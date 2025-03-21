@@ -10,13 +10,6 @@ namespace G
     public sealed partial class KeyPress
     {
         /// <summary>
-        /// The combination of keys the model is requesting to be pressed. This is an<br/>
-        /// array of strings, each representing a key.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("keys", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Keys { get; set; } = default!;
-
-        /// <summary>
         /// Specifies the event type. For a keypress action, this property is <br/>
         /// always set to `keypress`.<br/>
         /// Default Value: keypress
@@ -24,6 +17,13 @@ namespace G
         /// <default>global::G.KeyPressType.Keypress</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.KeyPressType Type { get; set; } = global::G.KeyPressType.Keypress;
+
+        /// <summary>
+        /// The combination of keys the model is requesting to be pressed. This is an<br/>
+        /// array of strings, each representing a key.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("keys", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> Keys { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,14 +34,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyPress" /> class.
         /// </summary>
-        /// <param name="keys">
-        /// The combination of keys the model is requesting to be pressed. This is an<br/>
-        /// array of strings, each representing a key.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a keypress action, this property is <br/>
         /// always set to `keypress`.<br/>
         /// Default Value: keypress
+        /// </param>
+        /// <param name="keys">
+        /// The combination of keys the model is requesting to be pressed. This is an<br/>
+        /// array of strings, each representing a key.
         /// </param>
         public KeyPress(
             global::System.Collections.Generic.IList<string> keys,

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogProjectCreated
     {
         /// <summary>
-        /// The payload used to create the project.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.AuditLogProjectCreatedData? Data { get; set; }
-
-        /// <summary>
         /// The project ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The payload used to create the project.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data")]
+        public global::G.AuditLogProjectCreatedData? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogProjectCreated" /> class.
         /// </summary>
-        /// <param name="data">
-        /// The payload used to create the project.
-        /// </param>
         /// <param name="id">
         /// The project ID.
         /// </param>
+        /// <param name="data">
+        /// The payload used to create the project.
+        /// </param>
         public AuditLogProjectCreated(
-            global::G.AuditLogProjectCreatedData? data,
-            string? id)
+            string? id,
+            global::G.AuditLogProjectCreatedData? data)
         {
-            this.Data = data;
             this.Id = id;
+            this.Data = data;
         }
 
         /// <summary>

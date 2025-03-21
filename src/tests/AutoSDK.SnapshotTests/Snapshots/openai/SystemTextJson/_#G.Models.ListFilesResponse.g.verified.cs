@@ -10,6 +10,14 @@ namespace G
     public sealed partial class ListFilesResponse
     {
         /// <summary>
+        /// Example: list
+        /// </summary>
+        /// <example>list</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Object { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -25,14 +33,6 @@ namespace G
         public required string FirstId { get; set; }
 
         /// <summary>
-        /// Example: false
-        /// </summary>
-        /// <example>false</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
-
-        /// <summary>
         /// Example: file-abc456
         /// </summary>
         /// <example>file-abc456</example>
@@ -41,12 +41,12 @@ namespace G
         public required string LastId { get; set; }
 
         /// <summary>
-        /// Example: list
+        /// Example: false
         /// </summary>
-        /// <example>list</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,34 +57,34 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListFilesResponse" /> class.
         /// </summary>
+        /// <param name="object">
+        /// Example: list
+        /// </param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: file-abc123
         /// </param>
-        /// <param name="hasMore">
-        /// Example: false
-        /// </param>
         /// <param name="lastId">
         /// Example: file-abc456
         /// </param>
-        /// <param name="object">
-        /// Example: list
+        /// <param name="hasMore">
+        /// Example: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListFilesResponse(
+            string @object,
             global::System.Collections.Generic.IList<global::G.OpenAIFile> data,
             string firstId,
-            bool hasMore,
             string lastId,
-            string @object)
+            bool hasMore)
         {
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.HasMore = hasMore;
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
-            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.HasMore = hasMore;
         }
 
         /// <summary>

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class VectorStoreSearchResultContentObject
     {
         /// <summary>
-        /// The text content returned from search.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
         /// The type of content.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.VectorStoreSearchResultContentObjectType Type { get; set; }
+
+        /// <summary>
+        /// The text content returned from search.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreSearchResultContentObject" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The text content returned from search.
-        /// </param>
         /// <param name="type">
         /// The type of content.
+        /// </param>
+        /// <param name="text">
+        /// The text content returned from search.
         /// </param>
         public VectorStoreSearchResultContentObject(
             string text,

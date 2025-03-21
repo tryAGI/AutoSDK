@@ -10,6 +10,13 @@ namespace G
     public sealed partial class ResponseErrorEvent
     {
         /// <summary>
+        /// The type of the event. Always `error`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseErrorEventTypeJsonConverter))]
+        public global::G.ResponseErrorEventType Type { get; set; }
+
+        /// <summary>
         /// The error code.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
@@ -31,13 +38,6 @@ namespace G
         public required string? Param { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `error`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseErrorEventTypeJsonConverter))]
-        public global::G.ResponseErrorEventType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +46,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseErrorEvent" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the event. Always `error`.
+        /// </param>
         /// <param name="code">
         /// The error code.
         /// </param>
@@ -54,9 +57,6 @@ namespace G
         /// </param>
         /// <param name="param">
         /// The error parameter.
-        /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `error`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogProjectUpdated
     {
         /// <summary>
-        /// The payload used to update the project.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("changes_requested")]
-        public global::G.AuditLogProjectUpdatedChangesRequested? ChangesRequested { get; set; }
-
-        /// <summary>
         /// The project ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The payload used to update the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("changes_requested")]
+        public global::G.AuditLogProjectUpdatedChangesRequested? ChangesRequested { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +30,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogProjectUpdated" /> class.
         /// </summary>
-        /// <param name="changesRequested">
-        /// The payload used to update the project.
-        /// </param>
         /// <param name="id">
         /// The project ID.
+        /// </param>
+        /// <param name="changesRequested">
+        /// The payload used to update the project.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogProjectUpdated(
-            global::G.AuditLogProjectUpdatedChangesRequested? changesRequested,
-            string? id)
+            string? id,
+            global::G.AuditLogProjectUpdatedChangesRequested? changesRequested)
         {
-            this.ChangesRequested = changesRequested;
             this.Id = id;
+            this.ChangesRequested = changesRequested;
         }
 
         /// <summary>

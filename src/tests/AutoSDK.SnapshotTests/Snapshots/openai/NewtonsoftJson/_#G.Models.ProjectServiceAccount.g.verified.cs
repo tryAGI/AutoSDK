@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ProjectServiceAccount
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the service account was created
+        /// The object type, which is always `organization.project.service_account`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectServiceAccountObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -28,16 +28,16 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The object type, which is always `organization.project.service_account`
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ProjectServiceAccountObject Object { get; set; }
-
-        /// <summary>
         /// `owner` or `member`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ProjectServiceAccountRole Role { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) of when the service account was created
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectServiceAccount" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the service account was created
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account`
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
@@ -57,23 +57,23 @@ namespace G
         /// <param name="name">
         /// The name of the service account
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.service_account`
-        /// </param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the service account was created
+        /// </param>
         public ProjectServiceAccount(
-            global::System.DateTimeOffset createdAt,
             string id,
             string name,
             global::G.ProjectServiceAccountRole role,
+            global::System.DateTimeOffset createdAt,
             global::G.ProjectServiceAccountObject @object)
         {
-            this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
+            this.CreatedAt = createdAt;
             this.Object = @object;
         }
 

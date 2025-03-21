@@ -12,16 +12,6 @@ namespace G
     public sealed partial class ModelResponseProperties
     {
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
-
-        /// <summary>
         /// Model ID used to generate the response, like `gpt-4o` or `o1`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
@@ -32,6 +22,16 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ModelResponsePropertiesModel?>))]
         public global::G.AnyOf<string, global::G.ModelResponsePropertiesModel?>? Model { get; set; }
+
+        /// <summary>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -73,19 +73,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelResponseProperties" /> class.
         /// </summary>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </param>
         /// <param name="model">
         /// Model ID used to generate the response, like `gpt-4o` or `o1`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
         /// to browse and compare available models.<br/>
         /// Example: gpt-4o
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -110,14 +110,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelResponseProperties(
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.AnyOf<string, global::G.ModelResponsePropertiesModel?>? model,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,
             string? user)
         {
-            this.Metadata = metadata;
             this.Model = model;
+            this.Metadata = metadata;
             this.Temperature = temperature;
             this.TopP = topP;
             this.User = user;

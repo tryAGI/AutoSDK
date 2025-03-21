@@ -13,15 +13,6 @@ namespace G
     public sealed partial class WebSearchTool
     {
         /// <summary>
-        /// High level guidance for the amount of context window space to use for the <br/>
-        /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
-        /// Default Value: medium
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchContextSizeJsonConverter))]
-        public global::G.WebSearchContextSize? SearchContextSize { get; set; }
-
-        /// <summary>
         /// The type of the web search tool. One of:<br/>
         /// - `web_search_preview`<br/>
         /// - `web_search_preview_2025_03_11`
@@ -39,6 +30,15 @@ namespace G
         public global::G.AllOf<global::G.WebSearchLocation, global::G.WebSearchToolUserLocation>? UserLocation { get; set; }
 
         /// <summary>
+        /// High level guidance for the amount of context window space to use for the <br/>
+        /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchContextSizeJsonConverter))]
+        public global::G.WebSearchContextSize? SearchContextSize { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,28 +47,28 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchTool" /> class.
         /// </summary>
-        /// <param name="searchContextSize">
-        /// High level guidance for the amount of context window space to use for the <br/>
-        /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
-        /// Default Value: medium
-        /// </param>
         /// <param name="type">
         /// The type of the web search tool. One of:<br/>
         /// - `web_search_preview`<br/>
         /// - `web_search_preview_2025_03_11`
         /// </param>
         /// <param name="userLocation"></param>
+        /// <param name="searchContextSize">
+        /// High level guidance for the amount of context window space to use for the <br/>
+        /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
+        /// Default Value: medium
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchTool(
             global::G.WebSearchToolType type,
-            global::G.WebSearchContextSize? searchContextSize,
-            global::G.AllOf<global::G.WebSearchLocation, global::G.WebSearchToolUserLocation>? userLocation)
+            global::G.AllOf<global::G.WebSearchLocation, global::G.WebSearchToolUserLocation>? userLocation,
+            global::G.WebSearchContextSize? searchContextSize)
         {
             this.Type = type;
-            this.SearchContextSize = searchContextSize;
             this.UserLocation = userLocation;
+            this.SearchContextSize = searchContextSize;
         }
 
         /// <summary>

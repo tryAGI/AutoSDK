@@ -12,18 +12,18 @@ namespace G
     public sealed partial class FineTuneDPOMethodHyperparameters
     {
         /// <summary>
-        /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBatchSize?, int?>? BatchSize { get; set; }
-
-        /// <summary>
         /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("beta")]
         public global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBeta?, double?>? Beta { get; set; }
+
+        /// <summary>
+        /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("batch_size")]
+        public global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBatchSize?, int?>? BatchSize { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.<br/>
@@ -48,12 +48,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuneDPOMethodHyperparameters" /> class.
         /// </summary>
-        /// <param name="batchSize">
-        /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="beta">
         /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="batchSize">
+        /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="learningRateMultiplier">
@@ -65,13 +65,13 @@ namespace G
         /// Default Value: auto
         /// </param>
         public FineTuneDPOMethodHyperparameters(
-            global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBatchSize?, int?>? batchSize,
             global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBeta?, double?>? beta,
+            global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersBatchSize?, int?>? batchSize,
             global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
             global::G.OneOf<global::G.FineTuneDPOMethodHyperparametersNEpochs?, int?>? nEpochs)
         {
-            this.BatchSize = batchSize;
             this.Beta = beta;
+            this.BatchSize = batchSize;
             this.LearningRateMultiplier = learningRateMultiplier;
             this.NEpochs = nEpochs;
         }

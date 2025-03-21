@@ -22,17 +22,17 @@ namespace G
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessageContentPartText>> Content { get; set; }
 
         /// <summary>
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The role of the messages author, in this case `developer`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestDeveloperMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestDeveloperMessageRole Role { get; set; }
+
+        /// <summary>
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,23 +46,23 @@ namespace G
         /// <param name="content">
         /// The contents of the developer message.
         /// </param>
-        /// <param name="name">
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </param>
         /// <param name="role">
         /// The role of the messages author, in this case `developer`.
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestDeveloperMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessageContentPartText>> content,
-            string? name,
-            global::G.ChatCompletionRequestDeveloperMessageRole role)
+            global::G.ChatCompletionRequestDeveloperMessageRole role,
+            string? name)
         {
             this.Content = content;
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
         }
 
         /// <summary>

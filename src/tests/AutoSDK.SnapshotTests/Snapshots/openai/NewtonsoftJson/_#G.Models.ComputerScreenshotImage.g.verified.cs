@@ -10,10 +10,13 @@ namespace G
     public sealed partial class ComputerScreenshotImage
     {
         /// <summary>
-        /// The identifier of an uploaded file that contains the screenshot.
+        /// Specifies the event type. For a computer screenshot, this property is <br/>
+        /// always set to `computer_screenshot`.<br/>
+        /// Default Value: computer_screenshot
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_id")]
-        public string? FileId { get; set; }
+        /// <default>global::G.ComputerScreenshotImageType.ComputerScreenshot</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ComputerScreenshotImageType Type { get; set; } = global::G.ComputerScreenshotImageType.ComputerScreenshot;
 
         /// <summary>
         /// The URL of the screenshot image.
@@ -22,13 +25,10 @@ namespace G
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// Specifies the event type. For a computer screenshot, this property is <br/>
-        /// always set to `computer_screenshot`.<br/>
-        /// Default Value: computer_screenshot
+        /// The identifier of an uploaded file that contains the screenshot.
         /// </summary>
-        /// <default>global::G.ComputerScreenshotImageType.ComputerScreenshot</default>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ComputerScreenshotImageType Type { get; set; } = global::G.ComputerScreenshotImageType.ComputerScreenshot;
+        [global::Newtonsoft.Json.JsonProperty("file_id")]
+        public string? FileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerScreenshotImage" /> class.
         /// </summary>
-        /// <param name="fileId">
-        /// The identifier of an uploaded file that contains the screenshot.
-        /// </param>
-        /// <param name="imageUrl">
-        /// The URL of the screenshot image.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a computer screenshot, this property is <br/>
         /// always set to `computer_screenshot`.<br/>
         /// Default Value: computer_screenshot
         /// </param>
+        /// <param name="imageUrl">
+        /// The URL of the screenshot image.
+        /// </param>
+        /// <param name="fileId">
+        /// The identifier of an uploaded file that contains the screenshot.
+        /// </param>
         public ComputerScreenshotImage(
-            string? fileId,
             string? imageUrl,
+            string? fileId,
             global::G.ComputerScreenshotImageType type = global::G.ComputerScreenshotImageType.ComputerScreenshot)
         {
-            this.FileId = fileId;
-            this.ImageUrl = imageUrl;
             this.Type = type;
+            this.ImageUrl = imageUrl;
+            this.FileId = fileId;
         }
 
         /// <summary>

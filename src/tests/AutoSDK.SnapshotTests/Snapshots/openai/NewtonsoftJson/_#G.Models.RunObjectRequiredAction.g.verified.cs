@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunObjectRequiredAction
     {
         /// <summary>
-        /// Details on the tool outputs needed for this run to continue.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("submit_tool_outputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; } = default!;
-
-        /// <summary>
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RunObjectRequiredActionType Type { get; set; }
+
+        /// <summary>
+        /// Details on the tool outputs needed for this run to continue.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("submit_tool_outputs", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunObjectRequiredAction" /> class.
         /// </summary>
-        /// <param name="submitToolOutputs">
-        /// Details on the tool outputs needed for this run to continue.
-        /// </param>
         /// <param name="type">
         /// For now, this is always `submit_tool_outputs`.
+        /// </param>
+        /// <param name="submitToolOutputs">
+        /// Details on the tool outputs needed for this run to continue.
         /// </param>
         public RunObjectRequiredAction(
             global::G.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs,

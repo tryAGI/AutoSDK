@@ -10,10 +10,10 @@ namespace G
     public sealed partial class BatchRequestOutputResponse
     {
         /// <summary>
-        /// The JSON body of the response
+        /// The HTTP status code of the response
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public object? Body { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("status_code")]
+        public int? StatusCode { get; set; }
 
         /// <summary>
         /// An unique identifier for the OpenAI API request. Please include this request ID when contacting support.
@@ -22,10 +22,10 @@ namespace G
         public string? RequestId { get; set; }
 
         /// <summary>
-        /// The HTTP status code of the response
+        /// The JSON body of the response
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status_code")]
-        public int? StatusCode { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("body")]
+        public object? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,26 +36,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequestOutputResponse" /> class.
         /// </summary>
-        /// <param name="body">
-        /// The JSON body of the response
+        /// <param name="statusCode">
+        /// The HTTP status code of the response
         /// </param>
         /// <param name="requestId">
         /// An unique identifier for the OpenAI API request. Please include this request ID when contacting support.
         /// </param>
-        /// <param name="statusCode">
-        /// The HTTP status code of the response
+        /// <param name="body">
+        /// The JSON body of the response
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchRequestOutputResponse(
-            object? body,
+            int? statusCode,
             string? requestId,
-            int? statusCode)
+            object? body)
         {
-            this.Body = body;
-            this.RequestId = requestId;
             this.StatusCode = statusCode;
+            this.RequestId = requestId;
+            this.Body = body;
         }
 
         /// <summary>

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class CodeInterpreterFileOutput
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CodeInterpreterFileOutputFile> Files { get; set; } = default!;
-
-        /// <summary>
         /// The type of the code interpreter file output. Always `files`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.CodeInterpreterFileOutputType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CodeInterpreterFileOutputFile> Files { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterFileOutput" /> class.
         /// </summary>
-        /// <param name="files"></param>
         /// <param name="type">
         /// The type of the code interpreter file output. Always `files`.
         /// </param>
+        /// <param name="files"></param>
         public CodeInterpreterFileOutput(
             global::System.Collections.Generic.IList<global::G.CodeInterpreterFileOutputFile> files,
             global::G.CodeInterpreterFileOutputType type)

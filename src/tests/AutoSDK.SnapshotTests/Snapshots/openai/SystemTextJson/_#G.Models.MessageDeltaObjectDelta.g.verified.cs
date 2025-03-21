@@ -12,17 +12,17 @@ namespace G
     public sealed partial class MessageDeltaObjectDelta
     {
         /// <summary>
-        /// The content of the message in array of text and/or images.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? Content { get; set; }
-
-        /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
         public global::G.MessageDeltaObjectDeltaRole? Role { get; set; }
+
+        /// <summary>
+        /// The content of the message in array of text and/or images.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,21 +33,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaObjectDelta" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The content of the message in array of text and/or images.
-        /// </param>
         /// <param name="role">
         /// The entity that produced the message. One of `user` or `assistant`.
+        /// </param>
+        /// <param name="content">
+        /// The content of the message in array of text and/or images.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaObjectDelta(
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? content,
-            global::G.MessageDeltaObjectDeltaRole? role)
+            global::G.MessageDeltaObjectDeltaRole? role,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? content)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

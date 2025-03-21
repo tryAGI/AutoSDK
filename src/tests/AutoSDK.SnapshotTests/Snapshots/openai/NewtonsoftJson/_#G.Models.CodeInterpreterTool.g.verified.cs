@@ -10,16 +10,16 @@ namespace G
     public sealed partial class CodeInterpreterTool
     {
         /// <summary>
-        /// The IDs of the files to run the code on.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> FileIds { get; set; } = default!;
-
-        /// <summary>
         /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.CodeInterpreterToolType Type { get; set; }
+
+        /// <summary>
+        /// The IDs of the files to run the code on.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("file_ids", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> FileIds { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterTool" /> class.
         /// </summary>
-        /// <param name="fileIds">
-        /// The IDs of the files to run the code on.
-        /// </param>
         /// <param name="type">
         /// The type of the code interpreter tool. Always `code_interpreter`.
+        /// </param>
+        /// <param name="fileIds">
+        /// The IDs of the files to run the code on.
         /// </param>
         public CodeInterpreterTool(
             global::System.Collections.Generic.IList<string> fileIds,

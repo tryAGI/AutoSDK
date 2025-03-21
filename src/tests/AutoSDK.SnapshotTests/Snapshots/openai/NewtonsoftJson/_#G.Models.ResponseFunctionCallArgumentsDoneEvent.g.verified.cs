@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseFunctionCallArgumentsDoneEvent
     {
         /// <summary>
-        /// The function-call arguments.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Arguments { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the item.
@@ -28,10 +28,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The function-call arguments.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Arguments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,25 +42,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The function-call arguments.
-        /// </param>
+        /// <param name="type"></param>
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="arguments">
+        /// The function-call arguments.
+        /// </param>
         public ResponseFunctionCallArgumentsDoneEvent(
-            string arguments,
             string itemId,
             int outputIndex,
+            string arguments,
             global::G.ResponseFunctionCallArgumentsDoneEventType type)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }
 

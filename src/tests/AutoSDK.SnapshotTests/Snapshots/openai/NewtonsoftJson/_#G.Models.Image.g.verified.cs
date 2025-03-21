@@ -16,16 +16,16 @@ namespace G
         public string? B64Json { get; set; }
 
         /// <summary>
-        /// The prompt that was used to generate the image, if there was any revision to the prompt.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("revised_prompt")]
-        public string? RevisedPrompt { get; set; }
-
-        /// <summary>
         /// The URL of the generated image, if `response_format` is `url` (default).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
+
+        /// <summary>
+        /// The prompt that was used to generate the image, if there was any revision to the prompt.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("revised_prompt")]
+        public string? RevisedPrompt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,20 +39,20 @@ namespace G
         /// <param name="b64Json">
         /// The base64-encoded JSON of the generated image, if `response_format` is `b64_json`.
         /// </param>
-        /// <param name="revisedPrompt">
-        /// The prompt that was used to generate the image, if there was any revision to the prompt.
-        /// </param>
         /// <param name="url">
         /// The URL of the generated image, if `response_format` is `url` (default).
         /// </param>
+        /// <param name="revisedPrompt">
+        /// The prompt that was used to generate the image, if there was any revision to the prompt.
+        /// </param>
         public Image(
             string? b64Json,
-            string? revisedPrompt,
-            string? url)
+            string? url,
+            string? revisedPrompt)
         {
             this.B64Json = b64Json;
-            this.RevisedPrompt = revisedPrompt;
             this.Url = url;
+            this.RevisedPrompt = revisedPrompt;
         }
 
         /// <summary>

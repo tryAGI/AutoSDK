@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseFileSearchCallSearchingEvent
     {
         /// <summary>
-        /// The ID of the output item that the file search call is initiated.
+        /// The type of the event. Always `response.file_search_call.searching`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFileSearchCallSearchingEventTypeJsonConverter))]
+        public global::G.ResponseFileSearchCallSearchingEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the file search call is searching.
@@ -24,11 +24,11 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.file_search_call.searching`.
+        /// The ID of the output item that the file search call is initiated.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFileSearchCallSearchingEventTypeJsonConverter))]
-        public global::G.ResponseFileSearchCallSearchingEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFileSearchCallSearchingEvent" /> class.
         /// </summary>
-        /// <param name="itemId">
-        /// The ID of the output item that the file search call is initiated.
+        /// <param name="type">
+        /// The type of the event. Always `response.file_search_call.searching`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the file search call is searching.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.file_search_call.searching`.
+        /// <param name="itemId">
+        /// The ID of the output item that the file search call is initiated.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFileSearchCallSearchingEvent(
-            string itemId,
             int outputIndex,
+            string itemId,
             global::G.ResponseFileSearchCallSearchingEventType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }
 

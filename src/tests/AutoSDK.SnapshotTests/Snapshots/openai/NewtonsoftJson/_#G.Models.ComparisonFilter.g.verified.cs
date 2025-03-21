@@ -12,12 +12,6 @@ namespace G
     public sealed partial class ComparisonFilter
     {
         /// <summary>
-        /// The key to compare against the value.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Key { get; set; } = default!;
-
-        /// <summary>
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
         /// - `ne`: not equal<br/>
@@ -30,6 +24,12 @@ namespace G
         /// <default>global::G.ComparisonFilterType.Eq</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ComparisonFilterType Type { get; set; } = default!;
+
+        /// <summary>
+        /// The key to compare against the value.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Key { get; set; } = default!;
 
         /// <summary>
         /// The value to compare against the attribute key; supports string, number, or boolean types.
@@ -46,9 +46,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComparisonFilter" /> class.
         /// </summary>
-        /// <param name="key">
-        /// The key to compare against the value.
-        /// </param>
         /// <param name="type">
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
@@ -59,16 +56,19 @@ namespace G
         /// - `lte`: less than or equal<br/>
         /// Default Value: eq
         /// </param>
+        /// <param name="key">
+        /// The key to compare against the value.
+        /// </param>
         /// <param name="value">
         /// The value to compare against the attribute key; supports string, number, or boolean types.
         /// </param>
         public ComparisonFilter(
-            string key,
             global::G.ComparisonFilterType type,
+            string key,
             global::G.OneOf<string, double?, bool?> value)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Type = type;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Value = value;
         }
 

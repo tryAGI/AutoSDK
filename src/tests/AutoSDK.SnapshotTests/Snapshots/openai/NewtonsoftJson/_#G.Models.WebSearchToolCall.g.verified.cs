@@ -17,16 +17,16 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The status of the web search tool call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebSearchToolCallStatus Status { get; set; } = default!;
-
-        /// <summary>
         /// The type of the web search tool call. Always `web_search_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.WebSearchToolCallType Type { get; set; }
+
+        /// <summary>
+        /// The status of the web search tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.WebSearchToolCallStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,11 +40,11 @@ namespace G
         /// <param name="id">
         /// The unique ID of the web search tool call.
         /// </param>
-        /// <param name="status">
-        /// The status of the web search tool call.
-        /// </param>
         /// <param name="type">
         /// The type of the web search tool call. Always `web_search_call`.
+        /// </param>
+        /// <param name="status">
+        /// The status of the web search tool call.
         /// </param>
         public WebSearchToolCall(
             string id,

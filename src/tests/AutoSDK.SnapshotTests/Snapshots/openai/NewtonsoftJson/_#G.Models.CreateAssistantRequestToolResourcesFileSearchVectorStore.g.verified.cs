@@ -12,16 +12,16 @@ namespace G
     public sealed partial class CreateAssistantRequestToolResourcesFileSearchVectorStore
     {
         /// <summary>
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
-        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
-
-        /// <summary>
         /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
+
+        /// <summary>
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearchVectorStore" /> class.
         /// </summary>
-        /// <param name="chunkingStrategy">
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
-        /// </param>
         /// <param name="fileIds">
         /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -56,12 +56,12 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </param>
         public CreateAssistantRequestToolResourcesFileSearchVectorStore(
-            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
             global::System.Collections.Generic.IList<string>? fileIds,
+            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.ChunkingStrategy = chunkingStrategy;
             this.FileIds = fileIds;
+            this.ChunkingStrategy = chunkingStrategy;
             this.Metadata = metadata;
         }
 

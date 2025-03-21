@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ResponseIncompleteEvent
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Response Response { get; set; } = default!;
-
-        /// <summary>
         /// The type of the event. Always `response.incomplete`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ResponseIncompleteEventType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Response Response { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseIncompleteEvent" /> class.
         /// </summary>
-        /// <param name="response"></param>
         /// <param name="type">
         /// The type of the event. Always `response.incomplete`.
         /// </param>
+        /// <param name="response"></param>
         public ResponseIncompleteEvent(
             global::G.Response response,
             global::G.ResponseIncompleteEventType type)

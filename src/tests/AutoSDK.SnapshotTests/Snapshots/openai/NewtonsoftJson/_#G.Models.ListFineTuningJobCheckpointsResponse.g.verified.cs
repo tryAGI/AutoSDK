@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("first_id")]
-        public string? FirstId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool HasMore { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("first_id")]
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,22 +49,22 @@ namespace G
         /// Initializes a new instance of the <see cref="ListFineTuningJobCheckpointsResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="firstId"></param>
-        /// <param name="hasMore"></param>
-        /// <param name="lastId"></param>
         /// <param name="object"></param>
+        /// <param name="firstId"></param>
+        /// <param name="lastId"></param>
+        /// <param name="hasMore"></param>
         public ListFineTuningJobCheckpointsResponse(
             global::System.Collections.Generic.IList<global::G.FineTuningJobCheckpoint> data,
             bool hasMore,
+            global::G.ListFineTuningJobCheckpointsResponseObject @object,
             string? firstId,
-            string? lastId,
-            global::G.ListFineTuningJobCheckpointsResponseObject @object)
+            string? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
+            this.Object = @object;
             this.FirstId = firstId;
             this.LastId = lastId;
-            this.Object = @object;
         }
 
         /// <summary>

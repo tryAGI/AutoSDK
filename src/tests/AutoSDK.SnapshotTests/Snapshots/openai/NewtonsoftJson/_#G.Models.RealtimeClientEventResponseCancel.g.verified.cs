@@ -18,17 +18,17 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
+        /// The event type, must be `response.cancel`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeClientEventResponseCancelType Type { get; set; }
+
+        /// <summary>
         /// A specific response ID to cancel - if not provided, will cancel an <br/>
         /// in-progress response in the default conversation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_id")]
         public string? ResponseId { get; set; }
-
-        /// <summary>
-        /// The event type, must be `response.cancel`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeClientEventResponseCancelType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,21 +42,21 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.cancel`.
+        /// </param>
         /// <param name="responseId">
         /// A specific response ID to cancel - if not provided, will cancel an <br/>
         /// in-progress response in the default conversation.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.cancel`.
-        /// </param>
         public RealtimeClientEventResponseCancel(
             string? eventId,
-            string? responseId,
-            global::G.RealtimeClientEventResponseCancelType type)
+            global::G.RealtimeClientEventResponseCancelType type,
+            string? responseId)
         {
             this.EventId = eventId;
-            this.ResponseId = responseId;
             this.Type = type;
+            this.ResponseId = responseId;
         }
 
         /// <summary>

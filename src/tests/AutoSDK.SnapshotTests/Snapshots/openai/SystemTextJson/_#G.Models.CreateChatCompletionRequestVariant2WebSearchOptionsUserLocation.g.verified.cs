@@ -10,18 +10,18 @@ namespace G
     public sealed partial class CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation
     {
         /// <summary>
-        /// Approximate location parameters for the search.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("approximate")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebSearchLocation Approximate { get; set; }
-
-        /// <summary>
         /// The type of location approximation. Always `approximate`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationTypeJsonConverter))]
         public global::G.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType Type { get; set; }
+
+        /// <summary>
+        /// Approximate location parameters for the search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("approximate")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.WebSearchLocation Approximate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation" /> class.
         /// </summary>
-        /// <param name="approximate">
-        /// Approximate location parameters for the search.
-        /// </param>
         /// <param name="type">
         /// The type of location approximation. Always `approximate`.
+        /// </param>
+        /// <param name="approximate">
+        /// Approximate location parameters for the search.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsCodeOutputLogsObject
     {
         /// <summary>
-        /// The text output from the Code Interpreter tool call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logs", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Logs { get; set; } = default!;
-
-        /// <summary>
         /// Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+
+        /// <summary>
+        /// The text output from the Code Interpreter tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logs", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Logs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputLogsObject" /> class.
         /// </summary>
-        /// <param name="logs">
-        /// The text output from the Code Interpreter tool call.
-        /// </param>
         /// <param name="type">
         /// Always `logs`.
+        /// </param>
+        /// <param name="logs">
+        /// The text output from the Code Interpreter tool call.
         /// </param>
         public RunStepDetailsToolCallsCodeOutputLogsObject(
             string logs,

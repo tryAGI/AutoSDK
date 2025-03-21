@@ -12,16 +12,16 @@ namespace G
     public sealed partial class MessageDeltaContentTextObjectText
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
-
-        /// <summary>
         /// The data that makes up the text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public string? Value { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,19 +32,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentTextObjectText" /> class.
         /// </summary>
-        /// <param name="annotations"></param>
         /// <param name="value">
         /// The data that makes up the text.
         /// </param>
+        /// <param name="annotations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextObjectText(
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? annotations,
-            string? value)
+            string? value,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? annotations)
         {
-            this.Annotations = annotations;
             this.Value = value;
+            this.Annotations = annotations;
         }
 
         /// <summary>

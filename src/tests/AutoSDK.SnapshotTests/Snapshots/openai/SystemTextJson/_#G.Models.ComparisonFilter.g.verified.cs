@@ -12,13 +12,6 @@ namespace G
     public sealed partial class ComparisonFilter
     {
         /// <summary>
-        /// The key to compare against the value.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Key { get; set; }
-
-        /// <summary>
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
         /// - `ne`: not equal<br/>
@@ -33,6 +26,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ComparisonFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ComparisonFilterType Type { get; set; } = global::G.ComparisonFilterType.Eq;
+
+        /// <summary>
+        /// The key to compare against the value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Key { get; set; }
 
         /// <summary>
         /// The value to compare against the attribute key; supports string, number, or boolean types.
@@ -51,9 +51,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComparisonFilter" /> class.
         /// </summary>
-        /// <param name="key">
-        /// The key to compare against the value.
-        /// </param>
         /// <param name="type">
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
@@ -64,6 +61,9 @@ namespace G
         /// - `lte`: less than or equal<br/>
         /// Default Value: eq
         /// </param>
+        /// <param name="key">
+        /// The key to compare against the value.
+        /// </param>
         /// <param name="value">
         /// The value to compare against the attribute key; supports string, number, or boolean types.
         /// </param>
@@ -71,12 +71,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComparisonFilter(
-            string key,
             global::G.ComparisonFilterType type,
+            string key,
             global::G.OneOf<string, double?, bool?> value)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Type = type;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Value = value;
         }
 

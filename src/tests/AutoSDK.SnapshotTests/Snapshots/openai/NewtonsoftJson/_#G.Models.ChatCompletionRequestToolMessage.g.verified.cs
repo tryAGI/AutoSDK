@@ -12,16 +12,16 @@ namespace G
     public sealed partial class ChatCompletionRequestToolMessage
     {
         /// <summary>
-        /// The contents of the tool message.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestToolMessageContentPart>> Content { get; set; } = default!;
-
-        /// <summary>
         /// The role of the messages author, in this case `tool`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
         public global::G.ChatCompletionRequestToolMessageRole Role { get; set; }
+
+        /// <summary>
+        /// The contents of the tool message.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestToolMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
         /// Tool call that this message is responding to.
@@ -38,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestToolMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The contents of the tool message.
-        /// </param>
         /// <param name="role">
         /// The role of the messages author, in this case `tool`.
+        /// </param>
+        /// <param name="content">
+        /// The contents of the tool message.
         /// </param>
         /// <param name="toolCallId">
         /// Tool call that this message is responding to.

@@ -10,22 +10,16 @@ namespace G
     public sealed partial class Project
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("archived_at")]
-        public global::System.DateTimeOffset? ArchivedAt { get; set; }
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the project was created.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
-
-        /// <summary>
         /// The identifier, which can be referenced in API endpoints
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// The object type, which is always `organization.project`
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectObject Object { get; set; }
 
         /// <summary>
         /// The name of the project. This appears in reporting.
@@ -34,10 +28,16 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The object type, which is always `organization.project`
+        /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ProjectObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("archived_at")]
+        public global::System.DateTimeOffset? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`
@@ -54,38 +54,38 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Project" /> class.
         /// </summary>
-        /// <param name="archivedAt">
-        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
-        /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the project was created.
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project`
         /// </param>
         /// <param name="name">
         /// The name of the project. This appears in reporting.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project`
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the project was created.
+        /// </param>
+        /// <param name="archivedAt">
+        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </param>
         /// <param name="status">
         /// `active` or `archived`
         /// </param>
         public Project(
-            global::System.DateTimeOffset createdAt,
             string id,
             string name,
+            global::System.DateTimeOffset createdAt,
             global::G.ProjectStatus status,
-            global::System.DateTimeOffset? archivedAt,
-            global::G.ProjectObject @object)
+            global::G.ProjectObject @object,
+            global::System.DateTimeOffset? archivedAt)
         {
-            this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
             this.Status = status;
-            this.ArchivedAt = archivedAt;
             this.Object = @object;
+            this.ArchivedAt = archivedAt;
         }
 
         /// <summary>

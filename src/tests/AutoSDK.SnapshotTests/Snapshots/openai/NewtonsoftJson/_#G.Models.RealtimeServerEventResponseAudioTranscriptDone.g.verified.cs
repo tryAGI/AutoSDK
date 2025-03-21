@@ -12,16 +12,22 @@ namespace G
     public sealed partial class RealtimeServerEventResponseAudioTranscriptDone
     {
         /// <summary>
-        /// The index of the content part in the item's content array.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ContentIndex { get; set; } = default!;
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string EventId { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be `response.audio_transcript.done`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventResponseAudioTranscriptDoneType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the response.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ResponseId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the item.
@@ -36,22 +42,16 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The ID of the response.
+        /// The index of the content part in the item's content array.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ResponseId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ContentIndex { get; set; } = default!;
 
         /// <summary>
         /// The final transcript of the audio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript", Required = global::Newtonsoft.Json.Required.Always)]
         public string Transcript { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be `response.audio_transcript.done`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventResponseAudioTranscriptDoneType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,11 +62,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventResponseAudioTranscriptDone" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part in the item's content array.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.audio_transcript.done`.
+        /// </param>
+        /// <param name="responseId">
+        /// The ID of the response.
         /// </param>
         /// <param name="itemId">
         /// The ID of the item.
@@ -74,29 +77,26 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
-        /// <param name="responseId">
-        /// The ID of the response.
+        /// <param name="contentIndex">
+        /// The index of the content part in the item's content array.
         /// </param>
         /// <param name="transcript">
         /// The final transcript of the audio.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.audio_transcript.done`.
-        /// </param>
         public RealtimeServerEventResponseAudioTranscriptDone(
-            int contentIndex,
             string eventId,
+            string responseId,
             string itemId,
             int outputIndex,
-            string responseId,
+            int contentIndex,
             string transcript,
             global::G.RealtimeServerEventResponseAudioTranscriptDoneType type)
         {
-            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
+            this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
         }

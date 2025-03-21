@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ChatCompletionDeleted
     {
         /// <summary>
-        /// Whether the chat completion was deleted.
+        /// The type of object being deleted.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ChatCompletionDeletedObject Object { get; set; }
 
         /// <summary>
         /// The ID of the chat completion that was deleted.
@@ -22,10 +22,10 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The type of object being deleted.
+        /// Whether the chat completion was deleted.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ChatCompletionDeletedObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionDeleted" /> class.
         /// </summary>
-        /// <param name="deleted">
-        /// Whether the chat completion was deleted.
+        /// <param name="object">
+        /// The type of object being deleted.
         /// </param>
         /// <param name="id">
         /// The ID of the chat completion that was deleted.
         /// </param>
-        /// <param name="object">
-        /// The type of object being deleted.
+        /// <param name="deleted">
+        /// Whether the chat completion was deleted.
         /// </param>
         public ChatCompletionDeleted(
-            bool deleted,
             string id,
+            bool deleted,
             global::G.ChatCompletionDeletedObject @object)
         {
-            this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
             this.Object = @object;
         }
 

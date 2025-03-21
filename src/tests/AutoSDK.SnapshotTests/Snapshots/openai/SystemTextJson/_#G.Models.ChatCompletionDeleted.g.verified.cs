@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ChatCompletionDeleted
     {
         /// <summary>
-        /// Whether the chat completion was deleted.
+        /// The type of object being deleted.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDeletedObjectJsonConverter))]
+        public global::G.ChatCompletionDeletedObject Object { get; set; }
 
         /// <summary>
         /// The ID of the chat completion that was deleted.
@@ -24,11 +24,11 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// The type of object being deleted.
+        /// Whether the chat completion was deleted.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDeletedObjectJsonConverter))]
-        public global::G.ChatCompletionDeletedObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionDeleted" /> class.
         /// </summary>
-        /// <param name="deleted">
-        /// Whether the chat completion was deleted.
+        /// <param name="object">
+        /// The type of object being deleted.
         /// </param>
         /// <param name="id">
         /// The ID of the chat completion that was deleted.
         /// </param>
-        /// <param name="object">
-        /// The type of object being deleted.
+        /// <param name="deleted">
+        /// Whether the chat completion was deleted.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionDeleted(
-            bool deleted,
             string id,
+            bool deleted,
             global::G.ChatCompletionDeletedObject @object)
         {
-            this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
             this.Object = @object;
         }
 

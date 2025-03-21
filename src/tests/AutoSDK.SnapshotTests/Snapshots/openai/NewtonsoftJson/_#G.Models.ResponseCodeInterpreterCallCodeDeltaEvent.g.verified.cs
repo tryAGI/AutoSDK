@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallCodeDeltaEvent
     {
         /// <summary>
-        /// The partial code snippet added by the code interpreter.
+        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Delta { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
@@ -22,10 +22,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// The partial code snippet added by the code interpreter.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// The partial code snippet added by the code interpreter.
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// <param name="delta">
+        /// The partial code snippet added by the code interpreter.
         /// </param>
         public ResponseCodeInterpreterCallCodeDeltaEvent(
-            string delta,
             int outputIndex,
+            string delta,
             global::G.ResponseCodeInterpreterCallCodeDeltaEventType type)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.OutputIndex = outputIndex;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }
 

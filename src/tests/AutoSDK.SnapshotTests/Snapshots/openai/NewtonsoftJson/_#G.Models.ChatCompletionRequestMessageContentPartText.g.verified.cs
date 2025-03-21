@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatCompletionRequestMessageContentPartText
     {
         /// <summary>
-        /// The text content.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
         /// The type of the content part.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ChatCompletionRequestMessageContentPartTextType Type { get; set; }
+
+        /// <summary>
+        /// The text content.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartText" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The text content.
-        /// </param>
         /// <param name="type">
         /// The type of the content part.
+        /// </param>
+        /// <param name="text">
+        /// The text content.
         /// </param>
         public ChatCompletionRequestMessageContentPartText(
             string text,

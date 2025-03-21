@@ -10,6 +10,12 @@ namespace G
     public sealed partial class AuditLogOrganizationUpdatedChangesRequested
     {
         /// <summary>
+        /// The organization title.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// The organization description.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -28,12 +34,6 @@ namespace G
         public global::G.AuditLogOrganizationUpdatedChangesRequestedSettings? Settings { get; set; }
 
         /// <summary>
-        /// The organization title.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string? Title { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogOrganizationUpdatedChangesRequested" /> class.
         /// </summary>
+        /// <param name="title">
+        /// The organization title.
+        /// </param>
         /// <param name="description">
         /// The organization description.
         /// </param>
@@ -49,22 +52,19 @@ namespace G
         /// The organization name.
         /// </param>
         /// <param name="settings"></param>
-        /// <param name="title">
-        /// The organization title.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogOrganizationUpdatedChangesRequested(
+            string? title,
             string? description,
             string? name,
-            global::G.AuditLogOrganizationUpdatedChangesRequestedSettings? settings,
-            string? title)
+            global::G.AuditLogOrganizationUpdatedChangesRequestedSettings? settings)
         {
+            this.Title = title;
             this.Description = description;
             this.Name = name;
             this.Settings = settings;
-            this.Title = title;
         }
 
         /// <summary>

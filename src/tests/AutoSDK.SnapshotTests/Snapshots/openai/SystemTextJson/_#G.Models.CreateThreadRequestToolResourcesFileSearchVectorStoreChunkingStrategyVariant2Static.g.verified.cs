@@ -10,19 +10,19 @@ namespace G
     public sealed partial class CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static
     {
         /// <summary>
+        /// The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_chunk_size_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int MaxChunkSizeTokens { get; set; }
+
+        /// <summary>
         /// The number of tokens that overlap between chunks. The default value is `400`.<br/>
         /// Note that the overlap must not exceed half of `max_chunk_size_tokens`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunk_overlap_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ChunkOverlapTokens { get; set; }
-
-        /// <summary>
-        /// The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_chunk_size_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxChunkSizeTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,22 +33,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static" /> class.
         /// </summary>
+        /// <param name="maxChunkSizeTokens">
+        /// The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.
+        /// </param>
         /// <param name="chunkOverlapTokens">
         /// The number of tokens that overlap between chunks. The default value is `400`.<br/>
         /// Note that the overlap must not exceed half of `max_chunk_size_tokens`.
-        /// </param>
-        /// <param name="maxChunkSizeTokens">
-        /// The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static(
-            int chunkOverlapTokens,
-            int maxChunkSizeTokens)
+            int maxChunkSizeTokens,
+            int chunkOverlapTokens)
         {
-            this.ChunkOverlapTokens = chunkOverlapTokens;
             this.MaxChunkSizeTokens = maxChunkSizeTokens;
+            this.ChunkOverlapTokens = chunkOverlapTokens;
         }
 
         /// <summary>

@@ -169,6 +169,14 @@ namespace G
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
+        /// <param name="model">
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
+        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
+        /// Default Value: &lt;|endoftext|&gt;
+        /// </param>
         /// <param name="bestOf">
         /// Generates `best_of` completions server-side and returns the "best" (the one with the highest log probability per token). Results cannot be streamed.<br/>
         /// When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.<br/>
@@ -199,9 +207,6 @@ namespace G
         /// Default Value: 16<br/>
         /// Example: 16
         /// </param>
-        /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
-        /// </param>
         /// <param name="n">
         /// How many completions to generate for each prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
@@ -212,11 +217,6 @@ namespace G
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
         /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
-        /// </param>
-        /// <param name="prompt">
-        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
-        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
-        /// Default Value: &lt;|endoftext|&gt;
         /// </param>
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
@@ -279,16 +279,16 @@ namespace G
         {
             var __request = new global::G.CreateCompletionRequest
             {
+                Model = model,
+                Prompt = prompt,
                 BestOf = bestOf,
                 Echo = echo,
                 FrequencyPenalty = frequencyPenalty,
                 LogitBias = logitBias,
                 Logprobs = logprobs,
                 MaxTokens = maxTokens,
-                Model = model,
                 N = n,
                 PresencePenalty = presencePenalty,
-                Prompt = prompt,
                 Seed = seed,
                 Stop = stop,
                 Stream = stream,

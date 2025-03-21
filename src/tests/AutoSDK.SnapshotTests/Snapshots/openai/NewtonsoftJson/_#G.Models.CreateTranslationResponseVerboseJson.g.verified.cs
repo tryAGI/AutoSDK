@@ -10,28 +10,28 @@ namespace G
     public sealed partial class CreateTranslationResponseVerboseJson
     {
         /// <summary>
-        /// The duration of the input audio.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("duration", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Duration { get; set; } = default!;
-
-        /// <summary>
         /// The language of the output translation (always `english`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
         public string Language { get; set; } = default!;
 
         /// <summary>
-        /// Segments of the translated text and their corresponding details.
+        /// The duration of the input audio.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("segments")]
-        public global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? Segments { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("duration", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Duration { get; set; } = default!;
 
         /// <summary>
         /// The translated text.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
+
+        /// <summary>
+        /// Segments of the translated text and their corresponding details.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("segments")]
+        public global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? Segments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,26 +42,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTranslationResponseVerboseJson" /> class.
         /// </summary>
-        /// <param name="duration">
-        /// The duration of the input audio.
-        /// </param>
         /// <param name="language">
         /// The language of the output translation (always `english`).
         /// </param>
-        /// <param name="segments">
-        /// Segments of the translated text and their corresponding details.
+        /// <param name="duration">
+        /// The duration of the input audio.
         /// </param>
         /// <param name="text">
         /// The translated text.
         /// </param>
+        /// <param name="segments">
+        /// Segments of the translated text and their corresponding details.
+        /// </param>
         public CreateTranslationResponseVerboseJson(
-            double duration,
             string language,
+            double duration,
             string text,
             global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? segments)
         {
-            this.Duration = duration;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Duration = duration;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Segments = segments;
         }

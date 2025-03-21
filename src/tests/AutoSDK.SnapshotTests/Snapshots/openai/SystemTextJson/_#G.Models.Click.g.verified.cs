@@ -10,14 +10,6 @@ namespace G
     public sealed partial class Click
     {
         /// <summary>
-        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("button")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClickButtonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ClickButton Button { get; set; }
-
-        /// <summary>
         /// Specifies the event type. For a click action, this property is <br/>
         /// always set to `click`.<br/>
         /// Default Value: click
@@ -26,6 +18,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClickTypeJsonConverter))]
         public global::G.ClickType Type { get; set; } = global::G.ClickType.Click;
+
+        /// <summary>
+        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("button")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClickButtonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.ClickButton Button { get; set; }
 
         /// <summary>
         /// The x-coordinate where the click occurred.
@@ -50,13 +50,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Click" /> class.
         /// </summary>
-        /// <param name="button">
-        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a click action, this property is <br/>
         /// always set to `click`.<br/>
         /// Default Value: click
+        /// </param>
+        /// <param name="button">
+        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
         /// </param>
         /// <param name="x">
         /// The x-coordinate where the click occurred.

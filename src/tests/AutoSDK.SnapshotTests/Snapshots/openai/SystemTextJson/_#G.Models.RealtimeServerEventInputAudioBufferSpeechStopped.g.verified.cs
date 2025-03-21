@@ -12,6 +12,20 @@ namespace G
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStopped
     {
         /// <summary>
+        /// The unique ID of the server event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string EventId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `input_audio_buffer.speech_stopped`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventInputAudioBufferSpeechStoppedTypeJsonConverter))]
+        public global::G.RealtimeServerEventInputAudioBufferSpeechStoppedType Type { get; set; }
+
+        /// <summary>
         /// Milliseconds since the session started when speech stopped. This will <br/>
         /// correspond to the end of audio sent to the model, and thus includes the <br/>
         /// `min_silence_duration_ms` configured in the Session.
@@ -21,25 +35,11 @@ namespace G
         public required int AudioEndMs { get; set; }
 
         /// <summary>
-        /// The unique ID of the server event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
-
-        /// <summary>
         /// The ID of the user message item that will be created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The event type, must be `input_audio_buffer.speech_stopped`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventInputAudioBufferSpeechStoppedTypeJsonConverter))]
-        public global::G.RealtimeServerEventInputAudioBufferSpeechStoppedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,31 +50,31 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventInputAudioBufferSpeechStopped" /> class.
         /// </summary>
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.speech_stopped`.
+        /// </param>
         /// <param name="audioEndMs">
         /// Milliseconds since the session started when speech stopped. This will <br/>
         /// correspond to the end of audio sent to the model, and thus includes the <br/>
         /// `min_silence_duration_ms` configured in the Session.
         /// </param>
-        /// <param name="eventId">
-        /// The unique ID of the server event.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventInputAudioBufferSpeechStopped(
-            int audioEndMs,
             string eventId,
+            int audioEndMs,
             string itemId,
             global::G.RealtimeServerEventInputAudioBufferSpeechStoppedType type)
         {
-            this.AudioEndMs = audioEndMs;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.AudioEndMs = audioEndMs;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }

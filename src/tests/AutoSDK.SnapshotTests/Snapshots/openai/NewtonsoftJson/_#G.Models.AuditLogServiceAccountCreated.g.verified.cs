@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogServiceAccountCreated
     {
         /// <summary>
-        /// The payload used to create the service account.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.AuditLogServiceAccountCreatedData? Data { get; set; }
-
-        /// <summary>
         /// The service account ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The payload used to create the service account.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data")]
+        public global::G.AuditLogServiceAccountCreatedData? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogServiceAccountCreated" /> class.
         /// </summary>
-        /// <param name="data">
-        /// The payload used to create the service account.
-        /// </param>
         /// <param name="id">
         /// The service account ID.
         /// </param>
+        /// <param name="data">
+        /// The payload used to create the service account.
+        /// </param>
         public AuditLogServiceAccountCreated(
-            global::G.AuditLogServiceAccountCreatedData? data,
-            string? id)
+            string? id,
+            global::G.AuditLogServiceAccountCreatedData? data)
         {
-            this.Data = data;
             this.Id = id;
+            this.Data = data;
         }
 
         /// <summary>

@@ -10,12 +10,6 @@ namespace G
     public sealed partial class WebSearchLocation
     {
         /// <summary>
-        /// Free text input for the city of the user, e.g. `San Francisco`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("city")]
-        public string? City { get; set; }
-
-        /// <summary>
         /// The two-letter <br/>
         /// [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1) of the user,<br/>
         /// e.g. `US`.
@@ -28,6 +22,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
         public string? Region { get; set; }
+
+        /// <summary>
+        /// Free text input for the city of the user, e.g. `San Francisco`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("city")]
+        public string? City { get; set; }
 
         /// <summary>
         /// The [IANA timezone](https://timeapi.io/documentation/iana-timezones) <br/>
@@ -45,9 +45,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchLocation" /> class.
         /// </summary>
-        /// <param name="city">
-        /// Free text input for the city of the user, e.g. `San Francisco`.
-        /// </param>
         /// <param name="country">
         /// The two-letter <br/>
         /// [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1) of the user,<br/>
@@ -56,19 +53,22 @@ namespace G
         /// <param name="region">
         /// Free text input for the region of the user, e.g. `California`.
         /// </param>
+        /// <param name="city">
+        /// Free text input for the city of the user, e.g. `San Francisco`.
+        /// </param>
         /// <param name="timezone">
         /// The [IANA timezone](https://timeapi.io/documentation/iana-timezones) <br/>
         /// of the user, e.g. `America/Los_Angeles`.
         /// </param>
         public WebSearchLocation(
-            string? city,
             string? country,
             string? region,
+            string? city,
             string? timezone)
         {
-            this.City = city;
             this.Country = country;
             this.Region = region;
+            this.City = city;
             this.Timezone = timezone;
         }
 

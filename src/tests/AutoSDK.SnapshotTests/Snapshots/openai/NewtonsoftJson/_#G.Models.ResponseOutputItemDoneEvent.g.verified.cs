@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseOutputItemDoneEvent
     {
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.output_item.done`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OutputItem Item { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseOutputItemDoneEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that was marked done.
@@ -22,10 +22,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.output_item.done`.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseOutputItemDoneEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OutputItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,20 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemDoneEvent" /> class.
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="outputIndex">
-        /// The index of the output item that was marked done.
-        /// </param>
         /// <param name="type">
         /// The type of the event. Always `response.output_item.done`.
         /// </param>
+        /// <param name="outputIndex">
+        /// The index of the output item that was marked done.
+        /// </param>
+        /// <param name="item"></param>
         public ResponseOutputItemDoneEvent(
-            global::G.OutputItem item,
             int outputIndex,
+            global::G.OutputItem item,
             global::G.ResponseOutputItemDoneEventType type)
         {
-            this.Item = item;
             this.OutputIndex = outputIndex;
+            this.Item = item;
             this.Type = type;
         }
 

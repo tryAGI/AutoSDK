@@ -24,18 +24,18 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
-        /// Realtime session object configuration.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeSessionCreateRequest Session { get; set; }
-
-        /// <summary>
         /// The event type, must be `session.update`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventSessionUpdateTypeJsonConverter))]
         public global::G.RealtimeClientEventSessionUpdateType Type { get; set; }
+
+        /// <summary>
+        /// Realtime session object configuration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RealtimeSessionCreateRequest Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,11 +49,11 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="session">
-        /// Realtime session object configuration.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `session.update`.
+        /// </param>
+        /// <param name="session">
+        /// Realtime session object configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

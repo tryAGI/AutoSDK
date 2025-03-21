@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ResponseCreatedEvent
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Response Response { get; set; } = default!;
-
-        /// <summary>
         /// The type of the event. Always `response.created`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ResponseCreatedEventType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Response Response { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCreatedEvent" /> class.
         /// </summary>
-        /// <param name="response"></param>
         /// <param name="type">
         /// The type of the event. Always `response.created`.
         /// </param>
+        /// <param name="response"></param>
         public ResponseCreatedEvent(
             global::G.Response response,
             global::G.ResponseCreatedEventType type)

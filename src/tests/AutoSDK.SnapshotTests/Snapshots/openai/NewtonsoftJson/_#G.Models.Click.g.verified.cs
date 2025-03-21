@@ -10,12 +10,6 @@ namespace G
     public sealed partial class Click
     {
         /// <summary>
-        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("button", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ClickButton Button { get; set; } = default!;
-
-        /// <summary>
         /// Specifies the event type. For a click action, this property is <br/>
         /// always set to `click`.<br/>
         /// Default Value: click
@@ -23,6 +17,12 @@ namespace G
         /// <default>global::G.ClickType.Click</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ClickType Type { get; set; } = global::G.ClickType.Click;
+
+        /// <summary>
+        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("button", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ClickButton Button { get; set; } = default!;
 
         /// <summary>
         /// The x-coordinate where the click occurred.
@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Click" /> class.
         /// </summary>
-        /// <param name="button">
-        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a click action, this property is <br/>
         /// always set to `click`.<br/>
         /// Default Value: click
+        /// </param>
+        /// <param name="button">
+        /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
         /// </param>
         /// <param name="x">
         /// The x-coordinate where the click occurred.

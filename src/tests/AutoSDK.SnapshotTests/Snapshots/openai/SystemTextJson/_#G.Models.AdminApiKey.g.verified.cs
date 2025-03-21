@@ -10,11 +10,11 @@ namespace G
     public sealed partial class AdminApiKey
     {
         /// <summary>
-        /// Example: 1711471533L
+        /// Example: organization.admin_api_key
         /// </summary>
-        /// <example>1711471533L</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public long? CreatedAt { get; set; }
+        /// <example>organization.admin_api_key</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// Example: key_abc
@@ -31,19 +31,6 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// Example: organization.admin_api_key
-        /// </summary>
-        /// <example>organization.admin_api_key</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public global::G.AdminApiKeyOwner? Owner { get; set; }
-
-        /// <summary>
         /// Example: sk-admin...def
         /// </summary>
         /// <example>sk-admin...def</example>
@@ -58,6 +45,19 @@ namespace G
         public string? Value { get; set; }
 
         /// <summary>
+        /// Example: 1711471533L
+        /// </summary>
+        /// <example>1711471533L</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public long? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public global::G.AdminApiKeyOwner? Owner { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminApiKey" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// Example: 1711471533L
+        /// <param name="object">
+        /// Example: organization.admin_api_key
         /// </param>
         /// <param name="id">
         /// Example: key_abc
@@ -75,35 +75,35 @@ namespace G
         /// <param name="name">
         /// Example: Administration Key
         /// </param>
-        /// <param name="object">
-        /// Example: organization.admin_api_key
-        /// </param>
-        /// <param name="owner"></param>
         /// <param name="redactedValue">
         /// Example: sk-admin...def
         /// </param>
         /// <param name="value">
         /// Example: sk-admin-1234abcd
         /// </param>
+        /// <param name="createdAt">
+        /// Example: 1711471533L
+        /// </param>
+        /// <param name="owner"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKey(
-            long? createdAt,
+            string? @object,
             string? id,
             string? name,
-            string? @object,
-            global::G.AdminApiKeyOwner? owner,
             string? redactedValue,
-            string? value)
+            string? value,
+            long? createdAt,
+            global::G.AdminApiKeyOwner? owner)
         {
-            this.CreatedAt = createdAt;
+            this.Object = @object;
             this.Id = id;
             this.Name = name;
-            this.Object = @object;
-            this.Owner = owner;
             this.RedactedValue = redactedValue;
             this.Value = value;
+            this.CreatedAt = createdAt;
+            this.Owner = owner;
         }
 
         /// <summary>

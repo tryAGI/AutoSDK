@@ -10,17 +10,17 @@ namespace G
     public sealed partial class CompleteUploadRequest
     {
         /// <summary>
-        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("md5")]
-        public string? Md5 { get; set; }
-
-        /// <summary>
         /// The ordered list of Part IDs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("part_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> PartIds { get; set; }
+
+        /// <summary>
+        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("md5")]
+        public string? Md5 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompleteUploadRequest" /> class.
         /// </summary>
-        /// <param name="md5">
-        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
-        /// </param>
         /// <param name="partIds">
         /// The ordered list of Part IDs.
+        /// </param>
+        /// <param name="md5">
+        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

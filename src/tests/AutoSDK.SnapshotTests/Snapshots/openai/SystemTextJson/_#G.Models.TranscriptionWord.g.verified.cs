@@ -10,11 +10,11 @@ namespace G
     public sealed partial class TranscriptionWord
     {
         /// <summary>
-        /// End time of the word in seconds.
+        /// The text content of the word.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("word")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float End { get; set; }
+        public required string Word { get; set; }
 
         /// <summary>
         /// Start time of the word in seconds.
@@ -24,11 +24,11 @@ namespace G
         public required float Start { get; set; }
 
         /// <summary>
-        /// The text content of the word.
+        /// End time of the word in seconds.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("word")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Word { get; set; }
+        public required float End { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,26 +39,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionWord" /> class.
         /// </summary>
-        /// <param name="end">
-        /// End time of the word in seconds.
+        /// <param name="word">
+        /// The text content of the word.
         /// </param>
         /// <param name="start">
         /// Start time of the word in seconds.
         /// </param>
-        /// <param name="word">
-        /// The text content of the word.
+        /// <param name="end">
+        /// End time of the word in seconds.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptionWord(
-            float end,
+            string word,
             float start,
-            string word)
+            float end)
         {
-            this.End = end;
-            this.Start = start;
             this.Word = word ?? throw new global::System.ArgumentNullException(nameof(word));
+            this.Start = start;
+            this.End = end;
         }
 
         /// <summary>

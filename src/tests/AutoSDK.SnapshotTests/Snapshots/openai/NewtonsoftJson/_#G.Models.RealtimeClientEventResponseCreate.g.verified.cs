@@ -27,16 +27,16 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
-        /// Create a new Realtime response with these parameters
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response")]
-        public global::G.RealtimeResponseCreateParams? Response { get; set; }
-
-        /// <summary>
         /// The event type, must be `response.create`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RealtimeClientEventResponseCreateType Type { get; set; }
+
+        /// <summary>
+        /// Create a new Realtime response with these parameters
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response")]
+        public global::G.RealtimeResponseCreateParams? Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,20 +50,20 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="response">
-        /// Create a new Realtime response with these parameters
-        /// </param>
         /// <param name="type">
         /// The event type, must be `response.create`.
         /// </param>
+        /// <param name="response">
+        /// Create a new Realtime response with these parameters
+        /// </param>
         public RealtimeClientEventResponseCreate(
             string? eventId,
-            global::G.RealtimeResponseCreateParams? response,
-            global::G.RealtimeClientEventResponseCreateType type)
+            global::G.RealtimeClientEventResponseCreateType type,
+            global::G.RealtimeResponseCreateParams? response)
         {
             this.EventId = eventId;
-            this.Response = response;
             this.Type = type;
+            this.Response = response;
         }
 
         /// <summary>

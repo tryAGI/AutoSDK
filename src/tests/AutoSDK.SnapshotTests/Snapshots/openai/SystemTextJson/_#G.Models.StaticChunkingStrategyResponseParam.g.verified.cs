@@ -10,18 +10,18 @@ namespace G
     public sealed partial class StaticChunkingStrategyResponseParam
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("static")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.StaticChunkingStrategy Static { get; set; }
-
-        /// <summary>
         /// Always `static`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter))]
         public global::G.StaticChunkingStrategyResponseParamType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("static")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.StaticChunkingStrategy Static { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="StaticChunkingStrategyResponseParam" /> class.
         /// </summary>
-        /// <param name="static"></param>
         /// <param name="type">
         /// Always `static`.
         /// </param>
+        /// <param name="static"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

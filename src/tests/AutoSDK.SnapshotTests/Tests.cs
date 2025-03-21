@@ -115,6 +115,7 @@ public partial class Tests
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"
                     : string.Empty,
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 // ["build_property.AutoSDK_GenerateSdk"] = "false",
                 // ["build_property.AutoSDK_GenerateModels"] = "true",
                 // ["build_property.AutoSDK_GenerateMethods"] = "false",

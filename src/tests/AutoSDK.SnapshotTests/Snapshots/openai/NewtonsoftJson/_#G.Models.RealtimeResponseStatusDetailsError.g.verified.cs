@@ -11,16 +11,16 @@ namespace G
     public sealed partial class RealtimeResponseStatusDetailsError
     {
         /// <summary>
-        /// Error code, if any.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code")]
-        public string? Code { get; set; }
-
-        /// <summary>
         /// The type of error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
+
+        /// <summary>
+        /// Error code, if any.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("code")]
+        public string? Code { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,18 +31,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeResponseStatusDetailsError" /> class.
         /// </summary>
-        /// <param name="code">
-        /// Error code, if any.
-        /// </param>
         /// <param name="type">
         /// The type of error.
         /// </param>
+        /// <param name="code">
+        /// Error code, if any.
+        /// </param>
         public RealtimeResponseStatusDetailsError(
-            string? code,
-            string? type)
+            string? type,
+            string? code)
         {
-            this.Code = code;
             this.Type = type;
+            this.Code = code;
         }
 
         /// <summary>

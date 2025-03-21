@@ -18,32 +18,11 @@ namespace G
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
     {
         /// <summary>
-        /// The index of the content part containing the audio.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventId { get; set; }
-
-        /// <summary>
-        /// The ID of the user message item containing the audio.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The transcribed text.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Transcript { get; set; }
 
         /// <summary>
         /// The event type, must be<br/>
@@ -54,6 +33,27 @@ namespace G
         public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
+        /// The ID of the user message item containing the audio.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The index of the content part containing the audio.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContentIndex { get; set; }
+
+        /// <summary>
+        /// The transcribed text.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Transcript { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,35 +62,35 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemInputAudioTranscriptionCompleted" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part containing the audio.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item containing the audio.
-        /// </param>
-        /// <param name="transcript">
-        /// The transcribed text.
         /// </param>
         /// <param name="type">
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item containing the audio.
+        /// </param>
+        /// <param name="contentIndex">
+        /// The index of the content part containing the audio.
+        /// </param>
+        /// <param name="transcript">
+        /// The transcribed text.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
-            int contentIndex,
             string eventId,
             string itemId,
+            int contentIndex,
             string transcript,
             global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
         {
-            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
         }

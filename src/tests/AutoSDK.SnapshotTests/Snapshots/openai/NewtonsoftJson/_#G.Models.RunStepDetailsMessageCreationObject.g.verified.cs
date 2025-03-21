@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunStepDetailsMessageCreationObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("message_creation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; } = default!;
-
-        /// <summary>
         /// Always `message_creation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RunStepDetailsMessageCreationObjectType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("message_creation", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsMessageCreationObject" /> class.
         /// </summary>
-        /// <param name="messageCreation"></param>
         /// <param name="type">
         /// Always `message_creation`.
         /// </param>
+        /// <param name="messageCreation"></param>
         public RunStepDetailsMessageCreationObject(
             global::G.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
             global::G.RunStepDetailsMessageCreationObjectType type)

@@ -10,18 +10,6 @@ namespace G
     public sealed partial class Scroll
     {
         /// <summary>
-        /// The horizontal scroll distance.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("scroll_x", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ScrollX { get; set; } = default!;
-
-        /// <summary>
-        /// The vertical scroll distance.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("scroll_y", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ScrollY { get; set; } = default!;
-
-        /// <summary>
         /// Specifies the event type. For a scroll action, this property is <br/>
         /// always set to `scroll`.<br/>
         /// Default Value: scroll
@@ -43,6 +31,18 @@ namespace G
         public int Y { get; set; } = default!;
 
         /// <summary>
+        /// The horizontal scroll distance.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("scroll_x", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ScrollX { get; set; } = default!;
+
+        /// <summary>
+        /// The vertical scroll distance.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("scroll_y", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ScrollY { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -51,12 +51,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Scroll" /> class.
         /// </summary>
-        /// <param name="scrollX">
-        /// The horizontal scroll distance.
-        /// </param>
-        /// <param name="scrollY">
-        /// The vertical scroll distance.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a scroll action, this property is <br/>
         /// always set to `scroll`.<br/>
@@ -68,17 +62,23 @@ namespace G
         /// <param name="y">
         /// The y-coordinate where the scroll occurred.
         /// </param>
+        /// <param name="scrollX">
+        /// The horizontal scroll distance.
+        /// </param>
+        /// <param name="scrollY">
+        /// The vertical scroll distance.
+        /// </param>
         public Scroll(
-            int scrollX,
-            int scrollY,
             int x,
             int y,
+            int scrollX,
+            int scrollY,
             global::G.ScrollType type = global::G.ScrollType.Scroll)
         {
-            this.ScrollX = scrollX;
-            this.ScrollY = scrollY;
             this.X = x;
             this.Y = y;
+            this.ScrollX = scrollX;
+            this.ScrollY = scrollY;
             this.Type = type;
         }
 

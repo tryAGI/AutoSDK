@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ResponseInProgressEvent
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Response Response { get; set; } = default!;
-
-        /// <summary>
         /// The type of the event. Always `response.in_progress`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ResponseInProgressEventType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Response Response { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseInProgressEvent" /> class.
         /// </summary>
-        /// <param name="response"></param>
         /// <param name="type">
         /// The type of the event. Always `response.in_progress`.
         /// </param>
+        /// <param name="response"></param>
         public ResponseInProgressEvent(
             global::G.Response response,
             global::G.ResponseInProgressEventType type)

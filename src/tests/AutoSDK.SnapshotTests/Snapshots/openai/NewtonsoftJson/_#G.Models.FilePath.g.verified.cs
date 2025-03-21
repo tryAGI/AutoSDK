@@ -10,6 +10,12 @@ namespace G
     public sealed partial class FilePath
     {
         /// <summary>
+        /// The type of the file path. Always `file_path`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.FilePathType Type { get; set; }
+
+        /// <summary>
         /// The ID of the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -22,12 +28,6 @@ namespace G
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// The type of the file path. Always `file_path`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FilePathType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FilePath" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the file path. Always `file_path`.
+        /// </param>
         /// <param name="fileId">
         /// The ID of the file.
         /// </param>
         /// <param name="index">
         /// The index of the file in the list of files.
-        /// </param>
-        /// <param name="type">
-        /// The type of the file path. Always `file_path`.
         /// </param>
         public FilePath(
             string fileId,

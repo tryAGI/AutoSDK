@@ -10,18 +10,18 @@ namespace G
     public sealed partial class MessageStreamEventVariant2
     {
         /// <summary>
-        /// Represents a message within a [thread](/docs/api-reference/threads).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageObject Data { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageStreamEventVariant2EventJsonConverter))]
         public global::G.MessageStreamEventVariant2Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.MessageObject Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant2" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
-        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

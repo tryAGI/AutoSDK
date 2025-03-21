@@ -10,19 +10,19 @@ namespace G
     public sealed partial class RealtimeSessionCreateRequestInputAudioTranscription
     {
         /// <summary>
+        /// The model to use for transcription, `whisper-1` is the only currently <br/>
+        /// supported model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
         /// The language of the input audio. Supplying the input language in<br/>
         /// [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format<br/>
         /// will improve accuracy and latency.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         public string? Language { get; set; }
-
-        /// <summary>
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
@@ -41,14 +41,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestInputAudioTranscription" /> class.
         /// </summary>
+        /// <param name="model">
+        /// The model to use for transcription, `whisper-1` is the only currently <br/>
+        /// supported model.
+        /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in<br/>
         /// [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format<br/>
         /// will improve accuracy and latency.
-        /// </param>
-        /// <param name="model">
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
@@ -59,12 +59,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateRequestInputAudioTranscription(
-            string? language,
             string? model,
+            string? language,
             string? prompt)
         {
-            this.Language = language;
             this.Model = model;
+            this.Language = language;
             this.Prompt = prompt;
         }
 

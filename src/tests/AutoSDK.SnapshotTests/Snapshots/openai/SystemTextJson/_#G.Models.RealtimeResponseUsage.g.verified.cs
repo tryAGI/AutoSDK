@@ -13,10 +13,11 @@ namespace G
     public sealed partial class RealtimeResponseUsage
     {
         /// <summary>
-        /// Details about the input tokens used in the Response.
+        /// The total number of tokens in the Response including input and output <br/>
+        /// text and audio tokens.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_token_details")]
-        public global::G.RealtimeResponseUsageInputTokenDetails? InputTokenDetails { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens used in the Response, including text and <br/>
@@ -26,12 +27,6 @@ namespace G
         public int? InputTokens { get; set; }
 
         /// <summary>
-        /// Details about the output tokens used in the Response.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_token_details")]
-        public global::G.RealtimeResponseUsageOutputTokenDetails? OutputTokenDetails { get; set; }
-
-        /// <summary>
         /// The number of output tokens sent in the Response, including text and <br/>
         /// audio tokens.
         /// </summary>
@@ -39,11 +34,16 @@ namespace G
         public int? OutputTokens { get; set; }
 
         /// <summary>
-        /// The total number of tokens in the Response including input and output <br/>
-        /// text and audio tokens.
+        /// Details about the input tokens used in the Response.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        public int? TotalTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_token_details")]
+        public global::G.RealtimeResponseUsageInputTokenDetails? InputTokenDetails { get; set; }
+
+        /// <summary>
+        /// Details about the output tokens used in the Response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_token_details")]
+        public global::G.RealtimeResponseUsageOutputTokenDetails? OutputTokenDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,39 +54,39 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeResponseUsage" /> class.
         /// </summary>
-        /// <param name="inputTokenDetails">
-        /// Details about the input tokens used in the Response.
+        /// <param name="totalTokens">
+        /// The total number of tokens in the Response including input and output <br/>
+        /// text and audio tokens.
         /// </param>
         /// <param name="inputTokens">
         /// The number of input tokens used in the Response, including text and <br/>
         /// audio tokens.
         /// </param>
-        /// <param name="outputTokenDetails">
-        /// Details about the output tokens used in the Response.
-        /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens sent in the Response, including text and <br/>
         /// audio tokens.
         /// </param>
-        /// <param name="totalTokens">
-        /// The total number of tokens in the Response including input and output <br/>
-        /// text and audio tokens.
+        /// <param name="inputTokenDetails">
+        /// Details about the input tokens used in the Response.
+        /// </param>
+        /// <param name="outputTokenDetails">
+        /// Details about the output tokens used in the Response.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeResponseUsage(
-            global::G.RealtimeResponseUsageInputTokenDetails? inputTokenDetails,
+            int? totalTokens,
             int? inputTokens,
-            global::G.RealtimeResponseUsageOutputTokenDetails? outputTokenDetails,
             int? outputTokens,
-            int? totalTokens)
+            global::G.RealtimeResponseUsageInputTokenDetails? inputTokenDetails,
+            global::G.RealtimeResponseUsageOutputTokenDetails? outputTokenDetails)
         {
-            this.InputTokenDetails = inputTokenDetails;
-            this.InputTokens = inputTokens;
-            this.OutputTokenDetails = outputTokenDetails;
-            this.OutputTokens = outputTokens;
             this.TotalTokens = totalTokens;
+            this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
+            this.InputTokenDetails = inputTokenDetails;
+            this.OutputTokenDetails = outputTokenDetails;
         }
 
         /// <summary>

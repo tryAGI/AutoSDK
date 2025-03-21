@@ -16,16 +16,16 @@ namespace G
         public string Email { get; set; } = default!;
 
         /// <summary>
-        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("projects")]
-        public global::System.Collections.Generic.IList<global::G.InviteRequestProject>? Projects { get; set; }
-
-        /// <summary>
         /// `owner` or `reader`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.InviteRequestRole Role { get; set; } = default!;
+
+        /// <summary>
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("projects")]
+        public global::System.Collections.Generic.IList<global::G.InviteRequestProject>? Projects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,11 +39,11 @@ namespace G
         /// <param name="email">
         /// Send an email to this address
         /// </param>
-        /// <param name="projects">
-        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
-        /// </param>
         /// <param name="role">
         /// `owner` or `reader`
+        /// </param>
+        /// <param name="projects">
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
         /// </param>
         public InviteRequest(
             string email,

@@ -12,19 +12,18 @@ namespace G
     public sealed partial class RealtimeSessionCreateRequestTurnDetection
     {
         /// <summary>
-        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
-        /// Default Value: true
+        /// Type of turn detection, only `server_vad` is currently supported.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("create_response")]
-        public bool? CreateResponse { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string? Type { get; set; }
 
         /// <summary>
-        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
-        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
-        /// Default Value: true
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
+        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// thus might perform better in noisy environments.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("interrupt_response")]
-        public bool? InterruptResponse { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("threshold")]
+        public double? Threshold { get; set; }
 
         /// <summary>
         /// Amount of audio to include before the VAD detected speech (in <br/>
@@ -42,18 +41,19 @@ namespace G
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
-        /// thus might perform better in noisy environments.
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
+        /// Default Value: true
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("threshold")]
-        public double? Threshold { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("create_response")]
+        public bool? CreateResponse { get; set; }
 
         /// <summary>
-        /// Type of turn detection, only `server_vad` is currently supported.
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
+        /// Default Value: true
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("interrupt_response")]
+        public bool? InterruptResponse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,14 +64,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestTurnDetection" /> class.
         /// </summary>
-        /// <param name="createResponse">
-        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
-        /// Default Value: true
+        /// <param name="type">
+        /// Type of turn detection, only `server_vad` is currently supported.
         /// </param>
-        /// <param name="interruptResponse">
-        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
-        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
-        /// Default Value: true
+        /// <param name="threshold">
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
+        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// thus might perform better in noisy environments.
         /// </param>
         /// <param name="prefixPaddingMs">
         /// Amount of audio to include before the VAD detected speech (in <br/>
@@ -82,28 +81,29 @@ namespace G
         /// to 500ms. With shorter values the model will respond more quickly, <br/>
         /// but may jump in on short pauses from the user.
         /// </param>
-        /// <param name="threshold">
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
-        /// thus might perform better in noisy environments.
+        /// <param name="createResponse">
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
+        /// Default Value: true
         /// </param>
-        /// <param name="type">
-        /// Type of turn detection, only `server_vad` is currently supported.
+        /// <param name="interruptResponse">
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
+        /// Default Value: true
         /// </param>
         public RealtimeSessionCreateRequestTurnDetection(
-            bool? createResponse,
-            bool? interruptResponse,
+            string? type,
+            double? threshold,
             int? prefixPaddingMs,
             int? silenceDurationMs,
-            double? threshold,
-            string? type)
+            bool? createResponse,
+            bool? interruptResponse)
         {
-            this.CreateResponse = createResponse;
-            this.InterruptResponse = interruptResponse;
+            this.Type = type;
+            this.Threshold = threshold;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
-            this.Threshold = threshold;
-            this.Type = type;
+            this.CreateResponse = createResponse;
+            this.InterruptResponse = interruptResponse;
         }
 
         /// <summary>

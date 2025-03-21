@@ -10,6 +10,13 @@ namespace G
     public sealed partial class ChatCompletionRequestMessageContentPartFileFile
     {
         /// <summary>
+        /// The name of the file, used when passing the file to the model as a <br/>
+        /// string.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_name")]
+        public string? FileName { get; set; }
+
+        /// <summary>
         /// The base64 encoded file data, used when passing the file to the model <br/>
         /// as a string.
         /// </summary>
@@ -23,13 +30,6 @@ namespace G
         public string? FileId { get; set; }
 
         /// <summary>
-        /// The name of the file, used when passing the file to the model as a <br/>
-        /// string.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_name")]
-        public string? FileName { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,6 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFileFile" /> class.
         /// </summary>
+        /// <param name="fileName">
+        /// The name of the file, used when passing the file to the model as a <br/>
+        /// string.
+        /// </param>
         /// <param name="fileData">
         /// The base64 encoded file data, used when passing the file to the model <br/>
         /// as a string.
@@ -45,21 +49,17 @@ namespace G
         /// <param name="fileId">
         /// The ID of an uploaded file to use as input.
         /// </param>
-        /// <param name="fileName">
-        /// The name of the file, used when passing the file to the model as a <br/>
-        /// string.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestMessageContentPartFileFile(
+            string? fileName,
             string? fileData,
-            string? fileId,
-            string? fileName)
+            string? fileId)
         {
+            this.FileName = fileName;
             this.FileData = fileData;
             this.FileId = fileId;
-            this.FileName = fileName;
         }
 
         /// <summary>

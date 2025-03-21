@@ -10,16 +10,16 @@ namespace G
     public sealed partial class MessageStreamEventVariant4
     {
         /// <summary>
-        /// Represents a message within a [thread](/docs/api-reference/threads).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageObject Data { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
         public global::G.MessageStreamEventVariant4Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.MessageObject Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant4" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
-        /// <param name="event"></param>
         public MessageStreamEventVariant4(
             global::G.MessageObject data,
             global::G.MessageStreamEventVariant4Event @event)

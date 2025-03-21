@@ -19,18 +19,18 @@ namespace G
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The ID of the item that was deleted.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
         /// The event type, must be `conversation.item.deleted`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemDeletedTypeJsonConverter))]
         public global::G.RealtimeServerEventConversationItemDeletedType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the item that was deleted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +44,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the item that was deleted.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.deleted`.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the item that was deleted.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

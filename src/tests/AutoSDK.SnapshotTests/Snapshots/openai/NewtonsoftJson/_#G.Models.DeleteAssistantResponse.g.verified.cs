@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteAssistantResponse" /> class.
         /// </summary>
-        /// <param name="deleted"></param>
         /// <param name="id"></param>
+        /// <param name="deleted"></param>
         /// <param name="object"></param>
         public DeleteAssistantResponse(
-            bool deleted,
             string id,
+            bool deleted,
             global::G.DeleteAssistantResponseObject @object)
         {
-            this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
             this.Object = @object;
         }
 

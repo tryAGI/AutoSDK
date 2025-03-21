@@ -10,14 +10,6 @@ namespace G
     public sealed partial class KeyPress
     {
         /// <summary>
-        /// The combination of keys the model is requesting to be pressed. This is an<br/>
-        /// array of strings, each representing a key.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Keys { get; set; }
-
-        /// <summary>
         /// Specifies the event type. For a keypress action, this property is <br/>
         /// always set to `keypress`.<br/>
         /// Default Value: keypress
@@ -28,6 +20,14 @@ namespace G
         public global::G.KeyPressType Type { get; set; } = global::G.KeyPressType.Keypress;
 
         /// <summary>
+        /// The combination of keys the model is requesting to be pressed. This is an<br/>
+        /// array of strings, each representing a key.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Keys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyPress" /> class.
         /// </summary>
-        /// <param name="keys">
-        /// The combination of keys the model is requesting to be pressed. This is an<br/>
-        /// array of strings, each representing a key.
-        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a keypress action, this property is <br/>
         /// always set to `keypress`.<br/>
         /// Default Value: keypress
+        /// </param>
+        /// <param name="keys">
+        /// The combination of keys the model is requesting to be pressed. This is an<br/>
+        /// array of strings, each representing a key.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

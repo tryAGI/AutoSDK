@@ -12,11 +12,19 @@ namespace G
     public sealed partial class VectorStoreSearchRequest
     {
         /// <summary>
-        /// A filter to apply based on file attributes.
+        /// A query string for a search
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ComparisonFilter, global::G.CompoundFilter>))]
-        public global::G.OneOf<global::G.ComparisonFilter, global::G.CompoundFilter>? Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; }
+
+        /// <summary>
+        /// Whether to rewrite the natural language query for vector search.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rewrite_query")]
+        public bool? RewriteQuery { get; set; }
 
         /// <summary>
         /// The maximum number of results to return. This number should be between 1 and 50 inclusive.<br/>
@@ -26,25 +34,17 @@ namespace G
         public int? MaxNumResults { get; set; }
 
         /// <summary>
-        /// A query string for a search
+        /// A filter to apply based on file attributes.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ComparisonFilter, global::G.CompoundFilter>))]
+        public global::G.OneOf<global::G.ComparisonFilter, global::G.CompoundFilter>? Filters { get; set; }
 
         /// <summary>
         /// Ranking options for search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranking_options")]
         public global::G.VectorStoreSearchRequestRankingOptions? RankingOptions { get; set; }
-
-        /// <summary>
-        /// Whether to rewrite the natural language query for vector search.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("rewrite_query")]
-        public bool? RewriteQuery { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,38 +55,38 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreSearchRequest" /> class.
         /// </summary>
-        /// <param name="filters">
-        /// A filter to apply based on file attributes.
+        /// <param name="query">
+        /// A query string for a search
+        /// </param>
+        /// <param name="rewriteQuery">
+        /// Whether to rewrite the natural language query for vector search.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="maxNumResults">
         /// The maximum number of results to return. This number should be between 1 and 50 inclusive.<br/>
         /// Default Value: 10
         /// </param>
-        /// <param name="query">
-        /// A query string for a search
+        /// <param name="filters">
+        /// A filter to apply based on file attributes.
         /// </param>
         /// <param name="rankingOptions">
         /// Ranking options for search.
-        /// </param>
-        /// <param name="rewriteQuery">
-        /// Whether to rewrite the natural language query for vector search.<br/>
-        /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorStoreSearchRequest(
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>> query,
-            global::G.OneOf<global::G.ComparisonFilter, global::G.CompoundFilter>? filters,
+            bool? rewriteQuery,
             int? maxNumResults,
-            global::G.VectorStoreSearchRequestRankingOptions? rankingOptions,
-            bool? rewriteQuery)
+            global::G.OneOf<global::G.ComparisonFilter, global::G.CompoundFilter>? filters,
+            global::G.VectorStoreSearchRequestRankingOptions? rankingOptions)
         {
             this.Query = query;
-            this.Filters = filters;
-            this.MaxNumResults = maxNumResults;
-            this.RankingOptions = rankingOptions;
             this.RewriteQuery = rewriteQuery;
+            this.MaxNumResults = maxNumResults;
+            this.Filters = filters;
+            this.RankingOptions = rankingOptions;
         }
 
         /// <summary>

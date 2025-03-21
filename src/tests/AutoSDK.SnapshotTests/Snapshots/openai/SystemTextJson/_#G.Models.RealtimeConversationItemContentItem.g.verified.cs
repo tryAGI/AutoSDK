@@ -10,10 +10,17 @@ namespace G
     public sealed partial class RealtimeConversationItemContentItem
     {
         /// <summary>
-        /// Base64-encoded audio bytes, used for `input_audio` content type.
+        /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public string? Audio { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemContentItemTypeJsonConverter))]
+        public global::G.RealtimeConversationItemContentItemType? Type { get; set; }
+
+        /// <summary>
+        /// The text content, used for `input_text` and `text` content types.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// ID of a previous conversation item to reference (for `item_reference`<br/>
@@ -24,23 +31,16 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// The text content, used for `input_text` and `text` content types.
+        /// Base64-encoded audio bytes, used for `input_audio` content type.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public string? Audio { get; set; }
 
         /// <summary>
         /// The transcript of the audio, used for `input_audio` content type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
         public string? Transcript { get; set; }
-
-        /// <summary>
-        /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemContentItemTypeJsonConverter))]
-        public global::G.RealtimeConversationItemContentItemType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,38 +51,38 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeConversationItemContentItem" /> class.
         /// </summary>
-        /// <param name="audio">
-        /// Base64-encoded audio bytes, used for `input_audio` content type.
+        /// <param name="type">
+        /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
+        /// </param>
+        /// <param name="text">
+        /// The text content, used for `input_text` and `text` content types.
         /// </param>
         /// <param name="id">
         /// ID of a previous conversation item to reference (for `item_reference`<br/>
         /// content types in `response.create` events). These can reference both<br/>
         /// client and server created items.
         /// </param>
-        /// <param name="text">
-        /// The text content, used for `input_text` and `text` content types.
+        /// <param name="audio">
+        /// Base64-encoded audio bytes, used for `input_audio` content type.
         /// </param>
         /// <param name="transcript">
         /// The transcript of the audio, used for `input_audio` content type.
-        /// </param>
-        /// <param name="type">
-        /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeConversationItemContentItem(
-            string? audio,
-            string? id,
+            global::G.RealtimeConversationItemContentItemType? type,
             string? text,
-            string? transcript,
-            global::G.RealtimeConversationItemContentItemType? type)
+            string? id,
+            string? audio,
+            string? transcript)
         {
-            this.Audio = audio;
-            this.Id = id;
-            this.Text = text;
-            this.Transcript = transcript;
             this.Type = type;
+            this.Text = text;
+            this.Id = id;
+            this.Audio = audio;
+            this.Transcript = transcript;
         }
 
         /// <summary>

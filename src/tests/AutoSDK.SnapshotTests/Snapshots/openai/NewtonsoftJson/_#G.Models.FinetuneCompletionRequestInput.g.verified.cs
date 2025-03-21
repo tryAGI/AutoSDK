@@ -10,16 +10,16 @@ namespace G
     public sealed partial class FineTuneCompletionRequestInput
     {
         /// <summary>
-        /// The desired completion for this training example.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completion")]
-        public string? Completion { get; set; }
-
-        /// <summary>
         /// The input prompt for this training example.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
+
+        /// <summary>
+        /// The desired completion for this training example.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completion")]
+        public string? Completion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuneCompletionRequestInput" /> class.
         /// </summary>
-        /// <param name="completion">
-        /// The desired completion for this training example.
-        /// </param>
         /// <param name="prompt">
         /// The input prompt for this training example.
         /// </param>
+        /// <param name="completion">
+        /// The desired completion for this training example.
+        /// </param>
         public FineTuneCompletionRequestInput(
-            string? completion,
-            string? prompt)
+            string? prompt,
+            string? completion)
         {
-            this.Completion = completion;
             this.Prompt = prompt;
+            this.Completion = completion;
         }
 
         /// <summary>

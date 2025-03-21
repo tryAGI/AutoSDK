@@ -19,12 +19,6 @@ namespace G
         public required int CompletionTokens { get; set; } = 0;
 
         /// <summary>
-        /// Breakdown of tokens used in a completion.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
-        public global::G.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
-
-        /// <summary>
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </summary>
@@ -34,12 +28,6 @@ namespace G
         public required int PromptTokens { get; set; } = 0;
 
         /// <summary>
-        /// Breakdown of tokens used in the prompt.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
-        public global::G.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
-
-        /// <summary>
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
         /// </summary>
@@ -47,6 +35,18 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalTokens { get; set; } = 0;
+
+        /// <summary>
+        /// Breakdown of tokens used in a completion.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
+        public global::G.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
+
+        /// <summary>
+        /// Breakdown of tokens used in the prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::G.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,19 +61,19 @@ namespace G
         /// Number of tokens in the generated completion.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="completionTokensDetails">
-        /// Breakdown of tokens used in a completion.
-        /// </param>
         /// <param name="promptTokens">
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="promptTokensDetails">
-        /// Breakdown of tokens used in the prompt.
-        /// </param>
         /// <param name="totalTokens">
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
+        /// </param>
+        /// <param name="completionTokensDetails">
+        /// Breakdown of tokens used in a completion.
+        /// </param>
+        /// <param name="promptTokensDetails">
+        /// Breakdown of tokens used in the prompt.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

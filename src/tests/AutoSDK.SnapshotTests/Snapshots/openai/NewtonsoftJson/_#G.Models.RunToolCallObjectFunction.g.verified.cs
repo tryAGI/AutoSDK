@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunToolCallObjectFunction
     {
         /// <summary>
-        /// The arguments that the model expects you to pass to the function.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Arguments { get; set; } = default!;
-
-        /// <summary>
         /// The name of the function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// The arguments that the model expects you to pass to the function.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Arguments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunToolCallObjectFunction" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The arguments that the model expects you to pass to the function.
-        /// </param>
         /// <param name="name">
         /// The name of the function.
         /// </param>
+        /// <param name="arguments">
+        /// The arguments that the model expects you to pass to the function.
+        /// </param>
         public RunToolCallObjectFunction(
-            string arguments,
-            string name)
+            string name,
+            string arguments)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
         }
 
         /// <summary>

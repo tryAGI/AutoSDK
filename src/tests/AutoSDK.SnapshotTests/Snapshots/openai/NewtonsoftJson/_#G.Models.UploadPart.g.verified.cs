@@ -10,28 +10,28 @@ namespace G
     public sealed partial class UploadPart
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the Part was created.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
-
-        /// <summary>
         /// The upload Part unique identifier, which can be referenced in API endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The object type, which is always `upload.part`.
+        /// The Unix timestamp (in seconds) for when the Part was created.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.UploadPartObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the Upload object that this Part was added to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upload_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string UploadId { get; set; } = default!;
+
+        /// <summary>
+        /// The object type, which is always `upload.part`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.UploadPartObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,26 +42,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadPart" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the Part was created.
-        /// </param>
         /// <param name="id">
         /// The upload Part unique identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `upload.part`.
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the Part was created.
         /// </param>
         /// <param name="uploadId">
         /// The ID of the Upload object that this Part was added to.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `upload.part`.
+        /// </param>
         public UploadPart(
-            global::System.DateTimeOffset createdAt,
             string id,
+            global::System.DateTimeOffset createdAt,
             string uploadId,
             global::G.UploadPartObject @object)
         {
-            this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
             this.UploadId = uploadId ?? throw new global::System.ArgumentNullException(nameof(uploadId));
             this.Object = @object;
         }

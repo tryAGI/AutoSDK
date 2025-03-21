@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ResponseCreatedEvent
     {
         /// <summary>
+        /// The type of the event. Always `response.created`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCreatedEventTypeJsonConverter))]
+        public global::G.ResponseCreatedEventType Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.Response Response { get; set; }
-
-        /// <summary>
-        /// The type of the event. Always `response.created`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCreatedEventTypeJsonConverter))]
-        public global::G.ResponseCreatedEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCreatedEvent" /> class.
         /// </summary>
-        /// <param name="response"></param>
         /// <param name="type">
         /// The type of the event. Always `response.created`.
         /// </param>
+        /// <param name="response"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

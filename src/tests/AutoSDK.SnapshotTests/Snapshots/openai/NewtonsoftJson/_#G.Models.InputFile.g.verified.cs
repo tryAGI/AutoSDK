@@ -10,10 +10,10 @@ namespace G
     public sealed partial class InputFile
     {
         /// <summary>
-        /// The content of the file to be sent to the model.
+        /// The type of the input item. Always `input_file`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_data")]
-        public string? FileData { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.InputFileType Type { get; set; }
 
         /// <summary>
         /// The ID of the file to be sent to the model.
@@ -28,10 +28,10 @@ namespace G
         public string? Filename { get; set; }
 
         /// <summary>
-        /// The type of the input item. Always `input_file`.
+        /// The content of the file to be sent to the model.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.InputFileType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("file_data")]
+        public string? FileData { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputFile" /> class.
         /// </summary>
-        /// <param name="fileData">
-        /// The content of the file to be sent to the model.
+        /// <param name="type">
+        /// The type of the input item. Always `input_file`.
         /// </param>
         /// <param name="fileId">
         /// The ID of the file to be sent to the model.
@@ -51,19 +51,19 @@ namespace G
         /// <param name="filename">
         /// The name of the file to be sent to the model.
         /// </param>
-        /// <param name="type">
-        /// The type of the input item. Always `input_file`.
+        /// <param name="fileData">
+        /// The content of the file to be sent to the model.
         /// </param>
         public InputFile(
-            string? fileData,
+            global::G.InputFileType type,
             string? fileId,
             string? filename,
-            global::G.InputFileType type)
+            string? fileData)
         {
-            this.FileData = fileData;
+            this.Type = type;
             this.FileId = fileId;
             this.Filename = filename;
-            this.Type = type;
+            this.FileData = fileData;
         }
 
         /// <summary>

@@ -22,32 +22,10 @@ namespace G
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
         /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
         /// </summary>
-        /// <param name="integrations">
-        /// A list of integrations to enable for your fine-tuning job.
-        /// </param>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </param>
-        /// <param name="method">
-        /// The method used for fine-tuning.
-        /// </param>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
         /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
-        /// </param>
-        /// <param name="seed">
-        /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.<br/>
-        /// If a seed is not specified, one will be generated for you.<br/>
-        /// Example: 42
-        /// </param>
-        /// <param name="suffix">
-        /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
-        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </param>
         /// <param name="trainingFile">
         /// The ID of an uploaded file that contains training data.<br/>
@@ -56,6 +34,10 @@ namespace G
         /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
+        /// </param>
+        /// <param name="suffix">
+        /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
+        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </param>
         /// <param name="validationFile">
         /// The ID of an uploaded file that contains validation data.<br/>
@@ -67,17 +49,35 @@ namespace G
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </param>
+        /// <param name="integrations">
+        /// A list of integrations to enable for your fine-tuning job.
+        /// </param>
+        /// <param name="seed">
+        /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.<br/>
+        /// If a seed is not specified, one will be generated for you.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="method">
+        /// The method used for fine-tuning.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
             global::G.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> model,
             string trainingFile,
-            global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegration>? integrations = default,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::G.FineTuneMethod? method = default,
-            int? seed = default,
             string? suffix = default,
             string? validationFile = default,
+            global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegration>? integrations = default,
+            int? seed = default,
+            global::G.FineTuneMethod? method = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

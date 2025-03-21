@@ -18,12 +18,6 @@ namespace G
         public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
-        /// Breakdown of tokens used in a completion.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completion_tokens_details")]
-        public global::G.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
-
-        /// <summary>
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </summary>
@@ -32,18 +26,24 @@ namespace G
         public int PromptTokens { get; set; } = default!;
 
         /// <summary>
-        /// Breakdown of tokens used in the prompt.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prompt_tokens_details")]
-        public global::G.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
-
-        /// <summary>
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
         /// </summary>
         /// <default>0</default>
         [global::Newtonsoft.Json.JsonProperty("total_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalTokens { get; set; } = default!;
+
+        /// <summary>
+        /// Breakdown of tokens used in a completion.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completion_tokens_details")]
+        public global::G.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
+
+        /// <summary>
+        /// Breakdown of tokens used in the prompt.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt_tokens_details")]
+        public global::G.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,19 +58,19 @@ namespace G
         /// Number of tokens in the generated completion.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="completionTokensDetails">
-        /// Breakdown of tokens used in a completion.
-        /// </param>
         /// <param name="promptTokens">
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="promptTokensDetails">
-        /// Breakdown of tokens used in the prompt.
-        /// </param>
         /// <param name="totalTokens">
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
+        /// </param>
+        /// <param name="completionTokensDetails">
+        /// Breakdown of tokens used in a completion.
+        /// </param>
+        /// <param name="promptTokensDetails">
+        /// Breakdown of tokens used in the prompt.
         /// </param>
         public CompletionUsage(
             int completionTokens,

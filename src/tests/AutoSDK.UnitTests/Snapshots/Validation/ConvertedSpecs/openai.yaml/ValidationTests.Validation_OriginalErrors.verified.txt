@@ -1,6 +1,18 @@
 ﻿[
   {
-    Message: OpenAPI specification version '3.1.0' is not supported.,
+    Message: $recursiveAnchor is not a valid property at #/components/schemas/CompoundFilter,
+    Pointer: 
+  },
+  {
+    Message: $recursiveRef is not a valid property at #/components/schemas/CompoundFilter/properties/filters/items/oneOf,
+    Pointer: 
+  },
+  {
+    Message: Cannot create a scalar value from this type of node.,
+    Pointer: #/components/schemas/CreateResponse/allOf/properties/include/description
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/VectorStoreFileAttributes,
     Pointer: 
   }
 ]

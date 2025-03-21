@@ -16,16 +16,16 @@ namespace G
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// The text output from the Code Interpreter tool call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logs")]
-        public string? Logs { get; set; }
-
-        /// <summary>
         /// Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+
+        /// <summary>
+        /// The text output from the Code Interpreter tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logs")]
+        public string? Logs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,20 +39,20 @@ namespace G
         /// <param name="index">
         /// The index of the output in the outputs array.
         /// </param>
-        /// <param name="logs">
-        /// The text output from the Code Interpreter tool call.
-        /// </param>
         /// <param name="type">
         /// Always `logs`.
         /// </param>
+        /// <param name="logs">
+        /// The text output from the Code Interpreter tool call.
+        /// </param>
         public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
             int index,
-            string? logs,
-            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type)
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type,
+            string? logs)
         {
             this.Index = index;
-            this.Logs = logs;
             this.Type = type;
+            this.Logs = logs;
         }
 
         /// <summary>

@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallCodeDeltaEvent
     {
         /// <summary>
-        /// The partial code snippet added by the code interpreter.
+        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDeltaEventTypeJsonConverter))]
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
@@ -24,11 +24,11 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// The partial code snippet added by the code interpreter.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDeltaEventTypeJsonConverter))]
-        public global::G.ResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// The partial code snippet added by the code interpreter.
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// <param name="delta">
+        /// The partial code snippet added by the code interpreter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallCodeDeltaEvent(
-            string delta,
             int outputIndex,
+            string delta,
             global::G.ResponseCodeInterpreterCallCodeDeltaEventType type)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.OutputIndex = outputIndex;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }
 

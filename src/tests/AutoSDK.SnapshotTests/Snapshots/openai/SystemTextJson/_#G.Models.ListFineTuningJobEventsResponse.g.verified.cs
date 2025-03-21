@@ -19,16 +19,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter))]
+        public global::G.ListFineTuningJobEventsResponseObject Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter))]
-        public global::G.ListFineTuningJobEventsResponseObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ListFineTuningJobEventsResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="hasMore"></param>
         /// <param name="object"></param>
+        /// <param name="hasMore"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

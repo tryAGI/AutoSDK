@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseFileSearchCallInProgressEvent
     {
         /// <summary>
-        /// The ID of the output item that the file search call is initiated.
+        /// The type of the event. Always `response.file_search_call.in_progress`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ItemId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseFileSearchCallInProgressEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the file search call is initiated.
@@ -22,10 +22,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.file_search_call.in_progress`.
+        /// The ID of the output item that the file search call is initiated.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseFileSearchCallInProgressEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFileSearchCallInProgressEvent" /> class.
         /// </summary>
-        /// <param name="itemId">
-        /// The ID of the output item that the file search call is initiated.
+        /// <param name="type">
+        /// The type of the event. Always `response.file_search_call.in_progress`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the file search call is initiated.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.file_search_call.in_progress`.
+        /// <param name="itemId">
+        /// The ID of the output item that the file search call is initiated.
         /// </param>
         public ResponseFileSearchCallInProgressEvent(
-            string itemId,
             int outputIndex,
+            string itemId,
             global::G.ResponseFileSearchCallInProgressEventType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }
 

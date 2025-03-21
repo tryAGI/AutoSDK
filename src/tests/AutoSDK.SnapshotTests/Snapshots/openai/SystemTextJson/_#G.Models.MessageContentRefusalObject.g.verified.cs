@@ -10,18 +10,18 @@ namespace G
     public sealed partial class MessageContentRefusalObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Refusal { get; set; }
-
-        /// <summary>
         /// Always `refusal`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
         public global::G.MessageContentRefusalObjectType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Refusal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
         /// </summary>
-        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
+        /// <param name="refusal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

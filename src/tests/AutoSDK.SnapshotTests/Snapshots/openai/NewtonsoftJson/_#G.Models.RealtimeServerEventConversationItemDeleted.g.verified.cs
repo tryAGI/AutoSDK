@@ -18,16 +18,16 @@ namespace G
         public string EventId { get; set; } = default!;
 
         /// <summary>
-        /// The ID of the item that was deleted.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ItemId { get; set; } = default!;
-
-        /// <summary>
         /// The event type, must be `conversation.item.deleted`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RealtimeServerEventConversationItemDeletedType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the item that was deleted.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +41,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the item that was deleted.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.deleted`.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the item that was deleted.
         /// </param>
         public RealtimeServerEventConversationItemDeleted(
             string eventId,

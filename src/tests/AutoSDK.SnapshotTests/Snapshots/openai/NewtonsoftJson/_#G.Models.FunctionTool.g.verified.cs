@@ -11,17 +11,23 @@ namespace G
     public sealed partial class FunctionTool
     {
         /// <summary>
-        /// A description of the function. Used by the model to determine whether<br/>
-        /// or not to call the function.
+        /// The type of the function tool. Always `function`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.FunctionToolType Type { get; set; }
 
         /// <summary>
         /// The name of the function to call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// A description of the function. Used by the model to determine whether<br/>
+        /// or not to call the function.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// A JSON schema object describing the parameters of the function.
@@ -36,12 +42,6 @@ namespace G
         public bool Strict { get; set; } = default!;
 
         /// <summary>
-        /// The type of the function tool. Always `function`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FunctionToolType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -50,12 +50,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionTool" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A description of the function. Used by the model to determine whether<br/>
-        /// or not to call the function.
+        /// <param name="type">
+        /// The type of the function tool. Always `function`.
         /// </param>
         /// <param name="name">
         /// The name of the function to call.
+        /// </param>
+        /// <param name="description">
+        /// A description of the function. Used by the model to determine whether<br/>
+        /// or not to call the function.
         /// </param>
         /// <param name="parameters">
         /// A JSON schema object describing the parameters of the function.
@@ -63,21 +66,18 @@ namespace G
         /// <param name="strict">
         /// Whether to enforce strict parameter validation. Default `true`.
         /// </param>
-        /// <param name="type">
-        /// The type of the function tool. Always `function`.
-        /// </param>
         public FunctionTool(
             string name,
             object parameters,
             bool strict,
-            string? description,
-            global::G.FunctionToolType type)
+            global::G.FunctionToolType type,
+            string? description)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Strict = strict;
-            this.Description = description;
             this.Type = type;
+            this.Description = description;
         }
 
         /// <summary>

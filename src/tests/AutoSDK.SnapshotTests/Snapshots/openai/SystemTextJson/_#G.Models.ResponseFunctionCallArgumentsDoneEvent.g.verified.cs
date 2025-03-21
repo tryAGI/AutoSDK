@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseFunctionCallArgumentsDoneEvent
     {
         /// <summary>
-        /// The function-call arguments.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFunctionCallArgumentsDoneEventTypeJsonConverter))]
+        public global::G.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the item.
@@ -31,11 +31,11 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The function-call arguments.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFunctionCallArgumentsDoneEventTypeJsonConverter))]
-        public global::G.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,28 +46,28 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The function-call arguments.
-        /// </param>
+        /// <param name="type"></param>
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item.
         /// </param>
-        /// <param name="type"></param>
+        /// <param name="arguments">
+        /// The function-call arguments.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFunctionCallArgumentsDoneEvent(
-            string arguments,
             string itemId,
             int outputIndex,
+            string arguments,
             global::G.ResponseFunctionCallArgumentsDoneEventType type)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }
 

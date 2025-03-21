@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogUserAdded
     {
         /// <summary>
-        /// The payload used to add the user to the project.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::G.AuditLogUserAddedData? Data { get; set; }
-
-        /// <summary>
         /// The user ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The payload used to add the user to the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public global::G.AuditLogUserAddedData? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +30,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogUserAdded" /> class.
         /// </summary>
-        /// <param name="data">
-        /// The payload used to add the user to the project.
-        /// </param>
         /// <param name="id">
         /// The user ID.
+        /// </param>
+        /// <param name="data">
+        /// The payload used to add the user to the project.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogUserAdded(
-            global::G.AuditLogUserAddedData? data,
-            string? id)
+            string? id,
+            global::G.AuditLogUserAddedData? data)
         {
-            this.Data = data;
             this.Id = id;
+            this.Data = data;
         }
 
         /// <summary>

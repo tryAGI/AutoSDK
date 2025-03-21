@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogActorSession
     {
         /// <summary>
-        /// The IP address from which the action was performed.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ip_address")]
-        public string? IpAddress { get; set; }
-
-        /// <summary>
         /// The user who performed the audit logged action.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.AuditLogActorUser? User { get; set; }
+
+        /// <summary>
+        /// The IP address from which the action was performed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("ip_address")]
+        public string? IpAddress { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogActorSession" /> class.
         /// </summary>
-        /// <param name="ipAddress">
-        /// The IP address from which the action was performed.
-        /// </param>
         /// <param name="user">
         /// The user who performed the audit logged action.
         /// </param>
+        /// <param name="ipAddress">
+        /// The IP address from which the action was performed.
+        /// </param>
         public AuditLogActorSession(
-            string? ipAddress,
-            global::G.AuditLogActorUser? user)
+            global::G.AuditLogActorUser? user,
+            string? ipAddress)
         {
-            this.IpAddress = ipAddress;
             this.User = user;
+            this.IpAddress = ipAddress;
         }
 
         /// <summary>

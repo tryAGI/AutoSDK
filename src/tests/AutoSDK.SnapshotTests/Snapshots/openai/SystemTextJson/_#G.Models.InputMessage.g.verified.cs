@@ -12,12 +12,11 @@ namespace G
     public sealed partial class InputMessage
     {
         /// <summary>
-        /// A list of one or many input items to the model, containing different content <br/>
-        /// types.
+        /// The type of the message input. Always set to `message`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.InputContent> Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InputMessageTypeJsonConverter))]
+        public global::G.InputMessageType? Type { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `system`, or `developer`.
@@ -36,11 +35,12 @@ namespace G
         public global::G.InputMessageStatus? Status { get; set; }
 
         /// <summary>
-        /// The type of the message input. Always set to `message`.
+        /// A list of one or many input items to the model, containing different content <br/>
+        /// types.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InputMessageTypeJsonConverter))]
-        public global::G.InputMessageType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.InputContent> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,9 +51,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// A list of one or many input items to the model, containing different content <br/>
-        /// types.
+        /// <param name="type">
+        /// The type of the message input. Always set to `message`.
         /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `system`, or `developer`.
@@ -62,22 +61,23 @@ namespace G
         /// The status of item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
-        /// <param name="type">
-        /// The type of the message input. Always set to `message`.
+        /// <param name="content">
+        /// A list of one or many input items to the model, containing different content <br/>
+        /// types.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputMessage(
-            global::System.Collections.Generic.IList<global::G.InputContent> content,
             global::G.InputMessageRole role,
-            global::G.InputMessageStatus? status,
-            global::G.InputMessageType? type)
+            global::System.Collections.Generic.IList<global::G.InputContent> content,
+            global::G.InputMessageType? type,
+            global::G.InputMessageStatus? status)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
-            this.Status = status;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Type = type;
+            this.Status = status;
         }
 
         /// <summary>

@@ -10,11 +10,18 @@ namespace G
     public sealed partial class MessageContentTextAnnotationsFilePathObject
     {
         /// <summary>
-        /// 
+        /// Always `file_path`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
+
+        /// <summary>
+        /// The text in the message content that needs to be replaced.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
+        public required string Text { get; set; }
 
         /// <summary>
         /// 
@@ -31,18 +38,11 @@ namespace G
         public required int StartIndex { get; set; }
 
         /// <summary>
-        /// The text in the message content that needs to be replaced.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
-        /// Always `file_path`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public required int EndIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,29 +53,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFilePathObject" /> class.
         /// </summary>
-        /// <param name="endIndex"></param>
-        /// <param name="filePath"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="text">
-        /// The text in the message content that needs to be replaced.
-        /// </param>
         /// <param name="type">
         /// Always `file_path`.
         /// </param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
+        /// </param>
+        /// <param name="filePath"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageContentTextAnnotationsFilePathObject(
-            int endIndex,
+            string text,
             global::G.MessageContentTextAnnotationsFilePathObjectFilePath filePath,
             int startIndex,
-            string text,
+            int endIndex,
             global::G.MessageContentTextAnnotationsFilePathObjectType type)
         {
-            this.EndIndex = endIndex;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.FilePath = filePath ?? throw new global::System.ArgumentNullException(nameof(filePath));
             this.StartIndex = startIndex;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.EndIndex = endIndex;
             this.Type = type;
         }
 

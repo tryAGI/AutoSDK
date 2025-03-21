@@ -12,11 +12,43 @@ namespace G
     public sealed partial class CreateChatCompletionRequestVariant2
     {
         /// <summary>
-        /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("audio")]
-        public global::G.CreateChatCompletionRequestVariant2Audio? Audio { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; } = default!;
+
+        /// <summary>
+        /// Output types that you would like the model to generate.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to <br/>
+        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
+        /// both text and audio responses, you can use:<br/>
+        /// `["text", "audio"]`
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("modalities")]
+        public global::System.Collections.Generic.IList<global::G.ResponseModalitie>? Modalities { get; set; }
+
+        /// <summary>
+        /// **o-series models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        public global::G.ReasoningEffort? ReasoningEffort { get; set; }
+
+        /// <summary>
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
@@ -26,6 +58,178 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency_penalty")]
         public double? FrequencyPenalty { get; set; }
+
+        /// <summary>
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
+        /// whether they appear in the text so far, increasing the model's likelihood<br/>
+        /// to talk about new topics.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("presence_penalty")]
+        public double? PresencePenalty { get; set; }
+
+        /// <summary>
+        /// This tool searches the web for relevant results to use in a response.<br/>
+        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("web_search_options")]
+        public global::G.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
+
+        /// <summary>
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.<br/>
+        /// `logprobs` must be set to `true` if this parameter is used.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("top_logprobs")]
+        public int? TopLogprobs { get; set; }
+
+        /// <summary>
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response_format")]
+        public global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        public global::G.CreateChatCompletionRequestVariant2ServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("audio")]
+        public global::G.CreateChatCompletionRequestVariant2Audio? Audio { get; set; }
+
+        /// <summary>
+        /// Whether or not to store the output of this chat completion request for <br/>
+        /// use in our [model distillation](/docs/guides/distillation) or<br/>
+        /// [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("store")]
+        public bool? Store { get; set; }
+
+        /// <summary>
+        /// If set to true, the model response data will be streamed to the client<br/>
+        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
+        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// guide for more information on how to handle the streaming events.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stop")]
+        public global::G.StopConfiguration? Stop { get; set; }
+
+        /// <summary>
+        /// Modify the likelihood of specified tokens appearing in the completion.<br/>
+        /// Accepts a JSON object that maps tokens (specified by their token ID in the<br/>
+        /// tokenizer) to an associated bias value from -100 to 100. Mathematically,<br/>
+        /// the bias is added to the logits generated by the model prior to sampling.<br/>
+        /// The exact effect will vary per model, but values between -1 and 1 should<br/>
+        /// decrease or increase likelihood of selection; values like -100 or 100<br/>
+        /// should result in a ban or exclusive selection of the relevant token.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logit_bias")]
+        public global::System.Collections.Generic.Dictionary<string, int>? LogitBias { get; set; }
+
+        /// <summary>
+        /// Whether to return log probabilities of the output tokens or not. If true,<br/>
+        /// returns the log probabilities of each output token returned in the<br/>
+        /// `content` of `message`.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public bool? Logprobs { get; set; }
+
+        /// <summary>
+        /// The maximum number of [tokens](/tokenizer) that can be generated in the<br/>
+        /// chat completion. This value can be used to control<br/>
+        /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
+        /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
+        /// not compatible with [o1 series models](/docs/guides/reasoning).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_tokens")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public int? MaxTokens { get; set; }
+
+        /// <summary>
+        /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::Newtonsoft.Json.JsonProperty("n")]
+        public int? N { get; set; }
+
+        /// <summary>
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
+        /// which can greatly improve response times when large parts of the model<br/>
+        /// response are known ahead of time. This is most common when you are<br/>
+        /// regenerating a file with only minor changes to most of the content.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prediction")]
+        public global::G.PredictionContent? Prediction { get; set; }
+
+        /// <summary>
+        /// This feature is in Beta.<br/>
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
+        /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// Options for streaming response. Only set this when you set `stream: true`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stream_options")]
+        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
+
+        /// <summary>
+        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tools")]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
+
+        /// <summary>
+        /// Controls which (if any) tool is called by the model.<br/>
+        /// `none` means the model will not call any tool and instead generates a message.<br/>
+        /// `auto` means the model can pick between generating a message or calling one or more tools.<br/>
+        /// `required` means the model must call one or more tools.<br/>
+        /// Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.<br/>
+        /// `none` is the default when no tools are present. `auto` is the default if tools are present.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        public global::G.ChatCompletionToolChoiceOption? ToolChoice { get; set; }
+
+        /// <summary>
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tool_choice`.<br/>
@@ -51,210 +255,6 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
-        /// Modify the likelihood of specified tokens appearing in the completion.<br/>
-        /// Accepts a JSON object that maps tokens (specified by their token ID in the<br/>
-        /// tokenizer) to an associated bias value from -100 to 100. Mathematically,<br/>
-        /// the bias is added to the logits generated by the model prior to sampling.<br/>
-        /// The exact effect will vary per model, but values between -1 and 1 should<br/>
-        /// decrease or increase likelihood of selection; values like -100 or 100<br/>
-        /// should result in a ban or exclusive selection of the relevant token.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logit_bias")]
-        public global::System.Collections.Generic.Dictionary<string, int>? LogitBias { get; set; }
-
-        /// <summary>
-        /// Whether to return log probabilities of the output tokens or not. If true,<br/>
-        /// returns the log probabilities of each output token returned in the<br/>
-        /// `content` of `message`.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public bool? Logprobs { get; set; }
-
-        /// <summary>
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_completion_tokens")]
-        public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
-        /// The maximum number of [tokens](/tokenizer) that can be generated in the<br/>
-        /// chat completion. This value can be used to control<br/>
-        /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
-        /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
-        /// not compatible with [o1 series models](/docs/guides/reasoning).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_tokens")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public int? MaxTokens { get; set; }
-
-        /// <summary>
-        /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](/docs/guides/text-generation),<br/>
-        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; } = default!;
-
-        /// <summary>
-        /// Output types that you would like the model to generate.<br/>
-        /// Most models are capable of generating text, which is the default:<br/>
-        /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
-        /// both text and audio responses, you can use:<br/>
-        /// `["text", "audio"]`
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("modalities")]
-        public global::System.Collections.Generic.IList<global::G.ResponseModalitie>? Modalities { get; set; }
-
-        /// <summary>
-        /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
-        /// Default Value: 1<br/>
-        /// Example: 1
-        /// </summary>
-        /// <example>1</example>
-        [global::Newtonsoft.Json.JsonProperty("n")]
-        public int? N { get; set; }
-
-        /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls")]
-        public bool? ParallelToolCalls { get; set; }
-
-        /// <summary>
-        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
-        /// which can greatly improve response times when large parts of the model<br/>
-        /// response are known ahead of time. This is most common when you are<br/>
-        /// regenerating a file with only minor changes to most of the content.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prediction")]
-        public global::G.PredictionContent? Prediction { get; set; }
-
-        /// <summary>
-        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
-        /// whether they appear in the text so far, increasing the model's likelihood<br/>
-        /// to talk about new topics.<br/>
-        /// Default Value: 0
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("presence_penalty")]
-        public double? PresencePenalty { get; set; }
-
-        /// <summary>
-        /// **o-series models only** <br/>
-        /// Constrains effort on reasoning for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
-        public global::G.ReasoningEffort? ReasoningEffort { get; set; }
-
-        /// <summary>
-        /// An object specifying the format that the model must output.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
-        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
-        /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
-        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
-        /// is preferred for models that support it.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? ResponseFormat { get; set; }
-
-        /// <summary>
-        /// This feature is in Beta.<br/>
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
-        /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("seed")]
-        public int? Seed { get; set; }
-
-        /// <summary>
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("service_tier")]
-        public global::G.CreateChatCompletionRequestVariant2ServiceTier? ServiceTier { get; set; }
-
-        /// <summary>
-        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
-        /// returned text will not contain the stop sequence.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.StopConfiguration? Stop { get; set; }
-
-        /// <summary>
-        /// Whether or not to store the output of this chat completion request for <br/>
-        /// use in our [model distillation](/docs/guides/distillation) or<br/>
-        /// [evals](/docs/guides/evals) products.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("store")]
-        public bool? Store { get; set; }
-
-        /// <summary>
-        /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
-        /// guide for more information on how to handle the streaming events.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; }
-
-        /// <summary>
-        /// Options for streaming response. Only set this when you set `stream: true`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stream_options")]
-        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
-
-        /// <summary>
-        /// Controls which (if any) tool is called by the model.<br/>
-        /// `none` means the model will not call any tool and instead generates a message.<br/>
-        /// `auto` means the model can pick between generating a message or calling one or more tools.<br/>
-        /// `required` means the model must call one or more tools.<br/>
-        /// Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.<br/>
-        /// `none` is the default when no tools are present. `auto` is the default if tools are present.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.ChatCompletionToolChoiceOption? ToolChoice { get; set; }
-
-        /// <summary>
-        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
-
-        /// <summary>
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
-        /// `logprobs` must be set to `true` if this parameter is used.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("top_logprobs")]
-        public int? TopLogprobs { get; set; }
-
-        /// <summary>
-        /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("web_search_options")]
-        public global::G.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -263,15 +263,95 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2" /> class.
         /// </summary>
-        /// <param name="audio">
-        /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// <param name="messages">
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
+        /// </param>
+        /// <param name="modalities">
+        /// Output types that you would like the model to generate.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to <br/>
+        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
+        /// both text and audio responses, you can use:<br/>
+        /// `["text", "audio"]`
+        /// </param>
+        /// <param name="reasoningEffort">
+        /// **o-series models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
+        /// <param name="maxCompletionTokens">
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
         /// their existing frequency in the text so far, decreasing the model's<br/>
         /// likelihood to repeat the same line verbatim.<br/>
         /// Default Value: 0
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
+        /// whether they appear in the text so far, increasing the model's likelihood<br/>
+        /// to talk about new topics.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="webSearchOptions">
+        /// This tool searches the web for relevant results to use in a response.<br/>
+        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// </param>
+        /// <param name="topLogprobs">
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.<br/>
+        /// `logprobs` must be set to `true` if this parameter is used.
+        /// </param>
+        /// <param name="responseFormat">
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </param>
+        /// <param name="serviceTier">
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="audio">
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </param>
+        /// <param name="store">
+        /// Whether or not to store the output of this chat completion request for <br/>
+        /// use in our [model distillation](/docs/guides/distillation) or<br/>
+        /// [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="stream">
+        /// If set to true, the model response data will be streamed to the client<br/>
+        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
+        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// guide for more information on how to handle the streaming events.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="stop">
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="logitBias">
         /// Modify the likelihood of specified tokens appearing in the completion.<br/>
@@ -288,32 +368,10 @@ namespace G
         /// `content` of `message`.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="maxCompletionTokens">
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
-        /// </param>
-        /// <param name="messages">
-        /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](/docs/guides/text-generation),<br/>
-        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
-        /// </param>
-        /// <param name="modalities">
-        /// Output types that you would like the model to generate.<br/>
-        /// Most models are capable of generating text, which is the default:<br/>
-        /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
-        /// both text and audio responses, you can use:<br/>
-        /// `["text", "audio"]`
-        /// </param>
         /// <param name="n">
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
-        /// </param>
-        /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
         /// </param>
         /// <param name="prediction">
         /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
@@ -321,66 +379,16 @@ namespace G
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.
         /// </param>
-        /// <param name="presencePenalty">
-        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
-        /// whether they appear in the text so far, increasing the model's likelihood<br/>
-        /// to talk about new topics.<br/>
-        /// Default Value: 0
-        /// </param>
-        /// <param name="reasoningEffort">
-        /// **o-series models only** <br/>
-        /// Constrains effort on reasoning for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </param>
-        /// <param name="responseFormat">
-        /// An object specifying the format that the model must output.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
-        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
-        /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
-        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
-        /// is preferred for models that support it.
-        /// </param>
         /// <param name="seed">
         /// This feature is in Beta.<br/>
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
-        /// <param name="serviceTier">
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </param>
-        /// <param name="stop">
-        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
-        /// returned text will not contain the stop sequence.
-        /// </param>
-        /// <param name="store">
-        /// Whether or not to store the output of this chat completion request for <br/>
-        /// use in our [model distillation](/docs/guides/distillation) or<br/>
-        /// [evals](/docs/guides/evals) products.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="stream">
-        /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
-        /// guide for more information on how to handle the streaming events.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="streamOptions">
         /// Options for streaming response. Only set this when you set `stream: true`.
+        /// </param>
+        /// <param name="tools">
+        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
         /// </param>
         /// <param name="toolChoice">
         /// Controls which (if any) tool is called by the model.<br/>
@@ -390,66 +398,58 @@ namespace G
         /// Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.<br/>
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </param>
-        /// <param name="tools">
-        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
-        /// </param>
-        /// <param name="topLogprobs">
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
-        /// `logprobs` must be set to `true` if this parameter is used.
-        /// </param>
-        /// <param name="webSearchOptions">
-        /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// <param name="parallelToolCalls">
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </param>
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
-            global::G.CreateChatCompletionRequestVariant2Audio? audio,
-            double? frequencyPenalty,
-            global::System.Collections.Generic.Dictionary<string, int>? logitBias,
-            bool? logprobs,
-            int? maxCompletionTokens,
             global::System.Collections.Generic.IList<global::G.ResponseModalitie>? modalities,
-            int? n,
-            bool? parallelToolCalls,
-            global::G.PredictionContent? prediction,
-            double? presencePenalty,
             global::G.ReasoningEffort? reasoningEffort,
+            int? maxCompletionTokens,
+            double? frequencyPenalty,
+            double? presencePenalty,
+            global::G.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions,
+            int? topLogprobs,
             global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? responseFormat,
-            int? seed,
             global::G.CreateChatCompletionRequestVariant2ServiceTier? serviceTier,
-            global::G.StopConfiguration? stop,
+            global::G.CreateChatCompletionRequestVariant2Audio? audio,
             bool? store,
             bool? stream,
+            global::G.StopConfiguration? stop,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias,
+            bool? logprobs,
+            int? n,
+            global::G.PredictionContent? prediction,
+            int? seed,
             global::G.ChatCompletionStreamOptions? streamOptions,
-            global::G.ChatCompletionToolChoiceOption? toolChoice,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools,
-            int? topLogprobs,
-            global::G.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions)
+            global::G.ChatCompletionToolChoiceOption? toolChoice,
+            bool? parallelToolCalls)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.Audio = audio;
-            this.FrequencyPenalty = frequencyPenalty;
-            this.LogitBias = logitBias;
-            this.Logprobs = logprobs;
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.Modalities = modalities;
-            this.N = n;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.Prediction = prediction;
-            this.PresencePenalty = presencePenalty;
             this.ReasoningEffort = reasoningEffort;
+            this.MaxCompletionTokens = maxCompletionTokens;
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+            this.WebSearchOptions = webSearchOptions;
+            this.TopLogprobs = topLogprobs;
             this.ResponseFormat = responseFormat;
-            this.Seed = seed;
             this.ServiceTier = serviceTier;
-            this.Stop = stop;
+            this.Audio = audio;
             this.Store = store;
             this.Stream = stream;
+            this.Stop = stop;
+            this.LogitBias = logitBias;
+            this.Logprobs = logprobs;
+            this.N = n;
+            this.Prediction = prediction;
+            this.Seed = seed;
             this.StreamOptions = streamOptions;
-            this.ToolChoice = toolChoice;
             this.Tools = tools;
-            this.TopLogprobs = topLogprobs;
-            this.WebSearchOptions = webSearchOptions;
+            this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
         }
 
         /// <summary>

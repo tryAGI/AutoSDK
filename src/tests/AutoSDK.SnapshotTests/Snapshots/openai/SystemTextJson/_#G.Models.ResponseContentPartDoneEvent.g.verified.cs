@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseContentPartDoneEvent
     {
         /// <summary>
-        /// The index of the content part that is done.
+        /// The type of the event. Always `response.content_part.done`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseContentPartDoneEventTypeJsonConverter))]
+        public global::G.ResponseContentPartDoneEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the output item that the content part was added to.
@@ -31,19 +31,19 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The index of the content part that is done.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContentIndex { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("part")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OutputContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OutputContent Part { get; set; }
-
-        /// <summary>
-        /// The type of the event. Always `response.content_part.done`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseContentPartDoneEventTypeJsonConverter))]
-        public global::G.ResponseContentPartDoneEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseContentPartDoneEvent" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part that is done.
+        /// <param name="type">
+        /// The type of the event. Always `response.content_part.done`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the content part was added to.
@@ -63,23 +63,23 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item that the content part was added to.
         /// </param>
-        /// <param name="part"></param>
-        /// <param name="type">
-        /// The type of the event. Always `response.content_part.done`.
+        /// <param name="contentIndex">
+        /// The index of the content part that is done.
         /// </param>
+        /// <param name="part"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseContentPartDoneEvent(
-            int contentIndex,
             string itemId,
             int outputIndex,
+            int contentIndex,
             global::G.OutputContent part,
             global::G.ResponseContentPartDoneEventType type)
         {
-            this.ContentIndex = contentIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ContentIndex = contentIndex;
             this.Part = part;
             this.Type = type;
         }

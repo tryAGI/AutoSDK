@@ -10,6 +10,12 @@ namespace G
     public sealed partial class ResponseErrorEvent
     {
         /// <summary>
+        /// The type of the event. Always `error`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseErrorEventType Type { get; set; }
+
+        /// <summary>
         /// The error code.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,12 +34,6 @@ namespace G
         public string? Param { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `error`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseErrorEventType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseErrorEvent" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the event. Always `error`.
+        /// </param>
         /// <param name="code">
         /// The error code.
         /// </param>
@@ -50,9 +53,6 @@ namespace G
         /// </param>
         /// <param name="param">
         /// The error parameter.
-        /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `error`.
         /// </param>
         public ResponseErrorEvent(
             string? code,

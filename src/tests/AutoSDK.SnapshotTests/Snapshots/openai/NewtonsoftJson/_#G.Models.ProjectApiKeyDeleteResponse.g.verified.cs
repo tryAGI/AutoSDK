@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectApiKeyDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ProjectApiKeyDeleteResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectApiKeyDeleteResponse" /> class.
         /// </summary>
-        /// <param name="deleted"></param>
-        /// <param name="id"></param>
         /// <param name="object"></param>
+        /// <param name="id"></param>
+        /// <param name="deleted"></param>
         public ProjectApiKeyDeleteResponse(
-            bool deleted,
             string id,
+            bool deleted,
             global::G.ProjectApiKeyDeleteResponseObject @object)
         {
-            this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
             this.Object = @object;
         }
 

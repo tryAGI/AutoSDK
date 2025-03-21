@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatCompletionRequestMessageContentPartAudio
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("input_audio", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionRequestMessageContentPartAudioInputAudio InputAudio { get; set; } = default!;
-
-        /// <summary>
         /// The type of the content part. Always `input_audio`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ChatCompletionRequestMessageContentPartAudioType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input_audio", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionRequestMessageContentPartAudioInputAudio InputAudio { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartAudio" /> class.
         /// </summary>
-        /// <param name="inputAudio"></param>
         /// <param name="type">
         /// The type of the content part. Always `input_audio`.
         /// </param>
+        /// <param name="inputAudio"></param>
         public ChatCompletionRequestMessageContentPartAudio(
             global::G.ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio,
             global::G.ChatCompletionRequestMessageContentPartAudioType type)

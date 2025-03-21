@@ -10,17 +10,17 @@ namespace G
     public sealed partial class ApiKeyList
     {
         /// <summary>
+        /// Example: list
+        /// </summary>
+        /// <example>list</example>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public string? Object { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
         public global::System.Collections.Generic.IList<global::G.AdminApiKey>? Data { get; set; }
-
-        /// <summary>
-        /// Example: key_abc
-        /// </summary>
-        /// <example>key_abc</example>
-        [global::Newtonsoft.Json.JsonProperty("first_id")]
-        public string? FirstId { get; set; }
 
         /// <summary>
         /// Example: false
@@ -30,18 +30,18 @@ namespace G
         public bool? HasMore { get; set; }
 
         /// <summary>
+        /// Example: key_abc
+        /// </summary>
+        /// <example>key_abc</example>
+        [global::Newtonsoft.Json.JsonProperty("first_id")]
+        public string? FirstId { get; set; }
+
+        /// <summary>
         /// Example: key_xyz
         /// </summary>
         /// <example>key_xyz</example>
         [global::Newtonsoft.Json.JsonProperty("last_id")]
         public string? LastId { get; set; }
-
-        /// <summary>
-        /// Example: list
-        /// </summary>
-        /// <example>list</example>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,31 +52,31 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyList" /> class.
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="firstId">
-        /// Example: key_abc
+        /// <param name="object">
+        /// Example: list
         /// </param>
+        /// <param name="data"></param>
         /// <param name="hasMore">
         /// Example: false
+        /// </param>
+        /// <param name="firstId">
+        /// Example: key_abc
         /// </param>
         /// <param name="lastId">
         /// Example: key_xyz
         /// </param>
-        /// <param name="object">
-        /// Example: list
-        /// </param>
         public ApiKeyList(
+            string? @object,
             global::System.Collections.Generic.IList<global::G.AdminApiKey>? data,
-            string? firstId,
             bool? hasMore,
-            string? lastId,
-            string? @object)
+            string? firstId,
+            string? lastId)
         {
-            this.Data = data;
-            this.FirstId = firstId;
-            this.HasMore = hasMore;
-            this.LastId = lastId;
             this.Object = @object;
+            this.Data = data;
+            this.HasMore = hasMore;
+            this.FirstId = firstId;
+            this.LastId = lastId;
         }
 
         /// <summary>

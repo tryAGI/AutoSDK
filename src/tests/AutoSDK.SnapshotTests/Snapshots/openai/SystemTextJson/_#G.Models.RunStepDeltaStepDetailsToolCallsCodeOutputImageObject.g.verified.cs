@@ -10,12 +10,6 @@ namespace G
     public sealed partial class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Image { get; set; }
-
-        /// <summary>
         /// The index of the output in the outputs array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -30,6 +24,12 @@ namespace G
         public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Image { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,24 +38,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsCodeOutputImageObject" /> class.
         /// </summary>
-        /// <param name="image"></param>
         /// <param name="index">
         /// The index of the output in the outputs array.
         /// </param>
         /// <param name="type">
         /// Always `image`.
         /// </param>
+        /// <param name="image"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
             int index,
-            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image,
-            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type)
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type,
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image)
         {
             this.Index = index;
-            this.Image = image;
             this.Type = type;
+            this.Image = image;
         }
 
         /// <summary>

@@ -12,21 +12,6 @@ namespace G
     public sealed partial class ResponseProperties
     {
         /// <summary>
-        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("instructions")]
-        public string? Instructions { get; set; }
-
-        /// <summary>
-        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_output_tokens")]
-        public int? MaxOutputTokens { get; set; }
-
-        /// <summary>
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about <br/>
         /// [conversation state](/docs/guides/conversation-state).
@@ -43,6 +28,21 @@ namespace G
         public global::G.Reasoning? Reasoning { get; set; }
 
         /// <summary>
+        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_output_tokens")]
+        public int? MaxOutputTokens { get; set; }
+
+        /// <summary>
+        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
+        /// When using along with `previous_response_id`, the instructions from a previous<br/>
+        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// to swap out system (or developer) messages in new responses.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("instructions")]
+        public string? Instructions { get; set; }
+
+        /// <summary>
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
         /// - [Text inputs and outputs](/docs/guides/text)<br/>
@@ -50,14 +50,6 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public global::G.ResponsePropertiesText? Text { get; set; }
-
-        /// <summary>
-        /// How the model should select which tool (or tools) to use when generating<br/>
-        /// a response. See the `tools` parameter to see how to specify which tools<br/>
-        /// the model can call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? ToolChoice { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You <br/>
@@ -73,6 +65,14 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
         public global::System.Collections.Generic.IList<global::G.Tool>? Tools { get; set; }
+
+        /// <summary>
+        /// How the model should select which tool (or tools) to use when generating<br/>
+        /// a response. See the `tools` parameter to see how to specify which tools<br/>
+        /// the model can call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        public global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? ToolChoice { get; set; }
 
         /// <summary>
         /// The truncation strategy to use for the model response.<br/>
@@ -96,15 +96,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseProperties" /> class.
         /// </summary>
-        /// <param name="instructions">
-        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
-        /// </param>
-        /// <param name="maxOutputTokens">
-        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
-        /// </param>
         /// <param name="previousResponseId">
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about <br/>
@@ -115,16 +106,20 @@ namespace G
         /// Configuration options for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
         /// </param>
+        /// <param name="maxOutputTokens">
+        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// </param>
+        /// <param name="instructions">
+        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
+        /// When using along with `previous_response_id`, the instructions from a previous<br/>
+        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// to swap out system (or developer) messages in new responses.
+        /// </param>
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
         /// - [Text inputs and outputs](/docs/guides/text)<br/>
         /// - [Structured Outputs](/docs/guides/structured-outputs)
-        /// </param>
-        /// <param name="toolChoice">
-        /// How the model should select which tool (or tools) to use when generating<br/>
-        /// a response. See the `tools` parameter to see how to specify which tools<br/>
-        /// the model can call.
         /// </param>
         /// <param name="tools">
         /// An array of tools the model may call while generating a response. You <br/>
@@ -138,6 +133,11 @@ namespace G
         ///   enabling the model to call your own code. Learn more about<br/>
         ///   [function calling](/docs/guides/function-calling).
         /// </param>
+        /// <param name="toolChoice">
+        /// How the model should select which tool (or tools) to use when generating<br/>
+        /// a response. See the `tools` parameter to see how to specify which tools<br/>
+        /// the model can call.
+        /// </param>
         /// <param name="truncation">
         /// The truncation strategy to use for the model response.<br/>
         /// - `auto`: If the context of this response and previous ones exceeds<br/>
@@ -149,22 +149,22 @@ namespace G
         /// Default Value: disabled
         /// </param>
         public ResponseProperties(
-            string? instructions,
-            int? maxOutputTokens,
             string? previousResponseId,
             global::G.Reasoning? reasoning,
+            int? maxOutputTokens,
+            string? instructions,
             global::G.ResponsePropertiesText? text,
-            global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? toolChoice,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
+            global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? toolChoice,
             global::G.ResponsePropertiesTruncation? truncation)
         {
-            this.Instructions = instructions;
-            this.MaxOutputTokens = maxOutputTokens;
             this.PreviousResponseId = previousResponseId;
             this.Reasoning = reasoning;
+            this.MaxOutputTokens = maxOutputTokens;
+            this.Instructions = instructions;
             this.Text = text;
-            this.ToolChoice = toolChoice;
             this.Tools = tools;
+            this.ToolChoice = toolChoice;
             this.Truncation = truncation;
         }
 

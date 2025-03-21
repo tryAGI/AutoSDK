@@ -10,12 +10,6 @@ namespace G
     public sealed partial class ProjectApiKeyOwner
     {
         /// <summary>
-        /// Represents an individual service account in a project.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("service_account")]
-        public global::G.ProjectServiceAccount? ServiceAccount { get; set; }
-
-        /// <summary>
         /// `user` or `service_account`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -28,6 +22,12 @@ namespace G
         public global::G.ProjectUser? User { get; set; }
 
         /// <summary>
+        /// Represents an individual service account in a project.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("service_account")]
+        public global::G.ProjectServiceAccount? ServiceAccount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectApiKeyOwner" /> class.
         /// </summary>
-        /// <param name="serviceAccount">
-        /// Represents an individual service account in a project.
-        /// </param>
         /// <param name="type">
         /// `user` or `service_account`
         /// </param>
         /// <param name="user">
         /// Represents an individual user in a project.
         /// </param>
+        /// <param name="serviceAccount">
+        /// Represents an individual service account in a project.
+        /// </param>
         public ProjectApiKeyOwner(
-            global::G.ProjectServiceAccount? serviceAccount,
             global::G.ProjectApiKeyOwnerType? type,
-            global::G.ProjectUser? user)
+            global::G.ProjectUser? user,
+            global::G.ProjectServiceAccount? serviceAccount)
         {
-            this.ServiceAccount = serviceAccount;
             this.Type = type;
             this.User = user;
+            this.ServiceAccount = serviceAccount;
         }
 
         /// <summary>

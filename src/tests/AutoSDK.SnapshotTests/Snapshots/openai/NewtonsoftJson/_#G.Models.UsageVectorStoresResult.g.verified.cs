@@ -16,16 +16,16 @@ namespace G
         public global::G.UsageVectorStoresResultObject Object { get; set; }
 
         /// <summary>
-        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("project_id")]
-        public string? ProjectId { get; set; }
-
-        /// <summary>
         /// The vector stores usage in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
         public int UsageBytes { get; set; } = default!;
+
+        /// <summary>
+        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,11 +37,11 @@ namespace G
         /// Initializes a new instance of the <see cref="UsageVectorStoresResult" /> class.
         /// </summary>
         /// <param name="object"></param>
-        /// <param name="projectId">
-        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-        /// </param>
         /// <param name="usageBytes">
         /// The vector stores usage in bytes.
+        /// </param>
+        /// <param name="projectId">
+        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
         public UsageVectorStoresResult(
             int usageBytes,

@@ -10,6 +10,18 @@ namespace G
     public sealed partial class VectorStoreSearchResultsPage
     {
         /// <summary>
+        /// The object type, which is always `vector_store.search_results.page`
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.VectorStoreSearchResultsPageObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("search_query", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> SearchQuery { get; set; } = default!;
+
+        /// <summary>
         /// The list of search result items.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,18 +40,6 @@ namespace G
         public string? NextPage { get; set; } = default!;
 
         /// <summary>
-        /// The object type, which is always `vector_store.search_results.page`
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.VectorStoreSearchResultsPageObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("search_query", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> SearchQuery { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -48,6 +48,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreSearchResultsPage" /> class.
         /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.search_results.page`
+        /// </param>
+        /// <param name="searchQuery"></param>
         /// <param name="data">
         /// The list of search result items.
         /// </param>
@@ -57,21 +61,17 @@ namespace G
         /// <param name="nextPage">
         /// The token for the next page, if any.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.search_results.page`
-        /// </param>
-        /// <param name="searchQuery"></param>
         public VectorStoreSearchResultsPage(
+            global::System.Collections.Generic.IList<string> searchQuery,
             global::System.Collections.Generic.IList<global::G.VectorStoreSearchResultItem> data,
             bool hasMore,
             string? nextPage,
-            global::System.Collections.Generic.IList<string> searchQuery,
             global::G.VectorStoreSearchResultsPageObject @object)
         {
+            this.SearchQuery = searchQuery ?? throw new global::System.ArgumentNullException(nameof(searchQuery));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
             this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
-            this.SearchQuery = searchQuery ?? throw new global::System.ArgumentNullException(nameof(searchQuery));
             this.Object = @object;
         }
 

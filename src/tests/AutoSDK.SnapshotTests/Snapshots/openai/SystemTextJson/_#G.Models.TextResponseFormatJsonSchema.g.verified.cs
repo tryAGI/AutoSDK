@@ -11,6 +11,13 @@ namespace G
     public sealed partial class TextResponseFormatJsonSchema
     {
         /// <summary>
+        /// The type of response format being defined. Always `json_schema`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TextResponseFormatJsonSchemaTypeJsonConverter))]
+        public global::G.TextResponseFormatJsonSchemaType Type { get; set; }
+
+        /// <summary>
         /// A description of what the response format is for, used by the model to<br/>
         /// determine how to respond in the format.
         /// </summary>
@@ -44,13 +51,6 @@ namespace G
         public bool? Strict { get; set; }
 
         /// <summary>
-        /// The type of response format being defined. Always `json_schema`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TextResponseFormatJsonSchemaTypeJsonConverter))]
-        public global::G.TextResponseFormatJsonSchemaType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +59,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TextResponseFormatJsonSchema" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
+        /// </param>
         /// <param name="description">
         /// A description of what the response format is for, used by the model to<br/>
         /// determine how to respond in the format.
@@ -79,24 +82,21 @@ namespace G
         /// guide](/docs/guides/structured-outputs).<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="type">
-        /// The type of response format being defined. Always `json_schema`.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextResponseFormatJsonSchema(
             object schema,
+            global::G.TextResponseFormatJsonSchemaType type,
             string? description,
             string? name,
-            bool? strict,
-            global::G.TextResponseFormatJsonSchemaType type)
+            bool? strict)
         {
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
+            this.Type = type;
             this.Description = description;
             this.Name = name;
             this.Strict = strict;
-            this.Type = type;
         }
 
         /// <summary>

@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseOutputItemAddedEvent
     {
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.output_item.added`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OutputItem Item { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseOutputItemAddedEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that was added.
@@ -22,10 +22,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.output_item.added`.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseOutputItemAddedEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OutputItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,20 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemAddedEvent" /> class.
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="outputIndex">
-        /// The index of the output item that was added.
-        /// </param>
         /// <param name="type">
         /// The type of the event. Always `response.output_item.added`.
         /// </param>
+        /// <param name="outputIndex">
+        /// The index of the output item that was added.
+        /// </param>
+        /// <param name="item"></param>
         public ResponseOutputItemAddedEvent(
-            global::G.OutputItem item,
             int outputIndex,
+            global::G.OutputItem item,
             global::G.ResponseOutputItemAddedEventType type)
         {
-            this.Item = item;
             this.OutputIndex = outputIndex;
+            this.Item = item;
             this.Type = type;
         }
 

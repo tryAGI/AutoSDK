@@ -24,16 +24,16 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
-        /// Realtime session object configuration.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("session", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RealtimeSessionCreateRequest Session { get; set; } = default!;
-
-        /// <summary>
         /// The event type, must be `session.update`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RealtimeClientEventSessionUpdateType Type { get; set; }
+
+        /// <summary>
+        /// Realtime session object configuration.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("session", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RealtimeSessionCreateRequest Session { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,11 +47,11 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="session">
-        /// Realtime session object configuration.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `session.update`.
+        /// </param>
+        /// <param name="session">
+        /// Realtime session object configuration.
         /// </param>
         public RealtimeClientEventSessionUpdate(
             global::G.RealtimeSessionCreateRequest session,

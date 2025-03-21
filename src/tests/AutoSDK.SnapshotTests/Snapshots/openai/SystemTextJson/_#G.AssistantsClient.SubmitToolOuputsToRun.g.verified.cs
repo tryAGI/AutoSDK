@@ -186,11 +186,11 @@ namespace G
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="runId"></param>
-        /// <param name="stream">
-        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-        /// </param>
         /// <param name="toolOutputs">
         /// A list of tools for which the outputs are being submitted.
+        /// </param>
+        /// <param name="stream">
+        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -206,8 +206,8 @@ namespace G
         {
             var __request = new global::G.SubmitToolOutputsRunRequest
             {
-                Stream = stream,
                 ToolOutputs = toolOutputs,
+                Stream = stream,
             };
 
             return await SubmitToolOuputsToRunAsync(

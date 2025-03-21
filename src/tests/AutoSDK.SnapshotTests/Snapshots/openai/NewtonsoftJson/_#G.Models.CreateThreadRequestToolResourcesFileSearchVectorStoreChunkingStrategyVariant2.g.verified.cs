@@ -10,16 +10,16 @@ namespace G
     public sealed partial class CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("static", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static Static { get; set; } = default!;
-
-        /// <summary>
         /// Always `static`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("static", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static Static { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2" /> class.
         /// </summary>
-        /// <param name="static"></param>
         /// <param name="type">
         /// Always `static`.
         /// </param>
+        /// <param name="static"></param>
         public CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2(
             global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static @static,
             global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type type)

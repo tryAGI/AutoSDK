@@ -10,10 +10,46 @@ namespace G
     public sealed partial class VectorStoreObject
     {
         /// <summary>
+        /// The identifier, which can be referenced in API endpoints.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// The object type, which is always `vector_store`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.VectorStoreObjectObject Object { get; set; }
+
+        /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The name of the vector store.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// The total number of bytes used by the files in the vector store.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
+        public int UsageBytes { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("file_counts", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.VectorStoreObjectFileCounts FileCounts { get; set; } = default!;
+
+        /// <summary>
+        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.VectorStoreObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The expiration policy for a vector store.
@@ -26,18 +62,6 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
         public global::System.DateTimeOffset? ExpiresAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_counts", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreObjectFileCounts FileCounts { get; set; } = default!;
-
-        /// <summary>
-        /// The identifier, which can be referenced in API endpoints.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was last active.
@@ -56,30 +80,6 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; } = default!;
 
         /// <summary>
-        /// The name of the vector store.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
-
-        /// <summary>
-        /// The object type, which is always `vector_store`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.VectorStoreObjectObject Object { get; set; }
-
-        /// <summary>
-        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreObjectStatus Status { get; set; } = default!;
-
-        /// <summary>
-        /// The total number of bytes used by the files in the vector store.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsageBytes { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -88,18 +88,30 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreObject" /> class.
         /// </summary>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store`.
+        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the vector store was created.
+        /// </param>
+        /// <param name="name">
+        /// The name of the vector store.
+        /// </param>
+        /// <param name="usageBytes">
+        /// The total number of bytes used by the files in the vector store.
+        /// </param>
+        /// <param name="fileCounts"></param>
+        /// <param name="status">
+        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
         /// </param>
         /// <param name="expiresAfter">
         /// The expiration policy for a vector store.
         /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) for when the vector store will expire.
-        /// </param>
-        /// <param name="fileCounts"></param>
-        /// <param name="id">
-        /// The identifier, which can be referenced in API endpoints.
         /// </param>
         /// <param name="lastActiveAt">
         /// The Unix timestamp (in seconds) for when the vector store was last active.
@@ -111,42 +123,30 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="name">
-        /// The name of the vector store.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store`.
-        /// </param>
-        /// <param name="status">
-        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
-        /// </param>
-        /// <param name="usageBytes">
-        /// The total number of bytes used by the files in the vector store.
-        /// </param>
         public VectorStoreObject(
-            global::System.DateTimeOffset createdAt,
-            global::G.VectorStoreObjectFileCounts fileCounts,
             string id,
+            global::System.DateTimeOffset createdAt,
+            string name,
+            int usageBytes,
+            global::G.VectorStoreObjectFileCounts fileCounts,
+            global::G.VectorStoreObjectStatus status,
             global::System.DateTimeOffset? lastActiveAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            string name,
-            global::G.VectorStoreObjectStatus status,
-            int usageBytes,
+            global::G.VectorStoreObjectObject @object,
             global::G.VectorStoreExpirationAfter? expiresAfter,
-            global::System.DateTimeOffset? expiresAt,
-            global::G.VectorStoreObjectObject @object)
+            global::System.DateTimeOffset? expiresAt)
         {
-            this.CreatedAt = createdAt;
-            this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.UsageBytes = usageBytes;
+            this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
+            this.Status = status;
             this.LastActiveAt = lastActiveAt;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Status = status;
-            this.UsageBytes = usageBytes;
+            this.Object = @object;
             this.ExpiresAfter = expiresAfter;
             this.ExpiresAt = expiresAt;
-            this.Object = @object;
         }
 
         /// <summary>

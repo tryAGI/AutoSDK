@@ -12,17 +12,17 @@ namespace G
     public sealed partial class CreateAssistantRequestToolResourcesFileSearchVectorStore
     {
         /// <summary>
+        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
+        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
+
+        /// <summary>
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>))]
         public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
-
-        /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
-        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -43,11 +43,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearchVectorStore" /> class.
         /// </summary>
-        /// <param name="chunkingStrategy">
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
-        /// </param>
         /// <param name="fileIds">
         /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -60,12 +60,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAssistantRequestToolResourcesFileSearchVectorStore(
-            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
             global::System.Collections.Generic.IList<string>? fileIds,
+            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.ChunkingStrategy = chunkingStrategy;
             this.FileIds = fileIds;
+            this.ChunkingStrategy = chunkingStrategy;
             this.Metadata = metadata;
         }
 

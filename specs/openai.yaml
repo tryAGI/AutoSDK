@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: OpenAI API
   description: The OpenAI REST API. Please see
@@ -16263,6 +16263,7 @@ components:
         - completion_tokens
         - total_tokens
     CompoundFilter:
+      $recursiveAnchor: true
       type: object
       additionalProperties: false
       title: Compound Filter
@@ -16281,6 +16282,7 @@ components:
           items:
             oneOf:
               - $ref: "#/components/schemas/ComparisonFilter"
+              - $recursiveRef: "#"
       required:
         - type
         - filters
@@ -17212,6 +17214,8 @@ components:
                 - $ref: "#/components/schemas/PredictionContent"
             seed:
               type: integer
+              minimum: -9223372036854776000
+              maximum: 9223372036854776000
               nullable: true
               description: >
                 This feature is in Beta.
@@ -19129,6 +19133,8 @@ components:
                     $ref: "#/components/schemas/InputItem"
             include:
               type: array
+              description:
+                $ref: "#/components/schemas/Includable/description"
               items:
                 x-oaiExpandable: true
                 $ref: "#/components/schemas/Includable"
@@ -22673,7 +22679,8 @@ components:
               type: array
               items:
                 oneOf:
-                  - $ref: "#/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObject"
+                  - $ref: "#/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObjec\
+                      t"
                   - $ref: "#/components/schemas/MessageDeltaContentTextAnnotationsFilePathObject"
                 x-oaiExpandable: true
       required:
@@ -29972,8 +29979,10 @@ components:
               items:
                 type: object
                 oneOf:
-                  - $ref: "#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject"
-                  - $ref: "#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputImageObject"
+                  - $ref: "#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjec\
+                      t"
+                  - $ref: "#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputImageObje\
+                      ct"
                 x-oaiExpandable: true
       required:
         - index
@@ -30227,7 +30236,8 @@ components:
           x-oaiTypeLabel: map
           properties:
             ranking_options:
-              $ref: "#/components/schemas/RunStepDetailsToolCallsFileSearchRankingOptionsObject"
+              $ref: "#/components/schemas/RunStepDetailsToolCallsFileSearchRankingOptionsObje\
+                ct"
             results:
               type: array
               description: The results of the file search.
@@ -32079,6 +32089,9 @@ components:
 
         length of 512 characters, booleans, or numbers.
       maxProperties: 16
+      propertyNames:
+        type: string
+        maxLength: 64
       additionalProperties:
         oneOf:
           - type: string

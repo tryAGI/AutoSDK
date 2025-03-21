@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogServiceAccountUpdated
     {
         /// <summary>
-        /// The payload used to updated the service account.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("changes_requested")]
-        public global::G.AuditLogServiceAccountUpdatedChangesRequested? ChangesRequested { get; set; }
-
-        /// <summary>
         /// The service account ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The payload used to updated the service account.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("changes_requested")]
+        public global::G.AuditLogServiceAccountUpdatedChangesRequested? ChangesRequested { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogServiceAccountUpdated" /> class.
         /// </summary>
-        /// <param name="changesRequested">
-        /// The payload used to updated the service account.
-        /// </param>
         /// <param name="id">
         /// The service account ID.
         /// </param>
+        /// <param name="changesRequested">
+        /// The payload used to updated the service account.
+        /// </param>
         public AuditLogServiceAccountUpdated(
-            global::G.AuditLogServiceAccountUpdatedChangesRequested? changesRequested,
-            string? id)
+            string? id,
+            global::G.AuditLogServiceAccountUpdatedChangesRequested? changesRequested)
         {
-            this.ChangesRequested = changesRequested;
             this.Id = id;
+            this.ChangesRequested = changesRequested;
         }
 
         /// <summary>

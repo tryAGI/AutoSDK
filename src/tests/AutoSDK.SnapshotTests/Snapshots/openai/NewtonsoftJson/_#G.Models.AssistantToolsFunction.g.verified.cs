@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AssistantToolsFunction
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FunctionObject Function { get; set; } = default!;
-
-        /// <summary>
         /// The type of tool being defined: `function`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.AssistantToolsFunctionType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FunctionObject Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantToolsFunction" /> class.
         /// </summary>
-        /// <param name="function"></param>
         /// <param name="type">
         /// The type of tool being defined: `function`
         /// </param>
+        /// <param name="function"></param>
         public AssistantToolsFunction(
             global::G.FunctionObject function,
             global::G.AssistantToolsFunctionType type)

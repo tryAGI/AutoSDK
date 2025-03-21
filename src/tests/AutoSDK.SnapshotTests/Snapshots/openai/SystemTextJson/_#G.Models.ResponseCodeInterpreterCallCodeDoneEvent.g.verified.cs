@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallCodeDoneEvent
     {
         /// <summary>
-        /// The final code snippet output by the code interpreter.
+        /// The type of the event. Always `response.code_interpreter_call.code.done`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDoneEventTypeJsonConverter))]
+        public global::G.ResponseCodeInterpreterCallCodeDoneEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
@@ -24,11 +24,11 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.code.done`.
+        /// The final code snippet output by the code interpreter.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDoneEventTypeJsonConverter))]
-        public global::G.ResponseCodeInterpreterCallCodeDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Code { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDoneEvent" /> class.
         /// </summary>
-        /// <param name="code">
-        /// The final code snippet output by the code interpreter.
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.code.done`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.code.done`.
+        /// <param name="code">
+        /// The final code snippet output by the code interpreter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallCodeDoneEvent(
-            string code,
             int outputIndex,
+            string code,
             global::G.ResponseCodeInterpreterCallCodeDoneEventType type)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.OutputIndex = outputIndex;
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Type = type;
         }
 

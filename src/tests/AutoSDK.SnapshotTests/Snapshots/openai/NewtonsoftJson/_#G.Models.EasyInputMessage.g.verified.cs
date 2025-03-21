@@ -16,18 +16,18 @@ namespace G
     public sealed partial class EasyInputMessage
     {
         /// <summary>
-        /// Text, image, or audio input to the model, used to generate a response.<br/>
-        /// Can also contain previous assistant responses.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> Content { get; set; } = default!;
-
-        /// <summary>
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.EasyInputMessageRole Role { get; set; } = default!;
+
+        /// <summary>
+        /// Text, image, or audio input to the model, used to generate a response.<br/>
+        /// Can also contain previous assistant responses.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> Content { get; set; } = default!;
 
         /// <summary>
         /// The type of the message input. Always `message`.
@@ -44,24 +44,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EasyInputMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// Text, image, or audio input to the model, used to generate a response.<br/>
-        /// Can also contain previous assistant responses.
-        /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
+        /// </param>
+        /// <param name="content">
+        /// Text, image, or audio input to the model, used to generate a response.<br/>
+        /// Can also contain previous assistant responses.
         /// </param>
         /// <param name="type">
         /// The type of the message input. Always `message`.
         /// </param>
         public EasyInputMessage(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> content,
             global::G.EasyInputMessageRole role,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> content,
             global::G.EasyInputMessageType? type)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.Type = type;
         }
 

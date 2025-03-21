@@ -10,16 +10,10 @@ namespace G
     public sealed partial class UrlCitation
     {
         /// <summary>
-        /// The index of the last character of the URL citation in the message.
+        /// The URL of the web resource.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("end_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int EndIndex { get; set; } = default!;
-
-        /// <summary>
-        /// The index of the first character of the URL citation in the message.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("start_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int StartIndex { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// The title of the web resource.
@@ -34,10 +28,16 @@ namespace G
         public global::G.UrlCitationType Type { get; set; }
 
         /// <summary>
-        /// The URL of the web resource.
+        /// The index of the first character of the URL citation in the message.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("start_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int StartIndex { get; set; } = default!;
+
+        /// <summary>
+        /// The index of the last character of the URL citation in the message.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("end_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int EndIndex { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,11 +48,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UrlCitation" /> class.
         /// </summary>
-        /// <param name="endIndex">
-        /// The index of the last character of the URL citation in the message.
-        /// </param>
-        /// <param name="startIndex">
-        /// The index of the first character of the URL citation in the message.
+        /// <param name="url">
+        /// The URL of the web resource.
         /// </param>
         /// <param name="title">
         /// The title of the web resource.
@@ -60,20 +57,23 @@ namespace G
         /// <param name="type">
         /// The type of the URL citation. Always `url_citation`.
         /// </param>
-        /// <param name="url">
-        /// The URL of the web resource.
+        /// <param name="startIndex">
+        /// The index of the first character of the URL citation in the message.
+        /// </param>
+        /// <param name="endIndex">
+        /// The index of the last character of the URL citation in the message.
         /// </param>
         public UrlCitation(
-            int endIndex,
-            int startIndex,
-            string title,
             string url,
+            string title,
+            int startIndex,
+            int endIndex,
             global::G.UrlCitationType type)
         {
-            this.EndIndex = endIndex;
-            this.StartIndex = startIndex;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.StartIndex = startIndex;
+            this.EndIndex = endIndex;
             this.Type = type;
         }
 

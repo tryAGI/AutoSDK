@@ -17,16 +17,10 @@ namespace G
         public string EventId { get; set; } = default!;
 
         /// <summary>
-        /// The item to add to the conversation.
+        /// The event type, must be `response.output_item.done`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RealtimeConversationItem Item { get; set; } = default!;
-
-        /// <summary>
-        /// The index of the output item in the Response.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("output_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int OutputIndex { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventResponseOutputItemDoneType Type { get; set; }
 
         /// <summary>
         /// The ID of the Response to which the item belongs.
@@ -35,10 +29,16 @@ namespace G
         public string ResponseId { get; set; } = default!;
 
         /// <summary>
-        /// The event type, must be `response.output_item.done`.
+        /// The index of the output item in the Response.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventResponseOutputItemDoneType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("output_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int OutputIndex { get; set; } = default!;
+
+        /// <summary>
+        /// The item to add to the conversation.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RealtimeConversationItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,29 +52,29 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="item">
-        /// The item to add to the conversation.
-        /// </param>
-        /// <param name="outputIndex">
-        /// The index of the output item in the Response.
+        /// <param name="type">
+        /// The event type, must be `response.output_item.done`.
         /// </param>
         /// <param name="responseId">
         /// The ID of the Response to which the item belongs.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.output_item.done`.
+        /// <param name="outputIndex">
+        /// The index of the output item in the Response.
+        /// </param>
+        /// <param name="item">
+        /// The item to add to the conversation.
         /// </param>
         public RealtimeServerEventResponseOutputItemDone(
             string eventId,
-            global::G.RealtimeConversationItem item,
-            int outputIndex,
             string responseId,
+            int outputIndex,
+            global::G.RealtimeConversationItem item,
             global::G.RealtimeServerEventResponseOutputItemDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
-            this.OutputIndex = outputIndex;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
+            this.OutputIndex = outputIndex;
+            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.Type = type;
         }
 

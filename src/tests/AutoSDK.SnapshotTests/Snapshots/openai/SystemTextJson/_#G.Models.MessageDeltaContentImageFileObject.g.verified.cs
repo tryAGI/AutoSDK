@@ -10,12 +10,6 @@ namespace G
     public sealed partial class MessageDeltaContentImageFileObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_file")]
-        public global::G.MessageDeltaContentImageFileObjectImageFile? ImageFile { get; set; }
-
-        /// <summary>
         /// The index of the content part in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -30,6 +24,12 @@ namespace G
         public global::G.MessageDeltaContentImageFileObjectType Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_file")]
+        public global::G.MessageDeltaContentImageFileObjectImageFile? ImageFile { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,24 +38,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentImageFileObject" /> class.
         /// </summary>
-        /// <param name="imageFile"></param>
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
         /// <param name="type">
         /// Always `image_file`.
         /// </param>
+        /// <param name="imageFile"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentImageFileObject(
             int index,
-            global::G.MessageDeltaContentImageFileObjectImageFile? imageFile,
-            global::G.MessageDeltaContentImageFileObjectType type)
+            global::G.MessageDeltaContentImageFileObjectType type,
+            global::G.MessageDeltaContentImageFileObjectImageFile? imageFile)
         {
             this.Index = index;
-            this.ImageFile = imageFile;
             this.Type = type;
+            this.ImageFile = imageFile;
         }
 
         /// <summary>

@@ -10,22 +10,10 @@ namespace G
     public sealed partial class ResponseTextAnnotationDeltaEvent
     {
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.output_text.annotation.added`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("annotation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Annotation Annotation { get; set; } = default!;
-
-        /// <summary>
-        /// The index of the annotation that was added.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("annotation_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int AnnotationIndex { get; set; } = default!;
-
-        /// <summary>
-        /// The index of the content part that the text annotation was added to.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ContentIndex { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseTextAnnotationDeltaEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the output item that the text annotation was added to.
@@ -40,10 +28,22 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.output_text.annotation.added`.
+        /// The index of the content part that the text annotation was added to.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseTextAnnotationDeltaEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ContentIndex { get; set; } = default!;
+
+        /// <summary>
+        /// The index of the annotation that was added.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("annotation_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int AnnotationIndex { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("annotation", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Annotation Annotation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,12 +54,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseTextAnnotationDeltaEvent" /> class.
         /// </summary>
-        /// <param name="annotation"></param>
-        /// <param name="annotationIndex">
-        /// The index of the annotation that was added.
-        /// </param>
-        /// <param name="contentIndex">
-        /// The index of the content part that the text annotation was added to.
+        /// <param name="type">
+        /// The type of the event. Always `response.output_text.annotation.added`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the text annotation was added to.
@@ -67,22 +63,26 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item that the text annotation was added to.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_text.annotation.added`.
+        /// <param name="contentIndex">
+        /// The index of the content part that the text annotation was added to.
         /// </param>
+        /// <param name="annotationIndex">
+        /// The index of the annotation that was added.
+        /// </param>
+        /// <param name="annotation"></param>
         public ResponseTextAnnotationDeltaEvent(
-            global::G.Annotation annotation,
-            int annotationIndex,
-            int contentIndex,
             string itemId,
             int outputIndex,
+            int contentIndex,
+            int annotationIndex,
+            global::G.Annotation annotation,
             global::G.ResponseTextAnnotationDeltaEventType type)
         {
-            this.Annotation = annotation;
-            this.AnnotationIndex = annotationIndex;
-            this.ContentIndex = contentIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ContentIndex = contentIndex;
+            this.AnnotationIndex = annotationIndex;
+            this.Annotation = annotation;
             this.Type = type;
         }
 

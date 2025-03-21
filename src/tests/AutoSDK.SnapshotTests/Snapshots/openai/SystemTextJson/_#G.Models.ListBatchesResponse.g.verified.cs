@@ -24,18 +24,18 @@ namespace G
         public string? FirstId { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
-
-        /// <summary>
         /// Example: batch_abc456
         /// </summary>
         /// <example>batch_abc456</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// 
@@ -57,10 +57,10 @@ namespace G
         /// <param name="firstId">
         /// Example: batch_abc123
         /// </param>
-        /// <param name="hasMore"></param>
         /// <param name="lastId">
         /// Example: batch_abc456
         /// </param>
+        /// <param name="hasMore"></param>
         /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

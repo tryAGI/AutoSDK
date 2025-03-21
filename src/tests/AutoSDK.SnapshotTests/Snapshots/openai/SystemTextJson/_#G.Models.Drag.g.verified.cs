@@ -10,6 +10,16 @@ namespace G
     public sealed partial class Drag
     {
         /// <summary>
+        /// Specifies the event type. For a drag action, this property is <br/>
+        /// always set to `drag`.<br/>
+        /// Default Value: drag
+        /// </summary>
+        /// <default>global::G.DragType.Drag</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DragTypeJsonConverter))]
+        public global::G.DragType Type { get; set; } = global::G.DragType.Drag;
+
+        /// <summary>
         /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array<br/>
         /// of objects, eg<br/>
         /// ```<br/>
@@ -24,16 +34,6 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Coordinate> Path { get; set; }
 
         /// <summary>
-        /// Specifies the event type. For a drag action, this property is <br/>
-        /// always set to `drag`.<br/>
-        /// Default Value: drag
-        /// </summary>
-        /// <default>global::G.DragType.Drag</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DragTypeJsonConverter))]
-        public global::G.DragType Type { get; set; } = global::G.DragType.Drag;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,6 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Drag" /> class.
         /// </summary>
+        /// <param name="type">
+        /// Specifies the event type. For a drag action, this property is <br/>
+        /// always set to `drag`.<br/>
+        /// Default Value: drag
+        /// </param>
         /// <param name="path">
         /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array<br/>
         /// of objects, eg<br/>
@@ -51,11 +56,6 @@ namespace G
         ///   { x: 200, y: 300 }<br/>
         /// ]<br/>
         /// ```
-        /// </param>
-        /// <param name="type">
-        /// Specifies the event type. For a drag action, this property is <br/>
-        /// always set to `drag`.<br/>
-        /// Default Value: drag
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

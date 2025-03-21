@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Model14
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) when the model was created.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset Created { get; set; } = default!;
-
-        /// <summary>
         /// The model identifier, which can be referenced in the API endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) when the model was created.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "model".
@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Model14" /> class.
         /// </summary>
-        /// <param name="created">
-        /// The Unix timestamp (in seconds) when the model was created.
-        /// </param>
         /// <param name="id">
         /// The model identifier, which can be referenced in the API endpoints.
+        /// </param>
+        /// <param name="created">
+        /// The Unix timestamp (in seconds) when the model was created.
         /// </param>
         /// <param name="object">
         /// The object type, which is always "model".
@@ -55,13 +55,13 @@ namespace G
         /// The organization that owns the model.
         /// </param>
         public Model14(
-            global::System.DateTimeOffset created,
             string id,
+            global::System.DateTimeOffset created,
             string ownedBy,
             global::G.ModelObject @object)
         {
-            this.Created = created;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Created = created;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Object = @object;
         }

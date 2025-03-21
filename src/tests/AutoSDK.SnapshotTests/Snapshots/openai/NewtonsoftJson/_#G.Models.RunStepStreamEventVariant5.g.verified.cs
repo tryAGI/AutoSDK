@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunStepStreamEventVariant5
     {
         /// <summary>
-        /// Represents a step in execution of a run.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepObject Data { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
         public global::G.RunStepStreamEventVariant5Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a step in execution of a run.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RunStepObject Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepStreamEventVariant5" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a step in execution of a run.
         /// </param>
-        /// <param name="event"></param>
         public RunStepStreamEventVariant5(
             global::G.RunStepObject data,
             global::G.RunStepStreamEventVariant5Event @event)

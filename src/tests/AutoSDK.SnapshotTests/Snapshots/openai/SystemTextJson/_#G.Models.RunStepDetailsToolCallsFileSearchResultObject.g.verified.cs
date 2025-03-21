@@ -10,12 +10,6 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsFileSearchResultObject
     {
         /// <summary>
-        /// The content of the result that was found. The content is only included if requested via the include query parameter.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Content { get; set; }
-
-        /// <summary>
         /// The ID of the file that result was found in.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -37,6 +31,12 @@ namespace G
         public required double Score { get; set; }
 
         /// <summary>
+        /// The content of the result that was found. The content is only included if requested via the include query parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Content { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,9 +45,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFileSearchResultObject" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The content of the result that was found. The content is only included if requested via the include query parameter.
-        /// </param>
         /// <param name="fileId">
         /// The ID of the file that result was found in.
         /// </param>
@@ -56,6 +53,9 @@ namespace G
         /// </param>
         /// <param name="score">
         /// The score of the result. All values must be a floating point number between 0 and 1.
+        /// </param>
+        /// <param name="content">
+        /// The content of the result that was found. The content is only included if requested via the include query parameter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

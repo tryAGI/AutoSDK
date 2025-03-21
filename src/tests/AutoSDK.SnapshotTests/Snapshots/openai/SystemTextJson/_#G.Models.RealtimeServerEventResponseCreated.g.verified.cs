@@ -18,18 +18,18 @@ namespace G
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The response resource.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeResponse Response { get; set; }
-
-        /// <summary>
         /// The event type, must be `response.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseCreatedTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseCreatedType Type { get; set; }
+
+        /// <summary>
+        /// The response resource.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RealtimeResponse Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,11 +43,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="response">
-        /// The response resource.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `response.created`.
+        /// </param>
+        /// <param name="response">
+        /// The response resource.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

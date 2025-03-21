@@ -12,12 +12,6 @@ namespace G
     public sealed partial class CreateResponseVariant3
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("include")]
-        public global::System.Collections.Generic.IList<global::G.Includable>? Include { get; set; }
-
-        /// <summary>
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
         /// - [Text inputs and outputs](/docs/guides/text)<br/>
@@ -30,6 +24,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.InputItem>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputItem>> Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include")]
+        public global::System.Collections.Generic.IList<global::G.Includable>? Include { get; set; }
 
         /// <summary>
         /// Whether to allow the model to run tool calls in parallel.<br/>
@@ -65,7 +65,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResponseVariant3" /> class.
         /// </summary>
-        /// <param name="include"></param>
         /// <param name="input">
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
@@ -75,6 +74,7 @@ namespace G
         /// - [Conversation state](/docs/guides/conversation-state)<br/>
         /// - [Function calling](/docs/guides/function-calling)
         /// </param>
+        /// <param name="include"></param>
         /// <param name="parallelToolCalls">
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true

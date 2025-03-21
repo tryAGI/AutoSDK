@@ -10,16 +10,16 @@ namespace G
     public sealed partial class CodeInterpreterTextOutput
     {
         /// <summary>
-        /// The logs of the code interpreter tool call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logs", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Logs { get; set; } = default!;
-
-        /// <summary>
         /// The type of the code interpreter text output. Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.CodeInterpreterTextOutputType Type { get; set; }
+
+        /// <summary>
+        /// The logs of the code interpreter tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logs", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Logs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterTextOutput" /> class.
         /// </summary>
-        /// <param name="logs">
-        /// The logs of the code interpreter tool call.
-        /// </param>
         /// <param name="type">
         /// The type of the code interpreter text output. Always `logs`.
+        /// </param>
+        /// <param name="logs">
+        /// The logs of the code interpreter tool call.
         /// </param>
         public CodeInterpreterTextOutput(
             string logs,

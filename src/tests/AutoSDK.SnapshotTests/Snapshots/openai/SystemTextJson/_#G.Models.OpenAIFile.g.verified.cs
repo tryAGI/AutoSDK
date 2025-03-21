@@ -10,6 +10,13 @@ namespace G
     public sealed partial class OpenAIFile
     {
         /// <summary>
+        /// The file identifier, which can be referenced in the API endpoints.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
         /// The size of the file, in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
@@ -37,13 +44,6 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Filename { get; set; }
-
-        /// <summary>
-        /// The file identifier, which can be referenced in the API endpoints.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
 
         /// <summary>
         /// The object type, which is always `file`.
@@ -84,6 +84,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenAIFile" /> class.
         /// </summary>
+        /// <param name="id">
+        /// The file identifier, which can be referenced in the API endpoints.
+        /// </param>
         /// <param name="bytes">
         /// The size of the file, in bytes.
         /// </param>
@@ -95,9 +98,6 @@ namespace G
         /// </param>
         /// <param name="filename">
         /// The name of the file.
-        /// </param>
-        /// <param name="id">
-        /// The file identifier, which can be referenced in the API endpoints.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `file`.
@@ -112,19 +112,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OpenAIFile(
+            string id,
             int bytes,
             global::System.DateTimeOffset createdAt,
             string filename,
-            string id,
             global::G.OpenAIFilePurpose purpose,
             global::G.OpenAIFileStatus status,
             global::System.DateTimeOffset? expiresAt,
             global::G.OpenAIFileObject @object)
         {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Bytes = bytes;
             this.CreatedAt = createdAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Purpose = purpose;
             this.Status = status;
             this.ExpiresAt = expiresAt;

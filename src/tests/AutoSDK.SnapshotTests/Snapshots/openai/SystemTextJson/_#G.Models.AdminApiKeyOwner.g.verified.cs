@@ -10,11 +10,11 @@ namespace G
     public sealed partial class AdminApiKeyOwner
     {
         /// <summary>
-        /// Example: 1711471533L
+        /// Example: service_account
         /// </summary>
-        /// <example>1711471533L</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public long? CreatedAt { get; set; }
+        /// <example>service_account</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
 
         /// <summary>
         /// Example: sa_456
@@ -31,18 +31,18 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
+        /// Example: 1711471533L
+        /// </summary>
+        /// <example>1711471533L</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public long? CreatedAt { get; set; }
+
+        /// <summary>
         /// Example: member
         /// </summary>
         /// <example>member</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         public string? Role { get; set; }
-
-        /// <summary>
-        /// Example: service_account
-        /// </summary>
-        /// <example>service_account</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,8 +53,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminApiKeyOwner" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// Example: 1711471533L
+        /// <param name="type">
+        /// Example: service_account
         /// </param>
         /// <param name="id">
         /// Example: sa_456
@@ -62,27 +62,27 @@ namespace G
         /// <param name="name">
         /// Example: My Service Account
         /// </param>
+        /// <param name="createdAt">
+        /// Example: 1711471533L
+        /// </param>
         /// <param name="role">
         /// Example: member
-        /// </param>
-        /// <param name="type">
-        /// Example: service_account
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKeyOwner(
-            long? createdAt,
+            string? type,
             string? id,
             string? name,
-            string? role,
-            string? type)
+            long? createdAt,
+            string? role)
         {
-            this.CreatedAt = createdAt;
+            this.Type = type;
             this.Id = id;
             this.Name = name;
+            this.CreatedAt = createdAt;
             this.Role = role;
-            this.Type = type;
         }
 
         /// <summary>

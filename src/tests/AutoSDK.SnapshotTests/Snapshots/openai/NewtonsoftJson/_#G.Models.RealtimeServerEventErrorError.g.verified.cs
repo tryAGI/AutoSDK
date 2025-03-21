@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RealtimeServerEventErrorError
     {
         /// <summary>
+        /// The type of error (e.g., "invalid_request_error", "server_error").
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
+
+        /// <summary>
         /// Error code, if any.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code")]
         public string? Code { get; set; }
-
-        /// <summary>
-        /// The event_id of the client event that caused the error, if applicable.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event_id")]
-        public string? EventId { get; set; }
 
         /// <summary>
         /// A human-readable error message.
@@ -34,10 +34,10 @@ namespace G
         public string? Param { get; set; }
 
         /// <summary>
-        /// The type of error (e.g., "invalid_request_error", "server_error").
+        /// The event_id of the client event that caused the error, if applicable.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event_id")]
+        public string? EventId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,11 +48,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventErrorError" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of error (e.g., "invalid_request_error", "server_error").
+        /// </param>
         /// <param name="code">
         /// Error code, if any.
-        /// </param>
-        /// <param name="eventId">
-        /// The event_id of the client event that caused the error, if applicable.
         /// </param>
         /// <param name="message">
         /// A human-readable error message.
@@ -60,21 +60,21 @@ namespace G
         /// <param name="param">
         /// Parameter related to the error, if any.
         /// </param>
-        /// <param name="type">
-        /// The type of error (e.g., "invalid_request_error", "server_error").
+        /// <param name="eventId">
+        /// The event_id of the client event that caused the error, if applicable.
         /// </param>
         public RealtimeServerEventErrorError(
-            string message,
             string type,
+            string message,
             string? code,
-            string? eventId,
-            string? param)
+            string? param,
+            string? eventId)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Code = code;
-            this.EventId = eventId;
             this.Param = param;
+            this.EventId = eventId;
         }
 
         /// <summary>

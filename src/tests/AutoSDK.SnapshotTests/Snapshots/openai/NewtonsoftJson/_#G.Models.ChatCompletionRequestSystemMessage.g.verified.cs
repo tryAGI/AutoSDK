@@ -20,16 +20,16 @@ namespace G
         public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The role of the messages author, in this case `system`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
         public global::G.ChatCompletionRequestSystemMessageRole Role { get; set; }
+
+        /// <summary>
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,20 +43,20 @@ namespace G
         /// <param name="content">
         /// The contents of the system message.
         /// </param>
-        /// <param name="name">
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </param>
         /// <param name="role">
         /// The role of the messages author, in this case `system`.
         /// </param>
+        /// <param name="name">
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </param>
         public ChatCompletionRequestSystemMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestSystemMessageContentPart>> content,
-            string? name,
-            global::G.ChatCompletionRequestSystemMessageRole role)
+            global::G.ChatCompletionRequestSystemMessageRole role,
+            string? name)
         {
             this.Content = content;
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
         }
 
         /// <summary>

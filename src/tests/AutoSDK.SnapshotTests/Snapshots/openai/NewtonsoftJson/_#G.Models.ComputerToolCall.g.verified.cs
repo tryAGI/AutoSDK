@@ -11,10 +11,18 @@ namespace G
     public sealed partial class ComputerToolCall
     {
         /// <summary>
-        /// 
+        /// The type of the computer call. Always `computer_call`.<br/>
+        /// Default Value: computer_call
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ComputerAction Action { get; set; } = default!;
+        /// <default>global::G.ComputerToolCallType.ComputerCall</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ComputerToolCallType Type { get; set; } = global::G.ComputerToolCallType.ComputerCall;
+
+        /// <summary>
+        /// The unique ID of the computer call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// An identifier used when responding to the tool call with output.
@@ -23,10 +31,10 @@ namespace G
         public string CallId { get; set; } = default!;
 
         /// <summary>
-        /// The unique ID of the computer call.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ComputerAction Action { get; set; } = default!;
 
         /// <summary>
         /// The pending safety checks for the computer call.
@@ -42,14 +50,6 @@ namespace G
         public global::G.ComputerToolCallStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// The type of the computer call. Always `computer_call`.<br/>
-        /// Default Value: computer_call
-        /// </summary>
-        /// <default>global::G.ComputerToolCallType.ComputerCall</default>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ComputerToolCallType Type { get; set; } = global::G.ComputerToolCallType.ComputerCall;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -58,13 +58,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerToolCall" /> class.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="callId">
-        /// An identifier used when responding to the tool call with output.
+        /// <param name="type">
+        /// The type of the computer call. Always `computer_call`.<br/>
+        /// Default Value: computer_call
         /// </param>
         /// <param name="id">
         /// The unique ID of the computer call.
         /// </param>
+        /// <param name="callId">
+        /// An identifier used when responding to the tool call with output.
+        /// </param>
+        /// <param name="action"></param>
         /// <param name="pendingSafetyChecks">
         /// The pending safety checks for the computer call.
         /// </param>
@@ -72,21 +76,17 @@ namespace G
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
-        /// <param name="type">
-        /// The type of the computer call. Always `computer_call`.<br/>
-        /// Default Value: computer_call
-        /// </param>
         public ComputerToolCall(
-            global::G.ComputerAction action,
-            string callId,
             string id,
+            string callId,
+            global::G.ComputerAction action,
             global::System.Collections.Generic.IList<global::G.ComputerToolCallSafetyCheck> pendingSafetyChecks,
             global::G.ComputerToolCallStatus status,
             global::G.ComputerToolCallType type = global::G.ComputerToolCallType.ComputerCall)
         {
-            this.Action = action;
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Action = action;
             this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
             this.Status = status;
             this.Type = type;

@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.UsageResponseObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.UsageTimeBucket> Data { get; set; } = default!;
 
@@ -28,12 +34,6 @@ namespace G
         public string NextPage { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.UsageResponseObject Object { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,10 +42,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageResponse" /> class.
         /// </summary>
+        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
         /// <param name="nextPage"></param>
-        /// <param name="object"></param>
         public UsageResponse(
             global::System.Collections.Generic.IList<global::G.UsageTimeBucket> data,
             bool hasMore,

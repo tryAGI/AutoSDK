@@ -10,12 +10,6 @@ namespace G
     public sealed partial class RunStepDeltaObject
     {
         /// <summary>
-        /// The delta containing the fields that have changed on the run step.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDeltaObjectDelta Delta { get; set; } = default!;
-
-        /// <summary>
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,6 +22,12 @@ namespace G
         public global::G.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>
+        /// The delta containing the fields that have changed on the run step.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RunStepDeltaObjectDelta Delta { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaObject" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// The delta containing the fields that have changed on the run step.
-        /// </param>
         /// <param name="id">
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `thread.run.step.delta`.
         /// </param>
+        /// <param name="delta">
+        /// The delta containing the fields that have changed on the run step.
+        /// </param>
         public RunStepDeltaObject(
-            global::G.RunStepDeltaObjectDelta delta,
             string id,
+            global::G.RunStepDeltaObjectDelta delta,
             global::G.RunStepDeltaObjectObject @object)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Object = @object;
         }
 

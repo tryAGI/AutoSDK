@@ -10,18 +10,18 @@ namespace G
     public sealed partial class ResponseAudioDeltaEvent
     {
         /// <summary>
-        /// A chunk of Base64 encoded response audio bytes.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
-
-        /// <summary>
         /// The type of the event. Always `response.audio.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseAudioDeltaEventTypeJsonConverter))]
         public global::G.ResponseAudioDeltaEventType Type { get; set; }
+
+        /// <summary>
+        /// A chunk of Base64 encoded response audio bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseAudioDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// A chunk of Base64 encoded response audio bytes.
-        /// </param>
         /// <param name="type">
         /// The type of the event. Always `response.audio.delta`.
+        /// </param>
+        /// <param name="delta">
+        /// A chunk of Base64 encoded response audio bytes.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

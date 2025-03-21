@@ -10,22 +10,22 @@ namespace G
     public sealed partial class CodeInterpreterToolCall
     {
         /// <summary>
-        /// The code to run.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Code { get; set; } = default!;
-
-        /// <summary>
         /// The unique ID of the code interpreter tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The results of the code interpreter tool call.
+        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> Results { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.CodeInterpreterToolCallType Type { get; set; }
+
+        /// <summary>
+        /// The code to run.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Code { get; set; } = default!;
 
         /// <summary>
         /// The status of the code interpreter tool call.
@@ -34,10 +34,10 @@ namespace G
         public global::G.CodeInterpreterToolCallStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
+        /// The results of the code interpreter tool call.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CodeInterpreterToolCallType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> Results { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,32 +48,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterToolCall" /> class.
         /// </summary>
-        /// <param name="code">
-        /// The code to run.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the code interpreter tool call.
-        /// </param>
-        /// <param name="results">
-        /// The results of the code interpreter tool call.
-        /// </param>
-        /// <param name="status">
-        /// The status of the code interpreter tool call.
         /// </param>
         /// <param name="type">
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.
         /// </param>
+        /// <param name="code">
+        /// The code to run.
+        /// </param>
+        /// <param name="status">
+        /// The status of the code interpreter tool call.
+        /// </param>
+        /// <param name="results">
+        /// The results of the code interpreter tool call.
+        /// </param>
         public CodeInterpreterToolCall(
-            string code,
             string id,
-            global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> results,
+            string code,
             global::G.CodeInterpreterToolCallStatus status,
+            global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> results,
             global::G.CodeInterpreterToolCallType type)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Status = status;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Type = type;
         }
 

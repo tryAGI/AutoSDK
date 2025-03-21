@@ -16,12 +16,6 @@ namespace G
         public string? Code { get; set; }
 
         /// <summary>
-        /// The line number of the input file where the error occurred, if applicable.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        public int? Line { get; set; }
-
-        /// <summary>
         /// A human-readable message providing more details about the error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
@@ -32,6 +26,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("param")]
         public string? Param { get; set; }
+
+        /// <summary>
+        /// The line number of the input file where the error occurred, if applicable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("line")]
+        public int? Line { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,28 +45,28 @@ namespace G
         /// <param name="code">
         /// An error code identifying the error type.
         /// </param>
-        /// <param name="line">
-        /// The line number of the input file where the error occurred, if applicable.
-        /// </param>
         /// <param name="message">
         /// A human-readable message providing more details about the error.
         /// </param>
         /// <param name="param">
         /// The name of the parameter that caused the error, if applicable.
         /// </param>
+        /// <param name="line">
+        /// The line number of the input file where the error occurred, if applicable.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchErrorsDataItem(
             string? code,
-            int? line,
             string? message,
-            string? param)
+            string? param,
+            int? line)
         {
             this.Code = code;
-            this.Line = line;
             this.Message = message;
             this.Param = param;
+            this.Line = line;
         }
 
         /// <summary>

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class MessageRequestContentTextObject
     {
         /// <summary>
-        /// Text content to be sent to the model
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
         /// Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.MessageRequestContentTextObjectType Type { get; set; }
+
+        /// <summary>
+        /// Text content to be sent to the model
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageRequestContentTextObject" /> class.
         /// </summary>
-        /// <param name="text">
-        /// Text content to be sent to the model
-        /// </param>
         /// <param name="type">
         /// Always `text`.
+        /// </param>
+        /// <param name="text">
+        /// Text content to be sent to the model
         /// </param>
         public MessageRequestContentTextObject(
             string text,

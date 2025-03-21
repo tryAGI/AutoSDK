@@ -10,6 +10,13 @@ namespace G
     public sealed partial class FilePath
     {
         /// <summary>
+        /// The type of the file path. Always `file_path`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilePathTypeJsonConverter))]
+        public global::G.FilePathType Type { get; set; }
+
+        /// <summary>
         /// The ID of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
@@ -24,13 +31,6 @@ namespace G
         public required int Index { get; set; }
 
         /// <summary>
-        /// The type of the file path. Always `file_path`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilePathTypeJsonConverter))]
-        public global::G.FilePathType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,14 +39,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FilePath" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the file path. Always `file_path`.
+        /// </param>
         /// <param name="fileId">
         /// The ID of the file.
         /// </param>
         /// <param name="index">
         /// The index of the file in the list of files.
-        /// </param>
-        /// <param name="type">
-        /// The type of the file path. Always `file_path`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatCompletionRequestMessageContentPartFile
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionRequestMessageContentPartFileFile File { get; set; } = default!;
-
-        /// <summary>
         /// The type of the content part. Always `file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ChatCompletionRequestMessageContentPartFileType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("file", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionRequestMessageContentPartFileFile File { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFile" /> class.
         /// </summary>
-        /// <param name="file"></param>
         /// <param name="type">
         /// The type of the content part. Always `file`.
         /// </param>
+        /// <param name="file"></param>
         public ChatCompletionRequestMessageContentPartFile(
             global::G.ChatCompletionRequestMessageContentPartFileFile file,
             global::G.ChatCompletionRequestMessageContentPartFileType type)

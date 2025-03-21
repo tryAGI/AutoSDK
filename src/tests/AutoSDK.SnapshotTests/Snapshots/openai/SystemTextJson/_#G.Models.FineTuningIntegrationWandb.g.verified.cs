@@ -12,11 +12,13 @@ namespace G
     public sealed partial class FineTuningIntegrationWandb
     {
         /// <summary>
-        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
-        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
+        /// The name of the project that the new run will be created under.<br/>
+        /// Example: my-wandb-project
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("entity")]
-        public string? Entity { get; set; }
+        /// <example>my-wandb-project</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Project { get; set; }
 
         /// <summary>
         /// A display name to set for the run. If not set, we will use the Job ID as the name.
@@ -25,13 +27,11 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// The name of the project that the new run will be created under.<br/>
-        /// Example: my-wandb-project
+        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
+        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
         /// </summary>
-        /// <example>my-wandb-project</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("project")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Project { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("entity")]
+        public string? Entity { get; set; }
 
         /// <summary>
         /// A list of tags to be attached to the newly created run. These tags are passed through directly to WandB. Some<br/>
@@ -49,16 +49,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuningIntegrationWandb" /> class.
         /// </summary>
-        /// <param name="entity">
-        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
-        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
+        /// <param name="project">
+        /// The name of the project that the new run will be created under.<br/>
+        /// Example: my-wandb-project
         /// </param>
         /// <param name="name">
         /// A display name to set for the run. If not set, we will use the Job ID as the name.
         /// </param>
-        /// <param name="project">
-        /// The name of the project that the new run will be created under.<br/>
-        /// Example: my-wandb-project
+        /// <param name="entity">
+        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
+        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
         /// </param>
         /// <param name="tags">
         /// A list of tags to be attached to the newly created run. These tags are passed through directly to WandB. Some<br/>
@@ -69,13 +69,13 @@ namespace G
 #endif
         public FineTuningIntegrationWandb(
             string project,
-            string? entity,
             string? name,
+            string? entity,
             global::System.Collections.Generic.IList<string>? tags)
         {
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
-            this.Entity = entity;
             this.Name = name;
+            this.Entity = entity;
             this.Tags = tags;
         }
 

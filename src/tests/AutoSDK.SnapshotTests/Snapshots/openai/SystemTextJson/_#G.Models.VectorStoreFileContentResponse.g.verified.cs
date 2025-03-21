@@ -10,6 +10,13 @@ namespace G
     public sealed partial class VectorStoreFileContentResponse
     {
         /// <summary>
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
+        public global::G.VectorStoreFileContentResponseObject Object { get; set; }
+
+        /// <summary>
         /// Parsed content of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -31,13 +38,6 @@ namespace G
         public required string? NextPage { get; set; }
 
         /// <summary>
-        /// The object type, which is always `vector_store.file_content.page`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
-        public global::G.VectorStoreFileContentResponseObject Object { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +46,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileContentResponse" /> class.
         /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </param>
         /// <param name="data">
         /// Parsed content of the file.
         /// </param>
@@ -54,9 +57,6 @@ namespace G
         /// </param>
         /// <param name="nextPage">
         /// The token for the next page, if any.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file_content.page`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

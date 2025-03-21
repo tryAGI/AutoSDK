@@ -12,16 +12,16 @@ namespace G
     public sealed partial class MessageContentTextObjectText
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("annotations", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>> Annotations { get; set; } = default!;
-
-        /// <summary>
         /// The data that makes up the text.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
         public string Value { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("annotations", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>> Annotations { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,16 +32,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextObjectText" /> class.
         /// </summary>
-        /// <param name="annotations"></param>
         /// <param name="value">
         /// The data that makes up the text.
         /// </param>
+        /// <param name="annotations"></param>
         public MessageContentTextObjectText(
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>> annotations,
-            string value)
+            string value,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>> annotations)
         {
-            this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
         }
 
         /// <summary>

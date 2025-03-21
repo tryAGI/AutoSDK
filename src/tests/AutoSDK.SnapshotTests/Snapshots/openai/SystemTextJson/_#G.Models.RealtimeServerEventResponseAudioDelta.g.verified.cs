@@ -10,25 +10,25 @@ namespace G
     public sealed partial class RealtimeServerEventResponseAudioDelta
     {
         /// <summary>
-        /// The index of the content part in the item's content array.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
-
-        /// <summary>
-        /// Base64-encoded audio data delta.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `response.audio.delta`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseAudioDeltaTypeJsonConverter))]
+        public global::G.RealtimeServerEventResponseAudioDeltaType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ResponseId { get; set; }
 
         /// <summary>
         /// The ID of the item.
@@ -45,18 +45,18 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The ID of the response.
+        /// The index of the content part in the item's content array.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResponseId { get; set; }
+        public required int ContentIndex { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.audio.delta`.
+        /// Base64-encoded audio data delta.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseAudioDeltaTypeJsonConverter))]
-        public global::G.RealtimeServerEventResponseAudioDeltaType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,14 +67,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventResponseAudioDelta" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part in the item's content array.
-        /// </param>
-        /// <param name="delta">
-        /// Base64-encoded audio data delta.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.audio.delta`.
+        /// </param>
+        /// <param name="responseId">
+        /// The ID of the response.
         /// </param>
         /// <param name="itemId">
         /// The ID of the item.
@@ -82,30 +82,30 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
-        /// <param name="responseId">
-        /// The ID of the response.
+        /// <param name="contentIndex">
+        /// The index of the content part in the item's content array.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.audio.delta`.
+        /// <param name="delta">
+        /// Base64-encoded audio data delta.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventResponseAudioDelta(
-            int contentIndex,
-            string delta,
             string eventId,
+            string responseId,
             string itemId,
             int outputIndex,
-            string responseId,
+            int contentIndex,
+            string delta,
             global::G.RealtimeServerEventResponseAudioDeltaType type)
         {
-            this.ContentIndex = contentIndex;
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
+            this.ContentIndex = contentIndex;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }
 

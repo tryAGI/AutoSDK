@@ -10,18 +10,18 @@ namespace G
     public sealed partial class RunStepStreamEventVariant3
     {
         /// <summary>
-        /// Represents a run step delta i.e. any changed fields on a run step during streaming.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepDeltaObject Data { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepStreamEventVariant3EventJsonConverter))]
         public global::G.RunStepStreamEventVariant3Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a run step delta i.e. any changed fields on a run step during streaming.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RunStepDeltaObject Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepStreamEventVariant3" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
         /// </param>
-        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

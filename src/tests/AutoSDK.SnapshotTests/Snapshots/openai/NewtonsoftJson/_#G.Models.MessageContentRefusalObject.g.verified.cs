@@ -10,16 +10,16 @@ namespace G
     public sealed partial class MessageContentRefusalObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("refusal", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Refusal { get; set; } = default!;
-
-        /// <summary>
         /// Always `refusal`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.MessageContentRefusalObjectType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("refusal", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Refusal { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
         /// </summary>
-        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
+        /// <param name="refusal"></param>
         public MessageContentRefusalObject(
             string refusal,
             global::G.MessageContentRefusalObjectType type)

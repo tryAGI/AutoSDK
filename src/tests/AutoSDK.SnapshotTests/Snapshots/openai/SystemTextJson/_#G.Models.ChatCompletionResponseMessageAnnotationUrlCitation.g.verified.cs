@@ -24,18 +24,18 @@ namespace G
         public required int StartIndex { get; set; }
 
         /// <summary>
-        /// The title of the web resource.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Title { get; set; }
-
-        /// <summary>
         /// The URL of the web resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
+
+        /// <summary>
+        /// The title of the web resource.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,11 +52,11 @@ namespace G
         /// <param name="startIndex">
         /// The index of the first character of the URL citation in the message.
         /// </param>
-        /// <param name="title">
-        /// The title of the web resource.
-        /// </param>
         /// <param name="url">
         /// The URL of the web resource.
+        /// </param>
+        /// <param name="title">
+        /// The title of the web resource.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,13 +64,13 @@ namespace G
         public ChatCompletionResponseMessageAnnotationUrlCitation(
             int endIndex,
             int startIndex,
-            string title,
-            string url)
+            string url,
+            string title)
         {
             this.EndIndex = endIndex;
             this.StartIndex = startIndex;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
         }
 
         /// <summary>

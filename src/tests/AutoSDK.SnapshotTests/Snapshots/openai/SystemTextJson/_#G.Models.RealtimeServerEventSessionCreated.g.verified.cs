@@ -19,18 +19,18 @@ namespace G
         public required string EventId { get; set; }
 
         /// <summary>
-        /// Realtime session object configuration.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeSession Session { get; set; }
-
-        /// <summary>
         /// The event type, must be `session.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventSessionCreatedTypeJsonConverter))]
         public global::G.RealtimeServerEventSessionCreatedType Type { get; set; }
+
+        /// <summary>
+        /// Realtime session object configuration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RealtimeSession Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +44,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="session">
-        /// Realtime session object configuration.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `session.created`.
+        /// </param>
+        /// <param name="session">
+        /// Realtime session object configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -10,10 +10,10 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallInProgressEvent
     {
         /// <summary>
-        /// A tool call to run code.
+        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code_interpreter_call", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeInterpreterToolCall CodeInterpreterCall { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseCodeInterpreterCallInProgressEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
@@ -22,10 +22,10 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
+        /// A tool call to run code.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ResponseCodeInterpreterCallInProgressEventType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("code_interpreter_call", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.CodeInterpreterToolCall CodeInterpreterCall { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallInProgressEvent" /> class.
         /// </summary>
-        /// <param name="codeInterpreterCall">
-        /// A tool call to run code.
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
+        /// <param name="codeInterpreterCall">
+        /// A tool call to run code.
         /// </param>
         public ResponseCodeInterpreterCallInProgressEvent(
-            global::G.CodeInterpreterToolCall codeInterpreterCall,
             int outputIndex,
+            global::G.CodeInterpreterToolCall codeInterpreterCall,
             global::G.ResponseCodeInterpreterCallInProgressEventType type)
         {
-            this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
             this.OutputIndex = outputIndex;
+            this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
             this.Type = type;
         }
 

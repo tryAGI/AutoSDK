@@ -10,16 +10,16 @@ namespace G
     public sealed partial class SubmitToolOutputsRunRequestToolOutput
     {
         /// <summary>
-        /// The output of the tool call to be submitted to continue the run.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("output")]
-        public string? Output { get; set; }
-
-        /// <summary>
         /// The ID of the tool call in the `required_action` object within the run object the output is being submitted for.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call_id")]
         public string? ToolCallId { get; set; }
+
+        /// <summary>
+        /// The output of the tool call to be submitted to continue the run.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("output")]
+        public string? Output { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitToolOutputsRunRequestToolOutput" /> class.
         /// </summary>
-        /// <param name="output">
-        /// The output of the tool call to be submitted to continue the run.
-        /// </param>
         /// <param name="toolCallId">
         /// The ID of the tool call in the `required_action` object within the run object the output is being submitted for.
         /// </param>
+        /// <param name="output">
+        /// The output of the tool call to be submitted to continue the run.
+        /// </param>
         public SubmitToolOutputsRunRequestToolOutput(
-            string? output,
-            string? toolCallId)
+            string? toolCallId,
+            string? output)
         {
-            this.Output = output;
             this.ToolCallId = toolCallId;
+            this.Output = output;
         }
 
         /// <summary>

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ToolChoiceFunction
     {
         /// <summary>
-        /// The name of the function to call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
-
-        /// <summary>
         /// For function calling, the type is always `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ToolChoiceFunctionType Type { get; set; }
+
+        /// <summary>
+        /// The name of the function to call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the function to call.
-        /// </param>
         /// <param name="type">
         /// For function calling, the type is always `function`.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function to call.
         /// </param>
         public ToolChoiceFunction(
             string name,

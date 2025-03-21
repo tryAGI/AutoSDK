@@ -10,13 +10,6 @@ namespace G
     public sealed partial class Type
     {
         /// <summary>
-        /// The text to type.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
         /// Specifies the event type. For a type action, this property is <br/>
         /// always set to `type`.<br/>
         /// Default Value: type
@@ -27,6 +20,13 @@ namespace G
         public global::G.TypeType1 Type1 { get; set; } = global::G.TypeType1.Type;
 
         /// <summary>
+        /// The text to type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,13 +35,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Type" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The text to type.
-        /// </param>
         /// <param name="type1">
         /// Specifies the event type. For a type action, this property is <br/>
         /// always set to `type`.<br/>
         /// Default Value: type
+        /// </param>
+        /// <param name="text">
+        /// The text to type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

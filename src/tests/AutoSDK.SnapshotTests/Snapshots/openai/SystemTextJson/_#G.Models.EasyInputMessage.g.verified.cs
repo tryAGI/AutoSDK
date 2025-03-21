@@ -16,15 +16,6 @@ namespace G
     public sealed partial class EasyInputMessage
     {
         /// <summary>
-        /// Text, image, or audio input to the model, used to generate a response.<br/>
-        /// Can also contain previous assistant responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.InputContent>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> Content { get; set; }
-
-        /// <summary>
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
         /// </summary>
@@ -32,6 +23,15 @@ namespace G
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EasyInputMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EasyInputMessageRole Role { get; set; }
+
+        /// <summary>
+        /// Text, image, or audio input to the model, used to generate a response.<br/>
+        /// Can also contain previous assistant responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.InputContent>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> Content { get; set; }
 
         /// <summary>
         /// The type of the message input. Always `message`.
@@ -49,13 +49,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EasyInputMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// Text, image, or audio input to the model, used to generate a response.<br/>
-        /// Can also contain previous assistant responses.
-        /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
+        /// </param>
+        /// <param name="content">
+        /// Text, image, or audio input to the model, used to generate a response.<br/>
+        /// Can also contain previous assistant responses.
         /// </param>
         /// <param name="type">
         /// The type of the message input. Always `message`.
@@ -64,12 +64,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EasyInputMessage(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> content,
             global::G.EasyInputMessageRole role,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.InputContent>> content,
             global::G.EasyInputMessageType? type)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.Type = type;
         }
 

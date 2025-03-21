@@ -10,6 +10,12 @@ namespace G
     public sealed partial class CostsResult
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.CostsResultObject Object { get; set; }
+
+        /// <summary>
         /// The monetary value in its associated currency.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("amount")]
@@ -20,12 +26,6 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line_item")]
         public string? LineItem { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.CostsResultObject Object { get; set; }
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
@@ -42,25 +42,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CostsResult" /> class.
         /// </summary>
+        /// <param name="object"></param>
         /// <param name="amount">
         /// The monetary value in its associated currency.
         /// </param>
         /// <param name="lineItem">
         /// When `group_by=line_item`, this field provides the line item of the grouped costs result.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
         /// </param>
         public CostsResult(
+            global::G.CostsResultObject @object,
             global::G.CostsResultAmount? amount,
             string? lineItem,
-            global::G.CostsResultObject @object,
             string? projectId)
         {
+            this.Object = @object;
             this.Amount = amount;
             this.LineItem = lineItem;
-            this.Object = @object;
             this.ProjectId = projectId;
         }
 

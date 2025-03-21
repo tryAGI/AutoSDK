@@ -10,17 +10,17 @@ namespace G
     public sealed partial class SubmitToolOutputsRunRequest
     {
         /// <summary>
-        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool? Stream { get; set; }
-
-        /// <summary>
         /// A list of tools for which the outputs are being submitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutput> ToolOutputs { get; set; }
+
+        /// <summary>
+        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SubmitToolOutputsRunRequest" /> class.
         /// </summary>
-        /// <param name="stream">
-        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-        /// </param>
         /// <param name="toolOutputs">
         /// A list of tools for which the outputs are being submitted.
+        /// </param>
+        /// <param name="stream">
+        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

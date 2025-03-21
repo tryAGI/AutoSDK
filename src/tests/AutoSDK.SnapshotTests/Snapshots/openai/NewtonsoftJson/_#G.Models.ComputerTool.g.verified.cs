@@ -11,10 +11,10 @@ namespace G
     public sealed partial class ComputerTool
     {
         /// <summary>
-        /// The height of the computer display.
+        /// The type of the computer use tool. Always `computer_use_preview`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("display_height", Required = global::Newtonsoft.Json.Required.Always)]
-        public double DisplayHeight { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ComputerToolType Type { get; set; }
 
         /// <summary>
         /// The width of the computer display.
@@ -23,16 +23,16 @@ namespace G
         public double DisplayWidth { get; set; } = default!;
 
         /// <summary>
+        /// The height of the computer display.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("display_height", Required = global::Newtonsoft.Json.Required.Always)]
+        public double DisplayHeight { get; set; } = default!;
+
+        /// <summary>
         /// The type of computer environment to control.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ComputerToolEnvironment Environment { get; set; } = default!;
-
-        /// <summary>
-        /// The type of the computer use tool. Always `computer_use_preview`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ComputerToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,26 +43,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerTool" /> class.
         /// </summary>
-        /// <param name="displayHeight">
-        /// The height of the computer display.
+        /// <param name="type">
+        /// The type of the computer use tool. Always `computer_use_preview`.
         /// </param>
         /// <param name="displayWidth">
         /// The width of the computer display.
         /// </param>
+        /// <param name="displayHeight">
+        /// The height of the computer display.
+        /// </param>
         /// <param name="environment">
         /// The type of computer environment to control.
         /// </param>
-        /// <param name="type">
-        /// The type of the computer use tool. Always `computer_use_preview`.
-        /// </param>
         public ComputerTool(
-            double displayHeight,
             double displayWidth,
+            double displayHeight,
             global::G.ComputerToolEnvironment environment,
             global::G.ComputerToolType type)
         {
-            this.DisplayHeight = displayHeight;
             this.DisplayWidth = displayWidth;
+            this.DisplayHeight = displayHeight;
             this.Environment = environment;
             this.Type = type;
         }

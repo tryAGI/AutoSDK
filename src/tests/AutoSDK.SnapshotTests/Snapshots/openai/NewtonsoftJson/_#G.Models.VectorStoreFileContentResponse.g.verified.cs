@@ -10,6 +10,12 @@ namespace G
     public sealed partial class VectorStoreFileContentResponse
     {
         /// <summary>
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.VectorStoreFileContentResponseObject Object { get; set; }
+
+        /// <summary>
         /// Parsed content of the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,12 +34,6 @@ namespace G
         public string? NextPage { get; set; } = default!;
 
         /// <summary>
-        /// The object type, which is always `vector_store.file_content.page`
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.VectorStoreFileContentResponseObject Object { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileContentResponse" /> class.
         /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </param>
         /// <param name="data">
         /// Parsed content of the file.
         /// </param>
@@ -50,9 +53,6 @@ namespace G
         /// </param>
         /// <param name="nextPage">
         /// The token for the next page, if any.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file_content.page`
         /// </param>
         public VectorStoreFileContentResponse(
             global::System.Collections.Generic.IList<global::G.VectorStoreFileContentResponseDataItem> data,

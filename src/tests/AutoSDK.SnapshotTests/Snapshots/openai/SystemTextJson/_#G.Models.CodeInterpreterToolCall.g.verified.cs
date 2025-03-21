@@ -10,13 +10,6 @@ namespace G
     public sealed partial class CodeInterpreterToolCall
     {
         /// <summary>
-        /// The code to run.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
-
-        /// <summary>
         /// The unique ID of the code interpreter tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -24,11 +17,18 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// The results of the code interpreter tool call.
+        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("results")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolCallTypeJsonConverter))]
+        public global::G.CodeInterpreterToolCallType Type { get; set; }
+
+        /// <summary>
+        /// The code to run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> Results { get; set; }
+        public required string Code { get; set; }
 
         /// <summary>
         /// The status of the code interpreter tool call.
@@ -39,11 +39,11 @@ namespace G
         public required global::G.CodeInterpreterToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
+        /// The results of the code interpreter tool call.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolCallTypeJsonConverter))]
-        public global::G.CodeInterpreterToolCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("results")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,35 +54,35 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterToolCall" /> class.
         /// </summary>
-        /// <param name="code">
-        /// The code to run.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the code interpreter tool call.
         /// </param>
-        /// <param name="results">
-        /// The results of the code interpreter tool call.
+        /// <param name="type">
+        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
+        /// </param>
+        /// <param name="code">
+        /// The code to run.
         /// </param>
         /// <param name="status">
         /// The status of the code interpreter tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
+        /// <param name="results">
+        /// The results of the code interpreter tool call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterToolCall(
-            string code,
             string id,
-            global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> results,
+            string code,
             global::G.CodeInterpreterToolCallStatus status,
+            global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> results,
             global::G.CodeInterpreterToolCallType type)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Status = status;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Type = type;
         }
 

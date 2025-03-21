@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ReasoningItemContentItem
     {
         /// <summary>
+        /// The type of the object. Always `text`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemContentItemTypeJsonConverter))]
+        public global::G.ReasoningItemContentItemType Type { get; set; }
+
+        /// <summary>
         /// A short summary of the reasoning used by the model when generating<br/>
         /// the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
-
-        /// <summary>
-        /// The type of the object. Always `text`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemContentItemTypeJsonConverter))]
-        public global::G.ReasoningItemContentItemType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +33,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningItemContentItem" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the object. Always `text`.
+        /// </param>
         /// <param name="text">
         /// A short summary of the reasoning used by the model when generating<br/>
         /// the response.
-        /// </param>
-        /// <param name="type">
-        /// The type of the object. Always `text`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

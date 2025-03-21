@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallCompletedEvent
     {
         /// <summary>
-        /// A tool call to run code.
+        /// The type of the event. Always `response.code_interpreter_call.completed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter_call")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeInterpreterToolCall CodeInterpreterCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCompletedEventTypeJsonConverter))]
+        public global::G.ResponseCodeInterpreterCallCompletedEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
@@ -24,11 +24,11 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.completed`.
+        /// A tool call to run code.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCompletedEventTypeJsonConverter))]
-        public global::G.ResponseCodeInterpreterCallCompletedEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter_call")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.CodeInterpreterToolCall CodeInterpreterCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="codeInterpreterCall">
-        /// A tool call to run code.
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.completed`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.completed`.
+        /// <param name="codeInterpreterCall">
+        /// A tool call to run code.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallCompletedEvent(
-            global::G.CodeInterpreterToolCall codeInterpreterCall,
             int outputIndex,
+            global::G.CodeInterpreterToolCall codeInterpreterCall,
             global::G.ResponseCodeInterpreterCallCompletedEventType type)
         {
-            this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
             this.OutputIndex = outputIndex;
+            this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
             this.Type = type;
         }
 

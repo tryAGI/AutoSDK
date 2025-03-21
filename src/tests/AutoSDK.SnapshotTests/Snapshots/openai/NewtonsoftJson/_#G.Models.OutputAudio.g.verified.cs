@@ -10,6 +10,12 @@ namespace G
     public sealed partial class OutputAudio
     {
         /// <summary>
+        /// The type of the output audio. Always `output_audio`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.OutputAudioType Type { get; set; }
+
+        /// <summary>
         /// Base64-encoded audio data from the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
@@ -22,12 +28,6 @@ namespace G
         public string Transcript { get; set; } = default!;
 
         /// <summary>
-        /// The type of the output audio. Always `output_audio`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.OutputAudioType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputAudio" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the output audio. Always `output_audio`.
+        /// </param>
         /// <param name="data">
         /// Base64-encoded audio data from the model.
         /// </param>
         /// <param name="transcript">
         /// The transcript of the audio data from the model.
-        /// </param>
-        /// <param name="type">
-        /// The type of the output audio. Always `output_audio`.
         /// </param>
         public OutputAudio(
             string data,

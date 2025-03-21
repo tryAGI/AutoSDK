@@ -11,16 +11,16 @@ namespace G
     public sealed partial class ResponseFormatJsonSchema
     {
         /// <summary>
-        /// Structured Outputs configuration options, including a JSON Schema.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("json_schema", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ResponseFormatJsonSchemaJsonSchema JsonSchema { get; set; } = default!;
-
-        /// <summary>
         /// The type of response format being defined. Always `json_schema`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ResponseFormatJsonSchemaType Type { get; set; }
+
+        /// <summary>
+        /// Structured Outputs configuration options, including a JSON Schema.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("json_schema", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ResponseFormatJsonSchemaJsonSchema JsonSchema { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFormatJsonSchema" /> class.
         /// </summary>
-        /// <param name="jsonSchema">
-        /// Structured Outputs configuration options, including a JSON Schema.
-        /// </param>
         /// <param name="type">
         /// The type of response format being defined. Always `json_schema`.
+        /// </param>
+        /// <param name="jsonSchema">
+        /// Structured Outputs configuration options, including a JSON Schema.
         /// </param>
         public ResponseFormatJsonSchema(
             global::G.ResponseFormatJsonSchemaJsonSchema jsonSchema,

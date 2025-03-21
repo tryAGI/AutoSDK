@@ -10,11 +10,13 @@ namespace G
     public sealed partial class CreateBatchRequest
     {
         /// <summary>
-        /// The time frame within which the batch should be processed. Currently only `24h` is supported.
+        /// The ID of an uploaded file that contains requests for the new batch.<br/>
+        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
-        public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_file_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string InputFileId { get; set; }
 
         /// <summary>
         /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
@@ -25,13 +27,11 @@ namespace G
         public required global::G.CreateBatchRequestEndpoint Endpoint { get; set; }
 
         /// <summary>
-        /// The ID of an uploaded file that contains requests for the new batch.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
-        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+        /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_file_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string InputFileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
+        public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -52,16 +52,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateBatchRequest" /> class.
         /// </summary>
-        /// <param name="completionWindow">
-        /// The time frame within which the batch should be processed. Currently only `24h` is supported.
-        /// </param>
-        /// <param name="endpoint">
-        /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
-        /// </param>
         /// <param name="inputFileId">
         /// The ID of an uploaded file that contains requests for the new batch.<br/>
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+        /// </param>
+        /// <param name="endpoint">
+        /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
+        /// </param>
+        /// <param name="completionWindow">
+        /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -74,13 +74,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateBatchRequest(
-            global::G.CreateBatchRequestEndpoint endpoint,
             string inputFileId,
+            global::G.CreateBatchRequestEndpoint endpoint,
             global::G.CreateBatchRequestCompletionWindow completionWindow,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.Endpoint = endpoint;
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
+            this.Endpoint = endpoint;
             this.CompletionWindow = completionWindow;
             this.Metadata = metadata;
         }

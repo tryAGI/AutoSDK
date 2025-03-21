@@ -18,19 +18,19 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
+        /// The type of the web search tool call. Always `web_search_call`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolCallTypeJsonConverter))]
+        public global::G.WebSearchToolCallType Type { get; set; }
+
+        /// <summary>
         /// The status of the web search tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebSearchToolCallStatus Status { get; set; }
-
-        /// <summary>
-        /// The type of the web search tool call. Always `web_search_call`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolCallTypeJsonConverter))]
-        public global::G.WebSearchToolCallType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +44,11 @@ namespace G
         /// <param name="id">
         /// The unique ID of the web search tool call.
         /// </param>
-        /// <param name="status">
-        /// The status of the web search tool call.
-        /// </param>
         /// <param name="type">
         /// The type of the web search tool call. Always `web_search_call`.
+        /// </param>
+        /// <param name="status">
+        /// The status of the web search tool call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

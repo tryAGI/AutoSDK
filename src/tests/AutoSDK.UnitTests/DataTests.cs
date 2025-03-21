@@ -54,6 +54,7 @@ public partial class DataTests
                     "ai21.json" => true,
                     "replicate.json" => true,
                     "luma.yaml" => true,
+                    "openai.yaml" => true,
                     _ => false,
                 },
             })),

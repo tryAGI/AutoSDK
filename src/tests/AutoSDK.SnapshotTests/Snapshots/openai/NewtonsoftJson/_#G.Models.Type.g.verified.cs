@@ -10,12 +10,6 @@ namespace G
     public sealed partial class Type
     {
         /// <summary>
-        /// The text to type.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
         /// Specifies the event type. For a type action, this property is <br/>
         /// always set to `type`.<br/>
         /// Default Value: type
@@ -23,6 +17,12 @@ namespace G
         /// <default>global::G.TypeType1.Type</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.TypeType1 Type1 { get; set; } = global::G.TypeType1.Type;
+
+        /// <summary>
+        /// The text to type.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Type" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The text to type.
-        /// </param>
         /// <param name="type1">
         /// Specifies the event type. For a type action, this property is <br/>
         /// always set to `type`.<br/>
         /// Default Value: type
+        /// </param>
+        /// <param name="text">
+        /// The text to type.
         /// </param>
         public Type(
             string text,

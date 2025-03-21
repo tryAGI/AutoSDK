@@ -11,11 +11,11 @@ namespace G
     public sealed partial class ReasoningItem
     {
         /// <summary>
-        /// Reasoning text contents.
+        /// The type of the object. Always `reasoning`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemTypeJsonConverter))]
+        public global::G.ReasoningItemType Type { get; set; }
 
         /// <summary>
         /// The unique identifier of the reasoning content.
@@ -23,6 +23,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// Reasoning text contents.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> Content { get; set; }
 
         /// <summary>
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -33,13 +40,6 @@ namespace G
         public global::G.ReasoningItemStatus? Status { get; set; }
 
         /// <summary>
-        /// The type of the object. Always `reasoning`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemTypeJsonConverter))]
-        public global::G.ReasoningItemType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,32 +48,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningItem" /> class.
         /// </summary>
-        /// <param name="content">
-        /// Reasoning text contents.
+        /// <param name="type">
+        /// The type of the object. Always `reasoning`.
         /// </param>
         /// <param name="id">
         /// The unique identifier of the reasoning content.
+        /// </param>
+        /// <param name="content">
+        /// Reasoning text contents.
         /// </param>
         /// <param name="status">
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
-        /// <param name="type">
-        /// The type of the object. Always `reasoning`.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReasoningItem(
-            global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> content,
             string id,
-            global::G.ReasoningItemStatus? status,
-            global::G.ReasoningItemType type)
+            global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> content,
+            global::G.ReasoningItemType type,
+            global::G.ReasoningItemStatus? status)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Status = status;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Type = type;
+            this.Status = status;
         }
 
         /// <summary>

@@ -10,13 +10,6 @@ namespace G
     public sealed partial class RealtimeServerEventConversationCreated
     {
         /// <summary>
-        /// The conversation resource.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeServerEventConversationCreatedConversation Conversation { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
@@ -31,6 +24,13 @@ namespace G
         public global::G.RealtimeServerEventConversationCreatedType Type { get; set; }
 
         /// <summary>
+        /// The conversation resource.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RealtimeServerEventConversationCreatedConversation Conversation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,25 +39,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationCreated" /> class.
         /// </summary>
-        /// <param name="conversation">
-        /// The conversation resource.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.created`.
         /// </param>
+        /// <param name="conversation">
+        /// The conversation resource.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationCreated(
-            global::G.RealtimeServerEventConversationCreatedConversation conversation,
             string eventId,
+            global::G.RealtimeServerEventConversationCreatedConversation conversation,
             global::G.RealtimeServerEventConversationCreatedType type)
         {
-            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
             this.Type = type;
         }
 

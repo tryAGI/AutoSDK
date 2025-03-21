@@ -21,10 +21,10 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The item to add to the conversation.
+        /// The event type, must be `conversation.item.create`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RealtimeConversationItem Item { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeClientEventConversationItemCreateType Type { get; set; }
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted. <br/>
@@ -37,10 +37,10 @@ namespace G
         public string? PreviousItemId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.create`.
+        /// The item to add to the conversation.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeClientEventConversationItemCreateType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RealtimeConversationItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="item">
-        /// The item to add to the conversation.
+        /// <param name="type">
+        /// The event type, must be `conversation.item.create`.
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted. <br/>
@@ -64,19 +64,19 @@ namespace G
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
         /// ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.create`.
+        /// <param name="item">
+        /// The item to add to the conversation.
         /// </param>
         public RealtimeClientEventConversationItemCreate(
             global::G.RealtimeConversationItem item,
             string? eventId,
-            string? previousItemId,
-            global::G.RealtimeClientEventConversationItemCreateType type)
+            global::G.RealtimeClientEventConversationItemCreateType type,
+            string? previousItemId)
         {
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.EventId = eventId;
-            this.PreviousItemId = previousItemId;
             this.Type = type;
+            this.PreviousItemId = previousItemId;
         }
 
         /// <summary>

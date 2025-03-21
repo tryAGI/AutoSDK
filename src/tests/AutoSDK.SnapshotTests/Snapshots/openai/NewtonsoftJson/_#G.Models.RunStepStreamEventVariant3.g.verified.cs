@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RunStepStreamEventVariant3
     {
         /// <summary>
-        /// Represents a run step delta i.e. any changed fields on a run step during streaming.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDeltaObject Data { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
         public global::G.RunStepStreamEventVariant3Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a run step delta i.e. any changed fields on a run step during streaming.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RunStepDeltaObject Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepStreamEventVariant3" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
         /// </param>
-        /// <param name="event"></param>
         public RunStepStreamEventVariant3(
             global::G.RunStepDeltaObject data,
             global::G.RunStepStreamEventVariant3Event @event)
