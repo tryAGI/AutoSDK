@@ -1,0 +1,64 @@
+<Solution>
+  <Folder Name="/helpers/">
+    <Project Path="src/helpers/GenerateDocs/GenerateDocs.csproj" />
+  </Folder>
+  <Folder Name="/libs/">
+    <File Path="src/libs/Directory.Build.props" />
+    <Project Path="src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj" />
+    <Project Path="src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" />
+    <Project Path="src/libs/AutoSDK/AutoSDK.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/dependabot.yml" />
+    <File Path=".gitignore" />
+    <File Path="LICENSE.md" />
+    <File Path="mkdocs.yml" />
+    <File Path="README.md" />
+    <File Path="src/Directory.Build.props" />
+  </Folder>
+  <Folder Name="/Solution Items/specs/">
+    <File Path="specs/ai21.json" />
+    <File Path="specs/anthropic.yaml" />
+    <File Path="specs/assemblyai.yaml" />
+    <File Path="specs/cohere.yaml" />
+    <File Path="specs/dedoose.json" />
+    <File Path="specs/elevenlabs.json" />
+    <File Path="specs/filtering.yaml" />
+    <File Path="specs/github.yaml" />
+    <File Path="specs/google-gemini.yaml" />
+    <File Path="specs/heygen.yaml" />
+    <File Path="specs/huggingface.yaml" />
+    <File Path="specs/ideogram.yaml" />
+    <File Path="specs/instill.yaml" />
+    <File Path="specs/ipinfo.yaml" />
+    <File Path="specs/jina.json" />
+    <File Path="specs/langsmith.json" />
+    <File Path="specs/leonardo.yaml" />
+    <File Path="specs/luma.yaml" />
+    <File Path="specs/mistral.yaml" />
+    <File Path="specs/mystic.yaml" />
+    <File Path="specs/ollama.yaml" />
+    <File Path="specs/openai.yaml" />
+    <File Path="specs/petstore.yaml" />
+    <File Path="specs/recraft.yaml" />
+    <File Path="specs/replicate.json" />
+    <File Path="specs/security.yaml" />
+    <File Path="specs/special-cases.yaml" />
+    <File Path="specs/together.yaml" />
+    <File Path="specs/twitch.json" />
+    <File Path="specs/vectara.yaml" />
+    <File Path="specs/weaviate.yaml" />
+  </Folder>
+  <Folder Name="/Solution Items/workflows/">
+    <File Path=".github/workflows/auto-merge.yml" />
+    <File Path=".github/workflows/main.yml" />
+    <File Path=".github/workflows/mkdocs.yml" />
+    <File Path=".github/workflows/pull-request.yml" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj" />
+    <Project Path="src/tests/AutoSDK.SnapshotTests/AutoSDK.SnapshotTests.csproj" />
+    <Project Path="src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj" />
+    <Project Path="src/tests/TrimmingHelper/TrimmingHelper.csproj" />
+  </Folder>
+</Solution>
