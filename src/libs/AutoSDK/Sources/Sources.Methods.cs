@@ -24,7 +24,11 @@ public static partial class Sources
         };
         
         return $@"
-#nullable enable
+#nullable enable{(
+    endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) || 
+    endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated)? @"
+
+#pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
 namespace {endPoint.Namespace}
 {{
