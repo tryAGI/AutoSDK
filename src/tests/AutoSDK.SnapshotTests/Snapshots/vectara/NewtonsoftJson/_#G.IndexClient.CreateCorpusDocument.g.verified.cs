@@ -30,8 +30,15 @@ namespace G
 
         /// <summary>
         /// Add a document to a corpus<br/>
-        /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
+        /// Add a document to a corpus. This endpoint supports two document formats, structured and core.<br/>
+        /// * **Structured** documents have a more conventional structure that provide document sections<br/>
+        /// and parts in a format created by Vectara's proprietary strategy automatically. You provide <br/>
+        /// a logical document structure, and Vectara handles the partitioning.<br/>
+        /// * **Core** documents differ in that they follow an advanced, granular structure that <br/>
+        /// explicitly defines each document part in an array. Each part becomes a distinct, <br/>
+        /// searchable item in query results. You have precise control over the document structure <br/>
+        /// and content.<br/>
+        /// For more details, see [Indexing](https://docs.vectara.com/docs/learn/select-ideal-indexing-api). 
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -208,6 +215,34 @@ namespace G
                         h => h.Value),
                 };
             }
+            // The document already exists
+            if ((int)__response.StatusCode == 409)
+            {
+                string? __content_409 = null;
+                global::G.Error? __value_409 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = global::G.Error.FromJson(__content_409, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = await global::G.Error.FromJsonStreamAsync(__contentStream_409, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.Error>(
+                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_409,
+                    ResponseObject = __value_409,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -283,8 +318,15 @@ namespace G
 
         /// <summary>
         /// Add a document to a corpus<br/>
-        /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
+        /// Add a document to a corpus. This endpoint supports two document formats, structured and core.<br/>
+        /// * **Structured** documents have a more conventional structure that provide document sections<br/>
+        /// and parts in a format created by Vectara's proprietary strategy automatically. You provide <br/>
+        /// a logical document structure, and Vectara handles the partitioning.<br/>
+        /// * **Core** documents differ in that they follow an advanced, granular structure that <br/>
+        /// explicitly defines each document part in an array. Each part becomes a distinct, <br/>
+        /// searchable item in query results. You have precise control over the document structure <br/>
+        /// and content.<br/>
+        /// For more details, see [Indexing](https://docs.vectara.com/docs/learn/select-ideal-indexing-api). 
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

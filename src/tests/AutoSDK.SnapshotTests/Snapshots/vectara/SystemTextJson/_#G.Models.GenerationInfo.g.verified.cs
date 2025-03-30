@@ -18,14 +18,13 @@ namespace G
         public string? Type { get; set; }
 
         /// <summary>
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
-        /// to Scale customers.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rendered_prompt")]
         public string? RenderedPrompt { get; set; }
 
         /// <summary>
-        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// View the actual query made to backend that was rephrased <br/>
         /// by the LLM from the input query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rephrased_query")]
@@ -46,11 +45,10 @@ namespace G
         /// Default Value: generation_info
         /// </param>
         /// <param name="renderedPrompt">
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
-        /// to Scale customers.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.
         /// </param>
         /// <param name="rephrasedQuery">
-        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// View the actual query made to backend that was rephrased <br/>
         /// by the LLM from the input query.
         /// </param>
 #if NET7_0_OR_GREATER

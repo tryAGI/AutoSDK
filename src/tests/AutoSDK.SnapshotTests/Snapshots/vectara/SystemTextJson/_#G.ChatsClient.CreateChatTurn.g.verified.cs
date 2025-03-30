@@ -299,6 +299,15 @@ namespace G
         /// <param name="chat">
         /// Parameters to control chat behavior.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save the chat in both the chat and query history. This overrides `chat.store`.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="intelligentQueryRewriting">
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="streamResponse">
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
@@ -313,6 +322,8 @@ namespace G
             int? requestTimeoutMillis = default,
             global::G.GenerationParameters? generation = default,
             global::G.ChatParameters? chat = default,
+            bool? saveHistory = default,
+            bool? intelligentQueryRewriting = default,
             bool? streamResponse = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -322,6 +333,8 @@ namespace G
                 Search = search,
                 Generation = generation,
                 Chat = chat,
+                SaveHistory = saveHistory,
+                IntelligentQueryRewriting = intelligentQueryRewriting,
                 StreamResponse = streamResponse,
             };
 

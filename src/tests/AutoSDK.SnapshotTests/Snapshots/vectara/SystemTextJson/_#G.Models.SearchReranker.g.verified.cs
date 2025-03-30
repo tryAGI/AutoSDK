@@ -6,9 +6,9 @@
 namespace G
 {
     /// <summary>
-    /// Rerank results of the search. Rerankers are very powerful tools to better order search results.<br/>
+    /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results.<br/>
     /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
-    /// To disable reranking set the reranker `type` to `"none"`.
+    /// To disable reranking, set the reranker `type` to `"none"`.
     /// </summary>
     public readonly partial struct SearchReranker : global::System.IEquatable<SearchReranker>
     {
@@ -53,7 +53,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A reranker that uses user-defined functions to reorder search results.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UserFunctionReranker? Userfn { get; init; }
@@ -88,7 +88,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MMRReranker? Mmr { get; init; }
@@ -123,7 +123,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A reranker that applies multiple rerankers in sequence to produce the final search results.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChainReranker? Chain { get; init; }
@@ -158,7 +158,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A placeholder reranker that does not modify the original search results ordering.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NoneReranker? None { get; init; }
@@ -222,6 +222,17 @@ namespace G
             Mmr as object ??
             Userfn as object ??
             CustomerReranker as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            CustomerReranker?.ToString() ??
+            Userfn?.ToString() ??
+            Mmr?.ToString() ??
+            Chain?.ToString() ??
+            None?.ToString() 
             ;
 
         /// <summary>

@@ -30,9 +30,11 @@ namespace G
 
         /// <summary>
         /// Upload a file to the corpus<br/>
-        /// Upload files such as PDFs and Word Documents. Vectara will attempt to automatically extract text and any metadata.<br/>
-        /// The File Upload endpoint request expects a `multipart/form-data` request containing the following parts:<br/>
+        /// Upload files such as PDFs and Word Documents for automatic text extraction and metadata parsing.<br/>
+        /// The request expects a `multipart/form-data` format containing the following parts:<br/>
         /// * `metadata` - (Optional) Specifies a JSON object representing any additional metadata to be associated with the extracted document. For example, `'metadata={"key": "value"};type=application/json'`<br/>
+        /// * `chunking_strategy` - (Optional) Specifies the chunking strategy for the platform to use. If you do not set this option, the platform uses the default strategy, which creates one chunk per sentence. You can explicitly set sentence chunking with `'chunking_strategy={"type":"sentence_chunking_strategy"};type=application/json'` or use max chars chunking with `'chunking_strategy={"type":"max_chars_chunking_strategy","max_chars_per_chunk":200};type=application/json'`<br/>
+        /// * `table_extraction_config` - (Optional) Specifies whether to extract table data from the uploaded file. If you do not set this option, the platform does not extract tables from PDF files. Example config, `'table_extraction_config={"extract_tables":true};type=application/json'`<br/>
         /// * `file` - Specifies the file that you want to upload.<br/>
         /// * `filename` - Specified as part of the file field with the file name that you want to associate with the uploaded file. For a curl example, use the following syntax: `'file=@/path/to/file/file.pdf;filename=desired_filename.pdf'`<br/>
         /// For more detailed information, see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
@@ -122,6 +124,18 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Metadata}"),
                     name: "metadata");
+            } 
+            if (request.ChunkingStrategy != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.ChunkingStrategy?.ToString() ?? string.Empty),
+                    name: "chunking_strategy");
+            } 
+            if (request.TableExtractionConfig != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.TableExtractionConfig}"),
+                    name: "table_extraction_config");
             } 
             if (request.Filename != default)
             {
@@ -241,6 +255,34 @@ namespace G
                         h => h.Value),
                 };
             }
+            // The media type of the uploaded file is not supported.
+            if ((int)__response.StatusCode == 415)
+            {
+                string? __content_415 = null;
+                global::G.Error? __value_415 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_415 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_415 = global::G.Error.FromJson(__content_415, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_415 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_415 = await global::G.Error.FromJsonStreamAsync(__contentStream_415, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.Error>(
+                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_415,
+                    ResponseObject = __value_415,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -316,9 +358,11 @@ namespace G
 
         /// <summary>
         /// Upload a file to the corpus<br/>
-        /// Upload files such as PDFs and Word Documents. Vectara will attempt to automatically extract text and any metadata.<br/>
-        /// The File Upload endpoint request expects a `multipart/form-data` request containing the following parts:<br/>
+        /// Upload files such as PDFs and Word Documents for automatic text extraction and metadata parsing.<br/>
+        /// The request expects a `multipart/form-data` format containing the following parts:<br/>
         /// * `metadata` - (Optional) Specifies a JSON object representing any additional metadata to be associated with the extracted document. For example, `'metadata={"key": "value"};type=application/json'`<br/>
+        /// * `chunking_strategy` - (Optional) Specifies the chunking strategy for the platform to use. If you do not set this option, the platform uses the default strategy, which creates one chunk per sentence. You can explicitly set sentence chunking with `'chunking_strategy={"type":"sentence_chunking_strategy"};type=application/json'` or use max chars chunking with `'chunking_strategy={"type":"max_chars_chunking_strategy","max_chars_per_chunk":200};type=application/json'`<br/>
+        /// * `table_extraction_config` - (Optional) Specifies whether to extract table data from the uploaded file. If you do not set this option, the platform does not extract tables from PDF files. Example config, `'table_extraction_config={"extract_tables":true};type=application/json'`<br/>
         /// * `file` - Specifies the file that you want to upload.<br/>
         /// * `filename` - Specified as part of the file field with the file name that you want to associate with the uploaded file. For a curl example, use the following syntax: `'file=@/path/to/file/file.pdf;filename=desired_filename.pdf'`<br/>
         /// For more detailed information, see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
@@ -331,6 +375,13 @@ namespace G
         /// </param>
         /// <param name="metadata">
         /// Arbitrary object that will be attached as document metadata to the extracted document.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
+        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// </param>
+        /// <param name="tableExtractionConfig">
+        /// Configuration for table extraction from the document. This is optional and if not provided, default table extraction behavior will be used.
         /// </param>
         /// <param name="filename">
         /// Optional multipart section to override the filename.
@@ -346,12 +397,16 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             object? metadata = default,
+            global::G.ChunkingStrategy? chunkingStrategy = default,
+            global::G.TableExtractionConfig? tableExtractionConfig = default,
             string? filename = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UploadFileRequest
             {
                 Metadata = metadata,
+                ChunkingStrategy = chunkingStrategy,
+                TableExtractionConfig = tableExtractionConfig,
                 Filename = filename,
                 File = file,
             };

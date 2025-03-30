@@ -12,7 +12,8 @@ namespace G
             ref int? requestTimeoutMillis,
             ref int? limit,
             ref string? pageKey,
-            ref string? corpusKey);
+            ref string? corpusKey,
+            ref global::G.ApiKeyRole? apiKeyRole);
         partial void PrepareListApiKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +21,8 @@ namespace G
             int? requestTimeoutMillis,
             int? limit,
             string? pageKey,
-            string? corpusKey);
+            string? corpusKey,
+            global::G.ApiKeyRole? apiKeyRole);
         partial void ProcessListApiKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +33,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// List API keys
+        /// List API keys<br/>
+        /// Retrieve a list of API keys for the customer account with optional filtering.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -43,6 +46,12 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+        /// <param name="apiKeyRole">
+        /// Role of the API key. <br/>
+        /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
+        /// indexing key can perform both indexing and query type requests on its corpora.<br/>
+        /// A personal API key has all the same permissions as the creator of the API key.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListApiKeysResponse> ListApiKeysAsync(
@@ -51,6 +60,7 @@ namespace G
             int? limit = default,
             string? pageKey = default,
             string? corpusKey = default,
+            global::G.ApiKeyRole? apiKeyRole = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -61,8 +71,16 @@ namespace G
                 requestTimeoutMillis: ref requestTimeoutMillis,
                 limit: ref limit,
                 pageKey: ref pageKey,
-                corpusKey: ref corpusKey);
+                corpusKey: ref corpusKey,
+                apiKeyRole: ref apiKeyRole);
 
+            var apiKeyRoleValue = apiKeyRole switch
+            {
+                global::G.ApiKeyRole.Serving => "serving",
+                global::G.ApiKeyRole.ServingAndIndexing => "serving_and_indexing",
+                global::G.ApiKeyRole.Personal => "personal",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/v2/api_keys",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,6 +88,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("page_key", pageKey) 
                 .AddOptionalParameter("corpus_key", corpusKey) 
+                .AddOptionalParameter("api_key_role", apiKeyRoleValue?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -116,7 +135,8 @@ namespace G
                 requestTimeoutMillis: requestTimeoutMillis,
                 limit: limit,
                 pageKey: pageKey,
-                corpusKey: corpusKey);
+                corpusKey: corpusKey,
+                apiKeyRole: apiKeyRole);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

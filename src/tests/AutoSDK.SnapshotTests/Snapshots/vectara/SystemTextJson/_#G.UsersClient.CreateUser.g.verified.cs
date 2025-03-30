@@ -35,7 +35,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.User> CreateUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>> CreateUserAsync(
             global::G.CreateUserRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
@@ -210,7 +210,7 @@ namespace G
                 }
 
                 return
-                    global::G.User.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.AllOf<global::G.User, global::G.CreateUserResponse2>.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -240,7 +240,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.User.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.AllOf<global::G.User, global::G.CreateUserResponse2>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -265,7 +265,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.User> CreateUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>> CreateUserAsync(
             string email,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A corpus is a collection of documents and associated configuration for indexing, searching, and generating responses through RAG.
     /// </summary>
     public sealed partial class Corpus
     {
@@ -65,19 +65,25 @@ namespace G
 
         /// <summary>
         /// The encoder used by the corpus.<br/>
-        /// *Deprecated*: use `encoder_name` instead
+        /// *Deprecated*: Use `encoder_name` instead
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoder_id")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? EncoderId { get; set; }
 
         /// <summary>
-        /// The encoder used by the corpus.<br/>
-        /// Example: boomerang
+        /// The encoder used by the corpus, `boomerang-2023-q3`.<br/>
+        /// Example: boomerang-2023-q3
         /// </summary>
-        /// <example>boomerang</example>
+        /// <example>boomerang-2023-q3</example>
         [global::Newtonsoft.Json.JsonProperty("encoder_name")]
         public string? EncoderName { get; set; }
+
+        /// <summary>
+        /// Indicates whether to save corpus queries to query history by default.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("save_history")]
+        public bool? SaveHistory { get; set; }
 
         /// <summary>
         /// The new filter attributes of the corpus.
@@ -142,8 +148,11 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="encoderName">
-        /// The encoder used by the corpus.<br/>
-        /// Example: boomerang
+        /// The encoder used by the corpus, `boomerang-2023-q3`.<br/>
+        /// Example: boomerang-2023-q3
+        /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save corpus queries to query history by default.
         /// </param>
         /// <param name="filterAttributes">
         /// The new filter attributes of the corpus.
@@ -165,6 +174,7 @@ namespace G
             bool? queriesAreAnswers,
             bool? documentsAreQuestions,
             string? encoderName,
+            bool? saveHistory,
             global::System.Collections.Generic.IList<global::G.FilterAttribute>? filterAttributes,
             global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? customDimensions,
             global::G.CorpusLimits? limits,
@@ -179,6 +189,7 @@ namespace G
             this.QueriesAreAnswers = queriesAreAnswers;
             this.DocumentsAreQuestions = documentsAreQuestions;
             this.EncoderName = encoderName;
+            this.SaveHistory = saveHistory;
             this.FilterAttributes = filterAttributes;
             this.CustomDimensions = customDimensions;
             this.Limits = limits;

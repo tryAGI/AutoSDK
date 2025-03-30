@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CoreDocument
     {
         /// <summary>
-        /// The document ID, must be unique within the corpus.<br/>
+        /// The document ID must be unique within the corpus.<br/>
         /// Example: my-doc-id
         /// </summary>
         /// <example>my-doc-id</example>
@@ -22,7 +22,7 @@ namespace G
         /// When the type of the indexed document is `core` the rest of<br/>
         /// the object is expected to follow this schema. This schema allows<br/>
         /// precise specification of document chunks that get directly translated<br/>
-        /// to retrieval search results.<br/>
+        /// to retrieve search results.<br/>
         /// Default Value: core
         /// </summary>
         /// <default>"core"</default>
@@ -32,10 +32,16 @@ namespace G
 
         /// <summary>
         /// Arbitrary object of document level metadata. Properties of this object<br/>
-        /// can be used by document filter if defined as a corpus filter attribute.
+        /// can be used by document filters if defined as a corpus filter attribute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// The tables that this document contains.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
+        public global::System.Collections.Generic.IList<global::G.Table>? Tables { get; set; }
 
         /// <summary>
         /// Parts of the document that make up the document.
@@ -54,19 +60,22 @@ namespace G
         /// Initializes a new instance of the <see cref="CoreDocument" /> class.
         /// </summary>
         /// <param name="id">
-        /// The document ID, must be unique within the corpus.<br/>
+        /// The document ID must be unique within the corpus.<br/>
         /// Example: my-doc-id
         /// </param>
         /// <param name="type">
         /// When the type of the indexed document is `core` the rest of<br/>
         /// the object is expected to follow this schema. This schema allows<br/>
         /// precise specification of document chunks that get directly translated<br/>
-        /// to retrieval search results.<br/>
+        /// to retrieve search results.<br/>
         /// Default Value: core
         /// </param>
         /// <param name="metadata">
         /// Arbitrary object of document level metadata. Properties of this object<br/>
-        /// can be used by document filter if defined as a corpus filter attribute.
+        /// can be used by document filters if defined as a corpus filter attribute.
+        /// </param>
+        /// <param name="tables">
+        /// The tables that this document contains.
         /// </param>
         /// <param name="documentParts">
         /// Parts of the document that make up the document.
@@ -78,12 +87,14 @@ namespace G
             string id,
             string type,
             global::System.Collections.Generic.IList<global::G.CoreDocumentPart> documentParts,
-            object? metadata)
+            object? metadata,
+            global::System.Collections.Generic.IList<global::G.Table>? tables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.DocumentParts = documentParts ?? throw new global::System.ArgumentNullException(nameof(documentParts));
             this.Metadata = metadata;
+            this.Tables = tables;
         }
 
         /// <summary>

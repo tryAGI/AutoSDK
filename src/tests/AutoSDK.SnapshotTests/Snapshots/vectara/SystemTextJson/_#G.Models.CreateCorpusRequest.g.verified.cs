@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Request object for creating a new corpus in the Vectara platform.
     /// </summary>
     public sealed partial class CreateCorpusRequest
     {
@@ -35,6 +35,13 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// Indicates whether to save corpus queries to query history by default.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("save_history")]
+        public bool? SaveHistory { get; set; }
+
+        /// <summary>
         /// Queries made to this corpus are considered answers, and not questions.<br/>
         /// Default Value: false
         /// </summary>
@@ -58,16 +65,17 @@ namespace G
         public string? EncoderId { get; set; }
 
         /// <summary>
-        /// The encoder used by the corpus.<br/>
-        /// Example: boomerang
+        /// The encoder used by the corpus, `boomerang-2023-q3`.<br/>
+        /// Example: boomerang-2023-q3
         /// </summary>
-        /// <example>boomerang</example>
+        /// <example>boomerang-2023-q3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoder_name")]
         public string? EncoderName { get; set; }
 
         /// <summary>
         /// The new filter attributes of the corpus. <br/>
-        /// If unset then the corpus will not have filter attributes.
+        /// If unset then the corpus will not have filter attributes.<br/>
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter_attributes")]
         public global::System.Collections.Generic.IList<global::G.FilterAttribute>? FilterAttributes { get; set; }
@@ -76,7 +84,8 @@ namespace G
         /// A custom dimension is an additional numerical field attached to a document part. You<br/>
         /// can then multiply this numerical field with a query time custom dimension of the same<br/>
         /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
-        /// This feature is only enabled for Scale customers.
+        /// This feature is only enabled for Pro and Enterprise customers.<br/>
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_dimensions")]
         public global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? CustomDimensions { get; set; }
@@ -102,6 +111,10 @@ namespace G
         /// Description of the corpus.<br/>
         /// Example: Documents with important information for my prompt.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save corpus queries to query history by default.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="queriesAreAnswers">
         /// Queries made to this corpus are considered answers, and not questions.<br/>
         /// Default Value: false
@@ -111,18 +124,20 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="encoderName">
-        /// The encoder used by the corpus.<br/>
-        /// Example: boomerang
+        /// The encoder used by the corpus, `boomerang-2023-q3`.<br/>
+        /// Example: boomerang-2023-q3
         /// </param>
         /// <param name="filterAttributes">
         /// The new filter attributes of the corpus. <br/>
-        /// If unset then the corpus will not have filter attributes.
+        /// If unset then the corpus will not have filter attributes.<br/>
+        /// Default Value: []
         /// </param>
         /// <param name="customDimensions">
         /// A custom dimension is an additional numerical field attached to a document part. You<br/>
         /// can then multiply this numerical field with a query time custom dimension of the same<br/>
         /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
-        /// This feature is only enabled for Scale customers.
+        /// This feature is only enabled for Pro and Enterprise customers.<br/>
+        /// Default Value: []
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -131,6 +146,7 @@ namespace G
             string key,
             string? name,
             string? description,
+            bool? saveHistory,
             bool? queriesAreAnswers,
             bool? documentsAreQuestions,
             string? encoderName,
@@ -140,6 +156,7 @@ namespace G
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name;
             this.Description = description;
+            this.SaveHistory = saveHistory;
             this.QueriesAreAnswers = queriesAreAnswers;
             this.DocumentsAreQuestions = documentsAreQuestions;
             this.EncoderName = encoderName;

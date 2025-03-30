@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Error returned when a request contains invalid parameters or violates schema validation.
     /// </summary>
     public sealed partial class BadRequestError
     {

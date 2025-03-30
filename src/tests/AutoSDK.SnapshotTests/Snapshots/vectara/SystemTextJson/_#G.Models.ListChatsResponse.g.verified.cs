@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing a list of chat conversations.
     /// </summary>
     public sealed partial class ListChatsResponse
     {

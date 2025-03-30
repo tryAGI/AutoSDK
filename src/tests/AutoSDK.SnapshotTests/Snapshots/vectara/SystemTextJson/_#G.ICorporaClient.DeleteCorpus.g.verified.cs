@@ -7,7 +7,7 @@ namespace G
     {
         /// <summary>
         /// Delete a corpus and all its data<br/>
-        /// Delete a corpus and all the data that it contains. The `corpus_key` uniquely identifies <br/>
+        /// Permanently delete a corpus and all its associated data. The `corpus_key` uniquely identifies <br/>
         /// the corpus. For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>

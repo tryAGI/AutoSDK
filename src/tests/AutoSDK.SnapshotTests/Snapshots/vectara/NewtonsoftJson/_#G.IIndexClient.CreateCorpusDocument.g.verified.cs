@@ -7,8 +7,15 @@ namespace G
     {
         /// <summary>
         /// Add a document to a corpus<br/>
-        /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
+        /// Add a document to a corpus. This endpoint supports two document formats, structured and core.<br/>
+        /// * **Structured** documents have a more conventional structure that provide document sections<br/>
+        /// and parts in a format created by Vectara's proprietary strategy automatically. You provide <br/>
+        /// a logical document structure, and Vectara handles the partitioning.<br/>
+        /// * **Core** documents differ in that they follow an advanced, granular structure that <br/>
+        /// explicitly defines each document part in an array. Each part becomes a distinct, <br/>
+        /// searchable item in query results. You have precise control over the document structure <br/>
+        /// and content.<br/>
+        /// For more details, see [Indexing](https://docs.vectara.com/docs/learn/select-ideal-indexing-api). 
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -28,8 +35,15 @@ namespace G
 
         /// <summary>
         /// Add a document to a corpus<br/>
-        /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
+        /// Add a document to a corpus. This endpoint supports two document formats, structured and core.<br/>
+        /// * **Structured** documents have a more conventional structure that provide document sections<br/>
+        /// and parts in a format created by Vectara's proprietary strategy automatically. You provide <br/>
+        /// a logical document structure, and Vectara handles the partitioning.<br/>
+        /// * **Core** documents differ in that they follow an advanced, granular structure that <br/>
+        /// explicitly defines each document part in an array. Each part becomes a distinct, <br/>
+        /// searchable item in query results. You have precise control over the document structure <br/>
+        /// and content.<br/>
+        /// For more details, see [Indexing](https://docs.vectara.com/docs/learn/select-ideal-indexing-api). 
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

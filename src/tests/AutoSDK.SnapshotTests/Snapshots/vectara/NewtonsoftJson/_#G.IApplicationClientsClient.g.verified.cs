@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Manage app clients, and perform authentication operations for admin-level access control<br/>
+    /// Configure and manage application clients for OAuth authentication<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

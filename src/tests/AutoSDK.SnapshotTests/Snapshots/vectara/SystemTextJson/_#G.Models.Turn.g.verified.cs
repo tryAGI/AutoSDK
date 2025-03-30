@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A single message exchange in a chat conversation, representing one user input and the corresponding response.
     /// </summary>
     public sealed partial class Turn
     {
@@ -23,9 +23,9 @@ namespace G
 
         /// <summary>
         /// The query made to produce this turn.<br/>
-        /// Example: How do a turn this widget?
+        /// Example: How do you turn this widget?
         /// </summary>
-        /// <example>How do a turn this widget?</example>
+        /// <example>How do you turn this widget?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
@@ -38,7 +38,7 @@ namespace G
         public string? Answer { get; set; }
 
         /// <summary>
-        /// Indicates whether the turn is enabled and shown in futures turns of the chat.<br/>
+        /// Indicates whether the turn is enabled and shown in future turns of the chat.<br/>
         /// Example: true
         /// </summary>
         /// <example>true</example>
@@ -68,14 +68,14 @@ namespace G
         /// </param>
         /// <param name="query">
         /// The query made to produce this turn.<br/>
-        /// Example: How do a turn this widget?
+        /// Example: How do you turn this widget?
         /// </param>
         /// <param name="answer">
         /// The response to the query.<br/>
         /// Example: The widget turns counter clockwise.
         /// </param>
         /// <param name="enabled">
-        /// Indicates whether the turn is enabled and shown in futures turns of the chat.<br/>
+        /// Indicates whether the turn is enabled and shown in future turns of the chat.<br/>
         /// Example: true
         /// </param>
         /// <param name="createdAt">

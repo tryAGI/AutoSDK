@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Configuration for search parameters specific to a single corpus within a customer account, including filters and semantics.
     /// </summary>
     public sealed partial class SearchCorpus
     {
@@ -16,10 +16,10 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, double>? CustomDimensions { get; set; }
 
         /// <summary>
-        /// The filter string to narrow the search to according to metadata attributes. The query against this<br/>
-        /// corpus will be confined to document parts that match the `metadata_filter`. Only metadata<br/>
-        /// set as `filter_attributes` on the corpus can be filtered. Filter syntax is similiar to<br/>
-        /// a SQL where clause. See [metadata filters documentation](https://docs.vectara.com/docs/learn/metadata-search-filtering/filter-overview)<br/>
+        /// The filter string used to narrow the search based on metadata attributes. The query against this<br/>
+        /// corpus will be confined to document parts that match the `metadata_filter`. Only metadata fields<br/>
+        /// set as `filter_attributes` on the corpus can be filtered. Filter syntax is similar to<br/>
+        /// a SQL WHERE clause. See [metadata filters documentation](https://docs.vectara.com/docs/learn/metadata-search-filtering/filter-overview)<br/>
         /// for more information.<br/>
         /// Example: doc.title = 'Charlotte''s Web'
         /// </summary>
@@ -55,10 +55,10 @@ namespace G
         /// The custom dimensions as additional weights.
         /// </param>
         /// <param name="metadataFilter">
-        /// The filter string to narrow the search to according to metadata attributes. The query against this<br/>
-        /// corpus will be confined to document parts that match the `metadata_filter`. Only metadata<br/>
-        /// set as `filter_attributes` on the corpus can be filtered. Filter syntax is similiar to<br/>
-        /// a SQL where clause. See [metadata filters documentation](https://docs.vectara.com/docs/learn/metadata-search-filtering/filter-overview)<br/>
+        /// The filter string used to narrow the search based on metadata attributes. The query against this<br/>
+        /// corpus will be confined to document parts that match the `metadata_filter`. Only metadata fields<br/>
+        /// set as `filter_attributes` on the corpus can be filtered. Filter syntax is similar to<br/>
+        /// a SQL WHERE clause. See [metadata filters documentation](https://docs.vectara.com/docs/learn/metadata-search-filtering/filter-overview)<br/>
         /// for more information.<br/>
         /// Example: doc.title = 'Charlotte''s Web'
         /// </param>

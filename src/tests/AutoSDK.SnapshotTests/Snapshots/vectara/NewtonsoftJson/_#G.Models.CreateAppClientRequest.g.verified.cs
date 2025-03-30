@@ -6,7 +6,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Request to create a new OAuth application client for the platform.
     /// </summary>
     public readonly partial struct CreateAppClientRequest : global::System.IEquatable<CreateAppClientRequest>
     {
@@ -68,6 +68,13 @@ namespace G
         /// </summary>
         public object? Object =>
             ClientCredentials as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            ClientCredentials?.ToString() 
             ;
 
         /// <summary>

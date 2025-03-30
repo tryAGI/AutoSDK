@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A placeholder reranker that does not modify the original search results ordering.
     /// </summary>
     public sealed partial class NoneReranker
     {

@@ -5,14 +5,22 @@
 namespace G
 {
     /// <summary>
-    /// The parameters for the model.  These are currently a Scale-only feature.<br/>
-    /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
+    /// The parameters for the model.<br/>
     /// WARNING: This is an experimental feature, and breakable at any point with virtually no<br/>
     /// notice. It is meant for experimentation to converge on optimal parameters that can then<br/>
     /// be set in the prompt definitions.
     /// </summary>
     public sealed partial class GenerationParametersModelParameters
     {
+        /// <summary>
+        /// The model (e.g., `gpt-4`) to use for summarization. If specified, it will override the model behind<br/>
+        /// `generation_preset_name`.<br/>
+        /// Example: gpt4
+        /// </summary>
+        /// <example>gpt4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_name")]
+        public string? LlmName { get; set; }
+
         /// <summary>
         /// The maximum number of tokens to be returned by the model.
         /// </summary>
@@ -49,6 +57,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerationParametersModelParameters" /> class.
         /// </summary>
+        /// <param name="llmName">
+        /// The model (e.g., `gpt-4`) to use for summarization. If specified, it will override the model behind<br/>
+        /// `generation_preset_name`.<br/>
+        /// Example: gpt4
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to be returned by the model.
         /// </param>
@@ -68,11 +81,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerationParametersModelParameters(
+            string? llmName,
             int? maxTokens,
             float? temperature,
             float? frequencyPenalty,
             float? presencePenalty)
         {
+            this.LlmName = llmName;
             this.MaxTokens = maxTokens;
             this.Temperature = temperature;
             this.FrequencyPenalty = frequencyPenalty;

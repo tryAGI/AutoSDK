@@ -42,24 +42,38 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? SearchResults { get; set; }
 
         /// <summary>
-        /// The probability that the summary is factually consistent with the results.
+        /// Indicates the probability that the summary is factually consistent with the results.<br/>
+        /// The system excludes this property if it encounters excessively large outputs or search<br/>
+        /// results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("factual_consistency_score")]
         public float? FactualConsistencyScore { get; set; }
 
         /// <summary>
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
-        /// to Scale customers.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rendered_prompt")]
         public string? RenderedPrompt { get; set; }
 
         /// <summary>
-        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// Non-fatal warnings that occurred during request processing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warnings")]
+        public global::System.Collections.Generic.IList<global::G.QueryWarning>? Warnings { get; set; }
+
+        /// <summary>
+        /// View the actual query made to backend that was rephrased <br/>
         /// by the LLM from the input query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rephrased_query")]
         public string? RephrasedQuery { get; set; }
+
+        /// <summary>
+        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
+        /// intelligent_query_rewriting is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rewritten_queries")]
+        public global::System.Collections.Generic.IList<global::G.RewrittenQuery>? RewrittenQueries { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,15 +101,23 @@ namespace G
         /// The ranked search results that the chat model used.
         /// </param>
         /// <param name="factualConsistencyScore">
-        /// The probability that the summary is factually consistent with the results.
+        /// Indicates the probability that the summary is factually consistent with the results.<br/>
+        /// The system excludes this property if it encounters excessively large outputs or search<br/>
+        /// results.
         /// </param>
         /// <param name="renderedPrompt">
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
-        /// to Scale customers.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates. 
+        /// </param>
+        /// <param name="warnings">
+        /// Non-fatal warnings that occurred during request processing
         /// </param>
         /// <param name="rephrasedQuery">
-        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// View the actual query made to backend that was rephrased <br/>
         /// by the LLM from the input query.
+        /// </param>
+        /// <param name="rewrittenQueries">
+        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
+        /// intelligent_query_rewriting is enabled.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -108,7 +130,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? searchResults,
             float? factualConsistencyScore,
             string? renderedPrompt,
-            string? rephrasedQuery)
+            global::System.Collections.Generic.IList<global::G.QueryWarning>? warnings,
+            string? rephrasedQuery,
+            global::System.Collections.Generic.IList<global::G.RewrittenQuery>? rewrittenQueries)
         {
             this.ChatId = chatId;
             this.TurnId = turnId;
@@ -117,7 +141,9 @@ namespace G
             this.SearchResults = searchResults;
             this.FactualConsistencyScore = factualConsistencyScore;
             this.RenderedPrompt = renderedPrompt;
+            this.Warnings = warnings;
             this.RephrasedQuery = rephrasedQuery;
+            this.RewrittenQueries = rewrittenQueries;
         }
 
         /// <summary>

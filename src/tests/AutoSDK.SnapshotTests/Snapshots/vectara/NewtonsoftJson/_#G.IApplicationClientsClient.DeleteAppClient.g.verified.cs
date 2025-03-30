@@ -6,7 +6,8 @@ namespace G
     public partial interface IApplicationClientsClient
     {
         /// <summary>
-        /// Delete an App Client
+        /// Delete an App Client<br/>
+        /// Remove an application client configuration from the customer account.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

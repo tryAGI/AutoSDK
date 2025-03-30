@@ -13,7 +13,9 @@ namespace G
             ref string corpusKey,
             ref string query,
             ref int? limit,
-            ref int? offset);
+            ref int? offset,
+            ref bool? saveHistory,
+            ref bool? intelligentQueryRewriting);
         partial void PrepareSearchCorpusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +24,9 @@ namespace G
             string corpusKey,
             string query,
             int? limit,
-            int? offset);
+            int? offset,
+            bool? saveHistory,
+            bool? intelligentQueryRewriting);
         partial void ProcessSearchCorpusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,6 +59,10 @@ namespace G
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
+        /// <param name="saveHistory"></param>
+        /// <param name="intelligentQueryRewriting">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.QueryFullResponse> SearchCorpusAsync(
@@ -64,6 +72,8 @@ namespace G
             int? requestTimeoutMillis = default,
             int? limit = default,
             int? offset = default,
+            bool? saveHistory = default,
+            bool? intelligentQueryRewriting = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -75,7 +85,9 @@ namespace G
                 corpusKey: ref corpusKey,
                 query: ref query,
                 limit: ref limit,
-                offset: ref offset);
+                offset: ref offset,
+                saveHistory: ref saveHistory,
+                intelligentQueryRewriting: ref intelligentQueryRewriting);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/query",
@@ -84,6 +96,8 @@ namespace G
                 .AddRequiredParameter("query", query) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("save_history", saveHistory?.ToString()) 
+                .AddOptionalParameter("intelligent_query_rewriting", intelligentQueryRewriting?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -131,7 +145,9 @@ namespace G
                 corpusKey: corpusKey,
                 query: query,
                 limit: limit,
-                offset: offset);
+                offset: offset,
+                saveHistory: saveHistory,
+                intelligentQueryRewriting: intelligentQueryRewriting);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

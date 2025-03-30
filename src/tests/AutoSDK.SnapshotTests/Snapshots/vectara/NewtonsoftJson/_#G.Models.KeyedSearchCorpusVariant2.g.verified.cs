@@ -18,6 +18,12 @@ namespace G
         public string? CorpusKey { get; set; }
 
         /// <summary>
+        /// Query for a particular corpus that will override the overall query if present.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("query")]
+        public string? Query { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -30,10 +36,15 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+        /// <param name="query">
+        /// Query for a particular corpus that will override the overall query if present.
+        /// </param>
         public KeyedSearchCorpusVariant2(
-            string? corpusKey)
+            string? corpusKey,
+            string? query)
         {
             this.CorpusKey = corpusKey;
+            this.Query = query;
         }
 
         /// <summary>

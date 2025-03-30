@@ -57,6 +57,15 @@ namespace G
 
 
         /// <summary>
+        /// Authenticate with the API using OAuth 2.0 or API keys
+        /// </summary>
+        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
         /// </summary>
         public QueriesClient Queries => new QueriesClient(HttpClient, authorizations: Authorizations)
@@ -75,7 +84,7 @@ namespace G
         };
 
         /// <summary>
-        /// Index and manage core and structured documents for efficient search and retrieval
+        /// Index and manage both core and structured documents to enable efficient search and retrieval
         /// </summary>
         public IndexClient Index => new IndexClient(HttpClient, authorizations: Authorizations)
         {
@@ -105,6 +114,42 @@ namespace G
         /// Create, manage, and interact with chat sessions for conversational AI
         /// </summary>
         public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Manage generation presets for controlling the behavior of generative AI responses
+        /// </summary>
+        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Retrieve and manage the history of previous queries for analytics and auditing
+        /// </summary>
+        public QueryHistoryClient QueryHistory => new QueryHistoryClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create, manage, and revoke API keys for secure access to the platform
+        /// </summary>
+        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Configure and manage application clients for OAuth authentication
+        /// </summary>
+        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -156,27 +201,9 @@ namespace G
         };
 
         /// <summary>
-        /// Manage app clients, and perform authentication operations for admin-level access control
+        /// List available extractors for tabular data from documents
         /// </summary>
-        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Manage API keys for the account
-        /// </summary>
-        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
+        public TableExtractorsClient TableExtractors => new TableExtractorsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

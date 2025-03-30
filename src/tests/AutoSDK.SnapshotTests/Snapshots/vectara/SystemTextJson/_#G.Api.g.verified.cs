@@ -71,10 +71,18 @@ namespace G
                     new global::G.JsonConverters.CitationParametersStyleNullableJsonConverter(),
                     new global::G.JsonConverters.SearchSemanticsJsonConverter(),
                     new global::G.JsonConverters.SearchSemanticsNullableJsonConverter(),
+                    new global::G.JsonConverters.QueryWarningJsonConverter(),
+                    new global::G.JsonConverters.QueryWarningNullableJsonConverter(),
                     new global::G.JsonConverters.QueryStreamedResponseDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.QueryStreamedResponseDiscriminatorTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ChunkingStrategyDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.ChunkingStrategyDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.CreateDocumentRequestDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.CreateDocumentRequestDiscriminatorTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.RemoteAuthDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.RemoteAuthDiscriminatorTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateLLMRequestDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.CreateLLMRequestDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ChatStreamedResponseDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.ChatStreamedResponseDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ApiKeyRoleJsonConverter(),
@@ -83,22 +91,46 @@ namespace G
                     new global::G.JsonConverters.ApiRoleNullableJsonConverter(),
                     new global::G.JsonConverters.CreateAppClientRequestDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.CreateAppClientRequestDiscriminatorTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateEncoderRequestDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.CreateEncoderRequestDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.JobTypeJsonConverter(),
                     new global::G.JsonConverters.JobTypeNullableJsonConverter(),
                     new global::G.JsonConverters.JobStateJsonConverter(),
                     new global::G.JsonConverters.JobStateNullableJsonConverter(),
+                    new global::G.JsonConverters.RewrittenQueryWarningJsonConverter(),
+                    new global::G.JsonConverters.RewrittenQueryWarningNullableJsonConverter(),
+                    new global::G.JsonConverters.QueryHistorySpanDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.QueryHistorySpanDiscriminatorTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.SummarizeDocumentStreamedResponseDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.SummarizeDocumentStreamedResponseDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.SearchRerankerJsonConverter(),
                     new global::G.JsonConverters.SearchCorporaParametersJsonConverter(),
                     new global::G.JsonConverters.KeyedSearchCorpusJsonConverter(),
                     new global::G.JsonConverters.QueryStreamedResponseJsonConverter(),
+                    new global::G.JsonConverters.ChunkingStrategyJsonConverter(),
                     new global::G.JsonConverters.CreateDocumentRequestJsonConverter(),
+                    new global::G.JsonConverters.CreateLLMRequestJsonConverter(),
+                    new global::G.JsonConverters.RemoteAuthJsonConverter(),
                     new global::G.JsonConverters.ChatStreamedResponseJsonConverter(),
                     new global::G.JsonConverters.CreateAppClientRequestJsonConverter(),
+                    new global::G.JsonConverters.CreateEncoderRequestJsonConverter(),
+                    new global::G.JsonConverters.QueryHistorySpanJsonConverter(),
+                    new global::G.JsonConverters.SummarizeDocumentStreamedResponseJsonConverter(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.User, global::G.CreateUserResponse2>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 
+
+        /// <summary>
+        /// Authenticate with the API using OAuth 2.0 or API keys
+        /// </summary>
+        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
@@ -119,7 +151,7 @@ namespace G
         };
 
         /// <summary>
-        /// Index and manage core and structured documents for efficient search and retrieval
+        /// Index and manage both core and structured documents to enable efficient search and retrieval
         /// </summary>
         public IndexClient Index => new IndexClient(HttpClient, authorizations: Authorizations)
         {
@@ -149,6 +181,42 @@ namespace G
         /// Create, manage, and interact with chat sessions for conversational AI
         /// </summary>
         public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Manage generation presets for controlling the behavior of generative AI responses
+        /// </summary>
+        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Retrieve and manage the history of previous queries for analytics and auditing
+        /// </summary>
+        public QueryHistoryClient QueryHistory => new QueryHistoryClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create, manage, and revoke API keys for secure access to the platform
+        /// </summary>
+        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Configure and manage application clients for OAuth authentication
+        /// </summary>
+        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -200,27 +268,9 @@ namespace G
         };
 
         /// <summary>
-        /// Manage app clients, and perform authentication operations for admin-level access control
+        /// List available extractors for tabular data from documents
         /// </summary>
-        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Manage API keys for the account
-        /// </summary>
-        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
+        public TableExtractorsClient TableExtractors => new TableExtractorsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

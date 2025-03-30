@@ -28,8 +28,8 @@ namespace G
 
         /// <summary>
         /// Create a corpus<br/>
-        /// Create a corpus, which is a container to store documents and associated metadata. This is where you <br/>
-        /// create the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
+        /// Create a corpus, which is a container to store documents and associated metadata. Here, you <br/>
+        /// define the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
         /// following your preferred naming convention, allowing you to easily manage the corpus's data and <br/>
         /// reference it in queries. For more information, see <br/>
         /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
@@ -176,6 +176,34 @@ namespace G
                         h => h.Value),
                 };
             }
+            // The corpus already exists
+            if ((int)__response.StatusCode == 409)
+            {
+                string? __content_409 = null;
+                global::G.Error? __value_409 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = global::G.Error.FromJson(__content_409, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_409 = await global::G.Error.FromJsonStreamAsync(__contentStream_409, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.Error>(
+                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_409,
+                    ResponseObject = __value_409,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -251,8 +279,8 @@ namespace G
 
         /// <summary>
         /// Create a corpus<br/>
-        /// Create a corpus, which is a container to store documents and associated metadata. This is where you <br/>
-        /// create the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
+        /// Create a corpus, which is a container to store documents and associated metadata. Here, you <br/>
+        /// define the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
         /// following your preferred naming convention, allowing you to easily manage the corpus's data and <br/>
         /// reference it in queries. For more information, see <br/>
         /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
@@ -271,6 +299,10 @@ namespace G
         /// Description of the corpus.<br/>
         /// Example: Documents with important information for my prompt.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save corpus queries to query history by default.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="queriesAreAnswers">
         /// Queries made to this corpus are considered answers, and not questions.<br/>
         /// Default Value: false
@@ -280,18 +312,20 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="encoderName">
-        /// The encoder used by the corpus.<br/>
-        /// Example: boomerang
+        /// The encoder used by the corpus, `boomerang-2023-q3`.<br/>
+        /// Example: boomerang-2023-q3
         /// </param>
         /// <param name="filterAttributes">
         /// The new filter attributes of the corpus. <br/>
-        /// If unset then the corpus will not have filter attributes.
+        /// If unset then the corpus will not have filter attributes.<br/>
+        /// Default Value: []
         /// </param>
         /// <param name="customDimensions">
         /// A custom dimension is an additional numerical field attached to a document part. You<br/>
         /// can then multiply this numerical field with a query time custom dimension of the same<br/>
         /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
-        /// This feature is only enabled for Scale customers.
+        /// This feature is only enabled for Pro and Enterprise customers.<br/>
+        /// Default Value: []
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -301,8 +335,10 @@ namespace G
             int? requestTimeoutMillis = default,
             string? name = default,
             string? description = default,
+            bool? saveHistory = default,
             bool? queriesAreAnswers = default,
             bool? documentsAreQuestions = default,
+            string? encoderId = default,
             string? encoderName = default,
             global::System.Collections.Generic.IList<global::G.FilterAttribute>? filterAttributes = default,
             global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? customDimensions = default,
@@ -313,6 +349,7 @@ namespace G
                 Key = key,
                 Name = name,
                 Description = description,
+                SaveHistory = saveHistory,
                 QueriesAreAnswers = queriesAreAnswers,
                 DocumentsAreQuestions = documentsAreQuestions,
                 EncoderName = encoderName,

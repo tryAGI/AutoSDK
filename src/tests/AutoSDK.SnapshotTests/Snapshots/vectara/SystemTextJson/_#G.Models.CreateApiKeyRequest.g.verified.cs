@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Request to create a new API key for authenticating with the platform.
     /// </summary>
     public sealed partial class CreateApiKeyRequest
     {

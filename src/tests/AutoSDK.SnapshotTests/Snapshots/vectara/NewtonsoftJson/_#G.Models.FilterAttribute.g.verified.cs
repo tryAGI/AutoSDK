@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Defines a filter attribute that can be used to filter search results based on document metadata for precise retrieval.
     /// </summary>
     public sealed partial class FilterAttribute
     {

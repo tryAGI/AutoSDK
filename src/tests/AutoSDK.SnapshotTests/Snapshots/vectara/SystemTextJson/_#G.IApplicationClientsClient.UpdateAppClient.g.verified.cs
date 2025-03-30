@@ -6,7 +6,8 @@ namespace G
     public partial interface IApplicationClientsClient
     {
         /// <summary>
-        /// Update an App Client
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -22,7 +23,8 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update an App Client
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

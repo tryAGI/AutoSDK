@@ -7,7 +7,7 @@ namespace G
     {
         /// <summary>
         /// Advanced Single Corpus Query<br/>
-        /// Query a specific corpus and find relevant results, highlight relevant snippets, and use Retrieval Augmented Generation:<br/>
+        /// Perform an advanced query on a specific corpus to find relevant results, highlight relevant snippets, and use Retrieval Augmented Generation:<br/>
         /// * Specify the unique `corpus_key` identifying the corpus to query. The `corpus_key` is [created in the Vectara Console UI](https://docs.vectara.com/docs/console-ui/creating-a-corpus) or the [Create Corpus API definition](https://docs.vectara.com/docs/api-reference/admin-apis/create-corpus). When creating a new corpus, you have the option to assign a custom `corpus_key` following your preferred naming convention. This key serves as a unique identifier for the corpus, allowing it to be referenced in search requests. For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).<br/>
         /// * Customize your search by specifying the query text (`query`), pagination details (`offset` and `limit`), and metadata filters (`metadata_filter`) to tailor your search results. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#query-definition)<br/>
         /// * Leverage advanced search capabilities like reranking (`reranker`) and Retrieval Augmented Generation (RAG) (`generation`) for enhanced query performance. Generation is opt in by setting the `generation` property. By excluding the property or by setting it to null, the response<br/>
@@ -35,7 +35,7 @@ namespace G
 
         /// <summary>
         /// Advanced Single Corpus Query<br/>
-        /// Query a specific corpus and find relevant results, highlight relevant snippets, and use Retrieval Augmented Generation:<br/>
+        /// Perform an advanced query on a specific corpus to find relevant results, highlight relevant snippets, and use Retrieval Augmented Generation:<br/>
         /// * Specify the unique `corpus_key` identifying the corpus to query. The `corpus_key` is [created in the Vectara Console UI](https://docs.vectara.com/docs/console-ui/creating-a-corpus) or the [Create Corpus API definition](https://docs.vectara.com/docs/api-reference/admin-apis/create-corpus). When creating a new corpus, you have the option to assign a custom `corpus_key` following your preferred naming convention. This key serves as a unique identifier for the corpus, allowing it to be referenced in search requests. For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).<br/>
         /// * Customize your search by specifying the query text (`query`), pagination details (`offset` and `limit`), and metadata filters (`metadata_filter`) to tailor your search results. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#query-definition)<br/>
         /// * Leverage advanced search capabilities like reranking (`reranker`) and Retrieval Augmented Generation (RAG) (`generation`) for enhanced query performance. Generation is opt in by setting the `generation` property. By excluding the property or by setting it to null, the response<br/>
@@ -64,6 +64,14 @@ namespace G
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save the query to query history.
+        /// </param>
+        /// <param name="intelligentQueryRewriting">
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.QueryFullResponse> QueryCorpusAsync(
@@ -74,6 +82,8 @@ namespace G
             global::G.AllOf<global::G.SearchCorpus, global::G.SearchParameters>? search = default,
             global::G.GenerationParameters? generation = default,
             bool? streamResponse = default,
+            bool? saveHistory = default,
+            bool? intelligentQueryRewriting = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -30,9 +30,9 @@ namespace G
 
         /// <summary>
         /// Replace the filter attributes of a corpus<br/>
-        /// Replace the filter attributes of a corpus. This does not happen immediately, but<br/>
-        /// instead creates a job and will complete when that job completes. Until that<br/>
-        /// job completes, using new filter attributes will not work.<br/>
+        /// Replace the filter attributes of a corpus. This does not happen immediately, as<br/>
+        /// this operation creates a job that completes asynchronously. These new filter <br/>
+        /// attributes will not work until the job completes.<br/>
         /// You can monitor the status of the filter change using the returned job ID. The <br/>
         /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
         /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
@@ -130,7 +130,7 @@ namespace G
             ProcessReplaceFilterAttributesResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Permissions don't allow replacing filter attributes.
+            // Permissions do not allow replacing filter attributes.
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -261,9 +261,9 @@ namespace G
 
         /// <summary>
         /// Replace the filter attributes of a corpus<br/>
-        /// Replace the filter attributes of a corpus. This does not happen immediately, but<br/>
-        /// instead creates a job and will complete when that job completes. Until that<br/>
-        /// job completes, using new filter attributes will not work.<br/>
+        /// Replace the filter attributes of a corpus. This does not happen immediately, as<br/>
+        /// this operation creates a job that completes asynchronously. These new filter <br/>
+        /// attributes will not work until the job completes.<br/>
         /// You can monitor the status of the filter change using the returned job ID. The <br/>
         /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
         /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).

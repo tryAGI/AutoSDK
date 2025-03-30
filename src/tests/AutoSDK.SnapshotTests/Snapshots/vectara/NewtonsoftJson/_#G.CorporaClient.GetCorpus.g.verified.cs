@@ -28,7 +28,7 @@ namespace G
 
         /// <summary>
         /// Retrieve metadata about a corpus<br/>
-        /// Get metadata about a corpus. This operation is not a method of searching a corpus. <br/>
+        /// Get metadata about a corpus. This operation does not search the corpus contents. <br/>
         /// Specify the `corpus_key` to identify the corpus whose metadata you want to <br/>
         /// retrieve. The `corpus_key` is created when the corpus is set up, either through<br/>
         /// the Vectara Console UI or the Create Corpus API. For more information, <br/>

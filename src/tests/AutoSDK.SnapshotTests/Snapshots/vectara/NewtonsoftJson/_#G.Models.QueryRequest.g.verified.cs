@@ -37,6 +37,20 @@ namespace G
         public bool? StreamResponse { get; set; }
 
         /// <summary>
+        /// Indicates whether to save the query to query history.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("save_history")]
+        public bool? SaveHistory { get; set; }
+
+        /// <summary>
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("intelligent_query_rewriting")]
+        public bool? IntelligentQueryRewriting { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -59,16 +73,28 @@ namespace G
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save the query to query history.
+        /// </param>
+        /// <param name="intelligentQueryRewriting">
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </param>
         public QueryRequest(
             string query,
             global::G.SearchCorporaParameters search,
             global::G.GenerationParameters? generation,
-            bool? streamResponse)
+            bool? streamResponse,
+            bool? saveHistory,
+            bool? intelligentQueryRewriting)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Search = search;
             this.Generation = generation;
             this.StreamResponse = streamResponse;
+            this.SaveHistory = saveHistory;
+            this.IntelligentQueryRewriting = intelligentQueryRewriting;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing a list of Large Language Models available for generative AI capabilities.
     /// </summary>
     public sealed partial class ListLLMsResponse
     {

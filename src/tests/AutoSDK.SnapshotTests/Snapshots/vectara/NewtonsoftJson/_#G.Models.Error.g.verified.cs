@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A general error response with an error code and message.
     /// </summary>
     public sealed partial class Error
     {

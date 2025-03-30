@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Enum representing the possible states of a background job.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum JobState

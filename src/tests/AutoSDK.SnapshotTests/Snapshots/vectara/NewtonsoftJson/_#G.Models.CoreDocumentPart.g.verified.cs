@@ -24,6 +24,12 @@ namespace G
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// The ID of the table that this document part belongs to.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("table_id")]
+        public string? TableId { get; set; }
+
+        /// <summary>
         /// The context text for the document part.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
@@ -51,6 +57,9 @@ namespace G
         /// <param name="metadata">
         /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
         /// </param>
+        /// <param name="tableId">
+        /// The ID of the table that this document part belongs to.
+        /// </param>
         /// <param name="context">
         /// The context text for the document part.
         /// </param>
@@ -60,11 +69,13 @@ namespace G
         public CoreDocumentPart(
             string text,
             object? metadata,
+            string? tableId,
             string? context,
             global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Metadata = metadata;
+            this.TableId = tableId;
             this.Context = context;
             this.CustomDimensions = customDimensions;
         }

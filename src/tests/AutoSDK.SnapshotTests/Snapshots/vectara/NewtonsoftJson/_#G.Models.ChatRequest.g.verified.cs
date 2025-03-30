@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Request to start or continue a chat conversation with a large language model.
     /// </summary>
     public sealed partial class ChatRequest
     {
@@ -36,6 +36,21 @@ namespace G
         public global::G.ChatParameters? Chat { get; set; }
 
         /// <summary>
+        /// Indicates whether to save the chat in both the chat and query history. This overrides `chat.store`.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("save_history")]
+        public bool? SaveHistory { get; set; }
+
+        /// <summary>
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("intelligent_query_rewriting")]
+        public bool? IntelligentQueryRewriting { get; set; }
+
+        /// <summary>
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
         /// </summary>
@@ -64,6 +79,15 @@ namespace G
         /// <param name="chat">
         /// Parameters to control chat behavior.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save the chat in both the chat and query history. This overrides `chat.store`.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="intelligentQueryRewriting">
+        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
+        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="streamResponse">
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
@@ -73,12 +97,16 @@ namespace G
             global::G.SearchCorporaParameters search,
             global::G.GenerationParameters? generation,
             global::G.ChatParameters? chat,
+            bool? saveHistory,
+            bool? intelligentQueryRewriting,
             bool? streamResponse)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Search = search;
             this.Generation = generation;
             this.Chat = chat;
+            this.SaveHistory = saveHistory;
+            this.IntelligentQueryRewriting = intelligentQueryRewriting;
             this.StreamResponse = streamResponse;
         }
 

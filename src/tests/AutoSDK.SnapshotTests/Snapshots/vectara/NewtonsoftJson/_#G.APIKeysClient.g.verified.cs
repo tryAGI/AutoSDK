@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Manage API keys for the account<br/>
+    /// Create, manage, and revoke API keys for secure access to the platform<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

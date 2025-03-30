@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A user account with associated profile information and permissions.
     /// </summary>
     public sealed partial class User
     {

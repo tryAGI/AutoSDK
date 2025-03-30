@@ -6,7 +6,10 @@ namespace G
     public partial interface IDocumentsClient
     {
         /// <summary>
-        /// List the documents in the corpus
+        /// List the documents in the corpus<br/>
+        /// Retrieve a list of documents stored in a specific corpus. This endpoint <br/>
+        /// provides an overview of document metadata without returning the full content of <br/>
+        /// each document.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

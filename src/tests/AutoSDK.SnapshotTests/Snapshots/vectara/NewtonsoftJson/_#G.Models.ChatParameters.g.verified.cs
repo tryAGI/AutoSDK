@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ChatParameters
     {
         /// <summary>
-        /// Indicates whether to store chat message and response message.<br/>
+        /// Indicates whether to store chat messages and response messages.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("store")]
@@ -26,7 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatParameters" /> class.
         /// </summary>
         /// <param name="store">
-        /// Indicates whether to store chat message and response message.<br/>
+        /// Indicates whether to store chat messages and response messages.<br/>
         /// Default Value: true
         /// </param>
         public ChatParameters(

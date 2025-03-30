@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing a list of background jobs and their current states.
     /// </summary>
     public sealed partial class ListJobsResponse
     {

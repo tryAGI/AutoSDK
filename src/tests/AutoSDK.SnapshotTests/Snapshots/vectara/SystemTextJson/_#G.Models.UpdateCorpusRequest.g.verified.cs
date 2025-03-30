@@ -34,6 +34,12 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// Indicates whether to save corpus queries to query history by default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("save_history")]
+        public bool? SaveHistory { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,17 +60,22 @@ namespace G
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: New description of the corpus.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save corpus queries to query history by default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateCorpusRequest(
             bool? enabled,
             string? name,
-            string? description)
+            string? description,
+            bool? saveHistory)
         {
             this.Enabled = enabled;
             this.Name = name;
             this.Description = description;
+            this.SaveHistory = saveHistory;
         }
 
         /// <summary>

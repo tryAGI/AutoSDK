@@ -34,7 +34,7 @@ namespace G
         /// manage data availability without deleting the corpus, which is useful for <br/>
         /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
         /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
-        /// Update the name and description of a corpus dynamically to help keep your data <br/>
+        /// Consider updating the name and description of a corpus dynamically to help keep your data <br/>
         /// aligned with changing business needs.
         /// </summary>
         /// <param name="requestTimeout"></param>
@@ -265,7 +265,7 @@ namespace G
         /// manage data availability without deleting the corpus, which is useful for <br/>
         /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
         /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
-        /// Update the name and description of a corpus dynamically to help keep your data <br/>
+        /// Consider updating the name and description of a corpus dynamically to help keep your data <br/>
         /// aligned with changing business needs.
         /// </summary>
         /// <param name="requestTimeout"></param>
@@ -286,6 +286,9 @@ namespace G
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: New description of the corpus.
         /// </param>
+        /// <param name="saveHistory">
+        /// Indicates whether to save corpus queries to query history by default.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Corpus> UpdateCorpusAsync(
@@ -295,6 +298,7 @@ namespace G
             bool? enabled = default,
             string? name = default,
             string? description = default,
+            bool? saveHistory = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UpdateCorpusRequest
@@ -302,6 +306,7 @@ namespace G
                 Enabled = enabled,
                 Name = name,
                 Description = description,
+                SaveHistory = saveHistory,
             };
 
             return await UpdateCorpusAsync(

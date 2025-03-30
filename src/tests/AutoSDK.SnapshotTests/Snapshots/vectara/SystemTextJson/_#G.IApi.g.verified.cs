@@ -57,6 +57,11 @@ namespace G
 
 
         /// <summary>
+        /// Authenticate with the API using OAuth 2.0 or API keys
+        /// </summary>
+        public AuthenticationClient Authentication { get; }
+
+        /// <summary>
         /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
         /// </summary>
         public QueriesClient Queries { get; }
@@ -67,7 +72,7 @@ namespace G
         public UploadClient Upload { get; }
 
         /// <summary>
-        /// Index and manage core and structured documents for efficient search and retrieval
+        /// Index and manage both core and structured documents to enable efficient search and retrieval
         /// </summary>
         public IndexClient Index { get; }
 
@@ -85,6 +90,26 @@ namespace G
         /// Create, manage, and interact with chat sessions for conversational AI
         /// </summary>
         public ChatsClient Chats { get; }
+
+        /// <summary>
+        /// Manage generation presets for controlling the behavior of generative AI responses
+        /// </summary>
+        public GenerationPresetsClient GenerationPresets { get; }
+
+        /// <summary>
+        /// Retrieve and manage the history of previous queries for analytics and auditing
+        /// </summary>
+        public QueryHistoryClient QueryHistory { get; }
+
+        /// <summary>
+        /// Create, manage, and revoke API keys for secure access to the platform
+        /// </summary>
+        public APIKeysClient APIKeys { get; }
+
+        /// <summary>
+        /// Configure and manage application clients for OAuth authentication
+        /// </summary>
+        public ApplicationClientsClient ApplicationClients { get; }
 
         /// <summary>
         /// List LLMs for text summarization, chat, and other generation tasks
@@ -112,19 +137,9 @@ namespace G
         public UsersClient Users { get; }
 
         /// <summary>
-        /// Manage app clients, and perform authentication operations for admin-level access control
+        /// List available extractors for tabular data from documents
         /// </summary>
-        public ApplicationClientsClient ApplicationClients { get; }
-
-        /// <summary>
-        /// Manage API keys for the account
-        /// </summary>
-        public APIKeysClient APIKeys { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GenerationPresetsClient GenerationPresets { get; }
+        public TableExtractorsClient TableExtractors { get; }
 
     }
 }

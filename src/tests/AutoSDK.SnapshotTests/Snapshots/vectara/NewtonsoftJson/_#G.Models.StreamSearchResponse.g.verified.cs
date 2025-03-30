@@ -24,6 +24,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? SearchResults { get; set; }
 
         /// <summary>
+        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
+        /// intelligent_query_rewriting is enabled.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("rewritten_queries")]
+        public global::System.Collections.Generic.IList<global::G.RewrittenQuery>? RewrittenQueries { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -40,12 +47,18 @@ namespace G
         /// <param name="searchResults">
         /// The ranked search results.
         /// </param>
+        /// <param name="rewrittenQueries">
+        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
+        /// intelligent_query_rewriting is enabled.
+        /// </param>
         public StreamSearchResponse(
             string? type,
-            global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? searchResults)
+            global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? searchResults,
+            global::System.Collections.Generic.IList<global::G.RewrittenQuery>? rewrittenQueries)
         {
             this.Type = type;
             this.SearchResults = searchResults;
+            this.RewrittenQueries = rewrittenQueries;
         }
 
         /// <summary>

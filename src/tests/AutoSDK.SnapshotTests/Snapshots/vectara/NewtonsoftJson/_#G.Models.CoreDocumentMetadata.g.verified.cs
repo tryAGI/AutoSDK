@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// Arbitrary object of document level metadata. Properties of this object<br/>
-    /// can be used by document filter if defined as a corpus filter attribute.
+    /// can be used by document filters if defined as a corpus filter attribute.
     /// </summary>
     public sealed partial class CoreDocumentMetadata
     {

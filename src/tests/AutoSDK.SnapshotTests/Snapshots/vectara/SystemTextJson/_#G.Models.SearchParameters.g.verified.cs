@@ -30,9 +30,9 @@ namespace G
         public global::G.ContextConfiguration? ContextConfiguration { get; set; }
 
         /// <summary>
-        /// Rerank results of the search. Rerankers are very powerful tools to better order search results.<br/>
+        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results.<br/>
         /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
-        /// To disable reranking set the reranker `type` to `"none"`.
+        /// To disable reranking, set the reranker `type` to `"none"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reranker")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SearchRerankerJsonConverter))]
@@ -59,9 +59,9 @@ namespace G
         /// Configuration on the presentation of each document part in the result set.
         /// </param>
         /// <param name="reranker">
-        /// Rerank results of the search. Rerankers are very powerful tools to better order search results.<br/>
+        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results.<br/>
         /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
-        /// To disable reranking set the reranker `type` to `"none"`.
+        /// To disable reranking, set the reranker `type` to `"none"`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

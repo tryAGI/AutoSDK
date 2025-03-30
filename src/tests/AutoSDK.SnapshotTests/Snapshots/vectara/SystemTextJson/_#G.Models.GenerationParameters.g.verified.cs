@@ -16,9 +16,9 @@ namespace G
         ///   * The LLM used.<br/>
         ///   * `model_parameter`s such as temperature.<br/>
         ///  <br/>
-        /// All of these properties except the model can be overriden by setting them in this<br/>
+        /// All of these properties except the model can be overridden by setting them in this<br/>
         /// object. Even when a `prompt_template` is set, the `generation_preset_name` is used to set <br/>
-        /// the model used.<br/>
+        /// the model used. See `model_parameters.model` if you want to set the model explicitly.<br/>
         /// If `generation_preset_name` is not set, the Vectara platform will use the default model and<br/>
         /// prompt.<br/>
         /// Example: vectara-summary-ext-v1.2.0
@@ -45,11 +45,10 @@ namespace G
 
         /// <summary>
         /// Vectara manages both system and user roles and prompts for the generative<br/>
-        /// LLM out of the box by default. However, Scale customers can override the<br/>
+        /// LLM out of the box by default. However, users can override the<br/>
         /// `prompt_template` via this variable. The `prompt_template` is in the form of an<br/>
         /// Apache Velocity template. For more details on how to configure the<br/>
         /// `prompt_template`, see the [long-form documentation](https://docs.vectara.com/docs/prompts/vectara-prompt-engine).<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: [<br/>
         ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
         ///   #foreach ($qResult in $vectaraQueryResults)<br/>
@@ -73,7 +72,7 @@ namespace G
         public string? PromptTemplate { get; set; }
 
         /// <summary>
-        /// This property is deprecated in favor clearer naming. Use `prompt_template`. This property will be<br/>
+        /// This property is deprecated in favor of clearer naming. Use `prompt_template`. This property will be<br/>
         /// ignored if `prompt_template` is set.<br/>
         /// Example: [<br/>
         ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
@@ -104,8 +103,6 @@ namespace G
         /// than this value. This is generally implemented by including the `max_response_characters` in the<br/>
         /// prompt, and the LLM's instruction following capability dictates how closely the generated output<br/>
         /// is limited.<br/>
-        /// This is currently a Scale-only feature.<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: 300
         /// </summary>
         /// <example>300</example>
@@ -121,8 +118,7 @@ namespace G
         public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>
-        /// The parameters for the model.  These are currently a Scale-only feature.<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
+        /// The parameters for the model.<br/>
         /// WARNING: This is an experimental feature, and breakable at any point with virtually no<br/>
         /// notice. It is meant for experimentation to converge on optimal parameters that can then<br/>
         /// be set in the prompt definitions.
@@ -159,9 +155,9 @@ namespace G
         ///   * The LLM used.<br/>
         ///   * `model_parameter`s such as temperature.<br/>
         ///  <br/>
-        /// All of these properties except the model can be overriden by setting them in this<br/>
+        /// All of these properties except the model can be overridden by setting them in this<br/>
         /// object. Even when a `prompt_template` is set, the `generation_preset_name` is used to set <br/>
-        /// the model used.<br/>
+        /// the model used. See `model_parameters.model` if you want to set the model explicitly.<br/>
         /// If `generation_preset_name` is not set, the Vectara platform will use the default model and<br/>
         /// prompt.<br/>
         /// Example: vectara-summary-ext-v1.2.0
@@ -172,11 +168,10 @@ namespace G
         /// </param>
         /// <param name="promptTemplate">
         /// Vectara manages both system and user roles and prompts for the generative<br/>
-        /// LLM out of the box by default. However, Scale customers can override the<br/>
+        /// LLM out of the box by default. However, users can override the<br/>
         /// `prompt_template` via this variable. The `prompt_template` is in the form of an<br/>
         /// Apache Velocity template. For more details on how to configure the<br/>
         /// `prompt_template`, see the [long-form documentation](https://docs.vectara.com/docs/prompts/vectara-prompt-engine).<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: [<br/>
         ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
         ///   #foreach ($qResult in $vectaraQueryResults)<br/>
@@ -192,8 +187,6 @@ namespace G
         /// than this value. This is generally implemented by including the `max_response_characters` in the<br/>
         /// prompt, and the LLM's instruction following capability dictates how closely the generated output<br/>
         /// is limited.<br/>
-        /// This is currently a Scale-only feature.<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: 300
         /// </param>
         /// <param name="responseLanguage">
@@ -201,8 +194,7 @@ namespace G
         /// Default Value: auto
         /// </param>
         /// <param name="modelParameters">
-        /// The parameters for the model.  These are currently a Scale-only feature.<br/>
-        /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
+        /// The parameters for the model.<br/>
         /// WARNING: This is an experimental feature, and breakable at any point with virtually no<br/>
         /// notice. It is meant for experimentation to converge on optimal parameters that can then<br/>
         /// be set in the prompt definitions.

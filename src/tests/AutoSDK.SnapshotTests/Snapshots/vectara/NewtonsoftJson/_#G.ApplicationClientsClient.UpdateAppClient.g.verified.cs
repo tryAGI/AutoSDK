@@ -29,7 +29,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Update an App Client
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -223,7 +224,8 @@ namespace G
         }
 
         /// <summary>
-        /// Update an App Client
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

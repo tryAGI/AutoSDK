@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StructuredDocument
     {
         /// <summary>
-        /// The document ID, must be unique within the corpus.
+        /// The document ID must be unique within the corpus.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,6 +61,14 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.StructuredDocumentSection> Sections { get; set; }
 
         /// <summary>
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
+        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChunkingStrategyJsonConverter))]
+        public global::G.ChunkingStrategy? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,7 +78,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StructuredDocument" /> class.
         /// </summary>
         /// <param name="id">
-        /// The document ID, must be unique within the corpus.
+        /// The document ID must be unique within the corpus.
         /// </param>
         /// <param name="type">
         /// When the type of the indexed document is `structured` the rest of<br/>
@@ -95,6 +103,10 @@ namespace G
         /// <param name="sections">
         /// The subsection of the document.
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
+        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +117,8 @@ namespace G
             string? title,
             string? description,
             object? metadata,
-            global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
+            global::System.Collections.Generic.Dictionary<string, double>? customDimensions,
+            global::G.ChunkingStrategy? chunkingStrategy)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
@@ -114,6 +127,7 @@ namespace G
             this.Description = description;
             this.Metadata = metadata;
             this.CustomDimensions = customDimensions;
+            this.ChunkingStrategy = chunkingStrategy;
         }
 
         /// <summary>

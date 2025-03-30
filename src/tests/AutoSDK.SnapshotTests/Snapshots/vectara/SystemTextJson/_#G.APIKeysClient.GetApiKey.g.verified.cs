@@ -27,7 +27,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Get an API key
+        /// Get an API key<br/>
+        /// Retrieve details of a specific API key by its ID.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -107,7 +108,7 @@ namespace G
             ProcessGetApiKeyResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Permissions do not allow getting this API keys.
+            // Permissions do not allow getting this API key.
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;

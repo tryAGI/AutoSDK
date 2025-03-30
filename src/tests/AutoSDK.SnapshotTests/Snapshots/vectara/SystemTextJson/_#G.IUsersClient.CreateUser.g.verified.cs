@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.User> CreateUserAsync(
+        global::System.Threading.Tasks.Task<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>> CreateUserAsync(
             global::G.CreateUserRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
@@ -40,7 +40,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.User> CreateUserAsync(
+        global::System.Threading.Tasks.Task<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>> CreateUserAsync(
             string email,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

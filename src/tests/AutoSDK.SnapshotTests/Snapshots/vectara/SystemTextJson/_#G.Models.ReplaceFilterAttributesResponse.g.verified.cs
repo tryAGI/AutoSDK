@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing the job ID for the filter attributes replacement operation.
     /// </summary>
     public sealed partial class ReplaceFilterAttributesResponse
     {

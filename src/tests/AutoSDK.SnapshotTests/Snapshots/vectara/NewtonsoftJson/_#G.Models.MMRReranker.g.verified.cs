@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
     /// </summary>
     public sealed partial class MMRReranker
     {
         /// <summary>
         /// When the type is `mmr`, you can specify the `diversity_bias`, and the<br/>
-        /// the retrieval engine will use the MMR reranker.<br/>
+        /// retrieval engine will use the MMR reranker.<br/>
         /// Default Value: mmr
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         /// <param name="type">
         /// When the type is `mmr`, you can specify the `diversity_bias`, and the<br/>
-        /// the retrieval engine will use the MMR reranker.<br/>
+        /// retrieval engine will use the MMR reranker.<br/>
         /// Default Value: mmr
         /// </param>
         /// <param name="diversityBias">

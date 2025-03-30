@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// Bundle of default values used when calling generation. All values except<br/>
-    /// model name can be overriden at generation time.
+    /// model name can be overridden at generation time.
     /// </summary>
     public sealed partial class GenerationPreset
     {
@@ -23,7 +23,8 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Name of the model that these presets are used with.
+        /// Name of the model that these presets are used with. The list of available names can be<br/>
+        /// fetched by the `GET /v2/llms` endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_name")]
         public string? LlmName { get; set; }
@@ -95,7 +96,8 @@ namespace G
         /// Description of the generation preset.
         /// </param>
         /// <param name="llmName">
-        /// Name of the model that these presets are used with.
+        /// Name of the model that these presets are used with. The list of available names can be<br/>
+        /// fetched by the `GET /v2/llms` endpoint.
         /// </param>
         /// <param name="promptTemplate">
         /// Preset template used to render the prompt sent to generation.

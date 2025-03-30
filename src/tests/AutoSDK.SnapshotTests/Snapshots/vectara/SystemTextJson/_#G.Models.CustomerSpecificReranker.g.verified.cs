@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CustomerSpecificReranker
     {
         /// <summary>
-        /// When type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
+        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
         /// The retrieval engine will then rerank results using that reranker.<br/>
         /// Default Value: customer_reranker
         /// </summary>
@@ -18,7 +18,7 @@ namespace G
         public string? Type { get; set; }
 
         /// <summary>
-        /// The ID of the reranker. The multilingual reranker that may be used by Scale customers is rnk_272725719.<br/>
+        /// The ID of the reranker. The multilingual reranker that may be specified is rnk_272725719.<br/>
         /// Do not specify the MMR reranker ID here, and instead, use the MMR reranker object type.<br/>
         /// **Deprecated**: Use `reranker_name` instead.<br/>
         /// Example: rnk_272725719
@@ -73,7 +73,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomerSpecificReranker" /> class.
         /// </summary>
         /// <param name="type">
-        /// When type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
+        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
         /// The retrieval engine will then rerank results using that reranker.<br/>
         /// Default Value: customer_reranker
         /// </param>

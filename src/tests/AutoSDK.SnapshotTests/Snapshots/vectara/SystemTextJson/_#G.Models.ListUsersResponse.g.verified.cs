@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing a list of user accounts.
     /// </summary>
     public sealed partial class ListUsersResponse
     {

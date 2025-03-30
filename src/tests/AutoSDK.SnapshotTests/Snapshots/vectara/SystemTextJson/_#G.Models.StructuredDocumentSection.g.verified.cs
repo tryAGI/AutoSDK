@@ -37,6 +37,12 @@ namespace G
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// The tables that this section contains.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
+        public global::System.Collections.Generic.IList<global::G.Table>? Tables { get; set; }
+
+        /// <summary>
         /// The sections that this section contains.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sections")]
@@ -65,6 +71,9 @@ namespace G
         /// by this section. Properties of this object can be used by document part level <br/>
         /// filters if defined as a corpus filter attribute.
         /// </param>
+        /// <param name="tables">
+        /// The tables that this section contains.
+        /// </param>
         /// <param name="sections">
         /// The sections that this section contains.
         /// </param>
@@ -76,12 +85,14 @@ namespace G
             int? id,
             string? title,
             object? metadata,
+            global::System.Collections.Generic.IList<global::G.Table>? tables,
             global::System.Collections.Generic.IList<global::G.StructuredDocumentSection>? sections)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Id = id;
             this.Title = title;
             this.Metadata = metadata;
+            this.Tables = tables;
             this.Sections = sections;
         }
 

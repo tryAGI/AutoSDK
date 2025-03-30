@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StructuredDocument
     {
         /// <summary>
-        /// The document ID, must be unique within the corpus.
+        /// The document ID must be unique within the corpus.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
@@ -58,6 +58,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.StructuredDocumentSection> Sections { get; set; } = default!;
 
         /// <summary>
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
+        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        public global::G.ChunkingStrategy? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -67,7 +74,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StructuredDocument" /> class.
         /// </summary>
         /// <param name="id">
-        /// The document ID, must be unique within the corpus.
+        /// The document ID must be unique within the corpus.
         /// </param>
         /// <param name="type">
         /// When the type of the indexed document is `structured` the rest of<br/>
@@ -92,6 +99,10 @@ namespace G
         /// <param name="sections">
         /// The subsection of the document.
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
+        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// </param>
         public StructuredDocument(
             string id,
             string type,
@@ -99,7 +110,8 @@ namespace G
             string? title,
             string? description,
             object? metadata,
-            global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
+            global::System.Collections.Generic.Dictionary<string, double>? customDimensions,
+            global::G.ChunkingStrategy? chunkingStrategy)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
@@ -108,6 +120,7 @@ namespace G
             this.Description = description;
             this.Metadata = metadata;
             this.CustomDimensions = customDimensions;
+            this.ChunkingStrategy = chunkingStrategy;
         }
 
         /// <summary>

@@ -29,7 +29,9 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Retrieve a document
+        /// Retrieve a document<br/>
+        /// Retrieve the content and metadata of a specific document, identified by its <br/>
+        /// unique `document_id` from a specific corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

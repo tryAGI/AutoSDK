@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response containing a list of API keys for the authenticated customer.
     /// </summary>
     public sealed partial class ListApiKeysResponse
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Error returned when a requested resource does not exist.
     /// </summary>
     public sealed partial class NotFoundError
     {
