@@ -24,23 +24,31 @@ namespace G
         /// </summary>
         /// <param name="shareToken"></param>
         /// <param name="sessionIds"></param>
-        /// <param name="comparativeExperimentId"></param>
-        /// <param name="filters"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 20
+        /// Default Value: 10
         /// </param>
+        /// <param name="preview">
+        /// Default Value: false
+        /// </param>
+        /// <param name="format"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="sortParams"></param>
+        /// <param name="filters"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::System.Guid? comparativeExperimentId = default,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             int? offset = default,
             int? limit = default,
+            bool? preview = default,
+            global::G.QueryExampleSchemaWithRunsFormat? format = default,
+            global::System.Guid? comparativeExperimentId = default,
+            global::G.SortParamsForRunsComparisonView? sortParams = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

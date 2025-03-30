@@ -288,6 +288,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("thread_id")]
+        public string? ThreadId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queue_run_id", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Guid QueueRunId { get; set; } = default!;
 
@@ -376,6 +388,8 @@ namespace G
         /// <param name="traceUpgrade">
         /// Default Value: false
         /// </param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="threadId"></param>
         /// <param name="queueRunId"></param>
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
@@ -428,6 +442,8 @@ namespace G
             global::System.DateTime? traceFirstReceivedAt,
             int? ttlSeconds,
             bool? traceUpgrade,
+            global::System.Guid? referenceDatasetId,
+            string? threadId,
             global::System.DateTime? lastReviewedTime,
             global::System.DateTime? addedAt,
             global::System.DateTime? effectiveAddedAt)
@@ -479,6 +495,8 @@ namespace G
             this.TraceFirstReceivedAt = traceFirstReceivedAt;
             this.TtlSeconds = ttlSeconds;
             this.TraceUpgrade = traceUpgrade;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.ThreadId = threadId;
             this.LastReviewedTime = lastReviewedTime;
             this.AddedAt = addedAt;
             this.EffectiveAddedAt = effectiveAddedAt;

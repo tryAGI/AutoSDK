@@ -113,6 +113,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Enabled?.ToString() ??
+            Disabled?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsEnabled && !IsDisabled || !IsEnabled && IsDisabled;

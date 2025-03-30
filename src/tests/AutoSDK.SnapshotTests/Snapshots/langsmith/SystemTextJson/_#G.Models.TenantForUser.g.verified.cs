@@ -46,6 +46,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
         public string? TenantHandle { get; set; }
 
@@ -87,6 +94,7 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="isDeleted"></param>
         /// <param name="tenantHandle"></param>
         /// <param name="readOnly">
         /// Default Value: false
@@ -102,6 +110,7 @@ namespace G
             global::System.DateTime createdAt,
             string displayName,
             bool isPersonal,
+            bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle,
             bool? readOnly,
@@ -113,6 +122,7 @@ namespace G
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
+            this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
             this.ReadOnly = readOnly;

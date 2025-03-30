@@ -54,6 +54,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsValue1;

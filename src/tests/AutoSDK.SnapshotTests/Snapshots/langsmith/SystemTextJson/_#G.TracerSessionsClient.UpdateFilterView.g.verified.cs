@@ -218,6 +218,7 @@ namespace G
         /// <param name="description"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
+        /// <param name="type"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> UpdateFilterViewAsync(
@@ -228,6 +229,7 @@ namespace G
             string? description = default,
             string? traceFilterString = default,
             string? treeFilterString = default,
+            global::G.FilterViewType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.FilterViewUpdate
@@ -237,6 +239,7 @@ namespace G
                 Description = description,
                 TraceFilterString = traceFilterString,
                 TreeFilterString = treeFilterString,
+                Type = type,
             };
 
             return await UpdateFilterViewAsync(

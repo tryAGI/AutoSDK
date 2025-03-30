@@ -11,14 +11,16 @@ namespace G
             ref global::System.Guid? datasetId,
             ref global::System.Guid? sessionId,
             ref global::G.ListRulesApiV1RunsRulesGetType? type,
-            ref string? nameContains);
+            ref string? nameContains,
+            global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? datasetId,
             global::System.Guid? sessionId,
             global::G.ListRulesApiV1RunsRulesGetType? type,
-            string? nameContains);
+            string? nameContains,
+            global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,6 +38,7 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="type"></param>
         /// <param name="nameContains"></param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
@@ -43,6 +46,7 @@ namespace G
             global::System.Guid? sessionId = default,
             global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -52,7 +56,8 @@ namespace G
                 datasetId: ref datasetId,
                 sessionId: ref sessionId,
                 type: ref type,
-                nameContains: ref nameContains);
+                nameContains: ref nameContains,
+                id: id);
 
             var typeValue = type switch
             {
@@ -68,6 +73,7 @@ namespace G
                 .AddOptionalParameter("session_id", sessionId?.ToString()) 
                 .AddOptionalParameter("type", typeValue?.ToString()) 
                 .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -103,7 +109,8 @@ namespace G
                 datasetId: datasetId,
                 sessionId: sessionId,
                 type: type,
-                nameContains: nameContains);
+                nameContains: nameContains,
+                id: id);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

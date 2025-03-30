@@ -210,6 +210,8 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="reservationMinutes"></param>
+        /// <param name="rubricItems"></param>
+        /// <param name="rubricInstructions"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
@@ -220,6 +222,8 @@ namespace G
             int? numReviewersPerItem = default,
             bool? enableReservations = default,
             int? reservationMinutes = default,
+            global::System.Collections.Generic.IList<global::G.AnnotationQueueRubricItemSchema>? rubricItems = default,
+            string? rubricInstructions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.AnnotationQueueUpdateSchema
@@ -230,6 +234,8 @@ namespace G
                 NumReviewersPerItem = numReviewersPerItem,
                 EnableReservations = enableReservations,
                 ReservationMinutes = reservationMinutes,
+                RubricItems = rubricItems,
+                RubricInstructions = rubricInstructions,
             };
 
             return await UpdateAnnotationQueueAsync(

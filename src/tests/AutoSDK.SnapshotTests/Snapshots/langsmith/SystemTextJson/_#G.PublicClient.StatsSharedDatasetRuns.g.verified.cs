@@ -210,6 +210,7 @@ namespace G
         /// <param name="dataSourceType">
         /// Enum for run data source types.
         /// </param>
+        /// <param name="skipPagination"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
@@ -230,6 +231,7 @@ namespace G
             string? treeFilter = default,
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
+            bool? skipPagination = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.FilterQueryParamsForRunSchema
@@ -250,6 +252,7 @@ namespace G
                 TreeFilter = treeFilter,
                 IsRoot = isRoot,
                 DataSourceType = dataSourceType,
+                SkipPagination = skipPagination,
             };
 
             return await StatsSharedDatasetRunsAsync(

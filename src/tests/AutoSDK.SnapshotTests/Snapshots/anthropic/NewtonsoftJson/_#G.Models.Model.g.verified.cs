@@ -559,6 +559,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToValueString() ??
+            Value3?.ToValueString() ??
+            Value4?.ToValueString() ??
+            Value5?.ToValueString() ??
+            Value6?.ToValueString() ??
+            Value7?.ToValueString() ??
+            Value8?.ToValueString() ??
+            Value9?.ToValueString() ??
+            Value10?.ToValueString() ??
+            Value11?.ToValueString() ??
+            Value12?.ToValueString() ??
+            Value13?.ToValueString() ??
+            Value14?.ToValueString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14;

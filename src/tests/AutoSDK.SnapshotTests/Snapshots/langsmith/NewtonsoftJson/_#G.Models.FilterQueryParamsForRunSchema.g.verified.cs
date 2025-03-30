@@ -106,6 +106,12 @@ namespace G
         public global::G.RunsFilterDataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("skip_pagination")]
+        public bool? SkipPagination { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -134,6 +140,7 @@ namespace G
         /// <param name="dataSourceType">
         /// Enum for run data source types.
         /// </param>
+        /// <param name="skipPagination"></param>
         public FilterQueryParamsForRunSchema(
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? trace,
@@ -150,7 +157,8 @@ namespace G
             string? traceFilter,
             string? treeFilter,
             bool? isRoot,
-            global::G.RunsFilterDataSourceTypeEnum? dataSourceType)
+            global::G.RunsFilterDataSourceTypeEnum? dataSourceType,
+            bool? skipPagination)
         {
             this.Id = id;
             this.Trace = trace;
@@ -168,6 +176,7 @@ namespace G
             this.TreeFilter = treeFilter;
             this.IsRoot = isRoot;
             this.DataSourceType = dataSourceType;
+            this.SkipPagination = skipPagination;
         }
 
         /// <summary>

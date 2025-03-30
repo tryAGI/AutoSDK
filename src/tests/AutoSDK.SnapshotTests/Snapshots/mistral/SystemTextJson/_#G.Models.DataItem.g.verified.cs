@@ -111,6 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Base?.ToString() ??
+            FineTuned?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsBase && !IsFineTuned || !IsBase && IsFineTuned;

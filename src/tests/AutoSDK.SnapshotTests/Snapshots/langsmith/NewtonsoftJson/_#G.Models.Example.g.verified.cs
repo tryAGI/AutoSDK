@@ -64,6 +64,12 @@ namespace G
         public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("attachment_urls")]
+        public object? AttachmentUrls { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -81,6 +87,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="modifiedAt"></param>
+        /// <param name="attachmentUrls"></param>
         public Example(
             global::System.Guid datasetId,
             object inputs,
@@ -90,7 +97,8 @@ namespace G
             global::System.Guid? sourceRunId,
             object? metadata,
             global::System.DateTime? createdAt,
-            global::System.DateTime? modifiedAt)
+            global::System.DateTime? modifiedAt,
+            object? attachmentUrls)
         {
             this.DatasetId = datasetId;
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
@@ -101,6 +109,7 @@ namespace G
             this.Metadata = metadata;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
+            this.AttachmentUrls = attachmentUrls;
         }
 
         /// <summary>

@@ -40,6 +40,12 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.FilterViewType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -53,18 +59,21 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
+        /// <param name="type"></param>
         public FilterViewCreate(
             string displayName,
             string? filterString,
             string? traceFilterString,
             string? treeFilterString,
-            string? description)
+            string? description,
+            global::G.FilterViewType? type)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.FilterString = filterString;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
             this.Description = description;
+            this.Type = type;
         }
 
         /// <summary>

@@ -84,6 +84,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        public global::System.Guid? TraceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
@@ -99,6 +105,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
         public global::G.FeedbackConfig? FeedbackConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public bool? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,9 +132,11 @@ namespace G
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="traceId"></param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -138,9 +152,11 @@ namespace G
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
+            global::System.Guid? traceId,
             global::System.Guid? id,
             global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? feedbackSource,
-            global::G.FeedbackConfig? feedbackConfig)
+            global::G.FeedbackConfig? feedbackConfig,
+            bool? error)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.CreatedAt = createdAt;
@@ -153,9 +169,11 @@ namespace G
             this.ComparativeExperimentId = comparativeExperimentId;
             this.RunId = runId;
             this.SessionId = sessionId;
+            this.TraceId = traceId;
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;
+            this.Error = error;
         }
 
         /// <summary>

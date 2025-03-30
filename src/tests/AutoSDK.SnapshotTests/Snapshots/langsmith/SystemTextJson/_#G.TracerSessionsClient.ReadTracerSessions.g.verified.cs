@@ -22,6 +22,8 @@ namespace G
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref bool? facets,
+            ref string? filter,
+            ref bool? includeStats,
             ref string? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,6 +42,8 @@ namespace G
             int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             bool? facets,
+            string? filter,
+            bool? includeStats,
             string? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -76,6 +80,10 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
+        /// <param name="includeStats">
+        /// Default Value: true
+        /// </param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -94,6 +102,8 @@ namespace G
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? facets = default,
+            string? filter = default,
+            bool? includeStats = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,6 +125,8 @@ namespace G
                 limit: ref limit,
                 tagValueId: tagValueId,
                 facets: ref facets,
+                filter: ref filter,
+                includeStats: ref includeStats,
                 accept: ref accept);
 
             var __pathBuilder = new PathBuilder(
@@ -135,6 +147,8 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("facets", facets?.ToString()) 
+                .AddOptionalParameter("filter", filter) 
+                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -187,6 +201,8 @@ namespace G
                 limit: limit,
                 tagValueId: tagValueId,
                 facets: facets,
+                filter: filter,
+                includeStats: includeStats,
                 accept: accept);
 
             using var __response = await HttpClient.SendAsync(

@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareListTenantsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? skipCreate);
+            ref bool? skipCreate,
+            ref bool? includeDeleted);
         partial void PrepareListTenantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? skipCreate);
+            bool? skipCreate,
+            bool? includeDeleted);
         partial void ProcessListTenantsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,23 +31,29 @@ namespace G
         /// <param name="skipCreate">
         /// Default Value: false
         /// </param>
+        /// <param name="includeDeleted">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TenantForUser>> ListTenantsAsync(
             bool? skipCreate = default,
+            bool? includeDeleted = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListTenantsArguments(
                 httpClient: HttpClient,
-                skipCreate: ref skipCreate);
+                skipCreate: ref skipCreate,
+                includeDeleted: ref includeDeleted);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tenants",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+                .AddOptionalParameter("include_deleted", includeDeleted?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -78,7 +86,8 @@ namespace G
             PrepareListTenantsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                skipCreate: skipCreate);
+                skipCreate: skipCreate,
+                includeDeleted: includeDeleted);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

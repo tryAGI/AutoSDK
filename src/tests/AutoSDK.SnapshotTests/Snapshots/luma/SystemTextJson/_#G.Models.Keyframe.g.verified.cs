@@ -111,6 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Generation?.ToString() ??
+            Image?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsGeneration && !IsImage || !IsGeneration && IsImage;

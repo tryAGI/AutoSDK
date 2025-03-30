@@ -94,6 +94,18 @@ namespace G
         public string? RoleName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
         /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_ids")]
@@ -124,6 +136,8 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         /// <param name="tenantIds">
         /// Default Value: []
         /// </param>
@@ -142,6 +156,8 @@ namespace G
             global::System.Guid? tenantId,
             global::System.Guid? organizationId,
             string? roleName,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName,
             global::System.Collections.Generic.IList<global::System.Guid>? tenantIds)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
@@ -158,6 +174,8 @@ namespace G
             this.TenantId = tenantId;
             this.OrganizationId = organizationId;
             this.RoleName = roleName;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
             this.TenantIds = tenantIds;
         }
 

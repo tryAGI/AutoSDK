@@ -597,6 +597,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Labeled?.ToString() ??
+            Unlabeled?.ToString() ??
+            Assigned?.ToString() ??
+            Unassigned?.ToString() ??
+            Milestoned?.ToString() ??
+            Demilestoned?.ToString() ??
+            Renamed?.ToString() ??
+            ReviewRequested?.ToString() ??
+            ReviewRequestRemoved?.ToString() ??
+            ReviewDismissed?.ToString() ??
+            Locked?.ToString() ??
+            AddedToProject?.ToString() ??
+            MovedColumnInProject?.ToString() ??
+            RemovedFromProject?.ToString() ??
+            ConvertedNoteTo?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsLabeled || IsUnlabeled || IsAssigned || IsUnassigned || IsMilestoned || IsDemilestoned || IsRenamed || IsReviewRequested || IsReviewRequestRemoved || IsReviewDismissed || IsLocked || IsAddedToProject || IsMovedColumnInProject || IsRemovedFromProject || IsConvertedNoteTo;

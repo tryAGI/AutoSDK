@@ -20,7 +20,6 @@ namespace G
             ref global::G.ListReposApiV1ReposGetIsPublic? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
-            ref bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref string? sortField,
             ref global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
@@ -39,7 +38,6 @@ namespace G
             global::G.ListReposApiV1ReposGetIsPublic? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
-            bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             string? sortField,
             global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
@@ -74,9 +72,6 @@ namespace G
         /// <param name="isPublic"></param>
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
-        /// <param name="matchPrefix">
-        /// Default Value: false
-        /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
@@ -95,7 +90,6 @@ namespace G
             global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
             global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
@@ -117,7 +111,6 @@ namespace G
                 isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
-                matchPrefix: ref matchPrefix,
                 tagValueId: tagValueId,
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
@@ -138,7 +131,6 @@ namespace G
                 .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("match_prefix", matchPrefix?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("sort_field", sortField) 
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
@@ -186,7 +178,6 @@ namespace G
                 isPublic: isPublic,
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
-                matchPrefix: matchPrefix,
                 tagValueId: tagValueId,
                 sortField: sortField,
                 sortDirection: sortDirection);

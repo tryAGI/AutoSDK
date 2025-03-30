@@ -72,6 +72,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("source_rule_id")]
+        public global::System.Guid? SourceRuleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_runs", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalRuns { get; set; } = default!;
 
@@ -100,6 +106,7 @@ namespace G
         /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="sourceRuleId"></param>
         /// <param name="totalRuns"></param>
         public AnnotationQueueSchemaWithSize(
             string name,
@@ -112,7 +119,8 @@ namespace G
             global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
-            int? reservationMinutes)
+            int? reservationMinutes,
+            global::System.Guid? sourceRuleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
@@ -125,6 +133,7 @@ namespace G
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.SourceRuleId = sourceRuleId;
         }
 
         /// <summary>

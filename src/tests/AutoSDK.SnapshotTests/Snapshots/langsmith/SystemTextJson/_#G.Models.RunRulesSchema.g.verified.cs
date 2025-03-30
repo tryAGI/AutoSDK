@@ -185,6 +185,19 @@ namespace G
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transient")]
+        public bool? Transient { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EvaluatorVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -229,6 +242,10 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
+        /// <param name="transient">
+        /// Default Value: false
+        /// </param>
+        /// <param name="evaluatorVersion"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -240,6 +257,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            int evaluatorVersion,
             bool? isEnabled,
             global::System.Guid? sessionId,
             string? sessionName,
@@ -260,7 +278,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? alerts,
             bool? extendOnly,
-            global::System.DateTime? backfillFrom)
+            global::System.DateTime? backfillFrom,
+            bool? transient)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -269,6 +288,7 @@ namespace G
             this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.EvaluatorVersion = evaluatorVersion;
             this.IsEnabled = isEnabled;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
@@ -290,6 +310,7 @@ namespace G
             this.Alerts = alerts;
             this.ExtendOnly = extendOnly;
             this.BackfillFrom = backfillFrom;
+            this.Transient = transient;
         }
 
         /// <summary>

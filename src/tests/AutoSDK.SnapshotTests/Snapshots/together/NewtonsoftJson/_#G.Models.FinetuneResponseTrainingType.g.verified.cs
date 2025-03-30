@@ -111,6 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Full?.ToString() ??
+            Lora?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsFull && !IsLora || !IsFull && IsLora;

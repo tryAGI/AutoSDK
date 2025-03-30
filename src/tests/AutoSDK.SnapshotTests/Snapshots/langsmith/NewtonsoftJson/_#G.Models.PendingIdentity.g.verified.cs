@@ -94,6 +94,18 @@ namespace G
         public string? RoleName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -118,6 +130,8 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         public PendingIdentity(
             string email,
             global::System.Guid id,
@@ -132,7 +146,9 @@ namespace G
             global::System.Guid? userId,
             global::System.Guid? tenantId,
             global::System.Guid? organizationId,
-            string? roleName)
+            string? roleName,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Id = id;
@@ -148,6 +164,8 @@ namespace G
             this.TenantId = tenantId;
             this.OrganizationId = organizationId;
             this.RoleName = roleName;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
         }
 
         /// <summary>

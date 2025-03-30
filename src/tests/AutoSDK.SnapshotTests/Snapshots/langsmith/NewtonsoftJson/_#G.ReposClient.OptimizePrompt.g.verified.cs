@@ -24,12 +24,12 @@ namespace G
 
         /// <summary>
         /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
+        /// Optimize prompt
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
             global::G.OptimizePromptRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -160,7 +160,7 @@ namespace G
                 }
 
                 return
-                    global::G.OptimizePromptResponse.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.AppHubCrudOptimizeOptimizePromptResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -190,14 +190,14 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.OptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.AppHubCrudOptimizeOptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
         /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
+        /// Optimize prompt
         /// </summary>
         /// <param name="prompt"></param>
         /// <param name="metaprompt"></param>
@@ -205,7 +205,7 @@ namespace G
         /// <param name="overallFeedback"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
             string prompt,
             object metaprompt,
             global::System.Collections.Generic.IList<global::G.ExampleRunWithFeedback> examples,

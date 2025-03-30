@@ -46,6 +46,18 @@ namespace G
         public int? ReservationMinutes { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rubric_items")]
+        public global::System.Collections.Generic.IList<global::G.AnnotationQueueRubricItemSchema>? RubricItems { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rubric_instructions")]
+        public string? RubricInstructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +76,8 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="reservationMinutes"></param>
+        /// <param name="rubricItems"></param>
+        /// <param name="rubricInstructions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +87,9 @@ namespace G
             global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
-            int? reservationMinutes)
+            int? reservationMinutes,
+            global::System.Collections.Generic.IList<global::G.AnnotationQueueRubricItemSchema>? rubricItems,
+            string? rubricInstructions)
         {
             this.Name = name;
             this.Description = description;
@@ -81,6 +97,8 @@ namespace G
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.RubricItems = rubricItems;
+            this.RubricInstructions = rubricInstructions;
         }
 
         /// <summary>

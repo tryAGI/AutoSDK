@@ -46,6 +46,13 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? PatchExamples { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transformations")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? Transformations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +66,7 @@ namespace G
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
+        /// <param name="transformations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,13 +75,15 @@ namespace G
             global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition,
             global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition,
-            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples)
+            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? transformations)
         {
             this.Name = name;
             this.Description = description;
             this.InputsSchemaDefinition = inputsSchemaDefinition;
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.PatchExamples = patchExamples;
+            this.Transformations = transformations;
         }
 
         /// <summary>

@@ -28,6 +28,7 @@ namespace G
         /// <param name="externallyManaged">
         /// Default Value: false
         /// </param>
+        /// <param name="transformations"></param>
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="dataType">
@@ -42,6 +43,7 @@ namespace G
             object? inputsSchemaDefinition = default,
             object? outputsSchemaDefinition = default,
             bool? externallyManaged = default,
+            global::System.Collections.Generic.IList<global::G.DatasetTransformation>? transformations = default,
             global::System.Guid? id = default,
             object? extra = default,
             global::G.DataType? dataType = default,

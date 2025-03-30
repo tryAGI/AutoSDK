@@ -12,26 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bucket_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string BucketName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("endpoint_url")]
+        public string? EndpointUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prefix", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Prefix { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("prefix")]
+        public string? Prefix { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("bucket_name")]
+        public string? BucketName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
         public string? Region { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("endpoint_url")]
-        public string? EndpointUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportDestinationS3Config" /> class.
         /// </summary>
-        /// <param name="bucketName"></param>
-        /// <param name="prefix"></param>
-        /// <param name="region"></param>
         /// <param name="endpointUrl"></param>
+        /// <param name="prefix"></param>
+        /// <param name="bucketName"></param>
+        /// <param name="region"></param>
         public BulkExportDestinationS3Config(
-            string bucketName,
+            string? endpointUrl,
             string? prefix,
-            string? region,
-            string? endpointUrl)
+            string? bucketName,
+            string? region)
         {
-            this.BucketName = bucketName ?? throw new global::System.ArgumentNullException(nameof(bucketName));
-            this.Prefix = prefix ?? throw new global::System.ArgumentNullException(nameof(prefix));
-            this.Region = region;
             this.EndpointUrl = endpointUrl;
+            this.Prefix = prefix;
+            this.BucketName = bucketName;
+            this.Region = region;
         }
 
         /// <summary>

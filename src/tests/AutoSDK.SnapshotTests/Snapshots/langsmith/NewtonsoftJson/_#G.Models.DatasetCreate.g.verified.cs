@@ -48,6 +48,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transformations")]
+        public global::System.Collections.Generic.IList<global::G.DatasetTransformation>? Transformations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public global::System.Guid? Id { get; set; }
 
@@ -80,6 +86,7 @@ namespace G
         /// <param name="externallyManaged">
         /// Default Value: false
         /// </param>
+        /// <param name="transformations"></param>
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="dataType">
@@ -92,6 +99,7 @@ namespace G
             object? inputsSchemaDefinition,
             object? outputsSchemaDefinition,
             bool? externallyManaged,
+            global::System.Collections.Generic.IList<global::G.DatasetTransformation>? transformations,
             global::System.Guid? id,
             object? extra,
             global::G.DataType? dataType)
@@ -102,6 +110,7 @@ namespace G
             this.InputsSchemaDefinition = inputsSchemaDefinition;
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.ExternallyManaged = externallyManaged;
+            this.Transformations = transformations;
             this.Id = id;
             this.Extra = extra;
             this.DataType = dataType;

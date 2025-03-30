@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// All database fields for commits, plus helpful computed fields.
+    /// All database fields for commits, plus helpful computed fields and user info<br/>
+    /// for private prompts.
     /// </summary>
     public sealed partial class CommitWithLookups
     {
@@ -85,6 +86,12 @@ namespace G
         public string? ParentCommitHash { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
+        public string? FullName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -104,6 +111,7 @@ namespace G
         /// <param name="numDownloads"></param>
         /// <param name="numViews"></param>
         /// <param name="parentCommitHash"></param>
+        /// <param name="fullName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -118,7 +126,8 @@ namespace G
             int numDownloads,
             int numViews,
             global::System.Guid? parentId,
-            string? parentCommitHash)
+            string? parentCommitHash,
+            string? fullName)
         {
             this.Id = id;
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
@@ -131,6 +140,7 @@ namespace G
             this.NumViews = numViews;
             this.ParentId = parentId;
             this.ParentCommitHash = parentCommitHash;
+            this.FullName = fullName;
         }
 
         /// <summary>

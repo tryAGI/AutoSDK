@@ -27,6 +27,7 @@ namespace G
         /// </param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
+        /// <param name="includeUserNames"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadFeedbacksAsync(
@@ -42,6 +43,7 @@ namespace G
             global::G.FeedbackLevel? level = default,
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
+            bool? includeUserNames = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

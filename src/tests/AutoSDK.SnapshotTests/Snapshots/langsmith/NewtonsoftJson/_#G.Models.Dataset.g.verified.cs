@@ -46,6 +46,12 @@ namespace G
         public bool? ExternallyManaged { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transformations")]
+        public global::System.Collections.Generic.IList<global::G.DatasetTransformation>? Transformations { get; set; }
+
+        /// <summary>
         /// Enum for dataset data types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
@@ -104,6 +110,7 @@ namespace G
         /// <param name="externallyManaged">
         /// Default Value: false
         /// </param>
+        /// <param name="transformations"></param>
         /// <param name="dataType">
         /// Enum for dataset data types.
         /// </param>
@@ -125,6 +132,7 @@ namespace G
             object? inputsSchemaDefinition,
             object? outputsSchemaDefinition,
             bool? externallyManaged,
+            global::System.Collections.Generic.IList<global::G.DatasetTransformation>? transformations,
             global::G.DataType? dataType,
             global::System.DateTime? lastSessionStartTime)
         {
@@ -139,6 +147,7 @@ namespace G
             this.InputsSchemaDefinition = inputsSchemaDefinition;
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.ExternallyManaged = externallyManaged;
+            this.Transformations = transformations;
             this.DataType = dataType;
             this.LastSessionStartTime = lastSessionStartTime;
         }

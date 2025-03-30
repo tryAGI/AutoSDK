@@ -28,6 +28,12 @@ namespace G
         public global::System.Guid? UserId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("user_name")]
+        public string? UserName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -39,14 +45,17 @@ namespace G
         /// <param name="type"></param>
         /// <param name="metadata"></param>
         /// <param name="userId"></param>
+        /// <param name="userName"></param>
         public FeedbackSource3(
             string? type,
             object? metadata,
-            global::System.Guid? userId)
+            global::System.Guid? userId,
+            string? userName)
         {
             this.Type = type;
             this.Metadata = metadata;
             this.UserId = userId;
+            this.UserName = userName;
         }
 
         /// <summary>

@@ -32,6 +32,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachments_operations")]
+        public global::G.AttachmentsOperations? AttachmentsOperations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
@@ -41,6 +47,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
         public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overwrite")]
+        public bool? Overwrite { get; set; }
 
         /// <summary>
         /// 
@@ -61,8 +73,12 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
+        /// <param name="attachmentsOperations"></param>
         /// <param name="metadata"></param>
         /// <param name="split"></param>
+        /// <param name="overwrite">
+        /// Default Value: false
+        /// </param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,15 +88,19 @@ namespace G
             global::System.Guid? datasetId,
             object? inputs,
             object? outputs,
+            global::G.AttachmentsOperations? attachmentsOperations,
             object? metadata,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split)
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
+            bool? overwrite)
         {
             this.Id = id;
             this.DatasetId = datasetId;
             this.Inputs = inputs;
             this.Outputs = outputs;
+            this.AttachmentsOperations = attachmentsOperations;
             this.Metadata = metadata;
             this.Split = split;
+            this.Overwrite = overwrite;
         }
 
         /// <summary>

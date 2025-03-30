@@ -13,6 +13,7 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="type"></param>
         /// <param name="nameContains"></param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
@@ -20,6 +21,7 @@ namespace G
             global::System.Guid? sessionId = default,
             global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

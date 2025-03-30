@@ -66,6 +66,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("attachment_urls")]
+        public object? AttachmentUrls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runs", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.RunSchema> Runs { get; set; } = default!;
 
@@ -87,6 +93,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="modifiedAt"></param>
+        /// <param name="attachmentUrls"></param>
         /// <param name="runs"></param>
         public ExampleWithRuns(
             global::System.Guid datasetId,
@@ -98,7 +105,8 @@ namespace G
             global::System.Guid? sourceRunId,
             object? metadata,
             global::System.DateTime? createdAt,
-            global::System.DateTime? modifiedAt)
+            global::System.DateTime? modifiedAt,
+            object? attachmentUrls)
         {
             this.DatasetId = datasetId;
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
@@ -110,6 +118,7 @@ namespace G
             this.Metadata = metadata;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
+            this.AttachmentUrls = attachmentUrls;
         }
 
         /// <summary>

@@ -12,8 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid UserId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user_id")]
+        public global::System.Guid? UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_identity_id")]
+        public global::System.Guid? OrgIdentityId { get; set; }
 
         /// <summary>
         /// 
@@ -37,14 +43,17 @@ namespace G
         /// Initializes a new instance of the <see cref="IdentityCreate" /> class.
         /// </summary>
         /// <param name="userId"></param>
+        /// <param name="orgIdentityId"></param>
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         public IdentityCreate(
-            global::System.Guid userId,
+            global::System.Guid? userId,
+            global::System.Guid? orgIdentityId,
             bool? readOnly,
             global::System.Guid? roleId)
         {
             this.UserId = userId;
+            this.OrgIdentityId = orgIdentityId;
             this.ReadOnly = readOnly;
             this.RoleId = roleId;
         }

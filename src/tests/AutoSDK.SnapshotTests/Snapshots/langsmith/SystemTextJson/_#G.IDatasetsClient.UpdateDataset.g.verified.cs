@@ -28,6 +28,7 @@ namespace G
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
+        /// <param name="transformations"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
@@ -37,6 +38,7 @@ namespace G
             global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition = default,
             global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition = default,
             global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? transformations = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -31,6 +31,10 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
+        /// <param name="includeStats">
+        /// Default Value: true
+        /// </param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -49,6 +53,8 @@ namespace G
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             bool? facets = default,
+            string? filter = default,
+            bool? includeStats = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -132,6 +132,7 @@ public partial class Tests
             },
             "langsmith.json" => new Dictionary<string, string>
             {
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdSplit",
                 ["build_property.AutoSDK_ExcludeDeprecatedOperations"] = "true",
                 //["build_property.AutoSDK_JsonSerializerContext"] = "SourceGenerationContext",

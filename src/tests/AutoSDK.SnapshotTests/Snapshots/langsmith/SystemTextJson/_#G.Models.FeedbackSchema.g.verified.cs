@@ -95,6 +95,12 @@ namespace G
         public global::G.FeedbackSource3? FeedbackSource { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
+        public object? Extra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -118,6 +124,7 @@ namespace G
         /// <param name="feedbackSource">
         /// The feedback source loaded from the database.
         /// </param>
+        /// <param name="extra"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -134,7 +141,8 @@ namespace G
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
-            global::G.FeedbackSource3? feedbackSource)
+            global::G.FeedbackSource3? feedbackSource,
+            object? extra)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Id = id;
@@ -149,6 +157,7 @@ namespace G
             this.RunId = runId;
             this.SessionId = sessionId;
             this.FeedbackSource = feedbackSource;
+            this.Extra = extra;
         }
 
         /// <summary>

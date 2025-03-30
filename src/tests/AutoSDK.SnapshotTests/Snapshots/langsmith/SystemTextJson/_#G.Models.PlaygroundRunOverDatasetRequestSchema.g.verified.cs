@@ -48,6 +48,12 @@ namespace G
         public string? ToolChoice { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
+
+        /// <summary>
         /// Configuration for a Runnable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
@@ -58,7 +64,44 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        public string? ProjectName { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ProjectName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo_handle")]
+        public string? RepoHandle { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public string? Owner { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
+        public string? Commit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluator_rules")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? EvaluatorRules { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("requests_per_second")]
+        public int? RequestsPerSecond { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_workspace_secrets")]
+        public bool? UseWorkspaceSecrets { get; set; }
 
         /// <summary>
         /// 
@@ -66,6 +109,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid DatasetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_splits")]
+        public global::System.Collections.Generic.IList<string>? DatasetSplits { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -88,11 +137,21 @@ namespace G
         /// <param name="repoId"></param>
         /// <param name="tools"></param>
         /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="options">
         /// Configuration for a Runnable.
         /// </param>
         /// <param name="projectName"></param>
+        /// <param name="repoHandle"></param>
+        /// <param name="owner"></param>
+        /// <param name="commit"></param>
+        /// <param name="evaluatorRules"></param>
+        /// <param name="requestsPerSecond"></param>
+        /// <param name="useWorkspaceSecrets">
+        /// Default Value: false
+        /// </param>
         /// <param name="datasetId"></param>
+        /// <param name="datasetSplits"></param>
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
@@ -103,23 +162,39 @@ namespace G
             object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::G.RunnableConfig options,
+            string projectName,
             global::System.Guid datasetId,
             string? runId,
             string? repoId,
             global::System.Collections.Generic.IList<object>? tools,
             string? toolChoice,
-            string? projectName,
+            bool? parallelToolCalls,
+            string? repoHandle,
+            string? owner,
+            string? commit,
+            global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
+            int? requestsPerSecond,
+            bool? useWorkspaceSecrets,
+            global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Secrets = secrets ?? throw new global::System.ArgumentNullException(nameof(secrets));
             this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
             this.DatasetId = datasetId;
             this.RunId = runId;
             this.RepoId = repoId;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
-            this.ProjectName = projectName;
+            this.ParallelToolCalls = parallelToolCalls;
+            this.RepoHandle = repoHandle;
+            this.Owner = owner;
+            this.Commit = commit;
+            this.EvaluatorRules = evaluatorRules;
+            this.RequestsPerSecond = requestsPerSecond;
+            this.UseWorkspaceSecrets = useWorkspaceSecrets;
+            this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }
 

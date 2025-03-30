@@ -260,6 +260,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Message?.ToString() ??
+            FileSearchToolCall?.ToString() ??
+            FunctionToolCall?.ToString() ??
+            WebSearchToolCall?.ToString() ??
+            ComputerToolCall?.ToString() ??
+            Reasoning?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsMessage || IsFileSearchToolCall || IsFunctionToolCall || IsWebSearchToolCall || IsComputerToolCall || IsReasoning;

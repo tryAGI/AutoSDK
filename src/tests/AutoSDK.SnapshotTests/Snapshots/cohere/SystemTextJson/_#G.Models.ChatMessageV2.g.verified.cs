@@ -187,6 +187,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            User?.ToString() ??
+            Assistant?.ToString() ??
+            System?.ToString() ??
+            Tool?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsUser && !IsAssistant && !IsSystem && !IsTool || !IsUser && IsAssistant && !IsSystem && !IsTool || !IsUser && !IsAssistant && IsSystem && !IsTool || !IsUser && !IsAssistant && !IsSystem && IsTool;

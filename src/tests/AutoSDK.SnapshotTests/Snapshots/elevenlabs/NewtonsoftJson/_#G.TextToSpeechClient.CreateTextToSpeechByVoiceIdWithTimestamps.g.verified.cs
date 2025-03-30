@@ -352,7 +352,6 @@ namespace G
             string? nextText = default,
             global::System.Collections.Generic.IList<string>? previousRequestIds = default,
             global::System.Collections.Generic.IList<string>? nextRequestIds = default,
-            bool? usePvcAsIvc = default,
             global::G.BodyTextToSpeechWithTimestampsV1TextToSpeechVoiceIdWithTimestampsPostApplyTextNormalization? applyTextNormalization = default,
             bool? applyLanguageTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)

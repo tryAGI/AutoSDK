@@ -178,6 +178,18 @@ namespace G
         public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transient")]
+        public bool? Transient { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("evaluator_version", Required = global::Newtonsoft.Json.Required.Always)]
+        public int EvaluatorVersion { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -222,6 +234,10 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
+        /// <param name="transient">
+        /// Default Value: false
+        /// </param>
+        /// <param name="evaluatorVersion"></param>
         public RunRulesSchema(
             global::System.Guid id,
             global::System.Guid tenantId,
@@ -230,6 +246,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            int evaluatorVersion,
             bool? isEnabled,
             global::System.Guid? sessionId,
             string? sessionName,
@@ -250,7 +267,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? alerts,
             bool? extendOnly,
-            global::System.DateTime? backfillFrom)
+            global::System.DateTime? backfillFrom,
+            bool? transient)
         {
             this.Id = id;
             this.TenantId = tenantId;
@@ -259,6 +277,7 @@ namespace G
             this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.EvaluatorVersion = evaluatorVersion;
             this.IsEnabled = isEnabled;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
@@ -280,6 +299,7 @@ namespace G
             this.Alerts = alerts;
             this.ExtendOnly = extendOnly;
             this.BackfillFrom = backfillFrom;
+            this.Transient = transient;
         }
 
         /// <summary>

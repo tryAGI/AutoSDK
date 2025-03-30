@@ -638,17 +638,21 @@ namespace {endPoint.Namespace}
             }" : " ")}
         }}";
         
+        var parameters = endPoint.Parameters
+            .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
+            .ToList();
+        
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Parameters.Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null }).Select(x => $@"
+{parameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{endPoint.Parameters.Where(static x => x.IsRequired).Select(x => $@"
+{parameters.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{endPoint.Parameters.Where(static x => x is { IsRequired: false }).Select(x => $@"
+{parameters.Where(static x => x is { IsRequired: false }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();

@@ -7,18 +7,18 @@ namespace G
     {
         /// <summary>
         /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
+        /// Optimize prompt
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptAsync(
+        global::System.Threading.Tasks.Task<global::G.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
             global::G.OptimizePromptRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Optimize Prompt<br/>
-        /// Optimize prompt tables.
+        /// Optimize prompt
         /// </summary>
         /// <param name="prompt"></param>
         /// <param name="metaprompt"></param>
@@ -26,7 +26,7 @@ namespace G
         /// <param name="overallFeedback"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptAsync(
+        global::System.Threading.Tasks.Task<global::G.AppHubCrudOptimizeOptimizePromptResponse> OptimizePromptAsync(
             string prompt,
             object metaprompt,
             global::System.Collections.Generic.IList<global::G.ExampleRunWithFeedback> examples,

@@ -41,6 +41,13 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilterViewTypeJsonConverter))]
+        public global::G.FilterViewType? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +61,7 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,13 +70,15 @@ namespace G
             string? filterString,
             string? traceFilterString,
             string? treeFilterString,
-            string? description)
+            string? description,
+            global::G.FilterViewType? type)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.FilterString = filterString;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
             this.Description = description;
+            this.Type = type;
         }
 
         /// <summary>

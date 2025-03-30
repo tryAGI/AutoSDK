@@ -182,5 +182,15 @@ namespace G
         /// </summary>
         public CommentsClient Comments { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OptimizationJobsClient OptimizationJobs { get; }
+
     }
 }

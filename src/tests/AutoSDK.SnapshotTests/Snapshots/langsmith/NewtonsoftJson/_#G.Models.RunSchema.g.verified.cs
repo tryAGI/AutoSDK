@@ -286,6 +286,18 @@ namespace G
         public bool? TraceUpgrade { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("reference_dataset_id")]
+        public global::System.Guid? ReferenceDatasetId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("thread_id")]
+        public string? ThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -352,6 +364,8 @@ namespace G
         /// <param name="traceUpgrade">
         /// Default Value: false
         /// </param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="threadId"></param>
         public RunSchema(
             string name,
             global::G.RunTypeEnum runType,
@@ -398,7 +412,9 @@ namespace G
             global::G.TraceTier? traceTier,
             global::System.DateTime? traceFirstReceivedAt,
             int? ttlSeconds,
-            bool? traceUpgrade)
+            bool? traceUpgrade,
+            global::System.Guid? referenceDatasetId,
+            string? threadId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;
@@ -446,6 +462,8 @@ namespace G
             this.TraceFirstReceivedAt = traceFirstReceivedAt;
             this.TtlSeconds = ttlSeconds;
             this.TraceUpgrade = traceUpgrade;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.ThreadId = threadId;
         }
 
         /// <summary>

@@ -54,6 +54,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("application_time")]
+        public global::System.DateTime? ApplicationTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue")]
         public global::G.RuleLogActionResponse? AddToAnnotationQueue { get; set; }
 
@@ -97,6 +103,7 @@ namespace G
         /// <param name="runSessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="applicationTime"></param>
         /// <param name="addToAnnotationQueue"></param>
         /// <param name="addToDataset"></param>
         /// <param name="evaluators"></param>
@@ -110,6 +117,7 @@ namespace G
             string? runName,
             string? runType,
             global::System.Guid? runSessionId,
+            global::System.DateTime? applicationTime,
             global::G.RuleLogActionResponse? addToAnnotationQueue,
             global::G.RuleLogActionResponse? addToDataset,
             global::G.RuleLogActionResponse? evaluators,
@@ -123,6 +131,7 @@ namespace G
             this.RunName = runName;
             this.RunType = runType;
             this.RunSessionId = runSessionId;
+            this.ApplicationTime = applicationTime;
             this.AddToAnnotationQueue = addToAnnotationQueue;
             this.AddToDataset = addToDataset;
             this.Evaluators = evaluators;

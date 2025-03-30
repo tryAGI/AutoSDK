@@ -64,6 +64,24 @@ namespace G
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("rubric_items")]
+        public global::System.Collections.Generic.IList<global::G.AnnotationQueueRubricItemSchema>? RubricItems { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("rubric_instructions")]
+        public string? RubricInstructions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("session_ids")]
+        public global::System.Collections.Generic.IList<global::System.Guid>? SessionIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -87,6 +105,9 @@ namespace G
         /// Default Value: 1
         /// </param>
         /// <param name="id"></param>
+        /// <param name="rubricItems"></param>
+        /// <param name="rubricInstructions"></param>
+        /// <param name="sessionIds"></param>
         public AnnotationQueueCreateSchema(
             string name,
             string? description,
@@ -96,7 +117,10 @@ namespace G
             int? numReviewersPerItem,
             bool? enableReservations,
             int? reservationMinutes,
-            global::System.Guid? id)
+            global::System.Guid? id,
+            global::System.Collections.Generic.IList<global::G.AnnotationQueueRubricItemSchema>? rubricItems,
+            string? rubricInstructions,
+            global::System.Collections.Generic.IList<global::System.Guid>? sessionIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
@@ -107,6 +131,9 @@ namespace G
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
             this.Id = id;
+            this.RubricItems = rubricItems;
+            this.RubricInstructions = rubricInstructions;
+            this.SessionIds = sessionIds;
         }
 
         /// <summary>

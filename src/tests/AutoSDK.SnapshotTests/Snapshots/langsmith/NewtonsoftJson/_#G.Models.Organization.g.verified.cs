@@ -94,6 +94,18 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("marketplace_payouts_enabled")]
+        public bool? MarketplacePayoutsEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("wallet")]
+        public global::G.Wallet? Wallet { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -128,6 +140,10 @@ namespace G
         /// <param name="permissions">
         /// Default Value: []
         /// </param>
+        /// <param name="marketplacePayoutsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="wallet"></param>
         public Organization(
             global::G.OrganizationConfig config,
             bool connectedToStripe,
@@ -142,7 +158,9 @@ namespace G
             global::G.CustomerVisiblePlanInfo? currentPlan,
             global::G.CustomerVisiblePlanInfo? upcomingPlan,
             bool? reachedMaxWorkspaces,
-            global::System.Collections.Generic.IList<string>? permissions)
+            global::System.Collections.Generic.IList<string>? permissions,
+            bool? marketplacePayoutsEnabled,
+            global::G.Wallet? wallet)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
@@ -158,6 +176,8 @@ namespace G
             this.UpcomingPlan = upcomingPlan;
             this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
             this.Permissions = permissions;
+            this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
+            this.Wallet = wallet;
         }
 
         /// <summary>

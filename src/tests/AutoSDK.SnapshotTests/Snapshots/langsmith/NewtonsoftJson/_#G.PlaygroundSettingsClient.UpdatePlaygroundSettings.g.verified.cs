@@ -207,16 +207,25 @@ namespace G
         /// </summary>
         /// <param name="playgroundSettingsId"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
+        /// <param name="options"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
             string playgroundSettingsId,
             string? name = default,
+            string? description = default,
+            object? settings = default,
+            global::G.PlaygroundSavedOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PlaygroundSettingsUpdateRequest
             {
                 Name = name,
+                Description = description,
+                Settings = settings,
+                Options = options,
             };
 
             return await UpdatePlaygroundSettingsAsync(

@@ -863,6 +863,34 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            LabeledEvent?.ToString() ??
+            UnlabeledEvent?.ToString() ??
+            MilestonedEvent?.ToString() ??
+            DemilestonedEvent?.ToString() ??
+            RenamedEvent?.ToString() ??
+            ReviewRequestedEvent?.ToString() ??
+            ReviewRequestRemovedEvent?.ToString() ??
+            ReviewDismissedEvent?.ToString() ??
+            LockedEvent?.ToString() ??
+            AddedToProjectEvent?.ToString() ??
+            MovedColumnInProjectEvent?.ToString() ??
+            RemovedFromProjectEvent?.ToString() ??
+            ConvertedNoteToEvent?.ToString() ??
+            CommentEvent?.ToString() ??
+            CrossReferencedEvent?.ToString() ??
+            CommittedEvent?.ToString() ??
+            ReviewedEvent?.ToString() ??
+            LineCommentedEvent?.ToString() ??
+            CommitCommentedEvent?.ToString() ??
+            AssignedEvent?.ToString() ??
+            UnassignedEvent?.ToString() ??
+            StateChangeEvent?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsLabeledEvent || IsUnlabeledEvent || IsMilestonedEvent || IsDemilestonedEvent || IsRenamedEvent || IsReviewRequestedEvent || IsReviewRequestRemovedEvent || IsReviewDismissedEvent || IsLockedEvent || IsAddedToProjectEvent || IsMovedColumnInProjectEvent || IsRemovedFromProjectEvent || IsConvertedNoteToEvent || IsCommentEvent || IsCrossReferencedEvent || IsCommittedEvent || IsReviewedEvent || IsLineCommentedEvent || IsCommitCommentedEvent || IsAssignedEvent || IsUnassignedEvent || IsStateChangeEvent;

@@ -33,11 +33,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FailedRetryable")]
-        FailedRetryable,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TimedOut")]
         TimedOut,
         /// <summary>
@@ -63,7 +58,6 @@ namespace G
                 BulkExportRunStatus.Completed => "Completed",
                 BulkExportRunStatus.Created => "Created",
                 BulkExportRunStatus.Failed => "Failed",
-                BulkExportRunStatus.FailedRetryable => "FailedRetryable",
                 BulkExportRunStatus.TimedOut => "TimedOut",
                 BulkExportRunStatus.Running => "Running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -80,7 +74,6 @@ namespace G
                 "Completed" => BulkExportRunStatus.Completed,
                 "Created" => BulkExportRunStatus.Created,
                 "Failed" => BulkExportRunStatus.Failed,
-                "FailedRetryable" => BulkExportRunStatus.FailedRetryable,
                 "TimedOut" => BulkExportRunStatus.TimedOut,
                 "Running" => BulkExportRunStatus.Running,
                 _ => null,

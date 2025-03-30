@@ -54,6 +54,12 @@ namespace G
         /// <summary>
         /// Default Value: false
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_disable_public_sharing")]
+        public bool? CanDisablePublicSharing { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_serve_datasets")]
         public bool? CanServeDatasets { get; set; }
 
@@ -88,10 +94,124 @@ namespace G
         public bool? UsePythonPlaygroundService { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
-        public global::System.Collections.Generic.Dictionary<string, bool>? Flags { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_sidenav")]
+        public bool? ShowUpdatedSidenav { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_updated_resource_tags")]
+        public bool? ShowUpdatedResourceTags { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kv_dataset_message_support")]
+        public bool? KvDatasetMessageSupport { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("show_playground_prompt_canvas")]
+        public bool? ShowPlaygroundPromptCanvas { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allow_custom_iframes")]
+        public bool? AllowCustomIframes { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_langgraph_pricing")]
+        public bool? EnableLanggraphPricing { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_thread_view_playground")]
+        public bool? EnableThreadViewPlayground { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_org_usage_charts")]
+        public bool? EnableOrgUsageCharts { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_select_all_traces")]
+        public bool? EnableSelectAllTraces { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_exact_search_for_prompts")]
+        public bool? UseExactSearchForPrompts { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_deploy_own_cloud_enabled")]
+        public bool? LanggraphDeployOwnCloudEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization")]
+        public bool? PromptOptimization { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_optimization_jobs_enabled")]
+        public bool? PromptOptimizationJobsEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enable_k8s_vanilla_platform")]
+        public bool? EnableK8sVanillaPlatform { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("demo_lgp_new_graph_enabled")]
+        public bool? DemoLgpNewGraphEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: 20
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("datadog_rum_session_sample_rate")]
+        public int? DatadogRumSessionSampleRate { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langgraph_remote_reconciler_enabled")]
+        public bool? LanggraphRemoteReconcilerEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("new_dataset_in_playground_enabled")]
+        public bool? NewDatasetInPlaygroundEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("langsmith_alerts_poc_enabled")]
+        public bool? LangsmithAlertsPocEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenant_skip_topk_facets")]
+        public bool? TenantSkipTopkFacets { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -117,6 +237,9 @@ namespace G
         /// <param name="startupPlanApprovalDate"></param>
         /// <param name="partnerPlanApprovalDate"></param>
         /// <param name="premierPlanApprovalDate"></param>
+        /// <param name="canDisablePublicSharing">
+        /// Default Value: false
+        /// </param>
         /// <param name="canServeDatasets">
         /// Default Value: false
         /// </param>
@@ -135,7 +258,66 @@ namespace G
         /// <param name="usePythonPlaygroundService">
         /// Default Value: false
         /// </param>
-        /// <param name="flags"></param>
+        /// <param name="showUpdatedSidenav">
+        /// Default Value: false
+        /// </param>
+        /// <param name="showUpdatedResourceTags">
+        /// Default Value: false
+        /// </param>
+        /// <param name="kvDatasetMessageSupport">
+        /// Default Value: true
+        /// </param>
+        /// <param name="showPlaygroundPromptCanvas">
+        /// Default Value: false
+        /// </param>
+        /// <param name="allowCustomIframes">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableLanggraphPricing">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableThreadViewPlayground">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableOrgUsageCharts">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableSelectAllTraces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="useExactSearchForPrompts">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langgraphDeployOwnCloudEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="promptOptimization">
+        /// Default Value: false
+        /// </param>
+        /// <param name="promptOptimizationJobsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enableK8sVanillaPlatform">
+        /// Default Value: false
+        /// </param>
+        /// <param name="demoLgpNewGraphEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="datadogRumSessionSampleRate">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="langgraphRemoteReconcilerEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="newDatasetInPlaygroundEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langsmithAlertsPocEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="tenantSkipTopkFacets">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -147,13 +329,33 @@ namespace G
             string? startupPlanApprovalDate,
             string? partnerPlanApprovalDate,
             string? premierPlanApprovalDate,
+            bool? canDisablePublicSharing,
             bool? canServeDatasets,
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
             bool? usePythonPlaygroundService,
-            global::System.Collections.Generic.Dictionary<string, bool>? flags)
+            bool? showUpdatedSidenav,
+            bool? showUpdatedResourceTags,
+            bool? kvDatasetMessageSupport,
+            bool? showPlaygroundPromptCanvas,
+            bool? allowCustomIframes,
+            bool? enableLanggraphPricing,
+            bool? enableThreadViewPlayground,
+            bool? enableOrgUsageCharts,
+            bool? enableSelectAllTraces,
+            bool? useExactSearchForPrompts,
+            bool? langgraphDeployOwnCloudEnabled,
+            bool? promptOptimization,
+            bool? promptOptimizationJobsEnabled,
+            bool? enableK8sVanillaPlatform,
+            bool? demoLgpNewGraphEnabled,
+            int? datadogRumSessionSampleRate,
+            bool? langgraphRemoteReconcilerEnabled,
+            bool? newDatasetInPlaygroundEnabled,
+            bool? langsmithAlertsPocEnabled,
+            bool? tenantSkipTopkFacets)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -162,13 +364,33 @@ namespace G
             this.StartupPlanApprovalDate = startupPlanApprovalDate;
             this.PartnerPlanApprovalDate = partnerPlanApprovalDate;
             this.PremierPlanApprovalDate = premierPlanApprovalDate;
+            this.CanDisablePublicSharing = canDisablePublicSharing;
             this.CanServeDatasets = canServeDatasets;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
             this.UsePythonPlaygroundService = usePythonPlaygroundService;
-            this.Flags = flags;
+            this.ShowUpdatedSidenav = showUpdatedSidenav;
+            this.ShowUpdatedResourceTags = showUpdatedResourceTags;
+            this.KvDatasetMessageSupport = kvDatasetMessageSupport;
+            this.ShowPlaygroundPromptCanvas = showPlaygroundPromptCanvas;
+            this.AllowCustomIframes = allowCustomIframes;
+            this.EnableLanggraphPricing = enableLanggraphPricing;
+            this.EnableThreadViewPlayground = enableThreadViewPlayground;
+            this.EnableOrgUsageCharts = enableOrgUsageCharts;
+            this.EnableSelectAllTraces = enableSelectAllTraces;
+            this.UseExactSearchForPrompts = useExactSearchForPrompts;
+            this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
+            this.PromptOptimization = promptOptimization;
+            this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
+            this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
+            this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
+            this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
+            this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
+            this.NewDatasetInPlaygroundEnabled = newDatasetInPlaygroundEnabled;
+            this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
+            this.TenantSkipTopkFacets = tenantSkipTopkFacets;
         }
 
         /// <summary>

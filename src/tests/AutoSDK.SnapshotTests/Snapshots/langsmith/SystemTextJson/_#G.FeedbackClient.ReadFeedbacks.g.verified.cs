@@ -19,7 +19,8 @@ namespace G
             ref bool? hasScore,
             ref global::G.FeedbackLevel? level,
             ref global::System.DateTime? maxCreatedAt,
-            ref global::System.DateTime? minCreatedAt);
+            ref global::System.DateTime? minCreatedAt,
+            ref bool? includeUserNames);
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -34,7 +35,8 @@ namespace G
             bool? hasScore,
             global::G.FeedbackLevel? level,
             global::System.DateTime? maxCreatedAt,
-            global::System.DateTime? minCreatedAt);
+            global::System.DateTime? minCreatedAt,
+            bool? includeUserNames);
         partial void ProcessReadFeedbacksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -66,6 +68,7 @@ namespace G
         /// </param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
+        /// <param name="includeUserNames"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadFeedbacksAsync(
@@ -81,6 +84,7 @@ namespace G
             global::G.FeedbackLevel? level = default,
             global::System.DateTime? maxCreatedAt = default,
             global::System.DateTime? minCreatedAt = default,
+            bool? includeUserNames = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -98,7 +102,8 @@ namespace G
                 hasScore: ref hasScore,
                 level: ref level,
                 maxCreatedAt: ref maxCreatedAt,
-                minCreatedAt: ref minCreatedAt);
+                minCreatedAt: ref minCreatedAt,
+                includeUserNames: ref includeUserNames);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/feedback",
@@ -115,6 +120,7 @@ namespace G
                 .AddOptionalParameter("level", level?.ToValueString()) 
                 .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("min_created_at", minCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -158,7 +164,8 @@ namespace G
                 hasScore: hasScore,
                 level: level,
                 maxCreatedAt: maxCreatedAt,
-                minCreatedAt: minCreatedAt);
+                minCreatedAt: minCreatedAt,
+                includeUserNames: includeUserNames);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

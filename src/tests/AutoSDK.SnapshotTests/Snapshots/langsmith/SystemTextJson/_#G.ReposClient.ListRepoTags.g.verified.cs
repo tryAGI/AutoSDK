@@ -19,7 +19,6 @@ namespace G
             ref global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
-            ref bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void PrepareListRepoTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,7 +34,6 @@ namespace G
             global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
-            bool? matchPrefix,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void ProcessListRepoTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -65,9 +63,6 @@ namespace G
         /// <param name="isPublic"></param>
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
-        /// <param name="matchPrefix">
-        /// Default Value: false
-        /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -83,7 +78,6 @@ namespace G
             global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,7 +96,6 @@ namespace G
                 isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
-                matchPrefix: ref matchPrefix,
                 tagValueId: tagValueId);
 
             var __pathBuilder = new PathBuilder(
@@ -120,7 +113,6 @@ namespace G
                 .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("match_prefix", matchPrefix?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -165,7 +157,6 @@ namespace G
                 isPublic: isPublic,
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
-                matchPrefix: matchPrefix,
                 tagValueId: tagValueId);
 
             using var __response = await HttpClient.SendAsync(

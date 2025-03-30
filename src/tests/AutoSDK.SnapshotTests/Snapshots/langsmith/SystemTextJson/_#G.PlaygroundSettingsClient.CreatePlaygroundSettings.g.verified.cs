@@ -199,19 +199,25 @@ namespace G
         /// Create Playground Settings<br/>
         /// Create playground settings.
         /// </summary>
-        /// <param name="settings"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
+        /// <param name="options"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PlaygroundSettingsResponse> CreatePlaygroundSettingsAsync(
             object settings,
             string? name = default,
+            string? description = default,
+            global::G.PlaygroundSavedOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PlaygroundSettingsCreateRequest
             {
-                Settings = settings,
                 Name = name,
+                Description = description,
+                Settings = settings,
+                Options = options,
             };
 
             return await CreatePlaygroundSettingsAsync(

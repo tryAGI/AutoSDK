@@ -89,6 +89,12 @@ namespace G
         public global::G.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
+        public object? Extra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -109,6 +115,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="extra"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -124,7 +131,8 @@ namespace G
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? id,
             global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? feedbackSource,
-            global::G.FeedbackConfig? feedbackConfig)
+            global::G.FeedbackConfig? feedbackConfig,
+            object? extra)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.CreatedAt = createdAt;
@@ -138,6 +146,7 @@ namespace G
             this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.FeedbackConfig = feedbackConfig;
+            this.Extra = extra;
         }
 
         /// <summary>

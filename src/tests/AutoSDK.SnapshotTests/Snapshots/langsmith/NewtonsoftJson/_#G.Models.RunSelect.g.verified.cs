@@ -113,6 +113,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="extra_or_signed_url")]
+        ExtraOrSignedUrl,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="serialized_or_signed_url")]
+        SerializedOrSignedUrl,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="parent_run_id")]
         ParentRunId,
         /// <summary>
@@ -128,6 +138,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="manifest")]
+        Manifest,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="session_id")]
         SessionId,
         /// <summary>
@@ -140,6 +155,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reference_example_id")]
         ReferenceExampleId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reference_dataset_id")]
+        ReferenceDatasetId,
         /// <summary>
         /// 
         /// </summary>
@@ -250,6 +270,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="trace_upgrade")]
         TraceUpgrade,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="thread_id")]
+        ThreadId,
     }
 
     /// <summary>
@@ -284,12 +309,16 @@ namespace G
                 RunSelect.S3Urls => "s3_urls",
                 RunSelect.ErrorOrSignedUrl => "error_or_signed_url",
                 RunSelect.EventsOrSignedUrl => "events_or_signed_url",
+                RunSelect.ExtraOrSignedUrl => "extra_or_signed_url",
+                RunSelect.SerializedOrSignedUrl => "serialized_or_signed_url",
                 RunSelect.ParentRunId => "parent_run_id",
                 RunSelect.ManifestId => "manifest_id",
                 RunSelect.ManifestS3Id => "manifest_s3_id",
+                RunSelect.Manifest => "manifest",
                 RunSelect.SessionId => "session_id",
                 RunSelect.Serialized => "serialized",
                 RunSelect.ReferenceExampleId => "reference_example_id",
+                RunSelect.ReferenceDatasetId => "reference_dataset_id",
                 RunSelect.TotalTokens => "total_tokens",
                 RunSelect.PromptTokens => "prompt_tokens",
                 RunSelect.CompletionTokens => "completion_tokens",
@@ -312,6 +341,7 @@ namespace G
                 RunSelect.TraceFirstReceivedAt => "trace_first_received_at",
                 RunSelect.TtlSeconds => "ttl_seconds",
                 RunSelect.TraceUpgrade => "trace_upgrade",
+                RunSelect.ThreadId => "thread_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -342,12 +372,16 @@ namespace G
                 "s3_urls" => RunSelect.S3Urls,
                 "error_or_signed_url" => RunSelect.ErrorOrSignedUrl,
                 "events_or_signed_url" => RunSelect.EventsOrSignedUrl,
+                "extra_or_signed_url" => RunSelect.ExtraOrSignedUrl,
+                "serialized_or_signed_url" => RunSelect.SerializedOrSignedUrl,
                 "parent_run_id" => RunSelect.ParentRunId,
                 "manifest_id" => RunSelect.ManifestId,
                 "manifest_s3_id" => RunSelect.ManifestS3Id,
+                "manifest" => RunSelect.Manifest,
                 "session_id" => RunSelect.SessionId,
                 "serialized" => RunSelect.Serialized,
                 "reference_example_id" => RunSelect.ReferenceExampleId,
+                "reference_dataset_id" => RunSelect.ReferenceDatasetId,
                 "total_tokens" => RunSelect.TotalTokens,
                 "prompt_tokens" => RunSelect.PromptTokens,
                 "completion_tokens" => RunSelect.CompletionTokens,
@@ -370,6 +404,7 @@ namespace G
                 "trace_first_received_at" => RunSelect.TraceFirstReceivedAt,
                 "ttl_seconds" => RunSelect.TtlSeconds,
                 "trace_upgrade" => RunSelect.TraceUpgrade,
+                "thread_id" => RunSelect.ThreadId,
                 _ => null,
             };
         }

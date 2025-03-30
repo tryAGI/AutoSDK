@@ -1243,6 +1243,44 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            AudioDelta?.ToString() ??
+            AudioDone?.ToString() ??
+            AudioTranscriptDelta?.ToString() ??
+            AudioTranscriptDone?.ToString() ??
+            CodeInterpreterCallDelta?.ToString() ??
+            CodeInterpreterCallDone?.ToString() ??
+            CodeInterpreterCallCompleted?.ToString() ??
+            CodeInterpreterCallInProgress?.ToString() ??
+            CodeInterpreterCallInterpreting?.ToString() ??
+            Completed?.ToString() ??
+            ContentPartAdded?.ToString() ??
+            ContentPartDone?.ToString() ??
+            Created?.ToString() ??
+            Error?.ToString() ??
+            FileSearchCallCompleted?.ToString() ??
+            FileSearchCallInProgress?.ToString() ??
+            FileSearchCallSearching?.ToString() ??
+            FunctionCallArgumentsDelta?.ToString() ??
+            FunctionCallArgumentsDone?.ToString() ??
+            InProgress?.ToString() ??
+            Failed?.ToString() ??
+            Incomplete?.ToString() ??
+            OutputItemAdded?.ToString() ??
+            OutputItemDone?.ToString() ??
+            RefusalDelta?.ToString() ??
+            RefusalDone?.ToString() ??
+            TextAnnotationDelta?.ToString() ??
+            TextDelta?.ToString() ??
+            TextDone?.ToString() ??
+            WebSearchCallCompleted?.ToString() ??
+            WebSearchCallInProgress?.ToString() ??
+            WebSearchCallSearching?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;

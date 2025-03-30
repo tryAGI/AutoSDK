@@ -9,12 +9,18 @@ namespace G
         partial void PrepareReadRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid runId,
-            ref bool? excludeS3StoredAttributes);
+            ref global::System.Guid? sessionId,
+            ref global::System.DateTime? startTime,
+            ref bool? excludeS3StoredAttributes,
+            ref bool? excludeSerialized);
         partial void PrepareReadRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid runId,
-            bool? excludeS3StoredAttributes);
+            global::System.Guid? sessionId,
+            global::System.DateTime? startTime,
+            bool? excludeS3StoredAttributes,
+            bool? excludeSerialized);
         partial void ProcessReadRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,14 +35,22 @@ namespace G
         /// Get a specific run.
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
         /// <param name="excludeS3StoredAttributes">
+        /// Default Value: false
+        /// </param>
+        /// <param name="excludeSerialized">
         /// Default Value: false
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunSchema> ReadRunAsync(
             global::System.Guid runId,
+            global::System.Guid? sessionId = default,
+            global::System.DateTime? startTime = default,
             bool? excludeS3StoredAttributes = default,
+            bool? excludeSerialized = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,13 +58,19 @@ namespace G
             PrepareReadRunArguments(
                 httpClient: HttpClient,
                 runId: ref runId,
-                excludeS3StoredAttributes: ref excludeS3StoredAttributes);
+                sessionId: ref sessionId,
+                startTime: ref startTime,
+                excludeS3StoredAttributes: ref excludeS3StoredAttributes,
+                excludeSerialized: ref excludeSerialized);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
+                .AddOptionalParameter("session_id", sessionId?.ToString()) 
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
+                .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -84,7 +104,10 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 runId: runId,
-                excludeS3StoredAttributes: excludeS3StoredAttributes);
+                sessionId: sessionId,
+                startTime: startTime,
+                excludeS3StoredAttributes: excludeS3StoredAttributes,
+                excludeSerialized: excludeSerialized);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

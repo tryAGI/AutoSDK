@@ -64,6 +64,12 @@ namespace G
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -83,6 +89,9 @@ namespace G
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="publicSharingDisabled">
+        /// Default Value: false
+        /// </param>
         public OrganizationPGSchemaSlim(
             global::System.Guid id,
             string displayName,
@@ -92,7 +101,8 @@ namespace G
             global::System.Guid? createdByUserId,
             global::System.DateTime? modifiedAt,
             string? ssoLoginSlug,
-            bool? ssoOnly)
+            bool? ssoOnly,
+            bool? publicSharingDisabled)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -103,6 +113,7 @@ namespace G
             this.ModifiedAt = modifiedAt;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
+            this.PublicSharingDisabled = publicSharingDisabled;
         }
 
         /// <summary>

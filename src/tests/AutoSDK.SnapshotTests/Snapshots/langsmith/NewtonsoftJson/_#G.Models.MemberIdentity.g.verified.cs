@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::System.Guid? LsUserId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("ls_user_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid LsUserId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -88,6 +88,24 @@ namespace G
         public string? AvatarUrl { get; set; }
 
         /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("linked_login_methods")]
+        public global::System.Collections.Generic.IList<global::G.ProviderUserSlim>? LinkedLoginMethods { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_id")]
+        public global::System.Guid? OrgRoleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("org_role_name")]
+        public string? OrgRoleName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -109,34 +127,45 @@ namespace G
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
+        /// <param name="linkedLoginMethods">
+        /// Default Value: []
+        /// </param>
+        /// <param name="orgRoleId"></param>
+        /// <param name="orgRoleName"></param>
         public MemberIdentity(
             global::System.Guid id,
             global::System.Guid organizationId,
             global::System.DateTime createdAt,
             global::System.Guid userId,
+            global::System.Guid lsUserId,
             bool readOnly,
             global::System.Guid? tenantId,
-            global::System.Guid? lsUserId,
             global::System.Guid? roleId,
             string? roleName,
             global::G.AccessScope? accessScope,
             string? email,
             string? fullName,
-            string? avatarUrl)
+            string? avatarUrl,
+            global::System.Collections.Generic.IList<global::G.ProviderUserSlim>? linkedLoginMethods,
+            global::System.Guid? orgRoleId,
+            string? orgRoleName)
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.UserId = userId;
+            this.LsUserId = lsUserId;
             this.ReadOnly = readOnly;
             this.TenantId = tenantId;
-            this.LsUserId = lsUserId;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.AccessScope = accessScope;
             this.Email = email;
             this.FullName = fullName;
             this.AvatarUrl = avatarUrl;
+            this.LinkedLoginMethods = linkedLoginMethods;
+            this.OrgRoleId = orgRoleId;
+            this.OrgRoleName = orgRoleName;
         }
 
         /// <summary>

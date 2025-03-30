@@ -10,7 +10,8 @@ namespace G
     public sealed partial class CreateRepoCommitResponse
     {
         /// <summary>
-        /// All database fields for commits, plus helpful computed fields.
+        /// All database fields for commits, plus helpful computed fields and user info<br/>
+        /// for private prompts.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CommitWithLookups Commit { get; set; } = default!;
@@ -25,7 +26,8 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateRepoCommitResponse" /> class.
         /// </summary>
         /// <param name="commit">
-        /// All database fields for commits, plus helpful computed fields.
+        /// All database fields for commits, plus helpful computed fields and user info<br/>
+        /// for private prompts.
         /// </param>
         public CreateRepoCommitResponse(
             global::G.CommitWithLookups commit)

@@ -23,7 +23,7 @@ namespace G
         public global::G.CustomChartSeriesFilters? Filters { get; set; }
 
         /// <summary>
-        /// Metrics you can chart.
+        /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomChartMetricJsonConverter))]
@@ -35,6 +35,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         public string? FeedbackKey { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
         /// 
@@ -55,9 +61,10 @@ namespace G
         /// <param name="name"></param>
         /// <param name="filters"></param>
         /// <param name="metric">
-        /// Metrics you can chart.
+        /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </param>
         /// <param name="feedbackKey"></param>
+        /// <param name="workspaceId"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,13 +74,15 @@ namespace G
             global::G.CustomChartMetric metric,
             global::System.Guid id,
             global::G.CustomChartSeriesFilters? filters,
-            string? feedbackKey)
+            string? feedbackKey,
+            global::System.Guid? workspaceId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
             this.Id = id;
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
+            this.WorkspaceId = workspaceId;
         }
 
         /// <summary>

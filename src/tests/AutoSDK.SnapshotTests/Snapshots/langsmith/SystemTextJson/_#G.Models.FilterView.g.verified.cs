@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilterViewTypeJsonConverter))]
+        public global::G.FilterViewType? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -81,6 +88,7 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
+        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="createdAt"></param>
@@ -97,6 +105,7 @@ namespace G
             string? traceFilterString,
             string? treeFilterString,
             string? description,
+            global::G.FilterViewType? type,
             global::System.Guid? sessionId)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -107,6 +116,7 @@ namespace G
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
             this.Description = description;
+            this.Type = type;
             this.SessionId = sessionId;
         }
 

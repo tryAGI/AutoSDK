@@ -104,6 +104,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Chat?.ToString() ??
+            Tool?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsChat && !IsTool || !IsChat && IsTool;

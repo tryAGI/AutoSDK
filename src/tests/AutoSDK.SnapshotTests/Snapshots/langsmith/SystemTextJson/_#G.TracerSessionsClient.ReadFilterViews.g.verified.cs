@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareReadFilterViewsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid sessionId);
+            ref global::System.Guid sessionId,
+            ref global::G.FilterViewType? type);
         partial void PrepareReadFilterViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid sessionId);
+            global::System.Guid sessionId,
+            global::G.FilterViewType? type);
         partial void ProcessReadFilterViewsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -27,21 +29,27 @@ namespace G
         /// Get all filter views for a session.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="type"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FilterView>> ReadFilterViewsAsync(
             global::System.Guid sessionId,
+            global::G.FilterViewType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareReadFilterViewsArguments(
                 httpClient: HttpClient,
-                sessionId: ref sessionId);
+                sessionId: ref sessionId,
+                type: ref type);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/views",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -73,7 +81,8 @@ namespace G
             PrepareReadFilterViewsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                sessionId: sessionId);
+                sessionId: sessionId,
+                type: type);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

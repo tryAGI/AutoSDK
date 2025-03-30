@@ -23,7 +23,7 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="select">
-        /// Default Value: [id, created_at, modified_at, name, dataset_id, metadata, inputs, outputs]
+        /// Default Value: [id, created_at, modified_at, name, dataset_id, metadata, inputs, outputs, attachment_urls]
         /// </param>
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

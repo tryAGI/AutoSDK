@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Metrics you can chart.
+    /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CustomChartMetric

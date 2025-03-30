@@ -301,6 +301,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Custom?.ToString() ??
+            Computer20241022?.ToString() ??
+            Bash20241022?.ToString() ??
+            TextEditor20241022?.ToString() ??
+            Computer20250124?.ToString() ??
+            Bash20250124?.ToString() ??
+            TextEditor20250124?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsCustom && !IsComputer20241022 && !IsBash20241022 && !IsTextEditor20241022 && !IsComputer20250124 && !IsBash20250124 && !IsTextEditor20250124 || !IsCustom && IsComputer20241022 && !IsBash20241022 && !IsTextEditor20241022 && !IsComputer20250124 && !IsBash20250124 && !IsTextEditor20250124 || !IsCustom && !IsComputer20241022 && IsBash20241022 && !IsTextEditor20241022 && !IsComputer20250124 && !IsBash20250124 && !IsTextEditor20250124 || !IsCustom && !IsComputer20241022 && !IsBash20241022 && IsTextEditor20241022 && !IsComputer20250124 && !IsBash20250124 && !IsTextEditor20250124 || !IsCustom && !IsComputer20241022 && !IsBash20241022 && !IsTextEditor20241022 && IsComputer20250124 && !IsBash20250124 && !IsTextEditor20250124 || !IsCustom && !IsComputer20241022 && !IsBash20241022 && !IsTextEditor20241022 && !IsComputer20250124 && IsBash20250124 && !IsTextEditor20250124 || !IsCustom && !IsComputer20241022 && !IsBash20241022 && !IsTextEditor20241022 && !IsComputer20250124 && !IsBash20250124 && IsTextEditor20250124;

@@ -32,6 +32,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("attachments_operations")]
+        public global::G.AttachmentsOperations? AttachmentsOperations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public object? Metadata { get; set; }
 
@@ -40,6 +46,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
         public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("overwrite")]
+        public bool? Overwrite { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,20 +65,28 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
+        /// <param name="attachmentsOperations"></param>
         /// <param name="metadata"></param>
         /// <param name="split"></param>
+        /// <param name="overwrite">
+        /// Default Value: false
+        /// </param>
         public ExampleUpdate(
             global::System.Guid? datasetId,
             object? inputs,
             object? outputs,
+            global::G.AttachmentsOperations? attachmentsOperations,
             object? metadata,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split)
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
+            bool? overwrite)
         {
             this.DatasetId = datasetId;
             this.Inputs = inputs;
             this.Outputs = outputs;
+            this.AttachmentsOperations = attachmentsOperations;
             this.Metadata = metadata;
             this.Split = split;
+            this.Overwrite = overwrite;
         }
 
         /// <summary>

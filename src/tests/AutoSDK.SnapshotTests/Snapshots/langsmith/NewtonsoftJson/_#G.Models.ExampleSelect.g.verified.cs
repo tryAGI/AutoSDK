@@ -55,6 +55,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="outputs")]
         Outputs,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="attachment_urls")]
+        AttachmentUrls,
     }
 
     /// <summary>
@@ -78,6 +83,7 @@ namespace G
                 ExampleSelect.Metadata => "metadata",
                 ExampleSelect.Inputs => "inputs",
                 ExampleSelect.Outputs => "outputs",
+                ExampleSelect.AttachmentUrls => "attachment_urls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -97,6 +103,7 @@ namespace G
                 "metadata" => ExampleSelect.Metadata,
                 "inputs" => ExampleSelect.Inputs,
                 "outputs" => ExampleSelect.Outputs,
+                "attachment_urls" => ExampleSelect.AttachmentUrls,
                 _ => null,
             };
         }

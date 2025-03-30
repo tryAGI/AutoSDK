@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BulkExportRunS3Metadata Metadata { get; set; }
+        public required global::G.BulkExportRunMetadata Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -96,7 +96,7 @@ namespace G
 #endif
         public BulkExportRun(
             global::System.Guid bulkExportId,
-            global::G.BulkExportRunS3Metadata metadata,
+            global::G.BulkExportRunMetadata metadata,
             global::System.Guid id,
             global::G.BulkExportRunStatus status,
             global::System.DateTime createdAt,

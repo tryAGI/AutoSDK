@@ -17,6 +17,31 @@ namespace G
         public required global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// Default Value: 10
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
+        public bool? Preview { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter))]
+        public global::G.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
@@ -25,20 +50,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sort_params")]
+        public global::G.SortParamsForRunsComparisonView? SortParams { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
-
-        /// <summary>
-        /// Default Value: 0
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// Default Value: 20
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,29 +69,40 @@ namespace G
         /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
-        /// <param name="comparativeExperimentId"></param>
-        /// <param name="filters"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 20
+        /// Default Value: 10
         /// </param>
+        /// <param name="preview">
+        /// Default Value: false
+        /// </param>
+        /// <param name="format"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="sortParams"></param>
+        /// <param name="filters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueryExampleSchemaWithRuns(
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::System.Guid? comparativeExperimentId,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
             int? offset,
-            int? limit)
+            int? limit,
+            bool? preview,
+            global::G.QueryExampleSchemaWithRunsFormat? format,
+            global::System.Guid? comparativeExperimentId,
+            global::G.SortParamsForRunsComparisonView? sortParams,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
-            this.ComparativeExperimentId = comparativeExperimentId;
-            this.Filters = filters;
             this.Offset = offset;
             this.Limit = limit;
+            this.Preview = preview;
+            this.Format = format;
+            this.ComparativeExperimentId = comparativeExperimentId;
+            this.SortParams = sortParams;
+            this.Filters = filters;
         }
 
         /// <summary>

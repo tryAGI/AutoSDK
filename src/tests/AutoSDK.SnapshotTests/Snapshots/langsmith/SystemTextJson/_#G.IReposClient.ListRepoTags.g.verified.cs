@@ -24,9 +24,6 @@ namespace G
         /// <param name="isPublic"></param>
         /// <param name="upstreamRepoOwner"></param>
         /// <param name="upstreamRepoHandle"></param>
-        /// <param name="matchPrefix">
-        /// Default Value: false
-        /// </param>
         /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -42,7 +39,6 @@ namespace G
             global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

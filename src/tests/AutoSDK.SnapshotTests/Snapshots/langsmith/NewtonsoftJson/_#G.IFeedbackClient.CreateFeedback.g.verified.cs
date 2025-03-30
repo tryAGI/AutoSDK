@@ -31,9 +31,11 @@ namespace G
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="traceId"></param>
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="error"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackSchema> CreateFeedbackAsync(
@@ -48,9 +50,11 @@ namespace G
             global::System.Guid? comparativeExperimentId = default,
             global::System.Guid? runId = default,
             global::System.Guid? sessionId = default,
+            global::System.Guid? traceId = default,
             global::System.Guid? id = default,
             global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? feedbackSource = default,
             global::G.FeedbackConfig? feedbackConfig = default,
+            bool? error = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

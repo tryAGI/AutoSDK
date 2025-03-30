@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Update organization schema. only support display_name for now.
+    /// Update organization schema.
     /// </summary>
     public sealed partial class OrganizationUpdate
     {
@@ -14,6 +14,18 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unshare_all")]
+        public bool? UnshareAll { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,13 +37,19 @@ namespace G
         /// Initializes a new instance of the <see cref="OrganizationUpdate" /> class.
         /// </summary>
         /// <param name="displayName"></param>
+        /// <param name="publicSharingDisabled"></param>
+        /// <param name="unshareAll"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OrganizationUpdate(
-            string? displayName)
+            string? displayName,
+            bool? publicSharingDisabled,
+            bool? unshareAll)
         {
             this.DisplayName = displayName;
+            this.PublicSharingDisabled = publicSharingDisabled;
+            this.UnshareAll = unshareAll;
         }
 
         /// <summary>

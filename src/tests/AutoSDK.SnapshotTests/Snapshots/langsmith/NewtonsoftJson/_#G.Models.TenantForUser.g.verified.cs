@@ -42,6 +42,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool IsDeleted { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_handle")]
         public string? TenantHandle { get; set; }
 
@@ -83,6 +89,7 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="isDeleted"></param>
         /// <param name="tenantHandle"></param>
         /// <param name="readOnly">
         /// Default Value: false
@@ -95,6 +102,7 @@ namespace G
             global::System.DateTime createdAt,
             string displayName,
             bool isPersonal,
+            bool isDeleted,
             global::System.Guid? organizationId,
             string? tenantHandle,
             bool? readOnly,
@@ -106,6 +114,7 @@ namespace G
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
+            this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
             this.ReadOnly = readOnly;

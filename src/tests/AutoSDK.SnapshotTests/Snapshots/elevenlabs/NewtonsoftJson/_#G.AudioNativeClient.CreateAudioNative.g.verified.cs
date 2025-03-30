@@ -308,13 +308,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AudioNativeCreateProjectResponseModel> CreateAudioNativeAsync(
             string name,
             string? xiApiKey = default,
-            string? image = default,
             string? author = default,
             string? title = default,
-            bool? small = default,
             string? textColor = default,
             string? backgroundColor = default,
-            int? sessionization = default,
             string? voiceId = default,
             string? modelId = default,
             byte[]? file = default,

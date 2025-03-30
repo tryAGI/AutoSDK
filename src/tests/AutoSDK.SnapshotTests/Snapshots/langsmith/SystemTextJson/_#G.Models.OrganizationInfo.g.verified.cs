@@ -73,6 +73,24 @@ namespace G
         public string? SsoLoginSlug { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_payouts_enabled")]
+        public bool? MarketplacePayoutsEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wallet")]
+        public global::G.Wallet? Wallet { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +119,13 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="ssoLoginSlug"></param>
+        /// <param name="publicSharingDisabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="marketplacePayoutsEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="wallet"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +139,10 @@ namespace G
             global::System.Collections.Generic.IList<string>? permissions,
             bool? disabled,
             bool? ssoOnly,
-            string? ssoLoginSlug)
+            string? ssoLoginSlug,
+            bool? publicSharingDisabled,
+            bool? marketplacePayoutsEnabled,
+            global::G.Wallet? wallet)
         {
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.IsPersonal = isPersonal;
@@ -126,6 +154,9 @@ namespace G
             this.Disabled = disabled;
             this.SsoOnly = ssoOnly;
             this.SsoLoginSlug = ssoLoginSlug;
+            this.PublicSharingDisabled = publicSharingDisabled;
+            this.MarketplacePayoutsEnabled = marketplacePayoutsEnabled;
+            this.Wallet = wallet;
         }
 
         /// <summary>

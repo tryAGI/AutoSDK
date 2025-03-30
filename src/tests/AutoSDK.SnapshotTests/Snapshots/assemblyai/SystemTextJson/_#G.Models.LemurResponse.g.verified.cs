@@ -103,6 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            String?.ToString() ??
+            QuestionAnswer?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsString && !IsQuestionAnswer || !IsString && IsQuestionAnswer;

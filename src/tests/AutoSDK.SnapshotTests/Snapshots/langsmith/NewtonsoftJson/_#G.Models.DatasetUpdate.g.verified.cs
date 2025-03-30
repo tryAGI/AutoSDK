@@ -42,6 +42,12 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? PatchExamples { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transformations")]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? Transformations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -55,18 +61,21 @@ namespace G
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
+        /// <param name="transformations"></param>
         public DatasetUpdate(
             global::G.AnyOf<string, global::G.Missing>? name,
             global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition,
             global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition,
-            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples)
+            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? transformations)
         {
             this.Name = name;
             this.Description = description;
             this.InputsSchemaDefinition = inputsSchemaDefinition;
             this.OutputsSchemaDefinition = outputsSchemaDefinition;
             this.PatchExamples = patchExamples;
+            this.Transformations = transformations;
         }
 
         /// <summary>

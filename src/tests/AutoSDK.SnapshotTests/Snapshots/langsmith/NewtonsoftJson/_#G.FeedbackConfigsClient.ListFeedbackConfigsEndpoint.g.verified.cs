@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareListFeedbackConfigsEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string>? key);
+            global::System.Collections.Generic.IList<string>? key,
+            ref bool? readAfterWrite);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string>? key);
+            global::System.Collections.Generic.IList<string>? key,
+            bool? readAfterWrite);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,23 +28,29 @@ namespace G
         /// List Feedback Configs Endpoint
         /// </summary>
         /// <param name="key"></param>
+        /// <param name="readAfterWrite">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackConfigSchema>> ListFeedbackConfigsEndpointAsync(
             global::System.Collections.Generic.IList<string>? key = default,
+            bool? readAfterWrite = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListFeedbackConfigsEndpointArguments(
                 httpClient: HttpClient,
-                key: key);
+                key: key,
+                readAfterWrite: ref readAfterWrite);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
+                .AddOptionalParameter("read_after_write", readAfterWrite?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,7 +83,8 @@ namespace G
             PrepareListFeedbackConfigsEndpointRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                key: key);
+                key: key,
+                readAfterWrite: readAfterWrite);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

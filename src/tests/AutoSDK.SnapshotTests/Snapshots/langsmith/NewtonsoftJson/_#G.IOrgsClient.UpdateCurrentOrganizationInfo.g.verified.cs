@@ -19,10 +19,14 @@ namespace G
         /// Update Current Organization Info
         /// </summary>
         /// <param name="displayName"></param>
+        /// <param name="publicSharingDisabled"></param>
+        /// <param name="unshareAll"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrganizationInfo> UpdateCurrentOrganizationInfoAsync(
             string? displayName = default,
+            bool? publicSharingDisabled = default,
+            bool? unshareAll = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

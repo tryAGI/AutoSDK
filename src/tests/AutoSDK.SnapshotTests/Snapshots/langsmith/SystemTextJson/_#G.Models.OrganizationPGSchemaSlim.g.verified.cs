@@ -68,6 +68,12 @@ namespace G
         public bool? SsoOnly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_sharing_disabled")]
+        public bool? PublicSharingDisabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -87,6 +93,9 @@ namespace G
         /// <param name="ssoOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="publicSharingDisabled">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,7 +108,8 @@ namespace G
             global::System.Guid? createdByUserId,
             global::System.DateTime? modifiedAt,
             string? ssoLoginSlug,
-            bool? ssoOnly)
+            bool? ssoOnly,
+            bool? publicSharingDisabled)
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -110,6 +120,7 @@ namespace G
             this.ModifiedAt = modifiedAt;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
+            this.PublicSharingDisabled = publicSharingDisabled;
         }
 
         /// <summary>

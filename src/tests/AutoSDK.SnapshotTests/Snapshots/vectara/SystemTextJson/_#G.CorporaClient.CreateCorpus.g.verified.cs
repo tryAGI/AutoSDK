@@ -338,7 +338,6 @@ namespace G
             bool? saveHistory = default,
             bool? queriesAreAnswers = default,
             bool? documentsAreQuestions = default,
-            string? encoderId = default,
             string? encoderName = default,
             global::System.Collections.Generic.IList<global::G.FilterAttribute>? filterAttributes = default,
             global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? customDimensions = default,

@@ -1,5 +1,131 @@
 ﻿[
   {
+    Message: propertyNames is not a valid property at #/paths/~1api~1v1~1workspaces~1current~1tags~1resources/post/responses/200/content/application~1json/schema,
+    Pointer: 
+  },
+  {
+    Message: consumes is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/post,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/post,
+    Pointer: 
+  },
+  {
+    Message: type is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/post/parameters,
+    Pointer: 
+  },
+  {
+    Message: format is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/post/parameters,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/examples.ExamplesCreatedResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: consumes is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/patch,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/patch,
+    Pointer: 
+  },
+  {
+    Message: type is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/patch/parameters,
+    Pointer: 
+  },
+  {
+    Message: format is not a valid property at #/paths/~1datasets~1{dataset_id}~1examples/patch/parameters,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/examples.ExamplesUpdatedResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/DatasetUpdate/properties/patch_examples,
+    Pointer: 
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/QueryExampleSchemaWithRuns/properties/filters,
+    Pointer: 
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/QueryFeedbackDelta/properties/filters,
+    Pointer: 
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/ResponseBodyForRunsGenerateQuery/properties/feedback_urls,
+    Pointer: 
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/SessionFeedbackDelta/properties/feedback_deltas,
+    Pointer: 
+  },
+  {
+    Message: definitions is not a valid property at #/,
+    Pointer: 
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ExamplesCreatedResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ExamplesUpdatedResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
     RuleName: KeyMustBeRegularExpression,
     Message: The key 'API Key' in 'securitySchemes' of components MUST match the regular expression '^[a-zA-Z0-9\.\-_]+$'.,
     Pointer: #/components

@@ -16,6 +16,30 @@ namespace G
         public global::System.Collections.Generic.IList<global::System.Guid> SessionIds { get; set; } = default!;
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("offset")]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// Default Value: 10
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("limit")]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("preview")]
+        public bool? Preview { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("format")]
+        public global::G.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparative_experiment_id")]
@@ -24,20 +48,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sort_params")]
+        public global::G.SortParamsForRunsComparisonView? SortParams { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Filters { get; set; }
-
-        /// <summary>
-        /// Default Value: 0
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("offset")]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// Default Value: 20
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,26 +67,37 @@ namespace G
         /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
-        /// <param name="comparativeExperimentId"></param>
-        /// <param name="filters"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 20
+        /// Default Value: 10
         /// </param>
+        /// <param name="preview">
+        /// Default Value: false
+        /// </param>
+        /// <param name="format"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="sortParams"></param>
+        /// <param name="filters"></param>
         public QueryExampleSchemaWithRuns(
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::System.Guid? comparativeExperimentId,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
             int? offset,
-            int? limit)
+            int? limit,
+            bool? preview,
+            global::G.QueryExampleSchemaWithRunsFormat? format,
+            global::System.Guid? comparativeExperimentId,
+            global::G.SortParamsForRunsComparisonView? sortParams,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
-            this.ComparativeExperimentId = comparativeExperimentId;
-            this.Filters = filters;
             this.Offset = offset;
             this.Limit = limit;
+            this.Preview = preview;
+            this.Format = format;
+            this.ComparativeExperimentId = comparativeExperimentId;
+            this.SortParams = sortParams;
+            this.Filters = filters;
         }
 
         /// <summary>

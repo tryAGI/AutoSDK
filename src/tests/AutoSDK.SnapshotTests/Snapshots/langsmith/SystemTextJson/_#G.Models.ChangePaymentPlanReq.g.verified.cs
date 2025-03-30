@@ -33,6 +33,10 @@ namespace G
         /// 
         /// </summary>
         Premier,
+        /// <summary>
+        /// 
+        /// </summary>
+        Free,
     }
 
     /// <summary>
@@ -53,6 +57,7 @@ namespace G
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.Partner => "partner",
                 ChangePaymentPlanReq.Premier => "premier",
+                ChangePaymentPlanReq.Free => "free",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,6 +74,7 @@ namespace G
                 "startup" => ChangePaymentPlanReq.Startup,
                 "partner" => ChangePaymentPlanReq.Partner,
                 "premier" => ChangePaymentPlanReq.Premier,
+                "free" => ChangePaymentPlanReq.Free,
                 _ => null,
             };
         }

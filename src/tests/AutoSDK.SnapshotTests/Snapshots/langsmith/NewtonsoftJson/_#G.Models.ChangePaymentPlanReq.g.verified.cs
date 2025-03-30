@@ -40,6 +40,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="premier")]
         Premier,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="free")]
+        Free,
     }
 
     /// <summary>
@@ -60,6 +65,7 @@ namespace G
                 ChangePaymentPlanReq.Startup => "startup",
                 ChangePaymentPlanReq.Partner => "partner",
                 ChangePaymentPlanReq.Premier => "premier",
+                ChangePaymentPlanReq.Free => "free",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,6 +82,7 @@ namespace G
                 "startup" => ChangePaymentPlanReq.Startup,
                 "partner" => ChangePaymentPlanReq.Partner,
                 "premier" => ChangePaymentPlanReq.Premier,
+                "free" => ChangePaymentPlanReq.Free,
                 _ => null,
             };
         }

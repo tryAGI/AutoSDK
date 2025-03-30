@@ -13,7 +13,8 @@ namespace G
             ref string? nameContains,
             ref int? offset,
             ref int? limit,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            ref global::System.Guid? datasetId);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +23,8 @@ namespace G
             string? nameContains,
             int? offset,
             int? limit,
-            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
+            global::System.Guid? datasetId);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,6 +47,7 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="tagValueId"></param>
+        /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
@@ -54,6 +57,7 @@ namespace G
             int? offset = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -65,7 +69,8 @@ namespace G
                 nameContains: ref nameContains,
                 offset: ref offset,
                 limit: ref limit,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                datasetId: ref datasetId);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/annotation-queues",
@@ -77,6 +82,7 @@ namespace G
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -114,7 +120,8 @@ namespace G
                 nameContains: nameContains,
                 offset: offset,
                 limit: limit,
-                tagValueId: tagValueId);
+                tagValueId: tagValueId,
+                datasetId: datasetId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

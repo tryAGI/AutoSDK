@@ -82,6 +82,12 @@ namespace G
         public bool? ExtendOnly { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transient")]
+        public bool? Transient { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue_id")]
@@ -150,6 +156,9 @@ namespace G
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
+        /// <param name="transient">
+        /// Default Value: false
+        /// </param>
         /// <param name="addToAnnotationQueueId"></param>
         /// <param name="addToDatasetId"></param>
         /// <param name="addToDatasetPreferCorrection">
@@ -172,6 +181,7 @@ namespace G
             bool? useCorrectionsDataset,
             int? numFewShotExamples,
             bool? extendOnly,
+            bool? transient,
             global::System.Guid? addToAnnotationQueueId,
             global::System.Guid? addToDatasetId,
             bool? addToDatasetPreferCorrection,
@@ -192,6 +202,7 @@ namespace G
             this.UseCorrectionsDataset = useCorrectionsDataset;
             this.NumFewShotExamples = numFewShotExamples;
             this.ExtendOnly = extendOnly;
+            this.Transient = transient;
             this.AddToAnnotationQueueId = addToAnnotationQueueId;
             this.AddToDatasetId = addToDatasetId;
             this.AddToDatasetPreferCorrection = addToDatasetPreferCorrection;

@@ -12,14 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings", Required = global::Newtonsoft.Json.Required.Always)]
         public object Settings { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("options")]
+        public global::G.PlaygroundSavedOptions? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
         /// </summary>
-        /// <param name="settings"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="settings"></param>
+        /// <param name="options"></param>
         public PlaygroundSettingsCreateRequest(
             object settings,
-            string? name)
+            string? name,
+            string? description,
+            global::G.PlaygroundSavedOptions? options)
         {
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Name = name;
+            this.Description = description;
+            this.Options = options;
         }
 
         /// <summary>

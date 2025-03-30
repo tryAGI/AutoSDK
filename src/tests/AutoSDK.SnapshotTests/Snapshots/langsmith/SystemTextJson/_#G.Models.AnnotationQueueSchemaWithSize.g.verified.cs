@@ -75,6 +75,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_rule_id")]
+        public global::System.Guid? SourceRuleId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalRuns { get; set; }
@@ -104,6 +110,7 @@ namespace G
         /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="sourceRuleId"></param>
         /// <param name="totalRuns"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -119,7 +126,8 @@ namespace G
             global::System.Guid? defaultDataset,
             int? numReviewersPerItem,
             bool? enableReservations,
-            int? reservationMinutes)
+            int? reservationMinutes,
+            global::System.Guid? sourceRuleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
@@ -132,6 +140,7 @@ namespace G
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.SourceRuleId = sourceRuleId;
         }
 
         /// <summary>

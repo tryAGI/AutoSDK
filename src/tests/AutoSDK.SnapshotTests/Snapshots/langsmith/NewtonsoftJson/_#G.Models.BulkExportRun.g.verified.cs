@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BulkExportRunS3Metadata Metadata { get; set; } = default!;
+        public global::G.BulkExportRunMetadata Metadata { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// <param name="finishedAt"></param>
         public BulkExportRun(
             global::System.Guid bulkExportId,
-            global::G.BulkExportRunS3Metadata metadata,
+            global::G.BulkExportRunMetadata metadata,
             global::System.Guid id,
             global::G.BulkExportRunStatus status,
             global::System.DateTime createdAt,
