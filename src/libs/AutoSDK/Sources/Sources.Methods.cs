@@ -247,9 +247,7 @@ namespace {endPoint.Namespace}
             : string.Empty;
         
         return property.Type.IsAnyOfLike
-            ? string.Join(" ?? ", property.Type.SubTypes.Select((y, i) => y.IsEnum
-                ? $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToValueString()"
-                : $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
+            ? $"{name}{(property.IsRequired ? "" : "?")}.ToString() ?? string.Empty"
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
     

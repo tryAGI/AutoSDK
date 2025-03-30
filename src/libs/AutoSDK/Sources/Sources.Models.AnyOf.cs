@@ -114,6 +114,13 @@ namespace {anyOfData.Namespace}
             ;
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public override string? ToString() =>
+{anyOfData.Properties.Select(x => $@" 
+            {x.Name}{(x.Type.IsEnum ? "?.ToValueString()" : "?.ToString()")} ??
+").Inject().TrimEnd('?', '\n')}
+            ;
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public bool Validate()
         {{
             return {validation};
