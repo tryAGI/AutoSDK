@@ -60,6 +60,8 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateJsonSerializerContextTypes"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_ComputeDiscriminators"/>
+    <!-- Adds missing path parameters. true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_AddMissingPathParameters"/>
 
     <!-- Models generation -->
     <!-- true/false. Default: false -->

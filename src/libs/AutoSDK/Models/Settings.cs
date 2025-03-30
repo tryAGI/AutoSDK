@@ -30,6 +30,7 @@ public readonly record struct Settings(
     string JsonSerializerContext,
     bool GenerateJsonSerializerContextTypes,
     bool ComputeDiscriminators,
+    bool AddMissingPathParameters,
 
     bool GenerateModels,
     bool GenerateModelValidationMethods,
@@ -72,6 +73,7 @@ public readonly record struct Settings(
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
         ComputeDiscriminators: false,
+        AddMissingPathParameters: true,
         GenerateModels: false,
         GenerateModelValidationMethods: false,
         ValidateAnyOfs: false,

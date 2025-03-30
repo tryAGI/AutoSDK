@@ -53,7 +53,8 @@ public static class OptionsExtensions
             ExcludeDeprecatedOperations: options.GetBoolGlobalOption(nameof(Settings.ExcludeDeprecatedOperations), prefix),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
             GenerateJsonSerializerContextTypes: options.GetBoolGlobalOption(nameof(Settings.GenerateJsonSerializerContextTypes), prefix),
-            ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix),
+            ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix, defaultValue: Settings.Default.ComputeDiscriminators),
+            AddMissingPathParameters: options.GetBoolGlobalOption(nameof(Settings.AddMissingPathParameters), prefix, defaultValue: Settings.Default.AddMissingPathParameters),
             
             GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix),
             GenerateModelValidationMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateModelValidationMethods), prefix),

@@ -54,7 +54,11 @@ public static class OpenApiExtensions
         {
             openApiDocument = openApiDocument.ComputeDiscriminators();
         }
-
+        if (settings.AddMissingPathParameters)
+        {
+            openApiDocument = openApiDocument.AddMissingPathParameters();
+        }
+        
         return openApiDocument;
     }
     
@@ -198,6 +202,45 @@ public static class OpenApiExtensions
         foreach (var schema in openApiDocument.Components.Schemas)
         {
             ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}", depth: 0);
+        }
+        
+        return openApiDocument;
+    }
+    
+    public static OpenApiDocument AddMissingPathParameters(
+        this OpenApiDocument openApiDocument)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        foreach (var path in openApiDocument.Paths)
+        {
+            foreach (var operation in path.Value.Operations)
+            {
+                var parametersFromPath = PathHelper.ExtractParameters(path.Key.AsSpan());
+                var parametersFromSpec = operation.Value.Parameters
+                    .Where(x => x.In == ParameterLocation.Path)
+                    .Select(x => x.Name)
+                    .ToImmutableHashSet();
+                foreach (var parameter in parametersFromPath)
+                {
+                    if (!parametersFromSpec.Contains(parameter))
+                    {
+                        operation.Value.Parameters.Add(new OpenApiParameter
+                        {
+                            Name = parameter,
+                            In = ParameterLocation.Path,
+                            Required = true,
+                            Description = "This is a missing parameter that was added automatically. Please check the OpenAPI spec.",
+                            Schema = new OpenApiSchema
+                            {
+                                Type = "string",
+                            },
+                        });
+                        
+                        Console.WriteLine($"Missing path parameter '{parameter}' was added to operation '{operation.Key}' in path '{path.Key}'.");
+                    }
+                }
+            }
         }
         
         return openApiDocument;
