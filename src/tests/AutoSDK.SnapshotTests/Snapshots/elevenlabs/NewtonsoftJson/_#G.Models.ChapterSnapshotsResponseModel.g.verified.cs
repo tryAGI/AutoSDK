@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ChapterSnapshotsResponseModel
     {
         /// <summary>
-        /// 
+        /// List of chapter snapshots.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("snapshots", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ChapterSnapshotResponseModel> Snapshots { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterSnapshotsResponseModel" /> class.
         /// </summary>
-        /// <param name="snapshots"></param>
+        /// <param name="snapshots">
+        /// List of chapter snapshots.
+        /// </param>
         public ChapterSnapshotsResponseModel(
             global::System.Collections.Generic.IList<global::G.ChapterSnapshotResponseModel> snapshots)
         {

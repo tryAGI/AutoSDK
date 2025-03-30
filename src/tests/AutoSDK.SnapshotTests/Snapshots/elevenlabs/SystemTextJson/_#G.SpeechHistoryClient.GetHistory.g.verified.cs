@@ -11,6 +11,8 @@ namespace G
             ref int? pageSize,
             ref string? startAfterHistoryItemId,
             ref string? voiceId,
+            ref string? search,
+            ref global::G.ListGeneratedItemsV1HistoryGetSource? source,
             ref string? xiApiKey);
         partial void PrepareGetHistoryRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -18,6 +20,8 @@ namespace G
             int? pageSize,
             string? startAfterHistoryItemId,
             string? voiceId,
+            string? search,
+            global::G.ListGeneratedItemsV1HistoryGetSource? source,
             string? xiApiKey);
         partial void ProcessGetHistoryResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,8 +33,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Get Generated Items<br/>
-        /// Returns metadata about all your generated audio.
+        /// List Generated Items<br/>
+        /// Returns a list of your generated audio.
         /// </summary>
         /// <param name="pageSize">
         /// How many history items to return at maximum. Can not exceed 1000, defaults to 100.<br/>
@@ -42,6 +46,14 @@ namespace G
         /// <param name="voiceId">
         /// Voice ID to be filtered for, you can use GET https://api.elevenlabs.io/v1/voices to receive a list of voices and their IDs.
         /// </param>
+        /// <param name="search">
+        /// search term used for filtering<br/>
+        /// Example: In the land far far away
+        /// </param>
+        /// <param name="source">
+        /// Source of the generated history item<br/>
+        /// Example: TTS
+        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -51,6 +63,8 @@ namespace G
             int? pageSize = default,
             string? startAfterHistoryItemId = default,
             string? voiceId = default,
+            string? search = default,
+            global::G.ListGeneratedItemsV1HistoryGetSource? source = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -61,6 +75,8 @@ namespace G
                 pageSize: ref pageSize,
                 startAfterHistoryItemId: ref startAfterHistoryItemId,
                 voiceId: ref voiceId,
+                search: ref search,
+                source: ref source,
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new PathBuilder(
@@ -70,6 +86,8 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("start_after_history_item_id", startAfterHistoryItemId) 
                 .AddOptionalParameter("voice_id", voiceId) 
+                .AddOptionalParameter("search", search) 
+                .AddOptionalParameter("source", source?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -95,6 +113,8 @@ namespace G
                 pageSize: pageSize,
                 startAfterHistoryItemId: startAfterHistoryItemId,
                 voiceId: voiceId,
+                search: search,
+                source: source,
                 xiApiKey: xiApiKey);
 
             using var __response = await HttpClient.SendAsync(

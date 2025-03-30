@@ -10,25 +10,25 @@ namespace G
     public sealed partial class ChapterStatisticsResponseModel
     {
         /// <summary>
-        /// 
+        /// The number of unconverted characters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("characters_unconverted", Required = global::Newtonsoft.Json.Required.Always)]
         public int CharactersUnconverted { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The number of converted characters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("characters_converted", Required = global::Newtonsoft.Json.Required.Always)]
         public int CharactersConverted { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The number of converted paragraphs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("paragraphs_converted", Required = global::Newtonsoft.Json.Required.Always)]
         public int ParagraphsConverted { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The number of unconverted paragraphs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("paragraphs_unconverted", Required = global::Newtonsoft.Json.Required.Always)]
         public int ParagraphsUnconverted { get; set; } = default!;
@@ -42,10 +42,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterStatisticsResponseModel" /> class.
         /// </summary>
-        /// <param name="charactersUnconverted"></param>
-        /// <param name="charactersConverted"></param>
-        /// <param name="paragraphsConverted"></param>
-        /// <param name="paragraphsUnconverted"></param>
+        /// <param name="charactersUnconverted">
+        /// The number of unconverted characters.
+        /// </param>
+        /// <param name="charactersConverted">
+        /// The number of converted characters.
+        /// </param>
+        /// <param name="paragraphsConverted">
+        /// The number of converted paragraphs.
+        /// </param>
+        /// <param name="paragraphsUnconverted">
+        /// The number of unconverted paragraphs.
+        /// </param>
         public ChapterStatisticsResponseModel(
             int charactersUnconverted,
             int charactersConverted,

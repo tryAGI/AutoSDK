@@ -10,130 +10,173 @@ namespace G
     public sealed partial class ProjectResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ProjectId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The name of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The creation date of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("create_date_unix", Required = global::Newtonsoft.Json.Required.Always)]
         public int CreateDateUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The default title voice ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_title_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultTitleVoiceId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The default paragraph voice ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_paragraph_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultParagraphVoiceId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The default model ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_model_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultModelId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The last conversion date of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("last_conversion_date_unix", Required = global::Newtonsoft.Json.Required.Always)]
-        public int LastConversionDateUnix { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("last_conversion_date_unix")]
+        public int? LastConversionDateUnix { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the project can be downloaded.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_be_downloaded", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanBeDownloaded { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The title of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Title { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("title")]
+        public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        /// The author of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public string? Author { get; set; }
 
         /// <summary>
-        /// 
+        /// The description of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// List of genres of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("genres", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Genres { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("genres")]
+        public global::System.Collections.Generic.IList<string>? Genres { get; set; }
 
         /// <summary>
-        /// 
+        /// The cover image URL of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cover_image_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CoverImageUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cover_image_url")]
+        public string? CoverImageUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// The target audience of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("target_audience", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectResponseModelTargetAudience TargetAudience { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("target_audience")]
+        public global::G.ProjectResponseModelTargetAudience? TargetAudience { get; set; }
 
         /// <summary>
-        /// 
+        /// Two-letter language code (ISO 639-1) of the language of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Language { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("language")]
+        public string? Language { get; set; }
 
         /// <summary>
-        /// 
+        /// The content type of the project, e.g. 'Novel' or 'Short Story'
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ContentType { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content_type")]
+        public string? ContentType { get; set; }
 
         /// <summary>
-        /// 
+        /// The original publication date of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("original_publication_date", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OriginalPublicationDate { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("original_publication_date")]
+        public string? OriginalPublicationDate { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the project contains mature content.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("mature_content", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool MatureContent { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("mature_content")]
+        public bool? MatureContent { get; set; }
 
         /// <summary>
-        /// 
+        /// The ISBN number of the project.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("isbn_number", Required = global::Newtonsoft.Json.Required.Always)]
-        public string IsbnNumber { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("isbn_number")]
+        public string? IsbnNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the project uses volume normalization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("volume_normalization", Required = global::Newtonsoft.Json.Required.Always)]
         public bool VolumeNormalization { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The state of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ProjectResponseModelState State { get; set; } = default!;
+
+        /// <summary>
+        /// The access level of the project.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("access_level", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ProjectResponseModelAccessLevel AccessLevel { get; set; } = default!;
+
+        /// <summary>
+        /// Whether the project is fiction.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("fiction")]
+        public global::G.ProjectResponseModelFiction? Fiction { get; set; }
+
+        /// <summary>
+        /// Whether quality check is enabled for this project.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("quality_check_on", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool QualityCheckOn { get; set; } = default!;
+
+        /// <summary>
+        /// Whether quality check is enabled on the project when bulk converting.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("quality_check_on_when_bulk_convert", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool QualityCheckOnWhenBulkConvert { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("creation_meta")]
+        public global::G.ProjectCreationMetaResponseModel? CreationMeta { get; set; }
+
+        /// <summary>
+        /// The source type of the project.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("source_type")]
+        public global::G.ProjectResponseModelSourceType? SourceType { get; set; }
+
+        /// <summary>
+        /// Whether chapters are enabled for the project.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chapters_enabled")]
+        public bool? ChaptersEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -144,27 +187,89 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectResponseModel" /> class.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="name"></param>
-        /// <param name="createDateUnix"></param>
-        /// <param name="defaultTitleVoiceId"></param>
-        /// <param name="defaultParagraphVoiceId"></param>
-        /// <param name="defaultModelId"></param>
-        /// <param name="lastConversionDateUnix"></param>
-        /// <param name="canBeDownloaded"></param>
-        /// <param name="title"></param>
-        /// <param name="author"></param>
-        /// <param name="description"></param>
-        /// <param name="genres"></param>
-        /// <param name="coverImageUrl"></param>
-        /// <param name="targetAudience"></param>
-        /// <param name="language"></param>
-        /// <param name="contentType"></param>
-        /// <param name="originalPublicationDate"></param>
-        /// <param name="matureContent"></param>
-        /// <param name="isbnNumber"></param>
-        /// <param name="volumeNormalization"></param>
-        /// <param name="state"></param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="name">
+        /// The name of the project.
+        /// </param>
+        /// <param name="createDateUnix">
+        /// The creation date of the project.
+        /// </param>
+        /// <param name="defaultTitleVoiceId">
+        /// The default title voice ID.
+        /// </param>
+        /// <param name="defaultParagraphVoiceId">
+        /// The default paragraph voice ID.
+        /// </param>
+        /// <param name="defaultModelId">
+        /// The default model ID.
+        /// </param>
+        /// <param name="lastConversionDateUnix">
+        /// The last conversion date of the project.
+        /// </param>
+        /// <param name="canBeDownloaded">
+        /// Whether the project can be downloaded.
+        /// </param>
+        /// <param name="title">
+        /// The title of the project.
+        /// </param>
+        /// <param name="author">
+        /// The author of the project.
+        /// </param>
+        /// <param name="description">
+        /// The description of the project.
+        /// </param>
+        /// <param name="genres">
+        /// List of genres of the project.
+        /// </param>
+        /// <param name="coverImageUrl">
+        /// The cover image URL of the project.
+        /// </param>
+        /// <param name="targetAudience">
+        /// The target audience of the project.
+        /// </param>
+        /// <param name="language">
+        /// Two-letter language code (ISO 639-1) of the language of the project.
+        /// </param>
+        /// <param name="contentType">
+        /// The content type of the project, e.g. 'Novel' or 'Short Story'
+        /// </param>
+        /// <param name="originalPublicationDate">
+        /// The original publication date of the project.
+        /// </param>
+        /// <param name="matureContent">
+        /// Whether the project contains mature content.
+        /// </param>
+        /// <param name="isbnNumber">
+        /// The ISBN number of the project.
+        /// </param>
+        /// <param name="volumeNormalization">
+        /// Whether the project uses volume normalization.
+        /// </param>
+        /// <param name="state">
+        /// The state of the project.
+        /// </param>
+        /// <param name="accessLevel">
+        /// The access level of the project.
+        /// </param>
+        /// <param name="fiction">
+        /// Whether the project is fiction.
+        /// </param>
+        /// <param name="qualityCheckOn">
+        /// Whether quality check is enabled for this project.
+        /// </param>
+        /// <param name="qualityCheckOnWhenBulkConvert">
+        /// Whether quality check is enabled on the project when bulk converting.
+        /// </param>
+        /// <param name="creationMeta"></param>
+        /// <param name="sourceType">
+        /// The source type of the project.
+        /// </param>
+        /// <param name="chaptersEnabled">
+        /// Whether chapters are enabled for the project.<br/>
+        /// Default Value: true
+        /// </param>
         public ProjectResponseModel(
             string projectId,
             string name,
@@ -172,21 +277,28 @@ namespace G
             string defaultTitleVoiceId,
             string defaultParagraphVoiceId,
             string defaultModelId,
-            int lastConversionDateUnix,
             bool canBeDownloaded,
-            string title,
-            string author,
-            string description,
-            global::System.Collections.Generic.IList<string> genres,
-            string coverImageUrl,
-            global::G.ProjectResponseModelTargetAudience targetAudience,
-            string language,
-            string contentType,
-            string originalPublicationDate,
-            bool matureContent,
-            string isbnNumber,
             bool volumeNormalization,
-            global::G.ProjectResponseModelState state)
+            global::G.ProjectResponseModelState state,
+            global::G.ProjectResponseModelAccessLevel accessLevel,
+            bool qualityCheckOn,
+            bool qualityCheckOnWhenBulkConvert,
+            int? lastConversionDateUnix,
+            string? title,
+            string? author,
+            string? description,
+            global::System.Collections.Generic.IList<string>? genres,
+            string? coverImageUrl,
+            global::G.ProjectResponseModelTargetAudience? targetAudience,
+            string? language,
+            string? contentType,
+            string? originalPublicationDate,
+            bool? matureContent,
+            string? isbnNumber,
+            global::G.ProjectResponseModelFiction? fiction,
+            global::G.ProjectCreationMetaResponseModel? creationMeta,
+            global::G.ProjectResponseModelSourceType? sourceType,
+            bool? chaptersEnabled)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -194,21 +306,28 @@ namespace G
             this.DefaultTitleVoiceId = defaultTitleVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultTitleVoiceId));
             this.DefaultParagraphVoiceId = defaultParagraphVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultParagraphVoiceId));
             this.DefaultModelId = defaultModelId ?? throw new global::System.ArgumentNullException(nameof(defaultModelId));
-            this.LastConversionDateUnix = lastConversionDateUnix;
             this.CanBeDownloaded = canBeDownloaded;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Genres = genres ?? throw new global::System.ArgumentNullException(nameof(genres));
-            this.CoverImageUrl = coverImageUrl ?? throw new global::System.ArgumentNullException(nameof(coverImageUrl));
-            this.TargetAudience = targetAudience;
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
-            this.OriginalPublicationDate = originalPublicationDate ?? throw new global::System.ArgumentNullException(nameof(originalPublicationDate));
-            this.MatureContent = matureContent;
-            this.IsbnNumber = isbnNumber ?? throw new global::System.ArgumentNullException(nameof(isbnNumber));
             this.VolumeNormalization = volumeNormalization;
             this.State = state;
+            this.AccessLevel = accessLevel;
+            this.QualityCheckOn = qualityCheckOn;
+            this.QualityCheckOnWhenBulkConvert = qualityCheckOnWhenBulkConvert;
+            this.LastConversionDateUnix = lastConversionDateUnix;
+            this.Title = title;
+            this.Author = author;
+            this.Description = description;
+            this.Genres = genres;
+            this.CoverImageUrl = coverImageUrl;
+            this.TargetAudience = targetAudience;
+            this.Language = language;
+            this.ContentType = contentType;
+            this.OriginalPublicationDate = originalPublicationDate;
+            this.MatureContent = matureContent;
+            this.IsbnNumber = isbnNumber;
+            this.Fiction = fiction;
+            this.CreationMeta = creationMeta;
+            this.SourceType = sourceType;
+            this.ChaptersEnabled = chaptersEnabled;
         }
 
         /// <summary>

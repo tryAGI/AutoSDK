@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.
+    /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.<br/>
+    /// Example: young
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostAge

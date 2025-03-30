@@ -10,13 +10,13 @@ namespace G
     public sealed partial class LanguageResponseModel
     {
         /// <summary>
-        /// 
+        /// The unique identifier of the language.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string LanguageId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The name of the language.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -30,8 +30,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LanguageResponseModel" /> class.
         /// </summary>
-        /// <param name="languageId"></param>
-        /// <param name="name"></param>
+        /// <param name="languageId">
+        /// The unique identifier of the language.
+        /// </param>
+        /// <param name="name">
+        /// The name of the language.
+        /// </param>
         public LanguageResponseModel(
             string languageId,
             string name)

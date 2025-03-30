@@ -10,12 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref int? pageSize,
+            ref global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort,
+            ref string? sortDirection,
             ref string? xiApiKey);
         partial void PrepareGetPronunciationDictionariesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? cursor,
             int? pageSize,
+            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort,
+            string? sortDirection,
             string? xiApiKey);
         partial void ProcessGetPronunciationDictionariesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,6 +41,16 @@ namespace G
         /// How many pronunciation dictionaries to return at maximum. Can not exceed 100, defaults to 30.<br/>
         /// Default Value: 30
         /// </param>
+        /// <param name="sort">
+        /// Which field to sort by, one of 'created_at_unix' or 'name'.<br/>
+        /// Default Value: creation_time_unix<br/>
+        /// Example: creation_time_unix
+        /// </param>
+        /// <param name="sortDirection">
+        /// Which direction to sort the voices in. 'ascending' or 'descending'.<br/>
+        /// Default Value: DESCENDING<br/>
+        /// Example: descending
+        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -45,6 +59,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionariesMetadataResponseModel> GetPronunciationDictionariesAsync(
             string? cursor = default,
             int? pageSize = default,
+            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort = default,
+            string? sortDirection = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -54,14 +70,24 @@ namespace G
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 pageSize: ref pageSize,
+                sort: ref sort,
+                sortDirection: ref sortDirection,
                 xiApiKey: ref xiApiKey);
 
+            var sortValue = sort switch
+            {
+                global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort.CreationTimeUnix => "creation_time_unix",
+                global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort.Name => "name",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/v1/pronunciation-dictionaries/",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("cursor", cursor) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("sort_direction", sortDirection) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -86,6 +112,8 @@ namespace G
                 httpRequestMessage: __httpRequest,
                 cursor: cursor,
                 pageSize: pageSize,
+                sort: sort,
+                sortDirection: sortDirection,
                 xiApiKey: xiApiKey);
 
             using var __response = await HttpClient.SendAsync(

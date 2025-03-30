@@ -5,10 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The state of the project.
     /// </summary>
     public enum ProjectExtendedResponseModelState
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Creating,
         /// <summary>
         /// 
         /// </summary>
@@ -35,6 +39,7 @@ namespace G
         {
             return value switch
             {
+                ProjectExtendedResponseModelState.Creating => "creating",
                 ProjectExtendedResponseModelState.Default => "default",
                 ProjectExtendedResponseModelState.Converting => "converting",
                 ProjectExtendedResponseModelState.InQueue => "in_queue",
@@ -48,6 +53,7 @@ namespace G
         {
             return value switch
             {
+                "creating" => ProjectExtendedResponseModelState.Creating,
                 "default" => ProjectExtendedResponseModelState.Default,
                 "converting" => ProjectExtendedResponseModelState.Converting,
                 "in_queue" => ProjectExtendedResponseModelState.InQueue,

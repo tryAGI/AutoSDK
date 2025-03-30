@@ -10,8 +10,10 @@ namespace G
     public sealed partial class BodySoundGenerationV1SoundGenerationPost
     {
         /// <summary>
-        /// The text that will get converted into a sound effect.
+        /// The text that will get converted into a sound effect.<br/>
+        /// Example: A large, ancient wooden door slowly opening in an eerie, abandoned castle..
         /// </summary>
+        /// <example>A large, ancient wooden door slowly opening in an eerie, abandoned castle..</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
@@ -39,7 +41,8 @@ namespace G
         /// Initializes a new instance of the <see cref="BodySoundGenerationV1SoundGenerationPost" /> class.
         /// </summary>
         /// <param name="text">
-        /// The text that will get converted into a sound effect.
+        /// The text that will get converted into a sound effect.<br/>
+        /// Example: A large, ancient wooden door slowly opening in an eerie, abandoned castle..
         /// </param>
         /// <param name="durationSeconds">
         /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 22. If set to None we will guess the optimal duration using the prompt. Defaults to None.

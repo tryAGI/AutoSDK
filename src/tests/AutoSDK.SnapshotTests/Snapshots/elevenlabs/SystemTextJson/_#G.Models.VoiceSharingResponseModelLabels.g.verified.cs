@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The labels of the voice.
     /// </summary>
     public sealed partial class VoiceSharingResponseModelLabels
     {

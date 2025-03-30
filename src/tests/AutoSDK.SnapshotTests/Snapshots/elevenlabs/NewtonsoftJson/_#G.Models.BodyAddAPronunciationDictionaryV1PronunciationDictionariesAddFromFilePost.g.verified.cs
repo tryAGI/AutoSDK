@@ -10,8 +10,10 @@ namespace G
     public sealed partial class BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost
     {
         /// <summary>
-        /// The name of the pronunciation dictionary, used for identification only.
+        /// The name of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: My Dictionary
         /// </summary>
+        /// <example>My Dictionary</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -28,14 +30,18 @@ namespace G
         public string? Filename { get; set; }
 
         /// <summary>
-        /// A description of the pronunciation dictionary, used for identification only.
+        /// A description of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: Contains pronunciation's of our character names
         /// </summary>
+        /// <example>Contains pronunciation's of our character names</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
+        /// Example: viewer
         /// </summary>
+        /// <example>viewer</example>
         [global::Newtonsoft.Json.JsonProperty("workspace_access")]
         public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? WorkspaceAccess { get; set; }
 
@@ -49,7 +55,8 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.
+        /// The name of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: My Dictionary
         /// </param>
         /// <param name="file">
         /// A lexicon .pls file which we will use to initialize the project with.
@@ -58,10 +65,12 @@ namespace G
         /// A lexicon .pls file which we will use to initialize the project with.
         /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.
+        /// A description of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: Contains pronunciation's of our character names
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
+        /// Example: viewer
         /// </param>
         public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost(
             string name,

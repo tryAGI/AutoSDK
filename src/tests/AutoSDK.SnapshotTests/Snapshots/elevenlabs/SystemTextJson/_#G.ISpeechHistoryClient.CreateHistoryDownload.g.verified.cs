@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task CreateHistoryDownloadAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateHistoryDownloadAsync(
             global::G.BodyDownloadHistoryItemsV1HistoryDownloadPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -35,7 +35,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task CreateHistoryDownloadAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateHistoryDownloadAsync(
             global::System.Collections.Generic.IList<string> historyItemIds,
             string? xiApiKey = default,
             string? outputFormat = default,

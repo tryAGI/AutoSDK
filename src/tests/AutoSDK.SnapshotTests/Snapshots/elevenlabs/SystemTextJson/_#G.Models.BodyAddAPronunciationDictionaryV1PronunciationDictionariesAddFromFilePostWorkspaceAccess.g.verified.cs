@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
+    /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
+    /// Example: viewer
     /// </summary>
     public enum BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess
     {

@@ -10,31 +10,31 @@ namespace G
     public sealed partial class ManualVerificationFileResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string FileId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The name of the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string FileName { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The MIME type of the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mime_type", Required = global::Newtonsoft.Json.Required.Always)]
         public string MimeType { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The size of the file in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
         public int SizeBytes { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The date of the file in Unix time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upload_date_unix", Required = global::Newtonsoft.Json.Required.Always)]
         public int UploadDateUnix { get; set; } = default!;
@@ -48,11 +48,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualVerificationFileResponseModel" /> class.
         /// </summary>
-        /// <param name="fileId"></param>
-        /// <param name="fileName"></param>
-        /// <param name="mimeType"></param>
-        /// <param name="sizeBytes"></param>
-        /// <param name="uploadDateUnix"></param>
+        /// <param name="fileId">
+        /// The ID of the file.
+        /// </param>
+        /// <param name="fileName">
+        /// The name of the file.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the file.
+        /// </param>
+        /// <param name="sizeBytes">
+        /// The size of the file in bytes.
+        /// </param>
+        /// <param name="uploadDateUnix">
+        /// The date of the file in Unix time.
+        /// </param>
         public ManualVerificationFileResponseModel(
             string fileId,
             string fileName,

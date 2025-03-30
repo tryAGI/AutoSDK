@@ -31,6 +31,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.GetProjectsResponseModel> GetProjectsAsync(
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

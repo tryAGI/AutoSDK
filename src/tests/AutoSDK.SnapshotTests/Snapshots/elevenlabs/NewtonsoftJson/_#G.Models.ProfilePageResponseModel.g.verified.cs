@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("handle", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Handle { get; set; } = default!;
+        public string? Handle { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_user_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string PublicUserId { get; set; } = default!;
+        public string? PublicUserId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bio", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Bio { get; set; } = default!;
+        public string? Bio { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("profile_picture", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ProfilePicture { get; set; } = default!;
+        public string? ProfilePicture { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,11 +54,11 @@ namespace G
         /// <param name="bio"></param>
         /// <param name="profilePicture"></param>
         public ProfilePageResponseModel(
-            string handle,
-            string publicUserId,
-            string name,
-            string bio,
-            string profilePicture)
+            string? handle,
+            string? publicUserId,
+            string? name,
+            string? bio,
+            string? profilePicture)
         {
             this.Handle = handle ?? throw new global::System.ArgumentNullException(nameof(handle));
             this.PublicUserId = publicUserId ?? throw new global::System.ArgumentNullException(nameof(publicUserId));

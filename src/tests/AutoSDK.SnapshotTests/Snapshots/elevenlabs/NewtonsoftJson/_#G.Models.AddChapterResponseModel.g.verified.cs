@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chapter", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChapterResponseModel Chapter { get; set; } = default!;
+        public global::G.ChapterWithContentResponseModel Chapter { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="chapter"></param>
         public AddChapterResponseModel(
-            global::G.ChapterResponseModel chapter)
+            global::G.ChapterWithContentResponseModel chapter)
         {
             this.Chapter = chapter ?? throw new global::System.ArgumentNullException(nameof(chapter));
         }

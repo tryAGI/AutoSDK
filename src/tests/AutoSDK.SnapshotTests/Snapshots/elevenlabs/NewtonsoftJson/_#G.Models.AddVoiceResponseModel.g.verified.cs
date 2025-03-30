@@ -10,7 +10,7 @@ namespace G
     public sealed partial class AddVoiceResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string VoiceId { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AddVoiceResponseModel" /> class.
         /// </summary>
-        /// <param name="voiceId"></param>
+        /// <param name="voiceId">
+        /// The ID of the voice.
+        /// </param>
         public AddVoiceResponseModel(
             string voiceId)
         {

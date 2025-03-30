@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The usage of each breakdown type along the time axis.
     /// </summary>
     public sealed partial class UsageCharactersResponseModelUsage
     {

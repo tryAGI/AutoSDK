@@ -31,17 +31,19 @@ namespace G
         /// Removes a sample by its ID.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="sampleId">
-        /// Sample ID to be used, you can use GET https://api.elevenlabs.io/v1/voices/{voice_id} to list all the available samples for a voice.
+        /// Sample ID to be used, you can use GET https://api.elevenlabs.io/v1/voices/{voice_id} to list all the available samples for a voice.<br/>
+        /// Example: VW7YKqPnjY4h39yTbx2L
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteVoicesByVoiceIdSamplesBySampleIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteSampleResponseModel> DeleteVoicesByVoiceIdSamplesBySampleIdAsync(
             string voiceId,
             string sampleId,
             string? xiApiKey = default,
@@ -159,7 +161,9 @@ namespace G
                     };
                 }
 
-                return __content;
+                return
+                    global::G.DeleteSampleResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -181,13 +185,15 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(
+                using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::G.DeleteSampleResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

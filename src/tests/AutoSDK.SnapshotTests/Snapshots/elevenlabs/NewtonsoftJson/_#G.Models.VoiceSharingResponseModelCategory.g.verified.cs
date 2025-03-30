@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The category of the voice.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum VoiceSharingResponseModelCategory
@@ -18,18 +18,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
+        Cloned,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
+        Premade,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="professional")]
         Professional,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high_quality")]
-        HighQuality,
+        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
+        Famous,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
-        Famous,
+        [global::System.Runtime.Serialization.EnumMember(Value="high_quality")]
+        HighQuality,
     }
 
     /// <summary>
@@ -45,9 +55,11 @@ namespace G
             return value switch
             {
                 VoiceSharingResponseModelCategory.Generated => "generated",
+                VoiceSharingResponseModelCategory.Cloned => "cloned",
+                VoiceSharingResponseModelCategory.Premade => "premade",
                 VoiceSharingResponseModelCategory.Professional => "professional",
-                VoiceSharingResponseModelCategory.HighQuality => "high_quality",
                 VoiceSharingResponseModelCategory.Famous => "famous",
+                VoiceSharingResponseModelCategory.HighQuality => "high_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +71,11 @@ namespace G
             return value switch
             {
                 "generated" => VoiceSharingResponseModelCategory.Generated,
+                "cloned" => VoiceSharingResponseModelCategory.Cloned,
+                "premade" => VoiceSharingResponseModelCategory.Premade,
                 "professional" => VoiceSharingResponseModelCategory.Professional,
-                "high_quality" => VoiceSharingResponseModelCategory.HighQuality,
                 "famous" => VoiceSharingResponseModelCategory.Famous,
+                "high_quality" => VoiceSharingResponseModelCategory.HighQuality,
                 _ => null,
             };
         }

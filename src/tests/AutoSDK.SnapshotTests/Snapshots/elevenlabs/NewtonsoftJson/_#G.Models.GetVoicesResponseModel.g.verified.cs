@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetVoicesResponseModel
     {
         /// <summary>
-        /// 
+        /// A list of available voices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voices", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.VoiceResponseModel> Voices { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetVoicesResponseModel" /> class.
         /// </summary>
-        /// <param name="voices"></param>
+        /// <param name="voices">
+        /// A list of available voices.
+        /// </param>
         public GetVoicesResponseModel(
             global::System.Collections.Generic.IList<global::G.VoiceResponseModel> voices)
         {

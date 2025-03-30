@@ -14,8 +14,19 @@ namespace G
         /// <summary>
         /// List of pronunciation rules. Rule can be either:<br/>
         ///     an alias rule: {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b', }<br/>
-        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }
+        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }<br/>
+        /// Example: <br/>
+        ///     [<br/>
+        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
+        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
+        ///     ]
         /// </summary>
+        /// <example>
+        ///     [<br/>
+        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
+        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
+        ///     ]
+        /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> Rules { get; set; }
@@ -32,7 +43,12 @@ namespace G
         /// <param name="rules">
         /// List of pronunciation rules. Rule can be either:<br/>
         ///     an alias rule: {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b', }<br/>
-        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }
+        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }<br/>
+        /// Example: <br/>
+        ///     [<br/>
+        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
+        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
+        ///     ]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

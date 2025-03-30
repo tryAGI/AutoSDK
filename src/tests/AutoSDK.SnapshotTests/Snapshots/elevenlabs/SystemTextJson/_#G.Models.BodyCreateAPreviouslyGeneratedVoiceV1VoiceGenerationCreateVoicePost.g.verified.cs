@@ -11,24 +11,24 @@ namespace G
     {
         /// <summary>
         /// Name to use for the created voice.<br/>
-        /// Example: Little squeaky mouse
+        /// Example: Sassy squeaky mouse
         /// </summary>
-        /// <example>Little squeaky mouse</example>
+        /// <example>Sassy squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceName { get; set; }
 
         /// <summary>
         /// Description to use for the created voice.<br/>
-        /// Example: A sassy little squeaky mouse
+        /// Example: A sassy squeaky mouse
         /// </summary>
-        /// <example>A sassy little squeaky mouse</example>
+        /// <example>A sassy squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceDescription { get; set; }
 
         /// <summary>
-        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
+        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.<br/>
         /// Example: 37HceQefKmEi3bGovXjL
         /// </summary>
         /// <example>37HceQefKmEi3bGovXjL</example>
@@ -37,8 +37,7 @@ namespace G
         public required string GeneratedVoiceId { get; set; }
 
         /// <summary>
-        /// List of voice ids that the user has played but not selected. Used for RLHF.<br/>
-        /// Default Value: []
+        /// List of voice ids that the user has played but not selected. Used for RLHF.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("played_not_selected_voice_ids")]
         public global::System.Collections.Generic.IList<string>? PlayedNotSelectedVoiceIds { get; set; }
@@ -60,19 +59,18 @@ namespace G
         /// </summary>
         /// <param name="voiceName">
         /// Name to use for the created voice.<br/>
-        /// Example: Little squeaky mouse
+        /// Example: Sassy squeaky mouse
         /// </param>
         /// <param name="voiceDescription">
         /// Description to use for the created voice.<br/>
-        /// Example: A sassy little squeaky mouse
+        /// Example: A sassy squeaky mouse
         /// </param>
         /// <param name="generatedVoiceId">
-        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
+        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.<br/>
         /// Example: 37HceQefKmEi3bGovXjL
         /// </param>
         /// <param name="playedNotSelectedVoiceIds">
-        /// List of voice ids that the user has played but not selected. Used for RLHF.<br/>
-        /// Default Value: []
+        /// List of voice ids that the user has played but not selected. Used for RLHF.
         /// </param>
         /// <param name="labels">
         /// Optional, metadata to add to the created voice. Defaults to None.

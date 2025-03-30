@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The settings of the history item.
     /// </summary>
     public sealed partial class SpeechHistoryItemResponseModelSettings
     {

@@ -10,37 +10,43 @@ namespace G
     public sealed partial class AddPronunciationDictionaryResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the created pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The name of the created pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The user ID of the creator of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_by", Required = global::Newtonsoft.Json.Required.Always)]
         public string CreatedBy { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The creation time of the pronunciation dictionary in Unix timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creation_time_unix", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreationTimeUnix { get; set; } = default!;
+        public global::System.DateTimeOffset CreationTimeUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The ID of the created pronunciation dictionary version.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string VersionId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The number of rules in the version of the pronunciation dictionary.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("version_rules_num", Required = global::Newtonsoft.Json.Required.Always)]
+        public int VersionRulesNum { get; set; } = default!;
+
+        /// <summary>
+        /// The description of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
@@ -54,18 +60,34 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AddPronunciationDictionaryResponseModel" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="createdBy"></param>
-        /// <param name="creationTimeUnix"></param>
-        /// <param name="versionId"></param>
-        /// <param name="description"></param>
+        /// <param name="id">
+        /// The ID of the created pronunciation dictionary.
+        /// </param>
+        /// <param name="name">
+        /// The name of the created pronunciation dictionary.
+        /// </param>
+        /// <param name="createdBy">
+        /// The user ID of the creator of the pronunciation dictionary.
+        /// </param>
+        /// <param name="creationTimeUnix">
+        /// The creation time of the pronunciation dictionary in Unix timestamp.
+        /// </param>
+        /// <param name="versionId">
+        /// The ID of the created pronunciation dictionary version.
+        /// </param>
+        /// <param name="versionRulesNum">
+        /// The number of rules in the version of the pronunciation dictionary.
+        /// </param>
+        /// <param name="description">
+        /// The description of the pronunciation dictionary.
+        /// </param>
         public AddPronunciationDictionaryResponseModel(
             string id,
             string name,
             string createdBy,
-            int creationTimeUnix,
+            global::System.DateTimeOffset creationTimeUnix,
             string versionId,
+            int versionRulesNum,
             string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -73,6 +95,7 @@ namespace G
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.VersionRulesNum = versionRulesNum;
             this.Description = description;
         }
 

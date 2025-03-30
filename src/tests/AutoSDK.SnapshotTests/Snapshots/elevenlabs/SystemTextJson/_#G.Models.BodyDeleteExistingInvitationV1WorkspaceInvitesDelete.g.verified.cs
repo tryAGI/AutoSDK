@@ -10,8 +10,10 @@ namespace G
     public sealed partial class BodyDeleteExistingInvitationV1WorkspaceInvitesDelete
     {
         /// <summary>
-        /// Email of the target user.
+        /// The email of the customer<br/>
+        /// Example: john.doe@testmail.com
         /// </summary>
+        /// <example>john.doe@testmail.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
@@ -26,7 +28,8 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyDeleteExistingInvitationV1WorkspaceInvitesDelete" /> class.
         /// </summary>
         /// <param name="email">
-        /// Email of the target user.
+        /// The email of the customer<br/>
+        /// Example: john.doe@testmail.com
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

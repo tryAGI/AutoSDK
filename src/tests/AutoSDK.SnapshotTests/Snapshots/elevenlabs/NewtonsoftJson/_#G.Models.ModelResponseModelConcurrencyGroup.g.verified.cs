@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The concurrency group for the model.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ModelResponseModelConcurrencyGroup

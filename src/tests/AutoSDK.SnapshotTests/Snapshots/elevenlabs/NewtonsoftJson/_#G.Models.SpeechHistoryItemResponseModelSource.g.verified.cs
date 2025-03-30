@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The source of the history item. Either TTS (text to speech), STS (speech to text) or STT (speech to text).
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SpeechHistoryItemResponseModelSource
@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STS")]
         STS,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STT")]
+        STT,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 SpeechHistoryItemResponseModelSource.TTS => "TTS",
                 SpeechHistoryItemResponseModelSource.STS => "STS",
+                SpeechHistoryItemResponseModelSource.STT => "STT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "TTS" => SpeechHistoryItemResponseModelSource.TTS,
                 "STS" => SpeechHistoryItemResponseModelSource.STS,
+                "STT" => SpeechHistoryItemResponseModelSource.STT,
                 _ => null,
             };
         }

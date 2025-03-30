@@ -10,25 +10,25 @@ namespace G
     public sealed partial class PronunciationDictionaryPhonemeRuleRequestModel
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
-
-        /// <summary>
-        /// 
+        /// The string to replace. Must be a non-empty string.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("string_to_replace", Required = global::Newtonsoft.Json.Required.Always)]
         public string StringToReplace { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The type of the rule.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
+
+        /// <summary>
+        /// The phoneme rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phoneme", Required = global::Newtonsoft.Json.Required.Always)]
         public string Phoneme { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The alphabet to use with the phoneme rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alphabet", Required = global::Newtonsoft.Json.Required.Always)]
         public string Alphabet { get; set; } = default!;
@@ -42,10 +42,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PronunciationDictionaryPhonemeRuleRequestModel" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="stringToReplace"></param>
-        /// <param name="phoneme"></param>
-        /// <param name="alphabet"></param>
+        /// <param name="stringToReplace">
+        /// The string to replace. Must be a non-empty string.
+        /// </param>
+        /// <param name="type">
+        /// The type of the rule.
+        /// </param>
+        /// <param name="phoneme">
+        /// The phoneme rule.
+        /// </param>
+        /// <param name="alphabet">
+        /// The alphabet to use with the phoneme rule.
+        /// </param>
         public PronunciationDictionaryPhonemeRuleRequestModel(
             string stringToReplace,
             string phoneme,

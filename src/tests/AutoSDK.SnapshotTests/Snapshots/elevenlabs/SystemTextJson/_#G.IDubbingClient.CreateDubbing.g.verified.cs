@@ -7,7 +7,7 @@ namespace G
     {
         /// <summary>
         /// Dub A Video Or An Audio File<br/>
-        /// Dubs provided audio or video file into given language.
+        /// Dubs a provided audio or video file into given language.
         /// </summary>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -22,7 +22,7 @@ namespace G
 
         /// <summary>
         /// Dub A Video Or An Audio File<br/>
-        /// Dubs provided audio or video file into given language.
+        /// Dubs a provided audio or video file into given language.
         /// </summary>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -32,6 +32,24 @@ namespace G
         /// </param>
         /// <param name="filename">
         /// A list of file paths to audio recordings intended for voice cloning
+        /// </param>
+        /// <param name="csvFile">
+        /// CSV file containing transcription/translation metadata
+        /// </param>
+        /// <param name="csvFilename">
+        /// CSV file containing transcription/translation metadata
+        /// </param>
+        /// <param name="foregroundAudioFile">
+        /// For use only with csv input
+        /// </param>
+        /// <param name="foregroundAudioFilename">
+        /// For use only with csv input
+        /// </param>
+        /// <param name="backgroundAudioFile">
+        /// For use only with csv input
+        /// </param>
+        /// <param name="backgroundAudioFilename">
+        /// For use only with csv input
         /// </param>
         /// <param name="name">
         /// Name of the dubbing project.
@@ -71,12 +89,30 @@ namespace G
         /// <param name="useProfanityFilter">
         /// [BETA] Whether transcripts should have profanities censored with the words '[censored]'
         /// </param>
+        /// <param name="dubbingStudio">
+        /// Whether to prepare dub for edits in dubbing studio or edits as a dubbing resource.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disableVoiceCloning">
+        /// [BETA] Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="mode">
+        /// automatic or manual. Manual mode is only supported when creating a dubbing studio project<br/>
+        /// Default Value: automatic
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DoDubbingResponseModel> CreateDubbingAsync(
             string? xiApiKey = default,
             byte[]? file = default,
             string? filename = default,
+            byte[]? csvFile = default,
+            string? csvFilename = default,
+            byte[]? foregroundAudioFile = default,
+            string? foregroundAudioFilename = default,
+            byte[]? backgroundAudioFile = default,
+            string? backgroundAudioFilename = default,
             string? name = default,
             string? sourceUrl = default,
             string? sourceLang = default,
@@ -88,6 +124,9 @@ namespace G
             bool? highestResolution = default,
             bool? dropBackgroundAudio = default,
             bool? useProfanityFilter = default,
+            bool? dubbingStudio = default,
+            bool? disableVoiceCloning = default,
+            string? mode = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

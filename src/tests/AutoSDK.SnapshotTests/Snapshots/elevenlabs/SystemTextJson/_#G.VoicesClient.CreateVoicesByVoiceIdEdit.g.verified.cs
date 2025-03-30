@@ -31,7 +31,8 @@ namespace G
         /// Edit a voice created by you.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -39,7 +40,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateVoicesByVoiceIdEditAsync(
+        public async global::System.Threading.Tasks.Task<global::G.EditVoiceResponseModel> CreateVoicesByVoiceIdEditAsync(
             string voiceId,
             global::G.BodyEditVoiceV1VoicesVoiceIdEditPost request,
             string? xiApiKey = default,
@@ -90,6 +91,12 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
                     name: "files");
+            } 
+            if (request.RemoveBackgroundNoise != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
+                    name: "remove_background_noise");
             } 
             if (request.Description != default)
             {
@@ -191,7 +198,9 @@ namespace G
                     };
                 }
 
-                return __content;
+                return
+                    global::G.EditVoiceResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -213,13 +222,15 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(
+                using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::G.EditVoiceResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -228,30 +239,39 @@ namespace G
         /// Edit a voice created by you.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
+        /// Example: John Smith
         /// </param>
         /// <param name="files">
         /// Audio files to add to the voice
         /// </param>
+        /// <param name="removeBackgroundNoise">
+        /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
         /// <param name="description">
-        /// How would you describe the voice?
+        /// A description of the voice.<br/>
+        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
         /// </param>
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateVoicesByVoiceIdEditAsync(
+        public async global::System.Threading.Tasks.Task<global::G.EditVoiceResponseModel> CreateVoicesByVoiceIdEditAsync(
             string voiceId,
             string name,
             string? xiApiKey = default,
             global::System.Collections.Generic.IList<byte[]>? files = default,
+            bool? removeBackgroundNoise = default,
             string? description = default,
             string? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -260,6 +280,7 @@ namespace G
             {
                 Name = name,
                 Files = files,
+                RemoveBackgroundNoise = removeBackgroundNoise,
                 Description = description,
                 Labels = labels,
             };

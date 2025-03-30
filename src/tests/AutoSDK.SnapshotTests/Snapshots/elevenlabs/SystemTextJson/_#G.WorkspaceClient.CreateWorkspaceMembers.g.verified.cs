@@ -34,7 +34,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateWorkspaceMembersAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateWorkspaceMemberResponseModel> CreateWorkspaceMembersAsync(
             global::G.BodyUpdateMemberV1WorkspaceMembersPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -157,7 +157,9 @@ namespace G
                     };
                 }
 
-                return __content;
+                return
+                    global::G.UpdateWorkspaceMemberResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -179,13 +181,15 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(
+                using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::G.UpdateWorkspaceMemberResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -207,7 +211,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateWorkspaceMembersAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateWorkspaceMemberResponseModel> CreateWorkspaceMembersAsync(
             string email,
             string? xiApiKey = default,
             bool? isLocked = default,

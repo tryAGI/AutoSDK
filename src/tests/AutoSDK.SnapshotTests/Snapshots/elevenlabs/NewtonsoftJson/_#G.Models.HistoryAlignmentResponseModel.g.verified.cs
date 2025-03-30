@@ -10,19 +10,19 @@ namespace G
     public sealed partial class HistoryAlignmentResponseModel
     {
         /// <summary>
-        /// 
+        /// The characters in the alignment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("characters", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Characters { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The start times of the characters in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_start_times_seconds", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<double> CharacterStartTimesSeconds { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The end times of the characters in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_end_times_seconds", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<double> CharacterEndTimesSeconds { get; set; } = default!;
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="HistoryAlignmentResponseModel" /> class.
         /// </summary>
-        /// <param name="characters"></param>
-        /// <param name="characterStartTimesSeconds"></param>
-        /// <param name="characterEndTimesSeconds"></param>
+        /// <param name="characters">
+        /// The characters in the alignment.
+        /// </param>
+        /// <param name="characterStartTimesSeconds">
+        /// The start times of the characters in seconds.
+        /// </param>
+        /// <param name="characterEndTimesSeconds">
+        /// The end times of the characters in seconds.
+        /// </param>
         public HistoryAlignmentResponseModel(
             global::System.Collections.Generic.IList<string> characters,
             global::System.Collections.Generic.IList<double> characterStartTimesSeconds,

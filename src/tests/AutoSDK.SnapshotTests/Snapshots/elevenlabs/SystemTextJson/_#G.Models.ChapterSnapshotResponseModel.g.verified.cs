@@ -10,35 +10,35 @@ namespace G
     public sealed partial class ChapterSnapshotResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the chapter snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chapter_snapshot_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ChapterSnapshotId { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the chapter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chapter_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ChapterId { get; set; }
 
         /// <summary>
-        /// 
+        /// The creation date of the chapter snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at_unix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CreatedAtUnix { get; set; }
 
         /// <summary>
-        /// 
+        /// The name of the chapter snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,11 +53,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterSnapshotResponseModel" /> class.
         /// </summary>
-        /// <param name="chapterSnapshotId"></param>
-        /// <param name="projectId"></param>
-        /// <param name="chapterId"></param>
-        /// <param name="createdAtUnix"></param>
-        /// <param name="name"></param>
+        /// <param name="chapterSnapshotId">
+        /// The ID of the chapter snapshot.
+        /// </param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="chapterId">
+        /// The ID of the chapter.
+        /// </param>
+        /// <param name="createdAtUnix">
+        /// The creation date of the chapter snapshot.
+        /// </param>
+        /// <param name="name">
+        /// The name of the chapter snapshot.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

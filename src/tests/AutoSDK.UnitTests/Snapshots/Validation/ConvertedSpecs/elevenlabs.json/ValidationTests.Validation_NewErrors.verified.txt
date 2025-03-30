@@ -1,18 +1,106 @@
 ﻿[
   {
+    Message: description is not a valid property at #/paths/~1v1~1history~1download/post/responses/200/content/application~1zip,
+    Pointer: 
+  },
+  {
     Message: embed is not a valid property at #/paths/~1v1~1dubbing~1{dubbing_id}~1transcript~1{language_code}/get/parameters/schema,
     Pointer: 
   },
   {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/quality_preset,
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}/get/parameters/schema,
     Pointer: 
   },
   {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/acx_volume_normalization,
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}/patch/parameters/schema,
     Pointer: 
   },
   {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/callback_url,
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1widget/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1link/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1avatar/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1add-secret/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1conversations~1{conversation_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1conversations~1{conversation_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1conversations~1{conversation_id}~1audio/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1conversations~1{conversation_id}~1feedback/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1phone-numbers~1{phone_number_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1phone-numbers~1{phone_number_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1phone-numbers~1{phone_number_id}/patch/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1knowledge-base~1{documentation_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1dependent-agents/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1content/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1chunk~1{chunk_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1chunk~1{chunk_id}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: optional is not a valid property at #/components/schemas/Body_Create_Agent_v1_convai_agents_create_post/properties/name,
+    Pointer: 
+  },
+  {
+    Message: name is not a valid property at #/components/schemas/Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_create_voice_from_preview_post/properties/labels,
     Pointer: 
   },
   {
@@ -20,23 +108,11 @@
     Pointer: 
   },
   {
-    Message: emded is not a valid property at #/components/schemas/Body_Dub_a_video_or_an_audio_file_v1_dubbing_post/properties/use_profanity_filter,
+    Message: optional is not a valid property at #/components/schemas/Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch/properties/name,
     Pointer: 
   },
   {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_streaming_v1_text_to_speech__voice_id__stream_post/properties/use_pvc_as_ivc,
-    Pointer: 
-  },
-  {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_streaming_with_timestamps_v1_text_to_speech__voice_id__stream_with_timestamps_post/properties/use_pvc_as_ivc,
-    Pointer: 
-  },
-  {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_v1_text_to_speech__voice_id__post/properties/use_pvc_as_ivc,
-    Pointer: 
-  },
-  {
-    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_with_timestamps_v1_text_to_speech__voice_id__with_timestamps_post/properties/use_pvc_as_ivc,
+    Message: propertyNames is not a valid property at #/components/schemas/ResourceMetadataResponseModel/properties/role_to_group_ids,
     Pointer: 
   }
 ]

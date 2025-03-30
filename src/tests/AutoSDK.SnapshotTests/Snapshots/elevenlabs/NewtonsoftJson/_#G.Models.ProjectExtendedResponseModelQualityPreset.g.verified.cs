@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The quality preset level of the project.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ProjectExtendedResponseModelQualityPreset

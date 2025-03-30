@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ModelRatesResponseModel
     {
         /// <summary>
-        /// 
+        /// The cost multiplier for characters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_cost_multiplier", Required = global::Newtonsoft.Json.Required.Always)]
         public double CharacterCostMultiplier { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelRatesResponseModel" /> class.
         /// </summary>
-        /// <param name="characterCostMultiplier"></param>
+        /// <param name="characterCostMultiplier">
+        /// The cost multiplier for characters.
+        /// </param>
         public ModelRatesResponseModel(
             double characterCostMultiplier)
         {

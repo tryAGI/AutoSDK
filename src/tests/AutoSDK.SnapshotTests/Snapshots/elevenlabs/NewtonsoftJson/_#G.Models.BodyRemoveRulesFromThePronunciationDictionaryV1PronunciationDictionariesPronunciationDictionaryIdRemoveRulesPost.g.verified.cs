@@ -10,8 +10,10 @@ namespace G
     public sealed partial class BodyRemoveRulesFromThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdRemoveRulesPost
     {
         /// <summary>
-        /// List of strings to remove from the pronunciation dictionary.
+        /// List of strings to remove from the pronunciation dictionary.<br/>
+        /// Example: ['a', 'b']
         /// </summary>
+        /// <example>['a', 'b']</example>
         [global::Newtonsoft.Json.JsonProperty("rule_strings", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> RuleStrings { get; set; } = default!;
 
@@ -25,7 +27,8 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyRemoveRulesFromThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdRemoveRulesPost" /> class.
         /// </summary>
         /// <param name="ruleStrings">
-        /// List of strings to remove from the pronunciation dictionary.
+        /// List of strings to remove from the pronunciation dictionary.<br/>
+        /// Example: ['a', 'b']
         /// </param>
         public BodyRemoveRulesFromThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdRemoveRulesPost(
             global::System.Collections.Generic.IList<string> ruleStrings)

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The category of the voice.
     /// </summary>
     public enum LibraryVoiceResponseModelCategory
     {

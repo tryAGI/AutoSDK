@@ -10,13 +10,13 @@ namespace G
     public sealed partial class GetLibraryVoicesResponseModel
     {
         /// <summary>
-        /// 
+        /// The list of shared voices
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voices", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.LibraryVoiceResponseModel> Voices { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Whether there are more shared voices in subsequent pages.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasMore { get; set; } = default!;
@@ -36,8 +36,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetLibraryVoicesResponseModel" /> class.
         /// </summary>
-        /// <param name="voices"></param>
-        /// <param name="hasMore"></param>
+        /// <param name="voices">
+        /// The list of shared voices
+        /// </param>
+        /// <param name="hasMore">
+        /// Whether there are more shared voices in subsequent pages.
+        /// </param>
         /// <param name="lastSortId"></param>
         public GetLibraryVoicesResponseModel(
             global::System.Collections.Generic.IList<global::G.LibraryVoiceResponseModel> voices,

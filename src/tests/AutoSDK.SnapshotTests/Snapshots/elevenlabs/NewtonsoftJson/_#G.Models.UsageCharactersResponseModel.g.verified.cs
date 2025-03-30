@@ -10,13 +10,13 @@ namespace G
     public sealed partial class UsageCharactersResponseModel
     {
         /// <summary>
-        /// 
+        /// The time axis with unix timestamps for each day.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<int> Time { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The usage of each breakdown type along the time axis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> Usage { get; set; } = default!;
@@ -30,8 +30,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCharactersResponseModel" /> class.
         /// </summary>
-        /// <param name="time"></param>
-        /// <param name="usage"></param>
+        /// <param name="time">
+        /// The time axis with unix timestamps for each day.
+        /// </param>
+        /// <param name="usage">
+        /// The usage of each breakdown type along the time axis.
+        /// </param>
         public UsageCharactersResponseModel(
             global::System.Collections.Generic.IList<int> time,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> usage)

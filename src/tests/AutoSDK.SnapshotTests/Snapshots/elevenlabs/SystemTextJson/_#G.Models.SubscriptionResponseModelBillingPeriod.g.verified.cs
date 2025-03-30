@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The billing period of the user's subscription.
     /// </summary>
     public enum SubscriptionResponseModelBillingPeriod
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The currency of the user's subscription.
     /// </summary>
     public enum ExtendedSubscriptionResponseModelCurrency
     {

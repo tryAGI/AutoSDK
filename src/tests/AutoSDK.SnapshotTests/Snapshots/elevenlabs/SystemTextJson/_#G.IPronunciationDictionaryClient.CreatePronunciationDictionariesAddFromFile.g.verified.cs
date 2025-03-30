@@ -28,7 +28,8 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.
+        /// The name of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: My Dictionary
         /// </param>
         /// <param name="file">
         /// A lexicon .pls file which we will use to initialize the project with.
@@ -37,10 +38,12 @@ namespace G
         /// A lexicon .pls file which we will use to initialize the project with.
         /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.
+        /// A description of the pronunciation dictionary, used for identification only.<br/>
+        /// Example: Contains pronunciation's of our character names
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
+        /// Example: viewer
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -49,6 +49,16 @@ namespace G
         public SpeechToSpeechClient SpeechToSpeech { get; }
 
         /// <summary>
+        /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model. Speech-to-text is currently in alpha and available to a select group of users. We plan to roll it out more broadly soon.
+        /// </summary>
+        public SpeechToTextClient SpeechToText { get; }
+
+        /// <summary>
+        /// Force align an audio file to a text transcript to get precise word-level and character level timing information. Response is a list of characters with their start and end times as milliseconds elapsed from the start of the recording.
+        /// </summary>
+        public ForcedAlignmentClient ForcedAlignment { get; }
+
+        /// <summary>
         /// Access the different models of the platform.
         /// </summary>
         public ModelsClient Models { get; }
@@ -91,7 +101,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TextToVoiceClient TextToVoice { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public UserClient User { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StudioClient Studio { get; }
 
         /// <summary>
         /// 
@@ -101,7 +121,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WorkspaceClient Workspace { get; }
+        public ResourceClient Resource { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SegmentClient Segment { get; }
 
         /// <summary>
         /// 
@@ -117,6 +142,16 @@ namespace G
         /// 
         /// </summary>
         public PronunciationDictionaryClient PronunciationDictionary { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkspaceClient Workspace { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationalAIClient ConversationalAI { get; }
 
     }
 }

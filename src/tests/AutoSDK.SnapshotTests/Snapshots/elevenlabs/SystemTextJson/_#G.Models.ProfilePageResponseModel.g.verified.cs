@@ -14,35 +14,35 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Handle { get; set; }
+        public required string? Handle { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PublicUserId { get; set; }
+        public required string? PublicUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Bio { get; set; }
+        public required string? Bio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("profile_picture")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ProfilePicture { get; set; }
+        public required string? ProfilePicture { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,11 +62,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProfilePageResponseModel(
-            string handle,
-            string publicUserId,
-            string name,
-            string bio,
-            string profilePicture)
+            string? handle,
+            string? publicUserId,
+            string? name,
+            string? bio,
+            string? profilePicture)
         {
             this.Handle = handle ?? throw new global::System.ArgumentNullException(nameof(handle));
             this.PublicUserId = publicUserId ?? throw new global::System.ArgumentNullException(nameof(publicUserId));

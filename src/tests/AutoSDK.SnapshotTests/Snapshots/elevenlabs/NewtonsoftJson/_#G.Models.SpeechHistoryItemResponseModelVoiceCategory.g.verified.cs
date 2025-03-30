@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The category of the voice. Either 'premade', 'cloned', 'generated' or 'professional'.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SpeechHistoryItemResponseModelVoiceCategory

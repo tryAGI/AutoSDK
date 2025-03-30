@@ -34,7 +34,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteWorkspaceInvitesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteWorkspaceInviteResponseModel> DeleteWorkspaceInvitesAsync(
             global::G.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -157,7 +157,9 @@ namespace G
                     };
                 }
 
-                return __content;
+                return
+                    global::G.DeleteWorkspaceInviteResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -179,13 +181,15 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(
+                using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::G.DeleteWorkspaceInviteResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -197,11 +201,12 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="email">
-        /// Email of the target user.
+        /// The email of the customer<br/>
+        /// Example: john.doe@testmail.com
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteWorkspaceInvitesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteWorkspaceInviteResponseModel> DeleteWorkspaceInvitesAsync(
             string email,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

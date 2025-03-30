@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The status of the voice sharing.
     /// </summary>
     public enum VoiceSharingResponseModelStatus
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The status of the voice sharing.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum VoiceSharingResponseModelStatus

@@ -6,8 +6,8 @@ namespace G
     public partial interface ISpeechHistoryClient
     {
         /// <summary>
-        /// Get Generated Items<br/>
-        /// Returns metadata about all your generated audio.
+        /// List Generated Items<br/>
+        /// Returns a list of your generated audio.
         /// </summary>
         /// <param name="pageSize">
         /// How many history items to return at maximum. Can not exceed 1000, defaults to 100.<br/>
@@ -19,6 +19,14 @@ namespace G
         /// <param name="voiceId">
         /// Voice ID to be filtered for, you can use GET https://api.elevenlabs.io/v1/voices to receive a list of voices and their IDs.
         /// </param>
+        /// <param name="search">
+        /// search term used for filtering<br/>
+        /// Example: In the land far far away
+        /// </param>
+        /// <param name="source">
+        /// Source of the generated history item<br/>
+        /// Example: TTS
+        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -28,6 +36,8 @@ namespace G
             int? pageSize = default,
             string? startAfterHistoryItemId = default,
             string? voiceId = default,
+            string? search = default,
+            global::G.ListGeneratedItemsV1HistoryGetSource? source = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -6,7 +6,7 @@ namespace G
     public partial interface IDubbingClient
     {
         /// <summary>
-        /// Delete Dubbing Project<br/>
+        /// Delete Dubbing<br/>
         /// Deletes a dubbing project.
         /// </summary>
         /// <param name="dubbingId">
@@ -17,7 +17,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteDubbingByDubbingIdAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteDubbingResponseModel> DeleteDubbingByDubbingIdAsync(
             string dubbingId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ChapterSnapshotsResponseModel
     {
         /// <summary>
-        /// 
+        /// List of chapter snapshots.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshots")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterSnapshotsResponseModel" /> class.
         /// </summary>
-        /// <param name="snapshots"></param>
+        /// <param name="snapshots">
+        /// List of chapter snapshots.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

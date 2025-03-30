@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string VersionId { get; set; } = default!;
+        public string? VersionId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="versionId"></param>
         public PronunciationDictionaryVersionLocatorDBModel(
             string pronunciationDictionaryId,
-            string versionId)
+            string? versionId)
         {
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));

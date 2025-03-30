@@ -19,6 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version_rules_num")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int VersionRulesNum { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PronunciationDictionaryId { get; set; }
@@ -52,6 +59,12 @@ namespace G
         public required int CreationTimeUnix { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("archived_time_unix")]
+        public int? ArchivedTimeUnix { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,28 +74,34 @@ namespace G
         /// Initializes a new instance of the <see cref="PronunciationDictionaryVersionResponseModel" /> class.
         /// </summary>
         /// <param name="versionId"></param>
+        /// <param name="versionRulesNum"></param>
         /// <param name="pronunciationDictionaryId"></param>
         /// <param name="dictionaryName"></param>
         /// <param name="versionName"></param>
         /// <param name="createdBy"></param>
         /// <param name="creationTimeUnix"></param>
+        /// <param name="archivedTimeUnix"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PronunciationDictionaryVersionResponseModel(
             string versionId,
+            int versionRulesNum,
             string pronunciationDictionaryId,
             string dictionaryName,
             string versionName,
             string createdBy,
-            int creationTimeUnix)
+            int creationTimeUnix,
+            int? archivedTimeUnix)
         {
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.VersionRulesNum = versionRulesNum;
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
+            this.ArchivedTimeUnix = archivedTimeUnix;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The status of the user's subscription.
     /// </summary>
     public enum ExtendedSubscriptionResponseModelStatus
     {

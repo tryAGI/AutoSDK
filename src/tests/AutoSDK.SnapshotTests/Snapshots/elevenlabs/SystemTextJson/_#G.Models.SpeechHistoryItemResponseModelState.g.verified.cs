@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The state of the history item.
     /// </summary>
     public enum SpeechHistoryItemResponseModelState
     {

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// An optional target audience of the project.
+    /// An optional target audience of the Studio project.<br/>
+    /// Example: adult
     /// </summary>
     public enum BodyAddProjectV1ProjectsAddPostTargetAudience
     {

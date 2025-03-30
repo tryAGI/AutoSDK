@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetVoicesResponseModel
     {
         /// <summary>
-        /// 
+        /// A list of available voices.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voices")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetVoicesResponseModel" /> class.
         /// </summary>
-        /// <param name="voices"></param>
+        /// <param name="voices">
+        /// A list of available voices.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

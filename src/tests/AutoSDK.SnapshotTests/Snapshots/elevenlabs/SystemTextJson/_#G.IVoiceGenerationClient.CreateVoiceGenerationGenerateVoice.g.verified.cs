@@ -28,13 +28,16 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="gender">
-        /// Category code corresponding to the gender of the generated voice. Possible values: female, male.
+        /// Category code corresponding to the gender of the generated voice. Possible values: female, male.<br/>
+        /// Example: female
         /// </param>
         /// <param name="accent">
-        /// Category code corresponding to the accent of the generated voice. Possible values: american, british, african, australian, indian.
+        /// Category code corresponding to the accent of the generated voice. Possible values: british, american, african, australian, indian.<br/>
+        /// Example: british
         /// </param>
         /// <param name="age">
-        /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.
+        /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.<br/>
+        /// Example: young
         /// </param>
         /// <param name="accentStrength">
         /// The strength of the accent of the generated voice. Has to be between 0.3 and 2.0.

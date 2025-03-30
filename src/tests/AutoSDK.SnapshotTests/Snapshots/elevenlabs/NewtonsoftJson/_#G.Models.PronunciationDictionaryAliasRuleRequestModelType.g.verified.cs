@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The type of the rule.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PronunciationDictionaryAliasRuleRequestModelType

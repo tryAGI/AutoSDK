@@ -10,28 +10,28 @@ namespace G
     public sealed partial class PronunciationDictionaryPhonemeRuleRequestModel
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeJsonConverter))]
-        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
-
-        /// <summary>
-        /// 
+        /// The string to replace. Must be a non-empty string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("string_to_replace")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StringToReplace { get; set; }
 
         /// <summary>
-        /// 
+        /// The type of the rule.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeJsonConverter))]
+        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
+
+        /// <summary>
+        /// The phoneme rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phoneme")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Phoneme { get; set; }
 
         /// <summary>
-        /// 
+        /// The alphabet to use with the phoneme rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alphabet")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,10 +46,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PronunciationDictionaryPhonemeRuleRequestModel" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="stringToReplace"></param>
-        /// <param name="phoneme"></param>
-        /// <param name="alphabet"></param>
+        /// <param name="stringToReplace">
+        /// The string to replace. Must be a non-empty string.
+        /// </param>
+        /// <param name="type">
+        /// The type of the rule.
+        /// </param>
+        /// <param name="phoneme">
+        /// The phoneme rule.
+        /// </param>
+        /// <param name="alphabet">
+        /// The alphabet to use with the phoneme rule.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

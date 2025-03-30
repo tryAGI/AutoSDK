@@ -10,19 +10,19 @@ namespace G
     public sealed partial class AudioNativeCreateProjectResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the created Audio Native project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ProjectId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Whether the project is currently being converted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("converting", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Converting { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The HTML snippet to embed the Audio Native player.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_snippet", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlSnippet { get; set; } = default!;
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioNativeCreateProjectResponseModel" /> class.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="converting"></param>
-        /// <param name="htmlSnippet"></param>
+        /// <param name="projectId">
+        /// The ID of the created Audio Native project.
+        /// </param>
+        /// <param name="converting">
+        /// Whether the project is currently being converted.
+        /// </param>
+        /// <param name="htmlSnippet">
+        /// The HTML snippet to embed the Audio Native player.
+        /// </param>
         public AudioNativeCreateProjectResponseModel(
             string projectId,
             bool converting,

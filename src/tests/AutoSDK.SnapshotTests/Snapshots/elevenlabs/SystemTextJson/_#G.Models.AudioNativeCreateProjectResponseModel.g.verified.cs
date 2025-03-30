@@ -10,21 +10,21 @@ namespace G
     public sealed partial class AudioNativeCreateProjectResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the created Audio Native project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the project is currently being converted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("converting")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Converting { get; set; }
 
         /// <summary>
-        /// 
+        /// The HTML snippet to embed the Audio Native player.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_snippet")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,9 +39,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioNativeCreateProjectResponseModel" /> class.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="converting"></param>
-        /// <param name="htmlSnippet"></param>
+        /// <param name="projectId">
+        /// The ID of the created Audio Native project.
+        /// </param>
+        /// <param name="converting">
+        /// Whether the project is currently being converted.
+        /// </param>
+        /// <param name="htmlSnippet">
+        /// The HTML snippet to embed the Audio Native player.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

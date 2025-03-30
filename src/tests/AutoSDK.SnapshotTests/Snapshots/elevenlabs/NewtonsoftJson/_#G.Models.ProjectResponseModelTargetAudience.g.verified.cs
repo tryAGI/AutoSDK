@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The target audience of the project.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ProjectResponseModelTargetAudience

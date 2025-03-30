@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The state of the chapter.
     /// </summary>
     public enum ChapterResponseModelState
     {

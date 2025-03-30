@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The state of the history item.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SpeechHistoryItemResponseModelState

@@ -10,28 +10,28 @@ namespace G
     public sealed partial class DubbingMetadataResponse
     {
         /// <summary>
-        /// 
+        /// The ID of the dubbing project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dubbing_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DubbingId { get; set; }
 
         /// <summary>
-        /// 
+        /// The name of the dubbing project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// The status of the dubbing project. Either 'dubbed', 'dubbing' or 'failed'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// The target languages of the dubbing project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_languages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,6 +39,12 @@ namespace G
 
         /// <summary>
         /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("media_metadata")]
+        public global::G.DubbingMediaMetadata? MediaMetadata { get; set; }
+
+        /// <summary>
+        /// Optional error message if the dubbing project failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
@@ -52,11 +58,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DubbingMetadataResponse" /> class.
         /// </summary>
-        /// <param name="dubbingId"></param>
-        /// <param name="name"></param>
-        /// <param name="status"></param>
-        /// <param name="targetLanguages"></param>
-        /// <param name="error"></param>
+        /// <param name="dubbingId">
+        /// The ID of the dubbing project.
+        /// </param>
+        /// <param name="name">
+        /// The name of the dubbing project.
+        /// </param>
+        /// <param name="status">
+        /// The status of the dubbing project. Either 'dubbed', 'dubbing' or 'failed'.
+        /// </param>
+        /// <param name="targetLanguages">
+        /// The target languages of the dubbing project.
+        /// </param>
+        /// <param name="mediaMetadata"></param>
+        /// <param name="error">
+        /// Optional error message if the dubbing project failed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,12 +82,14 @@ namespace G
             string name,
             string status,
             global::System.Collections.Generic.IList<string> targetLanguages,
+            global::G.DubbingMediaMetadata? mediaMetadata,
             string? error)
         {
             this.DubbingId = dubbingId ?? throw new global::System.ArgumentNullException(nameof(dubbingId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
+            this.MediaMetadata = mediaMetadata;
             this.Error = error;
         }
 

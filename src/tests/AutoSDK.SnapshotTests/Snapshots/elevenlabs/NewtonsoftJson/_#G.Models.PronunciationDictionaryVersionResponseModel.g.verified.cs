@@ -18,6 +18,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("version_rules_num", Required = global::Newtonsoft.Json.Required.Always)]
+        public int VersionRulesNum { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pronunciation_dictionary_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string PronunciationDictionaryId { get; set; } = default!;
 
@@ -46,6 +52,12 @@ namespace G
         public int CreationTimeUnix { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("archived_time_unix")]
+        public int? ArchivedTimeUnix { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -55,25 +67,31 @@ namespace G
         /// Initializes a new instance of the <see cref="PronunciationDictionaryVersionResponseModel" /> class.
         /// </summary>
         /// <param name="versionId"></param>
+        /// <param name="versionRulesNum"></param>
         /// <param name="pronunciationDictionaryId"></param>
         /// <param name="dictionaryName"></param>
         /// <param name="versionName"></param>
         /// <param name="createdBy"></param>
         /// <param name="creationTimeUnix"></param>
+        /// <param name="archivedTimeUnix"></param>
         public PronunciationDictionaryVersionResponseModel(
             string versionId,
+            int versionRulesNum,
             string pronunciationDictionaryId,
             string dictionaryName,
             string versionName,
             string createdBy,
-            int creationTimeUnix)
+            int creationTimeUnix,
+            int? archivedTimeUnix)
         {
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.VersionRulesNum = versionRulesNum;
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
+            this.ArchivedTimeUnix = archivedTimeUnix;
         }
 
         /// <summary>

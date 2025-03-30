@@ -10,16 +10,22 @@ namespace G
     public sealed partial class RemovePronunciationDictionaryRulesResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The version ID of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string VersionId { get; set; } = default!;
+
+        /// <summary>
+        /// The number of rules in the version of the pronunciation dictionary.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("version_rules_num", Required = global::Newtonsoft.Json.Required.Always)]
+        public int VersionRulesNum { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RemovePronunciationDictionaryRulesResponseModel" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="versionId"></param>
+        /// <param name="id">
+        /// The ID of the pronunciation dictionary.
+        /// </param>
+        /// <param name="versionId">
+        /// The version ID of the pronunciation dictionary.
+        /// </param>
+        /// <param name="versionRulesNum">
+        /// The number of rules in the version of the pronunciation dictionary.
+        /// </param>
         public RemovePronunciationDictionaryRulesResponseModel(
             string id,
-            string versionId)
+            string versionId,
+            int versionRulesNum)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.VersionRulesNum = versionRulesNum;
         }
 
         /// <summary>

@@ -10,14 +10,16 @@ namespace G
     public sealed partial class BodyAddVoiceV1VoicesAddPost
     {
         /// <summary>
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
+        /// Example: John Smith
         /// </summary>
+        /// <example>John Smith</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// A list of file paths to audio recordings intended for voice cloning
+        /// A list of file paths to audio recordings intended for voice cloning.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,14 +27,18 @@ namespace G
 
         /// <summary>
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
-        /// Default Value: false
+        /// Default Value: false<br/>
+        /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove_background_noise")]
         public bool? RemoveBackgroundNoise { get; set; }
 
         /// <summary>
-        /// How would you describe the voice?
+        /// A description of the voice.<br/>
+        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
         /// </summary>
+        /// <example>An old American male voice with a slight hoarseness in his throat. Perfect for news.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -52,17 +58,20 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyAddVoiceV1VoicesAddPost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
+        /// Example: John Smith
         /// </param>
         /// <param name="files">
-        /// A list of file paths to audio recordings intended for voice cloning
+        /// A list of file paths to audio recordings intended for voice cloning.
         /// </param>
         /// <param name="removeBackgroundNoise">
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
-        /// Default Value: false
+        /// Default Value: false<br/>
+        /// Example: true
         /// </param>
         /// <param name="description">
-        /// How would you describe the voice?
+        /// A description of the voice.<br/>
+        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
         /// </param>
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.

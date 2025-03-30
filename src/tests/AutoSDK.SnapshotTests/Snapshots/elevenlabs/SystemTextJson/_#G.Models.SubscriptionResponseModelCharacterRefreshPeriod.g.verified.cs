@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The character refresh period of the user's subscription.
     /// </summary>
     public enum SubscriptionResponseModelCharacterRefreshPeriod
     {

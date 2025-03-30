@@ -25,7 +25,7 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Delete Dubbing Project<br/>
+        /// Delete Dubbing<br/>
         /// Deletes a dubbing project.
         /// </summary>
         /// <param name="dubbingId">
@@ -36,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DeleteDubbingByDubbingIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteDubbingResponseModel> DeleteDubbingByDubbingIdAsync(
             string dubbingId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -151,7 +151,9 @@ namespace G
                     };
                 }
 
-                return __content;
+                return
+                    global::G.DeleteDubbingResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
@@ -173,13 +175,15 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync(
+                using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                return __content;
+                return
+                    await global::G.DeleteDubbingResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

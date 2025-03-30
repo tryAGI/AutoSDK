@@ -10,44 +10,44 @@ namespace G
     public sealed partial class ProjectSnapshotResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the project snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_snapshot_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectSnapshotId { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// The creation date of the project snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at_unix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CreatedAtUnix { get; set; }
 
         /// <summary>
-        /// 
+        /// The name of the project snapshot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// (Deprecated)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_upload")]
-        public global::G.ProjectSnapshotUploadResponseModel? AudioUpload { get; set; }
+        public object? AudioUpload { get; set; }
 
         /// <summary>
-        /// 
+        /// (Deprecated)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("zip_upload")]
-        public global::G.ProjectSnapshotUploadResponseModel? ZipUpload { get; set; }
+        public object? ZipUpload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,12 +58,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectSnapshotResponseModel" /> class.
         /// </summary>
-        /// <param name="projectSnapshotId"></param>
-        /// <param name="projectId"></param>
-        /// <param name="createdAtUnix"></param>
-        /// <param name="name"></param>
-        /// <param name="audioUpload"></param>
-        /// <param name="zipUpload"></param>
+        /// <param name="projectSnapshotId">
+        /// The ID of the project snapshot.
+        /// </param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="createdAtUnix">
+        /// The creation date of the project snapshot.
+        /// </param>
+        /// <param name="name">
+        /// The name of the project snapshot.
+        /// </param>
+        /// <param name="audioUpload">
+        /// (Deprecated)
+        /// </param>
+        /// <param name="zipUpload">
+        /// (Deprecated)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,8 +84,8 @@ namespace G
             string projectId,
             int createdAtUnix,
             string name,
-            global::G.ProjectSnapshotUploadResponseModel? audioUpload,
-            global::G.ProjectSnapshotUploadResponseModel? zipUpload)
+            object? audioUpload,
+            object? zipUpload)
         {
             this.ProjectSnapshotId = projectSnapshotId ?? throw new global::System.ArgumentNullException(nameof(projectSnapshotId));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));

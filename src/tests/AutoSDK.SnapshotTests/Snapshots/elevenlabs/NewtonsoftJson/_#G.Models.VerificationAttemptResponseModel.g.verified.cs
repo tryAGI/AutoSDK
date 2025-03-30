@@ -10,31 +10,31 @@ namespace G
     public sealed partial class VerificationAttemptResponseModel
     {
         /// <summary>
-        /// 
+        /// The text of the verification attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The date of the verification attempt in Unix time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date_unix", Required = global::Newtonsoft.Json.Required.Always)]
         public int DateUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Whether the verification attempt was accepted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accepted", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Accepted { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The similarity of the verification attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("similarity", Required = global::Newtonsoft.Json.Required.Always)]
         public double Similarity { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The Levenshtein distance of the verification attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("levenshtein_distance", Required = global::Newtonsoft.Json.Required.Always)]
         public double LevenshteinDistance { get; set; } = default!;
@@ -54,11 +54,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VerificationAttemptResponseModel" /> class.
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="dateUnix"></param>
-        /// <param name="accepted"></param>
-        /// <param name="similarity"></param>
-        /// <param name="levenshteinDistance"></param>
+        /// <param name="text">
+        /// The text of the verification attempt.
+        /// </param>
+        /// <param name="dateUnix">
+        /// The date of the verification attempt in Unix time.
+        /// </param>
+        /// <param name="accepted">
+        /// Whether the verification attempt was accepted.
+        /// </param>
+        /// <param name="similarity">
+        /// The similarity of the verification attempt.
+        /// </param>
+        /// <param name="levenshteinDistance">
+        /// The Levenshtein distance of the verification attempt.
+        /// </param>
         /// <param name="recording"></param>
         public VerificationAttemptResponseModel(
             string text,

@@ -25,7 +25,7 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Get Dubbing Project Metadata<br/>
+        /// Get Dubbing<br/>
         /// Returns metadata about a dubbing project, including whether it's still in progress or not
         /// </summary>
         /// <param name="dubbingId">

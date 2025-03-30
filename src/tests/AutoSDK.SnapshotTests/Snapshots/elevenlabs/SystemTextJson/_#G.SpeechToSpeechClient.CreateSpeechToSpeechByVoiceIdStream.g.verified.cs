@@ -11,7 +11,7 @@ namespace G
             ref string voiceId,
             ref bool? enableLogging,
             ref int? optimizeStreamingLatency,
-            ref string? outputFormat,
+            ref global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat,
             ref string? xiApiKey,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request);
         partial void PrepareCreateSpeechToSpeechByVoiceIdStreamRequest(
@@ -20,22 +20,28 @@ namespace G
             string voiceId,
             bool? enableLogging,
             int? optimizeStreamingLatency,
-            string? outputFormat,
+            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat,
             string? xiApiKey,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request);
         partial void ProcessCreateSpeechToSpeechByVoiceIdStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessCreateSpeechToSpeechByVoiceIdStreamResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Speech To Speech Streaming<br/>
-        /// Create speech by combining the content and emotion of the uploaded audio with a voice of your choice and returns an audio stream.
+        /// Stream audio from one voice to another. Maintain full control over emotion, timing and delivery.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="enableLogging">
-        /// When enable_logging is set to false full privacy mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Full privacy mode may only be used by enterprise customers.<br/>
+        /// When enable_logging is set to false zero retention mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Zero retention mode may only be used by enterprise customers.<br/>
         /// Default Value: true
         /// </param>
         /// <param name="optimizeStreamingLatency">
@@ -48,18 +54,7 @@ namespace G
         /// Defaults to None.
         /// </param>
         /// <param name="outputFormat">
-        /// Output format of the generated audio. Must be one of:<br/>
-        /// mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps.<br/>
-        /// mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps.<br/>
-        /// mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps.<br/>
-        /// mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps.<br/>
-        /// mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps.<br/>
-        /// mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above.<br/>
-        /// pcm_16000 - PCM format (S16LE) with 16kHz sample rate.<br/>
-        /// pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate.<br/>
-        /// pcm_24000 - PCM format (S16LE) with 24kHz sample rate.<br/>
-        /// pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Pro tier or above.<br/>
-        /// ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs.<br/>
+        /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
@@ -68,12 +63,12 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task CreateSpeechToSpeechByVoiceIdStreamAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechToSpeechByVoiceIdStreamAsync(
             string voiceId,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = default,
+            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -96,7 +91,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("enable_logging", enableLogging?.ToString()) 
                 .AddOptionalParameter("optimize_streaming_latency", optimizeStreamingLatency?.ToString()) 
-                .AddOptionalParameter("output_format", outputFormat) 
+                .AddOptionalParameter("output_format", outputFormat?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -131,7 +126,7 @@ namespace G
             if (outputFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{outputFormat}"),
+                    content: new global::System.Net.Http.StringContent($"{outputFormat?.ToValueString()}"),
                     name: "output_format");
             } 
             if (xiApiKey != default)
@@ -161,6 +156,12 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Seed}"),
                     name: "seed");
+            } 
+            if (request.RemoveBackgroundNoise != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
+                    name: "remove_background_noise");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -188,34 +189,117 @@ namespace G
             ProcessCreateSpeechToSpeechByVoiceIdStreamResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            try
+            // Validation Error
+            if ((int)__response.StatusCode == 422)
             {
-                __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::G.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
-                    innerException: __ex,
+                string? __content_422 = null;
+                global::G.HTTPValidationError? __value_422 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::G.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.HTTPValidationError>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
                         h => h.Value),
                 };
             }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessCreateSpeechToSpeechByVoiceIdStreamResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+                return
+                    global::System.Text.Json.JsonSerializer.Deserialize<byte[]?>(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+                using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                return
+                    await global::System.Text.Json.JsonSerializer.DeserializeAsync<byte[]?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
 
         /// <summary>
         /// Speech To Speech Streaming<br/>
-        /// Create speech by combining the content and emotion of the uploaded audio with a voice of your choice and returns an audio stream.
+        /// Stream audio from one voice to another. Maintain full control over emotion, timing and delivery.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="enableLogging">
-        /// When enable_logging is set to false full privacy mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Full privacy mode may only be used by enterprise customers.<br/>
+        /// When enable_logging is set to false zero retention mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Zero retention mode may only be used by enterprise customers.<br/>
         /// Default Value: true
         /// </param>
         /// <param name="optimizeStreamingLatency">
@@ -228,18 +312,7 @@ namespace G
         /// Defaults to None.
         /// </param>
         /// <param name="outputFormat">
-        /// Output format of the generated audio. Must be one of:<br/>
-        /// mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps.<br/>
-        /// mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps.<br/>
-        /// mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps.<br/>
-        /// mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps.<br/>
-        /// mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps.<br/>
-        /// mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above.<br/>
-        /// pcm_16000 - PCM format (S16LE) with 16kHz sample rate.<br/>
-        /// pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate.<br/>
-        /// pcm_24000 - PCM format (S16LE) with 24kHz sample rate.<br/>
-        /// pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Pro tier or above.<br/>
-        /// ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs.<br/>
+        /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
@@ -256,24 +329,31 @@ namespace G
         /// Default Value: eleven_english_sts_v2
         /// </param>
         /// <param name="voiceSettings">
-        /// Voice settings overriding stored setttings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.
+        /// Voice settings overriding stored settings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.
         /// </param>
         /// <param name="seed">
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed.
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
+        /// Example: 12345
+        /// </param>
+        /// <param name="removeBackgroundNoise">
+        /// If set, will remove the background noise from your audio input using our audio isolation model. Only applies to Voice Changer.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateSpeechToSpeechByVoiceIdStreamAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechToSpeechByVoiceIdStreamAsync(
             string voiceId,
             byte[] audio,
             string audioname,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = default,
+            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
             string? voiceSettings = default,
             int? seed = default,
+            bool? removeBackgroundNoise = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost
@@ -283,9 +363,10 @@ namespace G
                 ModelId = modelId,
                 VoiceSettings = voiceSettings,
                 Seed = seed,
+                RemoveBackgroundNoise = removeBackgroundNoise,
             };
 
-            await CreateSpeechToSpeechByVoiceIdStreamAsync(
+            return await CreateSpeechToSpeechByVoiceIdStreamAsync(
                 voiceId: voiceId,
                 enableLogging: enableLogging,
                 optimizeStreamingLatency: optimizeStreamingLatency,

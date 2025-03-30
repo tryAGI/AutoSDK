@@ -31,7 +31,8 @@ namespace G
         /// Creates a new chapter either as blank or from a URL.
         /// </summary>
         /// <param name="projectId">
-        /// The project_id of the project, you can query GET https://api.elevenlabs.io/v1/projects to list all available projects.
+        /// The ID of the Studio project.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -39,6 +40,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.AddChapterResponseModel> CreateProjectsByProjectIdChaptersAddAsync(
             string projectId,
             global::G.BodyAddChapterToAProjectV1ProjectsProjectIdChaptersAddPost request,
@@ -206,19 +208,23 @@ namespace G
         /// Creates a new chapter either as blank or from a URL.
         /// </summary>
         /// <param name="projectId">
-        /// The project_id of the project, you can query GET https://api.elevenlabs.io/v1/projects to list all available projects.
+        /// The ID of the Studio project.<br/>
+        /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name of the chapter, used for identification only.
+        /// The name of the chapter, used for identification only.<br/>
+        /// Example: Chapter 1
         /// </param>
         /// <param name="fromUrl">
-        /// An optional URL from which we will extract content to initialize the project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the project as blank.
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.<br/>
+        /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.AddChapterResponseModel> CreateProjectsByProjectIdChaptersAddAsync(
             string projectId,
             string name,

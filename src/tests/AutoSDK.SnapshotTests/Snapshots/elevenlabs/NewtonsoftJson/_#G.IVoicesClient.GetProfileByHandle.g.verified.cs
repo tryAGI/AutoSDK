@@ -10,7 +10,8 @@ namespace G
         /// Gets a profile page based on a handle
         /// </summary>
         /// <param name="handle">
-        /// Handle for a VA's profile page
+        /// Handle for a VA's profile page<br/>
+        /// Example: talexgeorge
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

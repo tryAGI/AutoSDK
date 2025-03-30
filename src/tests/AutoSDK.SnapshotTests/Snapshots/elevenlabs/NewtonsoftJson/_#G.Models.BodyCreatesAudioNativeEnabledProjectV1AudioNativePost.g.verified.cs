@@ -16,9 +16,10 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Image URL used in the player. If not provided, default image set in the Player settings is used.
+        /// (Deprecated) Image URL used in the player. If not provided, default image set in the Player settings is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Image { get; set; }
 
         /// <summary>
@@ -34,10 +35,11 @@ namespace G
         public string? Title { get; set; }
 
         /// <summary>
-        /// Whether to use small player or not. If not provided, default value set in the Player settings is used.<br/>
+        /// (Deprecated) Whether to use small player or not. If not provided, default value set in the Player settings is used.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("small")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? Small { get; set; }
 
         /// <summary>
@@ -53,10 +55,11 @@ namespace G
         public string? BackgroundColor { get; set; }
 
         /// <summary>
-        /// Specifies for how many minutes to persist the session across page reloads. If not provided, default sessionization set in the Player settings is used.<br/>
+        /// (Deprecated) Specifies for how many minutes to persist the session across page reloads. If not provided, default sessionization set in the Player settings is used.<br/>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sessionization")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Sessionization { get; set; }
 
         /// <summary>
@@ -102,28 +105,17 @@ namespace G
         /// <param name="name">
         /// Project name.
         /// </param>
-        /// <param name="image">
-        /// Image URL used in the player. If not provided, default image set in the Player settings is used.
-        /// </param>
         /// <param name="author">
         /// Author used in the player and inserted at the start of the uploaded article. If not provided, the default author set in the Player settings is used.
         /// </param>
         /// <param name="title">
         /// Title used in the player and inserted at the top of the uploaded article. If not provided, the default title set in the Player settings is used.
         /// </param>
-        /// <param name="small">
-        /// Whether to use small player or not. If not provided, default value set in the Player settings is used.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="textColor">
         /// Text color used in the player. If not provided, default text color set in the Player settings is used.
         /// </param>
         /// <param name="backgroundColor">
         /// Background color used in the player. If not provided, default background color set in the Player settings is used.
-        /// </param>
-        /// <param name="sessionization">
-        /// Specifies for how many minutes to persist the session across page reloads. If not provided, default sessionization set in the Player settings is used.<br/>
-        /// Default Value: 0
         /// </param>
         /// <param name="voiceId">
         /// Voice ID used to voice the content. If not provided, default voice ID set in the Player settings is used.
@@ -143,13 +135,10 @@ namespace G
         /// </param>
         public BodyCreatesAudioNativeEnabledProjectV1AudioNativePost(
             string name,
-            string? image,
             string? author,
             string? title,
-            bool? small,
             string? textColor,
             string? backgroundColor,
-            int? sessionization,
             string? voiceId,
             string? modelId,
             byte[]? file,
@@ -157,13 +146,10 @@ namespace G
             bool? autoConvert)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Image = image;
             this.Author = author;
             this.Title = title;
-            this.Small = small;
             this.TextColor = textColor;
             this.BackgroundColor = backgroundColor;
-            this.Sessionization = sessionization;
             this.VoiceId = voiceId;
             this.ModelId = modelId;
             this.File = file;

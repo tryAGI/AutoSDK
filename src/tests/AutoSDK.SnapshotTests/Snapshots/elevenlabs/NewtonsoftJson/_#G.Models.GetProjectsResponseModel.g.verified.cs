@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetProjectsResponseModel
     {
         /// <summary>
-        /// 
+        /// A list of projects with their metadata.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projects", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ProjectResponseModel> Projects { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetProjectsResponseModel" /> class.
         /// </summary>
-        /// <param name="projects"></param>
+        /// <param name="projects">
+        /// A list of projects with their metadata.
+        /// </param>
         public GetProjectsResponseModel(
             global::System.Collections.Generic.IList<global::G.ProjectResponseModel> projects)
         {

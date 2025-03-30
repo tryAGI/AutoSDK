@@ -10,35 +10,35 @@ namespace G
     public sealed partial class ManualVerificationFileResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FileId { get; set; }
 
         /// <summary>
-        /// 
+        /// The name of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FileName { get; set; }
 
         /// <summary>
-        /// 
+        /// The MIME type of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// 
+        /// The size of the file in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SizeBytes { get; set; }
 
         /// <summary>
-        /// 
+        /// The date of the file in Unix time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_date_unix")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,11 +53,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualVerificationFileResponseModel" /> class.
         /// </summary>
-        /// <param name="fileId"></param>
-        /// <param name="fileName"></param>
-        /// <param name="mimeType"></param>
-        /// <param name="sizeBytes"></param>
-        /// <param name="uploadDateUnix"></param>
+        /// <param name="fileId">
+        /// The ID of the file.
+        /// </param>
+        /// <param name="fileName">
+        /// The name of the file.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the file.
+        /// </param>
+        /// <param name="sizeBytes">
+        /// The size of the file in bytes.
+        /// </param>
+        /// <param name="uploadDateUnix">
+        /// The date of the file in Unix time.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

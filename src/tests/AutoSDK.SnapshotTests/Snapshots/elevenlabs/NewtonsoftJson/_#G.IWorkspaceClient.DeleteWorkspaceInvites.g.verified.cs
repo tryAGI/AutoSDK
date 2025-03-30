@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteWorkspaceInvitesAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteWorkspaceInviteResponseModel> DeleteWorkspaceInvitesAsync(
             global::G.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,11 +28,12 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="email">
-        /// Email of the target user.
+        /// The email of the customer<br/>
+        /// Example: john.doe@testmail.com
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteWorkspaceInvitesAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteWorkspaceInviteResponseModel> DeleteWorkspaceInvitesAsync(
             string email,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

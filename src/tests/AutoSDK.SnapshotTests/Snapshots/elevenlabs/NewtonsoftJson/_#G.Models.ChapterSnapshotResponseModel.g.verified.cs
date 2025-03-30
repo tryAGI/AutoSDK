@@ -10,31 +10,31 @@ namespace G
     public sealed partial class ChapterSnapshotResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the chapter snapshot.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chapter_snapshot_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ChapterSnapshotId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The ID of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ProjectId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The ID of the chapter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chapter_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ChapterId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The creation date of the chapter snapshot.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at_unix", Required = global::Newtonsoft.Json.Required.Always)]
         public int CreatedAtUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The name of the chapter snapshot.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -48,11 +48,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterSnapshotResponseModel" /> class.
         /// </summary>
-        /// <param name="chapterSnapshotId"></param>
-        /// <param name="projectId"></param>
-        /// <param name="chapterId"></param>
-        /// <param name="createdAtUnix"></param>
-        /// <param name="name"></param>
+        /// <param name="chapterSnapshotId">
+        /// The ID of the chapter snapshot.
+        /// </param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="chapterId">
+        /// The ID of the chapter.
+        /// </param>
+        /// <param name="createdAtUnix">
+        /// The creation date of the chapter snapshot.
+        /// </param>
+        /// <param name="name">
+        /// The name of the chapter snapshot.
+        /// </param>
         public ChapterSnapshotResponseModel(
             string chapterSnapshotId,
             string projectId,

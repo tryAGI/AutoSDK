@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chapter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChapterResponseModel Chapter { get; set; }
+        public required global::G.ChapterWithContentResponseModel Chapter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AddChapterResponseModel(
-            global::G.ChapterResponseModel chapter)
+            global::G.ChapterWithContentResponseModel chapter)
         {
             this.Chapter = chapter ?? throw new global::System.ArgumentNullException(nameof(chapter));
         }

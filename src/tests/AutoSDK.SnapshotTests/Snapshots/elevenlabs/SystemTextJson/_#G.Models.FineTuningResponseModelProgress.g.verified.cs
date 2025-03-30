@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The progress of the fine-tuning process.
     /// </summary>
     public sealed partial class FineTuningResponseModelProgress
     {

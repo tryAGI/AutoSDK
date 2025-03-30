@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ManualVerificationResponseModel
     {
         /// <summary>
-        /// 
+        /// The extra text of the manual verification.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra_text", Required = global::Newtonsoft.Json.Required.Always)]
         public string ExtraText { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The date of the manual verification in Unix time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_time_unix", Required = global::Newtonsoft.Json.Required.Always)]
         public int RequestTimeUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The files of the manual verification.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ManualVerificationFileResponseModel> Files { get; set; } = default!;
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualVerificationResponseModel" /> class.
         /// </summary>
-        /// <param name="extraText"></param>
-        /// <param name="requestTimeUnix"></param>
-        /// <param name="files"></param>
+        /// <param name="extraText">
+        /// The extra text of the manual verification.
+        /// </param>
+        /// <param name="requestTimeUnix">
+        /// The date of the manual verification in Unix time.
+        /// </param>
+        /// <param name="files">
+        /// The files of the manual verification.
+        /// </param>
         public ManualVerificationResponseModel(
             string extraText,
             int requestTimeUnix,

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class AddVoiceResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the voice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AddVoiceResponseModel" /> class.
         /// </summary>
-        /// <param name="voiceId"></param>
+        /// <param name="voiceId">
+        /// The ID of the voice.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

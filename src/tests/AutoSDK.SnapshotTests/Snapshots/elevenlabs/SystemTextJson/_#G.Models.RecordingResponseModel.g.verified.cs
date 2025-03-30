@@ -10,35 +10,35 @@ namespace G
     public sealed partial class RecordingResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the recording.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recording_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RecordingId { get; set; }
 
         /// <summary>
-        /// 
+        /// The MIME type of the recording.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// 
+        /// The size of the recording in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SizeBytes { get; set; }
 
         /// <summary>
-        /// 
+        /// The date of the recording in Unix time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_date_unix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int UploadDateUnix { get; set; }
 
         /// <summary>
-        /// 
+        /// The transcription of the recording.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,11 +53,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RecordingResponseModel" /> class.
         /// </summary>
-        /// <param name="recordingId"></param>
-        /// <param name="mimeType"></param>
-        /// <param name="sizeBytes"></param>
-        /// <param name="uploadDateUnix"></param>
-        /// <param name="transcription"></param>
+        /// <param name="recordingId">
+        /// The ID of the recording.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the recording.
+        /// </param>
+        /// <param name="sizeBytes">
+        /// The size of the recording in bytes.
+        /// </param>
+        /// <param name="uploadDateUnix">
+        /// The date of the recording in Unix time.
+        /// </param>
+        /// <param name="transcription">
+        /// The transcription of the recording.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

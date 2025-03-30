@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The status of the user's subscription.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SubscriptionResponseModelStatus

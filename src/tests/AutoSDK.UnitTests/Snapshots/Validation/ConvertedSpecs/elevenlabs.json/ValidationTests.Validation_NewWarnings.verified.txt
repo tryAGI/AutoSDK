@@ -1,12 +1,132 @@
 ﻿[
   {
-    RuleName: ParameterMismatchedDataType,
+    RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/0/example
+    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/0/schema/example
   },
   {
-    RuleName: ParameterMismatchedDataType,
+    RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/1/example
+    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/1/schema/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AudioWithTimestampsResponseModel/example/alignment/character_start_times_seconds/0
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AudioWithTimestampsResponseModel/example/normalized_alignment/character_start_times_seconds/0
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/Body_Add_project_v1_projects_add_post/properties/callback_url/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/Body_Create_Studio_project_v1_studio_projects_post/properties/callback_url/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/Body_Create_podcast_v1_projects_podcast_create_post/properties/callback_url/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/Body_Create_podcast_v1_studio_podcasts_post/properties/callback_url/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/GetLibraryVoicesResponseModel/example/voices
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/GetProjectsResponseModel/example/projects/0/original_publication_date
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/GetVoicesResponseModel/example/voices
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/ModelResponseModel/example/model_rates/character_cost_multiplier
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/RagConfig/properties/max_documents_length/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/SpeechToTextChunkResponseModel/example/words/0/start
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/SpeechToTextWordResponseModel/example/characters/0/start
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/StreamingAudioChunkWithTimestampsResponseModel/example/alignment/character_start_times_seconds/0
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/StreamingAudioChunkWithTimestampsResponseModel/example/normalized_alignment/character_start_times_seconds/0
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/UsageCharactersResponseModel/example/time/0
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/UsageCharactersResponseModel/example/time/1
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/settings/similarity_boost
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/settings/speed
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/settings/stability
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/settings/style
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/verified_languages
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceResponseModel/example/voice_verification/verification_attempts/0/levenshtein_distance
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/VoiceVerificationResponseModel/example/verification_attempts/0/levenshtein_distance
   }
 ]
