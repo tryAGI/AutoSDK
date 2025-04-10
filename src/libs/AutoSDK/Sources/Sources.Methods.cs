@@ -323,29 +323,6 @@ namespace {endPoint.Namespace}
     public static string GenerateResponse(
         EndPoint endPoint)
     {
-        if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
-        {
-            return $@" 
-            try
-            {{
-                __response.EnsureSuccessStatusCode();
-            }}
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {{
-                throw new global::{endPoint.Settings.Namespace}.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
-                    innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                }};
-            }}
- ";
-        }
-        
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         
         if (endPoint.Stream)
@@ -455,10 +432,11 @@ namespace {endPoint.Namespace}
                     client: HttpClient,
                     response: __response,
                     content: ref __content);" : " ")}
+{(!string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? @$" 
                 Process{endPoint.NotAsyncMethodName}ResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
-                    content: ref __content);
+                    content: ref __content);" : " ")}
 
                 try
                 {{
@@ -482,7 +460,9 @@ namespace {endPoint.Namespace}
                     }};
                 }}
 
-{(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+    ? " "
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
                 return
                     {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                     throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
@@ -525,7 +505,9 @@ namespace {endPoint.Namespace}
 #endif
                 ).ConfigureAwait(false);
 
-{(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+    ? " "
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
                 return
                     {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                     throw new global::System.InvalidOperationException(""Response deserialization failed."");" : @" 

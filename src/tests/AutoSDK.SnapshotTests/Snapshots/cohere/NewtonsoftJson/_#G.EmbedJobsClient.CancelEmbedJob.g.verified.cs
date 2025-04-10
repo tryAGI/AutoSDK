@@ -93,22 +93,402 @@ namespace G
             ProcessCancelEmbedJobResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            try
+            // This error is returned when the request is not well formed. This could be because:   - JSON is invalid   - The request is missing required fields   - The request contains an invalid combination of fields 
+            if ((int)__response.StatusCode == 400)
             {
-                __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::G.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
-                    innerException: __ex,
+                string? __content_400 = null;
+                global::G.CancelEmbedJobResponse? __value_400 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = global::G.CancelEmbedJobResponse.FromJson(__content_400, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_400 = await global::G.CancelEmbedJobResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse>(
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
+                    ResponseBody = __content_400,
+                    ResponseObject = __value_400,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
                         h => h.Value),
                 };
+            }
+            // This error indicates that the operation attempted to be performed is not allowed. This could be because:   - The api token is invalid   - The user does not have the necessary permissions 
+            if ((int)__response.StatusCode == 401)
+            {
+                string? __content_401 = null;
+                global::G.CancelEmbedJobResponse2? __value_401 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_401 = global::G.CancelEmbedJobResponse2.FromJson(__content_401, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_401 = await global::G.CancelEmbedJobResponse2.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse2>(
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseObject = __value_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error indicates that the operation attempted to be performed is not allowed. This could be because:   - The api token is invalid   - The user does not have the necessary permissions 
+            if ((int)__response.StatusCode == 403)
+            {
+                string? __content_403 = null;
+                global::G.CancelEmbedJobResponse3? __value_403 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::G.CancelEmbedJobResponse3.FromJson(__content_403, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::G.CancelEmbedJobResponse3.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse3>(
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_403,
+                    ResponseObject = __value_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when a resource is not found. This could be because:   - The endpoint does not exist   - The resource does not exist eg model id, dataset id 
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::G.CancelEmbedJobResponse4? __value_404 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = global::G.CancelEmbedJobResponse4.FromJson(__content_404, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = await global::G.CancelEmbedJobResponse4.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse4>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when the request is not well formed. This could be because:   - JSON is invalid   - The request is missing required fields   - The request contains an invalid combination of fields 
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::G.CancelEmbedJobResponse5? __value_422 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = global::G.CancelEmbedJobResponse5.FromJson(__content_422, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_422 = await global::G.CancelEmbedJobResponse5.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse5>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Too many requests
+            if ((int)__response.StatusCode == 429)
+            {
+                string? __content_429 = null;
+                global::G.CancelEmbedJobResponse6? __value_429 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = global::G.CancelEmbedJobResponse6.FromJson(__content_429, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_429 = await global::G.CancelEmbedJobResponse6.FromJsonStreamAsync(__contentStream_429, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse6>(
+                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_429,
+                    ResponseObject = __value_429,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when a request or response contains a deny-listed token. 
+            if ((int)__response.StatusCode == 498)
+            {
+                string? __content_498 = null;
+                global::G.CancelEmbedJobResponse7? __value_498 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_498 = global::G.CancelEmbedJobResponse7.FromJson(__content_498, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_498 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_498 = await global::G.CancelEmbedJobResponse7.FromJsonStreamAsync(__contentStream_498, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse7>(
+                    message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_498,
+                    ResponseObject = __value_498,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when a request is cancelled by the user. 
+            if ((int)__response.StatusCode == 499)
+            {
+                string? __content_499 = null;
+                global::G.CancelEmbedJobResponse8? __value_499 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_499 = global::G.CancelEmbedJobResponse8.FromJson(__content_499, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_499 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_499 = await global::G.CancelEmbedJobResponse8.FromJsonStreamAsync(__contentStream_499, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse8>(
+                    message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_499,
+                    ResponseObject = __value_499,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when an uncategorised internal server error occurs. 
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::G.CancelEmbedJobResponse9? __value_500 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::G.CancelEmbedJobResponse9.FromJson(__content_500, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::G.CancelEmbedJobResponse9.FromJsonStreamAsync(__contentStream_500, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse9>(
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when the requested feature is not implemented. 
+            if ((int)__response.StatusCode == 501)
+            {
+                string? __content_501 = null;
+                global::G.CancelEmbedJobResponse10? __value_501 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_501 = global::G.CancelEmbedJobResponse10.FromJson(__content_501, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_501 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_501 = await global::G.CancelEmbedJobResponse10.FromJsonStreamAsync(__contentStream_501, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse10>(
+                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_501,
+                    ResponseObject = __value_501,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when the service is unavailable. This could be due to:   - Too many users trying to access the service at the same time 
+            if ((int)__response.StatusCode == 503)
+            {
+                string? __content_503 = null;
+                global::G.CancelEmbedJobResponse11? __value_503 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = global::G.CancelEmbedJobResponse11.FromJson(__content_503, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = await global::G.CancelEmbedJobResponse11.FromJsonStreamAsync(__contentStream_503, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse11>(
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_503,
+                    ResponseObject = __value_503,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // This error is returned when a request to the server times out. This could be due to:   - An internal services taking too long to respond 
+            if ((int)__response.StatusCode == 504)
+            {
+                string? __content_504 = null;
+                global::G.CancelEmbedJobResponse12? __value_504 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_504 = global::G.CancelEmbedJobResponse12.FromJson(__content_504, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_504 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_504 = await global::G.CancelEmbedJobResponse12.FromJsonStreamAsync(__contentStream_504, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.CancelEmbedJobResponse12>(
+                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_504,
+                    ResponseObject = __value_504,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+                using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
             }
         }
     }
