@@ -3,10 +3,10 @@
     <Project Path="src/helpers/GenerateDocs/GenerateDocs.csproj" />
   </Folder>
   <Folder Name="/libs/">
-    <File Path="src/libs/Directory.Build.props" />
     <Project Path="src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj" />
     <Project Path="src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" />
     <Project Path="src/libs/AutoSDK/AutoSDK.csproj" />
+    <File Path="src/libs/Directory.Build.props" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".github/dependabot.yml" />
@@ -48,6 +48,7 @@
     <File Path="specs/twitch.json" />
     <File Path="specs/vectara.yaml" />
     <File Path="specs/weaviate.yaml" />
+    <File Path="specs\ultravox.yaml" />
   </Folder>
   <Folder Name="/Solution Items/workflows/">
     <File Path=".github/workflows/auto-merge.yml" />

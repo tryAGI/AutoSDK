@@ -41,7 +41,8 @@ public readonly record struct PropertyData(
         var type = context.TypeData;
         
         // OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
-        if (context.HasAllOfTypeForMetadata())
+        if (context.HasAllOfTypeForMetadata() &&
+            !type.SubTypes.IsEmpty)
         {
             type = type.SubTypes[0] with
             {

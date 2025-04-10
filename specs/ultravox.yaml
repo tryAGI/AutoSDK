@@ -1,0 +1,4472 @@
+openapi: 3.0.3
+info:
+  title: Ultravox
+  version: 0.1.0
+  description: API for the Ultravox service.
+paths:
+  /api/accounts:
+    get:
+      operationId: accounts_list
+      tags:
+      - accounts
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+          description: ''
+  /api/accounts/me:
+    get:
+      operationId: accounts_me_retrieve
+      tags:
+      - accounts
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: ''
+  /api/accounts/me/billing_subscription:
+    get:
+      operationId: accounts_me_billing_subscription_retrieve
+      description: Redirects to the billing portal for the current account.
+      tags:
+      - accounts
+      security:
+      - apiKeyAuth: []
+      responses:
+        '302':
+          description: No response body
+  /api/accounts/me/usage/calls:
+    get:
+      operationId: accounts_me_usage_calls_retrieve
+      description: Gets aggregated call usage.
+      parameters:
+      - in: query
+        name: durationMax
+        schema:
+          type: string
+        description: Maximum duration of calls
+      - in: query
+        name: durationMin
+        schema:
+          type: string
+        description: Minimum duration of calls
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date
+        description: Start date (inclusive) for filtering calls by creation date
+      - in: query
+        name: metadata
+        schema:
+          type: object
+          additionalProperties:
+            type: string
+        description: Filter calls by metadata. Use metadata.key=value to filter by
+          specific key-value pairs.
+      - in: query
+        name: search
+        schema:
+          type: string
+          minLength: 1
+        description: The search string used to filter results
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date
+        description: End date (inclusive) for filtering calls by creation date
+      - in: query
+        name: voiceId
+        schema:
+          type: string
+          format: uuid
+        description: Filter calls by the associated voice ID
+      tags:
+      - accounts
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallUsage'
+          description: ''
+  /api/agents:
+    get:
+      operationId: agents_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - agents
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAgentList'
+          description: ''
+    post:
+      operationId: agents_create
+      tags:
+      - agents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Agent'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+          description: ''
+  /api/agents/{agent_id}:
+    get:
+      operationId: agents_retrieve
+      parameters:
+      - in: path
+        name: agent_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - agents
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+          description: ''
+    patch:
+      operationId: agents_partial_update
+      parameters:
+      - in: path
+        name: agent_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - agents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAgent'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+          description: ''
+    delete:
+      operationId: agents_destroy
+      parameters:
+      - in: path
+        name: agent_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - agents
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/agents/{agent_id}/calls:
+    get:
+      operationId: agents_calls_list
+      parameters:
+      - in: path
+        name: agent_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - agents
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCallList'
+          description: ''
+    post:
+      operationId: agents_calls_create
+      parameters:
+      - in: path
+        name: agent_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - agents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.StartAgentCallRequest'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Call'
+          description: ''
+  /api/api_keys:
+    get:
+      operationId: api_keys_list
+      description: Gets the current user's API keys.
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - api_keys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAPIKeyList'
+          description: ''
+    post:
+      operationId: api_keys_create
+      description: Creates a new API key.
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKeyCreate'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyCreate'
+          description: ''
+  /api/api_keys/{api_key_prefix}:
+    get:
+      operationId: api_keys_retrieve
+      description: Gets an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    put:
+      operationId: api_keys_update
+      description: Updates an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    patch:
+      operationId: api_keys_partial_update
+      description: Updates an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAPIKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    delete:
+      operationId: api_keys_destroy
+      description: Deletes an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      responses:
+        '204':
+          description: No response body
+  /api/calls:
+    get:
+      operationId: calls_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - in: query
+        name: durationMax
+        schema:
+          type: string
+        description: Maximum duration of calls
+      - in: query
+        name: durationMin
+        schema:
+          type: string
+        description: Minimum duration of calls
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date
+        description: Start date (inclusive) for filtering calls by creation date
+      - in: query
+        name: metadata
+        schema:
+          type: object
+          additionalProperties:
+            type: string
+        description: Filter calls by metadata. Use metadata.key=value to filter by
+          specific key-value pairs.
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+          minLength: 1
+        description: The search string used to filter results
+      - name: sort
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date
+        description: End date (inclusive) for filtering calls by creation date
+      - in: query
+        name: voiceId
+        schema:
+          type: string
+          format: uuid
+        description: Filter calls by the associated voice ID
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCallList'
+          description: ''
+    post:
+      operationId: calls_create
+      parameters:
+      - in: query
+        name: enableGreetingPrompt
+        schema:
+          type: boolean
+          default: true
+        description: Adds a prompt for a greeting if there's not an initial message
+          that the model would naturally respond to (a user message or tool result).
+      - in: query
+        name: priorCallId
+        schema:
+          type: string
+          format: uuid
+        description: The UUID of a prior call. When specified, the new call will use
+          the same properites as the prior call unless overriden in this request's
+          body. The new call will also use the prior call's message history as its
+          own initial_messages. (It's illegal to also set initial_messages in the
+          body.)
+      tags:
+      - calls
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.StartCallRequest'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Call'
+          description: ''
+  /api/calls/{call_id}:
+    get:
+      operationId: calls_retrieve
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Call'
+          description: ''
+    delete:
+      operationId: calls_destroy
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/calls/{call_id}/messages:
+    get:
+      operationId: calls_messages_list
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedultravox.v1.MessageList'
+          description: ''
+  /api/calls/{call_id}/recording:
+    get:
+      operationId: calls_recording_retrieve
+      description: Returns or redirects to a recording of the call.
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+          description: ''
+        '302':
+          description: No response body
+  /api/calls/{call_id}/stages:
+    get:
+      operationId: calls_stages_list
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCallStageList'
+          description: ''
+  /api/calls/{call_id}/stages/{call_stage_id}:
+    get:
+      operationId: calls_stages_retrieve
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: call_stage_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallStage'
+          description: ''
+  /api/calls/{call_id}/stages/{call_stage_id}/messages:
+    get:
+      operationId: calls_stages_messages_list
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: call_stage_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedultravox.v1.MessageList'
+          description: ''
+  /api/calls/{call_id}/stages/{call_stage_id}/messages/{call_stage_message_index}/audio:
+    get:
+      operationId: calls_stages_messages_audio_retrieve
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: call_stage_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: call_stage_message_index
+        schema:
+          type: integer
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/calls/{call_id}/stages/{call_stage_id}/tools:
+    get:
+      operationId: calls_stages_tools_list
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: call_stage_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CallTool'
+          description: ''
+  /api/calls/{call_id}/tools:
+    get:
+      operationId: calls_tools_list
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CallTool'
+          description: ''
+  /api/corpora:
+    get:
+      operationId: corpora_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedultravox.v1.CorpusList'
+          description: ''
+    post:
+      operationId: corpora_create
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.Corpus'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.Corpus'
+          description: ''
+  /api/corpora/{corpus_id}:
+    get:
+      operationId: corpora_retrieve
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.Corpus'
+          description: ''
+    put:
+      operationId: corpora_update
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.Corpus'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.Corpus'
+          description: ''
+    patch:
+      operationId: corpora_partial_update
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.Corpus'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.Corpus'
+          description: ''
+    delete:
+      operationId: corpora_destroy
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/corpora/{corpus_id}/query:
+    post:
+      operationId: corpora_query
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.QueryCorpusRequest'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ultravox.v1.CorpusQueryResult'
+          description: ''
+  /api/corpora/{corpus_id}/sources:
+    get:
+      operationId: corpora_sources_list
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedultravox.v1.CorpusSourceList'
+          description: ''
+    post:
+      operationId: corpora_sources_create
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+          description: ''
+  /api/corpora/{corpus_id}/sources/{source_id}:
+    get:
+      operationId: corpora_sources_retrieve
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+          description: ''
+    put:
+      operationId: corpora_sources_update
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+          description: ''
+    patch:
+      operationId: corpora_sources_partial_update
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+          description: ''
+    delete:
+      operationId: corpora_sources_destroy
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/corpora/{corpus_id}/sources/{source_id}/documents:
+    get:
+      operationId: corpora_sources_documents_list
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedultravox.v1.CorpusDocumentList'
+          description: ''
+  /api/corpora/{corpus_id}/sources/{source_id}/documents/{document_id}:
+    get:
+      operationId: corpora_sources_documents_retrieve
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: document_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: source_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ultravox.v1.CorpusDocument'
+          description: ''
+  /api/corpora/{corpus_id}/uploads:
+    post:
+      operationId: corpora_uploads_create
+      description: Request a presigned URL for uploading a document.
+      parameters:
+      - in: path
+        name: corpus_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - corpora
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CorpusUploadsRequest'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CorpusUploadsResponse'
+          description: ''
+  /api/deleted_calls:
+    get:
+      operationId: deleted_calls_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - in: query
+        name: durationMax
+        schema:
+          type: string
+        description: Maximum duration of calls
+      - in: query
+        name: durationMin
+        schema:
+          type: string
+        description: Minimum duration of calls
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date
+        description: Start date (inclusive) for filtering calls by creation date
+      - in: query
+        name: metadata
+        schema:
+          type: object
+          additionalProperties:
+            type: string
+        description: Filter calls by metadata. Use metadata.key=value to filter by
+          specific key-value pairs.
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+          minLength: 1
+        description: The search string used to filter results
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date
+        description: End date (inclusive) for filtering calls by creation date
+      - in: query
+        name: voiceId
+        schema:
+          type: string
+          format: uuid
+        description: Filter calls by the associated voice ID
+      tags:
+      - deleted_calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCallTombstoneList'
+          description: ''
+  /api/deleted_calls/{call_id}:
+    get:
+      operationId: deleted_calls_retrieve
+      parameters:
+      - in: path
+        name: call_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - deleted_calls
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallTombstone'
+          description: ''
+  /api/models:
+    get:
+      operationId: models_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - models
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedModelAliasList'
+          description: ''
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/tools:
+    get:
+      operationId: tools_list
+      description: List all tools in your account.
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - in: query
+        name: ownership
+        schema:
+          type: string
+        description: The ownership used to filter results
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+        description: The search string used to filter results
+      tags:
+      - tools
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedToolList'
+          description: ''
+    post:
+      operationId: tools_create
+      tags:
+      - tools
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tool'
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: An OpenAPI schema file in either JSON or YAML format.
+              required:
+              - file
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tool'
+          description: ''
+  /api/tools/{tool_id}:
+    get:
+      operationId: tools_retrieve
+      parameters:
+      - in: path
+        name: tool_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - tools
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolDetail'
+          description: ''
+    put:
+      operationId: tools_update
+      parameters:
+      - in: path
+        name: tool_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - tools
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ToolDetail'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolDetail'
+          description: ''
+    delete:
+      operationId: tools_destroy
+      parameters:
+      - in: path
+        name: tool_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - tools
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/tools/{tool_id}/history:
+    get:
+      operationId: tools_history_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: path
+        name: tool_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - tools
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedToolHistoryList'
+          description: ''
+  /api/tools/{tool_id}/test:
+    post:
+      operationId: tools_test_create
+      description: Test a tool by executing it with the provided parameters.
+      parameters:
+      - in: path
+        name: tool_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - tools
+      security:
+      - apiKeyAuth: []
+      responses:
+        default:
+          content:
+            '*/*':
+              schema: {}
+          description: ''
+  /api/voices:
+    get:
+      operationId: voices_list
+      description: List all voices in your account.
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - in: query
+        name: ownership
+        schema:
+          type: string
+        description: The ownership used filter results
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+        description: The search string used to filter results
+      tags:
+      - voices
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedVoiceList'
+          description: ''
+    post:
+      operationId: voices_create
+      description: Create a new cloned voice from an audio sample. The created voice
+        will be private to your account.
+      tags:
+      - voices
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: An audio file containing a sample of the voice to clone.
+                name:
+                  type: string
+                  description: Name for the cloned voice. Must be unique within your
+                    account.
+                  example: My Custom Voice
+                description:
+                  type: string
+                  description: Optional description for the voice. If not provided,
+                    a default description will be generated.
+                  example: Voice recorded on Jan 1, 2024
+              required:
+              - file
+              - name
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+          description: ''
+      x-codeSamples:
+      - lang: curl
+        source: |-
+          curl --request POST \
+          --url https://api.ultravox.ai/api/voices \
+          --header 'Content-Type: multipart/form-data' \
+          --header 'X-API-Key: <your-api-key>' \
+          --form 'file=@/path/to/voice.mp3' \
+          --form 'name=My Custom Voice' \
+          --form 'description=Voice recorded on Jan 1, 2024'
+  /api/voices/{voice_id}:
+    get:
+      operationId: voices_retrieve
+      parameters:
+      - in: path
+        name: voice_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - voices
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+          description: ''
+    delete:
+      operationId: voices_destroy
+      parameters:
+      - in: path
+        name: voice_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - voices
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/webhooks:
+    get:
+      operationId: webhooks_list
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - webhooks
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedWebhookList'
+          description: ''
+    post:
+      operationId: webhooks_create
+      tags:
+      - webhooks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webhook'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+          description: ''
+  /api/webhooks/{webhook_id}:
+    get:
+      operationId: webhooks_retrieve
+      parameters:
+      - in: path
+        name: webhook_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - webhooks
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+          description: ''
+    put:
+      operationId: webhooks_update
+      parameters:
+      - in: path
+        name: webhook_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - webhooks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webhook'
+        required: true
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+          description: ''
+    patch:
+      operationId: webhooks_partial_update
+      parameters:
+      - in: path
+        name: webhook_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - webhooks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedWebhook'
+      security:
+      - apiKeyAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+          description: ''
+    delete:
+      operationId: webhooks_destroy
+      parameters:
+      - in: path
+        name: webhook_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - webhooks
+      security:
+      - apiKeyAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    APIKey:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          type: string
+          readOnly: true
+          description: A free-form name for the API key. Need not be unique. 50 characters
+            max.
+        expiryDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+        revoked:
+          type: boolean
+          description: If the API key is revoked, clients cannot use it anymore. (This
+            cannot be undone.)
+      required:
+      - created
+      - creator
+      - expiryDate
+      - name
+      - prefix
+    APIKeyCreate:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        secret:
+          type: string
+          readOnly: true
+          description: The API key itself. Will be generated on creation but not returned
+            in future requests.
+        revoked:
+          type: boolean
+          readOnly: true
+          description: If the API key is revoked, clients cannot use it anymore. (This
+            cannot be undone.)
+        name:
+          type: string
+          description: A free-form name for the API key. Need not be unique. 50 characters
+            max.
+          maxLength: 50
+        expiryDate:
+          type: string
+          format: date-time
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+      required:
+      - created
+      - creator
+      - name
+      - prefix
+      - revoked
+      - secret
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+        billingUrl:
+          type: string
+          readOnly: true
+        freeTimeUsed:
+          type: string
+          readOnly: true
+          description: How much free time has been used by previous (or ongoing) calls.
+        freeTimeRemaining:
+          type: string
+          readOnly: true
+          description: How much free call time this account has remaining. (This could
+            increase if an existing call ends without using its maximum duration or
+            an unjoined call times out.)
+        hasActiveSubscription:
+          type: boolean
+          description: Whether the account has an active subscription.
+        activeCalls:
+          type: integer
+          readOnly: true
+          description: The number of active calls for this account.
+        allowedConcurrentCalls:
+          type: integer
+          readOnly: true
+          description: The maximum number of concurrent calls allowed for this account.
+        allowedVoices:
+          type: integer
+          readOnly: true
+          description: The maximum number of custom voices allowed for this account.
+      required:
+      - activeCalls
+      - allowedConcurrentCalls
+      - allowedVoices
+      - billingUrl
+      - freeTimeRemaining
+      - freeTimeUsed
+      - hasActiveSubscription
+      - name
+    Agent:
+      type: object
+      properties:
+        agentId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 64
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        callTemplate:
+          $ref: '#/components/schemas/ultravox.v1.CallTemplate'
+      required:
+      - agentId
+      - created
+      - name
+    Call:
+      type: object
+      properties:
+        callId:
+          type: string
+          format: uuid
+          readOnly: true
+        clientVersion:
+          type: string
+          readOnly: true
+          nullable: true
+          description: The version of the client that joined this call.
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        joined:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+        ended:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+        endReason:
+          readOnly: true
+          nullable: true
+          description: |-
+            The reason the call ended.
+
+            * `unjoined` - Client never joined
+            * `hangup` - Client hung up
+            * `agent_hangup` - Agent hung up
+            * `timeout` - Call timed out
+            * `connection_error` - Connection error
+            * `system_error` - System error
+          oneOf:
+          - $ref: '#/components/schemas/EndReasonEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        firstSpeaker:
+          allOf:
+          - $ref: '#/components/schemas/FirstSpeakerEnum'
+          deprecated: true
+          readOnly: true
+          description: Who was supposed to talk first when the call started. Typically
+            set to FIRST_SPEAKER_USER for outgoing calls and left as the default (FIRST_SPEAKER_AGENT)
+            otherwise.
+        firstSpeakerSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings'
+          description: Settings for the initial message to get the call started.
+        inactivityMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.TimedMessage'
+          description: Messages spoken by the agent when the user is inactive for
+            the specified duration. Durations are cumulative, so a message m > 1 with
+            duration 30s will be spoken 30 seconds after message m-1.
+        initialOutputMedium:
+          allOf:
+          - $ref: '#/components/schemas/InitialOutputMediumEnum'
+          readOnly: true
+          description: The medium used initially by the agent. May later be changed
+            by the client.
+        joinTimeout:
+          type: string
+          default: 30s
+        joinUrl:
+          type: string
+          nullable: true
+          readOnly: true
+        languageHint:
+          type: string
+          nullable: true
+          description: BCP47 language code that may be used to guide speech recognition.
+          maxLength: 16
+        maxDuration:
+          type: string
+          default: 3600s
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium'
+          nullable: true
+        model:
+          type: string
+          default: fixie-ai/ultravox
+        recordingEnabled:
+          type: boolean
+          default: false
+        systemPrompt:
+          type: string
+          nullable: true
+        temperature:
+          type: number
+          format: double
+          maximum: 1.0
+          minimum: 0.0
+          default: 0.0
+        timeExceededMessage:
+          type: string
+          nullable: true
+        voice:
+          type: string
+          nullable: true
+        externalVoice:
+          $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
+        transcriptOptional:
+          type: boolean
+          default: true
+          description: Indicates whether a transcript is optional for the call.
+          deprecated: true
+        errorCount:
+          type: integer
+          readOnly: true
+          default: 0
+          description: The number of errors in this call.
+        vadSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.VadSettings'
+          nullable: true
+          description: VAD settings for the call.
+        shortSummary:
+          type: string
+          readOnly: true
+          nullable: true
+          description: A short summary of the call.
+        summary:
+          type: string
+          readOnly: true
+          nullable: true
+          description: A summary of the call.
+        experimentalSettings:
+          description: Experimental settings for the call.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Optional metadata key-value pairs to associate with the call.
+            All values must be strings.
+        initialState:
+          type: object
+          additionalProperties: {}
+          description: The initial state of the call which is readable/writable by
+            tools.
+        requestContext: {}
+      required:
+      - callId
+      - clientVersion
+      - created
+      - endReason
+      - ended
+      - errorCount
+      - experimentalSettings
+      - firstSpeaker
+      - firstSpeakerSettings
+      - initialOutputMedium
+      - initialState
+      - joinUrl
+      - joined
+      - metadata
+      - requestContext
+      - shortSummary
+      - summary
+    CallStage:
+      type: object
+      properties:
+        callId:
+          type: string
+          format: uuid
+          readOnly: true
+        callStageId:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        inactivityMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.TimedMessage'
+          description: Messages spoken by the agent when the user is inactive for
+            the specified duration. Durations are cumulative, so a message m > 1 with
+            duration 30s will be spoken 30 seconds after message m-1.
+        languageHint:
+          type: string
+          nullable: true
+          description: BCP47 language code that may be used to guide speech recognition.
+          maxLength: 16
+        model:
+          type: string
+          default: fixie-ai/ultravox
+        systemPrompt:
+          type: string
+          nullable: true
+        temperature:
+          type: number
+          format: double
+          readOnly: true
+        timeExceededMessage:
+          type: string
+          nullable: true
+        voice:
+          type: string
+          nullable: true
+        externalVoice:
+          $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
+        errorCount:
+          type: integer
+          readOnly: true
+          description: The number of errors in this call stage.
+        experimentalSettings:
+          readOnly: true
+          nullable: true
+          description: Experimental settings for this call stage.
+        initialState:
+          type: object
+          additionalProperties: {}
+          description: The initial state of the call stage which is readable/writable
+            by tools.
+      required:
+      - callId
+      - callStageId
+      - created
+      - errorCount
+      - experimentalSettings
+      - initialState
+      - temperature
+    CallStatistics:
+      type: object
+      properties:
+        totalCount:
+          type: integer
+          description: Total number of calls
+        duration:
+          type: string
+          description: Total duration of all calls
+        joinedCount:
+          type: integer
+          description: Number of calls that were joined
+      required:
+      - duration
+      - joinedCount
+      - totalCount
+    CallTombstone:
+      type: object
+      properties:
+        callId:
+          type: string
+          format: uuid
+          readOnly: true
+        accountId:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+        deletionTime:
+          type: string
+          format: date-time
+          readOnly: true
+        joined:
+          type: string
+          format: date-time
+          nullable: true
+        ended:
+          type: string
+          format: date-time
+          nullable: true
+        maxDuration:
+          type: string
+          default: 3600s
+        endReason:
+          readOnly: true
+          nullable: true
+          description: |-
+            The reason the call ended.
+
+            * `unjoined` - Client never joined
+            * `hangup` - Client hung up
+            * `agent_hangup` - Agent hung up
+            * `timeout` - Call timed out
+            * `connection_error` - Connection error
+            * `system_error` - System error
+          oneOf:
+          - $ref: '#/components/schemas/EndReasonEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        recordingEnabled:
+          type: boolean
+          readOnly: true
+        hadSummary:
+          type: boolean
+          readOnly: true
+      required:
+      - accountId
+      - callId
+      - created
+      - deletionTime
+      - endReason
+      - hadSummary
+      - recordingEnabled
+    CallTool:
+      type: object
+      properties:
+        callToolId:
+          type: string
+          format: uuid
+          readOnly: true
+        toolId:
+          type: string
+          format: uuid
+          readOnly: true
+          nullable: true
+        name:
+          type: string
+          readOnly: true
+          description: The possibly overridden name of the tool.
+        definition:
+          $ref: '#/components/schemas/ultravox.v1.CallTool'
+      required:
+      - callToolId
+      - definition
+      - name
+      - toolId
+    CallUsage:
+      type: object
+      properties:
+        allTime:
+          allOf:
+          - $ref: '#/components/schemas/CallStatistics'
+          description: All-time call usage
+        daily:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyCallStatistics'
+          description: Call usage per day
+      required:
+      - allTime
+      - daily
+    CorpusUploadsRequest:
+      type: object
+      properties:
+        mimeType:
+          type: string
+          description: The MIME type of the file to be uploaded.
+          minLength: 1
+      required:
+      - mimeType
+    CorpusUploadsResponse:
+      type: object
+      properties:
+        documentId:
+          type: string
+        presignedUrl:
+          type: string
+          format: uri
+      required:
+      - documentId
+      - presignedUrl
+    DailyCallStatistics:
+      type: object
+      properties:
+        totalCount:
+          type: integer
+          description: Total number of calls
+        duration:
+          type: string
+          description: Total duration of all calls
+        joinedCount:
+          type: integer
+          description: Number of calls that were joined
+        date:
+          type: string
+          format: date
+          description: Date of usage
+      required:
+      - date
+      - duration
+      - joinedCount
+      - totalCount
+    EndReasonEnum:
+      enum:
+      - unjoined
+      - hangup
+      - agent_hangup
+      - timeout
+      - connection_error
+      - system_error
+      type: string
+      description: |-
+        * `unjoined` - Client never joined
+        * `hangup` - Client hung up
+        * `agent_hangup` - Agent hung up
+        * `timeout` - Call timed out
+        * `connection_error` - Connection error
+        * `system_error` - System error
+    EventsEnum:
+      enum:
+      - call.started
+      - call.joined
+      - call.ended
+      type: string
+      description: |-
+        * `call.started` - Fired when a call starts
+        * `call.joined` - Fired when a call is joined
+        * `call.ended` - Fired when a call ends
+    FirstSpeakerEnum:
+      enum:
+      - FIRST_SPEAKER_AGENT
+      - FIRST_SPEAKER_USER
+      type: string
+    InitialOutputMediumEnum:
+      enum:
+      - MESSAGE_MEDIUM_VOICE
+      - MESSAGE_MEDIUM_TEXT
+      type: string
+    ModelAlias:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+          description: The alias name.
+      required:
+      - name
+    NullEnum:
+      enum:
+      - null
+    OwnershipEnum:
+      enum:
+      - public
+      - private
+      type: string
+    PaginatedAPIKeyList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/APIKey'
+        total:
+          type: integer
+          example: 123
+    PaginatedAgentList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Agent'
+        total:
+          type: integer
+          example: 123
+    PaginatedCallList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Call'
+        total:
+          type: integer
+          example: 123
+    PaginatedCallStageList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CallStage'
+        total:
+          type: integer
+          example: 123
+    PaginatedCallTombstoneList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CallTombstone'
+        total:
+          type: integer
+          example: 123
+    PaginatedModelAliasList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelAlias'
+        total:
+          type: integer
+          example: 123
+    PaginatedToolHistoryList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolHistory'
+        total:
+          type: integer
+          example: 123
+    PaginatedToolList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tool'
+        total:
+          type: integer
+          example: 123
+    PaginatedVoiceList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Voice'
+        total:
+          type: integer
+          example: 123
+    PaginatedWebhookList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
+        total:
+          type: integer
+          example: 123
+    Paginatedultravox.v1.CorpusDocumentList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.CorpusDocument'
+        total:
+          type: integer
+          example: 123
+    Paginatedultravox.v1.CorpusList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.Corpus'
+        total:
+          type: integer
+          example: 123
+    Paginatedultravox.v1.CorpusSourceList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.CorpusSource'
+        total:
+          type: integer
+          example: 123
+    Paginatedultravox.v1.MessageList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.Message'
+        total:
+          type: integer
+          example: 123
+    PatchedAPIKey:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          type: string
+          readOnly: true
+          description: A free-form name for the API key. Need not be unique. 50 characters
+            max.
+        expiryDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+        revoked:
+          type: boolean
+          description: If the API key is revoked, clients cannot use it anymore. (This
+            cannot be undone.)
+    PatchedAgent:
+      type: object
+      properties:
+        agentId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 64
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        callTemplate:
+          $ref: '#/components/schemas/ultravox.v1.CallTemplate'
+    PatchedWebhook:
+      type: object
+      properties:
+        webhookId:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          maxLength: 200
+        secrets:
+          type: array
+          items:
+            type: string
+            maxLength: 120
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventsEnum'
+    Tool:
+      type: object
+      properties:
+        toolId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        definition:
+          $ref: '#/components/schemas/ultravox.v1.BaseToolDefinition'
+        ownership:
+          allOf:
+          - $ref: '#/components/schemas/OwnershipEnum'
+          readOnly: true
+      required:
+      - created
+      - definition
+      - name
+      - ownership
+      - toolId
+    ToolDetail:
+      type: object
+      properties:
+        toolId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        definition:
+          $ref: '#/components/schemas/ultravox.v1.BaseToolDefinition'
+        ownership:
+          allOf:
+          - $ref: '#/components/schemas/OwnershipEnum'
+          readOnly: true
+        statistics:
+          allOf:
+          - $ref: '#/components/schemas/ToolStatistics'
+          readOnly: true
+      required:
+      - created
+      - definition
+      - name
+      - ownership
+      - statistics
+      - toolId
+    ToolHistory:
+      type: object
+      properties:
+        call:
+          allOf:
+          - $ref: '#/components/schemas/Call'
+          readOnly: true
+        errorCount:
+          type: integer
+          readOnly: true
+      required:
+      - call
+      - errorCount
+    ToolStatistics:
+      type: object
+      properties:
+        errorCount:
+          type: integer
+          readOnly: true
+          default: 0
+        timesCalled:
+          type: integer
+          readOnly: true
+          default: 0
+      required:
+      - errorCount
+      - timesCalled
+    Voice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+          nullable: true
+        previewUrl:
+          type: string
+          format: uri
+          readOnly: true
+          nullable: true
+        ownership:
+          allOf:
+          - $ref: '#/components/schemas/OwnershipEnum'
+          readOnly: true
+      required:
+      - description
+      - name
+      - ownership
+      - previewUrl
+      - voiceId
+    Webhook:
+      type: object
+      properties:
+        webhookId:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          maxLength: 200
+        secrets:
+          type: array
+          items:
+            type: string
+            maxLength: 120
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventsEnum'
+      required:
+      - created
+      - events
+      - url
+      - webhookId
+    ultravox.v1.CallTemplate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the call template.
+        created:
+          type: string
+          description: When the call template was created.
+          format: date-time
+        updated:
+          type: string
+          description: When the call template was last modified.
+          format: date-time
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium'
+          description: The medium used for calls by default.
+        initialOutputMedium:
+          enum:
+          - MESSAGE_MEDIUM_UNSPECIFIED
+          - MESSAGE_MEDIUM_VOICE
+          - MESSAGE_MEDIUM_TEXT
+          type: string
+          description: The medium initially used for calls by default. Defaults to
+            voice.
+          format: enum
+        joinTimeout:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: A default timeout for joining calls. Defaults to 30 seconds.
+        maxDuration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The default maximum duration of calls. Defaults to 1 hour.
+        vadSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.VadSettings'
+          description: The default voice activity detection settings for calls.
+        recordingEnabled:
+          type: boolean
+          description: Whether calls are recorded by default.
+        firstSpeakerSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings'
+          description: |-
+            The default settings for the initial message to get a conversation started for calls.
+             Defaults to `agent: {}` which means the agent will start the conversation with an
+             (interruptible) greeting generated based on the system prompt and any initial messages.
+        systemPrompt:
+          type: string
+          description: |-
+            The system prompt used for generations.
+             If multiple stages are defined for the call, this will be used only for stages without their own systemPrompt.
+        temperature:
+          type: number
+          description: |-
+            The model temperature, between 0 and 1. Defaults to 0.
+             If multiple stages are defined for the call, this will be used only for stages without their own temperature.
+          format: float
+        model:
+          type: string
+          description: |-
+            The model used for generations. Defaults to fixie-ai/ultravox.
+             If multiple stages are defined for the call, this will be used only for stages without their own model.
+        voice:
+          type: string
+          description: |-
+            The name or ID of the voice the agent should use for this call.
+             If multiple stages are defined for the call, this will be used only for stages without their own voice.
+        languageHint:
+          type: string
+          description: |-
+            A BCP47 language code that may be used to guide speech recognition and synthesis.
+             If multiple stages are defined for the call, this will be used only for stages without their own languageHint.
+        timeExceededMessage:
+          type: string
+          description: |-
+            What the agent should say immediately before hanging up if the call's time limit is reached.
+             If multiple stages are defined for the call, this will be used only for stages without their own timeExceededMessage.
+        inactivityMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.TimedMessage'
+          description: |-
+            Messages spoken by the agent when the user is inactive for the specified duration.
+             Durations are cumulative, so a message m > 1 with duration 30s will be spoken 30 seconds after message m-1.
+             If multiple stages are defined for the call, this will be used only for stages without their own inactivityMessages.
+        selectedTools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.SelectedTool'
+          description: |-
+            The tools available to the agent for this call.
+             The following fields are treated as templates when converting to a CallTool.
+               * description
+               * static_parameters.value
+               * http.auth_headers.value
+               * http.auth_query_params.value
+             If multiple stages are defined for the call, this will be used only for stages without their own selectedTools.
+        contextSchema:
+          type: object
+          description: |-
+            JSON schema for the variables used in string templates. If unset, a default schema will
+             be created from the variables used in the string templates.
+             Call creation requests must provide context adhering to this schema.
+             The follow fields are treated as templates:
+               * system_prompt
+               * language_hint
+               * time_exceeded_message
+               * inactivity_messages.message
+               * selected_tools.description
+               * selected_tools.static_parameters.value
+               * selected_tools.http.auth_headers.value
+               * selected_tools.http.auth_query_params.value
+             If multiple stages are defined for the call, each must define its own context schema (or use the generated one).
+      description: A CallTemplate that can be used to create Ultravox calls with shared
+        properties.
+    ultravox.v1.Corpus:
+      type: object
+      properties:
+        corpusId:
+          type: string
+          description: The unique ID of this corpus.
+        created:
+          type: string
+          description: When this corpus was created.
+          format: date-time
+        name:
+          type: string
+          description: The name of this corpus.
+        description:
+          type: string
+          description: A description of this corpus.
+        stats:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CorpusStats'
+          description: The current stats for this corpus.
+      description: |-
+        A queryable collection of documents. A corpus can be used to ground Ultravox
+         with factual content for a particular domain.
+    ultravox.v1.CorpusDocument:
+      type: object
+      properties:
+        corpusId:
+          type: string
+          description: The id of the corpus in which this document is included.
+        sourceId:
+          type: string
+          description: The id of the source that provides this document.
+        documentId:
+          type: string
+          description: The unique ID of this document.
+        created:
+          type: string
+          description: When this document was created.
+          format: date-time
+        mimeType:
+          type: string
+          description: |-
+            The MIME type of the document.
+             https://developer.mozilla.org/en-US/docs/Web/HTTP/MIME_types
+        metadata:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CorpusDocumentMetadata'
+          description: Metadata about the document.
+        sizeBytes:
+          type: string
+          description: The size of the document contents, in bytes.
+      description: |-
+        A single complete source of information included in a corpus. In the most
+         straight-forward case, this could be an uploaded PDF or a single webpage.
+         However, documents can also be created from other documents during processing,
+         for example turning an HTML page into a markdown document.
+    ultravox.v1.CorpusQueryResult:
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the retrieved chunk.
+        score:
+          type: number
+          description: The score of this chunk, with higher scores indicating better
+            matches.
+          format: double
+        citation:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CorpusQueryResult_Citation'
+          description: A citation for this chunk.
+      description: A single result from a corpus query (corresponding to a chunk).
+    ultravox.v1.CorpusSource:
+      type: object
+      properties:
+        corpusId:
+          type: string
+          description: The id of this source's corpus.
+        sourceId:
+          type: string
+          description: The unique ID of this source.
+        created:
+          type: string
+          description: When this source was created.
+          format: date-time
+        name:
+          type: string
+          description: The name of this source.
+        description:
+          type: string
+          description: A description of this source.
+        stats:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.SourceStats'
+          description: The current stats for this source.
+        loadSpec:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CrawlSpec'
+          description: DEPRECATED. Prefer setting crawl instead. If either crawl or
+            upload is set, this field will be ignored.
+        crawl:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CrawlSpec'
+          description: Allows loading documents by crawling the web.
+        upload:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.UploadSpec'
+          description: Allows loading from a uploaded document.
+      description: |-
+        A source of documents for building a corpus. A source defines where documents
+         are pulled from.
+    ultravox.v1.Message:
+      type: object
+      properties:
+        role:
+          enum:
+          - MESSAGE_ROLE_UNSPECIFIED
+          - MESSAGE_ROLE_USER
+          - MESSAGE_ROLE_AGENT
+          - MESSAGE_ROLE_TOOL_CALL
+          - MESSAGE_ROLE_TOOL_RESULT
+          type: string
+          description: The message's role.
+          format: enum
+        text:
+          type: string
+          description: The message text for user and agent messages, tool arguments
+            for tool_call messages, tool results for tool_result messages.
+        invocationId:
+          type: string
+          description: The invocation ID for tool messages. Used to pair tool calls
+            with their results.
+        toolName:
+          type: string
+          description: The tool name for tool messages.
+        errorDetails:
+          type: string
+          description: |-
+            For failed tool calls, additional debugging information. While the text field is
+             presented to the model so it can respond to failures gracefully, the full details
+             are only exposed via the Ultravox REST API.
+        medium:
+          enum:
+          - MESSAGE_MEDIUM_UNSPECIFIED
+          - MESSAGE_MEDIUM_VOICE
+          - MESSAGE_MEDIUM_TEXT
+          type: string
+          description: The medium of the message.
+          format: enum
+        callStageMessageIndex:
+          type: integer
+          description: The index of the message within the call stage.
+          format: int32
+        callStageId:
+          type: string
+          description: The call stage this message appeared in.
+        callState:
+          type: object
+          description: If the message updated the call state, the new call state.
+        timespan:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.InCallTimespan'
+          description: |-
+            The timespan during the call when this message occurred.
+             This is only set for messages that occurred during the call (stage)
+             and not for messages in the call's (call stage's) initial messages.
+      description: A message exchanged during a call.
+    google.protobuf.Value:
+      description: Represents a dynamically typed value which can be either null,
+        a number, a string, a boolean, a recursive struct value, or a list of values.
+    ultravox.v1.AutomaticParameter:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the parameter.
+        location:
+          enum:
+          - PARAMETER_LOCATION_UNSPECIFIED
+          - PARAMETER_LOCATION_QUERY
+          - PARAMETER_LOCATION_PATH
+          - PARAMETER_LOCATION_HEADER
+          - PARAMETER_LOCATION_BODY
+          type: string
+          description: Where the parameter is used.
+          format: enum
+        knownValue:
+          enum:
+          - KNOWN_PARAM_UNSPECIFIED
+          - KNOWN_PARAM_CALL_ID
+          - KNOWN_PARAM_CONVERSATION_HISTORY
+          - KNOWN_PARAM_OUTPUT_SAMPLE_RATE
+          - KNOWN_PARAM_CALL_STATE
+          type: string
+          description: The value to set for the parameter.
+          format: enum
+      description: A parameter that is automatically set by the system.
+    ultravox.v1.BaseClientToolDetails:
+      type: object
+      properties: {}
+      description: Details for invoking a tool expected to be implemented by the client.
+    ultravox.v1.BaseHttpToolDetails:
+      type: object
+      properties:
+        baseUrlPattern:
+          type: string
+          description: The base URL pattern for the tool, possibly with placeholders
+            for path parameters.
+        httpMethod:
+          type: string
+          description: The HTTP method for the tool.
+      description: Details for invoking a tool via HTTP.
+    ultravox.v1.BaseToolDefinition:
+      type: object
+      properties:
+        modelToolName:
+          type: string
+          description: The name of the tool, as presented to the model. Must match
+            ^[a-zA-Z0-9_-]{1,64}$.
+        description:
+          type: string
+          description: The description of the tool.
+        dynamicParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.DynamicParameter'
+          description: The parameters that the tool accepts.
+        staticParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.StaticParameter'
+          description: The static parameters added when the tool is invoked.
+        automaticParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.AutomaticParameter'
+          description: Additional parameters that are automatically set by the system
+            when the tool is invoked.
+        requirements:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.ToolRequirements'
+          description: Requirements that must be fulfilled when creating a call for
+            the tool to be used.
+        timeout:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            The maximum amount of time the tool is allowed for execution. The conversation is frozen
+             while tools run, so prefer sticking to the default unless you're comfortable with that
+             consequence. If your tool is too slow for the default and can't be made faster, still try to
+             keep this timeout as low as possible.
+        precomputable:
+          type: boolean
+          description: |-
+            The tool is guaranteed to be non-mutating, repeatable, and free of side-effects. Such tools
+             can safely be executed speculatively, reducing their effective latency. However, the fact they
+             were called may not be reflected in the call history if their result ends up unused.
+        http:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.BaseHttpToolDetails'
+          description: Details for an HTTP tool.
+        client:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.BaseClientToolDetails'
+          description: |-
+            Details for a client-implemented tool. Only body parameters are allowed
+             for client tools.
+        defaultReaction:
+          enum:
+          - AGENT_REACTION_UNSPECIFIED
+          - AGENT_REACTION_SPEAKS
+          - AGENT_REACTION_LISTENS
+          - AGENT_REACTION_SPEAKS_ONCE
+          type: string
+          description: |-
+            Indicates the default for how the agent should proceed after the tool is invoked.
+             Can be overridden by the tool implementation via the X-Ultravox-Agent-Reaction
+             header.
+          format: enum
+        staticResponse:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.StaticToolResponse'
+          description: |-
+            Static response to a tool. When this is used, this response will be returned
+             without waiting for the tool's response.
+      description: |-
+        The base definition of a tool that can be used during a call. Exactly one
+         implementation (http or client) should be set.
+    ultravox.v1.CallMedium:
+      type: object
+      properties:
+        webRtc:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_WebRtcMedium'
+          description: |-
+            The call will use WebRTC with the Ultravox client SDK.
+             This is the default.
+        twilio:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_TwilioMedium'
+          description: |-
+            The call will use Twilio's "Media Streams" protocol.
+             Once you have a join URL from starting a call, include it in your
+             TwiML like so:
+             <Connect><Stream url=${your-join-url} /></Connect>
+             This works for both inbound and outbound calls.
+        serverWebSocket:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_WebSocketMedium'
+          description: |-
+            The call will use a plain websocket connection. This is unlikely to yield an acceptable user
+             experience if used from a browser or mobile client, but may be suitable for a
+             server-to-server connection. This option provides a simple way to connect your own server to
+             an Ultravox inference instance.
+        telnyx:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_TelnyxMedium'
+          description: |-
+            The call will use Telnyx's media streaming protocol.
+             Once you have a join URL from starting a call, include it in your
+             TexML like so:
+             <Connect><Stream url=${your-join-url} bidirectionalMode="rtp" /></Connect>
+             This works for both inbound and outbound calls.
+        plivo:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_PlivoMedium'
+          description: |-
+            The call will use Plivo's AudioStreams protocol.
+             Once you have a join URL from starting a call, include it in your
+             Plivo XML like so:
+             <Stream keepCallAlive="true" bidirectional="true" contentType="audio/x-l16;rate=16000">${your-join-url}</Stream>
+             This works for both inbound and outbound calls.
+        exotel:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium_ExotelMedium'
+          description: |-
+            The call will use Exotel's "Voicebot" protocol.
+             Once you have a join URL from starting a call, provide it to Exotel as the wss target URL
+             for your Voicebot (either directly or more likely dynamically from your own server).
+      description: |-
+        Details about a call's protocol. By default, calls occur over WebRTC using
+         the Ultravox client SDK. Setting a different call medium will prepare the
+         server for a call using a different protocol.
+         At most one call medium may be set.
+    ultravox.v1.CallMedium_ExotelMedium:
+      type: object
+      properties: {}
+      description: Details for a Exotel call.
+    ultravox.v1.CallMedium_PlivoMedium:
+      type: object
+      properties: {}
+      description: Details for a Plivo call.
+    ultravox.v1.CallMedium_TelnyxMedium:
+      type: object
+      properties: {}
+      description: Details for a Telnyx call.
+    ultravox.v1.CallMedium_TwilioMedium:
+      type: object
+      properties: {}
+      description: Details for a Twilio call.
+    ultravox.v1.CallMedium_WebRtcMedium:
+      type: object
+      properties: {}
+      description: Details for a WebRTC call.
+    ultravox.v1.CallMedium_WebSocketMedium:
+      type: object
+      properties:
+        inputSampleRate:
+          type: integer
+          description: The sample rate for input (user) audio. Required.
+          format: int32
+        outputSampleRate:
+          type: integer
+          description: The desired sample rate for output (agent) audio. If unset,
+            defaults to the input_sample_rate.
+          format: int32
+        clientBufferSizeMs:
+          type: integer
+          description: |-
+            The size of the client-side audio buffer in milliseconds. Smaller buffers allow for faster
+             interruptions but may cause audio underflow if network latency fluctuates too greatly. For
+             the best of both worlds, set this to some large value (e.g. 30000) and implement support for
+             playback_clear_buffer messages. Defaults to 60.
+          format: int32
+      description: Details for a WebSocket call.
+    ultravox.v1.CallTool:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the tool.
+        dynamicParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.DynamicParameter'
+          description: The parameters presented to the model.
+        staticParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.StaticParameter'
+          description: Parameters added unconditionally when the tool is invoked.
+        automaticParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.AutomaticParameter'
+          description: Parameters automatically set by the system.
+        timeout:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            The maximum amount of time the tool is allowed for execution. The conversation is frozen
+             while tools run, so prefer sticking to the default unless you're comfortable with that
+             consequence. If your tool is too slow for the default and can't be made faster, still try to
+             keep this timeout as low as possible.
+        precomputable:
+          type: boolean
+          description: |-
+            The tool is guaranteed to be non-mutating, repeatable, and free of side-effects. Such tools
+             can safely be executed speculatively, reducing their effective latency. However, the fact they
+             were called may not be reflected in the call history if their result ends up unused.
+        http:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.HttpCallToolDetails'
+          description: Details for an HTTP tool.
+        client:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.ClientCallToolDetails'
+          description: |-
+            Details for a client-implemented tool. Only body parameters are allowed
+             for client tools.
+        defaultReaction:
+          enum:
+          - AGENT_REACTION_UNSPECIFIED
+          - AGENT_REACTION_SPEAKS
+          - AGENT_REACTION_LISTENS
+          - AGENT_REACTION_SPEAKS_ONCE
+          type: string
+          description: |-
+            Indicates the default for how the agent should proceed after the tool is invoked.
+             Can be overridden by the tool implementation via the X-Ultravox-Agent-Reaction
+             header.
+          format: enum
+        staticResponse:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.StaticToolResponse'
+          description: |-
+            Static response to a tool. When this is used, this response will be returned
+             without waiting for the tool's response.
+      description: A tool as used for a particular call (omitting auth details).
+    ultravox.v1.CartesiaVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in Cartesia.
+        model:
+          type: string
+          description: The Cartesia model to use.
+        speed:
+          type: number
+          description: |-
+            The speaking rate. Must be between -1 and 1. Defaults to 0.
+             See https://docs.cartesia.ai/api-reference/tts/tts#send.Generation%20Request.voice.Ttsrequest%20ID%20Specifier.__experimental_controls.speed
+          format: float
+        emotion:
+          type: string
+          description: See https://docs.cartesia.ai/api-reference/tts/tts#send.Generation%20Request.voice.Ttsrequest%20ID%20Specifier.__experimental_controls.emotion
+      description: Specification for a voice served by Cartesia.
+    ultravox.v1.ClientCallToolDetails:
+      type: object
+      properties: {}
+      description: Details for a CallTool implemented by the client.
+    ultravox.v1.CorpusDocumentMetadata:
+      type: object
+      properties:
+        publicUrl:
+          type: string
+          description: The public URL of the document, if any.
+        language:
+          type: string
+          description: The BCP47 language code of the document, if known.
+        title:
+          type: string
+          description: The title of the document, if known.
+        description:
+          type: string
+          description: A description of the document, if known.
+        published:
+          type: string
+          description: The timestamp that the document was published, if known.
+          format: date-time
+      description: |-
+        Metadata about a document. This is typically not included in the document's
+         chunks, but can be used for filtering or citations.
+         Derived documents inherit metadata from their source documents in general.
+    ultravox.v1.CorpusQueryResult_Citation:
+      type: object
+      properties:
+        sourceId:
+          type: string
+          description: The source that provided the document from which this chunk
+            was retrieved.
+        documentId:
+          type: string
+          description: The document from which this chunk was retrieved.
+        publicUrl:
+          type: string
+          description: The public URL of the document, if any.
+        title:
+          type: string
+          description: The title of the document, if known.
+      description: A citation for a query result.
+    ultravox.v1.CorpusStats:
+      type: object
+      properties:
+        status:
+          enum:
+          - CORPUS_STATUS_UNSPECIFIED
+          - CORPUS_STATUS_EMPTY
+          - CORPUS_STATUS_INITIALIZING
+          - CORPUS_STATUS_READY
+          - CORPUS_STATUS_UPDATING
+          type: string
+          description: The current status of this corpus, indicating whether it is
+            queryable.
+          format: enum
+        lastUpdated:
+          type: string
+          description: The last time the contents of this corpus were updated.
+          format: date-time
+        numChunks:
+          type: integer
+          description: The number of chunks in this corpus. Chunks are subsets of
+            documents.
+          format: int32
+        numDocs:
+          type: integer
+          description: The number of documents in this corpus.
+          format: int32
+        numVectors:
+          type: integer
+          description: |-
+            The number of vectors in this corpus. Vectors are used for semantic search.
+             Multiple vectors may correspond to a single chunk.
+          format: int32
+      description: |-
+        The current stats for a corpus. This gives an indication of whether the
+         corpus is queryable and what sorts of results can be expected.
+    ultravox.v1.CrawlSpec:
+      type: object
+      properties:
+        maxDocuments:
+          type: integer
+          description: The maximum number of documents to ingest.
+          format: int32
+        maxDocumentBytes:
+          type: integer
+          description: The maximum size of an individual document in bytes.
+          format: int32
+        relevantDocumentTypes:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.MimeTypeFilter'
+          description: |-
+            The types of documents to keep. Any documents surfaced during loading
+             that don't match this filter will be discarded. If not set, Ultravox will
+             choose a default that includes types known to provide real value.
+        startUrls:
+          type: array
+          items:
+            type: string
+          description: |-
+            The list of start URLs for crawling. If max_depth is 1, only these URLs will
+             be fetched. Otherwise, links from these urls will be followed up to the
+             max_depth.
+        maxDepth:
+          type: integer
+          description: |-
+            The maximum depth of links to traverse. Use 1 to only fetch the startUrls,
+             2 to fetch the startUrls and documents directly linked from them, 3 to
+             additionally fetch documents linked from those (excluding anything already
+             seen), etc.
+          format: int32
+      description: The specification of how to acquire documents for this source.
+    ultravox.v1.DynamicParameter:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the parameter.
+        location:
+          enum:
+          - PARAMETER_LOCATION_UNSPECIFIED
+          - PARAMETER_LOCATION_QUERY
+          - PARAMETER_LOCATION_PATH
+          - PARAMETER_LOCATION_HEADER
+          - PARAMETER_LOCATION_BODY
+          type: string
+          description: Where the parameter is used.
+          format: enum
+        schema:
+          type: object
+          description: |-
+            The JsonSchema definition of the parameter. This typically
+             includes things like type, description, enum values, format,
+             other restrictions, etc.
+        required:
+          type: boolean
+          description: Whether the parameter is required.
+      description: A dynamic parameter the tool accepts that may be set by the model.
+    ultravox.v1.ElevenLabsVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in ElevenLabs.
+        model:
+          type: string
+          description: The ElevenLabs model to use.
+        speed:
+          type: number
+          description: |-
+            The speaking rate. Must be between 0.7 and 1.2. Defaults to 1.
+             See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.speed
+          format: float
+        useSpeakerBoost:
+          type: boolean
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.use_speaker_boost
+        style:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.style
+          format: float
+        similarityBoost:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.similarity_boost
+          format: float
+        stability:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.stability
+          format: float
+        pronunciationDictionaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference'
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.pronunciation_dictionary_locators
+      description: Specification for a voice served by ElevenLabs.
+    ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference:
+      type: object
+      properties:
+        dictionaryId:
+          type: string
+          description: The dictionary's ID.
+        versionId:
+          type: string
+          description: The dictionary's version.
+      description: A reference to a pronunciation dictionary within ElevenLabs.
+    ultravox.v1.ExternalVoice:
+      type: object
+      properties:
+        elevenLabs:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice'
+          description: A voice served by ElevenLabs.
+        cartesia:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice'
+          description: A voice served by Cartesia.
+        playHt:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.PlayHtVoice'
+          description: A voice served by PlayHT.
+        lmnt:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.LmntVoice'
+          description: A voice served by LMNT.
+      description: |-
+        A voice not known to Ultravox Realtime that can nonetheless be used for a call.
+         Such voices are significantly less validated than normal voices and you'll be
+         responsible for your own TTS-related errors.
+         Exactly one field must be set.
+    ultravox.v1.FallbackAgentGreeting:
+      type: object
+      properties:
+        delay:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: How long the agent should wait before starting the conversation
+            itself.
+        text:
+          type: string
+          description: What the agent should say. If unset, the model will generate
+            a greeting.
+      description: A fallback for the case when the user is expected to speak first
+        but doesn't.
+    ultravox.v1.FirstSpeakerSettings:
+      type: object
+      properties:
+        user:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings_UserGreeting'
+          description: If set, the user should speak first.
+        agent:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings_AgentGreeting'
+          description: If set, the agent should speak first.
+      description: |-
+        Settings for the initial message to get a conversation started.
+         Exactly one of user or agent should be set. The default is agent
+         (unless firstSpeaker is also set, in which case the default will
+         match that).
+    ultravox.v1.FirstSpeakerSettings_AgentGreeting:
+      type: object
+      properties:
+        uninterruptible:
+          type: boolean
+          description: |-
+            Whether the user should be prevented from interrupting the agent's first message.
+             Defaults to false (meaning the agent is interruptible as usual).
+        text:
+          type: string
+          description: What the agent should say. If unset, the model will generate
+            a greeting.
+        delay:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            If set, the agent will wait this long before starting its greeting. This may be useful
+             for ensuring the user is ready.
+      description: Additional properties for when the agent speaks first.
+    ultravox.v1.FirstSpeakerSettings_UserGreeting:
+      type: object
+      properties:
+        fallback:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FallbackAgentGreeting'
+          description: |-
+            If set, the agent will start the conversation itself if the user doesn't start
+             speaking within the given delay.
+      description: Additional properties for when the user speaks first.
+    ultravox.v1.HeaderApiKeyRequirement:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the header.
+      description: A security requirement that will cause an API key to be added to
+        the header.
+    ultravox.v1.HttpAuthRequirement:
+      type: object
+      properties:
+        scheme:
+          type: string
+          description: The scheme of the HTTP authentication, e.g. "Bearer".
+      description: A security requirement that will cause an HTTP authentication header
+        to be added.
+    ultravox.v1.HttpCallToolDetails:
+      type: object
+      properties:
+        baseUrlPattern:
+          type: string
+          description: The base URL pattern for the tool, possibly with placeholders
+            for path parameters.
+        httpMethod:
+          type: string
+          description: The HTTP method for the tool.
+        authHeaders:
+          type: array
+          items:
+            type: string
+          description: Auth headers added when the tool is invoked.
+        authQueryParams:
+          type: array
+          items:
+            type: string
+          description: Auth query parameters added when the tool is invoked.
+        callTokenScopes:
+          type: array
+          items:
+            type: string
+          description: |-
+            If the tool requires a call token, the scopes that must be present in the token.
+             If this is empty, no call token will be created.
+      description: Details for a CallTool implemented via HTTP requests.
+    ultravox.v1.InCallTimespan:
+      type: object
+      properties:
+        start:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The offset relative to the start of the call.
+        end:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The offset relative to the start of the call.
+      description: A timespan during a call.
+    ultravox.v1.LmntVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in LMNT.
+        model:
+          type: string
+          description: The LMNT model to use.
+        speed:
+          type: number
+          description: |-
+            The speaking rate. Must be between 0.25 and 2. Defaults to 1.
+             See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-speed
+          format: float
+        conversational:
+          type: boolean
+          description: See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-conversational
+      description: Specification for a voice served by LMNT.
+    ultravox.v1.MimeTypeFilter:
+      type: object
+      properties:
+        include:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.MimeTypeSet'
+          description: Mime types must be in this set to be kept.
+        exclude:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.MimeTypeSet'
+          description: Mime types must not be in this set to be kept.
+      description: A Filter to apply to mime types.
+    ultravox.v1.MimeTypeSet:
+      type: object
+      properties:
+        mimeTypes:
+          type: array
+          items:
+            type: string
+          description: The mime types in this set.
+      description: |-
+        A set of mime types. Entries may be a full mime type (e.g. "text/html") or a
+         type without a subtype (e.g. "text"). Entries without a subtype will match
+         all subtypes (e.g. "text" will match "text/html", "text/plain", etc.).
+    ultravox.v1.PlayHtVoice:
+      type: object
+      properties:
+        userId:
+          type: string
+          description: |-
+            The "user id" for the PlayHT API. This must be the user who owns the Play API key
+             associated with your Ultravox account.
+        voiceId:
+          type: string
+          description: The ID of the voice in PlayHT. Typically an s3 location.
+        model:
+          type: string
+          description: The PlayHT model (aka "engine") to use.
+        speed:
+          type: number
+          description: The speaking rate. Must be between 0 and 5. Defaults to 1.
+          format: float
+        quality:
+          type: string
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+        temperature:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+        emotion:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+        voiceGuidance:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+        styleGuidance:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+        textGuidance:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+        voiceConditioningSeconds:
+          type: number
+          description: See https://docs.play.ht/reference/api-generate-tts-audio-stream.
+          format: float
+      description: Specification for a voice served by PlayHT.
+    ultravox.v1.QueryApiKeyRequirement:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the query parameter.
+      description: A security requirement that will cause an API key to be added to
+        the query string.
+    ultravox.v1.QueryCorpusRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The query to run.
+        maxResults:
+          type: integer
+          description: The maximum number of results to return.
+          format: int32
+      description: A request to query a corpus.
+    ultravox.v1.SecurityOptions:
+      type: object
+      properties:
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.SecurityRequirements'
+          description: |-
+            The options for security. Only one must be met. The first one that can be
+             satisfied will be used in general. The single exception to this rule is
+             that we always prefer a non-empty set of requirements over an empty set
+             unless no non-empty set can be satisfied.
+      description: The different options for satisfying a tool's security requirements.
+    ultravox.v1.SecurityRequirement:
+      type: object
+      properties:
+        queryApiKey:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.QueryApiKeyRequirement'
+          description: An API key must be added to the query string.
+        headerApiKey:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.HeaderApiKeyRequirement'
+          description: An API key must be added to a custom header.
+        httpAuth:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.HttpAuthRequirement'
+          description: The HTTP authentication header must be added.
+      description: |-
+        A single security requirement that must be met for a tool to be available. Exactly one
+         of query_api_key, header_api_key, or http_auth should be set.
+    ultravox.v1.SecurityRequirements:
+      type: object
+      properties:
+        requirements:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ultravox.v1.SecurityRequirement'
+          description: Requirements keyed by name.
+        ultravoxCallTokenRequirement:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.UltravoxCallTokenRequirement'
+          description: |-
+            An additional special security requirement that can be automatically fulfilled
+             during call creation. If a tool has this requirement set, a token identifying
+             the call and relevant scopes will be created during call creation and set as
+             an X-Ultravox-Call-Token header when the tool is invoked.
+             Such tokens are only verifiable by the Ultravox service and primarily exist
+             for built-in tools (though it's possible for third-party tools that wrap a
+             built-in tool to make use of them as well).
+      description: The security requirements for a request. All requirements must
+        be met.
+    ultravox.v1.SelectedTool:
+      type: object
+      properties:
+        toolId:
+          type: string
+          description: The ID of an existing base tool.
+        toolName:
+          type: string
+          description: The name of an existing base tool. The name must uniquely identify
+            the tool.
+        temporaryTool:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.BaseToolDefinition'
+          description: |-
+            A temporary tool definition, available only for this call (and subsequent
+             calls created using priorCallId without overriding selected tools).
+        nameOverride:
+          type: string
+          description: |-
+            An override for the model_tool_name. This is primarily useful when using
+             multiple instances of the same durable tool (presumably with different
+             parameter overrides.) The set of tools used within a call must have a unique
+             set of model names and every name must match this pattern: ^[a-zA-Z0-9_-]{1,64}$.
+        authTokens:
+          type: object
+          additionalProperties:
+            type: string
+          description: Auth tokens used to satisfy the tool's security requirements.
+        parameterOverrides:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/google.protobuf.Value'
+          description: |-
+            Static values to use in place of dynamic parameters. Any parameter included
+             here will be hidden from the model and the static value will be used instead.
+             Some tools may require certain parameters to be overridden, but any parameter
+             can be overridden regardless of whether it is required to be.
+        transitionId:
+          type: string
+          description: For internal use. Relates this tool to a stage transition definition
+            within a call template for attribution.
+      description: |-
+        A tool selected for a particular call. Exactly one of tool_id, tool_name, or
+         temporary_tool should be set.
+    ultravox.v1.SourceStats:
+      type: object
+      properties:
+        status:
+          enum:
+          - SOURCE_STATUS_UNSPECIFIED
+          - SOURCE_STATUS_INITIALIZING
+          - SOURCE_STATUS_READY
+          - SOURCE_STATUS_UPDATING
+          type: string
+          description: The current status of this source, indicating whether it affects
+            queries.
+          format: enum
+        lastUpdated:
+          type: string
+          description: When this source last finished contributing contents to its
+            corpus.
+          format: date-time
+        numDocs:
+          type: integer
+          description: |-
+            The number of documents in this source. This includes both loaded documents
+             and derived documents.
+          format: int32
+      description: The current stats for a source.
+    ultravox.v1.StartAgentCallRequest:
+      type: object
+      properties:
+        templateContext:
+          type: object
+          description: Context for filling any mustache templates for the call.
+        initialMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.Message'
+          description: The conversation history to start from for this call.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: |-
+            Optional metadata key-value pairs to associate with the call. All values must be strings.
+             Keys may not start with "ultravox.", which is reserved for system-provided metadata.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium'
+          description: The (overridden) medium used for this call.
+        joinTimeout:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The (overridden) timeout for joining this call.
+        maxDuration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The (overridden) maximum duration of this call.
+        recordingEnabled:
+          type: boolean
+          description: The (overridden) setting for whether the call should be recorded.
+        initialOutputMedium:
+          enum:
+          - MESSAGE_MEDIUM_UNSPECIFIED
+          - MESSAGE_MEDIUM_VOICE
+          - MESSAGE_MEDIUM_TEXT
+          type: string
+          description: The (overridden) medium initially used by the agent. May be
+            altered by the client later.
+          format: enum
+        firstSpeakerSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings'
+          description: |-
+            The (overridden) settings for the initial message to get a conversation started.
+             Defaults to `agent: {}` which means the agent will start the conversation with an
+             (interruptible) greeting generated based on the system prompt and any initial messages.
+             (If first_speaker is set and this is not, first_speaker will be used instead.)
+        experimentalSettings:
+          type: object
+          description: Experimental settings for the call.
+      description: A request to start a call with an existing agent.
+    ultravox.v1.StartCallRequest:
+      type: object
+      properties:
+        systemPrompt:
+          type: string
+          description: The system prompt provided to the model during generations.
+        temperature:
+          type: number
+          description: The model temperature, between 0 and 1. Defaults to 0.
+          format: float
+        model:
+          type: string
+          description: The model used for generations. Defaults to fixie-ai/ultravox.
+        voice:
+          type: string
+          description: The ID (or name if unique) of the voice the agent should use
+            for this call.
+        externalVoice:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
+          description: |-
+            A voice not known to Ultravox Realtime that can nonetheless be used for this call.
+             Your account must have an API key set for the provider of the voice.
+             Either this or `voice` may be set, but not both.
+        languageHint:
+          type: string
+          description: A BCP47 language code that may be used to guide speech recognition
+            and synthesis.
+        initialMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.Message'
+          description: The conversation history to start from for this call.
+        joinTimeout:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: A timeout for joining the call. Defaults to 30 seconds.
+        maxDuration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The maximum duration of the call. Defaults to 1 hour.
+        timeExceededMessage:
+          type: string
+          description: What the agent should say immediately before hanging up if
+            the call's time limit is reached.
+        inactivityMessages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.TimedMessage'
+          description: |-
+            Messages spoken by the agent when the user is inactive for the specified duration.
+             Durations are cumulative, so a message m > 1 with duration 30s will be spoken 30 seconds after message m-1.
+        selectedTools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.SelectedTool'
+          description: The tools available to the agent for (the first stage of) this
+            call.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CallMedium'
+          description: The medium used for this call.
+        recordingEnabled:
+          type: boolean
+          description: Whether the call should be recorded.
+        firstSpeaker:
+          enum:
+          - FIRST_SPEAKER_UNSPECIFIED
+          - FIRST_SPEAKER_AGENT
+          - FIRST_SPEAKER_USER
+          type: string
+          description: |-
+            Who should talk first when the call starts. Typically set to FIRST_SPEAKER_USER for outgoing
+             calls and left as the default (FIRST_SPEAKER_AGENT) otherwise.
+             Deprecated. Prefer `firstSpeakerSettings`. If both are set, they must match.
+          format: enum
+        transcriptOptional:
+          type: boolean
+          description: Indicates whether a transcript is optional for the call.
+        initialOutputMedium:
+          enum:
+          - MESSAGE_MEDIUM_UNSPECIFIED
+          - MESSAGE_MEDIUM_VOICE
+          - MESSAGE_MEDIUM_TEXT
+          type: string
+          description: |-
+            The medium to use for the call initially. May be altered by the client later.
+             Defaults to voice.
+          format: enum
+        vadSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.VadSettings'
+          description: VAD settings for the call.
+        firstSpeakerSettings:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.FirstSpeakerSettings'
+          description: |-
+            The settings for the initial message to get a conversation started.
+             Defaults to `agent: {}` which means the agent will start the conversation with an
+             (interruptible) greeting generated based on the system prompt and any initial messages.
+             (If first_speaker is set and this is not, first_speaker will be used instead.)
+        experimentalSettings:
+          type: object
+          description: Experimental settings for the call.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: |-
+            Optional metadata key-value pairs to associate with the call. All values must be strings.
+             Keys may not start with "ultravox.", which is reserved for system-provided metadata.
+        initialState:
+          type: object
+          description: The initial state of the call stage which is readable/writable
+            by tools.
+      description: A request to start a call.
+    ultravox.v1.StaticParameter:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the parameter.
+        location:
+          enum:
+          - PARAMETER_LOCATION_UNSPECIFIED
+          - PARAMETER_LOCATION_QUERY
+          - PARAMETER_LOCATION_PATH
+          - PARAMETER_LOCATION_HEADER
+          - PARAMETER_LOCATION_BODY
+          type: string
+          description: Where the parameter is used.
+          format: enum
+        value:
+          allOf:
+          - $ref: '#/components/schemas/google.protobuf.Value'
+          description: The value of the parameter.
+      description: |-
+        A static parameter that is unconditionally added when the tool is invoked. This
+         parameter is not exposed to or set by the model.
+    ultravox.v1.StaticToolResponse:
+      type: object
+      properties:
+        responseText:
+          type: string
+          description: The predefined text response to be returned immediately
+      description: |-
+        A predefined, static response for a tool. When a tool has a static response, it
+         can be returned immediately, without waiting for full tool execution.
+    ultravox.v1.TimedMessage:
+      type: object
+      properties:
+        duration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: The duration after which the message should be spoken.
+        message:
+          type: string
+          description: The message to speak.
+        endBehavior:
+          enum:
+          - END_BEHAVIOR_UNSPECIFIED
+          - END_BEHAVIOR_HANG_UP_SOFT
+          - END_BEHAVIOR_HANG_UP_STRICT
+          type: string
+          description: The behavior to exhibit when the message is finished being
+            spoken.
+          format: enum
+      description: |-
+        A message the agent should say after some duration. The duration's meaning
+         varies depending on the context.
+    ultravox.v1.ToolRequirements:
+      type: object
+      properties:
+        httpSecurityOptions:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.SecurityOptions'
+          description: Security requirements for an HTTP tool.
+        requiredParameterOverrides:
+          type: array
+          items:
+            type: string
+          description: Dynamic parameters that must be overridden with an explicit
+            (static) value.
+      description: The requirements for using a tool, which must be satisfied when
+        creating a call with the tool.
+    ultravox.v1.UltravoxCallTokenRequirement:
+      type: object
+      properties:
+        scopes:
+          type: array
+          items:
+            type: string
+          description: The scopes that must be present in the token.
+      description: |-
+        A security requirement that will automatically be fulfilled during call creation.
+         The generated token will be set as an X-Ultravox-Call-Token header when the tool
+         is invoked. The token is only verifiable by the Ultravox service and should not be
+         used for authentication by any other service.
+         The token will also be invalid as soon as the call is completed.
+    ultravox.v1.UploadSpec:
+      type: object
+      properties:
+        documentIds:
+          type: array
+          items:
+            type: string
+          description: |-
+            The IDs of uploaded documents. These documents must
+             have been previously uploaded using the document upload API.
+      description: The specification of how to acquire documents for uploaded documents
+        source.
+    ultravox.v1.VadSettings:
+      type: object
+      properties:
+        turnEndpointDelay:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            The minimum amount of time the agent will wait to respond after the user seems to be done
+             speaking. Increasing this value will make the agent less eager to respond, which may increase
+             perceived response latency but will also make the agent less likely to jump in before the user
+             is really done speaking.
+
+             Built-in VAD currently operates on 32ms frames, so only multiples of 32ms are meaningful.
+             (Anything from 1ms to 31ms will produce the same result.)
+
+             Defaults to "0.384s" (384ms) as a starting point, but there's nothing special about this value
+             aside from it corresponding to 12 VAD frames.
+        minimumTurnDuration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            The minimum duration of user speech required to be considered a user turn.
+             Increasing this value will cause the agent to ignore short user audio. This may be useful in
+             particularly noisy environments, but it comes at the cost of possibly ignoring very short
+             user responses such as "yes" or "no".
+
+             Defaults to "0s" meaning the agent considers all user audio inputs (that make it through
+             built-in noise cancellation).
+        minimumInterruptionDuration:
+          pattern: ^-?(?:0|[1-9][0-9]{0,11})(?:\.[0-9]{1,9})?s$
+          type: string
+          description: |-
+            The minimum duration of user speech required to interrupt the agent. This works the same way
+             as minimumTurnDuration, but allows for a higher threshold for interrupting the agent. (This
+             value will be ignored if it is less than minimumTurnDuration.)
+
+             Defaults to "0.09s" (90ms) as a starting point, but there's nothing special about this value.
+        frameActivationThreshold:
+          type: number
+          description: |-
+            The threshold for the VAD to consider a frame as speech. This is a value between 0.1 and 1.
+
+             Miniumum value is 0.1, which is the default value.
+          format: float
+      description: Call-level VAD settings.
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key
+servers:
+- url: https://api.ultravox.ai

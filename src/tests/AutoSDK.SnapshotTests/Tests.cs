@@ -70,6 +70,8 @@ public partial class Tests
     [DataRow("recraft.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("luma.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("luma.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("ultravox.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("ultravox.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")

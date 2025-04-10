@@ -35,6 +35,7 @@ public partial class DataTests
     [DataRow("jina.json")]
     [DataRow("recraft.yaml")]
     [DataRow("luma.yaml")]
+    [DataRow("ultravox.yaml")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
