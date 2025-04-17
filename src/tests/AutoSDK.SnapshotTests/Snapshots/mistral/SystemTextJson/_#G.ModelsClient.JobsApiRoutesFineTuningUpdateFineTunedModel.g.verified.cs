@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.FTModelOut> JobsApiRoutesFineTuningUpdateFineTunedModelAsync(
+        public async global::System.Threading.Tasks.Task<global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponse> JobsApiRoutesFineTuningUpdateFineTunedModelAsync(
             string modelId,
             global::G.UpdateFTModelIn request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -138,7 +138,7 @@ namespace G
                 }
 
                 return
-                    global::G.FTModelOut.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -168,7 +168,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.FTModelOut.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -182,7 +182,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.FTModelOut> JobsApiRoutesFineTuningUpdateFineTunedModelAsync(
+        public async global::System.Threading.Tasks.Task<global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponse> JobsApiRoutesFineTuningUpdateFineTunedModelAsync(
             string modelId,
             string? description = default,
             string? name = default,

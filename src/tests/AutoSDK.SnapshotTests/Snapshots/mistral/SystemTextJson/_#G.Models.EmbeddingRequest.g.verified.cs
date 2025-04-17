@@ -12,23 +12,20 @@ namespace G
     public sealed partial class EmbeddingRequest
     {
         /// <summary>
-        /// The format to return the embeddings in.<br/>
-        /// Default Value: float
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        public string? EncodingFormat { get; set; }
-
-        /// <summary>
-        /// Text to embed.
-        /// </summary>
+        /// <example>Embed this sentence.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Example: mistral-embed
         /// </summary>
+        /// <example>mistral-embed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
@@ -42,27 +39,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingRequest" /> class.
         /// </summary>
-        /// <param name="encodingFormat">
-        /// The format to return the embeddings in.<br/>
-        /// Default Value: float
-        /// </param>
         /// <param name="input">
-        /// Text to embed.
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Example: mistral-embed
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbeddingRequest(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
-            string model,
-            string? encodingFormat)
+            string model)
         {
             this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.EncodingFormat = encodingFormat;
         }
 
         /// <summary>

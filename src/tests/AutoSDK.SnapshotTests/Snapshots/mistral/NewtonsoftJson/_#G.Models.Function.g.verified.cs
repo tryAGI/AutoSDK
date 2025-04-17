@@ -28,6 +28,12 @@ namespace G
         public object Parameters { get; set; } = default!;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -39,14 +45,19 @@ namespace G
         /// <param name="description"></param>
         /// <param name="name"></param>
         /// <param name="parameters"></param>
+        /// <param name="strict">
+        /// Default Value: false
+        /// </param>
         public Function(
             string name,
             object parameters,
-            string? description)
+            string? description,
+            bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
+            this.Strict = strict;
         }
 
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ToolMessage.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Content { get; set; } = default!;
+        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> Content { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,12 +51,12 @@ namespace G
         /// </param>
         /// <param name="toolCallId"></param>
         public ToolMessage(
-            string content,
+            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
             string? name,
             global::G.ToolMessageRole? role,
             string? toolCallId)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Content = content;
             this.Name = name;
             this.Role = role;
             this.ToolCallId = toolCallId;

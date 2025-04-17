@@ -59,6 +59,11 @@ namespace G
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
+        /// Classifiers API.
+        /// </summary>
+        public ClassifiersClient Classifiers { get; }
+
+        /// <summary>
         /// Files API
         /// </summary>
         public FilesClient Files { get; }
@@ -72,6 +77,16 @@ namespace G
         /// Model Management API
         /// </summary>
         public ModelsClient Models { get; }
+
+        /// <summary>
+        /// Batch API
+        /// </summary>
+        public BatchClient Batch { get; }
+
+        /// <summary>
+        /// OCR API
+        /// </summary>
+        public OcrClient Ocr { get; }
 
     }
 }

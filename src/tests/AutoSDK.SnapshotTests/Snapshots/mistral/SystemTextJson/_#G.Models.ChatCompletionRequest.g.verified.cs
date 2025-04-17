@@ -12,6 +12,13 @@ namespace G
     public sealed partial class ChatCompletionRequest
     {
         /// <summary>
+        /// frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
+        public double? FrequencyPenalty { get; set; }
+
+        /// <summary>
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
@@ -27,19 +34,38 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; }
 
         /// <summary>
-        /// The minimum number of tokens to generate in the completion.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("min_tokens")]
-        public int? MinTokens { get; set; }
-
-        /// <summary>
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
         /// Example: mistral-small-latest
         /// </summary>
         /// <example>mistral-small-latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Model { get; set; }
+        public required string Model { get; set; }
+
+        /// <summary>
+        /// Number of completions to return for each request, input tokens are only billed once.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("n")]
+        public int? N { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
+        public global::G.Prediction? Prediction { get; set; }
+
+        /// <summary>
+        /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -75,8 +101,7 @@ namespace G
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
@@ -110,6 +135,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequest" /> class.
         /// </summary>
+        /// <param name="frequencyPenalty">
+        /// frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.<br/>
+        /// Default Value: 0
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
@@ -117,12 +146,20 @@ namespace G
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </param>
-        /// <param name="minTokens">
-        /// The minimum number of tokens to generate in the completion.
-        /// </param>
         /// <param name="model">
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
         /// Example: mistral-small-latest
+        /// </param>
+        /// <param name="n">
+        /// Number of completions to return for each request, input tokens are only billed once.
+        /// </param>
+        /// <param name="parallelToolCalls">
+        /// Default Value: true
+        /// </param>
+        /// <param name="prediction"></param>
+        /// <param name="presencePenalty">
+        /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -140,8 +177,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="temperature">
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </param>
         /// <param name="toolChoice">
         /// Default Value: auto
@@ -156,9 +192,13 @@ namespace G
 #endif
         public ChatCompletionRequest(
             global::System.Collections.Generic.IList<global::G.MessagesItem2> messages,
-            string? model,
+            string model,
+            double? frequencyPenalty,
             int? maxTokens,
-            int? minTokens,
+            int? n,
+            bool? parallelToolCalls,
+            global::G.Prediction? prediction,
+            double? presencePenalty,
             int? randomSeed,
             global::G.ResponseFormat? responseFormat,
             bool? safePrompt,
@@ -171,8 +211,12 @@ namespace G
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.FrequencyPenalty = frequencyPenalty;
             this.MaxTokens = maxTokens;
-            this.MinTokens = minTokens;
+            this.N = n;
+            this.ParallelToolCalls = parallelToolCalls;
+            this.Prediction = prediction;
+            this.PresencePenalty = presencePenalty;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.SafePrompt = safePrompt;

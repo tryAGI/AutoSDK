@@ -29,7 +29,7 @@ namespace G
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DetailedJobOut> JobsApiRoutesFineTuningStartFineTuningJobAsync(
+        public async global::System.Threading.Tasks.Task<global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse> JobsApiRoutesFineTuningStartFineTuningJobAsync(
             global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -124,7 +124,7 @@ namespace G
                 }
 
                 return
-                    global::G.DetailedJobOut.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -154,7 +154,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.DetailedJobOut.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

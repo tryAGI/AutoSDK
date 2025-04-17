@@ -110,9 +110,5 @@
   {
     Message: optional is not a valid property at #/components/schemas/Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch/properties/name,
     Pointer: 
-  },
-  {
-    Message: propertyNames is not a valid property at #/components/schemas/ResourceMetadataResponseModel/properties/role_to_group_ids,
-    Pointer: 
   }
 ]

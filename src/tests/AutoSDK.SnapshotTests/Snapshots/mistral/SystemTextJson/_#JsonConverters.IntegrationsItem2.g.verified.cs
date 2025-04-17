@@ -18,15 +18,15 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JobInIntegrationDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JobInIntegrationDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobInIntegrationDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierJobOutIntegrationDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierJobOutIntegrationDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClassifierJobOutIntegrationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.WandbIntegration? wandb = default;
-            if (discriminator?.Type == global::G.JobInIntegrationDiscriminatorType.Wandb)
+            global::G.WandbIntegrationOut? wandb = default;
+            if (discriminator?.Type == global::G.ClassifierJobOutIntegrationDiscriminatorType.Wandb)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegration> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WandbIntegration)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegrationOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WandbIntegrationOut)}");
                 wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -49,8 +49,8 @@ namespace G.JsonConverters
 
             if (value.IsWandb)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegration?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WandbIntegration).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegrationOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WandbIntegrationOut).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb, typeInfo);
             }
         }

@@ -17,6 +17,7 @@ namespace G
         /// </param>
         /// <param name="model"></param>
         /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
         /// <param name="createdByMe">
         /// Default Value: false
         /// </param>
@@ -31,6 +32,7 @@ namespace G
             int? pageSize = default,
             string? model = default,
             global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
             bool? createdByMe = default,
             global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
             string? wandbProject = default,

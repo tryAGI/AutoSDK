@@ -19,6 +19,41 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::G.SystemMessage? System { get; init; }
+#else
+        public global::G.SystemMessage? System { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
+#endif
+        public bool IsSystem => System != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator MessagesItem(global::G.SystemMessage value) => new MessagesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.SystemMessage?(MessagesItem @this) => @this.System;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessagesItem(global::G.SystemMessage? value)
+        {
+            System = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::G.UserMessage? User { get; init; }
 #else
         public global::G.UserMessage? User { get; }
@@ -125,6 +160,7 @@ namespace G
         /// </summary>
         public MessagesItem(
             global::G.AgentsCompletionRequestMessageDiscriminatorRole? role,
+            global::G.SystemMessage? system,
             global::G.UserMessage? user,
             global::G.AssistantMessage? assistant,
             global::G.ToolMessage? tool
@@ -132,6 +168,7 @@ namespace G
         {
             Role = role;
 
+            System = system;
             User = user;
             Assistant = assistant;
             Tool = tool;
@@ -143,13 +180,15 @@ namespace G
         public object? Object =>
             Tool as object ??
             Assistant as object ??
-            User as object 
+            User as object ??
+            System as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
+            System?.ToString() ??
             User?.ToString() ??
             Assistant?.ToString() ??
             Tool?.ToString() 
@@ -160,13 +199,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsUser && !IsAssistant && !IsTool || !IsUser && IsAssistant && !IsTool || !IsUser && !IsAssistant && IsTool;
+            return IsSystem && !IsUser && !IsAssistant && !IsTool || !IsSystem && IsUser && !IsAssistant && !IsTool || !IsSystem && !IsUser && IsAssistant && !IsTool || !IsSystem && !IsUser && !IsAssistant && IsTool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
+            global::System.Func<global::G.SystemMessage?, TResult>? system = null,
             global::System.Func<global::G.UserMessage?, TResult>? user = null,
             global::System.Func<global::G.AssistantMessage?, TResult>? assistant = null,
             global::System.Func<global::G.ToolMessage?, TResult>? tool = null,
@@ -177,7 +217,11 @@ namespace G
                 Validate();
             }
 
-            if (IsUser && user != null)
+            if (IsSystem && system != null)
+            {
+                return system(System!);
+            }
+            else if (IsUser && user != null)
             {
                 return user(User!);
             }
@@ -197,6 +241,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.SystemMessage?>? system = null,
             global::System.Action<global::G.UserMessage?>? user = null,
             global::System.Action<global::G.AssistantMessage?>? assistant = null,
             global::System.Action<global::G.ToolMessage?>? tool = null,
@@ -207,7 +252,11 @@ namespace G
                 Validate();
             }
 
-            if (IsUser)
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
             {
                 user?.Invoke(User!);
             }
@@ -228,6 +277,8 @@ namespace G
         {
             var fields = new object?[]
             {
+                System,
+                typeof(global::G.SystemMessage),
                 User,
                 typeof(global::G.UserMessage),
                 Assistant,
@@ -250,6 +301,7 @@ namespace G
         public bool Equals(MessagesItem other)
         {
             return
+                global::System.Collections.Generic.EqualityComparer<global::G.SystemMessage?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.UserMessage?>.Default.Equals(User, other.User) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.AssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ToolMessage?>.Default.Equals(Tool, other.Tool) 

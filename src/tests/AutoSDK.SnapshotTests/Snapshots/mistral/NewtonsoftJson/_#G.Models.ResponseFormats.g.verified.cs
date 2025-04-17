@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
         JsonObject,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
+        JsonSchema,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 ResponseFormats.Text => "text",
                 ResponseFormats.JsonObject => "json_object",
+                ResponseFormats.JsonSchema => "json_schema",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "text" => ResponseFormats.Text,
                 "json_object" => ResponseFormats.JsonObject,
+                "json_schema" => ResponseFormats.JsonSchema,
                 _ => null,
             };
         }

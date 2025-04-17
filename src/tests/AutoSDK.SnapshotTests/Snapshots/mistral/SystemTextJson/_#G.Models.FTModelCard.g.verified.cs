@@ -37,6 +37,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_model_temperature")]
+        public double? DefaultModelTemperature { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecation")]
         public global::System.DateTime? Deprecation { get; set; }
 
@@ -115,6 +121,7 @@ namespace G
         /// </param>
         /// <param name="capabilities"></param>
         /// <param name="created"></param>
+        /// <param name="defaultModelTemperature"></param>
         /// <param name="deprecation"></param>
         /// <param name="description"></param>
         /// <param name="id"></param>
@@ -144,6 +151,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? aliases,
             bool? archived,
             int? created,
+            double? defaultModelTemperature,
             global::System.DateTime? deprecation,
             string? description,
             int? maxContextLength,
@@ -159,6 +167,7 @@ namespace G
             this.Aliases = aliases;
             this.Archived = archived;
             this.Created = created;
+            this.DefaultModelTemperature = defaultModelTemperature;
             this.Deprecation = deprecation;
             this.Description = description;
             this.MaxContextLength = maxContextLength;

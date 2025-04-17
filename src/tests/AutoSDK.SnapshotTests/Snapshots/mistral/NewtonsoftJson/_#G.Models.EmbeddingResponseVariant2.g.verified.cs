@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.EmbeddingResponseData>? Data { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.EmbeddingResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,9 +26,9 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         public EmbeddingResponseVariant2(
-            global::System.Collections.Generic.IList<global::G.EmbeddingResponseData>? data)
+            global::System.Collections.Generic.IList<global::G.EmbeddingResponseData> data)
         {
-            this.Data = data;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

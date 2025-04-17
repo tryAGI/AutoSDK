@@ -8,6 +8,8 @@ public partial class Tests
     [DataTestMethod]
     [DataRow("", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", JsonSerializerType.SystemTextJson)]
+    // To test some private API
+    //[DataRow("openapi.json", JsonSerializerType.SystemTextJson)]
     [DataRow("ai21.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("ai21.json", JsonSerializerType.SystemTextJson)]
     [DataRow("anthropic.yaml", JsonSerializerType.NewtonsoftJson)]

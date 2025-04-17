@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobOutRepositorieDiscriminatorType? Type { get; }
+        public global::G.JobInRepositorieDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GithubRepositoryOut? Github { get; init; }
+        public global::G.GithubRepositoryIn? Github { get; init; }
 #else
-        public global::G.GithubRepositoryOut? Github { get; }
+        public global::G.GithubRepositoryIn? Github { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoriesItem3(global::G.GithubRepositoryOut value) => new RepositoriesItem3(value);
+        public static implicit operator RepositoriesItem3(global::G.GithubRepositoryIn value) => new RepositoriesItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GithubRepositoryOut?(RepositoriesItem3 @this) => @this.Github;
+        public static implicit operator global::G.GithubRepositoryIn?(RepositoriesItem3 @this) => @this.Github;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoriesItem3(global::G.GithubRepositoryOut? value)
+        public RepositoriesItem3(global::G.GithubRepositoryIn? value)
         {
             Github = value;
         }
@@ -54,8 +54,8 @@ namespace G
         /// 
         /// </summary>
         public RepositoriesItem3(
-            global::G.JobOutRepositorieDiscriminatorType? type,
-            global::G.GithubRepositoryOut? github
+            global::G.JobInRepositorieDiscriminatorType? type,
+            global::G.GithubRepositoryIn? github
             )
         {
             Type = type;
@@ -89,7 +89,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GithubRepositoryOut?, TResult>? github = null,
+            global::System.Func<global::G.GithubRepositoryIn?, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -109,7 +109,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GithubRepositoryOut?>? github = null,
+            global::System.Action<global::G.GithubRepositoryIn?>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -131,7 +131,7 @@ namespace G
             var fields = new object?[]
             {
                 Github,
-                typeof(global::G.GithubRepositoryOut),
+                typeof(global::G.GithubRepositoryIn),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -148,7 +148,7 @@ namespace G
         public bool Equals(RepositoriesItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GithubRepositoryOut?>.Default.Equals(Github, other.Github) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GithubRepositoryIn?>.Default.Equals(Github, other.Github) 
                 ;
         }
 

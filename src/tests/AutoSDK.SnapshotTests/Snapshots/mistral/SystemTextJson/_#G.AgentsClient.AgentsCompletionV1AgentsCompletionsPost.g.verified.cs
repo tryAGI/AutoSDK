@@ -200,6 +200,10 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent to use for this completion.
         /// </param>
+        /// <param name="frequencyPenalty">
+        /// frequency_penalty penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.<br/>
+        /// Default Value: 0
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
@@ -207,8 +211,16 @@ namespace G
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </param>
-        /// <param name="minTokens">
-        /// The minimum number of tokens to generate in the completion.
+        /// <param name="n">
+        /// Number of completions to return for each request, input tokens are only billed once.
+        /// </param>
+        /// <param name="parallelToolCalls">
+        /// Default Value: true
+        /// </param>
+        /// <param name="prediction"></param>
+        /// <param name="presencePenalty">
+        /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -230,8 +242,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> AgentsCompletionV1AgentsCompletionsPostAsync(
             string agentId,
             global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
+            double? frequencyPenalty = default,
             int? maxTokens = default,
-            int? minTokens = default,
+            int? n = default,
+            bool? parallelToolCalls = default,
+            global::G.Prediction? prediction = default,
+            double? presencePenalty = default,
             int? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
@@ -243,9 +259,13 @@ namespace G
             var __request = new global::G.AgentsCompletionRequest
             {
                 AgentId = agentId,
+                FrequencyPenalty = frequencyPenalty,
                 MaxTokens = maxTokens,
                 Messages = messages,
-                MinTokens = minTokens,
+                N = n,
+                ParallelToolCalls = parallelToolCalls,
+                Prediction = prediction,
+                PresencePenalty = presencePenalty,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
                 Stop = stop,

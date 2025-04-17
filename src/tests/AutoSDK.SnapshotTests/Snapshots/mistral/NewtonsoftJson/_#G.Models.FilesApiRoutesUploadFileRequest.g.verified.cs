@@ -38,10 +38,10 @@ namespace G
         public string Filename { get; set; } = default!;
 
         /// <summary>
-        /// Default Value: fine-tune
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
-        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
+        public global::G.FilePurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,13 +74,11 @@ namespace G
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
-        /// <param name="purpose">
-        /// Default Value: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,
-            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose)
+            global::G.FilePurpose? purpose)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

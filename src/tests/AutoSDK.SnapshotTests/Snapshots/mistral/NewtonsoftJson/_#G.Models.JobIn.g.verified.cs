@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.JobIn.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -16,16 +18,34 @@ namespace G
         public bool? AutoStart { get; set; }
 
         /// <summary>
-        /// The fine-tuning hyperparameter settings used in a fine-tune job.
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("classifier_targets")]
+        public global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? ClassifierTargets { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hyperparameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TrainingParametersIn Hyperparameters { get; set; } = default!;
+        public global::G.AnyOf<global::G.CompletionTrainingParametersIn, global::G.ClassifierTrainingParametersIn> Hyperparameters { get; set; } = default!;
 
         /// <summary>
         /// A list of integrations to enable for your fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.IntegrationsItem2>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsItem5>? Integrations { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("invalid_sample_skip_percentage")]
+        public double? InvalidSampleSkipPercentage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("job_type")]
+        public object? JobType { get; set; }
 
         /// <summary>
         /// The name of the model to fine-tune.
@@ -34,10 +54,10 @@ namespace G
         public global::G.FineTuneableModel Model { get; set; } = default!;
 
         /// <summary>
-        /// Default Value: []
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem3>? Repositories { get; set; }
 
         /// <summary>
         /// A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`
@@ -69,18 +89,19 @@ namespace G
         /// <param name="autoStart">
         /// This field will be required in a future release.
         /// </param>
-        /// <param name="hyperparameters">
-        /// The fine-tuning hyperparameter settings used in a fine-tune job.
-        /// </param>
+        /// <param name="classifierTargets"></param>
+        /// <param name="hyperparameters"></param>
         /// <param name="integrations">
         /// A list of integrations to enable for your fine-tuning job.
         /// </param>
+        /// <param name="invalidSampleSkipPercentage">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="jobType"></param>
         /// <param name="model">
         /// The name of the model to fine-tune.
         /// </param>
-        /// <param name="repositories">
-        /// Default Value: []
-        /// </param>
+        /// <param name="repositories"></param>
         /// <param name="suffix">
         /// A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`
         /// </param>
@@ -91,19 +112,25 @@ namespace G
         /// A list containing the IDs of uploaded files that contain validation data. If you provide these files, the data is used to generate validation metrics periodically during fine-tuning. These metrics can be viewed in `checkpoints` when getting the status of a running fine-tuning job. The same data should not be present in both train and validation files.
         /// </param>
         public JobIn(
-            global::G.TrainingParametersIn hyperparameters,
+            global::G.AnyOf<global::G.CompletionTrainingParametersIn, global::G.ClassifierTrainingParametersIn> hyperparameters,
             global::G.FineTuneableModel model,
             bool? autoStart,
-            global::System.Collections.Generic.IList<global::G.IntegrationsItem2>? integrations,
-            global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? repositories,
+            global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? classifierTargets,
+            global::System.Collections.Generic.IList<global::G.IntegrationsItem5>? integrations,
+            double? invalidSampleSkipPercentage,
+            object? jobType,
+            global::System.Collections.Generic.IList<global::G.RepositoriesItem3>? repositories,
             string? suffix,
             global::System.Collections.Generic.IList<global::G.TrainingFile>? trainingFiles,
             global::System.Collections.Generic.IList<global::System.Guid>? validationFiles)
         {
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Hyperparameters = hyperparameters;
             this.Model = model;
             this.AutoStart = autoStart;
+            this.ClassifierTargets = classifierTargets;
             this.Integrations = integrations;
+            this.InvalidSampleSkipPercentage = invalidSampleSkipPercentage;
+            this.JobType = jobType;
             this.Repositories = repositories;
             this.Suffix = suffix;
             this.TrainingFiles = trainingFiles;

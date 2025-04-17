@@ -22,6 +22,13 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AgentsCompletionRequestMessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::G.SystemMessage? system = default;
+            if (discriminator?.Role == global::G.AgentsCompletionRequestMessageDiscriminatorRole.System)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemMessage)}");
+                system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::G.UserMessage? user = default;
             if (discriminator?.Role == global::G.AgentsCompletionRequestMessageDiscriminatorRole.User)
             {
@@ -46,6 +53,7 @@ namespace G.JsonConverters
 
             var result = new global::G.MessagesItem(
                 discriminator?.Role,
+                system,
                 user,
                 assistant,
                 tool
@@ -63,7 +71,13 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsUser)
+            if (value.IsSystem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System, typeInfo);
+            }
+            else if (value.IsUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessage).Name}");

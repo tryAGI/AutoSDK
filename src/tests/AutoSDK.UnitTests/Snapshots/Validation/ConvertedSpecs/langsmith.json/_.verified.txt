@@ -15835,9 +15835,6 @@
                     },
                     "type": "array"
                   },
-                  "propertyNames": {
-                    "format": "uuid"
-                  },
                   "type": "object",
                   "title": "Response List Tags For Resources Api V1 Workspaces Current Tags Resources Post"
                 }
@@ -24247,9 +24244,6 @@
             "nullable": true,
             "additionalProperties": {
               "$ref": "#/components/schemas/ExampleUpdate"
-            },
-            "propertyNames": {
-              "format": "uuid"
             }
           },
           "transformations": {
@@ -29466,9 +29460,6 @@
                 "type": "string"
               },
               "type": "array"
-            },
-            "propertyNames": {
-              "format": "uuid"
             }
           }
         },
@@ -29506,9 +29497,6 @@
                 "type": "string"
               },
               "type": "array"
-            },
-            "propertyNames": {
-              "format": "uuid"
             }
           },
           "offset": {
@@ -29927,9 +29915,6 @@
           "feedback_urls": {
             "additionalProperties": {
               "type": "string"
-            },
-            "propertyNames": {
-              "$ref": "#/components/schemas/RunsGenerateQueryFeedbackKeys"
             },
             "type": "object",
             "title": "Feedback Urls"
@@ -32620,9 +32605,6 @@
           "feedback_deltas": {
             "additionalProperties": {
               "$ref": "#/components/schemas/FeedbackDelta"
-            },
-            "propertyNames": {
-              "format": "uuid"
             },
             "type": "object",
             "title": "Feedback Deltas"

@@ -30,9 +30,10 @@ namespace G
         /// Default Value: codestral-2405<br/>
         /// Example: codestral-2405
         /// </summary>
+        /// <default>"codestral-2405"</default>
         /// <example>codestral-2405</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Model { get; set; } = default!;
+        public string Model { get; set; } = default!;
 
         /// <summary>
         /// The text/code to complete.<br/>
@@ -70,8 +71,7 @@ namespace G
         public string? Suffix { get; set; }
 
         /// <summary>
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
@@ -124,15 +124,14 @@ namespace G
         /// Example: return a+b
         /// </param>
         /// <param name="temperature">
-        /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
-        /// Default Value: 0.7
+        /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </param>
         /// <param name="topP">
         /// Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.<br/>
         /// Default Value: 1
         /// </param>
         public FIMCompletionRequest(
-            string? model,
+            string model,
             string prompt,
             int? maxTokens,
             int? minTokens,

@@ -10,6 +10,12 @@ namespace G
     public sealed partial class ResponseFormat
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
+        public object? JsonSchema { get; set; }
+
+        /// <summary>
         /// An object specifying the format that the model must output. Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -25,6 +31,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFormat" /> class.
         /// </summary>
+        /// <param name="jsonSchema"></param>
         /// <param name="type">
         /// An object specifying the format that the model must output. Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
         /// </param>
@@ -32,8 +39,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFormat(
+            object? jsonSchema,
             global::G.ResponseFormats? type)
         {
+            this.JsonSchema = jsonSchema;
             this.Type = type;
         }
 

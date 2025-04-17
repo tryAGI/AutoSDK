@@ -17,6 +17,10 @@ namespace G
         /// 
         /// </summary>
         Repository,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mistral,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 Source.Upload => "upload",
                 Source.Repository => "repository",
+                Source.Mistral => "mistral",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "upload" => Source.Upload,
                 "repository" => Source.Repository,
+                "mistral" => Source.Mistral,
                 _ => null,
             };
         }

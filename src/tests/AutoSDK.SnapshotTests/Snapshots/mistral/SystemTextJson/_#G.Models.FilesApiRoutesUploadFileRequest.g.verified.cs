@@ -40,11 +40,11 @@ namespace G
         public required string Filename { get; set; }
 
         /// <summary>
-        /// Default Value: fine-tune
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilesApiRoutesUploadFileRequestPurposeJsonConverter))]
-        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilePurposeJsonConverter))]
+        public global::G.FilePurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,16 +77,14 @@ namespace G
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
-        /// <param name="purpose">
-        /// Default Value: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,
-            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose)
+            global::G.FilePurpose? purpose)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

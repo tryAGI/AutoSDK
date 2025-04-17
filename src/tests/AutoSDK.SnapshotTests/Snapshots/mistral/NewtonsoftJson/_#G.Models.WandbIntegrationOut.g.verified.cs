@@ -34,6 +34,12 @@ namespace G
         public global::G.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -52,16 +58,19 @@ namespace G
         /// <param name="type">
         /// Default Value: wandb
         /// </param>
+        /// <param name="url"></param>
         public WandbIntegrationOut(
             string project,
             string? name,
             string? runName,
-            global::G.WandbIntegrationOutType? type)
+            global::G.WandbIntegrationOutType? type,
+            string? url)
         {
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Name = name;
             this.RunName = runName;
             this.Type = type;
+            this.Url = url;
         }
 
         /// <summary>

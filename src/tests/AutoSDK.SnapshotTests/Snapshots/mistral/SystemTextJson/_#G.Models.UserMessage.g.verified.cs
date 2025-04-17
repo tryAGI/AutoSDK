@@ -15,9 +15,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>> Content { get; set; }
+        public required global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> Content { get; set; }
 
         /// <summary>
         /// Default Value: user
@@ -43,7 +43,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserMessage(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
+            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
             global::G.UserMessageRole? role)
         {
             this.Content = content;

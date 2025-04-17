@@ -26,6 +26,12 @@ namespace G
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
+
+        /// <summary>
         /// The name of the uploaded file.<br/>
         /// Example: files_upload.jsonl
         /// </summary>
@@ -56,12 +62,10 @@ namespace G
         public string Object { get; set; } = default!;
 
         /// <summary>
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-        /// Example: fine-tune
+        /// 
         /// </summary>
-        /// <example>fine-tune</example>
-        [global::Newtonsoft.Json.JsonProperty("purpose")]
-        public global::G.RetrieveFileOutPurpose Purpose { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FilePurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -92,6 +96,7 @@ namespace G
         /// The UNIX timestamp (in seconds) of the event.<br/>
         /// Example: 1716963433
         /// </param>
+        /// <param name="deleted"></param>
         /// <param name="filename">
         /// The name of the uploaded file.<br/>
         /// Example: files_upload.jsonl
@@ -105,32 +110,31 @@ namespace G
         /// The object type, which is always "file".<br/>
         /// Example: file
         /// </param>
-        /// <param name="purpose">
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-        /// Example: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         /// <param name="sampleType"></param>
         /// <param name="source"></param>
         public RetrieveFileOut(
             int bytes,
             global::System.DateTimeOffset createdAt,
+            bool deleted,
             string filename,
             global::System.Guid id,
             string @object,
+            global::G.FilePurpose purpose,
             global::G.SampleType sampleType,
             global::G.Source source,
-            int? numLines,
-            global::G.RetrieveFileOutPurpose purpose)
+            int? numLines)
         {
             this.Bytes = bytes;
             this.CreatedAt = createdAt;
+            this.Deleted = deleted;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id;
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Purpose = purpose;
             this.SampleType = sampleType;
             this.Source = source;
             this.NumLines = numLines;
-            this.Purpose = purpose;
         }
 
         /// <summary>

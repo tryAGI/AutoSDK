@@ -36,11 +36,27 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageURLChunk)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.DocumentURLChunk? documentUrl = default;
+            if (discriminator?.Type == global::G.ContentChunkDiscriminatorType.DocumentUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentURLChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DocumentURLChunk)}");
+                documentUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.ReferenceChunk? reference = default;
+            if (discriminator?.Type == global::G.ContentChunkDiscriminatorType.Reference)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReferenceChunk> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ReferenceChunk)}");
+                reference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::G.ContentChunk(
                 discriminator?.Type,
                 text,
-                imageUrl
+                imageUrl,
+                documentUrl,
+                reference
                 );
 
             return result;
@@ -66,6 +82,18 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageURLChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
+            }
+            else if (value.IsDocumentUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentURLChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DocumentURLChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentUrl, typeInfo);
+            }
+            else if (value.IsReference)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReferenceChunk?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReferenceChunk).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference, typeInfo);
             }
         }
     }

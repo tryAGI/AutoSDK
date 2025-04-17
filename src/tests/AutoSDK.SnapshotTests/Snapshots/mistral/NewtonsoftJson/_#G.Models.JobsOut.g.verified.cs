@@ -13,7 +13,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.JobOut>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -45,7 +45,7 @@ namespace G
         /// <param name="total"></param>
         public JobsOut(
             int total,
-            global::System.Collections.Generic.IList<global::G.JobOut>? data,
+            global::System.Collections.Generic.IList<global::G.DataItem>? data,
             global::G.JobsOutObject? @object)
         {
             this.Total = total;

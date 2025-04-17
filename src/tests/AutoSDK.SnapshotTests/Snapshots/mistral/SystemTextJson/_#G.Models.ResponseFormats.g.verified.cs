@@ -17,6 +17,10 @@ namespace G
         /// "json_object" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
         /// </summary>
         JsonObject,
+        /// <summary>
+        /// 
+        /// </summary>
+        JsonSchema,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 ResponseFormats.Text => "text",
                 ResponseFormats.JsonObject => "json_object",
+                ResponseFormats.JsonSchema => "json_schema",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "text" => ResponseFormats.Text,
                 "json_object" => ResponseFormats.JsonObject,
+                "json_schema" => ResponseFormats.JsonSchema,
                 _ => null,
             };
         }

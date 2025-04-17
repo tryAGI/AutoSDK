@@ -21457,13 +21457,6 @@
               },
               "type": "array"
             },
-            "propertyNames": {
-              "enum": [
-                "admin",
-                "editor",
-                "viewer"
-              ]
-            },
             "title": "Role To Group Ids"
           },
           "share_options": {

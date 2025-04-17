@@ -24,6 +24,13 @@ namespace G
         public required string Object { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Total { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -34,15 +41,18 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         /// <param name="object"></param>
+        /// <param name="total"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListFilesOut(
             global::System.Collections.Generic.IList<global::G.FileSchema> data,
-            string @object)
+            string @object,
+            int total)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Total = total;
         }
 
         /// <summary>

@@ -75,6 +75,15 @@ namespace G
         };
 
         /// <summary>
+        /// Classifiers API.
+        /// </summary>
+        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Files API
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
@@ -96,6 +105,24 @@ namespace G
         /// Model Management API
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Batch API
+        /// </summary>
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// OCR API
+        /// </summary>
+        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

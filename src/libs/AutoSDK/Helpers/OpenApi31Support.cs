@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using SharpYaml.Serialization;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -123,6 +122,12 @@ public static class OpenApi31Support
                     .Select(v => v?.DeepClone())
                     .ToArray());
                 node["nullable"] = true;
+            }
+            
+            // remove "propertyNames"
+            if (keyString == "propertyNames")
+            {
+                node.Remove(keyString);
             }
             
             if (keyString == "exclusiveMinimum")
@@ -288,6 +293,13 @@ public static class OpenApi31Support
             {
                 node[new string("openapi".ToCharArray())] = "3.0.3";
             }
+
+            // remove "propertyNames"
+            if (keyString == "propertyNames")
+            {
+                node.Remove(keyString);
+            }
+            
             if (keyString == "exclusiveMinimum" &&
                 entry.Value is not bool)
             {

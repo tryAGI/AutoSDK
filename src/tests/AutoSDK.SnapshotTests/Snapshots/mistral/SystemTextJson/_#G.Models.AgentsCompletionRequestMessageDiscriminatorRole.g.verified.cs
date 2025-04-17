@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
         /// <summary>
         /// 
@@ -36,6 +40,7 @@ namespace G
             return value switch
             {
                 AgentsCompletionRequestMessageDiscriminatorRole.Assistant => "assistant",
+                AgentsCompletionRequestMessageDiscriminatorRole.System => "system",
                 AgentsCompletionRequestMessageDiscriminatorRole.Tool => "tool",
                 AgentsCompletionRequestMessageDiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -49,6 +54,7 @@ namespace G
             return value switch
             {
                 "assistant" => AgentsCompletionRequestMessageDiscriminatorRole.Assistant,
+                "system" => AgentsCompletionRequestMessageDiscriminatorRole.System,
                 "tool" => AgentsCompletionRequestMessageDiscriminatorRole.Tool,
                 "user" => AgentsCompletionRequestMessageDiscriminatorRole.User,
                 _ => null,

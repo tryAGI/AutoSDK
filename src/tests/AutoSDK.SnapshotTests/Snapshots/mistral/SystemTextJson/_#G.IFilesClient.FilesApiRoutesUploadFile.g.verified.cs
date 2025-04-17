@@ -46,15 +46,13 @@ namespace G
         ///  file=@path/to/your/file.jsonl<br/>
         ///  ```
         /// </param>
-        /// <param name="purpose">
-        /// Default Value: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UploadFileOut> FilesApiRoutesUploadFileAsync(
             byte[] file,
             string filename,
-            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
+            global::G.FilePurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -12,21 +12,18 @@ namespace G
     public sealed partial class EmbeddingRequest
     {
         /// <summary>
-        /// The format to return the embeddings in.<br/>
-        /// Default Value: float
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("encoding_format")]
-        public string? EncodingFormat { get; set; }
-
-        /// <summary>
-        /// Text to embed.
-        /// </summary>
+        /// <example>Embed this sentence.</example>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = default!;
 
         /// <summary>
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Example: mistral-embed
         /// </summary>
+        /// <example>mistral-embed</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
@@ -39,24 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingRequest" /> class.
         /// </summary>
-        /// <param name="encodingFormat">
-        /// The format to return the embeddings in.<br/>
-        /// Default Value: float
-        /// </param>
         /// <param name="input">
-        /// Text to embed.
+        /// Text to embed.<br/>
+        /// Example: Embed this sentence.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use.
+        /// ID of the model to use.<br/>
+        /// Example: mistral-embed
         /// </param>
         public EmbeddingRequest(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
-            string model,
-            string? encodingFormat)
+            string model)
         {
             this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.EncodingFormat = encodingFormat;
         }
 
         /// <summary>

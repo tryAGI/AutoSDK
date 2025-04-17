@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutRepositorieDiscriminatorType? Type { get; }
+        public global::G.CompletionDetailedJobOutRepositorieDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         /// 
         /// </summary>
         public RepositoriesItem(
-            global::G.DetailedJobOutRepositorieDiscriminatorType? type,
+            global::G.CompletionDetailedJobOutRepositorieDiscriminatorType? type,
             global::G.GithubRepositoryOut? github
             )
         {

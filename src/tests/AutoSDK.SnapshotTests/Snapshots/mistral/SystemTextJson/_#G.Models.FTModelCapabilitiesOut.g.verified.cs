@@ -10,6 +10,12 @@ namespace G
     public sealed partial class FTModelCapabilitiesOut
     {
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classification")]
+        public bool? Classification { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_chat")]
@@ -42,6 +48,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FTModelCapabilitiesOut" /> class.
         /// </summary>
+        /// <param name="classification">
+        /// Default Value: false
+        /// </param>
         /// <param name="completionChat">
         /// Default Value: true
         /// </param>
@@ -58,11 +67,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FTModelCapabilitiesOut(
+            bool? classification,
             bool? completionChat,
             bool? completionFim,
             bool? fineTuning,
             bool? functionCalling)
         {
+            this.Classification = classification;
             this.CompletionChat = completionChat;
             this.CompletionFim = completionFim;
             this.FineTuning = fineTuning;

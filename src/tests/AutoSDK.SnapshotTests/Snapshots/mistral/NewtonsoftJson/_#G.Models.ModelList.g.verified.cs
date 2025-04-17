@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: list
         /// </param>
         public ModelList(
-            global::System.Collections.Generic.IList<global::G.DataItem>? data,
+            global::System.Collections.Generic.IList<global::G.DataItem2>? data,
             string? @object)
         {
             this.Data = data;

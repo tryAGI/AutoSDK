@@ -41,22 +41,9 @@ namespace G.JsonConverters
             {
             }
 
-            readerCopy = reader;
-            global::G.EmbeddingResponseVariant3? value3 = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingResponseVariant3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingResponseVariant3).Name}");
-                value3 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
             var result = new global::G.EmbeddingResponse(
                 value1,
-                value2,
-                value3
+                value2
                 );
 
             if (value1 != null)
@@ -69,12 +56,6 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingResponseVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingResponseVariant2).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (value3 != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingResponseVariant3> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingResponseVariant3).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -101,12 +82,6 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingResponseVariant2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
-            }
-            else if (value.IsValue3)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingResponseVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingResponseVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
             }
         }
     }

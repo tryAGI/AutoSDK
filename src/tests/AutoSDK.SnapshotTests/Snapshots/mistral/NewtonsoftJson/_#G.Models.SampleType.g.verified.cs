@@ -20,6 +20,21 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="instruct")]
         Instruct,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="batch_request")]
+        BatchRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="batch_result")]
+        BatchResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="batch_error")]
+        BatchError,
     }
 
     /// <summary>
@@ -36,6 +51,9 @@ namespace G
             {
                 SampleType.Pretrain => "pretrain",
                 SampleType.Instruct => "instruct",
+                SampleType.BatchRequest => "batch_request",
+                SampleType.BatchResult => "batch_result",
+                SampleType.BatchError => "batch_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +66,9 @@ namespace G
             {
                 "pretrain" => SampleType.Pretrain,
                 "instruct" => SampleType.Instruct,
+                "batch_request" => SampleType.BatchRequest,
+                "batch_result" => SampleType.BatchResult,
+                "batch_error" => SampleType.BatchError,
                 _ => null,
             };
         }

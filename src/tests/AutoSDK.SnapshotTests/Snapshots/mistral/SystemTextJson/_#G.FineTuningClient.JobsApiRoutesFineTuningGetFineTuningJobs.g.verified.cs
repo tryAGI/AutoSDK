@@ -12,6 +12,7 @@ namespace G
             ref int? pageSize,
             ref string? model,
             ref global::System.DateTime? createdAfter,
+            ref global::System.DateTime? createdBefore,
             ref bool? createdByMe,
             ref global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status,
             ref string? wandbProject,
@@ -24,6 +25,7 @@ namespace G
             int? pageSize,
             string? model,
             global::System.DateTime? createdAfter,
+            global::System.DateTime? createdBefore,
             bool? createdByMe,
             global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status,
             string? wandbProject,
@@ -50,6 +52,7 @@ namespace G
         /// </param>
         /// <param name="model"></param>
         /// <param name="createdAfter"></param>
+        /// <param name="createdBefore"></param>
         /// <param name="createdByMe">
         /// Default Value: false
         /// </param>
@@ -64,6 +67,7 @@ namespace G
             int? pageSize = default,
             string? model = default,
             global::System.DateTime? createdAfter = default,
+            global::System.DateTime? createdBefore = default,
             bool? createdByMe = default,
             global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
             string? wandbProject = default,
@@ -79,6 +83,7 @@ namespace G
                 pageSize: ref pageSize,
                 model: ref model,
                 createdAfter: ref createdAfter,
+                createdBefore: ref createdBefore,
                 createdByMe: ref createdByMe,
                 status: ref status,
                 wandbProject: ref wandbProject,
@@ -93,6 +98,7 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("model", model) 
                 .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
                 .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("wandb_project", wandbProject) 
@@ -134,6 +140,7 @@ namespace G
                 pageSize: pageSize,
                 model: model,
                 createdAfter: createdAfter,
+                createdBefore: createdBefore,
                 createdByMe: createdByMe,
                 status: status,
                 wandbProject: wandbProject,

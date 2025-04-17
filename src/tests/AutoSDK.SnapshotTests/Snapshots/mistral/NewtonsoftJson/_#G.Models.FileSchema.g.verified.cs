@@ -56,12 +56,10 @@ namespace G
         public string Object { get; set; } = default!;
 
         /// <summary>
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-        /// Example: fine-tune
+        /// 
         /// </summary>
-        /// <example>fine-tune</example>
-        [global::Newtonsoft.Json.JsonProperty("purpose")]
-        public global::G.FileSchemaPurpose Purpose { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FilePurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -105,10 +103,7 @@ namespace G
         /// The object type, which is always "file".<br/>
         /// Example: file
         /// </param>
-        /// <param name="purpose">
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
-        /// Example: fine-tune
-        /// </param>
+        /// <param name="purpose"></param>
         /// <param name="sampleType"></param>
         /// <param name="source"></param>
         public FileSchema(
@@ -117,20 +112,20 @@ namespace G
             string filename,
             global::System.Guid id,
             string @object,
+            global::G.FilePurpose purpose,
             global::G.SampleType sampleType,
             global::G.Source source,
-            int? numLines,
-            global::G.FileSchemaPurpose purpose)
+            int? numLines)
         {
             this.Bytes = bytes;
             this.CreatedAt = createdAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id;
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Purpose = purpose;
             this.SampleType = sampleType;
             this.Source = source;
             this.NumLines = numLines;
-            this.Purpose = purpose;
         }
 
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.AssistantMessage.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public string? Content { get; set; }
+        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.<br/>
@@ -53,7 +55,7 @@ namespace G
         /// </param>
         /// <param name="toolCalls"></param>
         public AssistantMessage(
-            string? content,
+            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             bool? prefix,
             global::G.AssistantMessageRole? role,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)

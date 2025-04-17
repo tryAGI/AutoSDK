@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.DeltaMessage.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public string? Content { get; set; }
+        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +42,7 @@ namespace G
         /// <param name="role"></param>
         /// <param name="toolCalls"></param>
         public DeltaMessage(
-            string? content,
+            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             string? role,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
         {

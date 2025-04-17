@@ -88,22 +88,98 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DocumentURLChunk? DocumentUrl { get; init; }
+#else
+        public global::G.DocumentURLChunk? DocumentUrl { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentUrl))]
+#endif
+        public bool IsDocumentUrl => DocumentUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::G.DocumentURLChunk value) => new ContentChunk(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.DocumentURLChunk?(ContentChunk @this) => @this.DocumentUrl;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::G.DocumentURLChunk? value)
+        {
+            DocumentUrl = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReferenceChunk? Reference { get; init; }
+#else
+        public global::G.ReferenceChunk? Reference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
+#endif
+        public bool IsReference => Reference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentChunk(global::G.ReferenceChunk value) => new ContentChunk(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ReferenceChunk?(ContentChunk @this) => @this.Reference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentChunk(global::G.ReferenceChunk? value)
+        {
+            Reference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentChunk(
             global::G.ContentChunkDiscriminatorType? type,
             global::G.TextChunk? text,
-            global::G.ImageURLChunk? imageUrl
+            global::G.ImageURLChunk? imageUrl,
+            global::G.DocumentURLChunk? documentUrl,
+            global::G.ReferenceChunk? reference
             )
         {
             Type = type;
 
             Text = text;
             ImageUrl = imageUrl;
+            DocumentUrl = documentUrl;
+            Reference = reference;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Reference as object ??
+            DocumentUrl as object ??
             ImageUrl as object ??
             Text as object 
             ;
@@ -113,7 +189,9 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            ImageUrl?.ToString() 
+            ImageUrl?.ToString() ??
+            DocumentUrl?.ToString() ??
+            Reference?.ToString() 
             ;
 
         /// <summary>
@@ -121,7 +199,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl || !IsText && IsImageUrl;
+            return IsText && !IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && IsImageUrl && !IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && IsDocumentUrl && !IsReference || !IsText && !IsImageUrl && !IsDocumentUrl && IsReference;
         }
 
         /// <summary>
@@ -130,6 +208,8 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.TextChunk?, TResult>? text = null,
             global::System.Func<global::G.ImageURLChunk?, TResult>? imageUrl = null,
+            global::System.Func<global::G.DocumentURLChunk?, TResult>? documentUrl = null,
+            global::System.Func<global::G.ReferenceChunk?, TResult>? reference = null,
             bool validate = true)
         {
             if (validate)
@@ -145,6 +225,14 @@ namespace G
             {
                 return imageUrl(ImageUrl!);
             }
+            else if (IsDocumentUrl && documentUrl != null)
+            {
+                return documentUrl(DocumentUrl!);
+            }
+            else if (IsReference && reference != null)
+            {
+                return reference(Reference!);
+            }
 
             return default(TResult);
         }
@@ -155,6 +243,8 @@ namespace G
         public void Match(
             global::System.Action<global::G.TextChunk?>? text = null,
             global::System.Action<global::G.ImageURLChunk?>? imageUrl = null,
+            global::System.Action<global::G.DocumentURLChunk?>? documentUrl = null,
+            global::System.Action<global::G.ReferenceChunk?>? reference = null,
             bool validate = true)
         {
             if (validate)
@@ -170,6 +260,14 @@ namespace G
             {
                 imageUrl?.Invoke(ImageUrl!);
             }
+            else if (IsDocumentUrl)
+            {
+                documentUrl?.Invoke(DocumentUrl!);
+            }
+            else if (IsReference)
+            {
+                reference?.Invoke(Reference!);
+            }
         }
 
         /// <summary>
@@ -183,6 +281,10 @@ namespace G
                 typeof(global::G.TextChunk),
                 ImageUrl,
                 typeof(global::G.ImageURLChunk),
+                DocumentUrl,
+                typeof(global::G.DocumentURLChunk),
+                Reference,
+                typeof(global::G.ReferenceChunk),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -200,7 +302,9 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.TextChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DocumentURLChunk?>.Default.Equals(DocumentUrl, other.DocumentUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReferenceChunk?>.Default.Equals(Reference, other.Reference) 
                 ;
         }
 

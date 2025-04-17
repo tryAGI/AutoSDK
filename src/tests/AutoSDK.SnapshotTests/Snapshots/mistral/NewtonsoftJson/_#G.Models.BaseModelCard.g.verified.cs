@@ -30,6 +30,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("default_model_temperature")]
+        public double? DefaultModelTemperature { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deprecation")]
         public global::System.DateTime? Deprecation { get; set; }
 
@@ -89,6 +95,7 @@ namespace G
         /// </param>
         /// <param name="capabilities"></param>
         /// <param name="created"></param>
+        /// <param name="defaultModelTemperature"></param>
         /// <param name="deprecation"></param>
         /// <param name="description"></param>
         /// <param name="id"></param>
@@ -110,6 +117,7 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<string>? aliases,
             int? created,
+            double? defaultModelTemperature,
             global::System.DateTime? deprecation,
             string? description,
             int? maxContextLength,
@@ -122,6 +130,7 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Aliases = aliases;
             this.Created = created;
+            this.DefaultModelTemperature = defaultModelTemperature;
             this.Deprecation = deprecation;
             this.Description = description;
             this.MaxContextLength = maxContextLength;

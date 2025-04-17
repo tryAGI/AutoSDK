@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
             global::G.JobIn request,
             bool? dryRun = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -141,7 +141,7 @@ namespace G
                 }
 
                 return
-                    global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -171,7 +171,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -184,18 +184,19 @@ namespace G
         /// <param name="autoStart">
         /// This field will be required in a future release.
         /// </param>
-        /// <param name="hyperparameters">
-        /// The fine-tuning hyperparameter settings used in a fine-tune job.
-        /// </param>
+        /// <param name="classifierTargets"></param>
+        /// <param name="hyperparameters"></param>
         /// <param name="integrations">
         /// A list of integrations to enable for your fine-tuning job.
         /// </param>
+        /// <param name="invalidSampleSkipPercentage">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="jobType"></param>
         /// <param name="model">
         /// The name of the model to fine-tune.
         /// </param>
-        /// <param name="repositories">
-        /// Default Value: []
-        /// </param>
+        /// <param name="repositories"></param>
         /// <param name="suffix">
         /// A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`
         /// </param>
@@ -207,13 +208,16 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
-            global::G.TrainingParametersIn hyperparameters,
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
+            global::G.AnyOf<global::G.CompletionTrainingParametersIn, global::G.ClassifierTrainingParametersIn> hyperparameters,
             global::G.FineTuneableModel model,
             bool? dryRun = default,
             bool? autoStart = default,
-            global::System.Collections.Generic.IList<global::G.IntegrationsItem2>? integrations = default,
-            global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? repositories = default,
+            global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? classifierTargets = default,
+            global::System.Collections.Generic.IList<global::G.IntegrationsItem5>? integrations = default,
+            double? invalidSampleSkipPercentage = default,
+            object? jobType = default,
+            global::System.Collections.Generic.IList<global::G.RepositoriesItem3>? repositories = default,
             string? suffix = default,
             global::System.Collections.Generic.IList<global::G.TrainingFile>? trainingFiles = default,
             global::System.Collections.Generic.IList<global::System.Guid>? validationFiles = default,
@@ -222,8 +226,11 @@ namespace G
             var __request = new global::G.JobIn
             {
                 AutoStart = autoStart,
+                ClassifierTargets = classifierTargets,
                 Hyperparameters = hyperparameters,
                 Integrations = integrations,
+                InvalidSampleSkipPercentage = invalidSampleSkipPercentage,
+                JobType = jobType,
                 Model = model,
                 Repositories = repositories,
                 Suffix = suffix,

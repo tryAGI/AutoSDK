@@ -22,6 +22,12 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("index")]
+        public int? Index { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -38,14 +44,19 @@ namespace G
         /// </summary>
         /// <param name="function"></param>
         /// <param name="id"></param>
+        /// <param name="index">
+        /// Default Value: 0
+        /// </param>
         /// <param name="type"></param>
         public ToolCall(
             global::G.FunctionCall function,
             string? id,
+            int? index,
             global::G.ToolTypes? type)
         {
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id;
+            this.Index = index;
             this.Type = type;
         }
 

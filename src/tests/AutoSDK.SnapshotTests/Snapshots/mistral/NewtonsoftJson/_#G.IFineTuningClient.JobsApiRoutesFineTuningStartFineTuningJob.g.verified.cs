@@ -12,7 +12,7 @@ namespace G
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DetailedJobOut> JobsApiRoutesFineTuningStartFineTuningJobAsync(
+        global::System.Threading.Tasks.Task<global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse> JobsApiRoutesFineTuningStartFineTuningJobAsync(
             global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

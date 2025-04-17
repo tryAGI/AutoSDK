@@ -83,57 +83,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.EmbeddingResponseVariant3? Value3 { get; init; }
-#else
-        public global::G.EmbeddingResponseVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant3 value) => new EmbeddingResponse(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.EmbeddingResponseVariant3?(EmbeddingResponse @this) => @this.Value3;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbeddingResponse(global::G.EmbeddingResponseVariant3? value)
-        {
-            Value3 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public EmbeddingResponse(
             global::G.ResponseBase? value1,
-            global::G.EmbeddingResponseVariant2? value2,
-            global::G.EmbeddingResponseVariant3? value3
+            global::G.EmbeddingResponseVariant2? value2
             )
         {
             Value1 = value1;
             Value2 = value2;
-            Value3 = value3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
             Value2 as object ??
             Value1 as object 
             ;
@@ -143,8 +105,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            Value2?.ToString() 
             ;
 
         /// <summary>
@@ -152,7 +113,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsValue1 && IsValue2;
         }
 
         /// <summary>
@@ -161,7 +122,6 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ResponseBase?, TResult>? value1 = null,
             global::System.Func<global::G.EmbeddingResponseVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.EmbeddingResponseVariant3?, TResult>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -177,10 +137,6 @@ namespace G
             {
                 return value2(Value2!);
             }
-            else if (IsValue3 && value3 != null)
-            {
-                return value3(Value3!);
-            }
 
             return default(TResult);
         }
@@ -191,7 +147,6 @@ namespace G
         public void Match(
             global::System.Action<global::G.ResponseBase?>? value1 = null,
             global::System.Action<global::G.EmbeddingResponseVariant2?>? value2 = null,
-            global::System.Action<global::G.EmbeddingResponseVariant3?>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,10 +162,6 @@ namespace G
             {
                 value2?.Invoke(Value2!);
             }
-            else if (IsValue3)
-            {
-                value3?.Invoke(Value3!);
-            }
         }
 
         /// <summary>
@@ -224,8 +175,6 @@ namespace G
                 typeof(global::G.ResponseBase),
                 Value2,
                 typeof(global::G.EmbeddingResponseVariant2),
-                Value3,
-                typeof(global::G.EmbeddingResponseVariant3),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -243,8 +192,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 
