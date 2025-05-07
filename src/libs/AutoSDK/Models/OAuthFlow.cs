@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Models;
 
-public readonly record struct OAuthFlow(
+public record struct OAuthFlow(
     string Type,
     string AuthorizationUrl,
     string TokenUrl,

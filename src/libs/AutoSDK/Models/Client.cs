@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace AutoSDK.Models;
 
-public readonly record struct Client(
+public record struct Client(
     string Id,
     string Namespace,
     string ClassName,

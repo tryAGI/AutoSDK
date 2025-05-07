@@ -41,10 +41,6 @@
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" PrivateAssets="all" />
     <PackageReference Include="System.Collections.Immutable" Version="9.0.4" PrivateAssets="all" />
     <PackageReference Include="System.Text.Json" Version="9.0.4" PrivateAssets="all" />
-    <PackageReference Include="PolySharp" Version="1.15.0" PrivateAssets="all">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
   
 </Project>

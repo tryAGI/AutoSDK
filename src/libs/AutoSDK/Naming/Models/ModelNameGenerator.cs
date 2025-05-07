@@ -96,14 +96,14 @@ public static class ModelNameGenerator
                 .Count(x => x.IsEnum && x is { IsReference: false }) == 1)
         {
             var variantName = ComputeHelperName(context)!;
-            className = className[..^variantName.Length] + "Enum";
+            className = className.Substring(0, className.Length - variantName.Length) + "Enum";
         }
         
         // Special case for array items with pluralized property name
         if (context.Hint is Hint.ArrayItem &&
             className.EndsWith("sItem", StringComparison.Ordinal))
         {
-            className = className[..^5];
+            className = className.Substring(0, className.Length - 5);
         }
         
         return className;

@@ -3,7 +3,7 @@ using AutoSDK.Extensions;
 
 namespace AutoSDK.Models;
 
-public readonly record struct ModelData(
+public record struct ModelData(
     SchemaContext SchemaContext,
     string Id,
     ImmutableArray<ModelData> Parents,

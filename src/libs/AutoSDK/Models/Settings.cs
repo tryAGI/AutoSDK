@@ -4,7 +4,7 @@ using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
-public readonly record struct Settings(
+public record struct Settings(
     string TargetFramework,
     string Namespace,
     string ClassName,

@@ -6,30 +6,34 @@ using Microsoft.OpenApi.Any;
 
 namespace AutoSDK.Models;
 
-public class SchemaContext
+public class SchemaContext(
+    Settings settings,
+    OpenApiSchema schema,
+    string id,
+    string type)
 {
-    public SchemaContext? Parent { get; init; }
+    public SchemaContext? Parent { get; set; }
     public IList<SchemaContext> Children { get; set; } = [];
     
-    public required Settings Settings { get; init; }
-    public required OpenApiSchema Schema { get; set; }
-    public required string Id { get; set; }
-    public required string Type { get; set; }
+    public Settings Settings { get; set; } = settings;
+    public OpenApiSchema Schema { get; set; } = schema;
+    public string Id { get; set; } = id;
+    public string Type { get; set; } = type;
     
-    public string? ReferenceId { get; init; }
+    public string? ReferenceId { get; set; }
     public bool IsReference => ReferenceId != null;
     public SchemaContext? ResolvedReference { get; set; }
     
     public IList<SchemaContext> Links { get; set; } = [];
     
-    public Hint? Hint { get; init; }
-    public int? Index { get; init; }
+    public Hint? Hint { get; set; }
+    public int? Index { get; set; }
     /// <summary>
     /// Used to constrain the recursion depth.
     /// </summary>
-    public int Depth { get; init; }
+    public int Depth { get; set; }
     
-    public string? PropertyName { get; init; }
+    public string? PropertyName { get; set; }
     public bool IsProperty => PropertyName != null;
     public PropertyData? PropertyData { get; set; }
     
@@ -37,17 +41,17 @@ public class SchemaContext
     public bool IsParameter => ParameterName != null;
     public MethodParameter? ParameterData { get; set; }
     
-    public string? ComponentId { get; init; }
+    public string? ComponentId { get; set; }
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
     
-    public string? OperationPath { get; init; }
-    public OperationType? OperationType { get; init; }
-    public OpenApiOperation? Operation { get; init; }
-    public string? ContentType { get; init; }
-    public OpenApiMediaType? MediaType { get; init; }
-    public OpenApiParameter? Parameter { get; init; }
-    public string? ResponseStatusCode { get; init; }
-    public OpenApiResponse? Response { get; init; }
+    public string? OperationPath { get; set; }
+    public OperationType? OperationType { get; set; }
+    public OpenApiOperation? Operation { get; set; }
+    public string? ContentType { get; set; }
+    public OpenApiMediaType? MediaType { get; set; }
+    public OpenApiParameter? Parameter { get; set; }
+    public string? ResponseStatusCode { get; set; }
+    public OpenApiResponse? Response { get; set; }
     public bool IsOperation => OperationPath != null;
     
     public TypeData TypeData { get; set; } = TypeData.Default;
@@ -74,7 +78,7 @@ public class SchemaContext
     public string? ClassName { get; set; }
     
     public AnyOfData? AnyOfData { get; set; }
-    public string? VariantName { get; init; }
+    public string? VariantName { get; set; }
     
     public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
     
@@ -130,7 +134,7 @@ public class SchemaContext
                         Id = PropertyData.Value.Id + "name",
                         Name = PropertyData.Value.Name + "name",
                         IsMultiPartFormDataFilename = true,
-                        Type = Models.TypeData.Default with
+                        Type = TypeData.Default with
                         {
                             CSharpTypeRaw = "string",
                             CSharpTypeNullability = !PropertyData.Value.IsRequired,
@@ -239,13 +243,13 @@ public class SchemaContext
         if (schema.Reference?.Id != null &&
             componentId != schema.Reference.Id)
         {
-            return [new SchemaContext
+            return [new SchemaContext(
+                settings,
+                schema,
+                id: schema.Reference.Id.ToCSharpName(settings, parent),
+                type: "ref")
             {
                 Parent = parent,
-                Settings = settings,
-                Schema = schema,
-                Id = schema.Reference.Id.ToCSharpName(settings, parent),
-                Type = "ref",
                 ReferenceId = schema.Reference.Id,
                 ComponentId = componentId,
                 PropertyName = propertyName,
@@ -263,13 +267,13 @@ public class SchemaContext
             }];
         }
         
-        var context = new SchemaContext
+        var context = new SchemaContext(
+            settings,
+            schema,
+            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index),
+            type: ComputeType(schema, isComponent: componentId != null))
         {
             Parent = parent,
-            Settings = settings,
-            Schema = schema,
-            Id = ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index),
-            Type = ComputeType(schema, isComponent: componentId != null),
             ComponentId = componentId,
             PropertyName = propertyName,
             Hint = hint,

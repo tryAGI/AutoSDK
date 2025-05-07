@@ -6,7 +6,7 @@ using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
-public readonly record struct AnyOfData(
+public record struct AnyOfData(
     string SubType,
     int Count,
     TypeData? DiscriminatorType,

@@ -54,9 +54,10 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
     public static string GetContextType(TypeData typeData, bool makeNullableRootIfValueType)
     {
-        var shortTypeWithoutSubTypes = typeData.ShortCSharpTypeWithoutNullability.Contains("<") ?
-            typeData.ShortCSharpTypeWithoutNullability[..typeData.ShortCSharpTypeWithoutNullability.IndexOf('<')] :
-            typeData.ShortCSharpTypeWithoutNullability;
+        var index = typeData.ShortCSharpTypeWithoutNullability.IndexOf('<');
+        var shortTypeWithoutSubTypes = index >= 0
+            ? typeData.ShortCSharpTypeWithoutNullability.Substring(0, index)
+            : typeData.ShortCSharpTypeWithoutNullability;
         
         return (typeData.IsValueType &&
                 (typeData.CSharpType.EndsWith("?", StringComparison.Ordinal) ||

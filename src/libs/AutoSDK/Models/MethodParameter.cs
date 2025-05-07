@@ -6,7 +6,7 @@ using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
-public readonly record struct MethodParameter(
+public record struct MethodParameter(
     string Id,
     string Name,
     string Value,

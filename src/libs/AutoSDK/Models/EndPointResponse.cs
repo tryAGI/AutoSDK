@@ -3,7 +3,7 @@ using AutoSDK.Extensions;
 
 namespace AutoSDK.Models;
 
-public readonly record struct EndPointResponse(
+public record struct EndPointResponse(
     string StatusCode,
     string Description,
     string MimeType,

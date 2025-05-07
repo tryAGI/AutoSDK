@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net4.6.2;netstandard2.0;net8.0;net9.0</TargetFrameworks>
-    <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227;CA1862;CA1303;CA1867</NoWarn>
+    <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227;CA1862;CA1303;CA1867;CA1845</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Label="Global Usings">
@@ -15,10 +15,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.15.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" />
     <PackageReference Include="System.Collections.Immutable" Version="9.0.4" />
     <PackageReference Include="System.Text.Json" Version="9.0.4" />

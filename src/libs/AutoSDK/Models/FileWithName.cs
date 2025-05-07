@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="Name"></param>
 /// <param name="Text"></param>
-public readonly record struct FileWithName(
+public record struct FileWithName(
     string Name,
     string Text)
 {

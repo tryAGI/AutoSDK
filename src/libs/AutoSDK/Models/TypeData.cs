@@ -3,7 +3,7 @@ using AutoSDK.Extensions;
 
 namespace AutoSDK.Models;
 
-public readonly record struct TypeData(
+public record struct TypeData(
     string CSharpTypeRaw,
     bool CSharpTypeNullability,
     bool IsBaseClass,

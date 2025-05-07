@@ -3,12 +3,16 @@ using AutoSDK.Naming.Methods;
 
 namespace AutoSDK.Models;
 
-public class OperationContext
+public class OperationContext(
+    Settings settings,
+    OpenApiOperation operation,
+    string operationPath,
+    OperationType operationType)
 {
-    public required Settings Settings { get; init; }
-    public required OpenApiOperation Operation { get; init; }
-    public required string OperationPath { get; init; }
-    public required OperationType OperationType { get; init; }
+    public Settings Settings { get; set; } = settings;
+    public OpenApiOperation Operation { get; set; } = operation;
+    public string OperationPath { get; set; } = operationPath;
+    public OperationType OperationType { get; set; } = operationType;
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
@@ -27,12 +31,8 @@ public class OperationContext
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        var context = new OperationContext
+        var context = new OperationContext(settings, operation, operationPath, operationType)
         {
-            Settings = settings,
-            Operation = operation,
-            OperationPath = operationPath,
-            OperationType = operationType,
             Schemas = filteredSchemas
                 .Where(schema => schema.Operation == operation)
                 .ToArray(),

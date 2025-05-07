@@ -1,6 +1,6 @@
 namespace AutoSDK.Models;
 
-public readonly record struct Times(
+public record struct Times(
     TimeSpan TraversalTree,
     TimeSpan Naming,
     TimeSpan ResolveReferences,

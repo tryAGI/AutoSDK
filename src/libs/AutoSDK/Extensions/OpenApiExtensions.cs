@@ -760,9 +760,13 @@ public static class OpenApiExtensions
         var lines = description.Split(["\n"], StringSplitOptions.RemoveEmptyEntries);
         var line = lines.FirstOrDefault(line => line.Contains(id) && line.Contains(":"));
         
-        return line == null
-            ? string.Empty
-            : line[(line.IndexOf(':') + 1)..].Trim();
+        if (line == null)
+            return string.Empty;
+
+        var index = line.IndexOf(':');
+        return index >= 0
+            ? line.Substring(index + 1).Trim()
+            : line.Trim();
     }
     
     public static string[] FindAllOperationIdsForTag(

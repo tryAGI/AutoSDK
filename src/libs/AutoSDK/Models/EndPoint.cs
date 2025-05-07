@@ -6,7 +6,7 @@ using AutoSDK.Serialization.Form;
 
 namespace AutoSDK.Models;
 
-public readonly record struct EndPoint(
+public record struct EndPoint(
     string Id,
     string Namespace,
     string ClassName,

@@ -6,7 +6,7 @@ namespace AutoSDK.Naming.Methods;
 
 public class MethodAndPathGenerator : IMethodNameGenerator
 {
-    public string? TryGenerate(OperationContext operation)
+    public string TryGenerate(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
@@ -24,9 +24,14 @@ public class MethodAndPathGenerator : IMethodNameGenerator
         };
         
         var path = operation.OperationPath;
-        path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
-        path = path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase) ? path[3..] : path;
-        path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
+        if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
+            path = path.Substring(4);
+
+        if (path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase))
+            path = path.Substring(3);
+
+        if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
+            path = path.Substring(4);
         
         path = path.Replace("{", "{By{");
         

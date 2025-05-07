@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Models;
 
-public readonly record struct Authorization(
+public record struct Authorization(
     string FriendlyName,
     SecuritySchemeType Type,
     ParameterLocation In,

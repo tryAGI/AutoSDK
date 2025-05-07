@@ -1,6 +1,6 @@
 namespace AutoSDK.Models;
 
-public readonly record struct Data(
+public record struct Data(
     EquatableArray<ModelData> Classes,
     EquatableArray<ModelData> Enums,
     EquatableArray<EndPoint> Methods,

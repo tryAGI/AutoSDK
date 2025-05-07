@@ -3,7 +3,7 @@ using AutoSDK.Naming.Properties;
 
 namespace AutoSDK.Models;
 
-public readonly record struct PropertyData(
+public record struct PropertyData(
     string Id,
     string Name,
     TypeData Type,

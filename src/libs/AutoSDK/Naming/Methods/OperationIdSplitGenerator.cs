@@ -15,7 +15,8 @@ public class OperationIdSplitGenerator : IMethodNameGenerator
             return null;
         }
         
-        var value = operation.Operation.OperationId[..operation.Operation.OperationId.IndexOf("api_v1", StringComparison.OrdinalIgnoreCase)];
+        var index = operation.Operation.OperationId.IndexOf("api_v1", StringComparison.OrdinalIgnoreCase);
+        var value = operation.Operation.OperationId.Substring(0, index);
         return value.ToClassName();
     }
 }

@@ -19,7 +19,8 @@ public static class PathHelper
             }
             
             var start = i + 1;
-            var end = input[start..].IndexOf('}');
+            var slice = input.Slice(start);
+            var end = slice.IndexOf('}');
             if (end <= 0)
             {
                 continue;
