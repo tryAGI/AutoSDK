@@ -6,6 +6,7 @@
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <NoWarn>$(NoWarn);CA1031</NoWarn>
+    <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227;CA1862;CA1303;CA1867</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
@@ -18,13 +19,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoSDK\AutoSDK.csproj" PrivateAssets="all" />
+    <Compile Include="..\AutoSDK\**\*.cs" Exclude="..\AutoSDK\bin\**\*.*;..\AutoSDK\obj\**\*.*" />
   </ItemGroup>
   
   <ItemGroup>
     <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    <None Include="$(OutputPath)\AutoSDK.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.Readers.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(OutputPath)\SharpYaml.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
@@ -35,6 +35,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" PrivateAssets="all" />
+    <PackageReference Include="System.Collections.Immutable" Version="9.0.4" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Json" Version="9.0.4" PrivateAssets="all" />
+    <PackageReference Include="PolySharp" Version="1.15.0" PrivateAssets="all">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   
 </Project>
