@@ -1,10 +1,10 @@
-using H.Generators.Extensions;
+using AutoSDK.Models;
 
 namespace AutoSDK.SourceGenerators;
 
 public static class TypeExtensions
 {
-    public static FileWithName AsFileWithName(this AutoSDK.Models.FileWithName value)
+    public static FileWithName AsFileWithName(this FileWithName value)
     {
         return new FileWithName(value.Name, value.Text);
     }

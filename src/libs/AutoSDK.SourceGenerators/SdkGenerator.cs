@@ -1,5 +1,4 @@
 ﻿using AutoSDK.Generation;
-using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 
 namespace AutoSDK.SourceGenerators;
