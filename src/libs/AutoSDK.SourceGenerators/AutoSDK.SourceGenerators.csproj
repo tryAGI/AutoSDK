@@ -5,14 +5,12 @@
     <IsRoslynComponent>true</IsRoslynComponent>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <SignAssembly>false</SignAssembly>
     <NoWarn>$(NoWarn);CA1031</NoWarn>
     <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227;CA1862;CA1303;CA1867</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
     <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <Version>0.28.1-dev.27</Version>
     <DevelopmentDependency>true</DevelopmentDependency>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <IncludeSymbols>false</IncludeSymbols>
@@ -21,7 +19,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Remove="MinVer" />
     <Compile Include="..\AutoSDK\**\*.cs" Exclude="..\AutoSDK\bin\**\*.*;..\AutoSDK\obj\**\*.*" />
   </ItemGroup>
   
