@@ -40,7 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\AutoSDK\AutoSDK.csproj" />
     <ProjectReference Include="..\..\libs\AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.csproj" />
   </ItemGroup>
 
