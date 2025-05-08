@@ -466,6 +466,14 @@ public static class OpenApiExtensions
         }
         if (context.Schema.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
+            if (context.Schema.Type != "string" && 
+                context.Schema.AnyOf.All(x => x.Type != "string") &&
+                context.Schema.AllOf.All(x => x.Type != "string") &&
+                context.Schema.OneOf.All(x => x.Type != "string"))
+            {
+                return null;
+            }
+            
             return $"\"{@string.Value}\"";
         }
         

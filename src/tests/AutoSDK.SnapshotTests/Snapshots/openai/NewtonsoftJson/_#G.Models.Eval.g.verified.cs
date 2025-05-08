@@ -48,7 +48,6 @@ namespace G
         /// A list of testing criteria.<br/>
         /// Default Value: eval
         /// </summary>
-        /// <default>"eval"</default>
         [global::Newtonsoft.Json.JsonProperty("testing_criteria", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; } = default!;
 

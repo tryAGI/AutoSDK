@@ -53,10 +53,9 @@ namespace G
         /// A list of testing criteria.<br/>
         /// Default Value: eval
         /// </summary>
-        /// <default>"eval"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; } = "eval";
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the eval was created.
