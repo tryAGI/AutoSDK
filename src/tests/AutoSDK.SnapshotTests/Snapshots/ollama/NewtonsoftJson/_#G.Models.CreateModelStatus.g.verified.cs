@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateModelStatus(string value) => new CreateModelStatus(value);
+        public static implicit operator CreateModelStatus(string value) => new CreateModelStatus((string?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateModelStatus(global::G.CreateModelStatusEnum value) => new CreateModelStatus(value);
+        public static implicit operator CreateModelStatus(global::G.CreateModelStatusEnum value) => new CreateModelStatus((global::G.CreateModelStatusEnum?)value);
 
         /// <summary>
         /// 

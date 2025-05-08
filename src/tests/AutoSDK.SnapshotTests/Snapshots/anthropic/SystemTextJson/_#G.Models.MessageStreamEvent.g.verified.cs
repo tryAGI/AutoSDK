@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStartEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStartEvent value) => new MessageStreamEvent((global::G.MessageStartEvent?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageDeltaEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageDeltaEvent value) => new MessageStreamEvent((global::G.MessageDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStopEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStopEvent value) => new MessageStreamEvent((global::G.MessageStopEvent?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.ContentBlockStartEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.ContentBlockStartEvent value) => new MessageStreamEvent((global::G.ContentBlockStartEvent?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.ContentBlockDeltaEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.ContentBlockDeltaEvent value) => new MessageStreamEvent((global::G.ContentBlockDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.ContentBlockStopEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.ContentBlockStopEvent value) => new MessageStreamEvent((global::G.ContentBlockStopEvent?)value);
 
         /// <summary>
         /// 

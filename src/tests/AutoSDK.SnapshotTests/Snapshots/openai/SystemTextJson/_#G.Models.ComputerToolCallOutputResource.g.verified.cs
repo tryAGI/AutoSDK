@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerToolCallOutputResource(global::G.ComputerToolCallOutput value) => new ComputerToolCallOutputResource(value);
+        public static implicit operator ComputerToolCallOutputResource(global::G.ComputerToolCallOutput value) => new ComputerToolCallOutputResource((global::G.ComputerToolCallOutput?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerToolCallOutputResource(global::G.ComputerToolCallOutputResourceVariant2 value) => new ComputerToolCallOutputResource(value);
+        public static implicit operator ComputerToolCallOutputResource(global::G.ComputerToolCallOutputResourceVariant2 value) => new ComputerToolCallOutputResource((global::G.ComputerToolCallOutputResourceVariant2?)value);
 
         /// <summary>
         /// 

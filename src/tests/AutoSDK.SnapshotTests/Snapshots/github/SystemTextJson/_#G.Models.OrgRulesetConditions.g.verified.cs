@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget> value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget> value) => new OrgRulesetConditions((global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?)value);
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> value) => new OrgRulesetConditions((global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?)value);
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> value) => new OrgRulesetConditions((global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?)value);
 
         /// <summary>
         /// 

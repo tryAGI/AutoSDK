@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AllOf<T1, T2>(T1 value) => new AllOf<T1, T2>(value);
+        public static implicit operator AllOf<T1, T2>(T1 value) => new AllOf<T1, T2>((T1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AllOf<T1, T2>(T2 value) => new AllOf<T1, T2>(value);
+        public static implicit operator AllOf<T1, T2>(T2 value) => new AllOf<T1, T2>((T2?)value);
 
         /// <summary>
         /// 

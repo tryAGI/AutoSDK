@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator VoiceIdsShared(string value) => new VoiceIdsShared(value);
+        public static implicit operator VoiceIdsShared(string value) => new VoiceIdsShared((string?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator VoiceIdsShared(global::G.VoiceIdsSharedEnum value) => new VoiceIdsShared(value);
+        public static implicit operator VoiceIdsShared(global::G.VoiceIdsSharedEnum value) => new VoiceIdsShared((global::G.VoiceIdsSharedEnum?)value);
 
         /// <summary>
         /// 

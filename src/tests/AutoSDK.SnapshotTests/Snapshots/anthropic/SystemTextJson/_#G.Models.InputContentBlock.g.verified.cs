@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestTextBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestTextBlock value) => new InputContentBlock((global::G.RequestTextBlock?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestImageBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestImageBlock value) => new InputContentBlock((global::G.RequestImageBlock?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestToolUseBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestToolUseBlock value) => new InputContentBlock((global::G.RequestToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestToolResultBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestToolResultBlock value) => new InputContentBlock((global::G.RequestToolResultBlock?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestDocumentBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestDocumentBlock value) => new InputContentBlock((global::G.RequestDocumentBlock?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestThinkingBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestThinkingBlock value) => new InputContentBlock((global::G.RequestThinkingBlock?)value);
 
         /// <summary>
         /// 
@@ -245,7 +245,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::G.RequestRedactedThinkingBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::G.RequestRedactedThinkingBlock value) => new InputContentBlock((global::G.RequestRedactedThinkingBlock?)value);
 
         /// <summary>
         /// 

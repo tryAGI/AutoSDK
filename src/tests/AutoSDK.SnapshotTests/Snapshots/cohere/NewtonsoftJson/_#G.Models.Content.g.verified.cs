@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content(global::G.TextContent value) => new Content(value);
+        public static implicit operator Content(global::G.TextContent value) => new Content((global::G.TextContent?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source4(global::G.Base64ImageSource value) => new Source4(value);
+        public static implicit operator Source4(global::G.Base64ImageSource value) => new Source4((global::G.Base64ImageSource?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source4(global::G.URLImageSource value) => new Source4(value);
+        public static implicit operator Source4(global::G.URLImageSource value) => new Source4((global::G.URLImageSource?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant2ItemItem(global::G.SystemMessage value) => new InputVariant2ItemItem(value);
+        public static implicit operator InputVariant2ItemItem(global::G.SystemMessage value) => new InputVariant2ItemItem((global::G.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant2ItemItem(global::G.UserMessage value) => new InputVariant2ItemItem(value);
+        public static implicit operator InputVariant2ItemItem(global::G.UserMessage value) => new InputVariant2ItemItem((global::G.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant2ItemItem(global::G.AssistantMessage value) => new InputVariant2ItemItem(value);
+        public static implicit operator InputVariant2ItemItem(global::G.AssistantMessage value) => new InputVariant2ItemItem((global::G.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputVariant2ItemItem(global::G.ToolMessage value) => new InputVariant2ItemItem(value);
+        public static implicit operator InputVariant2ItemItem(global::G.ToolMessage value) => new InputVariant2ItemItem((global::G.ToolMessage?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::G.EasyInputMessage value) => new InputItem(value);
+        public static implicit operator InputItem(global::G.EasyInputMessage value) => new InputItem((global::G.EasyInputMessage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::G.Item value) => new InputItem(value);
+        public static implicit operator InputItem(global::G.Item value) => new InputItem((global::G.Item?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::G.ItemReferenceParam value) => new InputItem(value);
+        public static implicit operator InputItem(global::G.ItemReferenceParam value) => new InputItem((global::G.ItemReferenceParam?)value);
 
         /// <summary>
         /// 

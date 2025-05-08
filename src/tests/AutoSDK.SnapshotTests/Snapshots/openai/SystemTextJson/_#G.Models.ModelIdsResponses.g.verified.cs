@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIdsResponses(global::G.ModelIdsShared value) => new ModelIdsResponses(value);
+        public static implicit operator ModelIdsResponses(global::G.ModelIdsShared value) => new ModelIdsResponses((global::G.ModelIdsShared?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIdsResponses(global::G.ModelIdsResponsesEnum value) => new ModelIdsResponses(value);
+        public static implicit operator ModelIdsResponses(global::G.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::G.ModelIdsResponsesEnum?)value);
 
         /// <summary>
         /// 

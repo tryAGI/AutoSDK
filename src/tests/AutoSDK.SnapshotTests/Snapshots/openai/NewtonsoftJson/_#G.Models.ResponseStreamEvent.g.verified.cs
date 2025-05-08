@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseAudioDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDoneEvent value) => new ResponseStreamEvent((global::G.ResponseAudioDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseAudioTranscriptDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent((global::G.ResponseAudioTranscriptDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallCodeDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallCodeDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallInterpretingEvent?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartAddedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartAddedEvent value) => new ResponseStreamEvent((global::G.ResponseContentPartAddedEvent?)value);
 
         /// <summary>
         /// 
@@ -415,7 +415,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartDoneEvent value) => new ResponseStreamEvent((global::G.ResponseContentPartDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseCreatedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCreatedEvent value) => new ResponseStreamEvent((global::G.ResponseCreatedEvent?)value);
 
         /// <summary>
         /// 
@@ -485,7 +485,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseErrorEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseErrorEvent value) => new ResponseStreamEvent((global::G.ResponseErrorEvent?)value);
 
         /// <summary>
         /// 
@@ -520,7 +520,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseFileSearchCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -555,7 +555,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseFileSearchCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -590,7 +590,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent((global::G.ResponseFileSearchCallSearchingEvent?)value);
 
         /// <summary>
         /// 
@@ -625,7 +625,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseFunctionCallArgumentsDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -660,7 +660,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::G.ResponseFunctionCallArgumentsDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -695,7 +695,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -730,7 +730,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseFailedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFailedEvent value) => new ResponseStreamEvent((global::G.ResponseFailedEvent?)value);
 
         /// <summary>
         /// 
@@ -765,7 +765,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseIncompleteEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseIncompleteEvent value) => new ResponseStreamEvent((global::G.ResponseIncompleteEvent?)value);
 
         /// <summary>
         /// 
@@ -800,7 +800,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent((global::G.ResponseOutputItemAddedEvent?)value);
 
         /// <summary>
         /// 
@@ -835,7 +835,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent((global::G.ResponseOutputItemDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -870,7 +870,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryPartAddedEvent?)value);
 
         /// <summary>
         /// 
@@ -905,7 +905,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartDoneEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryPartDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -940,7 +940,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryTextDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -975,7 +975,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDoneEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryTextDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -1010,7 +1010,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseRefusalDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -1045,7 +1045,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDoneEvent value) => new ResponseStreamEvent((global::G.ResponseRefusalDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -1080,7 +1080,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseTextAnnotationDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -1115,7 +1115,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseTextDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -1150,7 +1150,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDoneEvent value) => new ResponseStreamEvent((global::G.ResponseTextDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -1185,7 +1185,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseWebSearchCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -1220,7 +1220,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseWebSearchCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -1255,7 +1255,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent((global::G.ResponseWebSearchCallSearchingEvent?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionStream(global::G.ChatCompletionEvent value) => new ChatCompletionStream(value);
+        public static implicit operator ChatCompletionStream(global::G.ChatCompletionEvent value) => new ChatCompletionStream((global::G.ChatCompletionEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionStream(global::G.StreamSentinel value) => new ChatCompletionStream(value);
+        public static implicit operator ChatCompletionStream(global::G.StreamSentinel value) => new ChatCompletionStream((global::G.StreamSentinel?)value);
 
         /// <summary>
         /// 

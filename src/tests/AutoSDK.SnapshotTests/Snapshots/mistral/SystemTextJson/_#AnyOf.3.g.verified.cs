@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3>(T1 value) => new AnyOf<T1, T2, T3>(value);
+        public static implicit operator AnyOf<T1, T2, T3>(T1 value) => new AnyOf<T1, T2, T3>((T1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3>(T2 value) => new AnyOf<T1, T2, T3>(value);
+        public static implicit operator AnyOf<T1, T2, T3>(T2 value) => new AnyOf<T1, T2, T3>((T2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3>(T3 value) => new AnyOf<T1, T2, T3>(value);
+        public static implicit operator AnyOf<T1, T2, T3>(T3 value) => new AnyOf<T1, T2, T3>((T3?)value);
 
         /// <summary>
         /// 

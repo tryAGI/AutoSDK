@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamError(global::G.GenerateStreamEvent value) => new GenerateStreamError(value);
+        public static implicit operator GenerateStreamError(global::G.GenerateStreamEvent value) => new GenerateStreamError((global::G.GenerateStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamError(global::G.GenerateStreamErrorVariant2 value) => new GenerateStreamError(value);
+        public static implicit operator GenerateStreamError(global::G.GenerateStreamErrorVariant2 value) => new GenerateStreamError((global::G.GenerateStreamErrorVariant2?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FinetuneResponseTrainingType(global::G.FullTrainingType value) => new FinetuneResponseTrainingType(value);
+        public static implicit operator FinetuneResponseTrainingType(global::G.FullTrainingType value) => new FinetuneResponseTrainingType((global::G.FullTrainingType?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FinetuneResponseTrainingType(global::G.LoRATrainingType value) => new FinetuneResponseTrainingType(value);
+        public static implicit operator FinetuneResponseTrainingType(global::G.LoRATrainingType value) => new FinetuneResponseTrainingType((global::G.LoRATrainingType?)value);
 
         /// <summary>
         /// 

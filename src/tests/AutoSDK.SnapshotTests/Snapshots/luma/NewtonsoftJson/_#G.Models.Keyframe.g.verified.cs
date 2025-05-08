@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Keyframe(global::G.GenerationReference value) => new Keyframe(value);
+        public static implicit operator Keyframe(global::G.GenerationReference value) => new Keyframe((global::G.GenerationReference?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Keyframe(global::G.ImageReference value) => new Keyframe(value);
+        public static implicit operator Keyframe(global::G.ImageReference value) => new Keyframe((global::G.ImageReference?)value);
 
         /// <summary>
         /// 

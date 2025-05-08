@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::G.ToolSource value) => new Source(value);
+        public static implicit operator Source(global::G.ToolSource value) => new Source((global::G.ToolSource?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::G.DocumentSource value) => new Source(value);
+        public static implicit operator Source(global::G.DocumentSource value) => new Source((global::G.DocumentSource?)value);
 
         /// <summary>
         /// 

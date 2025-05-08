@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.InputMessageResource value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.InputMessageResource value) => new ItemResource((global::G.InputMessageResource?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.OutputMessage value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.OutputMessage value) => new ItemResource((global::G.OutputMessage?)value);
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.FileSearchToolCall value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.FileSearchToolCall value) => new ItemResource((global::G.FileSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -137,7 +137,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.ComputerToolCall value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.ComputerToolCall value) => new ItemResource((global::G.ComputerToolCall?)value);
 
         /// <summary>
         /// 
@@ -172,7 +172,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.ComputerToolCallOutputResource value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.ComputerToolCallOutputResource value) => new ItemResource((global::G.ComputerToolCallOutputResource?)value);
 
         /// <summary>
         /// 
@@ -208,7 +208,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.WebSearchToolCall value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.WebSearchToolCall value) => new ItemResource((global::G.WebSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -243,7 +243,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.FunctionToolCallResource value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.FunctionToolCallResource value) => new ItemResource((global::G.FunctionToolCallResource?)value);
 
         /// <summary>
         /// 
@@ -278,7 +278,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.FunctionToolCallOutputResource value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.FunctionToolCallOutputResource value) => new ItemResource((global::G.FunctionToolCallOutputResource?)value);
 
         /// <summary>
         /// 

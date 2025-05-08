@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TranscriptWebhookNotification(global::G.TranscriptReadyNotification value) => new TranscriptWebhookNotification(value);
+        public static implicit operator TranscriptWebhookNotification(global::G.TranscriptReadyNotification value) => new TranscriptWebhookNotification((global::G.TranscriptReadyNotification?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TranscriptWebhookNotification(global::G.RedactedAudioNotification value) => new TranscriptWebhookNotification(value);
+        public static implicit operator TranscriptWebhookNotification(global::G.RedactedAudioNotification value) => new TranscriptWebhookNotification((global::G.RedactedAudioNotification?)value);
 
         /// <summary>
         /// 

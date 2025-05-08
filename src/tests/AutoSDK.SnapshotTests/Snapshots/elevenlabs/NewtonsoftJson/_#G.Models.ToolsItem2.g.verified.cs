@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.WebhookToolConfigInput value) => new ToolsItem2(value);
+        public static implicit operator ToolsItem2(global::G.WebhookToolConfigInput value) => new ToolsItem2((global::G.WebhookToolConfigInput?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.ClientToolConfigInput value) => new ToolsItem2(value);
+        public static implicit operator ToolsItem2(global::G.ClientToolConfigInput value) => new ToolsItem2((global::G.ClientToolConfigInput?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.SystemToolConfig value) => new ToolsItem2(value);
+        public static implicit operator ToolsItem2(global::G.SystemToolConfig value) => new ToolsItem2((global::G.SystemToolConfig?)value);
 
         /// <summary>
         /// 

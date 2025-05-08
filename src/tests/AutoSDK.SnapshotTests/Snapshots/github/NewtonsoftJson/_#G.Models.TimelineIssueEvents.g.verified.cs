@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.LabeledIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.LabeledIssueEvent value) => new TimelineIssueEvents((global::G.LabeledIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.UnlabeledIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.UnlabeledIssueEvent value) => new TimelineIssueEvents((global::G.UnlabeledIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.MilestonedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.MilestonedIssueEvent value) => new TimelineIssueEvents((global::G.MilestonedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.DemilestonedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.DemilestonedIssueEvent value) => new TimelineIssueEvents((global::G.DemilestonedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.RenamedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.RenamedIssueEvent value) => new TimelineIssueEvents((global::G.RenamedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.ReviewRequestedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.ReviewRequestedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewRequestedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.ReviewRequestRemovedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.ReviewRequestRemovedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewRequestRemovedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.ReviewDismissedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.ReviewDismissedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewDismissedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.LockedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.LockedIssueEvent value) => new TimelineIssueEvents((global::G.LockedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.AddedToProjectIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.AddedToProjectIssueEvent value) => new TimelineIssueEvents((global::G.AddedToProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.MovedColumnInProjectIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.MovedColumnInProjectIssueEvent value) => new TimelineIssueEvents((global::G.MovedColumnInProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -415,7 +415,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.RemovedFromProjectIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.RemovedFromProjectIssueEvent value) => new TimelineIssueEvents((global::G.RemovedFromProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.ConvertedNoteToIssueIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.ConvertedNoteToIssueIssueEvent value) => new TimelineIssueEvents((global::G.ConvertedNoteToIssueIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -485,7 +485,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineCommentEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineCommentEvent value) => new TimelineIssueEvents((global::G.TimelineCommentEvent?)value);
 
         /// <summary>
         /// 
@@ -520,7 +520,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineCrossReferencedEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineCrossReferencedEvent value) => new TimelineIssueEvents((global::G.TimelineCrossReferencedEvent?)value);
 
         /// <summary>
         /// 
@@ -555,7 +555,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineCommittedEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineCommittedEvent value) => new TimelineIssueEvents((global::G.TimelineCommittedEvent?)value);
 
         /// <summary>
         /// 
@@ -590,7 +590,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineReviewedEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineReviewedEvent value) => new TimelineIssueEvents((global::G.TimelineReviewedEvent?)value);
 
         /// <summary>
         /// 
@@ -625,7 +625,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineLineCommentedEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineLineCommentedEvent value) => new TimelineIssueEvents((global::G.TimelineLineCommentedEvent?)value);
 
         /// <summary>
         /// 
@@ -660,7 +660,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineCommitCommentedEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineCommitCommentedEvent value) => new TimelineIssueEvents((global::G.TimelineCommitCommentedEvent?)value);
 
         /// <summary>
         /// 
@@ -695,7 +695,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineAssignedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineAssignedIssueEvent value) => new TimelineIssueEvents((global::G.TimelineAssignedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -730,7 +730,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.TimelineUnassignedIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.TimelineUnassignedIssueEvent value) => new TimelineIssueEvents((global::G.TimelineUnassignedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -765,7 +765,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TimelineIssueEvents(global::G.StateChangeIssueEvent value) => new TimelineIssueEvents(value);
+        public static implicit operator TimelineIssueEvents(global::G.StateChangeIssueEvent value) => new TimelineIssueEvents((global::G.StateChangeIssueEvent?)value);
 
         /// <summary>
         /// 

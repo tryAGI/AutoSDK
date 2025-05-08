@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::G.ChatMessageStartEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentStartEvent value) => new StreamedChatResponseV2((global::G.ChatContentStartEvent?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatContentDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentEndEvent value) => new StreamedChatResponseV2((global::G.ChatContentEndEvent?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolPlanDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallStartEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallStartEvent?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallEndEvent?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageEndEvent value) => new StreamedChatResponseV2(value);
+        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::G.ChatMessageEndEvent?)value);
 
         /// <summary>
         /// 

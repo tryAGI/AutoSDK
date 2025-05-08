@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DependentAgentsItem(global::G.DependentAvailableAgentIdentifier value) => new DependentAgentsItem(value);
+        public static implicit operator DependentAgentsItem(global::G.DependentAvailableAgentIdentifier value) => new DependentAgentsItem((global::G.DependentAvailableAgentIdentifier?)value);
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DependentAgentsItem(global::G.DependentUnknownAgentIdentifier value) => new DependentAgentsItem(value);
+        public static implicit operator DependentAgentsItem(global::G.DependentUnknownAgentIdentifier value) => new DependentAgentsItem((global::G.DependentUnknownAgentIdentifier?)value);
 
         /// <summary>
         /// 

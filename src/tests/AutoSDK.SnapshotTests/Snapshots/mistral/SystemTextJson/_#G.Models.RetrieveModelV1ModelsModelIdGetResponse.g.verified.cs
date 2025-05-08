@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::G.BaseModelCard?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+        public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::G.FTModelCard?)value);
 
         /// <summary>
         /// 

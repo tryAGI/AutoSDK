@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateLLMRequest(global::G.CreateOpenAILLMRequest value) => new CreateLLMRequest(value);
+        public static implicit operator CreateLLMRequest(global::G.CreateOpenAILLMRequest value) => new CreateLLMRequest((global::G.CreateOpenAILLMRequest?)value);
 
         /// <summary>
         /// 

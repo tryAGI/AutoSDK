@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestDeveloperMessage?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestSystemMessage?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestUserMessage?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestAssistantMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestAssistantMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestToolMessage?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestFunctionMessage?)value);
 
         /// <summary>
         /// 

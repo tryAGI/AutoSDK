@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCreation value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCreation value) => new RepositoryRule((global::G.RepositoryRuleCreation?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleUpdate value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleUpdate value) => new RepositoryRule((global::G.RepositoryRuleUpdate?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleDeletion value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleDeletion value) => new RepositoryRule((global::G.RepositoryRuleDeletion?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredLinearHistory value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredLinearHistory value) => new RepositoryRule((global::G.RepositoryRuleRequiredLinearHistory?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleMergeQueue value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleMergeQueue value) => new RepositoryRule((global::G.RepositoryRuleMergeQueue?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredDeployments value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredDeployments value) => new RepositoryRule((global::G.RepositoryRuleRequiredDeployments?)value);
 
         /// <summary>
         /// 
@@ -245,7 +245,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredSignatures value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredSignatures value) => new RepositoryRule((global::G.RepositoryRuleRequiredSignatures?)value);
 
         /// <summary>
         /// 
@@ -280,7 +280,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRulePullRequest value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRulePullRequest value) => new RepositoryRule((global::G.RepositoryRulePullRequest?)value);
 
         /// <summary>
         /// 
@@ -315,7 +315,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks value) => new RepositoryRule((global::G.RepositoryRuleRequiredStatusChecks?)value);
 
         /// <summary>
         /// 
@@ -350,7 +350,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleNonFastForward value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleNonFastForward value) => new RepositoryRule((global::G.RepositoryRuleNonFastForward?)value);
 
         /// <summary>
         /// 
@@ -385,7 +385,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitMessagePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitMessagePattern value) => new RepositoryRule((global::G.RepositoryRuleCommitMessagePattern?)value);
 
         /// <summary>
         /// 
@@ -420,7 +420,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern value) => new RepositoryRule((global::G.RepositoryRuleCommitAuthorEmailPattern?)value);
 
         /// <summary>
         /// 
@@ -455,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern value) => new RepositoryRule((global::G.RepositoryRuleCommitterEmailPattern?)value);
 
         /// <summary>
         /// 
@@ -490,7 +490,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleBranchNamePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleBranchNamePattern value) => new RepositoryRule((global::G.RepositoryRuleBranchNamePattern?)value);
 
         /// <summary>
         /// 
@@ -525,7 +525,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleTagNamePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleTagNamePattern value) => new RepositoryRule((global::G.RepositoryRuleTagNamePattern?)value);
 
         /// <summary>
         /// 
@@ -560,7 +560,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant16 value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant16 value) => new RepositoryRule((global::G.RepositoryRuleVariant16?)value);
 
         /// <summary>
         /// 
@@ -595,7 +595,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant17 value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant17 value) => new RepositoryRule((global::G.RepositoryRuleVariant17?)value);
 
         /// <summary>
         /// 
@@ -630,7 +630,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant18 value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant18 value) => new RepositoryRule((global::G.RepositoryRuleVariant18?)value);
 
         /// <summary>
         /// 
@@ -665,7 +665,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant19 value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant19 value) => new RepositoryRule((global::G.RepositoryRuleVariant19?)value);
 
         /// <summary>
         /// 
@@ -700,7 +700,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleWorkflows value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleWorkflows value) => new RepositoryRule((global::G.RepositoryRuleWorkflows?)value);
 
         /// <summary>
         /// 
@@ -735,7 +735,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCodeScanning value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCodeScanning value) => new RepositoryRule((global::G.RepositoryRuleCodeScanning?)value);
 
         /// <summary>
         /// 

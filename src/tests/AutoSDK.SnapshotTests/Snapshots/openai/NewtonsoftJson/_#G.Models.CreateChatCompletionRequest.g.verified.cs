@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateChatCompletionRequest(global::G.CreateModelResponseProperties value) => new CreateChatCompletionRequest(value);
+        public static implicit operator CreateChatCompletionRequest(global::G.CreateModelResponseProperties value) => new CreateChatCompletionRequest((global::G.CreateModelResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateChatCompletionRequest(global::G.CreateChatCompletionRequestVariant2 value) => new CreateChatCompletionRequest(value);
+        public static implicit operator CreateChatCompletionRequest(global::G.CreateChatCompletionRequestVariant2 value) => new CreateChatCompletionRequest((global::G.CreateChatCompletionRequestVariant2?)value);
 
         /// <summary>
         /// 

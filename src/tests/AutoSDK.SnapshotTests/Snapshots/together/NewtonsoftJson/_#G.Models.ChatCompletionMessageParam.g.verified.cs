@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionSystemMessageParam value) => new ChatCompletionMessageParam(value);
+        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionSystemMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionSystemMessageParam?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionUserMessageParam value) => new ChatCompletionMessageParam(value);
+        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionUserMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionUserMessageParam?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionAssistantMessageParam value) => new ChatCompletionMessageParam(value);
+        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionAssistantMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionAssistantMessageParam?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionToolMessageParam value) => new ChatCompletionMessageParam(value);
+        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionToolMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionToolMessageParam?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionFunctionMessageParam value) => new ChatCompletionMessageParam(value);
+        public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionFunctionMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionFunctionMessageParam?)value);
 
         /// <summary>
         /// 

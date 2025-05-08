@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant1 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant1 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant1?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant2 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant2 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant2?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant3 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant3 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant3?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant4 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant4 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant4?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant5 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant5 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant5?)value);
 
         /// <summary>
         /// 

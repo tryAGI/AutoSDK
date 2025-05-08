@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.BetaSucceededResult value) => new Result(value);
+        public static implicit operator Result(global::G.BetaSucceededResult value) => new Result((global::G.BetaSucceededResult?)value);
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.BetaErroredResult value) => new Result(value);
+        public static implicit operator Result(global::G.BetaErroredResult value) => new Result((global::G.BetaErroredResult?)value);
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.BetaCanceledResult value) => new Result(value);
+        public static implicit operator Result(global::G.BetaCanceledResult value) => new Result((global::G.BetaCanceledResult?)value);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.BetaExpiredResult value) => new Result(value);
+        public static implicit operator Result(global::G.BetaExpiredResult value) => new Result((global::G.BetaExpiredResult?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BatchReferenceResponse(global::G.BatchReference value) => new BatchReferenceResponse(value);
+        public static implicit operator BatchReferenceResponse(global::G.BatchReference value) => new BatchReferenceResponse((global::G.BatchReference?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BatchReferenceResponse(global::G.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse(value);
+        public static implicit operator BatchReferenceResponse(global::G.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse((global::G.BatchReferenceResponseVariant2?)value);
 
         /// <summary>
         /// 

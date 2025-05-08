@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Request(global::G.GenerationRequest value) => new Request(value);
+        public static implicit operator Request(global::G.GenerationRequest value) => new Request((global::G.GenerationRequest?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Request(global::G.ImageGenerationRequest value) => new Request(value);
+        public static implicit operator Request(global::G.ImageGenerationRequest value) => new Request((global::G.ImageGenerationRequest?)value);
 
         /// <summary>
         /// 

@@ -39,7 +39,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormatV2(global::G.TextResponseFormatV2 value) => new ResponseFormatV2(value);
+        public static implicit operator ResponseFormatV2(global::G.TextResponseFormatV2 value) => new ResponseFormatV2((global::G.TextResponseFormatV2?)value);
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormatV2(global::G.JsonResponseFormatV2 value) => new ResponseFormatV2(value);
+        public static implicit operator ResponseFormatV2(global::G.JsonResponseFormatV2 value) => new ResponseFormatV2((global::G.JsonResponseFormatV2?)value);
 
         /// <summary>
         /// 

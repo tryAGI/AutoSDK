@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator LemurTaskResponse(global::G.LemurStringResponse value) => new LemurTaskResponse(value);
+        public static implicit operator LemurTaskResponse(global::G.LemurStringResponse value) => new LemurTaskResponse((global::G.LemurStringResponse?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.RephraseSpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.RephraseSpan value) => new QueryHistorySpan((global::G.RephraseSpan?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.SearchSpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.SearchSpan value) => new QueryHistorySpan((global::G.SearchSpan?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.RerankSpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.RerankSpan value) => new QueryHistorySpan((global::G.RerankSpan?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.GenerationSpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.GenerationSpan value) => new QueryHistorySpan((global::G.GenerationSpan?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.FactualConsistencyScoreSpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.FactualConsistencyScoreSpan value) => new QueryHistorySpan((global::G.FactualConsistencyScoreSpan?)value);
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryHistorySpan(global::G.RewrittenQuerySpan value) => new QueryHistorySpan(value);
+        public static implicit operator QueryHistorySpan(global::G.RewrittenQuerySpan value) => new QueryHistorySpan((global::G.RewrittenQuerySpan?)value);
 
         /// <summary>
         /// 

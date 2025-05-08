@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBeta(string value) => new AnthropicBeta(value);
+        public static implicit operator AnthropicBeta(string value) => new AnthropicBeta((string?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBeta(global::G.AnthropicBetaEnum value) => new AnthropicBeta(value);
+        public static implicit operator AnthropicBeta(global::G.AnthropicBetaEnum value) => new AnthropicBeta((global::G.AnthropicBetaEnum?)value);
 
         /// <summary>
         /// 

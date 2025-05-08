@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(global::G.CompletionJobOut value) => new JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(value);
+        public static implicit operator JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(global::G.CompletionJobOut value) => new JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1((global::G.CompletionJobOut?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(global::G.ClassifierJobOut value) => new JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(value);
+        public static implicit operator JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(global::G.ClassifierJobOut value) => new JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1((global::G.ClassifierJobOut?)value);
 
         /// <summary>
         /// 

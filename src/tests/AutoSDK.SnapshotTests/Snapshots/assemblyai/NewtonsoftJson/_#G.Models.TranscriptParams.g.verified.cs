@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TranscriptParams(global::G.TranscriptParamsVariant1 value) => new TranscriptParams(value);
+        public static implicit operator TranscriptParams(global::G.TranscriptParamsVariant1 value) => new TranscriptParams((global::G.TranscriptParamsVariant1?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TranscriptParams(global::G.TranscriptOptionalParams value) => new TranscriptParams(value);
+        public static implicit operator TranscriptParams(global::G.TranscriptOptionalParams value) => new TranscriptParams((global::G.TranscriptOptionalParams?)value);
 
         /// <summary>
         /// 

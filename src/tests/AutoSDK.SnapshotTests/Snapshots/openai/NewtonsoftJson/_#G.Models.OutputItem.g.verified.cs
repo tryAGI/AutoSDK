@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.OutputMessage value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.OutputMessage value) => new OutputItem((global::G.OutputMessage?)value);
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.FileSearchToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.FileSearchToolCall value) => new OutputItem((global::G.FileSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.FunctionToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.FunctionToolCall value) => new OutputItem((global::G.FunctionToolCall?)value);
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.WebSearchToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.WebSearchToolCall value) => new OutputItem((global::G.WebSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.ComputerToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.ComputerToolCall value) => new OutputItem((global::G.ComputerToolCall?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::G.ReasoningItem value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::G.ReasoningItem value) => new OutputItem((global::G.ReasoningItem?)value);
 
         /// <summary>
         /// 

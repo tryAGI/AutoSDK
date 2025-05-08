@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem2(global::G.SystemMessage value) => new MessagesItem2(value);
+        public static implicit operator MessagesItem2(global::G.SystemMessage value) => new MessagesItem2((global::G.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem2(global::G.UserMessage value) => new MessagesItem2(value);
+        public static implicit operator MessagesItem2(global::G.UserMessage value) => new MessagesItem2((global::G.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem2(global::G.AssistantMessage value) => new MessagesItem2(value);
+        public static implicit operator MessagesItem2(global::G.AssistantMessage value) => new MessagesItem2((global::G.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessagesItem2(global::G.ToolMessage value) => new MessagesItem2(value);
+        public static implicit operator MessagesItem2(global::G.ToolMessage value) => new MessagesItem2((global::G.ToolMessage?)value);
 
         /// <summary>
         /// 

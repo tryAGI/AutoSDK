@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestToolMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestToolMessageContentPart(value);
+        public static implicit operator ChatCompletionRequestToolMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestToolMessageContentPart((global::G.ChatCompletionRequestMessageContentPartText?)value);
 
         /// <summary>
         /// 

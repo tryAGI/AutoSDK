@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.ThreadStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.ThreadStreamEvent value) => new AssistantStreamEvent((global::G.ThreadStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.RunStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.RunStreamEvent value) => new AssistantStreamEvent((global::G.RunStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.RunStepStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.RunStepStreamEvent value) => new AssistantStreamEvent((global::G.RunStepStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -149,7 +149,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.MessageStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.MessageStreamEvent value) => new AssistantStreamEvent((global::G.MessageStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -184,7 +184,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.ErrorEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.ErrorEvent value) => new AssistantStreamEvent((global::G.ErrorEvent?)value);
 
         /// <summary>
         /// 
@@ -219,7 +219,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::G.DoneEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::G.DoneEvent value) => new AssistantStreamEvent((global::G.DoneEvent?)value);
 
         /// <summary>
         /// 

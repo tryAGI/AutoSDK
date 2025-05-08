@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item4(global::G.RequestTextBlock value) => new ContentVariant2Item4(value);
+        public static implicit operator ContentVariant2Item4(global::G.RequestTextBlock value) => new ContentVariant2Item4((global::G.RequestTextBlock?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item4(global::G.RequestImageBlock value) => new ContentVariant2Item4(value);
+        public static implicit operator ContentVariant2Item4(global::G.RequestImageBlock value) => new ContentVariant2Item4((global::G.RequestImageBlock?)value);
 
         /// <summary>
         /// 

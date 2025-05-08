@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Annotation(global::G.FileCitationBody value) => new Annotation(value);
+        public static implicit operator Annotation(global::G.FileCitationBody value) => new Annotation((global::G.FileCitationBody?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Annotation(global::G.UrlCitationBody value) => new Annotation(value);
+        public static implicit operator Annotation(global::G.UrlCitationBody value) => new Annotation((global::G.UrlCitationBody?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Annotation(global::G.FilePath value) => new Annotation(value);
+        public static implicit operator Annotation(global::G.FilePath value) => new Annotation((global::G.FilePath?)value);
 
         /// <summary>
         /// 

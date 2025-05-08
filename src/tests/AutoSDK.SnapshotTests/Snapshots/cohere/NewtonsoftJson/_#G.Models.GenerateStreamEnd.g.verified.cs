@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEvent value) => new GenerateStreamEnd(value);
+        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEvent value) => new GenerateStreamEnd((global::G.GenerateStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEndVariant2 value) => new GenerateStreamEnd(value);
+        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEndVariant2 value) => new GenerateStreamEnd((global::G.GenerateStreamEndVariant2?)value);
 
         /// <summary>
         /// 

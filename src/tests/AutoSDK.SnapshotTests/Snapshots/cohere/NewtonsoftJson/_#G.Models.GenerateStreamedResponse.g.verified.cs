@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamText value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamText value) => new GenerateStreamedResponse((global::G.GenerateStreamText?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamEnd value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamEnd value) => new GenerateStreamedResponse((global::G.GenerateStreamEnd?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamError value) => new GenerateStreamedResponse(value);
+        public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamError value) => new GenerateStreamedResponse((global::G.GenerateStreamError?)value);
 
         /// <summary>
         /// 

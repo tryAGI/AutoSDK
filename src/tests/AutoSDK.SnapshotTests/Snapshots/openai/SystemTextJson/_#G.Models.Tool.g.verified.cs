@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.FileSearchTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.FileSearchTool value) => new Tool((global::G.FileSearchTool?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.FunctionTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.FunctionTool value) => new Tool((global::G.FunctionTool?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.WebSearchPreviewTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.WebSearchPreviewTool value) => new Tool((global::G.WebSearchPreviewTool?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool((global::G.ComputerUsePreviewTool?)value);
 
         /// <summary>
         /// 

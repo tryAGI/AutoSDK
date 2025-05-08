@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CompletionStream(global::G.CompletionEvent value) => new CompletionStream(value);
+        public static implicit operator CompletionStream(global::G.CompletionEvent value) => new CompletionStream((global::G.CompletionEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CompletionStream(global::G.StreamSentinel value) => new CompletionStream(value);
+        public static implicit operator CompletionStream(global::G.StreamSentinel value) => new CompletionStream((global::G.StreamSentinel?)value);
 
         /// <summary>
         /// 

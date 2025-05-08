@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem2(global::G.BaseModelCard value) => new DataItem2(value);
+        public static implicit operator DataItem2(global::G.BaseModelCard value) => new DataItem2((global::G.BaseModelCard?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem2(global::G.FTModelCard value) => new DataItem2(value);
+        public static implicit operator DataItem2(global::G.FTModelCard value) => new DataItem2((global::G.FTModelCard?)value);
 
         /// <summary>
         /// 

@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StopConfiguration(string value) => new StopConfiguration(value);
+        public static implicit operator StopConfiguration(string value) => new StopConfiguration((string?)value);
 
         /// <summary>
         /// 

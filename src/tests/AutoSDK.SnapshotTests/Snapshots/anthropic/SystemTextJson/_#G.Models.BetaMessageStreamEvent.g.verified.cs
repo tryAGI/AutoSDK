@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStartEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStartEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageStartEvent?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageDeltaEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageDeltaEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStopEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStopEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageStopEvent?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStartEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStartEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockStartEvent?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockDeltaEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockDeltaEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStopEvent value) => new BetaMessageStreamEvent(value);
+        public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStopEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockStopEvent?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FIMCompletionResponse(global::G.ChatCompletionResponse value) => new FIMCompletionResponse(value);
+        public static implicit operator FIMCompletionResponse(global::G.ChatCompletionResponse value) => new FIMCompletionResponse((global::G.ChatCompletionResponse?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FIMCompletionResponse(global::G.FIMCompletionResponseVariant2 value) => new FIMCompletionResponse(value);
+        public static implicit operator FIMCompletionResponse(global::G.FIMCompletionResponseVariant2 value) => new FIMCompletionResponse((global::G.FIMCompletionResponseVariant2?)value);
 
         /// <summary>
         /// 

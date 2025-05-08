@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithPresetName value) => new ColorPaletteWithPresetNameOrMembers(value);
+        public static implicit operator ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithPresetName value) => new ColorPaletteWithPresetNameOrMembers((global::G.ColorPaletteWithPresetName?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithMembers value) => new ColorPaletteWithPresetNameOrMembers(value);
+        public static implicit operator ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithMembers value) => new ColorPaletteWithPresetNameOrMembers((global::G.ColorPaletteWithMembers?)value);
 
         /// <summary>
         /// 

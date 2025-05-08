@@ -31,7 +31,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator WebhookConfigInsecureSsl(string value) => new WebhookConfigInsecureSsl(value);
+        public static implicit operator WebhookConfigInsecureSsl(string value) => new WebhookConfigInsecureSsl((string?)value);
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator WebhookConfigInsecureSsl(double value) => new WebhookConfigInsecureSsl(value);
+        public static implicit operator WebhookConfigInsecureSsl(double value) => new WebhookConfigInsecureSsl((double?)value);
 
         /// <summary>
         /// 

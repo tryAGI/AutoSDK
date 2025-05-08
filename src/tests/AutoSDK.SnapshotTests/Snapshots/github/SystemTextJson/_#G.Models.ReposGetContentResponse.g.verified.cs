@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ReposGetContentResponse(global::G.ContentFile value) => new ReposGetContentResponse(value);
+        public static implicit operator ReposGetContentResponse(global::G.ContentFile value) => new ReposGetContentResponse((global::G.ContentFile?)value);
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ReposGetContentResponse(global::G.ContentSymlink value) => new ReposGetContentResponse(value);
+        public static implicit operator ReposGetContentResponse(global::G.ContentSymlink value) => new ReposGetContentResponse((global::G.ContentSymlink?)value);
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ReposGetContentResponse(global::G.ContentSubmodule value) => new ReposGetContentResponse(value);
+        public static implicit operator ReposGetContentResponse(global::G.ContentSubmodule value) => new ReposGetContentResponse((global::G.ContentSubmodule?)value);
 
         /// <summary>
         /// 

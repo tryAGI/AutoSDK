@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateEncoderRequest(global::G.CreateOpenAIEncoderRequest value) => new CreateEncoderRequest(value);
+        public static implicit operator CreateEncoderRequest(global::G.CreateOpenAIEncoderRequest value) => new CreateEncoderRequest((global::G.CreateOpenAIEncoderRequest?)value);
 
         /// <summary>
         /// 

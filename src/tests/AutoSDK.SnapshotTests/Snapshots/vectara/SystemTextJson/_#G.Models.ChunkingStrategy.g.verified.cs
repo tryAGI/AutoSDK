@@ -37,7 +37,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategy(global::G.MaxCharsChunkingStrategy value) => new ChunkingStrategy(value);
+        public static implicit operator ChunkingStrategy(global::G.MaxCharsChunkingStrategy value) => new ChunkingStrategy((global::G.MaxCharsChunkingStrategy?)value);
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategy(global::G.SentenceChunkingStrategy value) => new ChunkingStrategy(value);
+        public static implicit operator ChunkingStrategy(global::G.SentenceChunkingStrategy value) => new ChunkingStrategy((global::G.SentenceChunkingStrategy?)value);
 
         /// <summary>
         /// 

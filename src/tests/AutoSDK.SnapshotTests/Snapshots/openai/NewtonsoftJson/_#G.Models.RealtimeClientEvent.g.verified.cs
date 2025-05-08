@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemCreate?)value);
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemDelete?)value);
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemRetrieve?)value);
 
         /// <summary>
         /// 
@@ -154,7 +154,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemTruncate?)value);
 
         /// <summary>
         /// 
@@ -197,7 +197,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferAppend?)value);
 
         /// <summary>
         /// 
@@ -233,7 +233,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferClear?)value);
 
         /// <summary>
         /// 
@@ -272,7 +272,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventOutputAudioBufferClear?)value);
 
         /// <summary>
         /// 
@@ -315,7 +315,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferCommit?)value);
 
         /// <summary>
         /// 
@@ -352,7 +352,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCancel?)value);
 
         /// <summary>
         /// 
@@ -398,7 +398,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCreate?)value);
 
         /// <summary>
         /// 
@@ -441,7 +441,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventSessionUpdate value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventSessionUpdate value) => new RealtimeClientEvent((global::G.RealtimeClientEventSessionUpdate?)value);
 
         /// <summary>
         /// 
@@ -476,7 +476,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventTranscriptionSessionUpdate value) => new RealtimeClientEvent(value);
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventTranscriptionSessionUpdate value) => new RealtimeClientEvent((global::G.RealtimeClientEventTranscriptionSessionUpdate?)value);
 
         /// <summary>
         /// 

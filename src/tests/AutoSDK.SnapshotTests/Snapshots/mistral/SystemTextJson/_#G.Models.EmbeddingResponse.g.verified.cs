@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.ResponseBase value) => new EmbeddingResponse(value);
+        public static implicit operator EmbeddingResponse(global::G.ResponseBase value) => new EmbeddingResponse((global::G.ResponseBase?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant2 value) => new EmbeddingResponse(value);
+        public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant2 value) => new EmbeddingResponse((global::G.EmbeddingResponseVariant2?)value);
 
         /// <summary>
         /// 

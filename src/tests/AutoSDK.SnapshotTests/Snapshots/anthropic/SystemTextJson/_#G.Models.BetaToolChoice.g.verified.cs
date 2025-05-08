@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceAuto value) => new BetaToolChoice(value);
+        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceAuto value) => new BetaToolChoice((global::G.BetaToolChoiceAuto?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceAny value) => new BetaToolChoice(value);
+        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceAny value) => new BetaToolChoice((global::G.BetaToolChoiceAny?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceTool value) => new BetaToolChoice(value);
+        public static implicit operator BetaToolChoice(global::G.BetaToolChoiceTool value) => new BetaToolChoice((global::G.BetaToolChoiceTool?)value);
 
         /// <summary>
         /// 

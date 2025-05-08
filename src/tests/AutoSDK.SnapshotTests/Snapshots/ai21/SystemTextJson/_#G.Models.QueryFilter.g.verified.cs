@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>> value) => new QueryFilter(value);
+        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?)value);
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, object> value) => new QueryFilter(value);
+        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, object> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, object>?)value);
 
         /// <summary>
         /// 

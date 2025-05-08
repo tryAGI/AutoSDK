@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaTool value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaTool value) => new ToolsItem((global::G.BetaTool?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaComputerUseTool20241022 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaComputerUseTool20241022 value) => new ToolsItem((global::G.BetaComputerUseTool20241022?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaBashTool20241022 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaBashTool20241022 value) => new ToolsItem((global::G.BetaBashTool20241022?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaTextEditor20241022 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaTextEditor20241022 value) => new ToolsItem((global::G.BetaTextEditor20241022?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaComputerUseTool20250124 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaComputerUseTool20250124 value) => new ToolsItem((global::G.BetaComputerUseTool20250124?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaBashTool20250124 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaBashTool20250124 value) => new ToolsItem((global::G.BetaBashTool20250124?)value);
 
         /// <summary>
         /// 
@@ -245,7 +245,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.BetaTextEditor20250124 value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.BetaTextEditor20250124 value) => new ToolsItem((global::G.BetaTextEditor20250124?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1>(T1 value) => new OneOf<T1>(value);
+        public static implicit operator OneOf<T1>(T1 value) => new OneOf<T1>((T1?)value);
 
         /// <summary>
         /// 

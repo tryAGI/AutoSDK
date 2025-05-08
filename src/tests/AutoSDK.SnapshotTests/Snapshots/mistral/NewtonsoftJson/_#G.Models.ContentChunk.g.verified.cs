@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::G.TextChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::G.TextChunk value) => new ContentChunk((global::G.TextChunk?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::G.ImageURLChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::G.ImageURLChunk value) => new ContentChunk((global::G.ImageURLChunk?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::G.DocumentURLChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::G.DocumentURLChunk value) => new ContentChunk((global::G.DocumentURLChunk?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentChunk(global::G.ReferenceChunk value) => new ContentChunk(value);
+        public static implicit operator ContentChunk(global::G.ReferenceChunk value) => new ContentChunk((global::G.ReferenceChunk?)value);
 
         /// <summary>
         /// 

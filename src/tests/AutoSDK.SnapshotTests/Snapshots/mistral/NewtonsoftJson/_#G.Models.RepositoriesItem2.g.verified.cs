@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoriesItem2(global::G.GithubRepositoryOut value) => new RepositoriesItem2(value);
+        public static implicit operator RepositoriesItem2(global::G.GithubRepositoryOut value) => new RepositoriesItem2((global::G.GithubRepositoryOut?)value);
 
         /// <summary>
         /// 

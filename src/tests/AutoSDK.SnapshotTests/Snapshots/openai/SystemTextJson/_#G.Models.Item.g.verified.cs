@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.InputMessage value) => new Item(value);
+        public static implicit operator Item(global::G.InputMessage value) => new Item((global::G.InputMessage?)value);
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.OutputMessage value) => new Item(value);
+        public static implicit operator Item(global::G.OutputMessage value) => new Item((global::G.OutputMessage?)value);
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.FileSearchToolCall value) => new Item(value);
+        public static implicit operator Item(global::G.FileSearchToolCall value) => new Item((global::G.FileSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.ComputerToolCall value) => new Item(value);
+        public static implicit operator Item(global::G.ComputerToolCall value) => new Item((global::G.ComputerToolCall?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.ComputerCallOutputItemParam value) => new Item(value);
+        public static implicit operator Item(global::G.ComputerCallOutputItemParam value) => new Item((global::G.ComputerCallOutputItemParam?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.WebSearchToolCall value) => new Item(value);
+        public static implicit operator Item(global::G.WebSearchToolCall value) => new Item((global::G.WebSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -246,7 +246,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.FunctionToolCall value) => new Item(value);
+        public static implicit operator Item(global::G.FunctionToolCall value) => new Item((global::G.FunctionToolCall?)value);
 
         /// <summary>
         /// 
@@ -281,7 +281,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item(value);
+        public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item((global::G.FunctionCallOutputItemParam?)value);
 
         /// <summary>
         /// 
@@ -317,7 +317,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.ReasoningItem value) => new Item(value);
+        public static implicit operator Item(global::G.ReasoningItem value) => new Item((global::G.ReasoningItem?)value);
 
         /// <summary>
         /// 

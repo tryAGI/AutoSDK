@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -415,7 +415,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -485,7 +485,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -520,7 +520,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -555,7 +555,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 
@@ -590,7 +590,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed((global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::G.CreateModelResponseProperties value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::G.CreateModelResponseProperties value) => new CreateResponse((global::G.CreateModelResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::G.ResponseProperties value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::G.ResponseProperties value) => new CreateResponse((global::G.ResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::G.CreateResponseVariant3 value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::G.CreateResponseVariant3 value) => new CreateResponse((global::G.CreateResponseVariant3?)value);
 
         /// <summary>
         /// 

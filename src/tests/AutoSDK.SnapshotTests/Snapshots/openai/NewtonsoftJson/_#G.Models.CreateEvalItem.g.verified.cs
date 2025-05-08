@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateEvalItem(global::G.CreateEvalItemVariant1 value) => new CreateEvalItem(value);
+        public static implicit operator CreateEvalItem(global::G.CreateEvalItemVariant1 value) => new CreateEvalItem((global::G.CreateEvalItemVariant1?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateEvalItem(global::G.EvalItem value) => new CreateEvalItem(value);
+        public static implicit operator CreateEvalItem(global::G.EvalItem value) => new CreateEvalItem((global::G.EvalItem?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseTextBlock value) => new ContentBlock2(value);
+        public static implicit operator ContentBlock2(global::G.ResponseTextBlock value) => new ContentBlock2((global::G.ResponseTextBlock?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseToolUseBlock value) => new ContentBlock2(value);
+        public static implicit operator ContentBlock2(global::G.ResponseToolUseBlock value) => new ContentBlock2((global::G.ResponseToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseThinkingBlock value) => new ContentBlock2(value);
+        public static implicit operator ContentBlock2(global::G.ResponseThinkingBlock value) => new ContentBlock2((global::G.ResponseThinkingBlock?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseRedactedThinkingBlock value) => new ContentBlock2(value);
+        public static implicit operator ContentBlock2(global::G.ResponseRedactedThinkingBlock value) => new ContentBlock2((global::G.ResponseRedactedThinkingBlock?)value);
 
         /// <summary>
         /// 

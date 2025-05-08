@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategyRequestParam(global::G.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam(value);
+        public static implicit operator ChunkingStrategyRequestParam(global::G.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::G.AutoChunkingStrategyRequestParam?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategyRequestParam(global::G.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam(value);
+        public static implicit operator ChunkingStrategyRequestParam(global::G.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::G.StaticChunkingStrategyRequestParam?)value);
 
         /// <summary>
         /// 

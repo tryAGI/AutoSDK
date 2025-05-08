@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Click value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Click value) => new ComputerAction((global::G.Click?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.DoubleClick value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.DoubleClick value) => new ComputerAction((global::G.DoubleClick?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Drag value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Drag value) => new ComputerAction((global::G.Drag?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.KeyPress value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.KeyPress value) => new ComputerAction((global::G.KeyPress?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Move value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Move value) => new ComputerAction((global::G.Move?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Screenshot value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Screenshot value) => new ComputerAction((global::G.Screenshot?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Scroll value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Scroll value) => new ComputerAction((global::G.Scroll?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Type value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Type value) => new ComputerAction((global::G.Type?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::G.Wait value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::G.Wait value) => new ComputerAction((global::G.Wait?)value);
 
         /// <summary>
         /// 

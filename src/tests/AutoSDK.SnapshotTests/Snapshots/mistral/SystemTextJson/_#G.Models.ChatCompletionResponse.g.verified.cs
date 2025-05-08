@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseBase value) => new ChatCompletionResponse(value);
+        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseBase value) => new ChatCompletionResponse((global::G.ChatCompletionResponseBase?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseVariant2 value) => new ChatCompletionResponse(value);
+        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseVariant2 value) => new ChatCompletionResponse((global::G.ChatCompletionResponseVariant2?)value);
 
         /// <summary>
         /// 

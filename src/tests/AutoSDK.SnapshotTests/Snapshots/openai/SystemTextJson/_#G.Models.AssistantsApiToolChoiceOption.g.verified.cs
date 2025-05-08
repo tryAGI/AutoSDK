@@ -34,7 +34,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption(value);
+        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption((global::G.AssistantsApiToolChoiceOptionEnum?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsNamedToolChoice value) => new AssistantsApiToolChoiceOption(value);
+        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsNamedToolChoice value) => new AssistantsApiToolChoiceOption((global::G.AssistantsNamedToolChoice?)value);
 
         /// <summary>
         /// 

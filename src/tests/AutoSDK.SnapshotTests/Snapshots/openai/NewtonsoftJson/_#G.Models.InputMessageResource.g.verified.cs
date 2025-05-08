@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputMessageResource(global::G.InputMessage value) => new InputMessageResource(value);
+        public static implicit operator InputMessageResource(global::G.InputMessage value) => new InputMessageResource((global::G.InputMessage?)value);
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputMessageResource(global::G.InputMessageResourceVariant2 value) => new InputMessageResource(value);
+        public static implicit operator InputMessageResource(global::G.InputMessageResourceVariant2 value) => new InputMessageResource((global::G.InputMessageResourceVariant2?)value);
 
         /// <summary>
         /// 

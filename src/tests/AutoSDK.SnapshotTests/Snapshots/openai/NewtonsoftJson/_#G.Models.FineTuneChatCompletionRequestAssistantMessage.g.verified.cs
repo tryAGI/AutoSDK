@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage(value);
+        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage((global::G.FineTuneChatCompletionRequestAssistantMessageVariant1?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.ChatCompletionRequestAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage(value);
+        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.ChatCompletionRequestAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage((global::G.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
         /// 

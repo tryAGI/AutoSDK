@@ -31,7 +31,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PullModelStatus(string value) => new PullModelStatus(value);
+        public static implicit operator PullModelStatus(string value) => new PullModelStatus((string?)value);
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PullModelStatus(global::G.PullModelStatusEnum value) => new PullModelStatus(value);
+        public static implicit operator PullModelStatus(global::G.PullModelStatusEnum value) => new PullModelStatus((global::G.PullModelStatusEnum?)value);
 
         /// <summary>
         /// 

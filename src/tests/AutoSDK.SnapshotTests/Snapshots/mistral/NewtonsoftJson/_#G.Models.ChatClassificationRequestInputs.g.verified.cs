@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatClassificationRequestInputs(global::G.InstructRequest value) => new ChatClassificationRequestInputs(value);
+        public static implicit operator ChatClassificationRequestInputs(global::G.InstructRequest value) => new ChatClassificationRequestInputs((global::G.InstructRequest?)value);
 
         /// <summary>
         /// 

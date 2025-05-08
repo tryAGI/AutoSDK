@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryURLResponseModel value) => new DocumentsItem(value);
+        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryURLResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryURLResponseModel?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFileResponseModel value) => new DocumentsItem(value);
+        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFileResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryFileResponseModel?)value);
 
         /// <summary>
         /// 

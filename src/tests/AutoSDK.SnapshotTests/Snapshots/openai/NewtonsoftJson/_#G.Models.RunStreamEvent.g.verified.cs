@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant1 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant1 value) => new RunStreamEvent((global::G.RunStreamEventVariant1?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant2 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant2 value) => new RunStreamEvent((global::G.RunStreamEventVariant2?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant3 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant3 value) => new RunStreamEvent((global::G.RunStreamEventVariant3?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant4 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant4 value) => new RunStreamEvent((global::G.RunStreamEventVariant4?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant5 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant5 value) => new RunStreamEvent((global::G.RunStreamEventVariant5?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant6 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant6 value) => new RunStreamEvent((global::G.RunStreamEventVariant6?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant7 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant7 value) => new RunStreamEvent((global::G.RunStreamEventVariant7?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant8 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant8 value) => new RunStreamEvent((global::G.RunStreamEventVariant8?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant9 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant9 value) => new RunStreamEvent((global::G.RunStreamEventVariant9?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant10 value) => new RunStreamEvent(value);
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant10 value) => new RunStreamEvent((global::G.RunStreamEventVariant10?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::G.CompletionJobOut value) => new DataItem(value);
+        public static implicit operator DataItem(global::G.CompletionJobOut value) => new DataItem((global::G.CompletionJobOut?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::G.ClassifierJobOut value) => new DataItem(value);
+        public static implicit operator DataItem(global::G.ClassifierJobOut value) => new DataItem((global::G.ClassifierJobOut?)value);
 
         /// <summary>
         /// 

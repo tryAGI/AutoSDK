@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationStartEvent(global::G.ChatStreamEventType value) => new CitationStartEvent(value);
+        public static implicit operator CitationStartEvent(global::G.ChatStreamEventType value) => new CitationStartEvent((global::G.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationStartEvent(global::G.CitationStartEventVariant2 value) => new CitationStartEvent(value);
+        public static implicit operator CitationStartEvent(global::G.CitationStartEventVariant2 value) => new CitationStartEvent((global::G.CitationStartEventVariant2?)value);
 
         /// <summary>
         /// 

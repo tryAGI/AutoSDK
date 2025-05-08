@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk value) => new SummarizeDocumentStreamedResponse(value);
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk value) => new SummarizeDocumentStreamedResponse((global::G.StreamGenerationChunk?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.GenerationInfo value) => new SummarizeDocumentStreamedResponse(value);
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.GenerationInfo value) => new SummarizeDocumentStreamedResponse((global::G.GenerationInfo?)value);
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationEnd value) => new SummarizeDocumentStreamedResponse(value);
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationEnd value) => new SummarizeDocumentStreamedResponse((global::G.StreamGenerationEnd?)value);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamResponseEnd value) => new SummarizeDocumentStreamedResponse(value);
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamResponseEnd value) => new SummarizeDocumentStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
         /// 
@@ -176,7 +176,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamError value) => new SummarizeDocumentStreamedResponse(value);
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamError value) => new SummarizeDocumentStreamedResponse((global::G.StreamError?)value);
 
         /// <summary>
         /// 

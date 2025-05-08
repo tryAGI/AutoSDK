@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::G.ToolChoiceAuto value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::G.ToolChoiceAuto value) => new ToolChoice((global::G.ToolChoiceAuto?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::G.ToolChoiceAny value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::G.ToolChoiceAny value) => new ToolChoice((global::G.ToolChoiceAny?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::G.ToolChoiceTool value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::G.ToolChoiceTool value) => new ToolChoice((global::G.ToolChoiceTool?)value);
 
         /// <summary>
         /// 

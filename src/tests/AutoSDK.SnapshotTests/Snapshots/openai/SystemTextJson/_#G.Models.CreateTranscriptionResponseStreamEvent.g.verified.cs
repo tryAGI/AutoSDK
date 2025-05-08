@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDeltaEvent value) => new CreateTranscriptionResponseStreamEvent(value);
+        public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDeltaEvent value) => new CreateTranscriptionResponseStreamEvent((global::G.TranscriptTextDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDoneEvent value) => new CreateTranscriptionResponseStreamEvent(value);
+        public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDoneEvent value) => new CreateTranscriptionResponseStreamEvent((global::G.TranscriptTextDoneEvent?)value);
 
         /// <summary>
         /// 

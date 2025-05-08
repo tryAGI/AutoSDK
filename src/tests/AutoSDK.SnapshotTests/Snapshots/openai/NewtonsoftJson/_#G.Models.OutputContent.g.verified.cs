@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::G.OutputTextContent value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::G.OutputTextContent value) => new OutputContent((global::G.OutputTextContent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::G.RefusalContent value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::G.RefusalContent value) => new OutputContent((global::G.RefusalContent?)value);
 
         /// <summary>
         /// 

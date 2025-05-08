@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::G.Object value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::G.Object value) => new ObjectsGetResponse((global::G.Object?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse((global::G.ObjectsGetResponseVariant2?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::G.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
         /// 

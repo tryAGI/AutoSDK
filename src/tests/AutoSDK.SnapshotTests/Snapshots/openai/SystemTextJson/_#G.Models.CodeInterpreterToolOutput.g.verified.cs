@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterTextOutput value) => new CodeInterpreterToolOutput(value);
+        public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterTextOutput value) => new CodeInterpreterToolOutput((global::G.CodeInterpreterTextOutput?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput(value);
+        public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput((global::G.CodeInterpreterFileOutput?)value);
 
         /// <summary>
         /// 

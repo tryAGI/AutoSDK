@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption((global::G.ChatCompletionToolChoiceOptionEnum?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption((global::G.ChatCompletionNamedToolChoice?)value);
 
         /// <summary>
         /// 

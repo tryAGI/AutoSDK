@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(string value) => new Model(value);
+        public static implicit operator Model(string value) => new Model((string?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant2 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant2 value) => new Model((global::G.ModelVariant2?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant3 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant3 value) => new Model((global::G.ModelVariant3?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant4 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant4 value) => new Model((global::G.ModelVariant4?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant5 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant5 value) => new Model((global::G.ModelVariant5?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant6 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant6 value) => new Model((global::G.ModelVariant6?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant7 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant7 value) => new Model((global::G.ModelVariant7?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant8 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant8 value) => new Model((global::G.ModelVariant8?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant9 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant9 value) => new Model((global::G.ModelVariant9?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant10 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant10 value) => new Model((global::G.ModelVariant10?)value);
 
         /// <summary>
         /// 
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant11 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant11 value) => new Model((global::G.ModelVariant11?)value);
 
         /// <summary>
         /// 
@@ -415,7 +415,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant12 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant12 value) => new Model((global::G.ModelVariant12?)value);
 
         /// <summary>
         /// 
@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant13 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant13 value) => new Model((global::G.ModelVariant13?)value);
 
         /// <summary>
         /// 
@@ -485,7 +485,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::G.ModelVariant14 value) => new Model(value);
+        public static implicit operator Model(global::G.ModelVariant14 value) => new Model((global::G.ModelVariant14?)value);
 
         /// <summary>
         /// 

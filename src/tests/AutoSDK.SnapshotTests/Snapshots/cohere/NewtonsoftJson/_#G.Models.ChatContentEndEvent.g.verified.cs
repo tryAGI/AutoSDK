@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentEndEvent(global::G.ChatStreamEventType value) => new ChatContentEndEvent(value);
+        public static implicit operator ChatContentEndEvent(global::G.ChatStreamEventType value) => new ChatContentEndEvent((global::G.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatContentEndEvent(global::G.ChatContentEndEventVariant2 value) => new ChatContentEndEvent(value);
+        public static implicit operator ChatContentEndEvent(global::G.ChatContentEndEventVariant2 value) => new ChatContentEndEvent((global::G.ChatContentEndEventVariant2?)value);
 
         /// <summary>
         /// 

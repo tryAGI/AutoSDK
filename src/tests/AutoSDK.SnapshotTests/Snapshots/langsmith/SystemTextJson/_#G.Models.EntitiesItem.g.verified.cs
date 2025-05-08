@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EntitiesItem(global::G.TenantShareRunToken value) => new EntitiesItem(value);
+        public static implicit operator EntitiesItem(global::G.TenantShareRunToken value) => new EntitiesItem((global::G.TenantShareRunToken?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EntitiesItem(global::G.TenantShareDatasetToken value) => new EntitiesItem(value);
+        public static implicit operator EntitiesItem(global::G.TenantShareDatasetToken value) => new EntitiesItem((global::G.TenantShareDatasetToken?)value);
 
         /// <summary>
         /// 

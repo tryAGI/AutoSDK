@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.LabeledIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.LabeledIssueEvent value) => new IssueEventForIssue((global::G.LabeledIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.UnlabeledIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.UnlabeledIssueEvent value) => new IssueEventForIssue((global::G.UnlabeledIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.AssignedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.AssignedIssueEvent value) => new IssueEventForIssue((global::G.AssignedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.UnassignedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.UnassignedIssueEvent value) => new IssueEventForIssue((global::G.UnassignedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.MilestonedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.MilestonedIssueEvent value) => new IssueEventForIssue((global::G.MilestonedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.DemilestonedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.DemilestonedIssueEvent value) => new IssueEventForIssue((global::G.DemilestonedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -240,7 +240,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.RenamedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.RenamedIssueEvent value) => new IssueEventForIssue((global::G.RenamedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.ReviewRequestedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.ReviewRequestedIssueEvent value) => new IssueEventForIssue((global::G.ReviewRequestedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -310,7 +310,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.ReviewRequestRemovedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.ReviewRequestRemovedIssueEvent value) => new IssueEventForIssue((global::G.ReviewRequestRemovedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -345,7 +345,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.ReviewDismissedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.ReviewDismissedIssueEvent value) => new IssueEventForIssue((global::G.ReviewDismissedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.LockedIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.LockedIssueEvent value) => new IssueEventForIssue((global::G.LockedIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -415,7 +415,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.AddedToProjectIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.AddedToProjectIssueEvent value) => new IssueEventForIssue((global::G.AddedToProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.MovedColumnInProjectIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.MovedColumnInProjectIssueEvent value) => new IssueEventForIssue((global::G.MovedColumnInProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -485,7 +485,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.RemovedFromProjectIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.RemovedFromProjectIssueEvent value) => new IssueEventForIssue((global::G.RemovedFromProjectIssueEvent?)value);
 
         /// <summary>
         /// 
@@ -520,7 +520,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IssueEventForIssue(global::G.ConvertedNoteToIssueIssueEvent value) => new IssueEventForIssue(value);
+        public static implicit operator IssueEventForIssue(global::G.ConvertedNoteToIssueIssueEvent value) => new IssueEventForIssue((global::G.ConvertedNoteToIssueIssueEvent?)value);
 
         /// <summary>
         /// 

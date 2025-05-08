@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamSearchResponse value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.StreamSearchResponse value) => new ChatStreamedResponse((global::G.StreamSearchResponse?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.ChatInfoResponse value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.ChatInfoResponse value) => new ChatStreamedResponse((global::G.ChatInfoResponse?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationChunk value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationChunk value) => new ChatStreamedResponse((global::G.StreamGenerationChunk?)value);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationEnd value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationEnd value) => new ChatStreamedResponse((global::G.StreamGenerationEnd?)value);
 
         /// <summary>
         /// 
@@ -176,7 +176,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.FactualConsistencyScore value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.FactualConsistencyScore value) => new ChatStreamedResponse((global::G.FactualConsistencyScore?)value);
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamResponseEnd value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.StreamResponseEnd value) => new ChatStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
         /// 
@@ -246,7 +246,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.GenerationInfo value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.GenerationInfo value) => new ChatStreamedResponse((global::G.GenerationInfo?)value);
 
         /// <summary>
         /// 
@@ -281,7 +281,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamError value) => new ChatStreamedResponse(value);
+        public static implicit operator ChatStreamedResponse(global::G.StreamError value) => new ChatStreamedResponse((global::G.StreamError?)value);
 
         /// <summary>
         /// 

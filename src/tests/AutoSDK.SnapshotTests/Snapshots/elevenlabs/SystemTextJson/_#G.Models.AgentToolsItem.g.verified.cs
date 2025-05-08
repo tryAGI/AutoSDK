@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier value) => new AgentToolsItem(value);
+        public static implicit operator AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier value) => new AgentToolsItem((global::G.DependentAvailableAgentToolIdentifier?)value);
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AgentToolsItem(global::G.DependentUnknownAgentToolIdentifier value) => new AgentToolsItem(value);
+        public static implicit operator AgentToolsItem(global::G.DependentUnknownAgentToolIdentifier value) => new AgentToolsItem((global::G.DependentUnknownAgentToolIdentifier?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T3?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T4?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T5?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T6?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T7?)value);
 
         /// <summary>
         /// 
@@ -274,7 +274,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T8?)value);
 
         /// <summary>
         /// 
@@ -309,7 +309,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T9?)value);
 
         /// <summary>
         /// 

@@ -39,7 +39,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateDocumentRequest(global::G.CoreDocument value) => new CreateDocumentRequest(value);
+        public static implicit operator CreateDocumentRequest(global::G.CoreDocument value) => new CreateDocumentRequest((global::G.CoreDocument?)value);
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateDocumentRequest(global::G.StructuredDocument value) => new CreateDocumentRequest(value);
+        public static implicit operator CreateDocumentRequest(global::G.StructuredDocument value) => new CreateDocumentRequest((global::G.StructuredDocument?)value);
 
         /// <summary>
         /// 

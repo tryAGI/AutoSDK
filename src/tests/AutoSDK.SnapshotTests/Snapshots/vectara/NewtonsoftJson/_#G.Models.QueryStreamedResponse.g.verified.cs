@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.StreamSearchResponse value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.StreamSearchResponse value) => new QueryStreamedResponse((global::G.StreamSearchResponse?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.StreamGenerationChunk value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.StreamGenerationChunk value) => new QueryStreamedResponse((global::G.StreamGenerationChunk?)value);
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.StreamGenerationEnd value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.StreamGenerationEnd value) => new QueryStreamedResponse((global::G.StreamGenerationEnd?)value);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.StreamResponseEnd value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.StreamResponseEnd value) => new QueryStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
         /// 
@@ -176,7 +176,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.FactualConsistencyScore value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.FactualConsistencyScore value) => new QueryStreamedResponse((global::G.FactualConsistencyScore?)value);
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.GenerationInfo value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.GenerationInfo value) => new QueryStreamedResponse((global::G.GenerationInfo?)value);
 
         /// <summary>
         /// 
@@ -246,7 +246,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryStreamedResponse(global::G.StreamError value) => new QueryStreamedResponse(value);
+        public static implicit operator QueryStreamedResponse(global::G.StreamError value) => new QueryStreamedResponse((global::G.StreamError?)value);
 
         /// <summary>
         /// 

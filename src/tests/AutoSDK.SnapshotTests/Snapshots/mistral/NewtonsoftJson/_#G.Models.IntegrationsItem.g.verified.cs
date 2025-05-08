@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IntegrationsItem(global::G.WandbIntegrationOut value) => new IntegrationsItem(value);
+        public static implicit operator IntegrationsItem(global::G.WandbIntegrationOut value) => new IntegrationsItem((global::G.WandbIntegrationOut?)value);
 
         /// <summary>
         /// 

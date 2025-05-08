@@ -92,7 +92,7 @@ namespace {anyOfData.Namespace}
   x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) != true && 
   x.Type.CSharpTypeWithoutNullability != "object"? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(value);
+        public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(({x.Type.CSharpTypeWithNullability})value);
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {x.Type.CSharpTypeWithNullability}({className} @this) => @this.{x.Name};

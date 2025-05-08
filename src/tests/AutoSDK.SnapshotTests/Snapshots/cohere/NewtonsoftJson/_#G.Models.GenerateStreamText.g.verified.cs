@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamText(global::G.GenerateStreamEvent value) => new GenerateStreamText(value);
+        public static implicit operator GenerateStreamText(global::G.GenerateStreamEvent value) => new GenerateStreamText((global::G.GenerateStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamText(global::G.GenerateStreamTextVariant2 value) => new GenerateStreamText(value);
+        public static implicit operator GenerateStreamText(global::G.GenerateStreamTextVariant2 value) => new GenerateStreamText((global::G.GenerateStreamTextVariant2?)value);
 
         /// <summary>
         /// 

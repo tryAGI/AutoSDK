@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatToolCallEndEvent(global::G.ChatStreamEventType value) => new ChatToolCallEndEvent(value);
+        public static implicit operator ChatToolCallEndEvent(global::G.ChatStreamEventType value) => new ChatToolCallEndEvent((global::G.ChatStreamEventType?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatToolCallEndEvent(global::G.ChatToolCallEndEventVariant2 value) => new ChatToolCallEndEvent(value);
+        public static implicit operator ChatToolCallEndEvent(global::G.ChatToolCallEndEventVariant2 value) => new ChatToolCallEndEvent((global::G.ChatToolCallEndEventVariant2?)value);
 
         /// <summary>
         /// 

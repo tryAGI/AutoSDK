@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::G.TextContent value) => new ContentItem(value);
+        public static implicit operator ContentItem(global::G.TextContent value) => new ContentItem((global::G.TextContent?)value);
 
         /// <summary>
         /// 

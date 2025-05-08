@@ -31,7 +31,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Message(global::G.ChatMessage value) => new Message(value);
+        public static implicit operator Message(global::G.ChatMessage value) => new Message((global::G.ChatMessage?)value);
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Message(global::G.ToolMessage value) => new Message(value);
+        public static implicit operator Message(global::G.ToolMessage value) => new Message((global::G.ToolMessage?)value);
 
         /// <summary>
         /// 

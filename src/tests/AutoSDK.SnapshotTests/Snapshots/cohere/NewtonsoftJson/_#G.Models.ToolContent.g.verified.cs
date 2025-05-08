@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolContent(global::G.TextContent value) => new ToolContent(value);
+        public static implicit operator ToolContent(global::G.TextContent value) => new ToolContent((global::G.TextContent?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolContent(global::G.DocumentContent value) => new ToolContent(value);
+        public static implicit operator ToolContent(global::G.DocumentContent value) => new ToolContent((global::G.DocumentContent?)value);
 
         /// <summary>
         /// 

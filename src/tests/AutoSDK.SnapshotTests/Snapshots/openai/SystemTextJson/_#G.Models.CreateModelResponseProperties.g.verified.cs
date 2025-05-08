@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateModelResponseProperties(global::G.ModelResponseProperties value) => new CreateModelResponseProperties(value);
+        public static implicit operator CreateModelResponseProperties(global::G.ModelResponseProperties value) => new CreateModelResponseProperties((global::G.ModelResponseProperties?)value);
 
         /// <summary>
         /// 

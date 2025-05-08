@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator WebhookPullRequestReviewRequestRemoved(global::G.WebhookPullRequestReviewRequestRemovedVariant1 value) => new WebhookPullRequestReviewRequestRemoved(value);
+        public static implicit operator WebhookPullRequestReviewRequestRemoved(global::G.WebhookPullRequestReviewRequestRemovedVariant1 value) => new WebhookPullRequestReviewRequestRemoved((global::G.WebhookPullRequestReviewRequestRemovedVariant1?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator WebhookPullRequestReviewRequestRemoved(global::G.WebhookPullRequestReviewRequestRemovedVariant2 value) => new WebhookPullRequestReviewRequestRemoved(value);
+        public static implicit operator WebhookPullRequestReviewRequestRemoved(global::G.WebhookPullRequestReviewRequestRemovedVariant2 value) => new WebhookPullRequestReviewRequestRemoved((global::G.WebhookPullRequestReviewRequestRemovedVariant2?)value);
 
         /// <summary>
         /// 

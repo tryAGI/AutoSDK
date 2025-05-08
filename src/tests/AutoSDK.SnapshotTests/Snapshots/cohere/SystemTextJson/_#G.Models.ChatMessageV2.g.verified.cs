@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::G.UserMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::G.UserMessage value) => new ChatMessageV2((global::G.UserMessage?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::G.AssistantMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::G.AssistantMessage value) => new ChatMessageV2((global::G.AssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::G.SystemMessage value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::G.SystemMessage value) => new ChatMessageV2((global::G.SystemMessage?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatMessageV2(global::G.ToolMessageV2 value) => new ChatMessageV2(value);
+        public static implicit operator ChatMessageV2(global::G.ToolMessageV2 value) => new ChatMessageV2((global::G.ToolMessageV2?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem3(global::G.RequestCharLocationCitation value) => new CitationsItem3(value);
+        public static implicit operator CitationsItem3(global::G.RequestCharLocationCitation value) => new CitationsItem3((global::G.RequestCharLocationCitation?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem3(global::G.RequestPageLocationCitation value) => new CitationsItem3(value);
+        public static implicit operator CitationsItem3(global::G.RequestPageLocationCitation value) => new CitationsItem3((global::G.RequestPageLocationCitation?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem3(global::G.RequestContentBlockLocationCitation value) => new CitationsItem3(value);
+        public static implicit operator CitationsItem3(global::G.RequestContentBlockLocationCitation value) => new CitationsItem3((global::G.RequestContentBlockLocationCitation?)value);
 
         /// <summary>
         /// 

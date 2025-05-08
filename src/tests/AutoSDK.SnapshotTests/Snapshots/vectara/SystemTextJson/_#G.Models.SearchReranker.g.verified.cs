@@ -37,7 +37,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SearchReranker(global::G.CustomerSpecificReranker value) => new SearchReranker(value);
+        public static implicit operator SearchReranker(global::G.CustomerSpecificReranker value) => new SearchReranker((global::G.CustomerSpecificReranker?)value);
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SearchReranker(global::G.UserFunctionReranker value) => new SearchReranker(value);
+        public static implicit operator SearchReranker(global::G.UserFunctionReranker value) => new SearchReranker((global::G.UserFunctionReranker?)value);
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SearchReranker(global::G.MMRReranker value) => new SearchReranker(value);
+        public static implicit operator SearchReranker(global::G.MMRReranker value) => new SearchReranker((global::G.MMRReranker?)value);
 
         /// <summary>
         /// 
@@ -142,7 +142,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SearchReranker(global::G.ChainReranker value) => new SearchReranker(value);
+        public static implicit operator SearchReranker(global::G.ChainReranker value) => new SearchReranker((global::G.ChainReranker?)value);
 
         /// <summary>
         /// 
@@ -177,7 +177,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator SearchReranker(global::G.NoneReranker value) => new SearchReranker(value);
+        public static implicit operator SearchReranker(global::G.NoneReranker value) => new SearchReranker((global::G.NoneReranker?)value);
 
         /// <summary>
         /// 

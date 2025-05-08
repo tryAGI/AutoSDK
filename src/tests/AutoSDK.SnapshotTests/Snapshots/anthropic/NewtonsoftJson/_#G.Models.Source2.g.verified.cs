@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::G.BetaBase64ImageSource value) => new Source2(value);
+        public static implicit operator Source2(global::G.BetaBase64ImageSource value) => new Source2((global::G.BetaBase64ImageSource?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::G.BetaURLImageSource value) => new Source2(value);
+        public static implicit operator Source2(global::G.BetaURLImageSource value) => new Source2((global::G.BetaURLImageSource?)value);
 
         /// <summary>
         /// 

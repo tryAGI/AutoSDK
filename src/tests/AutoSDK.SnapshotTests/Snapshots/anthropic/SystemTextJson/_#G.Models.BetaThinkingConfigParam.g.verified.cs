@@ -37,7 +37,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigEnabled value) => new BetaThinkingConfigParam(value);
+        public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigEnabled value) => new BetaThinkingConfigParam((global::G.BetaThinkingConfigEnabled?)value);
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigDisabled value) => new BetaThinkingConfigParam(value);
+        public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigDisabled value) => new BetaThinkingConfigParam((global::G.BetaThinkingConfigDisabled?)value);
 
         /// <summary>
         /// 

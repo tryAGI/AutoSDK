@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.DependentAvailableToolIdentifier value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.DependentAvailableToolIdentifier value) => new ToolsItem((global::G.DependentAvailableToolIdentifier?)value);
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::G.DependentUnknownToolIdentifier value) => new ToolsItem(value);
+        public static implicit operator ToolsItem(global::G.DependentUnknownToolIdentifier value) => new ToolsItem((global::G.DependentUnknownToolIdentifier?)value);
 
         /// <summary>
         /// 

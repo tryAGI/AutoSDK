@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PullRequestWebhook(global::G.PullRequest value) => new PullRequestWebhook(value);
+        public static implicit operator PullRequestWebhook(global::G.PullRequest value) => new PullRequestWebhook((global::G.PullRequest?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PullRequestWebhook(global::G.PullRequestWebhookVariant2 value) => new PullRequestWebhook(value);
+        public static implicit operator PullRequestWebhook(global::G.PullRequestWebhookVariant2 value) => new PullRequestWebhook((global::G.PullRequestWebhookVariant2?)value);
 
         /// <summary>
         /// 

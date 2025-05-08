@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source3(global::G.Base64PDFSource value) => new Source3(value);
+        public static implicit operator Source3(global::G.Base64PDFSource value) => new Source3((global::G.Base64PDFSource?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source3(global::G.PlainTextSource value) => new Source3(value);
+        public static implicit operator Source3(global::G.PlainTextSource value) => new Source3((global::G.PlainTextSource?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source3(global::G.ContentBlockSource value) => new Source3(value);
+        public static implicit operator Source3(global::G.ContentBlockSource value) => new Source3((global::G.ContentBlockSource?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source3(global::G.URLPDFSource value) => new Source3(value);
+        public static implicit operator Source3(global::G.URLPDFSource value) => new Source3((global::G.URLPDFSource?)value);
 
         /// <summary>
         /// 

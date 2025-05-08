@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestAssistantMessageContentPart(value);
+        public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestAssistantMessageContentPart((global::G.ChatCompletionRequestMessageContentPartText?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartRefusal value) => new ChatCompletionRequestAssistantMessageContentPart(value);
+        public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartRefusal value) => new ChatCompletionRequestAssistantMessageContentPart((global::G.ChatCompletionRequestMessageContentPartRefusal?)value);
 
         /// <summary>
         /// 

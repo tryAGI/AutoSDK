@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputTextContent value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputTextContent value) => new InputContent((global::G.InputTextContent?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputImageContent value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputImageContent value) => new InputContent((global::G.InputImageContent?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputFileContent value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputFileContent value) => new InputContent((global::G.InputFileContent?)value);
 
         /// <summary>
         /// 

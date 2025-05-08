@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateAppClientRequest(global::G.CreateClientCredentialsRequest value) => new CreateAppClientRequest(value);
+        public static implicit operator CreateAppClientRequest(global::G.CreateClientCredentialsRequest value) => new CreateAppClientRequest((global::G.CreateClientCredentialsRequest?)value);
 
         /// <summary>
         /// 

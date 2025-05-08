@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaInvalidRequestError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaInvalidRequestError value) => new Error((global::G.BetaInvalidRequestError?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaAuthenticationError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaAuthenticationError value) => new Error((global::G.BetaAuthenticationError?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaBillingError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaBillingError value) => new Error((global::G.BetaBillingError?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaPermissionError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaPermissionError value) => new Error((global::G.BetaPermissionError?)value);
 
         /// <summary>
         /// 
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaNotFoundError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaNotFoundError value) => new Error((global::G.BetaNotFoundError?)value);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaRateLimitError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaRateLimitError value) => new Error((global::G.BetaRateLimitError?)value);
 
         /// <summary>
         /// 
@@ -245,7 +245,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaGatewayTimeoutError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaGatewayTimeoutError value) => new Error((global::G.BetaGatewayTimeoutError?)value);
 
         /// <summary>
         /// 
@@ -280,7 +280,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaAPIError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaAPIError value) => new Error((global::G.BetaAPIError?)value);
 
         /// <summary>
         /// 
@@ -315,7 +315,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaOverloadedError value) => new Error(value);
+        public static implicit operator Error(global::G.BetaOverloadedError value) => new Error((global::G.BetaOverloadedError?)value);
 
         /// <summary>
         /// 

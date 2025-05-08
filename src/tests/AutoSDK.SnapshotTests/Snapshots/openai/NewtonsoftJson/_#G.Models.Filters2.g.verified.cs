@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Filters2(global::G.ComparisonFilter value) => new Filters2(value);
+        public static implicit operator Filters2(global::G.ComparisonFilter value) => new Filters2((global::G.ComparisonFilter?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Filters2(global::G.CompoundFilter value) => new Filters2(value);
+        public static implicit operator Filters2(global::G.CompoundFilter value) => new Filters2((global::G.CompoundFilter?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RedactedAudioNotification(global::G.RedactedAudioResponse value) => new RedactedAudioNotification(value);
+        public static implicit operator RedactedAudioNotification(global::G.RedactedAudioResponse value) => new RedactedAudioNotification((global::G.RedactedAudioResponse?)value);
 
         /// <summary>
         /// 

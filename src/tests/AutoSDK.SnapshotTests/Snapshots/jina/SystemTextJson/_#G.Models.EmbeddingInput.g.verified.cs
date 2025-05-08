@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingInput(global::G.TextEmbeddingInput value) => new EmbeddingInput(value);
+        public static implicit operator EmbeddingInput(global::G.TextEmbeddingInput value) => new EmbeddingInput((global::G.TextEmbeddingInput?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingInput(global::G.ImageEmbeddingInput value) => new EmbeddingInput(value);
+        public static implicit operator EmbeddingInput(global::G.ImageEmbeddingInput value) => new EmbeddingInput((global::G.ImageEmbeddingInput?)value);
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingInput(global::G.MixedEmbeddingInput value) => new EmbeddingInput(value);
+        public static implicit operator EmbeddingInput(global::G.MixedEmbeddingInput value) => new EmbeddingInput((global::G.MixedEmbeddingInput?)value);
 
         /// <summary>
         /// 

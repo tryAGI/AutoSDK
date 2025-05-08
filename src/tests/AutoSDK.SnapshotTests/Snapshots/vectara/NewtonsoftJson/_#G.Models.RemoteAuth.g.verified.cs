@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RemoteAuth(global::G.BearerAuth value) => new RemoteAuth(value);
+        public static implicit operator RemoteAuth(global::G.BearerAuth value) => new RemoteAuth((global::G.BearerAuth?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RemoteAuth(global::G.HeaderAuth value) => new RemoteAuth(value);
+        public static implicit operator RemoteAuth(global::G.HeaderAuth value) => new RemoteAuth((global::G.HeaderAuth?)value);
 
         /// <summary>
         /// 

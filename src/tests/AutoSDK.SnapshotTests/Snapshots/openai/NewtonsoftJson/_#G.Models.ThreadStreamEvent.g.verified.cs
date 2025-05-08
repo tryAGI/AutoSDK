@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThreadStreamEvent(global::G.ThreadStreamEventVariant1 value) => new ThreadStreamEvent(value);
+        public static implicit operator ThreadStreamEvent(global::G.ThreadStreamEventVariant1 value) => new ThreadStreamEvent((global::G.ThreadStreamEventVariant1?)value);
 
         /// <summary>
         /// 

@@ -30,7 +30,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DoneReason(string value) => new DoneReason(value);
+        public static implicit operator DoneReason(string value) => new DoneReason((string?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DoneReason(global::G.DoneReasonEnum value) => new DoneReason(value);
+        public static implicit operator DoneReason(global::G.DoneReasonEnum value) => new DoneReason((global::G.DoneReasonEnum?)value);
 
         /// <summary>
         /// 

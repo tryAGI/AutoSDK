@@ -37,7 +37,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThinkingConfigParam(global::G.ThinkingConfigEnabled value) => new ThinkingConfigParam(value);
+        public static implicit operator ThinkingConfigParam(global::G.ThinkingConfigEnabled value) => new ThinkingConfigParam((global::G.ThinkingConfigEnabled?)value);
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThinkingConfigParam(global::G.ThinkingConfigDisabled value) => new ThinkingConfigParam(value);
+        public static implicit operator ThinkingConfigParam(global::G.ThinkingConfigDisabled value) => new ThinkingConfigParam((global::G.ThinkingConfigDisabled?)value);
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningUpdateFineTunedModelResponse(global::G.CompletionFTModelOut value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse(value);
+        public static implicit operator JobsApiRoutesFineTuningUpdateFineTunedModelResponse(global::G.CompletionFTModelOut value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse((global::G.CompletionFTModelOut?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator JobsApiRoutesFineTuningUpdateFineTunedModelResponse(global::G.ClassifierFTModelOut value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse(value);
+        public static implicit operator JobsApiRoutesFineTuningUpdateFineTunedModelResponse(global::G.ClassifierFTModelOut value) => new JobsApiRoutesFineTuningUpdateFineTunedModelResponse((global::G.ClassifierFTModelOut?)value);
 
         /// <summary>
         /// 

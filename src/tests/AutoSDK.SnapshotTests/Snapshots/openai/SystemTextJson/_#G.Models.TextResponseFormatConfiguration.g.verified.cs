@@ -38,7 +38,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatText value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatText value) => new TextResponseFormatConfiguration((global::G.ResponseFormatText?)value);
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration((global::G.TextResponseFormatJsonSchema?)value);
 
         /// <summary>
         /// 
@@ -112,7 +112,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration((global::G.ResponseFormatJsonObject?)value);
 
         /// <summary>
         /// 
