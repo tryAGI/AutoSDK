@@ -11,8 +11,7 @@ namespace G
     public readonly partial struct Tool : global::System.IEquatable<Tool>
     {
         /// <summary>
-        /// A tool that searches for relevant content from uploaded files.<br/>
-        /// Learn more about the [file search tool](/docs/guides/tools-file-search).
+        /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FileSearchTool? FileSearch { get; init; }
@@ -47,8 +46,7 @@ namespace G
         }
 
         /// <summary>
-        /// Defines a function in your own code the model can choose to call. Learn more<br/>
-        /// about [function calling](/docs/guides/function-calling).
+        /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionTool? Function { get; init; }
@@ -83,75 +81,73 @@ namespace G
         }
 
         /// <summary>
-        /// A tool that controls a virtual computer. Learn more about the <br/>
-        /// [computer tool](/docs/guides/tools-computer-use).
+        /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerTool? Computer { get; init; }
+        public global::G.WebSearchPreviewTool? WebSearchPreview { get; init; }
 #else
-        public global::G.ComputerTool? Computer { get; }
+        public global::G.WebSearchPreviewTool? WebSearchPreview { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Computer))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPreview))]
 #endif
-        public bool IsComputer => Computer != null;
+        public bool IsWebSearchPreview => WebSearchPreview != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.ComputerTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.WebSearchPreviewTool value) => new Tool(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerTool?(Tool @this) => @this.Computer;
+        public static implicit operator global::G.WebSearchPreviewTool?(Tool @this) => @this.WebSearchPreview;
 
         /// <summary>
         /// 
         /// </summary>
-        public Tool(global::G.ComputerTool? value)
+        public Tool(global::G.WebSearchPreviewTool? value)
         {
-            Computer = value;
+            WebSearchPreview = value;
         }
 
         /// <summary>
-        /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](/docs/guides/tools-web-search).
+        /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebSearchTool? WebSearch { get; init; }
+        public global::G.ComputerUsePreviewTool? ComputerUsePreview { get; init; }
 #else
-        public global::G.WebSearchTool? WebSearch { get; }
+        public global::G.ComputerUsePreviewTool? ComputerUsePreview { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUsePreview))]
 #endif
-        public bool IsWebSearch => WebSearch != null;
+        public bool IsComputerUsePreview => ComputerUsePreview != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Tool(global::G.WebSearchTool value) => new Tool(value);
+        public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebSearchTool?(Tool @this) => @this.WebSearch;
+        public static implicit operator global::G.ComputerUsePreviewTool?(Tool @this) => @this.ComputerUsePreview;
 
         /// <summary>
         /// 
         /// </summary>
-        public Tool(global::G.WebSearchTool? value)
+        public Tool(global::G.ComputerUsePreviewTool? value)
         {
-            WebSearch = value;
+            ComputerUsePreview = value;
         }
 
         /// <summary>
@@ -160,22 +156,22 @@ namespace G
         public Tool(
             global::G.FileSearchTool? fileSearch,
             global::G.FunctionTool? function,
-            global::G.ComputerTool? computer,
-            global::G.WebSearchTool? webSearch
+            global::G.WebSearchPreviewTool? webSearchPreview,
+            global::G.ComputerUsePreviewTool? computerUsePreview
             )
         {
             FileSearch = fileSearch;
             Function = function;
-            Computer = computer;
-            WebSearch = webSearch;
+            WebSearchPreview = webSearchPreview;
+            ComputerUsePreview = computerUsePreview;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            WebSearch as object ??
-            Computer as object ??
+            ComputerUsePreview as object ??
+            WebSearchPreview as object ??
             Function as object ??
             FileSearch as object 
             ;
@@ -186,8 +182,8 @@ namespace G
         public override string? ToString() =>
             FileSearch?.ToString() ??
             Function?.ToString() ??
-            Computer?.ToString() ??
-            WebSearch?.ToString() 
+            WebSearchPreview?.ToString() ??
+            ComputerUsePreview?.ToString() 
             ;
 
         /// <summary>
@@ -195,7 +191,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFileSearch && !IsFunction && !IsComputer && !IsWebSearch || !IsFileSearch && IsFunction && !IsComputer && !IsWebSearch || !IsFileSearch && !IsFunction && IsComputer && !IsWebSearch || !IsFileSearch && !IsFunction && !IsComputer && IsWebSearch;
+            return IsFileSearch && !IsFunction && !IsWebSearchPreview && !IsComputerUsePreview || !IsFileSearch && IsFunction && !IsWebSearchPreview && !IsComputerUsePreview || !IsFileSearch && !IsFunction && IsWebSearchPreview && !IsComputerUsePreview || !IsFileSearch && !IsFunction && !IsWebSearchPreview && IsComputerUsePreview;
         }
 
         /// <summary>
@@ -204,8 +200,8 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.FileSearchTool?, TResult>? fileSearch = null,
             global::System.Func<global::G.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::G.ComputerTool?, TResult>? computer = null,
-            global::System.Func<global::G.WebSearchTool?, TResult>? webSearch = null,
+            global::System.Func<global::G.WebSearchPreviewTool?, TResult>? webSearchPreview = null,
+            global::System.Func<global::G.ComputerUsePreviewTool?, TResult>? computerUsePreview = null,
             bool validate = true)
         {
             if (validate)
@@ -221,13 +217,13 @@ namespace G
             {
                 return function(Function!);
             }
-            else if (IsComputer && computer != null)
+            else if (IsWebSearchPreview && webSearchPreview != null)
             {
-                return computer(Computer!);
+                return webSearchPreview(WebSearchPreview!);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (IsComputerUsePreview && computerUsePreview != null)
             {
-                return webSearch(WebSearch!);
+                return computerUsePreview(ComputerUsePreview!);
             }
 
             return default(TResult);
@@ -239,8 +235,8 @@ namespace G
         public void Match(
             global::System.Action<global::G.FileSearchTool?>? fileSearch = null,
             global::System.Action<global::G.FunctionTool?>? function = null,
-            global::System.Action<global::G.ComputerTool?>? computer = null,
-            global::System.Action<global::G.WebSearchTool?>? webSearch = null,
+            global::System.Action<global::G.WebSearchPreviewTool?>? webSearchPreview = null,
+            global::System.Action<global::G.ComputerUsePreviewTool?>? computerUsePreview = null,
             bool validate = true)
         {
             if (validate)
@@ -256,13 +252,13 @@ namespace G
             {
                 function?.Invoke(Function!);
             }
-            else if (IsComputer)
+            else if (IsWebSearchPreview)
             {
-                computer?.Invoke(Computer!);
+                webSearchPreview?.Invoke(WebSearchPreview!);
             }
-            else if (IsWebSearch)
+            else if (IsComputerUsePreview)
             {
-                webSearch?.Invoke(WebSearch!);
+                computerUsePreview?.Invoke(ComputerUsePreview!);
             }
         }
 
@@ -277,10 +273,10 @@ namespace G
                 typeof(global::G.FileSearchTool),
                 Function,
                 typeof(global::G.FunctionTool),
-                Computer,
-                typeof(global::G.ComputerTool),
-                WebSearch,
-                typeof(global::G.WebSearchTool),
+                WebSearchPreview,
+                typeof(global::G.WebSearchPreviewTool),
+                ComputerUsePreview,
+                typeof(global::G.ComputerUsePreviewTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -299,8 +295,8 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.FileSearchTool?>.Default.Equals(FileSearch, other.FileSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionTool?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerTool?>.Default.Equals(Computer, other.Computer) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchTool?>.Default.Equals(WebSearch, other.WebSearch) 
+                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchPreviewTool?>.Default.Equals(WebSearchPreview, other.WebSearchPreview) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerUsePreviewTool?>.Default.Equals(ComputerUsePreview, other.ComputerUsePreview) 
                 ;
         }
 

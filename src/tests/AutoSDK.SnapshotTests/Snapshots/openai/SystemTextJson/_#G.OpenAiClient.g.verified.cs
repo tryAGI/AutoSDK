@@ -84,6 +84,15 @@ namespace G
         };
 
         /// <summary>
+        /// Manage and run evals in the OpenAI platform.
+        /// </summary>
+        public EvalsClient Evals => new EvalsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
         public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
@@ -150,6 +159,15 @@ namespace G
         /// List user actions and configuration changes within this organization.
         /// </summary>
         public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates => new CertificatesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

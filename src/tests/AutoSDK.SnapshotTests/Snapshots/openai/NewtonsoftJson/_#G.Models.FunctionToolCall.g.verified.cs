@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// The unique ID of the function tool call.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// The type of the function tool call. Always `function_call`.
@@ -76,17 +76,17 @@ namespace G
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
         public FunctionToolCall(
-            string id,
             string callId,
             string name,
             string arguments,
+            string? id,
             global::G.FunctionToolCallType type,
             global::G.FunctionToolCallStatus? status)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Id = id;
             this.Type = type;
             this.Status = status;
         }

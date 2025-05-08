@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Type of turn detection, only `server_vad` is currently supported.
+    /// Type of turn detection.<br/>
+    /// Default Value: server_vad
     /// </summary>
     public enum RealtimeSessionTurnDetectionType
     {
@@ -13,6 +14,10 @@ namespace G
         /// 
         /// </summary>
         ServerVad,
+        /// <summary>
+        /// 
+        /// </summary>
+        SemanticVad,
     }
 
     /// <summary>
@@ -28,6 +33,7 @@ namespace G
             return value switch
             {
                 RealtimeSessionTurnDetectionType.ServerVad => "server_vad",
+                RealtimeSessionTurnDetectionType.SemanticVad => "semantic_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +45,7 @@ namespace G
             return value switch
             {
                 "server_vad" => RealtimeSessionTurnDetectionType.ServerVad,
+                "semantic_vad" => RealtimeSessionTurnDetectionType.SemanticVad,
                 _ => null,
             };
         }

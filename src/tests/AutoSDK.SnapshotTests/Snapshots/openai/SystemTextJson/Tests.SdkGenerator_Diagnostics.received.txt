@@ -1,0 +1,77 @@
+﻿[
+  {
+    Location: /*
+        /// </summary>
+        public static implicit operator ModelIds(global::G.ModelIdsShared value) => new ModelIds(value);
+                                                                                        ^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.Models.ModelIds.g.cs: (31,88)-(31,96),
+    Message: The call is ambiguous between the following methods or properties: 'ModelIds.ModelIds(ModelIdsShared?)' and 'ModelIds.ModelIds(ModelIdsResponses?)',
+    Severity: Error,
+    Descriptor: {
+      Id: CS0121,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0121),
+      MessageFormat: The call is ambiguous between the following methods or properties: '{0}' and '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public static implicit operator ModelIds(global::G.ModelIdsResponses value) => new ModelIds(value);
+                                                                                           ^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.Models.ModelIds.g.cs: (66,91)-(66,99),
+    Message: The call is ambiguous between the following methods or properties: 'ModelIds.ModelIds(ModelIdsShared?)' and 'ModelIds.ModelIds(ModelIdsResponses?)',
+    Severity: Error,
+    Descriptor: {
+      Id: CS0121,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0121),
+      MessageFormat: The call is ambiguous between the following methods or properties: '{0}' and '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; } = "eval";
+                                                                                                                                                                                                                                                                                   ^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.Models.Eval.g.cs: (57,275)-(57,281),
+    Message: Cannot implicitly convert type 'string' to 'System.Collections.Generic.IList<G.OneOf<G.EvalLabelModelGrader, G.EvalStringCheckGrader, G.EvalTextSimilarityGrader, G.EvalPythonGrader, G.EvalScoreModelGrader>>',
+    Severity: Error,
+    Descriptor: {
+      Id: CS0029,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+      MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

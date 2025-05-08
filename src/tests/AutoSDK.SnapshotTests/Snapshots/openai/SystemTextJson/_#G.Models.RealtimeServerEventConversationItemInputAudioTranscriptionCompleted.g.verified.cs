@@ -54,6 +54,12 @@ namespace G
         public required string Transcript { get; set; }
 
         /// <summary>
+        /// The log probabilities of the transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::G.LogProbProperties>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +84,9 @@ namespace G
         /// <param name="transcript">
         /// The transcribed text.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the transcription.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,13 +95,15 @@ namespace G
             string itemId,
             int contentIndex,
             string transcript,
-            global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
+            global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type,
+            global::System.Collections.Generic.IList<global::G.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

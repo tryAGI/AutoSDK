@@ -22,17 +22,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ReasoningEffort? Effort { get; set; }
+        public global::G.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// **o-series models only** <br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningSummaryJsonConverter))]
+        public global::G.ReasoningSummary? Summary { get; set; }
+
+        /// <summary>
+        /// **Deprecated:** use `summary` instead.<br/>
+        /// A summary of the reasoning performed by the model. This can be<br/>
+        /// useful for debugging and understanding the model's reasoning process.<br/>
+        /// One of `auto`, `concise`, or `detailed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReasoningGenerateSummaryJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>
@@ -53,21 +62,20 @@ namespace G
         /// on reasoning in a response.<br/>
         /// Default Value: medium
         /// </param>
-        /// <param name="generateSummary">
-        /// **o-series models only** <br/>
+        /// <param name="summary">
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Reasoning(
             global::G.ReasoningEffort? effort,
-            global::G.ReasoningGenerateSummary? generateSummary)
+            global::G.ReasoningSummary? summary)
         {
             this.Effort = effort;
-            this.GenerateSummary = generateSummary;
+            this.Summary = summary;
         }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace G
     public sealed partial class CreateSpeechRequest
     {
         /// <summary>
-        /// One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateSpeechRequestModel?>))]
@@ -27,12 +27,19 @@ namespace G
         public required string Input { get; set; }
 
         /// <summary>
-        /// The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
+        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
+
+        /// <summary>
+        /// Example: ash
+        /// </summary>
+        /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VoiceIdsSharedJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateSpeechRequestVoice Voice { get; set; }
+        public required global::G.VoiceIdsShared Voice { get; set; }
 
         /// <summary>
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -59,13 +66,16 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateSpeechRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </param>
         /// <param name="input">
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </param>
+        /// <param name="instructions">
+        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
+        /// </param>
         /// <param name="voice">
-        /// The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
+        /// Example: ash
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -81,13 +91,15 @@ namespace G
         public CreateSpeechRequest(
             global::G.AnyOf<string, global::G.CreateSpeechRequestModel?> model,
             string input,
-            global::G.CreateSpeechRequestVoice voice,
+            global::G.VoiceIdsShared voice,
+            string? instructions,
             global::G.CreateSpeechRequestResponseFormat? responseFormat,
             double? speed)
         {
             this.Model = model;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Voice = voice;
+            this.Instructions = instructions;
             this.ResponseFormat = responseFormat;
             this.Speed = speed;
         }

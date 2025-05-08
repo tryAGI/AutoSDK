@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Default Value: [text, audio]
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeSessionModalitie

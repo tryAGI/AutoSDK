@@ -13,6 +13,10 @@ namespace G
         /// 
         /// </summary>
         DallE2,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1,
     }
 
     /// <summary>
@@ -28,6 +32,7 @@ namespace G
             return value switch
             {
                 CreateImageEditRequestModel.DallE2 => "dall-e-2",
+                CreateImageEditRequestModel.GptImage1 => "gpt-image-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +44,7 @@ namespace G
             return value switch
             {
                 "dall-e-2" => CreateImageEditRequestModel.DallE2,
+                "gpt-image-1" => CreateImageEditRequestModel.GptImage1,
                 _ => null,
             };
         }

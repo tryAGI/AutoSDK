@@ -18,6 +18,13 @@ namespace G
         public required int InputTokens { get; set; }
 
         /// <summary>
+        /// A detailed breakdown of the input tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.ResponseUsageInputTokensDetails InputTokensDetails { get; set; }
+
+        /// <summary>
         /// The number of output tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
@@ -50,6 +57,9 @@ namespace G
         /// <param name="inputTokens">
         /// The number of input tokens.
         /// </param>
+        /// <param name="inputTokensDetails">
+        /// A detailed breakdown of the input tokens.
+        /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens.
         /// </param>
@@ -64,11 +74,13 @@ namespace G
 #endif
         public ResponseUsage(
             int inputTokens,
+            global::G.ResponseUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
             global::G.ResponseUsageOutputTokensDetails outputTokensDetails,
             int totalTokens)
         {
             this.InputTokens = inputTokens;
+            this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
             this.OutputTokens = outputTokens;
             this.OutputTokensDetails = outputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(outputTokensDetails));
             this.TotalTokens = totalTokens;

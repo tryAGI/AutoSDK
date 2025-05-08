@@ -5,13 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [OpenAI Whisper transcription](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as rough guidance rather than the representation understood by the model. The client can optionally set the language and prompt for transcription, these fields will be passed to the Whisper API.
+    /// Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
     /// </summary>
     public sealed partial class RealtimeSessionCreateRequestInputAudioTranscription
     {
         /// <summary>
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
+        /// The model to use for transcription, current options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `whisper-1`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public string? Model { get; set; }
@@ -26,8 +25,9 @@ namespace G
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
-        /// segment. The [prompt](/docs/guides/speech-to-text#prompting) should match<br/>
-        /// the audio language.
+        /// segment.<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `gpt-4o-transcribe` models, the prompt is a free text string, for example "expect words related to technology".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
@@ -42,8 +42,7 @@ namespace G
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestInputAudioTranscription" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
+        /// The model to use for transcription, current options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `whisper-1`.
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in<br/>
@@ -52,8 +51,9 @@ namespace G
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
-        /// segment. The [prompt](/docs/guides/speech-to-text#prompting) should match<br/>
-        /// the audio language.
+        /// segment.<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `gpt-4o-transcribe` models, the prompt is a free text string, for example "expect words related to technology".
         /// </param>
         public RealtimeSessionCreateRequestInputAudioTranscription(
             string? model,

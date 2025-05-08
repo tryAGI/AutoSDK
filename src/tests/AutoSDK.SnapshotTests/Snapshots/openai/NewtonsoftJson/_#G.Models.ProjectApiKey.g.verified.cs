@@ -34,6 +34,12 @@ namespace G
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
+        /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset LastUsedAt { get; set; } = default!;
+
+        /// <summary>
         /// The identifier, which can be referenced in API endpoints
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -66,6 +72,9 @@ namespace G
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </param>
+        /// <param name="lastUsedAt">
+        /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
@@ -74,6 +83,7 @@ namespace G
             string redactedValue,
             string name,
             global::System.DateTimeOffset createdAt,
+            global::System.DateTimeOffset lastUsedAt,
             string id,
             global::G.ProjectApiKeyOwner owner,
             global::G.ProjectApiKeyObject @object)
@@ -81,6 +91,7 @@ namespace G
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
+            this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Object = @object;

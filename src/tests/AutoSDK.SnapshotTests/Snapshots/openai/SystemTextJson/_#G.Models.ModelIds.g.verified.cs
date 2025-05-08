@@ -11,101 +11,101 @@ namespace G
     public readonly partial struct ModelIds : global::System.IEquatable<ModelIds>
     {
         /// <summary>
-        /// 
+        /// Example: gpt-4o
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public global::G.ModelIdsShared? Shared { get; init; }
 #else
-        public string? Value1 { get; }
+        public global::G.ModelIdsShared? Shared { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShared => Shared != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIds(string value) => new ModelIds(value);
+        public static implicit operator ModelIds(global::G.ModelIdsShared value) => new ModelIds(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ModelIds @this) => @this.Value1;
+        public static implicit operator global::G.ModelIdsShared?(ModelIds @this) => @this.Shared;
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelIds(string? value)
+        public ModelIds(global::G.ModelIdsShared? value)
         {
-            Value1 = value;
+            Shared = value;
         }
 
         /// <summary>
-        /// 
+        /// Example: gpt-4o
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelIdsEnum? Value2 { get; init; }
+        public global::G.ModelIdsResponses? Responses { get; init; }
 #else
-        public global::G.ModelIdsEnum? Value2 { get; }
+        public global::G.ModelIdsResponses? Responses { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResponses => Responses != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIds(global::G.ModelIdsEnum value) => new ModelIds(value);
+        public static implicit operator ModelIds(global::G.ModelIdsResponses value) => new ModelIds(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelIdsEnum?(ModelIds @this) => @this.Value2;
+        public static implicit operator global::G.ModelIdsResponses?(ModelIds @this) => @this.Responses;
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelIds(global::G.ModelIdsEnum? value)
+        public ModelIds(global::G.ModelIdsResponses? value)
         {
-            Value2 = value;
+            Responses = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ModelIds(
-            string? value1,
-            global::G.ModelIdsEnum? value2
+            global::G.ModelIdsShared? shared,
+            global::G.ModelIdsResponses? responses
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Shared = shared;
+            Responses = responses;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Responses as object ??
+            Shared as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            Shared?.ToString() ??
+            Responses?.ToString() 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsShared || IsResponses;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.ModelIdsEnum?, TResult>? value2 = null,
+            global::System.Func<global::G.ModelIdsShared?, TResult>? shared = null,
+            global::System.Func<global::G.ModelIdsResponses?, TResult>? responses = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShared && shared != null)
             {
-                return value1(Value1!);
+                return shared(Shared!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResponses && responses != null)
             {
-                return value2(Value2!);
+                return responses(Responses!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.ModelIdsEnum?>? value2 = null,
+            global::System.Action<global::G.ModelIdsShared?>? shared = null,
+            global::System.Action<global::G.ModelIdsResponses?>? responses = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShared)
             {
-                value1?.Invoke(Value1!);
+                shared?.Invoke(Shared!);
             }
-            else if (IsValue2)
+            else if (IsResponses)
             {
-                value2?.Invoke(Value2!);
+                responses?.Invoke(Responses!);
             }
         }
 
@@ -171,10 +171,10 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(string),
-                Value2,
-                typeof(global::G.ModelIdsEnum),
+                Shared,
+                typeof(global::G.ModelIdsShared),
+                Responses,
+                typeof(global::G.ModelIdsResponses),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(ModelIds other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsShared?>.Default.Equals(Shared, other.Shared) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsResponses?>.Default.Equals(Responses, other.Responses) 
                 ;
         }
 

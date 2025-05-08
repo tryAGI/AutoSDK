@@ -29,7 +29,8 @@ namespace G
         /// underscores and dashes, with a maximum length of 64.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// The schema for the response format, described as a JSON Schema object.<br/>
@@ -86,16 +87,16 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextResponseFormatJsonSchema(
+            string name,
             object schema,
             global::G.TextResponseFormatJsonSchemaType type,
             string? description,
-            string? name,
             bool? strict)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
             this.Description = description;
-            this.Name = name;
             this.Strict = strict;
         }
 

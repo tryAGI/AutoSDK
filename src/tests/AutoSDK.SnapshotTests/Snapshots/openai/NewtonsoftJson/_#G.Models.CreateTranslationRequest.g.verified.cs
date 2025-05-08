@@ -42,7 +42,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.AudioResponseFormat? ResponseFormat { get; set; }
+        public global::G.CreateTranslationRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
@@ -86,7 +86,7 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt,
-            global::G.AudioResponseFormat? responseFormat,
+            global::G.CreateTranslationRequestResponseFormat? responseFormat,
             double? temperature)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

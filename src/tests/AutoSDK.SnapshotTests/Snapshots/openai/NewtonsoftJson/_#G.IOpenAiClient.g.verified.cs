@@ -64,6 +64,11 @@ namespace G
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
+        /// Manage and run evals in the OpenAI platform.
+        /// </summary>
+        public EvalsClient Evals { get; }
+
+        /// <summary>
         /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
         public FineTuningClient FineTuning { get; }
@@ -102,6 +107,11 @@ namespace G
         /// List user actions and configuration changes within this organization.
         /// </summary>
         public AuditLogsClient AuditLogs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates { get; }
 
         /// <summary>
         /// 

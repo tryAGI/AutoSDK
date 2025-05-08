@@ -20,6 +20,14 @@ namespace G
         public string? PreviousResponseId { get; set; }
 
         /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+        /// <example>gpt-4o</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelIdsResponsesJsonConverter))]
+        public global::G.ModelIdsResponses? Model { get; set; }
+
+        /// <summary>
         /// **o-series models only**<br/>
         /// Configuration options for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
@@ -36,7 +44,7 @@ namespace G
         /// <summary>
         /// Inserts a system (or developer) message as the first item in the model's context.<br/>
         /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
         /// to swap out system (or developer) messages in new responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
@@ -103,6 +111,9 @@ namespace G
         /// create multi-turn conversations. Learn more about <br/>
         /// [conversation state](/docs/guides/conversation-state).
         /// </param>
+        /// <param name="model">
+        /// Example: gpt-4o
+        /// </param>
         /// <param name="reasoning">
         /// **o-series models only**<br/>
         /// Configuration options for <br/>
@@ -114,7 +125,7 @@ namespace G
         /// <param name="instructions">
         /// Inserts a system (or developer) message as the first item in the model's context.<br/>
         /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
         /// to swap out system (or developer) messages in new responses.
         /// </param>
         /// <param name="text">
@@ -155,6 +166,7 @@ namespace G
 #endif
         public ResponseProperties(
             string? previousResponseId,
+            global::G.ModelIdsResponses? model,
             global::G.Reasoning? reasoning,
             int? maxOutputTokens,
             string? instructions,
@@ -164,6 +176,7 @@ namespace G
             global::G.ResponsePropertiesTruncation? truncation)
         {
             this.PreviousResponseId = previousResponseId;
+            this.Model = model;
             this.Reasoning = reasoning;
             this.MaxOutputTokens = maxOutputTokens;
             this.Instructions = instructions;

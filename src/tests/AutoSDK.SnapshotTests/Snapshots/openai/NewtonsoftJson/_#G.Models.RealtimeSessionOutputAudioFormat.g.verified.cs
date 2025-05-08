@@ -6,7 +6,8 @@ namespace G
 {
     /// <summary>
     /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-    /// For `pcm16`, output audio is sampled at a rate of 24kHz.
+    /// For `pcm16`, output audio is sampled at a rate of 24kHz.<br/>
+    /// Default Value: pcm16
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeSessionOutputAudioFormat

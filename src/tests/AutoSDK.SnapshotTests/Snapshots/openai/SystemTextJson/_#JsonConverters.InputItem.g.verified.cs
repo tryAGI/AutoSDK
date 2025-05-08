@@ -42,11 +42,11 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ItemReference? value3 = default;
+            global::G.ItemReferenceParam? value3 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReference> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReference).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReferenceParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReferenceParam).Name}");
                 value3 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -73,8 +73,8 @@ namespace G.JsonConverters
             }
             else if (value3 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReference> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReference).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReferenceParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReferenceParam).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -104,8 +104,8 @@ namespace G.JsonConverters
             }
             else if (value.IsValue3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReference?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReference).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReferenceParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReferenceParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
             }
         }

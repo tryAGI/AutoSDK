@@ -46,7 +46,7 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            global::G.AudioResponseFormat? responseFormat = default,
+            global::G.CreateTranslationRequestResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

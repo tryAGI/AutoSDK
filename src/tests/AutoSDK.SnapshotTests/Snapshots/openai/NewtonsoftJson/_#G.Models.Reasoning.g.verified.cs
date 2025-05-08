@@ -20,16 +20,25 @@ namespace G
         /// on reasoning in a response.<br/>
         /// Default Value: medium
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("effort", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ReasoningEffort? Effort { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("effort")]
+        public global::G.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// **o-series models only** <br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("summary")]
+        public global::G.ReasoningSummary? Summary { get; set; }
+
+        /// <summary>
+        /// **Deprecated:** use `summary` instead.<br/>
+        /// A summary of the reasoning performed by the model. This can be<br/>
+        /// useful for debugging and understanding the model's reasoning process.<br/>
+        /// One of `auto`, `concise`, or `detailed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generate_summary")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>
@@ -50,18 +59,17 @@ namespace G
         /// on reasoning in a response.<br/>
         /// Default Value: medium
         /// </param>
-        /// <param name="generateSummary">
-        /// **o-series models only** <br/>
+        /// <param name="summary">
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
         /// </param>
         public Reasoning(
             global::G.ReasoningEffort? effort,
-            global::G.ReasoningGenerateSummary? generateSummary)
+            global::G.ReasoningSummary? summary)
         {
             this.Effort = effort;
-            this.GenerateSummary = generateSummary;
+            this.Summary = summary;
         }
 
         /// <summary>

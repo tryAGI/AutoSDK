@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ModelResponseProperties.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -11,18 +9,6 @@ namespace G
     /// </summary>
     public sealed partial class ModelResponseProperties
     {
-        /// <summary>
-        /// Model ID used to generate the response, like `gpt-4o` or `o1`. OpenAI<br/>
-        /// offers a wide range of models with different capabilities, performance<br/>
-        /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
-        /// to browse and compare available models.<br/>
-        /// Example: gpt-4o
-        /// </summary>
-        /// <example>gpt-4o</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ModelResponsePropertiesModel?>))]
-        public global::G.AnyOf<string, global::G.ModelResponsePropertiesModel?>? Model { get; set; }
-
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -65,6 +51,21 @@ namespace G
         public string? User { get; set; }
 
         /// <summary>
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ServiceTierJsonConverter))]
+        public global::G.ServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -73,13 +74,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelResponseProperties" /> class.
         /// </summary>
-        /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-4o` or `o1`. OpenAI<br/>
-        /// offers a wide range of models with different capabilities, performance<br/>
-        /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
-        /// to browse and compare available models.<br/>
-        /// Example: gpt-4o
-        /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -106,21 +100,32 @@ namespace G
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
+        /// <param name="serviceTier">
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelResponseProperties(
-            global::G.AnyOf<string, global::G.ModelResponsePropertiesModel?>? model,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,
-            string? user)
+            string? user,
+            global::G.ServiceTier? serviceTier)
         {
-            this.Model = model;
             this.Metadata = metadata;
             this.Temperature = temperature;
             this.TopP = topP;
             this.User = user;
+            this.ServiceTier = serviceTier;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The Realtime model used for this session.
     /// </summary>
     public enum RealtimeSessionModel
     {

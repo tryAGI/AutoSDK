@@ -15,6 +15,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="whisper-1")]
         Whisper1,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-transcribe")]
+        Gpt4oTranscribe,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-transcribe")]
+        Gpt4oMiniTranscribe,
     }
 
     /// <summary>
@@ -30,6 +40,8 @@ namespace G
             return value switch
             {
                 CreateTranscriptionRequestModel.Whisper1 => "whisper-1",
+                CreateTranscriptionRequestModel.Gpt4oTranscribe => "gpt-4o-transcribe",
+                CreateTranscriptionRequestModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -41,6 +53,8 @@ namespace G
             return value switch
             {
                 "whisper-1" => CreateTranscriptionRequestModel.Whisper1,
+                "gpt-4o-transcribe" => CreateTranscriptionRequestModel.Gpt4oTranscribe,
+                "gpt-4o-mini-transcribe" => CreateTranscriptionRequestModel.Gpt4oMiniTranscribe,
                 _ => null,
             };
         }

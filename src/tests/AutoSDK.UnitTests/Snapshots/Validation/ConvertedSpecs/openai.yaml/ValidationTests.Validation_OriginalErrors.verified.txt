@@ -8,11 +8,24 @@
     Pointer: 
   },
   {
-    Message: Cannot create a scalar value from this type of node.,
-    Pointer: #/components/schemas/CreateResponse/allOf/properties/include/description
+    Message: optional is not a valid property at #/components/schemas/CreateTranscriptionResponseJson/properties/logprobs,
+    Pointer: 
+  },
+  {
+    Message: min_items is not a valid property at #/components/schemas/EvalScoreModelGrader/properties/range/items,
+    Pointer: 
+  },
+  {
+    Message: max_items is not a valid property at #/components/schemas/EvalScoreModelGrader/properties/range/items,
+    Pointer: 
   },
   {
     Message: propertyNames is not a valid property at #/components/schemas/VectorStoreFileAttributes,
     Pointer: 
+  },
+  {
+    RuleName: PathParameterShouldBeInThePath,
+    Message: Declared path parameter "cert_id" needs to be defined as a path parameter at either the path or operation level,
+    Pointer: #/paths/~1organization~1certificates~1{certificate_id}/get/parameters/0/in
   }
 ]

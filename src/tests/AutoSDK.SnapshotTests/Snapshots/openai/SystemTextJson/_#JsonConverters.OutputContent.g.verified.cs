@@ -18,11 +18,11 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.OutputText? text = default;
+            global::G.OutputTextContent? text = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputText> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputText).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputTextContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputTextContent).Name}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -30,11 +30,11 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.Refusal? refusal = default;
+            global::G.RefusalContent? refusal = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Refusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Refusal> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Refusal).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RefusalContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RefusalContent).Name}");
                 refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -48,14 +48,14 @@ namespace G.JsonConverters
 
             if (text != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputText> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputText).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputTextContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputTextContent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (refusal != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Refusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Refusal> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Refusal).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RefusalContent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RefusalContent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -73,14 +73,14 @@ namespace G.JsonConverters
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputText?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputText).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputTextContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputTextContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
             else if (value.IsRefusal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Refusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Refusal?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Refusal).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RefusalContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RefusalContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Refusal, typeInfo);
             }
         }

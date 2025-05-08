@@ -851,6 +851,146 @@ namespace G
         }
 
         /// <summary>
+        /// Emitted when a new reasoning summary part is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartAdded))]
+#endif
+        public bool IsReasoningSummaryPartAdded => ReasoningSummaryPartAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryPartAddedEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryPartAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryPartAddedEvent? value)
+        {
+            ReasoningSummaryPartAdded = value;
+        }
+
+        /// <summary>
+        /// Emitted when a reasoning summary part is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartDone))]
+#endif
+        public bool IsReasoningSummaryPartDone => ReasoningSummaryPartDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryPartDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryPartDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryPartDoneEvent? value)
+        {
+            ReasoningSummaryPartDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a delta is added to a reasoning summary text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDelta))]
+#endif
+        public bool IsReasoningSummaryTextDelta => ReasoningSummaryTextDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryTextDeltaEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryTextDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDeltaEvent? value)
+        {
+            ReasoningSummaryTextDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when a reasoning summary text is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDone))]
+#endif
+        public bool IsReasoningSummaryTextDone => ReasoningSummaryTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryTextDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryTextDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDoneEvent? value)
+        {
+            ReasoningSummaryTextDone = value;
+        }
+
+        /// <summary>
         /// Emitted when there is a partial refusal text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1158,6 +1298,10 @@ namespace G
             global::G.ResponseIncompleteEvent? incomplete,
             global::G.ResponseOutputItemAddedEvent? outputItemAdded,
             global::G.ResponseOutputItemDoneEvent? outputItemDone,
+            global::G.ResponseReasoningSummaryPartAddedEvent? reasoningSummaryPartAdded,
+            global::G.ResponseReasoningSummaryPartDoneEvent? reasoningSummaryPartDone,
+            global::G.ResponseReasoningSummaryTextDeltaEvent? reasoningSummaryTextDelta,
+            global::G.ResponseReasoningSummaryTextDoneEvent? reasoningSummaryTextDone,
             global::G.ResponseRefusalDeltaEvent? refusalDelta,
             global::G.ResponseRefusalDoneEvent? refusalDone,
             global::G.ResponseTextAnnotationDeltaEvent? textAnnotationDelta,
@@ -1192,6 +1336,10 @@ namespace G
             Incomplete = incomplete;
             OutputItemAdded = outputItemAdded;
             OutputItemDone = outputItemDone;
+            ReasoningSummaryPartAdded = reasoningSummaryPartAdded;
+            ReasoningSummaryPartDone = reasoningSummaryPartDone;
+            ReasoningSummaryTextDelta = reasoningSummaryTextDelta;
+            ReasoningSummaryTextDone = reasoningSummaryTextDone;
             RefusalDelta = refusalDelta;
             RefusalDone = refusalDone;
             TextAnnotationDelta = textAnnotationDelta;
@@ -1214,6 +1362,10 @@ namespace G
             TextAnnotationDelta as object ??
             RefusalDone as object ??
             RefusalDelta as object ??
+            ReasoningSummaryTextDone as object ??
+            ReasoningSummaryTextDelta as object ??
+            ReasoningSummaryPartDone as object ??
+            ReasoningSummaryPartAdded as object ??
             OutputItemDone as object ??
             OutputItemAdded as object ??
             Incomplete as object ??
@@ -1268,6 +1420,10 @@ namespace G
             Incomplete?.ToString() ??
             OutputItemAdded?.ToString() ??
             OutputItemDone?.ToString() ??
+            ReasoningSummaryPartAdded?.ToString() ??
+            ReasoningSummaryPartDone?.ToString() ??
+            ReasoningSummaryTextDelta?.ToString() ??
+            ReasoningSummaryTextDone?.ToString() ??
             RefusalDelta?.ToString() ??
             RefusalDone?.ToString() ??
             TextAnnotationDelta?.ToString() ??
@@ -1283,7 +1439,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
         }
 
         /// <summary>
@@ -1314,6 +1470,10 @@ namespace G
             global::System.Func<global::G.ResponseIncompleteEvent?, TResult>? incomplete = null,
             global::System.Func<global::G.ResponseOutputItemAddedEvent?, TResult>? outputItemAdded = null,
             global::System.Func<global::G.ResponseOutputItemDoneEvent?, TResult>? outputItemDone = null,
+            global::System.Func<global::G.ResponseReasoningSummaryPartAddedEvent?, TResult>? reasoningSummaryPartAdded = null,
+            global::System.Func<global::G.ResponseReasoningSummaryPartDoneEvent?, TResult>? reasoningSummaryPartDone = null,
+            global::System.Func<global::G.ResponseReasoningSummaryTextDeltaEvent?, TResult>? reasoningSummaryTextDelta = null,
+            global::System.Func<global::G.ResponseReasoningSummaryTextDoneEvent?, TResult>? reasoningSummaryTextDone = null,
             global::System.Func<global::G.ResponseRefusalDeltaEvent?, TResult>? refusalDelta = null,
             global::System.Func<global::G.ResponseRefusalDoneEvent?, TResult>? refusalDone = null,
             global::System.Func<global::G.ResponseTextAnnotationDeltaEvent?, TResult>? textAnnotationDelta = null,
@@ -1425,6 +1585,22 @@ namespace G
             {
                 return outputItemDone(OutputItemDone!);
             }
+            else if (IsReasoningSummaryPartAdded && reasoningSummaryPartAdded != null)
+            {
+                return reasoningSummaryPartAdded(ReasoningSummaryPartAdded!);
+            }
+            else if (IsReasoningSummaryPartDone && reasoningSummaryPartDone != null)
+            {
+                return reasoningSummaryPartDone(ReasoningSummaryPartDone!);
+            }
+            else if (IsReasoningSummaryTextDelta && reasoningSummaryTextDelta != null)
+            {
+                return reasoningSummaryTextDelta(ReasoningSummaryTextDelta!);
+            }
+            else if (IsReasoningSummaryTextDone && reasoningSummaryTextDone != null)
+            {
+                return reasoningSummaryTextDone(ReasoningSummaryTextDone!);
+            }
             else if (IsRefusalDelta && refusalDelta != null)
             {
                 return refusalDelta(RefusalDelta!);
@@ -1489,6 +1665,10 @@ namespace G
             global::System.Action<global::G.ResponseIncompleteEvent?>? incomplete = null,
             global::System.Action<global::G.ResponseOutputItemAddedEvent?>? outputItemAdded = null,
             global::System.Action<global::G.ResponseOutputItemDoneEvent?>? outputItemDone = null,
+            global::System.Action<global::G.ResponseReasoningSummaryPartAddedEvent?>? reasoningSummaryPartAdded = null,
+            global::System.Action<global::G.ResponseReasoningSummaryPartDoneEvent?>? reasoningSummaryPartDone = null,
+            global::System.Action<global::G.ResponseReasoningSummaryTextDeltaEvent?>? reasoningSummaryTextDelta = null,
+            global::System.Action<global::G.ResponseReasoningSummaryTextDoneEvent?>? reasoningSummaryTextDone = null,
             global::System.Action<global::G.ResponseRefusalDeltaEvent?>? refusalDelta = null,
             global::System.Action<global::G.ResponseRefusalDoneEvent?>? refusalDone = null,
             global::System.Action<global::G.ResponseTextAnnotationDeltaEvent?>? textAnnotationDelta = null,
@@ -1600,6 +1780,22 @@ namespace G
             {
                 outputItemDone?.Invoke(OutputItemDone!);
             }
+            else if (IsReasoningSummaryPartAdded)
+            {
+                reasoningSummaryPartAdded?.Invoke(ReasoningSummaryPartAdded!);
+            }
+            else if (IsReasoningSummaryPartDone)
+            {
+                reasoningSummaryPartDone?.Invoke(ReasoningSummaryPartDone!);
+            }
+            else if (IsReasoningSummaryTextDelta)
+            {
+                reasoningSummaryTextDelta?.Invoke(ReasoningSummaryTextDelta!);
+            }
+            else if (IsReasoningSummaryTextDone)
+            {
+                reasoningSummaryTextDone?.Invoke(ReasoningSummaryTextDone!);
+            }
             else if (IsRefusalDelta)
             {
                 refusalDelta?.Invoke(RefusalDelta!);
@@ -1689,6 +1885,14 @@ namespace G
                 typeof(global::G.ResponseOutputItemAddedEvent),
                 OutputItemDone,
                 typeof(global::G.ResponseOutputItemDoneEvent),
+                ReasoningSummaryPartAdded,
+                typeof(global::G.ResponseReasoningSummaryPartAddedEvent),
+                ReasoningSummaryPartDone,
+                typeof(global::G.ResponseReasoningSummaryPartDoneEvent),
+                ReasoningSummaryTextDelta,
+                typeof(global::G.ResponseReasoningSummaryTextDeltaEvent),
+                ReasoningSummaryTextDone,
+                typeof(global::G.ResponseReasoningSummaryTextDoneEvent),
                 RefusalDelta,
                 typeof(global::G.ResponseRefusalDeltaEvent),
                 RefusalDone,
@@ -1745,6 +1949,10 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseIncompleteEvent?>.Default.Equals(Incomplete, other.Incomplete) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseOutputItemAddedEvent?>.Default.Equals(OutputItemAdded, other.OutputItemAdded) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseOutputItemDoneEvent?>.Default.Equals(OutputItemDone, other.OutputItemDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryPartAddedEvent?>.Default.Equals(ReasoningSummaryPartAdded, other.ReasoningSummaryPartAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryPartDoneEvent?>.Default.Equals(ReasoningSummaryPartDone, other.ReasoningSummaryPartDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryTextDeltaEvent?>.Default.Equals(ReasoningSummaryTextDelta, other.ReasoningSummaryTextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryTextDoneEvent?>.Default.Equals(ReasoningSummaryTextDone, other.ReasoningSummaryTextDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDeltaEvent?>.Default.Equals(RefusalDelta, other.RefusalDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDoneEvent?>.Default.Equals(RefusalDone, other.RefusalDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextAnnotationDeltaEvent?>.Default.Equals(TextAnnotationDelta, other.TextAnnotationDelta) &&

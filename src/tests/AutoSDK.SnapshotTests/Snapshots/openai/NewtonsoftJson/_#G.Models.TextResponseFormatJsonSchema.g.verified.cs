@@ -27,8 +27,8 @@ namespace G
         /// The name of the response format. Must be a-z, A-Z, 0-9, or contain<br/>
         /// underscores and dashes, with a maximum length of 64.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The schema for the response format, described as a JSON Schema object.<br/>
@@ -81,16 +81,16 @@ namespace G
         /// Default Value: false
         /// </param>
         public TextResponseFormatJsonSchema(
+            string name,
             object schema,
             global::G.TextResponseFormatJsonSchemaType type,
             string? description,
-            string? name,
             bool? strict)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
             this.Description = description;
-            this.Name = name;
             this.Strict = strict;
         }
 

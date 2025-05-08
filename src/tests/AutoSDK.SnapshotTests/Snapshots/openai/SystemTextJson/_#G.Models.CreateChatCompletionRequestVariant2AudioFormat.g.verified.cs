@@ -17,6 +17,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Aac,
+        /// <summary>
+        /// 
+        /// </summary>
         Mp3,
         /// <summary>
         /// 
@@ -45,6 +49,7 @@ namespace G
             return value switch
             {
                 CreateChatCompletionRequestVariant2AudioFormat.Wav => "wav",
+                CreateChatCompletionRequestVariant2AudioFormat.Aac => "aac",
                 CreateChatCompletionRequestVariant2AudioFormat.Mp3 => "mp3",
                 CreateChatCompletionRequestVariant2AudioFormat.Flac => "flac",
                 CreateChatCompletionRequestVariant2AudioFormat.Opus => "opus",
@@ -60,6 +65,7 @@ namespace G
             return value switch
             {
                 "wav" => CreateChatCompletionRequestVariant2AudioFormat.Wav,
+                "aac" => CreateChatCompletionRequestVariant2AudioFormat.Aac,
                 "mp3" => CreateChatCompletionRequestVariant2AudioFormat.Mp3,
                 "flac" => CreateChatCompletionRequestVariant2AudioFormat.Flac,
                 "opus" => CreateChatCompletionRequestVariant2AudioFormat.Opus,

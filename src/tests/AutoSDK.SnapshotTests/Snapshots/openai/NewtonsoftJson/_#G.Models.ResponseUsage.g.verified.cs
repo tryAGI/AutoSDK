@@ -17,6 +17,12 @@ namespace G
         public int InputTokens { get; set; } = default!;
 
         /// <summary>
+        /// A detailed breakdown of the input tokens.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input_tokens_details", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ResponseUsageInputTokensDetails InputTokensDetails { get; set; } = default!;
+
+        /// <summary>
         /// The number of output tokens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_tokens", Required = global::Newtonsoft.Json.Required.Always)]
@@ -46,6 +52,9 @@ namespace G
         /// <param name="inputTokens">
         /// The number of input tokens.
         /// </param>
+        /// <param name="inputTokensDetails">
+        /// A detailed breakdown of the input tokens.
+        /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens.
         /// </param>
@@ -57,11 +66,13 @@ namespace G
         /// </param>
         public ResponseUsage(
             int inputTokens,
+            global::G.ResponseUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
             global::G.ResponseUsageOutputTokensDetails outputTokensDetails,
             int totalTokens)
         {
             this.InputTokens = inputTokens;
+            this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
             this.OutputTokens = outputTokens;
             this.OutputTokensDetails = outputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(outputTokensDetails));
             this.TotalTokens = totalTokens;

@@ -5,34 +5,34 @@
 namespace G
 {
     /// <summary>
-    /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+    /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.<br/>
     /// Default Value: json
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum AudioResponseFormat
     {
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json")]
         Json,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="srt")]
         Srt,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="verbose_json")]
         VerboseJson,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vtt")]
         Vtt,

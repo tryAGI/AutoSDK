@@ -158,35 +158,35 @@ namespace G
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerToolCallOutput? ComputerToolCallOutput { get; init; }
+        public global::G.ComputerCallOutputItemParam? ComputerCallOutputParam { get; init; }
 #else
-        public global::G.ComputerToolCallOutput? ComputerToolCallOutput { get; }
+        public global::G.ComputerCallOutputItemParam? ComputerCallOutputParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutputParam))]
 #endif
-        public bool IsComputerToolCallOutput => ComputerToolCallOutput != null;
+        public bool IsComputerCallOutputParam => ComputerCallOutputParam != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.ComputerToolCallOutput value) => new Item(value);
+        public static implicit operator Item(global::G.ComputerCallOutputItemParam value) => new Item(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerToolCallOutput?(Item @this) => @this.ComputerToolCallOutput;
+        public static implicit operator global::G.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutputParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public Item(global::G.ComputerToolCallOutput? value)
+        public Item(global::G.ComputerCallOutputItemParam? value)
         {
-            ComputerToolCallOutput = value;
+            ComputerCallOutputParam = value;
         }
 
         /// <summary>
@@ -265,35 +265,35 @@ namespace G
         /// The output of a function tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionToolCallOutput? FunctionToolCallOutput { get; init; }
+        public global::G.FunctionCallOutputItemParam? FunctionCallOutputParam { get; init; }
 #else
-        public global::G.FunctionToolCallOutput? FunctionToolCallOutput { get; }
+        public global::G.FunctionCallOutputItemParam? FunctionCallOutputParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputParam))]
 #endif
-        public bool IsFunctionToolCallOutput => FunctionToolCallOutput != null;
+        public bool IsFunctionCallOutputParam => FunctionCallOutputParam != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::G.FunctionToolCallOutput value) => new Item(value);
+        public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionToolCallOutput?(Item @this) => @this.FunctionToolCallOutput;
+        public static implicit operator global::G.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutputParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public Item(global::G.FunctionToolCallOutput? value)
+        public Item(global::G.FunctionCallOutputItemParam? value)
         {
-            FunctionToolCallOutput = value;
+            FunctionCallOutputParam = value;
         }
 
         /// <summary>
@@ -340,10 +340,10 @@ namespace G
             global::G.OutputMessage? outputMessage,
             global::G.FileSearchToolCall? fileSearchToolCall,
             global::G.ComputerToolCall? computerToolCall,
-            global::G.ComputerToolCallOutput? computerToolCallOutput,
+            global::G.ComputerCallOutputItemParam? computerCallOutputParam,
             global::G.WebSearchToolCall? webSearchToolCall,
             global::G.FunctionToolCall? functionToolCall,
-            global::G.FunctionToolCallOutput? functionToolCallOutput,
+            global::G.FunctionCallOutputItemParam? functionCallOutputParam,
             global::G.ReasoningItem? reasoning
             )
         {
@@ -351,10 +351,10 @@ namespace G
             OutputMessage = outputMessage;
             FileSearchToolCall = fileSearchToolCall;
             ComputerToolCall = computerToolCall;
-            ComputerToolCallOutput = computerToolCallOutput;
+            ComputerCallOutputParam = computerCallOutputParam;
             WebSearchToolCall = webSearchToolCall;
             FunctionToolCall = functionToolCall;
-            FunctionToolCallOutput = functionToolCallOutput;
+            FunctionCallOutputParam = functionCallOutputParam;
             Reasoning = reasoning;
         }
 
@@ -363,10 +363,10 @@ namespace G
         /// </summary>
         public object? Object =>
             Reasoning as object ??
-            FunctionToolCallOutput as object ??
+            FunctionCallOutputParam as object ??
             FunctionToolCall as object ??
             WebSearchToolCall as object ??
-            ComputerToolCallOutput as object ??
+            ComputerCallOutputParam as object ??
             ComputerToolCall as object ??
             FileSearchToolCall as object ??
             OutputMessage as object ??
@@ -381,10 +381,10 @@ namespace G
             OutputMessage?.ToString() ??
             FileSearchToolCall?.ToString() ??
             ComputerToolCall?.ToString() ??
-            ComputerToolCallOutput?.ToString() ??
+            ComputerCallOutputParam?.ToString() ??
             WebSearchToolCall?.ToString() ??
             FunctionToolCall?.ToString() ??
-            FunctionToolCallOutput?.ToString() ??
+            FunctionCallOutputParam?.ToString() ??
             Reasoning?.ToString() 
             ;
 
@@ -393,7 +393,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && IsReasoning;
+            return IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && IsReasoning;
         }
 
         /// <summary>
@@ -404,10 +404,10 @@ namespace G
             global::System.Func<global::G.OutputMessage?, TResult>? outputMessage = null,
             global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchToolCall = null,
             global::System.Func<global::G.ComputerToolCall?, TResult>? computerToolCall = null,
-            global::System.Func<global::G.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
+            global::System.Func<global::G.ComputerCallOutputItemParam?, TResult>? computerCallOutputParam = null,
             global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchToolCall = null,
             global::System.Func<global::G.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::G.FunctionToolCallOutput?, TResult>? functionToolCallOutput = null,
+            global::System.Func<global::G.FunctionCallOutputItemParam?, TResult>? functionCallOutputParam = null,
             global::System.Func<global::G.ReasoningItem?, TResult>? reasoning = null,
             bool validate = true)
         {
@@ -432,9 +432,9 @@ namespace G
             {
                 return computerToolCall(ComputerToolCall!);
             }
-            else if (IsComputerToolCallOutput && computerToolCallOutput != null)
+            else if (IsComputerCallOutputParam && computerCallOutputParam != null)
             {
-                return computerToolCallOutput(ComputerToolCallOutput!);
+                return computerCallOutputParam(ComputerCallOutputParam!);
             }
             else if (IsWebSearchToolCall && webSearchToolCall != null)
             {
@@ -444,9 +444,9 @@ namespace G
             {
                 return functionToolCall(FunctionToolCall!);
             }
-            else if (IsFunctionToolCallOutput && functionToolCallOutput != null)
+            else if (IsFunctionCallOutputParam && functionCallOutputParam != null)
             {
-                return functionToolCallOutput(FunctionToolCallOutput!);
+                return functionCallOutputParam(FunctionCallOutputParam!);
             }
             else if (IsReasoning && reasoning != null)
             {
@@ -464,10 +464,10 @@ namespace G
             global::System.Action<global::G.OutputMessage?>? outputMessage = null,
             global::System.Action<global::G.FileSearchToolCall?>? fileSearchToolCall = null,
             global::System.Action<global::G.ComputerToolCall?>? computerToolCall = null,
-            global::System.Action<global::G.ComputerToolCallOutput?>? computerToolCallOutput = null,
+            global::System.Action<global::G.ComputerCallOutputItemParam?>? computerCallOutputParam = null,
             global::System.Action<global::G.WebSearchToolCall?>? webSearchToolCall = null,
             global::System.Action<global::G.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::G.FunctionToolCallOutput?>? functionToolCallOutput = null,
+            global::System.Action<global::G.FunctionCallOutputItemParam?>? functionCallOutputParam = null,
             global::System.Action<global::G.ReasoningItem?>? reasoning = null,
             bool validate = true)
         {
@@ -492,9 +492,9 @@ namespace G
             {
                 computerToolCall?.Invoke(ComputerToolCall!);
             }
-            else if (IsComputerToolCallOutput)
+            else if (IsComputerCallOutputParam)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerCallOutputParam?.Invoke(ComputerCallOutputParam!);
             }
             else if (IsWebSearchToolCall)
             {
@@ -504,9 +504,9 @@ namespace G
             {
                 functionToolCall?.Invoke(FunctionToolCall!);
             }
-            else if (IsFunctionToolCallOutput)
+            else if (IsFunctionCallOutputParam)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionCallOutputParam?.Invoke(FunctionCallOutputParam!);
             }
             else if (IsReasoning)
             {
@@ -529,14 +529,14 @@ namespace G
                 typeof(global::G.FileSearchToolCall),
                 ComputerToolCall,
                 typeof(global::G.ComputerToolCall),
-                ComputerToolCallOutput,
-                typeof(global::G.ComputerToolCallOutput),
+                ComputerCallOutputParam,
+                typeof(global::G.ComputerCallOutputItemParam),
                 WebSearchToolCall,
                 typeof(global::G.WebSearchToolCall),
                 FunctionToolCall,
                 typeof(global::G.FunctionToolCall),
-                FunctionToolCallOutput,
-                typeof(global::G.FunctionToolCallOutput),
+                FunctionCallOutputParam,
+                typeof(global::G.FunctionCallOutputItemParam),
                 Reasoning,
                 typeof(global::G.ReasoningItem),
             };
@@ -559,10 +559,10 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FileSearchToolCall?>.Default.Equals(FileSearchToolCall, other.FileSearchToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutput?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerCallOutputItemParam?>.Default.Equals(ComputerCallOutputParam, other.ComputerCallOutputParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallOutput?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionCallOutputItemParam?>.Default.Equals(FunctionCallOutputParam, other.FunctionCallOutputParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ReasoningItem?>.Default.Equals(Reasoning, other.Reasoning) 
                 ;
         }

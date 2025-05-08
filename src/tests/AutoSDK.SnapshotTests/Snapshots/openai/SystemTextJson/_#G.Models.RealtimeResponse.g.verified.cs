@@ -76,13 +76,12 @@ namespace G
         public string? ConversationId { get; set; }
 
         /// <summary>
-        /// The voice the model used to respond.<br/>
-        /// Current voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </summary>
+        /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseVoiceJsonConverter))]
-        public global::G.RealtimeResponseVoice? Voice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VoiceIdsSharedJsonConverter))]
+        public global::G.VoiceIdsShared? Voice { get; set; }
 
         /// <summary>
         /// The set of modalities the model used to respond. If there are multiple modalities,<br/>
@@ -161,9 +160,7 @@ namespace G
         /// the `conversation_id` will be an id like `conv_1234`.
         /// </param>
         /// <param name="voice">
-        /// The voice the model used to respond.<br/>
-        /// Current voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </param>
         /// <param name="modalities">
         /// The set of modalities the model used to respond. If there are multiple modalities,<br/>
@@ -192,7 +189,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.RealtimeResponseUsage? usage,
             string? conversationId,
-            global::G.RealtimeResponseVoice? voice,
+            global::G.VoiceIdsShared? voice,
             global::System.Collections.Generic.IList<global::G.RealtimeResponseModalitie>? modalities,
             global::G.RealtimeResponseOutputAudioFormat? outputAudioFormat,
             double? temperature,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The Realtime model used for this session.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeSessionModel

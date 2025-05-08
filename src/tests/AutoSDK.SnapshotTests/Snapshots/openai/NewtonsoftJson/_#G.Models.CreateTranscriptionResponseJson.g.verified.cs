@@ -16,6 +16,12 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -27,10 +33,15 @@ namespace G
         /// <param name="text">
         /// The transcribed text.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </param>
         public CreateTranscriptionResponseJson(
-            string text)
+            string text,
+            global::System.Collections.Generic.IList<global::G.CreateTranscriptionResponseJsonLogprob>? logprobs)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

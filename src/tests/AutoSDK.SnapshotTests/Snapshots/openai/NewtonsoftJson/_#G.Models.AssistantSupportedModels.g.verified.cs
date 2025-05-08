@@ -13,6 +13,36 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1")]
+        Gpt41,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1-mini")]
+        Gpt41Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1-nano")]
+        Gpt41Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1-2025-04-14")]
+        Gpt4120250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1-mini-2025-04-14")]
+        Gpt41Mini20250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.1-nano-2025-04-14")]
+        Gpt41Nano20250414,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="o3-mini")]
         O3Mini,
         /// <summary>
@@ -174,6 +204,12 @@ namespace G
         {
             return value switch
             {
+                AssistantSupportedModels.Gpt41 => "gpt-4.1",
+                AssistantSupportedModels.Gpt41Mini => "gpt-4.1-mini",
+                AssistantSupportedModels.Gpt41Nano => "gpt-4.1-nano",
+                AssistantSupportedModels.Gpt4120250414 => "gpt-4.1-2025-04-14",
+                AssistantSupportedModels.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
+                AssistantSupportedModels.Gpt41Nano20250414 => "gpt-4.1-nano-2025-04-14",
                 AssistantSupportedModels.O3Mini => "o3-mini",
                 AssistantSupportedModels.O3Mini20250131 => "o3-mini-2025-01-31",
                 AssistantSupportedModels.O1 => "o1",
@@ -214,6 +250,12 @@ namespace G
         {
             return value switch
             {
+                "gpt-4.1" => AssistantSupportedModels.Gpt41,
+                "gpt-4.1-mini" => AssistantSupportedModels.Gpt41Mini,
+                "gpt-4.1-nano" => AssistantSupportedModels.Gpt41Nano,
+                "gpt-4.1-2025-04-14" => AssistantSupportedModels.Gpt4120250414,
+                "gpt-4.1-mini-2025-04-14" => AssistantSupportedModels.Gpt41Mini20250414,
+                "gpt-4.1-nano-2025-04-14" => AssistantSupportedModels.Gpt41Nano20250414,
                 "o3-mini" => AssistantSupportedModels.O3Mini,
                 "o3-mini-2025-01-31" => AssistantSupportedModels.O3Mini20250131,
                 "o1" => AssistantSupportedModels.O1,

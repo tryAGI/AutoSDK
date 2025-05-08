@@ -58,6 +58,18 @@ namespace G
         public global::G.AuditLogApiKeyDeleted? ApiKeyDeleted { get; set; }
 
         /// <summary>
+        /// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("checkpoint_permission.created")]
+        public global::G.AuditLogCheckpointPermissionCreated? CheckpointPermissionCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("checkpoint_permission.deleted")]
+        public global::G.AuditLogCheckpointPermissionDeleted? CheckpointPermissionDeleted { get; set; }
+
+        /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invite.sent")]
@@ -160,6 +172,36 @@ namespace G
         public global::G.AuditLogUserDeleted? UserDeleted { get; set; }
 
         /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("certificate.created")]
+        public global::G.AuditLogCertificateCreated? CertificateCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("certificate.updated")]
+        public global::G.AuditLogCertificateUpdated? CertificateUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("certificate.deleted")]
+        public global::G.AuditLogCertificateDeleted? CertificateDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("certificates.activated")]
+        public global::G.AuditLogCertificatesActivated? CertificatesActivated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("certificates.deactivated")]
+        public global::G.AuditLogCertificatesDeactivated? CertificatesDeactivated { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -190,6 +232,12 @@ namespace G
         /// The details for events with this `type`.
         /// </param>
         /// <param name="apiKeyDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="checkpointPermissionCreated">
+        /// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
+        /// </param>
+        /// <param name="checkpointPermissionDeleted">
         /// The details for events with this `type`.
         /// </param>
         /// <param name="inviteSent">
@@ -243,6 +291,21 @@ namespace G
         /// <param name="userDeleted">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="certificateCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificateUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificateDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificatesActivated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificatesDeactivated">
+        /// The details for events with this `type`.
+        /// </param>
         public AuditLog(
             string id,
             global::G.AuditLogEventType type,
@@ -252,6 +315,8 @@ namespace G
             global::G.AuditLogApiKeyCreated? apiKeyCreated,
             global::G.AuditLogApiKeyUpdated? apiKeyUpdated,
             global::G.AuditLogApiKeyDeleted? apiKeyDeleted,
+            global::G.AuditLogCheckpointPermissionCreated? checkpointPermissionCreated,
+            global::G.AuditLogCheckpointPermissionDeleted? checkpointPermissionDeleted,
             global::G.AuditLogInviteSent? inviteSent,
             global::G.AuditLogInviteAccepted? inviteAccepted,
             global::G.AuditLogInviteDeleted? inviteDeleted,
@@ -268,7 +333,12 @@ namespace G
             global::G.AuditLogServiceAccountDeleted? serviceAccountDeleted,
             global::G.AuditLogUserAdded? userAdded,
             global::G.AuditLogUserUpdated? userUpdated,
-            global::G.AuditLogUserDeleted? userDeleted)
+            global::G.AuditLogUserDeleted? userDeleted,
+            global::G.AuditLogCertificateCreated? certificateCreated,
+            global::G.AuditLogCertificateUpdated? certificateUpdated,
+            global::G.AuditLogCertificateDeleted? certificateDeleted,
+            global::G.AuditLogCertificatesActivated? certificatesActivated,
+            global::G.AuditLogCertificatesDeactivated? certificatesDeactivated)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
@@ -278,6 +348,8 @@ namespace G
             this.ApiKeyCreated = apiKeyCreated;
             this.ApiKeyUpdated = apiKeyUpdated;
             this.ApiKeyDeleted = apiKeyDeleted;
+            this.CheckpointPermissionCreated = checkpointPermissionCreated;
+            this.CheckpointPermissionDeleted = checkpointPermissionDeleted;
             this.InviteSent = inviteSent;
             this.InviteAccepted = inviteAccepted;
             this.InviteDeleted = inviteDeleted;
@@ -295,6 +367,11 @@ namespace G
             this.UserAdded = userAdded;
             this.UserUpdated = userUpdated;
             this.UserDeleted = userDeleted;
+            this.CertificateCreated = certificateCreated;
+            this.CertificateUpdated = certificateUpdated;
+            this.CertificateDeleted = certificateDeleted;
+            this.CertificatesActivated = certificatesActivated;
+            this.CertificatesDeactivated = certificatesDeactivated;
         }
 
         /// <summary>

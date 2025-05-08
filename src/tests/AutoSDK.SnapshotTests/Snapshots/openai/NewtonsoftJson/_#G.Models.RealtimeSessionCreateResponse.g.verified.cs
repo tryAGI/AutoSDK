@@ -42,13 +42,11 @@ namespace G
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// The voice the model uses to respond. Voice cannot be changed during the <br/>
-        /// session once the model has responded with audio at least once. Current <br/>
-        /// voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </summary>
+        /// <example>ash</example>
         [global::Newtonsoft.Json.JsonProperty("voice")]
-        public global::G.RealtimeSessionCreateResponseVoice? Voice { get; set; }
+        public global::G.VoiceIdsShared? Voice { get; set; }
 
         /// <summary>
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
@@ -138,10 +136,7 @@ namespace G
         /// start of the session.
         /// </param>
         /// <param name="voice">
-        /// The voice the model uses to respond. Voice cannot be changed during the <br/>
-        /// session once the model has responded with audio at least once. Current <br/>
-        /// voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
@@ -181,7 +176,7 @@ namespace G
             global::G.RealtimeSessionCreateResponseClientSecret clientSecret,
             global::System.Collections.Generic.IList<global::G.RealtimeSessionCreateResponseModalitie>? modalities,
             string? instructions,
-            global::G.RealtimeSessionCreateResponseVoice? voice,
+            global::G.VoiceIdsShared? voice,
             string? inputAudioFormat,
             string? outputAudioFormat,
             global::G.RealtimeSessionCreateResponseInputAudioTranscription? inputAudioTranscription,

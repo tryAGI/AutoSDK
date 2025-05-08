@@ -14,9 +14,9 @@ namespace G
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputText? Text { get; init; }
+        public global::G.InputTextContent? Text { get; init; }
 #else
-        public global::G.InputText? Text { get; }
+        public global::G.InputTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -30,17 +30,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputText value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputTextContent value) => new InputContent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputText?(InputContent @this) => @this.Text;
+        public static implicit operator global::G.InputTextContent?(InputContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::G.InputText? value)
+        public InputContent(global::G.InputTextContent? value)
         {
             Text = value;
         }
@@ -49,9 +49,9 @@ namespace G
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputImage? Image { get; init; }
+        public global::G.InputImageContent? Image { get; init; }
 #else
-        public global::G.InputImage? Image { get; }
+        public global::G.InputImageContent? Image { get; }
 #endif
 
         /// <summary>
@@ -65,17 +65,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputImage value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputImageContent value) => new InputContent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputImage?(InputContent @this) => @this.Image;
+        public static implicit operator global::G.InputImageContent?(InputContent @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::G.InputImage? value)
+        public InputContent(global::G.InputImageContent? value)
         {
             Image = value;
         }
@@ -84,9 +84,9 @@ namespace G
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputFile? File { get; init; }
+        public global::G.InputFileContent? File { get; init; }
 #else
-        public global::G.InputFile? File { get; }
+        public global::G.InputFileContent? File { get; }
 #endif
 
         /// <summary>
@@ -100,17 +100,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::G.InputFile value) => new InputContent(value);
+        public static implicit operator InputContent(global::G.InputFileContent value) => new InputContent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputFile?(InputContent @this) => @this.File;
+        public static implicit operator global::G.InputFileContent?(InputContent @this) => @this.File;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::G.InputFile? value)
+        public InputContent(global::G.InputFileContent? value)
         {
             File = value;
         }
@@ -119,9 +119,9 @@ namespace G
         /// 
         /// </summary>
         public InputContent(
-            global::G.InputText? text,
-            global::G.InputImage? image,
-            global::G.InputFile? file
+            global::G.InputTextContent? text,
+            global::G.InputImageContent? image,
+            global::G.InputFileContent? file
             )
         {
             Text = text;
@@ -159,9 +159,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputText?, TResult>? text = null,
-            global::System.Func<global::G.InputImage?, TResult>? image = null,
-            global::System.Func<global::G.InputFile?, TResult>? file = null,
+            global::System.Func<global::G.InputTextContent?, TResult>? text = null,
+            global::System.Func<global::G.InputImageContent?, TResult>? image = null,
+            global::System.Func<global::G.InputFileContent?, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -189,9 +189,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputText?>? text = null,
-            global::System.Action<global::G.InputImage?>? image = null,
-            global::System.Action<global::G.InputFile?>? file = null,
+            global::System.Action<global::G.InputTextContent?>? text = null,
+            global::System.Action<global::G.InputImageContent?>? image = null,
+            global::System.Action<global::G.InputFileContent?>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -221,11 +221,11 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.InputText),
+                typeof(global::G.InputTextContent),
                 Image,
-                typeof(global::G.InputImage),
+                typeof(global::G.InputImageContent),
                 File,
-                typeof(global::G.InputFile),
+                typeof(global::G.InputFileContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,9 +242,9 @@ namespace G
         public bool Equals(InputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.InputText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputImage?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputFile?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::G.InputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputImageContent?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputFileContent?>.Default.Equals(File, other.File) 
                 ;
         }
 

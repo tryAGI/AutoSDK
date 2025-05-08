@@ -224,13 +224,12 @@ namespace G
         }
 
         /// <summary>
-        /// A tool call to run a function. See the <br/>
-        /// [function calling guide](/docs/guides/function-calling) for more information.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionToolCall? FunctionToolCall { get; init; }
+        public global::G.FunctionToolCallResource? FunctionToolCall { get; init; }
 #else
-        public global::G.FunctionToolCall? FunctionToolCall { get; }
+        public global::G.FunctionToolCallResource? FunctionToolCall { get; }
 #endif
 
         /// <summary>
@@ -244,17 +243,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::G.FunctionToolCall value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::G.FunctionToolCallResource value) => new ItemResource(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionToolCall?(ItemResource @this) => @this.FunctionToolCall;
+        public static implicit operator global::G.FunctionToolCallResource?(ItemResource @this) => @this.FunctionToolCall;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemResource(global::G.FunctionToolCall? value)
+        public ItemResource(global::G.FunctionToolCallResource? value)
         {
             FunctionToolCall = value;
         }
@@ -304,7 +303,7 @@ namespace G
             global::G.ComputerToolCall? computerToolCall,
             global::G.ComputerToolCallOutputResource? computerToolCallOutput,
             global::G.WebSearchToolCall? webSearchToolCall,
-            global::G.FunctionToolCall? functionToolCall,
+            global::G.FunctionToolCallResource? functionToolCall,
             global::G.FunctionToolCallOutputResource? functionToolCallOutput
             )
         {
@@ -364,7 +363,7 @@ namespace G
             global::System.Func<global::G.ComputerToolCall?, TResult>? computerToolCall = null,
             global::System.Func<global::G.ComputerToolCallOutputResource?, TResult>? computerToolCallOutput = null,
             global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchToolCall = null,
-            global::System.Func<global::G.FunctionToolCall?, TResult>? functionToolCall = null,
+            global::System.Func<global::G.FunctionToolCallResource?, TResult>? functionToolCall = null,
             global::System.Func<global::G.FunctionToolCallOutputResource?, TResult>? functionToolCallOutput = null,
             bool validate = true)
         {
@@ -419,7 +418,7 @@ namespace G
             global::System.Action<global::G.ComputerToolCall?>? computerToolCall = null,
             global::System.Action<global::G.ComputerToolCallOutputResource?>? computerToolCallOutput = null,
             global::System.Action<global::G.WebSearchToolCall?>? webSearchToolCall = null,
-            global::System.Action<global::G.FunctionToolCall?>? functionToolCall = null,
+            global::System.Action<global::G.FunctionToolCallResource?>? functionToolCall = null,
             global::System.Action<global::G.FunctionToolCallOutputResource?>? functionToolCallOutput = null,
             bool validate = true)
         {
@@ -482,7 +481,7 @@ namespace G
                 WebSearchToolCall,
                 typeof(global::G.WebSearchToolCall),
                 FunctionToolCall,
-                typeof(global::G.FunctionToolCall),
+                typeof(global::G.FunctionToolCallResource),
                 FunctionToolCallOutput,
                 typeof(global::G.FunctionToolCallOutputResource),
             };
@@ -507,7 +506,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutputResource?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallResource?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallOutputResource?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) 
                 ;
         }

@@ -11,13 +11,13 @@ namespace G
     public sealed partial class CreateChatCompletionRequestVariant2Audio
     {
         /// <summary>
-        /// The voice the model uses to respond. Supported voices are <br/>
-        /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, and `shimmer`.
+        /// Example: ash
         /// </summary>
+        /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestVariant2AudioVoiceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VoiceIdsSharedJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateChatCompletionRequestVariant2AudioVoice Voice { get; set; }
+        public required global::G.VoiceIdsShared Voice { get; set; }
 
         /// <summary>
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
@@ -38,8 +38,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2Audio" /> class.
         /// </summary>
         /// <param name="voice">
-        /// The voice the model uses to respond. Supported voices are <br/>
-        /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, and `shimmer`.
+        /// Example: ash
         /// </param>
         /// <param name="format">
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
@@ -49,7 +48,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionRequestVariant2Audio(
-            global::G.CreateChatCompletionRequestVariant2AudioVoice voice,
+            global::G.VoiceIdsShared voice,
             global::G.CreateChatCompletionRequestVariant2AudioFormat format)
         {
             this.Voice = voice;

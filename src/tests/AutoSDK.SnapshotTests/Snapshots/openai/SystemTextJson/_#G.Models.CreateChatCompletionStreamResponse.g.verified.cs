@@ -42,13 +42,19 @@ namespace G
         public required string Model { get; set; }
 
         /// <summary>
-        /// The service tier used for processing the request.<br/>
-        /// Example: scale
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </summary>
-        /// <example>scale</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
-        public global::G.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ServiceTierJsonConverter))]
+        public global::G.ServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
@@ -65,11 +71,10 @@ namespace G
         public global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
-        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
-        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// Usage statistics for the completion request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::G.CreateChatCompletionStreamResponseUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,8 +99,15 @@ namespace G
         /// The model to generate the completion.
         /// </param>
         /// <param name="serviceTier">
-        /// The service tier used for processing the request.<br/>
-        /// Example: scale
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="systemFingerprint">
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
@@ -105,8 +117,7 @@ namespace G
         /// The object type, which is always `chat.completion.chunk`.
         /// </param>
         /// <param name="usage">
-        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
-        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// Usage statistics for the completion request.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -116,10 +127,10 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoice> choices,
             global::System.DateTimeOffset created,
             string model,
-            global::G.CreateChatCompletionStreamResponseServiceTier? serviceTier,
+            global::G.ServiceTier? serviceTier,
             string? systemFingerprint,
             global::G.CreateChatCompletionStreamResponseObject @object,
-            global::G.CreateChatCompletionStreamResponseUsage? usage)
+            global::G.CompletionUsage? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));

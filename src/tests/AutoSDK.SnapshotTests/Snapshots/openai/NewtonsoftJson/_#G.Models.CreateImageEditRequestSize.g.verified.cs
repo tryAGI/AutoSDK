@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+    /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for `gpt-image-1`, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.<br/>
     /// Default Value: 1024x1024<br/>
     /// Example: 1024x1024
     /// </summary>
@@ -27,6 +27,21 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1024x1024")]
         x1024x1024,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1536x1024")]
+        x1536x1024,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1024x1536")]
+        x1024x1536,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
     }
 
     /// <summary>
@@ -44,6 +59,9 @@ namespace G
                 CreateImageEditRequestSize.x256x256 => "256x256",
                 CreateImageEditRequestSize.x512x512 => "512x512",
                 CreateImageEditRequestSize.x1024x1024 => "1024x1024",
+                CreateImageEditRequestSize.x1536x1024 => "1536x1024",
+                CreateImageEditRequestSize.x1024x1536 => "1024x1536",
+                CreateImageEditRequestSize.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,6 +75,9 @@ namespace G
                 "256x256" => CreateImageEditRequestSize.x256x256,
                 "512x512" => CreateImageEditRequestSize.x512x512,
                 "1024x1024" => CreateImageEditRequestSize.x1024x1024,
+                "1536x1024" => CreateImageEditRequestSize.x1536x1024,
+                "1024x1536" => CreateImageEditRequestSize.x1024x1536,
+                "auto" => CreateImageEditRequestSize.Auto,
                 _ => null,
             };
         }

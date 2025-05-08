@@ -25,8 +25,8 @@ namespace G
         /// <summary>
         /// Reasoning text contents.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("summary", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.ReasoningItemSummaryItem> Summary { get; set; } = default!;
 
         /// <summary>
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -50,7 +50,7 @@ namespace G
         /// <param name="id">
         /// The unique identifier of the reasoning content.
         /// </param>
-        /// <param name="content">
+        /// <param name="summary">
         /// Reasoning text contents.
         /// </param>
         /// <param name="status">
@@ -59,12 +59,12 @@ namespace G
         /// </param>
         public ReasoningItem(
             string id,
-            global::System.Collections.Generic.IList<global::G.ReasoningItemContentItem> content,
+            global::System.Collections.Generic.IList<global::G.ReasoningItemSummaryItem> summary,
             global::G.ReasoningItemType type,
             global::G.ReasoningItemStatus? status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
             this.Status = status;
         }

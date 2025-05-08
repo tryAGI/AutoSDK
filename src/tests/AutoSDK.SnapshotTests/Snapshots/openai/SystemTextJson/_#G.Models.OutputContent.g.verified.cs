@@ -14,9 +14,9 @@ namespace G
         /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OutputText? Text { get; init; }
+        public global::G.OutputTextContent? Text { get; init; }
 #else
-        public global::G.OutputText? Text { get; }
+        public global::G.OutputTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -30,17 +30,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::G.OutputText value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::G.OutputTextContent value) => new OutputContent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OutputText?(OutputContent @this) => @this.Text;
+        public static implicit operator global::G.OutputTextContent?(OutputContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::G.OutputText? value)
+        public OutputContent(global::G.OutputTextContent? value)
         {
             Text = value;
         }
@@ -49,9 +49,9 @@ namespace G
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Refusal? Refusal { get; init; }
+        public global::G.RefusalContent? Refusal { get; init; }
 #else
-        public global::G.Refusal? Refusal { get; }
+        public global::G.RefusalContent? Refusal { get; }
 #endif
 
         /// <summary>
@@ -65,17 +65,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::G.Refusal value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::G.RefusalContent value) => new OutputContent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Refusal?(OutputContent @this) => @this.Refusal;
+        public static implicit operator global::G.RefusalContent?(OutputContent @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::G.Refusal? value)
+        public OutputContent(global::G.RefusalContent? value)
         {
             Refusal = value;
         }
@@ -84,8 +84,8 @@ namespace G
         /// 
         /// </summary>
         public OutputContent(
-            global::G.OutputText? text,
-            global::G.Refusal? refusal
+            global::G.OutputTextContent? text,
+            global::G.RefusalContent? refusal
             )
         {
             Text = text;
@@ -120,8 +120,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputText?, TResult>? text = null,
-            global::System.Func<global::G.Refusal?, TResult>? refusal = null,
+            global::System.Func<global::G.OutputTextContent?, TResult>? text = null,
+            global::System.Func<global::G.RefusalContent?, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputText?>? text = null,
-            global::System.Action<global::G.Refusal?>? refusal = null,
+            global::System.Action<global::G.OutputTextContent?>? text = null,
+            global::System.Action<global::G.RefusalContent?>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -172,9 +172,9 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.OutputText),
+                typeof(global::G.OutputTextContent),
                 Refusal,
-                typeof(global::G.Refusal),
+                typeof(global::G.RefusalContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(OutputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.OutputText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Refusal?>.Default.Equals(Refusal, other.Refusal) 
+                global::System.Collections.Generic.EqualityComparer<global::G.OutputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RefusalContent?>.Default.Equals(Refusal, other.Refusal) 
                 ;
         }
 

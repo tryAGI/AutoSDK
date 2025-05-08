@@ -233,7 +233,9 @@ public record struct TypeData(
             
             (_, _) when context.Schema.IsArray() =>
                 $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
-
+            // Fallback if `items` property is missing (openai specification)
+            ("array", _) => "byte[]",
+                
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
             

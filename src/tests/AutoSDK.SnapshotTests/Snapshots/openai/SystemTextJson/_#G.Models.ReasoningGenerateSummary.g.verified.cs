@@ -5,13 +5,17 @@
 namespace G
 {
     /// <summary>
-    /// **o-series models only** <br/>
+    /// **Deprecated:** use `summary` instead.<br/>
     /// A summary of the reasoning performed by the model. This can be<br/>
     /// useful for debugging and understanding the model's reasoning process.<br/>
-    /// One of `concise` or `detailed`.
+    /// One of `auto`, `concise`, or `detailed`.
     /// </summary>
     public enum ReasoningGenerateSummary
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -34,6 +38,7 @@ namespace G
         {
             return value switch
             {
+                ReasoningGenerateSummary.Auto => "auto",
                 ReasoningGenerateSummary.Concise => "concise",
                 ReasoningGenerateSummary.Detailed => "detailed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -46,6 +51,7 @@ namespace G
         {
             return value switch
             {
+                "auto" => ReasoningGenerateSummary.Auto,
                 "concise" => ReasoningGenerateSummary.Concise,
                 "detailed" => ReasoningGenerateSummary.Detailed,
                 _ => null,

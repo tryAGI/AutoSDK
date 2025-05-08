@@ -88,9 +88,9 @@ namespace G
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ItemReference? Value3 { get; init; }
+        public global::G.ItemReferenceParam? Value3 { get; init; }
 #else
-        public global::G.ItemReference? Value3 { get; }
+        public global::G.ItemReferenceParam? Value3 { get; }
 #endif
 
         /// <summary>
@@ -104,17 +104,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::G.ItemReference value) => new InputItem(value);
+        public static implicit operator InputItem(global::G.ItemReferenceParam value) => new InputItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ItemReference?(InputItem @this) => @this.Value3;
+        public static implicit operator global::G.ItemReferenceParam?(InputItem @this) => @this.Value3;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputItem(global::G.ItemReference? value)
+        public InputItem(global::G.ItemReferenceParam? value)
         {
             Value3 = value;
         }
@@ -125,7 +125,7 @@ namespace G
         public InputItem(
             global::G.EasyInputMessage? value1,
             global::G.Item? value2,
-            global::G.ItemReference? value3
+            global::G.ItemReferenceParam? value3
             )
         {
             Value1 = value1;
@@ -165,7 +165,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.EasyInputMessage?, TResult>? value1 = null,
             global::System.Func<global::G.Item?, TResult>? value2 = null,
-            global::System.Func<global::G.ItemReference?, TResult>? value3 = null,
+            global::System.Func<global::G.ItemReferenceParam?, TResult>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -195,7 +195,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.EasyInputMessage?>? value1 = null,
             global::System.Action<global::G.Item?>? value2 = null,
-            global::System.Action<global::G.ItemReference?>? value3 = null,
+            global::System.Action<global::G.ItemReferenceParam?>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -229,7 +229,7 @@ namespace G
                 Value2,
                 typeof(global::G.Item),
                 Value3,
-                typeof(global::G.ItemReference),
+                typeof(global::G.ItemReferenceParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -248,7 +248,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessage?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.Item?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ItemReference?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ItemReferenceParam?>.Default.Equals(Value3, other.Value3) 
                 ;
         }
 

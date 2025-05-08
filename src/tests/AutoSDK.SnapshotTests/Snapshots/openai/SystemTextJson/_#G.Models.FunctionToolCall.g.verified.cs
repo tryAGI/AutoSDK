@@ -14,8 +14,7 @@ namespace G
         /// The unique ID of the function tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// The type of the function tool call. Always `function_call`.
@@ -85,17 +84,17 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FunctionToolCall(
-            string id,
             string callId,
             string name,
             string arguments,
+            string? id,
             global::G.FunctionToolCallType type,
             global::G.FunctionToolCallStatus? status)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Id = id;
             this.Type = type;
             this.Status = status;
         }

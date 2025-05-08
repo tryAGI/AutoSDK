@@ -42,24 +42,24 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ComputerTool? computer = default;
+            global::G.WebSearchPreviewTool? webSearchPreview = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerTool).Name}");
-                computer = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchPreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchPreviewTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchPreviewTool).Name}");
+                webSearchPreview = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.WebSearchTool? webSearch = default;
+            global::G.ComputerUsePreviewTool? computerUsePreview = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchTool).Name}");
-                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerUsePreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerUsePreviewTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
+                computerUsePreview = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -68,8 +68,8 @@ namespace G.JsonConverters
             var result = new global::G.Tool(
                 fileSearch,
                 function,
-                computer,
-                webSearch
+                webSearchPreview,
+                computerUsePreview
                 );
 
             if (fileSearch != null)
@@ -84,16 +84,16 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionTool).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (computer != null)
+            else if (webSearchPreview != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerTool).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchPreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchPreviewTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchPreviewTool).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (webSearch != null)
+            else if (computerUsePreview != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchTool).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerUsePreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerUsePreviewTool> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -121,17 +121,17 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
-            else if (value.IsComputer)
+            else if (value.IsWebSearchPreview)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Computer, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchPreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchPreviewTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchPreviewTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchPreview, typeInfo);
             }
-            else if (value.IsWebSearch)
+            else if (value.IsComputerUsePreview)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerUsePreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerUsePreviewTool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerUsePreview, typeInfo);
             }
         }
     }

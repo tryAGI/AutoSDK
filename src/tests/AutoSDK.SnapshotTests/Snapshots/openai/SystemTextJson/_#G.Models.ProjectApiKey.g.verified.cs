@@ -39,6 +39,14 @@ namespace G
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset LastUsedAt { get; set; }
+
+        /// <summary>
         /// The identifier, which can be referenced in API endpoints
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -73,6 +81,9 @@ namespace G
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </param>
+        /// <param name="lastUsedAt">
+        /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
@@ -84,6 +95,7 @@ namespace G
             string redactedValue,
             string name,
             global::System.DateTimeOffset createdAt,
+            global::System.DateTimeOffset lastUsedAt,
             string id,
             global::G.ProjectApiKeyOwner owner,
             global::G.ProjectApiKeyObject @object)
@@ -91,6 +103,7 @@ namespace G
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
+            this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Object = @object;

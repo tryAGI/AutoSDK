@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
+    /// The format in which generated images with `dall-e-2` and `dall-e-3` are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter isn't supported for `gpt-image-1` which will always return base64-encoded images.<br/>
     /// Default Value: url<br/>
     /// Example: url
     /// </summary>

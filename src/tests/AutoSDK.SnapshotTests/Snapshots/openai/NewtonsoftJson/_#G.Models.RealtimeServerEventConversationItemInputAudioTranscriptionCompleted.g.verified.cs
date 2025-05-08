@@ -49,6 +49,12 @@ namespace G
         public string Transcript { get; set; } = default!;
 
         /// <summary>
+        /// The log probabilities of the transcription.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::System.Collections.Generic.IList<global::G.LogProbProperties>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -73,18 +79,23 @@ namespace G
         /// <param name="transcript">
         /// The transcribed text.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the transcription.
+        /// </param>
         public RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
             string eventId,
             string itemId,
             int contentIndex,
             string transcript,
-            global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
+            global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type,
+            global::System.Collections.Generic.IList<global::G.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

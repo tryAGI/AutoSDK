@@ -6,7 +6,7 @@ namespace G
     public partial interface IImagesClient
     {
         /// <summary>
-        /// Creates a variation of a given image.
+        /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,7 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Creates a variation of a given image.
+        /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="image">
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
@@ -30,7 +30,7 @@ namespace G
         /// Example: dall-e-2
         /// </param>
         /// <param name="n">
-        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// The number of images to generate. Must be between 1 and 10.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>

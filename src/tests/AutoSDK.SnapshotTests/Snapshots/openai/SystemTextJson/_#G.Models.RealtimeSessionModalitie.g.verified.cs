@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Default Value: [text, audio]
     /// </summary>
     public enum RealtimeSessionModalitie
     {

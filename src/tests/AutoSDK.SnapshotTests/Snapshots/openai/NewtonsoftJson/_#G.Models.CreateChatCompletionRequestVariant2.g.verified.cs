@@ -21,6 +21,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; } = default!;
 
         /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+        /// <example>gpt-4o</example>
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ModelIdsShared Model { get; set; } = default!;
+
+        /// <summary>
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
@@ -97,19 +104,6 @@ namespace G
         public global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? ResponseFormat { get; set; }
 
         /// <summary>
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("service_tier")]
-        public global::G.CreateChatCompletionRequestVariant2ServiceTier? ServiceTier { get; set; }
-
-        /// <summary>
         /// Parameters for audio output. Required when audio output is requested with<br/>
         /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
         /// </summary>
@@ -137,6 +131,7 @@ namespace G
         public bool? Stream { get; set; }
 
         /// <summary>
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.
         /// </summary>
@@ -169,7 +164,7 @@ namespace G
         /// chat completion. This value can be used to control<br/>
         /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
         /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
-        /// not compatible with [o1 series models](/docs/guides/reasoning).
+        /// not compatible with [o-series models](/docs/guides/reasoning).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_tokens")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -269,6 +264,9 @@ namespace G
         /// supported, like [text](/docs/guides/text-generation),<br/>
         /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </param>
+        /// <param name="model">
+        /// Example: gpt-4o
+        /// </param>
         /// <param name="modalities">
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
@@ -321,16 +319,6 @@ namespace G
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </param>
-        /// <param name="serviceTier">
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="audio">
         /// Parameters for audio output. Required when audio output is requested with<br/>
         /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
@@ -350,6 +338,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="stop">
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.
         /// </param>
@@ -404,6 +393,7 @@ namespace G
         /// </param>
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
+            global::G.ModelIdsShared model,
             global::System.Collections.Generic.IList<global::G.ResponseModalitie>? modalities,
             global::G.ReasoningEffort? reasoningEffort,
             int? maxCompletionTokens,
@@ -412,7 +402,6 @@ namespace G
             global::G.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions,
             int? topLogprobs,
             global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? responseFormat,
-            global::G.CreateChatCompletionRequestVariant2ServiceTier? serviceTier,
             global::G.CreateChatCompletionRequestVariant2Audio? audio,
             bool? store,
             bool? stream,
@@ -428,6 +417,7 @@ namespace G
             bool? parallelToolCalls)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Model = model;
             this.Modalities = modalities;
             this.ReasoningEffort = reasoningEffort;
             this.MaxCompletionTokens = maxCompletionTokens;
@@ -436,7 +426,6 @@ namespace G
             this.WebSearchOptions = webSearchOptions;
             this.TopLogprobs = topLogprobs;
             this.ResponseFormat = responseFormat;
-            this.ServiceTier = serviceTier;
             this.Audio = audio;
             this.Store = store;
             this.Stream = stream;

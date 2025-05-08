@@ -10,13 +10,23 @@ namespace G
     public sealed partial class AdminApiKeyOwner
     {
         /// <summary>
-        /// Example: service_account
+        /// Always `user`<br/>
+        /// Example: user
         /// </summary>
-        /// <example>service_account</example>
+        /// <example>user</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
 
         /// <summary>
+        /// The object type, which is always organization.user<br/>
+        /// Example: organization.user
+        /// </summary>
+        /// <example>organization.user</example>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public string? Object { get; set; }
+
+        /// <summary>
+        /// The identifier, which can be referenced in API endpoints<br/>
         /// Example: sa_456
         /// </summary>
         /// <example>sa_456</example>
@@ -24,6 +34,7 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
+        /// The name of the user<br/>
         /// Example: My Service Account
         /// </summary>
         /// <example>My Service Account</example>
@@ -31,16 +42,18 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) of when the user was created<br/>
         /// Example: 1711471533L
         /// </summary>
         /// <example>1711471533L</example>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public long? CreatedAt { get; set; }
+        public global::System.DateTimeOffset? CreatedAt { get; set; }
 
         /// <summary>
-        /// Example: member
+        /// Always `owner`<br/>
+        /// Example: owner
         /// </summary>
-        /// <example>member</example>
+        /// <example>owner</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
         public string? Role { get; set; }
 
@@ -54,28 +67,39 @@ namespace G
         /// Initializes a new instance of the <see cref="AdminApiKeyOwner" /> class.
         /// </summary>
         /// <param name="type">
-        /// Example: service_account
+        /// Always `user`<br/>
+        /// Example: user
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always organization.user<br/>
+        /// Example: organization.user
         /// </param>
         /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints<br/>
         /// Example: sa_456
         /// </param>
         /// <param name="name">
+        /// The name of the user<br/>
         /// Example: My Service Account
         /// </param>
         /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the user was created<br/>
         /// Example: 1711471533L
         /// </param>
         /// <param name="role">
-        /// Example: member
+        /// Always `owner`<br/>
+        /// Example: owner
         /// </param>
         public AdminApiKeyOwner(
             string? type,
+            string? @object,
             string? id,
             string? name,
-            long? createdAt,
+            global::System.DateTimeOffset? createdAt,
             string? role)
         {
             this.Type = type;
+            this.Object = @object;
             this.Id = id;
             this.Name = name;
             this.CreatedAt = createdAt;

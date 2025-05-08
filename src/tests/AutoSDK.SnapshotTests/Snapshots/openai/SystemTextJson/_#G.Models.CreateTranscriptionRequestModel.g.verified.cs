@@ -13,6 +13,14 @@ namespace G
         /// 
         /// </summary>
         Whisper1,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oTranscribe,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniTranscribe,
     }
 
     /// <summary>
@@ -28,6 +36,8 @@ namespace G
             return value switch
             {
                 CreateTranscriptionRequestModel.Whisper1 => "whisper-1",
+                CreateTranscriptionRequestModel.Gpt4oTranscribe => "gpt-4o-transcribe",
+                CreateTranscriptionRequestModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +49,8 @@ namespace G
             return value switch
             {
                 "whisper-1" => CreateTranscriptionRequestModel.Whisper1,
+                "gpt-4o-transcribe" => CreateTranscriptionRequestModel.Gpt4oTranscribe,
+                "gpt-4o-mini-transcribe" => CreateTranscriptionRequestModel.Gpt4oMiniTranscribe,
                 _ => null,
             };
         }

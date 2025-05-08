@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of the function tool. Always `function`.
+    /// The type of the function tool. Always `function`.<br/>
+    /// Default Value: function
     /// </summary>
     public enum FunctionToolType
     {

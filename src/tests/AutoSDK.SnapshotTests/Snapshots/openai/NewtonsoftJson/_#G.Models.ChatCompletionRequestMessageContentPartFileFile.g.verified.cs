@@ -13,8 +13,8 @@ namespace G
         /// The name of the file, used when passing the file to the model as a <br/>
         /// string.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_name")]
-        public string? FileName { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("filename")]
+        public string? Filename { get; set; }
 
         /// <summary>
         /// The base64 encoded file data, used when passing the file to the model <br/>
@@ -38,7 +38,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFileFile" /> class.
         /// </summary>
-        /// <param name="fileName">
+        /// <param name="filename">
         /// The name of the file, used when passing the file to the model as a <br/>
         /// string.
         /// </param>
@@ -50,11 +50,11 @@ namespace G
         /// The ID of an uploaded file to use as input.
         /// </param>
         public ChatCompletionRequestMessageContentPartFileFile(
-            string? fileName,
+            string? filename,
             string? fileData,
             string? fileId)
         {
-            this.FileName = fileName;
+            this.Filename = filename;
             this.FileData = fileData;
             this.FileId = fileId;
         }
