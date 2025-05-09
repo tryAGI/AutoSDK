@@ -12,6 +12,13 @@ public static class BoxEtensions
     }
 }
 
+/// <summary>
+/// This class is used to box any value type or reference type into an object.
+/// This is used to avoid generic type cycling in structs.
+/// This is only here to support visual studio. Other dotnet build tools do not require this.
+/// More information can be found here:
+/// https://github.com/dotnet/runtime/issues/6924
+/// </summary>
 public struct Box : IEquatable<Box>
 {
     private object _value;
