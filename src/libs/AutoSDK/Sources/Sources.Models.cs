@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
 
@@ -20,7 +21,7 @@ namespace {modelData.Namespace}
 {GenerateModel(modelData, level: 0, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
-    
+
     private static string GenerateModel(
         ModelData modelData,
         int level,
@@ -38,14 +39,14 @@ namespace {modelData.Namespace}
                 _ => throw new NotSupportedException($"Model style {modelData.Style} is not supported."),
             };
         }
-        
+
         return $@" 
-public sealed partial class {modelData.Parents[level].ClassName}
+public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassName}
 {{
 {GenerateModel(modelData, level + 1, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces().AddIndent(level: 1);
     }
-    
+
     private static bool IsSupported(SdkFeatureUsage usage, string targetFramework)
     {
         return usage switch
@@ -65,12 +66,12 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {
             return " = default!;";
         }
-        
+
         return property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue)
             ? string.Empty
             : $" = {property.DefaultValue};";
     }
-    
+
     public static string GenerateClassModel(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -86,7 +87,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         var properties = modelData.Properties.Where(x =>
             !modelData.IsBaseClass ||
             x.Id != modelData.DiscriminatorPropertyName).ToArray();
-        
+
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? "[global::System.Obsolete(\"This model marked as deprecated.\")]" : " ")}
@@ -116,7 +117,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
  " : " ")}
  
-{( properties.Any(static x => x.IsRequired || !x.IsDeprecated) ? $@"
+{(properties.Any(static x => x.IsRequired || !x.IsDeprecated) ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>

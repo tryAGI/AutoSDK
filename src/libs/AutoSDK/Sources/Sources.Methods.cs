@@ -1,7 +1,8 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Generation;
 
@@ -22,11 +23,11 @@ public static partial class Sources
             ContentType.Stream => "global::System.IO.Stream",
             _ => "byte[]",
         };
-        
+
         return $@"
 #nullable enable{(
-    endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) || 
-    endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated)? @"
+    endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) ||
+    endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated) ? @"
 
 #pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
@@ -38,16 +39,14 @@ namespace {endPoint.Namespace}
             global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
                 .Where(x => x.Location != null)
                 .Select(x => $@",
-            {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
-(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
+            {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
             {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
         partial void Prepare{endPoint.NotAsyncMethodName}Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Parameters
                 .Where(x => x.Location != null)
                 .Select(x => $@",
-            {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
-(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
+            {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
             {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
         partial void Process{endPoint.NotAsyncMethodName}Response(
             global::System.Net.Http.HttpClient httpClient,
@@ -84,17 +83,17 @@ namespace {endPoint.Namespace}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
-    
+
     public static string GetHttpMethod(OperationType operationType)
     {
         if (operationType == OperationType.Patch)
         {
             return "new global::System.Net.Http.HttpMethod(\"PATCH\")";
         }
-        
+
         return $"global::System.Net.Http.HttpMethod.{operationType:G}";
     }
-    
+
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false)
     {
@@ -121,8 +120,7 @@ namespace {endPoint.Namespace}
                 httpClient: HttpClient{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
-                {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
-                (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
@@ -190,8 +188,7 @@ namespace {endPoint.Namespace}
                 httpRequestMessage: __httpRequest{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
-                {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{
-                (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
             using var __response = await HttpClient.SendAsync(
@@ -210,7 +207,7 @@ namespace {endPoint.Namespace}
                 httpResponseMessage: __response);
 {GenerateResponse(endPoint)}
         }}";
-        
+
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
@@ -230,7 +227,7 @@ namespace {endPoint.Namespace}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
-    
+
     public static string SerializePropertyAsString(
         MethodParameter property)
     {
@@ -240,21 +237,21 @@ namespace {endPoint.Namespace}
         if (property.Type.IsArray)
         {
             var subType = property.Type.SubTypes.First();
-            var additionalConvertSubtype = subType.IsEnum
+            var additionalConvertSubtype = subType.Unbox<TypeData>().IsEnum
                 ? ".ToValueString()"
                 : string.Empty;
             return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({name}, x => x{additionalConvertSubtype}))}}]\"";
         }
-        
+
         var additionalConvert = property.Type.IsEnum
             ? $"{(property.IsRequired ? "" : "?")}.ToValueString()"
             : string.Empty;
-        
+
         return property.Type.IsAnyOfLike
             ? $"{name}{(property.IsRequired ? "" : "?")}.ToString() ?? string.Empty"
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
-    
+
     public static string GeneratePathAndQuery(
         EndPoint endPoint)
     {
@@ -278,7 +275,7 @@ namespace {endPoint.Namespace}
         var queryParameters = endPoint.QueryParameters
             .Where(x =>
                 x.Type.IsEnum ||
-                (!x.Type.IsArray || (x.Type.SubTypes[0].Properties.Length == 0 && !x.Type.SubTypes[0].IsArray)))
+                (!x.Type.IsArray || (x.Type.SubTypes[0].Unbox<TypeData>().Properties.Length == 0 && !x.Type.SubTypes[0].Unbox<TypeData>().IsArray)))
             .ToArray();
 
         if (queryParameters.Length > 0)
@@ -292,7 +289,7 @@ namespace {endPoint.Namespace}
             var additionalArguments = parameter.Type.IsArray
                 ? $", delimiter: \"{parameter.Delimiter}\", explode: {(parameter.Explode ? "true" : "false")}"
                 : string.Empty;
-            if (parameter.Type.IsArray && parameter.Type.SubTypes[0].CSharpTypeWithoutNullability is not "string")
+            if (parameter.Type.IsArray && parameter.Type.SubTypes[0].Unbox<TypeData>().CSharpTypeWithoutNullability is not "string")
             {
                 additionalArguments = $", selector: static x => {parameter.Selector}" + additionalArguments;
             }
@@ -307,16 +304,16 @@ namespace {endPoint.Namespace}
                 .AddOptionalParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
             }
         }
-        
+
         if (queryParameters.Length > 0)
         {
             code += @" 
                 ;";
         }
-        
+
         code += @" 
             var __path = __pathBuilder.ToString();";
-        
+
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
@@ -324,7 +321,7 @@ namespace {endPoint.Namespace}
         EndPoint endPoint)
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
-        
+
         if (endPoint.Stream)
         {
             return $@" 
@@ -370,10 +367,10 @@ namespace {endPoint.Namespace}
             .Concat(endPoint.ErrorResponses.Where(x => x is { IsPattern: true, IsDefault: false }))
             .Concat(endPoint.ErrorResponses.Where(x => x.IsDefault))
             .ToArray();
-        
+
         var errors = endPoint.Settings.GenerateExceptions ? orderedErrorResponses.Select(x => $@"
             // {x.Description.Replace('\n', ' ').Replace('\r', ' ')}
-{(    x.IsDefault ? @" 
+{(x.IsDefault ? @" 
             if (!__response.IsSuccessStatusCode)"
     : x.IsPattern ? $@" 
             if ((int)__response.StatusCode >= {x.Min} && (int)__response.StatusCode <= {x.Max})"
@@ -411,17 +408,17 @@ namespace {endPoint.Namespace}
                         h => h.Value),
                 }};
             }}").Inject() : " ";
-        
+
         return @$"{errors}
 
             if (ReadResponseAsString)
             {{
                 var __content = await __response.Content.ReadAs{endPoint.ContentType switch
-                {
-                    ContentType.String => "String",
-                    ContentType.Stream => "Stream",
-                    _ => "ByteArray",
-                }}Async(
+        {
+            ContentType.String => "String",
+            ContentType.Stream => "Stream",
+            _ => "ByteArray",
+        }}Async(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
@@ -489,17 +486,17 @@ namespace {endPoint.Namespace}
                 }}
 
                 {endPoint.ContentType switch
-                {
-                    ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
-                    ContentType.Stream => "using ",
-                    _ => string.Empty,
-                }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
-                {
-                    ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
-                    ContentType.String => "Stream",
-                    ContentType.Stream => "Stream",
-                    _ => "ByteArray",
-                }}Async(
+    {
+        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
+        ContentType.Stream => "using ",
+        _ => string.Empty,
+    }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
+    {
+        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
+        ContentType.String => "Stream",
+        ContentType.Stream => "Stream",
+        _ => "ByteArray",
+    }}Async(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
@@ -515,7 +512,7 @@ namespace {endPoint.Namespace}
             }}
  ";
     }
-    
+
     public static string GenerateRequestData(
         EndPoint endPoint)
     {
@@ -523,7 +520,7 @@ namespace {endPoint.Namespace}
         {
             return " ";
         }
-        
+
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         if (endPoint.IsMultipartFormData)
         {
@@ -556,7 +553,7 @@ namespace {endPoint.Namespace}
             __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
-        
+
         var requestContent = endPoint.RequestType.IsBase64
             ? "global::System.Convert.ToBase64String(request)"
             : jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext);
@@ -570,7 +567,7 @@ namespace {endPoint.Namespace}
             __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
-    
+
     public static string GenerateExtensionMethod(
         EndPoint endPoint, bool isInterface = false)
     {
@@ -582,7 +579,7 @@ namespace {endPoint.Namespace}
         {
             return " ";
         }
-        
+
         var taskType = endPoint.Stream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
@@ -623,11 +620,11 @@ namespace {endPoint.Namespace}
                 yield return __response;
             }" : " ")}
         }}";
-        
+
         var parameters = endPoint.Parameters
             .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
             .ToList();
-        
+
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {parameters.Select(x => $@"

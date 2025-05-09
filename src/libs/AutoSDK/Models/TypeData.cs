@@ -1,5 +1,6 @@
-using System.Collections.Immutable;
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
+using System.Collections.Immutable;
 
 namespace AutoSDK.Models;
 
@@ -24,7 +25,7 @@ public record struct TypeData(
     bool HasDiscriminator,
     EquatableArray<string> Properties,
     EquatableArray<string> EnumValues,
-    EquatableArray<TypeData> SubTypes,
+    EquatableArray<Box> SubTypes,
     string Namespace,
     bool IsDeprecated,
     Settings Settings)
@@ -54,7 +55,7 @@ public record struct TypeData(
         Namespace: string.Empty,
         IsDeprecated: false,
         Settings: Settings.Default);
-    
+
     public string CSharpTypeWithoutNullability => CSharpTypeRaw.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
@@ -75,24 +76,24 @@ public record struct TypeData(
         CSharpTypeWithoutNullability is "string" ||
         IsAnyOfLike ||
         IsEnum;
-    
+
     public string ConverterType =>
         IsUnixTimestamp
             ? $"global::{Settings.Namespace}.JsonConverters.UnixTimestampJsonConverter"
             : IsEnum || (IsAnyOfLike && (IsComponent || HasDiscriminator))
                 ? $"global::{Settings.Namespace}.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
                 : AnyOfCount > 0
-                    ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
+                    ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.Unbox<TypeData>().CSharpTypeWithNullabilityForValueTypes))}>"
                     : OneOfCount > 0
-                        ? $"global::{Settings.Namespace}.JsonConverters.OneOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
+                        ? $"global::{Settings.Namespace}.JsonConverters.OneOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.Unbox<TypeData>().CSharpTypeWithNullabilityForValueTypes))}>"
                         : AllOfCount > 0
-                            ? $"global::{Settings.Namespace}.JsonConverters.AllOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
+                            ? $"global::{Settings.Namespace}.JsonConverters.AllOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.Unbox<TypeData>().CSharpTypeWithNullabilityForValueTypes))}>"
                             : string.Empty;
-    
+
     public static TypeData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         var properties = ImmutableArray<string>.Empty;
         if (context.Schema.ResolveIfRequired() is { } referenceSchema)
         {
@@ -100,7 +101,7 @@ public record struct TypeData(
                 .Select(x => x.Key)
                 .ToImmutableArray();
         }
-        
+
         var subTypes = ImmutableArray<TypeData>.Empty;
         if (context.Schema.IsAnyOf())
         {
@@ -144,7 +145,7 @@ public record struct TypeData(
                 },
             ];
         }
-        
+
         var enumValues = ImmutableArray<string>.Empty;
         if (context.Schema.IsEnum())
         {
@@ -159,9 +160,9 @@ public record struct TypeData(
                 .Select(x => x.Id)
                 .ToImmutableArray();
         }
-        
+
         var type = GetCSharpType(context);
-        
+
         return new TypeData(
             CSharpTypeRaw: type,
             CSharpTypeNullability: GetCSharpNullability(context),
@@ -189,18 +190,18 @@ public record struct TypeData(
             HasDiscriminator: context.Schema.Discriminator != null,
             Properties: properties,
             EnumValues: enumValues,
-            SubTypes: subTypes,
+            SubTypes: subTypes.Select(s => s.Box()).ToImmutableArray(),
             Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
                 ? "System"
                 : context.Settings.Namespace,
             IsDeprecated: context.Schema.Deprecated,
             Settings: context.Settings);
     }
-    
+
     public static bool ContextIsValueType(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         return (context.Schema.Type, context.Schema.Format) switch
         {
             (_, _) when context.IsAnyOfLikeStructure => true,
@@ -213,30 +214,30 @@ public record struct TypeData(
             ("string", "date-time") => true,
             ("string", "password") => true,
             ("string", "uuid") => true,
-            
+
             // AssemblyAI format
             (null, "float") => true,
             (null, "double") => true,
             (null, "boolean") => true,
-            
+
             _ => false,
         };
     }
-    
+
     public static string GetCSharpType(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         var type = (context.Schema.Type, context.Schema.Format) switch
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
-            
+
             (_, _) when context.Schema.IsArray() =>
                 $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
 
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
-            
+
             (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
@@ -246,27 +247,27 @@ public record struct TypeData(
                 (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
                  !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-            
+
             // ("object", _) or (null, "object") when context.Schema.Reference == null =>
             //     $"global::{context.Settings.Namespace}.{context.Id}",
-            
+
             ("object", _) or (null, "object") when
                 context.Schema.Reference == null &&
                 (context.Schema.Properties.Count > 0 ||
                 !context.Schema.AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-            
+
             ("object", _) when
                 context.Schema.AdditionalProperties?.Type is not null =>
                 $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData.CSharpType}>",
-            
+
             ("string", _) when context.Schema.Enum.Any() =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
             (null, "boolean") => "bool",
             (null, "float") => "float",
             (null, "double") => "double",
-            
+
             // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/include-metadata?view=aspnetcore-9.0&tabs=minimal-apis#type-and-format
             ("boolean", _) => "bool",
             ("integer", "int64") => "long",
@@ -282,7 +283,7 @@ public record struct TypeData(
             ("string", "date") => "global::System.DateTime",
             ("string", "date-time") => "global::System.DateTime",
             ("string", "password") => "string",
-            
+
             // Possible future types - not supported yet
             // ("string", "time") => "global::System.TimeOnly",
             // ("string", "date") => "global::System.DateOnly",
@@ -291,7 +292,7 @@ public record struct TypeData(
             // ("string", "duration") => "global::System.TimeSpan",
             // ("string", "uri") => "global::System.Uri",
             ("string", "uuid") => "global::System.Guid",
-            
+
             (null, "url") => "string",
 
             ("integer", _) => "int",
@@ -299,12 +300,12 @@ public record struct TypeData(
             ("string", _) => "string",
             (null, "string") => "string",
             ("object", _) => "object",
-            
+
             (null, null) when (context.IsClass && context.ClassData?.Properties.Length > 0) || context.IsEnum =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-            (null, null)  => "object",
-            ("null", _)  => "object",
-            ("any", _)  => "object",
+            (null, null) => "object",
+            ("null", _) => "object",
+            ("any", _) => "object",
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
         };
 
@@ -316,7 +317,7 @@ public record struct TypeData(
         SchemaContext? additionalContext = null)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         return context.Schema.Nullable ||
                !context.IsRequired && additionalContext?.IsRequired != true;
     }
