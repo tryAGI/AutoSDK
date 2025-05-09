@@ -1,14 +1,14 @@
 ﻿namespace AutoSDK.Helpers;
 
-public static class BoxEtensions
+public static class BoxExtensions
 {
     public static T Unbox<T>(this Box box)
     {
         return (T)box.Value;
     }
-    public static Box Box<T>(this T tobox)
+    public static Box Box<T>(this T value) where T : notnull
     {
-        return new Box() { Value = tobox };
+        return new Box { Value = value };
     }
 }
 
@@ -21,12 +21,7 @@ public static class BoxEtensions
 /// </summary>
 public struct Box : IEquatable<Box>
 {
-    private object _value;
-    public object Value
-    {
-        get => _value;
-        set => _value = value;
-    }
+    public object Value { get; set; }
 
     public override bool Equals(object? obj)
     {

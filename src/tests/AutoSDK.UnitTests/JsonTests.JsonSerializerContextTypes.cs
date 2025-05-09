@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using static AutoSDK.Serialization.Json.SystemTextJsonSerializer;
 
@@ -15,7 +16,7 @@ public partial class JsonTests
             CSharpTypeRaw = "global::System.Collections.Generic.IList<string>",
             IsArray = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with { CSharpTypeRaw = "string" }
+                (TypeData.Default with { CSharpTypeRaw = "string" }).Box(),
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("IListString");
         
@@ -24,8 +25,8 @@ public partial class JsonTests
             Namespace = "System.Collections.Generic",
             CSharpTypeRaw = "global::System.Collections.Generic.Dictionary<string, int>",
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with { CSharpTypeRaw = "string" },
-                TypeData.Default with { CSharpTypeRaw = "int" }
+                (TypeData.Default with { CSharpTypeRaw = "string" }).Box(),
+                (TypeData.Default with { CSharpTypeRaw = "int" }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("DictionaryStringInt32");
         
@@ -35,14 +36,14 @@ public partial class JsonTests
             CSharpTypeRaw = "global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>",
             IsArray = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "global::System.Collections.Generic.IList<string>",
                     IsArray = true,
                     SubTypes = ImmutableArray.Create([
-                        TypeData.Default with { CSharpTypeRaw = "string" }
+                        (TypeData.Default with { CSharpTypeRaw = "string" }).Box()
                     ]),
-                }
+                }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("IListIListString");
         
@@ -52,9 +53,9 @@ public partial class JsonTests
             CSharpTypeRaw = "global::System.Collections.Generic.IList<global::System.Guid>",
             IsArray = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with { 
+                (TypeData.Default with { 
                     Namespace = "System",
-                    CSharpTypeRaw = "global::System.Guid" }
+                    CSharpTypeRaw = "global::System.Guid" }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("IListGuid");
 
@@ -63,7 +64,7 @@ public partial class JsonTests
             CSharpTypeRaw = "byte[]",
             IsBinary = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with { CSharpTypeRaw = "byte" }
+                (TypeData.Default with { CSharpTypeRaw = "byte" }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("ByteArray");
         
@@ -72,14 +73,14 @@ public partial class JsonTests
             CSharpTypeRaw = "byte[][]",
             IsBinary = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "byte[]",
                     IsBinary = true,
                     SubTypes = ImmutableArray.Create([
-                        TypeData.Default with { CSharpTypeRaw = "byte" }
+                        (TypeData.Default with { CSharpTypeRaw = "byte" }).Box()
                     ]),
-                }
+                }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("ByteArrayArray");
         
@@ -88,14 +89,14 @@ public partial class JsonTests
             CSharpTypeRaw = "global::System.Collections.Generic.IList<byte[]>",
             IsArray = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "byte[]",
                     IsBinary = true,
                     SubTypes = ImmutableArray.Create([
-                        TypeData.Default with { CSharpTypeRaw = "byte" }
+                        (TypeData.Default with { CSharpTypeRaw = "byte" }).Box()
                     ]),
-                }
+                }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("IListByteArray");
         
@@ -105,15 +106,15 @@ public partial class JsonTests
             IsValueType = true,
             CSharpTypeRaw = "global::G.AllOf<Integration?, AppsCreateFromManifestResponse>",
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "Integration",
                     CSharpTypeNullability = true,
-                },
-                TypeData.Default with
+                }).Box(),
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "AppsCreateFromManifestResponse"
-                },
+                }).Box(),
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("NullableAllOfIntegrationAppsCreateFromManifestResponse");
         
@@ -123,18 +124,18 @@ public partial class JsonTests
             IsValueType = true,
             CSharpTypeRaw = "global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>",
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     Namespace = "Cohere",
                     CSharpTypeRaw = "global::Cohere.NonStreamedChatResponse"
-                },
-                TypeData.Default with
+                }).Box(),
+                (TypeData.Default with
                 {
                     Namespace = "Cohere",
                     CSharpTypeRaw = "global::Cohere.StreamedChatResponse",
                     CSharpTypeNullability = true,
                     IsValueType = true,
-                }
+                }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("NullableOneOfNonStreamedChatResponseNullableStreamedChatResponse");
         
@@ -149,21 +150,21 @@ public partial class JsonTests
             CSharpTypeRaw = "global::System.Collections.Generic.IList<byte[][]>",
             IsArray = true,
             SubTypes = ImmutableArray.Create([
-                TypeData.Default with
+                (TypeData.Default with
                 {
                     CSharpTypeRaw = "byte[][]",
                     IsBinary = true,
                     SubTypes = ImmutableArray.Create([
-                        TypeData.Default with
+                        (TypeData.Default with
                         {
                             CSharpTypeRaw = "byte[]",
                             IsBinary = true,
                             SubTypes = ImmutableArray.Create([
-                                TypeData.Default with { CSharpTypeRaw = "byte" }
+                                (TypeData.Default with { CSharpTypeRaw = "byte" }).Box()
                             ]),
-                        }
+                        }).Box()
                     ]),
-                }
+                }).Box()
             ]),
         }, makeNullableRootIfValueType: true).Should().Be("IListByteArrayArray");
     }
