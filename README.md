@@ -112,6 +112,14 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```
 - It's all! Now you can build your project and use the generated code with full trimming/nativeAOT support.
 
+## Known Errors
+
+### Generator error: "Could not write to output file 'Path/to/file'. Could not find part of the path"
+
+This error happens if the generated file path is too long. This happens if you didn't activated long path support on windows.
+To enable it follow the offical docs:
+https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#registry-setting-to-enable-long-paths
+ 
 ## 📚Examples of use in real SDKs📚
 - https://github.com/tryAGI/OpenAI
 - https://github.com/tryAGI/Ollama
