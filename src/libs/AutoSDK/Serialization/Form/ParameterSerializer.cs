@@ -1,7 +1,8 @@
 using AutoSDK.Extensions;
-using Microsoft.OpenApi.Models;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Serialization.Form;
 
@@ -10,7 +11,7 @@ public static class ParameterSerializer
     public static string SerializePathParameters(IList<MethodParameter> parameters, string path)
     {
         path = path ?? throw new ArgumentNullException(nameof(path));
-        
+
         foreach (var parameter in parameters.Where(x => x.Location == ParameterLocation.Path))
         {
             path = path.Replace($"{{{parameter.Id}}}", $"{{{parameter.ArgumentName}}}");
@@ -26,7 +27,7 @@ public static class ParameterSerializer
     public static IList<MethodParameter> SerializeQueryParameters(IList<MethodParameter> parameters)
     {
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
-        
+
         return parameters
             .Where(x => x.Location == ParameterLocation.Query)
             .SelectMany(SerializeQueryParameter)
@@ -126,7 +127,7 @@ public static class ParameterSerializer
                 Value = parameter.ArgumentName,
                 Selector = SerializeQueryParameter(parameter with {
                     Name = "x",
-                    Type = parameter.Type.SubTypes[0],
+                    Type = parameter.Type.SubTypes[0].Unbox<TypeData>(),
                     IsRequired = true,
                 }).FirstOrDefault().Value ?? "x",
                 Delimiter = parameter.Style switch
@@ -145,7 +146,8 @@ public static class ParameterSerializer
             var pairs = parameter.Properties
                 .Select(x => (
                     Name: x.Id.ToParameterName(),
-                    Value: $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}." + SerializeQueryParameter(parameter with {
+                    Value: $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}." + SerializeQueryParameter(parameter with
+                    {
                         Name = x.Id,
                         Type = x.Type,
                         IsRequired = x.IsRequired,
@@ -179,7 +181,7 @@ public static class ParameterSerializer
                     return [];
             }
         }
-        
+
         if (parameter.Type.IsDate)
         {
             return [parameter with
@@ -201,7 +203,7 @@ public static class ParameterSerializer
                 Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString() ?? string.Empty",
             }];
         }
-        
+
         return [parameter with
         {
             Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString()",
