@@ -1,5 +1,6 @@
 ﻿using AutoSDK.Generation;
 using AutoSDK.Naming.Methods;
+using System.Collections.Immutable;
 
 namespace AutoSDK.UnitTests;
 
@@ -61,5 +62,27 @@ public partial class DataTests
                 },
             })),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
+    }
+
+    [TestMethod]
+    public void ExcludeModels()
+    {
+        var processedSchema = Data.Prepare(
+            (
+                new H.Resource("petstore.yaml").AsString(),
+                DefaultSettings with
+                {
+                    GenerateJsonSerializerContextTypes = true,
+                    MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
+                    IgnoreOpenApiErrors = true,
+                    ExcludeModels = new[] { "Pet" }.ToImmutableArray(),
+
+                }
+            ));
+
+        var result = processedSchema.Classes
+            .Where(x => x.ClassName.Contains("Pet"))
+            .ToArray();
+        Assert.IsEmpty(result);
     }
 }
