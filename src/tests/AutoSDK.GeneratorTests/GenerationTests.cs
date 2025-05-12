@@ -49,5 +49,26 @@ public partial class GenerationTests
             .SelectMany(x => x.Members.OfType<ClassDeclarationSyntax>())
             .ToArray();
         generatedClasses.Where(c => c.Identifier.Text == "Pet").Should().BeEmpty();
+
+        // If a model is excluded, it should be refered with global usings, because their is no easy way to find the model.
+        generatedClasses.Select(c => c.Members.OfType<MethodDeclarationSyntax>())
+            .SelectMany(x => x)
+            .Where(m =>
+            {
+                var symbole = outputCompilation.GetSemanticModel(m.SyntaxTree).GetSymbolInfo(m.ReturnType).Symbol as INamedTypeSymbol;
+                if (symbole is null)
+                {
+                    return false;
+                }
+                var listSymbole = symbole.TypeArguments.FirstOrDefault() as INamedTypeSymbol;
+                var petType = listSymbole?.TypeArguments.FirstOrDefault();
+                if (petType is null)
+                {
+                    return false;
+                }
+                return petType.ContainingNamespace.Name.StartsWith("TestNamespace") &&
+                    petType.Name == "Pet";
+            })
+            .Should().BeEmpty();
     }
 }
