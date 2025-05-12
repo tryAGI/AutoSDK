@@ -192,5 +192,10 @@ namespace G
         /// </summary>
         public OptimizationJobsClient OptimizationJobs { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunsClient Runs { get; }
+
     }
 }

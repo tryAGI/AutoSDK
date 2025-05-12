@@ -70,10 +70,16 @@ namespace G
         public bool? CanUseLanggraphCloud { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_langgraph_cloud_deployments")]
         public int? MaxLanggraphCloudDeployments { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_free_langgraph_cloud_deployments")]
+        public int? MaxFreeLanggraphCloudDeployments { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -162,12 +168,6 @@ namespace G
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prompt_optimization")]
-        public bool? PromptOptimization { get; set; }
-
-        /// <summary>
-        /// Default Value: false
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_optimization_jobs_enabled")]
         public bool? PromptOptimizationJobsEnabled { get; set; }
 
@@ -196,13 +196,7 @@ namespace G
         public bool? LanggraphRemoteReconcilerEnabled { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("new_dataset_in_playground_enabled")]
-        public bool? NewDatasetInPlaygroundEnabled { get; set; }
-
-        /// <summary>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("langsmith_alerts_poc_enabled")]
         public bool? LangsmithAlertsPocEnabled { get; set; }
@@ -212,6 +206,36 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_skip_topk_facets")]
         public bool? TenantSkipTopkFacets { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("lgp_templates_enabled")]
+        public bool? LgpTemplatesEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("langsmith_alerts_legacy_poc_enabled")]
+        public bool? LangsmithAlertsLegacyPocEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("enable_prebuilt_dashboards")]
+        public bool? EnablePrebuiltDashboards { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("langsmith_experimental_search_enabled")]
+        public bool? LangsmithExperimentalSearchEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("langgraph_platform_ga_enabled")]
+        public bool? LanggraphPlatformGaEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -247,7 +271,10 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="maxLanggraphCloudDeployments">
-        /// Default Value: 1
+        /// Default Value: 3
+        /// </param>
+        /// <param name="maxFreeLanggraphCloudDeployments">
+        /// Default Value: 0
         /// </param>
         /// <param name="canUseSamlSso">
         /// Default Value: false
@@ -291,9 +318,6 @@ namespace G
         /// <param name="langgraphDeployOwnCloudEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="promptOptimization">
-        /// Default Value: false
-        /// </param>
         /// <param name="promptOptimizationJobsEnabled">
         /// Default Value: false
         /// </param>
@@ -309,13 +333,25 @@ namespace G
         /// <param name="langgraphRemoteReconcilerEnabled">
         /// Default Value: false
         /// </param>
-        /// <param name="newDatasetInPlaygroundEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="langsmithAlertsPocEnabled">
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="tenantSkipTopkFacets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="lgpTemplatesEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langsmithAlertsLegacyPocEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="enablePrebuiltDashboards">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langsmithExperimentalSearchEnabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="langgraphPlatformGaEnabled">
         /// Default Value: false
         /// </param>
         public OrganizationConfig(
@@ -330,6 +366,7 @@ namespace G
             bool? canServeDatasets,
             bool? canUseLanggraphCloud,
             int? maxLanggraphCloudDeployments,
+            int? maxFreeLanggraphCloudDeployments,
             bool? canUseSamlSso,
             bool? canUseBulkExport,
             bool? usePythonPlaygroundService,
@@ -344,15 +381,18 @@ namespace G
             bool? enableSelectAllTraces,
             bool? useExactSearchForPrompts,
             bool? langgraphDeployOwnCloudEnabled,
-            bool? promptOptimization,
             bool? promptOptimizationJobsEnabled,
             bool? enableK8sVanillaPlatform,
             bool? demoLgpNewGraphEnabled,
             int? datadogRumSessionSampleRate,
             bool? langgraphRemoteReconcilerEnabled,
-            bool? newDatasetInPlaygroundEnabled,
             bool? langsmithAlertsPocEnabled,
-            bool? tenantSkipTopkFacets)
+            bool? tenantSkipTopkFacets,
+            bool? lgpTemplatesEnabled,
+            bool? langsmithAlertsLegacyPocEnabled,
+            bool? enablePrebuiltDashboards,
+            bool? langsmithExperimentalSearchEnabled,
+            bool? langgraphPlatformGaEnabled)
         {
             this.MaxIdentities = maxIdentities;
             this.MaxWorkspaces = maxWorkspaces;
@@ -365,6 +405,7 @@ namespace G
             this.CanServeDatasets = canServeDatasets;
             this.CanUseLanggraphCloud = canUseLanggraphCloud;
             this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
+            this.MaxFreeLanggraphCloudDeployments = maxFreeLanggraphCloudDeployments;
             this.CanUseSamlSso = canUseSamlSso;
             this.CanUseBulkExport = canUseBulkExport;
             this.UsePythonPlaygroundService = usePythonPlaygroundService;
@@ -379,15 +420,18 @@ namespace G
             this.EnableSelectAllTraces = enableSelectAllTraces;
             this.UseExactSearchForPrompts = useExactSearchForPrompts;
             this.LanggraphDeployOwnCloudEnabled = langgraphDeployOwnCloudEnabled;
-            this.PromptOptimization = promptOptimization;
             this.PromptOptimizationJobsEnabled = promptOptimizationJobsEnabled;
             this.EnableK8sVanillaPlatform = enableK8sVanillaPlatform;
             this.DemoLgpNewGraphEnabled = demoLgpNewGraphEnabled;
             this.DatadogRumSessionSampleRate = datadogRumSessionSampleRate;
             this.LanggraphRemoteReconcilerEnabled = langgraphRemoteReconcilerEnabled;
-            this.NewDatasetInPlaygroundEnabled = newDatasetInPlaygroundEnabled;
             this.LangsmithAlertsPocEnabled = langsmithAlertsPocEnabled;
             this.TenantSkipTopkFacets = tenantSkipTopkFacets;
+            this.LgpTemplatesEnabled = lgpTemplatesEnabled;
+            this.LangsmithAlertsLegacyPocEnabled = langsmithAlertsLegacyPocEnabled;
+            this.EnablePrebuiltDashboards = enablePrebuiltDashboards;
+            this.LangsmithExperimentalSearchEnabled = langsmithExperimentalSearchEnabled;
+            this.LanggraphPlatformGaEnabled = langgraphPlatformGaEnabled;
         }
 
         /// <summary>

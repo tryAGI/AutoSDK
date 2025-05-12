@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CustomChartSeries.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -43,7 +45,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid Id { get; set; } = default!;
+        public global::G.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
+
+        /// <summary>
+        /// Include additional information about where the group_by param was set.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("group_by")]
+        public global::G.RunStatsGroupBySeriesResponse? GroupBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,13 +70,17 @@ namespace G
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
         /// <param name="id"></param>
+        /// <param name="groupBy">
+        /// Include additional information about where the group_by param was set.
+        /// </param>
         public CustomChartSeries(
             string name,
             global::G.CustomChartMetric metric,
-            global::System.Guid id,
+            global::G.AnyOf<global::System.Guid?, string> id,
             global::G.CustomChartSeriesFilters? filters,
             string? feedbackKey,
-            global::System.Guid? workspaceId)
+            global::System.Guid? workspaceId,
+            global::G.RunStatsGroupBySeriesResponse? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
@@ -76,6 +88,7 @@ namespace G
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

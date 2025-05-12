@@ -34,7 +34,7 @@ namespace G
         /// <param name="commit"></param>
         /// <param name="evaluatorRules"></param>
         /// <param name="requestsPerSecond"></param>
-        /// <param name="useWorkspaceSecrets">
+        /// <param name="useOrFallbackToWorkspaceSecrets">
         /// Default Value: false
         /// </param>
         /// <param name="datasetId"></param>
@@ -60,7 +60,7 @@ namespace G
             string? commit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules = default,
             int? requestsPerSecond = default,
-            bool? useWorkspaceSecrets = default,
+            bool? useOrFallbackToWorkspaceSecrets = default,
             global::System.Collections.Generic.IList<string>? datasetSplits = default,
             int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

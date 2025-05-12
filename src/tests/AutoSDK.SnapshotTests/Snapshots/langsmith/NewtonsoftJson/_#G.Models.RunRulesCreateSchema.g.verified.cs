@@ -130,6 +130,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? Webhooks { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("evaluator_version")]
+        public int? EvaluatorVersion { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -168,6 +174,7 @@ namespace G
         /// <param name="codeEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+        /// <param name="evaluatorVersion"></param>
         public RunRulesCreateSchema(
             string displayName,
             double samplingRate,
@@ -188,7 +195,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? alerts,
-            global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks)
+            global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
+            int? evaluatorVersion)
         {
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;
@@ -210,6 +218,7 @@ namespace G
             this.CodeEvaluators = codeEvaluators;
             this.Alerts = alerts;
             this.Webhooks = webhooks;
+            this.EvaluatorVersion = evaluatorVersion;
         }
 
         /// <summary>

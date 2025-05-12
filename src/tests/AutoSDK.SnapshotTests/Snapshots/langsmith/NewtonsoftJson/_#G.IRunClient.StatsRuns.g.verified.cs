@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.RunStats> StatsRunsAsync(
-            global::G.FilterQueryParamsForRunSchema request,
+        global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>> StatsRunsAsync(
+            global::G.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -41,9 +41,16 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.RunStats> StatsRunsAsync(
+        global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,
             global::System.Guid? parentRun = default,
@@ -61,6 +68,9 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
+            bool? useExperimentalSearch = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

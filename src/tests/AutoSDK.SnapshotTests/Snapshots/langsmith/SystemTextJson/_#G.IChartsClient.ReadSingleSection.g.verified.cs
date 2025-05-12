@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::G.CustomChartsRequestBase request,
+            global::G.CustomChartsSectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -31,14 +31,22 @@ namespace G
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::System.DateTime startTime,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
+            bool? omitData = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

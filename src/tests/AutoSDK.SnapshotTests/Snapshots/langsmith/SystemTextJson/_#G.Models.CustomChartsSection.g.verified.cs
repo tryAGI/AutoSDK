@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CustomChartsSection.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -32,8 +34,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public required global::G.AnyOf<global::System.Guid?, string> Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -41,6 +50,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("charts")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.SingleCustomChartResponse> Charts { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sub_sections")]
+        public global::System.Collections.Generic.IList<global::G.SingleCustomChartSubSectionResponse>? SubSections { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,22 +70,28 @@ namespace G
         /// <param name="description"></param>
         /// <param name="index"></param>
         /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <param name="charts"></param>
+        /// <param name="subSections"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsSection(
             string title,
-            global::System.Guid id,
+            global::G.AnyOf<global::System.Guid?, string> id,
             global::System.Collections.Generic.IList<global::G.SingleCustomChartResponse> charts,
             string? description,
-            int? index)
+            int? index,
+            global::System.Guid? sessionId,
+            global::System.Collections.Generic.IList<global::G.SingleCustomChartSubSectionResponse>? subSections)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Id = id;
             this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
             this.Description = description;
             this.Index = index;
+            this.SessionId = sessionId;
+            this.SubSections = subSections;
         }
 
         /// <summary>

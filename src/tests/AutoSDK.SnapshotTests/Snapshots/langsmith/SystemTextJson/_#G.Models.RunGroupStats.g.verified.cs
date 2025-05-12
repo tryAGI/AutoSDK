@@ -67,6 +67,36 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_p50")]
+        public int? CompletionTokensP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_p50")]
+        public int? PromptTokensP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokens_p99")]
+        public int? TokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_p99")]
+        public int? CompletionTokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_p99")]
+        public int? PromptTokensP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_run_start_time")]
         public global::System.DateTime? LastRunStartTime { get; set; }
 
@@ -115,6 +145,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost_p50")]
+        public string? CostP50 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost_p99")]
+        public string? CostP99 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int GroupCount { get; set; }
@@ -137,6 +179,11 @@ namespace G
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="medianTokens"></param>
+        /// <param name="completionTokensP50"></param>
+        /// <param name="promptTokensP50"></param>
+        /// <param name="tokensP99"></param>
+        /// <param name="completionTokensP99"></param>
+        /// <param name="promptTokensP99"></param>
         /// <param name="lastRunStartTime"></param>
         /// <param name="feedbackStats"></param>
         /// <param name="runFacets"></param>
@@ -145,6 +192,8 @@ namespace G
         /// <param name="totalCost"></param>
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
+        /// <param name="costP50"></param>
+        /// <param name="costP99"></param>
         /// <param name="groupCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -160,6 +209,11 @@ namespace G
             int? promptTokens,
             int? completionTokens,
             int? medianTokens,
+            int? completionTokensP50,
+            int? promptTokensP50,
+            int? tokensP99,
+            int? completionTokensP99,
+            int? promptTokensP99,
             global::System.DateTime? lastRunStartTime,
             object? feedbackStats,
             global::System.Collections.Generic.IList<object>? runFacets,
@@ -167,7 +221,9 @@ namespace G
             double? streamingRate,
             string? totalCost,
             string? promptCost,
-            string? completionCost)
+            string? completionCost,
+            string? costP50,
+            string? costP99)
         {
             this.RunCount = runCount;
             this.GroupCount = groupCount;
@@ -179,6 +235,11 @@ namespace G
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.MedianTokens = medianTokens;
+            this.CompletionTokensP50 = completionTokensP50;
+            this.PromptTokensP50 = promptTokensP50;
+            this.TokensP99 = tokensP99;
+            this.CompletionTokensP99 = completionTokensP99;
+            this.PromptTokensP99 = promptTokensP99;
             this.LastRunStartTime = lastRunStartTime;
             this.FeedbackStats = feedbackStats;
             this.RunFacets = runFacets;
@@ -187,6 +248,8 @@ namespace G
             this.TotalCost = totalCost;
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
+            this.CostP50 = costP50;
+            this.CostP99 = costP99;
         }
 
         /// <summary>

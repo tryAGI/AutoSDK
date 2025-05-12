@@ -211,6 +211,10 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -245,6 +249,8 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
+            bool? useExperimentalSearch = default,
             string? cursor = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
@@ -271,6 +277,8 @@ namespace G
                 IsRoot = isRoot,
                 DataSourceType = dataSourceType,
                 SkipPagination = skipPagination,
+                SearchFilter = searchFilter,
+                UseExperimentalSearch = useExperimentalSearch,
                 Cursor = cursor,
                 Limit = limit,
                 Select = select,

@@ -294,6 +294,10 @@ public record struct TypeData(
             // ("string", "duration") => "global::System.TimeSpan",
             // ("string", "uri") => "global::System.Uri",
             ("string", "uuid") => "global::System.Guid",
+            
+            // multipart/form-data
+            ("file", "binary") => "byte[]",
+            (_, "binary") => "byte[]",
 
             (null, "url") => "string",
 

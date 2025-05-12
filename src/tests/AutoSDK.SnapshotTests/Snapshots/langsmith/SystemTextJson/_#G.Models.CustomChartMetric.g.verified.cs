@@ -24,6 +24,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        LatencyAvg,
+        /// <summary>
+        /// 
+        /// </summary>
         FirstTokenP50,
         /// <summary>
         /// 
@@ -45,6 +49,26 @@ namespace G
         /// 
         /// </summary>
         MedianTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionTokensP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        TokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        CompletionTokensP99,
+        /// <summary>
+        /// 
+        /// </summary>
+        PromptTokensP99,
         /// <summary>
         /// 
         /// </summary>
@@ -77,6 +101,14 @@ namespace G
         /// 
         /// </summary>
         StreamingRate,
+        /// <summary>
+        /// 
+        /// </summary>
+        CostP50,
+        /// <summary>
+        /// 
+        /// </summary>
+        CostP99,
     }
 
     /// <summary>
@@ -94,12 +126,18 @@ namespace G
                 CustomChartMetric.RunCount => "run_count",
                 CustomChartMetric.LatencyP50 => "latency_p50",
                 CustomChartMetric.LatencyP99 => "latency_p99",
+                CustomChartMetric.LatencyAvg => "latency_avg",
                 CustomChartMetric.FirstTokenP50 => "first_token_p50",
                 CustomChartMetric.FirstTokenP99 => "first_token_p99",
                 CustomChartMetric.TotalTokens => "total_tokens",
                 CustomChartMetric.PromptTokens => "prompt_tokens",
                 CustomChartMetric.CompletionTokens => "completion_tokens",
                 CustomChartMetric.MedianTokens => "median_tokens",
+                CustomChartMetric.CompletionTokensP50 => "completion_tokens_p50",
+                CustomChartMetric.PromptTokensP50 => "prompt_tokens_p50",
+                CustomChartMetric.TokensP99 => "tokens_p99",
+                CustomChartMetric.CompletionTokensP99 => "completion_tokens_p99",
+                CustomChartMetric.PromptTokensP99 => "prompt_tokens_p99",
                 CustomChartMetric.Feedback => "feedback",
                 CustomChartMetric.FeedbackScoreAvg => "feedback_score_avg",
                 CustomChartMetric.FeedbackValues => "feedback_values",
@@ -108,6 +146,8 @@ namespace G
                 CustomChartMetric.CompletionCost => "completion_cost",
                 CustomChartMetric.ErrorRate => "error_rate",
                 CustomChartMetric.StreamingRate => "streaming_rate",
+                CustomChartMetric.CostP50 => "cost_p50",
+                CustomChartMetric.CostP99 => "cost_p99",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -121,12 +161,18 @@ namespace G
                 "run_count" => CustomChartMetric.RunCount,
                 "latency_p50" => CustomChartMetric.LatencyP50,
                 "latency_p99" => CustomChartMetric.LatencyP99,
+                "latency_avg" => CustomChartMetric.LatencyAvg,
                 "first_token_p50" => CustomChartMetric.FirstTokenP50,
                 "first_token_p99" => CustomChartMetric.FirstTokenP99,
                 "total_tokens" => CustomChartMetric.TotalTokens,
                 "prompt_tokens" => CustomChartMetric.PromptTokens,
                 "completion_tokens" => CustomChartMetric.CompletionTokens,
                 "median_tokens" => CustomChartMetric.MedianTokens,
+                "completion_tokens_p50" => CustomChartMetric.CompletionTokensP50,
+                "prompt_tokens_p50" => CustomChartMetric.PromptTokensP50,
+                "tokens_p99" => CustomChartMetric.TokensP99,
+                "completion_tokens_p99" => CustomChartMetric.CompletionTokensP99,
+                "prompt_tokens_p99" => CustomChartMetric.PromptTokensP99,
                 "feedback" => CustomChartMetric.Feedback,
                 "feedback_score_avg" => CustomChartMetric.FeedbackScoreAvg,
                 "feedback_values" => CustomChartMetric.FeedbackValues,
@@ -135,6 +181,8 @@ namespace G
                 "completion_cost" => CustomChartMetric.CompletionCost,
                 "error_rate" => CustomChartMetric.ErrorRate,
                 "streaming_rate" => CustomChartMetric.StreamingRate,
+                "cost_p50" => CustomChartMetric.CostP50,
+                "cost_p99" => CustomChartMetric.CostP99,
                 _ => null,
             };
         }

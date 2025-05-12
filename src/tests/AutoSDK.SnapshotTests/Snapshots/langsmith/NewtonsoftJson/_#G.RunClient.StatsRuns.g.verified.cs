@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareStatsRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.FilterQueryParamsForRunSchema request);
+            global::G.RunStatsQueryParams request);
         partial void PrepareStatsRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.FilterQueryParamsForRunSchema request);
+            global::G.RunStatsQueryParams request);
         partial void ProcessStatsRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,8 +29,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsRunsAsync(
-            global::G.FilterQueryParamsForRunSchema request,
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>> StatsRunsAsync(
+            global::G.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -160,7 +160,7 @@ namespace G
                 }
 
                 return
-                    global::G.RunStats.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -190,7 +190,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.RunStats.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -220,9 +220,16 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>> StatsRunsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Guid? trace = default,
             global::System.Guid? parentRun = default,
@@ -240,9 +247,12 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
+            bool? useExperimentalSearch = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.FilterQueryParamsForRunSchema
+            var __request = new global::G.RunStatsQueryParams
             {
                 Id = id,
                 Trace = trace,
@@ -261,6 +271,9 @@ namespace G
                 IsRoot = isRoot,
                 DataSourceType = dataSourceType,
                 SkipPagination = skipPagination,
+                SearchFilter = searchFilter,
+                UseExperimentalSearch = useExperimentalSearch,
+                GroupBy = groupBy,
             };
 
             return await StatsRunsAsync(

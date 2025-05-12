@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
             global::System.Guid shareToken,
-            global::G.FilterQueryParamsForRunSchema request,
+            global::G.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -44,6 +44,13 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
@@ -65,6 +72,9 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
+            bool? useExperimentalSearch = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

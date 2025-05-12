@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CustomChartSeries.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -46,8 +48,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public required global::G.AnyOf<global::System.Guid?, string> Id { get; set; }
+
+        /// <summary>
+        /// Include additional information about where the group_by param was set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
+        public global::G.RunStatsGroupBySeriesResponse? GroupBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,16 +75,20 @@ namespace G
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
         /// <param name="id"></param>
+        /// <param name="groupBy">
+        /// Include additional information about where the group_by param was set.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartSeries(
             string name,
             global::G.CustomChartMetric metric,
-            global::System.Guid id,
+            global::G.AnyOf<global::System.Guid?, string> id,
             global::G.CustomChartSeriesFilters? filters,
             string? feedbackKey,
-            global::System.Guid? workspaceId)
+            global::System.Guid? workspaceId,
+            global::G.RunStatsGroupBySeriesResponse? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
@@ -83,6 +96,7 @@ namespace G
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

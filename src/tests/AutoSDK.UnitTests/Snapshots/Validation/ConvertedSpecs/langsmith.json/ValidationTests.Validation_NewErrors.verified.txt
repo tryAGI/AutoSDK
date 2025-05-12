@@ -65,6 +65,115 @@
     Message: The reference string '/definitions/examples.ErrorResponse' has invalid format.
   },
   {
+    Message: consumes is not a valid property at #/paths/~1runs/post,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1runs/post,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/runs.Run' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: consumes is not a valid property at #/paths/~1runs~1batch/post,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1runs~1batch/post,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: consumes is not a valid property at #/paths/~1runs~1multipart/post,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1runs~1multipart/post,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: consumes is not a valid property at #/paths/~1runs~1{run_id}/patch,
+    Pointer: 
+  },
+  {
+    Message: produces is not a valid property at #/paths/~1runs~1{run_id}/patch,
+    Pointer: 
+  },
+  {
+    Message: type is not a valid property at #/paths/~1runs~1{run_id}/patch/parameters,
+    Pointer: 
+  },
+  {
+    Message: format is not a valid property at #/paths/~1runs~1{run_id}/patch/parameters,
+    Pointer: 
+  },
+  {
+    Message: The reference string '/definitions/runs.Run' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
+    Message: The reference string '/definitions/runs.ErrorResponse' has invalid format.
+  },
+  {
     Message: definitions is not a valid property at #/,
     Pointer: 
   },
@@ -100,6 +209,90 @@
   },
   {
     Message: Invalid Reference identifier '/definitions/examples.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.Run'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.Run'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    Message: Invalid Reference identifier '/definitions/runs.ErrorResponse'.
+  },
+  {
+    RuleName: ParameterRequiredFields,
+    Message: The field 'in' in 'parameter' object is REQUIRED.,
+    Pointer: #/paths/~1runs/post/parameters/0/in
+  },
+  {
+    RuleName: ParameterRequiredFields,
+    Message: The field 'in' in 'parameter' object is REQUIRED.,
+    Pointer: #/paths/~1runs~1batch/post/parameters/0/in
+  },
+  {
+    RuleName: ParameterRequiredFields,
+    Message: The field 'in' in 'parameter' object is REQUIRED.,
+    Pointer: #/paths/~1runs~1{run_id}/patch/parameters/1/in
   },
   {
     RuleName: KeyMustBeRegularExpression,

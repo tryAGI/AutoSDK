@@ -100,8 +100,8 @@ namespace G
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("use_workspace_secrets")]
-        public bool? UseWorkspaceSecrets { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_or_fallback_to_workspace_secrets")]
+        public bool? UseOrFallbackToWorkspaceSecrets { get; set; }
 
         /// <summary>
         /// 
@@ -147,7 +147,7 @@ namespace G
         /// <param name="commit"></param>
         /// <param name="evaluatorRules"></param>
         /// <param name="requestsPerSecond"></param>
-        /// <param name="useWorkspaceSecrets">
+        /// <param name="useOrFallbackToWorkspaceSecrets">
         /// Default Value: false
         /// </param>
         /// <param name="datasetId"></param>
@@ -174,7 +174,7 @@ namespace G
             string? commit,
             global::System.Collections.Generic.IList<global::System.Guid>? evaluatorRules,
             int? requestsPerSecond,
-            bool? useWorkspaceSecrets,
+            bool? useOrFallbackToWorkspaceSecrets,
             global::System.Collections.Generic.IList<string>? datasetSplits,
             int? repetitions)
         {
@@ -193,7 +193,7 @@ namespace G
             this.Commit = commit;
             this.EvaluatorRules = evaluatorRules;
             this.RequestsPerSecond = requestsPerSecond;
-            this.UseWorkspaceSecrets = useWorkspaceSecrets;
+            this.UseOrFallbackToWorkspaceSecrets = useOrFallbackToWorkspaceSecrets;
             this.DatasetSplits = datasetSplits;
             this.Repetitions = repetitions;
         }

@@ -116,6 +116,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_filter")]
+        public string? SearchFilter { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("use_experimental_search")]
+        public bool? UseExperimentalSearch { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         public string? Cursor { get; set; }
 
@@ -174,6 +186,10 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -208,6 +224,8 @@ namespace G
             bool? isRoot,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType,
             bool? skipPagination,
+            string? searchFilter,
+            bool? useExperimentalSearch,
             string? cursor,
             int? limit,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select,
@@ -231,6 +249,8 @@ namespace G
             this.IsRoot = isRoot;
             this.DataSourceType = dataSourceType;
             this.SkipPagination = skipPagination;
+            this.SearchFilter = searchFilter;
+            this.UseExperimentalSearch = useExperimentalSearch;
             this.Cursor = cursor;
             this.Limit = limit;
             this.Select = select;

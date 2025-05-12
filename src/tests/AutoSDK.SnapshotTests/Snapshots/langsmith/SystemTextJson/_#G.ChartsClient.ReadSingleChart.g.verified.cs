@@ -214,16 +214,20 @@ namespace G
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
         /// <param name="afterIndex"></param>
         /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SingleCustomChartResponse> ReadSingleChartAsync(
             global::System.Guid chartId,
-            global::System.DateTime startTime,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
+            bool? omitData = default,
             int? afterIndex = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -234,6 +238,7 @@ namespace G
                 StartTime = startTime,
                 EndTime = endTime,
                 Stride = stride,
+                OmitData = omitData,
                 AfterIndex = afterIndex,
                 TagValueId = tagValueId,
             };

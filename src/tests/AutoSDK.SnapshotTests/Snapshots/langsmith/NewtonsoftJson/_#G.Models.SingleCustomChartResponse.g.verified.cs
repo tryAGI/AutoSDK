@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.SingleCustomChartResponse.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -19,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid Id { get; set; } = default!;
+        public global::G.AnyOf<global::System.Guid?, string> Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,7 +87,7 @@ namespace G
         /// <param name="commonFilters"></param>
         public SingleCustomChartResponse(
             global::System.Collections.Generic.IList<global::G.CustomChartsDataPoint> data,
-            global::System.Guid id,
+            global::G.AnyOf<global::System.Guid?, string> id,
             string title,
             int index,
             global::G.CustomChartType chartType,

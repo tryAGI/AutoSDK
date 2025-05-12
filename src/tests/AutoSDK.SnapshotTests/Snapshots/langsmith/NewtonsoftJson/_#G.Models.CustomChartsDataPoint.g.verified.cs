@@ -30,6 +30,12 @@ namespace G
         public global::G.AnyOf<int?, double?, object>? Value { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("group")]
+        public string? Group { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -41,14 +47,17 @@ namespace G
         /// <param name="seriesId"></param>
         /// <param name="timestamp"></param>
         /// <param name="value"></param>
+        /// <param name="group"></param>
         public CustomChartsDataPoint(
             string seriesId,
             global::System.DateTime timestamp,
-            global::G.AnyOf<int?, double?, object>? value)
+            global::G.AnyOf<int?, double?, object>? value,
+            string? group)
         {
             this.SeriesId = seriesId ?? throw new global::System.ArgumentNullException(nameof(seriesId));
             this.Timestamp = timestamp;
             this.Value = value;
+            this.Group = group;
         }
 
         /// <summary>

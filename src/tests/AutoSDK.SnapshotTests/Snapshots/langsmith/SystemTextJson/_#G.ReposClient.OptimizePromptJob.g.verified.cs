@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        public async global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptJobAsync(
             global::G.OptimizePromptJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -160,7 +160,7 @@ namespace G
                 }
 
                 return
-                    global::G.AppSchemasOptimizePromptResponse.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.OptimizePromptResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -190,7 +190,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.AppSchemasOptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.OptimizePromptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
@@ -204,7 +204,7 @@ namespace G
         /// <param name="promptName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AppSchemasOptimizePromptResponse> OptimizePromptJobAsync(
+        public async global::System.Threading.Tasks.Task<global::G.OptimizePromptResponse> OptimizePromptJobAsync(
             global::G.EPromptOptimizationAlgorithm algorithm,
             global::G.AnyOf<global::G.PromptimConfig, global::G.DemoConfig> config,
             string promptName,

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("start_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime StartTime { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("start_time")]
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -32,6 +32,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("omit_data")]
+        public bool? OmitData { get; set; }
 
         /// <summary>
         /// 
@@ -62,20 +68,25 @@ namespace G
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
         /// <param name="afterIndex"></param>
         /// <param name="tagValueId"></param>
         public CustomChartsRequest(
-            global::System.DateTime startTime,
             string? timezone,
+            global::System.DateTime? startTime,
             global::System.DateTime? endTime,
             global::G.TimedeltaInput? stride,
+            bool? omitData,
             int? afterIndex,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId)
         {
-            this.StartTime = startTime;
             this.Timezone = timezone;
+            this.StartTime = startTime;
             this.EndTime = endTime;
             this.Stride = stride;
+            this.OmitData = omitData;
             this.AfterIndex = afterIndex;
             this.TagValueId = tagValueId;
         }

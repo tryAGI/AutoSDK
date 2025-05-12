@@ -92,6 +92,12 @@ namespace G
                     new global::G.JsonConverters.CustomChartTypeNullableJsonConverter(),
                     new global::G.JsonConverters.CustomChartMetricJsonConverter(),
                     new global::G.JsonConverters.CustomChartMetricNullableJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupByAttributeJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetByJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetByNullableJsonConverter(),
                     new global::G.JsonConverters.MissingMissing1JsonConverter(),
                     new global::G.JsonConverters.MissingMissing1NullableJsonConverter(),
                     new global::G.JsonConverters.PaymentPlanTierJsonConverter(),
@@ -209,6 +215,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Missing>(),
@@ -218,6 +225,9 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<object, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.CustomChartSeriesFilters, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<int?, double?, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, string>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Missing>(),
@@ -295,8 +305,12 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.DateTime?, string>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response3>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response6>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response10>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
@@ -576,6 +590,15 @@ namespace G
         /// 
         /// </summary>
         public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

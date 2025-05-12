@@ -40,6 +40,12 @@ namespace G
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
+        /// Group by param for run stats.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("group_by")]
+        public global::G.RunStatsGroupBy? GroupBy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -55,18 +61,23 @@ namespace G
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         public CustomChartSeriesCreate(
             string name,
             global::G.CustomChartMetric metric,
             global::G.CustomChartSeriesFilters? filters,
             string? feedbackKey,
-            global::System.Guid? workspaceId)
+            global::System.Guid? workspaceId,
+            global::G.RunStatsGroupBy? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metric = metric;
             this.Filters = filters;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.GroupBy = groupBy;
         }
 
         /// <summary>

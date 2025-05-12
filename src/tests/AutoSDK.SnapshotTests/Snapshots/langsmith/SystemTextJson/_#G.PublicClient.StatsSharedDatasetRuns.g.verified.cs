@@ -9,12 +9,12 @@ namespace G
         partial void PrepareStatsSharedDatasetRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            global::G.FilterQueryParamsForRunSchema request);
+            global::G.RunStatsQueryParams request);
         partial void PrepareStatsSharedDatasetRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::G.FilterQueryParamsForRunSchema request);
+            global::G.RunStatsQueryParams request);
         partial void ProcessStatsSharedDatasetRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,7 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
             global::System.Guid shareToken,
-            global::G.FilterQueryParamsForRunSchema request,
+            global::G.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -211,6 +211,13 @@ namespace G
         /// Enum for run data source types.
         /// </param>
         /// <param name="skipPagination"></param>
+        /// <param name="searchFilter"></param>
+        /// <param name="useExperimentalSearch">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
@@ -232,9 +239,12 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             bool? skipPagination = default,
+            string? searchFilter = default,
+            bool? useExperimentalSearch = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.FilterQueryParamsForRunSchema
+            var __request = new global::G.RunStatsQueryParams
             {
                 Id = id,
                 Trace = trace,
@@ -253,6 +263,9 @@ namespace G
                 IsRoot = isRoot,
                 DataSourceType = dataSourceType,
                 SkipPagination = skipPagination,
+                SearchFilter = searchFilter,
+                UseExperimentalSearch = useExperimentalSearch,
+                GroupBy = groupBy,
             };
 
             return await StatsSharedDatasetRunsAsync(

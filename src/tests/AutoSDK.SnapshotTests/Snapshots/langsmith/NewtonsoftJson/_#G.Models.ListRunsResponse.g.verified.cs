@@ -24,6 +24,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("search_cursors")]
+        public global::System.Collections.Generic.Dictionary<string, object?>? SearchCursors { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parsed_query")]
         public string? ParsedQuery { get; set; }
 
@@ -38,14 +44,17 @@ namespace G
         /// </summary>
         /// <param name="runs"></param>
         /// <param name="cursors"></param>
+        /// <param name="searchCursors"></param>
         /// <param name="parsedQuery"></param>
         public ListRunsResponse(
             global::System.Collections.Generic.IList<global::G.RunSchema> runs,
             global::System.Collections.Generic.Dictionary<string, string?> cursors,
+            global::System.Collections.Generic.Dictionary<string, object?>? searchCursors,
             string? parsedQuery)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
             this.Cursors = cursors ?? throw new global::System.ArgumentNullException(nameof(cursors));
+            this.SearchCursors = searchCursors;
             this.ParsedQuery = parsedQuery;
         }
 

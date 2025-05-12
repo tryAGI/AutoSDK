@@ -9,12 +9,12 @@ namespace G
         partial void PrepareReadSingleSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sectionId,
-            global::G.CustomChartsRequestBase request);
+            global::G.CustomChartsSectionRequest request);
         partial void PrepareReadSingleSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sectionId,
-            global::G.CustomChartsRequestBase request);
+            global::G.CustomChartsSectionRequest request);
         partial void ProcessReadSingleSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,7 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::G.CustomChartsRequestBase request,
+            global::G.CustomChartsSectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -214,22 +214,32 @@ namespace G
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+        /// <param name="omitData">
+        /// Default Value: false
+        /// </param>
+        /// <param name="groupBy">
+        /// Group by param for run stats.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
-            global::System.DateTime startTime,
             string? timezone = default,
+            global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
+            bool? omitData = default,
+            global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CustomChartsRequestBase
+            var __request = new global::G.CustomChartsSectionRequest
             {
                 Timezone = timezone,
                 StartTime = startTime,
                 EndTime = endTime,
                 Stride = stride,
+                OmitData = omitData,
+                GroupBy = groupBy,
             };
 
             return await ReadSingleSectionAsync(
