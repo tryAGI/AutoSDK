@@ -29,6 +29,10 @@ namespace G.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

@@ -29,6 +29,10 @@ namespace G.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::G.GetEventsubSubscriptionsStatus)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.GetEventsubSubscriptionsStatus?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

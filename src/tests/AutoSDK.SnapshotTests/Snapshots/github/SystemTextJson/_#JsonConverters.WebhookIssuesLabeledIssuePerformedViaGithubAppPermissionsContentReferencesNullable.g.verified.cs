@@ -29,6 +29,10 @@ namespace G.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::G.WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsContentReferences)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsContentReferences?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

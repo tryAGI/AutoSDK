@@ -44,6 +44,10 @@ namespace {model.Namespace}.JsonConverters
                     var numValue = reader.GetInt32();
                     return ({model.GlobalClassName})numValue;
                 }}
+                case global::System.Text.Json.JsonTokenType.Null:
+                {{
+                    return default({model.GlobalClassName});
+                }}
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }}
@@ -104,6 +108,10 @@ namespace {model.Namespace}.JsonConverters
                 {{
                     var numValue = reader.GetInt32();
                     return ({model.GlobalClassName})numValue;
+                }}
+                case global::System.Text.Json.JsonTokenType.Null:
+                {{
+                    return default({model.GlobalClassName}?);
                 }}
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
