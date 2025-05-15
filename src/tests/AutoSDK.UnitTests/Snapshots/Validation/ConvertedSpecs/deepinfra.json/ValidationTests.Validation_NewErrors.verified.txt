@@ -1,0 +1,6 @@
+﻿[
+  {
+    Message: soft_required is not a valid property at #/components/schemas/OpenAIEmbeddingsIn/properties/input,
+    Pointer: 
+  }
+]

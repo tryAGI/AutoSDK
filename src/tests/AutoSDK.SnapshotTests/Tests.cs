@@ -74,6 +74,8 @@ public partial class Tests
     [DataRow("luma.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("ultravox.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("ultravox.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("deepinfra.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("deepinfra.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -155,6 +157,10 @@ public partial class Tests
             {
                 ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "deepinfra.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
             },
             _ => new Dictionary<string, string>(),
         };

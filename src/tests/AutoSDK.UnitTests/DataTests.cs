@@ -36,6 +36,7 @@ public partial class DataTests
     [DataRow("recraft.yaml")]
     [DataRow("luma.yaml")]
     [DataRow("ultravox.yaml")]
+    [DataRow("deepinfra.json")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
@@ -57,6 +58,7 @@ public partial class DataTests
                     "replicate.json" => true,
                     "luma.yaml" => true,
                     "openai.yaml" => true,
+                    "deepinfra.json" => true,
                     _ => false,
                 },
             })),

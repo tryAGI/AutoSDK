@@ -4,6 +4,8 @@ using System.Collections.Immutable;
 
 namespace AutoSDK.Models;
 
+#pragma warning disable CA1308
+
 public record struct TypeData(
     string CSharpTypeRaw,
     bool CSharpTypeNullability,
@@ -228,7 +230,7 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        var type = (context.Schema.Type, context.Schema.Format) switch
+        var type = (context.Schema.Type?.ToLowerInvariant(), context.Schema.Format) switch
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 

@@ -310,7 +310,8 @@ public class SchemaContext(
         }
         
         var i = 0;
-        foreach (var property in schema.Properties)
+        foreach (var property in schema.Properties
+            .Where(x => x.Value != null))
         {
             children.AddRange(FromSchema(
                 schema: property.Value,
