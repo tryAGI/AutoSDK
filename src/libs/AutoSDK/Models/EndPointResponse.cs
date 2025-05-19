@@ -1,5 +1,5 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
+using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Models;
 
@@ -20,18 +20,18 @@ public record struct EndPointResponse(
     public bool IsPattern => StatusCode.Contains("XX");
     public int Min => int.TryParse(StatusCode.Replace("XX", "00"), out var code) ? code : 0;
     public int Max => int.TryParse(StatusCode.Replace("XX", "99"), out var code) ? code : 0;
-    
+
     public static EndPointResponse Default => new(
         StatusCode: "200",
         Description: string.Empty,
         MimeType: string.Empty,
         ContentType: ContentType.String,
         Type: TypeData.Default);
-    
+
     public static EndPointResponse FromResponse(KeyValuePair<string, OpenApiResponse> responseWithStatusCode, OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
-        
+
         var responses = responseWithStatusCode.Value?.ResolveIfRequired().Content?
             .Select(x => (
                 StatusCode: responseWithStatusCode.Key,
@@ -46,9 +46,9 @@ public record struct EndPointResponse(
                 StatusCode = responseWithStatusCode.Key,
             };
         }
-        
+
         var response = responses.First();
-        
+
         var contentType = response.MimeType.Contains("application/octet-stream")
             ? ContentType.ByteArray
             : ContentType.String;
@@ -59,7 +59,7 @@ public record struct EndPointResponse(
             {
                 CSharpTypeRaw = "byte[]",
             },
-            _ => responseContext?.TypeData,
+            _ => responseContext?.ResolvedReference?.TypeData,
         };
         if (responseType?.CSharpTypeWithoutNullability == "object")
         {
@@ -77,7 +77,7 @@ public record struct EndPointResponse(
             MimeType: response.MimeType,
             ContentType: contentType,
             Type: responseType ?? TypeData.Default);
-        
+
         return endPoint;
     }
 }

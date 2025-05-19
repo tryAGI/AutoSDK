@@ -145,7 +145,7 @@ public record struct TypeData(
             subTypes = [
                 context.Children
                     .FirstOrDefault(x => x is { Hint: Hint.ArrayItem } && x.TypeData != Default)
-                    ?.TypeData ??
+                    ?.ResolvedReference?.TypeData ??
                 Default with
                 {
                     IsEnum = context.Schema.Items.IsEnum(),
@@ -178,6 +178,11 @@ public record struct TypeData(
         }
 
         var type = GetCSharpType(context);
+        if (context.Schema.Reference is not null &&
+            context.Settings.ExcludeModels.Contains(context.Schema.Reference.Id))
+        {
+            type = context.Schema.Reference.Id;
+        }
 
         return new TypeData(
             CSharpTypeRaw: type,
@@ -249,7 +254,9 @@ public record struct TypeData(
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
             (_, _) when context.Schema.IsArray() =>
-                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
+                $"{(context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.IsReference == true ?
+                        context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.ResolvedReference?.TypeData.CSharpTypeWithoutNullability :
+                        context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability)}".AsArray(),
             // Fallback if `items` property is missing (openai specification)
             ("array", _) => "byte[]",
 

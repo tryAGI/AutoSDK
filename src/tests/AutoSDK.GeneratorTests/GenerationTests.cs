@@ -30,7 +30,7 @@ public partial class GenerationTests
         var additionalFiles = new[] { openApiSpec }.ToImmutableArray<AdditionalText>();
         var optionsProvider = new AdditionalTextOptionsProvider(new()
         {
-            [nameof(Settings.ExcludeModels)] = "Pet;",
+            [nameof(Settings.ExcludeModels)] = "PetStore.Pet;",
             [nameof(Settings.Namespace)] = "TestNamespace",
             [nameof(Settings.ClassName)] = "PetClient",
         });

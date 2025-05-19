@@ -1,7 +1,7 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Naming.Properties;
+using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Naming.Models;
 
@@ -19,11 +19,11 @@ public static class ModelNameGenerator
     {
         if (propertyName != null)
         {
-            return propertyName.ToCSharpName(settings, parent);
+            return propertyName.ToPropertyName();
         }
         if (componentId != null)
         {
-            return componentId.ToCSharpName(settings, parent);
+            return componentId;
         }
 
         var helper = hint switch
@@ -37,7 +37,7 @@ public static class ModelNameGenerator
             //_ when propertyName != null => propertyName,
             _ => null,
         };
-        var id = parent?.Id + helper?.ToCSharpName(settings, parent);
+        var id = parent?.Id + helper?.ToClassName();
         if (string.IsNullOrWhiteSpace(id))
         {
             throw new InvalidOperationException("Id is required. Invalid info.");
@@ -45,11 +45,11 @@ public static class ModelNameGenerator
 
         return id;
     }
-    
+
     public static string? ComputeHelperName(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         return (context.Hint switch
         {
             Hint.ArrayItem => "Item",
@@ -60,16 +60,16 @@ public static class ModelNameGenerator
             Hint.Discriminator => "Discriminator",
             _ when context.PropertyName != null => context.PropertyName,
             _ => null,
-        })?.ToCSharpName(context.Settings, context.Parent);
+        });
     }
-    
+
     public static string ComputeClassName(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         if (context.ComponentId != null)
         {
-            return context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();
+            return context.ComponentId.ToClassName();
         }
 
         // NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
@@ -80,7 +80,7 @@ public static class ModelNameGenerator
         }
 
         var className = id.ToClassName();
-        
+
         // Special case for anyOf/oneOf/allOf with a single non-basic type
         if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
             context.Parent?.Children
@@ -89,7 +89,7 @@ public static class ModelNameGenerator
         {
             className = $"{context.Parent?.ComputeClassName()}";
         }
-        
+
         // Special case for anyOf/oneOf/allOf with a single Enum type without reference
         else if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
             context.Parent?.Children
@@ -98,27 +98,27 @@ public static class ModelNameGenerator
             var variantName = ComputeHelperName(context)!;
             className = className.Substring(0, className.Length - variantName.Length) + "Enum";
         }
-        
+
         // Special case for array items with pluralized property name
         if (context.Hint is Hint.ArrayItem &&
             className.EndsWith("sItem", StringComparison.Ordinal))
         {
             className = className.Substring(0, className.Length - 5);
         }
-        
+
         return className;
     }
-    
+
     public static string ComputeId(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         context.ClassName = CSharpPropertyNameGenerator.SanitizeName(context.ComputeClassName(), context.Settings.ClsCompliantEnumPrefix);
         context.Id = context.ClassName;
-        
+
         return context.Id;
     }
-    
+
     public static void ResolveCollisions(IReadOnlyCollection<SchemaContext> contexts)
     {
         while (true)
@@ -133,7 +133,7 @@ public static class ModelNameGenerator
             {
                 break;
             }
-            
+
             foreach (var group in contextsWithCollision)
             {
                 var i = 2;
@@ -144,7 +144,7 @@ public static class ModelNameGenerator
             }
         }
     }
-    
+
     public static void ResolveCollisions(IReadOnlyCollection<OperationContext> contexts)
     {
         while (true)
@@ -157,7 +157,7 @@ public static class ModelNameGenerator
             {
                 break;
             }
-            
+
             foreach (var group in schemasWithCollision)
             {
                 var i = 2;

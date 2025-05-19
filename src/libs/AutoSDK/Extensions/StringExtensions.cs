@@ -1,6 +1,4 @@
 using System.Globalization;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
 
 namespace AutoSDK.Extensions;
 
@@ -25,7 +23,7 @@ public static class StringExtensions
 
         return text;
     }
-    
+
     /// <summary>
     /// Makes the first letter of the name uppercase.
     /// </summary>
@@ -46,7 +44,7 @@ public static class StringExtensions
 #endif
         };
     }
-    
+
     /// <summary>
     /// Makes the first letter of the name lowercase.
     /// </summary>
@@ -75,7 +73,7 @@ public static class StringExtensions
 #pragma warning restore CA1308 // Normalize strings to uppercase
         };
     }
-    
+
     /// <summary>
     /// Normalizes line endings to '\n' or your endings.
     /// </summary>
@@ -99,7 +97,7 @@ public static class StringExtensions
 
         return newText;
     }
-    
+
     private static readonly char[] Separator = { '\n' };
 
     /// <summary>
@@ -121,85 +119,85 @@ public static class StringExtensions
                 .Split(Separator, StringSplitOptions.None)
                 .Where(static line => line.Length == 0 || !line.All(char.IsWhiteSpace)));
     }
-    
+
     public static string AsArray(this string type)
     {
         return $"global::System.Collections.Generic.IList<{type}>";
     }
-    
+
     public static string? WithPostfix(this string? type, string postfix)
     {
         if (type == null)
         {
             return null;
         }
-        
+
         return type + postfix;
     }
-    
+
     public static string ToXmlDocumentation(
         this string text,
         int level = 4,
         bool returnIfSingleLine = false)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
-        
+
         var lines = text.Split(NewLine, StringSplitOptions.RemoveEmptyEntries);
         if (lines.Length == 0)
         {
             lines = [string.Empty];
         }
-        
+
         if (returnIfSingleLine && lines.Length == 1)
         {
             return $"{lines[0]}";
         }
-        
+
         var spaces = new string(' ', level);
         var value = string.Join("\n", lines
             .Select((line, i) => $"{spaces}/// {line}{(i != lines.Length - 1 ? "<br/>" : string.Empty)}"));
-        
+
         return value;
     }
-    
+
     public static string ToXmlDocumentationSummary(
         this string text,
         int level = 4)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
-        
+
         var spaces = new string(' ', level);
         var value = ToXmlDocumentation(text, level);
-        
+
         return $@"/// <summary>
 {value}
 {spaces}/// </summary>";
     }
-    
+
     public static string ToXmlDocumentationExample(
         this string text,
         int level = 4)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
-        
+
         if (string.IsNullOrWhiteSpace(text))
         {
             return string.Empty;
         }
-        
+
         var value = ToXmlDocumentation(text, level, returnIfSingleLine: true);
         if (!value.Contains("\n"))
         {
             return $"/// <example>{value}</example>";
         }
-        
+
         var spaces = new string(' ', level);
-        
+
         return $@"/// <example>
 {value}
 {spaces}/// </example>";
     }
-    
+
     public static string ToXmlDocumentationDefault(
         this string text,
         int level = 4)
@@ -210,20 +208,20 @@ public static class StringExtensions
         {
             return string.Empty;
         }
-        
+
         var value = ToXmlDocumentation(text, level, returnIfSingleLine: true);
         if (!value.Contains("\n"))
         {
             return $"/// <default>{value}</default>";
         }
-        
+
         var spaces = new string(' ', level);
-        
+
         return $@"/// <default>
 {value}
 {spaces}/// </default>";
     }
-    
+
     public static string ToXmlDocumentationForParam(
         this string text,
         string parameterName,
@@ -231,37 +229,37 @@ public static class StringExtensions
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         parameterName = parameterName ?? throw new ArgumentNullException(nameof(parameterName));
-        
+
         var spaces = new string(' ', level);
         var value = ToXmlDocumentation(text, level);
-        
+
         return string.IsNullOrWhiteSpace(text)
             ? $@"/// <param name=""{parameterName.TrimStart('@')}""></param>"
             : $@"/// <param name=""{parameterName.TrimStart('@')}"">
 {value}
 {spaces}/// </param>";
     }
-    
+
     public static string UseWordSeparator(
         this string propertyName,
         params char[] separator)
     {
         propertyName = propertyName ?? throw new ArgumentNullException(nameof(propertyName));
-        
+
         if (!separator.Any(propertyName.Contains))
         {
             return propertyName;
         }
-        
+
         return string.Join(
             string.Empty,
             propertyName
                 .Split(separator)
                 .Select(word => word.ToPropertyName()));
     }
-    
+
     private readonly static string[] NewLine = { "\n" };
-    
+
     public static string AddIndent(
         this string text,
         int level)
@@ -271,14 +269,14 @@ public static class StringExtensions
         {
             return text;
         }
-        
+
         var lines = text.Split(NewLine, StringSplitOptions.None);
         var spaces = new string(' ', level * 4);
-        
+
         return string.Join("\n", lines
             .Select(line => string.IsNullOrEmpty(line) ? line : $"{spaces}{line}"));
     }
-    
+
     public static string FixPropertyName(
         this string propertyName,
         string className)
@@ -287,15 +285,29 @@ public static class StringExtensions
             ? $"{propertyName}1"
             : propertyName;
     }
-    
+
     public static string ToClassName(
         this string text)
     {
         return text
             .ToPropertyName()
-            .UseWordSeparator('_', '-', '.', ' ', '\\', '/', '[', ']');
+            .UseWordSeparator('_', '-', ' ', '\\', '/', '[', ']')
+            .Split('.')
+            .Last();
     }
-    
+
+    public static string ToNamespace(
+        this string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            throw new ArgumentNullException(nameof(text));
+        }
+        return text
+            .Split('.')
+            .Last();
+    }
+
     public static string ReplaceIfEquals(
         this string text,
         string oldValue,
