@@ -42,9 +42,9 @@ public record struct ModelData(
 
         return new ModelData(
             SchemaContext: context,
-            Id: context.Id,
+            Id: context.Schema.Reference?.Id?.ToClassName() ?? context.Id?.ToClassName() ?? throw new ArgumentNullException(context.ReferenceId),
             Parents: parents.Select(p => p.Box()).ToImmutableArray(),
-            Namespace: context.Settings.Namespace,
+            Namespace: context.TypeData.Namespace ?? throw new ArgumentNullException(context.ReferenceId),
             Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Settings: context.Settings,
             Properties: context.IsDerivedClass

@@ -73,7 +73,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Pet"
+                $ref: "#/components/schemas/PetStore.Pet"
         default:
           description: unexpected error
           content:
@@ -82,7 +82,7 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
-    Pet:
+    PetStore.Pet:
       type: object
       required:
         - id
@@ -99,7 +99,7 @@ components:
       type: array
       maxItems: 100
       items:
-        $ref: "#/components/schemas/Pet"
+        $ref: "#/components/schemas/PetStore.Pet"
     Error:
       type: object
       required:
