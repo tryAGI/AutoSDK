@@ -1,8 +1,7 @@
-using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.AnyOfs;
-using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Json;
+using System.Collections.Immutable;
 
 namespace AutoSDK.Models;
 
@@ -20,11 +19,11 @@ public record struct AnyOfData(
 )
 {
     public bool IsNamed => !string.IsNullOrWhiteSpace(Name);
-    
+
     public static AnyOfData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         var children = context.Children
             .Where(x => x.Hint == (context.IsAnyOf
                 ? Hint.AnyOf
@@ -35,15 +34,14 @@ public record struct AnyOfData(
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
-        
+
         if (context.Schema.Discriminator != null &&
             context.Schema.Discriminator.Mapping.Count != 0)
         {
             discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
-            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName()
-                .ToCSharpName(context.Settings, context.Parent);
+            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName();
         }
-        
+
         var count = context.IsAnyOf
             ? context.Schema.AnyOf.Count
             : context.IsOneOf
@@ -86,7 +84,7 @@ public record struct AnyOfData(
                 })
                 .ToImmutableArray().AsEquatableArray();
         }
-        
+
         return new AnyOfData(
             SubType: context.IsAnyOf
                 ? "AnyOf"

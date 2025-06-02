@@ -12,7 +12,7 @@ public static class CSharpPropertyNameGenerator
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
 
         var name = propertyName.ToPropertyName();
-        
+
         name = HandleWordSeparators(name);
 
         if (context.Parent != null)
@@ -24,7 +24,7 @@ public static class CSharpPropertyNameGenerator
 
         return name;
     }
-    
+
     internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)
@@ -37,7 +37,7 @@ public static class CSharpPropertyNameGenerator
                 or >= 'a' and <= 'z'
                 or >= '0' and <= '9'
                 );
-        
+
         if (name is null || name.Length == 0)
         {
             return "";
@@ -54,7 +54,7 @@ public static class CSharpPropertyNameGenerator
                 ? "_"
                 : clsCompliantEnumPrefix;
         }
-        
+
         if (InvalidFirstChar(name[0]))
         {
             name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
@@ -69,7 +69,7 @@ public static class CSharpPropertyNameGenerator
 
         Span<char> buf = stackalloc char[name.Length];
         name.AsSpan().CopyTo(buf);
-        
+
         for (var i = 1; i < buf.Length; i++)
         {
             if (InvalidSubsequentChar(buf[i]))
@@ -86,20 +86,33 @@ public static class CSharpPropertyNameGenerator
     {
         return name
             .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '.', '/', '(', '[', ']', ')');
+            .UseWordSeparator('_', '+', '-', '/', '(', '[', ']', ')');
     }
 
-    internal static string ToCSharpName(this string text, Settings settings, SchemaContext? parent)
+    /// <summary>
+    /// Parses the text and returns a C# namespace and a name.
+    /// The namespace is onyl the part of the namespace that is maybe used inside the openapi spec.
+    /// It doesn't include the namespace that is defined in the settings.
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="settings"></param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    internal static (string, string) ToCSharpName(this string text, Settings settings, SchemaContext? parent)
     {
-        var name = text.ToPropertyName();
-        
-        name = HandleWordSeparators(name);
+        //var name = text.ToPropertyName();
 
-        if (parent != null)
-        {
-            name = name.FixPropertyName(parent.Id);
-        }
+        //var name = HandleWordSeparators(text);
 
-        return SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
+        //if (parent != null)
+        //{
+        //name = name.FixPropertyName(parent.Id);
+        //}
+        var name = text;
+        var splittedName = name.Split('.');
+        return (
+            SanitizeName(string.Join(".", splittedName), string.Empty, true),
+            SanitizeName(splittedName.Last(), settings.ClsCompliantEnumPrefix, true)
+        );
     }
 }

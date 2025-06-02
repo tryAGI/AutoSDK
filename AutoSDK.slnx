@@ -3,10 +3,10 @@
     <Project Path="src/helpers/GenerateDocs/GenerateDocs.csproj" />
   </Folder>
   <Folder Name="/libs/">
+    <File Path="src/libs/Directory.Build.props" />
     <Project Path="src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj" />
     <Project Path="src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" />
     <Project Path="src/libs/AutoSDK/AutoSDK.csproj" />
-    <File Path="src/libs/Directory.Build.props" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".github/dependabot.yml" />
@@ -57,6 +57,7 @@
     <File Path=".github/workflows/pull-request.yml" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="src/tests/AutoSDK.GeneratorTests/AutoSDK.GeneratorTests.csproj" Id="d50f68ac-4bdf-427f-b7b3-629841d2afa0" />
     <Project Path="src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj" />
     <Project Path="src/tests/AutoSDK.SnapshotTests/AutoSDK.SnapshotTests.csproj" />
     <Project Path="src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj" />

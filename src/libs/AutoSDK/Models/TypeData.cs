@@ -57,8 +57,24 @@ public record struct TypeData(
         Namespace: string.Empty,
         IsDeprecated: false,
         Settings: Settings.Default);
-
-    public string CSharpTypeWithoutNullability => CSharpTypeRaw.TrimEnd('?');
+    /// <summary>
+    /// This method removes the namespace from the type,
+    /// if the type is in the ExcludeModels list.
+    /// This makes it possible to use global usings to define 
+    /// outside of the generator where this type should come from.
+    /// </summary>
+    /// <returns></returns>
+    private string GetCsharpTypeValue()
+    {
+        var typeName = CSharpTypeRaw.TrimEnd('?').Replace($"global::{Namespace}.", string.Empty);
+        if (Settings.ExcludeModels.Contains(typeName))
+        {
+            Namespace = string.Empty;
+            return typeName;
+        }
+        return CSharpTypeRaw;
+    }
+    public string CSharpTypeWithoutNullability => GetCsharpTypeValue();
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
     public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
@@ -131,7 +147,7 @@ public record struct TypeData(
             subTypes = [
                 context.Children
                     .FirstOrDefault(x => x is { Hint: Hint.ArrayItem } && x.TypeData != Default)
-                    ?.TypeData ??
+                    ?.ResolvedReference?.TypeData ??
                 Default with
                 {
                     IsEnum = context.Schema.Items.IsEnum(),
@@ -164,6 +180,11 @@ public record struct TypeData(
         }
 
         var type = GetCSharpType(context);
+        if (context.Schema.Reference is not null &&
+            context.Settings.ExcludeModels.Contains(context.Schema.Reference.Id))
+        {
+            type = context.Schema.Reference.Id;
+        }
 
         return new TypeData(
             CSharpTypeRaw: type,
@@ -235,10 +256,12 @@ public record struct TypeData(
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
             (_, _) when context.Schema.IsArray() =>
-                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
+                $"{(context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.IsReference == true ?
+                        context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.ResolvedReference?.TypeData.CSharpTypeWithoutNullability :
+                        context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability)}".AsArray(),
             // Fallback if `items` property is missing (openai specification)
             ("array", _) => "byte[]",
-                
+
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
 

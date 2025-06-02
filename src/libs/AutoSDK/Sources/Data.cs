@@ -1,12 +1,12 @@
-﻿using System.Collections.Immutable;
-using System.Diagnostics;
-using Microsoft.OpenApi.Models;
-using AutoSDK.Extensions;
+﻿using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Naming.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi.Models;
+using System.Collections.Immutable;
+using System.Diagnostics;
 
 namespace AutoSDK.Generation;
 
@@ -18,15 +18,15 @@ public static class Data
     {
         var totalTime = Stopwatch.StartNew();
         var traversalTreeTime = Stopwatch.StartNew();
-        
+
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(settings, cancellationToken);
 
         var schemas = openApiDocument.GetSchemas(settings);
-        
+
         traversalTreeTime.Stop();
-        
+
         var namingTime = Stopwatch.StartNew();
 
         foreach (var schema in schemas.Where(x => x.IsModel))
@@ -35,26 +35,26 @@ public static class Data
         }
 
         ModelNameGenerator.ResolveCollisions(schemas);
-        
+
         namingTime.Stop();
-        
+
         var resolveReferencesTime = Stopwatch.StartNew();
-        
+
         var componentSchemas = schemas
             .Where(x => x.IsComponent)
             .ToDictionary(x => x.ComponentId!, x => x);
-        
+
         foreach (var context in schemas.Where(x => x.IsReference))
         {
             context.ResolvedReference = componentSchemas[context.ReferenceId!];
             context.Id = context.ResolvedReference.Id;
             context.TypeData = context.ResolvedReference.TypeData;
-            
+
             context.ResolvedReference.Links.Add(context);
         }
-        
+
         resolveReferencesTime.Stop();
-        
+
         var filteringTime = Stopwatch.StartNew();
 
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
@@ -67,7 +67,7 @@ public static class Data
         {
             excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
         }
-        
+
         // Find all tags used in operations besides the ones defined in the document
         var allTags = openApiDocument.Tags!;
         foreach (var operation in openApiDocument.Paths!
@@ -83,7 +83,7 @@ public static class Data
                 }
             }
         }
-        
+
         if (settings.GroupByTags && allTags.Count < 2)
         {
             settings = settings with
@@ -103,49 +103,58 @@ public static class Data
         {
             context.ComputeTags(maxDepth: maxDepth);
         }
-        
+
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
-        
+
         var isFilteringRequired = settings.IncludeTags.Length > 0 ||
                                   settings.ExcludeTags.Length > 0 ||
                                   includedModels.Count > 0 ||
                                   excludedModels.Count > 0 ||
                                   !settings.GenerateModels;
+
         var filteredSchemas = isFilteringRequired
             ? schemas
                 .Where(x =>
-                    (settings.GenerateModels ||
-                     settings.GenerateSdk ||
-                     (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))) &&
-                    (settings.IncludeTags.Length == 0 ||
-                     x.HasAnyTag(settings.IncludeTags.ToArray())) &&
-                    !x.HasAnyTag(settings.ExcludeTags.ToArray()) &&
-                    (!x.IsComponent && includedModels.Count == 0 ||
+                    settings.GenerateModels ||
+                    settings.GenerateSdk ||
+                    (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))
+                )
+                .Where(x =>
+                    settings.IncludeTags.Length == 0 ||
+                    x.HasAnyTag(settings.IncludeTags.ToArray())
+                )
+                .Where(x =>
+                    settings.ExcludeTags.Length == 0 ||
+                    !x.HasAnyTag(settings.ExcludeTags.ToArray())
+                )
+                .SelectMany(x => x.WithAllChildren())
+                .Where(x =>
+                    !x.IsComponent && includedModels.Count == 0 ||
                      (includedModels.Count == 0 ||
                       includedModels.Contains(x.ComponentId!)) &&
-                    !excludedModels.Contains(x.ComponentId!)))
-                .SelectMany(x => x.WithAllChildren())
+                    !excludedModels.Contains(x.ComponentId!)
+                )
                 .Distinct()
                 .ToArray()
             : schemas;
         filteredSchemas = filteredSchemas
             .Where(x => !x.HasAllOfTypeForMetadata())
             .ToArray();
-        
+
         filteringTime.Stop();
-        
+
         var computeDataTime = Stopwatch.StartNew();
 
         foreach (var schema in filteredSchemas)
         {
             schema.ComputeData();
         }
-        
+
         computeDataTime.Stop();
-        
+
         var computeDataClassesTime = Stopwatch.StartNew();
-        
+
         var classes = filteredSchemas
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
             .Select(x => x.ClassData)
@@ -168,7 +177,7 @@ public static class Data
 
         var operations = openApiDocument.GetOperations(settings, filteredSchemas);
         ModelNameGenerator.ResolveCollisions(operations);
-        
+
         var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
                 ? operations
                     .Where(operation =>
@@ -182,7 +191,7 @@ public static class Data
                         {
                             return true;
                         }
-                    
+
                         return (includedOperationIds.Count == 0 ||
                                 includedOperationIds.Contains(operation.MethodName) ||
                                 (operation.Operation.OperationId != null && includedOperationIds.Contains(operation.Operation.OperationId))) &&
@@ -191,7 +200,7 @@ public static class Data
                     })
                     .ToArray()
                 : [];
-        
+
         var methods = filteredOperations
             .Select(EndPoint.FromSchema)
             .ToImmutableArray();
@@ -223,8 +232,7 @@ public static class Data
                     x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
                     x.AnyOfData.HasValue &&
                     string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
-                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{
-                    string.Join(", ", x.Children
+                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{string.Join(", ", x.Children
                         .Where(y => y.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf)
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
             // Unix Timestamp converter
@@ -232,7 +240,7 @@ public static class Data
                 $"global::{settings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
             ])
             .ToImmutableArray();
-        
+
         var includedTags = allTags
             .Where(x =>
                 (settings.IncludeTags.Length == 0 ||
@@ -277,7 +285,7 @@ public static class Data
                         Converters: [])))
                 .ToArray();
         }
-        
+
         var types =
             settings.GenerateJsonSerializerContextTypes
                 ? filteredSchemas
@@ -289,7 +297,7 @@ public static class Data
                     .Select(x => x.First())
                     .ToImmutableArray()
                 : [];
-        
+
         classes = classes
             .Select(x => x with
             {
@@ -302,7 +310,7 @@ public static class Data
                 SchemaContext = default!,
             })
             .ToImmutableArray();
-        
+
         return new Models.Data(
             Classes: classes,
             Enums: enums,
