@@ -31,7 +31,7 @@ public static partial class Sources
 
 #pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
-namespace {endPoint.Namespace}
+namespace {endPoint.Settings.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
@@ -74,7 +74,7 @@ namespace {endPoint.Namespace}
 
         return $@"#nullable enable
 
-namespace {endPoint.Namespace}
+namespace {endPoint.Settings.Namespace}
 {{
     public partial interface I{endPoint.ClassName}
     {{
@@ -256,7 +256,7 @@ namespace {endPoint.Namespace}
         EndPoint endPoint)
     {
         var code = @$" 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
                 baseUri: HttpClient.BaseAddress);";
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
@@ -331,7 +331,7 @@ namespace {endPoint.Namespace}
             }}
             catch (global::System.Net.Http.HttpRequestException __ex)
             {{
-                throw new global::{endPoint.Settings.Namespace}.ApiException(
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
                     message: __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     statusCode: __response.StatusCode)
@@ -394,8 +394,8 @@ namespace {endPoint.Namespace}
                 }}
 
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                throw new global::{endPoint.Settings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
-                throw new global::{endPoint.Settings.Namespace}.ApiException(")}
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(")}
                     message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {{
@@ -441,7 +441,7 @@ namespace {endPoint.Namespace}
                 }}
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {{
-                    throw new global::{endPoint.Settings.Namespace}.ApiException(
+                    throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
 {(endPoint.ContentType == ContentType.String ? $@" 
                         message: __content ?? __response.ReasonPhrase ?? string.Empty," : @" 
                         message: __response.ReasonPhrase ?? string.Empty,")}
@@ -473,7 +473,7 @@ namespace {endPoint.Namespace}
                 }}
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {{
-                    throw new global::{endPoint.Settings.Namespace}.ApiException(
+                    throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)

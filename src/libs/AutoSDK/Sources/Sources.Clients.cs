@@ -15,10 +15,10 @@ public static partial class Sources
         return $@"
 #nullable enable
 
-namespace {client.Namespace}
+namespace {client.Settings.Namespace}
 {{
     {(client.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
-    public sealed partial class {client.ClassName} : global::{client.Namespace}.I{client.ClassName}, global::System.IDisposable
+    public sealed partial class {client.ClassName} : global::{client.Settings.Namespace}.I{client.ClassName}, global::System.IDisposable
     {{
         {client.BaseUrlSummary.ToXmlDocumentationSummary(level: 8)}
         public const string DefaultBaseUrl = ""{client.BaseUrl}"";
@@ -32,7 +32,7 @@ namespace {client.Namespace}
         public System.Uri? BaseUri => HttpClient.BaseAddress;
 
         /// <inheritdoc/>
-        public global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
+        public global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
 
         /// <inheritdoc/>
         public bool ReadResponseAsString {{ get; set; }}
@@ -71,12 +71,12 @@ namespace {client.Namespace}
         public {client.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization>? authorizations = null,
+            global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
             bool disposeHttpClient = true)
         {{
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
-            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization>();
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);
@@ -119,7 +119,7 @@ namespace {client.Namespace}
         return $@"
 #nullable enable
 
-namespace {client.Namespace}
+namespace {client.Settings.Namespace}
 {{
     {(client.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
     public partial interface I{client.ClassName} : global::System.IDisposable
@@ -137,7 +137,7 @@ namespace {client.Namespace}
         /// <summary>
         /// The authorizations to use for the requests.
         /// </summary>
-        public global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
+        public global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
 
         /// <summary>
         /// Gets or sets a value indicating whether the response content should be read as a string.

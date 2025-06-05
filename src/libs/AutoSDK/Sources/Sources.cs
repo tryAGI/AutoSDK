@@ -105,7 +105,7 @@ public static partial class Sources
             : data.Name;
 
         return new FileWithName(
-            Name: $"JsonConverters.{name}.g.cs",
+            Name: $"{data.Namespace}.JsonConverters.{name}.g.cs",
             Text: GenerateAnyOfJsonConverter(data, cancellationToken: cancellationToken));
     }
     
@@ -120,7 +120,7 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: $"JsonConverters.{data.ClassName}.g.cs",
+            Name: $"{data.Namespace}.JsonConverters.{data.ClassName}.g.cs",
             Text: GenerateEnumJsonConverter(data, cancellationToken: cancellationToken));
     }
     
@@ -135,7 +135,7 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: $"JsonConverters.{data.ClassName}Nullable.g.cs",
+            Name: $"{data.Namespace}.JsonConverters.{data.ClassName}Nullable.g.cs",
             Text: GenerateEnumNullableJsonConverter(data, cancellationToken: cancellationToken));
     }
 
@@ -176,7 +176,7 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: "JsonSerializerContextTypes.g.cs",
+            Name: $"{types[0].Settings.Namespace}.JsonSerializerContextTypes.g.cs",
             Text: GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
     }
     
@@ -193,7 +193,7 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: "JsonSerializerContext.g.cs",
+            Name: $"{client.FileNameWithoutExtension}.JsonSerializerContext.g.cs",
             Text: GenerateJsonSerializerContext(client, types, cancellationToken: cancellationToken));
     }
     
@@ -208,7 +208,7 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: "JsonSerializerContextConverters.g.cs",
+            Name: $"{client.Settings.Namespace}.JsonSerializerContextConverters.g.cs",
             Text: GenerateJsonSerializerContextConverters(client));
     }
     

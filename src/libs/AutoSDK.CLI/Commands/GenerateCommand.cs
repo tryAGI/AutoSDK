@@ -128,7 +128,7 @@ internal sealed class GenerateCommand : Command
             };
         }
 
-        var data = Generation.Data.Prepare((yaml, settings));
+        var data = Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
         var files = data.Enums
             .SelectMany(x => new []
             {

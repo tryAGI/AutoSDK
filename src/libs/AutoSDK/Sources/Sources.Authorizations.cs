@@ -54,7 +54,7 @@ namespace {authorization.Settings.Namespace}
             var accessToken = dictionary[""access_token""];
 
             Authorizations.Clear();
-            Authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{SecuritySchemeType.OAuth2:G}"",
                 Location = ""{ParameterLocation.Header:G}"",
@@ -85,7 +85,7 @@ namespace {authorization.Settings.Namespace}
             {x} = {x} ?? throw new global::System.ArgumentNullException(nameof({x}));").Inject()}
 
             Authorizations.Clear();
-            Authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{authorization.Type:G}"",
                 Location = ""{authorization.In:G}"",
@@ -187,13 +187,13 @@ namespace {authorization.Settings.Namespace}
 {{
     public sealed partial class {authorization.Settings.ClassName}
     {{
-        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{{global::{authorization.Settings.Namespace}.EndPointAuthorization}}?, bool)""/>
+        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{{global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization}}?, bool)""/>
         public {authorization.Settings.ClassName}(
 {string.Join("\n", authorization.Parameters.Select(x => $@" 
             string {x},"))}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::{authorization.Settings.Namespace}.EndPointAuthorization>? authorizations = null,
+            global::System.Collections.Generic.List<global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
             bool disposeHttpClient = true) : this(httpClient, baseUri, authorizations, disposeHttpClient)
         {{
             Authorizing(HttpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});

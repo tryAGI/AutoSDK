@@ -13,13 +13,13 @@ namespace AutoSDK.Generation;
 public static class Data
 {
     public static Models.Data Prepare(
-        (string text, Settings settings) tuple,
+        ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
         CancellationToken cancellationToken = default)
     {
         var totalTime = Stopwatch.StartNew();
         var traversalTreeTime = Stopwatch.StartNew();
         
-        var (text, settings) = tuple;
+        var ((text, settings), globalSettings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(settings, cancellationToken);
 
@@ -166,7 +166,7 @@ public static class Data
             .Distinct()
             .ToImmutableArray();
 
-        var operations = openApiDocument.GetOperations(settings, filteredSchemas);
+        var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas);
         ModelNameGenerator.ResolveCollisions(operations);
         
         var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
@@ -197,7 +197,7 @@ public static class Data
             .ToImmutableArray();
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
-            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings))
+            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .ToArray();
 
         var converters =
@@ -229,7 +229,7 @@ public static class Data
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
             // Unix Timestamp converter
             .Concat([
-                $"global::{settings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
+                $"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
             ])
             .ToImmutableArray();
         
@@ -241,7 +241,6 @@ public static class Data
             .ToArray();
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",
-                Namespace: settings.Namespace,
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
@@ -260,6 +259,7 @@ public static class Data
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
+                GlobalSettings: globalSettings,
                 Converters: converters)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
@@ -267,13 +267,13 @@ public static class Data
                 includedTags
                     .Select(tag => new Client(
                         Id: "Constructors",
-                        Namespace: settings.Namespace,
                         ClassName: ClientNameGenerator.Generate(settings, tag),
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Clients: [],
                         Summary: tag.Description?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
+                        GlobalSettings: globalSettings,
                         Converters: [])))
                 .ToArray();
         }
@@ -315,13 +315,13 @@ public static class Data
                 : [],
             Converters: new Client(
                 Id: "Converters",
-                Namespace: settings.Namespace,
                 ClassName: string.Empty,
                 BaseUrl: string.Empty,
                 Summary: string.Empty,
                 Clients: [],
                 BaseUrlSummary: string.Empty,
                 Settings: settings,
+                GlobalSettings: globalSettings,
                 Converters: converters),
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,

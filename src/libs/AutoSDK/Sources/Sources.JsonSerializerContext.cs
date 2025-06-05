@@ -24,7 +24,7 @@ public static partial class Sources
 #pragma warning disable CS0618 // Type or member is obsolete
 #pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
-namespace {client.Namespace}
+namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
@@ -36,7 +36,7 @@ namespace {client.Namespace}
 ").Inject()}
         }})]
 {(types.IsEmpty ? " " : $@"
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{client.Namespace}.JsonSerializerContextTypes))]")}
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{client.Settings.Namespace}.JsonSerializerContextTypes))]")}
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}

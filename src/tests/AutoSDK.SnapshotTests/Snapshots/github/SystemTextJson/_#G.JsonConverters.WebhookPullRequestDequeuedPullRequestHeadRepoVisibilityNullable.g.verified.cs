@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.WebhookPullRequestDequeuedPullRequestHeadRepoVisibilityNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebhookPullRequestDequeuedPullRequestHeadRepoVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibility?>
+    {
+        /// <inheritdoc />
+        public override global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibility? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibilityExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibility)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibility?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibility? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.WebhookPullRequestDequeuedPullRequestHeadRepoVisibilityExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

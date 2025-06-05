@@ -122,6 +122,7 @@ public static class TraversalTreeHelper
     public static IReadOnlyList<OperationContext> GetOperations(
         this OpenApiDocument openApiDocument,
         Settings settings,
+        Settings globalSettings,
         IReadOnlyCollection<SchemaContext> filteredSchemas)
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
@@ -130,6 +131,7 @@ public static class TraversalTreeHelper
             .SelectMany(x => x.Value.Operations
                 .Select(y => OperationContext.FromOperation(
                     settings: settings,
+                    globalSettings: globalSettings,
                     operation: y.Value,
                     operationPath: x.Key,
                     operationType: y.Key,

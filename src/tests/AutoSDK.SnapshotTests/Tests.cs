@@ -1,5 +1,6 @@
 ﻿using AutoSDK.Serialization.Json;
 using AutoSDK.SourceGenerators;
+using Microsoft.CodeAnalysis;
 
 namespace AutoSDK.SnapshotTests;
 
@@ -170,5 +171,33 @@ public partial class Tests
                 path: resource.FileName,
                 text: resource.AsString())
         ], Path.GetFileNameWithoutExtension(fileName), globalOptions);
+    }
+    
+    
+    [TestMethod]
+    public Task ParallelGeneration()
+    {
+        var resources = new[]
+        {
+            new H.Resource("petstore.yaml"),
+            new H.Resource("recraft.yaml"),
+        };
+        var texts = resources
+            .Select(AdditionalText (x) => new CustomAdditionalText(
+                path: x.FileName,
+                text: x.AsString()))
+            .ToList();
+
+        return CheckSourceAsync<SdkGenerator>(
+            jsonSerializerType: JsonSerializerType.SystemTextJson,
+            callerName: nameof(ParallelGeneration),
+            additionalTexts: texts,
+            additionalTextOptions: resources.ToDictionary(
+                x => x.FileName,
+                x => new Dictionary<string, string>
+                {
+                    ["build_metadata.AdditionalFiles.AutoSDK_Namespace"] = Path.GetFileNameWithoutExtension(x.FileName),
+                    ["build_metadata.AdditionalFiles.AutoSDK_ClassName"] = Path.GetFileNameWithoutExtension(x.FileName) + "Client",
+                }));
     }
 }

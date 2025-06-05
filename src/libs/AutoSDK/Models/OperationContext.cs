@@ -5,11 +5,13 @@ namespace AutoSDK.Models;
 
 public class OperationContext(
     Settings settings,
+    Settings globalSettings,
     OpenApiOperation operation,
     string operationPath,
     OperationType operationType)
 {
     public Settings Settings { get; set; } = settings;
+    public Settings GlobalSettings { get; set; } = globalSettings;
     public OpenApiOperation Operation { get; set; } = operation;
     public string OperationPath { get; set; } = operationPath;
     public OperationType OperationType { get; set; } = operationType;
@@ -23,6 +25,7 @@ public class OperationContext(
     
     public static OperationContext FromOperation(
         Settings settings,
+        Settings globalSettings,
         OpenApiOperation operation,
         string operationPath,
         OperationType operationType,
@@ -31,7 +34,7 @@ public class OperationContext(
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        var context = new OperationContext(settings, operation, operationPath, operationType)
+        var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
         {
             Schemas = filteredSchemas
                 .Where(schema => schema.Operation == operation)

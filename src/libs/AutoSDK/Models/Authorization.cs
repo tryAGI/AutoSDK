@@ -12,6 +12,7 @@ public record struct Authorization(
     string Name,
     string Scheme,
     Settings Settings,
+    Settings GlobalSettings,
     EquatableArray<OAuthFlow> Flows,
     string OpenIdConnectUrl
 )
@@ -20,7 +21,8 @@ public record struct Authorization(
     
     public static Authorization FromOpenApiSecurityScheme(
         OpenApiSecurityScheme scheme,
-        Settings settings)
+        Settings settings,
+        Settings globalSettings)
     {
         scheme = scheme ?? throw new ArgumentNullException(nameof(scheme));
 
@@ -55,6 +57,7 @@ public record struct Authorization(
             Name: scheme.Name ?? string.Empty,
             Scheme: scheme.Scheme ?? string.Empty,
             Settings: settings,
+            GlobalSettings: globalSettings,
             Flows: new []
                 {
                     scheme.Flows?.Implicit != null

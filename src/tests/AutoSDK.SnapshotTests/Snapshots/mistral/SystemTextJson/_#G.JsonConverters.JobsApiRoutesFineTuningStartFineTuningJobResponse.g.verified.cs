@@ -1,0 +1,72 @@
+﻿//HintName: G.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponse.g.cs
+#nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public class JobsApiRoutesFineTuningStartFineTuningJobResponseJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse>
+    {
+        /// <inheritdoc />
+        public override global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
+            global::G.CompletionDetailedJobOut? completion = default;
+            if (discriminator?.JobType == global::G.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType.Completion)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionDetailedJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CompletionDetailedJobOut)}");
+                completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.ClassifierDetailedJobOut? classifier = default;
+            if (discriminator?.JobType == global::G.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobType.Classifier)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierDetailedJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClassifierDetailedJobOut)}");
+                classifier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+
+            var result = new global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse(
+                discriminator?.JobType,
+                completion,
+                classifier
+                );
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.JobsApiRoutesFineTuningStartFineTuningJobResponse value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            if (value.IsCompletion)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionDetailedJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionDetailedJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
+            }
+            else if (value.IsClassifier)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierDetailedJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClassifierDetailedJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeInfo);
+            }
+        }
+    }
+}

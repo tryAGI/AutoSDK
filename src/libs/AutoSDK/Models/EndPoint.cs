@@ -8,7 +8,6 @@ namespace AutoSDK.Models;
 
 public record struct EndPoint(
     string Id,
-    string Namespace,
     string ClassName,
     string BaseUrl,
     bool Stream,
@@ -24,6 +23,7 @@ public record struct EndPoint(
     string Summary,
     string BaseUrlSummary,
     Settings Settings,
+    Settings GlobalSettings,
     bool IsDeprecated,
     string ExperimentalStage,
     TypeData RequestType
@@ -33,9 +33,9 @@ public record struct EndPoint(
     public string NotAsyncMethodName => Id.ToPropertyName();
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
     
-    public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
+    public string FileNameWithoutExtension => $"{Settings.Namespace}.{ClassName}.{Id.ToPropertyName()}";
     
-    public string InterfaceFileNameWithoutExtension => $"{Namespace}.I{ClassName}.{Id.ToPropertyName()}";
+    public string InterfaceFileNameWithoutExtension => $"{Settings.Namespace}.I{ClassName}.{Id.ToPropertyName()}";
     
     public static EndPoint FromSchema(OperationContext operation)
     {
@@ -43,13 +43,13 @@ public record struct EndPoint(
         
         var authorizations = operation.Operation.Security
             .SelectMany(x => x)
-            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings))
+            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings, operation.GlobalSettings))
             .ToImmutableArray();
         if (authorizations.Length == 0)
         {
             authorizations = operation.GlobalSecurityRequirements
                 .SelectMany(x => x)
-                .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings))
+                .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings, operation.GlobalSettings))
                 .ToImmutableArray();
         }
         
@@ -138,7 +138,6 @@ public record struct EndPoint(
         var firstTag = (operation.Operation.Tags ?? []).FirstOrDefault();
         var endPoint = new EndPoint(
             Id: operation.MethodName,
-            Namespace: operation.Settings.Namespace,
             ClassName: operation.Settings.GroupByTags && firstTag != null
                 ? ClientNameGenerator.Generate(operation.Settings, firstTag)
                 : operation.Settings.ClassName.Replace(".", string.Empty),
@@ -163,6 +162,7 @@ public record struct EndPoint(
             Summary: operation.Operation.GetXmlDocumentationSummary(),
             BaseUrlSummary: string.Empty,
             Settings: operation.Settings,
+            GlobalSettings: operation.GlobalSettings,
             IsDeprecated: operation.Operation.Deprecated,
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default);

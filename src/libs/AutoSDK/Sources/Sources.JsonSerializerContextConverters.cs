@@ -18,7 +18,7 @@ public static partial class Sources
         return $@"
 #nullable enable
 
-namespace {client.Namespace}
+namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     internal sealed partial class JsonSerializerContextConverters

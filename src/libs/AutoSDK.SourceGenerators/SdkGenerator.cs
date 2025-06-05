@@ -38,7 +38,9 @@ public class SdkGenerator : IIncrementalGenerator
             .Combine(context.AnalyzerConfigOptionsProvider)
             .Where(static pair =>
                 pair.Right.GetOption(pair.Left, "OpenApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE")
-            .Select(static (pair, cancellationToken) => GetContent(pair.Left, cancellationToken))
+            .Select((pair, cancellationToken) => (
+                GetContent(pair.Left, cancellationToken),
+                pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left)))
             .Combine(settings)
             .SelectAndReportExceptions(Data.Prepare, context, Id);
         

@@ -77,7 +77,7 @@ internal sealed class HttpCommand : Command
         };
         var openApiDocument = yaml.GetOpenApiDocument(settings);
         var schemas = openApiDocument.GetSchemas(settings);
-        var operations = openApiDocument.GetOperations(settings, schemas);
+        var operations = openApiDocument.GetOperations(settings, globalSettings: settings, schemas);
         
         var files = new List<FileWithName>
         {

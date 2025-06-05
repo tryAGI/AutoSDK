@@ -12,17 +12,20 @@ public static class OptionsExtensions
 {
     public static Settings GetSettings(
         this AnalyzerConfigOptionsProvider options,
-        string prefix)
+        string prefix,
+        AdditionalText? additionalText = null)
     {
         return new Settings(
             TargetFramework: options.GetGlobalOption("TargetFramework", prefix) ??
                              options.GetGlobalOption("TargetFramework") ??
                              "netstandard2.0",
-            Namespace: options.GetGlobalOption(nameof(Settings.Namespace), prefix) ??
+            Namespace: GetOptionFromAdditionalText(nameof(Settings.Namespace)) ??
+                       options.GetGlobalOption(nameof(Settings.Namespace), prefix) ??
                        options.GetGlobalOption("PackageId") ??
                        options.GetGlobalOption("AssemblyName") ??
                        prefix,
-            ClassName: options.GetGlobalOption(nameof(Settings.ClassName), prefix) ??
+            ClassName: GetOptionFromAdditionalText(nameof(Settings.ClassName)) ??
+                       options.GetGlobalOption(nameof(Settings.ClassName), prefix) ??
                        options.GetGlobalOption("PackageId")?.WithPostfix("Api") ??
                        options.GetGlobalOption("AssemblyName")?.WithPostfix("Api") ??
                        "Api",
@@ -72,6 +75,16 @@ public static class OptionsExtensions
             
             GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true),
             FromCli: false);
+        
+        string? GetOptionFromAdditionalText(string name)
+        {
+            if (additionalText == null)
+            {
+                return null;
+            }
+            
+            return options.GetOption(additionalText, name, prefix: prefix);
+        }
     }
     
     public static bool GetBoolGlobalOption(

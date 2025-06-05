@@ -39,29 +39,29 @@ public partial class DataTests
     [DataRow("deepinfra.json")]
     public Task PrepareData(string resourceName)
     {
-        return VerifyAsync(Data.Prepare((
-            new H.Resource(resourceName).AsString(),
-            DefaultSettings with
+        var settings = DefaultSettings with
+        {
+            GenerateJsonSerializerContextTypes = true,
+            MethodNamingConvention = resourceName switch
             {
-                GenerateJsonSerializerContextTypes = true,
-                MethodNamingConvention = resourceName switch
-                {
-                    "mystic.yaml" => MethodNamingConvention.Summary,
-                    "replicate.json" => MethodNamingConvention.OperationIdWithDots,
-                    _ => default,
-                },
-                IgnoreOpenApiErrors = resourceName switch
-                {
-                    "langsmith.json" => true,
-                    "elevenlabs.json" => true,
-                    "ai21.json" => true,
-                    "replicate.json" => true,
-                    "luma.yaml" => true,
-                    "openai.yaml" => true,
-                    "deepinfra.json" => true,
-                    _ => false,
-                },
-            })),
+                "mystic.yaml" => MethodNamingConvention.Summary,
+                "replicate.json" => MethodNamingConvention.OperationIdWithDots,
+                _ => default,
+            },
+            IgnoreOpenApiErrors = resourceName switch
+            {
+                "langsmith.json" => true,
+                "elevenlabs.json" => true,
+                "ai21.json" => true,
+                "replicate.json" => true,
+                "luma.yaml" => true,
+                "openai.yaml" => true,
+                "deepinfra.json" => true,
+                _ => false,
+            },
+        };
+        return VerifyAsync(
+            data: Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings)),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
 }

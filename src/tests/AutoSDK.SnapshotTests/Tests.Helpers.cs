@@ -15,6 +15,7 @@ public partial class Tests : VerifyBase
         IList<AdditionalText> additionalTexts,
         string callerName,
         Dictionary<string, string>? globalOptions = null,
+        Dictionary<string, Dictionary<string, string>>? additionalTextOptions = null,
         CancellationToken cancellationToken = default,
         params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()
@@ -55,43 +56,55 @@ public partial class Tests : VerifyBase
         {
             SyntaxFactory.ParseSyntaxTree("[assembly: System.CLSCompliantAttribute(true)]"),
         };
-        if (additionalTexts.Count != 0 &&
-            jsonSerializerType is JsonSerializerType.SystemTextJson)
+        if (jsonSerializerType is JsonSerializerType.SystemTextJson)
         {
-            trees.Add(SyntaxFactory.ParseSyntaxTree(@"#nullable enable
+            foreach (var additionalText in additionalTexts)
+            {
+                var options =
+                    additionalTextOptions != null &&
+                    additionalTextOptions.TryGetValue(additionalText.Path, out var existingOptions)
+                    ? existingOptions
+                    : new Dictionary<string, string>();
+                var @namespace = options.TryGetValue("build_metadata.AdditionalFiles.AutoSDK_Namespace", out var namespaceValue)
+                    ? namespaceValue
+                    : "G";
+                trees.Add(SyntaxFactory.ParseSyntaxTree($@"#nullable enable
 
-namespace G
-{
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.JsonSerializerContextTypes))]
+namespace {@namespace}
+{{
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{@namespace}.JsonSerializerContextTypes))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-        public static global::G.SourceGenerationContext Default { get; } = new global::G.SourceGenerationContext(new global::System.Text.Json.JsonSerializerOptions());
+    {{
+        public static global::{@namespace}.SourceGenerationContext Default {{ get; }} = new global::{@namespace}.SourceGenerationContext(new global::System.Text.Json.JsonSerializerOptions());
         
         /// <summary>
         /// The source-generated options associated with this context.
         /// </summary>
-        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions { get; }
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions {{ get; }}
         
         /// <inheritdoc/>
         public SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options) : base(options)
-        {
-        }
+        {{
+        }}
 
         public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
-        {
+        {{
             return null;
-        }
-    }
-}
+        }}
+    }}
+}}
 "));
+            }
         }
 
-        var additionalTextOptions = new Dictionary<string, Dictionary<string, string>>();
+        additionalTextOptions ??= new Dictionary<string, Dictionary<string, string>>();
         foreach (var additionalText in additionalTexts)
         {
-            var options = new Dictionary<string, string>();
+            var options = additionalTextOptions.TryGetValue(additionalText.Path, out var existingOptions)
+                ? existingOptions
+                : new Dictionary<string, string>();
             options.TryAdd("build_metadata.AdditionalFiles.AutoSDK_OpenApiSpecification", "true");
-            additionalTextOptions.Add(additionalText.Path, options);
+            additionalTextOptions[additionalText.Path] = options;
         }
         
         var compilation = (Compilation)CSharpCompilation.Create(
