@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 id: id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/videos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -52,7 +52,7 @@ namespace G
                 after: ref after,
                 order: ref order);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/certificates",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

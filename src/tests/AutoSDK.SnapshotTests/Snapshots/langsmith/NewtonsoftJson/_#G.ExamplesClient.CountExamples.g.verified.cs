@@ -72,7 +72,7 @@ namespace G
                 dataset: ref dataset,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples/count",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

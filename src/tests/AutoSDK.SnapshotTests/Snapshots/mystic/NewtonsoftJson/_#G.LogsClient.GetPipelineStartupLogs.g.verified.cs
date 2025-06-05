@@ -49,7 +49,7 @@ namespace G
                 pipelineId: ref pipelineId,
                 pointer: ref pointer);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/logs/pipeline-startup/{pipelineIdOrPointer}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

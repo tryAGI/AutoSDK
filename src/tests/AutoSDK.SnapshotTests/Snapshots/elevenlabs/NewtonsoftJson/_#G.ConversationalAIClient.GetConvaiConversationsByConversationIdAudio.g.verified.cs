@@ -44,7 +44,7 @@ namespace G
                 conversationId: ref conversationId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/conversations/{conversationId}/audio",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

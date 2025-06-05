@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 requestId: ref requestId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/lemur/v3/{requestId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 fileUid: ref fileUid);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/catalogs/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

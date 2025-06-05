@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 broadcasterId: broadcasterId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/channels",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -62,7 +62,7 @@ namespace G
                 limit: ref limit,
                 offset: ref offset);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -51,7 +51,7 @@ namespace G
                 viewId: ref viewId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/views/{viewId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

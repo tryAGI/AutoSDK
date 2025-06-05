@@ -59,7 +59,7 @@ namespace G
                 order: ref order,
                 orderBy: ref orderBy);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/evals",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

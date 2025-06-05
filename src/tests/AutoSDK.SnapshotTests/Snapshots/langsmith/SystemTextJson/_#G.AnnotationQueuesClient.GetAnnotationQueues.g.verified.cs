@@ -72,7 +72,7 @@ namespace G
                 tagValueId: tagValueId,
                 datasetId: ref datasetId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

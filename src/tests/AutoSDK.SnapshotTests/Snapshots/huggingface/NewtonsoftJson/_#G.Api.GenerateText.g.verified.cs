@@ -45,7 +45,7 @@ namespace G
                 modelId: ref modelId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

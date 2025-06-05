@@ -54,7 +54,7 @@ namespace G
                 page: ref page,
                 repositoryId: ref repositoryId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/user/codespaces",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

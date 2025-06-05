@@ -70,7 +70,7 @@ namespace G
                 global::G.ObjectsClassReferencesPutConsistencyLevel.ALL => "ALL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{className}/{id}/references/{propertyName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

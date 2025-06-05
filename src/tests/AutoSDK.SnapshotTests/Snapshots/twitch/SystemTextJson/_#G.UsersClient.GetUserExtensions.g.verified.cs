@@ -36,7 +36,7 @@ namespace G
             PrepareGetUserExtensionsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/users/extensions/list",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

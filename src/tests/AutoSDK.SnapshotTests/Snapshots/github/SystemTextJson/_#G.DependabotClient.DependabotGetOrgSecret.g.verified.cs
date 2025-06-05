@@ -45,7 +45,7 @@ namespace G
                 org: ref org,
                 secretName: ref secretName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/dependabot/secrets/{secretName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

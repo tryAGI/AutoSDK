@@ -49,7 +49,7 @@ namespace G
                 requestTimeoutMillis: ref requestTimeoutMillis,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/llms",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -45,7 +45,7 @@ namespace G
                 session: ref session,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/deepstart/application",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

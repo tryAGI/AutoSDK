@@ -53,7 +53,7 @@ namespace G
                 version: ref version,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelName}/schema/{variantKey}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

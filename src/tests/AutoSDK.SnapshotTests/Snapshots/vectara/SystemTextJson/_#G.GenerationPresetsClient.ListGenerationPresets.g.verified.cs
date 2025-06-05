@@ -64,7 +64,7 @@ namespace G
                 limit: ref limit,
                 pageKey: ref pageKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/generation_presets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -45,7 +45,7 @@ namespace G
                 organizationId: ref organizationId,
                 requestStartTime: ref requestStartTime);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/studio/v1/connectors/connected-users/{organizationId}/data-sources",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

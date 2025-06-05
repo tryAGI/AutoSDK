@@ -59,7 +59,7 @@ namespace G
                 releaseId: ref releaseId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines/{pipelineId}/releases/{releaseId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

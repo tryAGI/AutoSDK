@@ -43,7 +43,7 @@ namespace G
                 repo: ref repo,
                 invitationId: ref invitationId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/invitations/{invitationId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

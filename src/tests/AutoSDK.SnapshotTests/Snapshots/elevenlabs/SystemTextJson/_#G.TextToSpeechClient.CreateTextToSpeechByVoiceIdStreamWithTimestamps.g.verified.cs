@@ -87,7 +87,7 @@ namespace G
                 xiApiKey: ref xiApiKey,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/text-to-speech/{voiceId}/stream/with-timestamps",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

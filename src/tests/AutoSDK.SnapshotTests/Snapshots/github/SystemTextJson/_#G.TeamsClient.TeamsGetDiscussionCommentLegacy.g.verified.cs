@@ -53,7 +53,7 @@ namespace G
                 discussionNumber: ref discussionNumber,
                 commentNumber: ref commentNumber);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

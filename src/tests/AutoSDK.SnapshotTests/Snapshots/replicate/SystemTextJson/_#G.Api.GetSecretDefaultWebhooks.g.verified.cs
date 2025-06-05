@@ -46,7 +46,7 @@ namespace G
             PrepareGetSecretDefaultWebhooksArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/webhooks/default/secret",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

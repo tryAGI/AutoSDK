@@ -60,7 +60,7 @@ namespace G
                 modelId: ref modelId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/generations-texture/model/{modelId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

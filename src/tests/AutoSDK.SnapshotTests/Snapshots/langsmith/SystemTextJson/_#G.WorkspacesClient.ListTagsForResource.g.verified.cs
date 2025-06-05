@@ -43,7 +43,7 @@ namespace G
                 resourceType: ref resourceType,
                 resourceId: ref resourceId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/tags/resource",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

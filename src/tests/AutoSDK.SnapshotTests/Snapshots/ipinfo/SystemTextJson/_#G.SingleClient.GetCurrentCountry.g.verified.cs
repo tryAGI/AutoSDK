@@ -34,7 +34,7 @@ namespace G
             PrepareGetCurrentCountryArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/country",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

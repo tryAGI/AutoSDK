@@ -45,7 +45,7 @@ namespace G
                 key: key,
                 readAfterWrite: ref readAfterWrite);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

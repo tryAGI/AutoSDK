@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 shareTokens: shareTokens);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/public/datasets/sessions-bulk",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

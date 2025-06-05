@@ -40,7 +40,7 @@ namespace G
                 installationId: ref installationId,
                 repositoryId: ref repositoryId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/installations/{installationId}/repositories/{repositoryId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

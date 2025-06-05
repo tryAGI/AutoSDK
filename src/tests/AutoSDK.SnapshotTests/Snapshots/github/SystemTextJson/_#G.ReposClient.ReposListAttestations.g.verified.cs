@@ -68,7 +68,7 @@ namespace G
                 after: ref after,
                 subjectDigest: ref subjectDigest);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/attestations/{subjectDigest}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

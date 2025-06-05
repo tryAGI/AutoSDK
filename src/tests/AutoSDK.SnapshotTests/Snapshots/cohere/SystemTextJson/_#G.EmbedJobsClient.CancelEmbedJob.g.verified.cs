@@ -39,7 +39,7 @@ namespace G
                 id: ref id,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/embed-jobs/{id}/cancel",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

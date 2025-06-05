@@ -49,7 +49,7 @@ namespace G
                 catalogId: ref catalogId,
                 fileUid: ref fileUid);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/files/{fileUid}/source",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

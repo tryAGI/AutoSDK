@@ -54,7 +54,7 @@ namespace G
                 repo: ref repo,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/collaborators/{username}/permission",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

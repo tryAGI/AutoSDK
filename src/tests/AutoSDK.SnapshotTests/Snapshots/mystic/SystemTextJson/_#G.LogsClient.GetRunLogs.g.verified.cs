@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 runId: ref runId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/logs/run/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

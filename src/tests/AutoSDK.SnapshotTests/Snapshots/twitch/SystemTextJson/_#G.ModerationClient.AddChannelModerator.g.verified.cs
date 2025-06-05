@@ -42,7 +42,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/moderators",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

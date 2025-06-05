@@ -58,7 +58,7 @@ namespace G
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/models/{modelId}?beta=true",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

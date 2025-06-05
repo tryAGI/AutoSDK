@@ -33,7 +33,7 @@ namespace G
             PrepareModelsListModelsListGetArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/models/list",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

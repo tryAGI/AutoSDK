@@ -56,7 +56,7 @@ namespace G
                 global::G.PackagesDeletePackageForUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/packages/{packageTypeValue}/{packageName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -34,7 +34,7 @@ namespace G
             PrepareListCredentialsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/cloud/credentials",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

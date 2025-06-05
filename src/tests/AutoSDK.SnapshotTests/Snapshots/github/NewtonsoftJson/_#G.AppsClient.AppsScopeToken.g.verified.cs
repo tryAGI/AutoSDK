@@ -49,7 +49,7 @@ namespace G
                 clientId: ref clientId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/applications/{clientId}/token/scoped",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

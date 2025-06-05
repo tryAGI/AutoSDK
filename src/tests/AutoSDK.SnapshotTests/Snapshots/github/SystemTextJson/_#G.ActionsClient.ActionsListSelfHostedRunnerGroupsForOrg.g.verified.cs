@@ -59,7 +59,7 @@ namespace G
                 page: ref page,
                 visibleToRepository: ref visibleToRepository);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/actions/runner-groups",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 apiKeyId: ref apiKeyId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/api-key/{apiKeyId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

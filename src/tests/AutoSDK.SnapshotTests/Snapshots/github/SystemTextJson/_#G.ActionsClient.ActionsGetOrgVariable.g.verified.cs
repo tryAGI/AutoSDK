@@ -46,7 +46,7 @@ namespace G
                 org: ref org,
                 name: ref name);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/actions/variables/{name}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

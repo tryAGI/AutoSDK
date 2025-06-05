@@ -44,7 +44,7 @@ namespace G
                 transcriptId: ref transcriptId,
                 words: words);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/transcript/{transcriptId}/word-search",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

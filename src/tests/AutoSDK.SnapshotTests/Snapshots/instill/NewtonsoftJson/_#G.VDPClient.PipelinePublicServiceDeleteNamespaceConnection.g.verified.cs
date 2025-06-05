@@ -44,7 +44,7 @@ namespace G
                 namespaceId: ref namespaceId,
                 connectionId: ref connectionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/connections/{connectionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

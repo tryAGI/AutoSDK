@@ -33,7 +33,7 @@ namespace G
                 httpClient: HttpClient,
                 pointer: ref pointer);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pointers/{pointer}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -56,7 +56,7 @@ namespace G
                 instillRequesterUid: ref instillRequesterUid,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/chunks/retrieve",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

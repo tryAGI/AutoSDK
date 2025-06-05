@@ -57,7 +57,7 @@ namespace G
                 order: ref order,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

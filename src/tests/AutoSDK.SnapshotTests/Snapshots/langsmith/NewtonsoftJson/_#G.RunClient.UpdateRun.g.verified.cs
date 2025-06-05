@@ -46,7 +46,7 @@ namespace G
                 runId: ref runId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

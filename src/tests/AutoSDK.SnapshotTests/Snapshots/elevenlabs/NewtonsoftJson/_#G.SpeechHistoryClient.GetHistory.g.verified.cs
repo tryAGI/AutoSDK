@@ -85,7 +85,7 @@ namespace G
                 global::G.ListGeneratedItemsV1HistoryGetSource.STS => "STS",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/history",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

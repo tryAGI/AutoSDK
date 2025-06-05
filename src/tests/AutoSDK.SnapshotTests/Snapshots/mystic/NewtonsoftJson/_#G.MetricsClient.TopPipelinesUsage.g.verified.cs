@@ -78,7 +78,7 @@ namespace G
                 global::G.DurationUnit.Weeks => "weeks",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/top-pipelines-usage",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

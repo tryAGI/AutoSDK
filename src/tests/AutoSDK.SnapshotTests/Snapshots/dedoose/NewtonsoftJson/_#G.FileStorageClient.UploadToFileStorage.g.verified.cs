@@ -56,7 +56,7 @@ namespace G
                 uploadType: ref uploadType,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/api/v1/filestorage/upload",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

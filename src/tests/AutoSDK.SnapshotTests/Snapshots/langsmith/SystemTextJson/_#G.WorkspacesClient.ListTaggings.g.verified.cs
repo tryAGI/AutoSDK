@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 tagValueId: ref tagValueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/taggings",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

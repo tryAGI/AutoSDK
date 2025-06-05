@@ -40,7 +40,7 @@ namespace G
                 httpClient: HttpClient,
                 deliveryId: ref deliveryId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/app/hook/deliveries/{deliveryId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

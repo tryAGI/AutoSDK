@@ -47,7 +47,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 moderatorId: ref moderatorId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/session",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

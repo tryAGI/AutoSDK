@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 session: ref session);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/checklist",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

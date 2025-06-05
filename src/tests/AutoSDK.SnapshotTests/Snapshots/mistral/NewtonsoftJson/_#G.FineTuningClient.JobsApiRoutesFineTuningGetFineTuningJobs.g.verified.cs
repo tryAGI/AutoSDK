@@ -104,7 +104,7 @@ namespace G
                 global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

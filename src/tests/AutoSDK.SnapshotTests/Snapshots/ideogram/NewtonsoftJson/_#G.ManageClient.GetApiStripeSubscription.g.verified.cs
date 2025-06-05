@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 isBusiness: ref isBusiness);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/manage/api/stripe_subscription",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

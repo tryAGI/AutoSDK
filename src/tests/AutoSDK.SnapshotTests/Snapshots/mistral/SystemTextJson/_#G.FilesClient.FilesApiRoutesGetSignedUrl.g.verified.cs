@@ -46,7 +46,7 @@ namespace G
                 fileId: ref fileId,
                 expiry: ref expiry);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/files/{fileId}/url",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

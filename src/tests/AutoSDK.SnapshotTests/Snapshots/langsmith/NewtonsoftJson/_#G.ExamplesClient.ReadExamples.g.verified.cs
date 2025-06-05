@@ -110,7 +110,7 @@ namespace G
                 global::G.ExampleListOrder.RecentlyCreated => "recently_created",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 fileId: ref fileId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/files/{fileId}/content",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -63,7 +63,7 @@ namespace G
                 limit: ref limit,
                 pageKey: ref pageKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/encoders",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

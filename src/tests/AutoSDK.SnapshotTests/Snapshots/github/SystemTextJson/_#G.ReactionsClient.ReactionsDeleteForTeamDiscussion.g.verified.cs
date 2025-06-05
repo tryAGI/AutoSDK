@@ -52,7 +52,7 @@ namespace G
                 discussionNumber: ref discussionNumber,
                 reactionId: ref reactionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/reactions/{reactionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

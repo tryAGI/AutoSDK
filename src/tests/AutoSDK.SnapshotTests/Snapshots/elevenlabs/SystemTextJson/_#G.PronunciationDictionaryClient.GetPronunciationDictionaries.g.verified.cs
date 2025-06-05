@@ -74,7 +74,7 @@ namespace G
                 sortDirection: ref sortDirection,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/pronunciation-dictionaries/",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

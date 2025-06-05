@@ -98,7 +98,7 @@ namespace G
                 perPage: ref perPage,
                 basehead: ref basehead);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/compare/{basehead}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -58,7 +58,7 @@ namespace G
                 runId: ref runId,
                 excludePullRequests: ref excludePullRequests);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

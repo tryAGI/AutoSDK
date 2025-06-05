@@ -110,7 +110,7 @@ namespace G
                 global::G.GetVideosType.Upload => "upload",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/videos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

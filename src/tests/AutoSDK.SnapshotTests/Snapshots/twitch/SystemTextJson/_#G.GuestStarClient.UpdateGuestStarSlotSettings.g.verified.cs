@@ -72,7 +72,7 @@ namespace G
                 isLive: ref isLive,
                 volume: ref volume);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/slot_settings",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

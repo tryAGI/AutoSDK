@@ -39,7 +39,7 @@ namespace G
                 org: ref org,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/outside_collaborators/{username}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

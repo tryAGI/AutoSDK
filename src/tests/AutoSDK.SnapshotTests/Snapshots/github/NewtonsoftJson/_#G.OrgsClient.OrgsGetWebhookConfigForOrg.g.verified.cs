@@ -47,7 +47,7 @@ namespace G
                 org: ref org,
                 hookId: ref hookId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/hooks/{hookId}/config",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

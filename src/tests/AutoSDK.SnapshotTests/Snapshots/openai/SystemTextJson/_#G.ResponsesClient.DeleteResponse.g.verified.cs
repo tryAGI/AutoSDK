@@ -35,7 +35,7 @@ namespace G
                 httpClient: HttpClient,
                 responseId: ref responseId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/responses/{responseId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

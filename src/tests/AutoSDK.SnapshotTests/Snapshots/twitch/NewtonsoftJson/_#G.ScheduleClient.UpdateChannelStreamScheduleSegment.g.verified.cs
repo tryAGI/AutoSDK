@@ -54,7 +54,7 @@ namespace G
                 id: ref id,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/schedule/segment",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

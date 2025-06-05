@@ -65,7 +65,7 @@ namespace G
                 before: ref before,
                 include: include);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/responses/{responseId}/input_items",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -67,7 +67,7 @@ namespace G
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

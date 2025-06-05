@@ -38,7 +38,7 @@ namespace G
             PrepareGetGlobalChatBadgesArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/badges/global",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

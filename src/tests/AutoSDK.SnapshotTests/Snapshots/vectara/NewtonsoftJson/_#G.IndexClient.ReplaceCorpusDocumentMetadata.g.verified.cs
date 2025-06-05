@@ -65,7 +65,7 @@ namespace G
                 documentId: ref documentId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/documents/{documentId}/metadata",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

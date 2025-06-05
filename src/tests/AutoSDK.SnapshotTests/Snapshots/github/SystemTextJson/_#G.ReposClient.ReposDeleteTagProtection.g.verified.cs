@@ -48,7 +48,7 @@ namespace G
                 repo: ref repo,
                 tagProtectionId: ref tagProtectionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/tags/protection/{tagProtectionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

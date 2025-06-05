@@ -36,7 +36,7 @@ namespace G
                 httpClient: HttpClient,
                 targetUserId: ref targetUserId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/users/blocks",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

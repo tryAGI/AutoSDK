@@ -57,7 +57,7 @@ namespace G
                 chunkId: ref chunkId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/knowledge-base/{documentationId}/chunk/{chunkId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

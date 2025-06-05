@@ -74,7 +74,7 @@ namespace G
                 visibility: ref visibility,
                 orderBy: ref orderBy);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

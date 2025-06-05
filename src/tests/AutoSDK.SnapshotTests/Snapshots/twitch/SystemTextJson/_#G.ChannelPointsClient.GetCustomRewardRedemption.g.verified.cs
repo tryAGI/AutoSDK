@@ -71,7 +71,7 @@ namespace G
                 after: ref after,
                 first: ref first);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/channel_points/custom_rewards/redemptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

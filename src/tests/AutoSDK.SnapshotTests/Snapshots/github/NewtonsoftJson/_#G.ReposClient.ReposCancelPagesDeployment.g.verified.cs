@@ -45,7 +45,7 @@ namespace G
                 repo: ref repo,
                 pagesDeploymentId: ref pagesDeploymentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/pages/deployments/{pagesDeploymentId}/cancel",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

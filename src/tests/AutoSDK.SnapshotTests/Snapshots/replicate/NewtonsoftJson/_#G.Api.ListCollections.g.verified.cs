@@ -48,7 +48,7 @@ namespace G
             PrepareListCollectionsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/collections",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

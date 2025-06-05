@@ -51,7 +51,7 @@ namespace G
                 page: ref page,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/domains/{ip}",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

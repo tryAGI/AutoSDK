@@ -57,7 +57,7 @@ namespace G
                 dir: ref dir,
                 @ref: ref @ref);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/readme/{dir}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

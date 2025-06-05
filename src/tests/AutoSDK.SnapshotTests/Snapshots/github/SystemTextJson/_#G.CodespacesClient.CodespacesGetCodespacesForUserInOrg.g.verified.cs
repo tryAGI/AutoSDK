@@ -59,7 +59,7 @@ namespace G
                 org: ref org,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/members/{username}/codespaces",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

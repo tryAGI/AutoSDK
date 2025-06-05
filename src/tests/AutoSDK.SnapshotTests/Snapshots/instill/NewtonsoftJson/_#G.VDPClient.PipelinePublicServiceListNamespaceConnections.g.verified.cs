@@ -54,7 +54,7 @@ namespace G
                 pageToken: ref pageToken,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/connections",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

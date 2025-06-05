@@ -47,7 +47,7 @@ namespace G
                 type: ref type,
                 colorScheme: ref colorScheme);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/dashboard",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

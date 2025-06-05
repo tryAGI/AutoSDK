@@ -48,7 +48,7 @@ namespace G
                 fileId: ref fileId,
                 requestStartTime: ref requestStartTime);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/studio/v1/library/files/{fileId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -51,7 +51,7 @@ namespace G
                 teamId: ref teamId,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/teams/{teamId}/memberships/{username}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -61,7 +61,7 @@ namespace G
                 after: ref after,
                 before: ref before);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/banned",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

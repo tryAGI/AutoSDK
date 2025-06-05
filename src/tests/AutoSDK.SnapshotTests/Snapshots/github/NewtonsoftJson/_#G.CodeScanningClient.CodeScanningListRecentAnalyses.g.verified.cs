@@ -129,7 +129,7 @@ namespace G
                 global::G.CodeScanningListRecentAnalysesSort.Created => "created",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/analyses",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

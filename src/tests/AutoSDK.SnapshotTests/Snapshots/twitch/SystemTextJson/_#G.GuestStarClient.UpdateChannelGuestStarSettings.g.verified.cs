@@ -44,7 +44,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/channel_settings",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

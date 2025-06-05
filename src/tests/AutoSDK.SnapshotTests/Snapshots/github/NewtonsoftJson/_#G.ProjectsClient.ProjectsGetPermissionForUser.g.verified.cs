@@ -44,7 +44,7 @@ namespace G
                 projectId: ref projectId,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/projects/{projectId}/collaborators/{username}/permission",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -46,7 +46,7 @@ namespace G
                 aggregationWindow: ref aggregationWindow,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/metrics/vdp/pipeline/charts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

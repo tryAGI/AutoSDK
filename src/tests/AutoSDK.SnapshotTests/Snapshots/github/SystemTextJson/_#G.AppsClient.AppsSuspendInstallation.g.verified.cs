@@ -35,7 +35,7 @@ namespace G
                 httpClient: HttpClient,
                 installationId: ref installationId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/app/installations/{installationId}/suspended",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -44,7 +44,7 @@ namespace G
                 className: ref className,
                 tenant: ref tenant);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/schema/{className}/shards",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

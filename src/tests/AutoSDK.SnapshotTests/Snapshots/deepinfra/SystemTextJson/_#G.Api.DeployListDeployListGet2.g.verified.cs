@@ -45,7 +45,7 @@ namespace G
                 status: ref status,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/deploy/list",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

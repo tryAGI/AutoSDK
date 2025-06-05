@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 feedbackId: ref feedbackId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/feedback/{feedbackId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

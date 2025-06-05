@@ -37,13 +37,13 @@ public static class OptionsExtensions
             UseExperimentalAttributes: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseExperimentalAttributes), prefix),
             UseSetsRequiredMembersAttributes: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseSetsRequiredMembersAttributes), prefix),
             
-            GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
-            GroupByTags: options.GetBoolGlobalOption(nameof(Settings.GroupByTags), prefix, defaultValue: true),
-            GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix),
+            GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix, defaultValue: Settings.Default.GenerateConstructors),
+            GroupByTags: options.GetBoolGlobalOption(nameof(Settings.GroupByTags), prefix, defaultValue: Settings.Default.GroupByTags),
+            GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix, defaultValue: Settings.Default.GenerateMethods),
             MethodNamingConvention: options.GetEnumGlobalOption<MethodNamingConvention>(nameof(Settings.MethodNamingConvention), prefix),
             MethodNamingConventionFallback: options.GetEnumGlobalOption(nameof(Settings.MethodNamingConventionFallback), prefix, defaultValue: MethodNamingConvention.MethodAndPath),
-            GenerateMethodsAsHttpClientExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsAsHttpClientExtensions), prefix),
-            GenerateMethodsUsingSystemNetHttpJson: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsUsingSystemNetHttpJson), prefix),
+            GenerateMethodsAsHttpClientExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsAsHttpClientExtensions), prefix, defaultValue: Settings.Default.GenerateMethodsAsHttpClientExtensions),
+            GenerateMethodsUsingSystemNetHttpJson: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsUsingSystemNetHttpJson), prefix, defaultValue: Settings.Default.GenerateMethodsUsingSystemNetHttpJson),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
@@ -52,28 +52,28 @@ public static class OptionsExtensions
                                   []).ToImmutableArray(),
             ExcludeTags: (options.GetGlobalOption(nameof(Settings.ExcludeTags), prefix)?.Split(';') ??
                                   []).ToImmutableArray(),
-            ExcludeDeprecatedOperations: options.GetBoolGlobalOption(nameof(Settings.ExcludeDeprecatedOperations), prefix),
+            ExcludeDeprecatedOperations: options.GetBoolGlobalOption(nameof(Settings.ExcludeDeprecatedOperations), prefix, defaultValue: Settings.Default.ExcludeDeprecatedOperations),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
-            GenerateJsonSerializerContextTypes: options.GetBoolGlobalOption(nameof(Settings.GenerateJsonSerializerContextTypes), prefix),
+            GenerateJsonSerializerContextTypes: options.GetBoolGlobalOption(nameof(Settings.GenerateJsonSerializerContextTypes), prefix, defaultValue: Settings.Default.GenerateJsonSerializerContextTypes),
             ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix, defaultValue: Settings.Default.ComputeDiscriminators),
             AddMissingPathParameters: options.GetBoolGlobalOption(nameof(Settings.AddMissingPathParameters), prefix, defaultValue: Settings.Default.AddMissingPathParameters),
             
-            GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix),
-            GenerateModelValidationMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateModelValidationMethods), prefix),
-            ValidateAnyOfs: options.GetBoolGlobalOption(nameof(Settings.ValidateAnyOfs), prefix),
+            GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix, defaultValue: Settings.Default.GenerateModels),
+            GenerateModelValidationMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateModelValidationMethods), prefix, defaultValue: Settings.Default.GenerateModelValidationMethods),
+            ValidateAnyOfs: options.GetBoolGlobalOption(nameof(Settings.ValidateAnyOfs), prefix, defaultValue: Settings.Default.ValidateAnyOfs),
             ModelStyle: options.GetEnumGlobalOption<ModelStyle>(nameof(Settings.ModelStyle), prefix),
             IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray(),
             ExcludeModels: (options.GetGlobalOption(nameof(Settings.ExcludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray(),
             
-            GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: true),
-            GenerateExceptions: options.GetBoolGlobalOption(nameof(Settings.GenerateExceptions), prefix, defaultValue: true),
+            GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: Settings.Default.GeneratePolyfills),
+            GenerateExceptions: options.GetBoolGlobalOption(nameof(Settings.GenerateExceptions), prefix, defaultValue: Settings.Default.GenerateExceptions),
             
-            IgnoreOpenApiErrors: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiErrors), prefix),
-            IgnoreOpenApiWarnings: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiWarnings), prefix, defaultValue: true),
+            IgnoreOpenApiErrors: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiErrors), prefix, defaultValue: Settings.Default.IgnoreOpenApiErrors),
+            IgnoreOpenApiWarnings: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiWarnings), prefix, defaultValue: Settings.Default.IgnoreOpenApiWarnings),
             
-            GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true),
+            GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: Settings.Default.GenerateSdk),
             FromCli: false);
         
         string? GetOptionFromAdditionalText(string name)

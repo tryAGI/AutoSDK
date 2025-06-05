@@ -62,7 +62,7 @@ namespace G
                 xiApiKey: ref xiApiKey,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/dubbing/resource/{dubbingId}/speaker/{speakerId}/segment",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -48,7 +48,7 @@ namespace G
                 consistencyLevel: ref consistencyLevel,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/batch/references",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

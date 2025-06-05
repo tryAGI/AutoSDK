@@ -49,7 +49,7 @@ namespace G
                 migrationId: ref migrationId,
                 exclude: exclude);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/migrations/{migrationId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

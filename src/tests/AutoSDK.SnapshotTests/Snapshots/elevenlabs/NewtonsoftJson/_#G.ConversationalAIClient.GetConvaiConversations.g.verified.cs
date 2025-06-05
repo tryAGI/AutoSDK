@@ -76,7 +76,7 @@ namespace G
                 global::G.EvaluationSuccessResult.Unknown => "unknown",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/conversations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 exampleIds: exampleIds);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

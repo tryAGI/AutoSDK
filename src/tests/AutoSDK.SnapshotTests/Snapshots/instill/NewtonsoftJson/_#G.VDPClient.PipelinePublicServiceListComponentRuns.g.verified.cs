@@ -76,7 +76,7 @@ namespace G
                 global::G.PipelinePublicServiceListComponentRunsView.VIEWRECIPE => "VIEW_RECIPE",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/pipeline-runs/{pipelineRunId}/component-runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

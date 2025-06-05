@@ -71,7 +71,7 @@ namespace G
                 global::G.ListInputItemsOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/responses/{responseId}/input_items",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

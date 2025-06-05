@@ -77,7 +77,7 @@
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeModels"/>
 
-    <!-- true/false. Default: false -->
+    <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_IgnoreOpenApiErrors"/>
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_IgnoreOpenApiWarnings"/>

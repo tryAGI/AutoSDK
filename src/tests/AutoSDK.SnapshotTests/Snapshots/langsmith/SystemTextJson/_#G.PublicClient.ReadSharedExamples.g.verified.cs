@@ -83,7 +83,7 @@ namespace G
                 select: select,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/examples",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

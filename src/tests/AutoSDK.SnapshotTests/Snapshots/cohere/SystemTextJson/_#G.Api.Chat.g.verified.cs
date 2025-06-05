@@ -52,7 +52,7 @@ namespace G
                 accepts: ref accepts,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chat",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

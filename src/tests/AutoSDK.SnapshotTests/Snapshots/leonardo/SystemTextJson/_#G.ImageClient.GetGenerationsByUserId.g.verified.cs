@@ -53,7 +53,7 @@ namespace G
                 limit: ref limit,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/generations/user/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

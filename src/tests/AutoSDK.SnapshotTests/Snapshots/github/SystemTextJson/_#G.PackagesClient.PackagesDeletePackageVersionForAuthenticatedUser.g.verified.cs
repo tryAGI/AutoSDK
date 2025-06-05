@@ -46,7 +46,7 @@ namespace G
                 packageName: ref packageName,
                 packageVersionId: ref packageVersionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -99,7 +99,7 @@ namespace G
                 global::G.ReposGetOrgRuleSuitesRuleSuiteResult.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/rulesets/rule-suites",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

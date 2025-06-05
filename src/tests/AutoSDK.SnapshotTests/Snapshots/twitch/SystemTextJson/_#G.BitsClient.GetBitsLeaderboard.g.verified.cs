@@ -56,7 +56,7 @@ namespace G
                 startedAt: ref startedAt,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/bits/leaderboard",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

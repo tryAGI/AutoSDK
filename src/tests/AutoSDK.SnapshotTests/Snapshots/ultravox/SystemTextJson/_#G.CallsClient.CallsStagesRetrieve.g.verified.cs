@@ -43,7 +43,7 @@ namespace G
                 callId: ref callId,
                 callStageId: ref callStageId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/calls/{callId}/stages/{callStageId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

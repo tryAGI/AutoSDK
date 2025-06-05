@@ -55,7 +55,7 @@ namespace G
                 languageCode: ref languageCode,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/dubbing/{dubbingId}/audio/{languageCode}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

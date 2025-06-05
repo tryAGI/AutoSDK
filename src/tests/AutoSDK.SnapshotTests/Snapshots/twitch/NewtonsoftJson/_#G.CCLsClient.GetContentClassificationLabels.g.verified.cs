@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 locale: ref locale);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/content_classification_labels",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

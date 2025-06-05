@@ -87,7 +87,7 @@ namespace G
                 xiApiKey: ref xiApiKey,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/speech-to-speech/{voiceId}/stream",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

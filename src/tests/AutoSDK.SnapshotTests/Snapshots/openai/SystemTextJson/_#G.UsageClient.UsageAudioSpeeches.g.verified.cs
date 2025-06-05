@@ -85,7 +85,7 @@ namespace G
                 limit: ref limit,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/usage/audio_speeches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

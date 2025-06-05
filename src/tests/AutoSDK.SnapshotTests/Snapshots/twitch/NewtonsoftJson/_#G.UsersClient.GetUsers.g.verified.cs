@@ -52,7 +52,7 @@ namespace G
                 id: id,
                 login: login);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/users",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

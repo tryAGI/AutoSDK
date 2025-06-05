@@ -77,7 +77,7 @@ namespace G
                 global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/text-to-voice/create-previews",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

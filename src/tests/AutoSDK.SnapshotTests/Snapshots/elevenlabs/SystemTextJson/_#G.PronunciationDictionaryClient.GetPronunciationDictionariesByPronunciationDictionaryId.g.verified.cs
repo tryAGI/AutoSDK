@@ -49,7 +49,7 @@ namespace G
                 pronunciationDictionaryId: ref pronunciationDictionaryId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

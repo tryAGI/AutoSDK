@@ -49,7 +49,7 @@ namespace G
                 historyItemId: ref historyItemId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/history/{historyItemId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

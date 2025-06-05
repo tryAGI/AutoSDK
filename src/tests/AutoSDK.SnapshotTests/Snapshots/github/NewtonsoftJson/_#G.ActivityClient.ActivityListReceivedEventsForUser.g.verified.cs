@@ -56,7 +56,7 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/received_events",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

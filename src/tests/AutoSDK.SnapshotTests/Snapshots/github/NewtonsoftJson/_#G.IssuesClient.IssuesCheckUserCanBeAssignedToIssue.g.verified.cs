@@ -51,7 +51,7 @@ namespace G
                 issueNumber: ref issueNumber,
                 assignee: ref assignee);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/issues/{issueNumber}/assignees/{assignee}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

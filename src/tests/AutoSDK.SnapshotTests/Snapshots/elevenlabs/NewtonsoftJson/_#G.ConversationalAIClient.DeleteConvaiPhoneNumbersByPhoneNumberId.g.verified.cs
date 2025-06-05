@@ -49,7 +49,7 @@ namespace G
                 phoneNumberId: ref phoneNumberId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/phone-numbers/{phoneNumberId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

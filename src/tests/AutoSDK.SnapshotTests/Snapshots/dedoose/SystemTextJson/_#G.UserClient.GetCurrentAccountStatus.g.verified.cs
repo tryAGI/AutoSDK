@@ -34,7 +34,7 @@ namespace G
             PrepareGetCurrentAccountStatusArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/user/getcurrentaccountstatus",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

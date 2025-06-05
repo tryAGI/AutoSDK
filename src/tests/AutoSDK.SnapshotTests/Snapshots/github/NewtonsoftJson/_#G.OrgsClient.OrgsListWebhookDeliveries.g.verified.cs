@@ -64,7 +64,7 @@ namespace G
                 cursor: ref cursor,
                 redelivery: ref redelivery);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/hooks/{hookId}/deliveries",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

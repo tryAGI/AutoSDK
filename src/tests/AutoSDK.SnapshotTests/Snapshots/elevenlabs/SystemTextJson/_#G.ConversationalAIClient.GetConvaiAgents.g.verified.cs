@@ -63,7 +63,7 @@ namespace G
                 search: ref search,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/agents",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

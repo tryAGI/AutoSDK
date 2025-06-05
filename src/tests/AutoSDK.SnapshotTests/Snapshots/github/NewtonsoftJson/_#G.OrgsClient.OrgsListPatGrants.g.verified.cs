@@ -110,7 +110,7 @@ namespace G
                 global::G.OrgsListPatGrantsDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/personal-access-tokens",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -51,7 +51,7 @@ namespace G
                 global::G.CreateVideoFromImageXRunwayVersion.x20240913 => "2024-09-13",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/image_to_video",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

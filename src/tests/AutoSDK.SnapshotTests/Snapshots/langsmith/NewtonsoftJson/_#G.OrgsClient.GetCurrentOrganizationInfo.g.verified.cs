@@ -33,7 +33,7 @@ namespace G
             PrepareGetCurrentOrganizationInfoArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/info",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

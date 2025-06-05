@@ -50,7 +50,7 @@ namespace G
                 installationId: ref installationId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/app/installations/{installationId}/access_tokens",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -55,7 +55,7 @@ namespace G
                 owner: ref owner,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/repos/{owner}/{repo}/tags/{tagName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

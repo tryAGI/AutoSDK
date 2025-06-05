@@ -48,7 +48,7 @@ namespace G
                 name: ref name,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/workspace/groups/search",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

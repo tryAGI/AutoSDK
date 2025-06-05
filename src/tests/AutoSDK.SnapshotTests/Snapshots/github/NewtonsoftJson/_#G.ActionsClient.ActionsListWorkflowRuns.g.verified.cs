@@ -125,7 +125,7 @@ namespace G
                 global::G.ActionsListWorkflowRunsStatus.Pending => "pending",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/workflows/{workflowId}/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

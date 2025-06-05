@@ -43,7 +43,7 @@ namespace G
                 returnUrl: ref returnUrl,
                 session: ref session);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/billing-portal",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

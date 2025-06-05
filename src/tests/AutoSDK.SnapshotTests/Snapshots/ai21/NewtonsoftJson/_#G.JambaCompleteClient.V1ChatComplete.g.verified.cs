@@ -57,7 +57,7 @@ namespace G
                 authorization: ref authorization,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

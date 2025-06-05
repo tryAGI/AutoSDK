@@ -51,7 +51,7 @@ namespace G
                 shardName: ref shardName,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/schema/{className}/shards/{shardName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

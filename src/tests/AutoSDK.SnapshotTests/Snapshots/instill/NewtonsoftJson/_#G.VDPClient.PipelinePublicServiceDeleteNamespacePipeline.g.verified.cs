@@ -46,7 +46,7 @@ namespace G
                 namespaceId: ref namespaceId,
                 pipelineId: ref pipelineId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines/{pipelineId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -62,7 +62,7 @@ namespace G
                 after: ref after,
                 before: ref before);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

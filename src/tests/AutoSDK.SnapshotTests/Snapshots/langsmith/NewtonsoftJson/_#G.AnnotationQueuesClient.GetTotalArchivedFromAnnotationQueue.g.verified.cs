@@ -48,7 +48,7 @@ namespace G
                 startTime: ref startTime,
                 endTime: ref endTime);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/total_archived",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

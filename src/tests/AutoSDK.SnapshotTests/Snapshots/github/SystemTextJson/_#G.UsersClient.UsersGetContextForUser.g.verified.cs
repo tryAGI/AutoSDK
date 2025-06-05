@@ -51,7 +51,7 @@ namespace G
                 subjectType: ref subjectType,
                 subjectId: ref subjectId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/hovercard",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

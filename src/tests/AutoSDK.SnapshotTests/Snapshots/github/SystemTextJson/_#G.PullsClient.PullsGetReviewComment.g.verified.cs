@@ -54,7 +54,7 @@ namespace G
                 repo: ref repo,
                 commentId: ref commentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/pulls/comments/{commentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -47,7 +47,7 @@ namespace G
                 sourceContext: ref sourceContext,
                 reason: ref reason);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/users/blocks",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

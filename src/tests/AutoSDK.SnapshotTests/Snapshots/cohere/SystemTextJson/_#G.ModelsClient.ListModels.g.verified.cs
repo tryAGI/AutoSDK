@@ -56,7 +56,7 @@ namespace G
                 endpoint: ref endpoint,
                 defaultOnly: ref defaultOnly);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 petId: ref petId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/pets/{petId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

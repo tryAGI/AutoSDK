@@ -50,7 +50,7 @@ namespace G
                 pointer: ref pointer,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/{pipelineIdOrPointer}/warmup",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

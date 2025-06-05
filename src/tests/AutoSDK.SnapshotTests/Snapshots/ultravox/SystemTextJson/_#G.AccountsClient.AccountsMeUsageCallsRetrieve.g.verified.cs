@@ -68,7 +68,7 @@ namespace G
                 toDate: ref toDate,
                 voiceId: ref voiceId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/accounts/me/usage/calls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

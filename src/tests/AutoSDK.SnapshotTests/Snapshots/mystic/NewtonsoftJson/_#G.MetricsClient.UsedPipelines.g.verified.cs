@@ -59,7 +59,7 @@ namespace G
                 limit: ref limit,
                 orderBy: ref orderBy);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/pipelines",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

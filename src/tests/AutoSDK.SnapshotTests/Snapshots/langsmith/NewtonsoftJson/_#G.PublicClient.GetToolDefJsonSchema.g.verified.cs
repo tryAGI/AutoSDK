@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 version: ref version);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/schemas/{version}/tooldef.json",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

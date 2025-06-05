@@ -60,7 +60,7 @@ namespace G
                 branch: ref branch,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

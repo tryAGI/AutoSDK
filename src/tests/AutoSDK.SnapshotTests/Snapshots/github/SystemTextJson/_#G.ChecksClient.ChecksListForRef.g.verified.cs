@@ -89,7 +89,7 @@ namespace G
                 page: ref page,
                 appId: ref appId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits/{@ref}/check-runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

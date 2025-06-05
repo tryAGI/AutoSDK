@@ -55,7 +55,7 @@ namespace G
                 pageSize: ref pageSize,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/models/{modelId}/versions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

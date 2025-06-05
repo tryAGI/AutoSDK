@@ -46,7 +46,7 @@ namespace G
                 moderatorId: ref moderatorId,
                 messageId: ref messageId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/chat",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

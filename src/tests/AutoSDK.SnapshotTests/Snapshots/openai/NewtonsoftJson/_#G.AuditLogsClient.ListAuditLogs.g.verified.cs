@@ -80,7 +80,7 @@ namespace G
                 after: ref after,
                 before: ref before);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/audit_logs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

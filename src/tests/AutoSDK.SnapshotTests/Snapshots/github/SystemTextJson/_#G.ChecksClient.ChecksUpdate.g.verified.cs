@@ -59,7 +59,7 @@ namespace G
                 checkRunId: ref checkRunId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/check-runs/{checkRunId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

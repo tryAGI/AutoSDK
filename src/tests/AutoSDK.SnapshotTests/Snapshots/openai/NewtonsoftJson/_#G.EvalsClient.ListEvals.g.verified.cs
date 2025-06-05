@@ -71,7 +71,7 @@ namespace G
                 global::G.ListEvalsOrderBy.UpdatedAt => "updated_at",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/evals",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

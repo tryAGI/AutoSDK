@@ -77,7 +77,7 @@ namespace G
                 global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/sound-generation",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

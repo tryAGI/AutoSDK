@@ -82,7 +82,7 @@ namespace G
                 global::G.PipelinePublicServiceListPipelinesVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/pipelines",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

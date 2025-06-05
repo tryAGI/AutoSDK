@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 ruleId: ref ruleId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/last_applied",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

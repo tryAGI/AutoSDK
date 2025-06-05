@@ -52,7 +52,7 @@ namespace G
                 moderatorId: ref moderatorId,
                 sessionId: ref sessionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/invites",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

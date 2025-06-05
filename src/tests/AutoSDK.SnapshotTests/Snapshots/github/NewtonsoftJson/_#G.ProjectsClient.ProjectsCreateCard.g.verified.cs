@@ -43,7 +43,7 @@ namespace G
                 columnId: ref columnId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/projects/columns/{columnId}/cards",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

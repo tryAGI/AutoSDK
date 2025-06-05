@@ -52,7 +52,7 @@ namespace G
                 templateRepo: ref templateRepo,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{templateOwner}/{templateRepo}/generate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

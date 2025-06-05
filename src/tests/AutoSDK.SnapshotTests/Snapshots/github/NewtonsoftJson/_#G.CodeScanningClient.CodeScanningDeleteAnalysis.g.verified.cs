@@ -104,7 +104,7 @@ namespace G
                 analysisId: ref analysisId,
                 confirmDelete: ref confirmDelete);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/analyses/{analysisId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

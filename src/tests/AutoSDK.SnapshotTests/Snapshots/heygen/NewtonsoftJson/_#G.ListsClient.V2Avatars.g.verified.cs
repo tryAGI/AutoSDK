@@ -29,7 +29,7 @@ namespace G
             PrepareV2AvatarsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/avatars",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

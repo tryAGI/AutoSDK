@@ -50,7 +50,7 @@ namespace G
                 limit: ref limit,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/users",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

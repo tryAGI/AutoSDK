@@ -43,7 +43,7 @@ namespace G
                 modelName: ref modelName,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelName}/versions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

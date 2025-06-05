@@ -58,7 +58,7 @@ namespace G
                 runId: ref runId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

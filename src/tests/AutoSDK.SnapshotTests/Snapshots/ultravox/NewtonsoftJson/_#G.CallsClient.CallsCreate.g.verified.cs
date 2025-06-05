@@ -52,7 +52,7 @@ namespace G
                 priorCallId: ref priorCallId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/calls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -53,7 +53,7 @@ namespace G
                 repo: ref repo,
                 since: ref since);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/import/authors",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

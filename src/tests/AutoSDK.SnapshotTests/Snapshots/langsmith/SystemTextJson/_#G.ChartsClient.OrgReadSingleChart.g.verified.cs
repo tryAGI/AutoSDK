@@ -46,7 +46,7 @@ namespace G
                 chartId: ref chartId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/org-charts/{chartId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

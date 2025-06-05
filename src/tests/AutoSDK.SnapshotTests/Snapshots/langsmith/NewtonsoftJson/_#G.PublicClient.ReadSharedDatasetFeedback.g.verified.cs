@@ -101,7 +101,7 @@ namespace G
                 global::G.FeedbackLevel.Session => "session",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

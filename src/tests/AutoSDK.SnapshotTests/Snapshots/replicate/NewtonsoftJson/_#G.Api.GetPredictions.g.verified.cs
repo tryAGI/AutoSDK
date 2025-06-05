@@ -78,7 +78,7 @@ namespace G
                 httpClient: HttpClient,
                 predictionId: ref predictionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/predictions/{predictionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

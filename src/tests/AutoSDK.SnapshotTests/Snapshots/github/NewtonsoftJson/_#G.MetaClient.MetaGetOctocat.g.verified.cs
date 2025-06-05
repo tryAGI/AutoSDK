@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 s: ref s);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/octocat",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

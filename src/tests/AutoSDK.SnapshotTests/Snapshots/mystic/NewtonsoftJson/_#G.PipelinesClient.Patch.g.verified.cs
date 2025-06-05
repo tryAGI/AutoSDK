@@ -56,7 +56,7 @@ namespace G
                 pipelineIdOrPointer: ref pipelineIdOrPointer,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/{pipelineId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

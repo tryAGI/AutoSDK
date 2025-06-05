@@ -53,7 +53,7 @@ namespace G
                 tenant: ref tenant,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/batch/objects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

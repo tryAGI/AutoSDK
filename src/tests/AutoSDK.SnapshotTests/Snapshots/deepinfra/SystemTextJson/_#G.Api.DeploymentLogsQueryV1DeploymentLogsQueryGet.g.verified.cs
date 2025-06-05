@@ -80,7 +80,7 @@ namespace G
                 limit: ref limit,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/deployment_logs/query",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

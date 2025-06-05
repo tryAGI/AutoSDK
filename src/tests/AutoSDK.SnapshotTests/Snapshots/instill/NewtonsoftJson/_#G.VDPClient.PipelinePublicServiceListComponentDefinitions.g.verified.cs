@@ -62,7 +62,7 @@ namespace G
                 global::G.PipelinePublicServiceListComponentDefinitionsView.VIEWFULL => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/component-definitions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

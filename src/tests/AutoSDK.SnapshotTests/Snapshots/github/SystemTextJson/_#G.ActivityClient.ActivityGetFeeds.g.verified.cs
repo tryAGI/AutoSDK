@@ -44,7 +44,7 @@ namespace G
             PrepareActivityGetFeedsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/feeds",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 provider: ref provider);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/oauth/{provider}/logout",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

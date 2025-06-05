@@ -108,7 +108,7 @@ namespace G
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/speech-to-speech/{voiceId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

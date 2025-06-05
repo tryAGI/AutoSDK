@@ -57,7 +57,7 @@ namespace G
                 order: ref order,
                 projectId: ref projectId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

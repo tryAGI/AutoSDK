@@ -29,7 +29,7 @@ namespace G
             PrepareV2VideoTranslateTargetLanguagesArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/video_translate/target_languages",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

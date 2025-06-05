@@ -42,7 +42,7 @@ namespace G
                 httpClient: HttpClient,
                 since: ref since);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/repositories",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

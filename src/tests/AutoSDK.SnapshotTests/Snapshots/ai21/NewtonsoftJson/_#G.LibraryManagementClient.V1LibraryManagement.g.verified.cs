@@ -85,7 +85,7 @@ namespace G
                 global::G.FileStatus.PROCESSINGFAILED => "PROCESSING_FAILED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/library/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

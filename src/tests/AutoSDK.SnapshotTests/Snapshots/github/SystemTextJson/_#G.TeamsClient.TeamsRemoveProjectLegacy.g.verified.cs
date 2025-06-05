@@ -42,7 +42,7 @@ namespace G
                 teamId: ref teamId,
                 projectId: ref projectId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/teams/{teamId}/projects/{projectId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

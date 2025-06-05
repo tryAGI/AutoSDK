@@ -54,7 +54,7 @@ namespace G
                 issueNumber: ref issueNumber,
                 name: ref name);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/issues/{issueNumber}/labels/{name}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

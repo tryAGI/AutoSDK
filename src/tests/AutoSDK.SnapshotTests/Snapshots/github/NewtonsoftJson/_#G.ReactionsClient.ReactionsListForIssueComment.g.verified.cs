@@ -80,7 +80,7 @@ namespace G
                 global::G.ReactionsListForIssueCommentContent.Eyes => "eyes",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

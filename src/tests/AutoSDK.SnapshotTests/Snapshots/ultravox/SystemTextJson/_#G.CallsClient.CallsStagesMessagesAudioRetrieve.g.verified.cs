@@ -43,7 +43,7 @@ namespace G
                 callStageId: ref callStageId,
                 callStageMessageIndex: ref callStageMessageIndex);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/calls/{callId}/stages/{callStageId}/messages/{callStageMessageIndex}/audio",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

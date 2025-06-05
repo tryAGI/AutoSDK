@@ -77,7 +77,7 @@ namespace G
                 sortByDesc: ref sortByDesc,
                 tagValueId: tagValueId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/charts/section",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

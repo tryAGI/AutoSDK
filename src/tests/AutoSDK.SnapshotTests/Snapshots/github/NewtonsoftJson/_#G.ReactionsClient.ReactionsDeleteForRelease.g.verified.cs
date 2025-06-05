@@ -51,7 +51,7 @@ namespace G
                 releaseId: ref releaseId,
                 reactionId: ref reactionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/releases/{releaseId}/reactions/{reactionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

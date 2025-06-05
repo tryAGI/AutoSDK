@@ -54,7 +54,7 @@ namespace G
                 view: ref view,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/users",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

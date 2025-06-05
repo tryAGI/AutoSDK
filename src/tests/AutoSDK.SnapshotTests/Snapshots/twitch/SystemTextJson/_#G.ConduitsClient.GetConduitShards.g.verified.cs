@@ -51,7 +51,7 @@ namespace G
                 status: ref status,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/conduits/shards",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

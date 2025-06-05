@@ -76,7 +76,7 @@ namespace G
                 before: ref before,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/streams",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

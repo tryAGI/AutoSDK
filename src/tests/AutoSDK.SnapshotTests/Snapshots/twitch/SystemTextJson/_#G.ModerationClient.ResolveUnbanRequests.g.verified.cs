@@ -62,7 +62,7 @@ namespace G
                 status: ref status,
                 resolutionText: ref resolutionText);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/unban_requests",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

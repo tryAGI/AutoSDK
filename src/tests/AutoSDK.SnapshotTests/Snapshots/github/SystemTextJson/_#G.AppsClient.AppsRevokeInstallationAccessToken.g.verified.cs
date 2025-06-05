@@ -30,7 +30,7 @@ namespace G
             PrepareAppsRevokeInstallationAccessTokenArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/installation/token",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

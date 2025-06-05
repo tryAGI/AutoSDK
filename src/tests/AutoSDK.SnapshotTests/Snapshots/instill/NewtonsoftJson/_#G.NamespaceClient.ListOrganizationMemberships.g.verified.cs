@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 organizationId: ref organizationId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/organizations/{organizationId}/memberships",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

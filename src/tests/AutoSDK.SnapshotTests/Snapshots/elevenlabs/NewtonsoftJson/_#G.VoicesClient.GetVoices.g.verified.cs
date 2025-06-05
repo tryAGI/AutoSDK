@@ -50,7 +50,7 @@ namespace G
                 showLegacy: ref showLegacy,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/voices",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

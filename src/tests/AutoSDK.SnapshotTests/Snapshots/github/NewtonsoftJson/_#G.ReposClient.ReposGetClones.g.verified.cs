@@ -57,7 +57,7 @@ namespace G
                 global::G.ReposGetClonesPer.Week => "week",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/traffic/clones",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

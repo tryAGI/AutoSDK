@@ -83,7 +83,7 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets/rule-suites",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

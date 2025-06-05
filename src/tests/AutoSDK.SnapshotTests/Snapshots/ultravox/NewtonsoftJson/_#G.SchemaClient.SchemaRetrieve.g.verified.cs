@@ -154,7 +154,7 @@ namespace G
                 global::G.SchemaRetrieveLang.ZhHant => "zh-hant",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/schema/",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

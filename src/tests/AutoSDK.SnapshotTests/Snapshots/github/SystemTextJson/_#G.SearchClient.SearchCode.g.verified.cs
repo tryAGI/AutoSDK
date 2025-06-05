@@ -76,7 +76,7 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/search/code",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -45,7 +45,7 @@ namespace G
                 id: ref id,
                 include: ref include);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

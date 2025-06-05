@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 code: ref code);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/app-manifests/{code}/conversions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

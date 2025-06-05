@@ -65,7 +65,7 @@ namespace G
                 chapterSnapshotId: ref chapterSnapshotId,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/studio/projects/{projectId}/chapters/{chapterId}/snapshots/{chapterSnapshotId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

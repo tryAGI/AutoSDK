@@ -135,7 +135,7 @@ namespace G
                 perPage: ref perPage,
                 sort: ref sort);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/advisories",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

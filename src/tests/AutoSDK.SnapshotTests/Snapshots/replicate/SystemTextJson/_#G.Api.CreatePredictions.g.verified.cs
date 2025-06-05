@@ -53,7 +53,7 @@ namespace G
                 prefer: ref prefer,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/predictions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

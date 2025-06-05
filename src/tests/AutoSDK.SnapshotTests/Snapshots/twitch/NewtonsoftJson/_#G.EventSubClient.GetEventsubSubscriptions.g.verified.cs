@@ -153,7 +153,7 @@ namespace G
                 global::G.GetEventsubSubscriptionsType.UserWhisperMessage => "user.whisper.message",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

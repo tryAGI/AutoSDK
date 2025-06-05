@@ -115,7 +115,7 @@ namespace G
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

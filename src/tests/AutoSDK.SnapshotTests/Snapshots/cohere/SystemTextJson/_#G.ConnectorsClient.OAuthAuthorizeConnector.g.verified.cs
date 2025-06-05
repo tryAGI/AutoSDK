@@ -49,7 +49,7 @@ namespace G
                 afterTokenRedirect: ref afterTokenRedirect,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/connectors/{id}/oauth/authorize",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

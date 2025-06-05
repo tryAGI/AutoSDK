@@ -70,7 +70,7 @@ namespace G
                 after: ref after,
                 status: ref status);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/code-security/configurations/{configurationId}/repositories",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

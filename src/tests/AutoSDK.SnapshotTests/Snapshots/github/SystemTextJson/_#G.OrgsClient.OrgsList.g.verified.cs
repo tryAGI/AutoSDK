@@ -48,7 +48,7 @@ namespace G
                 since: ref since,
                 perPage: ref perPage);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organizations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

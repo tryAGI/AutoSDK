@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 version: ref version);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/cli/version",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -63,7 +63,7 @@ namespace G
                 global::G.ListProjectCertificatesOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

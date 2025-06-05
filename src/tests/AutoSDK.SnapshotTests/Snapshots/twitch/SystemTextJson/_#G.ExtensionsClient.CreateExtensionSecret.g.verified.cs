@@ -46,7 +46,7 @@ namespace G
                 extensionId: ref extensionId,
                 delay: ref delay);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions/jwt/secrets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

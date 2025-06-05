@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 sessionIds: sessionIds);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -36,7 +36,7 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/personalized_video/audience/detail",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

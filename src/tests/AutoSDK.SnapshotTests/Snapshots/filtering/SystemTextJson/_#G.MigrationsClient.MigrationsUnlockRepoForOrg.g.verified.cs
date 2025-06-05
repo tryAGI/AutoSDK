@@ -44,7 +44,7 @@ namespace G
                 migrationId: ref migrationId,
                 repoName: ref repoName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/migrations/{migrationId}/repos/{repoName}/lock",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -63,7 +63,7 @@ namespace G
                 global::G.AdminApiKeysListOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/admin_api_keys",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

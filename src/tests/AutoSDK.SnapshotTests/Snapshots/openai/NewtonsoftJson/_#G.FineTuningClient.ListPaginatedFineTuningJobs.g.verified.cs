@@ -50,7 +50,7 @@ namespace G
                 limit: ref limit,
                 metadata: metadata);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

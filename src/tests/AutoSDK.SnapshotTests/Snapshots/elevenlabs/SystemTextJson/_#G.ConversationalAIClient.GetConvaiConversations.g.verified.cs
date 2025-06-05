@@ -69,7 +69,7 @@ namespace G
                 pageSize: ref pageSize,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/conversations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

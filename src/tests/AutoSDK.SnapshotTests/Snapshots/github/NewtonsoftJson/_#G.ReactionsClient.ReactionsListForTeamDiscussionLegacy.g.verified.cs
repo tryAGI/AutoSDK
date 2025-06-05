@@ -79,7 +79,7 @@ namespace G
                 global::G.ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/teams/{teamId}/discussions/{discussionNumber}/reactions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

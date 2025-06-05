@@ -59,7 +59,7 @@ namespace G
                 requestStartTime: ref requestStartTime,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/studio/v1/j2-grande/{customModelName}/complete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

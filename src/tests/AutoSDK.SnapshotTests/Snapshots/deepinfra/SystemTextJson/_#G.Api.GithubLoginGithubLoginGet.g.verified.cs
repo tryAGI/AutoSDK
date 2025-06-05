@@ -54,7 +54,7 @@ namespace G
                 deal: ref deal,
                 tiToken: ref tiToken);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/github/login",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

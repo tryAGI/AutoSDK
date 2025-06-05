@@ -56,7 +56,7 @@ namespace G
                 vacationEndTime: ref vacationEndTime,
                 timezone: ref timezone);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/schedule/settings",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

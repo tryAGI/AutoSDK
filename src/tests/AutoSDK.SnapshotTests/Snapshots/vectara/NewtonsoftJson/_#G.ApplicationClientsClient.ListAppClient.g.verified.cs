@@ -61,7 +61,7 @@ namespace G
                 filter: ref filter,
                 pageKey: ref pageKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/app_clients",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

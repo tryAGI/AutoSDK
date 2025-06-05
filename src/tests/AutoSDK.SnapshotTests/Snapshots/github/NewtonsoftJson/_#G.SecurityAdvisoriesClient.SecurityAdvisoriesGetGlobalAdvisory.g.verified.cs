@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 ghsaId: ref ghsaId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/advisories/{ghsaId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

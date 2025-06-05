@@ -83,7 +83,7 @@ namespace G
                 sort: ref sort,
                 direction: ref direction);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/caches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

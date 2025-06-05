@@ -58,7 +58,7 @@ namespace G
                 rulesetId: ref rulesetId,
                 includesParents: ref includesParents);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets/{rulesetId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

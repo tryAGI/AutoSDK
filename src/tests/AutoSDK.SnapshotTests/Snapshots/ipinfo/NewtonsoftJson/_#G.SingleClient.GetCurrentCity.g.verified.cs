@@ -34,7 +34,7 @@ namespace G
             PrepareGetCurrentCityArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/city",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

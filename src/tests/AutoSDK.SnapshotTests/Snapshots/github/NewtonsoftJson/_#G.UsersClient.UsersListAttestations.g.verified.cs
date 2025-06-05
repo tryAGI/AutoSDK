@@ -63,7 +63,7 @@ namespace G
                 username: ref username,
                 subjectDigest: ref subjectDigest);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/attestations/{subjectDigest}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

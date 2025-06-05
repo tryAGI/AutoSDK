@@ -50,7 +50,7 @@ namespace G
                 after: ref after,
                 emails: emails);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/users",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

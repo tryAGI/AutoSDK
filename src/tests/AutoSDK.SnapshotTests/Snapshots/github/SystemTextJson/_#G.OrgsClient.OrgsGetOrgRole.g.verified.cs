@@ -48,7 +48,7 @@ namespace G
                 org: ref org,
                 roleId: ref roleId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/organization-roles/{roleId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -43,7 +43,7 @@ namespace G
                 projectId: ref projectId,
                 keyId: ref keyId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/api_keys/{keyId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -105,7 +105,7 @@ namespace G
                 minCreatedAt: ref minCreatedAt,
                 includeUserNames: ref includeUserNames);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

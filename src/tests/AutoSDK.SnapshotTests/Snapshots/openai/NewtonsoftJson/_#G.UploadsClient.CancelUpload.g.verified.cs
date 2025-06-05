@@ -40,7 +40,7 @@ namespace G
                 httpClient: HttpClient,
                 uploadId: ref uploadId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/uploads/{uploadId}/cancel",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

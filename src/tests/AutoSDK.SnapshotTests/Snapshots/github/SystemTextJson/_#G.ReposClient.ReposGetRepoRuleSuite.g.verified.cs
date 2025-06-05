@@ -50,7 +50,7 @@ namespace G
                 repo: ref repo,
                 ruleSuiteId: ref ruleSuiteId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets/rule-suites/{ruleSuiteId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

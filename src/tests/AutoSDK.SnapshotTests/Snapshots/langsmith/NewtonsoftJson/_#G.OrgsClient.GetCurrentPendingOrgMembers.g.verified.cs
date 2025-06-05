@@ -54,7 +54,7 @@ namespace G
                 offset: ref offset,
                 emails: emails);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/members/pending",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

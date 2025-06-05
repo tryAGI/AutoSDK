@@ -71,7 +71,7 @@ namespace G
                 metadataFilter: ref metadataFilter,
                 pageKey: ref pageKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/documents",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

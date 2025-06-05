@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 ip: ref ip);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/{ip}/abuse",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

@@ -33,7 +33,7 @@ namespace G
             PrepareGetAcceleratorAvailability2Arguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/cloud/provider/aws/accelerator-availability",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

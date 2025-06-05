@@ -33,7 +33,7 @@ namespace G
             PrepareUpcomingInvoiceArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/billing/upcoming-invoice",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

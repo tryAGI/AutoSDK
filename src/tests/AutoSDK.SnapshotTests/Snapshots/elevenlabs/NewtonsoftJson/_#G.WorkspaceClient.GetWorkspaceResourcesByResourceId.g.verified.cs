@@ -70,7 +70,7 @@ namespace G
                 global::G.WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/workspace/resources/{resourceId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

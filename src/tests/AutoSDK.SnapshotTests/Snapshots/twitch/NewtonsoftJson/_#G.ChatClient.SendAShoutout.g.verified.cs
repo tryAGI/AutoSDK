@@ -49,7 +49,7 @@ namespace G
                 toBroadcasterId: ref toBroadcasterId,
                 moderatorId: ref moderatorId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/shoutouts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

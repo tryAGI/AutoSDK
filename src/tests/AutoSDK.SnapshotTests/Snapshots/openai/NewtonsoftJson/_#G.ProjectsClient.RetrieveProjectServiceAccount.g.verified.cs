@@ -43,7 +43,7 @@ namespace G
                 projectId: ref projectId,
                 serviceAccountId: ref serviceAccountId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/service_accounts/{serviceAccountId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

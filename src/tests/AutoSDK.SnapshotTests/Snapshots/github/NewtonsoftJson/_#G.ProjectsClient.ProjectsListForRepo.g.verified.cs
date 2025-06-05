@@ -72,7 +72,7 @@ namespace G
                 global::G.ProjectsListForRepoState.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/projects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

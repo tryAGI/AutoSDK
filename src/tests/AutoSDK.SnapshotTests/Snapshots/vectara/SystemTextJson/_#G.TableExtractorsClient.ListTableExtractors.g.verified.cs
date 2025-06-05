@@ -44,7 +44,7 @@ namespace G
                 requestTimeout: ref requestTimeout,
                 requestTimeoutMillis: ref requestTimeoutMillis);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/table_extractors",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

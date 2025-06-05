@@ -59,7 +59,7 @@ namespace G
                 pullNumber: ref pullNumber,
                 reviewId: ref reviewId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/pulls/{pullNumber}/reviews/{reviewId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

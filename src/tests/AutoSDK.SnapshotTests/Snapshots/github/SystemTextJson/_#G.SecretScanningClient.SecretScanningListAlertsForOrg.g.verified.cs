@@ -99,7 +99,7 @@ namespace G
                 after: ref after,
                 validity: ref validity);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/secret-scanning/alerts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

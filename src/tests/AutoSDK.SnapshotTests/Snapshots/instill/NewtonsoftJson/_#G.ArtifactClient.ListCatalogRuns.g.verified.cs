@@ -64,7 +64,7 @@ namespace G
                 filter: ref filter,
                 orderBy: ref orderBy);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/catalogs/{catalogId}/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

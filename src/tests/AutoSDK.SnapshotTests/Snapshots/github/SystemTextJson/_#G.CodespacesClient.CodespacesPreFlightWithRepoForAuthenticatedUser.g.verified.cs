@@ -59,7 +59,7 @@ namespace G
                 @ref: ref @ref,
                 clientIp: ref clientIp);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/codespaces/new",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

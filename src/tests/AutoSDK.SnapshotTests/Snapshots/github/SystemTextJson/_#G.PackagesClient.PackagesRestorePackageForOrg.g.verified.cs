@@ -54,7 +54,7 @@ namespace G
                 org: ref org,
                 token: ref token);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/packages/{packageType}/{packageName}/restore",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

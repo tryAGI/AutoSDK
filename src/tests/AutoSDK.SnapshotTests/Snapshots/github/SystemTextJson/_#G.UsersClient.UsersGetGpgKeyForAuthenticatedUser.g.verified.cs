@@ -40,7 +40,7 @@ namespace G
                 httpClient: HttpClient,
                 gpgKeyId: ref gpgKeyId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/gpg_keys/{gpgKeyId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

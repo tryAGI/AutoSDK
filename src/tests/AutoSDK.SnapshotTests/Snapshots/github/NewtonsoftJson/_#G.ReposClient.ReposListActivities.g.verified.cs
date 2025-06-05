@@ -115,7 +115,7 @@ namespace G
                 global::G.ReposListActivitiesActivityType.MergeQueueMerge => "merge_queue_merge",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/activity",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

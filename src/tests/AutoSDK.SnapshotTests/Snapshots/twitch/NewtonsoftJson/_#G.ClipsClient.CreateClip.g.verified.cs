@@ -49,7 +49,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 hasDelay: ref hasDelay);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/clips",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

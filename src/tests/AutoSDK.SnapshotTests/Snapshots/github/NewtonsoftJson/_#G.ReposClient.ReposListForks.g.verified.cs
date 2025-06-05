@@ -72,7 +72,7 @@ namespace G
                 global::G.ReposListForksSort.Watchers => "watchers",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/forks",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

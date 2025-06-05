@@ -59,7 +59,7 @@ namespace G
                 page: ref page,
                 repositoryQuery: ref repositoryQuery);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/properties/values",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

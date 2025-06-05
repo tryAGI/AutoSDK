@@ -38,7 +38,7 @@ namespace G
                 clusterId: ref clusterId,
                 nodePoolName: ref nodePoolName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/clusters/{clusterId}/node-pools/{nodePoolName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -53,7 +53,7 @@ namespace G
                 offset: ref offset,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/connectors",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

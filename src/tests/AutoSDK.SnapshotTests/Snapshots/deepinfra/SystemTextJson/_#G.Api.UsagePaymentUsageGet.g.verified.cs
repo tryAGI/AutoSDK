@@ -52,7 +52,7 @@ namespace G
                 to: ref to,
                 session: ref session);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/usage",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

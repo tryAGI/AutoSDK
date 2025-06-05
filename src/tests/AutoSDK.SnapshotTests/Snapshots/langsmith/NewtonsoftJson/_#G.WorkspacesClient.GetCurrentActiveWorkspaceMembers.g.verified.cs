@@ -68,7 +68,7 @@ namespace G
                 lsUserIds: lsUserIds,
                 userIds: userIds);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/members/active",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

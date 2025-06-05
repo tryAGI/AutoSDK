@@ -48,7 +48,7 @@ namespace G
                 end: ref end,
                 pipelineId: ref pipelineId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/overall-usage-summary",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -77,7 +77,7 @@ namespace G
                 perPage: ref perPage,
                 state: ref state);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/security-advisories",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

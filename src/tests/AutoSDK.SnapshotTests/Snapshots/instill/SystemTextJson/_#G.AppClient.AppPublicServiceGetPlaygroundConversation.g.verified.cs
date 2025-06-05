@@ -44,7 +44,7 @@ namespace G
                 namespaceId: ref namespaceId,
                 appId: ref appId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/ai_assistant_playground/conversation",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

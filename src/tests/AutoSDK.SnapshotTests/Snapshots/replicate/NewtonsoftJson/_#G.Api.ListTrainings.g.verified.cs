@@ -74,7 +74,7 @@ namespace G
             PrepareListTrainingsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/trainings",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

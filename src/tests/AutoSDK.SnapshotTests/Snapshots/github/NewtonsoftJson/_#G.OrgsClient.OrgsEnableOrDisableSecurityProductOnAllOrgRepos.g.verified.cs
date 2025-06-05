@@ -73,7 +73,7 @@ namespace G
                 global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.DisableAll => "disable_all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/{securityProductValue}/{enablementValue}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

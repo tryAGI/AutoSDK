@@ -50,7 +50,7 @@ namespace G
                 packageName: ref packageName,
                 org: ref org);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/packages/{packageType}/{packageName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

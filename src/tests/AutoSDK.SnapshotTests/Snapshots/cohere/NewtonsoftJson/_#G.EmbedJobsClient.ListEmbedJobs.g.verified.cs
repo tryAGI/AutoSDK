@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/embed-jobs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

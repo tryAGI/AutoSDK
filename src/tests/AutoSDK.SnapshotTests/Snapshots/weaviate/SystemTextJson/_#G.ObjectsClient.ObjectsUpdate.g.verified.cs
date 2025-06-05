@@ -54,7 +54,7 @@ namespace G
                 consistencyLevel: ref consistencyLevel,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

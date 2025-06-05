@@ -34,7 +34,7 @@ namespace G
             PrepareOwnedOrUsedArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/pipelines/owned-or-used",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

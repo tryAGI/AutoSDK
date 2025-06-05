@@ -53,7 +53,7 @@ namespace G
                 teamSlug: ref teamSlug,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/teams/{teamSlug}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

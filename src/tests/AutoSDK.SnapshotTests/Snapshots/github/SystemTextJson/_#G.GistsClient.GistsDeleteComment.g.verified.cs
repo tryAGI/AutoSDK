@@ -38,7 +38,7 @@ namespace G
                 gistId: ref gistId,
                 commentId: ref commentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/gists/{gistId}/comments/{commentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

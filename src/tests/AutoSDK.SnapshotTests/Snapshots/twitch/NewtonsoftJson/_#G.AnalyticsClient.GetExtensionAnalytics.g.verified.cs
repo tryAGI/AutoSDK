@@ -71,7 +71,7 @@ namespace G
                 global::G.GetExtensionAnalyticsType.OverviewV2 => "overview_v2",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/analytics/extensions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

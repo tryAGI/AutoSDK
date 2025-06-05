@@ -75,7 +75,7 @@ namespace G
                 global::G.TranscriptStatus.Error => "error",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/transcript",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

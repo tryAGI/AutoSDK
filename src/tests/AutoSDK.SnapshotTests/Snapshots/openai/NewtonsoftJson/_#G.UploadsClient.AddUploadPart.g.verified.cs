@@ -49,7 +49,7 @@ namespace G
                 uploadId: ref uploadId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/uploads/{uploadId}/parts",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -33,7 +33,7 @@ namespace G
                 httpClient: HttpClient,
                 toolId: ref toolId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/tools/{toolId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

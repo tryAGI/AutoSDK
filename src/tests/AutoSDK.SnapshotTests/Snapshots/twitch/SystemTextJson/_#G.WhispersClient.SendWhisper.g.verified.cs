@@ -51,7 +51,7 @@ namespace G
                 toUserId: ref toUserId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/whispers",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

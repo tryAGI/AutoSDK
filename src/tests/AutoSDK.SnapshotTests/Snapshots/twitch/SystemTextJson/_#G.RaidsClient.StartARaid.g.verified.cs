@@ -50,7 +50,7 @@ namespace G
                 fromBroadcasterId: ref fromBroadcasterId,
                 toBroadcasterId: ref toBroadcasterId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/raids",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

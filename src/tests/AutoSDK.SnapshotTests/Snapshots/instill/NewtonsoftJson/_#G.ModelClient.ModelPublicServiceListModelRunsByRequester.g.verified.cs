@@ -75,7 +75,7 @@ namespace G
                 requesterId: ref requesterId,
                 instillRequesterUid: ref instillRequesterUid);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/dashboard/models/runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

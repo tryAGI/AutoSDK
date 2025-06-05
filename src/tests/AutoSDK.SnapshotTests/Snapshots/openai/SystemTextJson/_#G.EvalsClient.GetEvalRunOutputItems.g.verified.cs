@@ -67,7 +67,7 @@ namespace G
                 status: ref status,
                 order: ref order);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/evals/{evalId}/runs/{runId}/output_items",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

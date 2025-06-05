@@ -61,7 +61,7 @@ namespace G
                 messageUid: ref messageUid,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

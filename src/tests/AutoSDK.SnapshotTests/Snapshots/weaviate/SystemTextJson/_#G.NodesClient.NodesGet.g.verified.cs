@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 output: ref output);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -48,7 +48,7 @@ namespace G
                 name: ref name,
                 repositoryId: ref repositoryId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/actions/variables/{name}/repositories/{repositoryId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

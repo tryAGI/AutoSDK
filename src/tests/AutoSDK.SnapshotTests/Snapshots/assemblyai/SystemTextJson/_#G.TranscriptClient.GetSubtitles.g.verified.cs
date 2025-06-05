@@ -51,7 +51,7 @@ namespace G
                 subtitleFormat: ref subtitleFormat,
                 charsPerCaption: ref charsPerCaption);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/transcript/{transcriptId}/{subtitleFormat}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

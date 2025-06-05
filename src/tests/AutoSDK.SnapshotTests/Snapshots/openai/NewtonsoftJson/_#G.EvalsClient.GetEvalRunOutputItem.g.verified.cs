@@ -48,7 +48,7 @@ namespace G
                 runId: ref runId,
                 outputItemId: ref outputItemId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

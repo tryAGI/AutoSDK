@@ -58,7 +58,7 @@ namespace G
                 to: ref to,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/deploy/{deployId}/stats",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

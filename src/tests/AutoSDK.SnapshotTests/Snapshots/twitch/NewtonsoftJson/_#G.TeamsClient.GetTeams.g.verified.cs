@@ -46,7 +46,7 @@ namespace G
                 name: ref name,
                 id: ref id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/teams",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

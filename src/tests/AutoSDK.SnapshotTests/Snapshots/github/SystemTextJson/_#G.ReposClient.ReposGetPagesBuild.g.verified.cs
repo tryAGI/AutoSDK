@@ -50,7 +50,7 @@ namespace G
                 repo: ref repo,
                 buildId: ref buildId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/pages/builds/{buildId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

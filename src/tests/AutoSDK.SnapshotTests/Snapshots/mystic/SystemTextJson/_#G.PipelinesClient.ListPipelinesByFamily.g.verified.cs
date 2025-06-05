@@ -94,7 +94,7 @@ namespace G
                 nodePool: ref nodePool,
                 createdAt: ref createdAt);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/by-family/{pipelineFamilyName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

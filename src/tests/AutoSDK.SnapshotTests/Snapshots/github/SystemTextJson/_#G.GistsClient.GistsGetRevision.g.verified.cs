@@ -47,7 +47,7 @@ namespace G
                 gistId: ref gistId,
                 sha: ref sha);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/gists/{gistId}/{sha}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

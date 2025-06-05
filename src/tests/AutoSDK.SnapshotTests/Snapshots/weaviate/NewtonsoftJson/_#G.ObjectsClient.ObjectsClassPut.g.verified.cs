@@ -65,7 +65,7 @@ namespace G
                 global::G.ObjectsClassPutConsistencyLevel.ALL => "ALL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

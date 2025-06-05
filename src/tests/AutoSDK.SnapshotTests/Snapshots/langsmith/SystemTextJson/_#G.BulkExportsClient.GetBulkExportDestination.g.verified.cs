@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 destinationId: ref destinationId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/bulk-exports/destinations/{destinationId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

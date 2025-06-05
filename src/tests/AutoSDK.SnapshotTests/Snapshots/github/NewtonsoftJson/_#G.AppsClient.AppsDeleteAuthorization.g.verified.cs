@@ -42,7 +42,7 @@ namespace G
                 clientId: ref clientId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/applications/{clientId}/grant",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

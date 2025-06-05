@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 transcriptId: ref transcriptId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/transcript/{transcriptId}/paragraphs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

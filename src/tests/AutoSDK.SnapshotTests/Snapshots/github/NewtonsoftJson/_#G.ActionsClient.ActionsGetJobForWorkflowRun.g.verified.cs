@@ -51,7 +51,7 @@ namespace G
                 repo: ref repo,
                 jobId: ref jobId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/jobs/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

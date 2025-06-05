@@ -36,7 +36,7 @@ namespace G
             PrepareCodespacesGetPublicKeyForAuthenticatedUserArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/user/codespaces/secrets/public-key",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

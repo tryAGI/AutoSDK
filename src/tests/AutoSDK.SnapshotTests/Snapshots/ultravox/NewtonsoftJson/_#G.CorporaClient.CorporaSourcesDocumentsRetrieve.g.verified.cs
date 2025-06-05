@@ -48,7 +48,7 @@ namespace G
                 documentId: ref documentId,
                 sourceId: ref sourceId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/corpora/{corpusId}/sources/{sourceId}/documents/{documentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

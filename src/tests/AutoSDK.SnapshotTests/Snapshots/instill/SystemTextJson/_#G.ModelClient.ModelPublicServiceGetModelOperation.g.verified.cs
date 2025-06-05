@@ -45,7 +45,7 @@ namespace G
                 operationId: ref operationId,
                 view: ref view);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/operations/{operationId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

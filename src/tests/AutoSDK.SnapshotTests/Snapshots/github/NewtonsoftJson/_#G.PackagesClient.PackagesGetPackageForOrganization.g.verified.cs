@@ -60,7 +60,7 @@ namespace G
                 global::G.PackagesGetPackageForOrganizationPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/packages/{packageTypeValue}/{packageName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

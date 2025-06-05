@@ -46,7 +46,7 @@ namespace G
                 namespaceId: ref namespaceId,
                 modelId: ref modelId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/models/{modelId}/watch",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

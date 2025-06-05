@@ -75,7 +75,7 @@ namespace G
                 global::G.ListChatCompletionsOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

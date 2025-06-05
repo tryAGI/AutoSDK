@@ -81,7 +81,7 @@ namespace G
                 global::G.ApiKeyRole.Personal => "personal",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/api_keys",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

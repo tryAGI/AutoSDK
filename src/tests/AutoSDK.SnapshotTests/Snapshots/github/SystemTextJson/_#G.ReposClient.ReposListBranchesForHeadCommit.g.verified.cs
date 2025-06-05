@@ -50,7 +50,7 @@ namespace G
                 repo: ref repo,
                 commitSha: ref commitSha);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits/{commitSha}/branches-where-head",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

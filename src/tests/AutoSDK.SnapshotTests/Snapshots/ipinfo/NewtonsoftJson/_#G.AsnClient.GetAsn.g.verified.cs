@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 asn: ref asn);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/AS{asn}/json",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

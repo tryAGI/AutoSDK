@@ -52,7 +52,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/emotes/user",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

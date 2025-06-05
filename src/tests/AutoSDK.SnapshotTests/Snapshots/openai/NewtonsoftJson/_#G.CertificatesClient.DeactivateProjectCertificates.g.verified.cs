@@ -46,7 +46,7 @@ namespace G
                 projectId: ref projectId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates/deactivate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

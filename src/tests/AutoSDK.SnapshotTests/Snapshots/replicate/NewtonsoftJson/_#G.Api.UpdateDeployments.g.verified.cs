@@ -85,7 +85,7 @@ namespace G
                 deploymentName: ref deploymentName,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/deployments/{deploymentOwner}/{deploymentName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -34,7 +34,7 @@ namespace G
             PrepareGetVoiceGenerationGenerateVoiceParametersArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/voice-generation/generate-voice/parameters",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

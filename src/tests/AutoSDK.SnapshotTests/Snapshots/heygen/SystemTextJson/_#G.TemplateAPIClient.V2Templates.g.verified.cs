@@ -29,7 +29,7 @@ namespace G
             PrepareV2TemplatesArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/templates",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

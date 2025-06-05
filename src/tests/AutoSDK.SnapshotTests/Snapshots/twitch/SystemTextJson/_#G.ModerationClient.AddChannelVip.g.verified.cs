@@ -42,7 +42,7 @@ namespace G
                 userId: ref userId,
                 broadcasterId: ref broadcasterId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/channels/vips",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

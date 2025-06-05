@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 modelId: ref modelId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/fine_tuning/models/{modelId}/archive",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

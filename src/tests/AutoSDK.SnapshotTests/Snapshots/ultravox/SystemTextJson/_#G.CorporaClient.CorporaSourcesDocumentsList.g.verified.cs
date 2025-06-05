@@ -53,7 +53,7 @@ namespace G
                 pageSize: ref pageSize,
                 sourceId: ref sourceId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/corpora/{corpusId}/sources/{sourceId}/documents",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

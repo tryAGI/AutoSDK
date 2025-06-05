@@ -56,7 +56,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/enforcements/status",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

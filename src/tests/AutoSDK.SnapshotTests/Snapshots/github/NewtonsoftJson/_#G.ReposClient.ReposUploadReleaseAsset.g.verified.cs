@@ -78,7 +78,7 @@ namespace G
                 label: ref label,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/releases/{releaseId}/assets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

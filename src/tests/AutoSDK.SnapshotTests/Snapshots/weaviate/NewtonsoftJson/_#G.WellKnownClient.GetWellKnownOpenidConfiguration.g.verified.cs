@@ -34,7 +34,7 @@ namespace G
             PrepareGetWellKnownOpenidConfigurationArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/.well-known/openid-configuration",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

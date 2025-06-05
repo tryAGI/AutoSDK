@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 skipCreate: ref skipCreate);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

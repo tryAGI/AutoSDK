@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 assignmentId: ref assignmentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/assignments/{assignmentId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

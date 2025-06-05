@@ -51,7 +51,7 @@ namespace G
                 artifactId: ref artifactId,
                 archiveFormat: ref archiveFormat);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/artifacts/{artifactId}/{archiveFormat}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

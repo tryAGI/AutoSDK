@@ -42,7 +42,7 @@ namespace G
                 httpClient: HttpClient,
                 handle: ref handle);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/profile/{handle}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

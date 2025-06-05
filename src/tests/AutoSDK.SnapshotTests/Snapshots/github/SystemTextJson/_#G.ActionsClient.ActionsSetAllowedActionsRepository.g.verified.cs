@@ -47,7 +47,7 @@ namespace G
                 repo: ref repo,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/permissions/selected-actions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

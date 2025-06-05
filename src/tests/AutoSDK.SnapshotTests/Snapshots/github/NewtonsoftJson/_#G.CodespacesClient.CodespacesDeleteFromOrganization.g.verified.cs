@@ -50,7 +50,7 @@ namespace G
                 username: ref username,
                 codespaceName: ref codespaceName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/members/{username}/codespaces/{codespaceName}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -59,7 +59,7 @@ namespace G
                 userId: ref userId,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -42,7 +42,7 @@ namespace G
                 httpClient: HttpClient,
                 gistId: ref gistId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/gists/{gistId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -65,7 +65,7 @@ namespace G
                 global::G.PackagesGetPackageVersionForUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

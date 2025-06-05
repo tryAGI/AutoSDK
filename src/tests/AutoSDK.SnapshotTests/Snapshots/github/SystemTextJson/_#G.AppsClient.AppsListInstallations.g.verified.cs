@@ -59,7 +59,7 @@ namespace G
                 since: ref since,
                 outdated: ref outdated);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/app/installations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

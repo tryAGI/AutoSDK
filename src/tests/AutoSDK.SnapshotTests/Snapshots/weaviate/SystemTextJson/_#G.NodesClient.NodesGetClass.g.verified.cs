@@ -46,7 +46,7 @@ namespace G
                 className: ref className,
                 output: ref output);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/nodes/{className}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -53,7 +53,7 @@ namespace G
                 repo: ref repo,
                 alertNumber: ref alertNumber);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

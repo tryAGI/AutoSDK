@@ -49,7 +49,7 @@ namespace G
                 requestTimeoutMillis: ref requestTimeoutMillis,
                 corpusKey: ref corpusKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/reset",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

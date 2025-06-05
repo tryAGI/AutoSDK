@@ -36,7 +36,7 @@ namespace G
                 httpClient: HttpClient,
                 endpointId: ref endpointId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/webhook/endpoint.delete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

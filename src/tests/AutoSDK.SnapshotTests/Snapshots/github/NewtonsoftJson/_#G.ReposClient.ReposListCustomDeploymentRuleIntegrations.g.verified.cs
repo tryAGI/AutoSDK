@@ -67,7 +67,7 @@ namespace G
                 page: ref page,
                 perPage: ref perPage);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules/apps",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

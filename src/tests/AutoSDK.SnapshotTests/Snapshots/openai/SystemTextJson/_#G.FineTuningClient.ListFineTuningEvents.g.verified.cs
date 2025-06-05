@@ -52,7 +52,7 @@ namespace G
                 after: ref after,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/fine_tuning/jobs/{fineTuningJobId}/events",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

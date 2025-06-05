@@ -52,7 +52,7 @@ namespace G
                 name: name,
                 igdbId: igdbId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/games",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

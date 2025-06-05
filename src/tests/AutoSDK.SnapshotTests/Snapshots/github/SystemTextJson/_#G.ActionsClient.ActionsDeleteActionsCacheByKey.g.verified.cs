@@ -55,7 +55,7 @@ namespace G
                 key: ref key,
                 @ref: ref @ref);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/caches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

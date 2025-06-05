@@ -41,7 +41,7 @@ namespace G
                 httpClient: HttpClient,
                 name: ref name);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/gitignore/templates/{name}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -46,7 +46,7 @@ namespace G
                 shareToken: ref shareToken,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/runs/delta",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

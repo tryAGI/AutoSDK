@@ -107,7 +107,7 @@ namespace G
                 sort: ref sort,
                 severity: ref severity);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/code-scanning/alerts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

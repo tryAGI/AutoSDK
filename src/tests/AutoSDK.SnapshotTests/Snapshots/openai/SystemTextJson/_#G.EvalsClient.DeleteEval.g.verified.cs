@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 evalId: ref evalId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/evals/{evalId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

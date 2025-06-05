@@ -62,7 +62,7 @@ namespace G
                 commitSha: ref commitSha,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits/{commitSha}/comments",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

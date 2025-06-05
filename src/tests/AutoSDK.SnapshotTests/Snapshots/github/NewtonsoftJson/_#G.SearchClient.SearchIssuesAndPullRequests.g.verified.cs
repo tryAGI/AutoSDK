@@ -93,7 +93,7 @@ namespace G
                 global::G.SearchIssuesAndPullRequestsOrder.Asc => "asc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/search/issues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

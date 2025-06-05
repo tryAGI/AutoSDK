@@ -53,7 +53,7 @@ namespace G
                 appId: ref appId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

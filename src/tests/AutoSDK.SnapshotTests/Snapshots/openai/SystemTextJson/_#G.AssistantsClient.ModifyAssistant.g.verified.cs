@@ -48,7 +48,7 @@ namespace G
                 assistantId: ref assistantId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/assistants/{assistantId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

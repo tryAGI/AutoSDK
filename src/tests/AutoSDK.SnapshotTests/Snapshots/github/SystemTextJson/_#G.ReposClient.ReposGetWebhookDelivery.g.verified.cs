@@ -54,7 +54,7 @@ namespace G
                 hookId: ref hookId,
                 deliveryId: ref deliveryId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/hooks/{hookId}/deliveries/{deliveryId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

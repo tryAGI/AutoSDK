@@ -70,7 +70,7 @@ namespace G
                 before: ref before,
                 runId: ref runId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/threads/{threadId}/messages",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

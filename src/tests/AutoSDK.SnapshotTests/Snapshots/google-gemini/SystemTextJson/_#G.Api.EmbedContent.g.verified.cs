@@ -47,7 +47,7 @@ namespace G
                 modelId: ref modelId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelId}:embedContent",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 dataPath: ref dataPath);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/api/v1/filestorage/getbytes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

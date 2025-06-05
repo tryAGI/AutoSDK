@@ -40,7 +40,7 @@ namespace G
                 httpClient: HttpClient,
                 codespaceName: ref codespaceName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/codespaces/{codespaceName}/start",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

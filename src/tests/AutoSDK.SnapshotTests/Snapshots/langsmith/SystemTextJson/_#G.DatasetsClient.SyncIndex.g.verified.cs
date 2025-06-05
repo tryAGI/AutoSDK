@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 datasetId: ref datasetId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/index/sync",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

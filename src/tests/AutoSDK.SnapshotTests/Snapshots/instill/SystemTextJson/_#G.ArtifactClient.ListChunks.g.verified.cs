@@ -54,7 +54,7 @@ namespace G
                 fileUid: ref fileUid,
                 chunkUids: chunkUids);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/chunks",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

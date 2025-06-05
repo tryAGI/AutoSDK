@@ -47,7 +47,7 @@ namespace G
                 vectorStoreId: ref vectorStoreId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/files",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

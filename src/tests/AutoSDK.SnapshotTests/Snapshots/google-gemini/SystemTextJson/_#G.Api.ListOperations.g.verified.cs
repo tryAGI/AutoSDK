@@ -48,7 +48,7 @@ namespace G
                 pageSize: ref pageSize,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/operations",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

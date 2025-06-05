@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 certificateId: ref certificateId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/certificates/{certificateId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

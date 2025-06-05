@@ -47,7 +47,7 @@ namespace G
                 exampleId: ref exampleId,
                 asOf: ref asOf);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/examples/{exampleId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

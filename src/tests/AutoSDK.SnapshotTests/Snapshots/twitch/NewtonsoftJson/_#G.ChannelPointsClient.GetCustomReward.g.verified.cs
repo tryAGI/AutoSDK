@@ -52,7 +52,7 @@ namespace G
                 id: id,
                 onlyManageableRewards: ref onlyManageableRewards);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/channel_points/custom_rewards",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

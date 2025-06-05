@@ -49,7 +49,7 @@ namespace G
                 checkpointStep: ref checkpointStep,
                 output: ref output);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/finetune/download",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

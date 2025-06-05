@@ -80,7 +80,7 @@ public record struct Settings(
         ModelStyle: default,
         IncludeModels: ImmutableArray<string>.Empty,
         ExcludeModels: ImmutableArray<string>.Empty,
-        IgnoreOpenApiErrors: false,
+        IgnoreOpenApiErrors: true,
         IgnoreOpenApiWarnings: true,
         GeneratePolyfills: true,
         GenerateExceptions: true,

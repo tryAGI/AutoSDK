@@ -65,7 +65,7 @@ namespace G
                 global::G.ListRulesApiV1RunsRulesGetType.Dataset => "dataset",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

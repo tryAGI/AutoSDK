@@ -72,7 +72,7 @@ namespace G
                 breakdownType: ref breakdownType,
                 xiApiKey: ref xiApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/usage/character-stats",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -48,7 +48,7 @@ namespace G
                 cursor: ref cursor,
                 pageSize: ref pageSize);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/agents/{agentId}/calls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

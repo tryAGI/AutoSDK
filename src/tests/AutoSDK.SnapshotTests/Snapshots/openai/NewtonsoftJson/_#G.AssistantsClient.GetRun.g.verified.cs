@@ -43,7 +43,7 @@ namespace G
                 threadId: ref threadId,
                 runId: ref runId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

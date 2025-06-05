@@ -39,7 +39,7 @@ namespace G
                 httpClient: HttpClient,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/account/getprojectaccessdetailsforuser2",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

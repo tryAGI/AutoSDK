@@ -56,7 +56,7 @@ namespace G
                 filter: ref filter,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/component-definitions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

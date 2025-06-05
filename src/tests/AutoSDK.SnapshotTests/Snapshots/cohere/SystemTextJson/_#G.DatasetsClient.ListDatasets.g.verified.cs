@@ -71,7 +71,7 @@ namespace G
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

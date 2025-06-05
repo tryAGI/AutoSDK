@@ -86,7 +86,7 @@ namespace G
                 global::G.ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

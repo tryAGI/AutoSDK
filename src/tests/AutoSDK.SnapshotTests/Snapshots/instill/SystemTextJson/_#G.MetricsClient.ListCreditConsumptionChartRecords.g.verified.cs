@@ -57,7 +57,7 @@ namespace G
                 start: ref start,
                 stop: ref stop);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/metrics/credit/charts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -33,7 +33,7 @@ namespace G
                 httpClient: HttpClient,
                 credentialId: ref credentialId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/cloud/credentials/{credentialId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

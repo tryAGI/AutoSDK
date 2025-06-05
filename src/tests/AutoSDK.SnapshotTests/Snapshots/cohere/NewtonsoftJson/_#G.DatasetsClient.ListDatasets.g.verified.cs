@@ -81,7 +81,7 @@ namespace G
                 global::G.DatasetValidationStatus.Skipped => "skipped",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

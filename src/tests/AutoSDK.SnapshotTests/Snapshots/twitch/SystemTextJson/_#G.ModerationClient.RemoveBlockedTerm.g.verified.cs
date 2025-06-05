@@ -46,7 +46,7 @@ namespace G
                 moderatorId: ref moderatorId,
                 id: ref id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/blocked_terms",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

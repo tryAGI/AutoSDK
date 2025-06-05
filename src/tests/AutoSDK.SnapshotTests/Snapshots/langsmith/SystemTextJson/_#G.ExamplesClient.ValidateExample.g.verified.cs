@@ -34,7 +34,7 @@ namespace G
             PrepareValidateExampleArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples/validate",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

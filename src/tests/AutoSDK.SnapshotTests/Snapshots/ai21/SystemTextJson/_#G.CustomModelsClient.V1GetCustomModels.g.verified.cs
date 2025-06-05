@@ -47,7 +47,7 @@ namespace G
                 includeMetadata: ref includeMetadata,
                 requestStartTime: ref requestStartTime);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/custom-model",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

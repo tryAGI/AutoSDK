@@ -38,7 +38,7 @@ namespace G
                 httpClient: HttpClient,
                 credentialId: ref credentialId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/cloud/provider/gcp/auth",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

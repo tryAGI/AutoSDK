@@ -53,7 +53,7 @@ namespace G
                 filter: ref filter,
                 pageToken: ref pageToken);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/tunedModels/{tunedModelId}/operations",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

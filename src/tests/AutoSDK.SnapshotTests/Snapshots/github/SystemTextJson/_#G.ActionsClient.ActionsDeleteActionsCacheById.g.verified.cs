@@ -45,7 +45,7 @@ namespace G
                 repo: ref repo,
                 cacheId: ref cacheId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/caches/{cacheId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

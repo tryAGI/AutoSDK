@@ -86,7 +86,7 @@ namespace G
                 global::G.OrgsListPendingInvitationsInvitationSource.Scim => "scim",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/invitations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -46,7 +46,7 @@ namespace G
                 shareToken: ref shareToken,
                 excludeS3StoredAttributes: ref excludeS3StoredAttributes);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/run",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

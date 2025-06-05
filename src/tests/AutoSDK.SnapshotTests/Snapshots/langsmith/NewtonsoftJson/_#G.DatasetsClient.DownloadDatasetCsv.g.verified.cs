@@ -46,7 +46,7 @@ namespace G
                 datasetId: ref datasetId,
                 asOf: ref asOf);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/csv",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

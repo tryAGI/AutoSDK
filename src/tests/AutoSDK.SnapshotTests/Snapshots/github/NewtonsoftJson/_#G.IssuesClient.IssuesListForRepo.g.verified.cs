@@ -136,7 +136,7 @@ namespace G
                 global::G.IssuesListForRepoDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/issues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

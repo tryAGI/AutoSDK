@@ -45,7 +45,7 @@ namespace G
                 corpusId: ref corpusId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/corpora/{corpusId}/uploads",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

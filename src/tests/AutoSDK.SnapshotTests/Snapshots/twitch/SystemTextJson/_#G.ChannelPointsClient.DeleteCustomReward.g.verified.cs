@@ -42,7 +42,7 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 id: ref id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/channel_points/custom_rewards",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

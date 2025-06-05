@@ -53,7 +53,7 @@ namespace G
                 page: ref page,
                 perPage: ref perPage);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/assignments/{assignmentId}/accepted_assignments",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

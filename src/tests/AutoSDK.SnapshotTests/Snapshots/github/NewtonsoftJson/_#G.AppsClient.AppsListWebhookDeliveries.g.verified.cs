@@ -52,7 +52,7 @@ namespace G
                 cursor: ref cursor,
                 redelivery: ref redelivery);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/app/hook/deliveries",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

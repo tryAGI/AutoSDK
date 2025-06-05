@@ -63,7 +63,7 @@ namespace G
                 k: ref k,
                 rootRunsOnly: ref rootRunsOnly);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/metadata",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

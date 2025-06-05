@@ -50,7 +50,7 @@ namespace G
                 dataSource: ref dataSource,
                 requestStartTime: ref requestStartTime);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

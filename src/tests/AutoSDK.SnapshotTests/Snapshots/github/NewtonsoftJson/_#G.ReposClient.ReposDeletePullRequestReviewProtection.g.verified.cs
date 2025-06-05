@@ -44,7 +44,7 @@ namespace G
                 repo: ref repo,
                 branch: ref branch);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -99,7 +99,7 @@ namespace G
                 lastUsedBefore: ref lastUsedBefore,
                 lastUsedAfter: ref lastUsedAfter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/personal-access-tokens",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

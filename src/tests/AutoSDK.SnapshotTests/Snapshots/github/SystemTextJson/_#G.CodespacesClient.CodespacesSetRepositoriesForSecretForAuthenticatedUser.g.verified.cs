@@ -43,7 +43,7 @@ namespace G
                 secretName: ref secretName,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/codespaces/secrets/{secretName}/repositories",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

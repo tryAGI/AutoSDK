@@ -57,7 +57,7 @@ namespace G
                 global::G.ChatAccepts.TextEventStream => "text/event-stream",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chat",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

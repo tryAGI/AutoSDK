@@ -68,7 +68,7 @@ namespace G
                 search: ref search,
                 purpose: purpose);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -34,7 +34,7 @@ namespace G
             PrepareGetActiveUserInfosAsAdminArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/admin/getactiveuserinfos",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

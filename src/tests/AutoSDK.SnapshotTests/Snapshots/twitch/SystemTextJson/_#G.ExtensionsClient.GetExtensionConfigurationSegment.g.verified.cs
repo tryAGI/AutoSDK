@@ -52,7 +52,7 @@ namespace G
                 extensionId: ref extensionId,
                 segment: ref segment);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions/configurations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

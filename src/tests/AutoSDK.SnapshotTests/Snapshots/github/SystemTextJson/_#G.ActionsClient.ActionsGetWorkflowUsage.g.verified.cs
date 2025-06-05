@@ -52,7 +52,7 @@ namespace G
                 repo: ref repo,
                 workflowId: ref workflowId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/workflows/{workflowId}/timing",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -89,7 +89,7 @@ namespace G
                 saveHistory: ref saveHistory,
                 intelligentQueryRewriting: ref intelligentQueryRewriting);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/query",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

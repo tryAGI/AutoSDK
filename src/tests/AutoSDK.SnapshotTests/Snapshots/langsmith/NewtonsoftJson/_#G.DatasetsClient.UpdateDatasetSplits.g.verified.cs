@@ -45,7 +45,7 @@ namespace G
                 datasetId: ref datasetId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/splits",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

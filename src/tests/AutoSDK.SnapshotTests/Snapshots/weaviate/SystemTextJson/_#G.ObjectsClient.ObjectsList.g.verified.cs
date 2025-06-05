@@ -78,7 +78,7 @@ namespace G
                 @class: ref @class,
                 tenant: ref tenant);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/objects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

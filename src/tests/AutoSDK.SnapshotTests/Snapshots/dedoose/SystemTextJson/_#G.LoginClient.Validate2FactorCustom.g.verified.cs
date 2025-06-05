@@ -44,7 +44,7 @@ namespace G
                 username: ref username,
                 authToken: ref authToken);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/validate2factor",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

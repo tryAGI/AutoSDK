@@ -54,7 +54,7 @@ namespace G
                 moderatorId: ref moderatorId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/shield_mode",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -67,7 +67,7 @@ namespace G
                 before: ref before,
                 filter: ref filter);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

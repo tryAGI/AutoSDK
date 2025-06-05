@@ -64,7 +64,7 @@ namespace G
                 global::G.PackagesRestorePackageForUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/packages/{packageTypeValue}/{packageName}/restore",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

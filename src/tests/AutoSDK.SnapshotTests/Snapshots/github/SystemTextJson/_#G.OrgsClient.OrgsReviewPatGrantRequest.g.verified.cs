@@ -47,7 +47,7 @@ namespace G
                 patRequestId: ref patRequestId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/personal-access-token-requests/{patRequestId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

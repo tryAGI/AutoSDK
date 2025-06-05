@@ -69,7 +69,7 @@ namespace G
                 intervalUnit: ref intervalUnit,
                 intervalValue: ref intervalValue);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/top-pipelines-usage",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

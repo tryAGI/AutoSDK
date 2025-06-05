@@ -62,7 +62,7 @@ namespace G
                 slotId: ref slotId,
                 shouldReinviteGuest: ref shouldReinviteGuest);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/slot",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -67,7 +67,7 @@ namespace G
                 global::G.CompatibleEndpoint.Generate => "generate",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

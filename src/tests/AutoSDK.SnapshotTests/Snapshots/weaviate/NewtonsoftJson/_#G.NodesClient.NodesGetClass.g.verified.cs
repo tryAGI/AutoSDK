@@ -52,7 +52,7 @@ namespace G
                 global::G.NodesGetClassOutput.Verbose => "verbose",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/nodes/{className}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

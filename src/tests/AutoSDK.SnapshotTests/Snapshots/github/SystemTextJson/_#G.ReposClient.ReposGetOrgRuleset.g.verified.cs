@@ -46,7 +46,7 @@ namespace G
                 org: ref org,
                 rulesetId: ref rulesetId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/rulesets/{rulesetId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

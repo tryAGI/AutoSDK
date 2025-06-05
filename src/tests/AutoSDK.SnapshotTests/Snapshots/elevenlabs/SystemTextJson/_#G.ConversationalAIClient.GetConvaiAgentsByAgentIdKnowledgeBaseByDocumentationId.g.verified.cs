@@ -55,7 +55,7 @@ namespace G
                 xiApiKey: ref xiApiKey,
                 agentId: ref agentId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/agents/{agentId}/knowledge-base/{documentationId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

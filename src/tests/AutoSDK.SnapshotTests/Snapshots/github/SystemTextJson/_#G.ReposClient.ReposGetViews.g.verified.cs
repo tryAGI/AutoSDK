@@ -51,7 +51,7 @@ namespace G
                 repo: ref repo,
                 per: ref per);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/traffic/views",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

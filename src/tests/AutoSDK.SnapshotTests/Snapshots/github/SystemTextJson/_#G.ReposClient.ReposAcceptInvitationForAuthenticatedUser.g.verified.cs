@@ -33,7 +33,7 @@ namespace G
                 httpClient: HttpClient,
                 invitationId: ref invitationId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/repository_invitations/{invitationId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

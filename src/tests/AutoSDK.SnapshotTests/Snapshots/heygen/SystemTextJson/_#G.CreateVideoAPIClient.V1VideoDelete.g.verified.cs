@@ -36,7 +36,7 @@ namespace G
                 httpClient: HttpClient,
                 videoId: ref videoId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/video.delete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

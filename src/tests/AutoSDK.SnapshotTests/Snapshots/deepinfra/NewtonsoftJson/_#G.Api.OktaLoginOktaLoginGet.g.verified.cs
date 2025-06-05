@@ -48,7 +48,7 @@ namespace G
                 origin: ref origin,
                 loginId: ref loginId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/okta/login",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

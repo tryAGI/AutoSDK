@@ -50,7 +50,7 @@ namespace G
                 operationId: ref operationId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/tunedModels/{tunedModelId}/operations/{operationId}:cancel",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)

@@ -48,7 +48,7 @@ namespace G
                 pageSize: ref pageSize,
                 toolId: ref toolId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/tools/{toolId}/history",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

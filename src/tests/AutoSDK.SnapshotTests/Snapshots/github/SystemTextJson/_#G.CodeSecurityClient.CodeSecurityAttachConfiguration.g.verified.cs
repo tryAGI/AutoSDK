@@ -54,7 +54,7 @@ namespace G
                 configurationId: ref configurationId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/code-security/configurations/{configurationId}/attach",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

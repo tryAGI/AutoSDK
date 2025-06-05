@@ -64,7 +64,7 @@ namespace G
                 corpusKey: ref corpusKey,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/replace_filter_attributes",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

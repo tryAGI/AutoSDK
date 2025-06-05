@@ -57,7 +57,7 @@ namespace G
                 order: ref order,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/admin_api_keys",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

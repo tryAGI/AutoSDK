@@ -108,7 +108,7 @@ namespace G
                 global::G.TextToSpeechWithTimestampsV1TextToSpeechVoiceIdWithTimestampsPostOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/text-to-speech/{voiceId}/with-timestamps",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -34,7 +34,7 @@ namespace G
             PrepareGetVoicesSettingsDefaultArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/voices/settings/default",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

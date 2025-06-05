@@ -69,7 +69,7 @@ namespace G
                 conversationId: ref conversationId,
                 ifAll: ref ifAll);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -90,7 +90,7 @@ namespace G
                 global::G.ReposListCollaboratorsPermission.Admin => "admin",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/collaborators",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

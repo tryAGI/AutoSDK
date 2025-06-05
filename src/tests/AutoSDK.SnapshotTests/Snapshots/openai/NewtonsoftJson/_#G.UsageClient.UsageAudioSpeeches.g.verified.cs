@@ -92,7 +92,7 @@ namespace G
                 global::G.UsageAudioSpeechesBucketWidth.x1d => "1d",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/usage/audio_speeches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

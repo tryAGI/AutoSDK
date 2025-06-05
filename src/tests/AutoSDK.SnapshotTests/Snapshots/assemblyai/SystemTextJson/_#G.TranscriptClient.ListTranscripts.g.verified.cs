@@ -67,7 +67,7 @@ namespace G
                 afterId: ref afterId,
                 throttledOnly: ref throttledOnly);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/transcript",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -69,7 +69,7 @@ namespace G
                 view: ref view,
                 instillRequesterUid: ref instillRequesterUid);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/pipeline-runs/{pipelineRunId}/component-runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

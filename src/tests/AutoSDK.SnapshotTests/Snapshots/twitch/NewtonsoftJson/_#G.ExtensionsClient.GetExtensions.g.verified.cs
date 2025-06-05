@@ -46,7 +46,7 @@ namespace G
                 extensionId: ref extensionId,
                 extensionVersion: ref extensionVersion);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

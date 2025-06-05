@@ -51,7 +51,7 @@ namespace G
                 repo: ref repo,
                 owner: ref owner);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

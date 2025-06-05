@@ -34,7 +34,7 @@ namespace G
             PrepareValidateTokenArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/validate_token",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

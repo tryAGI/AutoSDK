@@ -80,7 +80,7 @@ namespace G
                 skip: ref skip,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/pipeline-families",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -96,7 +96,7 @@ namespace G
                 global::G.ChecksListForSuiteFilter.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/check-runs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

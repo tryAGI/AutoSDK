@@ -83,7 +83,7 @@ namespace G
                 after: ref after,
                 isFeatured: ref isFeatured);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/clips",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

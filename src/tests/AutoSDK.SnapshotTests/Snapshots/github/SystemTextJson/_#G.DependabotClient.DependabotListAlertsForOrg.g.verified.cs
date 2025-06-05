@@ -109,7 +109,7 @@ namespace G
                 last: ref last,
                 perPage: ref perPage);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/dependabot/alerts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -66,7 +66,7 @@ namespace G
                 first: ref first,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/analytics/games",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

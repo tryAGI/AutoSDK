@@ -45,7 +45,7 @@ namespace G
                 xiApiKey: ref xiApiKey,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/scoped-jwt",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

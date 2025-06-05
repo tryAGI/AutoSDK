@@ -51,7 +51,7 @@ namespace G
                 repo: ref repo,
                 @ref: ref @ref);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/git/ref/{@ref}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

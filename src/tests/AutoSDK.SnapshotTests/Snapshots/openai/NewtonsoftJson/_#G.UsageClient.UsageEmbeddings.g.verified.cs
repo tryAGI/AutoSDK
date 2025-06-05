@@ -92,7 +92,7 @@ namespace G
                 global::G.UsageEmbeddingsBucketWidth.x1d => "1d",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/usage/embeddings",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

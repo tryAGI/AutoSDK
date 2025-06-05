@@ -70,7 +70,7 @@ namespace G
                 limit: ref limit,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/usage/vector_stores",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

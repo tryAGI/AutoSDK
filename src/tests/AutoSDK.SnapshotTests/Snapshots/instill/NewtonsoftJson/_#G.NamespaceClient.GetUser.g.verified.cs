@@ -50,7 +50,7 @@ namespace G
                 global::G.GetUserView.VIEWFULL => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/users/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

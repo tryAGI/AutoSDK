@@ -113,7 +113,7 @@ namespace G
                 global::G.SessionSortableColumns.Feedback => "feedback",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -111,7 +111,6 @@ public partial class Tests
             "replicate.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdWithDots",
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 //["build_property.AutoSDK_GenerateSdk"] = "false",
                 //["build_property.AutoSDK_GenerateModels"] = "true",
                 //["build_property.AutoSDK_IncludeModels"] = "prediction_request",
@@ -122,7 +121,6 @@ public partial class Tests
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"
                     : string.Empty,
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 // ["build_property.AutoSDK_GenerateSdk"] = "false",
                 // ["build_property.AutoSDK_GenerateModels"] = "true",
                 // ["build_property.AutoSDK_GenerateMethods"] = "false",
@@ -139,7 +137,6 @@ public partial class Tests
             },
             "langsmith.json" => new Dictionary<string, string>
             {
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdSplit",
                 ["build_property.AutoSDK_ExcludeDeprecatedOperations"] = "true",
                 //["build_property.AutoSDK_JsonSerializerContext"] = "SourceGenerationContext",
@@ -147,21 +144,11 @@ public partial class Tests
             },
             "elevenlabs.json" => new Dictionary<string, string>
             {
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
-            },
-            "ai21.json" => new Dictionary<string, string>
-            {
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
             },
             "luma.yaml" => new Dictionary<string, string>
             {
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
-            },
-            "deepinfra.json" => new Dictionary<string, string>
-            {
-                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
             },
             _ => new Dictionary<string, string>(),
         };

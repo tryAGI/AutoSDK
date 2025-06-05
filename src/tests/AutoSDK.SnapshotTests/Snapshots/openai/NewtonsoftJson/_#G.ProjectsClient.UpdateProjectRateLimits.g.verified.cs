@@ -50,7 +50,7 @@ namespace G
                 rateLimitId: ref rateLimitId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/rate_limits/{rateLimitId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -50,7 +50,7 @@ namespace G
                 pageSize: ref pageSize,
                 pageToken: ref pageToken);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/secrets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
