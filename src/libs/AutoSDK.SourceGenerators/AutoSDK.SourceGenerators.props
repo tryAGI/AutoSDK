@@ -94,14 +94,16 @@
 
   <ItemGroup>
     <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_OpenApiSpecification" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_Namespace" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_ClassName" />
   </ItemGroup>
 
   <!-- Expose only those CompilerVisibleProperty items whose name starts with "AutoSDK_" -->
-  <ItemGroup>
-    <CompilerVisibleItemMetadata
-        Include="@(CompilerVisibleProperty -> 'AdditionalFiles')"
-        Condition="$([System.String]::Copy('%(CompilerVisibleProperty.Identity)').StartsWith('AutoSDK_'))"
-        MetadataName="%(CompilerVisibleProperty.Identity)" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <CompilerVisibleItemMetadata-->
+<!--        Include="@(CompilerVisibleProperty -> 'AdditionalFiles')"-->
+<!--        Condition="$([System.String]::Copy('%(CompilerVisibleProperty.Identity)').StartsWith('AutoSDK_'))"-->
+<!--        MetadataName="%(CompilerVisibleProperty.Identity)" />-->
+<!--  </ItemGroup>-->
 
 </Project>
