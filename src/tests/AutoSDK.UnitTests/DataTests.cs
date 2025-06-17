@@ -57,6 +57,7 @@ public partial class DataTests
                 "luma.yaml" => true,
                 "openai.yaml" => true,
                 "deepinfra.json" => true,
+                "cohere.yaml" => true,
                 _ => false,
             },
         };
