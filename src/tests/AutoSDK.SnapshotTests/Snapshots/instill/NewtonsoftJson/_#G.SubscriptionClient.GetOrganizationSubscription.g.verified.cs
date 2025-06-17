@@ -90,20 +90,29 @@ namespace G
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
                 string? __value_401 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_401, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_401, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<string?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__contentStream_401)));
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<string?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__contentStream_401)));
+                    __exception_401 = __ex;
                 }
 
                 throw new global::G.ApiException<string>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -118,20 +127,29 @@ namespace G
             if (!__response.IsSuccessStatusCode)
             {
                 string? __content_default = null;
+                global::System.Exception? __exception_default = null;
                 global::G.RpcStatus? __value_default = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = global::G.RpcStatus.FromJson(__content_default, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = global::G.RpcStatus.FromJson(__content_default, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = await global::G.RpcStatus.FromJsonStreamAsync(__contentStream_default, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = await global::G.RpcStatus.FromJsonStreamAsync(__contentStream_default, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_default = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.RpcStatus>(
                     message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_default,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_default,

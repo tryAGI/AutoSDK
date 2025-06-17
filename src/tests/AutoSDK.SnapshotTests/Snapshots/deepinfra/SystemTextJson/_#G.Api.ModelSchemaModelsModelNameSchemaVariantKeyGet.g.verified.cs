@@ -116,20 +116,29 @@ namespace G
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
                 global::G.DeepError? __value_403 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = global::G.DeepError.FromJson(__content_403, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::G.DeepError.FromJson(__content_403, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_403 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.DeepError>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -144,20 +153,29 @@ namespace G
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
                 global::G.DeepError? __value_404 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = global::G.DeepError.FromJson(__content_404, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::G.DeepError.FromJson(__content_404, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_404 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.DeepError>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -172,20 +190,29 @@ namespace G
             if ((int)__response.StatusCode == 423)
             {
                 string? __content_423 = null;
+                global::System.Exception? __exception_423 = null;
                 global::G.DeepError? __value_423 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_423 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_423 = global::G.DeepError.FromJson(__content_423, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_423 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_423 = global::G.DeepError.FromJson(__content_423, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_423 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_423 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_423, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_423 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_423 = await global::G.DeepError.FromJsonStreamAsync(__contentStream_423, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_423 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.DeepError>(
                     message: __content_423 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_423,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_423,
@@ -200,20 +227,29 @@ namespace G
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
                 global::G.HTTPValidationError? __value_422 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::G.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = await global::G.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_422 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.HTTPValidationError>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,

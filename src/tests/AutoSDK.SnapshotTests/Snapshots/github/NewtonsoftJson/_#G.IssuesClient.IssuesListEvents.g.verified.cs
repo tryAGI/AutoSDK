@@ -106,20 +106,29 @@ namespace G
             if ((int)__response.StatusCode == 410)
             {
                 string? __content_410 = null;
+                global::System.Exception? __exception_410 = null;
                 global::G.BasicError? __value_410 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_410 = global::G.BasicError.FromJson(__content_410, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_410 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_410 = global::G.BasicError.FromJson(__content_410, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_410 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_410 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_410, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_410 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_410 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_410, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_410 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
                     message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_410,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_410,

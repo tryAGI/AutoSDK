@@ -107,20 +107,29 @@ namespace G
             if ((int)__response.StatusCode == 301)
             {
                 string? __content_301 = null;
+                global::System.Exception? __exception_301 = null;
                 global::G.BasicError? __value_301 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_301 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_301 = global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_301 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_301 = global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_301 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_301 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_301, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_301 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_301 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_301, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_301 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
                     message: __content_301 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_301,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_301,

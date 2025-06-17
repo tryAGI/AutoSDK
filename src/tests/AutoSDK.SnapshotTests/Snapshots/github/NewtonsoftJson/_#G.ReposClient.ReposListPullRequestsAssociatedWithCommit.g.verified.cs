@@ -107,20 +107,29 @@ namespace G
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;
+                global::System.Exception? __exception_409 = null;
                 global::G.BasicError? __value_409 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_409 = global::G.BasicError.FromJson(__content_409, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_409 = global::G.BasicError.FromJson(__content_409, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_409 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_409, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_409 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_409, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_409 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_409,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,

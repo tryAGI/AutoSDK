@@ -109,20 +109,29 @@ namespace G
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
                 global::G.ErrorResponse? __value_400 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = await global::G.ErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = await global::G.ErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_400 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.ErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,

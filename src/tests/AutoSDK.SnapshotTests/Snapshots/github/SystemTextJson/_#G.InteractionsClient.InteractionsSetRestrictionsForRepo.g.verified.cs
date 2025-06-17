@@ -94,17 +94,26 @@ namespace G
             if ((int)__response.StatusCode == 409)
             {
                 string? __content_409 = null;
-                if (ReadResponseAsString)
+                global::System.Exception? __exception_409 = null;
+                try
                 {
-                    __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    if (ReadResponseAsString)
+                    {
+                        __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_409 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __exception_409 = __ex;
                 }
 
                 throw new global::G.ApiException(
                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_409,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,

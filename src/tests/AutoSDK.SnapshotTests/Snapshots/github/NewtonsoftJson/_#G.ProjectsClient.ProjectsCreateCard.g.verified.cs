@@ -85,17 +85,26 @@ namespace G
             if ((int)__response.StatusCode == 304)
             {
                 string? __content_304 = null;
-                if (ReadResponseAsString)
+                global::System.Exception? __exception_304 = null;
+                try
                 {
-                    __content_304 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    if (ReadResponseAsString)
+                    {
+                        __content_304 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_304 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_304 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __exception_304 = __ex;
                 }
 
                 throw new global::G.ApiException(
                     message: __content_304 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_304,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_304,
@@ -109,20 +118,29 @@ namespace G
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
                 global::G.BasicError? __value_403 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_403 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -137,20 +155,29 @@ namespace G
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
                 global::G.BasicError? __value_401 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = global::G.BasicError.FromJson(__content_401, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::G.BasicError.FromJson(__content_401, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_401 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -165,20 +192,29 @@ namespace G
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
                 global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>? __value_422 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>.FromJson(__content_422, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = await global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_422 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>?>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -193,20 +229,29 @@ namespace G
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
+                global::System.Exception? __exception_503 = null;
                 global::G.ProjectsCreateCardResponse2? __value_503 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_503 = global::G.ProjectsCreateCardResponse2.FromJson(__content_503, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_503 = global::G.ProjectsCreateCardResponse2.FromJson(__content_503, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_503 = await global::G.ProjectsCreateCardResponse2.FromJsonStreamAsync(__contentStream_503, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_503 = await global::G.ProjectsCreateCardResponse2.FromJsonStreamAsync(__contentStream_503, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_503 = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.ProjectsCreateCardResponse2>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_503,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,

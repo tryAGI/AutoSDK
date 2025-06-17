@@ -89,20 +89,29 @@ namespace G
             if (!__response.IsSuccessStatusCode)
             {
                 string? __content_default = null;
+                global::System.Exception? __exception_default = null;
                 string? __value_default = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_default, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_default, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<string?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__contentStream_default)));
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<string?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__contentStream_default)));
+                    __exception_default = __ex;
                 }
 
                 throw new global::G.ApiException<string>(
                     message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_default,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_default,

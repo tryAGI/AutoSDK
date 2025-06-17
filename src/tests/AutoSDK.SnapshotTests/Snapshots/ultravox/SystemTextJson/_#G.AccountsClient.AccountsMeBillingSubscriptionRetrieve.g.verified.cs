@@ -78,17 +78,26 @@ namespace G
             if ((int)__response.StatusCode == 302)
             {
                 string? __content_302 = null;
-                if (ReadResponseAsString)
+                global::System.Exception? __exception_302 = null;
+                try
                 {
-                    __content_302 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    if (ReadResponseAsString)
+                    {
+                        __content_302 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_302 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_302 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __exception_302 = __ex;
                 }
 
                 throw new global::G.ApiException(
                     message: __content_302 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_302,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_302,

@@ -106,20 +106,29 @@ namespace G
             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
             {
                 string? __content_4XX = null;
+                global::System.Exception? __exception_4XX = null;
                 global::G.ErrorResponse? __value_4XX = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_4XX = global::G.ErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_4XX = global::G.ErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_4XX = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_4XX = await global::G.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_4XX = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_4XX = await global::G.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_4XX = __ex;
                 }
 
                 throw new global::G.ApiException<global::G.ErrorResponse>(
                     message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_4XX,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_4XX,

@@ -374,25 +374,34 @@ namespace {endPoint.Settings.Namespace}
             if ((int)__response.StatusCode == {x.StatusCode})")}
             {{
                 string? __content_{x.StatusCode} = null;
+                global::System.Exception? __exception_{x.StatusCode} = null;
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
                 {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : " ")}
-                if (ReadResponseAsString)
+                try
                 {{
-                    __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    if (ReadResponseAsString)
+                    {{
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                    __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                    }}
+                    else
+                    {{
+                        var __contentStream_{x.StatusCode} = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeFromStreamCall($"__contentStream_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                    }}
                 }}
-                else
+                catch (global::System.Exception __ex)
                 {{
-                    var __contentStream_{x.StatusCode} = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                    __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeFromStreamCall($"__contentStream_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                    __exception_{x.StatusCode} = __ex;
                 }}
 
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
                 throw new global::{endPoint.GlobalSettings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
                 throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(")}
                     message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_{x.StatusCode},
                     statusCode: __response.StatusCode)
                 {{
                     ResponseBody = __content_{x.StatusCode},
