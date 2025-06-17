@@ -434,8 +434,16 @@ namespace {endPoint.Settings.Namespace}
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
+
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+    ? " "
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
+                    return
+                        {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
+                    return __content;")}
                 }}
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {{
                     throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
 {(endPoint.ContentType == ContentType.String ? $@" 
@@ -452,22 +460,39 @@ namespace {endPoint.Settings.Namespace}
                             h => h.Value),
                     }};
                 }}
-
-{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? " "
-    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
-                return
-                    {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                    throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
-                return __content;")}
             }}
             else
             {{
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
+
+                    {endPoint.ContentType switch
+                    {
+                        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
+                        ContentType.Stream => "using ",
+                        _ => string.Empty,
+                    }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
+            {
+                ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
+                ContentType.String => "Stream",
+                ContentType.Stream => "Stream",
+                _ => "ByteArray",
+            }}Async(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+    ? " "
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
+                    return
+                        {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");" : @" 
+                    return __content;")}
                 }}
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {{
                     throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -480,31 +505,6 @@ namespace {endPoint.Settings.Namespace}
                             h => h.Value),
                     }};
                 }}
-
-                {endPoint.ContentType switch
-    {
-        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
-        ContentType.Stream => "using ",
-        _ => string.Empty,
-    }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
-    {
-        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
-        ContentType.String => "Stream",
-        ContentType.Stream => "Stream",
-        _ => "ByteArray",
-    }}Async(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? " "
-    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
-                return
-                    {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                    throw new global::System.InvalidOperationException(""Response deserialization failed."");" : @" 
-                return __content;")}
             }}
  ";
     }

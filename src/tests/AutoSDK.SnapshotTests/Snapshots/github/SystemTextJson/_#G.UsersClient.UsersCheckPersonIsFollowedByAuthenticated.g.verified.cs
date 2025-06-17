@@ -189,8 +189,9 @@ namespace G
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::G.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -204,15 +205,21 @@ namespace G
                             h => h.Value),
                     };
                 }
-
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::G.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -225,13 +232,6 @@ namespace G
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
             }
         }
     }
