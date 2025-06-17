@@ -40,6 +40,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream-end")]
         StreamEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="debug")]
+        Debug,
     }
 
     /// <summary>
@@ -60,6 +65,7 @@ namespace G
                 ChatStreamEventEventType.TextGeneration => "text-generation",
                 ChatStreamEventEventType.CitationGeneration => "citation-generation",
                 ChatStreamEventEventType.StreamEnd => "stream-end",
+                ChatStreamEventEventType.Debug => "debug",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,6 +82,7 @@ namespace G
                 "text-generation" => ChatStreamEventEventType.TextGeneration,
                 "citation-generation" => ChatStreamEventEventType.CitationGeneration,
                 "stream-end" => ChatStreamEventEventType.StreamEnd,
+                "debug" => ChatStreamEventEventType.Debug,
                 _ => null,
             };
         }

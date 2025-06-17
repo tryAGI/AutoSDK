@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.TextContentType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.TextContentType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         public TextContent(
             string text,
             global::G.TextContentType type)

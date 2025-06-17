@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("arguments")]
+        public string? Arguments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("arguments")]
-        public string? Arguments { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCallV2Function" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="arguments"></param>
+        /// <param name="name"></param>
         public ToolCallV2Function(
-            string? name,
-            string? arguments)
+            string? arguments,
+            string? name)
         {
-            this.Name = name;
             this.Arguments = arguments;
+            this.Name = name;
         }
 
         /// <summary>

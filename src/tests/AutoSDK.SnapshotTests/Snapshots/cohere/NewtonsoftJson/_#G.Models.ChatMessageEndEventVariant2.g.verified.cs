@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("delta")]
+        public global::G.ChatMessageEndEventVariant2Delta? Delta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta")]
-        public global::G.ChatMessageEndEventVariant2Delta? Delta { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessageEndEventVariant2" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="delta"></param>
+        /// <param name="id"></param>
         public ChatMessageEndEventVariant2(
-            string? id,
-            global::G.ChatMessageEndEventVariant2Delta? delta)
+            global::G.ChatMessageEndEventVariant2Delta? delta,
+            string? id)
         {
-            this.Id = id;
             this.Delta = delta;
+            this.Id = id;
         }
 
         /// <summary>

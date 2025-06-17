@@ -17,6 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseFormatDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextResponseFormat? Text { get; init; }
 #else
@@ -53,18 +58,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.JSONResponseFormat? JSON { get; init; }
+        public global::G.JSONResponseFormat? JsonObject { get; init; }
 #else
-        public global::G.JSONResponseFormat? JSON { get; }
+        public global::G.JSONResponseFormat? JsonObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSON))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
-        public bool IsJSON => JSON != null;
+        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// 
@@ -74,33 +79,36 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.JSONResponseFormat?(ResponseFormat @this) => @this.JSON;
+        public static implicit operator global::G.JSONResponseFormat?(ResponseFormat @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponseFormat(global::G.JSONResponseFormat? value)
         {
-            JSON = value;
+            JsonObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResponseFormat(
+            global::G.ResponseFormatDiscriminatorType? type,
             global::G.TextResponseFormat? text,
-            global::G.JSONResponseFormat? jSON
+            global::G.JSONResponseFormat? jsonObject
             )
         {
+            Type = type;
+
             Text = text;
-            JSON = jSON;
+            JsonObject = jsonObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            JSON as object ??
+            JsonObject as object ??
             Text as object 
             ;
 
@@ -109,7 +117,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            JSON?.ToString() 
+            JsonObject?.ToString() 
             ;
 
         /// <summary>
@@ -117,7 +125,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsJSON || !IsText && IsJSON;
+            return IsText && !IsJsonObject || !IsText && IsJsonObject;
         }
 
         /// <summary>
@@ -125,7 +133,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.TextResponseFormat?, TResult>? text = null,
-            global::System.Func<global::G.JSONResponseFormat?, TResult>? jSON = null,
+            global::System.Func<global::G.JSONResponseFormat?, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -137,9 +145,9 @@ namespace G
             {
                 return text(Text!);
             }
-            else if (IsJSON && jSON != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return jSON(JSON!);
+                return jsonObject(JsonObject!);
             }
 
             return default(TResult);
@@ -150,7 +158,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.TextResponseFormat?>? text = null,
-            global::System.Action<global::G.JSONResponseFormat?>? jSON = null,
+            global::System.Action<global::G.JSONResponseFormat?>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -162,9 +170,9 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
-            else if (IsJSON)
+            else if (IsJsonObject)
             {
-                jSON?.Invoke(JSON!);
+                jsonObject?.Invoke(JsonObject!);
             }
         }
 
@@ -177,7 +185,7 @@ namespace G
             {
                 Text,
                 typeof(global::G.TextResponseFormat),
-                JSON,
+                JsonObject,
                 typeof(global::G.JSONResponseFormat),
             };
             const int offset = unchecked((int)2166136261);
@@ -196,7 +204,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.TextResponseFormat?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.JSONResponseFormat?>.Default.Equals(JSON, other.JSON) 
+                global::System.Collections.Generic.EqualityComparer<global::G.JSONResponseFormat?>.Default.Equals(JsonObject, other.JsonObject) 
                 ;
         }
 

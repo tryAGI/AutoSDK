@@ -10,16 +10,16 @@ namespace G
     public sealed partial class TokenizeRequest
     {
         /// <summary>
+        /// The input will be tokenized by the tokenizer that is used by this model.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Model { get; set; } = default!;
+
+        /// <summary>
         /// The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
-
-        /// <summary>
-        /// An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Model { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenizeRequest" /> class.
         /// </summary>
+        /// <param name="model">
+        /// The input will be tokenized by the tokenizer that is used by this model.
+        /// </param>
         /// <param name="text">
         /// The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.
         /// </param>
-        /// <param name="model">
-        /// An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
-        /// </param>
         public TokenizeRequest(
-            string text,
-            string model)
+            string model,
+            string text)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

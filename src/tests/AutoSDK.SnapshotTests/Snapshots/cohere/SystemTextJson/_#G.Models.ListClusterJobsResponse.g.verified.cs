@@ -19,14 +19,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int? TotalCount { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
+        public global::G.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
-        public global::G.ApiMeta? Meta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,19 +38,19 @@ namespace G
         /// Initializes a new instance of the <see cref="ListClusterJobsResponse" /> class.
         /// </summary>
         /// <param name="jobs"></param>
-        /// <param name="totalCount"></param>
         /// <param name="meta"></param>
+        /// <param name="totalCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListClusterJobsResponse(
             global::System.Collections.Generic.IList<global::G.GetClusterJobResponse> jobs,
-            int? totalCount,
-            global::G.ApiMeta? meta)
+            global::G.ApiMeta? meta,
+            int? totalCount)
         {
             this.Jobs = jobs ?? throw new global::System.ArgumentNullException(nameof(jobs));
-            this.TotalCount = totalCount;
             this.Meta = meta;
+            this.TotalCount = totalCount;
         }
 
         /// <summary>

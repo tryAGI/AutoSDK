@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_plan")]
-        public string? ToolPlan { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public global::G.ChatToolPlanDeltaEventVariant2DeltaMessage? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolPlanDeltaEventVariant2Delta" /> class.
         /// </summary>
-        /// <param name="toolPlan"></param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatToolPlanDeltaEventVariant2Delta(
-            string? toolPlan)
+            global::G.ChatToolPlanDeltaEventVariant2DeltaMessage? message)
         {
-            this.ToolPlan = toolPlan;
+            this.Message = message;
         }
 
         /// <summary>

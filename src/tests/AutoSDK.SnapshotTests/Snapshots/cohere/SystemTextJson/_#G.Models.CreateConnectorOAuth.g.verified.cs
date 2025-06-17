@@ -10,6 +10,12 @@ namespace G
     public sealed partial class CreateConnectorOAuth
     {
         /// <summary>
+        /// The OAuth 2.0 /authorize endpoint to use when users authorize the connector.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authorize_url")]
+        public string? AuthorizeUrl { get; set; }
+
+        /// <summary>
         /// The OAuth 2.0 client ID. This fields is encrypted at rest.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
@@ -22,22 +28,16 @@ namespace G
         public string? ClientSecret { get; set; }
 
         /// <summary>
-        /// The OAuth 2.0 /authorize endpoint to use when users authorize the connector.
+        /// The OAuth scopes to request when users authorize the connector.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("authorize_url")]
-        public string? AuthorizeUrl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        public string? Scope { get; set; }
 
         /// <summary>
         /// The OAuth 2.0 /token endpoint to use when users authorize the connector.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_url")]
         public string? TokenUrl { get; set; }
-
-        /// <summary>
-        /// The OAuth scopes to request when users authorize the connector.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        public string? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,36 +48,36 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConnectorOAuth" /> class.
         /// </summary>
+        /// <param name="authorizeUrl">
+        /// The OAuth 2.0 /authorize endpoint to use when users authorize the connector.
+        /// </param>
         /// <param name="clientId">
         /// The OAuth 2.0 client ID. This fields is encrypted at rest.
         /// </param>
         /// <param name="clientSecret">
         /// The OAuth 2.0 client Secret. This field is encrypted at rest and never returned in a response.
         /// </param>
-        /// <param name="authorizeUrl">
-        /// The OAuth 2.0 /authorize endpoint to use when users authorize the connector.
+        /// <param name="scope">
+        /// The OAuth scopes to request when users authorize the connector.
         /// </param>
         /// <param name="tokenUrl">
         /// The OAuth 2.0 /token endpoint to use when users authorize the connector.
-        /// </param>
-        /// <param name="scope">
-        /// The OAuth scopes to request when users authorize the connector.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateConnectorOAuth(
+            string? authorizeUrl,
             string? clientId,
             string? clientSecret,
-            string? authorizeUrl,
-            string? tokenUrl,
-            string? scope)
+            string? scope,
+            string? tokenUrl)
         {
+            this.AuthorizeUrl = authorizeUrl;
             this.ClientId = clientId;
             this.ClientSecret = clientSecret;
-            this.AuthorizeUrl = authorizeUrl;
-            this.TokenUrl = tokenUrl;
             this.Scope = scope;
+            this.TokenUrl = tokenUrl;
         }
 
         /// <summary>

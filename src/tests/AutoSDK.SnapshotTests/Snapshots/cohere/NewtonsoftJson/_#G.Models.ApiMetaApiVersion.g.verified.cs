@@ -12,12 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Version { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_deprecated")]
         public bool? IsDeprecated { get; set; }
 
@@ -28,6 +22,12 @@ namespace G
         public bool? IsExperimental { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Version { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,9 +36,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiMetaApiVersion" /> class.
         /// </summary>
-        /// <param name="version"></param>
         /// <param name="isDeprecated"></param>
         /// <param name="isExperimental"></param>
+        /// <param name="version"></param>
         public ApiMetaApiVersion(
             string version,
             bool? isDeprecated,

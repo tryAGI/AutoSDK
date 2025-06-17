@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Rerankv2Request.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,7 +10,22 @@ namespace G
     public sealed partial class Rerankv2Request
     {
         /// <summary>
-        /// The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`
+        /// A list of texts that will be compared to the `query`.<br/>
+        /// For optimal performance we recommend against sending more than 1,000 documents in a single request.<br/>
+        /// **Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.<br/>
+        /// **Note**: structured data should be formatted as YAML strings for best performance.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> Documents { get; set; } = default!;
+
+        /// <summary>
+        /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_tokens_per_doc")]
+        public int? MaxTokensPerDoc { get; set; }
+
+        /// <summary>
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
@@ -24,40 +37,10 @@ namespace G
         public string Query { get; set; } = default!;
 
         /// <summary>
-        /// A list of document objects or strings to rerank.<br/>
-        /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
-        /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
-        /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> Documents { get; set; } = default!;
-
-        /// <summary>
-        /// The number of most relevant documents or indices to return, defaults to the length of the documents
+        /// Limits the number of returned rerank results to the specified value. If not passed, all the rerank results will be returned.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_n")]
         public int? TopN { get; set; }
-
-        /// <summary>
-        /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("rank_fields")]
-        public global::System.Collections.Generic.IList<string>? RankFields { get; set; }
-
-        /// <summary>
-        /// - If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request.<br/>
-        /// - If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("return_documents")]
-        public bool? ReturnDocuments { get; set; }
-
-        /// <summary>
-        /// The maximum number of chunks to produce internally from a document<br/>
-        /// Default Value: 10
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_chunks_per_doc")]
-        public int? MaxChunksPerDoc { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,49 +51,36 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Rerankv2Request" /> class.
         /// </summary>
+        /// <param name="documents">
+        /// A list of texts that will be compared to the `query`.<br/>
+        /// For optimal performance we recommend against sending more than 1,000 documents in a single request.<br/>
+        /// **Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.<br/>
+        /// **Note**: structured data should be formatted as YAML strings for best performance.
+        /// </param>
+        /// <param name="maxTokensPerDoc">
+        /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
+        /// </param>
         /// <param name="model">
-        /// The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>
         /// <param name="query">
         /// The search query
         /// </param>
-        /// <param name="documents">
-        /// A list of document objects or strings to rerank.<br/>
-        /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
-        /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
-        /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
-        /// </param>
         /// <param name="topN">
-        /// The number of most relevant documents or indices to return, defaults to the length of the documents
-        /// </param>
-        /// <param name="rankFields">
-        /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
-        /// </param>
-        /// <param name="returnDocuments">
-        /// - If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request.<br/>
-        /// - If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="maxChunksPerDoc">
-        /// The maximum number of chunks to produce internally from a document<br/>
-        /// Default Value: 10
+        /// Limits the number of returned rerank results to the specified value. If not passed, all the rerank results will be returned.
         /// </param>
         public Rerankv2Request(
+            global::System.Collections.Generic.IList<string> documents,
             string model,
             string query,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
-            int? topN,
-            global::System.Collections.Generic.IList<string>? rankFields,
-            bool? returnDocuments,
-            int? maxChunksPerDoc)
+            int? maxTokensPerDoc,
+            int? topN)
         {
+            this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
-            this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
+            this.MaxTokensPerDoc = maxTokensPerDoc;
             this.TopN = topN;
-            this.RankFields = rankFields;
-            this.ReturnDocuments = returnDocuments;
-            this.MaxChunksPerDoc = maxChunksPerDoc;
         }
 
         /// <summary>

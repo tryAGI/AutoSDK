@@ -6,7 +6,8 @@ namespace G
 {
     /// <summary>
     /// Defaults to `"accurate"`.<br/>
-    /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+    /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
+    /// **Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `"fast"` and `"off"` modes. The default is `"fast"`.
     /// </summary>
     public enum CitationOptionsMode
     {

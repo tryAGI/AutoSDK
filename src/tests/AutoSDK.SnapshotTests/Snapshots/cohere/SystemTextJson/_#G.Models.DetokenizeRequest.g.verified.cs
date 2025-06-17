@@ -10,18 +10,18 @@ namespace G
     public sealed partial class DetokenizeRequest
     {
         /// <summary>
-        /// The list of tokens to be detokenized.<br/>
-        /// Included only in requests
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
-        public global::System.Collections.Generic.IList<int>? Tokens { get; set; }
-
-        /// <summary>
         /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// The list of tokens to be detokenized.<br/>
+        /// Included only in requests
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
+        public global::System.Collections.Generic.IList<int>? Tokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,12 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DetokenizeRequest" /> class.
         /// </summary>
+        /// <param name="model">
+        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
+        /// </param>
         /// <param name="tokens">
         /// The list of tokens to be detokenized.<br/>
         /// Included only in requests
-        /// </param>
-        /// <param name="model">
-        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

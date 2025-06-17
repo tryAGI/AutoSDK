@@ -11,7 +11,8 @@ namespace G
     {
         /// <summary>
         /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
+        /// **Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `"fast"` and `"off"` modes. The default is `"fast"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CitationOptionsModeJsonConverter))]
@@ -28,7 +29,8 @@ namespace G
         /// </summary>
         /// <param name="mode">
         /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.<br/>
+        /// **Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `"fast"` and `"off"` modes. The default is `"fast"`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

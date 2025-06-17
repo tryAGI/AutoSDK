@@ -16,16 +16,16 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// An ordered list of ranked documents
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Rerankv2ResponseResult> Results { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("meta")]
         public global::G.ApiMeta? Meta { get; set; }
+
+        /// <summary>
+        /// An ordered list of ranked documents
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.Rerankv2ResponseResult> Results { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,10 +37,10 @@ namespace G
         /// Initializes a new instance of the <see cref="Rerankv2Response" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="meta"></param>
         /// <param name="results">
         /// An ordered list of ranked documents
         /// </param>
-        /// <param name="meta"></param>
         public Rerankv2Response(
             global::System.Collections.Generic.IList<global::G.Rerankv2ResponseResult> results,
             string? id,

@@ -367,12 +367,12 @@ namespace G
         /// The possible stages of a fine-tuned model life-cycle.<br/>
         ///  - STATUS_UNSPECIFIED: Unspecified status.<br/>
         ///  - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.<br/>
-        ///  - STATUS_DEPLOYING_API: The fine-tuned model is being deployed.<br/>
+        ///  - STATUS_DEPLOYING_API: Deprecated: The fine-tuned model is being deployed.<br/>
         ///  - STATUS_READY: The fine-tuned model is ready to receive requests.<br/>
         ///  - STATUS_FAILED: The fine-tuned model failed.<br/>
         ///  - STATUS_DELETED: The fine-tuned model was deleted.<br/>
-        ///  - STATUS_TEMPORARILY_OFFLINE: The fine-tuned model is temporarily unavailable.<br/>
-        ///  - STATUS_PAUSED: The fine-tuned model is paused (Vanilla only).<br/>
+        ///  - STATUS_TEMPORARILY_OFFLINE: Deprecated: The fine-tuned model is temporarily unavailable.<br/>
+        ///  - STATUS_PAUSED: Deprecated: The fine-tuned model is paused (Vanilla only).<br/>
         ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
         /// Default Value: STATUS_UNSPECIFIED
         /// </param>

@@ -10,6 +10,13 @@ namespace G
     public sealed partial class CreateConnectorServiceAuth
     {
         /// <summary>
+        /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Token { get; set; }
+
+        /// <summary>
         /// The token_type specifies the way the token is passed in the Authorization header. Valid values are "bearer", "basic", and "noscheme".<br/>
         /// Default Value: noscheme
         /// </summary>
@@ -20,13 +27,6 @@ namespace G
         public required global::G.AuthTokenType Type { get; set; } = global::G.AuthTokenType.Noscheme;
 
         /// <summary>
-        /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,22 +35,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConnectorServiceAuth" /> class.
         /// </summary>
+        /// <param name="token">
+        /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.
+        /// </param>
         /// <param name="type">
         /// The token_type specifies the way the token is passed in the Authorization header. Valid values are "bearer", "basic", and "noscheme".<br/>
         /// Default Value: noscheme
-        /// </param>
-        /// <param name="token">
-        /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateConnectorServiceAuth(
-            global::G.AuthTokenType type,
-            string token)
+            string token,
+            global::G.AuthTokenType type)
         {
-            this.Type = type;
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Type = type;
         }
 
         /// <summary>

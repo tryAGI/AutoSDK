@@ -25,7 +25,7 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Rerank<br/>
+        /// Rerank V2 API<br/>
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>
@@ -516,59 +516,46 @@ namespace G
         }
 
         /// <summary>
-        /// Rerank<br/>
+        /// Rerank V2 API<br/>
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="documents">
+        /// A list of texts that will be compared to the `query`.<br/>
+        /// For optimal performance we recommend against sending more than 1,000 documents in a single request.<br/>
+        /// **Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.<br/>
+        /// **Note**: structured data should be formatted as YAML strings for best performance.
+        /// </param>
+        /// <param name="maxTokensPerDoc">
+        /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
+        /// </param>
         /// <param name="model">
-        /// The identifier of the model to use, one of : `rerank-english-v3.0`, `rerank-multilingual-v3.0`, `rerank-english-v2.0`, `rerank-multilingual-v2.0`
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>
         /// <param name="query">
         /// The search query
         /// </param>
-        /// <param name="documents">
-        /// A list of document objects or strings to rerank.<br/>
-        /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
-        /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
-        /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
-        /// </param>
         /// <param name="topN">
-        /// The number of most relevant documents or indices to return, defaults to the length of the documents
-        /// </param>
-        /// <param name="rankFields">
-        /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
-        /// </param>
-        /// <param name="returnDocuments">
-        /// - If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request.<br/>
-        /// - If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="maxChunksPerDoc">
-        /// The maximum number of chunks to produce internally from a document<br/>
-        /// Default Value: 10
+        /// Limits the number of returned rerank results to the specified value. If not passed, all the rerank results will be returned.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Rerankv2Response> Rerankv2Async(
+            global::System.Collections.Generic.IList<string> documents,
             string model,
             string query,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
             string? xClientName = default,
+            int? maxTokensPerDoc = default,
             int? topN = default,
-            global::System.Collections.Generic.IList<string>? rankFields = default,
-            bool? returnDocuments = default,
-            int? maxChunksPerDoc = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.Rerankv2Request
             {
+                Documents = documents,
+                MaxTokensPerDoc = maxTokensPerDoc,
                 Model = model,
                 Query = query,
-                Documents = documents,
                 TopN = topN,
-                RankFields = rankFields,
-                ReturnDocuments = returnDocuments,
-                MaxChunksPerDoc = maxChunksPerDoc,
             };
 
             return await Rerankv2Async(

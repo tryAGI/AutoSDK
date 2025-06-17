@@ -12,17 +12,17 @@ namespace G
     public sealed partial class UserMessage
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.UserMessageRole Role { get; set; }
-
-        /// <summary>
         /// The content of the message. This can be a string or a list of content blocks.<br/>
         /// If a string is provided, it will be treated as a text content block.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> Content { get; set; } = default!;
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content2>> Content { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.UserMessageRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content">
         /// The content of the message. This can be a string or a list of content blocks.<br/>
         /// If a string is provided, it will be treated as a text content block.
         /// </param>
+        /// <param name="role"></param>
         public UserMessage(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> content,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content2>> content,
             global::G.UserMessageRole role)
         {
             this.Content = content;

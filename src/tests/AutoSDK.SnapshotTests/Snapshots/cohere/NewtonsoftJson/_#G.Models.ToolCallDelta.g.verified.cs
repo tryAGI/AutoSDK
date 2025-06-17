@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ToolCallDelta
     {
         /// <summary>
-        /// Name of the tool call
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// Index of the tool call generated
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public double? Index { get; set; }
+
+        /// <summary>
+        /// Name of the tool call
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Chunk of the tool parameters
@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCallDelta" /> class.
         /// </summary>
-        /// <param name="name">
-        /// Name of the tool call
-        /// </param>
         /// <param name="index">
         /// Index of the tool call generated
+        /// </param>
+        /// <param name="name">
+        /// Name of the tool call
         /// </param>
         /// <param name="parameters">
         /// Chunk of the tool parameters
@@ -55,13 +55,13 @@ namespace G
         /// Chunk of the tool plan text
         /// </param>
         public ToolCallDelta(
-            string? name,
             double? index,
+            string? name,
             string? parameters,
             string? text)
         {
-            this.Name = name;
             this.Index = index;
+            this.Name = name;
             this.Parameters = parameters;
             this.Text = text;
         }

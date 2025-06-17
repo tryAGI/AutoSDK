@@ -13,15 +13,15 @@ namespace G
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("classifications")]
+        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
 
         /// <summary>
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::Newtonsoft.Json.JsonProperty("classifications")]
-        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -38,20 +38,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
         /// </summary>
-        /// <param name="id">
+        /// <param name="classifications">
         /// Included only in responses
         /// </param>
-        /// <param name="classifications">
+        /// <param name="id">
         /// Included only in responses
         /// </param>
         /// <param name="meta"></param>
         public ClassifyResponse(
             global::G.ApiMeta? meta,
-            string id = default!,
-            global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> classifications = default!)
+            global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> classifications = default!,
+            string id = default!)
         {
-            this.Id = id;
             this.Classifications = classifications;
+            this.Id = id;
             this.Meta = meta;
         }
 

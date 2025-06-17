@@ -25,16 +25,16 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Embed<br/>
-        /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
-        /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
-        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
+        /// Embed V1 API<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>> EmbedAsync(
+        public async global::System.Threading.Tasks.Task<global::G.EmbedResponse> EmbedAsync(
             global::G.EmbedRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -482,7 +482,7 @@ namespace G
                 }
 
                 return
-                    global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>.FromJson(__content, JsonSerializerOptions) ??
+                    global::G.EmbedResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -512,34 +512,31 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.EmbedResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Embed<br/>
-        /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
-        /// Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
-        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](/docs/semantic-search).
+        /// Embed V1 API<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// <param name="embeddingTypes">
+        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// * `"float"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.<br/>
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
         /// Included only in requests
         /// </param>
-        /// <param name="model">
-        /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
-        /// Available models and corresponding embedding dimensions:<br/>
-        /// * `embed-english-v3.0`  1024<br/>
-        /// * `embed-multilingual-v3.0`  1024<br/>
-        /// * `embed-english-light-v3.0`  384<br/>
-        /// * `embed-multilingual-light-v3.0`  384<br/>
-        /// * `embed-english-v2.0`  4096<br/>
-        /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768<br/>
-        /// Included only in requests
+        /// <param name="images">
+        /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
+        /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.<br/>
+        /// Images are only supported with Embed v3.0 and newer models.
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -549,13 +546,12 @@ namespace G
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
-        /// <param name="embeddingTypes">
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
-        /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.<br/>
+        /// <param name="model">
+        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
+        /// Included only in requests
+        /// </param>
+        /// <param name="texts">
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="truncate">
@@ -567,21 +563,23 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>> EmbedAsync(
-            global::System.Collections.Generic.IList<string> texts,
-            string model,
+        public async global::System.Threading.Tasks.Task<global::G.EmbedResponse> EmbedAsync(
             global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
+            string model,
+            global::System.Collections.Generic.IList<string> texts,
             global::G.EmbedRequestTruncate truncate,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? images = default,
             global::G.EmbedInputType? inputType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.EmbedRequest
             {
-                Texts = texts,
-                Model = model,
-                InputType = inputType,
                 EmbeddingTypes = embeddingTypes,
+                Images = images,
+                InputType = inputType,
+                Model = model,
+                Texts = texts,
                 Truncate = truncate,
             };
 

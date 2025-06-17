@@ -10,16 +10,16 @@ namespace G
     public sealed partial class DocumentSource
     {
         /// <summary>
-        /// The unique identifier of the document
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("document")]
         public object? Document { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the document
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSource" /> class.
         /// </summary>
+        /// <param name="document"></param>
         /// <param name="id">
         /// The unique identifier of the document
         /// </param>
-        /// <param name="document"></param>
         public DocumentSource(
-            string? id,
-            object? document)
+            object? document,
+            string? id)
         {
-            this.Id = id;
             this.Document = document;
+            this.Id = id;
         }
 
         /// <summary>

@@ -7,23 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    [global::System.Text.Json.Serialization.JsonPolymorphic(
-        TypeDiscriminatorPropertyName = "event_type",
-        IgnoreUnrecognizedTypeDiscriminators = true,
-        UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatStreamStartEvent), typeDiscriminator: "stream-start")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatSearchQueriesGenerationEvent), typeDiscriminator: "search-queries-generation")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatSearchResultsEvent), typeDiscriminator: "search-results")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatTextGenerationEvent), typeDiscriminator: "text-generation")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatCitationGenerationEvent), typeDiscriminator: "citation-generation")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(G.ChatStreamEndEvent), typeDiscriminator: "stream-end")]
-    public partial class ChatStreamEvent
+    public sealed partial class ChatStreamEvent
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatStreamEventEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.ChatStreamEventEventType EventType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatStreamEvent" /> class.
+        /// </summary>
+        /// <param name="eventType"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ChatStreamEvent(
+            global::G.ChatStreamEventEventType eventType)
+        {
+            this.EventType = eventType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatStreamEvent" /> class.
+        /// </summary>
+        public ChatStreamEvent()
+        {
+        }
     }
 }

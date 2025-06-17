@@ -10,12 +10,6 @@ namespace G
     public sealed partial class WandbConfig
     {
         /// <summary>
-        /// The WandB project name to be used during training.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Project { get; set; } = default!;
-
-        /// <summary>
         /// The WandB API key to be used during training.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_key", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,6 +22,12 @@ namespace G
         public string? Entity { get; set; }
 
         /// <summary>
+        /// The WandB project name to be used during training.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Project { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WandbConfig" /> class.
         /// </summary>
-        /// <param name="project">
-        /// The WandB project name to be used during training.
-        /// </param>
         /// <param name="apiKey">
         /// The WandB API key to be used during training.
         /// </param>
         /// <param name="entity">
         /// The WandB entity name to be used during training.
         /// </param>
+        /// <param name="project">
+        /// The WandB project name to be used during training.
+        /// </param>
         public WandbConfig(
-            string project,
             string apiKey,
+            string project,
             string? entity)
         {
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Entity = entity;
         }
 

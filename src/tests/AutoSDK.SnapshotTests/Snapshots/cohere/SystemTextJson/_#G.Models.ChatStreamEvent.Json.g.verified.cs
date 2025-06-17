@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public partial class ChatStreamEvent
+    public sealed partial class ChatStreamEvent
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -13,7 +13,7 @@ namespace G
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                typeof(ChatStreamEvent),
+                this.GetType(),
                 jsonSerializerContext);
         }
 
@@ -29,22 +29,20 @@ namespace G
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                typeof(ChatStreamEvent),
                 jsonSerializerOptions);
         }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static T? FromJson<T>(
+        public static global::G.ChatStreamEvent? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            where T : ChatStreamEvent
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(ChatStreamEvent),
-                jsonSerializerContext) as T;
+                typeof(global::G.ChatStreamEvent),
+                jsonSerializerContext) as global::G.ChatStreamEvent;
         }
 
         /// <summary>
@@ -54,28 +52,26 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static T? FromJson<T>(
+        public static global::G.ChatStreamEvent? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            where T : ChatStreamEvent
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<ChatStreamEvent>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatStreamEvent>(
                 json,
-                jsonSerializerOptions) as T;
+                jsonSerializerOptions);
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.ChatStreamEvent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            where T : ChatStreamEvent
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(ChatStreamEvent),
-                jsonSerializerContext).ConfigureAwait(false)) as T;
+                typeof(global::G.ChatStreamEvent),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.ChatStreamEvent;
         }
 
         /// <summary>
@@ -85,14 +81,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static async global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
+        public static global::System.Threading.Tasks.ValueTask<global::G.ChatStreamEvent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            where T : ChatStreamEvent
         {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<ChatStreamEvent?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.ChatStreamEvent?>(
                 jsonStream,
-                jsonSerializerOptions).ConfigureAwait(false)) as T;
+                jsonSerializerOptions);
         }
     }
 }

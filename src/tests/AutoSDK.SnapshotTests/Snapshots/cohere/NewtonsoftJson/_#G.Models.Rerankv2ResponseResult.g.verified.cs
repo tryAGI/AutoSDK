@@ -10,12 +10,6 @@ namespace G
     public sealed partial class Rerankv2ResponseResult
     {
         /// <summary>
-        /// If `return_documents` is set as `false` this will return none, if `true` it will return the documents passed in
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("document")]
-        public global::G.Rerankv2ResponseResultDocument? Document { get; set; }
-
-        /// <summary>
         /// Corresponds to the index in the original list of documents to which the ranked document belongs. (i.e. if the first value in the `results` object has an `index` value of 3, it means in the list of documents passed in, the document at `index=3` had the highest relevance)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
@@ -38,9 +32,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Rerankv2ResponseResult" /> class.
         /// </summary>
-        /// <param name="document">
-        /// If `return_documents` is set as `false` this will return none, if `true` it will return the documents passed in
-        /// </param>
         /// <param name="index">
         /// Corresponds to the index in the original list of documents to which the ranked document belongs. (i.e. if the first value in the `results` object has an `index` value of 3, it means in the list of documents passed in, the document at `index=3` had the highest relevance)
         /// </param>
@@ -50,11 +41,9 @@ namespace G
         /// </param>
         public Rerankv2ResponseResult(
             int index,
-            global::G.Rerankv2ResponseResultDocument? document,
             float relevanceScore = default!)
         {
             this.Index = index;
-            this.Document = document;
             this.RelevanceScore = relevanceScore;
         }
 

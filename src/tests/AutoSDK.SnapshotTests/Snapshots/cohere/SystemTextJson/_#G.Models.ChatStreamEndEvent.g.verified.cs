@@ -1,4 +1,5 @@
 ﻿//HintName: G.Models.ChatStreamEndEvent.g.cs
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,55 +8,216 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChatStreamEndEvent : ChatStreamEvent
+    public readonly partial struct ChatStreamEndEvent : global::System.IEquatable<ChatStreamEndEvent>
     {
         /// <summary>
-        /// - `COMPLETE` - the model sent back a finished reply<br/>
-        /// - `ERROR_LIMIT` - the reply was cut off because the model reached the maximum number of tokens for its context length<br/>
-        /// - `MAX_TOKENS` - the reply was cut off because the model reached the maximum number of tokens specified by the max_tokens parameter<br/>
-        /// - `ERROR` - something went wrong when generating the reply<br/>
-        /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatStreamEndEventVariant2FinishReason FinishReason { get; set; }
+#if NET6_0_OR_GREATER
+        public global::G.ChatStreamEvent? Value1 { get; init; }
+#else
+        public global::G.ChatStreamEvent? Value1 { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NonStreamedChatResponse Response { get; set; }
-
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+#endif
+        public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatStreamEndEvent" /> class.
+        /// 
         /// </summary>
-        /// <param name="finishReason">
-        /// - `COMPLETE` - the model sent back a finished reply<br/>
-        /// - `ERROR_LIMIT` - the reply was cut off because the model reached the maximum number of tokens for its context length<br/>
-        /// - `MAX_TOKENS` - the reply was cut off because the model reached the maximum number of tokens specified by the max_tokens parameter<br/>
-        /// - `ERROR` - something went wrong when generating the reply<br/>
-        /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
-        /// </param>
-        /// <param name="response"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-#endif
-        public ChatStreamEndEvent(
-            global::G.ChatStreamEndEventVariant2FinishReason finishReason,
-            global::G.NonStreamedChatResponse response)
+        public static implicit operator ChatStreamEndEvent(global::G.ChatStreamEvent value) => new ChatStreamEndEvent((global::G.ChatStreamEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatStreamEvent?(ChatStreamEndEvent @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamEndEvent(global::G.ChatStreamEvent? value)
         {
-            this.FinishReason = finishReason;
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
+            Value1 = value;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChatStreamEndEvent" /> class.
+        /// 
         /// </summary>
-        public ChatStreamEndEvent()
+#if NET6_0_OR_GREATER
+        public global::G.ChatStreamEndEventVariant2? Value2 { get; init; }
+#else
+        public global::G.ChatStreamEndEventVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatStreamEndEvent(global::G.ChatStreamEndEventVariant2 value) => new ChatStreamEndEvent((global::G.ChatStreamEndEventVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatStreamEndEventVariant2?(ChatStreamEndEvent @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamEndEvent(global::G.ChatStreamEndEventVariant2? value)
         {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamEndEvent(
+            global::G.ChatStreamEvent? value1,
+            global::G.ChatStreamEndEventVariant2? value2
+            )
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value2 as object ??
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsValue1 && IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ChatStreamEvent?, TResult>? value1 = null,
+            global::System.Func<global::G.ChatStreamEndEventVariant2?, TResult>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ChatStreamEvent?>? value1 = null,
+            global::System.Action<global::G.ChatStreamEndEventVariant2?>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Value1,
+                typeof(global::G.ChatStreamEvent),
+                Value2,
+                typeof(global::G.ChatStreamEndEventVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ChatStreamEndEvent other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEndEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ChatStreamEndEvent obj1, ChatStreamEndEvent obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ChatStreamEndEvent>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ChatStreamEndEvent obj1, ChatStreamEndEvent obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ChatStreamEndEvent o && Equals(o);
         }
     }
 }

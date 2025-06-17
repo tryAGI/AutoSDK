@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_call")]
-        public global::G.ChatToolCallDeltaEventVariant2DeltaToolCall? ToolCall { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("message")]
+        public global::G.ChatToolCallDeltaEventVariant2DeltaMessage? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,11 +24,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2Delta" /> class.
         /// </summary>
-        /// <param name="toolCall"></param>
+        /// <param name="message"></param>
         public ChatToolCallDeltaEventVariant2Delta(
-            global::G.ChatToolCallDeltaEventVariant2DeltaToolCall? toolCall)
+            global::G.ChatToolCallDeltaEventVariant2DeltaMessage? message)
         {
-            this.ToolCall = toolCall;
+            this.Message = message;
         }
 
         /// <summary>

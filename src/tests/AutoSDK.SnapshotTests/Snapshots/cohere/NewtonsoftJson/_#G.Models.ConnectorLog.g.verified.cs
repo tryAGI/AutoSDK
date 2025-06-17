@@ -10,46 +10,16 @@ namespace G
     public sealed partial class ConnectorLog
     {
         /// <summary>
-        /// Unique identifier for the connector log
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
-
-        /// <summary>
         /// Unique identifier for the connector
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("connector_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ConnectorId { get; set; } = default!;
 
         /// <summary>
-        /// Unique identifier for the request
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("request_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RequestId { get; set; } = default!;
-
-        /// <summary>
-        /// Unique identifier for the user
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string UserId { get; set; } = default!;
-
-        /// <summary>
-        /// Unique identifier for the organization
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OrganizationId { get; set; } = default!;
-
-        /// <summary>
         /// Time of connector log creation in RFC3339 format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
-
-        /// <summary>
-        /// HTTP status code of the request
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status_code", Required = global::Newtonsoft.Json.Required.Always)]
-        public int StatusCode { get; set; } = default!;
 
         /// <summary>
         /// Duration of the request in milliseconds
@@ -64,6 +34,36 @@ namespace G
         public string? ErrorMessage { get; set; }
 
         /// <summary>
+        /// Unique identifier for the connector log
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Unique identifier for the organization
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string OrganizationId { get; set; } = default!;
+
+        /// <summary>
+        /// Unique identifier for the request
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("request_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string RequestId { get; set; } = default!;
+
+        /// <summary>
+        /// HTTP status code of the request
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status_code", Required = global::Newtonsoft.Json.Required.Always)]
+        public int StatusCode { get; set; } = default!;
+
+        /// <summary>
+        /// Unique identifier for the user
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("user_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string UserId { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -72,26 +72,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectorLog" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Unique identifier for the connector log
-        /// </param>
         /// <param name="connectorId">
         /// Unique identifier for the connector
         /// </param>
-        /// <param name="requestId">
-        /// Unique identifier for the request
-        /// </param>
-        /// <param name="userId">
-        /// Unique identifier for the user
-        /// </param>
-        /// <param name="organizationId">
-        /// Unique identifier for the organization
-        /// </param>
         /// <param name="createdAt">
         /// Time of connector log creation in RFC3339 format
-        /// </param>
-        /// <param name="statusCode">
-        /// HTTP status code of the request
         /// </param>
         /// <param name="durationMillis">
         /// Duration of the request in milliseconds
@@ -99,25 +84,40 @@ namespace G
         /// <param name="errorMessage">
         /// Error message of the request
         /// </param>
+        /// <param name="id">
+        /// Unique identifier for the connector log
+        /// </param>
+        /// <param name="organizationId">
+        /// Unique identifier for the organization
+        /// </param>
+        /// <param name="requestId">
+        /// Unique identifier for the request
+        /// </param>
+        /// <param name="statusCode">
+        /// HTTP status code of the request
+        /// </param>
+        /// <param name="userId">
+        /// Unique identifier for the user
+        /// </param>
         public ConnectorLog(
-            string id,
             string connectorId,
-            string requestId,
-            string userId,
-            string organizationId,
             global::System.DateTime createdAt,
-            int statusCode,
             int durationMillis,
+            string id,
+            string organizationId,
+            string requestId,
+            int statusCode,
+            string userId,
             string? errorMessage)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ConnectorId = connectorId ?? throw new global::System.ArgumentNullException(nameof(connectorId));
-            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
-            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
-            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
             this.CreatedAt = createdAt;
-            this.StatusCode = statusCode;
             this.DurationMillis = durationMillis;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
+            this.StatusCode = statusCode;
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.ErrorMessage = errorMessage;
         }
 

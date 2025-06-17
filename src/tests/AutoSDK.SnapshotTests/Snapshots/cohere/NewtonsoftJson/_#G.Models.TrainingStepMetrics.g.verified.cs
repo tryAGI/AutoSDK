@@ -16,16 +16,16 @@ namespace G
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Step number.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("step_number")]
-        public int? StepNumber { get; set; }
-
-        /// <summary>
         /// Map of names and values for each evaluation metrics.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metrics")]
         public global::System.Collections.Generic.Dictionary<string, double>? Metrics { get; set; }
+
+        /// <summary>
+        /// Step number.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("step_number")]
+        public int? StepNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,20 +39,20 @@ namespace G
         /// <param name="createdAt">
         /// Creation timestamp.
         /// </param>
-        /// <param name="stepNumber">
-        /// Step number.
-        /// </param>
         /// <param name="metrics">
         /// Map of names and values for each evaluation metrics.
         /// </param>
+        /// <param name="stepNumber">
+        /// Step number.
+        /// </param>
         public TrainingStepMetrics(
             global::System.DateTime? createdAt,
-            int? stepNumber,
-            global::System.Collections.Generic.Dictionary<string, double>? metrics)
+            global::System.Collections.Generic.Dictionary<string, double>? metrics,
+            int? stepNumber)
         {
             this.CreatedAt = createdAt;
-            this.StepNumber = stepNumber;
             this.Metrics = metrics;
+            this.StepNumber = stepNumber;
         }
 
         /// <summary>

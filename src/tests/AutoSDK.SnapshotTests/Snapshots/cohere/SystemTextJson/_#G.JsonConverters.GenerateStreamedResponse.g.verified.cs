@@ -16,67 +16,40 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
-            global::G.GenerateStreamText? streamText = default;
-            try
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamedResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamedResponseDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GenerateStreamedResponseDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
+            global::G.GenerateStreamText? textGeneration = default;
+            if (discriminator?.EventType == global::G.GenerateStreamedResponseDiscriminatorEventType.TextGeneration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamText> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamText).Name}");
-                streamText = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GenerateStreamText)}");
+                textGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.GenerateStreamEnd? streamEnd = default;
-            try
+            if (discriminator?.EventType == global::G.GenerateStreamedResponseDiscriminatorEventType.StreamEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEnd> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEnd).Name}");
-                streamEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GenerateStreamEnd)}");
+                streamEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.GenerateStreamError? streamError = default;
-            try
+            if (discriminator?.EventType == global::G.GenerateStreamedResponseDiscriminatorEventType.StreamError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamError).Name}");
-                streamError = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GenerateStreamError)}");
+                streamError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.GenerateStreamedResponse(
-                streamText,
+                discriminator?.EventType,
+                textGeneration,
                 streamEnd,
                 streamError
                 );
-
-            if (streamText != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamText> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamText).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (streamEnd != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEnd> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEnd).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (streamError != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamError).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }
@@ -90,11 +63,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsStreamText)
+            if (value.IsTextGeneration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGeneration, typeInfo);
             }
             else if (value.IsStreamEnd)
             {

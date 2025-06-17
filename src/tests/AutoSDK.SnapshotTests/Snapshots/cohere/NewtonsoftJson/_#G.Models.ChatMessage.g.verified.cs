@@ -11,16 +11,16 @@ namespace G
     public sealed partial class ChatMessage
     {
         /// <summary>
-        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatRole Role { get; set; } = default!;
-
-        /// <summary>
         /// Contents of the chat message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
+
+        /// <summary>
+        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatRole Role { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,20 +37,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
-        /// </param>
         /// <param name="message">
         /// Contents of the chat message.
         /// </param>
+        /// <param name="role">
+        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
+        /// </param>
         /// <param name="toolCalls"></param>
         public ChatMessage(
-            global::G.ChatRole role,
             string message,
+            global::G.ChatRole role,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
         {
-            this.Role = role;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Role = role;
             this.ToolCalls = toolCalls;
         }
 

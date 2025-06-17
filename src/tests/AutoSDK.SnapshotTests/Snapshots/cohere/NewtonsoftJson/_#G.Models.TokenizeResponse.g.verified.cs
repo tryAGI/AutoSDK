@@ -10,12 +10,10 @@ namespace G
     public sealed partial class TokenizeResponse
     {
         /// <summary>
-        /// An array of tokens, where each token is an integer.<br/>
-        /// Included only in responses
+        /// 
         /// </summary>
-        /// <default>default!</default>
-        [global::Newtonsoft.Json.JsonProperty("tokens")]
-        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("meta")]
+        public global::G.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// 
@@ -24,10 +22,12 @@ namespace G
         public global::System.Collections.Generic.IList<string> TokenStrings { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// An array of tokens, where each token is an integer.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("meta")]
-        public global::G.ApiMeta? Meta { get; set; }
+        /// <default>default!</default>
+        [global::Newtonsoft.Json.JsonProperty("tokens")]
+        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,20 +38,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenizeResponse" /> class.
         /// </summary>
+        /// <param name="meta"></param>
+        /// <param name="tokenStrings"></param>
         /// <param name="tokens">
         /// An array of tokens, where each token is an integer.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="tokenStrings"></param>
-        /// <param name="meta"></param>
         public TokenizeResponse(
             global::System.Collections.Generic.IList<string> tokenStrings,
             global::G.ApiMeta? meta,
             global::System.Collections.Generic.IList<int> tokens = default!)
         {
             this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
-            this.Tokens = tokens;
             this.Meta = meta;
+            this.Tokens = tokens;
         }
 
         /// <summary>

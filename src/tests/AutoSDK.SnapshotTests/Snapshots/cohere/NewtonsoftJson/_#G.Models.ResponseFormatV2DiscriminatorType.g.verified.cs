@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
+        JsonObject,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
-        JsonObject,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ResponseFormatV2DiscriminatorType.Text => "text",
                 ResponseFormatV2DiscriminatorType.JsonObject => "json_object",
+                ResponseFormatV2DiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => ResponseFormatV2DiscriminatorType.Text,
                 "json_object" => ResponseFormatV2DiscriminatorType.JsonObject,
+                "text" => ResponseFormatV2DiscriminatorType.Text,
                 _ => null,
             };
         }

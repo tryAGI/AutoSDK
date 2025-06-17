@@ -16,181 +16,96 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
-            global::G.ChatMessageStartEvent? messageStartEvent = default;
-            try
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamedChatResponseV2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamedChatResponseV2Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StreamedChatResponseV2Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
+            global::G.ChatMessageStartEvent? messageStart = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.MessageStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageStartEvent).Name}");
-                messageStartEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatMessageStartEvent)}");
+                messageStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatContentStartEvent? contentStartEvent = default;
-            try
+            global::G.ChatContentStartEvent? contentStart = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ContentStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentStartEvent).Name}");
-                contentStartEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatContentStartEvent)}");
+                contentStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatContentDeltaEvent? contentDeltaEvent = default;
-            try
+            global::G.ChatContentDeltaEvent? contentDelta = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ContentDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent).Name}");
-                contentDeltaEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatContentDeltaEvent)}");
+                contentDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatContentEndEvent? contentEndEvent = default;
-            try
+            global::G.ChatContentEndEvent? contentEnd = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ContentEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentEndEvent).Name}");
-                contentEndEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatContentEndEvent)}");
+                contentEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatToolPlanDeltaEvent? toolPlanDeltaEvent = default;
-            try
+            global::G.ChatToolPlanDeltaEvent? toolPlanDelta = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ToolPlanDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolPlanDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolPlanDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolPlanDeltaEvent).Name}");
-                toolPlanDeltaEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatToolPlanDeltaEvent)}");
+                toolPlanDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatToolCallStartEvent? toolCallStartEvent = default;
-            try
+            global::G.ChatToolCallStartEvent? toolCallStart = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ToolCallStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallStartEvent).Name}");
-                toolCallStartEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatToolCallStartEvent)}");
+                toolCallStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatToolCallDeltaEvent? toolCallDeltaEvent = default;
-            try
+            global::G.ChatToolCallDeltaEvent? toolCallDelta = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ToolCallDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallDeltaEvent).Name}");
-                toolCallDeltaEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatToolCallDeltaEvent)}");
+                toolCallDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatToolCallEndEvent? toolCallEndEvent = default;
-            try
+            global::G.ChatToolCallEndEvent? toolCallEnd = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.ToolCallEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallEndEvent).Name}");
-                toolCallEndEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatToolCallEndEvent)}");
+                toolCallEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.ChatMessageEndEvent? messageEndEvent = default;
-            try
+            global::G.ChatMessageEndEvent? messageEnd = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.MessageEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageEndEvent).Name}");
-                messageEndEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatMessageEndEvent)}");
+                messageEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
+            global::G.ChatDebugEvent? debug = default;
+            if (discriminator?.Type == global::G.StreamedChatResponseV2DiscriminatorType.Debug)
             {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatDebugEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatDebugEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatDebugEvent)}");
+                debug = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.StreamedChatResponseV2(
-                messageStartEvent,
-                contentStartEvent,
-                contentDeltaEvent,
-                contentEndEvent,
-                toolPlanDeltaEvent,
-                toolCallStartEvent,
-                toolCallDeltaEvent,
-                toolCallEndEvent,
-                messageEndEvent
+                discriminator?.Type,
+                messageStart,
+                contentStart,
+                contentDelta,
+                contentEnd,
+                toolPlanDelta,
+                toolCallStart,
+                toolCallDelta,
+                toolCallEnd,
+                messageEnd,
+                debug
                 );
-
-            if (messageStartEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageStartEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (contentStartEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentStartEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (contentDeltaEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (contentEndEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentEndEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (toolPlanDeltaEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolPlanDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolPlanDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolPlanDeltaEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (toolCallStartEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallStartEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallStartEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (toolCallDeltaEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallDeltaEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (toolCallEndEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallEndEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (messageEndEvent != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageEndEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageEndEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }
@@ -204,59 +119,65 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageStartEvent)
+            if (value.IsMessageStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageStartEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageStartEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStartEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStart, typeInfo);
             }
-            else if (value.IsContentStartEvent)
+            else if (value.IsContentStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentStartEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentStartEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentStartEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentStart, typeInfo);
             }
-            else if (value.IsContentDeltaEvent)
+            else if (value.IsContentDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentDeltaEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentDelta, typeInfo);
             }
-            else if (value.IsContentEndEvent)
+            else if (value.IsContentEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentEndEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentEndEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentEndEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentEnd, typeInfo);
             }
-            else if (value.IsToolPlanDeltaEvent)
+            else if (value.IsToolPlanDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolPlanDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolPlanDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolPlanDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolPlanDeltaEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolPlanDelta, typeInfo);
             }
-            else if (value.IsToolCallStartEvent)
+            else if (value.IsToolCallStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallStartEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallStartEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallStartEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallStart, typeInfo);
             }
-            else if (value.IsToolCallDeltaEvent)
+            else if (value.IsToolCallDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallDeltaEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallDelta, typeInfo);
             }
-            else if (value.IsToolCallEndEvent)
+            else if (value.IsToolCallEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallEndEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallEndEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallEndEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallEnd, typeInfo);
             }
-            else if (value.IsMessageEndEvent)
+            else if (value.IsMessageEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageEndEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessageEndEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageEndEvent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageEnd, typeInfo);
+            }
+            else if (value.IsDebug)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatDebugEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatDebugEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatDebugEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Debug, typeInfo);
             }
         }
     }

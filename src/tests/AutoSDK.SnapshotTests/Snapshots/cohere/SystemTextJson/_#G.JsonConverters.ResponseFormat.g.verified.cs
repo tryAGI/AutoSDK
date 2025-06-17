@@ -16,48 +16,32 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFormatDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFormatDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseFormatDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::G.TextResponseFormat? text = default;
-            try
+            if (discriminator?.Type == global::G.ResponseFormatDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextResponseFormat).Name}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextResponseFormat)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
-            global::G.JSONResponseFormat? jSON = default;
-            try
+            global::G.JSONResponseFormat? jsonObject = default;
+            if (discriminator?.Type == global::G.ResponseFormatDiscriminatorType.JsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JSONResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.JSONResponseFormat).Name}");
-                jSON = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JSONResponseFormat)}");
+                jsonObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ResponseFormat(
+                discriminator?.Type,
                 text,
-                jSON
+                jsonObject
                 );
-
-            if (text != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextResponseFormat).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (jSON != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JSONResponseFormat> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.JSONResponseFormat).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }
@@ -77,11 +61,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextResponseFormat).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsJSON)
+            else if (value.IsJsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JSONResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JSONResponseFormat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.JSONResponseFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JSON, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject, typeInfo);
             }
         }
     }

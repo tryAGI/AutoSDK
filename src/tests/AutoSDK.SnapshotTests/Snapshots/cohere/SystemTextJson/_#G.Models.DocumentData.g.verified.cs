@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
+    /// A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.
     /// </summary>
     public sealed partial class DocumentData
     {

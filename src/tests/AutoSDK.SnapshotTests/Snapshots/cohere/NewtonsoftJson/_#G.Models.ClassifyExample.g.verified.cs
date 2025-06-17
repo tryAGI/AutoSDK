@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("label")]
+        public string? Label { get; set; }
 
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("label")]
-        public string? Label { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyExample" /> class.
         /// </summary>
-        /// <param name="text">
-        /// Included only in requests
-        /// </param>
         /// <param name="label">
         /// Included only in requests
         /// </param>
+        /// <param name="text">
+        /// Included only in requests
+        /// </param>
         public ClassifyExample(
-            string? text,
-            string? label)
+            string? label,
+            string? text)
         {
-            this.Text = text;
             this.Label = label;
+            this.Text = text;
         }
 
         /// <summary>

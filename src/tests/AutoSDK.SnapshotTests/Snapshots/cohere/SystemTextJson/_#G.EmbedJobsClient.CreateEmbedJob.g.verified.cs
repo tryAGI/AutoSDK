@@ -520,16 +520,16 @@ namespace G
         /// This API launches an async Embed job for a [Dataset](https://docs.cohere.com/docs/datasets) of type `embed-input`. The result of a completed embed job is new Dataset of type `embed-output`, which contains the original text entries and the corresponding embeddings.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="model">
-        /// ID of the embedding model.<br/>
-        /// Available models and corresponding embedding dimensions:<br/>
-        /// - `embed-english-v3.0` : 1024<br/>
-        /// - `embed-multilingual-v3.0` : 1024<br/>
-        /// - `embed-english-light-v3.0` : 384<br/>
-        /// - `embed-multilingual-light-v3.0` : 384
-        /// </param>
         /// <param name="datasetId">
         /// ID of a [Dataset](https://docs.cohere.com/docs/datasets). The Dataset must be of type `embed-input` and must have a validation status `Validated`
+        /// </param>
+        /// <param name="embeddingTypes">
+        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for v3 and newer model versions.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for v3 and newer model versions.
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -539,16 +539,16 @@ namespace G
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
+        /// <param name="model">
+        /// ID of the embedding model.<br/>
+        /// Available models and corresponding embedding dimensions:<br/>
+        /// - `embed-english-v3.0` : 1024<br/>
+        /// - `embed-multilingual-v3.0` : 1024<br/>
+        /// - `embed-english-light-v3.0` : 384<br/>
+        /// - `embed-multilingual-light-v3.0` : 384
+        /// </param>
         /// <param name="name">
         /// The name of the embed job.
-        /// </param>
-        /// <param name="embeddingTypes">
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
-        /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.
         /// </param>
         /// <param name="truncate">
         /// One of `START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
@@ -558,22 +558,22 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateEmbedJobResponse> CreateEmbedJobAsync(
-            string model,
             string datasetId,
             global::G.EmbedInputType inputType,
+            string model,
             string? xClientName = default,
-            string? name = default,
             global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes = default,
+            string? name = default,
             global::G.CreateEmbedJobRequestTruncate? truncate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateEmbedJobRequest
             {
-                Model = model,
                 DatasetId = datasetId,
-                InputType = inputType,
-                Name = name,
                 EmbeddingTypes = embeddingTypes,
+                InputType = inputType,
+                Model = model,
+                Name = name,
                 Truncate = truncate,
             };
 

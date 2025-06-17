@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index")]
-        public int? Index { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("delta")]
+        public global::G.ChatContentStartEventVariant2Delta? Delta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta")]
-        public global::G.ChatContentStartEventVariant2Delta? Delta { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("index")]
+        public int? Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatContentStartEventVariant2" /> class.
         /// </summary>
-        /// <param name="index"></param>
         /// <param name="delta"></param>
+        /// <param name="index"></param>
         public ChatContentStartEventVariant2(
-            int? index,
-            global::G.ChatContentStartEventVariant2Delta? delta)
+            global::G.ChatContentStartEventVariant2Delta? delta,
+            int? index)
         {
-            this.Index = index;
             this.Delta = delta;
+            this.Index = index;
         }
 
         /// <summary>

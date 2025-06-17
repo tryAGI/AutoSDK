@@ -10,6 +10,18 @@ namespace G
     public sealed partial class GenerateStreamErrorVariant2
     {
         /// <summary>
+        /// Error message
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("err", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Err { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FinishReason FinishReason { get; set; } = default!;
+
+        /// <summary>
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
@@ -22,18 +34,6 @@ namespace G
         public bool IsFinished { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FinishReason FinishReason { get; set; } = default!;
-
-        /// <summary>
-        /// Error message
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("err", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Err { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,23 +42,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamErrorVariant2" /> class.
         /// </summary>
+        /// <param name="err">
+        /// Error message
+        /// </param>
+        /// <param name="finishReason"></param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
         /// <param name="isFinished"></param>
-        /// <param name="finishReason"></param>
-        /// <param name="err">
-        /// Error message
-        /// </param>
         public GenerateStreamErrorVariant2(
-            bool isFinished,
-            global::G.FinishReason finishReason,
             string err,
+            global::G.FinishReason finishReason,
+            bool isFinished,
             int? index)
         {
-            this.IsFinished = isFinished;
-            this.FinishReason = finishReason;
             this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
+            this.FinishReason = finishReason;
+            this.IsFinished = isFinished;
             this.Index = index;
         }
 

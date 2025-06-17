@@ -10,27 +10,24 @@ namespace G
     public sealed partial class EmbedRequest
     {
         /// <summary>
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// * `"float"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.<br/>
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_types")]
+        public global::System.Collections.Generic.IList<global::G.EmbeddingType>? EmbeddingTypes { get; set; }
 
         /// <summary>
-        /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
-        /// Available models and corresponding embedding dimensions:<br/>
-        /// * `embed-english-v3.0`  1024<br/>
-        /// * `embed-multilingual-v3.0`  1024<br/>
-        /// * `embed-english-light-v3.0`  384<br/>
-        /// * `embed-multilingual-light-v3.0`  384<br/>
-        /// * `embed-english-v2.0`  4096<br/>
-        /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768<br/>
-        /// Included only in requests
+        /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
+        /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.<br/>
+        /// Images are only supported with Embed v3.0 and newer models.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
+        public global::System.Collections.Generic.IList<string>? Images { get; set; }
 
         /// <summary>
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -45,16 +42,18 @@ namespace G
         public global::G.EmbedInputType? InputType { get; set; }
 
         /// <summary>
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
-        /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.<br/>
+        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
         /// Included only in requests
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_types")]
-        public global::System.Collections.Generic.IList<global::G.EmbeddingType>? EmbeddingTypes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
+        /// Included only in requests
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
+        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
 
         /// <summary>
         /// One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
@@ -76,22 +75,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedRequest" /> class.
         /// </summary>
-        /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// <param name="embeddingTypes">
+        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// * `"float"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.<br/>
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
         /// Included only in requests
         /// </param>
-        /// <param name="model">
-        /// Defaults to embed-english-v2.0<br/>
-        /// The identifier of the model. Smaller "light" models are faster, while larger models will perform better. [Custom models](/docs/training-custom-models) can also be supplied with their full ID.<br/>
-        /// Available models and corresponding embedding dimensions:<br/>
-        /// * `embed-english-v3.0`  1024<br/>
-        /// * `embed-multilingual-v3.0`  1024<br/>
-        /// * `embed-english-light-v3.0`  384<br/>
-        /// * `embed-multilingual-light-v3.0`  384<br/>
-        /// * `embed-english-v2.0`  4096<br/>
-        /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768<br/>
-        /// Included only in requests
+        /// <param name="images">
+        /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
+        /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.<br/>
+        /// Images are only supported with Embed v3.0 and newer models.
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -101,13 +97,12 @@ namespace G
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
-        /// <param name="embeddingTypes">
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
-        /// * `"float"`: Use this when you want to get back the default float embeddings. Valid for all models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.<br/>
+        /// <param name="model">
+        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
+        /// Included only in requests
+        /// </param>
+        /// <param name="texts">
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="truncate">
@@ -121,16 +116,18 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EmbedRequest(
-            global::System.Collections.Generic.IList<string>? texts,
-            string? model,
-            global::G.EmbedInputType? inputType,
             global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes,
+            global::System.Collections.Generic.IList<string>? images,
+            global::G.EmbedInputType? inputType,
+            string? model,
+            global::System.Collections.Generic.IList<string>? texts,
             global::G.EmbedRequestTruncate? truncate)
         {
-            this.Texts = texts;
-            this.Model = model;
-            this.InputType = inputType;
             this.EmbeddingTypes = embeddingTypes;
+            this.Images = images;
+            this.InputType = inputType;
+            this.Model = model;
+            this.Texts = texts;
             this.Truncate = truncate;
         }
 

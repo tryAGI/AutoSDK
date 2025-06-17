@@ -29,7 +29,7 @@ namespace G
         /// Returns the details of a model, provided its name.
         /// </summary>
         /// <param name="model">
-        /// Example: command-r
+        /// Example: command-a-03-2025
         /// </param>
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

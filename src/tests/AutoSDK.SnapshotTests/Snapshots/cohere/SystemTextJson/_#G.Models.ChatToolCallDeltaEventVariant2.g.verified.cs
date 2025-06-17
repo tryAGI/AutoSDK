@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public int? Index { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        public global::G.ChatToolCallDeltaEventVariant2Delta? Delta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        public global::G.ChatToolCallDeltaEventVariant2Delta? Delta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        public int? Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,17 +30,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2" /> class.
         /// </summary>
-        /// <param name="index"></param>
         /// <param name="delta"></param>
+        /// <param name="index"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatToolCallDeltaEventVariant2(
-            int? index,
-            global::G.ChatToolCallDeltaEventVariant2Delta? delta)
+            global::G.ChatToolCallDeltaEventVariant2Delta? delta,
+            int? index)
         {
-            this.Index = index;
             this.Delta = delta;
+            this.Index = index;
         }
 
         /// <summary>

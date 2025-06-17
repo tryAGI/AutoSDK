@@ -13,19 +13,24 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.StreamedChatResponseDiscriminatorEventType? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamStartEvent? StreamStartEvent { get; init; }
+        public global::G.ChatStreamStartEvent? StreamStart { get; init; }
 #else
-        public global::G.ChatStreamStartEvent? StreamStartEvent { get; }
+        public global::G.ChatStreamStartEvent? StreamStart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamStartEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamStart))]
 #endif
-        public bool IsStreamStartEvent => StreamStartEvent != null;
+        public bool IsStreamStart => StreamStart != null;
 
         /// <summary>
         /// 
@@ -35,32 +40,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamStartEvent?(StreamedChatResponse @this) => @this.StreamStartEvent;
+        public static implicit operator global::G.ChatStreamStartEvent?(StreamedChatResponse @this) => @this.StreamStart;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatStreamStartEvent? value)
         {
-            StreamStartEvent = value;
+            StreamStart = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGenerationEvent { get; init; }
+        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
 #else
-        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGenerationEvent { get; }
+        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGenerationEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
 #endif
-        public bool IsSearchQueriesGenerationEvent => SearchQueriesGenerationEvent != null;
+        public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
 
         /// <summary>
         /// 
@@ -70,32 +75,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatSearchQueriesGenerationEvent?(StreamedChatResponse @this) => @this.SearchQueriesGenerationEvent;
+        public static implicit operator global::G.ChatSearchQueriesGenerationEvent?(StreamedChatResponse @this) => @this.SearchQueriesGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatSearchQueriesGenerationEvent? value)
         {
-            SearchQueriesGenerationEvent = value;
+            SearchQueriesGeneration = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatSearchResultsEvent? SearchResultsEvent { get; init; }
+        public global::G.ChatSearchResultsEvent? SearchResults { get; init; }
 #else
-        public global::G.ChatSearchResultsEvent? SearchResultsEvent { get; }
+        public global::G.ChatSearchResultsEvent? SearchResults { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultsEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
 #endif
-        public bool IsSearchResultsEvent => SearchResultsEvent != null;
+        public bool IsSearchResults => SearchResults != null;
 
         /// <summary>
         /// 
@@ -105,32 +110,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatSearchResultsEvent?(StreamedChatResponse @this) => @this.SearchResultsEvent;
+        public static implicit operator global::G.ChatSearchResultsEvent?(StreamedChatResponse @this) => @this.SearchResults;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatSearchResultsEvent? value)
         {
-            SearchResultsEvent = value;
+            SearchResults = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatTextGenerationEvent? TextGenerationEvent { get; init; }
+        public global::G.ChatTextGenerationEvent? TextGeneration { get; init; }
 #else
-        public global::G.ChatTextGenerationEvent? TextGenerationEvent { get; }
+        public global::G.ChatTextGenerationEvent? TextGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGenerationEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
 #endif
-        public bool IsTextGenerationEvent => TextGenerationEvent != null;
+        public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
         /// 
@@ -140,32 +145,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatTextGenerationEvent?(StreamedChatResponse @this) => @this.TextGenerationEvent;
+        public static implicit operator global::G.ChatTextGenerationEvent?(StreamedChatResponse @this) => @this.TextGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatTextGenerationEvent? value)
         {
-            TextGenerationEvent = value;
+            TextGeneration = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCitationGenerationEvent? CitationGenerationEvent { get; init; }
+        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; init; }
 #else
-        public global::G.ChatCitationGenerationEvent? CitationGenerationEvent { get; }
+        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGenerationEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
 #endif
-        public bool IsCitationGenerationEvent => CitationGenerationEvent != null;
+        public bool IsCitationGeneration => CitationGeneration != null;
 
         /// <summary>
         /// 
@@ -175,32 +180,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCitationGenerationEvent?(StreamedChatResponse @this) => @this.CitationGenerationEvent;
+        public static implicit operator global::G.ChatCitationGenerationEvent?(StreamedChatResponse @this) => @this.CitationGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatCitationGenerationEvent? value)
         {
-            CitationGenerationEvent = value;
+            CitationGeneration = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatToolCallsGenerationEvent? ToolCallsGenerationEvent { get; init; }
+        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
 #else
-        public global::G.ChatToolCallsGenerationEvent? ToolCallsGenerationEvent { get; }
+        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGenerationEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
 #endif
-        public bool IsToolCallsGenerationEvent => ToolCallsGenerationEvent != null;
+        public bool IsToolCallsGeneration => ToolCallsGeneration != null;
 
         /// <summary>
         /// 
@@ -210,32 +215,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatToolCallsGenerationEvent?(StreamedChatResponse @this) => @this.ToolCallsGenerationEvent;
+        public static implicit operator global::G.ChatToolCallsGenerationEvent?(StreamedChatResponse @this) => @this.ToolCallsGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatToolCallsGenerationEvent? value)
         {
-            ToolCallsGenerationEvent = value;
+            ToolCallsGeneration = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEndEvent? StreamEndEvent { get; init; }
+        public global::G.ChatStreamEndEvent? StreamEnd { get; init; }
 #else
-        public global::G.ChatStreamEndEvent? StreamEndEvent { get; }
+        public global::G.ChatStreamEndEvent? StreamEnd { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEndEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
 #endif
-        public bool IsStreamEndEvent => StreamEndEvent != null;
+        public bool IsStreamEnd => StreamEnd != null;
 
         /// <summary>
         /// 
@@ -245,32 +250,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEndEvent?(StreamedChatResponse @this) => @this.StreamEndEvent;
+        public static implicit operator global::G.ChatStreamEndEvent?(StreamedChatResponse @this) => @this.StreamEnd;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatStreamEndEvent? value)
         {
-            StreamEndEvent = value;
+            StreamEnd = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatToolCallsChunkEvent? ToolCallsChunkEvent { get; init; }
+        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
 #else
-        public global::G.ChatToolCallsChunkEvent? ToolCallsChunkEvent { get; }
+        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunkEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
 #endif
-        public bool IsToolCallsChunkEvent => ToolCallsChunkEvent != null;
+        public bool IsToolCallsChunk => ToolCallsChunk != null;
 
         /// <summary>
         /// 
@@ -280,66 +285,108 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatToolCallsChunkEvent?(StreamedChatResponse @this) => @this.ToolCallsChunkEvent;
+        public static implicit operator global::G.ChatToolCallsChunkEvent?(StreamedChatResponse @this) => @this.ToolCallsChunk;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(global::G.ChatToolCallsChunkEvent? value)
         {
-            ToolCallsChunkEvent = value;
+            ToolCallsChunk = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatDebugEvent? Debug { get; init; }
+#else
+        public global::G.ChatDebugEvent? Debug { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
+#endif
+        public bool IsDebug => Debug != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponse(global::G.ChatDebugEvent value) => new StreamedChatResponse((global::G.ChatDebugEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatDebugEvent?(StreamedChatResponse @this) => @this.Debug;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponse(global::G.ChatDebugEvent? value)
+        {
+            Debug = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StreamedChatResponse(
-            global::G.ChatStreamStartEvent? streamStartEvent,
-            global::G.ChatSearchQueriesGenerationEvent? searchQueriesGenerationEvent,
-            global::G.ChatSearchResultsEvent? searchResultsEvent,
-            global::G.ChatTextGenerationEvent? textGenerationEvent,
-            global::G.ChatCitationGenerationEvent? citationGenerationEvent,
-            global::G.ChatToolCallsGenerationEvent? toolCallsGenerationEvent,
-            global::G.ChatStreamEndEvent? streamEndEvent,
-            global::G.ChatToolCallsChunkEvent? toolCallsChunkEvent
+            global::G.StreamedChatResponseDiscriminatorEventType? eventType,
+            global::G.ChatStreamStartEvent? streamStart,
+            global::G.ChatSearchQueriesGenerationEvent? searchQueriesGeneration,
+            global::G.ChatSearchResultsEvent? searchResults,
+            global::G.ChatTextGenerationEvent? textGeneration,
+            global::G.ChatCitationGenerationEvent? citationGeneration,
+            global::G.ChatToolCallsGenerationEvent? toolCallsGeneration,
+            global::G.ChatStreamEndEvent? streamEnd,
+            global::G.ChatToolCallsChunkEvent? toolCallsChunk,
+            global::G.ChatDebugEvent? debug
             )
         {
-            StreamStartEvent = streamStartEvent;
-            SearchQueriesGenerationEvent = searchQueriesGenerationEvent;
-            SearchResultsEvent = searchResultsEvent;
-            TextGenerationEvent = textGenerationEvent;
-            CitationGenerationEvent = citationGenerationEvent;
-            ToolCallsGenerationEvent = toolCallsGenerationEvent;
-            StreamEndEvent = streamEndEvent;
-            ToolCallsChunkEvent = toolCallsChunkEvent;
+            EventType = eventType;
+
+            StreamStart = streamStart;
+            SearchQueriesGeneration = searchQueriesGeneration;
+            SearchResults = searchResults;
+            TextGeneration = textGeneration;
+            CitationGeneration = citationGeneration;
+            ToolCallsGeneration = toolCallsGeneration;
+            StreamEnd = streamEnd;
+            ToolCallsChunk = toolCallsChunk;
+            Debug = debug;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ToolCallsChunkEvent as object ??
-            StreamEndEvent as object ??
-            ToolCallsGenerationEvent as object ??
-            CitationGenerationEvent as object ??
-            TextGenerationEvent as object ??
-            SearchResultsEvent as object ??
-            SearchQueriesGenerationEvent as object ??
-            StreamStartEvent as object 
+            Debug as object ??
+            ToolCallsChunk as object ??
+            StreamEnd as object ??
+            ToolCallsGeneration as object ??
+            CitationGeneration as object ??
+            TextGeneration as object ??
+            SearchResults as object ??
+            SearchQueriesGeneration as object ??
+            StreamStart as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            StreamStartEvent?.ToString() ??
-            SearchQueriesGenerationEvent?.ToString() ??
-            SearchResultsEvent?.ToString() ??
-            TextGenerationEvent?.ToString() ??
-            CitationGenerationEvent?.ToString() ??
-            ToolCallsGenerationEvent?.ToString() ??
-            StreamEndEvent?.ToString() ??
-            ToolCallsChunkEvent?.ToString() 
+            StreamStart?.ToString() ??
+            SearchQueriesGeneration?.ToString() ??
+            SearchResults?.ToString() ??
+            TextGeneration?.ToString() ??
+            CitationGeneration?.ToString() ??
+            ToolCallsGeneration?.ToString() ??
+            StreamEnd?.ToString() ??
+            ToolCallsChunk?.ToString() ??
+            Debug?.ToString() 
             ;
 
         /// <summary>
@@ -347,21 +394,22 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && IsToolCallsGenerationEvent && !IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && IsStreamEndEvent && !IsToolCallsChunkEvent || !IsStreamStartEvent && !IsSearchQueriesGenerationEvent && !IsSearchResultsEvent && !IsTextGenerationEvent && !IsCitationGenerationEvent && !IsToolCallsGenerationEvent && !IsStreamEndEvent && IsToolCallsChunkEvent;
+            return IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && IsStreamEnd && !IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && IsToolCallsChunk && !IsDebug || !IsStreamStart && !IsSearchQueriesGeneration && !IsSearchResults && !IsTextGeneration && !IsCitationGeneration && !IsToolCallsGeneration && !IsStreamEnd && !IsToolCallsChunk && IsDebug;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamStartEvent?, TResult>? streamStartEvent = null,
-            global::System.Func<global::G.ChatSearchQueriesGenerationEvent?, TResult>? searchQueriesGenerationEvent = null,
-            global::System.Func<global::G.ChatSearchResultsEvent?, TResult>? searchResultsEvent = null,
-            global::System.Func<global::G.ChatTextGenerationEvent?, TResult>? textGenerationEvent = null,
-            global::System.Func<global::G.ChatCitationGenerationEvent?, TResult>? citationGenerationEvent = null,
-            global::System.Func<global::G.ChatToolCallsGenerationEvent?, TResult>? toolCallsGenerationEvent = null,
-            global::System.Func<global::G.ChatStreamEndEvent?, TResult>? streamEndEvent = null,
-            global::System.Func<global::G.ChatToolCallsChunkEvent?, TResult>? toolCallsChunkEvent = null,
+            global::System.Func<global::G.ChatStreamStartEvent?, TResult>? streamStart = null,
+            global::System.Func<global::G.ChatSearchQueriesGenerationEvent?, TResult>? searchQueriesGeneration = null,
+            global::System.Func<global::G.ChatSearchResultsEvent?, TResult>? searchResults = null,
+            global::System.Func<global::G.ChatTextGenerationEvent?, TResult>? textGeneration = null,
+            global::System.Func<global::G.ChatCitationGenerationEvent?, TResult>? citationGeneration = null,
+            global::System.Func<global::G.ChatToolCallsGenerationEvent?, TResult>? toolCallsGeneration = null,
+            global::System.Func<global::G.ChatStreamEndEvent?, TResult>? streamEnd = null,
+            global::System.Func<global::G.ChatToolCallsChunkEvent?, TResult>? toolCallsChunk = null,
+            global::System.Func<global::G.ChatDebugEvent?, TResult>? debug = null,
             bool validate = true)
         {
             if (validate)
@@ -369,37 +417,41 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStartEvent && streamStartEvent != null)
+            if (IsStreamStart && streamStart != null)
             {
-                return streamStartEvent(StreamStartEvent!);
+                return streamStart(StreamStart!);
             }
-            else if (IsSearchQueriesGenerationEvent && searchQueriesGenerationEvent != null)
+            else if (IsSearchQueriesGeneration && searchQueriesGeneration != null)
             {
-                return searchQueriesGenerationEvent(SearchQueriesGenerationEvent!);
+                return searchQueriesGeneration(SearchQueriesGeneration!);
             }
-            else if (IsSearchResultsEvent && searchResultsEvent != null)
+            else if (IsSearchResults && searchResults != null)
             {
-                return searchResultsEvent(SearchResultsEvent!);
+                return searchResults(SearchResults!);
             }
-            else if (IsTextGenerationEvent && textGenerationEvent != null)
+            else if (IsTextGeneration && textGeneration != null)
             {
-                return textGenerationEvent(TextGenerationEvent!);
+                return textGeneration(TextGeneration!);
             }
-            else if (IsCitationGenerationEvent && citationGenerationEvent != null)
+            else if (IsCitationGeneration && citationGeneration != null)
             {
-                return citationGenerationEvent(CitationGenerationEvent!);
+                return citationGeneration(CitationGeneration!);
             }
-            else if (IsToolCallsGenerationEvent && toolCallsGenerationEvent != null)
+            else if (IsToolCallsGeneration && toolCallsGeneration != null)
             {
-                return toolCallsGenerationEvent(ToolCallsGenerationEvent!);
+                return toolCallsGeneration(ToolCallsGeneration!);
             }
-            else if (IsStreamEndEvent && streamEndEvent != null)
+            else if (IsStreamEnd && streamEnd != null)
             {
-                return streamEndEvent(StreamEndEvent!);
+                return streamEnd(StreamEnd!);
             }
-            else if (IsToolCallsChunkEvent && toolCallsChunkEvent != null)
+            else if (IsToolCallsChunk && toolCallsChunk != null)
             {
-                return toolCallsChunkEvent(ToolCallsChunkEvent!);
+                return toolCallsChunk(ToolCallsChunk!);
+            }
+            else if (IsDebug && debug != null)
+            {
+                return debug(Debug!);
             }
 
             return default(TResult);
@@ -409,14 +461,15 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamStartEvent?>? streamStartEvent = null,
-            global::System.Action<global::G.ChatSearchQueriesGenerationEvent?>? searchQueriesGenerationEvent = null,
-            global::System.Action<global::G.ChatSearchResultsEvent?>? searchResultsEvent = null,
-            global::System.Action<global::G.ChatTextGenerationEvent?>? textGenerationEvent = null,
-            global::System.Action<global::G.ChatCitationGenerationEvent?>? citationGenerationEvent = null,
-            global::System.Action<global::G.ChatToolCallsGenerationEvent?>? toolCallsGenerationEvent = null,
-            global::System.Action<global::G.ChatStreamEndEvent?>? streamEndEvent = null,
-            global::System.Action<global::G.ChatToolCallsChunkEvent?>? toolCallsChunkEvent = null,
+            global::System.Action<global::G.ChatStreamStartEvent?>? streamStart = null,
+            global::System.Action<global::G.ChatSearchQueriesGenerationEvent?>? searchQueriesGeneration = null,
+            global::System.Action<global::G.ChatSearchResultsEvent?>? searchResults = null,
+            global::System.Action<global::G.ChatTextGenerationEvent?>? textGeneration = null,
+            global::System.Action<global::G.ChatCitationGenerationEvent?>? citationGeneration = null,
+            global::System.Action<global::G.ChatToolCallsGenerationEvent?>? toolCallsGeneration = null,
+            global::System.Action<global::G.ChatStreamEndEvent?>? streamEnd = null,
+            global::System.Action<global::G.ChatToolCallsChunkEvent?>? toolCallsChunk = null,
+            global::System.Action<global::G.ChatDebugEvent?>? debug = null,
             bool validate = true)
         {
             if (validate)
@@ -424,37 +477,41 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStartEvent)
+            if (IsStreamStart)
             {
-                streamStartEvent?.Invoke(StreamStartEvent!);
+                streamStart?.Invoke(StreamStart!);
             }
-            else if (IsSearchQueriesGenerationEvent)
+            else if (IsSearchQueriesGeneration)
             {
-                searchQueriesGenerationEvent?.Invoke(SearchQueriesGenerationEvent!);
+                searchQueriesGeneration?.Invoke(SearchQueriesGeneration!);
             }
-            else if (IsSearchResultsEvent)
+            else if (IsSearchResults)
             {
-                searchResultsEvent?.Invoke(SearchResultsEvent!);
+                searchResults?.Invoke(SearchResults!);
             }
-            else if (IsTextGenerationEvent)
+            else if (IsTextGeneration)
             {
-                textGenerationEvent?.Invoke(TextGenerationEvent!);
+                textGeneration?.Invoke(TextGeneration!);
             }
-            else if (IsCitationGenerationEvent)
+            else if (IsCitationGeneration)
             {
-                citationGenerationEvent?.Invoke(CitationGenerationEvent!);
+                citationGeneration?.Invoke(CitationGeneration!);
             }
-            else if (IsToolCallsGenerationEvent)
+            else if (IsToolCallsGeneration)
             {
-                toolCallsGenerationEvent?.Invoke(ToolCallsGenerationEvent!);
+                toolCallsGeneration?.Invoke(ToolCallsGeneration!);
             }
-            else if (IsStreamEndEvent)
+            else if (IsStreamEnd)
             {
-                streamEndEvent?.Invoke(StreamEndEvent!);
+                streamEnd?.Invoke(StreamEnd!);
             }
-            else if (IsToolCallsChunkEvent)
+            else if (IsToolCallsChunk)
             {
-                toolCallsChunkEvent?.Invoke(ToolCallsChunkEvent!);
+                toolCallsChunk?.Invoke(ToolCallsChunk!);
+            }
+            else if (IsDebug)
+            {
+                debug?.Invoke(Debug!);
             }
         }
 
@@ -465,22 +522,24 @@ namespace G
         {
             var fields = new object?[]
             {
-                StreamStartEvent,
+                StreamStart,
                 typeof(global::G.ChatStreamStartEvent),
-                SearchQueriesGenerationEvent,
+                SearchQueriesGeneration,
                 typeof(global::G.ChatSearchQueriesGenerationEvent),
-                SearchResultsEvent,
+                SearchResults,
                 typeof(global::G.ChatSearchResultsEvent),
-                TextGenerationEvent,
+                TextGeneration,
                 typeof(global::G.ChatTextGenerationEvent),
-                CitationGenerationEvent,
+                CitationGeneration,
                 typeof(global::G.ChatCitationGenerationEvent),
-                ToolCallsGenerationEvent,
+                ToolCallsGeneration,
                 typeof(global::G.ChatToolCallsGenerationEvent),
-                StreamEndEvent,
+                StreamEnd,
                 typeof(global::G.ChatStreamEndEvent),
-                ToolCallsChunkEvent,
+                ToolCallsChunk,
                 typeof(global::G.ChatToolCallsChunkEvent),
+                Debug,
+                typeof(global::G.ChatDebugEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -497,14 +556,15 @@ namespace G
         public bool Equals(StreamedChatResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamStartEvent?>.Default.Equals(StreamStartEvent, other.StreamStartEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatSearchQueriesGenerationEvent?>.Default.Equals(SearchQueriesGenerationEvent, other.SearchQueriesGenerationEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatSearchResultsEvent?>.Default.Equals(SearchResultsEvent, other.SearchResultsEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatTextGenerationEvent?>.Default.Equals(TextGenerationEvent, other.TextGenerationEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCitationGenerationEvent?>.Default.Equals(CitationGenerationEvent, other.CitationGenerationEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsGenerationEvent?>.Default.Equals(ToolCallsGenerationEvent, other.ToolCallsGenerationEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEndEvent?>.Default.Equals(StreamEndEvent, other.StreamEndEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsChunkEvent?>.Default.Equals(ToolCallsChunkEvent, other.ToolCallsChunkEvent) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamStartEvent?>.Default.Equals(StreamStart, other.StreamStart) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatSearchQueriesGenerationEvent?>.Default.Equals(SearchQueriesGeneration, other.SearchQueriesGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatSearchResultsEvent?>.Default.Equals(SearchResults, other.SearchResults) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatTextGenerationEvent?>.Default.Equals(TextGeneration, other.TextGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCitationGenerationEvent?>.Default.Equals(CitationGeneration, other.CitationGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsGenerationEvent?>.Default.Equals(ToolCallsGeneration, other.ToolCallsGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEndEvent?>.Default.Equals(StreamEnd, other.StreamEnd) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsChunkEvent?>.Default.Equals(ToolCallsChunk, other.ToolCallsChunk) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatDebugEvent?>.Default.Equals(Debug, other.Debug) 
                 ;
         }
 

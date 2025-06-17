@@ -13,19 +13,24 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateStreamedResponseDiscriminatorEventType? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GenerateStreamText? StreamText { get; init; }
+        public global::G.GenerateStreamText? TextGeneration { get; init; }
 #else
-        public global::G.GenerateStreamText? StreamText { get; }
+        public global::G.GenerateStreamText? TextGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
 #endif
-        public bool IsStreamText => StreamText != null;
+        public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
         /// 
@@ -35,14 +40,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GenerateStreamText?(GenerateStreamedResponse @this) => @this.StreamText;
+        public static implicit operator global::G.GenerateStreamText?(GenerateStreamedResponse @this) => @this.TextGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public GenerateStreamedResponse(global::G.GenerateStreamText? value)
         {
-            StreamText = value;
+            TextGeneration = value;
         }
 
         /// <summary>
@@ -119,12 +124,15 @@ namespace G
         /// 
         /// </summary>
         public GenerateStreamedResponse(
-            global::G.GenerateStreamText? streamText,
+            global::G.GenerateStreamedResponseDiscriminatorEventType? eventType,
+            global::G.GenerateStreamText? textGeneration,
             global::G.GenerateStreamEnd? streamEnd,
             global::G.GenerateStreamError? streamError
             )
         {
-            StreamText = streamText;
+            EventType = eventType;
+
+            TextGeneration = textGeneration;
             StreamEnd = streamEnd;
             StreamError = streamError;
         }
@@ -135,14 +143,14 @@ namespace G
         public object? Object =>
             StreamError as object ??
             StreamEnd as object ??
-            StreamText as object 
+            TextGeneration as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            StreamText?.ToString() ??
+            TextGeneration?.ToString() ??
             StreamEnd?.ToString() ??
             StreamError?.ToString() 
             ;
@@ -152,14 +160,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStreamText && !IsStreamEnd && !IsStreamError || !IsStreamText && IsStreamEnd && !IsStreamError || !IsStreamText && !IsStreamEnd && IsStreamError;
+            return IsTextGeneration && !IsStreamEnd && !IsStreamError || !IsTextGeneration && IsStreamEnd && !IsStreamError || !IsTextGeneration && !IsStreamEnd && IsStreamError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerateStreamText?, TResult>? streamText = null,
+            global::System.Func<global::G.GenerateStreamText?, TResult>? textGeneration = null,
             global::System.Func<global::G.GenerateStreamEnd?, TResult>? streamEnd = null,
             global::System.Func<global::G.GenerateStreamError?, TResult>? streamError = null,
             bool validate = true)
@@ -169,9 +177,9 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamText && streamText != null)
+            if (IsTextGeneration && textGeneration != null)
             {
-                return streamText(StreamText!);
+                return textGeneration(TextGeneration!);
             }
             else if (IsStreamEnd && streamEnd != null)
             {
@@ -189,7 +197,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerateStreamText?>? streamText = null,
+            global::System.Action<global::G.GenerateStreamText?>? textGeneration = null,
             global::System.Action<global::G.GenerateStreamEnd?>? streamEnd = null,
             global::System.Action<global::G.GenerateStreamError?>? streamError = null,
             bool validate = true)
@@ -199,9 +207,9 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamText)
+            if (IsTextGeneration)
             {
-                streamText?.Invoke(StreamText!);
+                textGeneration?.Invoke(TextGeneration!);
             }
             else if (IsStreamEnd)
             {
@@ -220,7 +228,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                StreamText,
+                TextGeneration,
                 typeof(global::G.GenerateStreamText),
                 StreamEnd,
                 typeof(global::G.GenerateStreamEnd),
@@ -242,7 +250,7 @@ namespace G
         public bool Equals(GenerateStreamedResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamText?>.Default.Equals(StreamText, other.StreamText) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamText?>.Default.Equals(TextGeneration, other.TextGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamEnd?>.Default.Equals(StreamEnd, other.StreamEnd) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamError?>.Default.Equals(StreamError, other.StreamError) 
                 ;

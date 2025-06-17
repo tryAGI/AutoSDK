@@ -5,7 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// The reason a chat request has finished.
+    /// The reason a chat request has finished.<br/>
+    /// - **complete**: The model finished sending a complete message.<br/>
+    /// - **max_tokens**: The number of generated tokens exceeded the model's context length or the value specified via the `max_tokens` parameter.<br/>
+    /// - **stop_sequence**: One of the provided `stop_sequence` entries was reached in the model's generation.<br/>
+    /// - **tool_call**: The model generated a Tool Call and is expecting a Tool Message in return<br/>
+    /// - **error**: The generation failed due to an internal error
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ChatFinishReason
@@ -13,38 +18,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="complete")]
-        Complete,
+        [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
+        COMPLETE,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stop_sequence")]
-        StopSequence,
+        [global::System.Runtime.Serialization.EnumMember(Value="STOP_SEQUENCE")]
+        STOPSEQUENCE,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="max_tokens")]
-        MaxTokens,
+        [global::System.Runtime.Serialization.EnumMember(Value="MAX_TOKENS")]
+        MAXTOKENS,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool_call")]
-        ToolCall,
+        [global::System.Runtime.Serialization.EnumMember(Value="TOOL_CALL")]
+        TOOLCALL,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_blocked")]
-        ContentBlocked,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error_limit")]
-        ErrorLimit,
+        [global::System.Runtime.Serialization.EnumMember(Value="ERROR")]
+        ERROR,
     }
 
     /// <summary>
@@ -59,13 +54,11 @@ namespace G
         {
             return value switch
             {
-                ChatFinishReason.Complete => "complete",
-                ChatFinishReason.StopSequence => "stop_sequence",
-                ChatFinishReason.MaxTokens => "max_tokens",
-                ChatFinishReason.ToolCall => "tool_call",
-                ChatFinishReason.Error => "error",
-                ChatFinishReason.ContentBlocked => "content_blocked",
-                ChatFinishReason.ErrorLimit => "error_limit",
+                ChatFinishReason.COMPLETE => "COMPLETE",
+                ChatFinishReason.STOPSEQUENCE => "STOP_SEQUENCE",
+                ChatFinishReason.MAXTOKENS => "MAX_TOKENS",
+                ChatFinishReason.TOOLCALL => "TOOL_CALL",
+                ChatFinishReason.ERROR => "ERROR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +69,11 @@ namespace G
         {
             return value switch
             {
-                "complete" => ChatFinishReason.Complete,
-                "stop_sequence" => ChatFinishReason.StopSequence,
-                "max_tokens" => ChatFinishReason.MaxTokens,
-                "tool_call" => ChatFinishReason.ToolCall,
-                "error" => ChatFinishReason.Error,
-                "content_blocked" => ChatFinishReason.ContentBlocked,
-                "error_limit" => ChatFinishReason.ErrorLimit,
+                "COMPLETE" => ChatFinishReason.COMPLETE,
+                "STOP_SEQUENCE" => ChatFinishReason.STOPSEQUENCE,
+                "MAX_TOKENS" => ChatFinishReason.MAXTOKENS,
+                "TOOL_CALL" => ChatFinishReason.TOOLCALL,
+                "ERROR" => ChatFinishReason.ERROR,
                 _ => null,
             };
         }

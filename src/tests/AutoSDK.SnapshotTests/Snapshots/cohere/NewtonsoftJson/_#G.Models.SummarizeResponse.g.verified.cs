@@ -16,16 +16,16 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// Generated summary for the text
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("summary")]
-        public string? Summary { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("meta")]
         public global::G.ApiMeta? Meta { get; set; }
+
+        /// <summary>
+        /// Generated summary for the text
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("summary")]
+        public string? Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,18 +39,18 @@ namespace G
         /// <param name="id">
         /// Generated ID for the summary
         /// </param>
+        /// <param name="meta"></param>
         /// <param name="summary">
         /// Generated summary for the text
         /// </param>
-        /// <param name="meta"></param>
         public SummarizeResponse(
             string? id,
-            string? summary,
-            global::G.ApiMeta? meta)
+            global::G.ApiMeta? meta,
+            string? summary)
         {
             this.Id = id;
-            this.Summary = summary;
             this.Meta = meta;
+            this.Summary = summary;
         }
 
         /// <summary>

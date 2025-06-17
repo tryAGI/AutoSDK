@@ -10,6 +10,12 @@ namespace G
     public sealed partial class ChatToolCallsChunkEventVariant2
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
         /// Contains the chunk of the tool call generation in the stream.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_delta")]
@@ -25,6 +31,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallsChunkEventVariant2" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="toolCallDelta">
         /// Contains the chunk of the tool call generation in the stream.
         /// </param>
@@ -32,9 +39,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatToolCallsChunkEventVariant2(
-            global::G.ToolCallDelta toolCallDelta)
+            global::G.ToolCallDelta toolCallDelta,
+            string? text)
         {
             this.ToolCallDelta = toolCallDelta ?? throw new global::System.ArgumentNullException(nameof(toolCallDelta));
+            this.Text = text;
         }
 
         /// <summary>

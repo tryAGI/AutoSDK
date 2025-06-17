@@ -12,13 +12,13 @@ namespace G
     public sealed partial class Document
     {
         /// <summary>
-        /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
+        /// A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, string> Data { get; set; } = default!;
+        public object Data { get; set; } = default!;
 
         /// <summary>
-        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated
+        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
@@ -33,13 +33,13 @@ namespace G
         /// Initializes a new instance of the <see cref="Document" /> class.
         /// </summary>
         /// <param name="data">
-        /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
+        /// A relevant document that the model can cite to generate a more accurate reply. Each document is a string-any dictionary.
         /// </param>
         /// <param name="id">
-        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated
+        /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated.
         /// </param>
         public Document(
-            global::System.Collections.Generic.Dictionary<string, string> data,
+            object data,
             string? id)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

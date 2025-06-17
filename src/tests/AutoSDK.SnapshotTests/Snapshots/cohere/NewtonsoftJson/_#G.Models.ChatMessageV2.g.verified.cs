@@ -121,7 +121,7 @@ namespace G
         }
 
         /// <summary>
-        /// A message from the system.
+        /// A message with Tool outputs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolMessageV2? Tool { get; init; }

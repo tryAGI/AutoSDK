@@ -10,22 +10,24 @@ namespace G
     public sealed partial class ToolV2Function
     {
         /// <summary>
-        /// The name of the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The description of the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
+        /// The name of the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
         /// The parameters of the function as a JSON schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolV2Function" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the function.
-        /// </param>
         /// <param name="description">
         /// The description of the function.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function.
         /// </param>
         /// <param name="parameters">
         /// The parameters of the function as a JSON schema.
@@ -49,13 +51,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolV2Function(
-            string? name,
-            string? description,
-            object? parameters)
+            string name,
+            object parameters,
+            string? description)
         {
-            this.Name = name;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
-            this.Parameters = parameters;
         }
 
         /// <summary>

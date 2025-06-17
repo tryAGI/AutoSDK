@@ -5,20 +5,21 @@
 namespace G
 {
     /// <summary>
-    /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
+    /// Used to select the [safety instruction](https://docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
     /// When `NONE` is specified, the safety instruction will be omitted.<br/>
     /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
-    /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
+    /// **Note**: This parameter is only compatible newer Cohere models, starting with [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release) and [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release).<br/>
+    /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.<br/>
     /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
     /// </summary>
     public enum ChatRequestSafetyMode
     {
         /// <summary>
-        /// 
+        /// //docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.
         /// </summary>
         CONTEXTUAL,
         /// <summary>
-        /// 
+        /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </summary>
         STRICT,
         /// <summary>

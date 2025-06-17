@@ -8,7 +8,7 @@ namespace G
     /// The possible strategy used to serve a fine-tuned models.<br/>
     ///  - STRATEGY_UNSPECIFIED: Unspecified strategy.<br/>
     ///  - STRATEGY_VANILLA: Deprecated: Serve the fine-tuned model on a dedicated GPU.<br/>
-    ///  - STRATEGY_TFEW: Serve the fine-tuned model on a shared GPU.<br/>
+    ///  - STRATEGY_TFEW: Deprecated: Serve the fine-tuned model on a shared GPU.<br/>
     /// Default Value: STRATEGY_UNSPECIFIED
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -25,7 +25,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_VANILLA")]
         VANILLA,
         /// <summary>
-        /// Serve the fine-tuned model on a shared GPU.
+        /// Deprecated: Serve the fine-tuned model on a shared GPU.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_TFEW")]
         TFEW,

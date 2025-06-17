@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("total_count")]
-        public int? TotalCount { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("meta")]
+        public global::G.ApiMeta? Meta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("meta")]
-        public global::G.ApiMeta? Meta { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("total_count")]
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="ListClusterJobsResponse" /> class.
         /// </summary>
         /// <param name="jobs"></param>
-        /// <param name="totalCount"></param>
         /// <param name="meta"></param>
+        /// <param name="totalCount"></param>
         public ListClusterJobsResponse(
             global::System.Collections.Generic.IList<global::G.GetClusterJobResponse> jobs,
-            int? totalCount,
-            global::G.ApiMeta? meta)
+            global::G.ApiMeta? meta,
+            int? totalCount)
         {
             this.Jobs = jobs ?? throw new global::System.ArgumentNullException(nameof(jobs));
-            this.TotalCount = totalCount;
             this.Meta = meta;
+            this.TotalCount = totalCount;
         }
 
         /// <summary>
