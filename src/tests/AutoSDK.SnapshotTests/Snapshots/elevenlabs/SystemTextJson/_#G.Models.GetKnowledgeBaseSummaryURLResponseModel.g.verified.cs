@@ -33,9 +33,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_injectable")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("supported_usages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool PromptInjectable { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> SupportedUsages { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependent_agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem2> DependentAgents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> DependentAgents { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="metadata"></param>
-        /// <param name="promptInjectable"></param>
+        /// <param name="supportedUsages"></param>
         /// <param name="accessInfo"></param>
         /// <param name="dependentAgents"></param>
         /// <param name="type"></param>
@@ -89,16 +89,16 @@ namespace G
             string id,
             string name,
             global::G.KnowledgeBaseDocumentMetadataResponseModel metadata,
-            bool promptInjectable,
+            global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
-            global::System.Collections.Generic.IList<global::G.DependentAgentsItem2> dependentAgents,
+            global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> dependentAgents,
             string url,
             global::G.GetKnowledgeBaseSummaryURLResponseModelType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.PromptInjectable = promptInjectable;
+            this.SupportedUsages = supportedUsages ?? throw new global::System.ArgumentNullException(nameof(supportedUsages));
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
             this.DependentAgents = dependentAgents ?? throw new global::System.ArgumentNullException(nameof(dependentAgents));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));

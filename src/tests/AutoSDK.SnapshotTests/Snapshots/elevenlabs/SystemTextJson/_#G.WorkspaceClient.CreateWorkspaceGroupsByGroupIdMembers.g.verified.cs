@@ -9,13 +9,13 @@ namespace G
         partial void PrepareCreateWorkspaceGroupsByGroupIdMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string groupId,
-            ref string xiApiKey,
+            ref string? xiApiKey,
             global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost request);
         partial void PrepareCreateWorkspaceGroupsByGroupIdMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string groupId,
-            string xiApiKey,
+            string? xiApiKey,
             global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost request);
         partial void ProcessCreateWorkspaceGroupsByGroupIdMembersResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddWorkspaceGroupMemberResponseModel> CreateWorkspaceGroupsByGroupIdMembersAsync(
             string groupId,
-            string xiApiKey,
             global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost request,
+            string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -67,7 +67,10 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
 
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -215,8 +218,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddWorkspaceGroupMemberResponseModel> CreateWorkspaceGroupsByGroupIdMembersAsync(
             string groupId,
-            string xiApiKey,
             string email,
+            string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost

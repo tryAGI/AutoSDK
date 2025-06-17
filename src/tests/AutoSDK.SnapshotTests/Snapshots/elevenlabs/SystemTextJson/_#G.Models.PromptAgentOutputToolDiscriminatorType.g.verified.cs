@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Mcp,
+        /// <summary>
+        /// 
+        /// </summary>
         System,
         /// <summary>
         /// 
@@ -36,6 +40,7 @@ namespace G
             return value switch
             {
                 PromptAgentOutputToolDiscriminatorType.Client => "client",
+                PromptAgentOutputToolDiscriminatorType.Mcp => "mcp",
                 PromptAgentOutputToolDiscriminatorType.System => "system",
                 PromptAgentOutputToolDiscriminatorType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -49,6 +54,7 @@ namespace G
             return value switch
             {
                 "client" => PromptAgentOutputToolDiscriminatorType.Client,
+                "mcp" => PromptAgentOutputToolDiscriminatorType.Mcp,
                 "system" => PromptAgentOutputToolDiscriminatorType.System,
                 "webhook" => PromptAgentOutputToolDiscriminatorType.Webhook,
                 _ => null,

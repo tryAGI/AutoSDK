@@ -20,13 +20,6 @@ namespace G
         public required string PhoneNumber { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TelephonyProviderJsonConverter))]
-        public global::G.TelephonyProvider? Provider { get; set; }
-
-        /// <summary>
         /// Label for the phone number
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
@@ -34,11 +27,44 @@ namespace G
         public required string Label { get; set; }
 
         /// <summary>
+        /// Default Value: sip_trunk
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateSIPTrunkPhoneNumberRequestProviderJsonConverter))]
+        public global::G.CreateSIPTrunkPhoneNumberRequestProvider? Provider { get; set; }
+
+        /// <summary>
         /// SIP trunk termination URI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("termination_uri")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TerminationUri { get; set; }
+
+        /// <summary>
+        /// Hostname or IP the SIP INVITE is sent to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("address")]
+        public string? Address { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SIPTrunkTransportEnumJsonConverter))]
+        public global::G.SIPTrunkTransportEnum? Transport { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("media_encryption")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SIPMediaEncryptionEnumJsonConverter))]
+        public global::G.SIPMediaEncryptionEnum? MediaEncryption { get; set; }
+
+        /// <summary>
+        /// SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
         /// 
@@ -58,12 +84,22 @@ namespace G
         /// <param name="phoneNumber">
         /// Phone number
         /// </param>
-        /// <param name="provider"></param>
         /// <param name="label">
         /// Label for the phone number
         /// </param>
+        /// <param name="provider">
+        /// Default Value: sip_trunk
+        /// </param>
         /// <param name="terminationUri">
         /// SIP trunk termination URI
+        /// </param>
+        /// <param name="address">
+        /// Hostname or IP the SIP INVITE is sent to.
+        /// </param>
+        /// <param name="transport"></param>
+        /// <param name="mediaEncryption"></param>
+        /// <param name="headers">
+        /// SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call.
         /// </param>
         /// <param name="credentials"></param>
 #if NET7_0_OR_GREATER
@@ -73,13 +109,21 @@ namespace G
             string phoneNumber,
             string label,
             string terminationUri,
-            global::G.TelephonyProvider? provider,
+            global::G.CreateSIPTrunkPhoneNumberRequestProvider? provider,
+            string? address,
+            global::G.SIPTrunkTransportEnum? transport,
+            global::G.SIPMediaEncryptionEnum? mediaEncryption,
+            global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::G.SIPTrunkCredentials? credentials)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.TerminationUri = terminationUri ?? throw new global::System.ArgumentNullException(nameof(terminationUri));
             this.Provider = provider;
+            this.Address = address;
+            this.Transport = transport;
+            this.MediaEncryption = mediaEncryption;
+            this.Headers = headers;
             this.Credentials = credentials;
         }
 

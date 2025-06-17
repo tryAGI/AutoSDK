@@ -1,0 +1,50 @@
+﻿//HintName: G.Models.WidgetLanguagePresetResponse.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class WidgetLanguagePresetResponse
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("first_message")]
+        public string? FirstMessage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text_contents")]
+        public global::G.WidgetTextContents? TextContents { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WidgetLanguagePresetResponse" /> class.
+        /// </summary>
+        /// <param name="firstMessage"></param>
+        /// <param name="textContents"></param>
+        public WidgetLanguagePresetResponse(
+            string? firstMessage,
+            global::G.WidgetTextContents? textContents)
+        {
+            this.FirstMessage = firstMessage;
+            this.TextContents = textContents;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WidgetLanguagePresetResponse" /> class.
+        /// </summary>
+        public WidgetLanguagePresetResponse()
+        {
+        }
+    }
+}

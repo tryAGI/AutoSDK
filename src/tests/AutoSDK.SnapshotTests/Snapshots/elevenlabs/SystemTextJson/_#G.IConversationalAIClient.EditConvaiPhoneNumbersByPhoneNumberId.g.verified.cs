@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetPhoneNumberResponseModel> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
+        global::System.Threading.Tasks.Task<global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
             string phoneNumberId,
             global::G.UpdatePhoneNumberRequest request,
             string? xiApiKey = default,
@@ -39,7 +39,7 @@ namespace G
         /// <param name="agentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetPhoneNumberResponseModel> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
+        global::System.Threading.Tasks.Task<global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
             string phoneNumberId,
             string? xiApiKey = default,
             string? agentId = default,

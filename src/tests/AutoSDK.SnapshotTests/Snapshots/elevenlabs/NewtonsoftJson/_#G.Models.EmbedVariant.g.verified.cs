@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tiny")]
+        Tiny,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="compact")]
         Compact,
         /// <summary>
@@ -39,6 +44,7 @@ namespace G
         {
             return value switch
             {
+                EmbedVariant.Tiny => "tiny",
                 EmbedVariant.Compact => "compact",
                 EmbedVariant.Full => "full",
                 EmbedVariant.Expandable => "expandable",
@@ -52,6 +58,7 @@ namespace G
         {
             return value switch
             {
+                "tiny" => EmbedVariant.Tiny,
                 "compact" => EmbedVariant.Compact,
                 "full" => EmbedVariant.Full,
                 "expandable" => EmbedVariant.Expandable,

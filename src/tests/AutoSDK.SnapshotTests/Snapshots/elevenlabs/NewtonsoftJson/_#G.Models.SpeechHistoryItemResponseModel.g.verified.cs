@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The ID of the voice used.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("voice_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string VoiceId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("voice_id")]
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// The ID of the model.
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// The name of the voice.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("voice_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string VoiceName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("voice_name")]
+        public string? VoiceName { get; set; }
 
         /// <summary>
         /// The category of the voice. Either 'premade', 'cloned', 'generated' or 'professional'.
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// The text used to generate the audio item.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Unix timestamp of when the item was created.
@@ -100,7 +100,7 @@ namespace G
         public string? ShareLinkId { get; set; }
 
         /// <summary>
-        /// The source of the history item. Either TTS (text to speech), STS (speech to text) or STT (speech to text).
+        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
         public global::G.SpeechHistoryItemResponseModelSource? Source { get; set; }
@@ -110,6 +110,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alignments")]
         public global::G.HistoryAlignmentsResponseModel? Alignments { get; set; }
+
+        /// <summary>
+        /// The dialogue (voice and text pairs) used to generate the audio item. If this is set then the top level `text` and `voice_id` fields will be empty.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dialogue")]
+        public global::System.Collections.Generic.IList<global::G.DialogueInputResponseModel>? Dialogue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -164,45 +170,50 @@ namespace G
         /// The ID of the share link.
         /// </param>
         /// <param name="source">
-        /// The source of the history item. Either TTS (text to speech), STS (speech to text) or STT (speech to text).
+        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
         /// </param>
         /// <param name="alignments"></param>
+        /// <param name="dialogue">
+        /// The dialogue (voice and text pairs) used to generate the audio item. If this is set then the top level `text` and `voice_id` fields will be empty.
+        /// </param>
         public SpeechHistoryItemResponseModel(
             string historyItemId,
-            string voiceId,
-            string voiceName,
-            string text,
             global::System.DateTimeOffset dateUnix,
             int characterCountChangeFrom,
             int characterCountChangeTo,
             string contentType,
             global::G.SpeechHistoryItemResponseModelState state,
             string? requestId,
+            string? voiceId,
             string? modelId,
+            string? voiceName,
             global::G.SpeechHistoryItemResponseModelVoiceCategory? voiceCategory,
+            string? text,
             object? settings,
             global::G.FeedbackResponseModel? feedback,
             string? shareLinkId,
             global::G.SpeechHistoryItemResponseModelSource? source,
-            global::G.HistoryAlignmentsResponseModel? alignments)
+            global::G.HistoryAlignmentsResponseModel? alignments,
+            global::System.Collections.Generic.IList<global::G.DialogueInputResponseModel>? dialogue)
         {
             this.HistoryItemId = historyItemId ?? throw new global::System.ArgumentNullException(nameof(historyItemId));
-            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
-            this.VoiceName = voiceName ?? throw new global::System.ArgumentNullException(nameof(voiceName));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.DateUnix = dateUnix;
             this.CharacterCountChangeFrom = characterCountChangeFrom;
             this.CharacterCountChangeTo = characterCountChangeTo;
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.State = state;
             this.RequestId = requestId;
+            this.VoiceId = voiceId;
             this.ModelId = modelId;
+            this.VoiceName = voiceName;
             this.VoiceCategory = voiceCategory;
+            this.Text = text;
             this.Settings = settings;
             this.Feedback = feedback;
             this.ShareLinkId = shareLinkId;
             this.Source = source;
             this.Alignments = alignments;
+            this.Dialogue = dialogue;
         }
 
         /// <summary>

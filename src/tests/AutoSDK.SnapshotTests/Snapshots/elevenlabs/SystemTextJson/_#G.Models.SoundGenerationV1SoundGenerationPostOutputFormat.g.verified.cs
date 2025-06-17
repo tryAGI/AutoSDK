@@ -57,7 +57,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +111,9 @@ namespace G
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm22050 => "pcm_22050",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm24000 => "pcm_24000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm44100 => "pcm_44100",
+                SoundGenerationV1SoundGenerationPostOutputFormat.Pcm48000 => "pcm_48000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                SoundGenerationV1SoundGenerationPostOutputFormat.Alaw8000 => "alaw_8000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800032 => "opus_48000_32",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800064 => "opus_48000_64",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -130,7 +140,9 @@ namespace G
                 "pcm_22050" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm22050,
                 "pcm_24000" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm24000,
                 "pcm_44100" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm44100,
+                "pcm_48000" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm48000,
                 "ulaw_8000" => SoundGenerationV1SoundGenerationPostOutputFormat.Ulaw8000,
+                "alaw_8000" => SoundGenerationV1SoundGenerationPostOutputFormat.Alaw8000,
                 "opus_48000_32" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800032,
                 "opus_48000_64" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800064,
                 "opus_48000_96" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800096,

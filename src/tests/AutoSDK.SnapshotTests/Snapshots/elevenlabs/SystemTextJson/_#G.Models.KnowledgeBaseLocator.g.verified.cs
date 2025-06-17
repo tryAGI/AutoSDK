@@ -10,12 +10,12 @@ namespace G
     public sealed partial class KnowledgeBaseLocator
     {
         /// <summary>
-        /// The type of the knowledge base
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseLocatorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseDocumentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.KnowledgeBaseLocatorType Type { get; set; }
+        public required global::G.KnowledgeBaseDocumentType Type { get; set; }
 
         /// <summary>
         /// The name of the knowledge base
@@ -47,9 +47,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeBaseLocator" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the knowledge base
-        /// </param>
+        /// <param name="type"></param>
         /// <param name="name">
         /// The name of the knowledge base
         /// </param>
@@ -61,7 +59,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public KnowledgeBaseLocator(
-            global::G.KnowledgeBaseLocatorType type,
+            global::G.KnowledgeBaseDocumentType type,
             string name,
             string id,
             global::G.DocumentUsageModeEnum? usageMode)

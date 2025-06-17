@@ -8,13 +8,11 @@ namespace G
     {
         partial void PrepareCreateConvaiAgentsCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? useToolIds,
             ref string? xiApiKey,
             global::G.BodyCreateAgentV1ConvaiAgentsCreatePost request);
         partial void PrepareCreateConvaiAgentsCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? useToolIds,
             string? xiApiKey,
             global::G.BodyCreateAgentV1ConvaiAgentsCreatePost request);
         partial void ProcessCreateConvaiAgentsCreateResponse(
@@ -30,10 +28,6 @@ namespace G
         /// Create Agent<br/>
         /// Create an agent from a config object
         /// </summary>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -42,7 +36,6 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateConvaiAgentsCreateAsync(
             global::G.BodyCreateAgentV1ConvaiAgentsCreatePost request,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -52,16 +45,12 @@ namespace G
                 client: HttpClient);
             PrepareCreateConvaiAgentsCreateArguments(
                 httpClient: HttpClient,
-                useToolIds: ref useToolIds,
                 xiApiKey: ref xiApiKey,
                 request: request);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/agents/create",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("use_tool_ids", useToolIds?.ToString()) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -89,7 +78,6 @@ namespace G
             PrepareCreateConvaiAgentsCreateRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                useToolIds: useToolIds,
                 xiApiKey: xiApiKey,
                 request: request);
 
@@ -209,10 +197,6 @@ namespace G
         /// Create Agent<br/>
         /// Create an agent from a config object
         /// </summary>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -222,14 +206,18 @@ namespace G
         /// A name to make the agent easier to find<br/>
         /// Example: My agent
         /// </param>
+        /// <param name="tags">
+        /// Tags to help classify and filter the agent<br/>
+        /// Example: [Customer Support, Technical Help, Eleven]
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateConvaiAgentsCreateAsync(
             global::G.ConversationalConfigAPIModelInput conversationConfig,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             global::G.AgentPlatformSettingsRequestModel? platformSettings = default,
             string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyCreateAgentV1ConvaiAgentsCreatePost
@@ -237,10 +225,10 @@ namespace G
                 ConversationConfig = conversationConfig,
                 PlatformSettings = platformSettings,
                 Name = name,
+                Tags = tags,
             };
 
             return await CreateConvaiAgentsCreateAsync(
-                useToolIds: useToolIds,
                 xiApiKey: xiApiKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

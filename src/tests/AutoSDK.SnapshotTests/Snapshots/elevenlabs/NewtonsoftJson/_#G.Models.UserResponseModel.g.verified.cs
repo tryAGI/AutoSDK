@@ -40,7 +40,7 @@ namespace G
         public string? XiApiKey { get; set; }
 
         /// <summary>
-        /// Whether the user can use delayed payment methods.
+        /// This field is deprecated and will be removed in a future major version. Instead use subscription.trust_on_invoice_creation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_use_delayed_payment_methods", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanUseDelayedPaymentMethods { get; set; } = default!;
@@ -109,7 +109,7 @@ namespace G
         /// The API key of the user.
         /// </param>
         /// <param name="canUseDelayedPaymentMethods">
-        /// Whether the user can use delayed payment methods.
+        /// This field is deprecated and will be removed in a future major version. Instead use subscription.trust_on_invoice_creation.
         /// </param>
         /// <param name="isOnboardingCompleted">
         /// Whether the user's onboarding is completed.

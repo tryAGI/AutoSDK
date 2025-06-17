@@ -13,10 +13,6 @@ namespace G
         /// The id of an agent. This is returned on agent creation.<br/>
         /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -26,7 +22,6 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetAgentResponseModel> EditConvaiAgentsByAgentIdAsync(
             string agentId,
             global::G.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatch request,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -37,10 +32,6 @@ namespace G
         /// <param name="agentId">
         /// The id of an agent. This is returned on agent creation.<br/>
         /// Example: 21m00Tcm4TlvDq8ikWAM
-        /// </param>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -55,15 +46,19 @@ namespace G
         /// A name to make the agent easier to find<br/>
         /// Example: My agent
         /// </param>
+        /// <param name="tags">
+        /// Tags to help classify and filter the agent<br/>
+        /// Example: [Customer Support, Technical Help, Eleven]
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetAgentResponseModel> EditConvaiAgentsByAgentIdAsync(
             string agentId,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             object? conversationConfig = default,
             object? platformSettings = default,
             string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -24,6 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="PUT")]
+        PUT,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PATCH")]
         PATCH,
         /// <summary>
@@ -47,6 +52,7 @@ namespace G
             {
                 WebhookToolApiSchemaConfigInputMethod.GET => "GET",
                 WebhookToolApiSchemaConfigInputMethod.POST => "POST",
+                WebhookToolApiSchemaConfigInputMethod.PUT => "PUT",
                 WebhookToolApiSchemaConfigInputMethod.PATCH => "PATCH",
                 WebhookToolApiSchemaConfigInputMethod.DELETE => "DELETE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -61,6 +67,7 @@ namespace G
             {
                 "GET" => WebhookToolApiSchemaConfigInputMethod.GET,
                 "POST" => WebhookToolApiSchemaConfigInputMethod.POST,
+                "PUT" => WebhookToolApiSchemaConfigInputMethod.PUT,
                 "PATCH" => WebhookToolApiSchemaConfigInputMethod.PATCH,
                 "DELETE" => WebhookToolApiSchemaConfigInputMethod.DELETE,
                 _ => null,

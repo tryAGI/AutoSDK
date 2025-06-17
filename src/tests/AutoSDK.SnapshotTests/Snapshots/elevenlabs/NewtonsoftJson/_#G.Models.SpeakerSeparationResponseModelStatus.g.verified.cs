@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The status of the speaker separation.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SpeakerSeparationResponseModelStatus

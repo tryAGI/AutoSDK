@@ -59,6 +59,14 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// The permission on the resource of the pronunciation dictionary.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AddPronunciationDictionaryResponseModelPermissionOnResourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? PermissionOnResource { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -88,6 +96,9 @@ namespace G
         /// <param name="description">
         /// The description of the pronunciation dictionary.
         /// </param>
+        /// <param name="permissionOnResource">
+        /// The permission on the resource of the pronunciation dictionary.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -98,6 +109,7 @@ namespace G
             global::System.DateTimeOffset creationTimeUnix,
             string versionId,
             int versionRulesNum,
+            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? permissionOnResource,
             string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -106,6 +118,7 @@ namespace G
             this.CreationTimeUnix = creationTimeUnix;
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
             this.VersionRulesNum = versionRulesNum;
+            this.PermissionOnResource = permissionOnResource;
             this.Description = description;
         }
 

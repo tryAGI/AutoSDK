@@ -23,6 +23,9 @@ namespace G
         /// If set to true, the endpoint will return only documents owned by you (and not shared from somebody else).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="types">
+        /// If present, the endpoint will return only documents of the given types.
+        /// </param>
         /// <param name="useTypesense">
         /// If set to true, the endpoint will use typesense DB to search for the documents).<br/>
         /// Default Value: false
@@ -37,6 +40,7 @@ namespace G
             int? pageSize = default,
             string? search = default,
             bool? showOnlyOwnedDocuments = default,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseDocumentType>? types = default,
             bool? useTypesense = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

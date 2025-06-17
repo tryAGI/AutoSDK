@@ -69,8 +69,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm_48000")]
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ulaw_8000")]
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="alaw_8000")]
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -121,7 +131,9 @@ namespace G
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm22050 => "pcm_22050",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm24000 => "pcm_24000",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm44100 => "pcm_44100",
+                TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm48000 => "pcm_48000",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Alaw8000 => "alaw_8000",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800032 => "opus_48000_32",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800064 => "opus_48000_64",
                 TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -148,7 +160,9 @@ namespace G
                 "pcm_22050" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm22050,
                 "pcm_24000" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm24000,
                 "pcm_44100" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm44100,
+                "pcm_48000" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Pcm48000,
                 "ulaw_8000" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Ulaw8000,
+                "alaw_8000" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Alaw8000,
                 "opus_48000_32" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800032,
                 "opus_48000_64" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800064,
                 "opus_48000_96" => TextToSpeechStreamingV1TextToSpeechVoiceIdStreamPostOutputFormat.Opus4800096,

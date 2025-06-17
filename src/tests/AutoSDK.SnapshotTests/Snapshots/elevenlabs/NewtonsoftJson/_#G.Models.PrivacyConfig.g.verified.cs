@@ -45,6 +45,13 @@ namespace G
         public bool? ApplyToExistingConversations { get; set; }
 
         /// <summary>
+        /// Whether to enable zero retention mode - no PII data is stored<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("zero_retention_mode")]
+        public bool? ZeroRetentionMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -73,18 +80,24 @@ namespace G
         /// Whether to apply the privacy settings to existing conversations<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="zeroRetentionMode">
+        /// Whether to enable zero retention mode - no PII data is stored<br/>
+        /// Default Value: false
+        /// </param>
         public PrivacyConfig(
             bool? recordVoice,
             int? retentionDays,
             bool? deleteTranscriptAndPii,
             bool? deleteAudio,
-            bool? applyToExistingConversations)
+            bool? applyToExistingConversations,
+            bool? zeroRetentionMode)
         {
             this.RecordVoice = recordVoice;
             this.RetentionDays = retentionDays;
             this.DeleteTranscriptAndPii = deleteTranscriptAndPii;
             this.DeleteAudio = deleteAudio;
             this.ApplyToExistingConversations = applyToExistingConversations;
+            this.ZeroRetentionMode = zeroRetentionMode;
         }
 
         /// <summary>

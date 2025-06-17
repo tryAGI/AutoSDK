@@ -5,20 +5,20 @@
 namespace G
 {
     /// <summary>
-    /// The type of the principal: user, group, or workspace api key.
+    /// The type of the principal: user, group, or service account (under 'key').
     /// </summary>
     public enum ShareOptionResponseModelType
     {
         /// <summary>
-        /// user, group, or workspace api key.
+        /// user, group, or service account (under 'key').
         /// </summary>
         User,
         /// <summary>
-        /// user, group, or workspace api key.
+        /// user, group, or service account (under 'key').
         /// </summary>
         Group,
         /// <summary>
-        /// user, group, or workspace api key.
+        /// user, group, or service account (under 'key').
         /// </summary>
         Key,
     }

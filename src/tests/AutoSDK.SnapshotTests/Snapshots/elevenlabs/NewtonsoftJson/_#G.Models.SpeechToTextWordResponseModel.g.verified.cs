@@ -40,6 +40,12 @@ namespace G
         public string? SpeakerId { get; set; }
 
         /// <summary>
+        /// The log of the probability with which this word was predicted. Logprobs are in range [-infinity, 0], higher logprobs indicate a higher confidence the model has in its predictions.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprob", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Logprob { get; set; } = default!;
+
+        /// <summary>
         /// The characters that make up the word and their timing information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("characters")]
@@ -69,12 +75,16 @@ namespace G
         /// <param name="speakerId">
         /// Unique identifier for the speaker of this word.
         /// </param>
+        /// <param name="logprob">
+        /// The log of the probability with which this word was predicted. Logprobs are in range [-infinity, 0], higher logprobs indicate a higher confidence the model has in its predictions.
+        /// </param>
         /// <param name="characters">
         /// The characters that make up the word and their timing information.
         /// </param>
         public SpeechToTextWordResponseModel(
             string text,
             global::G.SpeechToTextWordResponseModelType type,
+            double logprob,
             double? start,
             double? end,
             string? speakerId,
@@ -82,6 +92,7 @@ namespace G
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Logprob = logprob;
             this.Start = start;
             this.End = end;
             this.SpeakerId = speakerId;

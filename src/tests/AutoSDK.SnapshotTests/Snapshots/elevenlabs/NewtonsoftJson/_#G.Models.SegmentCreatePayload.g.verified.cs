@@ -28,6 +28,12 @@ namespace G
         public string? Text { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("translations")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Translations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -39,14 +45,17 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="translations"></param>
         public SegmentCreatePayload(
             double startTime,
             double endTime,
-            string? text)
+            string? text,
+            global::System.Collections.Generic.Dictionary<string, string>? translations)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Text = text;
+            this.Translations = translations;
         }
 
         /// <summary>

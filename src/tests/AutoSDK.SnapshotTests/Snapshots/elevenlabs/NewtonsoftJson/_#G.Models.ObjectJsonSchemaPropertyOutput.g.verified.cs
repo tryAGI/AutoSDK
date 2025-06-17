@@ -18,12 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("properties")]
-        public object? Properties { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required")]
         public global::System.Collections.Generic.IList<string>? Required { get; set; }
 
@@ -32,6 +26,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("properties")]
+        public object? Properties { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,19 +45,19 @@ namespace G
         /// <param name="type">
         /// Default Value: object
         /// </param>
-        /// <param name="properties"></param>
         /// <param name="required"></param>
         /// <param name="description"></param>
+        /// <param name="properties"></param>
         public ObjectJsonSchemaPropertyOutput(
             global::G.ObjectJsonSchemaPropertyOutputType? type,
-            object? properties,
             global::System.Collections.Generic.IList<string>? required,
-            string? description)
+            string? description,
+            object? properties)
         {
             this.Type = type;
-            this.Properties = properties;
             this.Required = required;
             this.Description = description;
+            this.Properties = properties;
         }
 
         /// <summary>

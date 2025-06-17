@@ -21,6 +21,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("placement")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WidgetPlacementJsonConverter))]
+        public global::G.WidgetPlacement? Placement { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expandable")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WidgetExpandableJsonConverter))]
         public global::G.WidgetExpandable? Expandable { get; set; }
@@ -175,11 +182,43 @@ namespace G
         public bool? DisableBanner { get; set; }
 
         /// <summary>
+        /// The override link for the widget
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("override_link")]
+        public string? OverrideLink { get; set; }
+
+        /// <summary>
         /// Whether to enable mic muting<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mic_muting_enabled")]
         public bool? MicMutingEnabled { get; set; }
+
+        /// <summary>
+        /// Whether the widget should show the conversation transcript as it goes on<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transcript_enabled")]
+        public bool? TranscriptEnabled { get; set; }
+
+        /// <summary>
+        /// Whether the user should be able to send text messages<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_input_enabled")]
+        public bool? TextInputEnabled { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_contents")]
+        public global::G.WidgetTextContents? TextContents { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("styles")]
+        public global::G.WidgetStyles? Styles { get; set; }
 
         /// <summary>
         /// 
@@ -195,6 +234,32 @@ namespace G
         public global::System.Collections.Generic.IList<string>? SupportedLanguageOverrides { get; set; }
 
         /// <summary>
+        /// Language presets for the widget
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language_presets")]
+        public global::System.Collections.Generic.Dictionary<string, global::G.WidgetLanguagePresetResponse>? LanguagePresets { get; set; }
+
+        /// <summary>
+        /// Whether the agent uses text-only mode<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_only")]
+        public bool? TextOnly { get; set; }
+
+        /// <summary>
+        /// Whether the agent can be switched to text-only mode<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_text_only")]
+        public bool? SupportsTextOnly { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("first_message")]
+        public string? FirstMessage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -204,6 +269,7 @@ namespace G
         /// Initializes a new instance of the <see cref="WidgetConfigResponseModel" /> class.
         /// </summary>
         /// <param name="variant"></param>
+        /// <param name="placement"></param>
         /// <param name="expandable"></param>
         /// <param name="avatar">
         /// The avatar of the widget
@@ -281,18 +347,44 @@ namespace G
         /// Whether to disable the banner<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="overrideLink">
+        /// The override link for the widget
+        /// </param>
         /// <param name="micMutingEnabled">
         /// Whether to enable mic muting<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="transcriptEnabled">
+        /// Whether the widget should show the conversation transcript as it goes on<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="textInputEnabled">
+        /// Whether the user should be able to send text messages<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="textContents"></param>
+        /// <param name="styles"></param>
         /// <param name="language"></param>
         /// <param name="supportedLanguageOverrides"></param>
+        /// <param name="languagePresets">
+        /// Language presets for the widget
+        /// </param>
+        /// <param name="textOnly">
+        /// Whether the agent uses text-only mode<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="supportsTextOnly">
+        /// Whether the agent can be switched to text-only mode<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="firstMessage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WidgetConfigResponseModel(
             string language,
             global::G.EmbedVariant? variant,
+            global::G.WidgetPlacement? placement,
             global::G.WidgetExpandable? expandable,
             global::G.AnyOf<global::G.OrbAvatar, global::G.URLAvatar, global::G.ImageAvatar>? avatar,
             global::G.WidgetFeedbackMode? feedbackMode,
@@ -317,11 +409,21 @@ namespace G
             string? termsKey,
             bool? showAvatarWhenCollapsed,
             bool? disableBanner,
+            string? overrideLink,
             bool? micMutingEnabled,
-            global::System.Collections.Generic.IList<string>? supportedLanguageOverrides)
+            bool? transcriptEnabled,
+            bool? textInputEnabled,
+            global::G.WidgetTextContents? textContents,
+            global::G.WidgetStyles? styles,
+            global::System.Collections.Generic.IList<string>? supportedLanguageOverrides,
+            global::System.Collections.Generic.Dictionary<string, global::G.WidgetLanguagePresetResponse>? languagePresets,
+            bool? textOnly,
+            bool? supportsTextOnly,
+            string? firstMessage)
         {
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Variant = variant;
+            this.Placement = placement;
             this.Expandable = expandable;
             this.Avatar = avatar;
             this.FeedbackMode = feedbackMode;
@@ -346,8 +448,17 @@ namespace G
             this.TermsKey = termsKey;
             this.ShowAvatarWhenCollapsed = showAvatarWhenCollapsed;
             this.DisableBanner = disableBanner;
+            this.OverrideLink = overrideLink;
             this.MicMutingEnabled = micMutingEnabled;
+            this.TranscriptEnabled = transcriptEnabled;
+            this.TextInputEnabled = textInputEnabled;
+            this.TextContents = textContents;
+            this.Styles = styles;
             this.SupportedLanguageOverrides = supportedLanguageOverrides;
+            this.LanguagePresets = languagePresets;
+            this.TextOnly = textOnly;
+            this.SupportsTextOnly = supportsTextOnly;
+            this.FirstMessage = firstMessage;
         }
 
         /// <summary>

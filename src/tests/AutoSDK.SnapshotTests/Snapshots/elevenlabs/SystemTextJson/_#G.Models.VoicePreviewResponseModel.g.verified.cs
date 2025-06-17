@@ -10,28 +10,28 @@ namespace G
     public sealed partial class VoicePreviewResponseModel
     {
         /// <summary>
-        /// 
+        /// The base64 encoded audio of the preview.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_base_64")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AudioBase64 { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the generated voice. Use it to create a voice from the preview.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_voice_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GeneratedVoiceId { get; set; }
 
         /// <summary>
-        /// 
+        /// The media type of the preview.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MediaType { get; set; }
 
         /// <summary>
-        /// 
+        /// The duration of the preview in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration_secs")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,10 +46,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VoicePreviewResponseModel" /> class.
         /// </summary>
-        /// <param name="audioBase64"></param>
-        /// <param name="generatedVoiceId"></param>
-        /// <param name="mediaType"></param>
-        /// <param name="durationSecs"></param>
+        /// <param name="audioBase64">
+        /// The base64 encoded audio of the preview.
+        /// </param>
+        /// <param name="generatedVoiceId">
+        /// The ID of the generated voice. Use it to create a voice from the preview.
+        /// </param>
+        /// <param name="mediaType">
+        /// The media type of the preview.
+        /// </param>
+        /// <param name="durationSecs">
+        /// The duration of the preview in seconds.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

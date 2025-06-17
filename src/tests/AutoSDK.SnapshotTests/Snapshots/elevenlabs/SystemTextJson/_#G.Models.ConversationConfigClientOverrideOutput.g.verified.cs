@@ -12,14 +12,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
-        public global::G.AgentConfigOverride? Agent { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tts")]
+        public global::G.TTSConversationalConfigOverride? Tts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tts")]
-        public global::G.TTSConversationalConfigOverride? Tts { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
+        public global::G.ConversationConfigOverride? Conversation { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
+        public global::G.AgentConfigOverride? Agent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,17 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideOutput" /> class.
         /// </summary>
-        /// <param name="agent"></param>
         /// <param name="tts"></param>
+        /// <param name="conversation"></param>
+        /// <param name="agent"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationConfigClientOverrideOutput(
-            global::G.AgentConfigOverride? agent,
-            global::G.TTSConversationalConfigOverride? tts)
+            global::G.TTSConversationalConfigOverride? tts,
+            global::G.ConversationConfigOverride? conversation,
+            global::G.AgentConfigOverride? agent)
         {
-            this.Agent = agent;
             this.Tts = tts;
+            this.Conversation = conversation;
+            this.Agent = agent;
         }
 
         /// <summary>

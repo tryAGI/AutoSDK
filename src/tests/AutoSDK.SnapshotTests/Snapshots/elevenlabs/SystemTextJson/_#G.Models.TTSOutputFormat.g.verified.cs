@@ -32,6 +32,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         Ulaw8000,
     }
 
@@ -52,6 +56,7 @@ namespace G
                 TTSOutputFormat.Pcm22050 => "pcm_22050",
                 TTSOutputFormat.Pcm24000 => "pcm_24000",
                 TTSOutputFormat.Pcm44100 => "pcm_44100",
+                TTSOutputFormat.Pcm48000 => "pcm_48000",
                 TTSOutputFormat.Ulaw8000 => "ulaw_8000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,6 +73,7 @@ namespace G
                 "pcm_22050" => TTSOutputFormat.Pcm22050,
                 "pcm_24000" => TTSOutputFormat.Pcm24000,
                 "pcm_44100" => TTSOutputFormat.Pcm44100,
+                "pcm_48000" => TTSOutputFormat.Pcm48000,
                 "ulaw_8000" => TTSOutputFormat.Ulaw8000,
                 _ => null,
             };

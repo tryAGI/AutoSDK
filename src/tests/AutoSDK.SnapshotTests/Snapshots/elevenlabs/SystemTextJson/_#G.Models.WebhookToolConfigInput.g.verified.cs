@@ -10,12 +10,10 @@ namespace G
     public sealed partial class WebhookToolConfigInput
     {
         /// <summary>
-        /// The type of tool<br/>
-        /// Default Value: webhook
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookToolConfigInputTypeJsonConverter))]
-        public global::G.WebhookToolConfigInputType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
@@ -30,6 +28,21 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
+
+        /// <summary>
+        /// The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).<br/>
+        /// Default Value: 20
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_timeout_secs")]
+        public int? ResponseTimeoutSecs { get; set; }
+
+        /// <summary>
+        /// The type of tool<br/>
+        /// Default Value: webhook
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookToolConfigInputTypeJsonConverter))]
+        public global::G.WebhookToolConfigInputType? Type { get; set; }
 
         /// <summary>
         /// Configuration for a webhook that will be called by an LLM tool.
@@ -53,12 +66,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookToolConfigInput" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="responseTimeoutSecs">
+        /// The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).<br/>
+        /// Default Value: 20
+        /// </param>
         /// <param name="type">
         /// The type of tool<br/>
         /// Default Value: webhook
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="apiSchema">
         /// Configuration for a webhook that will be called by an LLM tool.
         /// </param>
@@ -70,12 +88,16 @@ namespace G
             string name,
             string description,
             global::G.WebhookToolApiSchemaConfigInput apiSchema,
+            string? id,
+            int? responseTimeoutSecs,
             global::G.WebhookToolConfigInputType? type,
             global::G.DynamicVariablesConfig? dynamicVariables)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.ApiSchema = apiSchema ?? throw new global::System.ArgumentNullException(nameof(apiSchema));
+            this.Id = id;
+            this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.Type = type;
             this.DynamicVariables = dynamicVariables;
         }

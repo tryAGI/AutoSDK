@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tts")]
-        public global::G.TTSConversationalConfig? Tts { get; set; }
+        public global::G.TTSConversationalConfigOutput? Tts { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
         public ConversationalConfigAPIModelOutput(
             global::G.ASRConversationalConfig? asr,
             global::G.TurnConfig? turn,
-            global::G.TTSConversationalConfig? tts,
+            global::G.TTSConversationalConfigOutput? tts,
             global::G.ConversationConfig? conversation,
             global::System.Collections.Generic.Dictionary<string, global::G.LanguagePresetOutput>? languagePresets,
             global::G.AgentConfigAPIModelOutput? agent)

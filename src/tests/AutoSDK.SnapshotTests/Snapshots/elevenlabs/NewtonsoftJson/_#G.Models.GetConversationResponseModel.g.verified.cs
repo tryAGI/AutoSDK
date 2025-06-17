@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModel> Transcript { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> Transcript { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -52,6 +52,24 @@ namespace G
         public global::G.ConversationInitiationClientDataRequestOutput? ConversationInitiationClientData { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_audio", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasAudio { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_user_audio", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasUserAudio { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_response_audio", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasResponseAudio { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -67,12 +85,18 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="analysis"></param>
         /// <param name="conversationInitiationClientData"></param>
+        /// <param name="hasAudio"></param>
+        /// <param name="hasUserAudio"></param>
+        /// <param name="hasResponseAudio"></param>
         public GetConversationResponseModel(
             string agentId,
             string conversationId,
             global::G.GetConversationResponseModelStatus status,
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModel> transcript,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> transcript,
             global::G.ConversationHistoryMetadataCommonModel metadata,
+            bool hasAudio,
+            bool hasUserAudio,
+            bool hasResponseAudio,
             global::G.ConversationHistoryAnalysisCommonModel? analysis,
             global::G.ConversationInitiationClientDataRequestOutput? conversationInitiationClientData)
         {
@@ -81,6 +105,9 @@ namespace G
             this.Status = status;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.HasAudio = hasAudio;
+            this.HasUserAudio = hasUserAudio;
+            this.HasResponseAudio = hasResponseAudio;
             this.Analysis = analysis;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }

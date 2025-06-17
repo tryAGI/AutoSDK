@@ -10,7 +10,7 @@ namespace G
     public sealed partial class PromptAgentOverrideConfig
     {
         /// <summary>
-        /// Whether to allow prompt overriding<br/>
+        /// Whether to allow overriding the prompt field.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
@@ -26,7 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="PromptAgentOverrideConfig" /> class.
         /// </summary>
         /// <param name="prompt">
-        /// Whether to allow prompt overriding<br/>
+        /// Whether to allow overriding the prompt field.<br/>
         /// Default Value: false
         /// </param>
         public PromptAgentOverrideConfig(

@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetWorkspaceGroupsSearchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string name,
-            ref string xiApiKey);
+            ref string? xiApiKey);
         partial void PrepareGetWorkspaceGroupsSearchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string name,
-            string xiApiKey);
+            string? xiApiKey);
         partial void ProcessGetWorkspaceGroupsSearchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,7 +38,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.WorkspaceGroupByNameResponseModel>> GetWorkspaceGroupsSearchAsync(
             string name,
-            string xiApiKey,
+            string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -63,7 +63,10 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
 
 
             PrepareRequest(

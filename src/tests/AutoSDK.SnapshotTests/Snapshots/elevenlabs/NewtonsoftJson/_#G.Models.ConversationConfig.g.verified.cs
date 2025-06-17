@@ -10,6 +10,13 @@ namespace G
     public sealed partial class ConversationConfig
     {
         /// <summary>
+        /// If enabled audio will not be processed and only text will be used, use to avoid audio pricing.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text_only")]
+        public bool? TextOnly { get; set; }
+
+        /// <summary>
         /// The maximum duration of a conversation in seconds<br/>
         /// Default Value: 600
         /// </summary>
@@ -31,6 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfig" /> class.
         /// </summary>
+        /// <param name="textOnly">
+        /// If enabled audio will not be processed and only text will be used, use to avoid audio pricing.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="maxDurationSeconds">
         /// The maximum duration of a conversation in seconds<br/>
         /// Default Value: 600
@@ -39,9 +50,11 @@ namespace G
         /// The events that will be sent to the client
         /// </param>
         public ConversationConfig(
+            bool? textOnly,
             int? maxDurationSeconds,
             global::System.Collections.Generic.IList<global::G.ClientEvent>? clientEvents)
         {
+            this.TextOnly = textOnly;
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ClientEvents = clientEvents;
         }

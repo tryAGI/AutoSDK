@@ -202,18 +202,29 @@ namespace G
         /// </param>
         /// <param name="conversationInitiationClientDataWebhook"></param>
         /// <param name="webhooks"></param>
+        /// <param name="canUseMcpServers">
+        /// Whether the workspace can use MCP servers<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="ragRetentionPeriodDays">
+        /// Default Value: 10
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetConvAISettingsResponseModel> EditConvaiSettingsAsync(
             string? xiApiKey = default,
             global::G.ConversationInitiationClientDataWebhook? conversationInitiationClientDataWebhook = default,
             global::G.ConvAIWebhooks? webhooks = default,
+            bool? canUseMcpServers = default,
+            int? ragRetentionPeriodDays = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PatchConvAISettingsRequest
             {
                 ConversationInitiationClientDataWebhook = conversationInitiationClientDataWebhook,
                 Webhooks = webhooks,
+                CanUseMcpServers = canUseMcpServers,
+                RagRetentionPeriodDays = ragRetentionPeriodDays,
             };
 
             return await EditConvaiSettingsAsync(

@@ -42,6 +42,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("permission_on_resource", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_by", Required = global::Newtonsoft.Json.Required.Always)]
         public string CreatedBy { get; set; } = default!;
 
@@ -71,6 +77,7 @@ namespace G
         /// <param name="pronunciationDictionaryId"></param>
         /// <param name="dictionaryName"></param>
         /// <param name="versionName"></param>
+        /// <param name="permissionOnResource"></param>
         /// <param name="createdBy"></param>
         /// <param name="creationTimeUnix"></param>
         /// <param name="archivedTimeUnix"></param>
@@ -80,6 +87,7 @@ namespace G
             string pronunciationDictionaryId,
             string dictionaryName,
             string versionName,
+            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? permissionOnResource,
             string createdBy,
             int creationTimeUnix,
             int? archivedTimeUnix)
@@ -89,6 +97,7 @@ namespace G
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
+            this.PermissionOnResource = permissionOnResource;
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
             this.ArchivedTimeUnix = archivedTimeUnix;

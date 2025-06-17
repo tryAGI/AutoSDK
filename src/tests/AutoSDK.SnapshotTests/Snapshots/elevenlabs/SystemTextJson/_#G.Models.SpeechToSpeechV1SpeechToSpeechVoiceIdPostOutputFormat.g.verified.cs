@@ -57,7 +57,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +111,9 @@ namespace G
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050 => "pcm_22050",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000 => "pcm_24000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100 => "pcm_44100",
+                SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000 => "pcm_48000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000 => "alaw_8000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032 => "opus_48000_32",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064 => "opus_48000_64",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -130,7 +140,9 @@ namespace G
                 "pcm_22050" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050,
                 "pcm_24000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000,
                 "pcm_44100" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100,
+                "pcm_48000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000,
                 "ulaw_8000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000,
+                "alaw_8000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000,
                 "opus_48000_32" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032,
                 "opus_48000_64" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064,
                 "opus_48000_96" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The speakers of the sample.
     /// </summary>
     public sealed partial class SpeakerSeparationResponseModelSpeakers
     {

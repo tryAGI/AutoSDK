@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Tiny,
+        /// <summary>
+        /// 
+        /// </summary>
         Compact,
         /// <summary>
         /// 
@@ -35,6 +39,7 @@ namespace G
         {
             return value switch
             {
+                EmbedVariant.Tiny => "tiny",
                 EmbedVariant.Compact => "compact",
                 EmbedVariant.Full => "full",
                 EmbedVariant.Expandable => "expandable",
@@ -48,6 +53,7 @@ namespace G
         {
             return value switch
             {
+                "tiny" => EmbedVariant.Tiny,
                 "compact" => EmbedVariant.Compact,
                 "full" => EmbedVariant.Full,
                 "expandable" => EmbedVariant.Expandable,

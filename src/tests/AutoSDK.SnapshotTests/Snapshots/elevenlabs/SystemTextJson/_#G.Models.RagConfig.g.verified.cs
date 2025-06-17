@@ -41,6 +41,15 @@ namespace G
         public int? MaxDocumentsLength { get; set; }
 
         /// <summary>
+        /// Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.<br/>
+        /// Default Value: 20<br/>
+        /// Example: 5
+        /// </summary>
+        /// <example>5</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_retrieved_rag_chunks_count")]
+        public int? MaxRetrievedRagChunksCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +72,11 @@ namespace G
         /// Default Value: 50000<br/>
         /// Example: 50000
         /// </param>
+        /// <param name="maxRetrievedRagChunksCount">
+        /// Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.<br/>
+        /// Default Value: 20<br/>
+        /// Example: 5
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,12 +84,14 @@ namespace G
             bool? enabled,
             global::G.EmbeddingModelEnum? embeddingModel,
             double? maxVectorDistance,
-            int? maxDocumentsLength)
+            int? maxDocumentsLength,
+            int? maxRetrievedRagChunksCount)
         {
             this.Enabled = enabled;
             this.EmbeddingModel = embeddingModel;
             this.MaxVectorDistance = maxVectorDistance;
             this.MaxDocumentsLength = maxDocumentsLength;
+            this.MaxRetrievedRagChunksCount = maxRetrievedRagChunksCount;
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.GetPhoneNumberResponseModel>> GetConvaiPhoneNumbersAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ListPhoneNumbersV1ConvaiPhoneNumbersGetResponseItem>> GetConvaiPhoneNumbersAsync(
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -129,7 +129,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GetPhoneNumberResponseModel>?>(__content, JsonSerializerOptions) ??
+                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.ListPhoneNumbersV1ConvaiPhoneNumbersGetResponseItem>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -160,7 +160,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.GetPhoneNumberResponseModel>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.ListPhoneNumbersV1ConvaiPhoneNumbersGetResponseItem>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

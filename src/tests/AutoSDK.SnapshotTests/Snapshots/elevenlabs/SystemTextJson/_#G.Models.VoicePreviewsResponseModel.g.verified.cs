@@ -10,14 +10,14 @@ namespace G
     public sealed partial class VoicePreviewsResponseModel
     {
         /// <summary>
-        /// 
+        /// The previews of the generated voices.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previews")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.VoicePreviewResponseModel> Previews { get; set; }
 
         /// <summary>
-        /// 
+        /// The text used to preview the voices.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,8 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VoicePreviewsResponseModel" /> class.
         /// </summary>
-        /// <param name="previews"></param>
-        /// <param name="text"></param>
+        /// <param name="previews">
+        /// The previews of the generated voices.
+        /// </param>
+        /// <param name="text">
+        /// The text used to preview the voices.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

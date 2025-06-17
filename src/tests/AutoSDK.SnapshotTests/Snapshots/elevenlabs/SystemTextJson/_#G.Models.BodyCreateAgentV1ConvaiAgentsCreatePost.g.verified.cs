@@ -31,6 +31,14 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
+        /// Tags to help classify and filter the agent<br/>
+        /// Example: [Customer Support, Technical Help, Eleven]
+        /// </summary>
+        /// <example>[Customer Support, Technical Help, Eleven]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,17 +53,23 @@ namespace G
         /// A name to make the agent easier to find<br/>
         /// Example: My agent
         /// </param>
+        /// <param name="tags">
+        /// Tags to help classify and filter the agent<br/>
+        /// Example: [Customer Support, Technical Help, Eleven]
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyCreateAgentV1ConvaiAgentsCreatePost(
             global::G.ConversationalConfigAPIModelInput conversationConfig,
             global::G.AgentPlatformSettingsRequestModel? platformSettings,
-            string? name)
+            string? name,
+            global::System.Collections.Generic.IList<string>? tags)
         {
             this.ConversationConfig = conversationConfig ?? throw new global::System.ArgumentNullException(nameof(conversationConfig));
             this.PlatformSettings = platformSettings;
             this.Name = name;
+            this.Tags = tags;
         }
 
         /// <summary>

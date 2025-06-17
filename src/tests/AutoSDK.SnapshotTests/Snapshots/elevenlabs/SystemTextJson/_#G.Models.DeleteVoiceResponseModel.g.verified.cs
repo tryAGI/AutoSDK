@@ -10,7 +10,7 @@ namespace G
     public sealed partial class DeleteVoiceResponseModel
     {
         /// <summary>
-        /// The status of the voice deletion. If the request was successful, the status will be 'ok'. Otherwise an error message with status 500 will be returned.
+        /// The status of the voice deletion request. If the request was successful, the status will be 'ok'. Otherwise an error message with status 500 will be returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,7 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="DeleteVoiceResponseModel" /> class.
         /// </summary>
         /// <param name="status">
-        /// The status of the voice deletion. If the request was successful, the status will be 'ok'. Otherwise an error message with status 500 will be returned.
+        /// The status of the voice deletion request. If the request was successful, the status will be 'ok'. Otherwise an error message with status 500 will be returned.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AddPronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
+        global::System.Threading.Tasks.Task<global::G.PronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
             string pronunciationDictionaryId,
             global::G.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPost request,
             string? xiApiKey = default,
@@ -48,7 +48,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AddPronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
+        global::System.Threading.Tasks.Task<global::G.PronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
             string pronunciationDictionaryId,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> rules,
             string? xiApiKey = default,

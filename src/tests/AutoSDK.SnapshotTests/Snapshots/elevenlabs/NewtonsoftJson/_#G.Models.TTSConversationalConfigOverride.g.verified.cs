@@ -10,7 +10,7 @@ namespace G
     public sealed partial class TTSConversationalConfigOverride
     {
         /// <summary>
-        /// 
+        /// The voice ID to use for TTS
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_id")]
         public string? VoiceId { get; set; }
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSConversationalConfigOverride" /> class.
         /// </summary>
-        /// <param name="voiceId"></param>
+        /// <param name="voiceId">
+        /// The voice ID to use for TTS
+        /// </param>
         public TTSConversationalConfigOverride(
             string? voiceId)
         {

@@ -35,12 +35,17 @@ namespace G
         /// The group ids of the user<br/>
         /// Example: [group_id_1, group_id_2]
         /// </param>
+        /// <param name="workspacePermission">
+        /// The workspace permission of the user<br/>
+        /// Example: workspace_member
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddWorkspaceInviteResponseModel> CreateWorkspaceInvitesAddAsync(
             string email,
             string? xiApiKey = default,
             global::System.Collections.Generic.IList<string>? groupIds = default,
+            global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission? workspacePermission = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

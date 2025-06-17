@@ -30,6 +30,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("audio_stale", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool AudioStale { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_ref", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DubbingMediaReference MediaRef { get; set; } = default!;
 
@@ -45,16 +51,19 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="audioStale"></param>
         /// <param name="mediaRef"></param>
         public DubbedSegment(
             double startTime,
             double endTime,
             string? text,
+            bool audioStale,
             global::G.DubbingMediaReference mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.AudioStale = audioStale;
             this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
         }
 

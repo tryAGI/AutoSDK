@@ -9,10 +9,6 @@ namespace G
         /// Create Agent<br/>
         /// Create an agent from a config object
         /// </summary>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -21,7 +17,6 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateConvaiAgentsCreateAsync(
             global::G.BodyCreateAgentV1ConvaiAgentsCreatePost request,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -29,10 +24,6 @@ namespace G
         /// Create Agent<br/>
         /// Create an agent from a config object
         /// </summary>
-        /// <param name="useToolIds">
-        /// Use tool ids instead of tools specs from request payload.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -42,14 +33,18 @@ namespace G
         /// A name to make the agent easier to find<br/>
         /// Example: My agent
         /// </param>
+        /// <param name="tags">
+        /// Tags to help classify and filter the agent<br/>
+        /// Example: [Customer Support, Technical Help, Eleven]
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateConvaiAgentsCreateAsync(
             global::G.ConversationalConfigAPIModelInput conversationConfig,
-            bool? useToolIds = default,
             string? xiApiKey = default,
             global::G.AgentPlatformSettingsRequestModel? platformSettings = default,
             string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -10,13 +10,13 @@ namespace G
     public sealed partial class VoicePreviewsResponseModel
     {
         /// <summary>
-        /// 
+        /// The previews of the generated voices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("previews", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.VoicePreviewResponseModel> Previews { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The text used to preview the voices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
@@ -30,8 +30,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VoicePreviewsResponseModel" /> class.
         /// </summary>
-        /// <param name="previews"></param>
-        /// <param name="text"></param>
+        /// <param name="previews">
+        /// The previews of the generated voices.
+        /// </param>
+        /// <param name="text">
+        /// The text used to preview the voices.
+        /// </param>
         public VoicePreviewsResponseModel(
             global::System.Collections.Generic.IList<global::G.VoicePreviewResponseModel> previews,
             string text)

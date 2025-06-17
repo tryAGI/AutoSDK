@@ -13,6 +13,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="initiated")]
+        Initiated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in-progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="processing")]
         Processing,
         /// <summary>
@@ -39,6 +49,8 @@ namespace G
         {
             return value switch
             {
+                ConversationSummaryResponseModelStatus.Initiated => "initiated",
+                ConversationSummaryResponseModelStatus.InProgress => "in-progress",
                 ConversationSummaryResponseModelStatus.Processing => "processing",
                 ConversationSummaryResponseModelStatus.Done => "done",
                 ConversationSummaryResponseModelStatus.Failed => "failed",
@@ -52,6 +64,8 @@ namespace G
         {
             return value switch
             {
+                "initiated" => ConversationSummaryResponseModelStatus.Initiated,
+                "in-progress" => ConversationSummaryResponseModelStatus.InProgress,
                 "processing" => ConversationSummaryResponseModelStatus.Processing,
                 "done" => ConversationSummaryResponseModelStatus.Done,
                 "failed" => ConversationSummaryResponseModelStatus.Failed,

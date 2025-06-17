@@ -70,6 +70,18 @@ namespace G
         public global::G.SpeakerSeparationResponseModel? SpeakerSeparation { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trim_start")]
+        public int? TrimStart { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trim_end")]
+        public int? TrimEnd { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -98,6 +110,8 @@ namespace G
         /// <param name="hasIsolatedAudio"></param>
         /// <param name="hasIsolatedAudioPreview"></param>
         /// <param name="speakerSeparation"></param>
+        /// <param name="trimStart"></param>
+        /// <param name="trimEnd"></param>
         public SampleResponseModel(
             string sampleId,
             string fileName,
@@ -108,7 +122,9 @@ namespace G
             bool? removeBackgroundNoise,
             bool? hasIsolatedAudio,
             bool? hasIsolatedAudioPreview,
-            global::G.SpeakerSeparationResponseModel? speakerSeparation)
+            global::G.SpeakerSeparationResponseModel? speakerSeparation,
+            int? trimStart,
+            int? trimEnd)
         {
             this.SampleId = sampleId ?? throw new global::System.ArgumentNullException(nameof(sampleId));
             this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
@@ -120,6 +136,8 @@ namespace G
             this.HasIsolatedAudio = hasIsolatedAudio;
             this.HasIsolatedAudioPreview = hasIsolatedAudioPreview;
             this.SpeakerSeparation = speakerSeparation;
+            this.TrimStart = trimStart;
+            this.TrimEnd = trimEnd;
         }
 
         /// <summary>

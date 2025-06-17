@@ -24,6 +24,13 @@ namespace G
         public int? DailyLimit { get; set; }
 
         /// <summary>
+        /// Whether to enable bursting. If true, exceeding workspace concurrency limit will be allowed up to 3 times the limit. Calls will be charged at double rate when exceeding the limit.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("bursting_enabled")]
+        public bool? BurstingEnabled { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -40,12 +47,18 @@ namespace G
         /// The maximum number of conversations per day<br/>
         /// Default Value: 100000
         /// </param>
+        /// <param name="burstingEnabled">
+        /// Whether to enable bursting. If true, exceeding workspace concurrency limit will be allowed up to 3 times the limit. Calls will be charged at double rate when exceeding the limit.<br/>
+        /// Default Value: true
+        /// </param>
         public AgentCallLimits(
             int? agentConcurrencyLimit,
-            int? dailyLimit)
+            int? dailyLimit,
+            bool? burstingEnabled)
         {
             this.AgentConcurrencyLimit = agentConcurrencyLimit;
             this.DailyLimit = dailyLimit;
+            this.BurstingEnabled = burstingEnabled;
         }
 
         /// <summary>

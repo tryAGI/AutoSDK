@@ -52,6 +52,12 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// The permission on the resource of the pronunciation dictionary.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("permission_on_resource", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? PermissionOnResource { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -81,6 +87,9 @@ namespace G
         /// <param name="description">
         /// The description of the pronunciation dictionary.
         /// </param>
+        /// <param name="permissionOnResource">
+        /// The permission on the resource of the pronunciation dictionary.
+        /// </param>
         public AddPronunciationDictionaryResponseModel(
             string id,
             string name,
@@ -88,6 +97,7 @@ namespace G
             global::System.DateTimeOffset creationTimeUnix,
             string versionId,
             int versionRulesNum,
+            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? permissionOnResource,
             string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -96,6 +106,7 @@ namespace G
             this.CreationTimeUnix = creationTimeUnix;
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
             this.VersionRulesNum = versionRulesNum;
+            this.PermissionOnResource = permissionOnResource;
             this.Description = description;
         }
 

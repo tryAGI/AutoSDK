@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("widget")]
-        public global::G.WidgetConfig? Widget { get; set; }
+        public global::G.WidgetConfigOutput? Widget { get; set; }
 
         /// <summary>
         /// Data collection settings
@@ -90,7 +90,7 @@ namespace G
         public AgentPlatformSettingsResponseModel(
             global::G.AuthSettings? auth,
             global::G.EvaluationSettings? evaluation,
-            global::G.WidgetConfig? widget,
+            global::G.WidgetConfigOutput? widget,
             global::System.Collections.Generic.Dictionary<string, global::G.LiteralJsonSchemaProperty>? dataCollection,
             global::G.ConversationInitiationClientDataConfigOutput? overrides,
             global::G.AgentCallLimits? callLimits,

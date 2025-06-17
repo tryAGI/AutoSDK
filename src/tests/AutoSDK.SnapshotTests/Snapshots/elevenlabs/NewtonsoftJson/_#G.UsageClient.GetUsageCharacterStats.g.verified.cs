@@ -12,6 +12,8 @@ namespace G
             ref global::System.DateTimeOffset endUnix,
             ref bool? includeWorkspaceMetrics,
             ref global::G.BreakdownTypes? breakdownType,
+            ref global::G.UsageAggregationInterval? aggregationInterval,
+            ref global::G.MetricType? metric,
             ref string? xiApiKey);
         partial void PrepareGetUsageCharacterStatsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,6 +22,8 @@ namespace G
             global::System.DateTimeOffset endUnix,
             bool? includeWorkspaceMetrics,
             global::G.BreakdownTypes? breakdownType,
+            global::G.UsageAggregationInterval? aggregationInterval,
+            global::G.MetricType? metric,
             string? xiApiKey);
         partial void ProcessGetUsageCharacterStatsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,8 +35,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Get Character Usage Metrics<br/>
-        /// Returns the credit usage metrics for the current user or the entire workspace they are part of. The response will return a time axis with unix timestamps for each day and daily usage along that axis. The usage will be broken down by the specified breakdown type. For example, breakdown type "voice" will return the usage of each voice along the time axis.
+        /// Get Characters Usage Metrics<br/>
+        /// Returns the usage metrics for the current user or the entire workspace they are part of. The response provides a time axis based on the specified aggregation interval (default: day), with usage values for each interval along that axis. Usage is broken down by the selected breakdown type. For example, breakdown type "voice" will return the usage of each voice for each interval along the time axis.
         /// </summary>
         /// <param name="startUnix">
         /// UTC Unix timestamp for the start of the usage window, in milliseconds. To include the first day of the window, the timestamp should be at 00:00:00 of that day.<br/>
@@ -49,6 +53,10 @@ namespace G
         /// <param name="breakdownType">
         /// How to break down the information. Cannot be "user" or "api_key" if include_workspace_metrics is False.
         /// </param>
+        /// <param name="aggregationInterval">
+        /// The time interval over which to aggregate the usage data.
+        /// </param>
+        /// <param name="metric"></param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -59,6 +67,8 @@ namespace G
             global::System.DateTimeOffset endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
+            global::G.UsageAggregationInterval? aggregationInterval = default,
+            global::G.MetricType? metric = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -70,6 +80,8 @@ namespace G
                 endUnix: ref endUnix,
                 includeWorkspaceMetrics: ref includeWorkspaceMetrics,
                 breakdownType: ref breakdownType,
+                aggregationInterval: ref aggregationInterval,
+                metric: ref metric,
                 xiApiKey: ref xiApiKey);
 
             var breakdownTypeValue = breakdownType switch
@@ -84,6 +96,26 @@ namespace G
                 global::G.BreakdownTypes.ProductType => "product_type",
                 global::G.BreakdownTypes.Model => "model",
                 global::G.BreakdownTypes.Resource => "resource",
+                global::G.BreakdownTypes.RequestQueue => "request_queue",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var aggregationIntervalValue = aggregationInterval switch
+            {
+                global::G.UsageAggregationInterval.Hour => "hour",
+                global::G.UsageAggregationInterval.Day => "day",
+                global::G.UsageAggregationInterval.Week => "week",
+                global::G.UsageAggregationInterval.Month => "month",
+                global::G.UsageAggregationInterval.Cumulative => "cumulative",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var metricValue = metric switch
+            {
+                global::G.MetricType.Credits => "credits",
+                global::G.MetricType.MinutesUsed => "minutes_used",
+                global::G.MetricType.RequestCount => "request_count",
+                global::G.MetricType.TtfbAvg => "ttfb_avg",
+                global::G.MetricType.TtfbP95 => "ttfb_p95",
+                global::G.MetricType.FiatUnitsSpent => "fiat_units_spent",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -94,6 +126,8 @@ namespace G
                 .AddRequiredParameter("end_unix", endUnix.ToString()) 
                 .AddOptionalParameter("include_workspace_metrics", includeWorkspaceMetrics?.ToString()) 
                 .AddOptionalParameter("breakdown_type", breakdownType?.ToValueString()) 
+                .AddOptionalParameter("aggregation_interval", aggregationInterval?.ToValueString()) 
+                .AddOptionalParameter("metric", metric?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -120,6 +154,8 @@ namespace G
                 endUnix: endUnix,
                 includeWorkspaceMetrics: includeWorkspaceMetrics,
                 breakdownType: breakdownType,
+                aggregationInterval: aggregationInterval,
+                metric: metric,
                 xiApiKey: xiApiKey);
 
             using var __response = await HttpClient.SendAsync(

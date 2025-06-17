@@ -58,6 +58,7 @@ namespace G
             var resourceTypeValue = resourceType switch
             {
                 global::G.WorkspaceResourceType.Voice => "voice",
+                global::G.WorkspaceResourceType.VoiceCollection => "voice_collection",
                 global::G.WorkspaceResourceType.PronunciationDictionary => "pronunciation_dictionary",
                 global::G.WorkspaceResourceType.Dubbing => "dubbing",
                 global::G.WorkspaceResourceType.Project => "project",
@@ -68,6 +69,8 @@ namespace G
                 global::G.WorkspaceResourceType.ConvaiSecrets => "convai_secrets",
                 global::G.WorkspaceResourceType.MusicLatent => "music_latent",
                 global::G.WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
+                global::G.WorkspaceResourceType.ConvaiMcpServers => "convai_mcp_servers",
+                global::G.WorkspaceResourceType.ConvaiBatchCalls => "convai_batch_calls",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

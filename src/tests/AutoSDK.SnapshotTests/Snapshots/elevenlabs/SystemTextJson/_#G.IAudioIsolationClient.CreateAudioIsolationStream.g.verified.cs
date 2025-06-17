@@ -33,12 +33,18 @@ namespace G
         /// <param name="audioname">
         /// The audio file from which vocals/speech will be isolated from.
         /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateAudioIsolationStreamAsync(
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

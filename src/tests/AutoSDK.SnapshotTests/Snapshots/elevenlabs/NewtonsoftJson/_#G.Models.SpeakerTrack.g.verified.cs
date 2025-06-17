@@ -30,6 +30,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("voices", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.Dictionary<string, string> Voices { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segments", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Segments { get; set; } = default!;
 
@@ -45,16 +51,19 @@ namespace G
         /// <param name="id"></param>
         /// <param name="mediaRef"></param>
         /// <param name="speakerName"></param>
+        /// <param name="voices"></param>
         /// <param name="segments"></param>
         public SpeakerTrack(
             string id,
             global::G.DubbingMediaReference mediaRef,
             string speakerName,
+            global::System.Collections.Generic.Dictionary<string, string> voices,
             global::System.Collections.Generic.IList<string> segments)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
             this.SpeakerName = speakerName ?? throw new global::System.ArgumentNullException(nameof(speakerName));
+            this.Voices = voices ?? throw new global::System.ArgumentNullException(nameof(voices));
             this.Segments = segments ?? throw new global::System.ArgumentNullException(nameof(segments));
         }
 

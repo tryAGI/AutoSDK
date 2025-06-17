@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> Usage { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<double>> Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
 #endif
         public UsageCharactersResponseModel(
             global::System.Collections.Generic.IList<int> time,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> usage)
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<double>> usage)
         {
             this.Time = time ?? throw new global::System.ArgumentNullException(nameof(time));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));

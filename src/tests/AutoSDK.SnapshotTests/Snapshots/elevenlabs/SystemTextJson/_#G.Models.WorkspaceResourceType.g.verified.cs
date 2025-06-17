@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        VoiceCollection,
+        /// <summary>
+        /// 
+        /// </summary>
         PronunciationDictionary,
         /// <summary>
         /// 
@@ -53,6 +57,14 @@ namespace G
         /// 
         /// </summary>
         ConvaiPhoneNumbers,
+        /// <summary>
+        /// 
+        /// </summary>
+        ConvaiMcpServers,
+        /// <summary>
+        /// 
+        /// </summary>
+        ConvaiBatchCalls,
     }
 
     /// <summary>
@@ -68,6 +80,7 @@ namespace G
             return value switch
             {
                 WorkspaceResourceType.Voice => "voice",
+                WorkspaceResourceType.VoiceCollection => "voice_collection",
                 WorkspaceResourceType.PronunciationDictionary => "pronunciation_dictionary",
                 WorkspaceResourceType.Dubbing => "dubbing",
                 WorkspaceResourceType.Project => "project",
@@ -78,6 +91,8 @@ namespace G
                 WorkspaceResourceType.ConvaiSecrets => "convai_secrets",
                 WorkspaceResourceType.MusicLatent => "music_latent",
                 WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
+                WorkspaceResourceType.ConvaiMcpServers => "convai_mcp_servers",
+                WorkspaceResourceType.ConvaiBatchCalls => "convai_batch_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -89,6 +104,7 @@ namespace G
             return value switch
             {
                 "voice" => WorkspaceResourceType.Voice,
+                "voice_collection" => WorkspaceResourceType.VoiceCollection,
                 "pronunciation_dictionary" => WorkspaceResourceType.PronunciationDictionary,
                 "dubbing" => WorkspaceResourceType.Dubbing,
                 "project" => WorkspaceResourceType.Project,
@@ -99,6 +115,8 @@ namespace G
                 "convai_secrets" => WorkspaceResourceType.ConvaiSecrets,
                 "music_latent" => WorkspaceResourceType.MusicLatent,
                 "convai_phone_numbers" => WorkspaceResourceType.ConvaiPhoneNumbers,
+                "convai_mcp_servers" => WorkspaceResourceType.ConvaiMcpServers,
+                "convai_batch_calls" => WorkspaceResourceType.ConvaiBatchCalls,
                 _ => null,
             };
         }

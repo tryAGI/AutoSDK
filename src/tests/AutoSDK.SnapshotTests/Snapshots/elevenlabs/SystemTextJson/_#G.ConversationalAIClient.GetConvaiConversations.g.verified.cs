@@ -11,6 +11,8 @@ namespace G
             ref string? cursor,
             ref string? agentId,
             ref global::G.EvaluationSuccessResult? callSuccessful,
+            ref global::System.DateTimeOffset? callStartBeforeUnix,
+            ref global::System.DateTimeOffset? callStartAfterUnix,
             ref int? pageSize,
             ref string? xiApiKey);
         partial void PrepareGetConvaiConversationsRequest(
@@ -19,6 +21,8 @@ namespace G
             string? cursor,
             string? agentId,
             global::G.EvaluationSuccessResult? callSuccessful,
+            global::System.DateTimeOffset? callStartBeforeUnix,
+            global::System.DateTimeOffset? callStartAfterUnix,
             int? pageSize,
             string? xiApiKey);
         partial void ProcessGetConvaiConversationsResponse(
@@ -42,6 +46,12 @@ namespace G
         /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="callSuccessful"></param>
+        /// <param name="callStartBeforeUnix">
+        /// Unix timestamp (in seconds) to filter conversations up to this start date.
+        /// </param>
+        /// <param name="callStartAfterUnix">
+        /// Unix timestamp (in seconds) to filter conversations after to this start date.
+        /// </param>
         /// <param name="pageSize">
         /// How many conversations to return at maximum. Can not exceed 100, defaults to 30.<br/>
         /// Default Value: 30
@@ -55,6 +65,8 @@ namespace G
             string? cursor = default,
             string? agentId = default,
             global::G.EvaluationSuccessResult? callSuccessful = default,
+            global::System.DateTimeOffset? callStartBeforeUnix = default,
+            global::System.DateTimeOffset? callStartAfterUnix = default,
             int? pageSize = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -66,6 +78,8 @@ namespace G
                 cursor: ref cursor,
                 agentId: ref agentId,
                 callSuccessful: ref callSuccessful,
+                callStartBeforeUnix: ref callStartBeforeUnix,
+                callStartAfterUnix: ref callStartAfterUnix,
                 pageSize: ref pageSize,
                 xiApiKey: ref xiApiKey);
 
@@ -76,6 +90,8 @@ namespace G
                 .AddOptionalParameter("cursor", cursor) 
                 .AddOptionalParameter("agent_id", agentId) 
                 .AddOptionalParameter("call_successful", callSuccessful?.ToValueString()) 
+                .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString()) 
+                .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -102,6 +118,8 @@ namespace G
                 cursor: cursor,
                 agentId: agentId,
                 callSuccessful: callSuccessful,
+                callStartBeforeUnix: callStartBeforeUnix,
+                callStartAfterUnix: callStartAfterUnix,
                 pageSize: pageSize,
                 xiApiKey: xiApiKey);
 

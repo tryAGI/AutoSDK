@@ -36,6 +36,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.DubbingMediaReference Input { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DubbingMediaReference Background { get; set; } = default!;
 
@@ -58,6 +64,12 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.SpeakerSegment> SpeakerSegments { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("renders", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.Dictionary<string, global::G.Render> Renders { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -70,28 +82,34 @@ namespace G
         /// <param name="version"></param>
         /// <param name="sourceLanguage"></param>
         /// <param name="targetLanguages"></param>
+        /// <param name="input"></param>
         /// <param name="background"></param>
         /// <param name="foreground"></param>
         /// <param name="speakerTracks"></param>
         /// <param name="speakerSegments"></param>
+        /// <param name="renders"></param>
         public DubbingResource(
             string id,
             int version,
             string sourceLanguage,
             global::System.Collections.Generic.IList<string> targetLanguages,
+            global::G.DubbingMediaReference input,
             global::G.DubbingMediaReference background,
             global::G.DubbingMediaReference foreground,
             global::System.Collections.Generic.Dictionary<string, global::G.SpeakerTrack> speakerTracks,
-            global::System.Collections.Generic.Dictionary<string, global::G.SpeakerSegment> speakerSegments)
+            global::System.Collections.Generic.Dictionary<string, global::G.SpeakerSegment> speakerSegments,
+            global::System.Collections.Generic.Dictionary<string, global::G.Render> renders)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
             this.SourceLanguage = sourceLanguage ?? throw new global::System.ArgumentNullException(nameof(sourceLanguage));
             this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Background = background ?? throw new global::System.ArgumentNullException(nameof(background));
             this.Foreground = foreground ?? throw new global::System.ArgumentNullException(nameof(foreground));
             this.SpeakerTracks = speakerTracks ?? throw new global::System.ArgumentNullException(nameof(speakerTracks));
             this.SpeakerSegments = speakerSegments ?? throw new global::System.ArgumentNullException(nameof(speakerSegments));
+            this.Renders = renders ?? throw new global::System.ArgumentNullException(nameof(renders));
         }
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// The type of the principal: user, group, or workspace api key.
+        /// The type of the principal: user, group, or service account (under 'key').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ShareOptionResponseModelTypeJsonConverter))]
@@ -47,7 +47,7 @@ namespace G
         /// The ID of the principal.
         /// </param>
         /// <param name="type">
-        /// The type of the principal: user, group, or workspace api key.
+        /// The type of the principal: user, group, or service account (under 'key').
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

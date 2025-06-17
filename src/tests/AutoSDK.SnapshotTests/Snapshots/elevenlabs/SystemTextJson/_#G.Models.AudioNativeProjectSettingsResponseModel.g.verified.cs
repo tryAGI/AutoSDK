@@ -71,6 +71,14 @@ namespace G
         public string? AudioUrl { get; set; }
 
         /// <summary>
+        /// Current state of the project<br/>
+        /// Default Value: ready
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AudioNativeProjectSettingsResponseModelStatusJsonConverter))]
+        public global::G.AudioNativeProjectSettingsResponseModelStatus? Status { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -106,6 +114,10 @@ namespace G
         /// <param name="audioUrl">
         /// The URL of the audio file.
         /// </param>
+        /// <param name="status">
+        /// Current state of the project<br/>
+        /// Default Value: ready
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -118,7 +130,8 @@ namespace G
             string backgroundColor,
             int sessionization,
             string? audioPath,
-            string? audioUrl)
+            string? audioUrl,
+            global::G.AudioNativeProjectSettingsResponseModelStatus? status)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
@@ -129,6 +142,7 @@ namespace G
             this.Sessionization = sessionization;
             this.AudioPath = audioPath;
             this.AudioUrl = audioUrl;
+            this.Status = status;
         }
 
         /// <summary>

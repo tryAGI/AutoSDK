@@ -48,6 +48,18 @@ namespace G
         public global::System.Collections.Generic.IList<string>? ToolIds { get; set; }
 
         /// <summary>
+        /// A list of MCP server ids to be used by the agent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("mcp_server_ids")]
+        public global::System.Collections.Generic.IList<string>? McpServerIds { get; set; }
+
+        /// <summary>
+        /// A list of Native MCP server ids to be used by the agent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("native_mcp_server_ids")]
+        public global::System.Collections.Generic.IList<string>? NativeMcpServerIds { get; set; }
+
+        /// <summary>
         /// A list of knowledge bases to be used by the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("knowledge_base")]
@@ -99,6 +111,12 @@ namespace G
         /// <param name="toolIds">
         /// A list of IDs of tools used by the agent
         /// </param>
+        /// <param name="mcpServerIds">
+        /// A list of MCP server ids to be used by the agent
+        /// </param>
+        /// <param name="nativeMcpServerIds">
+        /// A list of Native MCP server ids to be used by the agent
+        /// </param>
         /// <param name="knowledgeBase">
         /// A list of knowledge bases to be used by the agent
         /// </param>
@@ -115,6 +133,8 @@ namespace G
             int? maxTokens,
             global::System.Collections.Generic.IList<global::G.ToolsItem2>? tools,
             global::System.Collections.Generic.IList<string>? toolIds,
+            global::System.Collections.Generic.IList<string>? mcpServerIds,
+            global::System.Collections.Generic.IList<string>? nativeMcpServerIds,
             global::System.Collections.Generic.IList<global::G.KnowledgeBaseLocator>? knowledgeBase,
             global::G.CustomLLM? customLlm,
             bool? ignoreDefaultPersonality,
@@ -126,6 +146,8 @@ namespace G
             this.MaxTokens = maxTokens;
             this.Tools = tools;
             this.ToolIds = toolIds;
+            this.McpServerIds = mcpServerIds;
+            this.NativeMcpServerIds = nativeMcpServerIds;
             this.KnowledgeBase = knowledgeBase;
             this.CustomLlm = customLlm;
             this.IgnoreDefaultPersonality = ignoreDefaultPersonality;

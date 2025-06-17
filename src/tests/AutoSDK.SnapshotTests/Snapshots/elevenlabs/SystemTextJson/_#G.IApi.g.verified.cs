@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// This is the documentation for the ElevenLabs API. You can use this API to use our service programmatically, this is done by using your xi-api-key. &lt;br/&gt; You can view your xi-api-key using the 'Profile' tab on https://elevenlabs.io. Our API is experimental so all endpoints are subject to change.<br/>
+    /// This is the documentation for the ElevenLabs API. You can use this API to use our service programmatically, this is done by using your API key. You can find your API key in the dashboard at https://elevenlabs.io/app/settings/api-keys.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -49,7 +49,7 @@ namespace G
         public SpeechToSpeechClient SpeechToSpeech { get; }
 
         /// <summary>
-        /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model. Speech-to-text is currently in alpha and available to a select group of users. We plan to roll it out more broadly soon.
+        /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.
         /// </summary>
         public SpeechToTextClient SpeechToText { get; }
 
@@ -64,7 +64,7 @@ namespace G
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// Access to voices created either by you or us.
+        /// Access to voices created either by you or ElevenLabs.
         /// </summary>
         public VoicesClient Voices { get; }
 
@@ -79,9 +79,9 @@ namespace G
         public SpeechHistoryClient SpeechHistory { get; }
 
         /// <summary>
-        /// Access, create and convert Projects programmatically, only specifically whitelisted accounts can access the Projects API. If you need access please contact our sales team.
+        /// Access, create and convert Studio Projects programmatically, only specifically whitelisted accounts can access the Projects API. If you need access please contact our sales team.
         /// </summary>
-        public ProjectsClient Projects { get; }
+        public StudiosClient Studios { get; }
 
         /// <summary>
         /// 
@@ -92,6 +92,11 @@ namespace G
         /// 
         /// </summary>
         public AudioIsolationClient AudioIsolation { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextToDialogueClient TextToDialogue { get; }
 
         /// <summary>
         /// 
@@ -116,6 +121,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ProjectsClient Projects { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DubbingClient Dubbing { get; }
 
         /// <summary>
@@ -127,6 +137,11 @@ namespace G
         /// 
         /// </summary>
         public SegmentClient Segment { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public EnterpriseClient Enterprise { get; }
 
         /// <summary>
         /// 
@@ -152,6 +167,11 @@ namespace G
         /// 
         /// </summary>
         public ConversationalAIClient ConversationalAI { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PvcVoicesClient PvcVoices { get; }
 
     }
 }

@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModel> Transcript { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> Transcript { get; set; }
 
         /// <summary>
         /// 
@@ -58,6 +58,27 @@ namespace G
         public global::G.ConversationInitiationClientDataRequestOutput? ConversationInitiationClientData { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasAudio { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_user_audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasUserAudio { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_response_audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasResponseAudio { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -73,6 +94,9 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="analysis"></param>
         /// <param name="conversationInitiationClientData"></param>
+        /// <param name="hasAudio"></param>
+        /// <param name="hasUserAudio"></param>
+        /// <param name="hasResponseAudio"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,8 +104,11 @@ namespace G
             string agentId,
             string conversationId,
             global::G.GetConversationResponseModelStatus status,
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModel> transcript,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> transcript,
             global::G.ConversationHistoryMetadataCommonModel metadata,
+            bool hasAudio,
+            bool hasUserAudio,
+            bool hasResponseAudio,
             global::G.ConversationHistoryAnalysisCommonModel? analysis,
             global::G.ConversationInitiationClientDataRequestOutput? conversationInitiationClientData)
         {
@@ -90,6 +117,9 @@ namespace G
             this.Status = status;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.HasAudio = hasAudio;
+            this.HasUserAudio = hasUserAudio;
+            this.HasResponseAudio = hasResponseAudio;
             this.Analysis = analysis;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }

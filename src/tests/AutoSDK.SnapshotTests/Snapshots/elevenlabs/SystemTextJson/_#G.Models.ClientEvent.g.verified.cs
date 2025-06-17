@@ -48,7 +48,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InternalVadScore,
+        McpToolCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpConnectionStatus,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentToolResponse,
+        /// <summary>
+        /// 
+        /// </summary>
+        VadScore,
         /// <summary>
         /// 
         /// </summary>
@@ -80,7 +92,10 @@ namespace G
                 ClientEvent.AgentResponse => "agent_response",
                 ClientEvent.AgentResponseCorrection => "agent_response_correction",
                 ClientEvent.ClientToolCall => "client_tool_call",
-                ClientEvent.InternalVadScore => "internal_vad_score",
+                ClientEvent.McpToolCall => "mcp_tool_call",
+                ClientEvent.McpConnectionStatus => "mcp_connection_status",
+                ClientEvent.AgentToolResponse => "agent_tool_response",
+                ClientEvent.VadScore => "vad_score",
                 ClientEvent.InternalTurnProbability => "internal_turn_probability",
                 ClientEvent.InternalTentativeAgentResponse => "internal_tentative_agent_response",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -102,7 +117,10 @@ namespace G
                 "agent_response" => ClientEvent.AgentResponse,
                 "agent_response_correction" => ClientEvent.AgentResponseCorrection,
                 "client_tool_call" => ClientEvent.ClientToolCall,
-                "internal_vad_score" => ClientEvent.InternalVadScore,
+                "mcp_tool_call" => ClientEvent.McpToolCall,
+                "mcp_connection_status" => ClientEvent.McpConnectionStatus,
+                "agent_tool_response" => ClientEvent.AgentToolResponse,
+                "vad_score" => ClientEvent.VadScore,
                 "internal_turn_probability" => ClientEvent.InternalTurnProbability,
                 "internal_tentative_agent_response" => ClientEvent.InternalTentativeAgentResponse,
                 _ => null,

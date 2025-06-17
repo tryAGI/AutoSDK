@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
         /// <summary>
@@ -40,6 +45,7 @@ namespace G
             return value switch
             {
                 PromptAgentInputToolDiscriminatorType.Client => "client",
+                PromptAgentInputToolDiscriminatorType.Mcp => "mcp",
                 PromptAgentInputToolDiscriminatorType.System => "system",
                 PromptAgentInputToolDiscriminatorType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -53,6 +59,7 @@ namespace G
             return value switch
             {
                 "client" => PromptAgentInputToolDiscriminatorType.Client,
+                "mcp" => PromptAgentInputToolDiscriminatorType.Mcp,
                 "system" => PromptAgentInputToolDiscriminatorType.System,
                 "webhook" => PromptAgentInputToolDiscriminatorType.Webhook,
                 _ => null,

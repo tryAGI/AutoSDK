@@ -40,7 +40,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetPhoneNumberResponseModel> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
             string phoneNumberId,
             global::G.UpdatePhoneNumberRequest request,
             string? xiApiKey = default,
@@ -152,7 +152,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.GetPhoneNumberResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -183,7 +183,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.GetPhoneNumberResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -216,7 +216,7 @@ namespace G
         /// <param name="agentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetPhoneNumberResponseModel> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
             string phoneNumberId,
             string? xiApiKey = default,
             string? agentId = default,

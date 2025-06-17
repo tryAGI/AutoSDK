@@ -12,14 +12,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("agent")]
-        public global::G.AgentConfigOverride? Agent { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("tts")]
+        public global::G.TTSConversationalConfigOverride? Tts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tts")]
-        public global::G.TTSConversationalConfigOverride? Tts { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("conversation")]
+        public global::G.ConversationConfigOverride? Conversation { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent")]
+        public global::G.AgentConfigOverride? Agent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideInput" /> class.
         /// </summary>
-        /// <param name="agent"></param>
         /// <param name="tts"></param>
+        /// <param name="conversation"></param>
+        /// <param name="agent"></param>
         public ConversationConfigClientOverrideInput(
-            global::G.AgentConfigOverride? agent,
-            global::G.TTSConversationalConfigOverride? tts)
+            global::G.TTSConversationalConfigOverride? tts,
+            global::G.ConversationConfigOverride? conversation,
+            global::G.AgentConfigOverride? agent)
         {
-            this.Agent = agent;
             this.Tts = tts;
+            this.Conversation = conversation;
+            this.Agent = agent;
         }
 
         /// <summary>

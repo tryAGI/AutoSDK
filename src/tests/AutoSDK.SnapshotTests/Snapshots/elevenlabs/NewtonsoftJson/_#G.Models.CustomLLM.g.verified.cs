@@ -28,6 +28,12 @@ namespace G
         public global::G.ConvAISecretLocator? ApiKey { get; set; }
 
         /// <summary>
+        /// Headers that should be included in the request
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("request_headers")]
+        public object? RequestHeaders { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -45,14 +51,19 @@ namespace G
         /// <param name="apiKey">
         /// Used to reference a secret from the agent's secret store.
         /// </param>
+        /// <param name="requestHeaders">
+        /// Headers that should be included in the request
+        /// </param>
         public CustomLLM(
             string url,
             string? modelId,
-            global::G.ConvAISecretLocator? apiKey)
+            global::G.ConvAISecretLocator? apiKey,
+            object? requestHeaders)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ModelId = modelId;
             this.ApiKey = apiKey;
+            this.RequestHeaders = requestHeaders;
         }
 
         /// <summary>

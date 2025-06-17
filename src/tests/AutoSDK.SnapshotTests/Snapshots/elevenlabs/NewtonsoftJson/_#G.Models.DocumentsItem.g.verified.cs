@@ -88,22 +88,60 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; init; }
+#else
+        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryTextResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryTextResponseModel?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.GetKnowledgeBaseSummaryTextResponseModel?(DocumentsItem @this) => @this.Text;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DocumentsItem(global::G.GetKnowledgeBaseSummaryTextResponseModel? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DocumentsItem(
             global::G.GetKnowledgeBaseListResponseModelDocumentDiscriminatorType? type,
             global::G.GetKnowledgeBaseSummaryURLResponseModel? url,
-            global::G.GetKnowledgeBaseSummaryFileResponseModel? file
+            global::G.GetKnowledgeBaseSummaryFileResponseModel? file,
+            global::G.GetKnowledgeBaseSummaryTextResponseModel? text
             )
         {
             Type = type;
 
             Url = url;
             File = file;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Text as object ??
             File as object ??
             Url as object 
             ;
@@ -113,7 +151,8 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Url?.ToString() ??
-            File?.ToString() 
+            File?.ToString() ??
+            Text?.ToString() 
             ;
 
         /// <summary>
@@ -121,7 +160,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsUrl && !IsFile || !IsUrl && IsFile;
+            return IsUrl && !IsFile && !IsText || !IsUrl && IsFile && !IsText || !IsUrl && !IsFile && IsText;
         }
 
         /// <summary>
@@ -130,6 +169,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.GetKnowledgeBaseSummaryURLResponseModel?, TResult>? url = null,
             global::System.Func<global::G.GetKnowledgeBaseSummaryFileResponseModel?, TResult>? file = null,
+            global::System.Func<global::G.GetKnowledgeBaseSummaryTextResponseModel?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -145,6 +185,10 @@ namespace G
             {
                 return file(File!);
             }
+            else if (IsText && text != null)
+            {
+                return text(Text!);
+            }
 
             return default(TResult);
         }
@@ -155,6 +199,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.GetKnowledgeBaseSummaryURLResponseModel?>? url = null,
             global::System.Action<global::G.GetKnowledgeBaseSummaryFileResponseModel?>? file = null,
+            global::System.Action<global::G.GetKnowledgeBaseSummaryTextResponseModel?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -170,6 +215,10 @@ namespace G
             {
                 file?.Invoke(File!);
             }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
         }
 
         /// <summary>
@@ -183,6 +232,8 @@ namespace G
                 typeof(global::G.GetKnowledgeBaseSummaryURLResponseModel),
                 File,
                 typeof(global::G.GetKnowledgeBaseSummaryFileResponseModel),
+                Text,
+                typeof(global::G.GetKnowledgeBaseSummaryTextResponseModel),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -200,7 +251,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryURLResponseModel?>.Default.Equals(Url, other.Url) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryFileResponseModel?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryFileResponseModel?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryTextResponseModel?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

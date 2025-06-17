@@ -100,7 +100,9 @@ namespace G
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050 => "pcm_22050",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000 => "pcm_24000",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100 => "pcm_44100",
+                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000 => "pcm_48000",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000 => "alaw_8000",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032 => "opus_48000_32",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064 => "opus_48000_64",
                 global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -185,6 +187,12 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
                     name: "remove_background_noise");
+            } 
+            if (request.FileFormat != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
+                    name: "file_format");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -363,6 +371,11 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechToSpeechByVoiceIdAsync(
@@ -377,6 +390,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost
@@ -387,6 +401,7 @@ namespace G
                 VoiceSettings = voiceSettings,
                 Seed = seed,
                 RemoveBackgroundNoise = removeBackgroundNoise,
+                FileFormat = fileFormat,
             };
 
             return await CreateSpeechToSpeechByVoiceIdAsync(

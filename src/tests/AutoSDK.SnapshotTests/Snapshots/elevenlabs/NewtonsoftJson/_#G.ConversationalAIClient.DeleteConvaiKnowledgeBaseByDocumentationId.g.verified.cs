@@ -9,11 +9,13 @@ namespace G
         partial void PrepareDeleteConvaiKnowledgeBaseByDocumentationIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string documentationId,
+            ref bool? force,
             ref string? xiApiKey);
         partial void PrepareDeleteConvaiKnowledgeBaseByDocumentationIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string documentationId,
+            bool? force,
             string? xiApiKey);
         partial void ProcessDeleteConvaiKnowledgeBaseByDocumentationIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,6 +34,10 @@ namespace G
         /// The id of a document from the knowledge base. This is returned on document addition.<br/>
         /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
+        /// <param name="force">
+        /// If set to true, the document will be deleted regardless of whether it is used by any agents and it will be deleted from the dependent agents.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -39,6 +45,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteConvaiKnowledgeBaseByDocumentationIdAsync(
             string documentationId,
+            bool? force = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -47,11 +54,15 @@ namespace G
             PrepareDeleteConvaiKnowledgeBaseByDocumentationIdArguments(
                 httpClient: HttpClient,
                 documentationId: ref documentationId,
+                force: ref force,
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/knowledge-base/{documentationId}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("force", force?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -74,6 +85,7 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 documentationId: documentationId,
+                force: force,
                 xiApiKey: xiApiKey);
 
             using var __response = await HttpClient.SendAsync(

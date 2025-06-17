@@ -10,13 +10,13 @@ namespace G
     public sealed partial class UtteranceResponseModel
     {
         /// <summary>
-        /// 
+        /// The start time of the utterance in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start", Required = global::Newtonsoft.Json.Required.Always)]
         public double Start { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The end time of the utterance in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end", Required = global::Newtonsoft.Json.Required.Always)]
         public double End { get; set; } = default!;
@@ -30,8 +30,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UtteranceResponseModel" /> class.
         /// </summary>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
+        /// <param name="start">
+        /// The start time of the utterance in seconds.
+        /// </param>
+        /// <param name="end">
+        /// The end time of the utterance in seconds.
+        /// </param>
         public UtteranceResponseModel(
             double start,
             double end)

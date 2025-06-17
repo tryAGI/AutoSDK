@@ -164,6 +164,12 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
                     name: "remove_background_noise");
+            } 
+            if (request.FileFormat != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
+                    name: "file_format");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -342,6 +348,11 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechToSpeechByVoiceIdAsync(
@@ -356,6 +367,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost
@@ -366,6 +378,7 @@ namespace G
                 VoiceSettings = voiceSettings,
                 Seed = seed,
                 RemoveBackgroundNoise = removeBackgroundNoise,
+                FileFormat = fileFormat,
             };
 
             return await CreateSpeechToSpeechByVoiceIdAsync(

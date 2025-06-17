@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="sip_trunking")]
+        SipTrunking,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="twilio")]
         Twilio,
     }
@@ -29,6 +34,7 @@ namespace G
         {
             return value switch
             {
+                ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.SipTrunking => "sip_trunking",
                 ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -40,6 +46,7 @@ namespace G
         {
             return value switch
             {
+                "sip_trunking" => ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.SipTrunking,
                 "twilio" => ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.Twilio,
                 _ => null,
             };

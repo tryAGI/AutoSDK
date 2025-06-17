@@ -19,7 +19,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.<br/>
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
         /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
         /// </summary>
         /// <example>https://blog.elevenlabs.io/the_first_ai_that_can_laugh/</example>
@@ -40,7 +40,7 @@ namespace G
         /// Example: Chapter 1
         /// </param>
         /// <param name="fromUrl">
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.<br/>
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
         /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
         /// </param>
 #if NET7_0_OR_GREATER

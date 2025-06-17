@@ -30,6 +30,12 @@ namespace G
         public string? Text { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("translations")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Translations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +47,20 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="translations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SegmentCreatePayload(
             double startTime,
             double endTime,
-            string? text)
+            string? text,
+            global::System.Collections.Generic.Dictionary<string, string>? translations)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Text = text;
+            this.Translations = translations;
         }
 
         /// <summary>

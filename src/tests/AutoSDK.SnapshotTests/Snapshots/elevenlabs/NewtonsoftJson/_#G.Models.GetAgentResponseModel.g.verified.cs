@@ -43,7 +43,19 @@ namespace G
         /// The phone numbers of the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phone_numbers")]
-        public global::System.Collections.Generic.IList<global::G.GetPhoneNumberResponseModel>? PhoneNumbers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PhoneNumbersItem>? PhoneNumbers { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("access_info")]
+        public global::G.ResourceAccessInfo? AccessInfo { get; set; }
+
+        /// <summary>
+        /// Agent tags used to categorize the agent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,13 +78,19 @@ namespace G
         /// <param name="phoneNumbers">
         /// The phone numbers of the agent
         /// </param>
+        /// <param name="accessInfo"></param>
+        /// <param name="tags">
+        /// Agent tags used to categorize the agent
+        /// </param>
         public GetAgentResponseModel(
             string agentId,
             string name,
             global::G.ConversationalConfigAPIModelOutput conversationConfig,
             global::G.AgentMetadataResponseModel metadata,
             global::G.AgentPlatformSettingsResponseModel? platformSettings,
-            global::System.Collections.Generic.IList<global::G.GetPhoneNumberResponseModel>? phoneNumbers)
+            global::System.Collections.Generic.IList<global::G.PhoneNumbersItem>? phoneNumbers,
+            global::G.ResourceAccessInfo? accessInfo,
+            global::System.Collections.Generic.IList<string>? tags)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -80,6 +98,8 @@ namespace G
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.PlatformSettings = platformSettings;
             this.PhoneNumbers = phoneNumbers;
+            this.AccessInfo = accessInfo;
+            this.Tags = tags;
         }
 
         /// <summary>

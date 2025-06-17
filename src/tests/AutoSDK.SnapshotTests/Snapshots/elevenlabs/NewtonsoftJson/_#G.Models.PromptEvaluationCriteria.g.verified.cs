@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The type of evaluation criteria<br/>
@@ -67,14 +67,14 @@ namespace G
         /// </param>
         public PromptEvaluationCriteria(
             string id,
+            string name,
             string conversationGoalPrompt,
-            string? name,
             global::G.PromptEvaluationCriteriaType? type,
             bool? useKnowledgeBase)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ConversationGoalPrompt = conversationGoalPrompt ?? throw new global::System.ArgumentNullException(nameof(conversationGoalPrompt));
-            this.Name = name;
             this.Type = type;
             this.UseKnowledgeBase = useKnowledgeBase;
         }

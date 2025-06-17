@@ -22,6 +22,12 @@ namespace G
         public bool? IsBlockedNonIvc { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ignore_safety_evaluation")]
+        public bool? IgnoreSafetyEvaluation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,20 @@ namespace G
         /// <param name="isBlockedNonIvc">
         /// Default Value: false
         /// </param>
+        /// <param name="ignoreSafetyEvaluation">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SafetyResponseModel(
             bool? isBlockedIvc,
-            bool? isBlockedNonIvc)
+            bool? isBlockedNonIvc,
+            bool? ignoreSafetyEvaluation)
         {
             this.IsBlockedIvc = isBlockedIvc;
             this.IsBlockedNonIvc = isBlockedNonIvc;
+            this.IgnoreSafetyEvaluation = ignoreSafetyEvaluation;
         }
 
         /// <summary>

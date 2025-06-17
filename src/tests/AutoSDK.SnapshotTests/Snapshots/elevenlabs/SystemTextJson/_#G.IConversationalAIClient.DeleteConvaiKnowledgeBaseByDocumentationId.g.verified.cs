@@ -13,6 +13,10 @@ namespace G
         /// The id of a document from the knowledge base. This is returned on document addition.<br/>
         /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
+        /// <param name="force">
+        /// If set to true, the document will be deleted regardless of whether it is used by any agents and it will be deleted from the dependent agents.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -20,6 +24,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteConvaiKnowledgeBaseByDocumentationIdAsync(
             string documentationId,
+            bool? force = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -79,6 +79,12 @@ namespace G
         public double? Rate { get; set; }
 
         /// <summary>
+        /// The rate of the voice sharing in USD per 1000 credits.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fiat_rate")]
+        public double? FiatRate { get; set; }
+
+        /// <summary>
         /// The notice period of the voice sharing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notice_period")]
@@ -261,6 +267,9 @@ namespace G
         /// <param name="rate">
         /// The rate of the voice sharing.
         /// </param>
+        /// <param name="fiatRate">
+        /// The rate of the voice sharing in USD per 1000 credits.
+        /// </param>
         /// <param name="noticePeriod">
         /// The notice period of the voice sharing.
         /// </param>
@@ -349,6 +358,7 @@ namespace G
             bool enabledInLibrary,
             string? historyItemSampleId,
             double? rate,
+            double? fiatRate,
             int? disableAtUnix,
             bool? readerAppEnabled,
             string? imageUrl,
@@ -382,6 +392,7 @@ namespace G
             this.EnabledInLibrary = enabledInLibrary;
             this.HistoryItemSampleId = historyItemSampleId;
             this.Rate = rate;
+            this.FiatRate = fiatRate;
             this.DisableAtUnix = disableAtUnix;
             this.ReaderAppEnabled = readerAppEnabled;
             this.ImageUrl = imageUrl;

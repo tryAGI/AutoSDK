@@ -30,6 +30,12 @@ namespace G
         public int? ExpirationTimeUnixSecs { get; set; }
 
         /// <summary>
+        /// The ID of the conversation
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("conversation_id")]
+        public string? ConversationId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
@@ -54,6 +60,9 @@ namespace G
         /// <param name="expirationTimeUnixSecs">
         /// The expiration time of the token in unix seconds
         /// </param>
+        /// <param name="conversationId">
+        /// The ID of the conversation
+        /// </param>
         /// <param name="purpose"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,11 +71,13 @@ namespace G
             string agentId,
             string conversationToken,
             int? expirationTimeUnixSecs,
+            string? conversationId,
             global::G.ConversationTokenPurpose? purpose)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.ConversationToken = conversationToken ?? throw new global::System.ArgumentNullException(nameof(conversationToken));
             this.ExpirationTimeUnixSecs = expirationTimeUnixSecs;
+            this.ConversationId = conversationId;
             this.Purpose = purpose;
         }
 

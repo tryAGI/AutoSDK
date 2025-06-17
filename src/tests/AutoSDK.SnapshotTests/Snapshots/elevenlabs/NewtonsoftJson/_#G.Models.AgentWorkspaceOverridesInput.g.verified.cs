@@ -16,6 +16,12 @@ namespace G
         public global::G.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("webhooks")]
+        public global::G.ConvAIWebhooks? Webhooks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -25,10 +31,13 @@ namespace G
         /// Initializes a new instance of the <see cref="AgentWorkspaceOverridesInput" /> class.
         /// </summary>
         /// <param name="conversationInitiationClientDataWebhook"></param>
+        /// <param name="webhooks"></param>
         public AgentWorkspaceOverridesInput(
-            global::G.ConversationInitiationClientDataWebhook? conversationInitiationClientDataWebhook)
+            global::G.ConversationInitiationClientDataWebhook? conversationInitiationClientDataWebhook,
+            global::G.ConvAIWebhooks? webhooks)
         {
             this.ConversationInitiationClientDataWebhook = conversationInitiationClientDataWebhook;
+            this.Webhooks = webhooks;
         }
 
         /// <summary>

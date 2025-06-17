@@ -6,8 +6,8 @@ namespace G
     public partial interface IUsageClient
     {
         /// <summary>
-        /// Get Character Usage Metrics<br/>
-        /// Returns the credit usage metrics for the current user or the entire workspace they are part of. The response will return a time axis with unix timestamps for each day and daily usage along that axis. The usage will be broken down by the specified breakdown type. For example, breakdown type "voice" will return the usage of each voice along the time axis.
+        /// Get Characters Usage Metrics<br/>
+        /// Returns the usage metrics for the current user or the entire workspace they are part of. The response provides a time axis based on the specified aggregation interval (default: day), with usage values for each interval along that axis. Usage is broken down by the selected breakdown type. For example, breakdown type "voice" will return the usage of each voice for each interval along the time axis.
         /// </summary>
         /// <param name="startUnix">
         /// UTC Unix timestamp for the start of the usage window, in milliseconds. To include the first day of the window, the timestamp should be at 00:00:00 of that day.<br/>
@@ -24,6 +24,10 @@ namespace G
         /// <param name="breakdownType">
         /// How to break down the information. Cannot be "user" or "api_key" if include_workspace_metrics is False.
         /// </param>
+        /// <param name="aggregationInterval">
+        /// The time interval over which to aggregate the usage data.
+        /// </param>
+        /// <param name="metric"></param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
@@ -34,6 +38,8 @@ namespace G
             global::System.DateTimeOffset endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
+            global::G.UsageAggregationInterval? aggregationInterval = default,
+            global::G.MetricType? metric = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

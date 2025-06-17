@@ -19,12 +19,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
-        public object? Properties { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required")]
         public global::System.Collections.Generic.IList<string>? Required { get; set; }
 
@@ -33,6 +27,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
+        public object? Properties { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,22 +46,22 @@ namespace G
         /// <param name="type">
         /// Default Value: object
         /// </param>
-        /// <param name="properties"></param>
         /// <param name="required"></param>
         /// <param name="description"></param>
+        /// <param name="properties"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ObjectJsonSchemaPropertyOutput(
             global::G.ObjectJsonSchemaPropertyOutputType? type,
-            object? properties,
             global::System.Collections.Generic.IList<string>? required,
-            string? description)
+            string? description,
+            object? properties)
         {
             this.Type = type;
-            this.Properties = properties;
             this.Required = required;
             this.Description = description;
+            this.Properties = properties;
         }
 
         /// <summary>

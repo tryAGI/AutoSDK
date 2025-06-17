@@ -28,6 +28,12 @@ namespace G
         public string? Accent { get; set; }
 
         /// <summary>
+        /// The voice's locale, if applicable.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("locale")]
+        public string? Locale { get; set; }
+
+        /// <summary>
         /// The voice's preview URL, if applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preview_url")]
@@ -51,6 +57,9 @@ namespace G
         /// <param name="accent">
         /// The voice's accent, if applicable.
         /// </param>
+        /// <param name="locale">
+        /// The voice's locale, if applicable.
+        /// </param>
         /// <param name="previewUrl">
         /// The voice's preview URL, if applicable.
         /// </param>
@@ -58,11 +67,13 @@ namespace G
             string language,
             string modelId,
             string? accent,
+            string? locale,
             string? previewUrl)
         {
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.Accent = accent;
+            this.Locale = locale;
             this.PreviewUrl = previewUrl;
         }
 

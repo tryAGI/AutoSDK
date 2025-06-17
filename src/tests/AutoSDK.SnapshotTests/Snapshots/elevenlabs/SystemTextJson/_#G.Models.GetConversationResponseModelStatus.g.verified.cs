@@ -12,6 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Initiated,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         Processing,
         /// <summary>
         /// 
@@ -35,6 +43,8 @@ namespace G
         {
             return value switch
             {
+                GetConversationResponseModelStatus.Initiated => "initiated",
+                GetConversationResponseModelStatus.InProgress => "in-progress",
                 GetConversationResponseModelStatus.Processing => "processing",
                 GetConversationResponseModelStatus.Done => "done",
                 GetConversationResponseModelStatus.Failed => "failed",
@@ -48,6 +58,8 @@ namespace G
         {
             return value switch
             {
+                "initiated" => GetConversationResponseModelStatus.Initiated,
+                "in-progress" => GetConversationResponseModelStatus.InProgress,
                 "processing" => GetConversationResponseModelStatus.Processing,
                 "done" => GetConversationResponseModelStatus.Done,
                 "failed" => GetConversationResponseModelStatus.Failed,

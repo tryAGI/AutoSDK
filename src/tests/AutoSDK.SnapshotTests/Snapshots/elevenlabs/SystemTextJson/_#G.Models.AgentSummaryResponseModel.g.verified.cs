@@ -24,6 +24,13 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
+        /// Agent tags used to categorize the agent
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Tags { get; set; }
+
+        /// <summary>
         /// The creation time of the agent in unix seconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at_unix_secs")]
@@ -52,6 +59,9 @@ namespace G
         /// <param name="name">
         /// The name of the agent
         /// </param>
+        /// <param name="tags">
+        /// Agent tags used to categorize the agent
+        /// </param>
         /// <param name="createdAtUnixSecs">
         /// The creation time of the agent in unix seconds
         /// </param>
@@ -62,11 +72,13 @@ namespace G
         public AgentSummaryResponseModel(
             string agentId,
             string name,
+            global::System.Collections.Generic.IList<string> tags,
             int createdAtUnixSecs,
             global::G.ResourceAccessInfo accessInfo)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
         }

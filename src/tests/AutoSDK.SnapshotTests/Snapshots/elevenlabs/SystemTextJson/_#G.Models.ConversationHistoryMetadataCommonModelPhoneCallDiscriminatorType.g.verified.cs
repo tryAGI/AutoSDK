@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        SipTrunking,
+        /// <summary>
+        /// 
+        /// </summary>
         Twilio,
     }
 
@@ -27,6 +31,7 @@ namespace G
         {
             return value switch
             {
+                ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.SipTrunking => "sip_trunking",
                 ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -38,6 +43,7 @@ namespace G
         {
             return value switch
             {
+                "sip_trunking" => ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.SipTrunking,
                 "twilio" => ConversationHistoryMetadataCommonModelPhoneCallDiscriminatorType.Twilio,
                 _ => null,
             };

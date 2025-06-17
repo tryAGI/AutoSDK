@@ -40,7 +40,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AddPronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.PronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
             string pronunciationDictionaryId,
             global::G.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPost request,
             string? xiApiKey = default,
@@ -152,7 +152,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.AddPronunciationDictionaryRulesResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.PronunciationDictionaryRulesResponseModel.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -183,7 +183,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.AddPronunciationDictionaryRulesResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.PronunciationDictionaryRulesResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -225,7 +225,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AddPronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.PronunciationDictionaryRulesResponseModel> CreatePronunciationDictionariesByPronunciationDictionaryIdAddRulesAsync(
             string pronunciationDictionaryId,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> rules,
             string? xiApiKey = default,

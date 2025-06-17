@@ -10,11 +10,18 @@ namespace G
     public sealed partial class TurnConfig
     {
         /// <summary>
-        /// Maximum wait time for the user’s reply before re-engaging the user<br/>
+        /// Maximum wait time for the user's reply before re-engaging the user<br/>
         /// Default Value: 7
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("turn_timeout")]
         public double? TurnTimeout { get; set; }
+
+        /// <summary>
+        /// Maximum wait time since the user last spoke before terminating the call<br/>
+        /// Default Value: -1
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("silence_end_call_timeout")]
+        public double? SilenceEndCallTimeout { get; set; }
 
         /// <summary>
         /// 
@@ -32,15 +39,21 @@ namespace G
         /// Initializes a new instance of the <see cref="TurnConfig" /> class.
         /// </summary>
         /// <param name="turnTimeout">
-        /// Maximum wait time for the user’s reply before re-engaging the user<br/>
+        /// Maximum wait time for the user's reply before re-engaging the user<br/>
         /// Default Value: 7
+        /// </param>
+        /// <param name="silenceEndCallTimeout">
+        /// Maximum wait time since the user last spoke before terminating the call<br/>
+        /// Default Value: -1
         /// </param>
         /// <param name="mode"></param>
         public TurnConfig(
             double? turnTimeout,
+            double? silenceEndCallTimeout,
             global::G.TurnMode? mode)
         {
             this.TurnTimeout = turnTimeout;
+            this.SilenceEndCallTimeout = silenceEndCallTimeout;
             this.Mode = mode;
         }
 

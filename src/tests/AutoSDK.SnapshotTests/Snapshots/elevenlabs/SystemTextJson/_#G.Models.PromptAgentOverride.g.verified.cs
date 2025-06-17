@@ -10,7 +10,7 @@ namespace G
     public sealed partial class PromptAgentOverride
     {
         /// <summary>
-        /// The initial system message that defines the agent, e.g. “You are a German language teacher named Laura.”
+        /// The prompt for the agent
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public string? Prompt { get; set; }
@@ -25,7 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="PromptAgentOverride" /> class.
         /// </summary>
         /// <param name="prompt">
-        /// The initial system message that defines the agent, e.g. “You are a German language teacher named Laura.”
+        /// The prompt for the agent
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

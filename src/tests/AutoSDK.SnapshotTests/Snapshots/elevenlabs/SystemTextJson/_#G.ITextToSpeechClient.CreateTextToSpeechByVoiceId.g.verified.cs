@@ -79,7 +79,7 @@ namespace G
         /// </param>
         /// <param name="modelId">
         /// Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.<br/>
-        /// Default Value: eleven_monolingual_v1
+        /// Default Value: eleven_multilingual_v2
         /// </param>
         /// <param name="languageCode">
         /// Language code (ISO 639-1) used to enforce a language for the model. Currently only Turbo v2.5 and Flash v2.5 support language enforcement. For other models, an error will be returned if language code is provided.
@@ -131,7 +131,7 @@ namespace G
             string? modelId = default,
             string? languageCode = default,
             global::G.VoiceSettingsResponseModel? voiceSettings = default,
-            global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorDBModel>? pronunciationDictionaryLocators = default,
+            global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorRequestModel>? pronunciationDictionaryLocators = default,
             int? seed = default,
             string? previousText = default,
             string? nextText = default,

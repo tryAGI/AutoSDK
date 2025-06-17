@@ -22,7 +22,7 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The type of the principal: user, group, or workspace api key.
+        /// The type of the principal: user, group, or service account (under 'key').
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ShareOptionResponseModelType Type { get; set; } = default!;
@@ -43,7 +43,7 @@ namespace G
         /// The ID of the principal.
         /// </param>
         /// <param name="type">
-        /// The type of the principal: user, group, or workspace api key.
+        /// The type of the principal: user, group, or service account (under 'key').
         /// </param>
         public ShareOptionResponseModel(
             string name,

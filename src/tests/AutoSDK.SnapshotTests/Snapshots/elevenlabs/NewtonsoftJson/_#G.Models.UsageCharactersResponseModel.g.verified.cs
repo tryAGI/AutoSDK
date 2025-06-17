@@ -19,7 +19,7 @@ namespace G
         /// The usage of each breakdown type along the time axis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> Usage { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<double>> Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public UsageCharactersResponseModel(
             global::System.Collections.Generic.IList<int> time,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> usage)
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<double>> usage)
         {
             this.Time = time ?? throw new global::System.ArgumentNullException(nameof(time));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));

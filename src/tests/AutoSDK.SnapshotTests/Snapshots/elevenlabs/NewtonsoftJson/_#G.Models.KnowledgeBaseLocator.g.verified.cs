@@ -10,10 +10,10 @@ namespace G
     public sealed partial class KnowledgeBaseLocator
     {
         /// <summary>
-        /// The type of the knowledge base
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.KnowledgeBaseLocatorType Type { get; set; } = default!;
+        public global::G.KnowledgeBaseDocumentType Type { get; set; } = default!;
 
         /// <summary>
         /// The name of the knowledge base
@@ -42,9 +42,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeBaseLocator" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the knowledge base
-        /// </param>
+        /// <param name="type"></param>
         /// <param name="name">
         /// The name of the knowledge base
         /// </param>
@@ -53,7 +51,7 @@ namespace G
         /// </param>
         /// <param name="usageMode"></param>
         public KnowledgeBaseLocator(
-            global::G.KnowledgeBaseLocatorType type,
+            global::G.KnowledgeBaseDocumentType type,
             string name,
             string id,
             global::G.DocumentUsageModeEnum? usageMode)

@@ -10,21 +10,21 @@ namespace G
     public sealed partial class SpeakerResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the speaker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaker_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SpeakerId { get; set; }
 
         /// <summary>
-        /// 
+        /// The duration of the speaker segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration_secs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double DurationSecs { get; set; }
 
         /// <summary>
-        /// 
+        /// The utterances of the speaker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("utterances")]
         public global::System.Collections.Generic.IList<global::G.UtteranceResponseModel>? Utterances { get; set; }
@@ -38,9 +38,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeakerResponseModel" /> class.
         /// </summary>
-        /// <param name="speakerId"></param>
-        /// <param name="durationSecs"></param>
-        /// <param name="utterances"></param>
+        /// <param name="speakerId">
+        /// The ID of the speaker.
+        /// </param>
+        /// <param name="durationSecs">
+        /// The duration of the speaker segment in seconds.
+        /// </param>
+        /// <param name="utterances">
+        /// The utterances of the speaker.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

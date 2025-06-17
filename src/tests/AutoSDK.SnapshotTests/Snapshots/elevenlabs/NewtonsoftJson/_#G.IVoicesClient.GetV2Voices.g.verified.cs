@@ -29,13 +29,16 @@ namespace G
         /// Example: desc
         /// </param>
         /// <param name="voiceType">
-        /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace'.
+        /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace', 'non-default'. 'non-default' is equal to all but 'default'.
         /// </param>
         /// <param name="category">
         /// Category of the voice to filter by. One of 'premade', 'cloned', 'generated', 'professional'
         /// </param>
         /// <param name="fineTuningState">
         /// State of the voice's fine tuning to filter by. Applicable only to professional voices clones. One of 'draft', 'not_verified', 'not_started', 'queued', 'fine_tuning', 'fine_tuned', 'failed', 'delayed'
+        /// </param>
+        /// <param name="collectionId">
+        /// Collection ID to filter voices by.
         /// </param>
         /// <param name="includeTotalCount">
         /// Whether to include the total count of voices found in the response. Incurs a performance cost.<br/>
@@ -56,6 +59,7 @@ namespace G
             string? voiceType = default,
             string? category = default,
             string? fineTuningState = default,
+            string? collectionId = default,
             bool? includeTotalCount = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -12,6 +12,7 @@ namespace G
             ref int? pageSize,
             ref string? search,
             ref bool? showOnlyOwnedDocuments,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseDocumentType>? types,
             ref bool? useTypesense,
             ref string? xiApiKey);
         partial void PrepareGetConvaiKnowledgeBaseRequest(
@@ -21,6 +22,7 @@ namespace G
             int? pageSize,
             string? search,
             bool? showOnlyOwnedDocuments,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseDocumentType>? types,
             bool? useTypesense,
             string? xiApiKey);
         partial void ProcessGetConvaiKnowledgeBaseResponse(
@@ -50,6 +52,9 @@ namespace G
         /// If set to true, the endpoint will return only documents owned by you (and not shared from somebody else).<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="types">
+        /// If present, the endpoint will return only documents of the given types.
+        /// </param>
         /// <param name="useTypesense">
         /// If set to true, the endpoint will use typesense DB to search for the documents).<br/>
         /// Default Value: false
@@ -64,6 +69,7 @@ namespace G
             int? pageSize = default,
             string? search = default,
             bool? showOnlyOwnedDocuments = default,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseDocumentType>? types = default,
             bool? useTypesense = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -76,6 +82,7 @@ namespace G
                 pageSize: ref pageSize,
                 search: ref search,
                 showOnlyOwnedDocuments: ref showOnlyOwnedDocuments,
+                types: types,
                 useTypesense: ref useTypesense,
                 xiApiKey: ref xiApiKey);
 
@@ -87,6 +94,7 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("search", search) 
                 .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString()) 
+                .AddOptionalParameter("types", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("use_typesense", useTypesense?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -114,6 +122,7 @@ namespace G
                 pageSize: pageSize,
                 search: search,
                 showOnlyOwnedDocuments: showOnlyOwnedDocuments,
+                types: types,
                 useTypesense: useTypesense,
                 xiApiKey: xiApiKey);
 

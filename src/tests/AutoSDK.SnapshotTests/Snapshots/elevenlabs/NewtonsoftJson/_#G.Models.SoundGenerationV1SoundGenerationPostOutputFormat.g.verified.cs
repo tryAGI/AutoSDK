@@ -69,8 +69,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm_48000")]
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ulaw_8000")]
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="alaw_8000")]
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -121,7 +131,9 @@ namespace G
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm22050 => "pcm_22050",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm24000 => "pcm_24000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Pcm44100 => "pcm_44100",
+                SoundGenerationV1SoundGenerationPostOutputFormat.Pcm48000 => "pcm_48000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                SoundGenerationV1SoundGenerationPostOutputFormat.Alaw8000 => "alaw_8000",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800032 => "opus_48000_32",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800064 => "opus_48000_64",
                 SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -148,7 +160,9 @@ namespace G
                 "pcm_22050" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm22050,
                 "pcm_24000" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm24000,
                 "pcm_44100" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm44100,
+                "pcm_48000" => SoundGenerationV1SoundGenerationPostOutputFormat.Pcm48000,
                 "ulaw_8000" => SoundGenerationV1SoundGenerationPostOutputFormat.Ulaw8000,
+                "alaw_8000" => SoundGenerationV1SoundGenerationPostOutputFormat.Alaw8000,
                 "opus_48000_32" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800032,
                 "opus_48000_64" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800064,
                 "opus_48000_96" => SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800096,

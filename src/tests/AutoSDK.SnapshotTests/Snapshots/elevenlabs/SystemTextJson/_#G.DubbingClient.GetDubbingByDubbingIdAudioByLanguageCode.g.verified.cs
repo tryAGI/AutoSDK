@@ -28,7 +28,7 @@ namespace G
 
         /// <summary>
         /// Get Dubbed File<br/>
-        /// Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
+        /// Returns dub as a streamed MP3 or MP4 file. If this dub has been edited using Dubbing Studio you need to use the resource render endpoint as this endpoint only returns the original automatic dub result.
         /// </summary>
         /// <param name="dubbingId">
         /// ID of the dubbing project.

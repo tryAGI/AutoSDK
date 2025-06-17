@@ -50,7 +50,7 @@ namespace G
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(
-                path: "/v1/convai/conversation/get_signed_url",
+                path: "/v1/convai/conversation/get-signed-url",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("agent_id", agentId) 

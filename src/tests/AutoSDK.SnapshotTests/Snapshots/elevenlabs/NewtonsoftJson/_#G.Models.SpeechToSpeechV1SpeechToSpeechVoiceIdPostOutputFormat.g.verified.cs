@@ -69,8 +69,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm_48000")]
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ulaw_8000")]
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="alaw_8000")]
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -121,7 +131,9 @@ namespace G
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050 => "pcm_22050",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000 => "pcm_24000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100 => "pcm_44100",
+                SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000 => "pcm_48000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000 => "alaw_8000",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032 => "opus_48000_32",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064 => "opus_48000_64",
                 SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -148,7 +160,9 @@ namespace G
                 "pcm_22050" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050,
                 "pcm_24000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000,
                 "pcm_44100" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100,
+                "pcm_48000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000,
                 "ulaw_8000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000,
+                "alaw_8000" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000,
                 "opus_48000_32" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032,
                 "opus_48000_64" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064,
                 "opus_48000_96" => SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096,

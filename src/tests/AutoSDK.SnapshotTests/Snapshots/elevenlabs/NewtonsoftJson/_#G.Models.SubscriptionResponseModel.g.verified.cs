@@ -28,6 +28,12 @@ namespace G
         public int CharacterLimit { get; set; } = default!;
 
         /// <summary>
+        /// Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_character_limit_extension", Required = global::Newtonsoft.Json.Required.Always)]
+        public int? MaxCharacterLimitExtension { get; set; } = default!;
+
+        /// <summary>
         /// Whether the user can extend their character limit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_extend_character_limit", Required = global::Newtonsoft.Json.Required.Always)]
@@ -50,6 +56,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_slots_used", Required = global::Newtonsoft.Json.Required.Always)]
         public int VoiceSlotsUsed { get; set; } = default!;
+
+        /// <summary>
+        /// The number of professional voice slots used by the workspace/user if single seat.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("professional_voice_slots_used", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ProfessionalVoiceSlotsUsed { get; set; } = default!;
 
         /// <summary>
         /// The maximum number of voice slots allowed for the user.
@@ -100,10 +112,10 @@ namespace G
         public global::G.SubscriptionResponseModelCurrency? Currency { get; set; }
 
         /// <summary>
-        /// The status of the user's subscription.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SubscriptionResponseModelStatus Status { get; set; } = default!;
+        public global::G.SubscriptionStatusType Status { get; set; } = default!;
 
         /// <summary>
         /// The billing period of the user's subscription.
@@ -135,6 +147,9 @@ namespace G
         /// <param name="characterLimit">
         /// The maximum number of characters allowed in the current billing period.
         /// </param>
+        /// <param name="maxCharacterLimitExtension">
+        /// Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.
+        /// </param>
         /// <param name="canExtendCharacterLimit">
         /// Whether the user can extend their character limit.
         /// </param>
@@ -146,6 +161,9 @@ namespace G
         /// </param>
         /// <param name="voiceSlotsUsed">
         /// The number of voice slots used by the user.
+        /// </param>
+        /// <param name="professionalVoiceSlotsUsed">
+        /// The number of professional voice slots used by the workspace/user if single seat.
         /// </param>
         /// <param name="voiceLimit">
         /// The maximum number of voice slots allowed for the user.
@@ -171,9 +189,7 @@ namespace G
         /// <param name="currency">
         /// The currency of the user's subscription.
         /// </param>
-        /// <param name="status">
-        /// The status of the user's subscription.
-        /// </param>
+        /// <param name="status"></param>
         /// <param name="billingPeriod">
         /// The billing period of the user's subscription.
         /// </param>
@@ -184,16 +200,18 @@ namespace G
             string tier,
             int characterCount,
             int characterLimit,
+            int? maxCharacterLimitExtension,
             bool canExtendCharacterLimit,
             bool allowedToExtendCharacterLimit,
             int voiceSlotsUsed,
+            int professionalVoiceSlotsUsed,
             int voiceLimit,
             int voiceAddEditCounter,
             int professionalVoiceLimit,
             bool canExtendVoiceLimit,
             bool canUseInstantVoiceCloning,
             bool canUseProfessionalVoiceCloning,
-            global::G.SubscriptionResponseModelStatus status,
+            global::G.SubscriptionStatusType status,
             global::System.DateTimeOffset? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
             global::G.SubscriptionResponseModelCurrency? currency,
@@ -203,9 +221,11 @@ namespace G
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;
             this.CharacterLimit = characterLimit;
+            this.MaxCharacterLimitExtension = maxCharacterLimitExtension;
             this.CanExtendCharacterLimit = canExtendCharacterLimit;
             this.AllowedToExtendCharacterLimit = allowedToExtendCharacterLimit;
             this.VoiceSlotsUsed = voiceSlotsUsed;
+            this.ProfessionalVoiceSlotsUsed = professionalVoiceSlotsUsed;
             this.VoiceLimit = voiceLimit;
             this.VoiceAddEditCounter = voiceAddEditCounter;
             this.ProfessionalVoiceLimit = professionalVoiceLimit;

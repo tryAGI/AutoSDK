@@ -197,6 +197,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionResponseModel> PronunciationDictionaryVersions { get; set; } = default!;
 
         /// <summary>
+        /// List of pronunciation dictionary locators.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("pronunciation_dictionary_locators", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.PronunciationDictionaryLocatorResponseModel> PronunciationDictionaryLocators { get; set; } = default!;
+
+        /// <summary>
         /// Whether text normalization is applied to the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization", Required = global::Newtonsoft.Json.Required.Always)]
@@ -309,6 +315,9 @@ namespace G
         /// <param name="pronunciationDictionaryVersions">
         /// List of pronunciation dictionary versions of the project and their metadata.
         /// </param>
+        /// <param name="pronunciationDictionaryLocators">
+        /// List of pronunciation dictionary locators.
+        /// </param>
         /// <param name="applyTextNormalization">
         /// Whether text normalization is applied to the project.
         /// </param>
@@ -331,6 +340,7 @@ namespace G
             global::G.ProjectExtendedResponseModelQualityPreset qualityPreset,
             global::System.Collections.Generic.IList<global::G.ChapterResponseModel> chapters,
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionResponseModel> pronunciationDictionaryVersions,
+            global::System.Collections.Generic.IList<global::G.PronunciationDictionaryLocatorResponseModel> pronunciationDictionaryLocators,
             global::G.ProjectExtendedResponseModelApplyTextNormalization applyTextNormalization,
             object experimental,
             int? lastConversionDateUnix,
@@ -365,6 +375,7 @@ namespace G
             this.QualityPreset = qualityPreset;
             this.Chapters = chapters ?? throw new global::System.ArgumentNullException(nameof(chapters));
             this.PronunciationDictionaryVersions = pronunciationDictionaryVersions ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryVersions));
+            this.PronunciationDictionaryLocators = pronunciationDictionaryLocators ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryLocators));
             this.ApplyTextNormalization = applyTextNormalization;
             this.Experimental = experimental ?? throw new global::System.ArgumentNullException(nameof(experimental));
             this.LastConversionDateUnix = lastConversionDateUnix;

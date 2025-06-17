@@ -16,6 +16,18 @@ namespace G
         public int AmountDueCents { get; set; } = default!;
 
         /// <summary>
+        /// The discount applied to the invoice. E.g. [20.0f] for 20% off.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("discount_percent_off")]
+        public double? DiscountPercentOff { get; set; }
+
+        /// <summary>
+        /// The discount applied to the invoice. E.g. [20.0f] for 20% off.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("discount_amount_off")]
+        public double? DiscountAmountOff { get; set; }
+
+        /// <summary>
         /// The Unix timestamp of the next payment attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_payment_attempt_unix", Required = global::Newtonsoft.Json.Required.Always)]
@@ -33,15 +45,25 @@ namespace G
         /// <param name="amountDueCents">
         /// The amount due in cents.
         /// </param>
+        /// <param name="discountPercentOff">
+        /// The discount applied to the invoice. E.g. [20.0f] for 20% off.
+        /// </param>
+        /// <param name="discountAmountOff">
+        /// The discount applied to the invoice. E.g. [20.0f] for 20% off.
+        /// </param>
         /// <param name="nextPaymentAttemptUnix">
         /// The Unix timestamp of the next payment attempt.
         /// </param>
         public InvoiceResponseModel(
             int amountDueCents,
-            global::System.DateTimeOffset nextPaymentAttemptUnix)
+            global::System.DateTimeOffset nextPaymentAttemptUnix,
+            double? discountPercentOff,
+            double? discountAmountOff)
         {
             this.AmountDueCents = amountDueCents;
             this.NextPaymentAttemptUnix = nextPaymentAttemptUnix;
+            this.DiscountPercentOff = discountPercentOff;
+            this.DiscountAmountOff = discountAmountOff;
         }
 
         /// <summary>

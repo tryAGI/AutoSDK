@@ -10,19 +10,19 @@ namespace G
     public sealed partial class SpeakerResponseModel
     {
         /// <summary>
-        /// 
+        /// The ID of the speaker.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speaker_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string SpeakerId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The duration of the speaker segment in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration_secs", Required = global::Newtonsoft.Json.Required.Always)]
         public double DurationSecs { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The utterances of the speaker.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("utterances")]
         public global::System.Collections.Generic.IList<global::G.UtteranceResponseModel>? Utterances { get; set; }
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeakerResponseModel" /> class.
         /// </summary>
-        /// <param name="speakerId"></param>
-        /// <param name="durationSecs"></param>
-        /// <param name="utterances"></param>
+        /// <param name="speakerId">
+        /// The ID of the speaker.
+        /// </param>
+        /// <param name="durationSecs">
+        /// The duration of the speaker segment in seconds.
+        /// </param>
+        /// <param name="utterances">
+        /// The utterances of the speaker.
+        /// </param>
         public SpeakerResponseModel(
             string speakerId,
             double durationSecs,

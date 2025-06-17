@@ -10,25 +10,25 @@ namespace G
     public sealed partial class VoicePreviewResponseModel
     {
         /// <summary>
-        /// 
+        /// The base64 encoded audio of the preview.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audio_base_64", Required = global::Newtonsoft.Json.Required.Always)]
         public string AudioBase64 { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The ID of the generated voice. Use it to create a voice from the preview.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string GeneratedVoiceId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The media type of the preview.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type", Required = global::Newtonsoft.Json.Required.Always)]
         public string MediaType { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The duration of the preview in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration_secs", Required = global::Newtonsoft.Json.Required.Always)]
         public double DurationSecs { get; set; } = default!;
@@ -42,10 +42,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VoicePreviewResponseModel" /> class.
         /// </summary>
-        /// <param name="audioBase64"></param>
-        /// <param name="generatedVoiceId"></param>
-        /// <param name="mediaType"></param>
-        /// <param name="durationSecs"></param>
+        /// <param name="audioBase64">
+        /// The base64 encoded audio of the preview.
+        /// </param>
+        /// <param name="generatedVoiceId">
+        /// The ID of the generated voice. Use it to create a voice from the preview.
+        /// </param>
+        /// <param name="mediaType">
+        /// The media type of the preview.
+        /// </param>
+        /// <param name="durationSecs">
+        /// The duration of the preview in seconds.
+        /// </param>
         public VoicePreviewResponseModel(
             string audioBase64,
             string generatedVoiceId,

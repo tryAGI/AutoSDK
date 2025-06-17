@@ -34,6 +34,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.SpeechToTextWordResponseModel> Words { get; set; } = default!;
 
         /// <summary>
+        /// Requested additional formats of the transcript.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("additional_formats")]
+        public global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel>? AdditionalFormats { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -54,16 +60,21 @@ namespace G
         /// <param name="words">
         /// List of words with their timing information.
         /// </param>
+        /// <param name="additionalFormats">
+        /// Requested additional formats of the transcript.
+        /// </param>
         public SpeechToTextChunkResponseModel(
             string languageCode,
             double languageProbability,
             string text,
-            global::System.Collections.Generic.IList<global::G.SpeechToTextWordResponseModel> words)
+            global::System.Collections.Generic.IList<global::G.SpeechToTextWordResponseModel> words,
+            global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel>? additionalFormats)
         {
             this.LanguageCode = languageCode ?? throw new global::System.ArgumentNullException(nameof(languageCode));
             this.LanguageProbability = languageProbability;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Words = words ?? throw new global::System.ArgumentNullException(nameof(words));
+            this.AdditionalFormats = additionalFormats;
         }
 
         /// <summary>

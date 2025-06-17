@@ -54,6 +54,16 @@ namespace G
         public bool? RemoveBackgroundNoise { get; set; }
 
         /// <summary>
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </summary>
+        /// <example>pcm_s16le_16</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormatJsonConverter))]
+        public global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? FileFormat { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,6 +94,11 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +108,8 @@ namespace G
             string? modelId,
             string? voiceSettings,
             int? seed,
-            bool? removeBackgroundNoise)
+            bool? removeBackgroundNoise,
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));
@@ -101,6 +117,7 @@ namespace G
             this.VoiceSettings = voiceSettings;
             this.Seed = seed;
             this.RemoveBackgroundNoise = removeBackgroundNoise;
+            this.FileFormat = fileFormat;
         }
 
         /// <summary>

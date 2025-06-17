@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The source of the history item. Either TTS (text to speech), STS (speech to text) or STT (speech to text).
+    /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
     /// </summary>
     public enum SpeechHistoryItemResponseModelSource
     {
@@ -20,7 +20,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        STT,
+        Projects,
+        /// <summary>
+        /// 
+        /// </summary>
+        PD,
+        /// <summary>
+        /// 
+        /// </summary>
+        AN,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dubbing,
+        /// <summary>
+        /// 
+        /// </summary>
+        PlayAPI,
+        /// <summary>
+        /// 
+        /// </summary>
+        ConvAI,
     }
 
     /// <summary>
@@ -37,7 +57,12 @@ namespace G
             {
                 SpeechHistoryItemResponseModelSource.TTS => "TTS",
                 SpeechHistoryItemResponseModelSource.STS => "STS",
-                SpeechHistoryItemResponseModelSource.STT => "STT",
+                SpeechHistoryItemResponseModelSource.Projects => "Projects",
+                SpeechHistoryItemResponseModelSource.PD => "PD",
+                SpeechHistoryItemResponseModelSource.AN => "AN",
+                SpeechHistoryItemResponseModelSource.Dubbing => "Dubbing",
+                SpeechHistoryItemResponseModelSource.PlayAPI => "PlayAPI",
+                SpeechHistoryItemResponseModelSource.ConvAI => "ConvAI",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,7 +75,12 @@ namespace G
             {
                 "TTS" => SpeechHistoryItemResponseModelSource.TTS,
                 "STS" => SpeechHistoryItemResponseModelSource.STS,
-                "STT" => SpeechHistoryItemResponseModelSource.STT,
+                "Projects" => SpeechHistoryItemResponseModelSource.Projects,
+                "PD" => SpeechHistoryItemResponseModelSource.PD,
+                "AN" => SpeechHistoryItemResponseModelSource.AN,
+                "Dubbing" => SpeechHistoryItemResponseModelSource.Dubbing,
+                "PlayAPI" => SpeechHistoryItemResponseModelSource.PlayAPI,
+                "ConvAI" => SpeechHistoryItemResponseModelSource.ConvAI,
                 _ => null,
             };
         }

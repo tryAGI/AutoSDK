@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prompt_injectable", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool PromptInjectable { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,13 +31,13 @@ namespace G
         /// Initializes a new instance of the <see cref="AddKnowledgeBaseResponseModel" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="promptInjectable"></param>
+        /// <param name="name"></param>
         public AddKnowledgeBaseResponseModel(
             string id,
-            bool promptInjectable)
+            string name)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.PromptInjectable = promptInjectable;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

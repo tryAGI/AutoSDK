@@ -64,6 +64,13 @@ namespace G
         public string? AudioUrl { get; set; }
 
         /// <summary>
+        /// Current state of the project<br/>
+        /// Default Value: ready
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.AudioNativeProjectSettingsResponseModelStatus? Status { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -99,6 +106,10 @@ namespace G
         /// <param name="audioUrl">
         /// The URL of the audio file.
         /// </param>
+        /// <param name="status">
+        /// Current state of the project<br/>
+        /// Default Value: ready
+        /// </param>
         public AudioNativeProjectSettingsResponseModel(
             string title,
             string image,
@@ -108,7 +119,8 @@ namespace G
             string backgroundColor,
             int sessionization,
             string? audioPath,
-            string? audioUrl)
+            string? audioUrl,
+            global::G.AudioNativeProjectSettingsResponseModelStatus? status)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
@@ -119,6 +131,7 @@ namespace G
             this.Sessionization = sessionization;
             this.AudioPath = audioPath;
             this.AudioUrl = audioUrl;
+            this.Status = status;
         }
 
         /// <summary>

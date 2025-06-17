@@ -28,7 +28,7 @@ namespace G
 
         /// <summary>
         /// Share Workspace Resource<br/>
-        /// Grants a role on a workspace resource to a user or a group. It overrides any existing role this user/group/workspace api key has on the resource. To target a user, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. You must have admin access to the resource to share it.
+        /// Grants a role on a workspace resource to a user or a group. It overrides any existing role this user/service account/group/workspace api key has on the resource. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be shared with the service account associated with the api key. You must have admin access to the resource to share it.
         /// </summary>
         /// <param name="resourceId">
         /// The ID of the target resource.
@@ -199,7 +199,7 @@ namespace G
 
         /// <summary>
         /// Share Workspace Resource<br/>
-        /// Grants a role on a workspace resource to a user or a group. It overrides any existing role this user/group/workspace api key has on the resource. To target a user, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. You must have admin access to the resource to share it.
+        /// Grants a role on a workspace resource to a user or a group. It overrides any existing role this user/service account/group/workspace api key has on the resource. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be shared with the service account associated with the api key. You must have admin access to the resource to share it.
         /// </summary>
         /// <param name="resourceId">
         /// The ID of the target resource.
@@ -214,7 +214,7 @@ namespace G
         /// Resource types that can be shared in the workspace. The name always need to match the collection names
         /// </param>
         /// <param name="userEmail">
-        /// The email of the user
+        /// The email of the user or service account.
         /// </param>
         /// <param name="groupId">
         /// The ID of the target group. To target the permissions principals have by default on this resource, use the value 'default'.

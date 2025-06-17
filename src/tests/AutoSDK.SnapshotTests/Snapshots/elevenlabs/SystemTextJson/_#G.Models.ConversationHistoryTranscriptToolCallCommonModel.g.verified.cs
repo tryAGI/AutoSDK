@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RequestId { get; set; }
@@ -38,6 +44,13 @@ namespace G
         public required bool ToolHasBeenCalled { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_details")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolDetailsJsonConverter))]
+        public global::G.ToolDetails? ToolDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,10 +59,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallCommonModel" /> class.
         /// </summary>
+        /// <param name="type"></param>
         /// <param name="requestId"></param>
         /// <param name="toolName"></param>
         /// <param name="paramsAsJson"></param>
         /// <param name="toolHasBeenCalled"></param>
+        /// <param name="toolDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,12 +72,16 @@ namespace G
             string requestId,
             string toolName,
             string paramsAsJson,
-            bool toolHasBeenCalled)
+            bool toolHasBeenCalled,
+            string? type,
+            global::G.ToolDetails? toolDetails)
         {
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ParamsAsJson = paramsAsJson ?? throw new global::System.ArgumentNullException(nameof(paramsAsJson));
             this.ToolHasBeenCalled = toolHasBeenCalled;
+            this.Type = type;
+            this.ToolDetails = toolDetails;
         }
 
         /// <summary>

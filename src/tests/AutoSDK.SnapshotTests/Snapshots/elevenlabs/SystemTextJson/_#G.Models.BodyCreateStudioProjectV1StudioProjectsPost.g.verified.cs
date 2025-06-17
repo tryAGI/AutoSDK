@@ -46,7 +46,7 @@ namespace G
         public required string DefaultModelId { get; set; }
 
         /// <summary>
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.<br/>
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
         /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
         /// </summary>
         /// <example>https://blog.elevenlabs.io/the_first_ai_that_can_laugh/</example>
@@ -54,16 +54,24 @@ namespace G
         public string? FromUrl { get; set; }
 
         /// <summary>
-        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' must be null.  If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.
+        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_document")]
         public byte[]? FromDocument { get; set; }
 
         /// <summary>
-        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' must be null.  If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.
+        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_documentname")]
         public string? FromDocumentname { get; set; }
+
+        /// <summary>
+        /// An optional content to initialize the Studio project with. If this is set, 'from_url' and 'from_document' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
+        /// Example: [{"name": "Chapter A", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "A", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "B", "type": "tts_node"}]}, {"sub_type": "h1", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "C", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "D", "type": "tts_node"}]}]}, {"name": "Chapter B", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "E", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "F", "type": "tts_node"}]}, {"sub_type": "h2", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "G", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "H", "type": "tts_node"}]}]}]
+        /// </summary>
+        /// <example>[{"name": "Chapter A", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "A", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "B", "type": "tts_node"}]}, {"sub_type": "h1", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "C", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "D", "type": "tts_node"}]}]}, {"name": "Chapter B", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "E", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "F", "type": "tts_node"}]}, {"sub_type": "h2", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "G", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "H", "type": "tts_node"}]}]}]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("from_content_json")]
+        public string? FromContentJson { get; set; }
 
         /// <summary>
         /// Output quality of the generated audio. Must be one of:<br/>
@@ -187,7 +195,59 @@ namespace G
         public global::System.Collections.Generic.IList<string>? PronunciationDictionaryLocators { get; set; }
 
         /// <summary>
-        /// A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
+        ///     A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
+        ///     Messages:<br/>
+        ///     1. When project was converted successfully:<br/>
+        ///     {<br/>
+        ///       type: "project_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         conversion_status: "success",<br/>
+        ///         project_snapshot_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         error_details: None,<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     2. When project conversion failed:<br/>
+        ///     {<br/>
+        ///       type: "project_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         conversion_status: "error",<br/>
+        ///         project_snapshot_id: None,<br/>
+        ///         error_details: "Error details if conversion failed"<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     3. When chapter was converted successfully:<br/>
+        ///     {<br/>
+        ///       type: "chapter_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         chapter_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         conversion_status: "success",<br/>
+        ///         chapter_snapshot_id: "23m00Tcm4TlvDq8ikMAV",<br/>
+        ///         error_details: None,<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     4. When chapter conversion failed:<br/>
+        ///     {<br/>
+        ///       type: "chapter_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         chapter_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         conversion_status: "error",<br/>
+        ///         chapter_snapshot_id: None,<br/>
+        ///         error_details: "Error details if conversion failed"<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     <br/>
         /// Example: [https://www.test.com/my-api/projects-status]
         /// </summary>
         /// <example>[https://www.test.com/my-api/projects-status]</example>
@@ -263,14 +323,18 @@ namespace G
         /// Example: 21m00Tcm4TlvDq8ikWAM
         /// </param>
         /// <param name="fromUrl">
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.<br/>
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
         /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
         /// </param>
         /// <param name="fromDocument">
-        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' must be null.  If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.
+        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </param>
         /// <param name="fromDocumentname">
-        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' must be null.  If neither 'from_url' or 'from_document' are provided we will initialize the Studio project as blank.
+        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
+        /// </param>
+        /// <param name="fromContentJson">
+        /// An optional content to initialize the Studio project with. If this is set, 'from_url' and 'from_document' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
+        /// Example: [{"name": "Chapter A", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "A", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "B", "type": "tts_node"}]}, {"sub_type": "h1", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "C", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "D", "type": "tts_node"}]}]}, {"name": "Chapter B", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "E", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "F", "type": "tts_node"}]}, {"sub_type": "h2", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "G", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "H", "type": "tts_node"}]}]}]
         /// </param>
         /// <param name="qualityPreset">
         /// Output quality of the generated audio. Must be one of:<br/>
@@ -337,7 +401,59 @@ namespace G
         /// Example: [{"pronunciation_dictionary_id": "test", "version_id": "id2"}]
         /// </param>
         /// <param name="callbackUrl">
-        /// A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
+        ///     A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
+        ///     Messages:<br/>
+        ///     1. When project was converted successfully:<br/>
+        ///     {<br/>
+        ///       type: "project_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         conversion_status: "success",<br/>
+        ///         project_snapshot_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         error_details: None,<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     2. When project conversion failed:<br/>
+        ///     {<br/>
+        ///       type: "project_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         conversion_status: "error",<br/>
+        ///         project_snapshot_id: None,<br/>
+        ///         error_details: "Error details if conversion failed"<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     3. When chapter was converted successfully:<br/>
+        ///     {<br/>
+        ///       type: "chapter_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         chapter_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         conversion_status: "success",<br/>
+        ///         chapter_snapshot_id: "23m00Tcm4TlvDq8ikMAV",<br/>
+        ///         error_details: None,<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     4. When chapter conversion failed:<br/>
+        ///     {<br/>
+        ///       type: "chapter_conversion_status",<br/>
+        ///       event_timestamp: 1234567890,<br/>
+        ///       data: {<br/>
+        ///         request_id: "1234567890",<br/>
+        ///         project_id: "21m00Tcm4TlvDq8ikWAM",<br/>
+        ///         chapter_id: "22m00Tcm4TlvDq8ikMAT",<br/>
+        ///         conversion_status: "error",<br/>
+        ///         chapter_snapshot_id: None,<br/>
+        ///         error_details: "Error details if conversion failed"<br/>
+        ///       }<br/>
+        ///     }<br/>
+        ///     <br/>
         /// Example: [https://www.test.com/my-api/projects-status]
         /// </param>
         /// <param name="fiction">
@@ -374,6 +490,7 @@ namespace G
             string? fromUrl,
             byte[]? fromDocument,
             string? fromDocumentname,
+            string? fromContentJson,
             string? qualityPreset,
             string? title,
             string? author,
@@ -402,6 +519,7 @@ namespace G
             this.FromUrl = fromUrl;
             this.FromDocument = fromDocument;
             this.FromDocumentname = fromDocumentname;
+            this.FromContentJson = fromContentJson;
             this.QualityPreset = qualityPreset;
             this.Title = title;
             this.Author = author;

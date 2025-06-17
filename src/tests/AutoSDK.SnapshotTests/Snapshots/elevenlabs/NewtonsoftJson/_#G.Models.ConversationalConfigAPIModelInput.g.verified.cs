@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tts")]
-        public global::G.TTSConversationalConfig? Tts { get; set; }
+        public global::G.TTSConversationalConfigInput? Tts { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         public ConversationalConfigAPIModelInput(
             global::G.ASRConversationalConfig? asr,
             global::G.TurnConfig? turn,
-            global::G.TTSConversationalConfig? tts,
+            global::G.TTSConversationalConfigInput? tts,
             global::G.ConversationConfig? conversation,
             global::System.Collections.Generic.Dictionary<string, global::G.LanguagePresetInput>? languagePresets,
             global::G.AgentConfigAPIModelInput? agent)

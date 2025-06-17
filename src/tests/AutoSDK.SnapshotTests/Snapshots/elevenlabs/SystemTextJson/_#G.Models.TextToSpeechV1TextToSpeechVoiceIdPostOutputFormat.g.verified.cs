@@ -57,7 +57,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Pcm48000,
+        /// <summary>
+        /// 
+        /// </summary>
         Ulaw8000,
+        /// <summary>
+        /// 
+        /// </summary>
+        Alaw8000,
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +111,9 @@ namespace G
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm22050 => "pcm_22050",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm24000 => "pcm_24000",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm44100 => "pcm_44100",
+                TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm48000 => "pcm_48000",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Ulaw8000 => "ulaw_8000",
+                TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Alaw8000 => "alaw_8000",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800032 => "opus_48000_32",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800064 => "opus_48000_64",
                 TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800096 => "opus_48000_96",
@@ -130,7 +140,9 @@ namespace G
                 "pcm_22050" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm22050,
                 "pcm_24000" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm24000,
                 "pcm_44100" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm44100,
+                "pcm_48000" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Pcm48000,
                 "ulaw_8000" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Ulaw8000,
+                "alaw_8000" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Alaw8000,
                 "opus_48000_32" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800032,
                 "opus_48000_64" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800064,
                 "opus_48000_96" => TextToSpeechV1TextToSpeechVoiceIdPostOutputFormat.Opus4800096,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model. Speech-to-text is currently in alpha and available to a select group of users. We plan to roll it out more broadly soon.<br/>
+    /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

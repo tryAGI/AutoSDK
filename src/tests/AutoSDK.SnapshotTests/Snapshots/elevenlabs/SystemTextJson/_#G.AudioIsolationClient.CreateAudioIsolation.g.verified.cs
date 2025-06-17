@@ -71,6 +71,12 @@ namespace G
                 content: new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>()),
                 name: "audio",
                 fileName: request.Audioname ?? string.Empty);
+            if (request.FileFormat != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
+                    name: "file_format");
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -197,18 +203,25 @@ namespace G
         /// <param name="audioname">
         /// The audio file from which vocals/speech will be isolated from.
         /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other<br/>
+        /// Example: pcm_s16le_16
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAudioIsolationV1AudioIsolationPost
             {
                 Audio = audio,
                 Audioname = audioname,
+                FileFormat = fileFormat,
             };
 
             await CreateAudioIsolationAsync(

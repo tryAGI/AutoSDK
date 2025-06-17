@@ -20,8 +20,8 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddWorkspaceGroupMemberResponseModel> CreateWorkspaceGroupsByGroupIdMembersAsync(
             string groupId,
-            string xiApiKey,
             global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost request,
+            string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddWorkspaceGroupMemberResponseModel> CreateWorkspaceGroupsByGroupIdMembersAsync(
             string groupId,
-            string xiApiKey,
             string email,
+            string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
