@@ -100,7 +100,9 @@ public record struct EndPoint(
             .Select(x => EndPointResponse.FromResponse(x, operation))
             .ToArray();
         var contentType = responses
-            .Any(x => x.MimeType.Contains("application/octet-stream"))
+            .Any(x =>
+                x.MimeType.Contains("application/octet-stream") ||
+                x.MimeType.Contains("audio/mpeg"))
             ? ContentType.ByteArray
             : ContentType.String;
 
