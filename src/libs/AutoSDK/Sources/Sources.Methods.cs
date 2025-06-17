@@ -601,7 +601,9 @@ namespace {endPoint.Settings.Namespace}
             var __request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
-                {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},").Inject()}
+{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : " ")}
+                {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},
+{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : " ")}".TrimEnd()).Inject()}
             }};
 
             {response}{endPoint.MethodName}(
