@@ -90,7 +90,7 @@ namespace G
                 .AddOptionalParameter("after", after?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("validationStatus", validationStatusValue?.ToString()) 
+                .AddOptionalParameter("validationStatus", validationStatus?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

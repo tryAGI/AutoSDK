@@ -82,7 +82,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("cursor", cursor) 
                 .AddOptionalParameter("agent_id", agentId) 
-                .AddOptionalParameter("call_successful", callSuccessfulValue?.ToString()) 
+                .AddOptionalParameter("call_successful", callSuccessful?.ToValueString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

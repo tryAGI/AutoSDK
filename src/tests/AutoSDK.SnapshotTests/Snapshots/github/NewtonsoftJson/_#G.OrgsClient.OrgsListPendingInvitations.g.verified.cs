@@ -92,8 +92,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("role", roleValue?.ToString()) 
-                .AddOptionalParameter("invitation_source", invitationSourceValue?.ToString()) 
+                .AddOptionalParameter("role", role?.ToValueString()) 
+                .AddOptionalParameter("invitation_source", invitationSource?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

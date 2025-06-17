@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
                 .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddRequiredParameter("interval_unit", intervalUnitValue.ToString()) 
+                .AddRequiredParameter("interval_unit", intervalUnit.ToValueString()) 
                 .AddRequiredParameter("interval_value", intervalValue.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

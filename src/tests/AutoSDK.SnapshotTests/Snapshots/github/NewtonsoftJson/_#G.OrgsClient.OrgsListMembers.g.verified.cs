@@ -84,8 +84,8 @@ namespace G
                 path: $"/orgs/{org}/members",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("filter", filterValue?.ToString()) 
-                .AddOptionalParameter("role", roleValue?.ToString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
+                .AddOptionalParameter("role", role?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

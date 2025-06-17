@@ -91,7 +91,7 @@ namespace G
                 .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
                 .AddOptionalParameter("user_id", userId) 
                 .AddOptionalParameter("game_id", gameId) 
-                .AddOptionalParameter("fulfillment_status", fulfillmentStatusValue?.ToString()) 
+                .AddOptionalParameter("fulfillment_status", fulfillmentStatus?.ToValueString()) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("first", first?.ToString()) 
                 ; 

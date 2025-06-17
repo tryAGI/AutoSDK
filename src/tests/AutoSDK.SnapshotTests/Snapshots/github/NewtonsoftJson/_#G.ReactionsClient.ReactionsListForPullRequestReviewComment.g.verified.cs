@@ -84,7 +84,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/pulls/comments/{commentId}/reactions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("content", contentValue?.ToString()) 
+                .AddOptionalParameter("content", content?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

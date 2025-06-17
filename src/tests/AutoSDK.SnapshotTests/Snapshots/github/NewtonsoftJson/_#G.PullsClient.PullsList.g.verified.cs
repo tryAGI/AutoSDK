@@ -122,11 +122,11 @@ namespace G
                 path: $"/repos/{owner}/{repo}/pulls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 .AddOptionalParameter("head", head) 
                 .AddOptionalParameter("base", @base) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

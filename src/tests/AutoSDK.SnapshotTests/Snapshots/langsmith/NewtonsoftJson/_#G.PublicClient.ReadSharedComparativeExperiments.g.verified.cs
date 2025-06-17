@@ -91,7 +91,7 @@ namespace G
                 .AddOptionalParameter("name_contains", nameContains) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortByValue?.ToString()) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -51,7 +51,7 @@ namespace G
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("output", outputValue?.ToString()) 
+                .AddOptionalParameter("output", output?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

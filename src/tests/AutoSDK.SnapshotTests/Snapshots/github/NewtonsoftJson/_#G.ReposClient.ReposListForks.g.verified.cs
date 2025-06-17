@@ -76,7 +76,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/forks",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

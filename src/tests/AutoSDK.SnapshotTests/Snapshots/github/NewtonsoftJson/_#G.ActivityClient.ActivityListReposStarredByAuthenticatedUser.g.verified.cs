@@ -80,8 +80,8 @@ namespace G
                 path: "/user/starred",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

@@ -94,8 +94,8 @@ namespace G
                 path: $"/repos/{owner}/{repo}/collaborators",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("affiliation", affiliationValue?.ToString()) 
-                .AddOptionalParameter("permission", permissionValue?.ToString()) 
+                .AddOptionalParameter("affiliation", affiliation?.ToValueString()) 
+                .AddOptionalParameter("permission", permission?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

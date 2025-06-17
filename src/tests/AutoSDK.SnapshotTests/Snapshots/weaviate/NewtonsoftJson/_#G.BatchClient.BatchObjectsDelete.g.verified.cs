@@ -64,7 +64,7 @@ namespace G
                 path: "/batch/objects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevelValue?.ToString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

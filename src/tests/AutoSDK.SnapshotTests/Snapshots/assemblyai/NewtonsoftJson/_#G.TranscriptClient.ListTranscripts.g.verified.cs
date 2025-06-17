@@ -80,7 +80,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("created_on", createdOn?.ToString("yyyy-MM-dd")) 
                 .AddOptionalParameter("before_id", beforeId?.ToString()) 
                 .AddOptionalParameter("after_id", afterId?.ToString()) 

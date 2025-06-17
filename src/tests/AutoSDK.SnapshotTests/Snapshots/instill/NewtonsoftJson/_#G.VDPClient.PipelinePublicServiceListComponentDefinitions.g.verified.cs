@@ -67,7 +67,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("view", viewValue?.ToString()) 
+                .AddOptionalParameter("view", view?.ToValueString()) 
                 .AddOptionalParameter("filter", filter) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

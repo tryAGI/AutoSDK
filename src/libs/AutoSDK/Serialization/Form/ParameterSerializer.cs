@@ -1,7 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
 using Microsoft.OpenApi.Models;
 
 namespace AutoSDK.Serialization.Form;
@@ -115,9 +114,7 @@ public static class ParameterSerializer
         {
             return [parameter with
             {
-                Value = parameter.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson
-                    ? $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToValueString()"
-                    : $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString()",
+                Value = $"{parameter.ParameterName}{(parameter.IsRequired ? "" : "?")}.ToValueString()",
             }];
         }
         if (parameter.Type.IsArray)

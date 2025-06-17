@@ -76,7 +76,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("extension_id", extensionId) 
-                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
                 .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("ended_at", endedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("first", first?.ToString()) 

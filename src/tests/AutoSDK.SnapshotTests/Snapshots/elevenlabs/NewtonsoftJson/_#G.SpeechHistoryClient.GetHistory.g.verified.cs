@@ -93,7 +93,7 @@ namespace G
                 .AddOptionalParameter("start_after_history_item_id", startAfterHistoryItemId) 
                 .AddOptionalParameter("voice_id", voiceId) 
                 .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("source", sourceValue?.ToString()) 
+                .AddOptionalParameter("source", source?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

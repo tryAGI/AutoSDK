@@ -63,7 +63,7 @@ namespace G
                 path: $"/users/{username}/hovercard",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("subject_type", subjectTypeValue?.ToString()) 
+                .AddOptionalParameter("subject_type", subjectType?.ToValueString()) 
                 .AddOptionalParameter("subject_id", subjectId) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -149,11 +149,11 @@ namespace G
                 path: "/issues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("filter", filterValue?.ToString()) 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 .AddOptionalParameter("labels", labels) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("collab", collab?.ToString()) 
                 .AddOptionalParameter("orgs", orgs?.ToString()) 

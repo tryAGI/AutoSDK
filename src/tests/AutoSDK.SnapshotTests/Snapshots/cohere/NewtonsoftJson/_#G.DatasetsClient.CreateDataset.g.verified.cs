@@ -105,7 +105,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("name", name) 
-                .AddRequiredParameter("type", typeValue.ToString()) 
+                .AddRequiredParameter("type", type.ToValueString()) 
                 .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString()) 
                 .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString()) 
                 .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true) 

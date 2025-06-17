@@ -83,7 +83,7 @@ namespace G
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -59,7 +59,7 @@ namespace G
                 path: $"/v1alpha/namespaces/{namespaceId}/models/{modelId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("view", viewValue?.ToString()) 
+                .AddOptionalParameter("view", view?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

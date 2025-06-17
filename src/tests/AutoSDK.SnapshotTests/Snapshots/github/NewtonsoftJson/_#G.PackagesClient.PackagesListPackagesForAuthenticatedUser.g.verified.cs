@@ -80,8 +80,8 @@ namespace G
                 path: "/user/packages",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddRequiredParameter("package_type", packageTypeValue.ToString()) 
-                .AddOptionalParameter("visibility", visibilityValue?.ToString()) 
+                .AddRequiredParameter("package_type", packageType.ToValueString()) 
+                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 

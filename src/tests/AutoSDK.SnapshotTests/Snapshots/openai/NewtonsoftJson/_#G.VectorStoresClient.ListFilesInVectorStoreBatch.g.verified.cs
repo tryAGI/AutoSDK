@@ -91,10 +91,10 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("filter", filterValue?.ToString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

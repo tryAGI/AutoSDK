@@ -89,6 +89,7 @@ namespace G
                 .AddOptionalParameter("lt", effectiveAt?.Lt?.ToString()) 
                 .AddOptionalParameter("lte", effectiveAt?.Lte?.ToString()) 
                 .AddOptionalParameter("project_ids[]", projectIds, delimiter: ",", explode: true) 
+                .AddOptionalParameter("event_types[]", eventTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true) 
                 .AddOptionalParameter("resource_ids[]", resourceIds, delimiter: ",", explode: true) 

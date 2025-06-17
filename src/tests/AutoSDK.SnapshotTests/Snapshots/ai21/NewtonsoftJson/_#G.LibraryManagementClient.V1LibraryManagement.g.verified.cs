@@ -92,7 +92,7 @@ namespace G
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("path", path) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("label", label, delimiter: ",", explode: true) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 

@@ -54,7 +54,7 @@ namespace G
                 path: $"/api/v1/sessions/{sessionId}/views",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

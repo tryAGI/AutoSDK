@@ -116,8 +116,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("owner", owner, delimiter: ",", explode: true) 
                 .AddOptionalParameter("repository", repository) 
                 .AddOptionalParameter("permission", permission) 

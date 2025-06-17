@@ -74,6 +74,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("sample_type", sampleType, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("search", search) 
                 .AddOptionalParameter("purpose", purpose?.ToString()) 
                 ; 

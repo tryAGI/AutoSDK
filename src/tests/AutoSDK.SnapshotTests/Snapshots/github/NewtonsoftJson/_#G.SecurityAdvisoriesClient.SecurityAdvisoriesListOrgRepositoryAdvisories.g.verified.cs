@@ -102,12 +102,12 @@ namespace G
                 path: $"/orgs/{org}/security-advisories",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

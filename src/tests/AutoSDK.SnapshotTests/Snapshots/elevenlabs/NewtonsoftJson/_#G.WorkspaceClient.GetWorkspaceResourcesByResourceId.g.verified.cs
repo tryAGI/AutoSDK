@@ -74,7 +74,7 @@ namespace G
                 path: $"/v1/workspace/resources/{resourceId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddRequiredParameter("resource_type", resourceTypeValue.ToString()) 
+                .AddRequiredParameter("resource_type", resourceType.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -182,7 +182,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("category", categoryValue?.ToString()) 
+                .AddOptionalParameter("category", category?.ToValueString()) 
                 .AddOptionalParameter("gender", gender) 
                 .AddOptionalParameter("age", age) 
                 .AddOptionalParameter("accent", accent) 

@@ -61,7 +61,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/traffic/views",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("per", perValue?.ToString()) 
+                .AddOptionalParameter("per", per?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

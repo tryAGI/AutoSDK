@@ -70,7 +70,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("count", count?.ToString()) 
-                .AddOptionalParameter("period", periodValue?.ToString()) 
+                .AddOptionalParameter("period", period?.ToValueString()) 
                 .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("user_id", userId) 
                 ; 

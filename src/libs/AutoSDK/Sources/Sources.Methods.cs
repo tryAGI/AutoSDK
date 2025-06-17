@@ -272,11 +272,7 @@ namespace {endPoint.Settings.Namespace}
             }}";
         }
 
-        var queryParameters = endPoint.QueryParameters
-            .Where(x =>
-                x.Type.IsEnum ||
-                (!x.Type.IsArray || (x.Type.SubTypes[0].Unbox<TypeData>().Properties.Length == 0 && !x.Type.SubTypes[0].Unbox<TypeData>().IsArray)))
-            .ToArray();
+        var queryParameters = endPoint.QueryParameters.ToArray();
 
         if (queryParameters.Length > 0)
         {

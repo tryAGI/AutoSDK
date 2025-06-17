@@ -79,7 +79,7 @@ namespace G
                 path: $"/teams/{teamId}/discussions/{discussionNumber}/comments",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

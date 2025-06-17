@@ -75,7 +75,7 @@ namespace G
                 path: $"/orgs/{org}/code-security/configurations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("target_type", targetTypeValue?.ToString()) 
+                .AddOptionalParameter("target_type", targetType?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 

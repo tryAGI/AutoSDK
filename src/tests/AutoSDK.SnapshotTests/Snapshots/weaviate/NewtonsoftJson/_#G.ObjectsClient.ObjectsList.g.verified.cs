@@ -93,7 +93,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("include", include) 
                 .AddOptionalParameter("sort", sort) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("class", @class) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 

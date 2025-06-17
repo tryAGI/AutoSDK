@@ -76,7 +76,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/projects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

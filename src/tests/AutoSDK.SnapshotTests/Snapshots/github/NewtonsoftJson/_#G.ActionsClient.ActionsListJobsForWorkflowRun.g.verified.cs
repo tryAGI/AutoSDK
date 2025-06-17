@@ -83,7 +83,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("filter", filterValue?.ToString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

@@ -77,7 +77,7 @@ namespace G
                 path: $"/orgs/{org}/teams/{teamSlug}/members",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("role", roleValue?.ToString()) 
+                .AddOptionalParameter("role", role?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

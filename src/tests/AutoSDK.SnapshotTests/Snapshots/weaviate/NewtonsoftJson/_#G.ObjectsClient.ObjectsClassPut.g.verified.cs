@@ -69,7 +69,7 @@ namespace G
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevelValue?.ToString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

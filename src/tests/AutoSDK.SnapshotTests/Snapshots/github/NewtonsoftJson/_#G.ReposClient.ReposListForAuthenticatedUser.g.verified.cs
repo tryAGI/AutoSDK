@@ -126,11 +126,11 @@ namespace G
                 path: "/user/repos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("visibility", visibilityValue?.ToString()) 
+                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
                 .AddOptionalParameter("affiliation", affiliation) 
-                .AddOptionalParameter("type", typeValue?.ToString()) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 

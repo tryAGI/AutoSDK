@@ -78,7 +78,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("include", include) 
-                .AddOptionalParameter("consistency_level", consistencyLevelValue?.ToString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
                 .AddOptionalParameter("node_name", nodeName) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 

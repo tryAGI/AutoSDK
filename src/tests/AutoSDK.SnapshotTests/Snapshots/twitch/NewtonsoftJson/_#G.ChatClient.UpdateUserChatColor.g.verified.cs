@@ -65,7 +65,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("user_id", userId) 
-                .AddRequiredParameter("color", colorValue.ToString()) 
+                .AddRequiredParameter("color", color.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

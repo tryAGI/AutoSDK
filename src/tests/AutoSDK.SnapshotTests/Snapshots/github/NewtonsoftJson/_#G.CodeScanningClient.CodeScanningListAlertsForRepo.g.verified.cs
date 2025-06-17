@@ -168,12 +168,12 @@ namespace G
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("ref", @ref) 
                 .AddOptionalParameter("pr", pr?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
-                .AddOptionalParameter("severity", severityValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
+                .AddOptionalParameter("severity", severity?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

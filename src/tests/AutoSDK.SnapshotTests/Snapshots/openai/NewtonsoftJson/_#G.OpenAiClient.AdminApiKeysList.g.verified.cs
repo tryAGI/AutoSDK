@@ -68,7 +68,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

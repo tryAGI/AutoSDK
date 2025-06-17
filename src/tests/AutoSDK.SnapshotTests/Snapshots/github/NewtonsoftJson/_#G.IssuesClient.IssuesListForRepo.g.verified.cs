@@ -141,13 +141,13 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("milestone", milestone) 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 .AddOptionalParameter("assignee", assignee) 
                 .AddOptionalParameter("creator", creator) 
                 .AddOptionalParameter("mentioned", mentioned) 
                 .AddOptionalParameter("labels", labels) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 

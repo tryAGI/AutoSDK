@@ -104,9 +104,9 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("ref", @ref) 
-                .AddOptionalParameter("time_period", timePeriodValue?.ToString()) 
+                .AddOptionalParameter("time_period", timePeriod?.ToValueString()) 
                 .AddOptionalParameter("actor_name", actorName) 
-                .AddOptionalParameter("rule_suite_result", ruleSuiteResultValue?.ToString()) 
+                .AddOptionalParameter("rule_suite_result", ruleSuiteResult?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

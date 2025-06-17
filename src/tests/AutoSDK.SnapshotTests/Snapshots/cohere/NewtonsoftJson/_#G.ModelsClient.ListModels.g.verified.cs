@@ -73,7 +73,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("page_token", pageToken) 
-                .AddOptionalParameter("endpoint", endpointValue?.ToString()) 
+                .AddOptionalParameter("endpoint", endpoint?.ToValueString()) 
                 .AddOptionalParameter("default_only", defaultOnly?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

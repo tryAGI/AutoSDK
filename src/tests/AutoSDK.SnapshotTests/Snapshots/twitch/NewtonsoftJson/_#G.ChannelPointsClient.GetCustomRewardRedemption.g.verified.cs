@@ -90,9 +90,9 @@ namespace G
             __pathBuilder 
                 .AddRequiredParameter("broadcaster_id", broadcasterId) 
                 .AddRequiredParameter("reward_id", rewardId) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("first", first?.ToString()) 
                 ; 

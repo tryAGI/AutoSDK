@@ -158,8 +158,8 @@ namespace G
                 path: "/api/schema/",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("format", formatValue?.ToString()) 
-                .AddOptionalParameter("lang", langValue?.ToString()) 
+                .AddOptionalParameter("format", format?.ToValueString()) 
+                .AddOptionalParameter("lang", lang?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

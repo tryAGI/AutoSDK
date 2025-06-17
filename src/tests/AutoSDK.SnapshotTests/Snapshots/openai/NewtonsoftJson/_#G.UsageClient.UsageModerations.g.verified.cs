@@ -98,11 +98,12 @@ namespace G
             __pathBuilder 
                 .AddRequiredParameter("start_time", startTime.ToString()) 
                 .AddOptionalParameter("end_time", endTime?.ToString()) 
-                .AddOptionalParameter("bucket_width", bucketWidthValue?.ToString()) 
+                .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString()) 
                 .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("user_ids", userIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("api_key_ids", apiKeyIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("models", models, delimiter: ",", explode: true) 
+                .AddOptionalParameter("group_by", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("page", page) 
                 ; 

@@ -65,8 +65,8 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("target_user_id", targetUserId) 
-                .AddOptionalParameter("source_context", sourceContextValue?.ToString()) 
-                .AddOptionalParameter("reason", reasonValue?.ToString()) 
+                .AddOptionalParameter("source_context", sourceContext?.ToValueString()) 
+                .AddOptionalParameter("reason", reason?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

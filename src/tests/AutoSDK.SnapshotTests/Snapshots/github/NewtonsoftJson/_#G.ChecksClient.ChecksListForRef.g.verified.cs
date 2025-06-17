@@ -107,8 +107,8 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("check_name", checkName) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
-                .AddOptionalParameter("filter", filterValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("app_id", appId?.ToString()) 

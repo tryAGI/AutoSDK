@@ -81,7 +81,7 @@ namespace G
                 path: "/v1/sound-generation",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("output_format", outputFormatValue?.ToString()) 
+                .AddOptionalParameter("output_format", outputFormat?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

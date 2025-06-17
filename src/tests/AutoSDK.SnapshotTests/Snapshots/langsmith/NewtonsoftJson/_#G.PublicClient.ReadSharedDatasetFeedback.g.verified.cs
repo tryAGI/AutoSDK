@@ -108,12 +108,13 @@ namespace G
                 .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
                 .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("has_comment", hasComment?.ToString()) 
                 .AddOptionalParameter("has_score", hasScore?.ToString()) 
-                .AddOptionalParameter("level", levelValue?.ToString()) 
+                .AddOptionalParameter("level", level?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

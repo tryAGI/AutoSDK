@@ -85,8 +85,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

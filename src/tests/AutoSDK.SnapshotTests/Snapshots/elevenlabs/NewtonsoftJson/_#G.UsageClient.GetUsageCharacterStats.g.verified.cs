@@ -93,7 +93,7 @@ namespace G
                 .AddRequiredParameter("start_unix", startUnix.ToString()) 
                 .AddRequiredParameter("end_unix", endUnix.ToString()) 
                 .AddOptionalParameter("include_workspace_metrics", includeWorkspaceMetrics?.ToString()) 
-                .AddOptionalParameter("breakdown_type", breakdownTypeValue?.ToString()) 
+                .AddOptionalParameter("breakdown_type", breakdownType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

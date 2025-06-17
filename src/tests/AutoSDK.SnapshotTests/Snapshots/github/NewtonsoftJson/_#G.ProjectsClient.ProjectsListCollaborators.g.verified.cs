@@ -71,7 +71,7 @@ namespace G
                 path: $"/projects/{projectId}/collaborators",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("affiliation", affiliationValue?.ToString()) 
+                .AddOptionalParameter("affiliation", affiliation?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

@@ -69,7 +69,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("purpose", purpose) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

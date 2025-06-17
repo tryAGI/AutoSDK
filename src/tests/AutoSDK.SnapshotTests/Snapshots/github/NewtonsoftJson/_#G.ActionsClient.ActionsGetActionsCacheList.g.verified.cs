@@ -104,8 +104,8 @@ namespace G
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("ref", @ref) 
                 .AddOptionalParameter("key", key) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

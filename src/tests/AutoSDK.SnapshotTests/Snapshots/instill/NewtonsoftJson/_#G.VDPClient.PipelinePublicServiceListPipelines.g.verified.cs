@@ -88,10 +88,10 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
                 .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("view", viewValue?.ToString()) 
+                .AddOptionalParameter("view", view?.ToValueString()) 
                 .AddOptionalParameter("filter", filter) 
                 .AddOptionalParameter("showDeleted", showDeleted?.ToString()) 
-                .AddOptionalParameter("visibility", visibilityValue?.ToString()) 
+                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
                 .AddOptionalParameter("orderBy", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

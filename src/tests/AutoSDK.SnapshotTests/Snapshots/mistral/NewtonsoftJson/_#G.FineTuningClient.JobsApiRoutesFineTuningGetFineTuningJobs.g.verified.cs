@@ -114,7 +114,7 @@ namespace G
                 .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("wandb_project", wandbProject) 
                 .AddOptionalParameter("wandb_name", wandbName) 
                 .AddOptionalParameter("suffix", suffix) 

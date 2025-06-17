@@ -73,7 +73,7 @@ namespace G
                 path: $"/v1/dubbing/{dubbingId}/transcript/{languageCode}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("format_type", formatTypeValue?.ToString()) 
+                .AddOptionalParameter("format_type", formatType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

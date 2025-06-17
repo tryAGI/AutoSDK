@@ -71,7 +71,7 @@ namespace G
                 path: $"/projects/columns/{columnId}/cards",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("archived_state", archivedStateValue?.ToString()) 
+                .AddOptionalParameter("archived_state", archivedState?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

@@ -132,7 +132,7 @@ namespace G
                 .AddOptionalParameter("actor", actor) 
                 .AddOptionalParameter("branch", branch) 
                 .AddOptionalParameter("event", @event) 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 

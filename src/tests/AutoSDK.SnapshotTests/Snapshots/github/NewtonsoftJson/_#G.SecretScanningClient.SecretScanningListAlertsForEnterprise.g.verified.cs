@@ -115,11 +115,11 @@ namespace G
                 path: $"/enterprises/{enterprise}/secret-scanning/alerts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("state", state?.ToValueString()) 
                 .AddOptionalParameter("secret_type", secretType) 
                 .AddOptionalParameter("resolution", resolution) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 

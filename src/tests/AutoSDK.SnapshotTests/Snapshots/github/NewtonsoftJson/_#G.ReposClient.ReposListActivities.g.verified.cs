@@ -119,14 +119,14 @@ namespace G
                 path: $"/repos/{owner}/{repo}/activity",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("ref", @ref) 
                 .AddOptionalParameter("actor", actor) 
-                .AddOptionalParameter("time_period", timePeriodValue?.ToString()) 
-                .AddOptionalParameter("activity_type", activityTypeValue?.ToString()) 
+                .AddOptionalParameter("time_period", timePeriod?.ToValueString()) 
+                .AddOptionalParameter("activity_type", activityType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

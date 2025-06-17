@@ -150,7 +150,7 @@ namespace G
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("name_contains", nameContains) 
                 .AddOptionalParameter("dataset_version", datasetVersion) 
-                .AddOptionalParameter("sort_by", sortByValue?.ToString()) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("metadata", metadata) 
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 

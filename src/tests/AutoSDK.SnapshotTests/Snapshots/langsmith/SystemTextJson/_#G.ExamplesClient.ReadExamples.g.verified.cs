@@ -117,6 +117,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("random_seed", randomSeed?.ToString()) 
+                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

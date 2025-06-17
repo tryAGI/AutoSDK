@@ -187,10 +187,10 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("ghsa_id", ghsaId) 
-                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
                 .AddOptionalParameter("cve_id", cveId) 
-                .AddOptionalParameter("ecosystem", ecosystemValue?.ToString()) 
-                .AddOptionalParameter("severity", severityValue?.ToString()) 
+                .AddOptionalParameter("ecosystem", ecosystem?.ToValueString()) 
+                .AddOptionalParameter("severity", severity?.ToValueString()) 
                 .AddOptionalParameter("cwes", cwes?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString()) 
                 .AddOptionalParameter("affects", affects?.ToString() ?? string.Empty) 
@@ -201,9 +201,9 @@ namespace G
                 .AddOptionalParameter("epss_percentile", epssPercentile) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -157,8 +157,8 @@ namespace G
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("status", statusValue?.ToString()) 
-                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
                 .AddOptionalParameter("user_id", userId) 
                 .AddOptionalParameter("after", after) 
                 ; 
