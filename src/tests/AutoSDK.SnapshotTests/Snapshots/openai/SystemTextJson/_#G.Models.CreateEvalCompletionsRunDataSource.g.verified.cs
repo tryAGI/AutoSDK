@@ -21,7 +21,7 @@ namespace G
         public global::G.CreateEvalCompletionsRunDataSourceType Type { get; set; } = global::G.CreateEvalCompletionsRunDataSourceType.Completions;
 
         /// <summary>
-        /// 
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_messages")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>))]
@@ -40,7 +40,7 @@ namespace G
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalStoredCompletionsSource>))]
@@ -60,12 +60,16 @@ namespace G
         /// The type of run data source. Always `completions`.<br/>
         /// Default Value: completions
         /// </param>
-        /// <param name="inputMessages"></param>
+        /// <param name="inputMessages">
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
+        /// </param>
         /// <param name="samplingParams"></param>
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -1061,41 +1061,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a text annotation is added.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseTextAnnotationDeltaEvent? TextAnnotationDelta { get; init; }
-#else
-        public global::G.ResponseTextAnnotationDeltaEvent? TextAnnotationDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextAnnotationDelta))]
-#endif
-        public bool IsTextAnnotationDelta => TextAnnotationDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseTextAnnotationDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ResponseTextAnnotationDeltaEvent?(ResponseStreamEvent @this) => @this.TextAnnotationDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent? value)
-        {
-            TextAnnotationDelta = value;
-        }
-
-        /// <summary>
         /// Emitted when there is an additional text delta.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1271,6 +1236,636 @@ namespace G
         }
 
         /// <summary>
+        /// Emitted when an image generation tool call has completed and the final image is available.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; init; }
+#else
+        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallCompleted))]
+#endif
+        public bool IsImageGenCallCompleted => ImageGenCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallCompletedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseImageGenCallCompletedEvent?(ResponseStreamEvent @this) => @this.ImageGenCallCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseImageGenCallCompletedEvent? value)
+        {
+            ImageGenCallCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when an image generation tool call is actively generating an image (intermediate state).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; init; }
+#else
+        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallGenerating))]
+#endif
+        public bool IsImageGenCallGenerating => ImageGenCallGenerating != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallGeneratingEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallGeneratingEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseImageGenCallGeneratingEvent?(ResponseStreamEvent @this) => @this.ImageGenCallGenerating;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseImageGenCallGeneratingEvent? value)
+        {
+            ImageGenCallGenerating = value;
+        }
+
+        /// <summary>
+        /// Emitted when an image generation tool call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; init; }
+#else
+        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallInProgress))]
+#endif
+        public bool IsImageGenCallInProgress => ImageGenCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallInProgressEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseImageGenCallInProgressEvent?(ResponseStreamEvent @this) => @this.ImageGenCallInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseImageGenCallInProgressEvent? value)
+        {
+            ImageGenCallInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when a partial image is available during image generation streaming.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; init; }
+#else
+        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallPartial))]
+#endif
+        public bool IsImageGenCallPartial => ImageGenCallPartial != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallPartialImageEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallPartialImageEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseImageGenCallPartialImageEvent?(ResponseStreamEvent @this) => @this.ImageGenCallPartial;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseImageGenCallPartialImageEvent? value)
+        {
+            ImageGenCallPartial = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; init; }
+#else
+        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDelta))]
+#endif
+        public bool IsMCPCallArgumentsDelta => MCPCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallArgumentsDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallArgumentsDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPCallArgumentsDeltaEvent?(ResponseStreamEvent @this) => @this.MCPCallArgumentsDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPCallArgumentsDeltaEvent? value)
+        {
+            MCPCallArgumentsDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when the arguments for an MCP tool call are finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; init; }
+#else
+        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDone))]
+#endif
+        public bool IsMCPCallArgumentsDone => MCPCallArgumentsDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallArgumentsDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPCallArgumentsDoneEvent?(ResponseStreamEvent @this) => @this.MCPCallArgumentsDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPCallArgumentsDoneEvent? value)
+        {
+            MCPCallArgumentsDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when an MCP  tool call has completed successfully.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; init; }
+#else
+        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallCompleted))]
+#endif
+        public bool IsMCPCallCompleted => MCPCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallCompletedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPCallCompletedEvent?(ResponseStreamEvent @this) => @this.MCPCallCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPCallCompletedEvent? value)
+        {
+            MCPCallCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when an MCP  tool call has failed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; init; }
+#else
+        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallFailed))]
+#endif
+        public bool IsMCPCallFailed => MCPCallFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallFailedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallFailedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPCallFailedEvent?(ResponseStreamEvent @this) => @this.MCPCallFailed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPCallFailedEvent? value)
+        {
+            MCPCallFailed = value;
+        }
+
+        /// <summary>
+        /// Emitted when an MCP  tool call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; init; }
+#else
+        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallInProgress))]
+#endif
+        public bool IsMCPCallInProgress => MCPCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallInProgressEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPCallInProgressEvent?(ResponseStreamEvent @this) => @this.MCPCallInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPCallInProgressEvent? value)
+        {
+            MCPCallInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when the list of available MCP tools has been successfully retrieved.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; init; }
+#else
+        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsCompleted))]
+#endif
+        public bool IsMCPListToolsCompleted => MCPListToolsCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPListToolsCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPListToolsCompletedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPListToolsCompletedEvent?(ResponseStreamEvent @this) => @this.MCPListToolsCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPListToolsCompletedEvent? value)
+        {
+            MCPListToolsCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when the attempt to list available MCP tools has failed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; init; }
+#else
+        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsFailed))]
+#endif
+        public bool IsMCPListToolsFailed => MCPListToolsFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPListToolsFailedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPListToolsFailedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPListToolsFailedEvent?(ResponseStreamEvent @this) => @this.MCPListToolsFailed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPListToolsFailedEvent? value)
+        {
+            MCPListToolsFailed = value;
+        }
+
+        /// <summary>
+        /// Emitted when the system is in the process of retrieving the list of available MCP tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; init; }
+#else
+        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsInProgress))]
+#endif
+        public bool IsMCPListToolsInProgress => MCPListToolsInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseMCPListToolsInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseMCPListToolsInProgressEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseMCPListToolsInProgressEvent?(ResponseStreamEvent @this) => @this.MCPListToolsInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseMCPListToolsInProgressEvent? value)
+        {
+            MCPListToolsInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when an annotation is added to output text content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; init; }
+#else
+        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextAnnotationAdded))]
+#endif
+        public bool IsOutputTextAnnotationAdded => OutputTextAnnotationAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputTextAnnotationAddedEvent value) => new ResponseStreamEvent((global::G.ResponseOutputTextAnnotationAddedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseOutputTextAnnotationAddedEvent?(ResponseStreamEvent @this) => @this.OutputTextAnnotationAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseOutputTextAnnotationAddedEvent? value)
+        {
+            OutputTextAnnotationAdded = value;
+        }
+
+        /// <summary>
+        /// Emitted when a response is queued and waiting to be processed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseQueuedEvent? Queued { get; init; }
+#else
+        public global::G.ResponseQueuedEvent? Queued { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Queued))]
+#endif
+        public bool IsQueued => Queued != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseQueuedEvent value) => new ResponseStreamEvent((global::G.ResponseQueuedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseQueuedEvent?(ResponseStreamEvent @this) => @this.Queued;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseQueuedEvent? value)
+        {
+            Queued = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the reasoning content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; init; }
+#else
+        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDelta))]
+#endif
+        public bool IsReasoningDelta => ReasoningDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningDeltaEvent?(ResponseStreamEvent @this) => @this.ReasoningDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningDeltaEvent? value)
+        {
+            ReasoningDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when the reasoning content is finalized for an item.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; init; }
+#else
+        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDone))]
+#endif
+        public bool IsReasoningDone => ReasoningDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningDoneEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningDoneEvent? value)
+        {
+            ReasoningDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the reasoning summary content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDelta))]
+#endif
+        public bool IsReasoningSummaryDelta => ReasoningSummaryDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryDeltaEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryDeltaEvent? value)
+        {
+            ReasoningSummaryDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when the reasoning summary content is finalized for an item.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDone))]
+#endif
+        public bool IsReasoningSummaryDone => ReasoningSummaryDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryDoneEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseReasoningSummaryDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseReasoningSummaryDoneEvent? value)
+        {
+            ReasoningSummaryDone = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ResponseStreamEvent(
@@ -1304,12 +1899,29 @@ namespace G
             global::G.ResponseReasoningSummaryTextDoneEvent? reasoningSummaryTextDone,
             global::G.ResponseRefusalDeltaEvent? refusalDelta,
             global::G.ResponseRefusalDoneEvent? refusalDone,
-            global::G.ResponseTextAnnotationDeltaEvent? textAnnotationDelta,
             global::G.ResponseTextDeltaEvent? textDelta,
             global::G.ResponseTextDoneEvent? textDone,
             global::G.ResponseWebSearchCallCompletedEvent? webSearchCallCompleted,
             global::G.ResponseWebSearchCallInProgressEvent? webSearchCallInProgress,
-            global::G.ResponseWebSearchCallSearchingEvent? webSearchCallSearching
+            global::G.ResponseWebSearchCallSearchingEvent? webSearchCallSearching,
+            global::G.ResponseImageGenCallCompletedEvent? imageGenCallCompleted,
+            global::G.ResponseImageGenCallGeneratingEvent? imageGenCallGenerating,
+            global::G.ResponseImageGenCallInProgressEvent? imageGenCallInProgress,
+            global::G.ResponseImageGenCallPartialImageEvent? imageGenCallPartial,
+            global::G.ResponseMCPCallArgumentsDeltaEvent? mCPCallArgumentsDelta,
+            global::G.ResponseMCPCallArgumentsDoneEvent? mCPCallArgumentsDone,
+            global::G.ResponseMCPCallCompletedEvent? mCPCallCompleted,
+            global::G.ResponseMCPCallFailedEvent? mCPCallFailed,
+            global::G.ResponseMCPCallInProgressEvent? mCPCallInProgress,
+            global::G.ResponseMCPListToolsCompletedEvent? mCPListToolsCompleted,
+            global::G.ResponseMCPListToolsFailedEvent? mCPListToolsFailed,
+            global::G.ResponseMCPListToolsInProgressEvent? mCPListToolsInProgress,
+            global::G.ResponseOutputTextAnnotationAddedEvent? outputTextAnnotationAdded,
+            global::G.ResponseQueuedEvent? queued,
+            global::G.ResponseReasoningDeltaEvent? reasoningDelta,
+            global::G.ResponseReasoningDoneEvent? reasoningDone,
+            global::G.ResponseReasoningSummaryDeltaEvent? reasoningSummaryDelta,
+            global::G.ResponseReasoningSummaryDoneEvent? reasoningSummaryDone
             )
         {
             AudioDelta = audioDelta;
@@ -1342,24 +1954,58 @@ namespace G
             ReasoningSummaryTextDone = reasoningSummaryTextDone;
             RefusalDelta = refusalDelta;
             RefusalDone = refusalDone;
-            TextAnnotationDelta = textAnnotationDelta;
             TextDelta = textDelta;
             TextDone = textDone;
             WebSearchCallCompleted = webSearchCallCompleted;
             WebSearchCallInProgress = webSearchCallInProgress;
             WebSearchCallSearching = webSearchCallSearching;
+            ImageGenCallCompleted = imageGenCallCompleted;
+            ImageGenCallGenerating = imageGenCallGenerating;
+            ImageGenCallInProgress = imageGenCallInProgress;
+            ImageGenCallPartial = imageGenCallPartial;
+            MCPCallArgumentsDelta = mCPCallArgumentsDelta;
+            MCPCallArgumentsDone = mCPCallArgumentsDone;
+            MCPCallCompleted = mCPCallCompleted;
+            MCPCallFailed = mCPCallFailed;
+            MCPCallInProgress = mCPCallInProgress;
+            MCPListToolsCompleted = mCPListToolsCompleted;
+            MCPListToolsFailed = mCPListToolsFailed;
+            MCPListToolsInProgress = mCPListToolsInProgress;
+            OutputTextAnnotationAdded = outputTextAnnotationAdded;
+            Queued = queued;
+            ReasoningDelta = reasoningDelta;
+            ReasoningDone = reasoningDone;
+            ReasoningSummaryDelta = reasoningSummaryDelta;
+            ReasoningSummaryDone = reasoningSummaryDone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ReasoningSummaryDone as object ??
+            ReasoningSummaryDelta as object ??
+            ReasoningDone as object ??
+            ReasoningDelta as object ??
+            Queued as object ??
+            OutputTextAnnotationAdded as object ??
+            MCPListToolsInProgress as object ??
+            MCPListToolsFailed as object ??
+            MCPListToolsCompleted as object ??
+            MCPCallInProgress as object ??
+            MCPCallFailed as object ??
+            MCPCallCompleted as object ??
+            MCPCallArgumentsDone as object ??
+            MCPCallArgumentsDelta as object ??
+            ImageGenCallPartial as object ??
+            ImageGenCallInProgress as object ??
+            ImageGenCallGenerating as object ??
+            ImageGenCallCompleted as object ??
             WebSearchCallSearching as object ??
             WebSearchCallInProgress as object ??
             WebSearchCallCompleted as object ??
             TextDone as object ??
             TextDelta as object ??
-            TextAnnotationDelta as object ??
             RefusalDone as object ??
             RefusalDelta as object ??
             ReasoningSummaryTextDone as object ??
@@ -1426,12 +2072,29 @@ namespace G
             ReasoningSummaryTextDone?.ToString() ??
             RefusalDelta?.ToString() ??
             RefusalDone?.ToString() ??
-            TextAnnotationDelta?.ToString() ??
             TextDelta?.ToString() ??
             TextDone?.ToString() ??
             WebSearchCallCompleted?.ToString() ??
             WebSearchCallInProgress?.ToString() ??
-            WebSearchCallSearching?.ToString() 
+            WebSearchCallSearching?.ToString() ??
+            ImageGenCallCompleted?.ToString() ??
+            ImageGenCallGenerating?.ToString() ??
+            ImageGenCallInProgress?.ToString() ??
+            ImageGenCallPartial?.ToString() ??
+            MCPCallArgumentsDelta?.ToString() ??
+            MCPCallArgumentsDone?.ToString() ??
+            MCPCallCompleted?.ToString() ??
+            MCPCallFailed?.ToString() ??
+            MCPCallInProgress?.ToString() ??
+            MCPListToolsCompleted?.ToString() ??
+            MCPListToolsFailed?.ToString() ??
+            MCPListToolsInProgress?.ToString() ??
+            OutputTextAnnotationAdded?.ToString() ??
+            Queued?.ToString() ??
+            ReasoningDelta?.ToString() ??
+            ReasoningDone?.ToString() ??
+            ReasoningSummaryDelta?.ToString() ??
+            ReasoningSummaryDone?.ToString() 
             ;
 
         /// <summary>
@@ -1439,7 +2102,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching || IsImageGenCallCompleted || IsImageGenCallGenerating || IsImageGenCallInProgress || IsImageGenCallPartial || IsMCPCallArgumentsDelta || IsMCPCallArgumentsDone || IsMCPCallCompleted || IsMCPCallFailed || IsMCPCallInProgress || IsMCPListToolsCompleted || IsMCPListToolsFailed || IsMCPListToolsInProgress || IsOutputTextAnnotationAdded || IsQueued || IsReasoningDelta || IsReasoningDone || IsReasoningSummaryDelta || IsReasoningSummaryDone;
         }
 
         /// <summary>
@@ -1476,12 +2139,29 @@ namespace G
             global::System.Func<global::G.ResponseReasoningSummaryTextDoneEvent?, TResult>? reasoningSummaryTextDone = null,
             global::System.Func<global::G.ResponseRefusalDeltaEvent?, TResult>? refusalDelta = null,
             global::System.Func<global::G.ResponseRefusalDoneEvent?, TResult>? refusalDone = null,
-            global::System.Func<global::G.ResponseTextAnnotationDeltaEvent?, TResult>? textAnnotationDelta = null,
             global::System.Func<global::G.ResponseTextDeltaEvent?, TResult>? textDelta = null,
             global::System.Func<global::G.ResponseTextDoneEvent?, TResult>? textDone = null,
             global::System.Func<global::G.ResponseWebSearchCallCompletedEvent?, TResult>? webSearchCallCompleted = null,
             global::System.Func<global::G.ResponseWebSearchCallInProgressEvent?, TResult>? webSearchCallInProgress = null,
             global::System.Func<global::G.ResponseWebSearchCallSearchingEvent?, TResult>? webSearchCallSearching = null,
+            global::System.Func<global::G.ResponseImageGenCallCompletedEvent?, TResult>? imageGenCallCompleted = null,
+            global::System.Func<global::G.ResponseImageGenCallGeneratingEvent?, TResult>? imageGenCallGenerating = null,
+            global::System.Func<global::G.ResponseImageGenCallInProgressEvent?, TResult>? imageGenCallInProgress = null,
+            global::System.Func<global::G.ResponseImageGenCallPartialImageEvent?, TResult>? imageGenCallPartial = null,
+            global::System.Func<global::G.ResponseMCPCallArgumentsDeltaEvent?, TResult>? mCPCallArgumentsDelta = null,
+            global::System.Func<global::G.ResponseMCPCallArgumentsDoneEvent?, TResult>? mCPCallArgumentsDone = null,
+            global::System.Func<global::G.ResponseMCPCallCompletedEvent?, TResult>? mCPCallCompleted = null,
+            global::System.Func<global::G.ResponseMCPCallFailedEvent?, TResult>? mCPCallFailed = null,
+            global::System.Func<global::G.ResponseMCPCallInProgressEvent?, TResult>? mCPCallInProgress = null,
+            global::System.Func<global::G.ResponseMCPListToolsCompletedEvent?, TResult>? mCPListToolsCompleted = null,
+            global::System.Func<global::G.ResponseMCPListToolsFailedEvent?, TResult>? mCPListToolsFailed = null,
+            global::System.Func<global::G.ResponseMCPListToolsInProgressEvent?, TResult>? mCPListToolsInProgress = null,
+            global::System.Func<global::G.ResponseOutputTextAnnotationAddedEvent?, TResult>? outputTextAnnotationAdded = null,
+            global::System.Func<global::G.ResponseQueuedEvent?, TResult>? queued = null,
+            global::System.Func<global::G.ResponseReasoningDeltaEvent?, TResult>? reasoningDelta = null,
+            global::System.Func<global::G.ResponseReasoningDoneEvent?, TResult>? reasoningDone = null,
+            global::System.Func<global::G.ResponseReasoningSummaryDeltaEvent?, TResult>? reasoningSummaryDelta = null,
+            global::System.Func<global::G.ResponseReasoningSummaryDoneEvent?, TResult>? reasoningSummaryDone = null,
             bool validate = true)
         {
             if (validate)
@@ -1609,10 +2289,6 @@ namespace G
             {
                 return refusalDone(RefusalDone!);
             }
-            else if (IsTextAnnotationDelta && textAnnotationDelta != null)
-            {
-                return textAnnotationDelta(TextAnnotationDelta!);
-            }
             else if (IsTextDelta && textDelta != null)
             {
                 return textDelta(TextDelta!);
@@ -1632,6 +2308,78 @@ namespace G
             else if (IsWebSearchCallSearching && webSearchCallSearching != null)
             {
                 return webSearchCallSearching(WebSearchCallSearching!);
+            }
+            else if (IsImageGenCallCompleted && imageGenCallCompleted != null)
+            {
+                return imageGenCallCompleted(ImageGenCallCompleted!);
+            }
+            else if (IsImageGenCallGenerating && imageGenCallGenerating != null)
+            {
+                return imageGenCallGenerating(ImageGenCallGenerating!);
+            }
+            else if (IsImageGenCallInProgress && imageGenCallInProgress != null)
+            {
+                return imageGenCallInProgress(ImageGenCallInProgress!);
+            }
+            else if (IsImageGenCallPartial && imageGenCallPartial != null)
+            {
+                return imageGenCallPartial(ImageGenCallPartial!);
+            }
+            else if (IsMCPCallArgumentsDelta && mCPCallArgumentsDelta != null)
+            {
+                return mCPCallArgumentsDelta(MCPCallArgumentsDelta!);
+            }
+            else if (IsMCPCallArgumentsDone && mCPCallArgumentsDone != null)
+            {
+                return mCPCallArgumentsDone(MCPCallArgumentsDone!);
+            }
+            else if (IsMCPCallCompleted && mCPCallCompleted != null)
+            {
+                return mCPCallCompleted(MCPCallCompleted!);
+            }
+            else if (IsMCPCallFailed && mCPCallFailed != null)
+            {
+                return mCPCallFailed(MCPCallFailed!);
+            }
+            else if (IsMCPCallInProgress && mCPCallInProgress != null)
+            {
+                return mCPCallInProgress(MCPCallInProgress!);
+            }
+            else if (IsMCPListToolsCompleted && mCPListToolsCompleted != null)
+            {
+                return mCPListToolsCompleted(MCPListToolsCompleted!);
+            }
+            else if (IsMCPListToolsFailed && mCPListToolsFailed != null)
+            {
+                return mCPListToolsFailed(MCPListToolsFailed!);
+            }
+            else if (IsMCPListToolsInProgress && mCPListToolsInProgress != null)
+            {
+                return mCPListToolsInProgress(MCPListToolsInProgress!);
+            }
+            else if (IsOutputTextAnnotationAdded && outputTextAnnotationAdded != null)
+            {
+                return outputTextAnnotationAdded(OutputTextAnnotationAdded!);
+            }
+            else if (IsQueued && queued != null)
+            {
+                return queued(Queued!);
+            }
+            else if (IsReasoningDelta && reasoningDelta != null)
+            {
+                return reasoningDelta(ReasoningDelta!);
+            }
+            else if (IsReasoningDone && reasoningDone != null)
+            {
+                return reasoningDone(ReasoningDone!);
+            }
+            else if (IsReasoningSummaryDelta && reasoningSummaryDelta != null)
+            {
+                return reasoningSummaryDelta(ReasoningSummaryDelta!);
+            }
+            else if (IsReasoningSummaryDone && reasoningSummaryDone != null)
+            {
+                return reasoningSummaryDone(ReasoningSummaryDone!);
             }
 
             return default(TResult);
@@ -1671,12 +2419,29 @@ namespace G
             global::System.Action<global::G.ResponseReasoningSummaryTextDoneEvent?>? reasoningSummaryTextDone = null,
             global::System.Action<global::G.ResponseRefusalDeltaEvent?>? refusalDelta = null,
             global::System.Action<global::G.ResponseRefusalDoneEvent?>? refusalDone = null,
-            global::System.Action<global::G.ResponseTextAnnotationDeltaEvent?>? textAnnotationDelta = null,
             global::System.Action<global::G.ResponseTextDeltaEvent?>? textDelta = null,
             global::System.Action<global::G.ResponseTextDoneEvent?>? textDone = null,
             global::System.Action<global::G.ResponseWebSearchCallCompletedEvent?>? webSearchCallCompleted = null,
             global::System.Action<global::G.ResponseWebSearchCallInProgressEvent?>? webSearchCallInProgress = null,
             global::System.Action<global::G.ResponseWebSearchCallSearchingEvent?>? webSearchCallSearching = null,
+            global::System.Action<global::G.ResponseImageGenCallCompletedEvent?>? imageGenCallCompleted = null,
+            global::System.Action<global::G.ResponseImageGenCallGeneratingEvent?>? imageGenCallGenerating = null,
+            global::System.Action<global::G.ResponseImageGenCallInProgressEvent?>? imageGenCallInProgress = null,
+            global::System.Action<global::G.ResponseImageGenCallPartialImageEvent?>? imageGenCallPartial = null,
+            global::System.Action<global::G.ResponseMCPCallArgumentsDeltaEvent?>? mCPCallArgumentsDelta = null,
+            global::System.Action<global::G.ResponseMCPCallArgumentsDoneEvent?>? mCPCallArgumentsDone = null,
+            global::System.Action<global::G.ResponseMCPCallCompletedEvent?>? mCPCallCompleted = null,
+            global::System.Action<global::G.ResponseMCPCallFailedEvent?>? mCPCallFailed = null,
+            global::System.Action<global::G.ResponseMCPCallInProgressEvent?>? mCPCallInProgress = null,
+            global::System.Action<global::G.ResponseMCPListToolsCompletedEvent?>? mCPListToolsCompleted = null,
+            global::System.Action<global::G.ResponseMCPListToolsFailedEvent?>? mCPListToolsFailed = null,
+            global::System.Action<global::G.ResponseMCPListToolsInProgressEvent?>? mCPListToolsInProgress = null,
+            global::System.Action<global::G.ResponseOutputTextAnnotationAddedEvent?>? outputTextAnnotationAdded = null,
+            global::System.Action<global::G.ResponseQueuedEvent?>? queued = null,
+            global::System.Action<global::G.ResponseReasoningDeltaEvent?>? reasoningDelta = null,
+            global::System.Action<global::G.ResponseReasoningDoneEvent?>? reasoningDone = null,
+            global::System.Action<global::G.ResponseReasoningSummaryDeltaEvent?>? reasoningSummaryDelta = null,
+            global::System.Action<global::G.ResponseReasoningSummaryDoneEvent?>? reasoningSummaryDone = null,
             bool validate = true)
         {
             if (validate)
@@ -1804,10 +2569,6 @@ namespace G
             {
                 refusalDone?.Invoke(RefusalDone!);
             }
-            else if (IsTextAnnotationDelta)
-            {
-                textAnnotationDelta?.Invoke(TextAnnotationDelta!);
-            }
             else if (IsTextDelta)
             {
                 textDelta?.Invoke(TextDelta!);
@@ -1827,6 +2588,78 @@ namespace G
             else if (IsWebSearchCallSearching)
             {
                 webSearchCallSearching?.Invoke(WebSearchCallSearching!);
+            }
+            else if (IsImageGenCallCompleted)
+            {
+                imageGenCallCompleted?.Invoke(ImageGenCallCompleted!);
+            }
+            else if (IsImageGenCallGenerating)
+            {
+                imageGenCallGenerating?.Invoke(ImageGenCallGenerating!);
+            }
+            else if (IsImageGenCallInProgress)
+            {
+                imageGenCallInProgress?.Invoke(ImageGenCallInProgress!);
+            }
+            else if (IsImageGenCallPartial)
+            {
+                imageGenCallPartial?.Invoke(ImageGenCallPartial!);
+            }
+            else if (IsMCPCallArgumentsDelta)
+            {
+                mCPCallArgumentsDelta?.Invoke(MCPCallArgumentsDelta!);
+            }
+            else if (IsMCPCallArgumentsDone)
+            {
+                mCPCallArgumentsDone?.Invoke(MCPCallArgumentsDone!);
+            }
+            else if (IsMCPCallCompleted)
+            {
+                mCPCallCompleted?.Invoke(MCPCallCompleted!);
+            }
+            else if (IsMCPCallFailed)
+            {
+                mCPCallFailed?.Invoke(MCPCallFailed!);
+            }
+            else if (IsMCPCallInProgress)
+            {
+                mCPCallInProgress?.Invoke(MCPCallInProgress!);
+            }
+            else if (IsMCPListToolsCompleted)
+            {
+                mCPListToolsCompleted?.Invoke(MCPListToolsCompleted!);
+            }
+            else if (IsMCPListToolsFailed)
+            {
+                mCPListToolsFailed?.Invoke(MCPListToolsFailed!);
+            }
+            else if (IsMCPListToolsInProgress)
+            {
+                mCPListToolsInProgress?.Invoke(MCPListToolsInProgress!);
+            }
+            else if (IsOutputTextAnnotationAdded)
+            {
+                outputTextAnnotationAdded?.Invoke(OutputTextAnnotationAdded!);
+            }
+            else if (IsQueued)
+            {
+                queued?.Invoke(Queued!);
+            }
+            else if (IsReasoningDelta)
+            {
+                reasoningDelta?.Invoke(ReasoningDelta!);
+            }
+            else if (IsReasoningDone)
+            {
+                reasoningDone?.Invoke(ReasoningDone!);
+            }
+            else if (IsReasoningSummaryDelta)
+            {
+                reasoningSummaryDelta?.Invoke(ReasoningSummaryDelta!);
+            }
+            else if (IsReasoningSummaryDone)
+            {
+                reasoningSummaryDone?.Invoke(ReasoningSummaryDone!);
             }
         }
 
@@ -1897,8 +2730,6 @@ namespace G
                 typeof(global::G.ResponseRefusalDeltaEvent),
                 RefusalDone,
                 typeof(global::G.ResponseRefusalDoneEvent),
-                TextAnnotationDelta,
-                typeof(global::G.ResponseTextAnnotationDeltaEvent),
                 TextDelta,
                 typeof(global::G.ResponseTextDeltaEvent),
                 TextDone,
@@ -1909,6 +2740,42 @@ namespace G
                 typeof(global::G.ResponseWebSearchCallInProgressEvent),
                 WebSearchCallSearching,
                 typeof(global::G.ResponseWebSearchCallSearchingEvent),
+                ImageGenCallCompleted,
+                typeof(global::G.ResponseImageGenCallCompletedEvent),
+                ImageGenCallGenerating,
+                typeof(global::G.ResponseImageGenCallGeneratingEvent),
+                ImageGenCallInProgress,
+                typeof(global::G.ResponseImageGenCallInProgressEvent),
+                ImageGenCallPartial,
+                typeof(global::G.ResponseImageGenCallPartialImageEvent),
+                MCPCallArgumentsDelta,
+                typeof(global::G.ResponseMCPCallArgumentsDeltaEvent),
+                MCPCallArgumentsDone,
+                typeof(global::G.ResponseMCPCallArgumentsDoneEvent),
+                MCPCallCompleted,
+                typeof(global::G.ResponseMCPCallCompletedEvent),
+                MCPCallFailed,
+                typeof(global::G.ResponseMCPCallFailedEvent),
+                MCPCallInProgress,
+                typeof(global::G.ResponseMCPCallInProgressEvent),
+                MCPListToolsCompleted,
+                typeof(global::G.ResponseMCPListToolsCompletedEvent),
+                MCPListToolsFailed,
+                typeof(global::G.ResponseMCPListToolsFailedEvent),
+                MCPListToolsInProgress,
+                typeof(global::G.ResponseMCPListToolsInProgressEvent),
+                OutputTextAnnotationAdded,
+                typeof(global::G.ResponseOutputTextAnnotationAddedEvent),
+                Queued,
+                typeof(global::G.ResponseQueuedEvent),
+                ReasoningDelta,
+                typeof(global::G.ResponseReasoningDeltaEvent),
+                ReasoningDone,
+                typeof(global::G.ResponseReasoningDoneEvent),
+                ReasoningSummaryDelta,
+                typeof(global::G.ResponseReasoningSummaryDeltaEvent),
+                ReasoningSummaryDone,
+                typeof(global::G.ResponseReasoningSummaryDoneEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1955,12 +2822,29 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryTextDoneEvent?>.Default.Equals(ReasoningSummaryTextDone, other.ReasoningSummaryTextDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDeltaEvent?>.Default.Equals(RefusalDelta, other.RefusalDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDoneEvent?>.Default.Equals(RefusalDone, other.RefusalDone) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextAnnotationDeltaEvent?>.Default.Equals(TextAnnotationDelta, other.TextAnnotationDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextDeltaEvent?>.Default.Equals(TextDelta, other.TextDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextDoneEvent?>.Default.Equals(TextDone, other.TextDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallCompletedEvent?>.Default.Equals(WebSearchCallCompleted, other.WebSearchCallCompleted) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallInProgressEvent?>.Default.Equals(WebSearchCallInProgress, other.WebSearchCallInProgress) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallSearchingEvent?>.Default.Equals(WebSearchCallSearching, other.WebSearchCallSearching) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallSearchingEvent?>.Default.Equals(WebSearchCallSearching, other.WebSearchCallSearching) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseImageGenCallCompletedEvent?>.Default.Equals(ImageGenCallCompleted, other.ImageGenCallCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseImageGenCallGeneratingEvent?>.Default.Equals(ImageGenCallGenerating, other.ImageGenCallGenerating) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseImageGenCallInProgressEvent?>.Default.Equals(ImageGenCallInProgress, other.ImageGenCallInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseImageGenCallPartialImageEvent?>.Default.Equals(ImageGenCallPartial, other.ImageGenCallPartial) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPCallArgumentsDeltaEvent?>.Default.Equals(MCPCallArgumentsDelta, other.MCPCallArgumentsDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPCallArgumentsDoneEvent?>.Default.Equals(MCPCallArgumentsDone, other.MCPCallArgumentsDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPCallCompletedEvent?>.Default.Equals(MCPCallCompleted, other.MCPCallCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPCallFailedEvent?>.Default.Equals(MCPCallFailed, other.MCPCallFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPCallInProgressEvent?>.Default.Equals(MCPCallInProgress, other.MCPCallInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPListToolsCompletedEvent?>.Default.Equals(MCPListToolsCompleted, other.MCPListToolsCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPListToolsFailedEvent?>.Default.Equals(MCPListToolsFailed, other.MCPListToolsFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseMCPListToolsInProgressEvent?>.Default.Equals(MCPListToolsInProgress, other.MCPListToolsInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseOutputTextAnnotationAddedEvent?>.Default.Equals(OutputTextAnnotationAdded, other.OutputTextAnnotationAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseQueuedEvent?>.Default.Equals(Queued, other.Queued) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningDeltaEvent?>.Default.Equals(ReasoningDelta, other.ReasoningDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningDoneEvent?>.Default.Equals(ReasoningDone, other.ReasoningDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryDeltaEvent?>.Default.Equals(ReasoningSummaryDelta, other.ReasoningSummaryDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseReasoningSummaryDoneEvent?>.Default.Equals(ReasoningSummaryDone, other.ReasoningSummaryDone) 
                 ;
         }
 

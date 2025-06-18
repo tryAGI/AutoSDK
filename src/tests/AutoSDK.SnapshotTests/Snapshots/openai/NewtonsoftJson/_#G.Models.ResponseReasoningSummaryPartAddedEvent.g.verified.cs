@@ -34,6 +34,12 @@ namespace G
         public int SummaryIndex { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// The summary part that was added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("part", Required = global::Newtonsoft.Json.Required.Always)]
@@ -60,6 +66,9 @@ namespace G
         /// <param name="summaryIndex">
         /// The index of the summary part within the reasoning summary.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="part">
         /// The summary part that was added.
         /// </param>
@@ -67,12 +76,14 @@ namespace G
             string itemId,
             int outputIndex,
             int summaryIndex,
+            int sequenceNumber,
             global::G.ResponseReasoningSummaryPartAddedEventPart part,
             global::G.ResponseReasoningSummaryPartAddedEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
             this.Type = type;
         }

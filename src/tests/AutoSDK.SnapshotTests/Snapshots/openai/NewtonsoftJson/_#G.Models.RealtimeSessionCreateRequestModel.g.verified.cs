@@ -28,6 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-realtime-preview-2025-06-03")]
+        Gpt4oRealtimePreview20250603,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-realtime-preview")]
         Gpt4oMiniRealtimePreview,
         /// <summary>
@@ -52,6 +57,7 @@ namespace G
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview => "gpt-4o-realtime-preview",
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241001 => "gpt-4o-realtime-preview-2024-10-01",
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241217 => "gpt-4o-realtime-preview-2024-12-17",
+                RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20250603 => "gpt-4o-realtime-preview-2025-06-03",
                 RealtimeSessionCreateRequestModel.Gpt4oMiniRealtimePreview => "gpt-4o-mini-realtime-preview",
                 RealtimeSessionCreateRequestModel.Gpt4oMiniRealtimePreview20241217 => "gpt-4o-mini-realtime-preview-2024-12-17",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -67,6 +73,7 @@ namespace G
                 "gpt-4o-realtime-preview" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview,
                 "gpt-4o-realtime-preview-2024-10-01" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241001,
                 "gpt-4o-realtime-preview-2024-12-17" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241217,
+                "gpt-4o-realtime-preview-2025-06-03" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20250603,
                 "gpt-4o-mini-realtime-preview" => RealtimeSessionCreateRequestModel.Gpt4oMiniRealtimePreview,
                 "gpt-4o-mini-realtime-preview-2024-12-17" => RealtimeSessionCreateRequestModel.Gpt4oMiniRealtimePreview20241217,
                 _ => null,

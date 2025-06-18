@@ -91,6 +91,13 @@ namespace G
         public bool? Stream { get; set; }
 
         /// <summary>
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>))]
+        public global::G.AnyOf<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -142,6 +149,9 @@ namespace G
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -155,7 +165,8 @@ namespace G
             double? temperature,
             global::System.Collections.Generic.IList<global::G.TranscriptionInclude>? include,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities,
-            bool? stream)
+            bool? stream,
+            global::G.AnyOf<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>? chunkingStrategy)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
@@ -167,6 +178,7 @@ namespace G
             this.Include = include;
             this.TimestampGranularities = timestampGranularities;
             this.Stream = stream;
+            this.ChunkingStrategy = chunkingStrategy;
         }
 
         /// <summary>

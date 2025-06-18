@@ -25,7 +25,7 @@ namespace G
         /// The bytes that were used to generate the log probability.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public byte[]? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
         public TranscriptTextDoneEventLogprob(
             string? token,
             double? logprob,
-            byte[]? bytes)
+            global::System.Collections.Generic.IList<int>? bytes)
         {
             this.Token = token;
             this.Logprob = logprob;

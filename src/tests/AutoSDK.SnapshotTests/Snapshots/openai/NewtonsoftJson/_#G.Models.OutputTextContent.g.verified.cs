@@ -30,6 +30,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Annotation> Annotations { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::System.Collections.Generic.IList<global::G.LogProb>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -48,14 +54,17 @@ namespace G
         /// <param name="annotations">
         /// The annotations of the text output.
         /// </param>
+        /// <param name="logprobs"></param>
         public OutputTextContent(
             string text,
             global::System.Collections.Generic.IList<global::G.Annotation> annotations,
+            global::System.Collections.Generic.IList<global::G.LogProb>? logprobs,
             global::G.OutputTextContentType type = global::G.OutputTextContentType.OutputText)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

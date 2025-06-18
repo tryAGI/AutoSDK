@@ -24,6 +24,12 @@ namespace G
         public global::G.CodeInterpreterToolCallType Type { get; set; }
 
         /// <summary>
+        /// The ID of the container used to run the code.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
+        public string? ContainerId { get; set; }
+
+        /// <summary>
         /// The code to run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
@@ -60,6 +66,9 @@ namespace G
         /// <param name="type">
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.
         /// </param>
+        /// <param name="containerId">
+        /// The ID of the container used to run the code.
+        /// </param>
         /// <param name="code">
         /// The code to run.
         /// </param>
@@ -77,13 +86,15 @@ namespace G
             string code,
             global::G.CodeInterpreterToolCallStatus status,
             global::System.Collections.Generic.IList<global::G.CodeInterpreterToolOutput> results,
-            global::G.CodeInterpreterToolCallType type)
+            global::G.CodeInterpreterToolCallType type,
+            string? containerId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Status = status;
             this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Type = type;
+            this.ContainerId = containerId;
         }
 
         /// <summary>

@@ -28,6 +28,12 @@ namespace G
         public global::G.CodeInterpreterToolCall CodeInterpreterCall { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -45,13 +51,18 @@ namespace G
         /// <param name="codeInterpreterCall">
         /// A tool call to run code.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         public ResponseCodeInterpreterCallInProgressEvent(
             int outputIndex,
             global::G.CodeInterpreterToolCall codeInterpreterCall,
+            int sequenceNumber,
             global::G.ResponseCodeInterpreterCallInProgressEventType type)
         {
             this.OutputIndex = outputIndex;
             this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

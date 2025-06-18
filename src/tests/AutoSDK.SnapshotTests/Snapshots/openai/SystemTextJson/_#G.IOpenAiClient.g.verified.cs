@@ -74,6 +74,11 @@ namespace G
         public FineTuningClient FineTuning { get; }
 
         /// <summary>
+        /// Manage and run graders in the OpenAI platform.
+        /// </summary>
+        public GradersClient Graders { get; }
+
+        /// <summary>
         /// Create large batches of API requests to run asynchronously.
         /// </summary>
         public BatchClient Batch { get; }

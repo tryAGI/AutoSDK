@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The type of the event. Always `response.code_interpreter_call.code.done`.
+    /// The type of the event. Always `response.code_interpreter_call_code.done`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ResponseCodeInterpreterCallCodeDoneEventType
@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="response.code_interpreter_call.code.done")]
+        [global::System.Runtime.Serialization.EnumMember(Value="response.code_interpreter_call_code.done")]
         ResponseCodeInterpreterCallCodeDone,
     }
 
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                ResponseCodeInterpreterCallCodeDoneEventType.ResponseCodeInterpreterCallCodeDone => "response.code_interpreter_call.code.done",
+                ResponseCodeInterpreterCallCodeDoneEventType.ResponseCodeInterpreterCallCodeDone => "response.code_interpreter_call_code.done",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "response.code_interpreter_call.code.done" => ResponseCodeInterpreterCallCodeDoneEventType.ResponseCodeInterpreterCallCodeDone,
+                "response.code_interpreter_call_code.done" => ResponseCodeInterpreterCallCodeDoneEventType.ResponseCodeInterpreterCallCodeDone,
                 _ => null,
             };
         }

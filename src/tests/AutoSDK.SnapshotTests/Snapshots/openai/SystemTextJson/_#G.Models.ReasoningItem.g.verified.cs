@@ -6,7 +6,9 @@ namespace G
 {
     /// <summary>
     /// A description of the chain of thought used by a reasoning model while generating<br/>
-    /// a response.
+    /// a response. Be sure to include these items in your `input` to the Responses API<br/>
+    /// for subsequent turns of a conversation if you are manually <br/>
+    /// [managing context](/docs/guides/conversation-state).
     /// </summary>
     public sealed partial class ReasoningItem
     {
@@ -23,6 +25,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// The encrypted content of the reasoning item - populated when a response is<br/>
+        /// generated with `reasoning.encrypted_content` in the `include` parameter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
 
         /// <summary>
         /// Reasoning text contents.
@@ -54,6 +63,10 @@ namespace G
         /// <param name="id">
         /// The unique identifier of the reasoning content.
         /// </param>
+        /// <param name="encryptedContent">
+        /// The encrypted content of the reasoning item - populated when a response is<br/>
+        /// generated with `reasoning.encrypted_content` in the `include` parameter.
+        /// </param>
         /// <param name="summary">
         /// Reasoning text contents.
         /// </param>
@@ -68,11 +81,13 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<global::G.ReasoningItemSummaryItem> summary,
             global::G.ReasoningItemType type,
+            string? encryptedContent,
             global::G.ReasoningItemStatus? status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
+            this.EncryptedContent = encryptedContent;
             this.Status = status;
         }
 

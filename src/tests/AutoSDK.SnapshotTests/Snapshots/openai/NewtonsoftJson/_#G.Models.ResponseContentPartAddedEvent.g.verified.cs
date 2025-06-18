@@ -40,6 +40,12 @@ namespace G
         public global::G.OutputContent Part { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -61,17 +67,22 @@ namespace G
         /// The index of the content part that was added.
         /// </param>
         /// <param name="part"></param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         public ResponseContentPartAddedEvent(
             string itemId,
             int outputIndex,
             int contentIndex,
             global::G.OutputContent part,
+            int sequenceNumber,
             global::G.ResponseContentPartAddedEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

@@ -29,7 +29,7 @@ namespace G
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.CreateEvalItem> Input { get; set; } = default!;
@@ -65,7 +65,7 @@ namespace G
         /// The model to use for the evaluation. Must support structured outputs.
         /// </param>
         /// <param name="input">
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </param>
         /// <param name="labels">
         /// The labels to classify to each item in the evaluation.

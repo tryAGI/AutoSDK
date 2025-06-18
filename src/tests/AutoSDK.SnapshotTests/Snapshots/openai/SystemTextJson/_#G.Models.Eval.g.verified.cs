@@ -12,7 +12,7 @@ namespace G
     /// Like:<br/>
     ///  - Improve the quality of my chatbot<br/>
     ///  - See how well my chatbot handles customer support<br/>
-    ///  - Check if o3-mini is better at my usecase than gpt-4o
+    ///  - Check if o4-mini is better at my usecase than gpt-4o
     /// </summary>
     public sealed partial class Eval
     {
@@ -45,9 +45,9 @@ namespace G
         /// Configuration of data sources used in runs of the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EvalCustomDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EvalCustomDataSourceConfig, global::G.EvalLogsDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
+        public required global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalLogsDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
 
         /// <summary>
         /// A list of testing criteria.<br/>
@@ -55,7 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalGraderLabelModel?, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> TestingCriteria { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the eval was created.
@@ -119,8 +119,8 @@ namespace G
         public Eval(
             string id,
             string name,
-            global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> testingCriteria,
+            global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalLogsDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalGraderLabelModel?, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> testingCriteria,
             global::System.DateTimeOffset createdAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalObject @object = global::G.EvalObject.Eval)

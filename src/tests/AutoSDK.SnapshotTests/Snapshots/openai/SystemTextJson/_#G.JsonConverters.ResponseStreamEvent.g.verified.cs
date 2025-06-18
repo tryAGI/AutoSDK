@@ -378,18 +378,6 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ResponseTextAnnotationDeltaEvent? textAnnotationDelta = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextAnnotationDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextAnnotationDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseTextAnnotationDeltaEvent).Name}");
-                textAnnotationDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.ResponseTextDeltaEvent? textDelta = default;
             try
             {
@@ -449,6 +437,222 @@ namespace G.JsonConverters
             {
             }
 
+            readerCopy = reader;
+            global::G.ResponseImageGenCallCompletedEvent? imageGenCallCompleted = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallCompletedEvent).Name}");
+                imageGenCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseImageGenCallGeneratingEvent? imageGenCallGenerating = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallGeneratingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallGeneratingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallGeneratingEvent).Name}");
+                imageGenCallGenerating = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseImageGenCallInProgressEvent? imageGenCallInProgress = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallInProgressEvent).Name}");
+                imageGenCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseImageGenCallPartialImageEvent? imageGenCallPartial = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallPartialImageEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallPartialImageEvent).Name}");
+                imageGenCallPartial = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPCallArgumentsDeltaEvent? mCPCallArgumentsDelta = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDeltaEvent).Name}");
+                mCPCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPCallArgumentsDoneEvent? mCPCallArgumentsDone = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDoneEvent).Name}");
+                mCPCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPCallCompletedEvent? mCPCallCompleted = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallCompletedEvent).Name}");
+                mCPCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPCallFailedEvent? mCPCallFailed = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallFailedEvent).Name}");
+                mCPCallFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPCallInProgressEvent? mCPCallInProgress = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallInProgressEvent).Name}");
+                mCPCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPListToolsCompletedEvent? mCPListToolsCompleted = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsCompletedEvent).Name}");
+                mCPListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPListToolsFailedEvent? mCPListToolsFailed = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsFailedEvent).Name}");
+                mCPListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseMCPListToolsInProgressEvent? mCPListToolsInProgress = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsInProgressEvent).Name}");
+                mCPListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseOutputTextAnnotationAddedEvent? outputTextAnnotationAdded = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputTextAnnotationAddedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputTextAnnotationAddedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputTextAnnotationAddedEvent).Name}");
+                outputTextAnnotationAdded = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseQueuedEvent? queued = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseQueuedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseQueuedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseQueuedEvent).Name}");
+                queued = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseReasoningDeltaEvent? reasoningDelta = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDeltaEvent).Name}");
+                reasoningDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseReasoningDoneEvent? reasoningDone = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDoneEvent).Name}");
+                reasoningDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseReasoningSummaryDeltaEvent? reasoningSummaryDelta = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDeltaEvent).Name}");
+                reasoningSummaryDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseReasoningSummaryDoneEvent? reasoningSummaryDone = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDoneEvent).Name}");
+                reasoningSummaryDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
             var result = new global::G.ResponseStreamEvent(
                 audioDelta,
                 audioDone,
@@ -480,12 +684,29 @@ namespace G.JsonConverters
                 reasoningSummaryTextDone,
                 refusalDelta,
                 refusalDone,
-                textAnnotationDelta,
                 textDelta,
                 textDone,
                 webSearchCallCompleted,
                 webSearchCallInProgress,
-                webSearchCallSearching
+                webSearchCallSearching,
+                imageGenCallCompleted,
+                imageGenCallGenerating,
+                imageGenCallInProgress,
+                imageGenCallPartial,
+                mCPCallArgumentsDelta,
+                mCPCallArgumentsDone,
+                mCPCallCompleted,
+                mCPCallFailed,
+                mCPCallInProgress,
+                mCPListToolsCompleted,
+                mCPListToolsFailed,
+                mCPListToolsInProgress,
+                outputTextAnnotationAdded,
+                queued,
+                reasoningDelta,
+                reasoningDone,
+                reasoningSummaryDelta,
+                reasoningSummaryDone
                 );
 
             if (audioDelta != null)
@@ -668,12 +889,6 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseRefusalDoneEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (textAnnotationDelta != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextAnnotationDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextAnnotationDeltaEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseTextAnnotationDeltaEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
             else if (textDelta != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextDeltaEvent> ??
@@ -702,6 +917,114 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseWebSearchCallSearchingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseWebSearchCallSearchingEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseWebSearchCallSearchingEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (imageGenCallCompleted != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallCompletedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (imageGenCallGenerating != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallGeneratingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallGeneratingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallGeneratingEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (imageGenCallInProgress != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallInProgressEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (imageGenCallPartial != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallPartialImageEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallPartialImageEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPCallArgumentsDelta != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDeltaEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPCallArgumentsDone != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDoneEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPCallCompleted != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallCompletedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPCallFailed != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallFailedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPCallInProgress != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallInProgressEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPListToolsCompleted != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsCompletedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsCompletedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPListToolsFailed != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsFailedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsFailedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (mCPListToolsInProgress != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsInProgressEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsInProgressEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (outputTextAnnotationAdded != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputTextAnnotationAddedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputTextAnnotationAddedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputTextAnnotationAddedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (queued != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseQueuedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseQueuedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseQueuedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (reasoningDelta != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDeltaEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (reasoningDone != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDoneEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (reasoningSummaryDelta != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDeltaEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (reasoningSummaryDone != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDoneEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -897,12 +1220,6 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseRefusalDoneEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RefusalDone, typeInfo);
             }
-            else if (value.IsTextAnnotationDelta)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextAnnotationDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextAnnotationDeltaEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseTextAnnotationDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAnnotationDelta, typeInfo);
-            }
             else if (value.IsTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextDeltaEvent?> ??
@@ -932,6 +1249,114 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseWebSearchCallSearchingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseWebSearchCallSearchingEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseWebSearchCallSearchingEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchCallSearching, typeInfo);
+            }
+            else if (value.IsImageGenCallCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenCallCompleted, typeInfo);
+            }
+            else if (value.IsImageGenCallGenerating)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallGeneratingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallGeneratingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallGeneratingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenCallGenerating, typeInfo);
+            }
+            else if (value.IsImageGenCallInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallInProgressEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallInProgressEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenCallInProgress, typeInfo);
+            }
+            else if (value.IsImageGenCallPartial)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseImageGenCallPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseImageGenCallPartialImageEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseImageGenCallPartialImageEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenCallPartial, typeInfo);
+            }
+            else if (value.IsMCPCallArgumentsDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPCallArgumentsDelta, typeInfo);
+            }
+            else if (value.IsMCPCallArgumentsDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallArgumentsDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallArgumentsDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPCallArgumentsDone, typeInfo);
+            }
+            else if (value.IsMCPCallCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPCallCompleted, typeInfo);
+            }
+            else if (value.IsMCPCallFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallFailedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallFailedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPCallFailed, typeInfo);
+            }
+            else if (value.IsMCPCallInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPCallInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPCallInProgressEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPCallInProgressEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPCallInProgress, typeInfo);
+            }
+            else if (value.IsMCPListToolsCompleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPListToolsCompleted, typeInfo);
+            }
+            else if (value.IsMCPListToolsFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsFailedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsFailedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsFailedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPListToolsFailed, typeInfo);
+            }
+            else if (value.IsMCPListToolsInProgress)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseMCPListToolsInProgressEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseMCPListToolsInProgressEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseMCPListToolsInProgressEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCPListToolsInProgress, typeInfo);
+            }
+            else if (value.IsOutputTextAnnotationAdded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputTextAnnotationAddedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputTextAnnotationAddedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputTextAnnotationAddedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputTextAnnotationAdded, typeInfo);
+            }
+            else if (value.IsQueued)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseQueuedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseQueuedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseQueuedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Queued, typeInfo);
+            }
+            else if (value.IsReasoningDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDelta, typeInfo);
+            }
+            else if (value.IsReasoningDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDone, typeInfo);
+            }
+            else if (value.IsReasoningSummaryDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningSummaryDelta, typeInfo);
+            }
+            else if (value.IsReasoningSummaryDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseReasoningSummaryDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseReasoningSummaryDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseReasoningSummaryDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningSummaryDone, typeInfo);
             }
         }
     }

@@ -16,6 +16,12 @@ namespace G
         public global::G.ResponseAudioDoneEventType Type { get; set; }
 
         /// <summary>
+        /// The sequence number of the delta.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -27,9 +33,14 @@ namespace G
         /// <param name="type">
         /// The type of the event. Always `response.audio.done`.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of the delta.
+        /// </param>
         public ResponseAudioDoneEvent(
+            int sequenceNumber,
             global::G.ResponseAudioDoneEventType type)
         {
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

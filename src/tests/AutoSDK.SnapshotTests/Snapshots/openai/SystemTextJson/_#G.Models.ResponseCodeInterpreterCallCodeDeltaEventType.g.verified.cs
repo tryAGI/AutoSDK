@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+    /// The type of the event. Always `response.code_interpreter_call_code.delta`.
     /// </summary>
     public enum ResponseCodeInterpreterCallCodeDeltaEventType
     {
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta => "response.code_interpreter_call.code.delta",
+                ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta => "response.code_interpreter_call_code.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "response.code_interpreter_call.code.delta" => ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta,
+                "response.code_interpreter_call_code.delta" => ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta,
                 _ => null,
             };
         }

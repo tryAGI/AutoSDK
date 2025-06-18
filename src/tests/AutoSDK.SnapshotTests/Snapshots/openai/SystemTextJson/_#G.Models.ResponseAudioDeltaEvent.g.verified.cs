@@ -17,6 +17,13 @@ namespace G
         public global::G.ResponseAudioDeltaEventType Type { get; set; }
 
         /// <summary>
+        /// A sequence number for this chunk of the stream response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// A chunk of Base64 encoded response audio bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
@@ -35,6 +42,9 @@ namespace G
         /// <param name="type">
         /// The type of the event. Always `response.audio.delta`.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// A sequence number for this chunk of the stream response.
+        /// </param>
         /// <param name="delta">
         /// A chunk of Base64 encoded response audio bytes.
         /// </param>
@@ -42,9 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseAudioDeltaEvent(
+            int sequenceNumber,
             string delta,
             global::G.ResponseAudioDeltaEventType type)
         {
+            this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }

@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-    /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+    /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
     /// single channel (mono), and little-endian byte order.<br/>
     /// Default Value: pcm16
     /// </summary>

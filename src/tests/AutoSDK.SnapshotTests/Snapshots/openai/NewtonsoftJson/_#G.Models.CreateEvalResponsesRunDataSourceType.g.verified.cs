@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of run data source. Always `completions`.<br/>
-    /// Default Value: completions
+    /// The type of run data source. Always `responses`.<br/>
+    /// Default Value: responses
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateEvalResponsesRunDataSourceType
@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completions")]
-        Completions,
+        [global::System.Runtime.Serialization.EnumMember(Value="responses")]
+        Responses,
     }
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace G
         {
             return value switch
             {
-                CreateEvalResponsesRunDataSourceType.Completions => "completions",
+                CreateEvalResponsesRunDataSourceType.Responses => "responses",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -41,7 +41,7 @@ namespace G
         {
             return value switch
             {
-                "completions" => CreateEvalResponsesRunDataSourceType.Completions,
+                "responses" => CreateEvalResponsesRunDataSourceType.Responses,
                 _ => null,
             };
         }

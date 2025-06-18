@@ -24,6 +24,13 @@ namespace G
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
@@ -46,16 +53,21 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item that was added.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="item"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputItemAddedEvent(
             int outputIndex,
+            int sequenceNumber,
             global::G.OutputItem item,
             global::G.ResponseOutputItemAddedEventType type)
         {
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Item = item;
             this.Type = type;
         }

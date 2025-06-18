@@ -24,7 +24,7 @@ namespace G
 
         /// <summary>
         /// Get info about a fine-tuning job.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="fineTuningJobId">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F

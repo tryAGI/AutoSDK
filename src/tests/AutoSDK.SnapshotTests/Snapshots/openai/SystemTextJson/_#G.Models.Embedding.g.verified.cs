@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<double> Embedding1 { get; set; }
+        public required global::System.Collections.Generic.IList<float> Embedding1 { get; set; }
 
         /// <summary>
         /// The object type, which is always "embedding".
@@ -53,7 +53,7 @@ namespace G
 #endif
         public Embedding(
             int index,
-            global::System.Collections.Generic.IList<double> embedding1,
+            global::System.Collections.Generic.IList<float> embedding1,
             global::G.EmbeddingObject @object)
         {
             this.Index = index;

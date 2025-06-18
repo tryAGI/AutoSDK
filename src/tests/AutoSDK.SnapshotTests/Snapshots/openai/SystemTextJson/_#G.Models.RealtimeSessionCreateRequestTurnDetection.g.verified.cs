@@ -28,23 +28,23 @@ namespace G
         public global::G.RealtimeSessionCreateRequestTurnDetectionEagerness? Eagerness { get; set; }
 
         /// <summary>
-        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
         /// thus might perform better in noisy environments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in <br/>
+        /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in<br/>
         /// milliseconds). Defaults to 300ms.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix_padding_ms")]
         public int? PrefixPaddingMs { get; set; }
 
         /// <summary>
-        /// Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults <br/>
-        /// to 500ms. With shorter values the model will respond more quickly, <br/>
+        /// Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults<br/>
+        /// to 500ms. With shorter values the model will respond more quickly,<br/>
         /// but may jump in on short pauses from the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("silence_duration_ms")]
@@ -83,17 +83,17 @@ namespace G
         /// Default Value: auto
         /// </param>
         /// <param name="threshold">
-        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
         /// thus might perform better in noisy environments.
         /// </param>
         /// <param name="prefixPaddingMs">
-        /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in <br/>
+        /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in<br/>
         /// milliseconds). Defaults to 300ms.
         /// </param>
         /// <param name="silenceDurationMs">
-        /// Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults <br/>
-        /// to 500ms. With shorter values the model will respond more quickly, <br/>
+        /// Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults<br/>
+        /// to 500ms. With shorter values the model will respond more quickly,<br/>
         /// but may jump in on short pauses from the user.
         /// </param>
         /// <param name="createResponse">

@@ -185,7 +185,7 @@ namespace G
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -206,6 +206,9 @@ namespace G
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RealtimeTranscriptionSessionCreateResponse> CreateRealtimeTranscriptionSessionAsync(
@@ -215,6 +218,7 @@ namespace G
             global::G.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
             global::G.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
             global::System.Collections.Generic.IList<string>? include = default,
+            global::G.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.RealtimeTranscriptionSessionCreateRequest
@@ -225,6 +229,7 @@ namespace G
                 TurnDetection = turnDetection,
                 InputAudioNoiseReduction = inputAudioNoiseReduction,
                 Include = include,
+                ClientSecret = clientSecret,
             };
 
             return await CreateRealtimeTranscriptionSessionAsync(

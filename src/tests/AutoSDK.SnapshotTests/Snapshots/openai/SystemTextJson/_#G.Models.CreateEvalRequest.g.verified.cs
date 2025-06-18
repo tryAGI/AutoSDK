@@ -28,19 +28,19 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// The configuration for the data source used for the evaluation runs.
+        /// The configuration for the data source used for the evaluation runs. Dictates the schema of the data used in the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig, global::G.CreateEvalStoredCompletionsDataSourceConfig>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig> DataSourceConfig { get; set; }
+        public required global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig, global::G.CreateEvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
 
         /// <summary>
-        /// A list of graders for all eval runs in this group.
+        /// A list of graders for all eval runs in this group. Graders can reference variables in the data source using double curly braces notation, like `{{item.variable_name}}`. To reference the model's output, use the `sample` namespace (ie, `{{sample.output_text}}`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> TestingCriteria { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,17 +62,17 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="dataSourceConfig">
-        /// The configuration for the data source used for the evaluation runs.
+        /// The configuration for the data source used for the evaluation runs. Dictates the schema of the data used in the evaluation.
         /// </param>
         /// <param name="testingCriteria">
-        /// A list of graders for all eval runs in this group.
+        /// A list of graders for all eval runs in this group. Graders can reference variables in the data source using double curly braces notation, like `{{item.variable_name}}`. To reference the model's output, use the `sample` namespace (ie, `{{sample.output_text}}`).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalRequest(
-            global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> testingCriteria,
+            global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig, global::G.CreateEvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> testingCriteria,
             string? name,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {

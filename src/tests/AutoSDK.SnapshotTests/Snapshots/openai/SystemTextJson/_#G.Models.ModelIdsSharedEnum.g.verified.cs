@@ -112,6 +112,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Gpt4oAudioPreview20250603,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4oMiniAudioPreview,
         /// <summary>
         /// 
@@ -137,6 +141,10 @@ namespace G
         /// 
         /// </summary>
         Chatgpt4oLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        CodexMiniLatest,
         /// <summary>
         /// 
         /// </summary>
@@ -260,6 +268,7 @@ namespace G
                 ModelIdsSharedEnum.Gpt4oAudioPreview => "gpt-4o-audio-preview",
                 ModelIdsSharedEnum.Gpt4oAudioPreview20241001 => "gpt-4o-audio-preview-2024-10-01",
                 ModelIdsSharedEnum.Gpt4oAudioPreview20241217 => "gpt-4o-audio-preview-2024-12-17",
+                ModelIdsSharedEnum.Gpt4oAudioPreview20250603 => "gpt-4o-audio-preview-2025-06-03",
                 ModelIdsSharedEnum.Gpt4oMiniAudioPreview => "gpt-4o-mini-audio-preview",
                 ModelIdsSharedEnum.Gpt4oMiniAudioPreview20241217 => "gpt-4o-mini-audio-preview-2024-12-17",
                 ModelIdsSharedEnum.Gpt4oSearchPreview => "gpt-4o-search-preview",
@@ -267,6 +276,7 @@ namespace G
                 ModelIdsSharedEnum.Gpt4oSearchPreview20250311 => "gpt-4o-search-preview-2025-03-11",
                 ModelIdsSharedEnum.Gpt4oMiniSearchPreview20250311 => "gpt-4o-mini-search-preview-2025-03-11",
                 ModelIdsSharedEnum.Chatgpt4oLatest => "chatgpt-4o-latest",
+                ModelIdsSharedEnum.CodexMiniLatest => "codex-mini-latest",
                 ModelIdsSharedEnum.Gpt4oMini => "gpt-4o-mini",
                 ModelIdsSharedEnum.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
                 ModelIdsSharedEnum.Gpt4Turbo => "gpt-4-turbo",
@@ -323,6 +333,7 @@ namespace G
                 "gpt-4o-audio-preview" => ModelIdsSharedEnum.Gpt4oAudioPreview,
                 "gpt-4o-audio-preview-2024-10-01" => ModelIdsSharedEnum.Gpt4oAudioPreview20241001,
                 "gpt-4o-audio-preview-2024-12-17" => ModelIdsSharedEnum.Gpt4oAudioPreview20241217,
+                "gpt-4o-audio-preview-2025-06-03" => ModelIdsSharedEnum.Gpt4oAudioPreview20250603,
                 "gpt-4o-mini-audio-preview" => ModelIdsSharedEnum.Gpt4oMiniAudioPreview,
                 "gpt-4o-mini-audio-preview-2024-12-17" => ModelIdsSharedEnum.Gpt4oMiniAudioPreview20241217,
                 "gpt-4o-search-preview" => ModelIdsSharedEnum.Gpt4oSearchPreview,
@@ -330,6 +341,7 @@ namespace G
                 "gpt-4o-search-preview-2025-03-11" => ModelIdsSharedEnum.Gpt4oSearchPreview20250311,
                 "gpt-4o-mini-search-preview-2025-03-11" => ModelIdsSharedEnum.Gpt4oMiniSearchPreview20250311,
                 "chatgpt-4o-latest" => ModelIdsSharedEnum.Chatgpt4oLatest,
+                "codex-mini-latest" => ModelIdsSharedEnum.CodexMiniLatest,
                 "gpt-4o-mini" => ModelIdsSharedEnum.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => ModelIdsSharedEnum.Gpt4oMini20240718,
                 "gpt-4-turbo" => ModelIdsSharedEnum.Gpt4Turbo,

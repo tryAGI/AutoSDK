@@ -16,6 +16,12 @@ namespace G
         public global::G.ResponseFailedEventType Type { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
@@ -33,11 +39,16 @@ namespace G
         /// <param name="type">
         /// The type of the event. Always `response.failed`.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="response"></param>
         public ResponseFailedEvent(
+            int sequenceNumber,
             global::G.Response response,
             global::G.ResponseFailedEventType type)
         {
+            this.SequenceNumber = sequenceNumber;
             this.Response = response;
             this.Type = type;
         }

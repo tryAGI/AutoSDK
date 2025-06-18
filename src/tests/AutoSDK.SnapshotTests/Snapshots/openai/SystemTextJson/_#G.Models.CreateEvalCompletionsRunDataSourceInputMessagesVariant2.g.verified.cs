@@ -17,7 +17,7 @@ namespace G
         public global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2Type Type { get; set; }
 
         /// <summary>
-        /// A reference to a variable in the "item" namespace. Ie, "item.name"
+        /// A reference to a variable in the `item` namespace. Ie, "item.input_trajectory"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_reference")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,7 +36,7 @@ namespace G
         /// The type of input messages. Always `item_reference`.
         /// </param>
         /// <param name="itemReference">
-        /// A reference to a variable in the "item" namespace. Ie, "item.name"
+        /// A reference to a variable in the `item` namespace. Ie, "item.input_trajectory"
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -8,15 +8,13 @@ namespace G
     {
         partial void PrepareGetCertificateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string certId,
-            global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include,
-            ref string certificateId);
+            ref string certificateId,
+            global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include);
         partial void PrepareGetCertificateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string certId,
-            global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include,
-            string certificateId);
+            string certificateId,
+            global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include);
         partial void ProcessGetCertificateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,13 +28,11 @@ namespace G
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.
         /// </summary>
-        /// <param name="certId"></param>
-        /// <param name="include"></param>
         /// <param name="certificateId"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Certificate> GetCertificateAsync(
-            string certId,
             string certificateId,
             global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -45,9 +41,8 @@ namespace G
                 client: HttpClient);
             PrepareGetCertificateArguments(
                 httpClient: HttpClient,
-                certId: ref certId,
-                include: include,
-                certificateId: ref certificateId);
+                certificateId: ref certificateId,
+                include: include);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/certificates/{certificateId}",
@@ -86,9 +81,8 @@ namespace G
             PrepareGetCertificateRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                certId: certId,
-                include: include,
-                certificateId: certificateId);
+                certificateId: certificateId,
+                include: include);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

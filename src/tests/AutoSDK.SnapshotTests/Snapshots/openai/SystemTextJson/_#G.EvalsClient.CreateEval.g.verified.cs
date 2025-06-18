@@ -24,7 +24,7 @@ namespace G
 
         /// <summary>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
-        /// An evaluation is a set of testing criteria and a datasource. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
+        /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
         /// For more information, see the [Evals guide](/docs/guides/evals).
         /// </summary>
         /// <param name="request"></param>
@@ -170,7 +170,7 @@ namespace G
 
         /// <summary>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
-        /// An evaluation is a set of testing criteria and a datasource. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
+        /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
         /// For more information, see the [Evals guide](/docs/guides/evals).
         /// </summary>
         /// <param name="name">
@@ -184,16 +184,16 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="dataSourceConfig">
-        /// The configuration for the data source used for the evaluation runs.
+        /// The configuration for the data source used for the evaluation runs. Dictates the schema of the data used in the evaluation.
         /// </param>
         /// <param name="testingCriteria">
-        /// A list of graders for all eval runs in this group.
+        /// A list of graders for all eval runs in this group. Graders can reference variables in the data source using double curly braces notation, like `{{item.variable_name}}`. To reference the model's output, use the `sample` namespace (ie, `{{sample.output_text}}`).
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Eval> CreateEvalAsync(
-            global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> testingCriteria,
+            global::G.OneOf<global::G.CreateEvalCustomDataSourceConfig, global::G.CreateEvalLogsDataSourceConfig, global::G.CreateEvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateEvalLabelModelGrader, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> testingCriteria,
             string? name = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)

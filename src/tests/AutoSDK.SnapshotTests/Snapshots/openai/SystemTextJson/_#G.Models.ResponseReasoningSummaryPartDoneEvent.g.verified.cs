@@ -38,6 +38,13 @@ namespace G
         public required int SummaryIndex { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// The completed summary part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("part")]
@@ -65,6 +72,9 @@ namespace G
         /// <param name="summaryIndex">
         /// The index of the summary part within the reasoning summary.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="part">
         /// The completed summary part.
         /// </param>
@@ -75,12 +85,14 @@ namespace G
             string itemId,
             int outputIndex,
             int summaryIndex,
+            int sequenceNumber,
             global::G.ResponseReasoningSummaryPartDoneEventPart part,
             global::G.ResponseReasoningSummaryPartDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
             this.Type = type;
         }

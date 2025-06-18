@@ -19,7 +19,7 @@ namespace G
         /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<double> Embedding1 { get; set; } = default!;
+        public global::System.Collections.Generic.IList<float> Embedding1 { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "embedding".
@@ -47,7 +47,7 @@ namespace G
         /// </param>
         public Embedding(
             int index,
-            global::System.Collections.Generic.IList<double> embedding1,
+            global::System.Collections.Generic.IList<float> embedding1,
             global::G.EmbeddingObject @object)
         {
             this.Index = index;

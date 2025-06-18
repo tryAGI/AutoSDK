@@ -32,8 +32,17 @@ namespace G
         public global::G.RealtimeSessionModel? Model { get; set; }
 
         /// <summary>
-        /// The default system instructions (i.e. system message) prepended to model  calls. This field allows the client to guide the model on desired  responses. The model can be instructed on response content and format,  (e.g. "be extremely succinct", "act friendly", "here are examples of good  responses") and on audio behavior (e.g. "talk quickly", "inject emotion  into your voice", "laugh frequently"). The instructions are not guaranteed  to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this  field is not set and are visible in the `session.created` event at the  start of the session.
+        /// The default system instructions (i.e. system message) prepended to model <br/>
+        /// calls. This field allows the client to guide the model on desired <br/>
+        /// responses. The model can be instructed on response content and format, <br/>
+        /// (e.g. "be extremely succinct", "act friendly", "here are examples of good <br/>
+        /// responses") and on audio behavior (e.g. "talk quickly", "inject emotion <br/>
+        /// into your voice", "laugh frequently"). The instructions are not<br/>
+        /// guaranteed to be followed by the model, but they provide guidance to the <br/>
+        /// model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this<br/>
+        /// field is not set and are visible in the `session.created` event at the<br/>
+        /// start of the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
@@ -88,6 +97,25 @@ namespace G
         public global::G.RealtimeSessionInputAudioNoiseReduction? InputAudioNoiseReduction { get; set; }
 
         /// <summary>
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public double? Speed { get; set; }
+
+        /// <summary>
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.RealtimeSessionTracingEnum?, global::G.RealtimeSessionTracingEnum2>))]
+        public global::G.OneOf<global::G.RealtimeSessionTracingEnum?, global::G.RealtimeSessionTracingEnum2>? Tracing { get; set; }
+
+        /// <summary>
         /// Tools (functions) available to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
@@ -138,8 +166,17 @@ namespace G
         /// The Realtime model used for this session.
         /// </param>
         /// <param name="instructions">
-        /// The default system instructions (i.e. system message) prepended to model  calls. This field allows the client to guide the model on desired  responses. The model can be instructed on response content and format,  (e.g. "be extremely succinct", "act friendly", "here are examples of good  responses") and on audio behavior (e.g. "talk quickly", "inject emotion  into your voice", "laugh frequently"). The instructions are not guaranteed  to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this  field is not set and are visible in the `session.created` event at the  start of the session.
+        /// The default system instructions (i.e. system message) prepended to model <br/>
+        /// calls. This field allows the client to guide the model on desired <br/>
+        /// responses. The model can be instructed on response content and format, <br/>
+        /// (e.g. "be extremely succinct", "act friendly", "here are examples of good <br/>
+        /// responses") and on audio behavior (e.g. "talk quickly", "inject emotion <br/>
+        /// into your voice", "laugh frequently"). The instructions are not<br/>
+        /// guaranteed to be followed by the model, but they provide guidance to the <br/>
+        /// model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this<br/>
+        /// field is not set and are visible in the `session.created` event at the<br/>
+        /// start of the session.
         /// </param>
         /// <param name="voice">
         /// Example: ash
@@ -167,6 +204,18 @@ namespace G
         /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
         /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
         /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
+        /// </param>
+        /// <param name="speed">
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="tracing">
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
         /// </param>
         /// <param name="tools">
         /// Tools (functions) available to the model.
@@ -200,6 +249,8 @@ namespace G
             global::G.RealtimeSessionInputAudioTranscription? inputAudioTranscription,
             global::G.RealtimeSessionTurnDetection? turnDetection,
             global::G.RealtimeSessionInputAudioNoiseReduction? inputAudioNoiseReduction,
+            double? speed,
+            global::G.OneOf<global::G.RealtimeSessionTracingEnum?, global::G.RealtimeSessionTracingEnum2>? tracing,
             global::System.Collections.Generic.IList<global::G.RealtimeSessionTool>? tools,
             string? toolChoice,
             double? temperature,
@@ -215,6 +266,8 @@ namespace G
             this.InputAudioTranscription = inputAudioTranscription;
             this.TurnDetection = turnDetection;
             this.InputAudioNoiseReduction = inputAudioNoiseReduction;
+            this.Speed = speed;
+            this.Tracing = tracing;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
             this.Temperature = temperature;

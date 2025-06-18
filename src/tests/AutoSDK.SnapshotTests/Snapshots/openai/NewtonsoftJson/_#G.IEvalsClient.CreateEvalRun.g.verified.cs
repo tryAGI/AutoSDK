@@ -6,7 +6,7 @@ namespace G
     public partial interface IEvalsClient
     {
         /// <summary>
-        /// Create a new evaluation run. This is the endpoint that will kick off grading.
+        /// Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
         /// </summary>
         /// <param name="evalId"></param>
         /// <param name="request"></param>
@@ -18,7 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new evaluation run. This is the endpoint that will kick off grading.
+        /// Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
         /// </summary>
         /// <param name="evalId"></param>
         /// <param name="name">

@@ -31,7 +31,14 @@ namespace G
         /// - `file_search_call.results`: Include the search results of<br/>
         ///   the file search tool call.<br/>
         /// - `message.input_image.image_url`: Include image urls from the input message.<br/>
-        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.
+        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.<br/>
+        /// - `reasoning.encrypted_content`: Includes an encrypted version of reasoning<br/>
+        ///   tokens in reasoning item outputs. This enables reasoning items to be used in<br/>
+        ///   multi-turn conversations when using the Responses API statelessly (like<br/>
+        ///   when the `store` parameter is set to `false`, or when an organization is<br/>
+        ///   enrolled in the zero data retention program).<br/>
+        /// - `code_interpreter_call.outputs`: Includes the outputs of python code execution<br/>
+        ///   in code interpreter tool call items.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::G.Includable>? Include { get; set; }
@@ -50,6 +57,15 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
         public bool? Store { get; set; }
+
+        /// <summary>
+        /// A system (or developer) message inserted into the model's context.<br/>
+        /// When using along with `previous_response_id`, the instructions from a previous<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
+        /// to swap out system (or developer) messages in new responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
 
         /// <summary>
         /// If set to true, the model response data will be streamed to the client<br/>
@@ -85,7 +101,14 @@ namespace G
         /// - `file_search_call.results`: Include the search results of<br/>
         ///   the file search tool call.<br/>
         /// - `message.input_image.image_url`: Include image urls from the input message.<br/>
-        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.
+        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.<br/>
+        /// - `reasoning.encrypted_content`: Includes an encrypted version of reasoning<br/>
+        ///   tokens in reasoning item outputs. This enables reasoning items to be used in<br/>
+        ///   multi-turn conversations when using the Responses API statelessly (like<br/>
+        ///   when the `store` parameter is set to `false`, or when an organization is<br/>
+        ///   enrolled in the zero data retention program).<br/>
+        /// - `code_interpreter_call.outputs`: Includes the outputs of python code execution<br/>
+        ///   in code interpreter tool call items.
         /// </param>
         /// <param name="parallelToolCalls">
         /// Whether to allow the model to run tool calls in parallel.<br/>
@@ -95,6 +118,12 @@ namespace G
         /// Whether to store the generated model response for later retrieval via<br/>
         /// API.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="instructions">
+        /// A system (or developer) message inserted into the model's context.<br/>
+        /// When using along with `previous_response_id`, the instructions from a previous<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
+        /// to swap out system (or developer) messages in new responses.
         /// </param>
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
@@ -111,12 +140,14 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Includable>? include,
             bool? parallelToolCalls,
             bool? store,
+            string? instructions,
             bool? stream)
         {
             this.Input = input;
             this.Include = include;
             this.ParallelToolCalls = parallelToolCalls;
             this.Store = store;
+            this.Instructions = instructions;
             this.Stream = stream;
         }
 

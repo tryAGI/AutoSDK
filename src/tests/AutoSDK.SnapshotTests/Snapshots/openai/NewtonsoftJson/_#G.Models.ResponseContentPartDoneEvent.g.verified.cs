@@ -34,6 +34,12 @@ namespace G
         public int ContentIndex { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("part", Required = global::Newtonsoft.Json.Required.Always)]
@@ -60,17 +66,22 @@ namespace G
         /// <param name="contentIndex">
         /// The index of the content part that is done.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="part"></param>
         public ResponseContentPartDoneEvent(
             string itemId,
             int outputIndex,
             int contentIndex,
+            int sequenceNumber,
             global::G.OutputContent part,
             global::G.ResponseContentPartDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Part = part;
             this.Type = type;
         }

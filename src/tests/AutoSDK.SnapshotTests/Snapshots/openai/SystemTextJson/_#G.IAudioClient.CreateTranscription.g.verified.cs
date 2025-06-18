@@ -61,6 +61,9 @@ namespace G
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
@@ -74,6 +77,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             bool? stream = default,
+            global::G.AnyOf<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>? chunkingStrategy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

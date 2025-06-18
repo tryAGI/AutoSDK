@@ -20,7 +20,7 @@ namespace G
         public global::G.CreateEvalJsonlRunDataSourceType Type { get; set; } = global::G.CreateEvalJsonlRunDataSourceType.Jsonl;
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in the data source.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource> Source { get; set; } = default!;
@@ -38,7 +38,9 @@ namespace G
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
         public CreateEvalJsonlRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource> source,
             global::G.CreateEvalJsonlRunDataSourceType type = global::G.CreateEvalJsonlRunDataSourceType.Jsonl)

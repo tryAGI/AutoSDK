@@ -28,6 +28,12 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// The function-call arguments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
@@ -49,17 +55,22 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="arguments">
         /// The function-call arguments.
         /// </param>
         public ResponseFunctionCallArgumentsDoneEvent(
             string itemId,
             int outputIndex,
+            int sequenceNumber,
             string arguments,
             global::G.ResponseFunctionCallArgumentsDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }

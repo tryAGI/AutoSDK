@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For `gpt-image-1`, each image should be a `png`, `webp`, or `jpg` file less <br/>
-        /// than 25MB. You can provide up to 16 images.<br/>
+        /// than 50MB. You can provide up to 16 images.<br/>
         /// For `dall-e-2`, you can only provide one image, and it should be a square <br/>
         /// `png` file less than 4MB.
         /// </summary>
@@ -40,6 +40,20 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maskname")]
         public string? Maskname { get; set; }
+
+        /// <summary>
+        /// Allows to set transparency for the background of the generated image(s). <br/>
+        /// This parameter is only supported for `gpt-image-1`. Must be one of <br/>
+        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the <br/>
+        /// model will automatically determine the best background for the image.<br/>
+        /// If `transparent`, the output format needs to support transparency, so it <br/>
+        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Default Value: auto<br/>
+        /// Example: transparent
+        /// </summary>
+        /// <example>transparent</example>
+        [global::Newtonsoft.Json.JsonProperty("background")]
+        public global::G.CreateImageEditRequestBackground? Background { get; set; }
 
         /// <summary>
         /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.<br/>
@@ -78,6 +92,28 @@ namespace G
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
+        /// The format in which the generated images are returned. This parameter is<br/>
+        /// only supported for `gpt-image-1`. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The default value is `png`.<br/>
+        /// Default Value: png<br/>
+        /// Example: png
+        /// </summary>
+        /// <example>png</example>
+        [global::Newtonsoft.Json.JsonProperty("output_format")]
+        public global::G.CreateImageEditRequestOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// The compression level (0-100%) for the generated images. This parameter <br/>
+        /// is only supported for `gpt-image-1` with the `webp` or `jpeg` output <br/>
+        /// formats, and defaults to 100.<br/>
+        /// Default Value: 100<br/>
+        /// Example: 100
+        /// </summary>
+        /// <example>100</example>
+        [global::Newtonsoft.Json.JsonProperty("output_compression")]
+        public int? OutputCompression { get; set; }
+
+        /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
@@ -106,7 +142,7 @@ namespace G
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For `gpt-image-1`, each image should be a `png`, `webp`, or `jpg` file less <br/>
-        /// than 25MB. You can provide up to 16 images.<br/>
+        /// than 50MB. You can provide up to 16 images.<br/>
         /// For `dall-e-2`, you can only provide one image, and it should be a square <br/>
         /// `png` file less than 4MB.
         /// </param>
@@ -119,6 +155,16 @@ namespace G
         /// </param>
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="background">
+        /// Allows to set transparency for the background of the generated image(s). <br/>
+        /// This parameter is only supported for `gpt-image-1`. Must be one of <br/>
+        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the <br/>
+        /// model will automatically determine the best background for the image.<br/>
+        /// If `transparent`, the output format needs to support transparency, so it <br/>
+        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Default Value: auto<br/>
+        /// Example: transparent
         /// </param>
         /// <param name="model">
         /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.<br/>
@@ -140,6 +186,20 @@ namespace G
         /// Default Value: url<br/>
         /// Example: url
         /// </param>
+        /// <param name="outputFormat">
+        /// The format in which the generated images are returned. This parameter is<br/>
+        /// only supported for `gpt-image-1`. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The default value is `png`.<br/>
+        /// Default Value: png<br/>
+        /// Example: png
+        /// </param>
+        /// <param name="outputCompression">
+        /// The compression level (0-100%) for the generated images. This parameter <br/>
+        /// is only supported for `gpt-image-1` with the `webp` or `jpeg` output <br/>
+        /// formats, and defaults to 100.<br/>
+        /// Default Value: 100<br/>
+        /// Example: 100
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
@@ -154,10 +214,13 @@ namespace G
             string prompt,
             byte[]? mask,
             string? maskname,
+            global::G.CreateImageEditRequestBackground? background,
             global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? model,
             int? n,
             global::G.CreateImageEditRequestSize? size,
             global::G.CreateImageEditRequestResponseFormat? responseFormat,
+            global::G.CreateImageEditRequestOutputFormat? outputFormat,
+            int? outputCompression,
             string? user,
             global::G.CreateImageEditRequestQuality? quality)
         {
@@ -165,10 +228,13 @@ namespace G
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Mask = mask;
             this.Maskname = maskname;
+            this.Background = background;
             this.Model = model;
             this.N = n;
             this.Size = size;
             this.ResponseFormat = responseFormat;
+            this.OutputFormat = outputFormat;
+            this.OutputCompression = outputCompression;
             this.User = user;
             this.Quality = quality;
         }

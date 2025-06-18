@@ -20,6 +20,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        O3Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        O3Pro20250610,
+        /// <summary>
+        /// 
+        /// </summary>
         ComputerUsePreview,
         /// <summary>
         /// 
@@ -41,6 +49,8 @@ namespace G
             {
                 ModelIdsResponsesEnum.O1Pro => "o1-pro",
                 ModelIdsResponsesEnum.O1Pro20250319 => "o1-pro-2025-03-19",
+                ModelIdsResponsesEnum.O3Pro => "o3-pro",
+                ModelIdsResponsesEnum.O3Pro20250610 => "o3-pro-2025-06-10",
                 ModelIdsResponsesEnum.ComputerUsePreview => "computer-use-preview",
                 ModelIdsResponsesEnum.ComputerUsePreview20250311 => "computer-use-preview-2025-03-11",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -55,6 +65,8 @@ namespace G
             {
                 "o1-pro" => ModelIdsResponsesEnum.O1Pro,
                 "o1-pro-2025-03-19" => ModelIdsResponsesEnum.O1Pro20250319,
+                "o3-pro" => ModelIdsResponsesEnum.O3Pro,
+                "o3-pro-2025-06-10" => ModelIdsResponsesEnum.O3Pro20250610,
                 "computer-use-preview" => ModelIdsResponsesEnum.ComputerUsePreview,
                 "computer-use-preview-2025-03-11" => ModelIdsResponsesEnum.ComputerUsePreview20250311,
                 _ => null,

@@ -28,6 +28,12 @@ namespace G
         public string ItemId { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of the web search call being processed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -45,13 +51,18 @@ namespace G
         /// <param name="itemId">
         /// Unique ID for the output item associated with the web search call.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of the web search call being processed.
+        /// </param>
         public ResponseWebSearchCallInProgressEvent(
             int outputIndex,
             string itemId,
+            int sequenceNumber,
             global::G.ResponseWebSearchCallInProgressEventType type)
         {
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

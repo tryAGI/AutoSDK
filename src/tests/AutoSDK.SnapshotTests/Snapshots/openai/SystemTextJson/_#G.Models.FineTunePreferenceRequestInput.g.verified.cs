@@ -7,7 +7,9 @@
 namespace G
 {
     /// <summary>
-    /// The per-line training example of a fine-tuning input file for chat models using the dpo method.
+    /// The per-line training example of a fine-tuning input file for chat models using the dpo method.<br/>
+    /// Input messages may contain text or image content only. Audio and file input messages<br/>
+    /// are not currently supported for fine-tuning.
     /// </summary>
     public sealed partial class FineTunePreferenceRequestInput
     {
@@ -20,14 +22,14 @@ namespace G
         /// <summary>
         /// The preferred completion message for the output.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("preferred_completion")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? PreferredCompletion { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("preferred_output")]
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
 
         /// <summary>
         /// The non-preferred completion message for the output.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("non_preferred_completion")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? NonPreferredCompletion { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("non_preferred_output")]
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? NonPreferredOutput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,10 +41,10 @@ namespace G
         /// Initializes a new instance of the <see cref="FineTunePreferenceRequestInput" /> class.
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="preferredCompletion">
+        /// <param name="preferredOutput">
         /// The preferred completion message for the output.
         /// </param>
-        /// <param name="nonPreferredCompletion">
+        /// <param name="nonPreferredOutput">
         /// The non-preferred completion message for the output.
         /// </param>
 #if NET7_0_OR_GREATER
@@ -50,12 +52,12 @@ namespace G
 #endif
         public FineTunePreferenceRequestInput(
             global::G.FineTunePreferenceRequestInputInput? input,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? preferredCompletion,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? nonPreferredCompletion)
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? preferredOutput,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput)
         {
             this.Input = input;
-            this.PreferredCompletion = preferredCompletion;
-            this.NonPreferredCompletion = nonPreferredCompletion;
+            this.PreferredOutput = preferredOutput;
+            this.NonPreferredOutput = nonPreferredOutput;
         }
 
         /// <summary>

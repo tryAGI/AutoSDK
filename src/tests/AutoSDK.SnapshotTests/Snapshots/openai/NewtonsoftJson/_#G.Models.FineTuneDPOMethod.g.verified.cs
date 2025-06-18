@@ -10,10 +10,10 @@ namespace G
     public sealed partial class FineTuneDPOMethod
     {
         /// <summary>
-        /// The hyperparameters used for the fine-tuning job.
+        /// The hyperparameters used for the DPO fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hyperparameters")]
-        public global::G.FineTuneDPOMethodHyperparameters? Hyperparameters { get; set; }
+        public global::G.FineTuneDPOHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,10 +25,10 @@ namespace G
         /// Initializes a new instance of the <see cref="FineTuneDPOMethod" /> class.
         /// </summary>
         /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job.
+        /// The hyperparameters used for the DPO fine-tuning job.
         /// </param>
         public FineTuneDPOMethod(
-            global::G.FineTuneDPOMethodHyperparameters? hyperparameters)
+            global::G.FineTuneDPOHyperparameters? hyperparameters)
         {
             this.Hyperparameters = hyperparameters;
         }

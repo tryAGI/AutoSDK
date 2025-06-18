@@ -40,6 +40,12 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number for this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -63,17 +69,22 @@ namespace G
         /// <param name="text">
         /// The text content that is finalized.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number for this event.
+        /// </param>
         public ResponseTextDoneEvent(
             string itemId,
             int outputIndex,
             int contentIndex,
             string text,
+            int sequenceNumber,
             global::G.ResponseTextDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

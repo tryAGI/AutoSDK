@@ -9,7 +9,7 @@ namespace G
     /// stop generating audio and emit a `output_audio_buffer.cleared` event. This <br/>
     /// event should be preceded by a `response.cancel` client event to stop the <br/>
     /// generation of the current response.<br/>
-    /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
+    /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
     /// </summary>
     public sealed partial class RealtimeClientEventOutputAudioBufferClear
     {

@@ -45,6 +45,13 @@ namespace G
         public required string Text { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +75,9 @@ namespace G
         /// <param name="text">
         /// The full text of the completed reasoning summary.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,12 +86,14 @@ namespace G
             int outputIndex,
             int summaryIndex,
             string text,
+            int sequenceNumber,
             global::G.ResponseReasoningSummaryTextDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

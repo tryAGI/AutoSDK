@@ -13,7 +13,7 @@ namespace G
         /// The hyperparameters used for the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        public global::G.FineTuneSupervisedMethodHyperparameters? Hyperparameters { get; set; }
+        public global::G.FineTuneSupervisedHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneSupervisedMethod(
-            global::G.FineTuneSupervisedMethodHyperparameters? hyperparameters)
+            global::G.FineTuneSupervisedHyperparameters? hyperparameters)
         {
             this.Hyperparameters = hyperparameters;
         }

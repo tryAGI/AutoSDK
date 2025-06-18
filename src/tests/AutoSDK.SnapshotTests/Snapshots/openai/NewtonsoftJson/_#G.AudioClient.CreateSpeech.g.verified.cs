@@ -177,7 +177,7 @@ namespace G
         /// Default Value: mp3
         /// </param>
         /// <param name="speed">
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
         /// Default Value: 1
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

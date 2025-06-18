@@ -22,6 +22,12 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("item", Required = global::Newtonsoft.Json.Required.Always)]
@@ -42,13 +48,18 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item that was added.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="item"></param>
         public ResponseOutputItemAddedEvent(
             int outputIndex,
+            int sequenceNumber,
             global::G.OutputItem item,
             global::G.ResponseOutputItemAddedEventType type)
         {
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Item = item;
             this.Type = type;
         }

@@ -7,7 +7,9 @@
 namespace G
 {
     /// <summary>
-    /// The per-line training example of a fine-tuning input file for chat models using the supervised method.
+    /// The per-line training example of a fine-tuning input file for chat models using the supervised method.<br/>
+    /// Input messages may contain text or image content only. Audio and file input messages<br/>
+    /// are not currently supported for fine-tuning.
     /// </summary>
     public sealed partial class FineTuneChatRequestInput
     {

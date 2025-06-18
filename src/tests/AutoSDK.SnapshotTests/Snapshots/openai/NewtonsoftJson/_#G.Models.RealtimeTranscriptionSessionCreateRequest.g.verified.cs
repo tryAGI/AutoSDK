@@ -18,7 +18,7 @@ namespace G
 
         /// <summary>
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </summary>
@@ -55,6 +55,12 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Include { get; set; }
 
         /// <summary>
+        /// Configuration options for the generated client secret.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("client_secret")]
+        public global::G.RealtimeTranscriptionSessionCreateRequestClientSecret? ClientSecret { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -69,7 +75,7 @@ namespace G
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -90,13 +96,17 @@ namespace G
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
         public RealtimeTranscriptionSessionCreateRequest(
             global::System.Collections.Generic.IList<global::G.RealtimeTranscriptionSessionCreateRequestModalitie>? modalities,
             global::G.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat,
             global::G.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription,
             global::G.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection,
             global::G.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction,
-            global::System.Collections.Generic.IList<string>? include)
+            global::System.Collections.Generic.IList<string>? include,
+            global::G.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret)
         {
             this.Modalities = modalities;
             this.InputAudioFormat = inputAudioFormat;
@@ -104,6 +114,7 @@ namespace G
             this.TurnDetection = turnDetection;
             this.InputAudioNoiseReduction = inputAudioNoiseReduction;
             this.Include = include;
+            this.ClientSecret = clientSecret;
         }
 
         /// <summary>

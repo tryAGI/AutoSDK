@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The type of method. Is either `supervised` or `dpo`.
+    /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum FineTuneMethodType
@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dpo")]
         Dpo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reinforcement")]
+        Reinforcement,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 FineTuneMethodType.Supervised => "supervised",
                 FineTuneMethodType.Dpo => "dpo",
+                FineTuneMethodType.Reinforcement => "reinforcement",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "supervised" => FineTuneMethodType.Supervised,
                 "dpo" => FineTuneMethodType.Dpo,
+                "reinforcement" => FineTuneMethodType.Reinforcement,
                 _ => null,
             };
         }

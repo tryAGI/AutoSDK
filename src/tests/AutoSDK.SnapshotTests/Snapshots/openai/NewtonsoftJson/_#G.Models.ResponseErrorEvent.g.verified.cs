@@ -34,6 +34,12 @@ namespace G
         public string? Param { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -54,15 +60,20 @@ namespace G
         /// <param name="param">
         /// The error parameter.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         public ResponseErrorEvent(
             string? code,
             string message,
             string? param,
+            int sequenceNumber,
             global::G.ResponseErrorEventType type)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

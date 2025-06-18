@@ -9,7 +9,7 @@ namespace G
     /// mode when the user has interrupted (`input_audio_buffer.speech_started`),<br/>
     /// or when the client has emitted the `output_audio_buffer.clear` event to manually<br/>
     /// cut off the current audio response.<br/>
-    /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
+    /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
     /// </summary>
     public sealed partial class RealtimeServerEventOutputAudioBufferCleared
     {

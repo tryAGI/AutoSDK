@@ -16,6 +16,12 @@ namespace G
         public global::G.ResponseCodeInterpreterCallInterpretingEventType Type { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// The index of the output item that the code interpreter call is in progress.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_index", Required = global::Newtonsoft.Json.Required.Always)]
@@ -39,6 +45,9 @@ namespace G
         /// <param name="type">
         /// The type of the event. Always `response.code_interpreter_call.interpreting`.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
@@ -46,10 +55,12 @@ namespace G
         /// A tool call to run code.
         /// </param>
         public ResponseCodeInterpreterCallInterpretingEvent(
+            int sequenceNumber,
             int outputIndex,
             global::G.CodeInterpreterToolCall codeInterpreterCall,
             global::G.ResponseCodeInterpreterCallInterpretingEventType type)
         {
+            this.SequenceNumber = sequenceNumber;
             this.OutputIndex = outputIndex;
             this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
             this.Type = type;

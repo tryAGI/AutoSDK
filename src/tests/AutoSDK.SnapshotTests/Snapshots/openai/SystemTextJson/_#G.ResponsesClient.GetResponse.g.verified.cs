@@ -9,12 +9,16 @@ namespace G
         partial void PrepareGetResponseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string responseId,
-            global::System.Collections.Generic.IList<global::G.Includable>? include);
+            global::System.Collections.Generic.IList<global::G.Includable>? include,
+            ref bool? stream,
+            ref int? startingAfter);
         partial void PrepareGetResponseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string responseId,
-            global::System.Collections.Generic.IList<global::G.Includable>? include);
+            global::System.Collections.Generic.IList<global::G.Includable>? include,
+            bool? stream,
+            int? startingAfter);
         partial void ProcessGetResponseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,11 +35,15 @@ namespace G
         /// Example: resp_677efb5139a88190b512bc3fef8e535d
         /// </param>
         /// <param name="include"></param>
+        /// <param name="stream"></param>
+        /// <param name="startingAfter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Response> GetResponseAsync(
             string responseId,
             global::System.Collections.Generic.IList<global::G.Includable>? include = default,
+            bool? stream = default,
+            int? startingAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -43,13 +51,17 @@ namespace G
             PrepareGetResponseArguments(
                 httpClient: HttpClient,
                 responseId: ref responseId,
-                include: include);
+                include: include,
+                stream: ref stream,
+                startingAfter: ref startingAfter);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/responses/{responseId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("stream", stream?.ToString()) 
+                .AddOptionalParameter("starting_after", startingAfter?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -83,7 +95,9 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 responseId: responseId,
-                include: include);
+                include: include,
+                stream: stream,
+                startingAfter: startingAfter);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

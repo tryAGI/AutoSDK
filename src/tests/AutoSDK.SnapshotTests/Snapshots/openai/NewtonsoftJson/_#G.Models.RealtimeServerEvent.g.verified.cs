@@ -1157,7 +1157,7 @@ namespace G
         /// **WebRTC Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
         /// emitted after an audio content part has been added (`response.content_part.added`)<br/>
         /// to the response.<br/>
-        /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RealtimeServerEventOutputAudioBufferStarted? OutputAudioBufferStarted { get; init; }
@@ -1195,7 +1195,7 @@ namespace G
         /// **WebRTC Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
-        /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RealtimeServerEventOutputAudioBufferStopped? OutputAudioBufferStopped { get; init; }
@@ -1234,7 +1234,7 @@ namespace G
         /// mode when the user has interrupted (`input_audio_buffer.speech_started`),<br/>
         /// or when the client has emitted the `output_audio_buffer.clear` event to manually<br/>
         /// cut off the current audio response.<br/>
-        /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RealtimeServerEventOutputAudioBufferCleared? OutputAudioBufferCleared { get; init; }

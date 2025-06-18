@@ -32,7 +32,7 @@ namespace G
         public required string Model { get; set; }
 
         /// <summary>
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -71,7 +71,7 @@ namespace G
         /// The model to use for the evaluation. Must support structured outputs.
         /// </param>
         /// <param name="input">
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </param>
         /// <param name="labels">
         /// The labels to classify to each item in the evaluation.

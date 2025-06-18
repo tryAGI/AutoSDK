@@ -20,7 +20,7 @@ namespace G
         public global::G.CreateEvalCompletionsRunDataSourceType Type { get; set; } = global::G.CreateEvalCompletionsRunDataSourceType.Completions;
 
         /// <summary>
-        /// 
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_messages")]
         public global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? InputMessages { get; set; }
@@ -38,7 +38,7 @@ namespace G
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalStoredCompletionsSource> Source { get; set; } = default!;
@@ -56,12 +56,16 @@ namespace G
         /// The type of run data source. Always `completions`.<br/>
         /// Default Value: completions
         /// </param>
-        /// <param name="inputMessages"></param>
+        /// <param name="inputMessages">
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
+        /// </param>
         /// <param name="samplingParams"></param>
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
+        /// </param>
         public CreateEvalCompletionsRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalStoredCompletionsSource> source,
             global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? inputMessages,

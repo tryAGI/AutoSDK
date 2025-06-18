@@ -10,7 +10,10 @@ namespace G
     /// Allowed values are:<br/>
     /// - `file_search`<br/>
     /// - `web_search_preview`<br/>
-    /// - `computer_use_preview`
+    /// - `computer_use_preview`<br/>
+    /// - `code_interpreter`<br/>
+    /// - `mcp`<br/>
+    /// - `image_generation`
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ToolChoiceTypesType
@@ -35,6 +38,21 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview_2025_03_11")]
         WebSearchPreview20250311,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="image_generation")]
+        ImageGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter")]
+        CodeInterpreter,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
     }
 
     /// <summary>
@@ -53,6 +71,9 @@ namespace G
                 ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
                 ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
                 ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
+                ToolChoiceTypesType.ImageGeneration => "image_generation",
+                ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
+                ToolChoiceTypesType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,6 +88,9 @@ namespace G
                 "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
                 "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
                 "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
+                "image_generation" => ToolChoiceTypesType.ImageGeneration,
+                "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,
+                "mcp" => ToolChoiceTypesType.Mcp,
                 _ => null,
             };
         }

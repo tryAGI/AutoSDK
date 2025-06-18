@@ -22,6 +22,12 @@ namespace G
         public global::G.Response Response { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -34,11 +40,16 @@ namespace G
         /// The type of the event. Always `response.in_progress`.
         /// </param>
         /// <param name="response"></param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         public ResponseInProgressEvent(
             global::G.Response response,
+            int sequenceNumber,
             global::G.ResponseInProgressEventType type)
         {
             this.Response = response;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

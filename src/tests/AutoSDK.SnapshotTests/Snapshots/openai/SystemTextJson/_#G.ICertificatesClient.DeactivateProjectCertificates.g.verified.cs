@@ -6,8 +6,8 @@ namespace G
     public partial interface ICertificatesClient
     {
         /// <summary>
-        /// Deactivate certificates at the project level.<br/>
-        /// You can atomically and idempotently deactivate up to 10 certificates at a time.
+        /// Deactivate certificates at the project level. You can atomically and <br/>
+        /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -19,8 +19,8 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deactivate certificates at the project level.<br/>
-        /// You can atomically and idempotently deactivate up to 10 certificates at a time.
+        /// Deactivate certificates at the project level. You can atomically and <br/>
+        /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="certificateIds"></param>

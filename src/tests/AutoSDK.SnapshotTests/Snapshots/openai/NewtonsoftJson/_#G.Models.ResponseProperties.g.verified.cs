@@ -35,19 +35,18 @@ namespace G
         public global::G.Reasoning? Reasoning { get; set; }
 
         /// <summary>
+        /// Whether to run the model response in the background. <br/>
+        /// [Learn more](/docs/guides/background).<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("background")]
+        public bool? Background { get; set; }
+
+        /// <summary>
         /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_output_tokens")]
         public int? MaxOutputTokens { get; set; }
-
-        /// <summary>
-        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("instructions")]
-        public string? Instructions { get; set; }
 
         /// <summary>
         /// Configuration options for a text response from the model. Can be plain<br/>
@@ -80,6 +79,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
         public global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? ToolChoice { get; set; }
+
+        /// <summary>
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt")]
+        public global::G.Prompt2? Prompt { get; set; }
 
         /// <summary>
         /// The truncation strategy to use for the model response.<br/>
@@ -116,14 +122,13 @@ namespace G
         /// Configuration options for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
         /// </param>
+        /// <param name="background">
+        /// Whether to run the model response in the background. <br/>
+        /// [Learn more](/docs/guides/background).<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="maxOutputTokens">
         /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
-        /// </param>
-        /// <param name="instructions">
-        /// Inserts a system (or developer) message as the first item in the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
         /// </param>
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
@@ -148,6 +153,10 @@ namespace G
         /// a response. See the `tools` parameter to see how to specify which tools<br/>
         /// the model can call.
         /// </param>
+        /// <param name="prompt">
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </param>
         /// <param name="truncation">
         /// The truncation strategy to use for the model response.<br/>
         /// - `auto`: If the context of this response and previous ones exceeds<br/>
@@ -162,21 +171,23 @@ namespace G
             string? previousResponseId,
             global::G.ModelIdsResponses? model,
             global::G.Reasoning? reasoning,
+            bool? background,
             int? maxOutputTokens,
-            string? instructions,
             global::G.ResponsePropertiesText? text,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
             global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? toolChoice,
+            global::G.Prompt2? prompt,
             global::G.ResponsePropertiesTruncation? truncation)
         {
             this.PreviousResponseId = previousResponseId;
             this.Model = model;
             this.Reasoning = reasoning;
+            this.Background = background;
             this.MaxOutputTokens = maxOutputTokens;
-            this.Instructions = instructions;
             this.Text = text;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
+            this.Prompt = prompt;
             this.Truncation = truncation;
         }
 

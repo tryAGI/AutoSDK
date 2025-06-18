@@ -21,7 +21,7 @@ namespace G
         public global::G.CreateEvalJsonlRunDataSourceType Type { get; set; } = global::G.CreateEvalJsonlRunDataSourceType.Jsonl;
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in the data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource>))]
@@ -41,7 +41,9 @@ namespace G
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -5,11 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// A StoredCompletionsDataSourceConfig which specifies the metadata property of your stored completions query.<br/>
-    /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.<br/>
-    /// The schema returned by this data source config is used to defined what variables are available in your evals.<br/>
-    /// `item` and `sample` are both defined when using this data source config.
+    /// Deprecated in favor of LogsDataSourceConfig.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class EvalStoredCompletionsDataSourceConfig
     {
         /// <summary>
@@ -18,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalStoredCompletionsDataSourceConfigType.StoredCompletions</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.EvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::G.EvalStoredCompletionsDataSourceConfigType.StoredCompletions;
 
         /// <summary>
@@ -28,6 +27,7 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
@@ -35,6 +35,7 @@ namespace G
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public object Schema { get; set; } = default!;
 
         /// <summary>

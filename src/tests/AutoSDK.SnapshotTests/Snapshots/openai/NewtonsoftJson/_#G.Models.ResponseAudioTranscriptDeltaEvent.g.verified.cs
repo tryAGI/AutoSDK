@@ -22,6 +22,12 @@ namespace G
         public string Delta { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,11 +42,16 @@ namespace G
         /// <param name="delta">
         /// The partial transcript of the audio response.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         public ResponseAudioTranscriptDeltaEvent(
             string delta,
+            int sequenceNumber,
             global::G.ResponseAudioTranscriptDeltaEventType type)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

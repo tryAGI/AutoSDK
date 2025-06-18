@@ -29,7 +29,7 @@ namespace G
         public string? Model { get; set; }
 
         /// <summary>
-        /// Optional search string for instructions. This is a query parameter used to select responses.
+        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions_search")]
         public string? InstructionsSearch { get; set; }
@@ -45,12 +45,6 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_before")]
         public int? CreatedBefore { get; set; }
-
-        /// <summary>
-        /// Whether the response has tool calls. This is a query parameter used to select responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_tool_calls")]
-        public bool? HasToolCalls { get; set; }
 
         /// <summary>
         /// **o-series models only** <br/>
@@ -84,10 +78,10 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Users { get; set; }
 
         /// <summary>
-        /// Whether to allow parallel tool calls. This is a query parameter used to select responses.
+        /// List of tool names. This is a query parameter used to select responses.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allow_parallel_tool_calls")]
-        public bool? AllowParallelToolCalls { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<string>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -108,16 +102,13 @@ namespace G
         /// The name of the model to find responses for. This is a query parameter used to select responses.
         /// </param>
         /// <param name="instructionsSearch">
-        /// Optional search string for instructions. This is a query parameter used to select responses.
+        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
         /// </param>
         /// <param name="createdAfter">
         /// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
         /// </param>
         /// <param name="createdBefore">
         /// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
-        /// </param>
-        /// <param name="hasToolCalls">
-        /// Whether the response has tool calls. This is a query parameter used to select responses.
         /// </param>
         /// <param name="reasoningEffort">
         /// **o-series models only** <br/>
@@ -137,8 +128,8 @@ namespace G
         /// <param name="users">
         /// List of user identifiers. This is a query parameter used to select responses.
         /// </param>
-        /// <param name="allowParallelToolCalls">
-        /// Whether to allow parallel tool calls. This is a query parameter used to select responses.
+        /// <param name="tools">
+        /// List of tool names. This is a query parameter used to select responses.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -150,12 +141,11 @@ namespace G
             string? instructionsSearch,
             int? createdAfter,
             int? createdBefore,
-            bool? hasToolCalls,
             global::G.ReasoningEffort? reasoningEffort,
             double? temperature,
             double? topP,
             global::System.Collections.Generic.IList<string>? users,
-            bool? allowParallelToolCalls)
+            global::System.Collections.Generic.IList<string>? tools)
         {
             this.Type = type;
             this.Metadata = metadata;
@@ -163,12 +153,11 @@ namespace G
             this.InstructionsSearch = instructionsSearch;
             this.CreatedAfter = createdAfter;
             this.CreatedBefore = createdBefore;
-            this.HasToolCalls = hasToolCalls;
             this.ReasoningEffort = reasoningEffort;
             this.Temperature = temperature;
             this.TopP = topP;
             this.Users = users;
-            this.AllowParallelToolCalls = allowParallelToolCalls;
+            this.Tools = tools;
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ResponseCodeInterpreterCallCodeDeltaEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// The type of the event. Always `response.code_interpreter_call_code.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDeltaEventTypeJsonConverter))]
@@ -31,6 +31,13 @@ namespace G
         public required string Delta { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -40,7 +47,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDeltaEvent" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+        /// The type of the event. Always `response.code_interpreter_call_code.delta`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
@@ -48,16 +55,21 @@ namespace G
         /// <param name="delta">
         /// The partial code snippet added by the code interpreter.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallCodeDeltaEvent(
             int outputIndex,
             string delta,
+            int sequenceNumber,
             global::G.ResponseCodeInterpreterCallCodeDeltaEventType type)
         {
             this.OutputIndex = outputIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

@@ -12,7 +12,7 @@ namespace G
     /// Like:<br/>
     ///  - Improve the quality of my chatbot<br/>
     ///  - See how well my chatbot handles customer support<br/>
-    ///  - Check if o3-mini is better at my usecase than gpt-4o
+    ///  - Check if o4-mini is better at my usecase than gpt-4o
     /// </summary>
     public sealed partial class Eval
     {
@@ -42,14 +42,14 @@ namespace G
         /// Configuration of data sources used in runs of the evaluation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_source_config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; } = default!;
+        public global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalLogsDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; } = default!;
 
         /// <summary>
         /// A list of testing criteria.<br/>
         /// Default Value: eval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("testing_criteria", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> TestingCriteria { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalGraderLabelModel?, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> TestingCriteria { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the eval was created.
@@ -107,8 +107,8 @@ namespace G
         public Eval(
             string id,
             string name,
-            global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalLabelModelGrader, global::G.EvalStringCheckGrader, global::G.EvalTextSimilarityGrader, global::G.EvalPythonGrader, global::G.EvalScoreModelGrader>> testingCriteria,
+            global::G.OneOf<global::G.EvalCustomDataSourceConfig, global::G.EvalLogsDataSourceConfig, global::G.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.EvalGraderLabelModel?, global::G.EvalGraderStringCheck?, global::G.EvalGraderTextSimilarity?, global::G.EvalGraderPython?, global::G.EvalGraderScoreModel?>> testingCriteria,
             global::System.DateTimeOffset createdAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalObject @object = global::G.EvalObject.Eval)

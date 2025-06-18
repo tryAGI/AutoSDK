@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CreateEvalCompletionsRunDataSourceSamplingParams.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -37,6 +39,26 @@ namespace G
         public int? Seed { get; set; }
 
         /// <summary>
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>))]
+        public global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +82,19 @@ namespace G
         /// A seed value to initialize the randomness, during sampling.<br/>
         /// Default Value: 42
         /// </param>
+        /// <param name="responseFormat">
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </param>
+        /// <param name="tools">
+        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,12 +102,16 @@ namespace G
             double? temperature,
             int? maxCompletionTokens,
             double? topP,
-            int? seed)
+            int? seed,
+            global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonSchema, global::G.ResponseFormatJsonObject>? responseFormat,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools)
         {
             this.Temperature = temperature;
             this.MaxCompletionTokens = maxCompletionTokens;
             this.TopP = topP;
             this.Seed = seed;
+            this.ResponseFormat = responseFormat;
+            this.Tools = tools;
         }
 
         /// <summary>

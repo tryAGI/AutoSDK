@@ -28,6 +28,12 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sequence_number", Required = global::Newtonsoft.Json.Required.Always)]
+        public int SequenceNumber { get; set; } = default!;
+
+        /// <summary>
         /// The function-call arguments delta that is added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
@@ -51,17 +57,22 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item that the function-call arguments delta is added to.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="delta">
         /// The function-call arguments delta that is added.
         /// </param>
         public ResponseFunctionCallArgumentsDeltaEvent(
             string itemId,
             int outputIndex,
+            int sequenceNumber,
             string delta,
             global::G.ResponseFunctionCallArgumentsDeltaEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }

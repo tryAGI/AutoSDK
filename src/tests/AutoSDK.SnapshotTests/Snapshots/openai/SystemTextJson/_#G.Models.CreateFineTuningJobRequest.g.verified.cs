@@ -27,7 +27,7 @@ namespace G
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
         /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
         /// <example>file-abc123</example>
@@ -57,7 +57,7 @@ namespace G
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
         /// <example>file-abc123</example>
@@ -114,7 +114,7 @@ namespace G
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
         /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="suffix">
@@ -128,7 +128,7 @@ namespace G
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="integrations">

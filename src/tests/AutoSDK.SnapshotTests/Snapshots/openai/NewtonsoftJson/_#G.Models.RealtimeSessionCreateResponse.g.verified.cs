@@ -71,6 +71,24 @@ namespace G
         public global::G.RealtimeSessionCreateResponseInputAudioTranscription? InputAudioTranscription { get; set; }
 
         /// <summary>
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("speed")]
+        public double? Speed { get; set; }
+
+        /// <summary>
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tracing")]
+        public global::G.OneOf<global::G.RealtimeSessionCreateResponseTracingEnum?, global::G.RealtimeSessionCreateResponseTracingEnum2>? Tracing { get; set; }
+
+        /// <summary>
         /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
         /// VAD means that the model will detect the start and end of speech based on <br/>
         /// audio volume and respond at the end of user speech.
@@ -151,6 +169,18 @@ namespace G
         /// asynchronously through Whisper and should be treated as rough guidance <br/>
         /// rather than the representation understood by the model.
         /// </param>
+        /// <param name="speed">
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="tracing">
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </param>
         /// <param name="turnDetection">
         /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
         /// VAD means that the model will detect the start and end of speech based on <br/>
@@ -180,6 +210,8 @@ namespace G
             string? inputAudioFormat,
             string? outputAudioFormat,
             global::G.RealtimeSessionCreateResponseInputAudioTranscription? inputAudioTranscription,
+            double? speed,
+            global::G.OneOf<global::G.RealtimeSessionCreateResponseTracingEnum?, global::G.RealtimeSessionCreateResponseTracingEnum2>? tracing,
             global::G.RealtimeSessionCreateResponseTurnDetection? turnDetection,
             global::System.Collections.Generic.IList<global::G.RealtimeSessionCreateResponseTool>? tools,
             string? toolChoice,
@@ -193,6 +225,8 @@ namespace G
             this.InputAudioFormat = inputAudioFormat;
             this.OutputAudioFormat = outputAudioFormat;
             this.InputAudioTranscription = inputAudioTranscription;
+            this.Speed = speed;
+            this.Tracing = tracing;
             this.TurnDetection = turnDetection;
             this.Tools = tools;
             this.ToolChoice = toolChoice;

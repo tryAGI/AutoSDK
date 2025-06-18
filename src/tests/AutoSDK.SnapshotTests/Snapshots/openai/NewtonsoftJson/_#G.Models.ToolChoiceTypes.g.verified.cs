@@ -16,7 +16,10 @@ namespace G
         /// Allowed values are:<br/>
         /// - `file_search`<br/>
         /// - `web_search_preview`<br/>
-        /// - `computer_use_preview`
+        /// - `computer_use_preview`<br/>
+        /// - `code_interpreter`<br/>
+        /// - `mcp`<br/>
+        /// - `image_generation`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ToolChoiceTypesType Type { get; set; } = default!;
@@ -36,7 +39,10 @@ namespace G
         /// Allowed values are:<br/>
         /// - `file_search`<br/>
         /// - `web_search_preview`<br/>
-        /// - `computer_use_preview`
+        /// - `computer_use_preview`<br/>
+        /// - `code_interpreter`<br/>
+        /// - `mcp`<br/>
+        /// - `image_generation`
         /// </param>
         public ToolChoiceTypes(
             global::G.ToolChoiceTypesType type)

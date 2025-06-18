@@ -45,6 +45,13 @@ namespace G
         public required string Refusal { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +75,9 @@ namespace G
         /// <param name="refusal">
         /// The refusal text that is finalized.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,12 +86,14 @@ namespace G
             int outputIndex,
             int contentIndex,
             string refusal,
+            int sequenceNumber,
             global::G.ResponseRefusalDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 
