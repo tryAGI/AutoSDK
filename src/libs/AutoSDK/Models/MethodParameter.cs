@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Json;
 
@@ -205,4 +206,13 @@ public record struct MethodParameter(
         DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOfLike
         ? "default"
         : DefaultValue;
+
+    public bool ProducesDeprecationWarning =>
+        Type.IsAnyOfLike &&
+        Type.SubTypes.Any(static x => x.Unbox<TypeData>().IsDeprecated);
+
+    public string DisableDeprecationWarningIfRequired =>
+        ProducesDeprecationWarning
+            ? "#pragma warning disable CS0618 // Type or member is obsolete"
+            : " ";
 }

@@ -641,9 +641,13 @@ namespace {endPoint.Settings.Namespace}
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {parameters.Where(static x => x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{x.DisableDeprecationWarningIfRequired}
+            {x.Type.CSharpType} {x.ParameterName},
+{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
 {parameters.Where(static x => x is { IsRequired: false }).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+{x.DisableDeprecationWarningIfRequired}
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
+{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
