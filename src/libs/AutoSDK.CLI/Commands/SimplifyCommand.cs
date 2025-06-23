@@ -8,29 +8,35 @@ namespace AutoSDK.CLI.Commands;
 
 internal sealed class SimplifyCommand : Command
 {
+    private Option<string> OutputOption { get; } = new(
+        name: "--output",
+        aliases: ["-o"])
+    {
+        DefaultValueFactory = _ => "simplified.yaml",
+        Description = "Output file path",
+    };
+    
+    private Argument<string> InputOption { get; } = new(
+        name: "input")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Input file path",
+    };
+    
     public SimplifyCommand() : base(name: "simplify", description: "Simplifies OpenAPI spec.")
     {
-        var inputOption = new Argument<string>(
-            name: "input",
-            getDefaultValue: () => string.Empty,
-            description: "Input file path");
-        var outputOption = new Option<string>(
-            aliases: ["--output", "-o"],
-            getDefaultValue: () => "simplified.yaml",
-            description: "Output file path");
-        AddArgument(inputOption);
-        AddOption(outputOption);
+        Arguments.Add(InputOption);
+        Options.Add(OutputOption);
 
-        this.SetHandler(
-            HandleAsync,
-            inputOption,
-            outputOption);
+        SetAction(HandleAsync);
     }
 
-    private static async Task HandleAsync(
-        string inputPath,
-        string outputPath)
+    private async Task HandleAsync(
+        ParseResult parseResult)
     {
+        var inputPath = parseResult.GetRequiredValue(InputOption);
+        var outputPath = parseResult.GetRequiredValue(OutputOption);
+
         Console.WriteLine($"Loading {inputPath}...");
         
         using var client = new HttpClient();

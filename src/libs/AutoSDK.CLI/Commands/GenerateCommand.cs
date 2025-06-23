@@ -8,98 +8,150 @@ namespace AutoSDK.CLI.Commands;
 
 internal sealed class GenerateCommand : Command
 {
+    private Argument<string> Input { get; } = new(
+        name: "input")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Input file path",
+    };
+    
+    private Option<string> Output { get; } = new(
+        name: "--output",
+        aliases: ["-o"])
+    {
+        DefaultValueFactory = _ => "Generated",
+        Description = "Output file path",
+    };
+    
+    private Option<string> TargetFramework { get; } = new(
+        name: "--targetFramework",
+        aliases: ["-t"])
+    {
+        DefaultValueFactory = _ => Settings.Default.TargetFramework,
+        Description = "TargetFramework for the generated code",
+    };
+    
+    private Option<string> Namespace { get; } = new(
+        name: "--namespace",
+        aliases: ["-n"])
+    {
+        DefaultValueFactory = _ => Settings.Default.Namespace,
+        Description = "Namespace for the generated code",
+    };
+    
+    private Option<string> ClientClassName { get; } = new(
+        name: "--clientClassName",
+        aliases: ["-c"])
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Client class name",
+    };
+    
+    private Option<MethodNamingConvention> MethodNamingConvention { get; } = new(
+        name: "--methodNamingConvention",
+        aliases: ["-m"])
+    {
+        DefaultValueFactory = _ => Settings.Default.MethodNamingConvention,
+        Description = "Method Naming Convention",
+    };
+    
+    private Option<bool> SingleFile { get; } = new(
+        name: "--single-file",
+        aliases: ["-s"])
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Generate all models in a single file",
+    };
+    
+    private Option<bool> ExcludeDeprecatedOperations { get; } = new(
+        name: "--exclude-deprecated-operations",
+        aliases: ["-e"])
+    {
+        DefaultValueFactory = _ => Settings.Default.ExcludeDeprecatedOperations,
+        Description = "Exclude deprecated operations",
+    };
+    
+    private Option<string> ClsCompliantEnumPrefix { get; } = new(
+        name: "--clsCompliantEnumPrefix",
+        aliases: ["-e"])
+    {
+        DefaultValueFactory = _ => "x",
+        Description = "Prefix for enums which start with a number to make them CLS compliant. Pass empty string to disable prefixing(it will be non-CLS compliant '_')",
+    };
+    
+    private Option<bool> IgnoreOpenApiErrors { get; } = new(
+        name: "--ignore-openapi-errors")
+    {
+        DefaultValueFactory = _ => Settings.Default.IgnoreOpenApiErrors,
+        Description = "Ignore OpenAPI errors",
+    };
+    
+    private Option<bool> IgnoreOpenApiWarnings { get; } = new(
+        name: "--ignore-openapi-warnings")
+    {
+        DefaultValueFactory = _ => Settings.Default.IgnoreOpenApiWarnings,
+        Description = "Ignore OpenAPI warnings",
+    };
+    
+    private Option<bool> GenerateModelValidationMethods { get; } = new(
+        name: "--validation")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateModelValidationMethods,
+        Description = "Generate validation methods for models",
+    };
+    
+    private Option<bool> ComputeDiscriminators { get; } = new(
+        name: "--compute-discriminators")
+    {
+        DefaultValueFactory = _ => Settings.Default.ComputeDiscriminators,
+        Description = "Compute discriminators for polymorphic models",
+    };
+    
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
-        var inputOption = new Argument<string>(
-            name: "input",
-            getDefaultValue: () => string.Empty,
-            description: "Input file path");
-        var outputOption = new Option<string>(
-            aliases: ["--output", "-o"],
-            getDefaultValue: () => "Generated",
-            description: "Output file path");
-        var targetFrameworkOption = new Option<string>(
-            aliases: ["--targetFramework", "-t"],
-            getDefaultValue: () => Settings.Default.TargetFramework,
-            description: "TargetFramework for the generated code");
-        var namespaceOption = new Option<string>(
-            aliases: ["--namespace", "-n"],
-            getDefaultValue: () => Settings.Default.Namespace,
-            description: "Namespace for the generated code");
-        var clientClassNameOption = new Option<string>(
-            aliases: ["--clientClassName", "-c"],
-            getDefaultValue: () => string.Empty,
-            description: "Client class name");
-        var methodNamingConventionOption = new Option<MethodNamingConvention>(
-            aliases: ["--methodNamingConvention", "-m"],
-            getDefaultValue: () => Settings.Default.MethodNamingConvention,
-            description: "Method Naming Convention");
-        var singleFileOption = new Option<bool>(
-            aliases: ["--single-file", "-s"],
-            getDefaultValue: () => false,
-            description: "Generate all models in a single file");
-        var excludeDeprecatedOption = new Option<bool>(
-            aliases: ["--exclude-deprecated-operations", "-e"],
-            getDefaultValue: () => Settings.Default.ExcludeDeprecatedOperations,
-            description: "Exclude deprecated operations");
-        var clsCompliantEnumPrefixOption = new Option<string>(
-            aliases: ["--clsCompliantEnumPrefix"],
-            getDefaultValue: () => "x",
-            description: "Prefix for enums which start with a number to make them CLS compliant. Pass empty string to disable prefixing(it will be non-CLS compliant '_')");
-        var ignoreOpenApiErrorsOption = new Option<bool>(
-            aliases: ["--ignore-openapi-errors"],
-            getDefaultValue: () => Settings.Default.IgnoreOpenApiErrors,
-            description: "Ignore OpenAPI errors");
-        var ignoreOpenApiWarningsOption = new Option<bool>(
-            aliases: ["--ignore-openapi-warnings"],
-            getDefaultValue: () => Settings.Default.IgnoreOpenApiWarnings,
-            description: "Ignore OpenAPI warnings");
-        var validationOption = new Option<bool>(
-            aliases: ["--validation"],
-            getDefaultValue: () => Settings.Default.GenerateModelValidationMethods,
-            description: "Generate validation methods for models");
-        var computeDiscriminatorsOption = new Option<bool>(
-            aliases: ["--compute-discriminators"],
-            getDefaultValue: () => Settings.Default.ComputeDiscriminators,
-            description: "Compute discriminators for polymorphic models");
-        AddArgument(inputOption);
-        AddOption(outputOption);
-        AddOption(targetFrameworkOption);
-        AddOption(namespaceOption);
-        AddOption(clientClassNameOption);
-        AddOption(methodNamingConventionOption);
-        AddOption(singleFileOption);
-        AddOption(excludeDeprecatedOption);
-        AddOption(clsCompliantEnumPrefixOption);
-        AddOption(ignoreOpenApiErrorsOption);
-        AddOption(ignoreOpenApiWarningsOption);
-        AddOption(validationOption);
-        AddOption(computeDiscriminatorsOption);
+        Arguments.Add(Input);
+        Options.Add(Output);
+        Options.Add(TargetFramework);
+        Options.Add(Namespace);
+        Options.Add(ClientClassName);
+        Options.Add(MethodNamingConvention);
+        Options.Add(SingleFile);
+        Options.Add(ExcludeDeprecatedOperations);
+        Options.Add(ClsCompliantEnumPrefix);
+        Options.Add(IgnoreOpenApiErrors);
+        Options.Add(IgnoreOpenApiWarnings);
+        Options.Add(GenerateModelValidationMethods);
+        Options.Add(ComputeDiscriminators);
 
-        this.SetHandler(
-            HandleAsync,
-            inputOption,
-            outputOption,
-            singleFileOption,
-            new SettingsBinder(
-                targetFrameworkOption,
-                namespaceOption,
-                clientClassNameOption,
-                methodNamingConventionOption,
-                excludeDeprecatedOption,
-                clsCompliantEnumPrefixOption,
-                ignoreOpenApiErrorsOption,
-                ignoreOpenApiWarningsOption,
-                validationOption,
-                computeDiscriminatorsOption));
+        SetAction(HandleAsync);
     }
 
-    private static async Task HandleAsync(
-        string input,
-        string output,
-        bool singleFile,
-        Settings settings)
+    private async Task HandleAsync(ParseResult parseResult)
     {
+        string input = parseResult.GetRequiredValue(Input);
+        string output = parseResult.GetRequiredValue(Output);
+        bool singleFile = parseResult.GetRequiredValue(SingleFile);
+        
+        var namespaceValue = parseResult.GetRequiredValue(Namespace);
+        
+        Settings settings = Settings.Default with
+        {
+            TargetFramework = parseResult.GetRequiredValue(TargetFramework),
+            Namespace = namespaceValue,
+            ClassName = parseResult.GetRequiredValue(ClientClassName),
+            ClsCompliantEnumPrefix = parseResult.GetRequiredValue(ClsCompliantEnumPrefix),
+            MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),
+            ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
+            JsonSerializerContext = $"{namespaceValue}.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
+            GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
+            IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
+            IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
+            FromCli = true,
+        };
+        //Settings.Load(parseResult.GetValueForOption(outputOption));
+            
         Console.WriteLine($"Loading {input}...");
         
         using var client = new HttpClient();

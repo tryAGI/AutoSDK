@@ -5,29 +5,35 @@ namespace AutoSDK.CLI.Commands;
 
 internal sealed class ConvertCommand : Command
 {
+    private Argument<string> Input { get; } = new(
+        name: "input")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Input file path",
+    };
+    
+    private Option<string> Output { get; } = new(
+        name: "--output",
+        aliases: ["-o"])
+    {
+        DefaultValueFactory = _ => "openapi30.yaml",
+        Description = "Output file path",
+    };
+    
     public ConvertCommand() : base(name: "convert-to-openapi30", description: "Converts OpenAPI 3.1 spec to OpenAPI 3.0.")
     {
-        var inputOption = new Argument<string>(
-            name: "input",
-            getDefaultValue: () => string.Empty,
-            description: "Input file path");
-        var outputOption = new Option<string>(
-            aliases: ["--output", "-o"],
-            getDefaultValue: () => "openapi30.yaml",
-            description: "Output file path");
-        AddArgument(inputOption);
-        AddOption(outputOption);
+        Arguments.Add(Input);
+        Options.Add(Output);
 
-        this.SetHandler(
-            HandleAsync,
-            inputOption,
-            outputOption);
+        SetAction(HandleAsync);
     }
 
-    private static async Task HandleAsync(
-        string inputPath,
-        string outputPath)
+    private async Task HandleAsync(ParseResult parseResult)
     {
+        var inputPath = parseResult.GetRequiredValue(Input);
+        var outputPath = parseResult.GetRequiredValue(Output);
+
+
         Console.WriteLine($"Loading {inputPath}...");
         
         using var client = new HttpClient();

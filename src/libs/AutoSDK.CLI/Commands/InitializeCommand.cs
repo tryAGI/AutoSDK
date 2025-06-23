@@ -5,64 +5,81 @@ namespace AutoSDK.CLI.Commands;
 
 internal sealed class InitializeCommand : Command
 {
+    private Argument<string> SolutionName { get; } = new(
+        name: "solution-name")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Solution name",
+    };
+    
+    private Argument<string> ClientName { get; } = new(
+        name: "client-name")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "API client name",
+    };
+    
+    private Argument<string> OpenApiSpec { get; } = new(
+        name: "open-api-spec")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "OpenAPI spec url",
+    };
+    
+    private Argument<string> Company { get; } = new(
+        name: "company")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Company name",
+    };
+    
+    private Option<string> Output { get; } = new(
+        name: "--output",
+        aliases: ["-o"])
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Output directory",
+    };
+    
+    private Option<bool> AddMkDocs { get; } = new(
+        name: "--add-mkdocs",
+        aliases: ["-m"])
+    {
+        DefaultValueFactory = _ => true,
+        Description = "Adds MkDocs to the solution",
+    };
+    
+    private Option<bool> AddTests { get; } = new(
+        name: "--add-tests",
+        aliases: ["-t"])
+    {
+        DefaultValueFactory = _ => true,
+        Description = "Adds integration tests to the solution",
+    };
+    
     public InitializeCommand() : base(name: "init", description: "Creates a new solution with GitHub Actions.")
     {
-        var solutionName = new Argument<string>(
-            name: "solution-name",
-            getDefaultValue: () => string.Empty,
-            description: "Solution name");
-        var clientName = new Argument<string>(
-            name: "client-name",
-            getDefaultValue: () => string.Empty,
-            description: "API client name");
-        var openApiSpec = new Argument<string>(
-            name: "open-api-spec",
-            getDefaultValue: () => string.Empty,
-            description: "OpenAPI spec url");
-        var company = new Argument<string>(
-            name: "company",
-            getDefaultValue: () => string.Empty,
-            description: "Company name");
-        var output = new Option<string>(
-            aliases: ["--output", "-o"],
-            getDefaultValue: () => string.Empty,
-            description: "Output directory");
-        var addMkDocs = new Option<bool>(
-            aliases: ["--add-mkdocs", "-m"],
-            getDefaultValue: () => true,
-            description: "Adds MkDocs to the solution");
-        var addTests = new Option<bool>(
-            aliases: ["--add-tests", "-t"],
-            getDefaultValue: () => true,
-            description: "Adds integration tests to the solution");
-        AddArgument(solutionName);
-        AddArgument(clientName);
-        AddArgument(openApiSpec);
-        AddArgument(company);
-        AddOption(output);
-        AddOption(addMkDocs);
-        AddOption(addTests);
+        Arguments.Add(SolutionName);
+        Arguments.Add(ClientName);
+        Arguments.Add(OpenApiSpec);
+        Arguments.Add(Company);
+        Options.Add(Output);
+        Options.Add(AddMkDocs);
+        Options.Add(AddTests);
 
-        this.SetHandler(
-            HandleAsync,
-            solutionName,
-            clientName,
-            openApiSpec,
-            company,
-            output,
-            addMkDocs,
-            addTests);
+        SetAction(HandleAsync);
     }
 
-    private static async Task HandleAsync(
-        string solutionName,
-        string clientName,
-        string openApiSpec,
-        string company,
-        string outputPath,
-        bool addMkDocs,
-        bool addTests)
+    private async Task HandleAsync(ParseResult parseResult)
     {
+        string solutionName = parseResult.GetRequiredValue(SolutionName);
+        string clientName = parseResult.GetRequiredValue(ClientName);
+        string openApiSpec = parseResult.GetRequiredValue(OpenApiSpec);
+        string company = parseResult.GetRequiredValue(Company);
+        string outputPath = parseResult.GetRequiredValue(Output);
+        bool addMkDocs = parseResult.GetRequiredValue(AddMkDocs);
+        bool addTests = parseResult.GetRequiredValue(AddTests); 
+            
         Console.WriteLine("Initializing...");
 
         if (string.IsNullOrWhiteSpace(outputPath))

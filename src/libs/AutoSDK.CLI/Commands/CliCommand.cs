@@ -5,7 +5,7 @@ using AutoSDK.Models;
 
 namespace AutoSDK.CLI.Commands;
 
-internal sealed class HttpCommand : Command
+internal sealed class CliCommand : Command
 {
     private Argument<string> Input { get; } = new(
         name: "input")
@@ -22,15 +22,7 @@ internal sealed class HttpCommand : Command
         Description = "Output file path",
     };
     
-    private Option<bool> SingleFile { get; } = new(
-        name: "--single-file",
-        aliases: ["-s"])
-    {
-        DefaultValueFactory = _ => false,
-        Description = "Generate a single .http file",
-    };
-    
-    private Option<bool> ExcludeDeprecatedOperations { get; } = new(
+    private Option<bool> ExcludeDeprecated { get; } = new(
         name: "--exclude-deprecated-operations",
         aliases: ["-e"])
     {
@@ -52,12 +44,11 @@ internal sealed class HttpCommand : Command
         Description = "Ignore OpenAPI warnings",
     };
     
-    public HttpCommand() : base(name: "http", description: "Creates .http files for a OpenAPI spec.")
+    public CliCommand() : base(name: "cli", description: "Creates CLI .cs files for a OpenAPI spec.")
     {
         Arguments.Add(Input);
         Options.Add(Output);
-        Options.Add(SingleFile);
-        Options.Add(ExcludeDeprecatedOperations);
+        Options.Add(ExcludeDeprecated);
         Options.Add(IgnoreOpenApiErrors);
         Options.Add(IgnoreOpenApiWarnings);
 
@@ -66,12 +57,11 @@ internal sealed class HttpCommand : Command
 
     private async Task HandleAsync(ParseResult parseResult)
     {
-        var input = parseResult.GetRequiredValue(Input);
-        var output = parseResult.GetRequiredValue(Output);
-        var singleFile = parseResult.GetRequiredValue(SingleFile);
-        var excludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations);
-        var ignoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors);
-        var ignoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings); 
+        string input = parseResult.GetRequiredValue(Input);
+        string output = parseResult.GetRequiredValue(Output);
+        bool excludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecated);
+        bool ignoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors);
+        bool ignoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings);
             
         Console.WriteLine($"Loading {input}...");
         
@@ -82,8 +72,6 @@ internal sealed class HttpCommand : Command
         
         Console.WriteLine("Creating...");
         
-        var name = Path.GetFileNameWithoutExtension(input);
-
         var settings = Settings.Default with
         {
             ExcludeDeprecatedOperations = excludeDeprecatedOperations,
@@ -139,13 +127,6 @@ Content-Type: application/json
         }
         
         Directory.CreateDirectory(output);
-        
-        if (singleFile)
-        {
-            var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
-            await File.WriteAllTextAsync(Path.Combine(output, $"{name}.http"), text).ConfigureAwait(false);
-            return;
-        }
         
         foreach (var file in files)
         {

@@ -4,11 +4,12 @@ using AutoSDK.CLI.Commands.AI;
 
 var rootCommand = new RootCommand(
     description: "CLI tool to use AutoSDK");
-rootCommand.AddCommand(new GenerateCommand());
-rootCommand.AddCommand(new HttpCommand());
-rootCommand.AddCommand(new SimplifyCommand());
-rootCommand.AddCommand(new ConvertCommand());
-rootCommand.AddCommand(new InitializeCommand());
-rootCommand.AddCommand(new AiCommand());
+rootCommand.Subcommands.Add(new GenerateCommand());
+rootCommand.Subcommands.Add(new HttpCommand());
+rootCommand.Subcommands.Add(new CliCommand());
+rootCommand.Subcommands.Add(new SimplifyCommand());
+rootCommand.Subcommands.Add(new ConvertCommand());
+rootCommand.Subcommands.Add(new InitializeCommand());
+rootCommand.Subcommands.Add(new AiCommand());
 
-return await rootCommand.InvokeAsync(args).ConfigureAwait(false);
+return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);

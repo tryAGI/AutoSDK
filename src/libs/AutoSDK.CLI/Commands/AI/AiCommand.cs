@@ -6,6 +6,6 @@ internal sealed class AiCommand : Command
 {
     public AiCommand() : base(name: "ai", description: "AI subcommands.")
     {
-        AddCommand(new SpecFromDocsCommand());
+        Subcommands.Add(new SpecFromDocsCommand());
     }
 }
