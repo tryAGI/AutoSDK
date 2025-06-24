@@ -24,7 +24,7 @@ public static partial class Sources
 
 namespace {endPoint.Settings.Namespace}
 {{
-    internal sealed partial class {endPoint.MethodName}Command : global::System.CommandLine.Command
+    internal sealed partial class {endPoint.NotAsyncMethodName}Command : global::System.CommandLine.Command
     {{
         private readonly {clientType} _client;
 
@@ -53,7 +53,7 @@ namespace {endPoint.Settings.Namespace}
         }};
 ").Inject()}
     
-        public {endPoint.MethodName}Command({clientType} client) : base(
+        public {endPoint.NotAsyncMethodName}Command({clientType} client) : base(
             name: ""{endPoint.NotAsyncMethodName.FirstWord().ToLowerInvariant()}"",
             description: ""{endPoint.Description}"")
         {{

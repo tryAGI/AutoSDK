@@ -34,7 +34,7 @@ namespace {methods[0].Settings.Namespace}
             this global::Microsoft.Extensions.DependencyInjection.IServiceCollection services)
         {{
             // Register individual command services as singletons
-{methods.Select(x => $"{x.MethodName}Command").Distinct().Select((type, i) => @$"
+{methods.Select(x => $"{x.NotAsyncMethodName}Command").Distinct().Select((type, i) => @$"
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 {type}>(services);").Inject()}
 
