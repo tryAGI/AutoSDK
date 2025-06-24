@@ -4,6 +4,8 @@ using AutoSDK.Extensions;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Serialization.Form;
 
+#pragma warning disable CA1308
+
 namespace AutoSDK.Models;
 
 public record struct EndPoint(
@@ -24,6 +26,7 @@ public record struct EndPoint(
     string Summary,
     string Description,
     string BaseUrlSummary,
+    string CliAction,
     Settings Settings,
     Settings GlobalSettings,
     bool IsDeprecated,
@@ -169,6 +172,11 @@ public record struct EndPoint(
             Summary: operation.Operation.GetXmlDocumentationSummary(),
             Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
+            CliAction:
+                operation.Operation.Extensions
+                    .FirstOrDefault(x => x.Key == "x-cli-action")
+                    .Value?.ToString() ??
+                operation.MethodName.FirstWord().ToLowerInvariant(),
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,
             IsDeprecated: operation.Operation.Deprecated,

@@ -54,7 +54,7 @@ namespace {endPoint.Settings.Namespace}
 ").Inject()}
     
         public {endPoint.NotAsyncMethodName}Command({clientType} client) : base(
-            name: ""{endPoint.NotAsyncMethodName.FirstWord().ToLowerInvariant()}"",
+            name: ""{endPoint.CliAction}"",
             description: ""{endPoint.Description}"")
         {{
             _client = client;
