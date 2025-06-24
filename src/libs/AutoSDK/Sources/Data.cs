@@ -313,6 +313,7 @@ public static class Data
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()
                 : [],
+            Tags: includedTags.Select(x => Tag.FromTag(x, settings)).ToImmutableArray(),
             Converters: new Client(
                 Id: "Converters",
                 ClassName: string.Empty,

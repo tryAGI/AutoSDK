@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.CommandLine;
 using AutoSDK.Extensions;
 using AutoSDK.Generation;
@@ -107,6 +108,13 @@ internal sealed class GenerateCommand : Command
         Description = "Compute discriminators for polymorphic models",
     };
     
+    private Option<bool> GenerateCli { get; } = new(
+        name: "--generate-cli")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateCli,
+        Description = "Generate CLI for the client",
+    };
+    
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
         Arguments.Add(Input);
@@ -122,6 +130,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(GenerateModelValidationMethods);
         Options.Add(ComputeDiscriminators);
+        Options.Add(GenerateCli);
 
         SetAction(HandleAsync);
     }
@@ -149,8 +158,8 @@ internal sealed class GenerateCommand : Command
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             FromCli = true,
+            GenerateCli = parseResult.GetRequiredValue(GenerateCli),
         };
-        //Settings.Load(parseResult.GetValueForOption(outputOption));
             
         Console.WriteLine($"Loading {input}...");
         
@@ -176,12 +185,26 @@ internal sealed class GenerateCommand : Command
             settings = settings with
             {
                 ClassName = $"{name.ToPropertyName()
-                    .UseWordSeparator('\\', '-', '.', '_', '/')}Api",
+                    .UseWordSeparator('\\', '-', '.', '_', '/')}Client",
             };
         }
 
         var data = Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
-        var files = data.Enums
+        var files = settings.GenerateCli
+            ? data.Methods
+                .SelectMany(x => new []
+                {
+                    Sources.Command(x),
+                }).Concat(data.Methods.GroupBy(x => x.Tag)
+                    .SelectMany(x => new []
+                    {
+                        Sources.TagCommand(x.Key, x.ToImmutableArray()),
+                    }))
+                .Concat([Sources.MainCommand(data.Tags)])
+                .Concat([Sources.AddCommands(data.Methods, data.Tags)])
+                .Where(x => !x.IsEmpty)
+                .ToArray()
+            : data.Enums
             .SelectMany(x => new []
             {
                 Sources.Enum(x),

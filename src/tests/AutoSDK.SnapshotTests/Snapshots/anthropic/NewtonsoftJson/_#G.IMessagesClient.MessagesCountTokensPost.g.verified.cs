@@ -152,7 +152,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CountMessageTokensResponse> MessagesCountTokensPostAsync(
             global::System.Collections.Generic.IList<global::G.InputMessage> messages,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::G.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
             global::G.ToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? tools = default,

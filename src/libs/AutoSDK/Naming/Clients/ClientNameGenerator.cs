@@ -28,4 +28,15 @@ public static class ClientNameGenerator
         
         return CSharpPropertyNameGenerator.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
     }
+    
+    public static string GeneratePropertyName(
+        Settings settings,
+        Tag tag)
+    {
+        var name = new string(tag.Name
+            .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
+            .ToArray());
+        
+        return CSharpPropertyNameGenerator.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
+    }
 }

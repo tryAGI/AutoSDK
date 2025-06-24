@@ -8,6 +8,7 @@ public record struct Data(
     EquatableArray<AnyOfData> AnyOfs,
     EquatableArray<TypeData> Types,
     EquatableArray<Authorization> Authorizations,
+    EquatableArray<Tag> Tags,
     Client Converters,
     IReadOnlyList<SchemaContext> Schemas,
     IReadOnlyList<SchemaContext> FilteredSchemas,

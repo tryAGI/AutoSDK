@@ -9,6 +9,7 @@ namespace AutoSDK.Models;
 public record struct EndPoint(
     string Id,
     string ClassName,
+    Tag Tag,
     string BaseUrl,
     bool Stream,
     string Path,
@@ -21,6 +22,7 @@ public record struct EndPoint(
     OperationType HttpMethod,
     ContentType ContentType,
     string Summary,
+    string Description,
     string BaseUrlSummary,
     Settings Settings,
     Settings GlobalSettings,
@@ -143,6 +145,9 @@ public record struct EndPoint(
             ClassName: operation.Settings.GroupByTags && firstTag != null
                 ? ClientNameGenerator.Generate(operation.Settings, firstTag)
                 : operation.Settings.ClassName.Replace(".", string.Empty),
+            Tag: firstTag != null ?
+                Tag.FromTag(firstTag, operation.GlobalSettings)
+                : Tag.Empty,
             BaseUrl: string.Empty,
             Stream: responses
                 .Any(x => x.MimeType.Contains("application/x-ndjson")), // text/event-stream
@@ -162,6 +167,7 @@ public record struct EndPoint(
             HttpMethod: operation.OperationType,
             ContentType: contentType,
             Summary: operation.Operation.GetXmlDocumentationSummary(),
+            Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,

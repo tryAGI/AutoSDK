@@ -74,7 +74,8 @@ public static class OptionsExtensions
             IgnoreOpenApiWarnings: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiWarnings), prefix, defaultValue: Settings.Default.IgnoreOpenApiWarnings),
             
             GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: Settings.Default.GenerateSdk),
-            FromCli: false);
+            FromCli: false,
+            GenerateCli: false);
         
         string? GetOptionFromAdditionalText(string name)
         {

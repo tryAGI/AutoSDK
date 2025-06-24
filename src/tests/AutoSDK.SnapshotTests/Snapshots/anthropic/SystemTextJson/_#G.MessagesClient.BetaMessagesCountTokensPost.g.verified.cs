@@ -351,7 +351,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
             global::System.Collections.Generic.IList<global::G.BetaInputMessage> messages,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::G.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::G.BetaToolChoice? toolChoice = default,

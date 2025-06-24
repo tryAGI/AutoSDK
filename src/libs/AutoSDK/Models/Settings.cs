@@ -46,7 +46,9 @@ public record struct Settings(
     bool GenerateExceptions,
 
     bool GenerateSdk,
-    bool FromCli)
+    bool FromCli,
+    
+    bool GenerateCli)
 {
     public static Settings Default => new(
         TargetFramework: "net8.0",
@@ -85,6 +87,7 @@ public record struct Settings(
         GeneratePolyfills: true,
         GenerateExceptions: true,
         GenerateSdk: true,
-        FromCli: false
+        FromCli: false,
+        GenerateCli: false
     );
 }

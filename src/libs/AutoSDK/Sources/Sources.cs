@@ -47,6 +47,59 @@ public static partial class Sources
             Text: GenerateModel(modelData, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName Command(
+        EndPoint endPoint,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{endPoint.GlobalSettings.Namespace}.Commands.{endPoint.NotAsyncMethodName}Command.g.cs",
+            Text: GenerateCommand(endPoint, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName TagCommand(
+        Tag tag,
+        EquatableArray<EndPoint> methods,
+        CancellationToken cancellationToken = default)
+    {
+        if (methods.IsEmpty)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"{methods[0].GlobalSettings.Namespace}.Commands.{tag.SingularizedName}Command.g.cs",
+            Text: GenerateTagCommand(tag, methods, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName MainCommand(
+        EquatableArray<Tag> values,
+        CancellationToken cancellationToken = default)
+    {
+        if (values.IsEmpty)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"{values[0].GlobalSettings.Namespace}.Commands.MainCommand.g.cs",
+            Text: GenerateMainCommand(values, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName AddCommands(
+        EquatableArray<EndPoint> methods,
+        EquatableArray<Tag> tags,
+        CancellationToken cancellationToken = default)
+    {
+        if (methods.IsEmpty || tags.IsEmpty)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"{methods[0].Settings.Namespace}.ServiceCollectionExtensions.AddCommands.g.cs",
+            Text: GenerateAddCommands(methods, tags, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName AnyOf(
         AnyOfData data,
         CancellationToken cancellationToken = default)

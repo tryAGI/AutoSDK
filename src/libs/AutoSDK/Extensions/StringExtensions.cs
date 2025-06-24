@@ -305,4 +305,32 @@ public static class StringExtensions
             ? newValue
             : text;
     }
+    
+    /// <summary>
+    /// Returns the first “word” of a string.
+    /// A word = sequence of letters up to the first:
+    ///   • space / tab / underscore, or
+    ///   • Camel/Pascal-case boundary (lower → upper).
+    /// </summary>
+    public static string FirstWord(this string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return string.Empty;
+
+        int end = text!.Length;
+
+        // 1️⃣ Stop at obvious separators
+        int sep = text.IndexOfAny([' ', '\t', '_']);
+        if (sep >= 0) end = sep;
+
+        // 2️⃣ Detect camel/pascal boundary (…aB… → break before B)
+        for (int i = 1; i < end; i++)
+            if (char.IsLower(text[i - 1]) && char.IsUpper(text[i]))
+            {
+                end = i;
+                break;
+            }
+
+        return text.Substring(0, end);
+    }
 }

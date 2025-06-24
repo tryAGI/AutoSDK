@@ -196,7 +196,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BetaMessage> BetaMessagesPostAsync(
+#pragma warning disable CS0618 // Type or member is obsolete
             global::G.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::System.Collections.Generic.IList<global::G.BetaInputMessage> messages,
             int maxTokens,
             string? anthropicBeta = default,
