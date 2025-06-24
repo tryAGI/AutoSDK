@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Serialization.Form;
+using Microsoft.OpenApi.Any;
 
 #pragma warning disable CA1308
 
@@ -173,9 +174,9 @@ public record struct EndPoint(
             Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
             CliAction:
-                operation.Operation.Extensions
+                (operation.Operation.Extensions
                     .FirstOrDefault(x => x.Key == "x-cli-action")
-                    .Value?.ToString() ??
+                    .Value as OpenApiString)?.Value ??
                 operation.MethodName.FirstWord().ToLowerInvariant(),
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,
