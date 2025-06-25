@@ -195,6 +195,14 @@ public static class Data
         var methods = filteredOperations
             .Select(EndPoint.FromSchema)
             .ToImmutableArray();
+
+        foreach (var group in methods
+                     .GroupBy(x => x.Tag)
+                     .Where(x => !x.AreKeysUnique(y => y.CliAction)))
+        {
+            Console.WriteLine($"Found duplicate CLI action names in '{group.Key.SingularizedName}': {string.Join(", ", group.Select(x => x.CliAction))}");
+        }
+        
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))

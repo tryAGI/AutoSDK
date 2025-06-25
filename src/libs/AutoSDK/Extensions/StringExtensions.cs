@@ -361,4 +361,26 @@ public static class StringExtensions
 
         return text.Substring(start);
     }
+    
+    /// <summary>
+    /// Returns true when every element’s SomeKey value appears exactly once.
+    /// </summary>
+    /// <param name="items"></param>
+    /// <param name="keySelector"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static bool AreKeysUnique<T>(this IEnumerable<T> items, Func<T, object> keySelector)
+    {
+        items = items ?? throw new ArgumentNullException(nameof(items));
+        keySelector = keySelector ?? throw new ArgumentNullException(nameof(keySelector));
+        
+        // HashSet gives O(n) uniqueness check without extra allocations
+        var seen = new HashSet<object>();
+
+        foreach (var item in items)
+            if (!seen.Add(keySelector(item)))   // Add() returns false if key already present
+                return false;                   // duplicate found → stop early
+
+        return true;                            // no duplicates
+    }
 }
