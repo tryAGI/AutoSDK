@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetExtensionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,15 +23,17 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = @"",
+            Description = @"The ID of the extension to get.",
         };
 
         private global::System.CommandLine.Option<string?> ExtensionVersion { get; } = new(
             name: "extensionVersion")
         {
-            Description = @"",
+            Description = @"The version of the extension to get. If not specified, it returns the latest, released version. If you don’t have a released version, you must specify a version; otherwise, the list is empty.",
         };
-        public GetExtensionsCommand(G.IApi client) : base(
+        public GetExtensionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets information about an extension.
 
@@ -39,6 +42,7 @@ __Authorization:__
 Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` field (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)), and the `role` field must be set to _external_.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ExtensionId);
             Options.Add(ExtensionVersion);

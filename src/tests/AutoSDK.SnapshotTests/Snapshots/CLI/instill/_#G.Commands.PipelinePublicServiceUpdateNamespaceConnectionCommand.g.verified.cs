@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceUpdateNamespaceConnectionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,61 +30,74 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"ID of the namespace that owns the connection.",
         };
 
         private global::System.CommandLine.Argument<string> ConnectionId { get; } = new(
             name: "connectionId")
         {
-            Description = @"",
+            Description = @"ID of the connection to be updated, as present in the database.",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"ID.",
         };
 
         private global::System.CommandLine.Argument<string> IntegrationId { get; } = new(
             name: "integrationId")
         {
-            Description = @"",
+            Description = @"Integration ID. It determines for which type of components can reference
+this connection.",
         };
 
         private global::System.CommandLine.Argument<global::G.Method> Method { get; } = new(
             name: "method")
         {
-            Description = @"",
+            Description = @"Connection method. It references the setup schema provided by the
+integration.",
         };
 
         private global::System.CommandLine.Argument<object> Setup { get; } = new(
             name: "setup")
         {
-            Description = @"",
+            Description = @"Connection details. This field is required on creation, optional on view.
+When viewing the connection details, the setup values will be redacted.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Scopes { get; } = new(
             name: "scopes")
         {
-            Description = @"",
+            Description = @"A list of scopes that identify the resources that the connection will be
+able to access on the user's behalf. This is typically passed on creation
+when the setup has been generated through an OAuth flow with a limited set
+of scopes.",
         };
 
         private global::System.CommandLine.Option<string?> Identity { get; } = new(
             name: "identity")
         {
-            Description = @"",
+            Description = @"When the connection method is METHOD_OAUTH, this field will hold the
+identity (e.g., email, username) with which the access token has been
+generated.",
         };
 
         private global::System.CommandLine.Option<object?> OAuthAccessDetails { get; } = new(
             name: "oAuthAccessDetails")
         {
-            Description = @"",
+            Description = @"When the connection method is METHOD_OAUTH, the access token might come
+with some extra information that might vary across vendors. This
+information is passed as connection metadata.",
         };
-        public PipelinePublicServiceUpdateNamespaceConnectionCommand(G.IApi client) : base(
+        public PipelinePublicServiceUpdateNamespaceConnectionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Updates a connection with the supplied connection fields.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ConnectionId);

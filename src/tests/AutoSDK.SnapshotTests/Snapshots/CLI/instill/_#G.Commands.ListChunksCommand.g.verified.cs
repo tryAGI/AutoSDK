@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListChunksCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,34 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"owner/namespace id (not uid)",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"catalog id (not uid)",
         };
 
         private global::System.CommandLine.Option<string?> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = @"",
+            Description = @"unique identifier of the file",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> ChunkUids { get; } = new(
             name: "chunkUids")
         {
-            Description = @"",
+            Description = @"repeated chunk uid(not implemented yet)",
         };
-        public ListChunksCommand(G.IApi client) : base(
+        public ListChunksCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a paginated list of catalog chunks.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

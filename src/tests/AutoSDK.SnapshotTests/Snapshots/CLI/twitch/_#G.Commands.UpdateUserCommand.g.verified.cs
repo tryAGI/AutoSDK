@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,9 +23,12 @@ namespace G
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"The string to update the channel’s description to. The description is limited to a maximum of 300 characters.  
+To remove the description, specify this parameter but don’t set it’s value (for example, `?description=`).",
         };
-        public UpdateUserCommand(G.IApi client) : base(
+        public UpdateUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Updates the specified user’s information. The user ID in the OAuth token identifies the user whose information you want to update.
 
@@ -35,6 +39,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:edit** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Description);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V1VoiceListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,11 +18,14 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public V1VoiceListCommand(G.IApi client) : base(
+        public V1VoiceListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v1voice",
             description: @"v1/voice.list")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

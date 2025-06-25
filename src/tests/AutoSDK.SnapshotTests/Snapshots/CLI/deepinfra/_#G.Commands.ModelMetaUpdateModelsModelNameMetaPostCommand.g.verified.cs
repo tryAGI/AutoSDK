@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelMetaUpdateModelsModelNameMetaPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -41,37 +42,37 @@ namespace G
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"short model description in plain text",
         };
 
         private global::System.CommandLine.Option<string?> GithubUrl { get; } = new(
             name: "githubUrl")
         {
-            Description = @"",
+            Description = @"source code project link (empty to delete)",
         };
 
         private global::System.CommandLine.Option<string?> PaperUrl { get; } = new(
             name: "paperUrl")
         {
-            Description = @"",
+            Description = @"paper/research link (empty to delete)",
         };
 
         private global::System.CommandLine.Option<string?> LicenseUrl { get; } = new(
             name: "licenseUrl")
         {
-            Description = @"",
+            Description = @"usage license link (empty to delete)",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = @"",
+            Description = @"markdown flavored model readme",
         };
 
         private global::System.CommandLine.Option<string?> CoverImgUrl { get; } = new(
             name: "coverImgUrl")
         {
-            Description = @"",
+            Description = @"dataurl or regular url to cover image (empty to delete)",
         };
 
         private global::System.CommandLine.Option<global::G.HFTasksE?> ReportedType { get; } = new(
@@ -79,11 +80,14 @@ namespace G
         {
             Description = @"",
         };
-        public ModelMetaUpdateModelsModelNameMetaPostCommand(G.IApi client) : base(
+        public ModelMetaUpdateModelsModelNameMetaPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelName);
             Options.Add(XiApiKey);

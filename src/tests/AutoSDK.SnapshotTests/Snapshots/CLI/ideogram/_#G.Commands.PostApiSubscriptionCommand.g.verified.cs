@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PostApiSubscriptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,13 +23,16 @@ namespace G
         private global::System.CommandLine.Option<global::G.RechargeSettings?> RechargeSettings { get; } = new(
             name: "rechargeSettings")
         {
-            Description = @"",
+            Description = @"The current recharge settings for the API subscription.",
         };
-        public PostApiSubscriptionCommand(G.IApi client) : base(
+        public PostApiSubscriptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "post",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(RechargeSettings);
 

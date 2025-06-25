@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsDeleteArchiveForOrgCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,20 +22,23 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = @"",
+            Description = @"The organization name. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
-        public MigrationsDeleteArchiveForOrgCommand(G.IApi client) : base(
+        public MigrationsDeleteArchiveForOrgCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Deletes a previous migration archive. Migration archives are automatically deleted after seven days.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Org);
             Arguments.Add(MigrationId);

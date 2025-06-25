@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployGpuAvailabilityDeployLlmGpuAvailabilityGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -38,11 +39,14 @@ namespace G
         {
             Description = @"",
         };
-        public DeployGpuAvailabilityDeployLlmGpuAvailabilityGetCommand(G.IApi client) : base(
+        public DeployGpuAvailabilityDeployLlmGpuAvailabilityGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Source);
             Options.Add(BaseModel);

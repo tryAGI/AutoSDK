@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CorporaPartialUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -32,37 +33,40 @@ namespace G
         private global::System.CommandLine.Option<string?> RequestCorpusId { get; } = new(
             name: "requestCorpusId")
         {
-            Description = @"",
+            Description = @"The unique ID of this corpus.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Created { get; } = new(
             name: "created")
         {
-            Description = @"",
+            Description = @"When this corpus was created.",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"The name of this corpus.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"A description of this corpus.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CorpusStats?> Stats { get; } = new(
             name: "stats")
         {
-            Description = @"",
+            Description = @"The current stats for this corpus.",
         };
-        public CorporaPartialUpdateCommand(G.IApi client) : base(
+        public CorporaPartialUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "corpora",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CorpusId);
             Options.Add(RequestCorpusId);

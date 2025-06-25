@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,7 +18,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public ListModelsCommand(G.IApi client) : base(
+        public ListModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Get a paginated list of public models.
 
@@ -62,6 +65,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
 - A generic fallback image.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

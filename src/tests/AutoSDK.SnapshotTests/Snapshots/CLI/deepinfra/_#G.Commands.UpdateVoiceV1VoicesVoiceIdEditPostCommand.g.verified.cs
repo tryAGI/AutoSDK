@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateVoiceV1VoicesVoiceIdEditPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -44,11 +45,14 @@ namespace G
         {
             Description = @"",
         };
-        public UpdateVoiceV1VoicesVoiceIdEditPostCommand(G.IApi client) : base(
+        public UpdateVoiceV1VoicesVoiceIdEditPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(VoiceId);
             Arguments.Add(Name);

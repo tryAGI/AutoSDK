@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetUserExtensionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetUserExtensionsCommand(G.IApi client) : base(
+        public GetUserExtensionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets a list of all extensions (both active and inactive) that the broadcaster has installed. The user ID in the access token identifies the broadcaster.
 
@@ -27,6 +30,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:read:broadcast** or **user:edit:broadcast** scope. To include inactive extensions, you must include the **user:edit:broadcast** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

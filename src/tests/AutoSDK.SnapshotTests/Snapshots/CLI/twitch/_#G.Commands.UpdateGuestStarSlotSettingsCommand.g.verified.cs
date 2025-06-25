@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateGuestStarSlotSettingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,51 +28,53 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The ID of the Guest Star session in which to update a slot’s settings.",
         };
 
         private global::System.CommandLine.Argument<string> SlotId { get; } = new(
             name: "slotId")
         {
-            Description = @"",
+            Description = @"The slot assignment that has previously been assigned to a user.",
         };
 
         private global::System.CommandLine.Option<bool?> IsAudioEnabled { get; } = new(
             name: "isAudioEnabled")
         {
-            Description = @"",
+            Description = @"Flag indicating whether the slot is allowed to share their audio with the rest of the session. If false, the slot will be muted in any views containing the slot.",
         };
 
         private global::System.CommandLine.Option<bool?> IsVideoEnabled { get; } = new(
             name: "isVideoEnabled")
         {
-            Description = @"",
+            Description = @"Flag indicating whether the slot is allowed to share their video with the rest of the session. If false, the slot will have no video shared in any views containing the slot.",
         };
 
         private global::System.CommandLine.Option<bool?> IsLive { get; } = new(
             name: "isLive")
         {
-            Description = @"",
+            Description = @"Flag indicating whether the user assigned to this slot is visible/can be heard from any public subscriptions. Generally, this determines whether or not the slot is enabled in any broadcasting software integrations.",
         };
 
         private global::System.CommandLine.Option<int?> Volume { get; } = new(
             name: "volume")
         {
-            Description = @"",
+            Description = @"Value from 0-100 that controls the audio volume for shared views containing the slot.",
         };
-        public UpdateGuestStarSlotSettingsCommand(G.IApi client) : base(
+        public UpdateGuestStarSlotSettingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"BETA Allows a user to update slot settings for a particular guest within a Guest Star session, such as allowing the user to share audio or video within the call as a host. These settings will be broadcasted to all subscribers which control their view of the guest in that slot. One or more of the optional parameters to this API can be specified at any time.
 
@@ -81,6 +84,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListConnectorsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,25 +25,28 @@ namespace G
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = @"",
+            Description = @"Maximum number of connectors to return [0, 100].",
         };
 
         private global::System.CommandLine.Option<double?> Offset { get; } = new(
             name: "offset")
         {
-            Description = @"",
+            Description = @"Number of connectors to skip before returning results [0, inf].",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public ListConnectorsCommand(G.IApi client) : base(
+        public ListConnectorsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a list of connectors ordered by descending creation date (newer first). See ['Managing your Connector'](https://docs.cohere.com/docs/managing-your-connector) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Limit);
             Options.Add(Offset);

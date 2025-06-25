@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetGamesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,21 +25,23 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the category or game to get. Include this parameter for each category or game you want to get. For example, `&id=1234&id=5678`. You may specify a maximum of 100 IDs. The endpoint ignores duplicate and invalid IDs or IDs that weren’t found.",
         };
 
         private new global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"The name of the category or game to get. The name must exactly match the category’s or game’s title. Include this parameter for each category or game you want to get. For example, `&name=foo&name=bar`. You may specify a maximum of 100 names. The endpoint ignores duplicate names and names that weren’t found.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> IgdbId { get; } = new(
             name: "igdbId")
         {
-            Description = @"",
+            Description = @"The [IGDB](https://www.igdb.com/) ID of the game to get. Include this parameter for each game you want to get. For example, `&igdb_id=1234&igdb_id=5678`. You may specify a maximum of 100 IDs. The endpoint ignores duplicate and invalid IDs or IDs that weren’t found.",
         };
-        public GetGamesCommand(G.IApi client) : base(
+        public GetGamesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets information about specified categories or games.
 
@@ -49,6 +52,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Id);
             Options.Add(Name);

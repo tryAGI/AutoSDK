@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetApiStripeSubscriptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,13 +23,16 @@ namespace G
         private global::System.CommandLine.Option<bool?> IsBusiness { get; } = new(
             name: "isBusiness")
         {
-            Description = @"",
+            Description = @"Whether the subscription is intended to be used for business or personal use.",
         };
-        public GetApiStripeSubscriptionCommand(G.IApi client) : base(
+        public GetApiStripeSubscriptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(IsBusiness);
 

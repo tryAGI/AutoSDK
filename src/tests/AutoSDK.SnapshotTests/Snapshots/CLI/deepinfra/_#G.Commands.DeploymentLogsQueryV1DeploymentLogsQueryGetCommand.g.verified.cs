@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeploymentLogsQueryV1DeploymentLogsQueryGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -58,7 +59,9 @@ namespace G
         {
             Description = @"",
         };
-        public DeploymentLogsQueryV1DeploymentLogsQueryGetCommand(G.IApi client) : base(
+        public DeploymentLogsQueryV1DeploymentLogsQueryGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deployment",
             description: @"Query deployment logs.
 * Without timestamps (from/to) returns last `limit` messages (in last month).
@@ -68,6 +71,7 @@ namespace G
 * `from` and `to` should be no more than a month apart.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeployId);
             Options.Add(PodName);

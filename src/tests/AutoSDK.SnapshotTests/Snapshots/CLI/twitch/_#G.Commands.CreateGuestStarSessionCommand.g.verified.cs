@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateGuestStarSessionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,12 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster you want to create a Guest Star session for. Provided `broadcaster_id` must match the `user_id` in the auth token.",
         };
 
-        public CreateGuestStarSessionCommand(G.IApi client) : base(
+        public CreateGuestStarSessionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"BETA Programmatically creates a Guest Star session on behalf of the broadcaster. Requires the broadcaster to be present in the call interface, or the call will be ended automatically.
 
@@ -34,6 +37,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
 

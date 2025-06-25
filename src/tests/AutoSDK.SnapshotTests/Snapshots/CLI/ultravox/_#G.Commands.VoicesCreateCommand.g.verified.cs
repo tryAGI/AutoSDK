@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class VoicesCreateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,34 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> File { get; } = new(
             name: "file")
         {
-            Description = @"",
+            Description = @"An audio file containing a sample of the voice to clone.",
         };
 
         private global::System.CommandLine.Argument<string> Filename { get; } = new(
             name: "filename")
         {
-            Description = @"",
+            Description = @"An audio file containing a sample of the voice to clone.",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"Name for the cloned voice. Must be unique within your account.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"Optional description for the voice. If not provided, a default description will be generated.",
         };
-        public VoicesCreateCommand(G.IApi client) : base(
+        public VoicesCreateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "voices",
             description: @"Create a new cloned voice from an audio sample. The created voice will be private to your account.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(File);
             Arguments.Add(Filename);

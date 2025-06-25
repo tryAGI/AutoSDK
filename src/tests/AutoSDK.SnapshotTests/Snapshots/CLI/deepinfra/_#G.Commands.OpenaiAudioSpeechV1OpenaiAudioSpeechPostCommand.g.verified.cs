@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OpenaiAudioSpeechV1OpenaiAudioSpeechPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,13 +29,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"model name",
         };
 
         private global::System.CommandLine.Argument<string> Input { get; } = new(
             name: "input")
         {
-            Description = @"",
+            Description = @"Text to convert to speech",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
@@ -52,31 +53,34 @@ namespace G
         private global::System.CommandLine.Option<string?> Voice { get; } = new(
             name: "voice")
         {
-            Description = @"",
+            Description = @"Preset voices to use for the speech.",
         };
 
         private global::System.CommandLine.Option<global::G.TtsResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = @"",
+            Description = @"Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.",
         };
 
         private global::System.CommandLine.Option<double?> Speed { get; } = new(
             name: "speed")
         {
-            Description = @"",
+            Description = @"speed of the speech",
         };
 
         private global::System.CommandLine.Option<object?> ExtraBody { get; } = new(
             name: "extraBody")
         {
-            Description = @"",
+            Description = @"Extra body parameters for the model.",
         };
-        public OpenaiAudioSpeechV1OpenaiAudioSpeechPostCommand(G.IApi client) : base(
+        public OpenaiAudioSpeechV1OpenaiAudioSpeechPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "openai",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Input);

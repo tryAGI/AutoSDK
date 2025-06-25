@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceListConversationsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,49 +28,53 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"namespace id",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"app id",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"page size",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"page token",
         };
 
         private global::System.CommandLine.Option<string?> ConversationUid { get; } = new(
             name: "conversationUid")
         {
-            Description = @"",
+            Description = @"conversation_uid this is optional, if provided, only the conversation with the given conversation_uid will be returned
+first check conversation_uid, then check conversation_id, then check if_all",
         };
 
         private global::System.CommandLine.Option<string?> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = @"",
+            Description = @"conversation_id this is optional, if provided, only the conversation with the given conversation_id will be returned",
         };
 
         private global::System.CommandLine.Option<bool?> IfAll { get; } = new(
             name: "ifAll")
         {
-            Description = @"",
+            Description = @"If true, all conversations will be returned. This has higher priority over conversation_id, page_size, and page_token.",
         };
-        public AppPublicServiceListConversationsCommand(G.IApi client) : base(
+        public AppPublicServiceListConversationsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Returns a paginated list of conversations.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

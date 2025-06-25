@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceTriggerNamespacePipelineWithStreamCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,25 +26,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<object>?> Inputs { get; } = new(
             name: "inputs")
         {
-            Description = @"",
+            Description = @"Pipeline input parameters, it will be deprecated soon.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TriggerData>?> Data { get; } = new(
@@ -51,7 +52,9 @@ namespace G
         {
             Description = @"",
         };
-        public PipelinePublicServiceTriggerNamespacePipelineWithStreamCommand(G.IApi client) : base(
+        public PipelinePublicServiceTriggerNamespacePipelineWithStreamCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Triggers the execution of a pipeline asynchronously and streams back the response.
 This method is intended for real-time inference when low latency is of concern
@@ -61,6 +64,7 @@ The pipeline is identified by its resource name, formed by the parent namespace
 and ID of the pipeline.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

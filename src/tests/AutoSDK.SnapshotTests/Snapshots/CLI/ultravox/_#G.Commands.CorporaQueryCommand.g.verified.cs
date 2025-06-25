@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CorporaQueryCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,19 +30,22 @@ namespace G
         private global::System.CommandLine.Option<string?> Query { get; } = new(
             name: "query")
         {
-            Description = @"",
+            Description = @"The query to run.",
         };
 
         private global::System.CommandLine.Option<int?> MaxResults { get; } = new(
             name: "maxResults")
         {
-            Description = @"",
+            Description = @"The maximum number of results to return.",
         };
-        public CorporaQueryCommand(G.IApi client) : base(
+        public CorporaQueryCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "corpora",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CorpusId);
             Options.Add(Query);

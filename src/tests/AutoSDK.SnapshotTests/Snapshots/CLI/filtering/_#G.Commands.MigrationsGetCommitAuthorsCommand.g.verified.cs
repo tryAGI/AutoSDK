@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsGetCommitAuthorsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,23 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = @"",
+            Description = @"The account owner of the repository. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = @"",
+            Description = @"The name of the repository without the `.git` extension. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Option<int?> Since { get; } = new(
             name: "since")
         {
-            Description = @"",
+            Description = @"A user ID. Only return users with an ID greater than this ID.",
         };
-        public MigrationsGetCommitAuthorsCommand(G.IApi client) : base(
+        public MigrationsGetCommitAuthorsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
 
@@ -47,6 +50,7 @@ This endpoint and the [Map a commit author](https://docs.github.com/rest/migrati
 > **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Owner);
             Arguments.Add(Repo);

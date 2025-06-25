@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AddChannelModeratorCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the chat room. This ID must match the user ID in the access token.",
         };
 
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the user to add as a moderator in the broadcaster’s chat room.",
         };
 
-        public AddChannelModeratorCommand(G.IApi client) : base(
+        public AddChannelModeratorCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "add",
             description: @"Adds a moderator to the broadcaster’s chat room.
 
@@ -41,6 +44,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:moderators** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(UserId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class StreamingListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,11 +18,14 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public StreamingListCommand(G.IApi client) : base(
+        public StreamingListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "streaming",
             description: @"streaming.list")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

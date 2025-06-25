@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SnoozeNextAdCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,12 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"Provided `broadcaster_id` must match the `user_id` in the auth token.",
         };
 
-        public SnoozeNextAdCommand(G.IApi client) : base(
+        public SnoozeNextAdCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "snooze",
             description: @"If available, pushes back the timestamp of the upcoming automatic mid-roll ad by 5 minutes. This endpoint duplicates the snooze functionality in the creator dashboard’s Ads Manager.
 
@@ -33,6 +36,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:ads** scope. The `user_id` in the user access token must match the `broadcaster_id`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
 

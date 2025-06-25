@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GithubLoginGithubLoginGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -45,11 +46,14 @@ namespace G
         {
             Description = @"",
         };
-        public GithubLoginGithubLoginGetCommand(G.IApi client) : base(
+        public GithubLoginGithubLoginGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "github",
             description: @"Initiate github SSO login flow. Callback is /github/callback")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(LoginId);
             Options.Add(Origin);

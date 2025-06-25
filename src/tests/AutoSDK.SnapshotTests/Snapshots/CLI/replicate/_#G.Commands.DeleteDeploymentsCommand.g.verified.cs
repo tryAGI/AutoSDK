@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteDeploymentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the deployment.",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = @"",
+            Description = @"The name of the deployment.",
         };
 
-        public DeleteDeploymentsCommand(G.IApi client) : base(
+        public DeleteDeploymentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Delete a deployment
 
@@ -49,6 +52,7 @@ curl -s -X DELETE \
 The response will be an empty 204, indicating the deployment has been deleted.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeploymentOwner);
             Arguments.Add(DeploymentName);

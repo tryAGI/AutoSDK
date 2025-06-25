@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceChatCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,13 +27,13 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"App ID",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
@@ -58,13 +59,16 @@ namespace G
         {
             Description = @"",
         };
-        public AppPublicServiceChatCommand(G.IApi client) : base(
+        public AppPublicServiceChatCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Chat sends a message asynchronously and streams back the response.
 This method is intended for real-time conversation with a chatbot
 and the response needs to be processed incrementally.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

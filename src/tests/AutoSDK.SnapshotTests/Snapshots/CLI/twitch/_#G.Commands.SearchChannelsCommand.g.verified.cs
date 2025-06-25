@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SearchChannelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,27 +25,29 @@ namespace G
         private global::System.CommandLine.Argument<string> Query { get; } = new(
             name: "query")
         {
-            Description = @"",
+            Description = @"The URI-encoded search string. For example, encode search strings like _angel of death_ as `angel%20of%20death`.",
         };
 
         private global::System.CommandLine.Option<bool?> LiveOnly { get; } = new(
             name: "liveOnly")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether the response includes only channels that are currently streaming live. Set to **true** to get only channels that are streaming live; otherwise, **false** to get live and offline channels. The default is **false**.",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return per page in the response. The minimum page size is 1 item per page and the maximum is 100 items per page. The default is 20.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
-        public SearchChannelsCommand(G.IApi client) : base(
+        public SearchChannelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "search",
             description: @"Gets the channels that match the specified query and have streamed content within the past 6 months.
 
@@ -59,6 +62,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Query);
             Options.Add(LiveOnly);

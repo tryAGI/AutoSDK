@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetExtensionLiveChannelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,23 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = @"",
+            Description = @"The ID of the extension to get. Returns the list of broadcasters that are live and that have installed or activated this extension.",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return per page in the response. The minimum page size is 1 item per page and the maximum is 100 items per page. The default is 20.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The `pagination` field in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
-        public GetExtensionLiveChannelsCommand(G.IApi client) : base(
+        public GetExtensionLiveChannelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets a list of broadcasters that are streaming live and have installed or activated the extension.
 
@@ -48,6 +51,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ExtensionId);
             Options.Add(First);

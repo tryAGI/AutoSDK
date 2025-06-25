@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ToolsUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -35,14 +36,18 @@ namespace G
         private global::System.CommandLine.Argument<global::G.UltravoxV1BaseToolDefinition> Definition { get; } = new(
             name: "definition")
         {
-            Description = @"",
+            Description = @"The base definition of a tool that can be used during a call. Exactly one
+ implementation (http or client) should be set.",
         };
 
-        public ToolsUpdateCommand(G.IApi client) : base(
+        public ToolsUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "tools",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ToolId);
             Arguments.Add(Name);

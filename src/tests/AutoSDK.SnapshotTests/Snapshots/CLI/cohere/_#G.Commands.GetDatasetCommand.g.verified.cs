@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetDatasetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,13 +29,16 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public GetDatasetCommand(G.IApi client) : base(
+        public GetDatasetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Retrieve a dataset by ID. See ['Datasets'](https://docs.cohere.com/docs/datasets) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(XClientName);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CallsRecordingRetrieveCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
             Description = @"",
         };
 
-        public CallsRecordingRetrieveCommand(G.IApi client) : base(
+        public CallsRecordingRetrieveCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "calls",
             description: @"Returns or redirects to a recording of the call.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CallId);
 

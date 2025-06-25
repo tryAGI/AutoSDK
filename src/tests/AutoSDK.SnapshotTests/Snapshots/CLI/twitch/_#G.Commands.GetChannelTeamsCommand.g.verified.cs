@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetChannelTeamsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,12 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose teams you want to get.",
         };
 
-        public GetChannelTeamsCommand(G.IApi client) : base(
+        public GetChannelTeamsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the list of Twitch teams that the broadcaster is a member of.
 
@@ -33,6 +36,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
 

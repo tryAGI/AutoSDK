@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceListComponentRunsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,49 +28,61 @@ namespace G
         private global::System.CommandLine.Argument<string> PipelineRunId { get; } = new(
             name: "pipelineRunId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the pipeline run to list component runs for.",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"The page number to retrieve.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of items per page to return. The default and cap values
+are 10 and 100, respectively.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter
+expression.
+- Example: `create_time>timestamp(""2000-06-19T23:31:08.657Z"")`.",
         };
 
         private global::System.CommandLine.Option<string?> OrderBy { get; } = new(
             name: "orderBy")
         {
-            Description = @"",
+            Description = @"Order by field, with options for ordering by `id`, `create_time` or `update_time`.
+Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceListComponentRunsView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired run view in the response.
+The basic view excludes input / output data.
+
+ - VIEW_BASIC: Default view, only includes basic information.
+ - VIEW_FULL: Full representation.
+ - VIEW_RECIPE: Contains the recipe of the resource.",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public PipelinePublicServiceListComponentRunsCommand(G.IApi client) : base(
+        public PipelinePublicServiceListComponentRunsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns the information of each component execution within a pipeline run.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(PipelineRunId);
             Options.Add(Page);

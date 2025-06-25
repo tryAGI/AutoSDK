@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceDeleteNamespaceConnectionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID.",
         };
 
         private global::System.CommandLine.Argument<string> ConnectionId { get; } = new(
             name: "connectionId")
         {
-            Description = @"",
+            Description = @"Connection ID.",
         };
 
-        public PipelinePublicServiceDeleteNamespaceConnectionCommand(G.IApi client) : base(
+        public PipelinePublicServiceDeleteNamespaceConnectionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Deletes a connection.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ConnectionId);

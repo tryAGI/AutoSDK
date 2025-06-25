@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateTokenCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,31 +26,41 @@ namespace G
         private global::System.CommandLine.Option<global::System.DateTime?> LastUseTime { get; } = new(
             name: "lastUseTime")
         {
-            Description = @"",
+            Description = @"When users trigger a pipeline which uses an API token, the token is
+updated with the current time. This field is used to track the last time
+the token was used.",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"API token resource ID (used in `name` as the last segment). This conforms
+to RFC-1034, which restricts to letters, numbers, and hyphen, with the
+first character a letter, the last a letter or a number, and a 63
+character maximum.
+
+This field can reflect the client(s) that will use the token.",
         };
 
         private global::System.CommandLine.Option<int?> Ttl { get; } = new(
             name: "ttl")
         {
-            Description = @"",
+            Description = @"The time-to-live in seconds for this resource.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> ExpireTime { get; } = new(
             name: "expireTime")
         {
-            Description = @"",
+            Description = @"Expiration time.",
         };
-        public CreateTokenCommand(G.IApi client) : base(
+        public CreateTokenCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Creates an API token for the authenticated user.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(LastUseTime);
             Options.Add(Id);

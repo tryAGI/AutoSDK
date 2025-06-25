@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateConduitsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,12 @@ namespace G
         private global::System.CommandLine.Argument<int> ShardCount { get; } = new(
             name: "shardCount")
         {
-            Description = @"",
+            Description = @"The number of shards to create for this conduit.",
         };
 
-        public CreateConduitsCommand(G.IApi client) : base(
+        public CreateConduitsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"NEW Creates a new [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).
 
@@ -33,6 +36,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ShardCount);
 

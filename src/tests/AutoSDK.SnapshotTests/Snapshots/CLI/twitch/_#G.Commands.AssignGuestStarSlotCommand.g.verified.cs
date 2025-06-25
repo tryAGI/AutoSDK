@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AssignGuestStarSlotCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,34 +25,36 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the `user_id` in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The ID of the Guest Star session in which to assign the slot.",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = @"",
+            Description = @"The Twitch User ID corresponding to the guest to assign a slot in the session. This user must already have an invite to this session, and have indicated that they are ready to join.",
         };
 
         private global::System.CommandLine.Argument<string> SlotId { get; } = new(
             name: "slotId")
         {
-            Description = @"",
+            Description = @"The slot assignment to give to the user. Must be a numeric identifier between “1” and “N” where N is the max number of slots for the session. Max number of slots allowed for the session is reported by [Get Channel Guest Star Settings](https://dev.twitch.tv/docs/api/reference#get-channel-guest-star-settings).",
         };
 
-        public AssignGuestStarSlotCommand(G.IApi client) : base(
+        public AssignGuestStarSlotCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "assign",
             description: @"BETA Allows a previously invited user to be assigned a slot within the active Guest Star session, once that guest has indicated they are ready to join.
 
@@ -61,6 +64,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetChannelGuestStarSettingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster you want to get guest star settings for.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
 
-        public GetChannelGuestStarSettingsCommand(G.IApi client) : base(
+        public GetChannelGuestStarSettingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"BETA Gets the channel settings for configuration of the Guest Star feature for a particular host.
 
@@ -41,6 +44,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

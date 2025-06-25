@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ManageHeldAutomodMessagesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,22 +23,26 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The moderator who is approving or denying the held message. This ID must match the user ID in the access token.",
         };
 
         private global::System.CommandLine.Argument<string> MsgId { get; } = new(
             name: "msgId")
         {
-            Description = @"",
+            Description = @"The ID of the message to allow or deny.",
         };
 
         private new global::System.CommandLine.Argument<global::G.ManageHeldAutoModMessagesBodyAction> Action { get; } = new(
             name: "action")
         {
-            Description = @"",
+            Description = @"The action to take for the message. Possible values are:  
+* ALLOW
+* DENY",
         };
 
-        public ManageHeldAutomodMessagesCommand(G.IApi client) : base(
+        public ManageHeldAutomodMessagesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "manage",
             description: @"Allow or deny the message that AutoMod flagged for review. For information about AutoMod, see [How to Use AutoMod](https://help.twitch.tv/s/article/how-to-use-automod).
 
@@ -48,6 +53,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:automod** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Arguments.Add(MsgId);

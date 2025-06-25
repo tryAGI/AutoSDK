@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UnblockUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> TargetUserId { get; } = new(
             name: "targetUserId")
         {
-            Description = @"",
+            Description = @"The ID of the user to remove from the broadcaster’s list of blocked users. The API ignores the request if the broadcaster hasn’t blocked the user.",
         };
 
-        public UnblockUserCommand(G.IApi client) : base(
+        public UnblockUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "unblock",
             description: @"Removes the user from the broadcaster’s list of blocked users. The user ID in the OAuth token identifies the broadcaster who’s removing the block.
 
@@ -32,6 +35,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:manage:blocked\_users** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TargetUserId);
 

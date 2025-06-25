@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsGetImportStatusCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = @"",
+            Description = @"The account owner of the repository. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = @"",
+            Description = @"The name of the repository without the `.git` extension. The name is not case sensitive.",
         };
 
-        public MigrationsGetImportStatusCommand(G.IApi client) : base(
+        public MigrationsGetImportStatusCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"View the progress of an import.
 
@@ -72,6 +75,7 @@ This section includes details about Git LFS related fields that may be present i
 *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a ""Get Large Files"" request.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Owner);
             Arguments.Add(Repo);

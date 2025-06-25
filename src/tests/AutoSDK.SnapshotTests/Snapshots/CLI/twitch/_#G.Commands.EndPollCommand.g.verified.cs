@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class EndPollCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,22 +24,26 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that’s running the poll. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the poll to update.",
         };
 
         private global::System.CommandLine.Argument<global::G.EndPollBodyStatus> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"The status to set the poll to. Possible case-sensitive values are:  
+* TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.
+* ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.",
         };
 
-        public EndPollCommand(G.IApi client) : base(
+        public EndPollCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "end",
             description: @"Ends an active poll. You have the option to end it or end it and archive it.
 
@@ -47,6 +52,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(Id);

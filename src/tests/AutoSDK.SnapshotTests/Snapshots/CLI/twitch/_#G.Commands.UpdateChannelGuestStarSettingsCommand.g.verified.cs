@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateChannelGuestStarSettingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,39 +26,45 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster you want to update Guest Star settings for.",
         };
 
         private global::System.CommandLine.Option<bool?> IsModeratorSendLiveEnabled { get; } = new(
             name: "isModeratorSendLiveEnabled")
         {
-            Description = @"",
+            Description = @"Flag determining if Guest Star moderators have access to control whether a guest is live once assigned to a slot.",
         };
 
         private global::System.CommandLine.Option<int?> SlotCount { get; } = new(
             name: "slotCount")
         {
-            Description = @"",
+            Description = @"Number of slots the Guest Star call interface will allow the host to add to a call. Required to be between 1 and 6.",
         };
 
         private global::System.CommandLine.Option<bool?> IsBrowserSourceAudioEnabled { get; } = new(
             name: "isBrowserSourceAudioEnabled")
         {
-            Description = @"",
+            Description = @"Flag determining if Browser Sources subscribed to sessions on this channel should output audio",
         };
 
         private global::System.CommandLine.Option<global::G.UpdateChannelGuestStarSettingsBodyGroupLayout?> GroupLayout { get; } = new(
             name: "groupLayout")
         {
-            Description = @"",
+            Description = @"This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values:   
+* `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.
+* `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
+* `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source
+* `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source",
         };
 
         private global::System.CommandLine.Option<bool?> RegenerateBrowserSources { get; } = new(
             name: "regenerateBrowserSources")
         {
-            Description = @"",
+            Description = @"Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.",
         };
-        public UpdateChannelGuestStarSettingsCommand(G.IApi client) : base(
+        public UpdateChannelGuestStarSettingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.
 
@@ -67,6 +74,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Options.Add(IsModeratorSendLiveEnabled);

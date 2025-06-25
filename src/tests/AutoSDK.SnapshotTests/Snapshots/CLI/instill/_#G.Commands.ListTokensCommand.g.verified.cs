@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListTokensCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,19 +24,24 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of tokens to return. If this parameter is unspecified,
+at most 10 pipelines will be returned. The cap value for this parameter is
+100 (i.e. any value above that will be coerced to 100).",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page token.",
         };
-        public ListTokensCommand(G.IApi client) : base(
+        public ListTokensCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a paginated list of the API tokens of the authenticated user.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageSize);
             Options.Add(PageToken);

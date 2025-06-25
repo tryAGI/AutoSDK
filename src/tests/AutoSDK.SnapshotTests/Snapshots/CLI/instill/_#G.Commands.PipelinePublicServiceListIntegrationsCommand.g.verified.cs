@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceListIntegrationsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,25 +25,33 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return. The default and cap values are 10 and 100, respectively.",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page token. By default, the first page will be returned.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter expression.
+The following filters are supported:
+- `qIntegration` (fuzzy search on title or vendor)
+
+**Examples**:
+- List integrations where app name or vendor match `googl`: `q=""googl""`.",
         };
-        public PipelinePublicServiceListIntegrationsCommand(G.IApi client) : base(
+        public PipelinePublicServiceListIntegrationsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns a paginated list of available integrations.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageSize);
             Options.Add(PageToken);

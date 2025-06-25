@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class StreamingInterruptCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,11 +24,14 @@ namespace G
         {
             Description = @"",
         };
-        public StreamingInterruptCommand(G.IApi client) : base(
+        public StreamingInterruptCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "streaming",
             description: @"This is endpoint is to interrupt a speaking avatar. If the avatar is not speaking, it doesn't do anything.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(SessionId);
 

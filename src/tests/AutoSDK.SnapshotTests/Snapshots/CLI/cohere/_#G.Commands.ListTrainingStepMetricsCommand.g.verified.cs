@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListTrainingStepMetricsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,35 @@ namespace G
         private global::System.CommandLine.Argument<string> FinetunedModelId { get; } = new(
             name: "finetunedModelId")
         {
-            Description = @"",
+            Description = @"The parent fine-tuned model ID.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"Maximum number of results to be returned by the server. If 0, defaults to
+50.",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Request a specific page of the list results.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public ListTrainingStepMetricsCommand(G.IApi client) : base(
+        public ListTrainingStepMetricsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(FinetunedModelId);
             Options.Add(PageSize);

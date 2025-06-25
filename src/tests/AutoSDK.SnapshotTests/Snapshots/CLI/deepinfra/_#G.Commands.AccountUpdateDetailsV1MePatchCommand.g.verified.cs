@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AccountUpdateDetailsV1MePatchCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -34,7 +35,7 @@ namespace G
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"Personal name",
         };
 
         private global::System.CommandLine.Option<string?> Email { get; } = new(
@@ -52,25 +53,28 @@ namespace G
         private global::System.CommandLine.Option<string?> Company { get; } = new(
             name: "company")
         {
-            Description = @"",
+            Description = @"Company name",
         };
 
         private global::System.CommandLine.Option<string?> Website { get; } = new(
             name: "website")
         {
-            Description = @"",
+            Description = @"Company website address",
         };
 
         private global::System.CommandLine.Option<string?> DisplayName { get; } = new(
             name: "displayName")
         {
-            Description = @"",
+            Description = @"String with length between 1 and 39 characters. Only alphanumeric characters and dashes allowed. Must contain no leading, trailing or consecutive dashes.",
         };
-        public AccountUpdateDetailsV1MePatchCommand(G.IApi client) : base(
+        public AccountUpdateDetailsV1MePatchCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "account",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XiApiKey);
             Options.Add(Name);

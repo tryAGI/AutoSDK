@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SubmitFeedbackV1FeedbackPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,7 +24,7 @@ namespace G
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = @"",
+            Description = @"The message you'd like to send to deepinfra team",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
@@ -35,13 +36,16 @@ namespace G
         private global::System.CommandLine.Option<string?> ContactEmail { get; } = new(
             name: "contactEmail")
         {
-            Description = @"",
+            Description = @"Optional contact email to reach you back",
         };
-        public SubmitFeedbackV1FeedbackPostCommand(G.IApi client) : base(
+        public SubmitFeedbackV1FeedbackPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "submit",
             description: @"Submit feedback")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Message);
             Options.Add(XiApiKey);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SchemaRetrieveCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,7 +32,9 @@ namespace G
         {
             Description = @"",
         };
-        public SchemaRetrieveCommand(G.IApi client) : base(
+        public SchemaRetrieveCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "schema",
             description: @"OpenApi3 schema for this API. Format can be selected via content negotiation.
 
@@ -39,6 +42,7 @@ namespace G
 - JSON: application/vnd.oai.openapi+json")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Format);
             Options.Add(Lang);

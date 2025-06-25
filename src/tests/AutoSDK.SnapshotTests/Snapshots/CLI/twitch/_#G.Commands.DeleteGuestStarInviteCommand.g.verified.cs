@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteGuestStarInviteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,28 +24,30 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the `user_id` in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The ID of the session for the invite to be revoked on behalf of the broadcaster.",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = @"",
+            Description = @"Twitch User ID for the guest to revoke the Guest Star session invite from.",
         };
 
-        public DeleteGuestStarInviteCommand(G.IApi client) : base(
+        public DeleteGuestStarInviteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"BETA Revokes a previously sent invite for a Guest Star session.
 
@@ -54,6 +57,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

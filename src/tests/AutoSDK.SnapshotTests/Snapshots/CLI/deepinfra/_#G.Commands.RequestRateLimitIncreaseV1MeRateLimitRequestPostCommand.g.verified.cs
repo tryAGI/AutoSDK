@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class RequestRateLimitIncreaseV1MeRateLimitRequestPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -37,11 +38,14 @@ namespace G
         {
             Description = @"",
         };
-        public RequestRateLimitIncreaseV1MeRateLimitRequestPostCommand(G.IApi client) : base(
+        public RequestRateLimitIncreaseV1MeRateLimitRequestPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "request",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(RateLimit);
             Arguments.Add(Reason);

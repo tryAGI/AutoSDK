@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetGlobalEmotesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetGlobalEmotesCommand(G.IApi client) : base(
+        public GetGlobalEmotesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the list of [global emotes](https://www.twitch.tv/creatorcamp/en/learn-the-basics/emotes/). Global emotes are Twitch-created emotes that users can use in any Twitch chat.
 
@@ -33,6 +36,7 @@ __Request Query Parameters:__
 None")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -34,7 +35,7 @@ namespace G
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
-            Description = @"",
+            Description = @"Text to convert to speech",
         };
 
         private global::System.CommandLine.Option<string?> OutputFormat { get; } = new(
@@ -58,25 +59,28 @@ namespace G
         private global::System.CommandLine.Option<string?> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID to use for the conversion",
         };
 
         private global::System.CommandLine.Option<global::G.TtsResponseFormat?> RequestOutputFormat { get; } = new(
             name: "requestOutputFormat")
         {
-            Description = @"",
+            Description = @"Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.",
         };
 
         private global::System.CommandLine.Option<string?> LanguageCode { get; } = new(
             name: "languageCode")
         {
-            Description = @"",
+            Description = @"ISO 639-1, 2 letter language code",
         };
-        public TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostCommand(G.IApi client) : base(
+        public TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "text",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(VoiceId);
             Arguments.Add(Text);

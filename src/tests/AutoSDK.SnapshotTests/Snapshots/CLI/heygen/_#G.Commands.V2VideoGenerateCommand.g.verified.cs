@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V2VideoGenerateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -58,13 +59,16 @@ namespace G
         {
             Description = @"",
         };
-        public V2VideoGenerateCommand(G.IApi client) : base(
+        public V2VideoGenerateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v2video",
             description: @"Generated Video: [https://app.heygen.com/share/67cd13935445457eaa99040070bdb545](https://app.heygen.com/share/67cd13935445457eaa99040070bdb545)
 
 <img src=""https://resource.heygen.ai/video/gifs/67cd13935445457eaa99040070bdb545.gif"" alt="""">")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(AspectRatio);
             Options.Add(CallbackId);

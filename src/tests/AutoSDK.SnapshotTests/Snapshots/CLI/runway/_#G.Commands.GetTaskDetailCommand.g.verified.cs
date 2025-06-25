@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetTaskDetailCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<global::G.GetTaskDetailXRunwayVersion> XRunwayVersion { get; } = new(
             name: "xRunwayVersion")
         {
-            Description = @"",
+            Description = @"API version header.",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the task.",
         };
 
-        public GetTaskDetailCommand(G.IApi client) : base(
+        public GetTaskDetailCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Return details about a task. Updates every 5 seconds.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(XRunwayVersion);
             Arguments.Add(Id);

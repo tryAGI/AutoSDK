@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ProcessCatalogFilesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,22 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> FileUids { get; } = new(
             name: "fileUids")
         {
-            Description = @"",
+            Description = @"The file uid.",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public ProcessCatalogFilesCommand(G.IApi client) : base(
+        public ProcessCatalogFilesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "process",
             description: @"Processes catalog files.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(FileUids);
             Options.Add(InstillRequesterUid);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsGetStatusForAuthenticatedUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,7 +23,7 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Exclude { get; } = new(
@@ -30,7 +31,9 @@ namespace G
         {
             Description = @"",
         };
-        public MigrationsGetStatusForAuthenticatedUserCommand(G.IApi client) : base(
+        public MigrationsGetStatusForAuthenticatedUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:
 
@@ -42,6 +45,7 @@ namespace G
 Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(MigrationId);
             Options.Add(Exclude);

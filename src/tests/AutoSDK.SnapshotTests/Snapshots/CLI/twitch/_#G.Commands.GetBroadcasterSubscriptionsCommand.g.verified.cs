@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetBroadcasterSubscriptionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,33 +26,35 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The broadcaster’s ID. This ID must match the user ID in the access token.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"Filters the list to include only the specified subscribers. To specify more than one subscriber, include this parameter for each subscriber. For example, `&user_id=1234&user_id=5678`. You may specify a maximum of 100 subscribers.",
         };
 
         private global::System.CommandLine.Option<string?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return per page in the response. The minimum page size is 1 item per page and the maximum is 100 items per page. The default is 20.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. Do not specify if you set the _user\_id_ query parameter. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = @"",
+            Description = @"The cursor used to get the previous page of results. Do not specify if you set the _user\_id_ query parameter. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
-        public GetBroadcasterSubscriptionsCommand(G.IApi client) : base(
+        public GetBroadcasterSubscriptionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets a list of users that subscribe to the specified broadcaster.
 
@@ -62,6 +65,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 A Twitch extensions may use an app access token if the broadcaster has granted the **channel:read:subscriptions** scope from within the Twitch Extensions manager.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Options.Add(UserId);

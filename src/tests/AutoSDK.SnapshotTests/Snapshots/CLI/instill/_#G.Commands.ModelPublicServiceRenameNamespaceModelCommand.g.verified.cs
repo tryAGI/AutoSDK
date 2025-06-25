@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceRenameNamespaceModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,27 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID",
         };
 
         private global::System.CommandLine.Argument<string> NewModelId { get; } = new(
             name: "newModelId")
         {
-            Description = @"",
+            Description = @"The new resource ID. This will transform the resource name into
+`namespaces/{namespace.id}/models/{new_model_id}`.",
         };
 
-        public ModelPublicServiceRenameNamespaceModelCommand(G.IApi client) : base(
+        public ModelPublicServiceRenameNamespaceModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Renames a model, accesing it by its resource name, which is defined by the
 parent namespace and the ID of the model.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ModelId);

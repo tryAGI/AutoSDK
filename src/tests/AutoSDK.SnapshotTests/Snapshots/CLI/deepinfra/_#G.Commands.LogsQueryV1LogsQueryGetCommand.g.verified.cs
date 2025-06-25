@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class LogsQueryV1LogsQueryGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -51,7 +52,9 @@ namespace G
         {
             Description = @"",
         };
-        public LogsQueryV1LogsQueryGetCommand(G.IApi client) : base(
+        public LogsQueryV1LogsQueryGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "logs",
             description: @"Query inference logs.
 * Without timestamps (from/to) returns last `limit` messages (in last month).
@@ -61,6 +64,7 @@ namespace G
 * `from` and `to` should be no more than a month apart.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeployId);
             Options.Add(From);

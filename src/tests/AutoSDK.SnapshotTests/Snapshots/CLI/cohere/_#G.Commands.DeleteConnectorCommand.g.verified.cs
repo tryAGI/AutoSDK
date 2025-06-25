@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteConnectorCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,22 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the connector to delete.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public DeleteConnectorCommand(G.IApi client) : base(
+        public DeleteConnectorCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Delete a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/connectors) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(XClientName);

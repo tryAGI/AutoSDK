@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetDropsEntitlementsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,39 +28,43 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"An ID that identifies the entitlement to get. Include this parameter for each entitlement you want to get. For example, `id=1234&id=5678`. You may specify a maximum of 100 IDs.",
         };
 
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"An ID that identifies a user that was granted entitlements.",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = @"",
+            Description = @"An ID that identifies a game that offered entitlements.",
         };
 
         private global::System.CommandLine.Option<global::G.GetDropsEntitlementsFulfillmentStatus?> FulfillmentStatus { get; } = new(
             name: "fulfillmentStatus")
         {
-            Description = @"",
+            Description = @"The entitlement’s fulfillment status. Used to filter the list to only those with the specified status. Possible values are:   
+* CLAIMED
+* FULFILLED",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of entitlements to return per page in the response. The minimum page size is 1 entitlement per page and the maximum is 1000\. The default is 20.",
         };
-        public GetDropsEntitlementsCommand(G.IApi client) : base(
+        public GetDropsEntitlementsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets an organization’s list of entitlements that have been granted to a game, a user, or both.
 
@@ -84,6 +89,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Id);
             Options.Add(UserId);

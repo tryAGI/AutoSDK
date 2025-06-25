@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetExtensionBitsProductsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,9 +23,11 @@ namespace G
         private global::System.CommandLine.Option<bool?> ShouldIncludeAll { get; } = new(
             name: "shouldIncludeAll")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether to include disabled or expired Bits products in the response. The default is **false**.",
         };
-        public GetExtensionBitsProductsCommand(G.IApi client) : base(
+        public GetExtensionBitsProductsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the list of Bits products that belongs to the extension. The client ID in the app access token identifies the extension.
 
@@ -33,6 +36,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must be the extension’s client ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(ShouldIncludeAll);
 

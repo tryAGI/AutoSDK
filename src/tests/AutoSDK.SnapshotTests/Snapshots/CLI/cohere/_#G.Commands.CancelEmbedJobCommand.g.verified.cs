@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelEmbedJobCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,19 +22,22 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the embed job to cancel.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public CancelEmbedJobCommand(G.IApi client) : base(
+        public CancelEmbedJobCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"This API allows users to cancel an active embed job. Once invoked, the embedding process will be terminated, and users will be charged for the embeddings processed up to the cancellation point. It's important to note that partial results will not be available to users after cancellation.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(XClientName);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteCatalogCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The owner's id. i.e. namespace.",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"The catalog id.",
         };
 
-        public DeleteCatalogCommand(G.IApi client) : base(
+        public DeleteCatalogCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Deletes a catalog.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

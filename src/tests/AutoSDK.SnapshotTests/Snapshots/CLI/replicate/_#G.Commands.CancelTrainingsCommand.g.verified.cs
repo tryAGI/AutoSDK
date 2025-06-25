@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelTrainingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,14 +21,17 @@ namespace G
         private global::System.CommandLine.Argument<string> TrainingId { get; } = new(
             name: "trainingId")
         {
-            Description = @"",
+            Description = @"The ID of the training you want to cancel.",
         };
 
-        public CancelTrainingsCommand(G.IApi client) : base(
+        public CancelTrainingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TrainingId);
 

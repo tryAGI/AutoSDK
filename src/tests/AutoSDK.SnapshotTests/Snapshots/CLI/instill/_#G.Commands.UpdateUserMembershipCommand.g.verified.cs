@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateUserMembershipCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,32 +25,38 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"User ID",
         };
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
         private global::System.CommandLine.Argument<string> UpdateMask { get; } = new(
             name: "updateMask")
         {
-            Description = @"",
+            Description = @"The update mask specifies the subset of fields that should be modified.
+
+For more information about this field, see
+https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#field-mask.",
         };
 
         private global::System.CommandLine.Argument<global::G.MembershipState> State { get; } = new(
             name: "state")
         {
-            Description = @"",
+            Description = @"State of the membership.",
         };
 
-        public UpdateUserMembershipCommand(G.IApi client) : base(
+        public UpdateUserMembershipCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Accesses and updates a user membership by parent and membership IDs.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Arguments.Add(OrganizationId);

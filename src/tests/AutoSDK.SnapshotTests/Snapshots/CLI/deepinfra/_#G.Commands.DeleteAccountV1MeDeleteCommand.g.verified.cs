@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteAccountV1MeDeleteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
         {
             Description = @"",
         };
-        public DeleteAccountV1MeDeleteCommand(G.IApi client) : base(
+        public DeleteAccountV1MeDeleteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XiApiKey);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListEmbedJobsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,13 +23,16 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public ListEmbedJobsCommand(G.IApi client) : base(
+        public ListEmbedJobsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"The list embed job endpoint allows users to view all embed jobs history for that specific user.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XClientName);
 

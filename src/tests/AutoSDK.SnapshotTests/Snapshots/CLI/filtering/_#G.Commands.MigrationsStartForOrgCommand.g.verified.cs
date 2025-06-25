@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsStartForOrgCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,67 +31,70 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = @"",
+            Description = @"The organization name. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Repositories { get; } = new(
             name: "repositories")
         {
-            Description = @"",
+            Description = @"A list of arrays indicating which repositories should be migrated.",
         };
 
         private global::System.CommandLine.Option<bool?> LockRepositories { get; } = new(
             name: "lockRepositories")
         {
-            Description = @"",
+            Description = @"Indicates whether repositories should be locked (to prevent manipulation) while migrating data.",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeMetadata { get; } = new(
             name: "excludeMetadata")
         {
-            Description = @"",
+            Description = @"Indicates whether metadata should be excluded and only git source should be included for the migration.",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeGitData { get; } = new(
             name: "excludeGitData")
         {
-            Description = @"",
+            Description = @"Indicates whether the repository git data should be excluded from the migration.",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeAttachments { get; } = new(
             name: "excludeAttachments")
         {
-            Description = @"",
+            Description = @"Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeReleases { get; } = new(
             name: "excludeReleases")
         {
-            Description = @"",
+            Description = @"Indicates whether releases should be excluded from the migration (to reduce migration archive file size).",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeOwnerProjects { get; } = new(
             name: "excludeOwnerProjects")
         {
-            Description = @"",
+            Description = @"Indicates whether projects owned by the organization or users should be excluded. from the migration.",
         };
 
         private global::System.CommandLine.Option<bool?> OrgMetadataOnly { get; } = new(
             name: "orgMetadataOnly")
         {
-            Description = @"",
+            Description = @"Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = @"",
+            Description = @"Exclude related items from being returned in the response in order to improve performance of the request.",
         };
-        public MigrationsStartForOrgCommand(G.IApi client) : base(
+        public MigrationsStartForOrgCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Initiates the generation of a migration archive.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Org);
             Arguments.Add(Repositories);

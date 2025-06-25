@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class LemurActionItemsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,11 +19,14 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public LemurActionItemsCommand(G.IApi client) : base(
+        public LemurActionItemsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "lemur",
             description: @"Use LeMUR to generate a list of action items from a transcript")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

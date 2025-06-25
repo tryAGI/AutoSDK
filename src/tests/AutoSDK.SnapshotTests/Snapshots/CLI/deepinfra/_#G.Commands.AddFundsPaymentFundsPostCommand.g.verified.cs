@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AddFundsPaymentFundsPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,7 +23,7 @@ namespace G
         private global::System.CommandLine.Argument<int> Amount { get; } = new(
             name: "amount")
         {
-            Description = @"",
+            Description = @"Amount to add in cents",
         };
 
         private global::System.CommandLine.Option<string?> Session { get; } = new(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public AddFundsPaymentFundsPostCommand(G.IApi client) : base(
+        public AddFundsPaymentFundsPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "add",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Amount);
             Options.Add(Session);

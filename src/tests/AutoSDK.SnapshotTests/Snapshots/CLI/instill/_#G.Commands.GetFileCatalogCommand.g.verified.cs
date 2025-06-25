@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetFileCatalogCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,34 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"id of the namespace",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"id of the catalog",
         };
 
         private global::System.CommandLine.Option<string?> FileId { get; } = new(
             name: "fileId")
         {
-            Description = @"",
+            Description = @"id of the file(i.e. file name)",
         };
 
         private global::System.CommandLine.Option<string?> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = @"",
+            Description = @"Uid of the file",
         };
-        public GetFileCatalogCommand(G.IApi client) : base(
+        public GetFileCatalogCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get the catalog file.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

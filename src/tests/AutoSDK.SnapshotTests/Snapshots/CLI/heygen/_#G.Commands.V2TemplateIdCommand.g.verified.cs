@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V2TemplateIdCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,11 +18,14 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public V2TemplateIdCommand(G.IApi client) : base(
+        public V2TemplateIdCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v2template",
             description: @"v2/template/<id>")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

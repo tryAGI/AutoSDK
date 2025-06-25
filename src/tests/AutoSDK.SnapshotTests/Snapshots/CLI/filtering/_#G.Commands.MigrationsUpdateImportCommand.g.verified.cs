@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsUpdateImportCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,39 +27,41 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = @"",
+            Description = @"The account owner of the repository. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = @"",
+            Description = @"The name of the repository without the `.git` extension. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Option<string?> VcsUsername { get; } = new(
             name: "vcsUsername")
         {
-            Description = @"",
+            Description = @"The username to provide to the originating repository.",
         };
 
         private global::System.CommandLine.Option<string?> VcsPassword { get; } = new(
             name: "vcsPassword")
         {
-            Description = @"",
+            Description = @"The password to provide to the originating repository.",
         };
 
         private global::System.CommandLine.Option<global::G.MigrationsUpdateImportRequestVcs?> Vcs { get; } = new(
             name: "vcs")
         {
-            Description = @"",
+            Description = @"The type of version control system you are migrating from.",
         };
 
         private global::System.CommandLine.Option<string?> TfvcProject { get; } = new(
             name: "tfvcProject")
         {
-            Description = @"",
+            Description = @"For a tfvc import, the name of the project that is being imported.",
         };
-        public MigrationsUpdateImportCommand(G.IApi client) : base(
+        public MigrationsUpdateImportCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API
 request. If no parameters are provided, the import will be restarted.
@@ -71,6 +74,7 @@ You can select the project to import by providing one of the objects in the `pro
 > **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Owner);
             Arguments.Add(Repo);

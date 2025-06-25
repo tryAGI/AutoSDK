@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceCreateNamespacePipelineCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -33,85 +34,92 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The namespace that creates the pipeline.",
         };
 
         private global::System.CommandLine.Argument<object> Recipe { get; } = new(
             name: "recipe")
         {
-            Description = @"",
+            Description = @"Recipe describes the components of a Pipeline and how they are connected.",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Pipeline resource ID (used in `name` as the last segment). This conforms
+to RFC-1034, which restricts to letters, numbers, and hyphen, with the
+first character a letter, the last a letter or a number, and a 63
+character maximum.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"Pipeline description.",
         };
 
         private global::System.CommandLine.Option<global::G.Sharing?> Sharing { get; } = new(
             name: "sharing")
         {
-            Description = @"",
+            Description = @"Pipeline sharing information.",
         };
 
         private global::System.CommandLine.Option<object?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Metadata holds console-related data such as the pipeline builder layout.",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = @"",
+            Description = @"README holds the pipeline documentation.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Tags { get; } = new(
             name: "tags")
         {
-            Description = @"",
+            Description = @"Tags.",
         };
 
         private global::System.CommandLine.Option<string?> RawRecipe { get; } = new(
             name: "rawRecipe")
         {
-            Description = @"",
+            Description = @"Recipe in YAML format describes the components of a pipeline and how they
+are connected.",
         };
 
         private global::System.CommandLine.Option<string?> SourceUrl { get; } = new(
             name: "sourceUrl")
         {
-            Description = @"",
+            Description = @"A link to the source code of the pipeline (e.g. to a GitHub repository).",
         };
 
         private global::System.CommandLine.Option<string?> DocumentationUrl { get; } = new(
             name: "documentationUrl")
         {
-            Description = @"",
+            Description = @"A link to any extra information.",
         };
 
         private global::System.CommandLine.Option<string?> License { get; } = new(
             name: "license")
         {
-            Description = @"",
+            Description = @"License under which the pipeline is distributed.",
         };
 
         private global::System.CommandLine.Option<string?> ProfileImage { get; } = new(
             name: "profileImage")
         {
-            Description = @"",
+            Description = @"Pipeline profile image in base64 format.",
         };
-        public PipelinePublicServiceCreateNamespacePipelineCommand(G.IApi client) : base(
+        public PipelinePublicServiceCreateNamespacePipelineCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Creates a new pipeline under a namespace.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(Recipe);

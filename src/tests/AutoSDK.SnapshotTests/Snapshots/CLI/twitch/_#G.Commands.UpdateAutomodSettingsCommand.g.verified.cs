@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateAutomodSettingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,69 +32,71 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose AutoMod settings you want to update.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Option<int?> Aggression { get; } = new(
             name: "aggression")
         {
-            Description = @"",
+            Description = @"The Automod level for hostility involving aggression.",
         };
 
         private global::System.CommandLine.Option<int?> Bullying { get; } = new(
             name: "bullying")
         {
-            Description = @"",
+            Description = @"The Automod level for hostility involving name calling or insults.",
         };
 
         private global::System.CommandLine.Option<int?> Disability { get; } = new(
             name: "disability")
         {
-            Description = @"",
+            Description = @"The Automod level for discrimination against disability.",
         };
 
         private global::System.CommandLine.Option<int?> Misogyny { get; } = new(
             name: "misogyny")
         {
-            Description = @"",
+            Description = @"The Automod level for discrimination against women.",
         };
 
         private global::System.CommandLine.Option<int?> OverallLevel { get; } = new(
             name: "overallLevel")
         {
-            Description = @"",
+            Description = @"The default AutoMod level for the broadcaster.",
         };
 
         private global::System.CommandLine.Option<int?> RaceEthnicityOrReligion { get; } = new(
             name: "raceEthnicityOrReligion")
         {
-            Description = @"",
+            Description = @"The Automod level for racial discrimination.",
         };
 
         private global::System.CommandLine.Option<int?> SexBasedTerms { get; } = new(
             name: "sexBasedTerms")
         {
-            Description = @"",
+            Description = @"The Automod level for sexual content.",
         };
 
         private global::System.CommandLine.Option<int?> SexualitySexOrGender { get; } = new(
             name: "sexualitySexOrGender")
         {
-            Description = @"",
+            Description = @"The AutoMod level for discrimination based on sexuality, sex, or gender.",
         };
 
         private global::System.CommandLine.Option<int?> Swearing { get; } = new(
             name: "swearing")
         {
-            Description = @"",
+            Description = @"The Automod level for profanity.",
         };
-        public UpdateAutomodSettingsCommand(G.IApi client) : base(
+        public UpdateAutomodSettingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Updates the broadcaster’s AutoMod settings. The settings are used to automatically block inappropriate or harassing messages from appearing in the broadcaster’s chat room.
 
@@ -116,6 +119,7 @@ Note that if you set all the individual settings to values that match what `over
 Valid values for all levels are from 0 (no filtering) through 4 (most aggressive filtering). These levels affect how aggressively AutoMod holds back messages for moderators to review before they appear in chat or are denied (not shown).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

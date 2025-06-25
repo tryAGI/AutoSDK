@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateConnectorCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,43 +30,43 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"A human-readable name for the connector.",
         };
 
         private global::System.CommandLine.Argument<string> Url { get; } = new(
             name: "url")
         {
-            Description = @"",
+            Description = @"The URL of the connector that will be used to search for documents.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
 
         private global::System.CommandLine.Option<bool?> Active { get; } = new(
             name: "active")
         {
-            Description = @"",
+            Description = @"Whether the connector is active or not.",
         };
 
         private global::System.CommandLine.Option<bool?> ContinueOnFailure { get; } = new(
             name: "continueOnFailure")
         {
-            Description = @"",
+            Description = @"Whether a chat request should continue or not if the request to this connector fails.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"A description of the connector.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Excludes { get; } = new(
             name: "excludes")
         {
-            Description = @"",
+            Description = @"A list of fields to exclude from the prompt (fields remain in the document).",
         };
 
         private global::System.CommandLine.Option<global::G.CreateConnectorOAuth?> Oauth { get; } = new(
@@ -79,11 +80,14 @@ namespace G
         {
             Description = @"",
         };
-        public CreateConnectorCommand(G.IApi client) : base(
+        public CreateConnectorCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Creates a new connector. The connector is tested during registration and will cancel registration when the test is unsuccessful. See ['Creating and Deploying a Connector'](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Name);
             Arguments.Add(Url);

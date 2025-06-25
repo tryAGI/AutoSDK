@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceGetModelDefinitionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,26 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelDefinitionId { get; } = new(
             name: "modelDefinitionId")
         {
-            Description = @"",
+            Description = @"The resource name of the model definition, which allows its access by ID.
+- Format: `model-definitions/{id}`.",
         };
 
         private global::System.CommandLine.Option<global::G.ModelPublicServiceGetModelDefinitionView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired resource view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
+ - VIEW_FULL: Full representation.",
         };
-        public ModelPublicServiceGetModelDefinitionCommand(G.IApi client) : base(
+        public ModelPublicServiceGetModelDefinitionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Returns the details of a model definition.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelDefinitionId);
             Options.Add(View);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceUpdateConversationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,19 +27,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"namespace id",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"app id",
         };
 
         private global::System.CommandLine.Argument<string> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = @"",
+            Description = @"conversation id",
         };
 
         private global::System.CommandLine.Option<string?> NewConversationId { get; } = new(
@@ -58,11 +59,14 @@ namespace G
         {
             Description = @"",
         };
-        public AppPublicServiceUpdateConversationCommand(G.IApi client) : base(
+        public AppPublicServiceUpdateConversationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Updates a conversation.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

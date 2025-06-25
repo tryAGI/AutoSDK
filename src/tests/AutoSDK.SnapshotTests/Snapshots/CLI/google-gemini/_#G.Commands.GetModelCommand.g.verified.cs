@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"The id of the model to get.",
         };
 
-        public GetModelCommand(G.IApi client) : base(
+        public GetModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets information about a specific Model.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelId);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceGetIntegrationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<string> IntegrationId { get; } = new(
             name: "integrationId")
         {
-            Description = @"",
+            Description = @"Integration ID.",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceGetIntegrationView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired view in the response.
+
+ - VIEW_BASIC: Default view.
+ - VIEW_FULL: Full representation.",
         };
-        public PipelinePublicServiceGetIntegrationCommand(G.IApi client) : base(
+        public PipelinePublicServiceGetIntegrationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns the details of an integration.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(IntegrationId);
             Options.Add(View);

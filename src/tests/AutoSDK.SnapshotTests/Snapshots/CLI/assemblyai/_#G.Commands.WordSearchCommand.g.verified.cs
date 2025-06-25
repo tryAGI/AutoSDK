@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class WordSearchCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = @"",
+            Description = @"ID of the transcript",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Words { get; } = new(
             name: "words")
         {
-            Description = @"",
+            Description = @"Keywords to search for",
         };
 
-        public WordSearchCommand(G.IApi client) : base(
+        public WordSearchCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "word",
             description: @"Search through the transcript for keywords. You can search for individual words, numbers, or phrases containing up to five words or numbers.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TranscriptId);
             Arguments.Add(Words);

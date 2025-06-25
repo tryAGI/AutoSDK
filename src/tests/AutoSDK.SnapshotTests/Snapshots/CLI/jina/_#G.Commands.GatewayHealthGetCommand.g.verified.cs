@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GatewayHealthGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,12 +19,15 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GatewayHealthGetCommand(G.IApi client) : base(
+        public GatewayHealthGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "gateway",
             description: @"Get the health of this Gateway service.
 .. # noqa: DAR201")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

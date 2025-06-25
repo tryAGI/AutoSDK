@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateConduitsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Conduit ID.",
         };
 
         private global::System.CommandLine.Argument<int> ShardCount { get; } = new(
             name: "shardCount")
         {
-            Description = @"",
+            Description = @"The new number of shards for this conduit.",
         };
 
-        public UpdateConduitsCommand(G.IApi client) : base(
+        public UpdateConduitsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"NEW Updates a [conduit’s](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) shard count. To delete shards, update the count to a lower number, and the shards above the count will be deleted. For example, if the existing shard count is 100, by resetting shard count to 50, shards 50-99 are disabled.
 
@@ -40,6 +43,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Arguments.Add(ShardCount);

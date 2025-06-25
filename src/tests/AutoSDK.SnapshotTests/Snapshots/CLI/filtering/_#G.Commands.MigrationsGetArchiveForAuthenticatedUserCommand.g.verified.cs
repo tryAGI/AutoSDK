@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsGetArchiveForAuthenticatedUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
-        public MigrationsGetArchiveForAuthenticatedUserCommand(G.IApi client) : base(
+        public MigrationsGetArchiveForAuthenticatedUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:
 
@@ -48,6 +51,7 @@ namespace G
 The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(MigrationId);
 

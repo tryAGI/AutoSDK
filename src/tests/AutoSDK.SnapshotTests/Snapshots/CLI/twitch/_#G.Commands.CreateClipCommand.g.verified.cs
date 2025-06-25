@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateClipCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,15 +23,17 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose stream you want to create a clip from.",
         };
 
         private global::System.CommandLine.Option<bool?> HasDelay { get; } = new(
             name: "hasDelay")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether the API captures the clip at the moment the viewer requests it or after a delay. If **false** (default), Twitch captures the clip at the moment the viewer requests it (this is the same clip experience as the Twitch UX). If **true**, Twitch adds a delay before capturing the clip (this basically shifts the capture window to the right slightly).",
         };
-        public CreateClipCommand(G.IApi client) : base(
+        public CreateClipCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Creates a clip from the broadcaster’s stream.
 
@@ -45,6 +48,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **clips:edit** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Options.Add(HasDelay);

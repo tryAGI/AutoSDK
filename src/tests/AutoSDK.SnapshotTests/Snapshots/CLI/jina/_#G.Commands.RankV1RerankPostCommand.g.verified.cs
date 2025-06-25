@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class RankV1RerankPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,37 +26,47 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The identifier of the model.
+
+Available models and corresponding param size and dimension:
+- `jina-reranker-v2-base-multilingual`,	278M
+- `jina-reranker-v1-base-en`,	137M
+- `jina-reranker-v1-tiny-en`,	33M
+- `jina-reranker-v1-turbo-en`,	38M
+- `jina-colbert-v1-en`,	137M",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<string, global::G.ApiSchemasRankTextDoc>> Query { get; } = new(
             name: "query")
         {
-            Description = @"",
+            Description = @"The search query",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.ApiSchemasRankTextDoc>>> Documents { get; } = new(
             name: "documents")
         {
-            Description = @"",
+            Description = @"A list of text documents or strings to rerank. If a document is provided the text fields is required and all other fields will be preserved in the response.",
         };
 
         private global::System.CommandLine.Option<int?> TopN { get; } = new(
             name: "topN")
         {
-            Description = @"",
+            Description = @"The number of most relevant documents or indices to return, defaults to the length of `documents`",
         };
 
         private global::System.CommandLine.Option<bool?> ReturnDocuments { get; } = new(
             name: "returnDocuments")
         {
-            Description = @"",
+            Description = @"If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request. If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request. Defaults to true",
         };
-        public RankV1RerankPostCommand(G.IApi client) : base(
+        public RankV1RerankPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "rank",
             description: @"Rank pairs.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Query);

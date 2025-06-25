@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SetConfigPaymentConfigPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,13 +30,16 @@ namespace G
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = @"",
+            Description = @"Set usage limit (in USD). Negative means no limit.null/not-set means don't change it",
         };
-        public SetConfigPaymentConfigPostCommand(G.IApi client) : base(
+        public SetConfigPaymentConfigPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "set",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Session);
             Options.Add(Limit);

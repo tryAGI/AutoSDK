@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceCloneNamespacePipelineReleaseCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,50 +28,53 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Argument<string> ReleaseId { get; } = new(
             name: "releaseId")
         {
-            Description = @"",
+            Description = @"Release ID",
         };
 
         private global::System.CommandLine.Argument<string> TargetNamespaceId { get; } = new(
             name: "targetNamespaceId")
         {
-            Description = @"",
+            Description = @"Target Namespace ID.",
         };
 
         private global::System.CommandLine.Argument<string> TargetPipelineId { get; } = new(
             name: "targetPipelineId")
         {
-            Description = @"",
+            Description = @"Target Pipeline ID.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"Pipeline description.",
         };
 
         private global::System.CommandLine.Option<global::G.Sharing?> Sharing { get; } = new(
             name: "sharing")
         {
-            Description = @"",
+            Description = @"Pipeline sharing information.",
         };
-        public PipelinePublicServiceCloneNamespacePipelineReleaseCommand(G.IApi client) : base(
+        public PipelinePublicServiceCloneNamespacePipelineReleaseCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Clones a pipeline release owned by a namespace. The new pipeline may have a different
 parent, and this can be either a namespace or an organization.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

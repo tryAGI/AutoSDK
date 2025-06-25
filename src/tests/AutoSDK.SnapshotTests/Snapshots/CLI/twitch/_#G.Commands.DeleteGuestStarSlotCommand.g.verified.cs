@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteGuestStarSlotCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,39 +26,41 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The ID of the Guest Star session in which to remove the slot assignment.",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = @"",
+            Description = @"The Twitch User ID corresponding to the guest to remove from the session.",
         };
 
         private global::System.CommandLine.Argument<string> SlotId { get; } = new(
             name: "slotId")
         {
-            Description = @"",
+            Description = @"The slot ID representing the slot assignment to remove from the session.",
         };
 
         private global::System.CommandLine.Option<string?> ShouldReinviteGuest { get; } = new(
             name: "shouldReinviteGuest")
         {
-            Description = @"",
+            Description = @"Flag signaling that the guest should be reinvited to the session, sending them back to the invite queue.",
         };
-        public DeleteGuestStarSlotCommand(G.IApi client) : base(
+        public DeleteGuestStarSlotCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session. This revokes their access to the session immediately and disables their access to publish or subscribe to media within the session.
 
@@ -67,6 +70,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

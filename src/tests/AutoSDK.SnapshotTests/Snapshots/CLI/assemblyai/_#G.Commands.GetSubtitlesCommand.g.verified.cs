@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetSubtitlesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,28 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = @"",
+            Description = @"ID of the transcript",
         };
 
         private global::System.CommandLine.Argument<global::G.SubtitleFormat> SubtitleFormat { get; } = new(
             name: "subtitleFormat")
         {
-            Description = @"Format of the subtitles",
+            Description = @"The format of the captions",
         };
 
         private global::System.CommandLine.Option<int?> CharsPerCaption { get; } = new(
             name: "charsPerCaption")
         {
-            Description = @"",
+            Description = @"The maximum number of characters per caption",
         };
-        public GetSubtitlesCommand(G.IApi client) : base(
+        public GetSubtitlesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Export your transcript in SRT or VTT format to use with a video player for subtitles and closed captions.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TranscriptId);
             Arguments.Add(SubtitleFormat);

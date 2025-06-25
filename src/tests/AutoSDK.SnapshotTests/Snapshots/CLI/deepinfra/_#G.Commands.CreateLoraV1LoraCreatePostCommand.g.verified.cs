@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateLoraV1LoraCreatePostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -58,11 +59,14 @@ namespace G
         {
             Description = @"",
         };
-        public CreateLoraV1LoraCreatePostCommand(G.IApi client) : base(
+        public CreateLoraV1LoraCreatePostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BaseModel);
             Arguments.Add(LoraName);

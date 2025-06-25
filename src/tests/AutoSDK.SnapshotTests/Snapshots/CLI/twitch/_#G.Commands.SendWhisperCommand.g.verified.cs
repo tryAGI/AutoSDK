@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SendWhisperCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,22 +23,28 @@ namespace G
         private global::System.CommandLine.Argument<string> FromUserId { get; } = new(
             name: "fromUserId")
         {
-            Description = @"",
+            Description = @"The ID of the user sending the whisper. This user must have a verified phone number. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> ToUserId { get; } = new(
             name: "toUserId")
         {
-            Description = @"",
+            Description = @"The ID of the user to receive the whisper.",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = @"",
+            Description = @"The whisper message to send. The message must not be empty.  
+The maximum message lengths are:  
+* 500 characters if the user you're sending the message to hasn't whispered you before.
+* 10,000 characters if the user you're sending the message to has whispered you before.
+Messages that exceed the maximum length are truncated.",
         };
 
-        public SendWhisperCommand(G.IApi client) : base(
+        public SendWhisperCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "send",
             description: @"Sends a whisper message to the specified user.
 
@@ -52,6 +59,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:manage:whispers** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(FromUserId);
             Arguments.Add(ToUserId);

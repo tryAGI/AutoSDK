@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateChannelStreamScheduleCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,33 +25,35 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose schedule settings you want to update. The ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Option<bool?> IsVacationEnabled { get; } = new(
             name: "isVacationEnabled")
         {
-            Description = @"",
+            Description = @"A Boolean value that indicates whether the broadcaster has scheduled a vacation. Set to **true** to enable Vacation Mode and add vacation dates, or **false** to cancel a previously scheduled vacation.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> VacationStartTime { get; } = new(
             name: "vacationStartTime")
         {
-            Description = @"",
+            Description = @"The UTC date and time of when the broadcaster’s vacation starts. Specify the date and time in RFC3339 format (for example, 2021-05-16T00:00:00Z). Required if _is\_vacation\_enabled_ is **true**.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> VacationEndTime { get; } = new(
             name: "vacationEndTime")
         {
-            Description = @"",
+            Description = @"The UTC date and time of when the broadcaster’s vacation ends. Specify the date and time in RFC3339 format (for example, 2021-05-30T23:59:59Z). Required if _is\_vacation\_enabled_ is **true**.",
         };
 
         private global::System.CommandLine.Option<string?> Timezone { get; } = new(
             name: "timezone")
         {
-            Description = @"",
+            Description = @"The time zone that the broadcaster broadcasts from. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New\_York). Required if _is\_vacation\_enabled_ is **true**.",
         };
-        public UpdateChannelStreamScheduleCommand(G.IApi client) : base(
+        public UpdateChannelStreamScheduleCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Updates the broadcaster’s schedule settings, such as scheduling a vacation.
 
@@ -59,6 +62,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Options.Add(IsVacationEnabled);

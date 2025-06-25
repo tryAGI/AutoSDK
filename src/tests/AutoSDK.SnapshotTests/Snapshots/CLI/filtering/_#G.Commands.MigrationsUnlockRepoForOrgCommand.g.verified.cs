@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsUnlockRepoForOrgCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,26 +23,29 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = @"",
+            Description = @"The organization name. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
         private global::System.CommandLine.Argument<string> RepoName { get; } = new(
             name: "repoName")
         {
-            Description = @"",
+            Description = @"repo_name parameter",
         };
 
-        public MigrationsUnlockRepoForOrgCommand(G.IApi client) : base(
+        public MigrationsUnlockRepoForOrgCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Org);
             Arguments.Add(MigrationId);

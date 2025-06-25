@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetTunedModelOperationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> TunedModelId { get; } = new(
             name: "tunedModelId")
         {
-            Description = @"",
+            Description = @"The id of the tuned model.",
         };
 
         private global::System.CommandLine.Argument<string> OperationId { get; } = new(
             name: "operationId")
         {
-            Description = @"",
+            Description = @"The id of the operation to get.",
         };
 
-        public GetTunedModelOperationCommand(G.IApi client) : base(
+        public GetTunedModelOperationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TunedModelId);
             Arguments.Add(OperationId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateApiKeyCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,11 +19,14 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public CreateApiKeyCommand(G.IApi client) : base(
+        public CreateApiKeyCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

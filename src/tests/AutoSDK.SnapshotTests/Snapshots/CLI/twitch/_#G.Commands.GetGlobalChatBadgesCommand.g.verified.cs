@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetGlobalChatBadgesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetGlobalChatBadgesCommand(G.IApi client) : base(
+        public GetGlobalChatBadgesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets Twitch’s list of chat badges, which users may use in any channel’s chat room. For information about chat badges, see [Twitch Chat Badges Guide](https://help.twitch.tv/s/article/twitch-chat-badges-guide).
 
@@ -31,6 +34,7 @@ __Request Query Parameters:__
 None")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -44,13 +45,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"model name",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>>> Messages { get; } = new(
             name: "messages")
         {
-            Description = @"",
+            Description = @"conversation messages: (user,assistant,tool)*,user including one system message anywhere",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
@@ -74,73 +75,75 @@ namespace G
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = @"",
+            Description = @"whether to stream the output via SSE or return the full response",
         };
 
         private global::System.CommandLine.Option<double?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = @"",
+            Description = @"What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic",
         };
 
         private global::System.CommandLine.Option<double?> TopP { get; } = new(
             name: "topP")
         {
-            Description = @"",
+            Description = @"An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.",
         };
 
         private global::System.CommandLine.Option<double?> MinP { get; } = new(
             name: "minP")
         {
-            Description = @"",
+            Description = @"Float that represents the minimum probability for a token to be considered, relative to the probability of the most likely token. Must be in [0, 1]. Set to 0 to disable this.",
         };
 
         private global::System.CommandLine.Option<int?> TopK { get; } = new(
             name: "topK")
         {
-            Description = @"",
+            Description = @"Sample from the best k (number of) tokens. 0 means off",
         };
 
         private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
             name: "maxTokens")
         {
-            Description = @"",
+            Description = @"The maximum number of tokens to generate in the chat completion.
+
+The total length of input tokens and generated tokens is limited by the model's context length. If explicitly set to None it will be the model's max context length minus input length or 16384, whichever is smaller.",
         };
 
         private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Stop { get; } = new(
             name: "stop")
         {
-            Description = @"",
+            Description = @"up to 16 sequences where the API will stop generating further tokens",
         };
 
         private global::System.CommandLine.Option<int?> N { get; } = new(
             name: "n")
         {
-            Description = @"",
+            Description = @"number of sequences to return",
         };
 
         private global::System.CommandLine.Option<double?> PresencePenalty { get; } = new(
             name: "presencePenalty")
         {
-            Description = @"",
+            Description = @"Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
         };
 
         private global::System.CommandLine.Option<double?> FrequencyPenalty { get; } = new(
             name: "frequencyPenalty")
         {
-            Description = @"",
+            Description = @"Positive values penalize new tokens based on how many times they appear in the text so far, increasing the model's likelihood to talk about new topics.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ChatTools>?> Tools { get; } = new(
             name: "tools")
         {
-            Description = @"",
+            Description = @"A list of tools the model may call. Currently, only functions are supported as a tool.",
         };
 
         private global::System.CommandLine.Option<string?> ToolChoice { get; } = new(
             name: "toolChoice")
         {
-            Description = @"",
+            Description = @"Controls which (if any) function is called by the model. none means the model will not call a function and instead generates a message. auto means the model can pick between generating a message or calling a function. specifying a particular function choice is not supported currently.none is the default when no functions are present. auto is the default if functions are present.",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
@@ -152,25 +155,25 @@ namespace G
         private global::System.CommandLine.Option<double?> RepetitionPenalty { get; } = new(
             name: "repetitionPenalty")
         {
-            Description = @"",
+            Description = @"Alternative penalty for repetition, but multiplicative instead of additive (> 1 penalize, < 1 encourage)",
         };
 
         private global::System.CommandLine.Option<string?> User { get; } = new(
             name: "user")
         {
-            Description = @"",
+            Description = @"A unique identifier representing your end-user, which can help monitor and detect abuse. Avoid sending us any identifying information. We recommend hashing user identifiers.",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = @"",
+            Description = @"Seed for random number generator. If not provided, a random seed is used. Determinism is not guaranteed.",
         };
 
         private global::System.CommandLine.Option<bool?> Logprobs { get; } = new(
             name: "logprobs")
         {
-            Description = @"",
+            Description = @"Whether to return log probabilities of the output tokens or not.If true, returns the log probabilities of each output token returned in the `content` of `message`.",
         };
 
         private global::System.CommandLine.Option<global::G.StreamOptions?> StreamOptions { get; } = new(
@@ -182,13 +185,16 @@ namespace G
         private global::System.CommandLine.Option<global::G.OpenAIChatCompletionsInReasoningEffort?> ReasoningEffort { get; } = new(
             name: "reasoningEffort")
         {
-            Description = @"",
+            Description = @"Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.",
         };
-        public OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand(G.IApi client) : base(
+        public OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "openai",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Messages);

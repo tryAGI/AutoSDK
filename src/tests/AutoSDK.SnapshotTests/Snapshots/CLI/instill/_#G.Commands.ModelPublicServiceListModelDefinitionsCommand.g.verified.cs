@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceListModelDefinitionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,25 +25,33 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of model definitions to return. If this parameter
+is unspecified, at most 10 definitions will be returned. The cap value for
+this parameter is 100 (i.e. any value above that will be coerced to 100).",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page token.",
         };
 
         private global::System.CommandLine.Option<global::G.ModelPublicServiceListModelDefinitionsView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired resource view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
+ - VIEW_FULL: Full representation.",
         };
-        public ModelPublicServiceListModelDefinitionsCommand(G.IApi client) : base(
+        public ModelPublicServiceListModelDefinitionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Returns a paginated list of model definitions.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageSize);
             Options.Add(PageToken);

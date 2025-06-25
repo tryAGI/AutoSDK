@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,57 +29,59 @@ namespace G
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = @"",
+            Description = @"The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"The name of the model. This must be unique among all models owned by the user or organization.",
         };
 
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that will own the model. This must be the same as the user or organization that is making the API request. In other words, the API token used in the request must belong to this user or organization.",
         };
 
         private global::System.CommandLine.Argument<global::G.ModelsCreateRequestVisibility> Visibility { get; } = new(
             name: "visibility")
         {
-            Description = @"",
+            Description = @"Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.",
         };
 
         private global::System.CommandLine.Option<string?> CoverImageUrl { get; } = new(
             name: "coverImageUrl")
         {
-            Description = @"",
+            Description = @"A URL for the model's cover image. This should be an image file.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"A description of the model.",
         };
 
         private global::System.CommandLine.Option<string?> GithubUrl { get; } = new(
             name: "githubUrl")
         {
-            Description = @"",
+            Description = @"A URL for the model's source code on GitHub.",
         };
 
         private global::System.CommandLine.Option<string?> LicenseUrl { get; } = new(
             name: "licenseUrl")
         {
-            Description = @"",
+            Description = @"A URL for the model's license.",
         };
 
         private global::System.CommandLine.Option<string?> PaperUrl { get; } = new(
             name: "paperUrl")
         {
-            Description = @"",
+            Description = @"A URL for the model's paper.",
         };
-        public CreateModelsCommand(G.IApi client) : base(
+        public CreateModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Create a model.
 
@@ -114,6 +117,7 @@ The response will be a model object in the following format:
 Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Hardware);
             Arguments.Add(Name);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OpenaiEmbeddingsV1OpenaiEmbeddingsPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,13 +27,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"model name",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>> Input { get; } = new(
             name: "input")
         {
-            Description = @"",
+            Description = @"sequences to embed",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
@@ -56,13 +57,16 @@ namespace G
         private global::System.CommandLine.Option<global::G.OpenAIEmbeddingsInEncodingFormat?> EncodingFormat { get; } = new(
             name: "encodingFormat")
         {
-            Description = @"",
+            Description = @"format used when encoding",
         };
-        public OpenaiEmbeddingsV1OpenaiEmbeddingsPostCommand(G.IApi client) : base(
+        public OpenaiEmbeddingsV1OpenaiEmbeddingsPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "openai",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Input);

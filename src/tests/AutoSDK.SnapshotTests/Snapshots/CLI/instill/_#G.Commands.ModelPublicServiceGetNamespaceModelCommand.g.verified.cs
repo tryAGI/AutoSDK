@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceGetNamespaceModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID",
         };
 
         private global::System.CommandLine.Option<global::G.ModelPublicServiceGetNamespaceModelView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired model view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
+ - VIEW_FULL: Full representation.",
         };
-        public ModelPublicServiceGetNamespaceModelCommand(G.IApi client) : base(
+        public ModelPublicServiceGetNamespaceModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Returns the detail of a model, accessing it by the model ID and its parent namespace.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ModelId);

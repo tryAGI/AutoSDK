@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BetaMessageBatchesCancelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -41,7 +42,9 @@ To use multiple betas, use a comma separated list like `beta1,beta2` or specify 
 
 Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
-        public BetaMessageBatchesCancelCommand(G.IApi client) : base(
+        public BetaMessageBatchesCancelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "beta",
             description: @"Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -50,6 +53,7 @@ The number of canceled requests is specified in `request_counts`. To determine w
 Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(MessageBatchId);
             Options.Add(AnthropicBeta);

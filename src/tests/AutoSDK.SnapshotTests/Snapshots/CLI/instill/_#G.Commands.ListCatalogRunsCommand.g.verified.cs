@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListCatalogRunsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,43 +27,50 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The ID of the owner of the catalog.",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"The ID of the catalog for which the runs will be listed.",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"The page number to retrieve.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of items per page to return. The default and cap values
+are 10 and 100, respectively.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter
+expression.
+- Example: `create_time>timestamp(""2000-06-19T23:31:08.657Z"")`.",
         };
 
         private global::System.CommandLine.Option<string?> OrderBy { get; } = new(
             name: "orderBy")
         {
-            Description = @"",
+            Description = @"Order by field, with options for ordering by `id`, `create_time` or `update_time`.
+Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
         };
-        public ListCatalogRunsCommand(G.IApi client) : base(
+        public ListCatalogRunsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a paginated list of catalog runs.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

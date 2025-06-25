@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployCreateLlmDeployLlmPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,7 +28,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"model name for deepinfra (username/mode-name format)",
         };
 
         private global::System.CommandLine.Argument<global::G.DeployGPUs> Gpu { get; } = new(
@@ -45,13 +46,13 @@ namespace G
         private global::System.CommandLine.Option<int?> NumGpus { get; } = new(
             name: "numGpus")
         {
-            Description = @"",
+            Description = @"Number of GPUs you want for this model",
         };
 
         private global::System.CommandLine.Option<int?> MaxBatchSize { get; } = new(
             name: "maxBatchSize")
         {
-            Description = @"",
+            Description = @"Maximum number of concurrent requests",
         };
 
         private global::System.CommandLine.Option<global::G.HFWeights?> Hf { get; } = new(
@@ -65,11 +66,14 @@ namespace G
         {
             Description = @"",
         };
-        public DeployCreateLlmDeployLlmPostCommand(G.IApi client) : base(
+        public DeployCreateLlmDeployLlmPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelName);
             Arguments.Add(Gpu);

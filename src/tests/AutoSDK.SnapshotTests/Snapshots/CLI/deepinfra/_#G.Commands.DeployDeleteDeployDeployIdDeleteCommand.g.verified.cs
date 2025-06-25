@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployDeleteDeployDeployIdDeleteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public DeployDeleteDeployDeployIdDeleteCommand(G.IApi client) : base(
+        public DeployDeleteDeployDeployIdDeleteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeployId);
             Options.Add(XiApiKey);

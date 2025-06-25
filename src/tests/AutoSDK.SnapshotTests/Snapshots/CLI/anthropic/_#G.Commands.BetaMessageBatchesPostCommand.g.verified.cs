@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BetaMessageBatchesPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,7 +24,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.BetaMessageBatchIndividualRequestParams>> Requests { get; } = new(
             name: "requests")
         {
-            Description = @"",
+            Description = @"List of requests for prompt completion. Each is an individual request to create a Message.",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicBeta { get; } = new(
@@ -41,7 +42,9 @@ To use multiple betas, use a comma separated list like `beta1,beta2` or specify 
 
 Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
-        public BetaMessageBatchesPostCommand(G.IApi client) : base(
+        public BetaMessageBatchesPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "beta",
             description: @"Send a batch of Message creation requests.
 
@@ -50,6 +53,7 @@ The Message Batches API can be used to process multiple Messages API requests at
 Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Requests);
             Options.Add(AnthropicBeta);

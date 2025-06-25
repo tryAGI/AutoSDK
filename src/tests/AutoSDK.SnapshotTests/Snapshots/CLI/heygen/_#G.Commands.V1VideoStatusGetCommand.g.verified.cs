@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V1VideoStatusGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,11 +24,14 @@ namespace G
         {
             Description = @"",
         };
-        public V1VideoStatusGetCommand(G.IApi client) : base(
+        public V1VideoStatusGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v1video",
             description: @"v1/video_status.get")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(VideoId);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class Rerankv2Command : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,43 +27,51 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Documents { get; } = new(
             name: "documents")
         {
-            Description = @"",
+            Description = @"A list of texts that will be compared to the `query`.
+For optimal performance we recommend against sending more than 1,000 documents in a single request.
+
+**Note**: long documents will automatically be truncated to the value of `max_tokens_per_doc`.
+
+**Note**: structured data should be formatted as YAML strings for best performance.",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The identifier of the model to use, eg `rerank-v3.5`.",
         };
 
         private global::System.CommandLine.Argument<string> Query { get; } = new(
             name: "query")
         {
-            Description = @"",
+            Description = @"The search query",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
 
         private global::System.CommandLine.Option<int?> MaxTokensPerDoc { get; } = new(
             name: "maxTokensPerDoc")
         {
-            Description = @"",
+            Description = @"Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.",
         };
 
         private global::System.CommandLine.Option<int?> TopN { get; } = new(
             name: "topN")
         {
-            Description = @"",
+            Description = @"Limits the number of returned rerank results to the specified value. If not passed, all the rerank results will be returned.",
         };
-        public Rerankv2Command(G.IApi client) : base(
+        public Rerankv2Command(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "rerankv2",
             description: @"This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Documents);
             Arguments.Add(Model);

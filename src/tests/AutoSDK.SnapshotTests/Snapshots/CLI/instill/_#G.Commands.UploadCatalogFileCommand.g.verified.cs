@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UploadCatalogFileCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,13 +27,13 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"owner/namespace uid",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"catalog id",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
@@ -58,11 +59,14 @@ namespace G
         {
             Description = @"",
         };
-        public UploadCatalogFileCommand(G.IApi client) : base(
+        public UploadCatalogFileCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "upload",
             description: @"Creates a file.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

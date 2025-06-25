@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployCreateV1DeployPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,7 +25,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"model name in specified provider",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
@@ -42,13 +43,16 @@ namespace G
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"A specific revision, if left empty uses the last one",
         };
-        public DeployCreateV1DeployPostCommand(G.IApi client) : base(
+        public DeployCreateV1DeployPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelName);
             Options.Add(XiApiKey);

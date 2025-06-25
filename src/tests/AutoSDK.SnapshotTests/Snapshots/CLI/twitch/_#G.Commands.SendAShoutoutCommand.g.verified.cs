@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SendAShoutoutCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,22 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> FromBroadcasterId { get; } = new(
             name: "fromBroadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that’s sending the Shoutout.",
         };
 
         private global::System.CommandLine.Argument<string> ToBroadcasterId { get; } = new(
             name: "toBroadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that’s receiving the Shoutout.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that is one of the broadcaster’s moderators. This ID must match the user ID in the access token.",
         };
 
-        public SendAShoutoutCommand(G.IApi client) : base(
+        public SendAShoutoutCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "send",
             description: @"Sends a Shoutout to the specified broadcaster. Typically, you send Shoutouts when you or one of your moderators notice another broadcaster in your chat, the other broadcaster is coming up in conversation, or after they raid your broadcast.
 
@@ -52,6 +55,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:shoutouts** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(FromBroadcasterId);
             Arguments.Add(ToBroadcasterId);

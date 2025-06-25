@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetTrainingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> TrainingId { get; } = new(
             name: "trainingId")
         {
-            Description = @"",
+            Description = @"The ID of the training to get.",
         };
 
-        public GetTrainingsCommand(G.IApi client) : base(
+        public GetTrainingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get the current state of a training.
 
@@ -80,6 +83,7 @@ In the case of failure, `error` will contain the error encountered during the tr
 Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TrainingId);
 

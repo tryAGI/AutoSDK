@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceRenameNamespacePipelineCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,22 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Argument<string> NewPipelineId { get; } = new(
             name: "newPipelineId")
         {
-            Description = @"",
+            Description = @"The new resource ID. This will transform the resource name into
+`namespaces/{namespace.id}/pipelines/{new_pipeline_id}`.",
         };
 
-        public PipelinePublicServiceRenameNamespacePipelineCommand(G.IApi client) : base(
+        public PipelinePublicServiceRenameNamespacePipelineCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Updates the ID of a pipeline. Since this is an output-only field, a custom
 method is required to modify it.
@@ -51,6 +55,7 @@ The authenticated namespace must be the parent of the pipeline in order to
 perform this action.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

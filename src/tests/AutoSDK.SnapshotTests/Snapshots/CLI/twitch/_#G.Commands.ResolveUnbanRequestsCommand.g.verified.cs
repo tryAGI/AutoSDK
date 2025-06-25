@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ResolveUnbanRequestsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,33 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose channel is approving or denying the unban request.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s unban requests. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> UnbanRequestId { get; } = new(
             name: "unbanRequestId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s unban requests. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"Resolution status.   
+* approved
+* denied",
         };
 
         private global::System.CommandLine.Option<string?> ResolutionText { get; } = new(
             name: "resolutionText")
         {
-            Description = @"",
+            Description = @"Message supplied by the unban request resolver",
         };
-        public ResolveUnbanRequestsCommand(G.IApi client) : base(
+        public ResolveUnbanRequestsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "resolve",
             description: @"NEW Resolves an unban request by approving or denying it.
 
@@ -61,6 +66,7 @@ __Authorization:__
 * Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

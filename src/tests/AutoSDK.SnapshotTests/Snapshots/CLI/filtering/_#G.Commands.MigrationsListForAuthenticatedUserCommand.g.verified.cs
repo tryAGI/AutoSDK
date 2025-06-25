@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsListForAuthenticatedUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,19 +24,22 @@ namespace G
         private global::System.CommandLine.Option<int?> PerPage { get; } = new(
             name: "perPage")
         {
-            Description = @"",
+            Description = @"The number of results per page (max 100). For more information, see ""[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).""",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"The page number of the results to fetch. For more information, see ""[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).""",
         };
-        public MigrationsListForAuthenticatedUserCommand(G.IApi client) : base(
+        public MigrationsListForAuthenticatedUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Lists all migrations a user has started.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PerPage);
             Options.Add(Page);

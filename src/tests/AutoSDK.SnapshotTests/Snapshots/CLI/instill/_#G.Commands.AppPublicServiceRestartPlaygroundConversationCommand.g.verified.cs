@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceRestartPlaygroundConversationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,21 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The namespace id.",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"The app id.",
         };
 
-        public AppPublicServiceRestartPlaygroundConversationCommand(G.IApi client) : base(
+        public AppPublicServiceRestartPlaygroundConversationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Creates a new conversation and uses the auth user UID as creator UID and
 auto-generates a new conversation ID on the behalf of auth user.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

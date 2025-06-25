@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceGetPlaygroundConversationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The namespace id.",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"The app id.",
         };
 
-        public AppPublicServiceGetPlaygroundConversationCommand(G.IApi client) : base(
+        public AppPublicServiceGetPlaygroundConversationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Returns the latest conversation of auth user(e.g. login user and api key user).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

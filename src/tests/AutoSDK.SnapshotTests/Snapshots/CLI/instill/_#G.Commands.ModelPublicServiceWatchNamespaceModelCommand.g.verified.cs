@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceWatchNamespaceModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,28 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"Model version",
         };
 
-        public ModelPublicServiceWatchNamespaceModelCommand(G.IApi client) : base(
+        public ModelPublicServiceWatchNamespaceModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Returns the state of a model. The model resource allocation and scaling actions take some
 time, during which a model will be in various state. This endpoint
 allows clients to track the state.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ModelId);

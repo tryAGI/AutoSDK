@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetExtensionConfigurationSegmentCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,27 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = @"",
+            Description = @"The ID of the extension that contains the configuration segment you want to get.",
         };
 
         private global::System.CommandLine.Argument<global::G.GetExtensionConfigurationSegmentSegment> Segment { get; } = new(
             name: "segment")
         {
-            Description = @"",
+            Description = @"The type of configuration segment to get. Possible case-sensitive values are:   
+* broadcaster
+* developer
+* global
+You may specify one or more segments. To specify multiple segments, include the `segment` parameter for each segment to get. For example, `segment=broadcaster&segment=developer`. Ignores duplicate segments.",
         };
 
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that installed the extension. This parameter is required if you set the _segment_ parameter to broadcaster or developer. Do not specify this parameter if you set _segment_ to global.",
         };
-        public GetExtensionConfigurationSegmentCommand(G.IApi client) : base(
+        public GetExtensionConfigurationSegmentCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the specified configuration segment from the specified extension.
 
@@ -48,6 +55,7 @@ __Authorization:__
 Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ExtensionId);
             Arguments.Add(Segment);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListDeploymentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public ListDeploymentsCommand(G.IApi client) : base(
+        public ListDeploymentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Get a list of deployments associated with the current account, including the latest release configuration for each deployment.
 
@@ -63,6 +66,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

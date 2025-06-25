@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetSecretDefaultWebhooksCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetSecretDefaultWebhooksCommand(G.IApi client) : base(
+        public GetSecretDefaultWebhooksCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.
 
@@ -39,6 +42,7 @@ The response will be a JSON object with a `key` property:
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

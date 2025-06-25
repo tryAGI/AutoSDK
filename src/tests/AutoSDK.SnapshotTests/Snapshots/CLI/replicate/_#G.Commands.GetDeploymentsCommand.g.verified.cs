@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetDeploymentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the deployment.",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = @"",
+            Description = @"The name of the deployment.",
         };
 
-        public GetDeploymentsCommand(G.IApi client) : base(
+        public GetDeploymentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get information about a deployment by name including the current release.
 
@@ -70,6 +73,7 @@ The response will be a JSON object describing the deployment:
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeploymentOwner);
             Arguments.Add(DeploymentName);

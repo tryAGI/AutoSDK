@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateDeploymentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,40 +27,42 @@ namespace G
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = @"",
+            Description = @"The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.",
         };
 
         private global::System.CommandLine.Argument<int> MaxInstances { get; } = new(
             name: "maxInstances")
         {
-            Description = @"",
+            Description = @"The maximum number of instances for scaling.",
         };
 
         private global::System.CommandLine.Argument<int> MinInstances { get; } = new(
             name: "minInstances")
         {
-            Description = @"",
+            Description = @"The minimum number of instances for scaling.",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The full name of the model that you want to deploy e.g. stability-ai/sdxl.",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"The name of the deployment.",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"The 64-character string ID of the model version that you want to deploy.",
         };
 
-        public CreateDeploymentsCommand(G.IApi client) : base(
+        public CreateDeploymentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Create a new deployment:
 
@@ -108,6 +111,7 @@ The response will be a JSON object describing the deployment:
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Hardware);
             Arguments.Add(MaxInstances);

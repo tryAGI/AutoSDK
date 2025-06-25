@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceListComponentDefinitionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,33 +26,45 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of component definitions to return. If this parameter
+is unspecified, at most 10 definitions will be returned. The cap value for
+this parameter is 100 (i.e. any value above that will be coerced to 100).",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceListComponentDefinitionsView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired resource view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information (removes the `spec`
+field).
+ - VIEW_FULL: Full representation.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter
+expression.
+- Example: `component_type=""COMPONENT_TYPE_AI""`.
+- Example: `tasks:""TASK_TEXT_GENERATION""`.",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"Page number.",
         };
-        public PipelinePublicServiceListComponentDefinitionsCommand(G.IApi client) : base(
+        public PipelinePublicServiceListComponentDefinitionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns a paginated list of component definitions, regardless their type.
 This offers a single source of truth, with pagination and filter
 capabilities, for the components that might be used in a VDP pipeline.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageSize);
             Options.Add(View);

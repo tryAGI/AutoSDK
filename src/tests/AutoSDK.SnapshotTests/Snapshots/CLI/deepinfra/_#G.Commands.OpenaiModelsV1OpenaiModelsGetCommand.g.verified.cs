@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OpenaiModelsV1OpenaiModelsGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
         {
             Description = @"",
         };
-        public OpenaiModelsV1OpenaiModelsGetCommand(G.IApi client) : base(
+        public OpenaiModelsV1OpenaiModelsGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "openai",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XiApiKey);
 

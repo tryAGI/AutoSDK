@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CorporaSourcesUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -43,61 +44,64 @@ namespace G
         private global::System.CommandLine.Option<string?> RequestCorpusId { get; } = new(
             name: "requestCorpusId")
         {
-            Description = @"",
+            Description = @"The id of this source's corpus.",
         };
 
         private global::System.CommandLine.Option<string?> RequestSourceId { get; } = new(
             name: "requestSourceId")
         {
-            Description = @"",
+            Description = @"The unique ID of this source.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Created { get; } = new(
             name: "created")
         {
-            Description = @"",
+            Description = @"When this source was created.",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"The name of this source.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"A description of this source.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1SourceStats?> Stats { get; } = new(
             name: "stats")
         {
-            Description = @"",
+            Description = @"The current stats for this source.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CrawlSpec?> LoadSpec { get; } = new(
             name: "loadSpec")
         {
-            Description = @"",
+            Description = @"DEPRECATED. Prefer setting crawl instead. If either crawl or upload is set, this field will be ignored.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CrawlSpec?> Crawl { get; } = new(
             name: "crawl")
         {
-            Description = @"",
+            Description = @"Allows loading documents by crawling the web.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1UploadSpec?> Upload { get; } = new(
             name: "upload")
         {
-            Description = @"",
+            Description = @"Allows loading from a uploaded document.",
         };
-        public CorporaSourcesUpdateCommand(G.IApi client) : base(
+        public CorporaSourcesUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "corpora",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CorpusId);
             Arguments.Add(SourceId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PostRemixImageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,22 +24,24 @@ namespace G
         private global::System.CommandLine.Argument<global::G.InitialImageRequest> ImageRequest { get; } = new(
             name: "imageRequest")
         {
-            Description = @"",
+            Description = @"A request to generate a new image using a provided image and a prompt.",
         };
 
         private global::System.CommandLine.Argument<byte[]> ImageFile { get; } = new(
             name: "imageFile")
         {
-            Description = @"",
+            Description = @"An image binary; only JPEG, WEBPs and PNGs are supported at this time",
         };
 
         private global::System.CommandLine.Argument<string> ImageFilename { get; } = new(
             name: "imageFilename")
         {
-            Description = @"",
+            Description = @"An image binary; only JPEG, WEBPs and PNGs are supported at this time",
         };
 
-        public PostRemixImageCommand(G.IApi client) : base(
+        public PostRemixImageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "post",
             description: @"A request to remix a provided image with Ideogram. Input images
 are cropped to the chosen aspect ratio before being remixed.
@@ -46,6 +49,7 @@ are cropped to the chosen aspect ratio before being remixed.
 Supported image formats include JPEG, PNG, and WEBP")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ImageRequest);
             Arguments.Add(ImageFile);

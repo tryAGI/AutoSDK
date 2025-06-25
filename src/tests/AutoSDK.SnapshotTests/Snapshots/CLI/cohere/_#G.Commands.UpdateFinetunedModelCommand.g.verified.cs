@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateFinetunedModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,37 +26,50 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"FinetunedModel ID.",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"FinetunedModel name (e.g. `foobar`).",
         };
 
         private global::System.CommandLine.Argument<global::G.Settings> Settings { get; } = new(
             name: "settings")
         {
-            Description = @"",
+            Description = @"The configuration used for fine-tuning.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
 
         private global::System.CommandLine.Option<global::G.Status?> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"The possible stages of a fine-tuned model life-cycle.
+
+ - STATUS_UNSPECIFIED: Unspecified status.
+ - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.
+ - STATUS_DEPLOYING_API: Deprecated: The fine-tuned model is being deployed.
+ - STATUS_READY: The fine-tuned model is ready to receive requests.
+ - STATUS_FAILED: The fine-tuned model failed.
+ - STATUS_DELETED: The fine-tuned model was deleted.
+ - STATUS_TEMPORARILY_OFFLINE: Deprecated: The fine-tuned model is temporarily unavailable.
+ - STATUS_PAUSED: Deprecated: The fine-tuned model is paused (Vanilla only).
+ - STATUS_QUEUED: The fine-tuned model is queued for training.",
         };
-        public UpdateFinetunedModelCommand(G.IApi client) : base(
+        public UpdateFinetunedModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Arguments.Add(Name);

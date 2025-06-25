@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListPipelineTriggerChartRecordsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,26 @@ namespace G
         private global::System.CommandLine.Option<int?> AggregationWindow { get; } = new(
             name: "aggregationWindow")
         {
-            Description = @"",
+            Description = @"Aggregation window in nanoseconds.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter
+expression.
+- Example: `create_time>timestamp(""2000-06-19T23:31:08.657Z"")`.",
         };
-        public ListPipelineTriggerChartRecordsCommand(G.IApi client) : base(
+        public ListPipelineTriggerChartRecordsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a timeline of pipline trigger counts for the pipelines of a given
 owner.
 NOTE: This method will soon return the trigger counts of a given requester.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(AggregationWindow);
             Options.Add(Filter);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OpenaiImagesGenerationsV1OpenaiImagesGenerationsPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -38,11 +39,14 @@ namespace G
         {
             Description = @"",
         };
-        public OpenaiImagesGenerationsV1OpenaiImagesGenerationsPostCommand(G.IApi client) : base(
+        public OpenaiImagesGenerationsV1OpenaiImagesGenerationsPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "openai",
             description: @"Generate image using OpenAI Images API")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XDeepinfraSource);
             Options.Add(UserAgent);

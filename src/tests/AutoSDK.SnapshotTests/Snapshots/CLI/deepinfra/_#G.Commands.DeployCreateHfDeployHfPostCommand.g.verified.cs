@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployCreateHfDeployHfPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,7 +24,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"Model Id from huggingface",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
@@ -35,13 +36,16 @@ namespace G
         private global::System.CommandLine.Option<string?> Task { get; } = new(
             name: "task")
         {
-            Description = @"",
+            Description = @"Task",
         };
-        public DeployCreateHfDeployHfPostCommand(G.IApi client) : base(
+        public DeployCreateHfDeployHfPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelName);
             Options.Add(XiApiKey);

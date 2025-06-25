@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CheckUserSubscriptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of a partner or affiliate broadcaster.",
         };
 
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the user that you’re checking to see whether they subscribe to the broadcaster in _broadcaster\_id_. This ID must match the user ID in the access Token.",
         };
 
-        public CheckUserSubscriptionCommand(G.IApi client) : base(
+        public CheckUserSubscriptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "check",
             description: @"Checks whether the user subscribes to the broadcaster’s channel.
 
@@ -42,6 +45,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 A Twitch extensions may use an app access token if the broadcaster has granted the **user:read:subscriptions** scope from within the Twitch Extensions manager.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(UserId);

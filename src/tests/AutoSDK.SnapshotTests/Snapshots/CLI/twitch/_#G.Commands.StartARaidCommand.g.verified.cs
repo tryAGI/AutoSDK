@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class StartARaidCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,15 +24,17 @@ namespace G
         private global::System.CommandLine.Option<string?> FromBroadcasterId { get; } = new(
             name: "fromBroadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that’s sending the raiding party. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Option<string?> ToBroadcasterId { get; } = new(
             name: "toBroadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster to raid.",
         };
-        public StartARaidCommand(G.IApi client) : base(
+        public StartARaidCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "start",
             description: @"Raid another channel by sending the broadcaster’s viewers to the targeted channel.
 
@@ -48,6 +51,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:raids** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(FromBroadcasterId);
             Options.Add(ToBroadcasterId);

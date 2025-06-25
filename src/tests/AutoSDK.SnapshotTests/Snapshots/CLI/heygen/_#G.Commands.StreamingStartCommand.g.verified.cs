@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class StreamingStartCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public StreamingStartCommand(G.IApi client) : base(
+        public StreamingStartCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "streaming",
             description: @"streaming.start")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Sdp);
             Options.Add(SessionId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceListPipelineIDsByConnectionIDCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,39 +26,44 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID.",
         };
 
         private global::System.CommandLine.Argument<string> ConnectionId { get; } = new(
             name: "connectionId")
         {
-            Description = @"",
+            Description = @"Connection ID.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return. The default and cap values are 10 and 100, respectively.",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page token. By default, the first page will be returned.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter expression.
+The following filters are supported:
+- `q` (fuzzy search on pipeline ID)",
         };
-        public PipelinePublicServiceListPipelineIDsByConnectionIDCommand(G.IApi client) : base(
+        public PipelinePublicServiceListPipelineIDsByConnectionIDCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns a paginated list with the IDs of the pipelines that reference a
 given connection. All the pipelines will belong to the same namespace as
 the connection.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ConnectionId);

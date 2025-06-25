@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetReleasedExtensionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,15 +23,17 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = @"",
+            Description = @"The ID of the extension to get.",
         };
 
         private global::System.CommandLine.Option<string?> ExtensionVersion { get; } = new(
             name: "extensionVersion")
         {
-            Description = @"",
+            Description = @"The version of the extension to get. If not specified, it returns the latest version.",
         };
-        public GetReleasedExtensionsCommand(G.IApi client) : base(
+        public GetReleasedExtensionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets information about a released extension. Returns the extension if its `state` is Released.
 
@@ -39,6 +42,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ExtensionId);
             Options.Add(ExtensionVersion);

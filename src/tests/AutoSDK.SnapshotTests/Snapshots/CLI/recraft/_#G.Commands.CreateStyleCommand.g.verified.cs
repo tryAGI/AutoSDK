@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateStyleCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,11 +32,14 @@ namespace G
             Description = @"",
         };
 
-        public CreateStyleCommand(G.IApi client) : base(
+        public CreateStyleCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Images);
             Arguments.Add(Style);

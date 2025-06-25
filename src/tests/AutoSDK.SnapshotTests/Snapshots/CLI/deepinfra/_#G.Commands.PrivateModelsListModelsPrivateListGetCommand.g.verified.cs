@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PrivateModelsListModelsPrivateListGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
         {
             Description = @"",
         };
-        public PrivateModelsListModelsPrivateListGetCommand(G.IApi client) : base(
+        public PrivateModelsListModelsPrivateListGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "private",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XiApiKey);
 

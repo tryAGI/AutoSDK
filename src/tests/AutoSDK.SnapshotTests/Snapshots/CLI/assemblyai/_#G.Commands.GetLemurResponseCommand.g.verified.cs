@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetLemurResponseCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> RequestId { get; } = new(
             name: "requestId")
         {
-            Description = @"",
+            Description = @"The ID of the LeMUR request you previously made.
+This would be found in the response of the original request.",
         };
 
-        public GetLemurResponseCommand(G.IApi client) : base(
+        public GetLemurResponseCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Retrieve a LeMUR response that was previously generated.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(RequestId);
 

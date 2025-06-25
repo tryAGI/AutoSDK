@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsListForOrgCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,33 +25,36 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = @"",
+            Description = @"The organization name. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Option<int?> PerPage { get; } = new(
             name: "perPage")
         {
-            Description = @"",
+            Description = @"The number of results per page (max 100). For more information, see ""[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).""",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"The page number of the results to fetch. For more information, see ""[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).""",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = @"",
+            Description = @"Exclude attributes from the API response to improve performance",
         };
-        public MigrationsListForOrgCommand(G.IApi client) : base(
+        public MigrationsListForOrgCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).
 
 A list of `repositories` is only returned for export migrations.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Org);
             Options.Add(PerPage);

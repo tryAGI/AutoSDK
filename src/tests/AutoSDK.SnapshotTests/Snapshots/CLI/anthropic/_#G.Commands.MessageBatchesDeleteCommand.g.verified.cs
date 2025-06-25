@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MessageBatchesDeleteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -41,7 +42,9 @@ Read more about versioning and our version history [here](https://docs.anthropic
 
 This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
         };
-        public MessageBatchesDeleteCommand(G.IApi client) : base(
+        public MessageBatchesDeleteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "message",
             description: @"Delete a Message Batch.
 
@@ -50,6 +53,7 @@ Message Batches can only be deleted once they've finished processing. If you'd l
 Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(MessageBatchId);
             Options.Add(AnthropicVersion);

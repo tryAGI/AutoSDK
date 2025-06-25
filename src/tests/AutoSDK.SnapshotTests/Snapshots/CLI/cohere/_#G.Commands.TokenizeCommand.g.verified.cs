@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class TokenizeCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,28 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The input will be tokenized by the tokenizer that is used by this model.",
         };
 
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
-            Description = @"",
+            Description = @"The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public TokenizeCommand(G.IApi client) : base(
+        public TokenizeCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "tokenize",
             description: @"This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Text);

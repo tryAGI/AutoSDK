@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BetaModelsListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -58,13 +59,16 @@ Read more about versioning and our version history [here](https://docs.anthropic
 
 This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
         };
-        public BetaModelsListCommand(G.IApi client) : base(
+        public BetaModelsListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "beta",
             description: @"List available models.
 
 The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(BeforeId);
             Options.Add(AfterId);

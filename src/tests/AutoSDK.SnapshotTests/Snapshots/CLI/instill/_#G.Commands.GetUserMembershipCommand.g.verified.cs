@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetUserMembershipCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,26 +24,32 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"User ID",
         };
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
         private global::System.CommandLine.Option<global::G.GetUserMembershipView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired resource view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information.
+ - VIEW_FULL: Full representation.",
         };
-        public GetUserMembershipCommand(G.IApi client) : base(
+        public GetUserMembershipCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the details of the relationship between a user and an
 organization. The authenticated must match the membership parent.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Arguments.Add(OrganizationId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateOrganizationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,28 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
         private global::System.CommandLine.Argument<global::G.OrganizationProfile> Profile { get; } = new(
             name: "profile")
         {
-            Description = @"",
+            Description = @"Profile.",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Resource ID (used in `name` as the last segment). This conforms to
+RFC-1034, which restricts to letters, numbers, and hyphen, with the first
+character a letter, the last a letter or a number, and a 63 character
+maximum.
+
+Note that the ID can be updated.",
         };
-        public UpdateOrganizationCommand(G.IApi client) : base(
+        public UpdateOrganizationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Accesses and updates an organization by ID.
 
@@ -45,6 +53,7 @@ In REST requests, only the supplied organization fields will be taken into
 account when updating the resource.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(OrganizationId);
             Arguments.Add(Profile);

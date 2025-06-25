@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SendExtensionPubsubMessageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,27 +24,33 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTargetItem>> Target { get; } = new(
             name: "target")
         {
-            Description = @"",
+            Description = @"The target of the message. Possible values are:  
+* broadcast
+* global
+* whisper-<user-id>
+If `is_global_broadcast` is **true**, you must set this field to global. The broadcast and global values are mutually exclusive; specify only one of them.",
         };
 
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster to send the message to. Don’t include this field if `is_global_broadcast` is set to **true**.",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = @"",
+            Description = @"The message to send. The message can be a plain-text string or a string-encoded JSON object. The message is limited to a maximum of 5 KB.",
         };
 
         private global::System.CommandLine.Option<bool?> IsGlobalBroadcast { get; } = new(
             name: "isGlobalBroadcast")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.",
         };
-        public SendExtensionPubsubMessageCommand(G.IApi client) : base(
+        public SendExtensionPubsubMessageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "send",
             description: @"Sends a message to one or more viewers. You can send messages to a specific channel or to all channels where your extension is active. This endpoint uses the same mechanism as the [send](https://dev.twitch.tv/docs/extensions/reference#send) JavaScript helper function used to send messages.
 
@@ -88,6 +95,7 @@ To send the message to all channels on which your extension is active, set the `
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Target);
             Arguments.Add(BroadcasterId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListTunedModelOperationsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,34 @@ namespace G
         private global::System.CommandLine.Argument<string> TunedModelId { get; } = new(
             name: "tunedModelId")
         {
-            Description = @"",
+            Description = @"The id of the tuned model.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The standard list page size.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"The filters to apply.",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"The token identifying which page to start with.",
         };
-        public ListTunedModelOperationsCommand(G.IApi client) : base(
+        public ListTunedModelOperationsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TunedModelId);
             Options.Add(PageSize);

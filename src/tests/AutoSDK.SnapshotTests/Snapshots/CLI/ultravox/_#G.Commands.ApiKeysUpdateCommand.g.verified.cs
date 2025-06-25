@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ApiKeysUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,13 +29,16 @@ namespace G
         private global::System.CommandLine.Option<bool?> Revoked { get; } = new(
             name: "revoked")
         {
-            Description = @"",
+            Description = @"If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)",
         };
-        public ApiKeysUpdateCommand(G.IApi client) : base(
+        public ApiKeysUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "api",
             description: @"Updates an API key.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ApiKeyPrefix);
             Options.Add(Revoked);

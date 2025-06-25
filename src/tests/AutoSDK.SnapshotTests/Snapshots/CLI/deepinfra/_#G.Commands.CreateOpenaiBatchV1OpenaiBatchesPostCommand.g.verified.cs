@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateOpenaiBatchV1OpenaiBatchesPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,19 +26,19 @@ namespace G
         private global::System.CommandLine.Argument<string> InputFileId { get; } = new(
             name: "inputFileId")
         {
-            Description = @"",
+            Description = @"The ID of an uploaded file that contains requests for the new batch.",
         };
 
         private global::System.CommandLine.Argument<global::G.OpenAIBatchesInEndpoint> Endpoint { get; } = new(
             name: "endpoint")
         {
-            Description = @"",
+            Description = @"The endpoint to be used for all requests in the batch. Currently /v1/chat/completions, /v1/completions are supported.",
         };
 
         private global::System.CommandLine.Argument<object?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Optional metadata to be stored with the batch.",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
@@ -49,13 +50,16 @@ namespace G
         private global::System.CommandLine.Option<global::G.OpenAIBatchesInCompletionWindow> CompletionWindow { get; } = new(
             name: "completionWindow")
         {
-            Description = @"",
+            Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
         };
-        public CreateOpenaiBatchV1OpenaiBatchesPostCommand(G.IApi client) : base(
+        public CreateOpenaiBatchV1OpenaiBatchesPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(InputFileId);
             Arguments.Add(Endpoint);

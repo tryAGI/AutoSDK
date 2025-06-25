@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V1WebhookEndpointDeleteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,11 +24,14 @@ namespace G
         {
             Description = @"",
         };
-        public V1WebhookEndpointDeleteCommand(G.IApi client) : base(
+        public V1WebhookEndpointDeleteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v1webhook",
             description: @"v1/webhook/endpoint.delete")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(EndpointId);
 

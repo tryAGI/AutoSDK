@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetObjectUploadURLCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,37 +26,44 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"id of the namespace",
         };
 
         private global::System.CommandLine.Argument<string> ObjectName { get; } = new(
             name: "objectName")
         {
-            Description = @"",
+            Description = @"name of the object with length limit to 1024 characters.
+this is the unique identifier of the object in the namespace",
         };
 
         private global::System.CommandLine.Option<int?> UrlExpireDays { get; } = new(
             name: "urlExpireDays")
         {
-            Description = @"",
+            Description = @"expiration time in days for the URL.
+maximum is 7 days. if set to 0, URL will not expire.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> LastModifiedTime { get; } = new(
             name: "lastModifiedTime")
         {
-            Description = @"",
+            Description = @"last modified time this value is provided by the client when the object url is created
+it must be in RFC3339 formatted date-time string",
         };
 
         private global::System.CommandLine.Option<int?> ObjectExpireDays { get; } = new(
             name: "objectExpireDays")
         {
-            Description = @"",
+            Description = @"object live time in days
+minimum is 1 day. if set to 0, the object will not be deleted automatically",
         };
-        public GetObjectUploadURLCommand(G.IApi client) : base(
+        public GetObjectUploadURLCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the upload URL of an object.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ObjectName);

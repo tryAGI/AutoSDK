@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SimilarityChunksSearchCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,19 +26,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"owner/namespace id",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"catalog id",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
 
         private global::System.CommandLine.Option<string?> TextPrompt { get; } = new(
@@ -51,11 +52,14 @@ namespace G
         {
             Description = @"",
         };
-        public SimilarityChunksSearchCommand(G.IApi client) : base(
+        public SimilarityChunksSearchCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "similarity",
             description: @"Returns the similar chunks.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

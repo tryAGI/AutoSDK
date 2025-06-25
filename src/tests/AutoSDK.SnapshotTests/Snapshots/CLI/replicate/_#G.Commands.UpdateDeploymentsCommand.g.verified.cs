@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateDeploymentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,39 +27,41 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the deployment.",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = @"",
+            Description = @"The name of the deployment.",
         };
 
         private global::System.CommandLine.Option<string?> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = @"",
+            Description = @"The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.",
         };
 
         private global::System.CommandLine.Option<int?> MaxInstances { get; } = new(
             name: "maxInstances")
         {
-            Description = @"",
+            Description = @"The maximum number of instances for scaling.",
         };
 
         private global::System.CommandLine.Option<int?> MinInstances { get; } = new(
             name: "minInstances")
         {
-            Description = @"",
+            Description = @"The minimum number of instances for scaling.",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"The ID of the model version that you want to deploy",
         };
-        public UpdateDeploymentsCommand(G.IApi client) : base(
+        public UpdateDeploymentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).
 
@@ -102,6 +105,7 @@ The response will be a JSON object describing the deployment:
 Updating any deployment properties will increment the `number` field of the `current_release`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeploymentOwner);
             Arguments.Add(DeploymentName);

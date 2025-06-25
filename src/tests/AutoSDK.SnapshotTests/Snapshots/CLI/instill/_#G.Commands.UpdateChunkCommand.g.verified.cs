@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateChunkCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,7 +23,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ChunkUid { get; } = new(
             name: "chunkUid")
         {
-            Description = @"",
+            Description = @"chunk uid",
         };
 
         private global::System.CommandLine.Option<bool?> Retrievable { get; } = new(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public UpdateChunkCommand(G.IApi client) : base(
+        public UpdateChunkCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Updates a catalog chunk.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ChunkUid);
             Options.Add(Retrievable);

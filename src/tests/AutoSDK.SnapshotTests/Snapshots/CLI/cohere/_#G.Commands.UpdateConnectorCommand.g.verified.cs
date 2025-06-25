@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateConnectorCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,13 +30,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the connector to update.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
 
         private global::System.CommandLine.Option<bool?> Active { get; } = new(
@@ -53,13 +54,13 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Excludes { get; } = new(
             name: "excludes")
         {
-            Description = @"",
+            Description = @"A list of fields to exclude from the prompt (fields remain in the document).",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = @"",
+            Description = @"A human-readable name for the connector.",
         };
 
         private global::System.CommandLine.Option<global::G.CreateConnectorOAuth?> Oauth { get; } = new(
@@ -77,13 +78,16 @@ namespace G
         private global::System.CommandLine.Option<string?> Url { get; } = new(
             name: "url")
         {
-            Description = @"",
+            Description = @"The URL of the connector that will be used to search for documents.",
         };
-        public UpdateConnectorCommand(G.IApi client) : base(
+        public UpdateConnectorCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Update a connector by ID. Omitted fields will not be updated. See ['Managing your Connector'](https://docs.cohere.com/docs/managing-your-connector) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(XClientName);

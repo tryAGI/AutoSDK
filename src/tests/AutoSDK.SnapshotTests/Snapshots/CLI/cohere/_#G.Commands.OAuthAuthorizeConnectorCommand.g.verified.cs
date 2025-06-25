@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class OAuthAuthorizeConnectorCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,28 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the connector to authorize.",
         };
 
         private global::System.CommandLine.Option<string?> AfterTokenRedirect { get; } = new(
             name: "afterTokenRedirect")
         {
-            Description = @"",
+            Description = @"The URL to redirect to after the connector has been authorized.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public OAuthAuthorizeConnectorCommand(G.IApi client) : base(
+        public OAuthAuthorizeConnectorCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "oauth",
             description: @"Authorize the connector with the given ID for the connector oauth app.  See ['Connector Authentication'](https://docs.cohere.com/docs/connector-authentication) for more information.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(AfterTokenRedirect);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListOperationsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,25 +25,28 @@ namespace G
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"The token identifying which page to start with.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The list page size.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"The filters to apply.",
         };
-        public ListOperationsCommand(G.IApi client) : base(
+        public ListOperationsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageToken);
             Options.Add(PageSize);

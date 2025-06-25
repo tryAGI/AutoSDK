@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetLoraV1LoraLoraNameGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public GetLoraV1LoraLoraNameGetCommand(G.IApi client) : base(
+        public GetLoraV1LoraLoraNameGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(LoraName);
             Options.Add(XiApiKey);

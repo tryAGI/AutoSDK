@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteDatasetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,13 +29,16 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public DeleteDatasetCommand(G.IApi client) : base(
+        public DeleteDatasetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Delete a dataset by ID. Datasets are automatically deleted after 30 days, but they can also be deleted manually.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Options.Add(XClientName);

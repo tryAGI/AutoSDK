@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelOrDeleteTaskCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,20 +22,23 @@ namespace G
         private global::System.CommandLine.Argument<global::G.CancelOrDeleteTaskXRunwayVersion> XRunwayVersion { get; } = new(
             name: "xRunwayVersion")
         {
-            Description = @"",
+            Description = @"API version header.",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the task.",
         };
 
-        public CancelOrDeleteTaskCommand(G.IApi client) : base(
+        public CancelOrDeleteTaskCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"Cancel a running task or delete a completed one.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(XRunwayVersion);
             Arguments.Add(Id);

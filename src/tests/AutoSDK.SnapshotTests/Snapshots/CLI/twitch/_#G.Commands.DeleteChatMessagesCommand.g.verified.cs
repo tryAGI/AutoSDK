@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteChatMessagesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,21 +23,27 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the chat room to remove messages from.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Option<string?> MessageId { get; } = new(
             name: "messageId")
         {
-            Description = @"",
+            Description = @"The ID of the message to remove. The `id` tag in the [PRIVMSG](https://dev.twitch.tv/docs/irc/tags#privmsg-tags) tag contains the message’s ID. Restrictions:  
+* The message must have been created within the last 6 hours.
+* The message must not belong to the broadcaster.
+* The message must not belong to another moderator.
+If not specified, the request removes all messages in the broadcaster’s chat room.",
         };
-        public DeleteChatMessagesCommand(G.IApi client) : base(
+        public DeleteChatMessagesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Removes a single chat message or all chat messages from the broadcaster’s chat room.
 
@@ -45,6 +52,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:chat\_messages** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceCreateNamespaceSecretCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,19 +25,22 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Secret resource ID (used in `name` as the last segment). This conforms
+to RFC-1034, which restricts to letters, numbers, and hyphen, with the
+first character a letter, the last a letter or a number, and a 63
+character maximum.",
         };
 
         private global::System.CommandLine.Option<string?> Value { get; } = new(
             name: "value")
         {
-            Description = @"",
+            Description = @"The value of the secret, which is input-only and will never be returned in API responses.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
@@ -44,11 +48,14 @@ namespace G
         {
             Description = @"",
         };
-        public PipelinePublicServiceCreateNamespaceSecretCommand(G.IApi client) : base(
+        public PipelinePublicServiceCreateNamespaceSecretCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Creates a new secret under the parenthood of an namespace.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Options.Add(Id);

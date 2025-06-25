@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SendGuestStarInviteCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,28 +24,30 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the `user_id` in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The session ID for the invite to be sent on behalf of the broadcaster.",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = @"",
+            Description = @"Twitch User ID for the guest to invite to the Guest Star session.",
         };
 
-        public SendGuestStarInviteCommand(G.IApi client) : base(
+        public SendGuestStarInviteCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "send",
             description: @"BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.
 
@@ -54,6 +57,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

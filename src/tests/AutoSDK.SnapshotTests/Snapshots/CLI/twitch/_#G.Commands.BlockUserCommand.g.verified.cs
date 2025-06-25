@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BlockUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,21 +23,29 @@ namespace G
         private global::System.CommandLine.Argument<string> TargetUserId { get; } = new(
             name: "targetUserId")
         {
-            Description = @"",
+            Description = @"The ID of the user to block. The API ignores the request if the broadcaster has already blocked the user.",
         };
 
         private global::System.CommandLine.Option<global::G.BlockUserSourceContext?> SourceContext { get; } = new(
             name: "sourceContext")
         {
-            Description = @"",
+            Description = @"The location where the harassment took place that is causing the brodcaster to block the user. Possible values are:  
+* chat
+* whisper
+.",
         };
 
         private global::System.CommandLine.Option<global::G.BlockUserReason?> Reason { get; } = new(
             name: "reason")
         {
-            Description = @"",
+            Description = @"The reason that the broadcaster is blocking the user. Possible values are:  
+* harassment
+* spam
+* other",
         };
-        public BlockUserCommand(G.IApi client) : base(
+        public BlockUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "block",
             description: @"Blocks the specified user from interacting with or having contact with the broadcaster. The user ID in the OAuth token identifies the broadcaster who is blocking the user.
 
@@ -47,6 +56,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:manage:blocked\_users** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TargetUserId);
             Options.Add(SourceContext);

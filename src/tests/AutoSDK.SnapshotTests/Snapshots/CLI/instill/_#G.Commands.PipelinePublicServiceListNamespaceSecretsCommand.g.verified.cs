@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceListNamespaceSecretsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,26 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of secrets to return. If this parameter is unspecified,
+at most 10 pipelines will be returned. The cap value for this parameter is
+100 (i.e. any value above that will be coerced to 100).",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page secret.",
         };
-        public PipelinePublicServiceListNamespaceSecretsCommand(G.IApi client) : base(
+        public PipelinePublicServiceListNamespaceSecretsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns a paginated list of secrets that belong to the specified
 namespace.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Options.Add(PageSize);

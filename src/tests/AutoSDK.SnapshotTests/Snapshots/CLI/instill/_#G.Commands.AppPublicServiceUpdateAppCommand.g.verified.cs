@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceUpdateAppCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,49 +28,57 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace id.",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"App id.",
         };
 
         private global::System.CommandLine.Option<string?> NewAppId { get; } = new(
             name: "newAppId")
         {
-            Description = @"",
+            Description = @"The app id needs to follow the kebab case format.
+if the new app id is not provided, the app id will not be updated.",
         };
 
         private global::System.CommandLine.Option<string?> NewDescription { get; } = new(
             name: "newDescription")
         {
-            Description = @"",
+            Description = @"The app description.
+If the new description is empty, the description will be set to empty.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> NewTags { get; } = new(
             name: "newTags")
         {
-            Description = @"",
+            Description = @"The app tags.
+If the new tags is empty, the tags will be set to empty.",
         };
 
         private global::System.CommandLine.Option<string?> LastAiAssistantAppCatalogUid { get; } = new(
             name: "lastAiAssistantAppCatalogUid")
         {
-            Description = @"",
+            Description = @"last AI assistant app catalog uid
+If the last AI assistant app catalog uid is empty, the last AI assistant app catalog uid will be set to empty.",
         };
 
         private global::System.CommandLine.Option<int?> LastAiAssistantAppTopK { get; } = new(
             name: "lastAiAssistantAppTopK")
         {
-            Description = @"",
+            Description = @"last AI assistant app top k
+If the last AI assistant app top k is empty, the last AI assistant app top k will be set to empty.",
         };
-        public AppPublicServiceUpdateAppCommand(G.IApi client) : base(
+        public AppPublicServiceUpdateAppCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Updates the information of an app.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

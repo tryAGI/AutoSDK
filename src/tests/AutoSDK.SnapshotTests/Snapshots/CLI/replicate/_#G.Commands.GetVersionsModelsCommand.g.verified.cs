@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetVersionsModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,22 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the model.",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"The name of the model.",
         };
 
         private global::System.CommandLine.Argument<string> VersionId { get; } = new(
             name: "versionId")
         {
-            Description = @"",
+            Description = @"The ID of the version.",
         };
 
-        public GetVersionsModelsCommand(G.IApi client) : base(
+        public GetVersionsModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Example cURL request:
 
@@ -92,6 +95,7 @@ The `openapi_schema.components.schemas.Output` property for the [replicate/hello
 For more details, see the docs on [Cog's supported input and output types](https://github.com/replicate/cog/blob/75b7802219e7cd4cee845e34c4c22139558615d4/docs/python.md#input-and-output-types)")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelOwner);
             Arguments.Add(ModelName);

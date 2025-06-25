@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V2VideoTranslateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -51,11 +52,14 @@ namespace G
         {
             Description = @"",
         };
-        public V2VideoTranslateCommand(G.IApi client) : base(
+        public V2VideoTranslateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v2video",
             description: @"Generated Video: [https://app.heygen.com/video-translation/share/dab5a987e6154b0cb7e606c858043fa9](https://app.heygen.com/video-translation/share/dab5a987e6154b0cb7e606c858043fa9)")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(OutputLanguage);
             Options.Add(SpeakerNum);

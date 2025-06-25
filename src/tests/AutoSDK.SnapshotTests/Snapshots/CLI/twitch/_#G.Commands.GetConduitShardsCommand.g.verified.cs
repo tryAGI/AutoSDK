@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetConduitShardsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,23 @@ namespace G
         private global::System.CommandLine.Argument<string> ConduitId { get; } = new(
             name: "conduitId")
         {
-            Description = @"",
+            Description = @"Conduit ID.",
         };
 
         private global::System.CommandLine.Option<string?> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"Status to filter by.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The pagination object in the response contains the cursor’s value.",
         };
-        public GetConduitShardsCommand(G.IApi client) : base(
+        public GetConduitShardsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"NEW Gets a lists of all shards for a [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).
 
@@ -46,6 +49,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ConduitId);
             Options.Add(Status);

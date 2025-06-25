@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteVideosCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The list of videos to delete. To specify more than one video, include the _id_ parameter for each video to delete. For example, `id=1234&id=5678`. You can delete a maximum of 5 videos per request. Ignores invalid video IDs.  
+If the user doesn’t have permission to delete one of the videos in the list, none of the videos are deleted.",
         };
 
-        public DeleteVideosCommand(G.IApi client) : base(
+        public DeleteVideosCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Deletes one or more videos. You may delete past broadcasts, highlights, or uploads.
 
@@ -33,6 +37,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:videos** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
 

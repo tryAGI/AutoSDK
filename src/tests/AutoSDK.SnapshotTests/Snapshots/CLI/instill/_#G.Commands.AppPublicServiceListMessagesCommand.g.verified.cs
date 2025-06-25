@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceListMessagesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,61 +30,64 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"namespace id",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"app id",
         };
 
         private global::System.CommandLine.Argument<string> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = @"",
+            Description = @"conversation id",
         };
 
         private global::System.CommandLine.Option<int?> LatestK { get; } = new(
             name: "latestK")
         {
-            Description = @"",
+            Description = @"latest k messages",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"page size",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"page token",
         };
 
         private global::System.CommandLine.Option<bool?> IncludeSystemMessages { get; } = new(
             name: "includeSystemMessages")
         {
-            Description = @"",
+            Description = @"include system messages",
         };
 
         private global::System.CommandLine.Option<bool?> IfAll { get; } = new(
             name: "ifAll")
         {
-            Description = @"",
+            Description = @"If true, all messages will be returned. This has higher priority over latest_k, page_size, and page_token.",
         };
 
         private global::System.CommandLine.Option<string?> MessageUid { get; } = new(
             name: "messageUid")
         {
-            Description = @"",
+            Description = @"message_uid this is optional, if provided, only the message with the given message_uid will be returned",
         };
-        public AppPublicServiceListMessagesCommand(G.IApi client) : base(
+        public AppPublicServiceListMessagesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Returns a paginated list of messages.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

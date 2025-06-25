@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteSingleApiKeyCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,14 +21,17 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiKeyId { get; } = new(
             name: "apiKeyId")
         {
-            Description = @"",
+            Description = @"The ID of API key to operate on. Expected to be a URL safe Base64 encoded UUID.",
         };
 
-        public DeleteSingleApiKeyCommand(G.IApi client) : base(
+        public DeleteSingleApiKeyCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ApiKeyId);
 

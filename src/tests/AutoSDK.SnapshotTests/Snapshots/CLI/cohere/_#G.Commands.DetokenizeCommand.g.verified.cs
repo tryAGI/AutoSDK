@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DetokenizeCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,28 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<int>> Tokens { get; } = new(
             name: "tokens")
         {
-            Description = @"",
+            Description = @"The list of tokens to be detokenized.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public DetokenizeCommand(G.IApi client) : base(
+        public DetokenizeCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "detokenize",
             description: @"This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Model);
             Arguments.Add(Tokens);

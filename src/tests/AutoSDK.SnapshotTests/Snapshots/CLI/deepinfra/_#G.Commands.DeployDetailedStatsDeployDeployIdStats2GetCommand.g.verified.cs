@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeployDetailedStatsDeployDeployIdStats2GetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -44,11 +45,14 @@ namespace G
         {
             Description = @"",
         };
-        public DeployDetailedStatsDeployDeployIdStats2GetCommand(G.IApi client) : base(
+        public DeployDetailedStatsDeployDeployIdStats2GetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "deploy",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(DeployId);
             Arguments.Add(From);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceValidateNamespacePipelineCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,16 +23,18 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
-        public PipelinePublicServiceValidateNamespacePipelineCommand(G.IApi client) : base(
+        public PipelinePublicServiceValidateNamespacePipelineCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Validates a pipeline by its resource name, which is defined by the parent
 namespace and the ID of the pipeline.
@@ -39,6 +42,7 @@ namespace and the ID of the pipeline.
 Validation checks the recipe of the pipeline and the status of its components.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

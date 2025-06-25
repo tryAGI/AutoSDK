@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteUserMembershipCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"User ID",
         };
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
-        public DeleteUserMembershipCommand(G.IApi client) : base(
+        public DeleteUserMembershipCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Accesses and deletes a user membership by parent and membership IDs.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Arguments.Add(OrganizationId);

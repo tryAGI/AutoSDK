@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AgentsCallsCreateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -37,67 +38,74 @@ namespace G
         private global::System.CommandLine.Option<object?> TemplateContext { get; } = new(
             name: "templateContext")
         {
-            Description = @"",
+            Description = @"Context for filling any mustache templates for the call.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1Message>?> InitialMessages { get; } = new(
             name: "initialMessages")
         {
-            Description = @"",
+            Description = @"The conversation history to start from for this call.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Optional metadata key-value pairs to associate with the call. All values must be strings.
+ Keys may not start with ""ultravox."", which is reserved for system-provided metadata.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallMedium?> Medium { get; } = new(
             name: "medium")
         {
-            Description = @"",
+            Description = @"The (overridden) medium used for this call.",
         };
 
         private global::System.CommandLine.Option<string?> JoinTimeout { get; } = new(
             name: "joinTimeout")
         {
-            Description = @"",
+            Description = @"The (overridden) timeout for joining this call.",
         };
 
         private global::System.CommandLine.Option<string?> MaxDuration { get; } = new(
             name: "maxDuration")
         {
-            Description = @"",
+            Description = @"The (overridden) maximum duration of this call.",
         };
 
         private global::System.CommandLine.Option<bool?> RecordingEnabled { get; } = new(
             name: "recordingEnabled")
         {
-            Description = @"",
+            Description = @"The (overridden) setting for whether the call should be recorded.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartAgentCallRequestInitialOutputMedium?> InitialOutputMedium { get; } = new(
             name: "initialOutputMedium")
         {
-            Description = @"",
+            Description = @"The (overridden) medium initially used by the agent. May be altered by the client later.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1FirstSpeakerSettings?> FirstSpeakerSettings { get; } = new(
             name: "firstSpeakerSettings")
         {
-            Description = @"",
+            Description = @"The (overridden) settings for the initial message to get a conversation started.
+ Defaults to `agent: {}` which means the agent will start the conversation with an
+ (interruptible) greeting generated based on the system prompt and any initial messages.
+ (If first_speaker is set and this is not, first_speaker will be used instead.)",
         };
 
         private global::System.CommandLine.Option<object?> ExperimentalSettings { get; } = new(
             name: "experimentalSettings")
         {
-            Description = @"",
+            Description = @"Experimental settings for the call.",
         };
-        public AgentsCallsCreateCommand(G.IApi client) : base(
+        public AgentsCallsCreateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "agents",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(AgentId);
             Options.Add(TemplateContext);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PatchAuthenticatedUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,45 +28,62 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Resource ID (used in `name` as the last segment). This conforms to
+RFC-1034, which restricts to letters, numbers, and hyphen, with the first
+character a letter, the last a letter or a number, and a 63 character
+maximum.
+
+Note that the ID can be updated.",
         };
 
         private global::System.CommandLine.Argument<string> Email { get; } = new(
             name: "email")
         {
-            Description = @"",
+            Description = @"Email.",
         };
 
         private global::System.CommandLine.Argument<bool> NewsletterSubscription { get; } = new(
             name: "newsletterSubscription")
         {
-            Description = @"",
+            Description = @"This defines whether the user is subscribed to Instill AI's newsletter.",
         };
 
         private global::System.CommandLine.Option<string?> Uid { get; } = new(
             name: "uid")
         {
-            Description = @"",
+            Description = @"User UUID. This field is optionally set by users on creation (it will be
+server-generated if unspecified).",
         };
 
         private global::System.CommandLine.Option<string?> Role { get; } = new(
             name: "role")
         {
-            Description = @"",
+            Description = @"Role.
+
+It must be one of the following allowed roles:
+- `manager`
+- `ai-researcher`
+- `ai-engineer`
+- `data-engineer`
+- `data-scientist`
+- `analytics-engineer`
+- `hobbyist`",
         };
 
         private global::System.CommandLine.Option<string?> CookieToken { get; } = new(
             name: "cookieToken")
         {
-            Description = @"",
+            Description = @"Console cookie token.",
         };
 
         private global::System.CommandLine.Option<global::G.OnboardingStatus?> OnboardingStatus { get; } = new(
             name: "onboardingStatus")
         {
-            Description = @"",
+            Description = @"Onboarding Status.",
         };
-        public PatchAuthenticatedUserCommand(G.IApi client) : base(
+        public PatchAuthenticatedUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "patch",
             description: @"Updates the information of the authenticated user.
 
@@ -73,6 +91,7 @@ In REST requests, only the supplied user fields will be taken into account
 when updating the resource.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
             Arguments.Add(Email);

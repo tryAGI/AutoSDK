@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetUserEmotesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,23 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the user. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"Returns all emotes available to the user within the chat owned by the specified broadcaster. This includes the Global and Subscriber Emotes the user has access to, as well as channel-only specific emotes such as Follower Emotes.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The Pagination object in the response contains the cursor’s value.",
         };
-        public GetUserEmotesCommand(G.IApi client) : base(
+        public GetUserEmotesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"NEW Retrieves emotes available to the user across all channels.
 
@@ -47,6 +50,7 @@ __Authorization:__
 * Query parameter `user_id` must match the `user_id` in the user access token.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Options.Add(BroadcasterId);

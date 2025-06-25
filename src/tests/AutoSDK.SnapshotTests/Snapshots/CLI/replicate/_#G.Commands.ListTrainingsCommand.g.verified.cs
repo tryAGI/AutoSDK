@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListTrainingsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,7 +18,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public ListTrainingsCommand(G.IApi client) : base(
+        public ListTrainingsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Get a paginated list of trainings that you've created. This will include trainings created from the API and the website. It will return 100 records per page.
 
@@ -76,6 +79,7 @@ The response will be a paginated JSON array of training objects, sorted with the
 `version` will be the unique ID of model version used to create the training.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

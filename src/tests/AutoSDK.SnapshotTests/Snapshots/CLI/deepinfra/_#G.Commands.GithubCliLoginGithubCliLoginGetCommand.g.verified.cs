@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GithubCliLoginGithubCliLoginGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,12 +25,15 @@ namespace G
             Description = @"",
         };
 
-        public GithubCliLoginGithubCliLoginGetCommand(G.IApi client) : base(
+        public GithubCliLoginGithubCliLoginGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "github",
             description: @"deepctl is calling this request waiting for auth token during login.
 The token is stored in /github/callback")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(LoginId);
 

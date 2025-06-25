@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelPredictionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,14 +21,17 @@ namespace G
         private global::System.CommandLine.Argument<string> PredictionId { get; } = new(
             name: "predictionId")
         {
-            Description = @"",
+            Description = @"The ID of the prediction to cancel.",
         };
 
-        public CancelPredictionsCommand(G.IApi client) : base(
+        public CancelPredictionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(PredictionId);
 

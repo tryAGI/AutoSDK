@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetVideosCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,63 +32,89 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"A list of IDs that identify the videos you want to get. To get more than one video, include this parameter for each video you want to get. For example, `id=1234&id=5678`. You may specify a maximum of 100 IDs. The endpoint ignores duplicate IDs and IDs that weren't found (if there's at least one valid ID).  
+The _id_, _user\_id_, and _game\_id_ parameters are mutually exclusive.",
         };
 
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the user whose list of videos you want to get.  
+The _id_, _user\_id_, and _game\_id_ parameters are mutually exclusive.",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = @"",
+            Description = @"A category or game ID. The response contains a maximum of 500 videos that show this content. To get category/game IDs, use the [Search Categories](https://dev.twitch.tv/docs/api/reference#search-categories) endpoint.  
+The _id_, _user\_id_, and _game\_id_ parameters are mutually exclusive.",
         };
 
         private global::System.CommandLine.Option<string?> Language { get; } = new(
             name: "language")
         {
-            Description = @"",
+            Description = @"A filter used to filter the list of videos by the language that the video owner broadcasts in. For example, to get videos that were broadcast in German, set this parameter to the ISO 639-1 two-letter code for German (i.e., DE). For a list of supported languages, see [Supported Stream Language](https://help.twitch.tv/s/article/languages-on-twitch#streamlang). If the language is not supported, use “other.”  
+Specify this parameter only if you specify the _game\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosPeriod?> Period { get; } = new(
             name: "period")
         {
-            Description = @"",
+            Description = @"A filter used to filter the list of videos by when they were published. For example, videos published in the last week. Possible values are:  
+* all
+* day
+* month
+* week
+The default is ""all,"" which returns videos published in all periods.  
+Specify this parameter only if you specify the _game\_id_ or _user\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosSort?> Sort { get; } = new(
             name: "sort")
         {
-            Description = @"",
+            Description = @"The order to sort the returned videos in. Possible values are:  
+* time — Sort the results in descending order by when they were created (i.e., latest video first).
+* trending — Sort the results in descending order by biggest gains in viewership (i.e., highest trending video first).
+* views — Sort the results in descending order by most views (i.e., highest number of views first).
+The default is ""time.""  
+Specify this parameter only if you specify the _game\_id_ or _user\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosType?> Type { get; } = new(
             name: "type")
         {
-            Description = @"",
+            Description = @"A filter used to filter the list of videos by the video's type. Possible case-sensitive values are:  
+* all
+* archive — On-demand videos (VODs) of past streams.
+* highlight — Highlight reels of past streams.
+* upload — External videos that the broadcaster uploaded using the Video Producer.
+The default is ""all,"" which returns all video types.  
+Specify this parameter only if you specify the _game\_id_ or _user\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<string?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return per page in the response. The minimum page size is 1 item per page and the maximum is 100\. The default is 20.  
+Specify this parameter only if you specify the _game\_id_ or _user\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)  
+Specify this parameter only if you specify the _user\_id_ query parameter.",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = @"",
+            Description = @"The cursor used to get the previous page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)  
+Specify this parameter only if you specify the _user\_id_ query parameter.",
         };
-        public GetVideosCommand(G.IApi client) : base(
+        public GetVideosCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets information about one or more published videos. You may get videos by ID, by user, or by game/category.
 
@@ -98,6 +125,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Id);
             Options.Add(UserId);

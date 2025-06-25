@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CountTokensCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,22 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"The id of the model to use.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.Content>?> Contents { get; } = new(
             name: "contents")
         {
-            Description = @"",
+            Description = @"Required. The input given to the model as a prompt.",
         };
-        public CountTokensCommand(G.IApi client) : base(
+        public CountTokensCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "count",
             description: @"Runs a model's tokenizer on input content and returns the token count.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelId);
             Options.Add(Contents);

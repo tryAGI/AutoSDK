@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class LemurSummaryCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,12 +19,15 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public LemurSummaryCommand(G.IApi client) : base(
+        public LemurSummaryCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "lemur",
             description: @"Custom Summary allows you to distill a piece of audio into a few impactful sentences.
 You can give the model context to obtain more targeted results while outputting the results in a variety of formats described in human language.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

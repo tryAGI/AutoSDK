@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,31 +26,35 @@ namespace G
         private global::System.CommandLine.Option<double?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"Maximum number of models to include in a page
+Defaults to `20`, min value of `1`, max value of `1000`.",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = @"",
+            Description = @"Page token provided in the `next_page_token` field of a previous response.",
         };
 
         private global::System.CommandLine.Option<global::G.CompatibleEndpoint?> Endpoint { get; } = new(
             name: "endpoint")
         {
-            Description = @"One of the Cohere API endpoints that the model can be used with.",
+            Description = @"When provided, filters the list of models to only those that are compatible with the specified endpoint.",
         };
 
         private global::System.CommandLine.Option<bool?> DefaultOnly { get; } = new(
             name: "defaultOnly")
         {
-            Description = @"",
+            Description = @"When provided, filters the list of models to only the default model to the endpoint. This parameter is only valid when `endpoint` is provided.",
         };
-        public ListModelsCommand(G.IApi client) : base(
+        public ListModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a list of models available for use. The list contains models from Cohere as well as your fine-tuned models.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(PageSize);
             Options.Add(PageToken);

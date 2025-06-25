@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicityModelsModelNamePublicityPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -29,7 +30,7 @@ namespace G
         private global::System.CommandLine.Argument<bool> Public { get; } = new(
             name: "@public")
         {
-            Description = @"",
+            Description = @"whether to make the model public of private",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
@@ -37,11 +38,14 @@ namespace G
         {
             Description = @"",
         };
-        public ModelPublicityModelsModelNamePublicityPostCommand(G.IApi client) : base(
+        public ModelPublicityModelsModelNamePublicityPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelName);
             Arguments.Add(Public);

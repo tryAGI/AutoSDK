@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class V2TemplateGenerateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -51,13 +52,16 @@ namespace G
         {
             Description = @"",
         };
-        public V2TemplateGenerateCommand(G.IApi client) : base(
+        public V2TemplateGenerateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "v2template",
             description: @"Generated Video: [https://app.heygen.com/videos/7cba9d29d6db46b88471221fdbc4fb75](https://app.heygen.com/videos/7cba9d29d6db46b88471221fdbc4fb75)
 
 <img src=""https://resource.heygen.ai/video/gifs/7cba9d29d6db46b88471221fdbc4fb75.gif"" alt="""">")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Caption);
             Options.Add(Dimension);

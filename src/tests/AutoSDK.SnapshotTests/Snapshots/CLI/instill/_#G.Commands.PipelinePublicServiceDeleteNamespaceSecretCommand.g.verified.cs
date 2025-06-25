@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceDeleteNamespaceSecretCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,21 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> SecretId { get; } = new(
             name: "secretId")
         {
-            Description = @"",
+            Description = @"Secret ID",
         };
 
-        public PipelinePublicServiceDeleteNamespaceSecretCommand(G.IApi client) : base(
+        public PipelinePublicServiceDeleteNamespaceSecretCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Deletes a secret, accesing it by its resource name, which is defined by
 the parent namespace and the ID of the secret.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(SecretId);

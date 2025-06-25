@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetObjectDownloadURLCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,29 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"id of the namespace",
         };
 
         private global::System.CommandLine.Argument<string> ObjectUid { get; } = new(
             name: "objectUid")
         {
-            Description = @"",
+            Description = @"uid of the object",
         };
 
         private global::System.CommandLine.Option<int?> UrlExpireDays { get; } = new(
             name: "urlExpireDays")
         {
-            Description = @"",
+            Description = @"expiration time in days for the URL.
+maximum is 7 days. if set to 0, URL will not expire.",
         };
-        public GetObjectDownloadURLCommand(G.IApi client) : base(
+        public GetObjectDownloadURLCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the download URL of an object.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ObjectUid);

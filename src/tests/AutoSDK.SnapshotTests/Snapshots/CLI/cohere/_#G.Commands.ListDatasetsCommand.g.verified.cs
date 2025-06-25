@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListDatasetsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,49 +29,52 @@ namespace G
         private global::System.CommandLine.Option<string?> DatasetType { get; } = new(
             name: "datasetType")
         {
-            Description = @"",
+            Description = @"optional filter by dataset type",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Before { get; } = new(
             name: "before")
         {
-            Description = @"",
+            Description = @"optional filter before a date",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"optional filter after a date",
         };
 
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = @"",
+            Description = @"optional limit to number of results",
         };
 
         private global::System.CommandLine.Option<double?> Offset { get; } = new(
             name: "offset")
         {
-            Description = @"",
+            Description = @"optional offset to start of results",
         };
 
         private global::System.CommandLine.Option<global::G.DatasetValidationStatus?> ValidationStatus { get; } = new(
             name: "validationStatus")
         {
-            Description = @"The validation status of the dataset",
+            Description = @"optional filter by validation status",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public ListDatasetsCommand(G.IApi client) : base(
+        public ListDatasetsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"List datasets that have been created.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(DatasetType);
             Options.Add(Before);

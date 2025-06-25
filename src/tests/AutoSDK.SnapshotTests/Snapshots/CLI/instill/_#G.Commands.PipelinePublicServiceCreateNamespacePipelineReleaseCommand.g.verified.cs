@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceCreateNamespacePipelineReleaseCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,45 +28,50 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Release resource ID (used in `name` as the last segment). It must be a
+sematic version vX.Y.Z.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"Release description.",
         };
 
         private global::System.CommandLine.Option<object?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Key-value object with console-related data such as the pipeline builder
+layout.",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = @"",
+            Description = @"README.",
         };
 
         private global::System.CommandLine.Option<string?> RawRecipe { get; } = new(
             name: "rawRecipe")
         {
-            Description = @"",
+            Description = @"Recipe in YAML format describes the components of a pipeline and how they
+are connected.",
         };
-        public PipelinePublicServiceCreateNamespacePipelineReleaseCommand(G.IApi client) : base(
+        public PipelinePublicServiceCreateNamespacePipelineReleaseCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Commits the version of a pipeline, identified by its resource name, which
 is formed by the parent namespace and ID of the pipeline.
@@ -74,6 +80,7 @@ The authenticated namespace must be the parent of the pipeline in order to
 perform this action.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

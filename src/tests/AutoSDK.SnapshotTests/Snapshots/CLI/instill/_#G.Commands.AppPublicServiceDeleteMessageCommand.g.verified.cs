@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceDeleteMessageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,32 +25,35 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"namespace id",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = @"",
+            Description = @"app id",
         };
 
         private global::System.CommandLine.Argument<string> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = @"",
+            Description = @"conversation id",
         };
 
         private global::System.CommandLine.Argument<string> MessageUid { get; } = new(
             name: "messageUid")
         {
-            Description = @"",
+            Description = @"message uid",
         };
 
-        public AppPublicServiceDeleteMessageCommand(G.IApi client) : base(
+        public AppPublicServiceDeleteMessageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Deletes a message.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(AppId);

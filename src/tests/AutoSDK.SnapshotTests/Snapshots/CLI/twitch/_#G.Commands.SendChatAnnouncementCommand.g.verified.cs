@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class SendChatAnnouncementCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,27 +24,35 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the chat room to send the announcement to.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of a user who has permission to moderate the broadcaster’s chat room, or the broadcaster’s ID if they’re sending the announcement. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = @"",
+            Description = @"The announcement to make in the broadcaster’s chat room. Announcements are limited to a maximum of 500 characters; announcements longer than 500 characters are truncated.",
         };
 
         private global::System.CommandLine.Option<global::G.SendChatAnnouncementBodyColor?> Color { get; } = new(
             name: "color")
         {
-            Description = @"",
+            Description = @"The color used to highlight the announcement. Possible case-sensitive values are:  
+* blue
+* green
+* orange
+* purple
+* primary (default)
+If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).",
         };
-        public SendChatAnnouncementCommand(G.IApi client) : base(
+        public SendChatAnnouncementCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "send",
             description: @"Sends an announcement to the broadcaster’s chat room.
 
@@ -52,6 +61,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:announcements** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

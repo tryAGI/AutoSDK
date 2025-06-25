@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateExtensionBitsProductCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,39 +27,41 @@ namespace G
         private global::System.CommandLine.Argument<string> Sku { get; } = new(
             name: "sku")
         {
-            Description = @"",
+            Description = @"The product's SKU. The SKU must be unique within an extension. The product's SKU cannot be changed. The SKU may contain only alphanumeric characters, dashes (-), underscores (\_), and periods (.) and is limited to a maximum of 255 characters. No spaces.",
         };
 
         private global::System.CommandLine.Argument<global::G.UpdateExtensionBitsProductBodyCost> Cost { get; } = new(
             name: "cost")
         {
-            Description = @"",
+            Description = @"An object that contains the product's cost information.",
         };
 
         private global::System.CommandLine.Argument<string> DisplayName { get; } = new(
             name: "displayName")
         {
-            Description = @"",
+            Description = @"The product's name as displayed in the extension. The maximum length is 255 characters.",
         };
 
         private global::System.CommandLine.Option<bool?> InDevelopment { get; } = new(
             name: "inDevelopment")
         {
-            Description = @"",
+            Description = @"A Boolean value that indicates whether the product is in development. Set to **true** if the product is in development and not available for public use. The default is **false**.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Expiration { get; } = new(
             name: "expiration")
         {
-            Description = @"",
+            Description = @"The date and time, in RFC3339 format, when the product expires. If not set, the product does not expire. To disable the product, set the expiration date to a date in the past.",
         };
 
         private global::System.CommandLine.Option<bool?> IsBroadcast { get; } = new(
             name: "isBroadcast")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether Bits product purchase events are broadcast to all instances of the extension on a channel. The events are broadcast via the `onTransactionComplete` helper callback. The default is **false**.",
         };
-        public UpdateExtensionBitsProductCommand(G.IApi client) : base(
+        public UpdateExtensionBitsProductCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Adds or updates a Bits product that the extension created. If the SKU doesn’t exist, the product is added. You may update all fields except the `sku` field.
 
@@ -67,6 +70,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must match the extension’s client ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Sku);
             Arguments.Add(Cost);

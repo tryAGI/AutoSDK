@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetPredictionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> PredictionId { get; } = new(
             name: "predictionId")
         {
-            Description = @"",
+            Description = @"The ID of the prediction to get.",
         };
 
-        public GetPredictionsCommand(G.IApi client) : base(
+        public GetPredictionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get the current state of a prediction.
 
@@ -84,6 +87,7 @@ You must save a copy of any data or files in the output if you'd like to continu
 Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(PredictionId);
 

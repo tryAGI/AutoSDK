@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateVideoFromImageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,55 +29,58 @@ namespace G
         private global::System.CommandLine.Argument<global::G.CreateVideoFromImageXRunwayVersion> XRunwayVersion { get; } = new(
             name: "xRunwayVersion")
         {
-            Description = @"",
+            Description = @"API version header.",
         };
 
         private global::System.CommandLine.Argument<string> PromptImage { get; } = new(
             name: "promptImage")
         {
-            Description = @"",
+            Description = @"HTTPS URL of an image (JPEG, PNG, WebP, max 16MB).",
         };
 
         private global::System.CommandLine.Option<global::G.CreateVideoFromImageRequestModel> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The model variant to use.",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = @"",
+            Description = @"Seed value for generating consistent results.",
         };
 
         private global::System.CommandLine.Option<string?> PromptText { get; } = new(
             name: "promptText")
         {
-            Description = @"",
+            Description = @"A detailed description of the output.",
         };
 
         private global::System.CommandLine.Option<bool?> Watermark { get; } = new(
             name: "watermark")
         {
-            Description = @"",
+            Description = @"Add a Runway watermark to the output.",
         };
 
         private global::System.CommandLine.Option<int?> Duration { get; } = new(
             name: "duration")
         {
-            Description = @"",
+            Description = @"Duration of the video in seconds.",
         };
 
         private global::System.CommandLine.Option<global::G.CreateVideoFromImageRequestRatio?> Ratio { get; } = new(
             name: "ratio")
         {
-            Description = @"",
+            Description = @"Aspect ratio of the video.",
         };
-        public CreateVideoFromImageCommand(G.IApi client) : base(
+        public CreateVideoFromImageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Start a new task to generate a video from an image prompt.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(XRunwayVersion);
             Arguments.Add(PromptImage);

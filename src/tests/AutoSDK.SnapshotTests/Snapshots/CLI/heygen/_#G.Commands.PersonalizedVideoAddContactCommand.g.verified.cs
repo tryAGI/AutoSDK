@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PersonalizedVideoAddContactCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public PersonalizedVideoAddContactCommand(G.IApi client) : base(
+        public PersonalizedVideoAddContactCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "personalized",
             description: @"personalized_video/add_contact")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(ProjectId);
             Options.Add(VariablesList);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetUnbanRequestsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -26,39 +27,46 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose channel is receiving unban requests.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s unban requests. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"Filter by a status.  
+* pending
+* approved
+* denied
+* acknowledged
+* canceled",
         };
 
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID used to filter what unban requests are returned.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"Cursor used to get next page of results. Pagination object in response contains cursor value.",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of items to return per page in response",
         };
-        public GetUnbanRequestsCommand(G.IApi client) : base(
+        public GetUnbanRequestsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"NEW Gets a list of unban requests for a broadcaster’s channel.
 
@@ -68,6 +76,7 @@ __Authorization:__
 * Query parameter `moderator_id` must match the `user_id` in the [user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

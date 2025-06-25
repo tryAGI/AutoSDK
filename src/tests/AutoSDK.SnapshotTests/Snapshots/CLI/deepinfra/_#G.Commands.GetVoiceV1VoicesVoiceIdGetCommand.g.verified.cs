@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetVoiceV1VoicesVoiceIdGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public GetVoiceV1VoicesVoiceIdGetCommand(G.IApi client) : base(
+        public GetVoiceV1VoicesVoiceIdGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get a voice by its id")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(VoiceId);
             Options.Add(XiApiKey);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PurgeLemurRequestDataCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,15 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> RequestId { get; } = new(
             name: "requestId")
         {
-            Description = @"",
+            Description = @"The ID of the LeMUR request whose data you want to delete. This would be found in the response of the original request.",
         };
 
-        public PurgeLemurRequestDataCommand(G.IApi client) : base(
+        public PurgeLemurRequestDataCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "purge",
             description: @"Delete the data for a previously submitted LeMUR request.
 The LLM response data, as well as any context provided in the original request will be removed.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(RequestId);
 

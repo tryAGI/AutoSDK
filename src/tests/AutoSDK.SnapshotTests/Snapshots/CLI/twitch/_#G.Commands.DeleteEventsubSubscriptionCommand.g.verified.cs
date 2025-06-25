@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteEventsubSubscriptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the subscription to delete.",
         };
 
-        public DeleteEventsubSubscriptionCommand(G.IApi client) : base(
+        public DeleteEventsubSubscriptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Deletes an EventSub subscription.
 
@@ -34,6 +37,7 @@ If you use [webhooks to receive events](https://dev.twitch.tv/docs/eventsub/hand
 If you use [WebSockets to receive events](https://dev.twitch.tv/docs/eventsub/handling-websocket-events), the request must specify a user access token. The request will fail if you use an app access token. The token may include any scopes.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsUnlockRepoForAuthenticatedUserCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,20 +22,23 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
         private global::System.CommandLine.Argument<string> RepoName { get; } = new(
             name: "repoName")
         {
-            Description = @"",
+            Description = @"repo_name parameter",
         };
 
-        public MigrationsUnlockRepoForAuthenticatedUserCommand(G.IApi client) : base(
+        public MigrationsUnlockRepoForAuthenticatedUserCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(MigrationId);
             Arguments.Add(RepoName);

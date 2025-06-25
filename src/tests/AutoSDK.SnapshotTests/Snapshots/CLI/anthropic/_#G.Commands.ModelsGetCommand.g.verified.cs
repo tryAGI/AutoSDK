@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelsGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -41,13 +42,16 @@ Read more about versioning and our version history [here](https://docs.anthropic
 
 This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
         };
-        public ModelsGetCommand(G.IApi client) : base(
+        public ModelsGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "models",
             description: @"Get a specific model.
 
 The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelId);
             Options.Add(AnthropicVersion);

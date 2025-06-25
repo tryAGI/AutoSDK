@@ -32,6 +32,7 @@ namespace {endPoint.Settings.Namespace}
     internal sealed partial class {endPoint.NotAsyncMethodName}Command : global::System.CommandLine.Command
     {{
         private readonly {clientType} _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -61,11 +62,14 @@ namespace {endPoint.Settings.Namespace}
         }};
 ").Inject()}
     
-        public {endPoint.NotAsyncMethodName}Command({clientType} client) : base(
+        public {endPoint.NotAsyncMethodName}Command(
+            {clientType} client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: ""{endPoint.CliAction}"",
             description: @""{endPoint.Description.ClearForCSharp()}"")
         {{
             _client = client;
+            _serviceProvider = serviceProvider;
 
 {endPoint.Parameters.Where(x => x.IsRequired).Select((x, i) => @$"
             Arguments.Add({x.Name.ToPropertyName()});").Inject()}

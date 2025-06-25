@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteOrganizationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
-        public DeleteOrganizationCommand(G.IApi client) : base(
+        public DeleteOrganizationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Accesses and deletes an organization by ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(OrganizationId);
 

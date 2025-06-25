@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetChannelIcalendarCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the streaming schedule you want to get.",
         };
 
-        public GetChannelIcalendarCommand(G.IApi client) : base(
+        public GetChannelIcalendarCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the broadcaster’s streaming schedule as an [iCalendar](https://datatracker.ietf.org/doc/html/rfc5545).
 
@@ -38,6 +41,7 @@ The response body contains the iCalendar data (see [RFC5545](https://datatracker
 The Content-Type response header is set to `text/calendar`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
 

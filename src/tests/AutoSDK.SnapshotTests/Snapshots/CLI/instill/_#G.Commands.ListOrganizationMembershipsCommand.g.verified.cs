@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListOrganizationMembershipsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
-        public ListOrganizationMembershipsCommand(G.IApi client) : base(
+        public ListOrganizationMembershipsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Returns a paginated list of the user memberships in an organization.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(OrganizationId);
 

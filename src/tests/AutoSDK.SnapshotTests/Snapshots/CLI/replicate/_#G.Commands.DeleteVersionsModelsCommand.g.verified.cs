@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteVersionsModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,22 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the model.",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"The name of the model.",
         };
 
         private global::System.CommandLine.Argument<string> VersionId { get; } = new(
             name: "versionId")
         {
-            Description = @"",
+            Description = @"The ID of the version.",
         };
 
-        public DeleteVersionsModelsCommand(G.IApi client) : base(
+        public DeleteVersionsModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Delete a model version and all associated predictions, including all output files.
 
@@ -61,6 +64,7 @@ curl -s -X DELETE \
 The response will be an empty 202, indicating the deletion request has been accepted. It might take a few minutes to be processed.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelOwner);
             Arguments.Add(ModelName);

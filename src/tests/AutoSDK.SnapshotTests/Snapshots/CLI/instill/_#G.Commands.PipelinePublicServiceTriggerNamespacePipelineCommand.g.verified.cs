@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceTriggerNamespacePipelineCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,19 +26,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<object>> Inputs { get; } = new(
             name: "inputs")
         {
-            Description = @"",
+            Description = @"Pipeline input parameters, it will be deprecated soon.",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.TriggerData>> Data { get; } = new(
@@ -49,9 +50,11 @@ namespace G
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public PipelinePublicServiceTriggerNamespacePipelineCommand(G.IApi client) : base(
+        public PipelinePublicServiceTriggerNamespacePipelineCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Triggers the execution of a pipeline synchronously, i.e., the result is
 sent back to the namespace right after the data is processed. This method is
@@ -63,6 +66,7 @@ and ID of the pipeline.
 For more information, see [Run NamespacePipeline](https://www.instill.tech/docs/vdp/run).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

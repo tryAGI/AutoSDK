@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PostUpscaleImageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,28 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<global::G.UpscaleInitialImageRequest> ImageRequest { get; } = new(
             name: "imageRequest")
         {
-            Description = @"",
+            Description = @"A request to upscale a provided image with the help of an optional prompt.",
         };
 
         private global::System.CommandLine.Argument<byte[]> ImageFile { get; } = new(
             name: "imageFile")
         {
-            Description = @"",
+            Description = @"An image binary; only JPEG, WEBPs and PNGs are supported at this time",
         };
 
         private global::System.CommandLine.Argument<string> ImageFilename { get; } = new(
             name: "imageFilename")
         {
-            Description = @"",
+            Description = @"An image binary; only JPEG, WEBPs and PNGs are supported at this time",
         };
 
-        public PostUpscaleImageCommand(G.IApi client) : base(
+        public PostUpscaleImageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "post",
             description: @"A request to upscale a provided image with Ideogram.
 
 Supported image formats include JPEG, PNG, and WEBP")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ImageRequest);
             Arguments.Add(ImageFile);

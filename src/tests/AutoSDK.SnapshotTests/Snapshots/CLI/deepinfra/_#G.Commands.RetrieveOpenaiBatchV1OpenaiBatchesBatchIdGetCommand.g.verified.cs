@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class RetrieveOpenaiBatchV1OpenaiBatchesBatchIdGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,11 +31,14 @@ namespace G
         {
             Description = @"",
         };
-        public RetrieveOpenaiBatchV1OpenaiBatchesBatchIdGetCommand(G.IApi client) : base(
+        public RetrieveOpenaiBatchV1OpenaiBatchesBatchIdGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "retrieve",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BatchId);
             Options.Add(XiApiKey);

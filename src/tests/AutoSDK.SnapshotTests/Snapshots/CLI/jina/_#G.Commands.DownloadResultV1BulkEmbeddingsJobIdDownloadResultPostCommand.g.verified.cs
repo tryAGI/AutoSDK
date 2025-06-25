@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
             Description = @"",
         };
 
-        public DownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand(G.IApi client) : base(
+        public DownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "download",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(JobId);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceGetOperationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,24 @@ namespace G
         private global::System.CommandLine.Argument<string> OperationId { get; } = new(
             name: "operationId")
         {
-            Description = @"",
+            Description = @"The name of the operation resource. Asynchronous methods will contain this
+information in their response.",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated user is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public PipelinePublicServiceGetOperationCommand(G.IApi client) : base(
+        public PipelinePublicServiceGetOperationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"This method allows requesters to request the status and outcome of
 long-running operations such as asynchronous pipeline triggers.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(OperationId);
             Options.Add(InstillRequesterUid);

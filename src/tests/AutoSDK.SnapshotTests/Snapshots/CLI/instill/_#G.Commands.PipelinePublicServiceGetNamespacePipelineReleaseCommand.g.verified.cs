@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceGetNamespacePipelineReleaseCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,32 +25,39 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Argument<string> ReleaseId { get; } = new(
             name: "releaseId")
         {
-            Description = @"",
+            Description = @"Release ID",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceGetNamespacePipelineReleaseView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired pipeline view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information.
+ - VIEW_FULL: Full representation.
+ - VIEW_RECIPE: Contains the recipe of the resource.",
         };
-        public PipelinePublicServiceGetNamespacePipelineReleaseCommand(G.IApi client) : base(
+        public PipelinePublicServiceGetNamespacePipelineReleaseCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Gets the details of a pipeline release, where the pipeline is identified
 by its resource name, formed by its parent namespace and ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateEventsubSubscriptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,28 +25,30 @@ namespace G
         private global::System.CommandLine.Argument<global::G.CreateEventSubSubscriptionBodyType> Type { get; } = new(
             name: "type")
         {
-            Description = @"",
+            Description = @"The type of subscription to create. For a list of subscriptions that you can create, see [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types). Set this field to the value in the **Name** column of the Subscription Types table.",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"The version number that identifies the definition of the subscription type that you want the response to use.",
         };
 
         private global::System.CommandLine.Argument<object> Condition { get; } = new(
             name: "condition")
         {
-            Description = @"",
+            Description = @"A JSON object that contains the parameter values that are specific to the specified subscription type. For the object’s required and optional fields, see the subscription type’s documentation.",
         };
 
         private global::System.CommandLine.Argument<global::G.CreateEventSubSubscriptionBodyTransport> Transport { get; } = new(
             name: "transport")
         {
-            Description = @"",
+            Description = @"The transport details that you want Twitch to use when sending you notifications.",
         };
 
-        public CreateEventsubSubscriptionCommand(G.IApi client) : base(
+        public CreateEventsubSubscriptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Creates an EventSub subscription.
 
@@ -58,6 +61,7 @@ If you use [WebSockets to receive events](https://dev.twitch.tv/docs/eventsub/ha
 If you use [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) to receive events, the request must specify an app access token. The request will fail if you use a user access token.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Type);
             Arguments.Add(Version);

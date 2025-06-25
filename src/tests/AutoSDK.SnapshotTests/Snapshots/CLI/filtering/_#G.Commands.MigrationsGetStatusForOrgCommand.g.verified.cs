@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsGetStatusForOrgCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,21 +24,23 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = @"",
+            Description = @"The organization name. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = @"",
+            Description = @"The unique identifier of the migration.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = @"",
+            Description = @"Exclude attributes from the API response to improve performance",
         };
-        public MigrationsGetStatusForOrgCommand(G.IApi client) : base(
+        public MigrationsGetStatusForOrgCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Fetches the status of a migration.
 
@@ -49,6 +52,7 @@ The `state` of a migration can be one of the following values:
 *   `failed`, which means the migration failed.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Org);
             Arguments.Add(MigrationId);

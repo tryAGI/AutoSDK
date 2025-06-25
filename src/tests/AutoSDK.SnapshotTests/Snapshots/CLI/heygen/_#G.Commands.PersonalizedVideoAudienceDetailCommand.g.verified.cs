@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PersonalizedVideoAudienceDetailCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,11 +24,14 @@ namespace G
         {
             Description = @"",
         };
-        public PersonalizedVideoAudienceDetailCommand(G.IApi client) : base(
+        public PersonalizedVideoAudienceDetailCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "personalized",
             description: @"personalized_video/audience/detail")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Id);
 

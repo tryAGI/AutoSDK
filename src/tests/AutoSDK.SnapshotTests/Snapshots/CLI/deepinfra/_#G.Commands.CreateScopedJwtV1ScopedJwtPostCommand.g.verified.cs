@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateScopedJwtV1ScopedJwtPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -38,31 +39,34 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Models { get; } = new(
             name: "models")
         {
-            Description = @"",
+            Description = @"allow inference only to the specified model names",
         };
 
         private global::System.CommandLine.Option<int?> ExpiresDelta { get; } = new(
             name: "expiresDelta")
         {
-            Description = @"",
+            Description = @"how many seconds in the future should the token be valid for",
         };
 
         private global::System.CommandLine.Option<global::System.DateTimeOffset?> ExpiresAt { get; } = new(
             name: "expiresAt")
         {
-            Description = @"",
+            Description = @"unix timestamp when the token should expire",
         };
 
         private global::System.CommandLine.Option<double?> SpendingLimit { get; } = new(
             name: "spendingLimit")
         {
-            Description = @"",
+            Description = @"only allow spending that much USD until the token becomes invalid",
         };
-        public CreateScopedJwtV1ScopedJwtPostCommand(G.IApi client) : base(
+        public CreateScopedJwtV1ScopedJwtPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ApiTokenName);
             Options.Add(XiApiKey);

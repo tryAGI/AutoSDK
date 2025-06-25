@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetClipsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -30,57 +31,59 @@ namespace G
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"An ID that identifies the broadcaster whose video clips you want to get. Use this parameter to get clips that were captured from the broadcaster’s streams.",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = @"",
+            Description = @"An ID that identifies the game whose clips you want to get. Use this parameter to get clips that were captured from streams that were playing this game.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"An ID that identifies the clip to get. To specify more than one ID, include this parameter for each clip you want to get. For example, `id=foo&id=bar`. You may specify a maximum of 100 IDs. The API ignores duplicate IDs and IDs that aren’t found.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> StartedAt { get; } = new(
             name: "startedAt")
         {
-            Description = @"",
+            Description = @"The start date used to filter clips. The API returns only clips within the start and end date window. Specify the date and time in RFC3339 format.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> EndedAt { get; } = new(
             name: "endedAt")
         {
-            Description = @"",
+            Description = @"The end date used to filter clips. If not specified, the time window is the start date plus one week. Specify the date and time in RFC3339 format.",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of clips to return per page in the response. The minimum page size is 1 clip per page and the maximum is 100\. The default is 20.",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = @"",
+            Description = @"The cursor used to get the previous page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
 
         private global::System.CommandLine.Option<bool?> IsFeatured { get; } = new(
             name: "isFeatured")
         {
-            Description = @"",
+            Description = @"A Boolean value that determines whether the response includes featured clips. If **true**, returns only clips that are featured. If **false**, returns only clips that aren’t featured. All clips are returned if this parameter is not present.",
         };
-        public GetClipsCommand(G.IApi client) : base(
+        public GetClipsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets one or more video clips that were captured from streams. For information about clips, see [How to use clips](https://help.twitch.tv/s/article/how-to-use-clips).
 
@@ -93,6 +96,7 @@ __Request Query Parameters:__
 The _id_, _game\_id_, and _broadcaster\_id_ query parameters are mutually exclusive.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(BroadcasterId);
             Options.Add(GameId);

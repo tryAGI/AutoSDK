@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BatchEmbedContentsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,22 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"The id of the model to use.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EmbedContentRequest>?> Requests { get; } = new(
             name: "requests")
         {
-            Description = @"",
+            Description = @"Required. Embed requests for the batch. The model in each of these requests must match the model specified `BatchEmbedContentsRequest.model`.",
         };
-        public BatchEmbedContentsCommand(G.IApi client) : base(
+        public BatchEmbedContentsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "batch",
             description: @"Generates multiple embeddings from the model given input text in a synchronous call.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelId);
             Options.Add(Requests);

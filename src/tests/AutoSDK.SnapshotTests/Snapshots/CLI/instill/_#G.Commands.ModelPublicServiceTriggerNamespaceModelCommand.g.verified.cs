@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceTriggerNamespaceModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,38 +26,41 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = @"",
+            Description = @"Model version",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<object>> TaskInputs { get; } = new(
             name: "taskInputs")
         {
-            Description = @"",
+            Description = @"Model inference inputs.",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public ModelPublicServiceTriggerNamespaceModelCommand(G.IApi client) : base(
+        public ModelPublicServiceTriggerNamespaceModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Triggers a deployed model to infer the result of a set of task or
 questions.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ModelId);

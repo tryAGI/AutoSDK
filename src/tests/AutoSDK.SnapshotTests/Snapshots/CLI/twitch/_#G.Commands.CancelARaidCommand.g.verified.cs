@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelARaidCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that initiated the raid. This ID must match the user ID in the user access token.",
         };
 
-        public CancelARaidCommand(G.IApi client) : base(
+        public CancelARaidCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"Cancel a pending raid.
 
@@ -36,6 +39,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:raids** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
 

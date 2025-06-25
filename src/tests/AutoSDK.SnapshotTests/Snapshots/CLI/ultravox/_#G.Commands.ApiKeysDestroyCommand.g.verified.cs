@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ApiKeysDestroyCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,11 +24,14 @@ namespace G
             Description = @"",
         };
 
-        public ApiKeysDestroyCommand(G.IApi client) : base(
+        public ApiKeysDestroyCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "api",
             description: @"Deletes an API key.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ApiKeyPrefix);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetCollectionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -20,10 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> CollectionSlug { get; } = new(
             name: "collectionSlug")
         {
-            Description = @"",
+            Description = @"The slug of the collection, like `super-resolution` or `image-restoration`. See [replicate.com/collections](https://replicate.com/collections).",
         };
 
-        public GetCollectionsCommand(G.IApi client) : base(
+        public GetCollectionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Example cURL request:
 
@@ -45,6 +48,7 @@ The response will be a collection object with a nested list of the models in tha
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CollectionSlug);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class RemoveChannelVipCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the user to remove VIP status from.",
         };
 
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster who owns the channel where the user has VIP status.",
         };
 
-        public RemoveChannelVipCommand(G.IApi client) : base(
+        public RemoveChannelVipCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "remove",
             description: @"Removes the specified user as a VIP in the broadcaster’s channel.
 
@@ -43,6 +46,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:vips** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(UserId);
             Arguments.Add(BroadcasterId);

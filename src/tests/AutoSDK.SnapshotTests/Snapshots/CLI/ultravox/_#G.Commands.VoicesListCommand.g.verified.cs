@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class VoicesListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,31 +26,34 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = @"",
+            Description = @"The pagination cursor value.",
         };
 
         private global::System.CommandLine.Option<string?> Ownership { get; } = new(
             name: "ownership")
         {
-            Description = @"",
+            Description = @"The ownership used filter results",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"Number of results to return per page.",
         };
 
         private global::System.CommandLine.Option<string?> Search { get; } = new(
             name: "search")
         {
-            Description = @"",
+            Description = @"The search string used to filter results",
         };
-        public VoicesListCommand(G.IApi client) : base(
+        public VoicesListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "voices",
             description: @"List all voices in your account.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Cursor);
             Options.Add(Ownership);

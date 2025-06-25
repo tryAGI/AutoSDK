@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetUserActiveExtensionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,9 +23,12 @@ namespace G
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster whose active extensions you want to get.  
+This parameter is required if you specify an app access token and is optional if you specify a user access token. If you specify a user access token and don’t specify this parameter, the API uses the user ID from the access token.",
         };
-        public GetUserActiveExtensionsCommand(G.IApi client) : base(
+        public GetUserActiveExtensionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the active extensions that the broadcaster has installed for each configuration.
 
@@ -35,6 +39,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(UserId);
 

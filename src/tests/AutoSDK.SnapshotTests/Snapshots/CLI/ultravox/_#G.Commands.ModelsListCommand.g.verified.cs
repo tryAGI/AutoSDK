@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelsListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,19 +24,22 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = @"",
+            Description = @"The pagination cursor value.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"Number of results to return per page.",
         };
-        public ModelsListCommand(G.IApi client) : base(
+        public ModelsListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "models",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Cursor);
             Options.Add(PageSize);

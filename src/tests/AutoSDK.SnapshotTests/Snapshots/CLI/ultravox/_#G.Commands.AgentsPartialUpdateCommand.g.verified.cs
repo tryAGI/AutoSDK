@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AgentsPartialUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -35,13 +36,16 @@ namespace G
         private global::System.CommandLine.Option<global::G.UltravoxV1CallTemplate?> CallTemplate { get; } = new(
             name: "callTemplate")
         {
-            Description = @"",
+            Description = @"A CallTemplate that can be used to create Ultravox calls with shared properties.",
         };
-        public AgentsPartialUpdateCommand(G.IApi client) : base(
+        public AgentsPartialUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "agents",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(AgentId);
             Options.Add(Name);

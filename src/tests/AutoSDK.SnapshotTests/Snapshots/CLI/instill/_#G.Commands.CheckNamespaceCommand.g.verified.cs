@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CheckNamespaceCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,15 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The namespace ID to be checked.",
         };
 
-        public CheckNamespaceCommand(G.IApi client) : base(
+        public CheckNamespaceCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "check",
             description: @"Returns the availability of a namespace or, alternatively, the type of
 resource that is using it.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Id);
 

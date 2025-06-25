@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetApiTokensV1ApiTokensGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
         {
             Description = @"",
         };
-        public GetApiTokensV1ApiTokensGetCommand(G.IApi client) : base(
+        public GetApiTokensV1ApiTokensGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XiApiKey);
 

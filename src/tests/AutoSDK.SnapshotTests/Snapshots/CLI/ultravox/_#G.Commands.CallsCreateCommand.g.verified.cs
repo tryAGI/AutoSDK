@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CallsCreateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -45,151 +46,164 @@ namespace G
         private global::System.CommandLine.Option<bool?> EnableGreetingPrompt { get; } = new(
             name: "enableGreetingPrompt")
         {
-            Description = @"",
+            Description = @"Adds a prompt for a greeting if there's not an initial message that the model would naturally respond to (a user message or tool result).",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> PriorCallId { get; } = new(
             name: "priorCallId")
         {
-            Description = @"",
+            Description = @"The UUID of a prior call. When specified, the new call will use the same properites as the prior call unless overriden in this request's body. The new call will also use the prior call's message history as its own initial_messages. (It's illegal to also set initial_messages in the body.)",
         };
 
         private global::System.CommandLine.Option<string?> SystemPrompt { get; } = new(
             name: "systemPrompt")
         {
-            Description = @"",
+            Description = @"The system prompt provided to the model during generations.",
         };
 
         private global::System.CommandLine.Option<float?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = @"",
+            Description = @"The model temperature, between 0 and 1. Defaults to 0.",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = @"",
+            Description = @"The model used for generations. Defaults to fixie-ai/ultravox.",
         };
 
         private global::System.CommandLine.Option<string?> Voice { get; } = new(
             name: "voice")
         {
-            Description = @"",
+            Description = @"The ID (or name if unique) of the voice the agent should use for this call.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1ExternalVoice?> ExternalVoice { get; } = new(
             name: "externalVoice")
         {
-            Description = @"",
+            Description = @"A voice not known to Ultravox Realtime that can nonetheless be used for this call.
+ Your account must have an API key set for the provider of the voice.
+ Either this or `voice` may be set, but not both.",
         };
 
         private global::System.CommandLine.Option<string?> LanguageHint { get; } = new(
             name: "languageHint")
         {
-            Description = @"",
+            Description = @"A BCP47 language code that may be used to guide speech recognition and synthesis.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1Message>?> InitialMessages { get; } = new(
             name: "initialMessages")
         {
-            Description = @"",
+            Description = @"The conversation history to start from for this call.",
         };
 
         private global::System.CommandLine.Option<string?> JoinTimeout { get; } = new(
             name: "joinTimeout")
         {
-            Description = @"",
+            Description = @"A timeout for joining the call. Defaults to 30 seconds.",
         };
 
         private global::System.CommandLine.Option<string?> MaxDuration { get; } = new(
             name: "maxDuration")
         {
-            Description = @"",
+            Description = @"The maximum duration of the call. Defaults to 1 hour.",
         };
 
         private global::System.CommandLine.Option<string?> TimeExceededMessage { get; } = new(
             name: "timeExceededMessage")
         {
-            Description = @"",
+            Description = @"What the agent should say immediately before hanging up if the call's time limit is reached.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1TimedMessage>?> InactivityMessages { get; } = new(
             name: "inactivityMessages")
         {
-            Description = @"",
+            Description = @"Messages spoken by the agent when the user is inactive for the specified duration.
+ Durations are cumulative, so a message m > 1 with duration 30s will be spoken 30 seconds after message m-1.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1SelectedTool>?> SelectedTools { get; } = new(
             name: "selectedTools")
         {
-            Description = @"",
+            Description = @"The tools available to the agent for (the first stage of) this call.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallMedium?> Medium { get; } = new(
             name: "medium")
         {
-            Description = @"",
+            Description = @"The medium used for this call.",
         };
 
         private global::System.CommandLine.Option<bool?> RecordingEnabled { get; } = new(
             name: "recordingEnabled")
         {
-            Description = @"",
+            Description = @"Whether the call should be recorded.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartCallRequestFirstSpeaker?> FirstSpeaker { get; } = new(
             name: "firstSpeaker")
         {
-            Description = @"",
+            Description = @"Who should talk first when the call starts. Typically set to FIRST_SPEAKER_USER for outgoing
+ calls and left as the default (FIRST_SPEAKER_AGENT) otherwise.
+ Deprecated. Prefer `firstSpeakerSettings`. If both are set, they must match.",
         };
 
         private global::System.CommandLine.Option<bool?> TranscriptOptional { get; } = new(
             name: "transcriptOptional")
         {
-            Description = @"",
+            Description = @"Indicates whether a transcript is optional for the call.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartCallRequestInitialOutputMedium?> InitialOutputMedium { get; } = new(
             name: "initialOutputMedium")
         {
-            Description = @"",
+            Description = @"The medium to use for the call initially. May be altered by the client later.
+ Defaults to voice.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1VadSettings?> VadSettings { get; } = new(
             name: "vadSettings")
         {
-            Description = @"",
+            Description = @"VAD settings for the call.",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1FirstSpeakerSettings?> FirstSpeakerSettings { get; } = new(
             name: "firstSpeakerSettings")
         {
-            Description = @"",
+            Description = @"The settings for the initial message to get a conversation started.
+ Defaults to `agent: {}` which means the agent will start the conversation with an
+ (interruptible) greeting generated based on the system prompt and any initial messages.
+ (If first_speaker is set and this is not, first_speaker will be used instead.)",
         };
 
         private global::System.CommandLine.Option<object?> ExperimentalSettings { get; } = new(
             name: "experimentalSettings")
         {
-            Description = @"",
+            Description = @"Experimental settings for the call.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Optional metadata key-value pairs to associate with the call. All values must be strings.
+ Keys may not start with ""ultravox."", which is reserved for system-provided metadata.",
         };
 
         private global::System.CommandLine.Option<object?> InitialState { get; } = new(
             name: "initialState")
         {
-            Description = @"",
+            Description = @"The initial state of the call stage which is readable/writable by tools.",
         };
-        public CallsCreateCommand(G.IApi client) : base(
+        public CallsCreateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "calls",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(EnableGreetingPrompt);
             Options.Add(PriorCallId);

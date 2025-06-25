@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetCustomRewardRedemptionCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -27,45 +28,56 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the custom reward. This ID must match the user ID found in the user OAuth token.",
         };
 
         private global::System.CommandLine.Argument<string> RewardId { get; } = new(
             name: "rewardId")
         {
-            Description = @"",
+            Description = @"The ID that identifies the custom reward whose redemptions you want to get.",
         };
 
         private global::System.CommandLine.Option<global::G.GetCustomRewardRedemptionStatus?> Status { get; } = new(
             name: "status")
         {
-            Description = @"",
+            Description = @"The status of the redemptions to return. The possible case-sensitive values are:  
+* CANCELED
+* FULFILLED
+* UNFULFILLED
+**NOTE**: This field is required only if you don’t specify the _id_ query parameter.  
+**NOTE**: Canceled and fulfilled redemptions are returned for only a few days after they’re canceled or fulfilled.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"A list of IDs to filter the redemptions by. To specify more than one ID, include this parameter for each redemption you want to get. For example, `id=1234&id=5678`. You may specify a maximum of 50 IDs.  
+Duplicate IDs are ignored. The response contains only the IDs that were found. If none of the IDs were found, the response is 404 Not Found.",
         };
 
         private global::System.CommandLine.Option<global::G.GetCustomRewardRedemptionSort?> Sort { get; } = new(
             name: "sort")
         {
-            Description = @"",
+            Description = @"The order to sort redemptions by. The possible case-sensitive values are:  
+* OLDEST
+* NEWEST
+The default is OLDEST.",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = @"",
+            Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read more](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = @"",
+            Description = @"The maximum number of redemptions to return per page in the response. The minimum page size is 1 redemption per page and the maximum is 50\. The default is 20.",
         };
-        public GetCustomRewardRedemptionCommand(G.IApi client) : base(
+        public GetCustomRewardRedemptionCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets a list of redemptions for the specified custom reward. The app used to create the reward is the only app that may get the redemptions.
 
@@ -74,6 +86,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:redemptions** or **channel:manage:redemptions** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(RewardId);

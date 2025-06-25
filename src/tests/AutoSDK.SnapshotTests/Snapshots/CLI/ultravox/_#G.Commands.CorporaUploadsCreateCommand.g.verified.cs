@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CorporaUploadsCreateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,14 +29,17 @@ namespace G
         private global::System.CommandLine.Argument<string> MimeType { get; } = new(
             name: "mimeType")
         {
-            Description = @"",
+            Description = @"The MIME type of the file to be uploaded.",
         };
 
-        public CorporaUploadsCreateCommand(G.IApi client) : base(
+        public CorporaUploadsCreateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "corpora",
             description: @"Request a presigned URL for uploading a document.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(CorpusId);
             Arguments.Add(MimeType);

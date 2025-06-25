@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class AppPublicServiceCreateAppCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,31 +25,36 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"The app's owner(namespaces).",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The app id.
+the app id should be lowercase without any space or special character besides the hyphen,
+it can not start with number or hyphen, and should be less than 32 characters.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"The app description.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Tags { get; } = new(
             name: "tags")
         {
-            Description = @"",
+            Description = @"The app tags.",
         };
-        public AppPublicServiceCreateAppCommand(G.IApi client) : base(
+        public AppPublicServiceCreateAppCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "app",
             description: @"Creates an app.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(Id);

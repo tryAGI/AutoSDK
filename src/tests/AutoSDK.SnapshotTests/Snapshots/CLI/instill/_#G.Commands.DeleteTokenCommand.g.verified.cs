@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteTokenCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> TokenId { get; } = new(
             name: "tokenId")
         {
-            Description = @"",
+            Description = @"Token ID",
         };
 
-        public DeleteTokenCommand(G.IApi client) : base(
+        public DeleteTokenCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Deletes an API token.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TokenId);
 

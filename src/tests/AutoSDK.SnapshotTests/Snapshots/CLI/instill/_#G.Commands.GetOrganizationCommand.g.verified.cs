@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetOrganizationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,19 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = @"",
+            Description = @"Organization ID",
         };
 
         private global::System.CommandLine.Option<global::G.GetOrganizationView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired resource view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information.
+ - VIEW_FULL: Full representation.",
         };
-        public GetOrganizationCommand(G.IApi client) : base(
+        public GetOrganizationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the organization details by its ID.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(OrganizationId);
             Options.Add(View);

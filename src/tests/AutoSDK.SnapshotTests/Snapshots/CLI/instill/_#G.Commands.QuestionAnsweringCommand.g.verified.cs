@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class QuestionAnsweringCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -25,19 +26,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"id of the namespace",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"id of the catalog",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
 
         private global::System.CommandLine.Option<string?> Question { get; } = new(
@@ -51,11 +52,14 @@ namespace G
         {
             Description = @"",
         };
-        public QuestionAnsweringCommand(G.IApi client) : base(
+        public QuestionAnsweringCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "question",
             description: @"Asks a question.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

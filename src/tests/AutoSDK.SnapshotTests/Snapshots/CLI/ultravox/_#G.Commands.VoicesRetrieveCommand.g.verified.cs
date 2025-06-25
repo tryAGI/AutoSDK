@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class VoicesRetrieveCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
             Description = @"",
         };
 
-        public VoicesRetrieveCommand(G.IApi client) : base(
+        public VoicesRetrieveCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "voices",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(VoiceId);
 

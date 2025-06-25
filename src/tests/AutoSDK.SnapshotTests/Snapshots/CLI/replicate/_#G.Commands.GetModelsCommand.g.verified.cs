@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetModelsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = @"",
+            Description = @"The name of the user or organization that owns the model.",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = @"",
+            Description = @"The name of the model.",
         };
 
-        public GetModelsCommand(G.IApi client) : base(
+        public GetModelsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Example cURL request:
 
@@ -71,6 +74,7 @@ The `default_example` object is a [prediction](#predictions.get) created with th
 The `latest_version` object is the model's most recently pushed [version](#models.versions.get).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ModelOwner);
             Arguments.Add(ModelName);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetSourceFileCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,26 +24,29 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"owner/namespace id",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = @"",
+            Description = @"catalog id",
         };
 
         private global::System.CommandLine.Argument<string> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = @"",
+            Description = @"unique identifier of the original uploaded file",
         };
 
-        public GetSourceFileCommand(G.IApi client) : base(
+        public GetSourceFileCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets the single-source-of-truth file of a catalog.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(CatalogId);

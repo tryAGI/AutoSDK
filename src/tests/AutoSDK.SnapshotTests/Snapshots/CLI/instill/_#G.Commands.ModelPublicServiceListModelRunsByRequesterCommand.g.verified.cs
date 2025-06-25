@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceListModelRunsByRequesterCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -28,56 +29,71 @@ namespace G
         private global::System.CommandLine.Argument<string> RequesterId { get; } = new(
             name: "requesterId")
         {
-            Description = @"",
+            Description = @"Requester ID.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"The maximum number of runs to return. The default and cap values are 10
+and 100, respectively.",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = @"",
+            Description = @"Page number.",
         };
 
         private global::System.CommandLine.Option<string?> OrderBy { get; } = new(
             name: "orderBy")
         {
-            Description = @"",
+            Description = @"Sort the results by the given expression.
+Format: `field [ASC | DESC], where `field` can be:
+- `create_time`
+- `update_time`
+By default, results are sorted by descending creation time.",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = @"",
+            Description = @"Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter
+expression.
+- Example: `status=""RUN_STATUS_COMPLETED""`.
+The filter can be applied to the following fields:
+- `status`
+- `source`",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Start { get; } = new(
             name: "start")
         {
-            Description = @"",
+            Description = @"Beginning of the time range from which the records will be fetched.
+The default value is the beginning of the current day, in UTC.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Stop { get; } = new(
             name: "stop")
         {
-            Description = @"",
+            Description = @"End of the time range from which the records will be fetched.
+The default value is the current timestamp.",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = @"",
+            Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
-        public ModelPublicServiceListModelRunsByRequesterCommand(G.IApi client) : base(
+        public ModelPublicServiceListModelRunsByRequesterCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Returns a paginated list of runs for 1 or more models. This is mainly used by dashboard.
 The requester can view all the runs by the requester across different models.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(RequesterId);
             Options.Add(PageSize);

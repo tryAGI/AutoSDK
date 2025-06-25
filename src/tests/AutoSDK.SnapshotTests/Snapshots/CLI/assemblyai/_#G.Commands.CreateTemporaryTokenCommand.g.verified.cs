@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CreateTemporaryTokenCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<int> ExpiresIn { get; } = new(
             name: "expiresIn")
         {
-            Description = @"",
+            Description = @"The amount of time until the token expires in seconds",
         };
 
-        public CreateTemporaryTokenCommand(G.IApi client) : base(
+        public CreateTemporaryTokenCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "create",
             description: @"Create a temporary authentication token for Streaming Speech-to-Text")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ExpiresIn);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ListCollectionsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -17,7 +18,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public ListCollectionsCommand(G.IApi client) : base(
+        public ListCollectionsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "list",
             description: @"Example cURL request:
 
@@ -44,6 +47,7 @@ The response will be a paginated JSON list of collection objects:
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

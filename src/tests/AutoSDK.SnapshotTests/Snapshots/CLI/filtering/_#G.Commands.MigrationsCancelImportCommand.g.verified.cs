@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class MigrationsCancelImportCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = @"",
+            Description = @"The account owner of the repository. The name is not case sensitive.",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = @"",
+            Description = @"The name of the repository without the `.git` extension. The name is not case sensitive.",
         };
 
-        public MigrationsCancelImportCommand(G.IApi client) : base(
+        public MigrationsCancelImportCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "migrations",
             description: @"Stop an import for a repository.
 
@@ -38,6 +41,7 @@ namespace G
 > **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Owner);
             Arguments.Add(Repo);

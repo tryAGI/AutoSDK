@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class WebhooksUpdateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -44,11 +45,14 @@ namespace G
         {
             Description = @"",
         };
-        public WebhooksUpdateCommand(G.IApi client) : base(
+        public WebhooksUpdateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "webhooks",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(WebhookId);
             Arguments.Add(Url);

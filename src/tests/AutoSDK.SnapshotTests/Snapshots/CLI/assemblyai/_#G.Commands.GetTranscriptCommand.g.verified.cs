@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetTranscriptCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = @"",
+            Description = @"ID of the transcript",
         };
 
-        public GetTranscriptCommand(G.IApi client) : base(
+        public GetTranscriptCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Get the transcript resource. The transcript is ready when the ""status"" is ""completed"".")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TranscriptId);
 

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetRemainingCreditCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,12 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
-        public GetRemainingCreditCommand(G.IApi client) : base(
+        public GetRemainingCreditCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"This endpoint returns the remaining [Instill Credit](https://www.instill.tech/docs/vdp/credit) of a given user or
 organization. The requested credit owner must be either the authenticated
@@ -33,6 +36,7 @@ user or an organization they belong to.
 On Instill Core, this endpoint will return a 404 Not Found status.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
 

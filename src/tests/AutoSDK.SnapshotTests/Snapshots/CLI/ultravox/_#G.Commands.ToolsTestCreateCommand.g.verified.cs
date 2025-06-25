@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ToolsTestCreateCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,11 +25,14 @@ namespace G
             Description = @"",
         };
 
-        public ToolsTestCreateCommand(G.IApi client) : base(
+        public ToolsTestCreateCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "tools",
             description: @"Test a tool by executing it with the provided parameters.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(ToolId);
 

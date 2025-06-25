@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CallsListCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,67 +32,70 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = @"",
+            Description = @"The pagination cursor value.",
         };
 
         private global::System.CommandLine.Option<string?> DurationMax { get; } = new(
             name: "durationMax")
         {
-            Description = @"",
+            Description = @"Maximum duration of calls",
         };
 
         private global::System.CommandLine.Option<string?> DurationMin { get; } = new(
             name: "durationMin")
         {
-            Description = @"",
+            Description = @"Minimum duration of calls",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> FromDate { get; } = new(
             name: "fromDate")
         {
-            Description = @"",
+            Description = @"Start date (inclusive) for filtering calls by creation date",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = @"",
+            Description = @"Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs.",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = @"",
+            Description = @"Number of results to return per page.",
         };
 
         private global::System.CommandLine.Option<string?> Search { get; } = new(
             name: "search")
         {
-            Description = @"",
+            Description = @"The search string used to filter results",
         };
 
         private global::System.CommandLine.Option<string?> Sort { get; } = new(
             name: "sort")
         {
-            Description = @"",
+            Description = @"Which field to use when ordering the results.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> ToDate { get; } = new(
             name: "toDate")
         {
-            Description = @"",
+            Description = @"End date (inclusive) for filtering calls by creation date",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = @"",
+            Description = @"Filter calls by the associated voice ID",
         };
-        public CallsListCommand(G.IApi client) : base(
+        public CallsListCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "calls",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(Cursor);
             Options.Add(DurationMax);

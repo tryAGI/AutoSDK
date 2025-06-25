@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetTokenCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,14 +22,17 @@ namespace G
         private global::System.CommandLine.Argument<string> TokenId { get; } = new(
             name: "tokenId")
         {
-            Description = @"",
+            Description = @"Token ID",
         };
 
-        public GetTokenCommand(G.IApi client) : base(
+        public GetTokenCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the details of an API token.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TokenId);
 

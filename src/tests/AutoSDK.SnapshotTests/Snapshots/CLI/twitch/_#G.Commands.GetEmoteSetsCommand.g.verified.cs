@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetEmoteSetsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,10 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> EmoteSetId { get; } = new(
             name: "emoteSetId")
         {
-            Description = @"",
+            Description = @"An ID that identifies the emote set to get. Include this parameter for each emote set you want to get. For example, `emote_set_id=1234&emote_set_id=5678`. You may specify a maximum of 25 IDs. The response contains only the IDs that were found and ignores duplicate IDs.  
+To get emote set IDs, use the [Get Channel Emotes](https://dev.twitch.tv/docs/api/reference#get-channel-emotes) API.",
         };
 
-        public GetEmoteSetsCommand(G.IApi client) : base(
+        public GetEmoteSetsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Gets emotes for one or more specified emote sets.
 
@@ -37,6 +41,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(EmoteSetId);
 

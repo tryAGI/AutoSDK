@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class PipelinePublicServiceGetNamespacePipelineCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,25 +24,32 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = @"",
+            Description = @"Pipeline ID",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceGetNamespacePipelineView?> View { get; } = new(
             name: "view")
         {
-            Description = @"",
+            Description = @"View allows clients to specify the desired pipeline view in the response.
+
+ - VIEW_BASIC: Default view, only includes basic information.
+ - VIEW_FULL: Full representation.
+ - VIEW_RECIPE: Contains the recipe of the resource.",
         };
-        public PipelinePublicServiceGetNamespacePipelineCommand(G.IApi client) : base(
+        public PipelinePublicServiceGetNamespacePipelineCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "pipeline",
             description: @"Returns the details of a pipeline.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(PipelineId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetAccountCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -18,7 +19,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetAccountCommand(G.IApi client) : base(
+        public GetAccountCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns information about the user or organization associated with the provided API token.
 
@@ -42,6 +45,7 @@ The response will be a JSON object describing the account:
 ```")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();

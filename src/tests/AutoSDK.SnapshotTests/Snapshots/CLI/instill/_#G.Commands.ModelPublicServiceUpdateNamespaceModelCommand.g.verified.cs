@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class ModelPublicServiceUpdateNamespaceModelCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -35,93 +36,100 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = @"",
+            Description = @"Namespace ID",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = @"",
+            Description = @"Model ID",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"Model resource ID (used in `name` as the last segment). This conforms to
+RFC-1034, which restricts to letters, numbers, and hyphen, with the first
+character a letter, the last a letter or a number, and a 63 character
+maximum.",
         };
 
         private global::System.CommandLine.Argument<string> ModelDefinition { get; } = new(
             name: "modelDefinition")
         {
-            Description = @"",
+            Description = @"The model definition that has been used to import the model.",
         };
 
         private global::System.CommandLine.Argument<object> Configuration { get; } = new(
             name: "configuration")
         {
-            Description = @"",
+            Description = @"Model configuration. This field is validated against the model
+specification in the model definition (i.e. the `model_spec` field in the
+model definition).",
         };
 
         private global::System.CommandLine.Argument<global::G.AITask> Task { get; } = new(
             name: "task")
         {
-            Description = @"",
+            Description = @"Model task.",
         };
 
         private global::System.CommandLine.Argument<global::G.ModelVisibility> Visibility { get; } = new(
             name: "visibility")
         {
-            Description = @"",
+            Description = @"Model visibility.",
         };
 
         private global::System.CommandLine.Argument<string> Region { get; } = new(
             name: "region")
         {
-            Description = @"",
+            Description = @"Region of choice for the particular provider to host the model.",
         };
 
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = @"",
+            Description = @"Hardware of choice to serve the model.",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = @"",
+            Description = @"Model description.",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = @"",
+            Description = @"README holds the model documentation.",
         };
 
         private global::System.CommandLine.Option<string?> SourceUrl { get; } = new(
             name: "sourceUrl")
         {
-            Description = @"",
+            Description = @"A link to the source code of the model (e.g. to a GitHub repository).",
         };
 
         private global::System.CommandLine.Option<string?> DocumentationUrl { get; } = new(
             name: "documentationUrl")
         {
-            Description = @"",
+            Description = @"A link to any extra information.",
         };
 
         private global::System.CommandLine.Option<string?> License { get; } = new(
             name: "license")
         {
-            Description = @"",
+            Description = @"License under which the model is distributed.",
         };
 
         private global::System.CommandLine.Option<string?> ProfileImage { get; } = new(
             name: "profileImage")
         {
-            Description = @"",
+            Description = @"Model profile image in base64 format.",
         };
-        public ModelPublicServiceUpdateNamespaceModelCommand(G.IApi client) : base(
+        public ModelPublicServiceUpdateNamespaceModelCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "model",
             description: @"Updates a model, accessing it by its resource name, which is defined by
 the parent namespace and the ID of the model.
@@ -130,6 +138,7 @@ In REST requests, only the supplied model fields will be taken into
 account when updating the resource.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(NamespaceId);
             Arguments.Add(ModelId);

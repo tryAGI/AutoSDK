@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class BillingPortalPaymentBillingPortalGetCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -31,11 +32,14 @@ namespace G
         {
             Description = @"",
         };
-        public BillingPortalPaymentBillingPortalGetCommand(G.IApi client) : base(
+        public BillingPortalPaymentBillingPortalGetCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "billing",
             description: @"")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(ReturnUrl);
             Options.Add(Session);

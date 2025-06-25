@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class DeleteChannelStreamScheduleSegmentCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -21,16 +22,18 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster that owns the streaming schedule. This ID must match the user ID in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = @"",
+            Description = @"The ID of the broadcast segment to remove.",
         };
 
-        public DeleteChannelStreamScheduleSegmentCommand(G.IApi client) : base(
+        public DeleteChannelStreamScheduleSegmentCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "delete",
             description: @"Removes a broadcast segment from the broadcaster’s streaming schedule.
 
@@ -41,6 +44,7 @@ __Authorization:__
 Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(Id);

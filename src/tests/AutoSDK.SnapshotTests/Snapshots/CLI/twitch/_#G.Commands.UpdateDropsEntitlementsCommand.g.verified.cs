@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateDropsEntitlementsCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -23,15 +24,19 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> EntitlementIds { get; } = new(
             name: "entitlementIds")
         {
-            Description = @"",
+            Description = @"A list of IDs that identify the entitlements to update. You may specify a maximum of 100 IDs.",
         };
 
         private global::System.CommandLine.Option<global::G.UpdateDropsEntitlementsBodyFulfillmentStatus?> FulfillmentStatus { get; } = new(
             name: "fulfillmentStatus")
         {
-            Description = @"",
+            Description = @"The fulfillment status to set the entitlements to. Possible values are:  
+* CLAIMED — The user claimed the benefit.
+* FULFILLED — The developer granted the benefit that the user claimed.",
         };
-        public UpdateDropsEntitlementsCommand(G.IApi client) : base(
+        public UpdateDropsEntitlementsCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"Updates the Drop entitlement’s fulfillment status.
 
@@ -48,6 +53,7 @@ __Authorization:__
 Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(EntitlementIds);
             Options.Add(FulfillmentStatus);

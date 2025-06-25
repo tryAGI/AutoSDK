@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class UpdateGuestStarSlotCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -24,33 +25,35 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster running the Guest Star session.",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = @"",
+            Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the `user_id` in the user access token.",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = @"",
+            Description = @"The ID of the Guest Star session in which to update slot settings.",
         };
 
         private global::System.CommandLine.Argument<string> SourceSlotId { get; } = new(
             name: "sourceSlotId")
         {
-            Description = @"",
+            Description = @"The slot assignment previously assigned to a user.",
         };
 
         private global::System.CommandLine.Option<string?> DestinationSlotId { get; } = new(
             name: "destinationSlotId")
         {
-            Description = @"",
+            Description = @"The slot to move this user assignment to. If the destination slot is occupied, the user assigned will be swapped into `source_slot_id`.",
         };
-        public UpdateGuestStarSlotCommand(G.IApi client) : base(
+        public UpdateGuestStarSlotCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "update",
             description: @"BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.
 
@@ -60,6 +63,7 @@ __Authorization:__
 * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(BroadcasterId);
             Arguments.Add(ModeratorId);

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetDatasetUsageCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,13 +23,16 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = @"",
+            Description = @"The name of the project that is making the request.",
         };
-        public GetDatasetUsageCommand(G.IApi client) : base(
+        public GetDatasetUsageCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"View the dataset storage usage for your Organization. Each Organization can have up to 10GB of storage across all their users.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Options.Add(XClientName);
 

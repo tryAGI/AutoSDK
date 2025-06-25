@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class StartBulkEmbeddingV1BulkEmbeddingsPostCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -44,11 +45,14 @@ namespace G
         {
             Description = @"",
         };
-        public StartBulkEmbeddingV1BulkEmbeddingsPostCommand(G.IApi client) : base(
+        public StartBulkEmbeddingV1BulkEmbeddingsPostCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "start",
             description: @"Upload a file and get embeddings for each row")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(File);
             Arguments.Add(Filename);

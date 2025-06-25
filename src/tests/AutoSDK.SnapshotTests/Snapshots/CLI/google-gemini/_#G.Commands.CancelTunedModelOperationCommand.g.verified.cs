@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class CancelTunedModelOperationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -22,20 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> TunedModelId { get; } = new(
             name: "tunedModelId")
         {
-            Description = @"",
+            Description = @"The id of the tuned model.",
         };
 
         private global::System.CommandLine.Argument<string> OperationId { get; } = new(
             name: "operationId")
         {
-            Description = @"",
+            Description = @"The id of the operation to cancel.",
         };
 
-        public CancelTunedModelOperationCommand(G.IApi client) : base(
+        public CancelTunedModelOperationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "cancel",
             description: @"Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(TunedModelId);
             Arguments.Add(OperationId);
