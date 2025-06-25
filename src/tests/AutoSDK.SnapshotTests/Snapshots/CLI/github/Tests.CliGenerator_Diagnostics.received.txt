@@ -1,0 +1,507 @@
+﻿[
+  {
+    Location: /*
+
+        private global::System.CommandLine.Argument<global::G.OrgsReviewPatGrantRequestsInBulkRequestAction> Action { get; } = new(
+                                                                                                             ^^^^^^
+            name: "action")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.OrgsReviewPatGrantRequestsInBulkCommand.g.cs: (28,109)-(28,115),
+    Message: 'OrgsReviewPatGrantRequestsInBulkCommand.Action' hides inherited member 'Command.Action'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Argument<global::G.OrgsReviewPatGrantRequestRequestAction> Action { get; } = new(
+                                                                                                      ^^^^^^
+            name: "action")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.OrgsReviewPatGrantRequestCommand.g.cs: (33,102)-(33,108),
+    Message: 'OrgsReviewPatGrantRequestCommand.Action' hides inherited member 'Command.Action'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.OrgsUpdatePatAccessesRequestAction> Action { get; } = new(
+                                                                                                ^^^^^^
+            name: "action")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.OrgsUpdatePatAccessesCommand.g.cs: (33,96)-(33,102),
+    Message: 'OrgsUpdatePatAccessesCommand.Action' hides inherited member 'Command.Action'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.OrgsUpdatePatAccessRequestAction> Action { get; } = new(
+                                                                                              ^^^^^^
+            name: "action")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.OrgsUpdatePatAccessCommand.g.cs: (32,94)-(32,100),
+    Message: 'OrgsUpdatePatAccessCommand.Action' hides inherited member 'Command.Action'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<bool?> Validate { get; } = new(
+                                                         ^^^^^^^^
+            name: "validate")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CodeScanningUploadSarifCommand.g.cs: (75,57)-(75,65),
+    Message: The type 'CodeScanningUploadSarifCommand' already contains a definition for 'Validate',
+    Severity: Error,
+    Descriptor: {
+      Id: CS0102,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0102),
+      MessageFormat: The type '{0}' already contains a definition for '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Parents { get; } = new(
+                                                                                                     ^^^^^^^
+            name: "parents")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GitCreateCommitCommand.g.cs: (50,101)-(50,108),
+    Message: 'GitCreateCommitCommand.Parents' hides inherited member 'Symbol.Parents'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+            MarkdownCommand command15,
+            MergeQueueCommand command16,
+            ^^^^^^^^^^^^^^^^^
+            MetaCommand command17,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (24,12)-(24,29),
+    Message: The type or namespace name 'MergeQueueCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            ClassroomCommand command35,
+            DesktopCommand command36,
+            ^^^^^^^^^^^^^^
+            EnterpriseTeamCommand command37,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (44,12)-(44,26),
+    Message: The type or namespace name 'DesktopCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            DesktopCommand command36,
+            EnterpriseTeamCommand command37,
+            ^^^^^^^^^^^^^^^^^^^^^
+            CodeSecurityCommand command38)
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (45,12)-(45,33),
+    Message: The type or namespace name 'EnterpriseTeamCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                MergeQueueCommand>(services);
+                ^^^^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (1984,16)-(1984,33),
+    Message: The type or namespace name 'MergeQueueCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                DesktopCommand>(services);
+                ^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (2024,16)-(2024,30),
+    Message: The type or namespace name 'DesktopCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                EnterpriseTeamCommand>(services);
+                ^^^^^^^^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (2026,16)-(2026,37),
+    Message: The type or namespace name 'EnterpriseTeamCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                path: path,
+                position: position,
+                ^^^^^^^^
+                side: side,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.PullsCreateReviewCommentCommand.g.cs: (190,16)-(190,24),
+    Message: The best overload for 'PullsCreateReviewCommentAsync' does not have a parameter named 'position',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(ToolName);
+            Options.Add(Validate);
+                        ^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CodeScanningUploadSarifCommand.g.cs: (127,24)-(127,32),
+    Message: Argument 1: cannot convert from 'method group' to 'System.CommandLine.Option',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1503,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1503),
+      MessageFormat: Argument {0}: cannot convert from '{1}' to '{2}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            var toolName = parseResult.GetRequiredValue(ToolName);
+            var validate = parseResult.GetRequiredValue(Validate);
+                                       ^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CodeScanningUploadSarifCommand.g.cs: (146,39)-(146,55),
+    Message: The type arguments for method 'ParseResult.GetRequiredValue<T>(Argument<T>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.,
+    Severity: Error,
+    Descriptor: {
+      Id: CS0411,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0411),
+      MessageFormat: The type arguments for method '{0}' cannot be inferred from the usage. Try specifying the type arguments explicitly.,
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                strict: strict,
+                contexts: contexts,
+                ^^^^^^^^
+                checks: checks,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.ReposUpdateStatusCheckProtectionCommand.g.cs: (106,16)-(106,24),
+    Message: The best overload for 'ReposUpdateStatusCheckProtectionAsync' does not have a parameter named 'contexts',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                allowUpdateBranch: allowUpdateBranch,
+                useSquashPrTitleAsDefault: useSquashPrTitleAsDefault,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+                squashMergeCommitTitle: squashMergeCommitTitle,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.ReposUpdateCommand.g.cs: (329,16)-(329,41),
+    Message: The best overload for 'ReposUpdateAsync' does not have a parameter named 'useSquashPrTitleAsDefault',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                deleteBranchOnMerge: deleteBranchOnMerge,
+                useSquashPrTitleAsDefault: useSquashPrTitleAsDefault,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+                squashMergeCommitTitle: squashMergeCommitTitle,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.ReposCreateInOrgCommand.g.cs: (322,16)-(322,41),
+    Message: The best overload for 'ReposCreateInOrgAsync' does not have a parameter named 'useSquashPrTitleAsDefault',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Markdown.MarkdownRenderRawAsync(
+                                                  ^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MarkdownRenderRawCommand.g.cs: (41,50)-(41,72),
+    Message: There is no argument given that corresponds to the required parameter 'request' of 'MarkdownClient.MarkdownRenderRawAsync(string, CancellationToken)',
+    Severity: Error,
+    Descriptor: {
+      Id: CS7036,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS7036),
+      MessageFormat: There is no argument given that corresponds to the required parameter '{0}' of '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                blog: blog,
+                advancedSecurityEnabledForNewRepositories: advancedSecurityEnabledForNewRepositories,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                dependabotAlertsEnabledForNewRepositories: dependabotAlertsEnabledForNewRepositories,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.OrgsUpdateCommand.g.cs: (372,16)-(372,57),
+    Message: The best overload for 'OrgsUpdateAsync' does not have a parameter named 'advancedSecurityEnabledForNewRepositories',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

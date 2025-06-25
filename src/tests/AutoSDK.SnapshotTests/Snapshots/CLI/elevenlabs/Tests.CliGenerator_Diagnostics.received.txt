@@ -1,0 +1,277 @@
+﻿[
+  {
+    Location: /*
+            DubbingCommand command16,
+            ResourceCommand command17,
+            ^^^^^^^^^^^^^^^
+            SegmentCommand command18,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (25,12)-(25,27),
+    Message: The type or namespace name 'ResourceCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            ResourceCommand command17,
+            SegmentCommand command18,
+            ^^^^^^^^^^^^^^
+            EnterpriseCommand command19,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (26,12)-(26,26),
+    Message: The type or namespace name 'SegmentCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            SegmentCommand command18,
+            EnterpriseCommand command19,
+            ^^^^^^^^^^^^^^^^^
+            AudioNativeCommand command20,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (27,12)-(27,29),
+    Message: The type or namespace name 'EnterpriseCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                nextRequestIds: nextRequestIds,
+                usePvcAsIvc: usePvcAsIvc,
+                ^^^^^^^^^^^
+                applyTextNormalization: applyTextNormalization,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTextToSpeechByVoiceIdWithTimestampsCommand.g.cs: (235,16)-(235,27),
+    Message: The best overload for 'CreateTextToSpeechByVoiceIdWithTimestampsAsync' does not have a parameter named 'usePvcAsIvc',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                nextRequestIds: nextRequestIds,
+                usePvcAsIvc: usePvcAsIvc,
+                ^^^^^^^^^^^
+                applyTextNormalization: applyTextNormalization,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTextToSpeechByVoiceIdStreamCommand.g.cs: (235,16)-(235,27),
+    Message: The best overload for 'CreateTextToSpeechByVoiceIdStreamAsync' does not have a parameter named 'usePvcAsIvc',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                name: name,
+                image: image,
+                ^^^^^
+                author: author,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateAudioNativeCommand.g.cs: (182,16)-(182,21),
+    Message: The best overload for 'CreateAudioNativeAsync' does not have a parameter named 'image',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                nextRequestIds: nextRequestIds,
+                usePvcAsIvc: usePvcAsIvc,
+                ^^^^^^^^^^^
+                applyTextNormalization: applyTextNormalization,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTextToSpeechByVoiceIdCommand.g.cs: (235,16)-(235,27),
+    Message: The best overload for 'CreateTextToSpeechByVoiceIdAsync' does not have a parameter named 'usePvcAsIvc',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                ResourceCommand>(services);
+                ^^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (460,16)-(460,31),
+    Message: The type or namespace name 'ResourceCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                SegmentCommand>(services);
+                ^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (462,16)-(462,30),
+    Message: The type or namespace name 'SegmentCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                EnterpriseCommand>(services);
+                ^^^^^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (464,16)-(464,33),
+    Message: The type or namespace name 'EnterpriseCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                nextRequestIds: nextRequestIds,
+                usePvcAsIvc: usePvcAsIvc,
+                ^^^^^^^^^^^
+                applyTextNormalization: applyTextNormalization,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTextToSpeechByVoiceIdStreamWithTimestampsCommand.g.cs: (235,16)-(235,27),
+    Message: The best overload for 'CreateTextToSpeechByVoiceIdStreamWithTimestampsAsync' does not have a parameter named 'usePvcAsIvc',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

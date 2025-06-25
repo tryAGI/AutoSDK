@@ -1,0 +1,69 @@
+﻿//HintName: G.Commands.GetSecretDefaultWebhooksCommand.g.cs
+
+#nullable enable
+
+namespace G
+{
+    internal sealed partial class GetSecretDefaultWebhooksCommand : global::System.CommandLine.Command
+    {
+        private readonly G.IApi _client;
+
+        partial void Initialize();
+        partial void Validate(
+            global::System.CommandLine.ParseResult parseResult,
+            global::System.Threading.CancellationToken cancellationToken);
+        partial void Complete(
+            global::System.CommandLine.ParseResult parseResult,
+            global::G.WebhooksDefaultSecretGetResponse response,
+            global::System.Threading.CancellationToken cancellationToken);
+
+
+        public GetSecretDefaultWebhooksCommand(G.IApi client) : base(
+            name: "get",
+            description: @"Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H ""Authorization: Bearer $REPLICATE_API_TOKEN"" \
+  https://api.replicate.com/v1/webhooks/default/secret
+```
+
+The response will be a JSON object with a `key` property:
+
+```json
+{
+  ""key"": ""...""
+}
+```
+")
+        {
+            _client = client;
+
+
+            Initialize();
+
+            SetAction(HandleAsync);
+        }
+
+        private async global::System.Threading.Tasks.Task HandleAsync(
+            global::System.CommandLine.ParseResult parseResult,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Validate(
+                parseResult: parseResult,
+                cancellationToken: cancellationToken);
+
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.GetSecretDefaultWebhooksAsync(
+                cancellationToken: cancellationToken);
+
+            Complete(
+                parseResult: parseResult,
+                response: response,
+                cancellationToken: cancellationToken);
+        }
+    }
+}

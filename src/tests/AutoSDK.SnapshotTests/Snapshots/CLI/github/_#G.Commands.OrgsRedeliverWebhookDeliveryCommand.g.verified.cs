@@ -1,0 +1,89 @@
+﻿//HintName: G.Commands.OrgsRedeliverWebhookDeliveryCommand.g.cs
+
+#nullable enable
+
+namespace G
+{
+    internal sealed partial class OrgsRedeliverWebhookDeliveryCommand : global::System.CommandLine.Command
+    {
+        private readonly G.IApi _client;
+
+        partial void Initialize();
+        partial void Validate(
+            global::System.CommandLine.ParseResult parseResult,
+            string org,
+            int hookId,
+            int deliveryId,
+            global::System.Threading.CancellationToken cancellationToken);
+        partial void Complete(
+            global::System.CommandLine.ParseResult parseResult,
+            string response,
+            global::System.Threading.CancellationToken cancellationToken);
+
+        private global::System.CommandLine.Argument<string> Org { get; } = new(
+            name: "org")
+        {
+            Description = "",
+        };
+
+        private global::System.CommandLine.Argument<int> HookId { get; } = new(
+            name: "hookId")
+        {
+            Description = "",
+        };
+
+        private global::System.CommandLine.Argument<int> DeliveryId { get; } = new(
+            name: "deliveryId")
+        {
+            Description = "",
+        };
+
+        public OrgsRedeliverWebhookDeliveryCommand(G.IApi client) : base(
+            name: "orgs",
+            description: @"Redeliver a delivery for a webhook configured in an organization.
+
+You must be an organization owner to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.")
+        {
+            _client = client;
+
+            Arguments.Add(Org);
+            Arguments.Add(HookId);
+            Arguments.Add(DeliveryId);
+
+            Initialize();
+
+            SetAction(HandleAsync);
+        }
+
+        private async global::System.Threading.Tasks.Task HandleAsync(
+            global::System.CommandLine.ParseResult parseResult,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var org = parseResult.GetRequiredValue(Org);
+            var hookId = parseResult.GetRequiredValue(HookId);
+            var deliveryId = parseResult.GetRequiredValue(DeliveryId);
+
+            Validate(
+                parseResult: parseResult,
+                org: org,
+                hookId: hookId,
+                deliveryId: deliveryId,
+                cancellationToken: cancellationToken);
+
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Orgs.OrgsRedeliverWebhookDeliveryAsync(
+                org: org,
+                hookId: hookId,
+                deliveryId: deliveryId,
+                cancellationToken: cancellationToken);
+
+            Complete(
+                parseResult: parseResult,
+                response: response,
+                cancellationToken: cancellationToken);
+        }
+    }
+}

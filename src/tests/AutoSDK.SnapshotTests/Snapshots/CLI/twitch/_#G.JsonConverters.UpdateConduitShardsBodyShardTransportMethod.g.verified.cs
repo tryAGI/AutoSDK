@@ -1,0 +1,54 @@
+﻿//HintName: G.JsonConverters.UpdateConduitShardsBodyShardTransportMethod.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class UpdateConduitShardsBodyShardTransportMethodJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateConduitShardsBodyShardTransportMethod>
+    {
+        /// <inheritdoc />
+        public override global::G.UpdateConduitShardsBodyShardTransportMethod Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.UpdateConduitShardsBodyShardTransportMethodExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.UpdateConduitShardsBodyShardTransportMethod)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.UpdateConduitShardsBodyShardTransportMethod);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.UpdateConduitShardsBodyShardTransportMethod value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::G.UpdateConduitShardsBodyShardTransportMethodExtensions.ToValueString(value));
+        }
+    }
+}

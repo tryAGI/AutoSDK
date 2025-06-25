@@ -1,0 +1,708 @@
+﻿[
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.RequestOptions?> Options { get; } = new(
+                                                                             ^^^^^^^
+            name: "options")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (72,77)-(72,84),
+    Message: 'GenerateCompletionCommand.Options' hides inherited member 'Command.Options'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.RequestOptions?> Options { get; } = new(
+                                                                             ^^^^^^^
+            name: "options")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (43,77)-(43,84),
+    Message: 'GenerateChatCompletionCommand.Options' hides inherited member 'Command.Options'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.RequestOptions?> Options { get; } = new(
+                                                                             ^^^^^^^
+            name: "options")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateEmbeddingCommand.g.cs: (34,77)-(34,84),
+    Message: 'GenerateEmbeddingCommand.Options' hides inherited member 'Command.Options'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+            Arguments.Add(Prompt);
+            Options.Add(Options);
+                    ^^^
+            Options.Add(KeepAlive);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateEmbeddingCommand.g.cs: (53,20)-(53,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Options);
+            Options.Add(KeepAlive);
+                    ^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateEmbeddingCommand.g.cs: (54,20)-(54,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Arguments.Add(Messages);
+            Options.Add(Format);
+                    ^^^
+            Options.Add(Options);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (74,20)-(74,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Format);
+            Options.Add(Options);
+                    ^^^
+            Options.Add(Stream);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (75,20)-(75,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Options);
+            Options.Add(Stream);
+                    ^^^
+            Options.Add(KeepAlive);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (76,20)-(76,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Stream);
+            Options.Add(KeepAlive);
+                    ^^^
+            Options.Add(Tools);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (77,20)-(77,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(KeepAlive);
+            Options.Add(Tools);
+                    ^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (78,20)-(78,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Arguments.Add(Prompt);
+            Options.Add(Suffix);
+                    ^^^
+            Options.Add(Images);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (109,20)-(109,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Suffix);
+            Options.Add(Images);
+                    ^^^
+            Options.Add(System);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (110,20)-(110,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Images);
+            Options.Add(System);
+                    ^^^
+            Options.Add(Template);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (111,20)-(111,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(System);
+            Options.Add(Template);
+                    ^^^
+            Options.Add(Context);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (112,20)-(112,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Template);
+            Options.Add(Context);
+                    ^^^
+            Options.Add(Options);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (113,20)-(113,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Context);
+            Options.Add(Options);
+                    ^^^
+            Options.Add(Format);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (114,20)-(114,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Options);
+            Options.Add(Format);
+                    ^^^
+            Options.Add(Raw);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (115,20)-(115,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Format);
+            Options.Add(Raw);
+                    ^^^
+            Options.Add(Stream);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (116,20)-(116,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Raw);
+            Options.Add(Stream);
+                    ^^^
+            Options.Add(KeepAlive);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (117,20)-(117,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Stream);
+            Options.Add(KeepAlive);
+                    ^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (118,20)-(118,23),
+    Message: 'Option<RequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<RequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Models.CreateModelAsync(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                model: model,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                modelfile: modelfile,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                path: path,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                quantize: quantize,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                stream: stream,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateModelCommand.g.cs: (89,27)-(95,53),
+    Message: 'IAsyncEnumerable<CreateModelResponse>' does not contain a definition for 'GetAwaiter' and no accessible extension method 'GetAwaiter' accepting a first argument of type 'IAsyncEnumerable<CreateModelResponse>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Models.PushModelAsync(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                model: model,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                insecure: insecure,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                username: username,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                password: password,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                stream: stream,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.PushModelCommand.g.cs: (89,27)-(95,53),
+    Message: 'IAsyncEnumerable<PushModelResponse>' does not contain a definition for 'GetAwaiter' and no accessible extension method 'GetAwaiter' accepting a first argument of type 'IAsyncEnumerable<PushModelResponse>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Completions.GenerateCompletionAsync(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                model: model,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                prompt: prompt,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                suffix: suffix,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                images: images,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                system: system,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                template: template,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                context: context,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                options: options,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                format: format,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                raw: raw,
+^^^^^^^^^^^^^^^^^^^^^^^^^
+                stream: stream,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                keepAlive: keepAlive,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateCompletionCommand.g.cs: (159,27)-(172,53),
+    Message: 'IAsyncEnumerable<GenerateCompletionResponse>' does not contain a definition for 'GetAwaiter' and no accessible extension method 'GetAwaiter' accepting a first argument of type 'IAsyncEnumerable<GenerateCompletionResponse>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Models.PullModelAsync(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                model: model,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                insecure: insecure,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                username: username,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                password: password,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                stream: stream,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.PullModelCommand.g.cs: (89,27)-(95,53),
+    Message: 'IAsyncEnumerable<PullModelResponse>' does not contain a definition for 'GetAwaiter' and no accessible extension method 'GetAwaiter' accepting a first argument of type 'IAsyncEnumerable<PullModelResponse>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Chat.GenerateChatCompletionAsync(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                model: model,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                messages: messages,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                format: format,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                options: options,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                stream: stream,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                keepAlive: keepAlive,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                tools: tools,
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                cancellationToken: cancellationToken);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateChatCompletionCommand.g.cs: (109,27)-(117,53),
+    Message: 'IAsyncEnumerable<GenerateChatCompletionResponse>' does not contain a definition for 'GetAwaiter' and no accessible extension method 'GetAwaiter' accepting a first argument of type 'IAsyncEnumerable<GenerateChatCompletionResponse>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

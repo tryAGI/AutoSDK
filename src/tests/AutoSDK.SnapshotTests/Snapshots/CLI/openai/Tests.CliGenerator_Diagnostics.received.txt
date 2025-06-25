@@ -1,0 +1,677 @@
+﻿[
+  {
+    Location: /*
+            FineTuningCommand command6,
+            GraderCommand command7,
+            ^^^^^^^^^^^^^
+            BatchCommand command8,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.MainCommand.g.cs: (15,12)-(15,25),
+    Message: The type or namespace name 'GraderCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                trainingFile: trainingFile,
+                hyperparameters: hyperparameters,
+                ^^^^^^^^^^^^^^^
+                suffix: suffix,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateFineTuningJobCommand.g.cs: (132,16)-(132,31),
+    Message: The best overload for 'CreateFineTuningJobAsync' does not have a parameter named 'hyperparameters',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1739,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1739),
+      MessageFormat: The best overload for '{0}' does not have a parameter named '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ChatClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.AudioClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.EmbeddingsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.BatchClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.CompletionsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.AssistantsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.OpenAiClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                GraderCommand>(services);
+                ^^^^^^^^^^^^^
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.ServiceCollectionExtensions.AddCommands.g.cs: (360,16)-(360,29),
+    Message: The type or namespace name 'GraderCommand' could not be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0246,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246),
+      MessageFormat: The type or namespace name '{0}' could not be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.EvalsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.FilesClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.FineTuningClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ImagesClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ModelsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ModerationsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.AuditLogsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.CertificatesClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.UsageClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.InvitesClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ProjectsClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.UsersClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.RealtimeClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ResponsesClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.UploadsClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.VectorStoresClient.g.cs: (35,114)-(35,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::G.SourceGenerationContext.Default;
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.GradersClient.g.cs: (36,114)-(36,147),
+    Message: The type or namespace name 'SourceGenerationContext' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

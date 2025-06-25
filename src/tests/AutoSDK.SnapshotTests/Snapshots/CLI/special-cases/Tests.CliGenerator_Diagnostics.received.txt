@@ -1,0 +1,77 @@
+﻿[
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            await _client.Pets.CreatePetsAsync(
+                          ^^^^
+                cancellationToken: cancellationToken);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreatePetsCommand.g.cs: (40,26)-(40,30),
+    Message: 'IApi' does not contain a definition for 'Pets' and no accessible extension method 'Pets' accepting a first argument of type 'IApi' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Pets.ShowPetByIdAsync(
+                                         ^^^^
+                petId: petId,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.ShowPetByIdCommand.g.cs: (50,41)-(50,45),
+    Message: 'IApi' does not contain a definition for 'Pets' and no accessible extension method 'Pets' accepting a first argument of type 'IApi' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.Pets.ListPetsAsync(
+                                         ^^^^
+                limit: limit,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.ListPetsCommand.g.cs: (50,41)-(50,45),
+    Message: 'IApi' does not contain a definition for 'Pets' and no accessible extension method 'Pets' accepting a first argument of type 'IApi' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

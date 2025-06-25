@@ -1,0 +1,18 @@
+﻿//HintName: G.IDeletedCallsClient.DeletedCallsRetrieve.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDeletedCallsClient
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="callId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.CallTombstone> DeletedCallsRetrieveAsync(
+            global::System.Guid callId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -136,4 +136,73 @@ namespace {@namespace}
                 .AutoVerify()
                 );
     }
+    
+    private async Task CheckCliSourceAsync<T>(
+        IList<AdditionalText> additionalTexts,
+        string callerName,
+        Dictionary<string, string>? globalOptions = null,
+        Dictionary<string, Dictionary<string, string>>? additionalTextOptions = null,
+        CancellationToken cancellationToken = default,
+        params IIncrementalGenerator[] additionalGenerators)
+        where T : IIncrementalGenerator, new()
+    {
+        globalOptions ??= new Dictionary<string, string>();
+        globalOptions.TryAdd("build_property.AutoSDK_Namespace", "G");
+        globalOptions.TryAdd("build_property.AutoSDK_JsonSerializerType", "SystemTextJson");
+        globalOptions.TryAdd("build_property.AutoSDK_GenerateJsonSerializerContextTypes", "true");
+        globalOptions.TryAdd("build_property.TargetFramework",  "net8.0");
+        globalOptions.TryAdd("build_property.AutoSDK_UseExperimentalAttributes", "InSupportedTargetFrameworks");
+        globalOptions.TryAdd("build_property.AutoSDK_UseSetsRequiredMembersAttributes", "InSupportedTargetFrameworks");
+        globalOptions.TryAdd("build_property.AutoSDK_GenerateModels", "true");
+        globalOptions.TryAdd("build_property.AutoSDK_GenerateCli", "true");
+
+        var referenceAssemblies = LatestReferenceAssemblies.Net80.AddPackages([
+            new PackageIdentity("System.CommandLine", "2.0.0-beta5.25306.1"),
+            new PackageIdentity("Microsoft.Extensions.DependencyInjection", "9.0.6")
+        ]);
+        var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
+        var trees = new List<SyntaxTree>
+        {
+            SyntaxFactory.ParseSyntaxTree("[assembly: System.CLSCompliantAttribute(true)]"),
+        };
+
+        additionalTextOptions ??= new Dictionary<string, Dictionary<string, string>>();
+        foreach (var additionalText in additionalTexts)
+        {
+            var options = additionalTextOptions.TryGetValue(additionalText.Path, out var existingOptions)
+                ? existingOptions
+                : new Dictionary<string, string>();
+            options.TryAdd("build_metadata.AdditionalFiles.AutoSDK_OpenApiSpecification", "true");
+            additionalTextOptions[additionalText.Path] = options;
+        }
+        
+        var compilation = (Compilation)CSharpCompilation.Create(
+            assemblyName: "Tests",
+            syntaxTrees: [..trees],
+            references: references,
+            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+        var generator = new T();
+        var driver = CSharpGeneratorDriver.Create(
+            generators: new IIncrementalGenerator[] { generator }
+                .Concat(additionalGenerators)
+                .Select(GeneratorExtensions.AsSourceGenerator)
+                .ToArray())
+            .AddAdditionalTexts([..additionalTexts])
+            .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions, additionalTextOptions: additionalTextOptions))
+            .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
+        var diagnostics = compilation.GetDiagnostics(cancellationToken)
+            .Where(x => x.Id != "CS0618")
+            .ToImmutableArray();
+
+        await Task.WhenAll(
+            Verify(diagnostics.NormalizeLocations())
+                .UseDirectory($"Snapshots/CLI/{callerName}")
+                //.AutoVerify()
+                .UseTextForParameters("Diagnostics"),
+            Verify(driver)
+                .UseDirectory($"Snapshots/CLI/{callerName}")
+                .UseFileName("_")
+                .AutoVerify()
+                );
+    }
 }

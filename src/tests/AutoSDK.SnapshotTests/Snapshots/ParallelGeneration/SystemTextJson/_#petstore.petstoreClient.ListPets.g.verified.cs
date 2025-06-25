@@ -76,20 +76,29 @@ namespace petstore
             if (!__response.IsSuccessStatusCode)
             {
                 string? __content_default = null;
+                global::System.Exception? __exception_default = null;
                 global::petstore.Error? __value_default = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = global::petstore.Error.FromJson(__content_default, JsonSerializerOptions);
+                    if (ReadResponseAsString)
+                    {
+                        __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = global::petstore.Error.FromJson(__content_default, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = await global::petstore.Error.FromJsonStreamAsync(__contentStream_default, JsonSerializerOptions).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_default = await global::petstore.Error.FromJsonStreamAsync(__contentStream_default, JsonSerializerOptions).ConfigureAwait(false);
+                    __exception_default = __ex;
                 }
 
                 throw new global::G.ApiException<global::petstore.Error>(
                     message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_default,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_default,
@@ -121,8 +130,12 @@ namespace petstore
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::G.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -136,18 +149,24 @@ namespace petstore
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::G.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -160,16 +179,6 @@ namespace petstore
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

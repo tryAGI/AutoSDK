@@ -81,7 +81,7 @@ public partial class Tests
     {
         if (fileName == "")
         {
-            return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [], callerName: "Empty");
+            return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [], callerName: "Empty", additionalGenerators: [new CliGenerator()]);
         }
         
         var resource = new H.Resource(fileName);
@@ -157,9 +157,123 @@ public partial class Tests
             new CustomAdditionalText(
                 path: resource.FileName,
                 text: resource.AsString())
-        ], Path.GetFileNameWithoutExtension(fileName), globalOptions);
+        ], Path.GetFileNameWithoutExtension(fileName), globalOptions, additionalGenerators: [new CliGenerator()]);
     }
     
+    [DataTestMethod]
+    [DataRow("")]
+    //[DataRow("ai21.json")]
+    [DataRow("anthropic.yaml")]
+    [DataRow("assemblyai.yaml")]
+    [DataRow("cohere.yaml")]
+    //[DataRow("dedoose.json")]
+    //[DataRow("github.yaml")]
+    //[DataRow("huggingface.yaml")]
+    //[DataRow("ipinfo.yaml")]
+    //[DataRow("langsmith.json")]
+    //[DataRow("leonardo.yaml")]
+    //[DataRow("mystic.yaml")]
+    //[DataRow("ollama.yaml")]
+    //[DataRow("openai.yaml")]
+    //[DataRow("petstore.yaml")]
+    [DataRow("replicate.json")]
+    //[DataRow("special-cases.yaml")]
+    //[DataRow("together.yaml")]
+    [DataRow("twitch.json")]
+    [DataRow("filtering.yaml")]
+    [DataRow("heygen.yaml")]
+    [DataRow("instill.yaml")]
+    [DataRow("ideogram.yaml")]
+    [DataRow("google-gemini.yaml")]
+    //[DataRow("vectara.yaml")]
+    //[DataRow("weaviate.yaml")]
+    //[DataRow("elevenlabs.json")]
+    [DataRow("jina.json")]
+    [DataRow("runway.yaml")]
+    [DataRow("recraft.yaml")]
+    //[DataRow("luma.yaml")]
+    [DataRow("ultravox.yaml")]
+    [DataRow("deepinfra.json")]
+    public Task CliGenerator(string fileName)
+    {
+        if (fileName == "")
+        {
+            return CheckCliSourceAsync<CliGenerator>([], callerName: "Empty", additionalGenerators: [new SdkGenerator()]);
+        }
+        
+        var resource = new H.Resource(fileName);
+
+        var globalOptions = fileName switch
+        {
+            "cohere.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "anthropic.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "github.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "together.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "mystic.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_MethodNamingConvention"] = "Summary",
+            },
+            "replicate.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdWithDots",
+                //["build_property.AutoSDK_GenerateSdk"] = "false",
+                //["build_property.AutoSDK_GenerateModels"] = "true",
+                //["build_property.AutoSDK_IncludeModels"] = "prediction_request",
+            },
+            "openai.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ClassName"] = "OpenAiClient",
+                ["build_property.AutoSDK_JsonSerializerContext"] = "G.SourceGenerationContext",
+                // ["build_property.AutoSDK_GenerateSdk"] = "false",
+                // ["build_property.AutoSDK_GenerateModels"] = "true",
+                // ["build_property.AutoSDK_GenerateMethods"] = "false",
+                // ["build_property.AutoSDK_GenerateConstructors"] = "false",
+                //["build_property.AutoSDK_IncludeOperationIds"] = "listVectorStores",
+                //["build_property.AutoSDK_IncludeModels"] = "CreateAssistantRequest",
+            },
+            "filtering.yaml" => new Dictionary<string, string>
+            {
+                // migrations/list-for-org
+                ["build_property.AutoSDK_IncludeTags"] = "migrations",
+                //["build_property.AutoSDK_IncludeTags"] = "actions;activity;apps;billing;checks;code-scanning;codes-of-conduct;emojis;dependabot;dependency-graph;gists;git;gitignore;issues;licenses;markdown;merge-queue;meta;migrations;oidc;orgs;packages;projects;pulls;rate-limit;reactions;repos;search;secret-scanning;teams;users;codespaces;copilot;security-advisories;interactions;classroom;desktop;enterprise-teams",
+                //["build_property.AutoSDK_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
+            },
+            "langsmith.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdSplit",
+                ["build_property.AutoSDK_ExcludeDeprecatedOperations"] = "true",
+                //["build_property.AutoSDK_JsonSerializerContext"] = "SourceGenerationContext",
+                //["build_property.AutoSDK_GenerateMethods"] = "true",
+            },
+            "elevenlabs.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
+            },
+            "luma.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            _ => new Dictionary<string, string>(),
+        };
+        
+        return CheckCliSourceAsync<CliGenerator>([
+            new CustomAdditionalText(
+                path: resource.FileName,
+                text: resource.AsString())
+        ], Path.GetFileNameWithoutExtension(fileName), globalOptions, additionalGenerators: [new SdkGenerator()]);
+    }
     
     [TestMethod]
     public Task ParallelGeneration()

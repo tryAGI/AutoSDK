@@ -1,0 +1,103 @@
+﻿[
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::G.GenerateTextRequestOptions?> Options { get; } = new(
+                                                                                         ^^^^^^^
+            name: "options")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateTextCommand.g.cs: (40,89)-(40,96),
+    Message: 'GenerateTextCommand.Options' hides inherited member 'Command.Options'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  },
+  {
+    Location: /*
+            Arguments.Add(Inputs);
+            Options.Add(Parameters);
+                    ^^^
+            Options.Add(Options);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateTextCommand.g.cs: (53,20)-(53,23),
+    Message: 'Option<GenerateTextRequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<GenerateTextRequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            Options.Add(Parameters);
+            Options.Add(Options);
+                    ^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateTextCommand.g.cs: (54,20)-(54,23),
+    Message: 'Option<GenerateTextRequestOptions?>' does not contain a definition for 'Add' and no accessible extension method 'Add' accepting a first argument of type 'Option<GenerateTextRequestOptions?>' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.HuggingFace.GenerateTextAsync(
+                                         ^^^^^^^^^^^
+                modelId: modelId,
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.GenerateTextCommand.g.cs: (79,41)-(79,52),
+    Message: 'IApi' does not contain a definition for 'HuggingFace' and no accessible extension method 'HuggingFace' accepting a first argument of type 'IApi' could be found (are you missing a using directive or an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS1061,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1061),
+      MessageFormat: '{0}' does not contain a definition for '{1}' and no accessible extension method '{1}' accepting a first argument of type '{0}' could be found (are you missing a using directive or an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

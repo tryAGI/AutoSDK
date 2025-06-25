@@ -1,0 +1,27 @@
+﻿[
+  {
+    Location: /*
+            // ReSharper disable once RedundantAssignment
+            var response = await _client.General.BatchAsync(
+                                                 ^^^^^^^^^^
+                cancellationToken: cancellationToken);
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.BatchCommand.g.cs: (41,49)-(41,59),
+    Message: There is no argument given that corresponds to the required parameter 'request' of 'GeneralClient.BatchAsync(IList<string>, CancellationToken)',
+    Severity: Error,
+    Descriptor: {
+      Id: CS7036,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS7036),
+      MessageFormat: There is no argument given that corresponds to the required parameter '{0}' of '{1}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]
