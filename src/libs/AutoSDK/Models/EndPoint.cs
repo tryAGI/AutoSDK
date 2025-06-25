@@ -140,6 +140,7 @@ public record struct EndPoint(
                 Settings = requestProperty.Settings,
                 Summary = requestProperty.Summary,
                 ConverterType = requestProperty.ConverterType,
+                Description = requestProperty.Description,
             });
         }
         

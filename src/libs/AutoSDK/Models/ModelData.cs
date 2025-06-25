@@ -14,6 +14,7 @@ public record struct ModelData(
     ImmutableArray<PropertyData> Properties,
     ImmutableArray<PropertyData> EnumValues,
     string Summary,
+    string Description,
     bool IsDeprecated,
     string BaseClass,
     bool IsBaseClass,
@@ -62,6 +63,7 @@ public record struct ModelData(
                 ? context.ComputeEnum().Values.ToImmutableArray()
                 : [],
             Summary: context.Schema.GetSummary(),
+            Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.Deprecated,
             BaseClass: context.IsDerivedClass
                 ? context.BaseClassContext.Id

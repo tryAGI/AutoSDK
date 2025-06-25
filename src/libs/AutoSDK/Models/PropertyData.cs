@@ -17,6 +17,7 @@ public record struct PropertyData(
     string? Example,
     bool IsDeprecated,
     string Summary,
+    string Description,
     string ConverterType,
     string DiscriminatorValue)
 {
@@ -33,6 +34,7 @@ public record struct PropertyData(
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
+        Description: string.Empty,
         ConverterType: string.Empty,
         DiscriminatorValue: string.Empty);
 
@@ -87,6 +89,7 @@ public record struct PropertyData(
                 ? example.ClearForXml()
                 : null,
             Summary: context.Schema.GetSummary(),
+            Description: context.Schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
             DiscriminatorValue: string.Empty);
     }

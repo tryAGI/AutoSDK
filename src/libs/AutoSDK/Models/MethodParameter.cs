@@ -97,7 +97,10 @@ public record struct MethodParameter(
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
-            Description: context.Schema.Description ?? string.Empty,
+            Description:
+                context.Parameter?.Description ??
+                context.Schema.Description ??
+                string.Empty,
             ConverterType: type.ConverterType,
             Properties: context.ClassData?.Properties ?? []);
     }
