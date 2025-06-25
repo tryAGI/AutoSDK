@@ -18,6 +18,11 @@ public static partial class Sources
 
         var clientType = $"{endPoint.GlobalSettings.Namespace}.I{endPoint.GlobalSettings.ClassName}";
         var canReturn = endPoint.SuccessResponse.Type != TypeData.Default;
+
+        var newModifierIfRequired = (MethodParameter parameter) =>
+            parameter.Name.ToPropertyName() is "Name" or "Description" or "Action"
+                ? "new "
+                : "";
         
         return $@"
 #nullable enable
@@ -28,17 +33,20 @@ namespace {endPoint.Settings.Namespace}
     {{
         private readonly {clientType} _client;
 
-        partial void BeforeRequest(
+        partial void Initialize();
+        partial void Validate(
+            global::System.CommandLine.ParseResult parseResult,
 {endPoint.Parameters.Select((x, i) => @$"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-            CancellationToken cancellationToken);
-        partial void AfterRequest(
+            global::System.Threading.CancellationToken cancellationToken);
+        partial void Complete(
+            global::System.CommandLine.ParseResult parseResult,
 {(canReturn ? $@" 
             {endPoint.SuccessResponse.Type.CSharpType} response," : " ")}
-            CancellationToken cancellationToken);
+            global::System.Threading.CancellationToken cancellationToken);
 
 {endPoint.Parameters.Where(x => x.IsRequired).Select((x, i) => @$"
-        private global::System.CommandLine.Argument<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
+        private {newModifierIfRequired(x)}global::System.CommandLine.Argument<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
             Description = """",
@@ -46,7 +54,7 @@ namespace {endPoint.Settings.Namespace}
 ").Inject()}
 
 {endPoint.Parameters.Where(x => !x.IsRequired).Select((x, i) => @$"
-        private global::System.CommandLine.Option<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
+        private {newModifierIfRequired(x)}global::System.CommandLine.Option<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
             Description = """",
@@ -55,7 +63,7 @@ namespace {endPoint.Settings.Namespace}
     
         public {endPoint.NotAsyncMethodName}Command({clientType} client) : base(
             name: ""{endPoint.CliAction}"",
-            description: ""{endPoint.Description}"")
+            description: @""{endPoint.Description.Replace("\"", "\"\"")}"")
         {{
             _client = client;
 
@@ -64,17 +72,20 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => !x.IsRequired).Select((x, i) => @$"
             Options.Add({x.Name.ToPropertyName()});").Inject()}
 
+            Initialize();
+
             SetAction(HandleAsync);
         }}
 
-        private async Task HandleAsync(
+        private async global::System.Threading.Tasks.Task HandleAsync(
             global::System.CommandLine.ParseResult parseResult,
-            CancellationToken cancellationToken = default)
+            global::System.Threading.CancellationToken cancellationToken = default)
         {{
 {endPoint.Parameters.Select((x, i) => @$"
             var {x.ParameterName} = parseResult.GetRequiredValue({x.Name.ToPropertyName()});").Inject()}
 
-            BeforeRequest(
+            Validate(
+                parseResult: parseResult,
 {endPoint.Parameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 cancellationToken: cancellationToken);
@@ -82,12 +93,15 @@ namespace {endPoint.Settings.Namespace}
             // ReSharper disable once RedundantAssignment
             {(!canReturn
                 ? string.Empty
-                : "var response = ")}await _client.{endPoint.Tag.SafeName}.{endPoint.MethodName}(
+                : "var response = ")}await _client.{(!string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
+                    ? $"{endPoint.Tag.SafeName}."
+                    : "")}{endPoint.MethodName}(
 {endPoint.Parameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 cancellationToken: cancellationToken);
 
-            AfterRequest(
+            Complete(
+                parseResult: parseResult,
 {(canReturn ? @" 
                 response: response," : " ")}
                 cancellationToken: cancellationToken);
