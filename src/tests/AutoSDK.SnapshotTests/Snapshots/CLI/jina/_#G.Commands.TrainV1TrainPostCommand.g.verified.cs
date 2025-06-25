@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc>> Input { get; } = new(
             name: "input")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ClassifierId { get; } = new(
             name: "classifierId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.TrainingAPIInputVisibility?> Visibility { get; } = new(
             name: "visibility")
         {
-            Description = "",
+            Description = @"",
         };
         public TrainV1TrainPostCommand(G.IApi client) : base(
             name: "train",

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<int> RateLimit { get; } = new(
             name: "rateLimit")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Reason { get; } = new(
             name: "reason")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public RequestRateLimitIncreaseV1MeRateLimitRequestPostCommand(G.IApi client) : base(
             name: "request",

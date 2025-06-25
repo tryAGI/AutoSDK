@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteOrganizationCommand(G.IApi client) : base(

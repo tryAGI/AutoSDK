@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> HfModelName { get; } = new(
             name: "hfModelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> LoraModelName { get; } = new(
             name: "loraModelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> HfToken { get; } = new(
             name: "hfToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BaseModelName { get; } = new(
             name: "baseModelName")
         {
-            Description = "",
+            Description = @"",
         };
         public UploadLoraModelLoraModelPostCommand(G.IApi client) : base(
             name: "upload",

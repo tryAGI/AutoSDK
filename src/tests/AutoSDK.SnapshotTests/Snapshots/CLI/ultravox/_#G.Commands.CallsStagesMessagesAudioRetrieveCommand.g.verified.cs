@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CallId { get; } = new(
             name: "callId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> CallStageId { get; } = new(
             name: "callStageId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> CallStageMessageIndex { get; } = new(
             name: "callStageMessageIndex")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CallsStagesMessagesAudioRetrieveCommand(G.IApi client) : base(

@@ -31,67 +31,67 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> SourceId { get; } = new(
             name: "sourceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> RequestCorpusId { get; } = new(
             name: "requestCorpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> RequestSourceId { get; } = new(
             name: "requestSourceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Created { get; } = new(
             name: "created")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1SourceStats?> Stats { get; } = new(
             name: "stats")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CrawlSpec?> LoadSpec { get; } = new(
             name: "loadSpec")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CrawlSpec?> Crawl { get; } = new(
             name: "crawl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1UploadSpec?> Upload { get; } = new(
             name: "upload")
         {
-            Description = "",
+            Description = @"",
         };
         public CorporaSourcesPartialUpdateCommand(G.IApi client) : base(
             name: "corpora",

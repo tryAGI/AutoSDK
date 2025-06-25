@@ -35,91 +35,91 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelDefinition { get; } = new(
             name: "modelDefinition")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object> Configuration { get; } = new(
             name: "configuration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.AITask> Task { get; } = new(
             name: "task")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.ModelVisibility> Visibility { get; } = new(
             name: "visibility")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Region { get; } = new(
             name: "region")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> SourceUrl { get; } = new(
             name: "sourceUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DocumentationUrl { get; } = new(
             name: "documentationUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> License { get; } = new(
             name: "license")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ProfileImage { get; } = new(
             name: "profileImage")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelPublicServiceUpdateNamespaceModelCommand(G.IApi client) : base(
             name: "model",

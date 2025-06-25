@@ -29,55 +29,55 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> GithubUrl { get; } = new(
             name: "githubUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PaperUrl { get; } = new(
             name: "paperUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LicenseUrl { get; } = new(
             name: "licenseUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> CoverImgUrl { get; } = new(
             name: "coverImgUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.HFTasksE?> ReportedType { get; } = new(
             name: "reportedType")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelMetaUpdateModelsModelNameMetaPostCommand(G.IApi client) : base(
             name: "model",

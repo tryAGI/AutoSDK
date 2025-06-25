@@ -38,117 +38,116 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> EndSequences { get; } = new(
             name: "endSequences")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> FrequencyPenalty { get; } = new(
             name: "frequencyPenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> K { get; } = new(
             name: "k")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MaxTokens { get; } = new(
             name: "maxTokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> NumGenerations { get; } = new(
             name: "numGenerations")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> P { get; } = new(
             name: "p")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> PresencePenalty { get; } = new(
             name: "presencePenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Preset { get; } = new(
             name: "preset")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Prompt { get; } = new(
             name: "prompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> StopSequences { get; } = new(
             name: "stopSequences")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.GenerateRequestTruncate> Truncate { get; } = new(
             name: "truncate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> RawPrompting { get; } = new(
             name: "rawPrompting")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GenerateRequestReturnLikelihoods?> ReturnLikelihoods { get; } = new(
             name: "returnLikelihoods")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = "",
+            Description = @"",
         };
         public GenerateCommand(G.IApi client) : base(
             name: "generate",
             description: @"<Warning>
 This API is marked as ""Legacy"" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.
 </Warning>
-Generates realistic text conditioned on a given input.
-")
+Generates realistic text conditioned on a given input.")
         {
             _client = client;
 

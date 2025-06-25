@@ -31,67 +31,67 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> EmoteMode { get; } = new(
             name: "emoteMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> FollowerMode { get; } = new(
             name: "followerMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> FollowerModeDuration { get; } = new(
             name: "followerModeDuration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> NonModeratorChatDelay { get; } = new(
             name: "nonModeratorChatDelay")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> NonModeratorChatDelayDuration { get; } = new(
             name: "nonModeratorChatDelayDuration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> SlowMode { get; } = new(
             name: "slowMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> SlowModeWaitTime { get; } = new(
             name: "slowModeWaitTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> SubscriberMode { get; } = new(
             name: "subscriberMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> UniqueChatMode { get; } = new(
             name: "uniqueChatMode")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateChatSettingsCommand(G.IApi client) : base(
             name: "update",

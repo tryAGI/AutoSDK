@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<object>> TaskInputs { get; } = new(
             name: "taskInputs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelPublicServiceTriggerNamespaceLatestModelCommand(G.IApi client) : base(
             name: "model",

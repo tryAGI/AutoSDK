@@ -22,12 +22,11 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public CheckAPIKeyCommand(G.IApi client) : base(
             name: "check",
-            description: @"Checks that the api key in the Authorization header is valid and active
-")
+            description: @"Checks that the api key in the Authorization header is valid and active")
         {
             _client = client;
 

@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> TargetUserId { get; } = new(
             name: "targetUserId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.BlockUserSourceContext?> SourceContext { get; } = new(
             name: "sourceContext")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.BlockUserReason?> Reason { get; } = new(
             name: "reason")
         {
-            Description = "",
+            Description = @"",
         };
         public BlockUserCommand(G.IApi client) : base(
             name: "block",

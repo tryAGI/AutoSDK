@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> FinetunedModelId { get; } = new(
             name: "finetunedModelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public ListTrainingStepMetricsCommand(G.IApi client) : base(
             name: "list",

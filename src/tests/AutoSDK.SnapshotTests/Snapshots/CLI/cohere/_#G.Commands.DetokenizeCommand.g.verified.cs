@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<int>> Tokens { get; } = new(
             name: "tokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public DetokenizeCommand(G.IApi client) : base(
             name: "detokenize",

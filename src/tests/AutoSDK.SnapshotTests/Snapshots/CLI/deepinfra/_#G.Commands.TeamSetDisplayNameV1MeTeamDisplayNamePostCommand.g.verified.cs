@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> DisplayName { get; } = new(
             name: "displayName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public TeamSetDisplayNameV1MeTeamDisplayNamePostCommand(G.IApi client) : base(
             name: "team",

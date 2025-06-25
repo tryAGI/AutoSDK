@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CheckUserSubscriptionCommand(G.IApi client) : base(

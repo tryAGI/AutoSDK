@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ObjectName { get; } = new(
             name: "objectName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> UrlExpireDays { get; } = new(
             name: "urlExpireDays")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> LastModifiedTime { get; } = new(
             name: "lastModifiedTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> ObjectExpireDays { get; } = new(
             name: "objectExpireDays")
         {
-            Description = "",
+            Description = @"",
         };
         public GetObjectUploadURLCommand(G.IApi client) : base(
             name: "get",

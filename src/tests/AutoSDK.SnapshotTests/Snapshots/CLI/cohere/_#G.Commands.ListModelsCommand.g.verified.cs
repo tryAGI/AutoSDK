@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<double?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CompatibleEndpoint?> Endpoint { get; } = new(
             name: "endpoint")
         {
-            Description = "",
+            Description = @"One of the Cohere API endpoints that the model can be used with.",
         };
 
         private global::System.CommandLine.Option<bool?> DefaultOnly { get; } = new(
             name: "defaultOnly")
         {
-            Description = "",
+            Description = @"",
         };
         public ListModelsCommand(G.IApi client) : base(
             name: "list",

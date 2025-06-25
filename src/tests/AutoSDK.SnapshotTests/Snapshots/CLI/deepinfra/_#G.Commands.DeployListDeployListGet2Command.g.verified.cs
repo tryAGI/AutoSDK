@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<string?> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"A list of statuses that should be returned, separated by comma. Allowed values in the list are: initializing,deploying,running,failed,deleted",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployListDeployListGet2Command(G.IApi client) : base(
             name: "deploy",

@@ -27,43 +27,45 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.InputMessage>> Messages { get; } = new(
             name: "messages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.Model> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
 
         private global::System.CommandLine.Option<global::G.ToolChoice?> ToolChoice { get; } = new(
             name: "toolChoice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>?> Tools { get; } = new(
             name: "tools")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.RequestTextBlock>>?> System { get; } = new(
             name: "system")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ThinkingConfigParam?> Thinking { get; } = new(
             name: "thinking")
         {
-            Description = "",
+            Description = @"",
         };
         public MessagesCountTokensPostCommand(G.IApi client) : base(
             name: "messages",

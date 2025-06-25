@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CancelARaidCommand(G.IApi client) : base(

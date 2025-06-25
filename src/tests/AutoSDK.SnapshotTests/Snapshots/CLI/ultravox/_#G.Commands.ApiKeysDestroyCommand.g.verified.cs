@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiKeyPrefix { get; } = new(
             name: "apiKeyPrefix")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ApiKeysDestroyCommand(G.IApi client) : base(

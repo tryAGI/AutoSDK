@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> Length { get; } = new(
             name: "length")
         {
-            Description = "",
+            Description = @"",
         };
 
         public StartCommercialCommand(G.IApi client) : base(

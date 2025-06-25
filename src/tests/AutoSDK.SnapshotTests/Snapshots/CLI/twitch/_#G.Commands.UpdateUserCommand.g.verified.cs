@@ -22,7 +22,7 @@ namespace G
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateUserCommand(G.IApi client) : base(
             name: "update",

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetUserView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public GetUserCommand(G.IApi client) : base(
             name: "get",

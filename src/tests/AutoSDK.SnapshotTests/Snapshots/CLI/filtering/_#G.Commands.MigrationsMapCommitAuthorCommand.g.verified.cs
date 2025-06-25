@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> AuthorId { get; } = new(
             name: "authorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Email { get; } = new(
             name: "email")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsMapCommitAuthorCommand(G.IApi client) : base(
             name: "migrations",

@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CallId { get; } = new(
             name: "callId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CallsToolsListCommand(G.IApi client) : base(

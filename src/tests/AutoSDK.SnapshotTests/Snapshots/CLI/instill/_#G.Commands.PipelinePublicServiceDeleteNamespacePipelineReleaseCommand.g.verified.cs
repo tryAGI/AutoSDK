@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ReleaseId { get; } = new(
             name: "releaseId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PipelinePublicServiceDeleteNamespacePipelineReleaseCommand(G.IApi client) : base(

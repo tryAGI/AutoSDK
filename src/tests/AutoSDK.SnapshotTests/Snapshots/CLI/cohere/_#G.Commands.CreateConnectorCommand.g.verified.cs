@@ -29,55 +29,55 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Url { get; } = new(
             name: "url")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Active { get; } = new(
             name: "active")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ContinueOnFailure { get; } = new(
             name: "continueOnFailure")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Excludes { get; } = new(
             name: "excludes")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CreateConnectorOAuth?> Oauth { get; } = new(
             name: "oauth")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CreateConnectorServiceAuth?> ServiceAuth { get; } = new(
             name: "serviceAuth")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateConnectorCommand(G.IApi client) : base(
             name: "create",

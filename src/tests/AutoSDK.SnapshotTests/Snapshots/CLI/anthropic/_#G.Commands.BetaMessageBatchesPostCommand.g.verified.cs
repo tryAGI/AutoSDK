@@ -23,19 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.BetaMessageBatchIndividualRequestParams>> Requests { get; } = new(
             name: "requests")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicBeta { get; } = new(
             name: "anthropicBeta")
         {
-            Description = "",
+            Description = @"Optional header to specify the beta version(s) you want to use.
+
+To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
         public BetaMessageBatchesPostCommand(G.IApi client) : base(
             name: "beta",

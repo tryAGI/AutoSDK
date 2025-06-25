@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> StyleId { get; } = new(
             name: "styleId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteStyleCommand(G.IApi client) : base(

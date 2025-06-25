@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyDataItem>> Data { get; } = new(
             name: "data")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CheckAutomodStatusCommand(G.IApi client) : base(

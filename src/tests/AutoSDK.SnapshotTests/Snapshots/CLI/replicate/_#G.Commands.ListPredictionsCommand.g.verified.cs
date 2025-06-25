@@ -75,8 +75,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
 
 `version` will be the unique ID of model version used to create the prediction.
 
-`data_removed` will be `true` if the input and output data has been deleted.
-")
+`data_removed` will be `true` if the input and output data has been deleted.")
         {
             _client = client;
 

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> DeployId { get; } = new(
             name: "deployId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployStatusDeployDeployIdGetCommand(G.IApi client) : base(
             name: "deploy",

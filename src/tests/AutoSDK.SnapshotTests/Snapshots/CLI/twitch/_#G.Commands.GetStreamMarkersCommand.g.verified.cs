@@ -26,31 +26,31 @@ namespace G
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> VideoId { get; } = new(
             name: "videoId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public GetStreamMarkersCommand(G.IApi client) : base(
             name: "get",

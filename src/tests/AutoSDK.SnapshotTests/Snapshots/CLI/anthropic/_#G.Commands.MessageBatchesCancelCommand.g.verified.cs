@@ -22,13 +22,15 @@ namespace G
         private global::System.CommandLine.Argument<string> MessageBatchId { get; } = new(
             name: "messageBatchId")
         {
-            Description = "",
+            Description = @"ID of the Message Batch.",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
         public MessageBatchesCancelCommand(G.IApi client) : base(
             name: "message",

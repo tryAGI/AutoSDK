@@ -31,67 +31,67 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> AgentId { get; } = new(
             name: "agentId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> TemplateContext { get; } = new(
             name: "templateContext")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1Message>?> InitialMessages { get; } = new(
             name: "initialMessages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallMedium?> Medium { get; } = new(
             name: "medium")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> JoinTimeout { get; } = new(
             name: "joinTimeout")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> MaxDuration { get; } = new(
             name: "maxDuration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> RecordingEnabled { get; } = new(
             name: "recordingEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartAgentCallRequestInitialOutputMedium?> InitialOutputMedium { get; } = new(
             name: "initialOutputMedium")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1FirstSpeakerSettings?> FirstSpeakerSettings { get; } = new(
             name: "firstSpeakerSettings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> ExperimentalSettings { get; } = new(
             name: "experimentalSettings")
         {
-            Description = "",
+            Description = @"",
         };
         public AgentsCallsCreateCommand(G.IApi client) : base(
             name: "agents",

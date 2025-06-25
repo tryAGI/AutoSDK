@@ -31,67 +31,67 @@ namespace G
         private global::System.CommandLine.Argument<string> Company { get; } = new(
             name: "company")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Ceo { get; } = new(
             name: "ceo")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Funding { get; } = new(
             name: "funding")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> FoundedOn { get; } = new(
             name: "foundedOn")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Website { get; } = new(
             name: "website")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Uid { get; } = new(
             name: "uid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> CreatedAt { get; } = new(
             name: "createdAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Deal { get; } = new(
             name: "deal")
         {
-            Description = "",
+            Description = @"",
         };
         public DeepstartApplyPaymentDeepstartApplicationPostCommand(G.IApi client) : base(
             name: "deepstart",

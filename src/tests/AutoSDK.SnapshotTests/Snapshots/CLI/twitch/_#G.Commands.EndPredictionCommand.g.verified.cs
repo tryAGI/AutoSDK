@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.EndPredictionBodyStatus> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> WinningOutcomeId { get; } = new(
             name: "winningOutcomeId")
         {
-            Description = "",
+            Description = @"",
         };
         public EndPredictionCommand(G.IApi client) : base(
             name: "end",

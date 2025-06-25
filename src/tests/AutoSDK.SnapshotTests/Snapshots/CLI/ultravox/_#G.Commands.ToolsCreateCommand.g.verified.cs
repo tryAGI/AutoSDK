@@ -22,13 +22,13 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.UltravoxV1BaseToolDefinition> Definition { get; } = new(
             name: "definition")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ToolsCreateCommand(G.IApi client) : base(

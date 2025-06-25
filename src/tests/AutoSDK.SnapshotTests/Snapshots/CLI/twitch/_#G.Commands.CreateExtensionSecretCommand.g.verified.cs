@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Delay { get; } = new(
             name: "delay")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateExtensionSecretCommand(G.IApi client) : base(
             name: "create",

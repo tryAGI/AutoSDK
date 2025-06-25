@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.ClassifyExample>> Examples { get; } = new(
             name: "examples")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Inputs { get; } = new(
             name: "inputs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Preset { get; } = new(
             name: "preset")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.ClassifyRequestTruncate> Truncate { get; } = new(
             name: "truncate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public ClassifyCommand(G.IApi client) : base(
             name: "classify",

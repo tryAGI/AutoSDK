@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public MeV1MeGetCommand(G.IApi client) : base(
             name: "me",

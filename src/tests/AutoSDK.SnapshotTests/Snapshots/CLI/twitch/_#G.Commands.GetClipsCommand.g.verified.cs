@@ -30,55 +30,55 @@ namespace G
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> StartedAt { get; } = new(
             name: "startedAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> EndedAt { get; } = new(
             name: "endedAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsFeatured { get; } = new(
             name: "isFeatured")
         {
-            Description = "",
+            Description = @"",
         };
         public GetClipsCommand(G.IApi client) : base(
             name: "get",

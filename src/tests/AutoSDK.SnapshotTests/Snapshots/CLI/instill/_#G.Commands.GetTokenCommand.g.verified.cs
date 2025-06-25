@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TokenId { get; } = new(
             name: "tokenId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetTokenCommand(G.IApi client) : base(

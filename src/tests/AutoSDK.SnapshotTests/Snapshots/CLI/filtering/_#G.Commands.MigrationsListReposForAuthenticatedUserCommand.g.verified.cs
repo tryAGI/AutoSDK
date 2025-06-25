@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PerPage { get; } = new(
             name: "perPage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsListReposForAuthenticatedUserCommand(G.IApi client) : base(
             name: "migrations",

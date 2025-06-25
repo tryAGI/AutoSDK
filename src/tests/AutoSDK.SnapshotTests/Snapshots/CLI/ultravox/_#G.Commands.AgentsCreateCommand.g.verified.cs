@@ -22,13 +22,13 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallTemplate?> CallTemplate { get; } = new(
             name: "callTemplate")
         {
-            Description = "",
+            Description = @"",
         };
         public AgentsCreateCommand(G.IApi client) : base(
             name: "agents",

@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"",
         };
         public SetConfigPaymentConfigPostCommand(G.IApi client) : base(
             name: "set",

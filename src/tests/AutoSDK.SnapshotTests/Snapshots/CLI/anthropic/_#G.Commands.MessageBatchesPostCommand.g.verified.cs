@@ -22,13 +22,15 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.MessageBatchIndividualRequestParams>> Requests { get; } = new(
             name: "requests")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
         public MessageBatchesPostCommand(G.IApi client) : base(
             name: "message",

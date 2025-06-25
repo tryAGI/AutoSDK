@@ -30,61 +30,61 @@ namespace G
         private global::System.CommandLine.Argument<string> Prompt { get; } = new(
             name: "prompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UserControls?> Controls { get; } = new(
             name: "controls")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.TransformModel?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> N { get; } = new(
             name: "n")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> RandomSeed { get; } = new(
             name: "randomSeed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ImageSize?> Size { get; } = new(
             name: "size")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ImageStyle?> Style { get; } = new(
             name: "style")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> StyleId { get; } = new(
             name: "styleId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ImageSubStyle?> Substyle { get; } = new(
             name: "substyle")
         {
-            Description = "",
+            Description = @"",
         };
         public GenerateImageCommand(G.IApi client) : base(
             name: "generate",

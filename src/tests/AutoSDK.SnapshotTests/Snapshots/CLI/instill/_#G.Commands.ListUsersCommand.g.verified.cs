@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ListUsersView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = "",
+            Description = @"",
         };
         public ListUsersCommand(G.IApi client) : base(
             name: "list",

@@ -30,61 +30,61 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> File { get; } = new(
             name: "file")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Filename { get; } = new(
             name: "filename")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Language { get; } = new(
             name: "language")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Prompt { get; } = new(
             name: "prompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitie>?> TimestampGranularities { get; } = new(
             name: "timestampGranularities")
         {
-            Description = "",
+            Description = @"",
         };
         public OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostCommand(G.IApi client) : base(
             name: "openai",

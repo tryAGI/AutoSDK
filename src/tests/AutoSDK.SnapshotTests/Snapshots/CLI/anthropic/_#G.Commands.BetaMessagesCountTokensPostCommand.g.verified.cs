@@ -28,49 +28,53 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.BetaInputMessage>> Messages { get; } = new(
             name: "messages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.Model> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicBeta { get; } = new(
             name: "anthropicBeta")
         {
-            Description = "",
+            Description = @"Optional header to specify the beta version(s) you want to use.
+
+To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
 
         private global::System.CommandLine.Option<global::G.BetaToolChoice?> ToolChoice { get; } = new(
             name: "toolChoice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolsItem>?> Tools { get; } = new(
             name: "tools")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>?> System { get; } = new(
             name: "system")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.BetaThinkingConfigParam?> Thinking { get; } = new(
             name: "thinking")
         {
-            Description = "",
+            Description = @"",
         };
         public BetaMessagesCountTokensPostCommand(G.IApi client) : base(
             name: "beta",

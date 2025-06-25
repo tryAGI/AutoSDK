@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> EntitlementIds { get; } = new(
             name: "entitlementIds")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UpdateDropsEntitlementsBodyFulfillmentStatus?> FulfillmentStatus { get; } = new(
             name: "fulfillmentStatus")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateDropsEntitlementsCommand(G.IApi client) : base(
             name: "update",

@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<bool?> ShouldIncludeAll { get; } = new(
             name: "shouldIncludeAll")
         {
-            Description = "",
+            Description = @"",
         };
         public GetExtensionBitsProductsCommand(G.IApi client) : base(
             name: "get",

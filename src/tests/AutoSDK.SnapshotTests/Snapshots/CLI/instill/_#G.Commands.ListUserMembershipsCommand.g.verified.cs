@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ListUserMembershipsCommand(G.IApi client) : base(

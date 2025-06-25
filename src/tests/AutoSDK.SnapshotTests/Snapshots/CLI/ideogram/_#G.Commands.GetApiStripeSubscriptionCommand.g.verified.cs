@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<bool?> IsBusiness { get; } = new(
             name: "isBusiness")
         {
-            Description = "",
+            Description = @"",
         };
         public GetApiStripeSubscriptionCommand(G.IApi client) : base(
             name: "get",

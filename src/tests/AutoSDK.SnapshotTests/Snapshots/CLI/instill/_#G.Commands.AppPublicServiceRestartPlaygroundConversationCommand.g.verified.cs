@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public AppPublicServiceRestartPlaygroundConversationCommand(G.IApi client) : base(

@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteEventsubSubscriptionCommand(G.IApi client) : base(

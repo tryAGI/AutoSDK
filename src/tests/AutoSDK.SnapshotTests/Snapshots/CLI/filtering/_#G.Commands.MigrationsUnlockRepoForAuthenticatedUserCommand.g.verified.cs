@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> RepoName { get; } = new(
             name: "repoName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsUnlockRepoForAuthenticatedUserCommand(G.IApi client) : base(

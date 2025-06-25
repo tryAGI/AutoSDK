@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TargetUserId { get; } = new(
             name: "targetUserId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UnblockUserCommand(G.IApi client) : base(

@@ -24,31 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsVacationEnabled { get; } = new(
             name: "isVacationEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> VacationStartTime { get; } = new(
             name: "vacationStartTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> VacationEndTime { get; } = new(
             name: "vacationEndTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Timezone { get; } = new(
             name: "timezone")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateChannelStreamScheduleCommand(G.IApi client) : base(
             name: "update",

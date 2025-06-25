@@ -25,37 +25,37 @@ namespace G
         private global::System.CommandLine.Argument<object> Input { get; } = new(
             name: "input")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Prefer { get; } = new(
             name: "prefer")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Webhook { get; } = new(
             name: "webhook")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>?> WebhookEventsFilter { get; } = new(
             name: "webhookEventsFilter")
         {
-            Description = "",
+            Description = @"",
         };
         public CreatePredictionsCommand(G.IApi client) : base(
             name: "create",
@@ -73,8 +73,7 @@ curl -s -X POST -H 'Prefer: wait' \
 
 The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `""starting""` state and need to be retrieved using the `predictions.get` endpiont.
 
-For a complete overview of the `predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
-")
+For a complete overview of the `predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.")
         {
             _client = client;
 

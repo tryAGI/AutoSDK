@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Offset { get; } = new(
             name: "offset")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public ListConnectorsCommand(G.IApi client) : base(
             name: "list",

@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ConnectionId { get; } = new(
             name: "connectionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceListPipelineIDsByConnectionIDCommand(G.IApi client) : base(
             name: "pipeline",

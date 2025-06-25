@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = "",
+            Description = @"",
         };
         public GetTopGamesCommand(G.IApi client) : base(
             name: "get",

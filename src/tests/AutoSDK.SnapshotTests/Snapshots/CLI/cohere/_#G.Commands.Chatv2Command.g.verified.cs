@@ -41,134 +41,133 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.ChatMessageV2>> Messages { get; } = new(
             name: "messages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CitationOptions?> CitationOptions { get; } = new(
             name: "citationOptions")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>?> Documents { get; } = new(
             name: "documents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> FrequencyPenalty { get; } = new(
             name: "frequencyPenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> K { get; } = new(
             name: "k")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Logprobs { get; } = new(
             name: "logprobs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
             name: "maxTokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> P { get; } = new(
             name: "p")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> PresencePenalty { get; } = new(
             name: "presencePenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ReasoningEffort?> ReasoningEffort { get; } = new(
             name: "reasoningEffort")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormatV2?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Chatv2RequestSafetyMode?> SafetyMode { get; } = new(
             name: "safetyMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> StopSequences { get; } = new(
             name: "stopSequences")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> StrictTools { get; } = new(
             name: "strictTools")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Chatv2RequestToolChoice?> ToolChoice { get; } = new(
             name: "toolChoice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolV2>?> Tools { get; } = new(
             name: "tools")
         {
-            Description = "",
+            Description = @"",
         };
         public Chatv2Command(G.IApi client) : base(
             name: "chatv2",
             description: @"Generates a text response to a user message and streams it down, token by token. To learn how to use the Chat API with streaming follow our [Text Generation guides](https://docs.cohere.com/v2/docs/chat-api).
 
-Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
-")
+Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.")
         {
             _client = client;
 

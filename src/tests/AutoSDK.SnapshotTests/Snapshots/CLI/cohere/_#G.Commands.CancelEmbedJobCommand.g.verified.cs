@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public CancelEmbedJobCommand(G.IApi client) : base(
             name: "cancel",

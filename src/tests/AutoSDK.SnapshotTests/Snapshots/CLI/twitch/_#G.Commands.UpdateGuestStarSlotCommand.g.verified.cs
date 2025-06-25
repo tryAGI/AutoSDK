@@ -24,31 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SourceSlotId { get; } = new(
             name: "sourceSlotId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DestinationSlotId { get; } = new(
             name: "destinationSlotId")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateGuestStarSlotCommand(G.IApi client) : base(
             name: "update",

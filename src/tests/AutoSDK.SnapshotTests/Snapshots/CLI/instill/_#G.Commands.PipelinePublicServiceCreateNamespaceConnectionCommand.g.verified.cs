@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> IntegrationId { get; } = new(
             name: "integrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.Method> Method { get; } = new(
             name: "method")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object> Setup { get; } = new(
             name: "setup")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Scopes { get; } = new(
             name: "scopes")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Identity { get; } = new(
             name: "identity")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> OAuthAccessDetails { get; } = new(
             name: "oAuthAccessDetails")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceCreateNamespaceConnectionCommand(G.IApi client) : base(
             name: "pipeline",

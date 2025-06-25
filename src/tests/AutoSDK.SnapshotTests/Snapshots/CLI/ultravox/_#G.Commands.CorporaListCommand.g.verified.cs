@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
         public CorporaListCommand(G.IApi client) : base(
             name: "corpora",

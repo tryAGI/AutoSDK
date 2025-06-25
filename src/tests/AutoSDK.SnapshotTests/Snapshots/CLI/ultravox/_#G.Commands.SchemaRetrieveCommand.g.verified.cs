@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<global::G.SchemaRetrieveFormat?> Format { get; } = new(
             name: "format")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.SchemaRetrieveLang?> Lang { get; } = new(
             name: "lang")
         {
-            Description = "",
+            Description = @"",
         };
         public SchemaRetrieveCommand(G.IApi client) : base(
             name: "schema",

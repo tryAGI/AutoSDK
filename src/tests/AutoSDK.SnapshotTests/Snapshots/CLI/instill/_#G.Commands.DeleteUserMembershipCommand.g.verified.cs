@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteUserMembershipCommand(G.IApi client) : base(

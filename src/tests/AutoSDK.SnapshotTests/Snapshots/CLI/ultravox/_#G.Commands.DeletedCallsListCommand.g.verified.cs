@@ -30,55 +30,55 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DurationMax { get; } = new(
             name: "durationMax")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DurationMin { get; } = new(
             name: "durationMin")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> FromDate { get; } = new(
             name: "fromDate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Search { get; } = new(
             name: "search")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> ToDate { get; } = new(
             name: "toDate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = "",
+            Description = @"",
         };
         public DeletedCallsListCommand(G.IApi client) : base(
             name: "deleted",

@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteCatalogFileCommand(G.IApi client) : base(

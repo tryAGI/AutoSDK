@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public AppPublicServiceListAppsCommand(G.IApi client) : base(

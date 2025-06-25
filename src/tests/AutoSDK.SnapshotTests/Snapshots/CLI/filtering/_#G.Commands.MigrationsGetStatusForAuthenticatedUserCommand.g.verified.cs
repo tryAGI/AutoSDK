@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsGetStatusForAuthenticatedUserCommand(G.IApi client) : base(
             name: "migrations",

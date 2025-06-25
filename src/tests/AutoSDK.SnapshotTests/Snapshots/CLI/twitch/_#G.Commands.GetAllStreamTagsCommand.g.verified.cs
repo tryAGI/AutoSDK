@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> TagId { get; } = new(
             name: "tagId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public GetAllStreamTagsCommand(G.IApi client) : base(
             name: "get",

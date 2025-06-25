@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>> Input { get; } = new(
             name: "input")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserAgent { get; } = new(
             name: "userAgent")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.OpenAIEmbeddingsInEncodingFormat?> EncodingFormat { get; } = new(
             name: "encodingFormat")
         {
-            Description = "",
+            Description = @"",
         };
         public OpenaiEmbeddingsV1OpenaiEmbeddingsPostCommand(G.IApi client) : base(
             name: "openai",

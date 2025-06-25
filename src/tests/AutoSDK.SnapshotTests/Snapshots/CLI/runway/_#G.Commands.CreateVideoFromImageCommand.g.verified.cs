@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<global::G.CreateVideoFromImageXRunwayVersion> XRunwayVersion { get; } = new(
             name: "xRunwayVersion")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PromptImage { get; } = new(
             name: "promptImage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CreateVideoFromImageRequestModel> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PromptText { get; } = new(
             name: "promptText")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Watermark { get; } = new(
             name: "watermark")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Duration { get; } = new(
             name: "duration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CreateVideoFromImageRequestRatio?> Ratio { get; } = new(
             name: "ratio")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateVideoFromImageCommand(G.IApi client) : base(
             name: "create",

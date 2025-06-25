@@ -47,169 +47,168 @@ namespace G
         private global::System.CommandLine.Argument<double> FrequencyPenalty { get; } = new(
             name: "frequencyPenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> K { get; } = new(
             name: "k")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MaxInputTokens { get; } = new(
             name: "maxInputTokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MaxTokens { get; } = new(
             name: "maxTokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> P { get; } = new(
             name: "p")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> PresencePenalty { get; } = new(
             name: "presencePenalty")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> StopSequences { get; } = new(
             name: "stopSequences")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ChatAccepts?> Accepts { get; } = new(
             name: "accepts")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.Message>?> ChatHistory { get; } = new(
             name: "chatHistory")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ChatRequestCitationQuality?> CitationQuality { get; } = new(
             name: "citationQuality")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ChatConnector>?> Connectors { get; } = new(
             name: "connectors")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ChatDocument>?> Documents { get; } = new(
             name: "documents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ForceSingleStep { get; } = new(
             name: "forceSingleStep")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Preamble { get; } = new(
             name: "preamble")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ChatRequestPromptTruncation?> PromptTruncation { get; } = new(
             name: "promptTruncation")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ChatRequestSafetyMode?> SafetyMode { get; } = new(
             name: "safetyMode")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> SearchQueriesOnly { get; } = new(
             name: "searchQueriesOnly")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolResult>?> ToolResults { get; } = new(
             name: "toolResults")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.Tool>?> Tools { get; } = new(
             name: "tools")
         {
-            Description = "",
+            Description = @"",
         };
         public ChatCommand(G.IApi client) : base(
             name: "chat",
             description: @"Generates a text response to a user message.
-To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
-")
+To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).")
         {
             _client = client;
 

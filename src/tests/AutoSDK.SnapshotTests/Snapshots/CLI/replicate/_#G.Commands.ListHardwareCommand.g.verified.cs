@@ -37,8 +37,7 @@ The response will be a JSON array of hardware objects:
     {""name"": ""Nvidia A40 GPU"", ""sku"": ""gpu-a40-small""},
     {""name"": ""Nvidia A40 (Large) GPU"", ""sku"": ""gpu-a40-large""},
 ]
-```
-")
+```")
         {
             _client = client;
 

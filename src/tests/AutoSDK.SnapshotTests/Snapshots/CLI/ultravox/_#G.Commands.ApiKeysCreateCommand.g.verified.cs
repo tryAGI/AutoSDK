@@ -22,13 +22,13 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> ExpiryDate { get; } = new(
             name: "expiryDate")
         {
-            Description = "",
+            Description = @"",
         };
         public ApiKeysCreateCommand(G.IApi client) : base(
             name: "api",

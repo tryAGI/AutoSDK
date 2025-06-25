@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> HasDelay { get; } = new(
             name: "hasDelay")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateClipCommand(G.IApi client) : base(
             name: "create",

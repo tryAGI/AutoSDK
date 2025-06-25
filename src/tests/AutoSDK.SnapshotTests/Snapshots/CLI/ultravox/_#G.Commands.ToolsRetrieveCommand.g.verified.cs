@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> ToolId { get; } = new(
             name: "toolId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ToolsRetrieveCommand(G.IApi client) : base(

@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.CreatePollBodyChoice>> Choices { get; } = new(
             name: "choices")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> Duration { get; } = new(
             name: "duration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ChannelPointsVotingEnabled { get; } = new(
             name: "channelPointsVotingEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> ChannelPointsPerVote { get; } = new(
             name: "channelPointsPerVote")
         {
-            Description = "",
+            Description = @"",
         };
         public CreatePollCommand(G.IApi client) : base(
             name: "create",

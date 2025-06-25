@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxInstances { get; } = new(
             name: "maxInstances")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MinInstances { get; } = new(
             name: "minInstances")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateDeploymentsCommand(G.IApi client) : base(
             name: "update",
@@ -99,8 +99,7 @@ The response will be a JSON object describing the deployment:
 }
 ```
 
-Updating any deployment properties will increment the `number` field of the `current_release`.
-")
+Updating any deployment properties will increment the `number` field of the `current_release`.")
         {
             _client = client;
 

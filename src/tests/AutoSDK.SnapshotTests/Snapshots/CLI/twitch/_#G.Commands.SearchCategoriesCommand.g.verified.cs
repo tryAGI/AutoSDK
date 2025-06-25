@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Query { get; } = new(
             name: "query")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public SearchCategoriesCommand(G.IApi client) : base(
             name: "search",

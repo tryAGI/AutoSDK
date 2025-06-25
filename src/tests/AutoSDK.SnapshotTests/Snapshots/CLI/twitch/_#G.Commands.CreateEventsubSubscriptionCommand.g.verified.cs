@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<global::G.CreateEventSubSubscriptionBodyType> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object> Condition { get; } = new(
             name: "condition")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.CreateEventSubSubscriptionBodyTransport> Transport { get; } = new(
             name: "transport")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CreateEventsubSubscriptionCommand(G.IApi client) : base(

@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsCancelImportCommand(G.IApi client) : base(

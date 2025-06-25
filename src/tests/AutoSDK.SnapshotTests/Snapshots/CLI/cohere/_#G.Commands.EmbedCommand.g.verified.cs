@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.EmbeddingType>> EmbeddingTypes { get; } = new(
             name: "embeddingTypes")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Texts { get; } = new(
             name: "texts")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.EmbedRequestTruncate> Truncate { get; } = new(
             name: "truncate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Images { get; } = new(
             name: "images")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.EmbedInputType?> InputType { get; } = new(
             name: "inputType")
         {
-            Description = "",
+            Description = @"",
         };
         public EmbedCommand(G.IApi client) : base(
             name: "embed",

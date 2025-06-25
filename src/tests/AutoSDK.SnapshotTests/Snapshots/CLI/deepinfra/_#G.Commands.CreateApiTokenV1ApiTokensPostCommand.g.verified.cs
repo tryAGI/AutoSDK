@@ -22,13 +22,13 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateApiTokenV1ApiTokensPostCommand(G.IApi client) : base(
             name: "create",

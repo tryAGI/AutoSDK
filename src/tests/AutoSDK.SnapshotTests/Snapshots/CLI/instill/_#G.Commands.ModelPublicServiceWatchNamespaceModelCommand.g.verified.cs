@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ModelPublicServiceWatchNamespaceModelCommand(G.IApi client) : base(

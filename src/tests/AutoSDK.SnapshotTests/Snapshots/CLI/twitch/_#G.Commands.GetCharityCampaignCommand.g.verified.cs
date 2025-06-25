@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetCharityCampaignCommand(G.IApi client) : base(

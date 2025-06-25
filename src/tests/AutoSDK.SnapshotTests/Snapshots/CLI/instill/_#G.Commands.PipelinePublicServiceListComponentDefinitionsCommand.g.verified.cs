@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceListComponentDefinitionsView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceListComponentDefinitionsCommand(G.IApi client) : base(
             name: "pipeline",

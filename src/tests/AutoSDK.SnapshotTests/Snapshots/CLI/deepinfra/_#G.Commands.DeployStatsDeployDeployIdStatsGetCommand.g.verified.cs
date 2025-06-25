@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> DeployId { get; } = new(
             name: "deployId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> From { get; } = new(
             name: "from")
         {
-            Description = "",
+            Description = @"start of period, unix ts or 'now-5h', supported units s(ec), m(min), h(our), d(ay), w(eek), M(onth)",
         };
 
         private global::System.CommandLine.Option<string?> To { get; } = new(
             name: "to")
         {
-            Description = "",
+            Description = @"end of period, unix ts or now-relative, check from, defaults to now",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployStatsDeployDeployIdStatsGetCommand(G.IApi client) : base(
             name: "deploy",

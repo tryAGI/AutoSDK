@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<int> ShardCount { get; } = new(
             name: "shardCount")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CreateConduitsCommand(G.IApi client) : base(

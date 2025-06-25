@@ -30,61 +30,63 @@ namespace G
         private global::System.CommandLine.Argument<global::G.Model> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Prompt { get; } = new(
             name: "prompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MaxTokensToSample { get; } = new(
             name: "maxTokensToSample")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> StopSequences { get; } = new(
             name: "stopSequences")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> TopP { get; } = new(
             name: "topP")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> TopK { get; } = new(
             name: "topK")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Metadata?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Stream { get; } = new(
             name: "stream")
         {
-            Description = "",
+            Description = @"",
         };
         public CompletePostCommand(G.IApi client) : base(
             name: "complete",

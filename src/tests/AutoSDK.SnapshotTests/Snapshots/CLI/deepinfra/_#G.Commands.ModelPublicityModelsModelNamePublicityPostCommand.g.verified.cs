@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> Public { get; } = new(
             name: "@public")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelPublicityModelsModelNamePublicityPostCommand(G.IApi client) : base(
             name: "model",

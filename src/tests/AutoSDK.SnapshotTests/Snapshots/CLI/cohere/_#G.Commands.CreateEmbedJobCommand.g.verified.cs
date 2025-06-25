@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> DatasetId { get; } = new(
             name: "datasetId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.EmbedInputType> InputType { get; } = new(
             name: "inputType")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EmbeddingType>?> EmbeddingTypes { get; } = new(
             name: "embeddingTypes")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.CreateEmbedJobRequestTruncate?> Truncate { get; } = new(
             name: "truncate")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateEmbedJobCommand(G.IApi client) : base(
             name: "create",

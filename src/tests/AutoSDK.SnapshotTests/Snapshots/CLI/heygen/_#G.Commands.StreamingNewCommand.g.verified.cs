@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Option<string?> Quality { get; } = new(
             name: "quality")
         {
-            Description = "",
+            Description = @"",
         };
         public StreamingNewCommand(G.IApi client) : base(
             name: "streaming",

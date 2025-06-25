@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SecretId { get; } = new(
             name: "secretId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PipelinePublicServiceGetNamespaceSecretCommand(G.IApi client) : base(

@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<string?> Source { get; } = new(
             name: "source")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BaseModel { get; } = new(
             name: "baseModel")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployGpuAvailabilityDeployLlmGpuAvailabilityGetCommand(G.IApi client) : base(
             name: "deploy",

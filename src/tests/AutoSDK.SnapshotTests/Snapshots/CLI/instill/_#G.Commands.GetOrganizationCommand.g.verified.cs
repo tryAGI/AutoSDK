@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetOrganizationView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public GetOrganizationCommand(G.IApi client) : base(
             name: "get",

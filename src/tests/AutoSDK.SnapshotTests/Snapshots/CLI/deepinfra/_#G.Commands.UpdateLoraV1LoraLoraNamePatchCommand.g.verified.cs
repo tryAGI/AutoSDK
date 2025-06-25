@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> LoraName { get; } = new(
             name: "loraName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Private { get; } = new(
             name: "@private")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateLoraV1LoraLoraNamePatchCommand(G.IApi client) : base(
             name: "update",

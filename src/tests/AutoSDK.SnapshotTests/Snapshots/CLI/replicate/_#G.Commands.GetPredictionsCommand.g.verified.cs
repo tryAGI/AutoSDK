@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> PredictionId { get; } = new(
             name: "predictionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetPredictionsCommand(G.IApi client) : base(
@@ -81,8 +81,7 @@ All input parameters, output values, and logs are automatically removed after an
 
 You must save a copy of any data or files in the output if you'd like to continue using them. The `output` key will still be present, but it's value will be `null` after the output has been removed.
 
-Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
-")
+Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.")
         {
             _client = client;
 

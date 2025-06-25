@@ -73,8 +73,7 @@ The response will be a paginated JSON array of training objects, sorted with the
 
 `urls` will be a convenience object that can be used to construct new API requests for the given training.
 
-`version` will be the unique ID of model version used to create the training.
-")
+`version` will be the unique ID of model version used to create the training.")
         {
             _client = client;
 

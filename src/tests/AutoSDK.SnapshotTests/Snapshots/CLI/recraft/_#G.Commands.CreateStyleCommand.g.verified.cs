@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<byte[]>> Images { get; } = new(
             name: "images")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.ImageStyle> Style { get; } = new(
             name: "style")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CreateStyleCommand(G.IApi client) : base(

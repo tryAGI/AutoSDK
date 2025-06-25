@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetUserMembershipView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public GetUserMembershipCommand(G.IApi client) : base(
             name: "get",

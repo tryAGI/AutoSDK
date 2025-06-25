@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ReleaseId { get; } = new(
             name: "releaseId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<object>?> Inputs { get; } = new(
             name: "inputs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TriggerData>?> Data { get; } = new(
             name: "data")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceTriggerAsyncNamespacePipelineReleaseCommand(G.IApi client) : base(
             name: "pipeline",

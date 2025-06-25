@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> AgentId { get; } = new(
             name: "agentId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public AgentsRetrieveCommand(G.IApi client) : base(

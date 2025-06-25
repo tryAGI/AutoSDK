@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Content { get; } = new(
             name: "content")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Role { get; } = new(
             name: "role")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.MessageType> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"",
         };
         public AppPublicServiceCreateMessageCommand(G.IApi client) : base(
             name: "app",

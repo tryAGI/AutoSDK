@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> WebhookId { get; } = new(
             name: "webhookId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Url { get; } = new(
             name: "url")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Secrets { get; } = new(
             name: "secrets")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EventsEnum>?> Events { get; } = new(
             name: "events")
         {
-            Description = "",
+            Description = @"",
         };
         public WebhooksPartialUpdateCommand(G.IApi client) : base(
             name: "webhooks",

@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Input { get; } = new(
             name: "input")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Voice { get; } = new(
             name: "voice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.TtsResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Speed { get; } = new(
             name: "speed")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> ExtraBody { get; } = new(
             name: "extraBody")
         {
-            Description = "",
+            Description = @"",
         };
         public OpenaiAudioSpeechV1OpenaiAudioSpeechPostCommand(G.IApi client) : base(
             name: "openai",

@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Question { get; } = new(
             name: "question")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> TopK { get; } = new(
             name: "topK")
         {
-            Description = "",
+            Description = @"",
         };
         public QuestionAnsweringCommand(G.IApi client) : base(
             name: "question",

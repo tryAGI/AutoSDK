@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Login { get; } = new(
             name: "login")
         {
-            Description = "",
+            Description = @"",
         };
         public GetUsersCommand(G.IApi client) : base(
             name: "get",

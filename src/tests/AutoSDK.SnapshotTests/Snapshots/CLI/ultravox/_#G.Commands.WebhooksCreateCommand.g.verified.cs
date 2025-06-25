@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Url { get; } = new(
             name: "url")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.EventsEnum>> Events { get; } = new(
             name: "events")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Secrets { get; } = new(
             name: "secrets")
         {
-            Description = "",
+            Description = @"",
         };
         public WebhooksCreateCommand(G.IApi client) : base(
             name: "webhooks",

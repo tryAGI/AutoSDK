@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetChannelGuestStarSettingsCommand(G.IApi client) : base(

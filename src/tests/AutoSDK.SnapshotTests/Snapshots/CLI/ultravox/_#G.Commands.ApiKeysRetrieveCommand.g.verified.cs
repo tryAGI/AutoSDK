@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiKeyPrefix { get; } = new(
             name: "apiKeyPrefix")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ApiKeysRetrieveCommand(G.IApi client) : base(

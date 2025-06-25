@@ -59,8 +59,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
 - An image uploaded by the model author.
 - The output file of the example prediction, if the model author has not set a cover image.
 - The input file of the example prediction, if the model author has not set a cover image and the example prediction has no output file.
-- A generic fallback image.
-")
+- A generic fallback image.")
         {
             _client = client;
 

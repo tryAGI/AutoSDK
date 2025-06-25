@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> DeployId { get; } = new(
             name: "deployId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.ScaleSettings> Settings { get; } = new(
             name: "settings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployUpdateDeployDeployIdPutCommand(G.IApi client) : base(
             name: "deploy",

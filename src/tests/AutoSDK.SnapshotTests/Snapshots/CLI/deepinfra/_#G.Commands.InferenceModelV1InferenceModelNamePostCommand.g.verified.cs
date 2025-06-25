@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"model version to run inference against",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserAgent { get; } = new(
             name: "userAgent")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public InferenceModelV1InferenceModelNamePostCommand(G.IApi client) : base(
             name: "inference",

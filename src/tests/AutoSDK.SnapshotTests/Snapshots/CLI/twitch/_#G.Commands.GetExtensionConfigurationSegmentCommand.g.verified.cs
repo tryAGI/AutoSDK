@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.GetExtensionConfigurationSegmentSegment> Segment { get; } = new(
             name: "segment")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
         public GetExtensionConfigurationSegmentCommand(G.IApi client) : base(
             name: "get",

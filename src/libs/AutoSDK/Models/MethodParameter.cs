@@ -23,6 +23,7 @@ public record struct MethodParameter(
     string? DefaultValue,
     bool IsDeprecated,
     string Summary,
+    string Description,
     string ConverterType,
     ImmutableArray<PropertyData> Properties)
 {
@@ -42,6 +43,7 @@ public record struct MethodParameter(
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
+        Description: string.Empty,
         ConverterType: string.Empty,
         Properties: []);
 
@@ -78,7 +80,7 @@ public record struct MethodParameter(
         // {
         //     isRequired = false;
         // }
-        
+
         return new MethodParameter(
             Id: parameterName,
             Name: name,
@@ -95,6 +97,7 @@ public record struct MethodParameter(
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
+            Description: context.Schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
             Properties: context.ClassData?.Properties ?? []);
     }

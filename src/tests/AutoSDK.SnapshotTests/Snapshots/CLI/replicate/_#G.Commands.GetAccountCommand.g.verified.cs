@@ -39,8 +39,7 @@ The response will be a JSON object describing the account:
   ""name"": ""Acme Corp, Inc."",
   ""github_url"": ""https://github.com/acme"",
 }
-```
-")
+```")
         {
             _client = client;
 

@@ -31,61 +31,61 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Language { get; } = new(
             name: "language")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosPeriod?> Period { get; } = new(
             name: "period")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosSort?> Sort { get; } = new(
             name: "sort")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetVideosType?> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Before { get; } = new(
             name: "before")
         {
-            Description = "",
+            Description = @"",
         };
         public GetVideosCommand(G.IApi client) : base(
             name: "get",

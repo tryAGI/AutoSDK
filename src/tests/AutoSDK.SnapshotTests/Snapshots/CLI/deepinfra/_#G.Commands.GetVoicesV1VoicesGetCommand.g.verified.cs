@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public GetVoicesV1VoicesGetCommand(G.IApi client) : base(
             name: "get",

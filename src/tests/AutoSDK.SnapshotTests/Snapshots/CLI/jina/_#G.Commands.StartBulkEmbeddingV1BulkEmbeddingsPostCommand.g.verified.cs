@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> File { get; } = new(
             name: "file")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Filename { get; } = new(
             name: "filename")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Email { get; } = new(
             name: "email")
         {
-            Description = "",
+            Description = @"",
         };
         public StartBulkEmbeddingV1BulkEmbeddingsPostCommand(G.IApi client) : base(
             name: "start",

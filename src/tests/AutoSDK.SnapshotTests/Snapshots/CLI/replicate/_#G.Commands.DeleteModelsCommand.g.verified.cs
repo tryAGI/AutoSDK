@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteModelsCommand(G.IApi client) : base(
@@ -48,8 +48,7 @@ curl -s -X DELETE \
   https://api.replicate.com/v1/models/replicate/hello-world
 ```
 
-The response will be an empty 204, indicating the model has been deleted.
-")
+The response will be an empty 204, indicating the model has been deleted.")
         {
             _client = client;
 

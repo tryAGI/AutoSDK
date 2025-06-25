@@ -34,85 +34,85 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<long> Cost { get; } = new(
             name: "cost")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Prompt { get; } = new(
             name: "prompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsEnabled { get; } = new(
             name: "isEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BackgroundColor { get; } = new(
             name: "backgroundColor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsUserInputRequired { get; } = new(
             name: "isUserInputRequired")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsMaxPerStreamEnabled { get; } = new(
             name: "isMaxPerStreamEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxPerStream { get; } = new(
             name: "maxPerStream")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsMaxPerUserPerStreamEnabled { get; } = new(
             name: "isMaxPerUserPerStreamEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxPerUserPerStream { get; } = new(
             name: "maxPerUserPerStream")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsGlobalCooldownEnabled { get; } = new(
             name: "isGlobalCooldownEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> GlobalCooldownSeconds { get; } = new(
             name: "globalCooldownSeconds")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ShouldRedemptionsSkipRequestQueue { get; } = new(
             name: "shouldRedemptionsSkipRequestQueue")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateCustomRewardsCommand(G.IApi client) : base(
             name: "create",

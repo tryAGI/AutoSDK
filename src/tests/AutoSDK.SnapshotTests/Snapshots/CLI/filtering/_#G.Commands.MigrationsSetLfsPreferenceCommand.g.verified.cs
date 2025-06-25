@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.MigrationsSetLfsPreferenceRequestUseLfs> UseLfs { get; } = new(
             name: "useLfs")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsSetLfsPreferenceCommand(G.IApi client) : base(

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EmbedContentRequest>?> Requests { get; } = new(
             name: "requests")
         {
-            Description = "",
+            Description = @"",
         };
         public BatchEmbedContentsCommand(G.IApi client) : base(
             name: "batch",

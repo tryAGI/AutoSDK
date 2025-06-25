@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateStreamMarkerCommand(G.IApi client) : base(
             name: "create",

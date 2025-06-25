@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> MimeType { get; } = new(
             name: "mimeType")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CorporaUploadsCreateCommand(G.IApi client) : base(

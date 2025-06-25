@@ -23,25 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ExtensionVersion { get; } = new(
             name: "extensionVersion")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> RequiredConfiguration { get; } = new(
             name: "requiredConfiguration")
         {
-            Description = "",
+            Description = @"",
         };
 
         public SetExtensionRequiredConfigurationCommand(G.IApi client) : base(

@@ -21,14 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> RequestId { get; } = new(
             name: "requestId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PurgeLemurRequestDataCommand(G.IApi client) : base(
             name: "purge",
             description: @"Delete the data for a previously submitted LeMUR request.
-The LLM response data, as well as any context provided in the original request will be removed.
-")
+The LLM response data, as well as any context provided in the original request will be removed.")
         {
             _client = client;
 

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Words { get; } = new(
             name: "words")
         {
-            Description = "",
+            Description = @"",
         };
 
         public WordSearchCommand(G.IApi client) : base(

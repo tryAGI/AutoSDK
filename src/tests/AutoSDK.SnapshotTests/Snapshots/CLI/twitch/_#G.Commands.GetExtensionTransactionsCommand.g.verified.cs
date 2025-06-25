@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public GetExtensionTransactionsCommand(G.IApi client) : base(
             name: "get",

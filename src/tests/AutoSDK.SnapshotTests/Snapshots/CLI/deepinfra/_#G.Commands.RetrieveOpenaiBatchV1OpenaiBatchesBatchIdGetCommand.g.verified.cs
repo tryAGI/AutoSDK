@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> BatchId { get; } = new(
             name: "batchId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public RetrieveOpenaiBatchV1OpenaiBatchesBatchIdGetCommand(G.IApi client) : base(
             name: "retrieve",

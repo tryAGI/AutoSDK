@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<int?> PerPage { get; } = new(
             name: "perPage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsListForAuthenticatedUserCommand(G.IApi client) : base(
             name: "migrations",

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
-            Description = "",
+            Description = @"",
         };
 
         public AddBlockedTermCommand(G.IApi client) : base(

@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AggregationWindow { get; } = new(
             name: "aggregationWindow")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Start { get; } = new(
             name: "start")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Stop { get; } = new(
             name: "stop")
         {
-            Description = "",
+            Description = @"",
         };
         public ListCreditConsumptionChartRecordsCommand(G.IApi client) : base(
             name: "list",

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public GetVoiceV1VoicesVoiceIdGetCommand(G.IApi client) : base(
             name: "get",

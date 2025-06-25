@@ -23,13 +23,13 @@ namespace G
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
         public GetTeamsCommand(G.IApi client) : base(
             name: "get",

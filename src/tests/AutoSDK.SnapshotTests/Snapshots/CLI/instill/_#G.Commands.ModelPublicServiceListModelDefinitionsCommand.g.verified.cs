@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PageToken { get; } = new(
             name: "pageToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ModelPublicServiceListModelDefinitionsView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelPublicServiceListModelDefinitionsCommand(G.IApi client) : base(
             name: "model",

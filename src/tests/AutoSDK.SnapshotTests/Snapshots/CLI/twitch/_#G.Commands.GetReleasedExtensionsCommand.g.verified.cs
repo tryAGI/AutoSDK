@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ExtensionVersion { get; } = new(
             name: "extensionVersion")
         {
-            Description = "",
+            Description = @"",
         };
         public GetReleasedExtensionsCommand(G.IApi client) : base(
             name: "get",

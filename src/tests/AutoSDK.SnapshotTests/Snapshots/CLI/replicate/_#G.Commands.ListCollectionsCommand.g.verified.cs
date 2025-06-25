@@ -41,8 +41,7 @@ The response will be a paginated JSON list of collection objects:
     }
   ]
 }
-```
-")
+```")
         {
             _client = client;
 

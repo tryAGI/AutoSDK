@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsGetArchiveForAuthenticatedUserCommand(G.IApi client) : base(

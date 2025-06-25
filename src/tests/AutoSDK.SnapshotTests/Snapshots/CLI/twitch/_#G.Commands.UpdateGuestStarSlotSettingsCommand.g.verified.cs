@@ -27,49 +27,49 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SlotId { get; } = new(
             name: "slotId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsAudioEnabled { get; } = new(
             name: "isAudioEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsVideoEnabled { get; } = new(
             name: "isVideoEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsLive { get; } = new(
             name: "isLive")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Volume { get; } = new(
             name: "volume")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateGuestStarSlotSettingsCommand(G.IApi client) : base(
             name: "update",

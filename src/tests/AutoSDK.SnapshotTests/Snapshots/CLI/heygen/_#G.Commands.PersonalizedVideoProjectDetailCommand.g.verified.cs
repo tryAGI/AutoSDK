@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
         public PersonalizedVideoProjectDetailCommand(G.IApi client) : base(
             name: "personalized",

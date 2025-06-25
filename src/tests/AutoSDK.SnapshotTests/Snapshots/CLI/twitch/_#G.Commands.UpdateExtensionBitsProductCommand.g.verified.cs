@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> Sku { get; } = new(
             name: "sku")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.UpdateExtensionBitsProductBodyCost> Cost { get; } = new(
             name: "cost")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> DisplayName { get; } = new(
             name: "displayName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> InDevelopment { get; } = new(
             name: "inDevelopment")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Expiration { get; } = new(
             name: "expiration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsBroadcast { get; } = new(
             name: "isBroadcast")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateExtensionBitsProductCommand(G.IApi client) : base(
             name: "update",

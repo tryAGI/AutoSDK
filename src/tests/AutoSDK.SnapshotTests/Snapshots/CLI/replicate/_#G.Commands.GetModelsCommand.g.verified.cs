@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetModelsCommand(G.IApi client) : base(
@@ -68,8 +68,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
 
 The `default_example` object is a [prediction](#predictions.get) created with this model.
 
-The `latest_version` object is the model's most recently pushed [version](#models.versions.get).
-")
+The `latest_version` object is the model's most recently pushed [version](#models.versions.get).")
         {
             _client = client;
 

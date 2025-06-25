@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public GetDatasetUsageCommand(G.IApi client) : base(
             name: "get",

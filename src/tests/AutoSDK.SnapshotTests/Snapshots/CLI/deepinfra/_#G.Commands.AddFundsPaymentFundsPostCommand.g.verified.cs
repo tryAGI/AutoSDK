@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<int> Amount { get; } = new(
             name: "amount")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
         public AddFundsPaymentFundsPostCommand(G.IApi client) : base(
             name: "add",

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> Image { get; } = new(
             name: "image")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Imagename { get; } = new(
             name: "imagename")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = "",
+            Description = @"",
         };
         public RemoveBackgroundCommand(G.IApi client) : base(
             name: "remove",

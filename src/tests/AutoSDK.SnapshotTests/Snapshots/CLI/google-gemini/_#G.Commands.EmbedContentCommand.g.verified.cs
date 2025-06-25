@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Content?> Content { get; } = new(
             name: "content")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.EmbedContentRequestTaskType?> TaskType { get; } = new(
             name: "taskType")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> OutputDimensionality { get; } = new(
             name: "outputDimensionality")
         {
-            Description = "",
+            Description = @"",
         };
         public EmbedContentCommand(G.IApi client) : base(
             name: "embed",

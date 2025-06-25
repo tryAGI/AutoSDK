@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiToken { get; } = new(
             name: "apiToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> From { get; } = new(
             name: "from")
         {
-            Description = "",
+            Description = @"start of period, YYYY.MM or current(-N) format",
         };
 
         private global::System.CommandLine.Option<string?> To { get; } = new(
             name: "to")
         {
-            Description = "",
+            Description = @"end of period (if missing a single month marked by from is return), same format as from",
         };
 
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
         public UsageApiTokenPaymentUsageApiTokenGetCommand(G.IApi client) : base(
             name: "usage",

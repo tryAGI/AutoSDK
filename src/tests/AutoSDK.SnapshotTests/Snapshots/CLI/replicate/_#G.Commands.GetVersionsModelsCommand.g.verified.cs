@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> VersionId { get; } = new(
             name: "versionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetVersionsModelsCommand(G.IApi client) : base(
@@ -89,8 +89,7 @@ The `openapi_schema.components.schemas.Output` property for the [replicate/hello
 }
 ```
 
-For more details, see the docs on [Cog's supported input and output types](https://github.com/replicate/cog/blob/75b7802219e7cd4cee845e34c4c22139558615d4/docs/python.md#input-and-output-types)
-")
+For more details, see the docs on [Cog's supported input and output types](https://github.com/replicate/cog/blob/75b7802219e7cd4cee845e34c4c22139558615d4/docs/python.md#input-and-output-types)")
         {
             _client = client;
 

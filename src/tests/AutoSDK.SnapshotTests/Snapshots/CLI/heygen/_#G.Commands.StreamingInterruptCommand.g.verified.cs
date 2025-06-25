@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Option<string?> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
         public StreamingInterruptCommand(G.IApi client) : base(
             name: "streaming",

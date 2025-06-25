@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public AccountRateLimitV1MeRateLimitGetCommand(G.IApi client) : base(
             name: "account",

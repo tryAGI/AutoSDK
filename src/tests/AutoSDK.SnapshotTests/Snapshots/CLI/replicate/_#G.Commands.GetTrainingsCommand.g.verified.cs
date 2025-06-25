@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TrainingId { get; } = new(
             name: "trainingId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetTrainingsCommand(G.IApi client) : base(
@@ -77,8 +77,7 @@ In the case of success, `output` will be an object containing the output of the 
 
 In the case of failure, `error` will contain the error encountered during the training.
 
-Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.
-")
+Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.")
         {
             _client = client;
 

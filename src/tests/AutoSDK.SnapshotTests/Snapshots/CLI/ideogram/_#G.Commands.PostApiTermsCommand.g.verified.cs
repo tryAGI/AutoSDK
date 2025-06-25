@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TermsId { get; } = new(
             name: "termsId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PostApiTermsCommand(G.IApi client) : base(

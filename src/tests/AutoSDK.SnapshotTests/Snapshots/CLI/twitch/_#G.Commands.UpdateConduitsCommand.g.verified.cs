@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> ShardCount { get; } = new(
             name: "shardCount")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UpdateConduitsCommand(G.IApi client) : base(

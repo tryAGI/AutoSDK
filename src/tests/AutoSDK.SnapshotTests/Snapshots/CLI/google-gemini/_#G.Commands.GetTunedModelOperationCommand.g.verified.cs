@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> TunedModelId { get; } = new(
             name: "tunedModelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> OperationId { get; } = new(
             name: "operationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetTunedModelOperationCommand(G.IApi client) : base(

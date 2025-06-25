@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> ChunkUids { get; } = new(
             name: "chunkUids")
         {
-            Description = "",
+            Description = @"",
         };
         public ListChunksCommand(G.IApi client) : base(
             name: "list",

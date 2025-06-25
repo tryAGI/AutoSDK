@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> WebhookId { get; } = new(
             name: "webhookId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public WebhooksDestroyCommand(G.IApi client) : base(

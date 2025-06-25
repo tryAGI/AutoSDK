@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<string?> ReturnUrl { get; } = new(
             name: "returnUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
         public BillingPortalPaymentBillingPortalGetCommand(G.IApi client) : base(
             name: "billing",

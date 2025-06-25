@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ObjectUid { get; } = new(
             name: "objectUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> UrlExpireDays { get; } = new(
             name: "urlExpireDays")
         {
-            Description = "",
+            Description = @"",
         };
         public GetObjectDownloadURLCommand(G.IApi client) : base(
             name: "get",

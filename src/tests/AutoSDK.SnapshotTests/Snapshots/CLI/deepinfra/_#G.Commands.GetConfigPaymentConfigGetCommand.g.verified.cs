@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> Session { get; } = new(
             name: "session")
         {
-            Description = "",
+            Description = @"",
         };
         public GetConfigPaymentConfigGetCommand(G.IApi client) : base(
             name: "get",

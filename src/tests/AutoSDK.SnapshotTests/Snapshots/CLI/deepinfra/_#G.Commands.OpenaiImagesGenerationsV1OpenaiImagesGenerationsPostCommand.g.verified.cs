@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserAgent { get; } = new(
             name: "userAgent")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public OpenaiImagesGenerationsV1OpenaiImagesGenerationsPostCommand(G.IApi client) : base(
             name: "openai",

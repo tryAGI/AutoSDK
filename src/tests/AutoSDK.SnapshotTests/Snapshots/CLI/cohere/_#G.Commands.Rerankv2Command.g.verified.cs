@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Documents { get; } = new(
             name: "documents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Query { get; } = new(
             name: "query")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxTokensPerDoc { get; } = new(
             name: "maxTokensPerDoc")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> TopN { get; } = new(
             name: "topN")
         {
-            Description = "",
+            Description = @"",
         };
         public Rerankv2Command(G.IApi client) : base(
             name: "rerankv2",

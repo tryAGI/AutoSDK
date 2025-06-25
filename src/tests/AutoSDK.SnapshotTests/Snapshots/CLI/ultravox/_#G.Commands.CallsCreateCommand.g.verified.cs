@@ -45,145 +45,145 @@ namespace G
         private global::System.CommandLine.Option<bool?> EnableGreetingPrompt { get; } = new(
             name: "enableGreetingPrompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> PriorCallId { get; } = new(
             name: "priorCallId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> SystemPrompt { get; } = new(
             name: "systemPrompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<float?> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Voice { get; } = new(
             name: "voice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1ExternalVoice?> ExternalVoice { get; } = new(
             name: "externalVoice")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LanguageHint { get; } = new(
             name: "languageHint")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1Message>?> InitialMessages { get; } = new(
             name: "initialMessages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> JoinTimeout { get; } = new(
             name: "joinTimeout")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> MaxDuration { get; } = new(
             name: "maxDuration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> TimeExceededMessage { get; } = new(
             name: "timeExceededMessage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1TimedMessage>?> InactivityMessages { get; } = new(
             name: "inactivityMessages")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.UltravoxV1SelectedTool>?> SelectedTools { get; } = new(
             name: "selectedTools")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallMedium?> Medium { get; } = new(
             name: "medium")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> RecordingEnabled { get; } = new(
             name: "recordingEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartCallRequestFirstSpeaker?> FirstSpeaker { get; } = new(
             name: "firstSpeaker")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> TranscriptOptional { get; } = new(
             name: "transcriptOptional")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1StartCallRequestInitialOutputMedium?> InitialOutputMedium { get; } = new(
             name: "initialOutputMedium")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1VadSettings?> VadSettings { get; } = new(
             name: "vadSettings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1FirstSpeakerSettings?> FirstSpeakerSettings { get; } = new(
             name: "firstSpeakerSettings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> ExperimentalSettings { get; } = new(
             name: "experimentalSettings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> InitialState { get; } = new(
             name: "initialState")
         {
-            Description = "",
+            Description = @"",
         };
         public CallsCreateCommand(G.IApi client) : base(
             name: "calls",

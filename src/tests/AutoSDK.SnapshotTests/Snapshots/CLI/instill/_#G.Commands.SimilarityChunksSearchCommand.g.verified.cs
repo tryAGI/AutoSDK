@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> TextPrompt { get; } = new(
             name: "textPrompt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<long?> TopK { get; } = new(
             name: "topK")
         {
-            Description = "",
+            Description = @"",
         };
         public SimilarityChunksSearchCommand(G.IApi client) : base(
             name: "similarity",

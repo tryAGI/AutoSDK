@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetSourceFileCommand(G.IApi client) : base(

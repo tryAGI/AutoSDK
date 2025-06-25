@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Option<string?> ProjectId { get; } = new(
             name: "projectId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.PersonalizedVideoAddContactRequestVariablesListItem>?> VariablesList { get; } = new(
             name: "variablesList")
         {
-            Description = "",
+            Description = @"",
         };
         public PersonalizedVideoAddContactCommand(G.IApi client) : base(
             name: "personalized",

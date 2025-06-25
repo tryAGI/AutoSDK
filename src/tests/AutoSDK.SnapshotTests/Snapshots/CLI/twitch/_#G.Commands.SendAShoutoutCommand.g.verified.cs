@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> FromBroadcasterId { get; } = new(
             name: "fromBroadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ToBroadcasterId { get; } = new(
             name: "toBroadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public SendAShoutoutCommand(G.IApi client) : base(

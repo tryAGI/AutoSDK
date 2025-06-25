@@ -24,31 +24,31 @@ namespace G
         private global::System.CommandLine.Argument<string> ExtensionId { get; } = new(
             name: "extensionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SetExtensionConfigurationSegmentBodySegment> Segment { get; } = new(
             name: "segment")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Content { get; } = new(
             name: "content")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
         public SetExtensionConfigurationSegmentCommand(G.IApi client) : base(
             name: "set",

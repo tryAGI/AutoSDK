@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetModelCommand(G.IApi client) : base(

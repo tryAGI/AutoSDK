@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsGetStatusForOrgCommand(G.IApi client) : base(
             name: "migrations",

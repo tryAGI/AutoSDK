@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CheckNamespaceCommand(G.IApi client) : base(

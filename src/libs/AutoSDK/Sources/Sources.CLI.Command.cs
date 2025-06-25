@@ -49,7 +49,7 @@ namespace {endPoint.Settings.Namespace}
         private {newModifierIfRequired(x)}global::System.CommandLine.Argument<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
-            Description = """",
+            Description = @""{x.Description.ClearForCSharp()}"",
         }};
 ").Inject()}
 
@@ -57,13 +57,13 @@ namespace {endPoint.Settings.Namespace}
         private {newModifierIfRequired(x)}global::System.CommandLine.Option<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
-            Description = """",
+            Description = @""{x.Description.ClearForCSharp()}"",
         }};
 ").Inject()}
     
         public {endPoint.NotAsyncMethodName}Command({clientType} client) : base(
             name: ""{endPoint.CliAction}"",
-            description: @""{endPoint.Description.Replace("\"", "\"\"")}"")
+            description: @""{endPoint.Description.ClearForCSharp()}"")
         {{
             _client = client;
 

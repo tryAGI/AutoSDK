@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteDeploymentsCommand(G.IApi client) : base(
@@ -46,8 +46,7 @@ curl -s -X DELETE \
   https://api.replicate.com/v1/deployments/acme/my-app-image-generator
 ```
 
-The response will be an empty 204, indicating the deployment has been deleted.
-")
+The response will be an empty 204, indicating the deployment has been deleted.")
         {
             _client = client;
 

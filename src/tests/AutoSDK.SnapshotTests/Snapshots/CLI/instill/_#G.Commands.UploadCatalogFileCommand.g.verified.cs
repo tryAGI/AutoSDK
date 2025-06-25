@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.FileType> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Content { get; } = new(
             name: "content")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> ExternalMetadata { get; } = new(
             name: "externalMetadata")
         {
-            Description = "",
+            Description = @"",
         };
         public UploadCatalogFileCommand(G.IApi client) : base(
             name: "upload",

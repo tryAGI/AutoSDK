@@ -34,85 +34,85 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object> Recipe { get; } = new(
             name: "recipe")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Sharing?> Sharing { get; } = new(
             name: "sharing")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Readme { get; } = new(
             name: "readme")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Tags { get; } = new(
             name: "tags")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> RawRecipe { get; } = new(
             name: "rawRecipe")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> SourceUrl { get; } = new(
             name: "sourceUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DocumentationUrl { get; } = new(
             name: "documentationUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> License { get; } = new(
             name: "license")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ProfileImage { get; } = new(
             name: "profileImage")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceUpdateNamespacePipelineCommand(G.IApi client) : base(
             name: "pipeline",

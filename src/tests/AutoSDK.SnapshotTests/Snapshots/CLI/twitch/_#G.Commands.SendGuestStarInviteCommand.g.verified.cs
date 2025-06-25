@@ -23,25 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public SendGuestStarInviteCommand(G.IApi client) : base(

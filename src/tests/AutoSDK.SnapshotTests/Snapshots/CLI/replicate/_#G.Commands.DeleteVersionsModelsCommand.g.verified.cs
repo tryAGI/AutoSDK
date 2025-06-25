@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> VersionId { get; } = new(
             name: "versionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteVersionsModelsCommand(G.IApi client) : base(
@@ -58,8 +58,7 @@ curl -s -X DELETE \
   https://api.replicate.com/v1/models/replicate/hello-world/versions/5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa
 ```
 
-The response will be an empty 202, indicating the deletion request has been accepted. It might take a few minutes to be processed.
-")
+The response will be an empty 202, indicating the deletion request has been accepted. It might take a few minutes to be processed.")
         {
             _client = client;
 

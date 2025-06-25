@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> Locale { get; } = new(
             name: "locale")
         {
-            Description = "",
+            Description = @"",
         };
         public GetContentClassificationLabelsCommand(G.IApi client) : base(
             name: "get",

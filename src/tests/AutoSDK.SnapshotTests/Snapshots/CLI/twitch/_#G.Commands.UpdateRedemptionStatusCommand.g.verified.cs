@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> RewardId { get; } = new(
             name: "rewardId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.UpdateRedemptionStatusBodyStatus> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UpdateRedemptionStatusCommand(G.IApi client) : base(

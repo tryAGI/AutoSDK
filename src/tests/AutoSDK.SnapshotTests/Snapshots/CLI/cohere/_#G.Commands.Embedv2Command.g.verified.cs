@@ -30,61 +30,61 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.EmbeddingType>> EmbeddingTypes { get; } = new(
             name: "embeddingTypes")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.EmbedInputType> InputType { get; } = new(
             name: "inputType")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Texts { get; } = new(
             name: "texts")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.Embedv2RequestTruncate> Truncate { get; } = new(
             name: "truncate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Images { get; } = new(
             name: "images")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EmbedInput>?> Inputs { get; } = new(
             name: "inputs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
             name: "maxTokens")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> OutputDimension { get; } = new(
             name: "outputDimension")
         {
-            Description = "",
+            Description = @"",
         };
         public Embedv2Command(G.IApi client) : base(
             name: "embedv2",

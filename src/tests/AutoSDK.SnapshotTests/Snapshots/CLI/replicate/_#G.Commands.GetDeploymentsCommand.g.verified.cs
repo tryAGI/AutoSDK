@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> DeploymentOwner { get; } = new(
             name: "deploymentOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> DeploymentName { get; } = new(
             name: "deploymentName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetDeploymentsCommand(G.IApi client) : base(
@@ -67,8 +67,7 @@ The response will be a JSON object describing the deployment:
     }
   }
 }
-```
-")
+```")
         {
             _client = client;
 

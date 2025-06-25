@@ -26,43 +26,43 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> VersionId { get; } = new(
             name: "versionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Destination { get; } = new(
             name: "destination")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object> Input { get; } = new(
             name: "input")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Webhook { get; } = new(
             name: "webhook")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>?> WebhookEventsFilter { get; } = new(
             name: "webhookEventsFilter")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateTrainingsCommand(G.IApi client) : base(
             name: "create",
@@ -115,8 +115,7 @@ As models can take several minutes or more to train, the result will not be avai
 
 When a training completes, it creates a new [version](https://replicate.com/docs/how-does-replicate-work#terminology) of the model at the specified destination.
 
-To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).
-")
+To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).")
         {
             _client = client;
 

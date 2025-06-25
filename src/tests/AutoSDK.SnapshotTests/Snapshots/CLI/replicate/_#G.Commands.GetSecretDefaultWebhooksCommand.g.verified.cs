@@ -36,8 +36,7 @@ The response will be a JSON object with a `key` property:
 {
   ""key"": ""...""
 }
-```
-")
+```")
         {
             _client = client;
 

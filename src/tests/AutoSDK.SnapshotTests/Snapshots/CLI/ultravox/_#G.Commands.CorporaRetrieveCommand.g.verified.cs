@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CorporaRetrieveCommand(G.IApi client) : base(

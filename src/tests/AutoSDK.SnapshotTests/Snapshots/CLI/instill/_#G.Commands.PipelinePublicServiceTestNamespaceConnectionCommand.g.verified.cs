@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ConnectionId { get; } = new(
             name: "connectionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PipelinePublicServiceTestNamespaceConnectionCommand(G.IApi client) : base(

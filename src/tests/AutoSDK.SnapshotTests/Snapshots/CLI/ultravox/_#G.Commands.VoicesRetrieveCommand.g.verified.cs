@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public VoicesRetrieveCommand(G.IApi client) : base(

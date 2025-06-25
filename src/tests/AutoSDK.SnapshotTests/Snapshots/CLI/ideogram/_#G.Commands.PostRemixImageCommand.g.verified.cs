@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<global::G.InitialImageRequest> ImageRequest { get; } = new(
             name: "imageRequest")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<byte[]> ImageFile { get; } = new(
             name: "imageFile")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ImageFilename { get; } = new(
             name: "imageFilename")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PostRemixImageCommand(G.IApi client) : base(
@@ -43,8 +43,7 @@ namespace G
             description: @"A request to remix a provided image with Ideogram. Input images
 are cropped to the chosen aspect ratio before being remixed.
 
-Supported image formats include JPEG, PNG, and WEBP
-")
+Supported image formats include JPEG, PNG, and WEBP")
         {
             _client = client;
 

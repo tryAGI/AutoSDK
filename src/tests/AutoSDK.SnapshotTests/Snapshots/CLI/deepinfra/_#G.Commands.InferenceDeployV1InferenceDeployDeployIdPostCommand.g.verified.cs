@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> DeployId { get; } = new(
             name: "deployId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserAgent { get; } = new(
             name: "userAgent")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public InferenceDeployV1InferenceDeployDeployIdPostCommand(G.IApi client) : base(
             name: "inference",

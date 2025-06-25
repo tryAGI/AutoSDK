@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelOwner { get; } = new(
             name: "modelOwner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ListVersionsModelsCommand(G.IApi client) : base(
@@ -55,8 +55,7 @@ The response will be a JSON array of model version objects, sorted with the most
     }
   ]
 }
-```
-")
+```")
         {
             _client = client;
 

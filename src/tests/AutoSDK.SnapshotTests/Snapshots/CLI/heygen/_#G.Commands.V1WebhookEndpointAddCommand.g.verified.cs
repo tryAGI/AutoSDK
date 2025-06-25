@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<object>?> Events { get; } = new(
             name: "events")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Url { get; } = new(
             name: "url")
         {
-            Description = "",
+            Description = @"",
         };
         public V1WebhookEndpointAddCommand(G.IApi client) : base(
             name: "v1webhook",

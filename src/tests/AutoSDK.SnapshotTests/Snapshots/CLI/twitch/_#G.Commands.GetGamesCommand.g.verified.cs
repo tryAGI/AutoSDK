@@ -24,19 +24,19 @@ namespace G
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> IgdbId { get; } = new(
             name: "igdbId")
         {
-            Description = "",
+            Description = @"",
         };
         public GetGamesCommand(G.IApi client) : base(
             name: "get",

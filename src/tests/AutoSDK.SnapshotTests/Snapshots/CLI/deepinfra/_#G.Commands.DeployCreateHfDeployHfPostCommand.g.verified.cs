@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Task { get; } = new(
             name: "task")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployCreateHfDeployHfPostCommand(G.IApi client) : base(
             name: "deploy",

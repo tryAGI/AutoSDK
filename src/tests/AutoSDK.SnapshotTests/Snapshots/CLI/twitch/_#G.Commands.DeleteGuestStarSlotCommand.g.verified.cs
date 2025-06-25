@@ -25,37 +25,37 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> GuestId { get; } = new(
             name: "guestId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> SlotId { get; } = new(
             name: "slotId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ShouldReinviteGuest { get; } = new(
             name: "shouldReinviteGuest")
         {
-            Description = "",
+            Description = @"",
         };
         public DeleteGuestStarSlotCommand(G.IApi client) : base(
             name: "delete",

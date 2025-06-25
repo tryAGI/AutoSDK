@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Ownership { get; } = new(
             name: "ownership")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Search { get; } = new(
             name: "search")
         {
-            Description = "",
+            Description = @"",
         };
         public ToolsListCommand(G.IApi client) : base(
             name: "tools",

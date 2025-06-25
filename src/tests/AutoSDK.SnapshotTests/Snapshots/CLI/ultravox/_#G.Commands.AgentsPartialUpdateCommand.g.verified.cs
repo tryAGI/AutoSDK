@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> AgentId { get; } = new(
             name: "agentId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CallTemplate?> CallTemplate { get; } = new(
             name: "callTemplate")
         {
-            Description = "",
+            Description = @"",
         };
         public AgentsPartialUpdateCommand(G.IApi client) : base(
             name: "agents",

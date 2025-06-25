@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> AfterTokenRedirect { get; } = new(
             name: "afterTokenRedirect")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public OAuthAuthorizeConnectorCommand(G.IApi client) : base(
             name: "oauth",

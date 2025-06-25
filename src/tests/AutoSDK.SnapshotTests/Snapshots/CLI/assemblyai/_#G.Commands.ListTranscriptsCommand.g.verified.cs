@@ -27,43 +27,42 @@ namespace G
         private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.TranscriptStatus?> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"The status of your transcript. Possible values are queued, processing, completed, or error.",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> CreatedOn { get; } = new(
             name: "createdOn")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> BeforeId { get; } = new(
             name: "beforeId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Guid?> AfterId { get; } = new(
             name: "afterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ThrottledOnly { get; } = new(
             name: "throttledOnly")
         {
-            Description = "",
+            Description = @"",
         };
         public ListTranscriptsCommand(G.IApi client) : base(
             name: "list",
             description: @"Retrieve a list of transcripts you created.
-Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
-")
+Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.")
         {
             _client = client;
 

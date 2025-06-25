@@ -28,55 +28,55 @@ namespace G
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.ModelsCreateRequestVisibility> Visibility { get; } = new(
             name: "visibility")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> CoverImageUrl { get; } = new(
             name: "coverImageUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> GithubUrl { get; } = new(
             name: "githubUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LicenseUrl { get; } = new(
             name: "licenseUrl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> PaperUrl { get; } = new(
             name: "paperUrl")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateModelsCommand(G.IApi client) : base(
             name: "create",
@@ -111,8 +111,7 @@ The response will be a model object in the following format:
 }
 ```
 
-Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.
-")
+Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.")
         {
             _client = client;
 

@@ -28,43 +28,43 @@ namespace G
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Email { get; } = new(
             name: "email")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsBusinessAccount { get; } = new(
             name: "isBusinessAccount")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Company { get; } = new(
             name: "company")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Website { get; } = new(
             name: "website")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> DisplayName { get; } = new(
             name: "displayName")
         {
-            Description = "",
+            Description = @"",
         };
         public AccountUpdateDetailsV1MePatchCommand(G.IApi client) : base(
             name: "account",

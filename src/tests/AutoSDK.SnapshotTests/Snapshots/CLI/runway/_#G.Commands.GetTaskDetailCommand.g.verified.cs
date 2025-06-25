@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::G.GetTaskDetailXRunwayVersion> XRunwayVersion { get; } = new(
             name: "xRunwayVersion")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetTaskDetailCommand(G.IApi client) : base(

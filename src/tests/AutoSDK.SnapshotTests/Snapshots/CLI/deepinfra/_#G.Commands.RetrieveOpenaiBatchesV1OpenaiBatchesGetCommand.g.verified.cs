@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public RetrieveOpenaiBatchesV1OpenaiBatchesGetCommand(G.IApi client) : base(
             name: "retrieve",

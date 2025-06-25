@@ -24,25 +24,25 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.Settings> Settings { get; } = new(
             name: "settings")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Status?> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateFinetunedModelCommand(G.IApi client) : base(
             name: "create",

@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> AgentId { get; } = new(
             name: "agentId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public AgentsDestroyCommand(G.IApi client) : base(

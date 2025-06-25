@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetUserChatColorCommand(G.IApi client) : base(

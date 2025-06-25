@@ -333,4 +333,32 @@ public static class StringExtensions
 
         return text.Substring(0, end);
     }
+
+    /// <summary>
+    /// Returns the last “word” of a string.
+    /// A word = sequence of letters after the last:
+    ///   • space / tab / underscore, or
+    ///   • Camel/Pascal‑case boundary (lower → upper).
+    /// </summary>
+    public static string LastWord(this string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return string.Empty;
+
+        int start = 0;
+
+        // 1️⃣ Skip obvious separators working from the end
+        int sep = text!.LastIndexOfAny([' ', '\t', '_']);
+        if (sep >= 0) start = sep + 1;
+
+        // 2️⃣ Detect camel/pascal boundary (…aB… → break before B)
+        for (int i = text.Length - 1; i > start; i--)
+            if (char.IsUpper(text[i]) && char.IsLower(text[i - 1]))
+            {
+                start = i;
+                break;
+            }
+
+        return text.Substring(start);
+    }
 }

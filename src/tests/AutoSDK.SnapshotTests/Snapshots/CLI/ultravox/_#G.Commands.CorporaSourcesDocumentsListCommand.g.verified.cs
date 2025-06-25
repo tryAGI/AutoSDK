@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> SourceId { get; } = new(
             name: "sourceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
         public CorporaSourcesDocumentsListCommand(G.IApi client) : base(
             name: "corpora",

@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Option<string?> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Text { get; } = new(
             name: "text")
         {
-            Description = "",
+            Description = @"",
         };
         public StreamingTaskCommand(G.IApi client) : base(
             name: "streaming",

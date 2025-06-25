@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"delete a particular version, pass 'ALL' to wipe everything",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelDeleteModelsModelNameDeleteCommand(G.IApi client) : base(
             name: "model",

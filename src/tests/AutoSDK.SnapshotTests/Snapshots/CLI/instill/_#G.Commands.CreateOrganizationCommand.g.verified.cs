@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::G.OrganizationProfile> Profile { get; } = new(
             name: "profile")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateOrganizationCommand(G.IApi client) : base(
             name: "create",

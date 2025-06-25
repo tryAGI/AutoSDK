@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Option<string?> VideoId { get; } = new(
             name: "videoId")
         {
-            Description = "",
+            Description = @"",
         };
         public V1VideoDeleteCommand(G.IApi client) : base(
             name: "v1video",

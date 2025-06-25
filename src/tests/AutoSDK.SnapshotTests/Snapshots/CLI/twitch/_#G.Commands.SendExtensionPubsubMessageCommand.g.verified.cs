@@ -23,25 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTargetItem>> Target { get; } = new(
             name: "target")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsGlobalBroadcast { get; } = new(
             name: "isGlobalBroadcast")
         {
-            Description = "",
+            Description = @"",
         };
         public SendExtensionPubsubMessageCommand(G.IApi client) : base(
             name: "send",

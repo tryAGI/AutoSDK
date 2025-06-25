@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CliVersionCliVersionGetCommand(G.IApi client) : base(

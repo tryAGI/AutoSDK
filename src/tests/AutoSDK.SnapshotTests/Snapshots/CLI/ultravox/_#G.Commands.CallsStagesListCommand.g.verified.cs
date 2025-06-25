@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CallId { get; } = new(
             name: "callId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Cursor { get; } = new(
             name: "cursor")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
         public CallsStagesListCommand(G.IApi client) : base(
             name: "calls",

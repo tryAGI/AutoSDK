@@ -26,31 +26,31 @@ namespace G
         private global::System.CommandLine.Option<string?> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Created { get; } = new(
             name: "created")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UltravoxV1CorpusStats?> Stats { get; } = new(
             name: "stats")
         {
-            Description = "",
+            Description = @"",
         };
         public CorporaCreateCommand(G.IApi client) : base(
             name: "corpora",

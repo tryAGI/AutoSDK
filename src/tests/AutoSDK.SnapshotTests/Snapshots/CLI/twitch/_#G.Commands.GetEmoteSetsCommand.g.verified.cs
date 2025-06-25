@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> EmoteSetId { get; } = new(
             name: "emoteSetId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetEmoteSetsCommand(G.IApi client) : base(

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SubtitleFormat> SubtitleFormat { get; } = new(
             name: "subtitleFormat")
         {
-            Description = "",
+            Description = @"Format of the subtitles",
         };
 
         private global::System.CommandLine.Option<int?> CharsPerCaption { get; } = new(
             name: "charsPerCaption")
         {
-            Description = "",
+            Description = @"",
         };
         public GetSubtitlesCommand(G.IApi client) : base(
             name: "get",

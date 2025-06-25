@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::G.UpdateUserExtensionsBodyData> Data { get; } = new(
             name: "data")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UpdateUserExtensionsCommand(G.IApi client) : base(

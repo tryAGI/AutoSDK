@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<int?> Count { get; } = new(
             name: "count")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetBitsLeaderboardPeriod?> Period { get; } = new(
             name: "period")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> StartedAt { get; } = new(
             name: "startedAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
         public GetBitsLeaderboardCommand(G.IApi client) : base(
             name: "get",

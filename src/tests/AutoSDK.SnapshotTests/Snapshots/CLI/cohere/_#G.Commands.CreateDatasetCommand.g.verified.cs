@@ -33,79 +33,79 @@ namespace G
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.DatasetType> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"The type of the dataset",
         };
 
         private global::System.CommandLine.Argument<byte[]> Data { get; } = new(
             name: "data")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Dataname { get; } = new(
             name: "dataname")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> KeepOriginalFile { get; } = new(
             name: "keepOriginalFile")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> SkipMalformedInput { get; } = new(
             name: "skipMalformedInput")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> KeepFields { get; } = new(
             name: "keepFields")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> OptionalFields { get; } = new(
             name: "optionalFields")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> TextSeparator { get; } = new(
             name: "textSeparator")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> CsvDelimiter { get; } = new(
             name: "csvDelimiter")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<byte[]?> EvalData { get; } = new(
             name: "evalData")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> EvalDataname { get; } = new(
             name: "evalDataname")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateDatasetCommand(G.IApi client) : base(
             name: "create",

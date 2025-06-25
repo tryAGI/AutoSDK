@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ConversationId { get; } = new(
             name: "conversationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> NewConversationId { get; } = new(
             name: "newConversationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LastUsedCatalogUid { get; } = new(
             name: "lastUsedCatalogUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<long?> LastUsedTopK { get; } = new(
             name: "lastUsedTopK")
         {
-            Description = "",
+            Description = @"",
         };
         public AppPublicServiceUpdateConversationCommand(G.IApi client) : base(
             name: "app",

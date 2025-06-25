@@ -24,30 +24,29 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GenerationConfig?> GenerationConfig { get; } = new(
             name: "generationConfig")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.Content>?> Contents { get; } = new(
             name: "contents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.SafetySetting>?> SafetySettings { get; } = new(
             name: "safetySettings")
         {
-            Description = "",
+            Description = @"",
         };
         public GenerateContentCommand(G.IApi client) : base(
             name: "generate",
-            description: @"Generates a response from the model given an input `GenerateContentRequest`.
-")
+            description: @"Generates a response from the model given an input `GenerateContentRequest`.")
         {
             _client = client;
 

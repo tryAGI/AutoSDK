@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.EndPollBodyStatus> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         public EndPollCommand(G.IApi client) : base(

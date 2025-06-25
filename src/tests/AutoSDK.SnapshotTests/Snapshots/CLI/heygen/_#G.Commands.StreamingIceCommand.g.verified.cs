@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Option<global::G.StreamingIceRequestCandidate?> Candidate { get; } = new(
             name: "candidate")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
         public StreamingIceCommand(G.IApi client) : base(
             name: "streaming",

@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TrainingId { get; } = new(
             name: "trainingId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CancelTrainingsCommand(G.IApi client) : base(

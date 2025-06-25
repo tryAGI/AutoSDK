@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> VcsUsername { get; } = new(
             name: "vcsUsername")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> VcsPassword { get; } = new(
             name: "vcsPassword")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.MigrationsUpdateImportRequestVcs?> Vcs { get; } = new(
             name: "vcs")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> TfvcProject { get; } = new(
             name: "tfvcProject")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsUpdateImportCommand(G.IApi client) : base(
             name: "migrations",

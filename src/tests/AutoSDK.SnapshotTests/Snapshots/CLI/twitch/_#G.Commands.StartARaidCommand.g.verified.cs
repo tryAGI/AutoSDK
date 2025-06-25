@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<string?> FromBroadcasterId { get; } = new(
             name: "fromBroadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ToBroadcasterId { get; } = new(
             name: "toBroadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
         public StartARaidCommand(G.IApi client) : base(
             name: "start",

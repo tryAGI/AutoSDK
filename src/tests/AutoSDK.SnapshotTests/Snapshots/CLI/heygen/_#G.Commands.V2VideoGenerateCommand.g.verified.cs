@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Option<object?> AspectRatio { get; } = new(
             name: "aspectRatio")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<object?> CallbackId { get; } = new(
             name: "callbackId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.V2VideoGenerateRequestDimension?> Dimension { get; } = new(
             name: "dimension")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Test { get; } = new(
             name: "test")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>?> VideoInputs { get; } = new(
             name: "videoInputs")
         {
-            Description = "",
+            Description = @"",
         };
         public V2VideoGenerateCommand(G.IApi client) : base(
             name: "v2video",

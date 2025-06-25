@@ -25,25 +25,25 @@ namespace G
         private global::System.CommandLine.Option<global::System.DateTime?> LastUseTime { get; } = new(
             name: "lastUseTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Ttl { get; } = new(
             name: "ttl")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> ExpireTime { get; } = new(
             name: "expireTime")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateTokenCommand(G.IApi client) : base(
             name: "create",

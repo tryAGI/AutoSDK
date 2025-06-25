@@ -29,55 +29,55 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Repositories { get; } = new(
             name: "repositories")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> LockRepositories { get; } = new(
             name: "lockRepositories")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeMetadata { get; } = new(
             name: "excludeMetadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeGitData { get; } = new(
             name: "excludeGitData")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeAttachments { get; } = new(
             name: "excludeAttachments")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeReleases { get; } = new(
             name: "excludeReleases")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ExcludeOwnerProjects { get; } = new(
             name: "excludeOwnerProjects")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> OrgMetadataOnly { get; } = new(
             name: "orgMetadataOnly")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsStartForAuthenticatedUserCommand(G.IApi client) : base(
             name: "migrations",

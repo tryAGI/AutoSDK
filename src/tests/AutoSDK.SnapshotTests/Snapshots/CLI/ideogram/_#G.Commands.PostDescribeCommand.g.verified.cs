@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> ImageFile { get; } = new(
             name: "imageFile")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ImageFilename { get; } = new(
             name: "imageFilename")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PostDescribeCommand(G.IApi client) : base(

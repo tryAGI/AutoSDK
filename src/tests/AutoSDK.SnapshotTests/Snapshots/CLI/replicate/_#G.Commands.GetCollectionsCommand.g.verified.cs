@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> CollectionSlug { get; } = new(
             name: "collectionSlug")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetCollectionsCommand(G.IApi client) : base(
@@ -42,8 +42,7 @@ The response will be a collection object with a nested list of the models in tha
   ""description"": ""Upscaling models that create high-quality images from low-quality images."",
   ""models"": [...]
 }
-```
-")
+```")
         {
             _client = client;
 

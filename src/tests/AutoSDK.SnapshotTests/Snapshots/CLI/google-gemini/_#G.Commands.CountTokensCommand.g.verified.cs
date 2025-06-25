@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.Content>?> Contents { get; } = new(
             name: "contents")
         {
-            Description = "",
+            Description = @"",
         };
         public CountTokensCommand(G.IApi client) : base(
             name: "count",

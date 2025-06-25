@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ChunkUid { get; } = new(
             name: "chunkUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Retrievable { get; } = new(
             name: "retrievable")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateChunkCommand(G.IApi client) : base(
             name: "update",

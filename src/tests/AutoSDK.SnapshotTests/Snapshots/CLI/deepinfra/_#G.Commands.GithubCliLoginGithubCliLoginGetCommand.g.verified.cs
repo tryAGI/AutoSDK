@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> LoginId { get; } = new(
             name: "loginId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GithubCliLoginGithubCliLoginGetCommand(G.IApi client) : base(

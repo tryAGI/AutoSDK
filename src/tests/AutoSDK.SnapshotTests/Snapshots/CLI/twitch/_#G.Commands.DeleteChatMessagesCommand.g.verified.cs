@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> MessageId { get; } = new(
             name: "messageId")
         {
-            Description = "",
+            Description = @"",
         };
         public DeleteChatMessagesCommand(G.IApi client) : base(
             name: "delete",

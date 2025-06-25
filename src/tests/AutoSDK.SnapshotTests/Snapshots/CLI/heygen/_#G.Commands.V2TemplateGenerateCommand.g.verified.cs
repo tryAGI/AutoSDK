@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Option<bool?> Caption { get; } = new(
             name: "caption")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.V2TemplateGenerateRequestDimension?> Dimension { get; } = new(
             name: "dimension")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Test { get; } = new(
             name: "test")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.V2TemplateGenerateRequestVariables?> Variables { get; } = new(
             name: "variables")
         {
-            Description = "",
+            Description = @"",
         };
         public V2TemplateGenerateCommand(G.IApi client) : base(
             name: "v2template",

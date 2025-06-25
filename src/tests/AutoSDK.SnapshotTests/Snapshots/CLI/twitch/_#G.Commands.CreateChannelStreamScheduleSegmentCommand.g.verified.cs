@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.DateTime> StartTime { get; } = new(
             name: "startTime")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Timezone { get; } = new(
             name: "timezone")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Duration { get; } = new(
             name: "duration")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsRecurring { get; } = new(
             name: "isRecurring")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> CategoryId { get; } = new(
             name: "categoryId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateChannelStreamScheduleSegmentCommand(G.IApi client) : base(
             name: "create",

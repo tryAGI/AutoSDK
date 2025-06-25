@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<global::G.RechargeSettings?> RechargeSettings { get; } = new(
             name: "rechargeSettings")
         {
-            Description = "",
+            Description = @"",
         };
         public PostApiSubscriptionCommand(G.IApi client) : base(
             name: "post",

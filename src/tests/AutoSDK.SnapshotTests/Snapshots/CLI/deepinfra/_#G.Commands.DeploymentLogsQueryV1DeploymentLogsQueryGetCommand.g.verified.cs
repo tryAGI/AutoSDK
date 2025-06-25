@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> DeployId { get; } = new(
             name: "deployId")
         {
-            Description = "",
+            Description = @"the deploy id to get the logs from",
         };
 
         private global::System.CommandLine.Option<string?> PodName { get; } = new(
             name: "podName")
         {
-            Description = "",
+            Description = @"the pod name to get the logs from",
         };
 
         private global::System.CommandLine.Option<string?> From { get; } = new(
             name: "from")
         {
-            Description = "",
+            Description = @"start of period, in fractional seconds since unix epoch (inclusive)",
         };
 
         private global::System.CommandLine.Option<string?> To { get; } = new(
             name: "to")
         {
-            Description = "",
+            Description = @"end of period, in fractional seconds since unix epoch (exclusive)",
         };
 
         private global::System.CommandLine.Option<int?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"how many items to return at most (default 100, in [1, 1000])",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeploymentLogsQueryV1DeploymentLogsQueryGetCommand(G.IApi client) : base(
             name: "deployment",

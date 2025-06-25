@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(
             name: "organizationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> UpdateMask { get; } = new(
             name: "updateMask")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Role { get; } = new(
             name: "role")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UpdateOrganizationMembershipCommand(G.IApi client) : base(

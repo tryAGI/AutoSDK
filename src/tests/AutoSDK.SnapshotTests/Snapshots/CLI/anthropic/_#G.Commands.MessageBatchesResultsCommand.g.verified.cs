@@ -23,19 +23,23 @@ namespace G
         private global::System.CommandLine.Argument<string> MessageBatchId { get; } = new(
             name: "messageBatchId")
         {
-            Description = "",
+            Description = @"ID of the Message Batch.",
         };
 
         private global::System.CommandLine.Option<string?> AnthropicVersion { get; } = new(
             name: "anthropicVersion")
         {
-            Description = "",
+            Description = @"The version of the Anthropic API you want to use.
+
+Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
 
         private global::System.CommandLine.Option<string?> XApiKey { get; } = new(
             name: "xApiKey")
         {
-            Description = "",
+            Description = @"Your unique API key for authentication.
+
+This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
         };
         public MessageBatchesResultsCommand(G.IApi client) : base(
             name: "message",

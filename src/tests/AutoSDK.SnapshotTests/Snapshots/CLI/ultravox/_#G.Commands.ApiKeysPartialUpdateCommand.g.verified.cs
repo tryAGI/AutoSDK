@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiKeyPrefix { get; } = new(
             name: "apiKeyPrefix")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> Revoked { get; } = new(
             name: "revoked")
         {
-            Description = "",
+            Description = @"",
         };
         public ApiKeysPartialUpdateCommand(G.IApi client) : base(
             name: "api",

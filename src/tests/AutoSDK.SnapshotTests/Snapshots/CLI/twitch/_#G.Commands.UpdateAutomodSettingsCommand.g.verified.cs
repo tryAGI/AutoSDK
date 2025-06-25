@@ -31,67 +31,67 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Aggression { get; } = new(
             name: "aggression")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Bullying { get; } = new(
             name: "bullying")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Disability { get; } = new(
             name: "disability")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Misogyny { get; } = new(
             name: "misogyny")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> OverallLevel { get; } = new(
             name: "overallLevel")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> RaceEthnicityOrReligion { get; } = new(
             name: "raceEthnicityOrReligion")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> SexBasedTerms { get; } = new(
             name: "sexBasedTerms")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> SexualitySexOrGender { get; } = new(
             name: "sexualitySexOrGender")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Swearing { get; } = new(
             name: "swearing")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateAutomodSettingsCommand(G.IApi client) : base(
             name: "update",

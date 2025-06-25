@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<int> ExpiresIn { get; } = new(
             name: "expiresIn")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CreateTemporaryTokenCommand(G.IApi client) : base(

@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<string, global::G.ApiSchemasRankTextDoc>> Query { get; } = new(
             name: "query")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.ApiSchemasRankTextDoc>>> Documents { get; } = new(
             name: "documents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> TopN { get; } = new(
             name: "topN")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ReturnDocuments { get; } = new(
             name: "returnDocuments")
         {
-            Description = "",
+            Description = @"",
         };
         public RankV1RerankPostCommand(G.IApi client) : base(
             name: "rank",

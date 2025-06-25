@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> ConduitId { get; } = new(
             name: "conduitId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public GetConduitShardsCommand(G.IApi client) : base(
             name: "get",

@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Option<string?> EndpointId { get; } = new(
             name: "endpointId")
         {
-            Description = "",
+            Description = @"",
         };
         public V1WebhookEndpointDeleteCommand(G.IApi client) : base(
             name: "v1webhook",

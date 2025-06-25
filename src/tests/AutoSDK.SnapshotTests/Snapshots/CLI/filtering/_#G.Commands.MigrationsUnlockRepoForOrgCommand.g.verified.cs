@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> RepoName { get; } = new(
             name: "repoName")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsUnlockRepoForOrgCommand(G.IApi client) : base(

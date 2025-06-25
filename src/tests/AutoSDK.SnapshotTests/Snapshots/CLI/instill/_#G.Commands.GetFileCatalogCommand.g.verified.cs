@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> CatalogId { get; } = new(
             name: "catalogId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> FileId { get; } = new(
             name: "fileId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> FileUid { get; } = new(
             name: "fileUid")
         {
-            Description = "",
+            Description = @"",
         };
         public GetFileCatalogCommand(G.IApi client) : base(
             name: "get",

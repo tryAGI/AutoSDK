@@ -23,25 +23,25 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.SendChatAnnouncementBodyColor?> Color { get; } = new(
             name: "color")
         {
-            Description = "",
+            Description = @"",
         };
         public SendChatAnnouncementCommand(G.IApi client) : base(
             name: "send",

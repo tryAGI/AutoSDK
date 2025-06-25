@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiToken { get; } = new(
             name: "apiToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ProjectIdOrName { get; } = new(
             name: "projectIdOrName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> IsSensitive { get; } = new(
             name: "isSensitive")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> EnvDevelopment { get; } = new(
             name: "envDevelopment")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> EnvPreview { get; } = new(
             name: "envPreview")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> EnvProduction { get; } = new(
             name: "envProduction")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public ExportApiTokenToVercelV1ApiTokensApiTokenVercelExportPostCommand(G.IApi client) : base(
             name: "export",

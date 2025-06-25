@@ -25,37 +25,37 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsModeratorSendLiveEnabled { get; } = new(
             name: "isModeratorSendLiveEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> SlotCount { get; } = new(
             name: "slotCount")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsBrowserSourceAudioEnabled { get; } = new(
             name: "isBrowserSourceAudioEnabled")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.UpdateChannelGuestStarSettingsBodyGroupLayout?> GroupLayout { get; } = new(
             name: "groupLayout")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> RegenerateBrowserSources { get; } = new(
             name: "regenerateBrowserSources")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateChannelGuestStarSettingsCommand(G.IApi client) : base(
             name: "update",

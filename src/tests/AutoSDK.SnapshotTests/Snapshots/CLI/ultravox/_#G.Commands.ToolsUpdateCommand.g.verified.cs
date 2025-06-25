@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> ToolId { get; } = new(
             name: "toolId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.UltravoxV1BaseToolDefinition> Definition { get; } = new(
             name: "definition")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ToolsUpdateCommand(G.IApi client) : base(

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceGetNamespacePipelineView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceGetNamespacePipelineCommand(G.IApi client) : base(
             name: "pipeline",

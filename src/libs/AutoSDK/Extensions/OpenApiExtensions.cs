@@ -609,6 +609,15 @@ public static class OpenApiExtensions
             .Replace(">", "&gt;");
     }
 
+    public static string ClearForCSharp(this string text)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+
+        return text
+            .Replace("\"", "\"\"")
+            .Trim();
+    }
+
     public static string? GetString(this IOpenApiAny any)
     {
         return any switch

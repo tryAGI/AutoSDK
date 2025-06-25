@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> Hardware { get; } = new(
             name: "hardware")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MaxInstances { get; } = new(
             name: "maxInstances")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MinInstances { get; } = new(
             name: "minInstances")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CreateDeploymentsCommand(G.IApi client) : base(
@@ -105,8 +105,7 @@ The response will be a JSON object describing the deployment:
     }
   }
 }
-```
-")
+```")
         {
             _client = client;
 

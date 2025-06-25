@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CallId { get; } = new(
             name: "callId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> CallStageId { get; } = new(
             name: "callStageId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CallsStagesRetrieveCommand(G.IApi client) : base(

@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> JobId { get; } = new(
             name: "jobId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand(G.IApi client) : base(

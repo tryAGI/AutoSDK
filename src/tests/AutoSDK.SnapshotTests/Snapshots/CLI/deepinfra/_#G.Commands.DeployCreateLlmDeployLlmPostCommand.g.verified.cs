@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.DeployGPUs> Gpu { get; } = new(
             name: "gpu")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> NumGpus { get; } = new(
             name: "numGpus")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxBatchSize { get; } = new(
             name: "maxBatchSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.HFWeights?> Hf { get; } = new(
             name: "hf")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ScaleSettings?> Settings { get; } = new(
             name: "settings")
         {
-            Description = "",
+            Description = @"",
         };
         public DeployCreateLlmDeployLlmPostCommand(G.IApi client) : base(
             name: "deploy",

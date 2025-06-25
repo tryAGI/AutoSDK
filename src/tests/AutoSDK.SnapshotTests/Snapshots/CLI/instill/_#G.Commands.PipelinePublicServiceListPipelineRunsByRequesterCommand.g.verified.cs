@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<string> RequesterId { get; } = new(
             name: "requesterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PageSize { get; } = new(
             name: "pageSize")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> OrderBy { get; } = new(
             name: "orderBy")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Start { get; } = new(
             name: "start")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Stop { get; } = new(
             name: "stop")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceListPipelineRunsByRequesterCommand(G.IApi client) : base(
             name: "pipeline",

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Purpose { get; } = new(
             name: "purpose")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<byte[]>> File { get; } = new(
             name: "file")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public OpenaiFilesV1OpenaiFilesPostCommand(G.IApi client) : base(
             name: "openai",

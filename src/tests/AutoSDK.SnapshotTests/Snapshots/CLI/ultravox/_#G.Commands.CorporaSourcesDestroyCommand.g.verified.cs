@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Guid> CorpusId { get; } = new(
             name: "corpusId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::System.Guid> SourceId { get; } = new(
             name: "sourceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CorporaSourcesDestroyCommand(G.IApi client) : base(

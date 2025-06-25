@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> ApiTokenName { get; } = new(
             name: "apiTokenName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Models { get; } = new(
             name: "models")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> ExpiresDelta { get; } = new(
             name: "expiresDelta")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTimeOffset?> ExpiresAt { get; } = new(
             name: "expiresAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> SpendingLimit { get; } = new(
             name: "spendingLimit")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateScopedJwtV1ScopedJwtPostCommand(G.IApi client) : base(
             name: "create",

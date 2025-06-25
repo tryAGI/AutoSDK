@@ -23,13 +23,13 @@ namespace G
         private global::System.CommandLine.Option<int?> AggregationWindow { get; } = new(
             name: "aggregationWindow")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Filter { get; } = new(
             name: "filter")
         {
-            Description = "",
+            Description = @"",
         };
         public ListPipelineTriggerChartRecordsCommand(G.IApi client) : base(
             name: "list",

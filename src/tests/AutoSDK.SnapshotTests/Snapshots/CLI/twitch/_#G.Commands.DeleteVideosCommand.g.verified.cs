@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         public DeleteVideosCommand(G.IApi client) : base(

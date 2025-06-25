@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> PipelineId { get; } = new(
             name: "pipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ReleaseId { get; } = new(
             name: "releaseId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> TargetNamespaceId { get; } = new(
             name: "targetNamespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> TargetPipelineId { get; } = new(
             name: "targetPipelineId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.Sharing?> Sharing { get; } = new(
             name: "sharing")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceCloneNamespacePipelineReleaseCommand(G.IApi client) : base(
             name: "pipeline",

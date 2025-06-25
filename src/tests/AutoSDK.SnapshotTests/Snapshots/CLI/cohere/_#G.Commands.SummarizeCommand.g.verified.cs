@@ -28,57 +28,56 @@ namespace G
         private global::System.CommandLine.Argument<string> AdditionalCommand { get; } = new(
             name: "additionalCommand")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SummarizeRequestExtractiveness> Extractiveness { get; } = new(
             name: "extractiveness")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SummarizeRequestFormat> Format { get; } = new(
             name: "format")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SummarizeRequestLength> Length { get; } = new(
             name: "length")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<double> Temperature { get; } = new(
             name: "temperature")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public SummarizeCommand(G.IApi client) : base(
             name: "summarize",
             description: @"<Warning>
 This API is marked as ""Legacy"" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.
 </Warning>
-Generates a summary in English for a given text.
-")
+Generates a summary in English for a given text.")
         {
             _client = client;
 

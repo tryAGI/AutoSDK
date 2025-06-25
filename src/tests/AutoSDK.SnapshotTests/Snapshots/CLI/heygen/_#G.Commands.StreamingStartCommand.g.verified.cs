@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Option<global::G.StreamingStartRequestSdp?> Sdp { get; } = new(
             name: "sdp")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> SessionId { get; } = new(
             name: "sessionId")
         {
-            Description = "",
+            Description = @"",
         };
         public StreamingStartCommand(G.IApi client) : base(
             name: "streaming",

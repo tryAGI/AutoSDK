@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public UpdateVoiceV1VoicesVoiceIdEditPostCommand(G.IApi client) : base(
             name: "update",

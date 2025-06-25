@@ -21,13 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<global::G.ImageRequest> ImageRequest { get; } = new(
             name: "imageRequest")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PostGenerateImageCommand(G.IApi client) : base(
             name: "post",
-            description: @"A request to generate an image with Ideogram.
-")
+            description: @"A request to generate an image with Ideogram.")
         {
             _client = client;
 

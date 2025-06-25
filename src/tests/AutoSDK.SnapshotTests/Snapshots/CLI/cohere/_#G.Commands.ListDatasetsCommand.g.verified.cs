@@ -28,43 +28,43 @@ namespace G
         private global::System.CommandLine.Option<string?> DatasetType { get; } = new(
             name: "datasetType")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> Before { get; } = new(
             name: "before")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Limit { get; } = new(
             name: "limit")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> Offset { get; } = new(
             name: "offset")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.DatasetValidationStatus?> ValidationStatus { get; } = new(
             name: "validationStatus")
         {
-            Description = "",
+            Description = @"The validation status of the dataset",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
         public ListDatasetsCommand(G.IApi client) : base(
             name: "list",

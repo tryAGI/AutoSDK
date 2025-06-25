@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> MsgId { get; } = new(
             name: "msgId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<global::G.ManageHeldAutoModMessagesBodyAction> Action { get; } = new(
             name: "action")
         {
-            Description = "",
+            Description = @"",
         };
 
         public ManageHeldAutomodMessagesCommand(G.IApi client) : base(

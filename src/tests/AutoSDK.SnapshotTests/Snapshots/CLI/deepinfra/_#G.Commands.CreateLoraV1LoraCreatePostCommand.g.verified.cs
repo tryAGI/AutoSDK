@@ -26,37 +26,37 @@ namespace G
         private global::System.CommandLine.Argument<string> BaseModel { get; } = new(
             name: "baseModel")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> LoraName { get; } = new(
             name: "loraName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SourceModel> Source { get; } = new(
             name: "source")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> Private { get; } = new(
             name: "@private")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateLoraV1LoraCreatePostCommand(G.IApi client) : base(
             name: "create",

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ContactEmail { get; } = new(
             name: "contactEmail")
         {
-            Description = "",
+            Description = @"",
         };
         public SubmitFeedbackV1FeedbackPostCommand(G.IApi client) : base(
             name: "submit",

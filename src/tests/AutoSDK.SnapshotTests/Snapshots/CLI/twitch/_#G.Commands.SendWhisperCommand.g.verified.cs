@@ -22,19 +22,19 @@ namespace G
         private global::System.CommandLine.Argument<string> FromUserId { get; } = new(
             name: "fromUserId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ToUserId { get; } = new(
             name: "toUserId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
             name: "message")
         {
-            Description = "",
+            Description = @"",
         };
 
         public SendWhisperCommand(G.IApi client) : base(

@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelName { get; } = new(
             name: "modelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.SchemaVariantKey> VariantKey { get; } = new(
             name: "variantKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(
             name: "version")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelSchemaModelsModelNameSchemaVariantKeyGetCommand(G.IApi client) : base(
             name: "model",

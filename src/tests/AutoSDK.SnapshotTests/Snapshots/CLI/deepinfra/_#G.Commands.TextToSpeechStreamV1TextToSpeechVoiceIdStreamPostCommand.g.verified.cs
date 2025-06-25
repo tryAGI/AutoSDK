@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<string> VoiceId { get; } = new(
             name: "voiceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> OutputFormat { get; } = new(
             name: "outputFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XDeepinfraSource { get; } = new(
             name: "xDeepinfraSource")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ModelId { get; } = new(
             name: "modelId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.TtsResponseFormat?> RequestOutputFormat { get; } = new(
             name: "requestOutputFormat")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LanguageCode { get; } = new(
             name: "languageCode")
         {
-            Description = "",
+            Description = @"",
         };
         public TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostCommand(G.IApi client) : base(
             name: "text",

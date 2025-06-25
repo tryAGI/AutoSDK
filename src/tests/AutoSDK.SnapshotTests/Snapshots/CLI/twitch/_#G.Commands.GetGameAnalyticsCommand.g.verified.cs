@@ -27,37 +27,37 @@ namespace G
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.GetGameAnalyticsType?> Type { get; } = new(
             name: "type")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> StartedAt { get; } = new(
             name: "startedAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.DateTime?> EndedAt { get; } = new(
             name: "endedAt")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> First { get; } = new(
             name: "first")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> After { get; } = new(
             name: "after")
         {
-            Description = "",
+            Description = @"",
         };
         public GetGameAnalyticsCommand(G.IApi client) : base(
             name: "get",

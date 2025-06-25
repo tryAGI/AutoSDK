@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> FileUids { get; } = new(
             name: "fileUids")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
         public ProcessCatalogFilesCommand(G.IApi client) : base(
             name: "process",

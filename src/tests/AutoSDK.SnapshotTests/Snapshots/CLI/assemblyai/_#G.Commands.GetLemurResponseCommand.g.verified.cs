@@ -21,13 +21,12 @@ namespace G
         private global::System.CommandLine.Argument<string> RequestId { get; } = new(
             name: "requestId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetLemurResponseCommand(G.IApi client) : base(
             name: "get",
-            description: @"Retrieve a LeMUR response that was previously generated.
-")
+            description: @"Retrieve a LeMUR response that was previously generated.")
         {
             _client = client;
 

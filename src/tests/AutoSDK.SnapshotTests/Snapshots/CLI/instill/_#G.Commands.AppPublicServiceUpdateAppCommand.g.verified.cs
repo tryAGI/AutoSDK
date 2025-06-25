@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(
             name: "namespaceId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> AppId { get; } = new(
             name: "appId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> NewAppId { get; } = new(
             name: "newAppId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> NewDescription { get; } = new(
             name: "newDescription")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> NewTags { get; } = new(
             name: "newTags")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LastAiAssistantAppCatalogUid { get; } = new(
             name: "lastAiAssistantAppCatalogUid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> LastAiAssistantAppTopK { get; } = new(
             name: "lastAiAssistantAppTopK")
         {
-            Description = "",
+            Description = @"",
         };
         public AppPublicServiceUpdateAppCommand(G.IApi client) : base(
             name: "app",

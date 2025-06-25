@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
         public GetUserActiveExtensionsCommand(G.IApi client) : base(
             name: "get",

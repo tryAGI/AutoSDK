@@ -60,8 +60,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
     }
   ]
 }
-```
-")
+```")
         {
             _client = client;
 

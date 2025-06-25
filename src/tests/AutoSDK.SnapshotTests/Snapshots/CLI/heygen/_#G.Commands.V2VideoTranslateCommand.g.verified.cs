@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Option<string?> OutputLanguage { get; } = new(
             name: "outputLanguage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<double?> SpeakerNum { get; } = new(
             name: "speakerNum")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> TranslateAudioOnly { get; } = new(
             name: "translateAudioOnly")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> VideoUrl { get; } = new(
             name: "videoUrl")
         {
-            Description = "",
+            Description = @"",
         };
         public V2VideoTranslateCommand(G.IApi client) : base(
             name: "v2video",

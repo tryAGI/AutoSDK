@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> ModelDefinitionId { get; } = new(
             name: "modelDefinitionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.ModelPublicServiceGetModelDefinitionView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public ModelPublicServiceGetModelDefinitionCommand(G.IApi client) : base(
             name: "model",

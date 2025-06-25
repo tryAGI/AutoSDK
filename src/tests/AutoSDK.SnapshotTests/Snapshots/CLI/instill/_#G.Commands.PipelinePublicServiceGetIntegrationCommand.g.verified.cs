@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> IntegrationId { get; } = new(
             name: "integrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.PipelinePublicServiceGetIntegrationView?> View { get; } = new(
             name: "view")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceGetIntegrationCommand(G.IApi client) : base(
             name: "pipeline",

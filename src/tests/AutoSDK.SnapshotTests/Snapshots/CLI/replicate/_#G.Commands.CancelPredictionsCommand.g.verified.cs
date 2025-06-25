@@ -20,7 +20,7 @@ namespace G
         private global::System.CommandLine.Argument<string> PredictionId { get; } = new(
             name: "predictionId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public CancelPredictionsCommand(G.IApi client) : base(

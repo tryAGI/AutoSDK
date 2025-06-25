@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<string> TranscriptId { get; } = new(
             name: "transcriptId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetTranscriptParagraphsCommand(G.IApi client) : base(

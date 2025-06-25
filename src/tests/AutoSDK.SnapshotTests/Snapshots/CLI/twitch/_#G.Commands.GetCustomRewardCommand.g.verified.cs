@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> OnlyManageableRewards { get; } = new(
             name: "onlyManageableRewards")
         {
-            Description = "",
+            Description = @"",
         };
         public GetCustomRewardCommand(G.IApi client) : base(
             name: "get",

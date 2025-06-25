@@ -23,27 +23,26 @@ namespace G
         private global::System.CommandLine.Argument<global::G.UpscaleInitialImageRequest> ImageRequest { get; } = new(
             name: "imageRequest")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<byte[]> ImageFile { get; } = new(
             name: "imageFile")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ImageFilename { get; } = new(
             name: "imageFilename")
         {
-            Description = "",
+            Description = @"",
         };
 
         public PostUpscaleImageCommand(G.IApi client) : base(
             name: "post",
             description: @"A request to upscale a provided image with Ideogram.
 
-Supported image formats include JPEG, PNG, and WEBP
-")
+Supported image formats include JPEG, PNG, and WEBP")
         {
             _client = client;
 

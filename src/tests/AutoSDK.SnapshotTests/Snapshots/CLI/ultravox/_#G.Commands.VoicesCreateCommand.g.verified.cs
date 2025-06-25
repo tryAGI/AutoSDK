@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<byte[]> File { get; } = new(
             name: "file")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Filename { get; } = new(
             name: "filename")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Argument<string> Name { get; } = new(
             name: "name")
         {
-            Description = "",
+            Description = @"",
         };
 
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
-            Description = "",
+            Description = @"",
         };
         public VoicesCreateCommand(G.IApi client) : base(
             name: "voices",

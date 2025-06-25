@@ -28,49 +28,49 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>>> Documents { get; } = new(
             name: "documents")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Query { get; } = new(
             name: "query")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> MaxChunksPerDoc { get; } = new(
             name: "maxChunksPerDoc")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> RankFields { get; } = new(
             name: "rankFields")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> ReturnDocuments { get; } = new(
             name: "returnDocuments")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> TopN { get; } = new(
             name: "topN")
         {
-            Description = "",
+            Description = @"",
         };
         public RerankCommand(G.IApi client) : base(
             name: "rerank",

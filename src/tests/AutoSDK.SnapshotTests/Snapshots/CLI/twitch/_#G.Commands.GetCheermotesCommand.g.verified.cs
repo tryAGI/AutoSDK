@@ -22,7 +22,7 @@ namespace G
         private global::System.CommandLine.Option<string?> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
         public GetCheermotesCommand(G.IApi client) : base(
             name: "get",

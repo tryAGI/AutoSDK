@@ -21,7 +21,7 @@ namespace G
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public GetChannelInformationCommand(G.IApi client) : base(

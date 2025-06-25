@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> OperationId { get; } = new(
             name: "operationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> InstillRequesterUid { get; } = new(
             name: "instillRequesterUid")
         {
-            Description = "",
+            Description = @"",
         };
         public PipelinePublicServiceGetOperationCommand(G.IApi client) : base(
             name: "pipeline",

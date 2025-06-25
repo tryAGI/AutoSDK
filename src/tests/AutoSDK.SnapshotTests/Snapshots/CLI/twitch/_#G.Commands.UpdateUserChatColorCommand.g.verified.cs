@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> UserId { get; } = new(
             name: "userId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.UpdateUserChatColorColor> Color { get; } = new(
             name: "color")
         {
-            Description = "",
+            Description = @"",
         };
 
         public UpdateUserChatColorCommand(G.IApi client) : base(

@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> TeamId { get; } = new(
             name: "teamId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Origin { get; } = new(
             name: "origin")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> LoginId { get; } = new(
             name: "loginId")
         {
-            Description = "",
+            Description = @"",
         };
         public OktaLoginOktaLoginGetCommand(G.IApi client) : base(
             name: "okta",

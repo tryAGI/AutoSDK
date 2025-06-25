@@ -27,43 +27,43 @@ namespace G
         private global::System.CommandLine.Argument<string> Id { get; } = new(
             name: "id")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Email { get; } = new(
             name: "email")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<bool> NewsletterSubscription { get; } = new(
             name: "newsletterSubscription")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Uid { get; } = new(
             name: "uid")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Role { get; } = new(
             name: "role")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> CookieToken { get; } = new(
             name: "cookieToken")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.OnboardingStatus?> OnboardingStatus { get; } = new(
             name: "onboardingStatus")
         {
-            Description = "",
+            Description = @"",
         };
         public PatchAuthenticatedUserCommand(G.IApi client) : base(
             name: "patch",

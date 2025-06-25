@@ -23,19 +23,19 @@ namespace G
         private global::System.CommandLine.Argument<string> Owner { get; } = new(
             name: "owner")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Repo { get; } = new(
             name: "repo")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Since { get; } = new(
             name: "since")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsGetCommitAuthorsCommand(G.IApi client) : base(
             name: "migrations",

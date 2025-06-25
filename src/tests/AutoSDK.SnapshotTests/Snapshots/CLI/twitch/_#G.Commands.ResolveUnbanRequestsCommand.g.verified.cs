@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> ModeratorId { get; } = new(
             name: "moderatorId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> UnbanRequestId { get; } = new(
             name: "unbanRequestId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<string> Status { get; } = new(
             name: "status")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> ResolutionText { get; } = new(
             name: "resolutionText")
         {
-            Description = "",
+            Description = @"",
         };
         public ResolveUnbanRequestsCommand(G.IApi client) : base(
             name: "resolve",

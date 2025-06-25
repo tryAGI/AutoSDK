@@ -21,13 +21,13 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<int> MigrationId { get; } = new(
             name: "migrationId")
         {
-            Description = "",
+            Description = @"",
         };
 
         public MigrationsDeleteArchiveForOrgCommand(G.IApi client) : base(

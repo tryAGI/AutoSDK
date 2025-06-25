@@ -22,13 +22,13 @@ namespace G
         private global::System.CommandLine.Argument<string> LoraModelName { get; } = new(
             name: "loraModelName")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
         public DeleteLoraModelLoraModelLoraModelNameDeleteCommand(G.IApi client) : base(
             name: "delete",

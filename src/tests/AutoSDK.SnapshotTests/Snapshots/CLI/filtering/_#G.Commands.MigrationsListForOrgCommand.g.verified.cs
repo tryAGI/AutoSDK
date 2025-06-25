@@ -24,25 +24,25 @@ namespace G
         private global::System.CommandLine.Argument<string> Org { get; } = new(
             name: "org")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> PerPage { get; } = new(
             name: "perPage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Page { get; } = new(
             name: "page")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>?> Exclude { get; } = new(
             name: "exclude")
         {
-            Description = "",
+            Description = @"",
         };
         public MigrationsListForOrgCommand(G.IApi client) : base(
             name: "migrations",

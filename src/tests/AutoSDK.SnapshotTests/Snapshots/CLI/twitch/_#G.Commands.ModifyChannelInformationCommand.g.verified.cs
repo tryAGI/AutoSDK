@@ -27,49 +27,49 @@ namespace G
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
             name: "broadcasterId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> GameId { get; } = new(
             name: "gameId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> BroadcasterLanguage { get; } = new(
             name: "broadcasterLanguage")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> Title { get; } = new(
             name: "title")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<int?> Delay { get; } = new(
             name: "delay")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Tags { get; } = new(
             name: "tags")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabel>?> ContentClassificationLabels { get; } = new(
             name: "contentClassificationLabels")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<bool?> IsBrandedContent { get; } = new(
             name: "isBrandedContent")
         {
-            Description = "",
+            Description = @"",
         };
         public ModifyChannelInformationCommand(G.IApi client) : base(
             name: "modify",

@@ -25,31 +25,31 @@ namespace G
         private global::System.CommandLine.Argument<string> InputFileId { get; } = new(
             name: "inputFileId")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<global::G.OpenAIBatchesInEndpoint> Endpoint { get; } = new(
             name: "endpoint")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Argument<object?> Metadata { get; } = new(
             name: "metadata")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(
             name: "xiApiKey")
         {
-            Description = "",
+            Description = @"",
         };
 
         private global::System.CommandLine.Option<global::G.OpenAIBatchesInCompletionWindow> CompletionWindow { get; } = new(
             name: "completionWindow")
         {
-            Description = "",
+            Description = @"",
         };
         public CreateOpenaiBatchV1OpenaiBatchesPostCommand(G.IApi client) : base(
             name: "create",
