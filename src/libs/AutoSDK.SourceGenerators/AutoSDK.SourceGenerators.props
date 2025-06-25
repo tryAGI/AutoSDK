@@ -90,6 +90,10 @@
     <!-- Generates full sdk(all methods/models) -->
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateSdk"/>
+
+    <!-- Generates CLI -->
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateCli"/>
   </ItemGroup>
 
   <ItemGroup>

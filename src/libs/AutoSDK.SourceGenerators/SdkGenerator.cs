@@ -1,5 +1,7 @@
 ﻿using AutoSDK.Generation;
+using AutoSDK.Models;
 using Microsoft.CodeAnalysis;
+using Data = AutoSDK.Generation.Data;
 
 namespace AutoSDK.SourceGenerators;
 
@@ -18,19 +20,27 @@ public class SdkGenerator : IIncrementalGenerator
     {
         var settings = context.DetectSettings();
         settings
-            .SelectAndReportExceptions((x, c) => Sources.Polyfills(x, c)
+            .SelectAndReportExceptions((x, c) => x.GenerateSdk
+                ? Sources.Polyfills(x, c)
+                : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         settings
-            .SelectAndReportExceptions((x, c) => Sources.Exceptions(x, c)
+            .SelectAndReportExceptions((x, c) => x.GenerateSdk
+                ? Sources.Exceptions(x, c)
+                : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         settings
-            .SelectAndReportExceptions((x, c) => Sources.PathBuilder(x, c)
+            .SelectAndReportExceptions((x, c) => x.GenerateSdk
+                ? Sources.PathBuilder(x, c)
+                : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         settings
-            .SelectAndReportExceptions((x, c) => Sources.UnixTimestampJsonConverter(x, c)
+            .SelectAndReportExceptions((x, c) => x.GenerateSdk
+                ? Sources.UnixTimestampJsonConverter(x, c)
+                : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         
