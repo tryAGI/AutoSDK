@@ -47,11 +47,11 @@ namespace G
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GenerateCommand>(services);
+                GenerateGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ManageCommand>(services);
+                ManageGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VisionCommand>(services);
+                VisionGroupCommand>(services);
 
             // Register the main command service as a singleton
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

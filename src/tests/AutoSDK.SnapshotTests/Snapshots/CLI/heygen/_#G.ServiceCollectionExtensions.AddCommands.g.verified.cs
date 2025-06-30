@@ -91,25 +91,25 @@ namespace G
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListCommand>(services);
+                ListGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateVideoAPICommand>(services);
+                CreateVideoAPIGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                TemplateAPICommand>(services);
+                TemplateAPIGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VideoTranslateAPICommand>(services);
+                VideoTranslateAPIGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingAPICommand>(services);
+                StreamingAPIGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhookCommand>(services);
+                WebhookGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                TalkingPhotoCommand>(services);
+                TalkingPhotoGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PersonalizedVideoCommand>(services);
+                PersonalizedVideoGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UserCommand>(services);
+                UserGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AssetCommand>(services);
+                AssetGroupCommand>(services);
 
             // Register the main command service as a singleton
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

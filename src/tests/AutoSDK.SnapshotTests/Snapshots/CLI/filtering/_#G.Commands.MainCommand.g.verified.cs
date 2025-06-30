@@ -7,7 +7,7 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            MigrationCommand command0)
+            MigrationGroupCommand command0)
             : base(
                 description: "CLI tool")
         {

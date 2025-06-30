@@ -63,11 +63,11 @@ namespace G
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageCommand>(services);
+                MessageGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                TextCompletionCommand>(services);
+                TextCompletionGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatcheCommand>(services);
+                MessageBatcheGroupCommand>(services);
 
             // Register the main command service as a singleton
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

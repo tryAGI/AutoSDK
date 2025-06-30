@@ -7,9 +7,9 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            TranscriptCommand command0,
-            LeMURCommand command1,
-            StreamingCommand command2)
+            TranscriptGroupCommand command0,
+            LeMURGroupCommand command1,
+            StreamingGroupCommand command2)
             : base(
                 description: "CLI tool")
         {

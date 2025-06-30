@@ -32,7 +32,7 @@ public class CliGenerator : IIncrementalGenerator
         
         data
             .SelectMany(static (x, _) => x.Methods.GroupBy(x => x.Tag))
-            .SelectAndReportExceptions((x, c) => Sources.TagCommand(x.Key, x.ToImmutableArray(), c)
+            .SelectAndReportExceptions((x, c) => Sources.GroupCommand(x.Key, x.ToImmutableArray(), c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data

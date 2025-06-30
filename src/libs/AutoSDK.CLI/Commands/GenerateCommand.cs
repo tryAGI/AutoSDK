@@ -198,7 +198,7 @@ internal sealed class GenerateCommand : Command
                 }).Concat(data.Methods.GroupBy(x => x.Tag)
                     .SelectMany(x => new []
                     {
-                        Sources.TagCommand(x.Key, x.ToImmutableArray()),
+                        Sources.GroupCommand(x.Key, x.ToImmutableArray()),
                     }))
                 .Concat([Sources.MainCommand(data.Tags)])
                 .Concat([Sources.AddCommands(data.Methods, data.Tags)])

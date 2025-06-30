@@ -7,13 +7,13 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            NamespaceCommand command0,
-            VDPCommand command1,
-            ModelCommand command2,
-            ArtifactCommand command3,
-            AppCommand command4,
-            MetricCommand command5,
-            SubscriptionCommand command6)
+            NamespaceGroupCommand command0,
+            VDPGroupCommand command1,
+            ModelGroupCommand command2,
+            ArtifactGroupCommand command3,
+            AppGroupCommand command4,
+            MetricGroupCommand command5,
+            SubscriptionGroupCommand command6)
             : base(
                 description: "CLI tool")
         {

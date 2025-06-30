@@ -39,7 +39,7 @@ namespace {methods[0].Settings.Namespace}
                 {type}>(services);").Inject()}
 
             // Register grouped command services as singletons
-{tags.Select(x => $"{x.SingularizedName}Command").Distinct().Select((type, i) => @$"
+{tags.Select(x => $"{x.SingularizedName}GroupCommand").Distinct().Select((type, i) => @$"
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 {type}>(services);").Inject()}
 

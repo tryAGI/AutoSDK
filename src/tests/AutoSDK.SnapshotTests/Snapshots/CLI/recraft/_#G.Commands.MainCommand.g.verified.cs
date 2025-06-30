@@ -7,9 +7,9 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            ImageCommand command0,
-            StyleCommand command1,
-            UserCommand command2)
+            ImageGroupCommand command0,
+            StyleGroupCommand command1,
+            UserGroupCommand command2)
             : base(
                 description: "CLI tool")
         {

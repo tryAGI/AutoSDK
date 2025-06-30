@@ -7,17 +7,17 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            AccountCommand command0,
-            AgentCommand command1,
-            ApiKeyCommand command2,
-            CallCommand command3,
-            CorporaCommand command4,
-            DeletedCallCommand command5,
-            ModelCommand command6,
-            SchemaCommand command7,
-            ToolCommand command8,
-            VoiceCommand command9,
-            WebhookCommand command10)
+            AccountGroupCommand command0,
+            AgentGroupCommand command1,
+            ApiKeyGroupCommand command2,
+            CallGroupCommand command3,
+            CorporaGroupCommand command4,
+            DeletedCallGroupCommand command5,
+            ModelGroupCommand command6,
+            SchemaGroupCommand command7,
+            ToolGroupCommand command8,
+            VoiceGroupCommand command9,
+            WebhookGroupCommand command10)
             : base(
                 description: "CLI tool")
         {

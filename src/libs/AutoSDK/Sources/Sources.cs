@@ -56,7 +56,7 @@ public static partial class Sources
             Text: GenerateCommand(endPoint, cancellationToken: cancellationToken));
     }
     
-    public static FileWithName TagCommand(
+    public static FileWithName GroupCommand(
         Tag tag,
         EquatableArray<EndPoint> methods,
         CancellationToken cancellationToken = default)
@@ -67,8 +67,8 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: $"{methods[0].GlobalSettings.Namespace}.Commands.{tag.SingularizedName}Command.g.cs",
-            Text: GenerateTagCommand(tag, methods, cancellationToken: cancellationToken));
+            Name: $"{methods[0].GlobalSettings.Namespace}.Commands.{tag.SingularizedName}GroupCommand.g.cs",
+            Text: GenerateGroupCommand(tag, methods, cancellationToken: cancellationToken));
     }
     
     public static FileWithName MainCommand(
