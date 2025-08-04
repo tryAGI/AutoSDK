@@ -12,7 +12,7 @@
     <PackageReference Include="H.Generators.Extensions" Version="1.24.2" />
     <PackageReference Include="H.Generators.Tests.Extensions" Version="1.24.2" />
     <PackageReference Include="Microsoft.OpenApi" Version="2.0.0" />
-    <PackageReference Include="MSTest" Version="3.9.3" />
+    <PackageReference Include="MSTest" Version="3.10.0" />
     <PackageReference Include="AwesomeAssertions" Version="9.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
