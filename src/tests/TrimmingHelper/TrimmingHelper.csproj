@@ -38,5 +38,8 @@
   <Target Name="ProduceTrimmingWarnings" AfterTargets="Build">
     <CallTarget Targets="Publish"/>
   </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.8" />
+  </ItemGroup>
 
 </Project>
