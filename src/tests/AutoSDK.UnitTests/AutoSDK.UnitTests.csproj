@@ -11,7 +11,7 @@
     </PackageReference>
     <PackageReference Include="MSTest" Version="3.10.4" />
     <PackageReference Include="AwesomeAssertions" Version="9.1.0" />
-    <PackageReference Include="Verify.MSTest" Version="30.13.0" />
+    <PackageReference Include="Verify.MSTest" Version="30.18.0" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
@@ -29,7 +29,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="System.Text.Json" Version="9.0.9" />
   </ItemGroup>
 
