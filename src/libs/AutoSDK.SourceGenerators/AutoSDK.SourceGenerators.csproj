@@ -44,7 +44,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.26" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.27" PrivateAssets="all" />
     <PackageReference Include="System.Collections.Immutable" Version="9.0.9" PrivateAssets="all" />
     <PackageReference Include="System.Text.Json" Version="9.0.9" PrivateAssets="all" />
   </ItemGroup>
