@@ -21,7 +21,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <Compile Remove="Resources\*.cs" />
-    <PackageReference Include="System.CommandLine" Version="2.0.0-rc.1.25451.107" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-rc.2.25502.107" />
     <PackageReference Include="Firecrawl" Version="1.1.1" />
     <PackageReference Include="tryAGI.OpenAI" Version="4.2.0" />
   </ItemGroup>
