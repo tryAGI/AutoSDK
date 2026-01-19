@@ -1,7 +1,7 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Naming.Properties;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Naming.Clients;
 

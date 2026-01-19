@@ -1,6 +1,5 @@
 using System.CommandLine;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 

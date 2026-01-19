@@ -2,15 +2,10 @@ using System.Collections.Immutable;
 using System.Globalization;
 using AutoSDK.Helpers;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Interfaces;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Form;
-using Microsoft.OpenApi.Validations;
+using Microsoft.OpenApi.Reader;
 
 namespace AutoSDK.Extensions;
 
@@ -23,31 +18,28 @@ public static class OpenApiExtensions
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
         
-        if (OpenApi31Support.IsOpenApi31(yamlOrJson))
-        {
-            yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
-            
-            Console.WriteLine("Microsoft.OpenAPI currently doesn't support OpenAPI 3.1.0. Converting to OpenAPI 3.0.3. It may not work correctly.");
-        }
-        
-        var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
+        var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: new OpenApiReaderSettings
         {
             RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
-        }).Read(yamlOrJson, out var diagnostics);
-        if (!settings.IgnoreOpenApiErrors && diagnostics.Errors.Any())
+        });
+        if (openApiDocument == null)
+        {
+            throw new InvalidOperationException("Document is null");
+        }
+        if (!settings.IgnoreOpenApiErrors && diagnostics?.Errors.Any() == true)
         {
             throw new AggregateException(diagnostics.Errors.Select(x => new InvalidOperationException(x.Message)));
         }
-        if (!settings.IgnoreOpenApiWarnings && diagnostics.Warnings.Any())
+        if (!settings.IgnoreOpenApiWarnings && diagnostics?.Warnings.Any() == true)
         {
             throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
         }
 
         openApiDocument.Components ??= new OpenApiComponents();
-        openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
+        openApiDocument.Components.Schemas ??= new Dictionary<string, IOpenApiSchema>();
         openApiDocument.Paths ??= new OpenApiPaths();
-        openApiDocument.Tags ??= new List<OpenApiTag>();
-        openApiDocument.SecurityRequirements ??= new List<OpenApiSecurityRequirement>();
+        openApiDocument.Tags ??= new HashSet<OpenApiTag>();
+        openApiDocument.Security ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
         if (settings.ComputeDiscriminators)
@@ -374,7 +366,7 @@ public static class OpenApiExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
     public static bool HasAllOfTypeForMetadata(
-        this OpenApiSchema schema,
+        this IOpenApiSchema schema,
         string? propertyName)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
@@ -480,7 +472,7 @@ public static class OpenApiExtensions
         return context.Schema.Default?.GetString();
     }
     
-    public static string GetSummary(this OpenApiSchema schema)
+    public static string GetSummary(this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -643,7 +635,7 @@ public static class OpenApiExtensions
     }
 
     public static KeyValuePair<string, OpenApiSchema> WithKey(
-        this OpenApiSchema schema,
+        this IOpenApiSchema schema,
         string key)
     {
         return new KeyValuePair<string, OpenApiSchema>(key, schema);

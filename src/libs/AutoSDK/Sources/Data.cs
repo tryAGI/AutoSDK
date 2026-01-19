@@ -1,12 +1,12 @@
 ﻿using System.Collections.Immutable;
 using System.Diagnostics;
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Naming.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
 
@@ -74,7 +74,7 @@ public static class Data
                      .SelectMany(x => x.Value.Operations)
                      .Select(x => x.Value))
         {
-            foreach (var tag in operation.Tags ?? Array.Empty<OpenApiTag>())
+            foreach (var tag in operation.Tags ?? Array.Empty<OpenApiTagReference>())
             {
                 var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
                 if (existingTag is null)
@@ -203,7 +203,7 @@ public static class Data
             Console.WriteLine($"Found duplicate CLI action names in '{group.Key.SingularizedName}': {string.Join(", ", group.Select(x => x.CliAction))}");
         }
         
-        var authorizations = openApiDocument.SecurityRequirements!
+        var authorizations = openApiDocument.Security!
             .SelectMany(requirement => requirement)
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .ToArray();

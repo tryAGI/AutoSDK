@@ -2,7 +2,7 @@ using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
 

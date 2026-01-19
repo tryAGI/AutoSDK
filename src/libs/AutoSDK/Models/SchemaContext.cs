@@ -1,8 +1,6 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Models;
-using AutoSDK.Naming.Properties;
-using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
@@ -45,7 +43,7 @@ public class SchemaContext(
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
     
     public string? OperationPath { get; set; }
-    public OperationType? OperationType { get; set; }
+    public System.Net.Http.HttpMethod? OperationType { get; set; }
     public OpenApiOperation? Operation { get; set; }
     public string? ContentType { get; set; }
     public OpenApiMediaType? MediaType { get; set; }

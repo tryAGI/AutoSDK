@@ -1,9 +1,8 @@
 using System.Collections.Immutable;
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Serialization.Form;
-using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi;
 
 #pragma warning disable CA1308
 
@@ -22,7 +21,7 @@ public record struct EndPoint(
     EquatableArray<EndPointResponse> ErrorResponses,
     EquatableArray<Authorization> Authorizations,
     EquatableArray<MethodParameter> QueryParameters,
-    OperationType HttpMethod,
+    System.Net.Http.HttpMethod HttpMethod,
     ContentType ContentType,
     string Summary,
     string Description,

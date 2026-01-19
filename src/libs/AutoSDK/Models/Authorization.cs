@@ -1,13 +1,13 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
 public record struct Authorization(
     string FriendlyName,
-    SecuritySchemeType Type,
-    ParameterLocation In,
+    SecuritySchemeType? Type,
+    ParameterLocation? In,
     EquatableArray<string> Parameters,
     string Name,
     string Scheme,
@@ -20,7 +20,7 @@ public record struct Authorization(
     public string MethodName => $"AuthorizeUsing{FriendlyName}";
     
     public static Authorization FromOpenApiSecurityScheme(
-        OpenApiSecurityScheme scheme,
+        OpenApiSecuritySchemeReference scheme,
         Settings settings,
         Settings globalSettings)
     {

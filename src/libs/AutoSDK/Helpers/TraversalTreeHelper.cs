@@ -1,5 +1,5 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Helpers;
 
@@ -136,7 +136,7 @@ public static class TraversalTreeHelper
                     operationPath: x.Key,
                     operationType: y.Key,
                     filteredSchemas: filteredSchemas,
-                    globalSecurityRequirements: openApiDocument.SecurityRequirements ?? [])))
+                    globalSecurityRequirements: openApiDocument.Security ?? [])))
             .ToArray() ?? [];
     }
 }

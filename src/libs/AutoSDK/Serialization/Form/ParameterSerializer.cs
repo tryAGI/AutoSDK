@@ -1,7 +1,7 @@
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Serialization.Form;
 

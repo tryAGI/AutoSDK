@@ -1,5 +1,5 @@
 using System.Collections.Immutable;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 

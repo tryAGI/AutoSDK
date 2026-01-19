@@ -1,5 +1,5 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Naming.Methods;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
@@ -8,13 +8,13 @@ public class OperationContext(
     Settings globalSettings,
     OpenApiOperation operation,
     string operationPath,
-    OperationType operationType)
+    System.Net.Http.HttpMethod operationType)
 {
     public Settings Settings { get; set; } = settings;
     public Settings GlobalSettings { get; set; } = globalSettings;
     public OpenApiOperation Operation { get; set; } = operation;
     public string OperationPath { get; set; } = operationPath;
-    public OperationType OperationType { get; set; } = operationType;
+    public System.Net.Http.HttpMethod OperationType { get; set; } = operationType;
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
@@ -28,7 +28,7 @@ public class OperationContext(
         Settings globalSettings,
         OpenApiOperation operation,
         string operationPath,
-        OperationType operationType,
+        System.Net.Http.HttpMethod operationType,
         IReadOnlyCollection<SchemaContext> filteredSchemas,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements)
     {

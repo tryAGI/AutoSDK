@@ -1,4 +1,4 @@
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 

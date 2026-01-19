@@ -1,12 +1,11 @@
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Extensions;
 
 public static class OpenApiSchemaExtensions
 {
     public static bool IsOneOf(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -16,7 +15,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsAnyOf(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -26,7 +25,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsAllOf(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -36,7 +35,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsArray(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -45,7 +44,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsEnum(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -53,7 +52,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsBoolean(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -62,7 +61,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsBase64(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -70,7 +69,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsDate(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -78,7 +77,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsDateTime(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -86,7 +85,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsBinary(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -94,7 +93,7 @@ public static class OpenApiSchemaExtensions
     }
     
     public static bool IsUnixTimestamp(
-        this OpenApiSchema schema)
+        this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 

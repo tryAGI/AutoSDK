@@ -1,5 +1,5 @@
 using AutoSDK.Naming.Clients;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 

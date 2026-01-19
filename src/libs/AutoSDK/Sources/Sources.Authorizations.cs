@@ -1,6 +1,6 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
 

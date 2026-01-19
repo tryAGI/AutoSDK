@@ -1,6 +1,4 @@
 using System.Globalization;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
 
 namespace AutoSDK.Extensions;
 

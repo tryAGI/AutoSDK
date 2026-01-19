@@ -1,5 +1,5 @@
 ﻿using AutoSDK.Helpers;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Readers.Exceptions;
 

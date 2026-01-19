@@ -1,66 +1,37 @@
 ﻿using AutoSDK.Extensions;
-using AutoSDK.Helpers;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Readers.Exceptions;
 
 namespace AutoSDK.UnitTests;
 
 [TestClass]
 public class ProcessingTests : VerifyBase
 {
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("openai.yaml")]
     [DataRow("cohere.yaml")]
     public async Task ComputeDiscriminators(string resourceName)
     {
         var yamlOrJson = new H.Resource(resourceName).AsString();
         
-        OpenApiDiagnostic originalDiagnostics;
-        try
+        var (document, diagnostics) = OpenApiDocument.Parse(yamlOrJson);
+        if (document == null)
         {
-            _ = new OpenApiStringReader().Read(yamlOrJson, out originalDiagnostics);
-        }
-        catch (OpenApiUnsupportedSpecVersionException e)
-        {
-            originalDiagnostics = new OpenApiDiagnostic
-            {
-                Errors =
-                {
-                    new OpenApiError(pointer: string.Empty, e.Message),
-                }
-            };
-        }
-
-        if (OpenApi31Support.IsOpenApi31(yamlOrJson))
-        {
-            yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
+            throw new InvalidOperationException("Document is null");
         }
         
-        var document = new OpenApiStringReader().Read(yamlOrJson, out var newDiagnostics);
         document = document.ComputeDiscriminators();
         
-        yamlOrJson = document.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+        yamlOrJson = await document.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
         
         await Task.WhenAll(
-            Verify(originalDiagnostics.Errors)
+            Verify(diagnostics?.Errors ?? [])
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
                 .AutoVerify()
-                .UseTextForParameters("OriginalErrors"),
-            Verify(originalDiagnostics.Warnings)
+                .UseTextForParameters("Errors"),
+            Verify(diagnostics?.Warnings ?? [])
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
                 .AutoVerify()
-                .UseTextForParameters("OriginalWarnings"),
-            Verify(newDiagnostics.Errors)
-                .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
-                .AutoVerify()
-                .UseTextForParameters("NewErrors"),
-            Verify(newDiagnostics.Warnings)
-                .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
-                .AutoVerify()
-                .UseTextForParameters("NewWarnings"),
+                .UseTextForParameters("Warnings"),
             Verify(yamlOrJson)
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
                 .UseFileName("_")
