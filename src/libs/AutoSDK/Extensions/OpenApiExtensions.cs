@@ -7,6 +7,7 @@ using AutoSDK.Models;
 using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Form;
 using Microsoft.OpenApi.Reader;
+using Microsoft.OpenApi.YamlReader;
 
 namespace AutoSDK.Extensions;
 
@@ -18,11 +19,15 @@ public static class OpenApiExtensions
         CancellationToken cancellationToken = default)
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
-        
-        var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: new OpenApiReaderSettings
+
+        var readerSettings = new OpenApiReaderSettings
         {
             RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
-        });
+        };
+        // Add YAML reader support via extension method from Microsoft.OpenApi.YamlReader
+        readerSettings.AddYamlReader();
+
+        var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
         if (openApiDocument == null)
         {
             throw new InvalidOperationException("Document is null");

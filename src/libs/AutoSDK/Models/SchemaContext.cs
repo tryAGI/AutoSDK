@@ -157,10 +157,8 @@ public class SchemaContext(
         {
             return "enum";
         }
-        if (schema.Type == JsonSchemaType.Object)// &&
-            // (isComponent ||
-            //  schema.Properties.Count > 0 ||
-            //  !schema.AdditionalPropertiesAllowed))
+        // Check if Object flag is set (handles nullable types like ["object", "null"])
+        if (schema.Type != null && (schema.Type & JsonSchemaType.Object) == JsonSchemaType.Object)
         {
             return "class";
         }
@@ -168,7 +166,8 @@ public class SchemaContext(
         {
             return "bool";
         }
-        if (schema.Type == JsonSchemaType.Number)
+        // Check if Number flag is set (handles nullable types like ["number", "null"])
+        if (schema.Type != null && (schema.Type & JsonSchemaType.Number) == JsonSchemaType.Number)
         {
             return schema.Format switch
             {
@@ -176,7 +175,8 @@ public class SchemaContext(
                 _ => "double",
             };
         }
-        if (schema.Type == JsonSchemaType.Integer)
+        // Check if Integer flag is set (handles nullable types like ["integer", "null"])
+        if (schema.Type != null && (schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer)
         {
             return schema.Format switch
             {
@@ -185,7 +185,8 @@ public class SchemaContext(
             };
         }
 
-        if (schema.Type == JsonSchemaType.String)
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        if (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String)
         {
             return schema.Format switch
             {
@@ -209,7 +210,7 @@ public class SchemaContext(
         {
             return "allOf";
         }
-        
+
         return schema.Type.ToTypeString() ?? "class";
     }
 

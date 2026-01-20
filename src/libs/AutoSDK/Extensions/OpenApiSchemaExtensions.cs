@@ -9,10 +9,21 @@ public static class OpenApiSchemaExtensions
 {
     /// <summary>
     /// Converts JsonSchemaType? to a lowercase string representation for pattern matching.
+    /// In OpenAPI 3.1+, Type can be a flags enum (e.g., Object | Null for nullable object).
+    /// This method extracts the primary type, ignoring the Null flag.
     /// </summary>
     public static string? ToTypeString(this JsonSchemaType? type)
     {
-        return type switch
+        if (type == null)
+        {
+            return null;
+        }
+
+        // Remove Null flag to get the primary type
+        // In OpenAPI 3.1, nullable is expressed as type: ["string", "null"]
+        var nonNullType = type.Value & ~JsonSchemaType.Null;
+
+        return nonNullType switch
         {
             JsonSchemaType.String => "string",
             JsonSchemaType.Integer => "integer",
@@ -20,9 +31,9 @@ public static class OpenApiSchemaExtensions
             JsonSchemaType.Boolean => "boolean",
             JsonSchemaType.Array => "array",
             JsonSchemaType.Object => "object",
-            JsonSchemaType.Null => "null",
-            null => null,
-            _ => type.ToString()?.ToLowerInvariant(),
+            0 when (type.Value & JsonSchemaType.Null) == JsonSchemaType.Null => "null", // Only null type
+            0 => null, // No type specified (e.g., for anyOf/oneOf)
+            _ => nonNullType.ToString()?.ToLowerInvariant(),
         };
     }
 
@@ -117,7 +128,8 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type is JsonSchemaType.Array or null &&
+        // Check if Array flag is set (handles nullable types like ["array", "null"])
+        return (schema.Type == null || (schema.Type & JsonSchemaType.Array) == JsonSchemaType.Array) &&
                schema.Items is not null;
     }
 
@@ -126,7 +138,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return (schema.Enum?.Any() ?? false) && schema.Type is JsonSchemaType.String or null;
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        return (schema.Enum?.Any() ?? false) &&
+               (schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String);
     }
 
     public static bool IsBoolean(
@@ -134,7 +148,8 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == JsonSchemaType.Boolean ||
+        // Check if Boolean flag is set (handles nullable types like ["boolean", "null"])
+        return (schema.Type != null && (schema.Type & JsonSchemaType.Boolean) == JsonSchemaType.Boolean) ||
                (schema.Default is JsonValue defaultValue && defaultValue.TryGetValue<bool>(out _));
     }
 
@@ -143,7 +158,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == JsonSchemaType.String && schema.Format == "byte";
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        return (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
+               schema.Format == "byte";
     }
 
     public static bool IsDate(
@@ -151,7 +168,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == JsonSchemaType.String && schema.Format == "date";
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        return (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
+               schema.Format == "date";
     }
 
     public static bool IsDateTime(
@@ -159,7 +178,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == JsonSchemaType.String && schema.Format == "date-time";
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        return (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
+               schema.Format == "date-time";
     }
 
     public static bool IsBinary(
@@ -167,7 +188,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == JsonSchemaType.String && schema.Format == "binary";
+        // Check if String flag is set (handles nullable types like ["string", "null"])
+        return (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
+               schema.Format == "binary";
     }
 
     public static bool IsUnixTimestamp(
@@ -180,7 +203,10 @@ public static class OpenApiSchemaExtensions
         //  type: integer
         //  description: The Unix timestamp (in seconds) for when the batch was created.
 
-        return (schema.Type == JsonSchemaType.Integer &&
+        // Check if Integer flag is set (handles nullable types like ["integer", "null"])
+        var isInteger = schema.Type != null && (schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer;
+
+        return (isInteger &&
                schema.Format is
                     // https://github.com/OAI/OpenAPI-Specification/issues/2565
                     "timestamp" or
@@ -188,7 +214,7 @@ public static class OpenApiSchemaExtensions
                     "unix-time" or
                     "unix-epoch" or
                     "epoch") ||
-               (schema.Type == JsonSchemaType.Integer &&
+               (isInteger &&
                schema.Format is
                    null or
                    "int64" or
