@@ -97,7 +97,7 @@ internal sealed class HttpCommand : Command
         var files = new List<FileWithName>
         {
             new("http-client.env.json", @$"{{
-{openApiDocument.Servers.Select(x => @$"
+{(openApiDocument.Servers ?? []).Select(x => @$"
   ""{x.Description}"": {{
     ""host"": ""{x.Url}"",
     ""token"": """"
@@ -119,16 +119,16 @@ internal sealed class HttpCommand : Command
                 
                 var requestSchema = operation.Schemas.FirstOrDefault(y => y.Hint == Hint.Request);
                 content += $@"
-### {operation.OperationType.ToString("G").ToUpperInvariant()} {operation.OperationPath}
-{operation.OperationType.ToString("G").ToUpperInvariant()} {{{{host}}}}{operation.OperationPath}
-{(operation.GlobalSecurityRequirements.Any() || operation.Operation.Security.Any() ? @" 
+### {operation.OperationType.Method.ToUpperInvariant()} {operation.OperationPath}
+{operation.OperationType.Method.ToUpperInvariant()} {{{{host}}}}{operation.OperationPath}
+{(operation.GlobalSecurityRequirements.Any() || (operation.Operation.Security ?? []).Any() ? @"
 Authorization: Bearer {{token}}" : " ")}
 Content-Type: application/json
 
 {(requestSchema != null ? @$"
 {{
-{requestSchema.Schema.Properties.Select(x => @$"
-  ""{x.Key}"": {x.Value.Example?.ToString() ?? "\"1\""},").Inject()}
+{(requestSchema.Schema.Properties?.Select(x => @$"
+  ""{x.Key}"": {x.Value.Example?.ToString() ?? "\"1\""},") ?? []).Inject()}
 }}
 " : " ")}
 

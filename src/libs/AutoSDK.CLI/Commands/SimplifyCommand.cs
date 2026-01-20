@@ -1,7 +1,4 @@
 using System.CommandLine;
-using Microsoft.OpenApi;
-using AutoSDK.Extensions;
-using AutoSDK.Models;
 
 namespace AutoSDK.CLI.Commands;
 
@@ -14,14 +11,14 @@ internal sealed class SimplifyCommand : Command
         DefaultValueFactory = _ => "simplified.yaml",
         Description = "Output file path",
     };
-    
+
     private Argument<string> InputOption { get; } = new(
         name: "input")
     {
         DefaultValueFactory = _ => string.Empty,
         Description = "Input file path",
     };
-    
+
     public SimplifyCommand() : base(name: "simplify", description: "Simplifies OpenAPI spec.")
     {
         Arguments.Add(InputOption);
@@ -30,32 +27,36 @@ internal sealed class SimplifyCommand : Command
         SetAction(HandleAsync);
     }
 
-    private async Task HandleAsync(
-        ParseResult parseResult)
+    private static Task HandleAsync(ParseResult parseResult)
     {
-        var inputPath = parseResult.GetRequiredValue(InputOption);
-        var outputPath = parseResult.GetRequiredValue(OutputOption);
+        // var inputPath = parseResult.GetRequiredValue(InputOption);
+        // var outputPath = parseResult.GetRequiredValue(OutputOption);
 
-        Console.WriteLine($"Loading {inputPath}...");
+        // Console.WriteLine($"Loading {inputPath}...");
         
-        using var client = new HttpClient();
-        var yamlOrJson = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
-            ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
-            : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
-        var openApiDocument = yamlOrJson.GetOpenApiDocument(settings: Settings.Default);
+        // using var client = new HttpClient();
+        // var yamlOrJson = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+        //     ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
+        //     : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
+        // var openApiDocument = yamlOrJson.GetOpenApiDocument(settings: Settings.Default);
         
-        Console.WriteLine("Simplifying...");
+        // Console.WriteLine("Simplifying...");
         
-        openApiDocument = openApiDocument.Simplify();
+        // openApiDocument = openApiDocument.Simplify();
         
-        var text = Path.GetExtension(outputPath).ToUpperInvariant() switch
-        {
-            ".JSON" => openApiDocument.SerializeAsJson(OpenApiSpecVersion.OpenApi3_0),
-            _ => openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0),
-        };
+        // var text = Path.GetExtension(outputPath).ToUpperInvariant() switch
+        // {
+        //     ".JSON" => openApiDocument.SerializeAsJson(OpenApiSpecVersion.OpenApi3_0),
+        //     _ => openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0),
+        // };
         
-        await File.WriteAllTextAsync(outputPath, text).ConfigureAwait(false);
+        // await File.WriteAllTextAsync(outputPath, text).ConfigureAwait(false);
         
-        Console.WriteLine("Done.");
+        // Console.WriteLine("Done.");
+        Console.WriteLine("This command is currently disabled.");
+        Console.WriteLine("The OpenAPI serialization API has changed in Microsoft.OpenApi 3.x.");
+        Console.WriteLine("If you need this functionality, please open an issue on GitHub.");
+
+        return Task.CompletedTask;
     }
 }
