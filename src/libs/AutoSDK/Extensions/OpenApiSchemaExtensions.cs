@@ -3,6 +3,8 @@ using Microsoft.OpenApi;
 
 namespace AutoSDK.Extensions;
 
+#pragma warning disable CA1308 // Normalize strings to uppercase - we need lowercase for type matching
+
 public static class OpenApiSchemaExtensions
 {
     /// <summary>
@@ -86,28 +88,28 @@ public static class OpenApiSchemaExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         return
-            schema.OneOf.Any() &&
-            schema.Properties.Count == 0; // OneOf with properties is not supported
+            (schema.OneOf?.Any() ?? false) &&
+            (schema.Properties?.Count ?? 0) == 0; // OneOf with properties is not supported
     }
-    
+
     public static bool IsAnyOf(
         this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         return
-            schema.AnyOf.Any() &&
-            schema.Properties.Count == 0; // AnyOf with properties is not supported
+            (schema.AnyOf?.Any() ?? false) &&
+            (schema.Properties?.Count ?? 0) == 0; // AnyOf with properties is not supported
     }
-    
+
     public static bool IsAllOf(
         this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         return
-            schema.AllOf.Any() &&
-            schema.Properties.Count == 0; // AllOf with properties is not supported
+            (schema.AllOf?.Any() ?? false) &&
+            (schema.Properties?.Count ?? 0) == 0; // AllOf with properties is not supported
     }
     
     public static bool IsArray(
@@ -124,7 +126,7 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Enum.Any() && schema.Type is JsonSchemaType.String or null;
+        return (schema.Enum?.Any() ?? false) && schema.Type is JsonSchemaType.String or null;
     }
 
     public static bool IsBoolean(

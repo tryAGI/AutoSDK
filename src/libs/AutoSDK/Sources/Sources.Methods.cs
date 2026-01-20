@@ -86,6 +86,8 @@ namespace {endPoint.Settings.Namespace}
 
     public static string GetHttpMethod(System.Net.Http.HttpMethod operationType)
     {
+        operationType = operationType ?? throw new ArgumentNullException(nameof(operationType));
+
         return operationType.Method.ToUpperInvariant() switch
         {
             "GET" => "global::System.Net.Http.HttpMethod.Get",

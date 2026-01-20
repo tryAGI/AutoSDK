@@ -62,41 +62,42 @@ public static class OpenApiExtensions
         
         var schemasToRemove = new List<KeyValuePair<string, IOpenApiSchema>>();
         var schemasToAdd = new List<KeyValuePair<string, IOpenApiSchema>>();
-        foreach (var schema in openApiDocument.Components.Schemas)
+        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
         {
             // If schema is OneOf and all children have only one enum value, combine them into one schema.
             if (schema.Value.IsOneOf() &&
-                schema.Value.OneOf.All(child =>
-                    child.Properties.Any(subChild =>
+                (schema.Value.OneOf ?? []).All(child =>
+                    (child.Properties ?? new Dictionary<string, IOpenApiSchema>()).Any(subChild =>
                         subChild.Value.IsEnum() &&
-                        subChild.Value.Enum.Count == 1)))
+                        (subChild.Value.Enum?.Count ?? 0) == 1)))
             {
-                var subChildren = schema.Value.OneOf
+                var subChildren = (schema.Value.OneOf ?? [])
                     .Select(child =>
-                        child.Properties.First(subChild =>
+                        (child.Properties ?? new Dictionary<string, IOpenApiSchema>()).First(subChild =>
                             subChild.Value.IsEnum() &&
-                            subChild.Value.Enum.Count == 1))
+                            (subChild.Value.Enum?.Count ?? 0) == 1))
                     .ToList();
                 var newEnum = new OpenApiSchema
                 {
                     Enum = subChildren
-                        .Select(x => x.Value.Enum.First())
+                        .Where(x => x.Value.Enum != null)
+                        .Select(x => x.Value.Enum!.First())
                         .ToArray(),
                     Type = JsonSchemaType.String,
                 }.WithKey(schema.Key.ToPropertyName() + subChildren.First().Key.ToPropertyName());
                 schemasToAdd.Add(newEnum);
 
-                foreach (var child in schema.Value.OneOf)
+                foreach (var child in schema.Value.OneOf ?? [])
                 {
-                    var subChild = child.Properties.First(subChild =>
+                    var subChild = (child.Properties ?? new Dictionary<string, IOpenApiSchema>()).First(subChild =>
                         subChild.Value.IsEnum() &&
-                        subChild.Value.Enum.Count == 1);
-                    child.Properties.Remove(subChild.Key);
+                        (subChild.Value.Enum?.Count ?? 0) == 1);
+                    child.Properties?.Remove(subChild.Key);
                     // In OpenApi 3.0+, create a reference using OpenApiSchemaReference
                     var newSubChild = new KeyValuePair<string, IOpenApiSchema>(
                         subChild.Key,
                         new OpenApiSchemaReference(newEnum.Key, openApiDocument, string.Empty));
-                    child.Properties.Add(newSubChild.Key, newSubChild.Value);
+                    child.Properties?.Add(newSubChild.Key, newSubChild.Value);
 
                     // Old Code for Microsoft.OpenApi 1.x
                     //newSubChild.Value.Extensions["x-original-schema"] = new OpenApiString(
@@ -107,11 +108,12 @@ public static class OpenApiExtensions
 
                 // Remove duplicated schemas from OneOf.
                 // Skip schemas with references.
-                if (schema.Value.OneOf.Any(x => !x.IsSchemaReference()))
+                var oneOfCollection = schema.Value.OneOf ?? [];
+                if (oneOfCollection.Any(x => !x.IsSchemaReference()))
                 {
                     var duplicatedSchemas = new List<IOpenApiSchema>();
-                    foreach (var group in schema.Value.OneOf
-                                 .GroupBy(x => x.Properties
+                    foreach (var group in oneOfCollection
+                                 .GroupBy(x => (x.Properties ?? new Dictionary<string, IOpenApiSchema>())
                                      .Select(y => (y.Key, y.Value.Type, y.Value.Format, y.Value.GetReferenceId()))
                                      .ToImmutableArray().AsEquatableArray())
                                  .Where(x => x.Count() > 1))
@@ -130,46 +132,46 @@ public static class OpenApiExtensions
 
                     foreach (var duplicatedSchema in duplicatedSchemas)
                     {
-                        schema.Value.OneOf.Remove(duplicatedSchema);
+                        schema.Value.OneOf?.Remove(duplicatedSchema);
                     }
                 }
 
                 // Simplify OneOf with only one schema.
-                if (schema.Value.OneOf.Count == 1)
+                if ((schema.Value.OneOf?.Count ?? 0) == 1)
                 {
                     schemasToRemove.Add(schema);
                     schemasToAdd.Add(new KeyValuePair<string, IOpenApiSchema>(
                         schema.Key,
-                        schema.Value.OneOf.First()));
+                        schema.Value.OneOf!.First()));
                 }
             }
         }
         foreach (var schema in schemasToRemove)
         {
-            openApiDocument.Components.Schemas.Remove(schema.Key);
+            openApiDocument.Components?.Schemas?.Remove(schema.Key);
         }
         foreach (var schema in schemasToAdd)
         {
-            openApiDocument.Components.Schemas.Add(schema.Key, schema.Value);
+            openApiDocument.Components?.Schemas?.Add(schema.Key, schema.Value);
         }
-        
+
         return openApiDocument;
     }
-    
+
     public static OpenApiDocument SimplifyAllOf(
         this OpenApiDocument openApiDocument)
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
-        foreach (var schema in openApiDocument.Components.Schemas)
+        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
         {
             var propertiesToAdd = new List<KeyValuePair<string, IOpenApiSchema>>();
             var propertiesToRemove = new List<string>();
-            foreach (var property in schema.Value.Properties)
+            foreach (var property in schema.Value.Properties ?? new Dictionary<string, IOpenApiSchema>())
             {
-                if (property.Value.AllOf.Count == 1)
+                if ((property.Value.AllOf?.Count ?? 0) == 1)
                 {
-                    var firstAllOfSchema = property.Value.AllOf.First();
+                    var firstAllOfSchema = property.Value.AllOf!.First();
                     propertiesToAdd.Add(new KeyValuePair<string, IOpenApiSchema>(property.Key, firstAllOfSchema));
                     propertiesToRemove.Add(property.Key);
                 }
@@ -177,11 +179,11 @@ public static class OpenApiExtensions
 
             foreach (var propertyKey in propertiesToRemove)
             {
-                schema.Value.Properties.Remove(propertyKey);
+                schema.Value.Properties?.Remove(propertyKey);
             }
             foreach (var property in propertiesToAdd)
             {
-                schema.Value.Properties.Add(property.Key, property.Value);
+                schema.Value.Properties?.Add(property.Key, property.Value);
             }
         }
 
@@ -193,7 +195,7 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        foreach (var schema in openApiDocument.Components.Schemas)
+        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
         {
             ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}", depth: 0);
         }
@@ -206,12 +208,12 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        foreach (var path in openApiDocument.Paths)
+        foreach (var path in openApiDocument.Paths ?? new OpenApiPaths())
         {
-            foreach (var operation in path.Value.Operations)
+            foreach (var operation in path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
             {
                 var parametersFromPath = PathHelper.ExtractParameters(path.Key.AsSpan());
-                var parametersFromSpec = operation.Value.Parameters
+                var parametersFromSpec = (operation.Value.Parameters ?? new List<IOpenApiParameter>())
                     .Where(x => x.In == ParameterLocation.Path)
                     .Select(x => x.Name)
                     .ToImmutableHashSet();
@@ -219,7 +221,7 @@ public static class OpenApiExtensions
                 {
                     if (!parametersFromSpec.Contains(parameter))
                     {
-                        operation.Value.Parameters.Add(new OpenApiParameter
+                        (operation.Value.Parameters ??= new List<IOpenApiParameter>()).Add(new OpenApiParameter
                         {
                             Name = parameter,
                             In = ParameterLocation.Path,
@@ -253,7 +255,7 @@ public static class OpenApiExtensions
             path = $"#/components/schemas/{refId}";
         }
 
-        foreach (var property in schema.Properties)
+        foreach (var property in schema.Properties ?? new Dictionary<string, IOpenApiSchema>())
         {
             ProcessSchema(property.Value, path: path + "/properties/" + property.Key, depth: depth + 1);
         }
@@ -261,9 +263,9 @@ public static class OpenApiExtensions
         // Remove any nested OneOfs
         var schemasToRemove = new List<IOpenApiSchema>();
         var schemasToAdd = new List<IOpenApiSchema>();
-        foreach (var value in schema.OneOf.Where(x => x.OneOf.Count > 0))
+        foreach (var value in (schema.OneOf ?? []).Where(x => (x.OneOf?.Count ?? 0) > 0))
         {
-            foreach (var child in value.OneOf)
+            foreach (var child in value.OneOf ?? [])
             {
                 schemasToAdd.Add(child);
             }
@@ -271,7 +273,7 @@ public static class OpenApiExtensions
         }
         schemasToRemove.ForEach(x =>
         {
-            schema.OneOf.Remove(x);
+            schema.OneOf?.Remove(x);
 
             // Old Code for Microsoft.OpenApi 1.x
             // if (x.Reference?.Id != null)
@@ -285,17 +287,17 @@ public static class OpenApiExtensions
                 // Note: Direct document manipulation is different in new API
             }
         });
-        schemasToAdd.ForEach(x => schema.OneOf.Add(x));
+        schemasToAdd.ForEach(x => schema.OneOf?.Add(x));
 
-        foreach (var value in schema.OneOf)
+        foreach (var value in schema.OneOf ?? [])
         {
             ProcessSchema(value, path: path + "/oneOf", depth: depth + 1);
         }
-        foreach (var value in schema.AllOf)
+        foreach (var value in schema.AllOf ?? [])
         {
             ProcessSchema(value, path: path + "/allOf", depth: depth + 1);
         }
-        foreach (var value in schema.AnyOf)
+        foreach (var value in schema.AnyOf ?? [])
         {
             ProcessSchema(value, path: path + "/anyOf", depth: depth + 1);
         }
@@ -306,14 +308,16 @@ public static class OpenApiExtensions
 
         // Auto-detection in OpenAI-like specs
         if (schema.Discriminator == null &&
-            schema.OneOf.Count > 1 &&
-            schema.OneOf.All(y => y.ResolveIfRequired().Properties.Any(z => z.Value.Enum is { Count: 1 })))
+            (schema.OneOf?.Count ?? 0) > 1 &&
+            schema.OneOf!.All(y => (y.ResolveIfRequired().Properties ?? new Dictionary<string, IOpenApiSchema>()).Any(z => z.Value.Enum is { Count: 1 })))
         {
-            var discriminatorPropertyName = schema.OneOf.First().Properties
+            var oneOfSchemas = schema.OneOf!;
+            var discriminatorPropertyName = (oneOfSchemas.First().Properties ?? new Dictionary<string, IOpenApiSchema>())
                 .FirstOrDefault(y => y.Value.Enum is { Count: 1 }).Key;
-            var uniqueKeys = new HashSet<string>(schema.OneOf
-                .Select(x => x.Properties[discriminatorPropertyName].Enum.First().GetString() ?? string.Empty));
-            if (discriminatorPropertyName != null && uniqueKeys.Count == schema.OneOf.Count)
+            var uniqueKeys = new HashSet<string>(oneOfSchemas
+                .Where(x => (x.Properties ?? new Dictionary<string, IOpenApiSchema>()).ContainsKey(discriminatorPropertyName ?? string.Empty))
+                .Select(x => (x.Properties ?? new Dictionary<string, IOpenApiSchema>())[discriminatorPropertyName!].Enum?.FirstOrDefault()?.GetString() ?? string.Empty));
+            if (discriminatorPropertyName != null && uniqueKeys.Count == oneOfSchemas.Count)
             {
                 // Old Code for Microsoft.OpenApi 1.x
                 // schema.Discriminator = new OpenApiDiscriminator
@@ -399,7 +403,7 @@ public static class OpenApiExtensions
                (schema.AnyOf?.Count == 1 ||
                schema.AllOf?.Count == 1 ||
                schema.OneOf?.Count == 1) &&
-               schema.Properties.Count == 0;
+               (schema.Properties?.Count ?? 0) == 0;
     }
     
     public static string? GetDefaultValue(this SchemaContext context)
@@ -419,7 +423,7 @@ public static class OpenApiExtensions
         //     return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.CombinedEnumOriginalSchema.Value.Value.Enum.First().ToEnumValue(context.Settings).Name;
         // }
         var defaultString = context.Schema.Default?.GetString();
-        if (context.Schema.Enum.Any() && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
+        if ((context.Schema.Enum?.Any() ?? false) && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             var @enum = context.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
@@ -429,11 +433,11 @@ public static class OpenApiExtensions
 
             return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if (context.Schema.AnyOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
+        if ((context.Schema.AnyOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AnyOf)
-                .First(x => x.Schema.Enum.Any());
+                .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
             var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "";
 
@@ -449,45 +453,45 @@ public static class OpenApiExtensions
                         return $"\"{value}\"";
                     }
                 }
-                
+
                 return null;
             }
-            
+
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + value;
         }
-        if (context.Schema.OneOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
+        if ((context.Schema.OneOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.OneOf)
-                .First(x => x.Schema.Enum.Any());
+                .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
                 return string.Empty;
             }
-            
+
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if (context.Schema.AllOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
+        if ((context.Schema.AllOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AllOf)
-                .First(x => x.Schema.Enum.Any());
+                .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
                 return string.Empty;
             }
-            
+
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
         var defaultStringValue = context.Schema.Default?.GetString();
         if (context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultStringValue))
         {
             if (context.Schema.Type != JsonSchemaType.String &&
-                context.Schema.AnyOf.All(x => x.Type != JsonSchemaType.String) &&
-                context.Schema.AllOf.All(x => x.Type != JsonSchemaType.String) &&
-                context.Schema.OneOf.All(x => x.Type != JsonSchemaType.String))
+                (context.Schema.AnyOf ?? []).All(x => x.Type != JsonSchemaType.String) &&
+                (context.Schema.AllOf ?? []).All(x => x.Type != JsonSchemaType.String) &&
+                (context.Schema.OneOf ?? []).All(x => x.Type != JsonSchemaType.String))
             {
                 return null;
             }
@@ -572,41 +576,21 @@ public static class OpenApiExtensions
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        foreach (var jsonObject in operation.Extensions
-             .Where(x => x.Value is JsonObject)
-             .Select(x => x.Value)
-             .Cast<JsonObject>())
-        {
-            if (jsonObject.TryGetPropertyValue("stage", out var stage2) &&
-                stage2 is JsonValue stageValue && stageValue.TryGetValue<string>(out var stageStr))
-            {
-                return stageStr;
-            }
-            if (jsonObject.TryGetPropertyValue("alpha", out var alpha2) &&
-                alpha2 is JsonValue alphaValue && alphaValue.TryGetValue<bool>(out var alphaBool) && alphaBool)
-            {
-                return "Alpha";
-            }
-            if (jsonObject.TryGetPropertyValue("beta", out var beta2) &&
-                beta2 is JsonValue betaValue && betaValue.TryGetValue<bool>(out var betaBool) && betaBool)
-            {
-                return "Beta";
-            }
-        }
-
-        if (operation.Extensions.TryGetValue("x-stage", out var stage) &&
+        // In Microsoft.OpenApi 3.0, extension values are IOpenApiExtension, not JsonNode directly
+        // Check for specific extension keys instead
+        if ((operation.Extensions?.TryGetValue("x-stage", out var stage) ?? false) &&
             stage is JsonValue stageJsonValue && stageJsonValue.TryGetValue<string>(out var stageString))
         {
             return stageString;
         }
 
-        if (operation.Extensions.TryGetValue("x-alpha", out var alpha) &&
+        if ((operation.Extensions?.TryGetValue("x-alpha", out var alpha) ?? false) &&
             alpha is JsonValue alphaJsonValue && alphaJsonValue.TryGetValue<bool>(out var alphaBoolean) && alphaBoolean)
         {
             return "Alpha";
         }
 
-        if (operation.Extensions.TryGetValue("x-beta", out var beta) &&
+        if ((operation.Extensions?.TryGetValue("x-beta", out var beta) ?? false) &&
             beta is JsonValue betaJsonValue && betaJsonValue.TryGetValue<bool>(out var betaBoolean) && betaBoolean)
         {
             return "Beta";
@@ -687,12 +671,12 @@ public static class OpenApiExtensions
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
-        var @enum = context.Schema.Enum.ComputeEnum(
+        var @enum = (context.Schema.Enum ?? []).ComputeEnum(
             enumName: context.Id,
             description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
             context.Settings);
-        
-        if (context.Schema.Extensions.TryGetValue("x-enum-descriptions", out var descriptions) &&
+
+        if ((context.Schema.Extensions?.TryGetValue("x-enum-descriptions", out var descriptions) ?? false) &&
             descriptions is JsonNode descriptionsNode && descriptionsNode is JsonArray descriptionsArray)
         {
             var i = 0;
@@ -713,13 +697,13 @@ public static class OpenApiExtensions
     }
     
     public static Dictionary<string, PropertyData> ComputeEnum(
-        this IList<JsonNode?> @enum,
+        this IList<JsonNode> @enum,
         string enumName,
         string description,
         Settings settings)
     {
         var values = @enum
-            .Select(value => value.ToEnumValue(
+            .Select(value => ((JsonNode?)value).ToEnumValue(
                 description: description,
                 settings))
             .Where(value => !string.IsNullOrWhiteSpace(value.Name))
@@ -810,8 +794,8 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        return openApiDocument.Paths!
-            .SelectMany(path => path.Value.Operations)
+        return (openApiDocument.Paths ?? new OpenApiPaths())
+            .SelectMany(path => path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
             .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
             .Where(x => x.Value.OperationId != null)
             .Select(x => x.Value.OperationId!)

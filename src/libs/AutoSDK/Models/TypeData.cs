@@ -1,6 +1,8 @@
+using System.Collections.Immutable;
+using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
-using System.Collections.Immutable;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
@@ -99,7 +101,7 @@ public record struct TypeData(
         var properties = ImmutableArray<string>.Empty;
         if (context.Schema.ResolveIfRequired() is { } referenceSchema)
         {
-            properties = referenceSchema.Properties
+            properties = (referenceSchema.Properties ?? new Dictionary<string, IOpenApiSchema>())
                 .Select(x => x.Key)
                 .ToImmutableArray();
         }
@@ -134,7 +136,7 @@ public record struct TypeData(
                     ?.TypeData ??
                 Default with
                 {
-                    IsEnum = context.Schema.Items.IsEnum(),
+                    IsEnum = context.Schema.Items != null && context.Schema.Items.IsEnum(),
                 },
             ];
         }
@@ -151,8 +153,8 @@ public record struct TypeData(
         var enumValues = ImmutableArray<string>.Empty;
         if (context.Schema.IsEnum())
         {
-            var values = context.Schema.Enum
-                .Select(value => value.ToEnumValue(
+            var values = (context.Schema.Enum ?? [])
+                .Select(value => ((JsonNode?)value).ToEnumValue(
                     description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
                     context.Settings)).ToArray();
             properties = values
@@ -248,7 +250,7 @@ public record struct TypeData(
 
             ("object", _) or (null, _) when
                 context.Schema.IsSchemaReference() &&
-                (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
+                ((context.Schema.ResolveIfRequired().Properties?.Count ?? 0) > 0 ||
                  !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
@@ -257,7 +259,7 @@ public record struct TypeData(
 
             ("object", _) or (null, "object") when
                 !context.Schema.IsSchemaReference() &&
-                (context.Schema.Properties.Count > 0 ||
+                ((context.Schema.Properties?.Count ?? 0) > 0 ||
                 !context.Schema.AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
@@ -265,7 +267,7 @@ public record struct TypeData(
                 context.Schema.AdditionalProperties?.Type is not null =>
                 $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData.CSharpType}>",
 
-            ("string", _) when context.Schema.Enum.Any() =>
+            ("string", _) when (context.Schema.Enum?.Any() ?? false) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
             (null, "boolean") => "bool",

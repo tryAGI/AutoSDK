@@ -39,7 +39,7 @@ public class OperationContext(
             Schemas = filteredSchemas
                 .Where(schema => schema.Operation == operation)
                 .ToArray(),
-            Tags = [..operation.Tags.Select(tag => tag.Name)],
+            Tags = [..(operation.Tags ?? new HashSet<OpenApiTagReference>()).Select(tag => tag.Name).Where(name => name != null).Cast<string>()],
             GlobalSecurityRequirements = globalSecurityRequirements,
         };
         context.MethodName = context.GetMethodName();

@@ -35,20 +35,21 @@ public record struct AnyOfData(
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
-        
+
         if (context.Schema.Discriminator != null &&
-            context.Schema.Discriminator.Mapping.Count != 0)
+            (context.Schema.Discriminator.Mapping?.Count ?? 0) != 0)
         {
             discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
-            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName()
+            discriminatorPropertyName = (context.Schema.Discriminator.PropertyName ?? string.Empty).ToPropertyName()
                 .ToCSharpName(context.Settings, context.Parent);
         }
-        
+
         var count = context.IsAnyOf
-            ? context.Schema.AnyOf.Count
+            ? context.Schema.AnyOf?.Count ?? 0
             : context.IsOneOf
-                ? context.Schema.OneOf.Count
-                : context.Schema.AllOf.Count;
+                ? context.Schema.OneOf?.Count ?? 0
+                : context.Schema.AllOf?.Count ?? 0;
+        var discriminatorPropName = context.Schema.Discriminator?.PropertyName ?? string.Empty;
         var properties = context.IsNamedAnyOfLike
             ? children.Select((x, i) => PropertyData.Default with
             {
@@ -58,9 +59,9 @@ public record struct AnyOfData(
                 DiscriminatorValue = context.Schema.Discriminator?.Mapping?
                     .FirstOrDefault(y =>
                         y.Value.Reference?.Id?.Contains(x.Id) == true ||
-                        (x.Schema.Properties.ContainsKey(context.Schema.Discriminator.PropertyName) &&
-                         x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.Count == 1 &&
-                         x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.FirstOrDefault()
+                        ((x.Schema.Properties?.ContainsKey(discriminatorPropName) ?? false) &&
+                         (x.Schema.Properties![discriminatorPropName].Enum?.Count ?? 0) == 1 &&
+                         (x.Schema.Properties[discriminatorPropName].Enum?.FirstOrDefault())
                              ?.GetString() == y.Key))
                     .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
             }).ToImmutableArray().AsEquatableArray()

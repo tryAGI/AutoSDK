@@ -24,7 +24,7 @@ public record struct Tag(
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
         var value = new Tag(
-            Name: tag.Name,
+            Name: tag.Name ?? string.Empty,
             Description: tag.Description ?? string.Empty,
             GlobalSettings: settings);
 
@@ -36,7 +36,7 @@ public record struct Tag(
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
         var value = new Tag(
-            Name: tag.Name,
+            Name: tag.Name ?? string.Empty,
             Description: tag.Description ?? string.Empty,
             GlobalSettings: settings);
 

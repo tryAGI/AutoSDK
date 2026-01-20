@@ -214,7 +214,7 @@ public class SchemaContext(
     }
 
     public bool IsRequired =>
-        IsProperty && Parent?.Schema.Required.Contains(PropertyName) == true ||
+        IsProperty && PropertyName != null && (Parent?.Schema.Required?.Contains(PropertyName) ?? false) ||
         Hint == Models.Hint.Parameter && Parameter?.Required == true ||
         Hint == Models.Hint.Request && Operation?.RequestBody?.Required == true ||
         Hint == Models.Hint.Response ||
@@ -311,7 +311,7 @@ public class SchemaContext(
         }
         
         var i = 0;
-        foreach (var property in schema.Properties
+        foreach (var property in (schema.Properties ?? new Dictionary<string, IOpenApiSchema>())
             .Where(x => x.Value != null))
         {
             children.AddRange(FromSchema(
@@ -325,7 +325,7 @@ public class SchemaContext(
         }
 
         i = 0;
-        foreach (var item in schema.AnyOf)
+        foreach (var item in schema.AnyOf ?? [])
         {
             children.AddRange(FromSchema(
                 schema: item,
@@ -336,7 +336,7 @@ public class SchemaContext(
                 depth: depth + 1));
         }
         i = 0;
-        foreach (var item in schema.OneOf)
+        foreach (var item in schema.OneOf ?? [])
         {
             children.AddRange(FromSchema(
                 schema: item,
@@ -347,7 +347,7 @@ public class SchemaContext(
                 depth: depth + 1));
         }
         i = 0;
-        foreach (var item in schema.AllOf)
+        foreach (var item in schema.AllOf ?? [])
         {
             children.AddRange(FromSchema(
                 schema: item,
@@ -357,24 +357,26 @@ public class SchemaContext(
                 index: i++,
                 depth: depth + 1));
         }
-        
-        if (schema.Discriminator != null)
+
+        if (schema.Discriminator != null && schema.Discriminator.PropertyName != null)
         {
-            children.AddRange(FromSchema(
-                schema: new OpenApiSchema
+            var discriminatorSchema = new OpenApiSchema
+            {
+                Type = JsonSchemaType.Object,
+                Properties = new Dictionary<string, IOpenApiSchema>
                 {
-                    Type = JsonSchemaType.Object,
-                    Properties =
+                    [schema.Discriminator.PropertyName] = new OpenApiSchema
                     {
-                        [schema.Discriminator.PropertyName] = new OpenApiSchema
-                        {
-                            Type = JsonSchemaType.String,
-                            Enum = schema.Discriminator.Mapping?.Keys
-                                .Select(x => (JsonNode?)JsonValue.Create(x))
-                                .ToList() ?? [],
-                        }
+                        Type = JsonSchemaType.String,
+                        Enum = schema.Discriminator.Mapping?.Keys
+                            .Select(x => JsonValue.Create(x))
+                            .OfType<JsonNode>()
+                            .ToList() ?? [],
                     }
-                },
+                }
+            };
+            children.AddRange(FromSchema(
+                schema: discriminatorSchema,
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.Discriminator,
@@ -488,7 +490,10 @@ public class SchemaContext(
         {
             foreach (var tag in Operation.Tags)
             {
-                Tags.Add(tag.Name);
+                if (tag.Name != null)
+                {
+                    Tags.Add(tag.Name);
+                }
             }
         }
         foreach (var tag in parentTags ?? [])

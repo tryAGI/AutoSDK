@@ -70,11 +70,11 @@ public static class Data
         
         // Find all tags used in operations besides the ones defined in the document
         var allTags = openApiDocument.Tags!;
-        foreach (var operation in openApiDocument.Paths!
-                     .SelectMany(x => x.Value.Operations)
+        foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
+                     .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
                      .Select(x => x.Value))
         {
-            foreach (var tag in operation.Tags)
+            foreach (var tag in operation.Tags ?? new HashSet<OpenApiTagReference>())
             {
                 var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
                 if (existingTag is null)
@@ -245,6 +245,7 @@ public static class Data
         
         var includedTags = allTags
             .Where(x =>
+                x.Name != null &&
                 (settings.IncludeTags.Length == 0 ||
                  settings.IncludeTags.Contains(x.Name)) &&
                 !settings.ExcludeTags.Contains(x.Name))

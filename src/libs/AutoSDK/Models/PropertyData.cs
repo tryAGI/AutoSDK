@@ -55,7 +55,7 @@ public record struct PropertyData(
         }
 
         var requiredProperties = context.Parent != null
-            ? new HashSet<string>(context.Parent.Schema.Required)
+            ? new HashSet<string>(context.Parent.Schema.Required ?? new HashSet<string>())
             : [];
 
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");

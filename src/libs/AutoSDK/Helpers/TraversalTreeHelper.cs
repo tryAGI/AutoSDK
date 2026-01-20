@@ -12,7 +12,7 @@ public static class TraversalTreeHelper
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
         var operations = openApiDocument.Paths?
-            .SelectMany(x => x.Value.Operations
+            .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
                 .Select(y => (
                     OperationPath: x.Key,
                     OperationType: y.Key,
@@ -27,7 +27,7 @@ public static class TraversalTreeHelper
                 hint: Hint.Component)) ?? [])
             .Concat(operations
                 .Where(x => x.Operation.RequestBody != null)
-                .SelectMany(x => x.Operation.RequestBody!.Content
+                .SelectMany(x => (x.Operation.RequestBody!.Content ?? new Dictionary<string, IOpenApiMediaType>())
                     .Select(y => (
                         x.OperationPath,
                         x.OperationType,
@@ -68,7 +68,7 @@ public static class TraversalTreeHelper
                     x.OperationType,
                     x.Operation,
                     Parameter: y)))
-                .SelectMany(x => x.Parameter.Content
+                .SelectMany(x => (x.Parameter.Content ?? new Dictionary<string, IOpenApiMediaType>())
                     .Select(y => (
                         x.OperationPath,
                         x.OperationType,
@@ -95,7 +95,7 @@ public static class TraversalTreeHelper
                         x.Operation,
                         ResponseStatusCode: y.Key,
                         Response: y.Value)))
-                .SelectMany(x => x.Response.Content
+                .SelectMany(x => (x.Response.Content ?? new Dictionary<string, IOpenApiMediaType>())
                     .Select(y => (
                         x.OperationPath,
                         x.OperationType,
@@ -128,7 +128,7 @@ public static class TraversalTreeHelper
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
         return openApiDocument.Paths?
-            .SelectMany(x => x.Value.Operations
+            .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
                 .Select(y => OperationContext.FromOperation(
                     settings: settings,
                     globalSettings: globalSettings,

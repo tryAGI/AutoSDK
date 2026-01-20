@@ -22,7 +22,7 @@ public static class ClientNameGenerator
     {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
-        var name = new string(tag.Name
+        var name = new string((tag.Name ?? string.Empty)
             .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
             .ToArray());
 
@@ -55,7 +55,7 @@ public static class ClientNameGenerator
     {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
-        var name = new string(tag.Name
+        var name = new string((tag.Name ?? string.Empty)
             .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
             .ToArray());
 

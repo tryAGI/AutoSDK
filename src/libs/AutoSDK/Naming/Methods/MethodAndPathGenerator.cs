@@ -9,7 +9,7 @@ public class MethodAndPathGenerator : IMethodNameGenerator
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
-        var prefix = operation.OperationType switch
+        var prefix = operation.OperationType.Method switch
         {
             "GET" => "get",
             "POST" => "create",

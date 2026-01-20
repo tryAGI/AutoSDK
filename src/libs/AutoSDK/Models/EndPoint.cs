@@ -47,7 +47,7 @@ public record struct EndPoint(
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
-        var authorizations = operation.Operation.Security
+        var authorizations = (operation.Operation.Security ?? [])
             .SelectMany(x => x)
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings, operation.GlobalSettings))
             .ToImmutableArray();
@@ -104,7 +104,7 @@ public record struct EndPoint(
             requestMediaType = "application/octet-stream";
         }
 
-        var responses = operation.Operation.Responses
+        var responses = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
             .Select(x => EndPointResponse.FromResponse(x, operation))
             .ToArray();
         var contentType = responses
@@ -146,7 +146,7 @@ public record struct EndPoint(
             });
         }
         
-        var firstTag = operation.Operation.Tags.FirstOrDefault();
+        var firstTag = (operation.Operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
         var endPoint = new EndPoint(
             Id: operation.MethodName,
             ClassName: operation.Settings.GroupByTags && firstTag != null
@@ -177,7 +177,7 @@ public record struct EndPoint(
             Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
             CliAction:
-                (operation.Operation.Extensions
+                ((operation.Operation.Extensions ?? new Dictionary<string, IOpenApiExtension>())
                     .FirstOrDefault(x => x.Key == "x-cli-action")
                     .Value is JsonValue cliActionValue && cliActionValue.TryGetValue<string>(out var cliActionStr)
                     ? cliActionStr

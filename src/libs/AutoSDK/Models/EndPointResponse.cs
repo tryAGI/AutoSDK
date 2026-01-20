@@ -73,7 +73,7 @@ public record struct EndPointResponse(
 
         var endPoint = new EndPointResponse(
             StatusCode: responseWithStatusCode.Key,
-            Description: response.Response.Description,
+            Description: response.Response.Description ?? string.Empty,
             MimeType: response.MimeType,
             ContentType: contentType,
             Type: responseType ?? TypeData.Default);
