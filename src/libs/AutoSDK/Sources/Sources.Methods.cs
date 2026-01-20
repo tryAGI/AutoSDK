@@ -84,14 +84,20 @@ namespace {endPoint.Settings.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
-    public static string GetHttpMethod(OperationType operationType)
+    public static string GetHttpMethod(System.Net.Http.HttpMethod operationType)
     {
-        if (operationType == OperationType.Patch)
+        return operationType.Method.ToUpperInvariant() switch
         {
-            return "new global::System.Net.Http.HttpMethod(\"PATCH\")";
-        }
-
-        return $"global::System.Net.Http.HttpMethod.{operationType:G}";
+            "GET" => "global::System.Net.Http.HttpMethod.Get",
+            "POST" => "global::System.Net.Http.HttpMethod.Post",
+            "PUT" => "global::System.Net.Http.HttpMethod.Put",
+            "DELETE" => "global::System.Net.Http.HttpMethod.Delete",
+            "HEAD" => "global::System.Net.Http.HttpMethod.Head",
+            "OPTIONS" => "global::System.Net.Http.HttpMethod.Options",
+            "TRACE" => "global::System.Net.Http.HttpMethod.Trace",
+            "PATCH" => "new global::System.Net.Http.HttpMethod(\"PATCH\")",
+            _ => $"new global::System.Net.Http.HttpMethod(\"{operationType.Method}\")",
+        };
     }
 
     public static string GenerateMethod(

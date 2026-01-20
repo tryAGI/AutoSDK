@@ -1,3 +1,4 @@
+using AutoSDK.Extensions;
 using AutoSDK.Models;
 
 namespace AutoSDK.Naming.AnyOfs;
@@ -16,7 +17,7 @@ public static class SmartNamedAnyOfNames
     public static bool ShouldUseSmartName(IList<SchemaContext> children, string className)
     {
         return children.All(x =>
-            x.Schema.Reference != null &&
+            x.Schema.IsSchemaReference() &&
             !string.IsNullOrWhiteSpace(ComputeSmartName(x.TypeData, className)) &&
             x.TypeData.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal) != true);
     }

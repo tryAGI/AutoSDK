@@ -57,7 +57,7 @@ public record struct AnyOfData(
                 Summary = x.Schema.GetSummary(),
                 DiscriminatorValue = context.Schema.Discriminator?.Mapping?
                     .FirstOrDefault(y =>
-                        y.Value.Contains(x.Id) ||
+                        y.Value.Reference?.Id?.Contains(x.Id) == true ||
                         (x.Schema.Properties.ContainsKey(context.Schema.Discriminator.PropertyName) &&
                          x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.Count == 1 &&
                          x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.FirstOrDefault()

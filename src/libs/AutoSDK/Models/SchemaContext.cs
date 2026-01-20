@@ -1,20 +1,22 @@
+using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Models;
+using AutoSDK.Naming.Properties;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
 public class SchemaContext(
     Settings settings,
-    OpenApiSchema schema,
+    IOpenApiSchema schema,
     string id,
     string type)
 {
     public SchemaContext? Parent { get; set; }
     public IList<SchemaContext> Children { get; set; } = [];
-    
+
     public Settings Settings { get; set; } = settings;
-    public OpenApiSchema Schema { get; set; } = schema;
+    public IOpenApiSchema Schema { get; set; } = schema;
     public string Id { get; set; } = id;
     public string Type { get; set; } = type;
     
@@ -46,10 +48,10 @@ public class SchemaContext(
     public System.Net.Http.HttpMethod? OperationType { get; set; }
     public OpenApiOperation? Operation { get; set; }
     public string? ContentType { get; set; }
-    public OpenApiMediaType? MediaType { get; set; }
-    public OpenApiParameter? Parameter { get; set; }
+    public IOpenApiMediaType? MediaType { get; set; }
+    public IOpenApiParameter? Parameter { get; set; }
     public string? ResponseStatusCode { get; set; }
-    public OpenApiResponse? Response { get; set; }
+    public IOpenApiResponse? Response { get; set; }
     public bool IsOperation => OperationPath != null;
     
     public TypeData TypeData { get; set; } = TypeData.Default;
@@ -86,26 +88,26 @@ public class SchemaContext(
     public bool IsBaseClass => this is { IsComponent: true, Schema.Discriminator.Mapping: not null };
     public bool IsDerivedClass => Schema.IsAllOf() &&
                                   Schema.AllOf is { Count: 2 } allOf &&
-                                  (allOf[0].Reference != null &&
+                                  (allOf[0].IsSchemaReference() &&
                                   allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
-                                  allOf[1].Reference != null &&
+                                  allOf[1].IsSchemaReference() &&
                                   allOf[1].ResolveIfRequired().Discriminator?.Mapping != null);
     public SchemaContext DerivedClassContext =>
         Schema.IsAllOf() &&
         Schema.AllOf is { Count: 2 } allOf
-        ? allOf[0].Reference != null &&
+        ? allOf[0].IsSchemaReference() &&
           allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
-            ? Children.First(x => x.ReferenceId == allOf[1].Reference?.Id)
-            : Children.First(x => x.ReferenceId == allOf[0].Reference?.Id)
+            ? Children.First(x => x.ReferenceId == allOf[1].GetReferenceId())
+            : Children.First(x => x.ReferenceId == allOf[0].GetReferenceId())
             : throw new InvalidOperationException("Schema is not derived class.");
-    
+
     public SchemaContext BaseClassContext =>
         Schema.IsAllOf() &&
         Schema.AllOf is { Count: 2 } allOf
-        ? allOf[0].Reference != null &&
+        ? allOf[0].IsSchemaReference() &&
           allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
-            ? Children.First(x => x.ReferenceId == allOf[0].Reference?.Id)
-            : Children.First(x => x.ReferenceId == allOf[1].Reference?.Id)
+            ? Children.First(x => x.ReferenceId == allOf[0].GetReferenceId())
+            : Children.First(x => x.ReferenceId == allOf[1].GetReferenceId())
             : throw new InvalidOperationException("Schema is not derived class.");
     
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
@@ -149,13 +151,13 @@ public class SchemaContext(
 
     public HashSet<string> Tags { get; set; } = [];
     
-    private static string ComputeType(OpenApiSchema schema, bool isComponent)
+    private static string ComputeType(IOpenApiSchema schema, bool isComponent)
     {
         if (schema.IsEnum())
         {
             return "enum";
         }
-        if (schema.Type == "object")// &&
+        if (schema.Type == JsonSchemaType.Object)// &&
             // (isComponent ||
             //  schema.Properties.Count > 0 ||
             //  !schema.AdditionalPropertiesAllowed))
@@ -166,7 +168,7 @@ public class SchemaContext(
         {
             return "bool";
         }
-        if (schema.Type == "number")
+        if (schema.Type == JsonSchemaType.Number)
         {
             return schema.Format switch
             {
@@ -174,7 +176,7 @@ public class SchemaContext(
                 _ => "double",
             };
         }
-        if (schema.Type == "integer")
+        if (schema.Type == JsonSchemaType.Integer)
         {
             return schema.Format switch
             {
@@ -183,7 +185,7 @@ public class SchemaContext(
             };
         }
 
-        if (schema.Type == "string")
+        if (schema.Type == JsonSchemaType.String)
         {
             return schema.Format switch
             {
@@ -208,7 +210,7 @@ public class SchemaContext(
             return "allOf";
         }
         
-        return schema.Type ?? "class";
+        return schema.Type.ToTypeString() ?? "class";
     }
 
     public bool IsRequired =>
@@ -219,36 +221,37 @@ public class SchemaContext(
         Hint == Models.Hint.AdditionalProperties;
 
     public static IReadOnlyList<SchemaContext> FromSchema(
-        OpenApiSchema schema,
+        IOpenApiSchema schema,
         Settings settings,
         SchemaContext? parent = null,
         string? componentId = null,
         string? propertyName = null,
         string? operationPath = null,
-        OperationType? operationType = null,
+        System.Net.Http.HttpMethod? operationType = null,
         OpenApiOperation? operation = null,
         string? contentType = null,
-        OpenApiMediaType? mediaType = null,
-        OpenApiParameter? parameter = null,
+        IOpenApiMediaType? mediaType = null,
+        IOpenApiParameter? parameter = null,
         string? responseStatusCode = null,
-        OpenApiResponse? response = null,
+        IOpenApiResponse? response = null,
         Hint? hint = null,
         int? index = null,
         int depth = 0)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        if (schema.Reference?.Id != null &&
-            componentId != schema.Reference.Id)
+        var referenceId = schema.GetReferenceId();
+        if (referenceId != null &&
+            componentId != referenceId)
         {
             return [new SchemaContext(
                 settings,
                 schema,
-                id: schema.Reference.Id.ToCSharpName(settings, parent),
+                id: referenceId.ToCSharpName(settings, parent),
                 type: "ref")
             {
                 Parent = parent,
-                ReferenceId = schema.Reference.Id,
+                ReferenceId = referenceId,
                 ComponentId = componentId,
                 PropertyName = propertyName,
                 Hint = hint,
@@ -360,16 +363,15 @@ public class SchemaContext(
             children.AddRange(FromSchema(
                 schema: new OpenApiSchema
                 {
-                    Type = "object",
+                    Type = JsonSchemaType.Object,
                     Properties =
                     {
                         [schema.Discriminator.PropertyName] = new OpenApiSchema
                         {
-                            Type = "string",
+                            Type = JsonSchemaType.String,
                             Enum = schema.Discriminator.Mapping?.Keys
-                                .Select(x => new OpenApiString(x))
-                                .Cast<IOpenApiAny>()
-                                .ToList(),
+                                .Select(x => (JsonNode?)JsonValue.Create(x))
+                                .ToList() ?? [],
                         }
                     }
                 },
@@ -482,9 +484,12 @@ public class SchemaContext(
             return;
         }
         
-        foreach (var tag in Operation?.Tags ?? [])
+        if (Operation?.Tags != null)
         {
-            Tags.Add(tag.Name);
+            foreach (var tag in Operation.Tags)
+            {
+                Tags.Add(tag.Name);
+            }
         }
         foreach (var tag in parentTags ?? [])
         {

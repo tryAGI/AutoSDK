@@ -171,7 +171,7 @@ public record struct TypeData(
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
             IsValueType: ContextIsValueType(context),
-            IsNullable: context.Schema.Nullable,
+            IsNullable: context.Schema.IsNullable(),
             IsArray: context.Schema.IsArray(),
             IsEnum: context.Schema.IsEnum(),
             IsBase64: context.Schema.IsBase64(),
@@ -204,7 +204,7 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        return (context.Schema.Type, context.Schema.Format) switch
+        return (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
         {
             (_, _) when context.IsAnyOfLikeStructure => true,
             (_, _) when context.IsEnum => true,
@@ -230,7 +230,7 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        var type = (context.Schema.Type?.ToLowerInvariant(), context.Schema.Format) switch
+        var type = (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
@@ -247,16 +247,16 @@ public record struct TypeData(
             (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
 
             ("object", _) or (null, _) when
-                context.Schema.Reference != null &&
+                context.Schema.IsSchemaReference() &&
                 (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
                  !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
-            // ("object", _) or (null, "object") when context.Schema.Reference == null =>
+            // ("object", _) or (null, "object") when !context.Schema.IsSchemaReference() =>
             //     $"global::{context.Settings.Namespace}.{context.Id}",
 
             ("object", _) or (null, "object") when
-                context.Schema.Reference == null &&
+                !context.Schema.IsSchemaReference() &&
                 (context.Schema.Properties.Count > 0 ||
                 !context.Schema.AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
@@ -326,7 +326,7 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        return context.Schema.Nullable ||
+        return context.Schema.IsNullable() ||
                !context.IsRequired && additionalContext?.IsRequired != true;
     }
 }

@@ -72,7 +72,9 @@ public record struct ModelData(
             IsDerivedClass: context.IsDerivedClass,
             DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
             DerivedTypes: context.Schema.Discriminator?.Mapping?
-                .Select(x => (ClassName: x.Value.Replace("#/components/schemas/", string.Empty), Discriminator: x.Key))
+                // Old Code for Microsoft.OpenApi 1.x
+                //.Select(x => (ClassName: x.Value.Replace("#/components/schemas/", string.Empty), Discriminator: x.Key))
+                .Select(x => (ClassName: x.Value.Reference?.Id ?? string.Empty, Discriminator: x.Key))
                 .ToImmutableArray() ?? []
             );
     }

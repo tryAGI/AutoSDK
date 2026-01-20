@@ -28,11 +28,11 @@ public record struct EndPointResponse(
         ContentType: ContentType.String,
         Type: TypeData.Default);
     
-    public static EndPointResponse FromResponse(KeyValuePair<string, OpenApiResponse> responseWithStatusCode, OperationContext operation)
+    public static EndPointResponse FromResponse(KeyValuePair<string, IOpenApiResponse> responseWithStatusCode, OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
-        
-        var responses = responseWithStatusCode.Value?.ResolveIfRequired().Content?
+
+        var responses = responseWithStatusCode.Value?.Content?
             .Select(x => (
                 StatusCode: responseWithStatusCode.Key,
                 Response: responseWithStatusCode.Value,

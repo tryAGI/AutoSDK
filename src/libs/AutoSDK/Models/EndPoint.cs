@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Serialization.Form;
@@ -88,8 +89,10 @@ public record struct EndPoint(
         var queryParameters = ParameterSerializer.SerializeQueryParameters(parameters);
  
         var requestMediaTypes =
-            operation.Operation.RequestBody?.ResolveIfRequired().Content ??
-            new Dictionary<string, OpenApiMediaType>();
+            // Old Code for Microsoft.OpenApi 1.x
+            //operation.Operation.RequestBody?.ResolveIfRequired().Content ??
+            operation.Operation.RequestBody?.Content ??
+            new Dictionary<string, IOpenApiMediaType>();
 
         var requestContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Request);
         TypeData? requestType = requestContext?.TypeData;
@@ -101,7 +104,7 @@ public record struct EndPoint(
             requestMediaType = "application/octet-stream";
         }
 
-        var responses = (operation.Operation.Responses ?? [])
+        var responses = operation.Operation.Responses
             .Select(x => EndPointResponse.FromResponse(x, operation))
             .ToArray();
         var contentType = responses
@@ -143,7 +146,7 @@ public record struct EndPoint(
             });
         }
         
-        var firstTag = (operation.Operation.Tags ?? []).FirstOrDefault();
+        var firstTag = operation.Operation.Tags.FirstOrDefault();
         var endPoint = new EndPoint(
             Id: operation.MethodName,
             ClassName: operation.Settings.GroupByTags && firstTag != null
@@ -176,7 +179,9 @@ public record struct EndPoint(
             CliAction:
                 (operation.Operation.Extensions
                     .FirstOrDefault(x => x.Key == "x-cli-action")
-                    .Value as OpenApiString)?.Value ??
+                    .Value is JsonValue cliActionValue && cliActionValue.TryGetValue<string>(out var cliActionStr)
+                    ? cliActionStr
+                    : null) ??
                 operation.MethodName.FirstWord().ToLowerInvariant(),
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,

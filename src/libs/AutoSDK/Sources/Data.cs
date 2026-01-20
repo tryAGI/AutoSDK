@@ -74,12 +74,14 @@ public static class Data
                      .SelectMany(x => x.Value.Operations)
                      .Select(x => x.Value))
         {
-            foreach (var tag in operation.Tags ?? Array.Empty<OpenApiTagReference>())
+            foreach (var tag in operation.Tags)
             {
                 var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
                 if (existingTag is null)
                 {
-                    allTags.Add(tag);
+                    // In OpenAPI 3.0+, Tags collection contains OpenApiTag, but operation.Tags contains OpenApiTagReference
+                    // Create a new OpenApiTag from the reference
+                    allTags.Add(new OpenApiTag { Name = tag.Name, Description = tag.Description });
                 }
             }
         }

@@ -1,12 +1,1 @@
-﻿[
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1v1~1finetuning~1finetuned-models~1{finetuned_model_id}~1training-step-metrics/get/responses/200/content/application~1json/example/step_metrics/0/metrics/step
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1v1~1finetuning~1finetuned-models~1{finetuned_model_id}~1training-step-metrics/get/responses/200/content/application~1json/example/step_metrics/1/metrics/step
-  }
-]
+﻿[]

@@ -19,15 +19,27 @@ public record struct Tag(
         Description: string.Empty,
         GlobalSettings: Settings.Default);
 
+    public static Tag FromTag(OpenApiTagReference tag, Settings settings)
+    {
+        tag = tag ?? throw new ArgumentNullException(nameof(tag));
+
+        var value = new Tag(
+            Name: tag.Name,
+            Description: tag.Description ?? string.Empty,
+            GlobalSettings: settings);
+
+        return value;
+    }
+
     public static Tag FromTag(OpenApiTag tag, Settings settings)
     {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
-        
+
         var value = new Tag(
             Name: tag.Name,
-            Description: tag.Description,
+            Description: tag.Description ?? string.Empty,
             GlobalSettings: settings);
-        
+
         return value;
     }
 }

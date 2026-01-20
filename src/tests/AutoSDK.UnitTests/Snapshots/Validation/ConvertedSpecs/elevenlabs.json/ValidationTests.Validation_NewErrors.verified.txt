@@ -32,7 +32,11 @@
     Pointer: 
   },
   {
-    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1add-secret/post/parameters/schema,
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1simulate-conversation/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1agents~1{agent_id}~1simulate-conversation~1stream/post/parameters/schema,
     Pointer: 
   },
   {
@@ -64,7 +68,7 @@
     Pointer: 
   },
   {
-    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index/post/parameters/schema,
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}/patch/parameters/schema,
     Pointer: 
   },
   {
@@ -73,6 +77,22 @@
   },
   {
     Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index/post/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index~1{rag_index_id}/delete/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1convai~1knowledge-base~1{documentation_id}~1rag-index~1{rag_index_id}/delete/parameters/schema,
     Pointer: 
   },
   {
@@ -100,6 +120,10 @@
     Pointer: 
   },
   {
+    Message: optional is not a valid property at #/components/schemas/Body_Create_Agent_v1_convai_agents_create_post/properties/tags,
+    Pointer: 
+  },
+  {
     Message: name is not a valid property at #/components/schemas/Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_create_voice_from_preview_post/properties/labels,
     Pointer: 
   },
@@ -109,6 +133,10 @@
   },
   {
     Message: optional is not a valid property at #/components/schemas/Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch/properties/name,
+    Pointer: 
+  },
+  {
+    Message: optional is not a valid property at #/components/schemas/Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch/properties/tags,
     Pointer: 
   }
 ]

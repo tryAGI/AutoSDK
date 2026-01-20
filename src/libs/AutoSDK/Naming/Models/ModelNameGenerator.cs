@@ -12,7 +12,7 @@ public static class ModelNameGenerator
         SchemaContext? parent = null,
         Hint? hint = null,
         OpenApiOperation? operation = null,
-        OpenApiParameter? parameter = null,
+        IOpenApiParameter? parameter = null,
         string? propertyName = null,
         string? componentId = null,
         int? index = null)

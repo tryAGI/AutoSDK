@@ -1,4 +1,3 @@
-using Microsoft.OpenApi;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 
@@ -12,15 +11,15 @@ public class MethodAndPathGenerator : IMethodNameGenerator
         
         var prefix = operation.OperationType switch
         {
-            OperationType.Get => "get",
-            OperationType.Post => "create",
-            OperationType.Put => "put",
-            OperationType.Delete => "delete",
-            OperationType.Patch => "edit",
-            OperationType.Head => "head",
-            OperationType.Options => "options",
-            OperationType.Trace => "trace",
-            _ => throw new NotSupportedException($"OperationType {operation.OperationType} is not supported."),
+            "GET" => "get",
+            "POST" => "create",
+            "PUT" => "put",
+            "DELETE" => "delete",
+            "PATCH" => "edit",
+            "HEAD" => "head",
+            "OPTIONS" => "options",
+            "TRACE" => "trace",
+            _ => throw new NotSupportedException($"HttpMethod {operation.OperationType} is not supported."),
         };
         
         var path = operation.OperationPath;

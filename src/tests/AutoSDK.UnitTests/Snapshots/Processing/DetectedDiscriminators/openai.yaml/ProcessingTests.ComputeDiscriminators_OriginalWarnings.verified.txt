@@ -2,6 +2,11 @@
   {
     RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/CreateTranscriptionRequest/properties/chunking_strategy/anyOf/0/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/components/schemas/RealtimeSession/properties/modalities/items/default
   },
   {
@@ -28,6 +33,11 @@
     RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/components/schemas/RealtimeTranscriptionSessionCreateRequest/properties/input_audio_noise_reduction/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptionChunkingStrategy/oneOf/0/default
   },
   {
     RuleName: SchemaMismatchedDataType,
