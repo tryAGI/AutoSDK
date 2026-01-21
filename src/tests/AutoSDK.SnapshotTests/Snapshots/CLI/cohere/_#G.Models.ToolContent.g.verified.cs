@@ -33,6 +33,22 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// Document content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DocumentContent? Document { get; init; }
+#else
+        public global::G.DocumentContent? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ToolContent(global::G.TextContent value) => new ToolContent((global::G.TextContent?)value);
@@ -49,23 +65,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// Document content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DocumentContent? Document { get; init; }
-#else
-        public global::G.DocumentContent? Document { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
-#endif
-        public bool IsDocument => Document != null;
 
         /// <summary>
         /// 

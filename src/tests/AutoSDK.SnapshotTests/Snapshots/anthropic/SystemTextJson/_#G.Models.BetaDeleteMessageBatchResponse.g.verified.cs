@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BetaDeleteMessageBatchResponse
     {
         /// <summary>
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -38,8 +36,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaDeleteMessageBatchResponse" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </param>
         /// <param name="type">
         /// Deleted object type.<br/>

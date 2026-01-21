@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"custom_llm_extra_body":true,"enable_conversation_initiation_client_data_from_webhook":true}
     /// </summary>
     public sealed partial class ConversationInitiationClientDataConfigInput
     {
         /// <summary>
-        /// 
+        /// Overrides for the conversation configuration
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conversation_config_override")]
         public global::G.ConversationConfigClientOverrideConfigInput? ConversationConfigOverride { get; set; }
@@ -38,7 +38,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationInitiationClientDataConfigInput" /> class.
         /// </summary>
-        /// <param name="conversationConfigOverride"></param>
+        /// <param name="conversationConfigOverride">
+        /// Overrides for the conversation configuration
+        /// </param>
         /// <param name="customLlmExtraBody">
         /// Whether to include custom LLM extra body<br/>
         /// Default Value: false

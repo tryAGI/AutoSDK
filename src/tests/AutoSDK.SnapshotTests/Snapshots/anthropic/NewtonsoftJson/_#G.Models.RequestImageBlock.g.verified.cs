@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant115? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// <param name="source"></param>
         public RequestImageBlock(
             global::G.Source4 source,
-            global::G.CacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant115? cacheControl,
             global::G.RequestImageBlockType type)
         {
             this.Source = source;

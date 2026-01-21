@@ -28,6 +28,22 @@ namespace G
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// Customize your own chunking strategy by setting chunk size and chunk overlap.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StaticChunkingStrategyRequestParam? Static { get; init; }
+#else
+        public global::G.StaticChunkingStrategyRequestParam? Static { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
+#endif
+        public bool IsStatic => Static != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChunkingStrategyRequestParam(global::G.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::G.AutoChunkingStrategyRequestParam?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Auto = value;
         }
-
-        /// <summary>
-        /// Customize your own chunking strategy by setting chunk size and chunk overlap.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StaticChunkingStrategyRequestParam? Static { get; init; }
-#else
-        public global::G.StaticChunkingStrategyRequestParam? Static { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
-#endif
-        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 

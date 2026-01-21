@@ -21,7 +21,10 @@ namespace G
         /// Deploy Create
         /// </summary>
         /// <param name="xiApiKey"></param>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// namespace for the model name<br/>
+        /// Default Value: cnt
+        /// </param>
         /// <param name="modelName">
         /// model name in specified provider
         /// </param>

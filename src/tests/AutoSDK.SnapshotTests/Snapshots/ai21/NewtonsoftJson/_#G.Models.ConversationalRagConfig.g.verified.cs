@@ -46,7 +46,7 @@ namespace G
         public global::G.ConversationalRagConfigRetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrieval_similarity_threshold")]
         public double? RetrievalSimilarityThreshold { get; set; }
@@ -58,7 +58,7 @@ namespace G
         public int? MaxNeighbors { get; set; }
 
         /// <summary>
-        /// Default Value: 0.98
+        /// Default Value: 0.98F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hybrid_search_alpha")]
         public double? HybridSearchAlpha { get; set; }
@@ -85,11 +85,11 @@ namespace G
         /// Default Value: default
         /// </param>
         /// <param name="retrievalSimilarityThreshold">
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </param>
         /// <param name="maxNeighbors"></param>
         /// <param name="hybridSearchAlpha">
-        /// Default Value: 0.98
+        /// Default Value: 0.98F
         /// </param>
         public ConversationalRagConfig(
             global::System.Collections.Generic.IList<global::G.Message> messages,

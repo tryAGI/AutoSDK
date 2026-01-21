@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"type":"url","url":"https://www.example.com"}
     /// </summary>
     public sealed partial class PodcastURLSource
     {
@@ -13,8 +13,8 @@ namespace G
         /// The type of source to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PodcastURLSourceTypeJsonConverter))]
-        public global::G.PodcastURLSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// The URL to create the podcast from.
@@ -42,11 +42,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastURLSource(
-            string url,
-            global::G.PodcastURLSourceType type)
+            string type,
+            string url)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

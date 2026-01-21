@@ -25,13 +25,10 @@ namespace G
 
         /// <summary>
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </summary>
-        /// <example>pcm_s16le_16</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyAudioIsolationV1AudioIsolationPostFileFormatJsonConverter))]
-        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? FileFormat { get; set; }
+        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? FileFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,8 +47,7 @@ namespace G
         /// </param>
         /// <param name="fileFormat">
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,7 +55,7 @@ namespace G
         public BodyAudioIsolationV1AudioIsolationPost(
             byte[] audio,
             string audioname,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat)
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));

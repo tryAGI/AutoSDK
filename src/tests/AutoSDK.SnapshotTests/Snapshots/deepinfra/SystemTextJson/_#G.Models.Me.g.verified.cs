@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vercel_connection")]
-        public global::G.MeVercelConnection? VercelConnection { get; set; }
+        public global::G.MeVercelConnection2? VercelConnection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -194,7 +194,7 @@ namespace G
             string? teamRole,
             string? teamDisplayName,
             bool? isTeamUpgradeEnabled,
-            global::G.MeVercelConnection? vercelConnection)
+            global::G.MeVercelConnection2? vercelConnection)
         {
             this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));

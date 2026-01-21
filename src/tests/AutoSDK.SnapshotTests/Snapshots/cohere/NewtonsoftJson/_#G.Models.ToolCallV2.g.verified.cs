@@ -12,12 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function")]
-        public global::G.ToolCallV2Function? Function { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -28,6 +22,12 @@ namespace G
         public global::G.ToolCallV2Type? Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("function")]
+        public global::G.ToolCallV2Function? Function { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCallV2" /> class.
         /// </summary>
-        /// <param name="function"></param>
         /// <param name="id"></param>
         /// <param name="type"></param>
+        /// <param name="function"></param>
         public ToolCallV2(
-            global::G.ToolCallV2Function? function,
             string? id,
-            global::G.ToolCallV2Type? type)
+            global::G.ToolCallV2Type? type,
+            global::G.ToolCallV2Function? function)
         {
-            this.Function = function;
             this.Id = id;
             this.Type = type;
+            this.Function = function;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.EmbeddingsResponseDataItem> Data { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.EmbeddingsResponseObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.EmbeddingsResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.EmbeddingsResponseDataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsResponse" /> class.
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="model"></param>
         /// <param name="object"></param>
+        /// <param name="model"></param>
+        /// <param name="data"></param>
         public EmbeddingsResponse(
-            global::System.Collections.Generic.IList<global::G.EmbeddingsResponseDataItem> data,
             string model,
+            global::System.Collections.Generic.IList<global::G.EmbeddingsResponseDataItem> data,
             global::G.EmbeddingsResponseObject @object)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;
         }
 

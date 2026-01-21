@@ -45,14 +45,16 @@ namespace G
         public global::G.WorkflowState State { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2019-12-06T14:20:20.000Z
         /// </summary>
+        /// <example>2019-12-06T14:20:20.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2019-12-06T14:20:20.000Z
         /// </summary>
+        /// <example>2019-12-06T14:20:20.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -78,8 +80,9 @@ namespace G
         public string BadgeUrl { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2019-12-06T14:20:20.000Z
         /// </summary>
+        /// <example>2019-12-06T14:20:20.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("deleted_at")]
         public global::System.DateTime? DeletedAt { get; set; }
 
@@ -107,8 +110,12 @@ namespace G
         /// <param name="state">
         /// Example: active
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2019-12-06T14:20:20.000Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2019-12-06T14:20:20.000Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/actions/setup-ruby/workflows/5
         /// </param>
@@ -118,7 +125,9 @@ namespace G
         /// <param name="badgeUrl">
         /// Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
         /// </param>
-        /// <param name="deletedAt"></param>
+        /// <param name="deletedAt">
+        /// Example: 2019-12-06T14:20:20.000Z
+        /// </param>
         public Workflow(
             int id,
             string nodeId,

@@ -28,8 +28,10 @@ namespace G
         public required string Guid { get; set; }
 
         /// <summary>
-        /// Time when the webhook delivery occurred.
+        /// Time when the webhook delivery occurred.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </summary>
+        /// <example>2021-05-12T20:33:44Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("delivered_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime DeliveredAt { get; set; }
@@ -107,8 +109,10 @@ namespace G
         public required int? RepositoryId { get; set; }
 
         /// <summary>
-        /// Time when the webhook delivery was throttled.
+        /// Time when the webhook delivery was throttled.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </summary>
+        /// <example>2021-05-12T20:33:44Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("throttled_at")]
         public global::System.DateTime? ThrottledAt { get; set; }
 
@@ -130,7 +134,8 @@ namespace G
         /// Example: 58474f00-b361-11eb-836d-0e4f3503ccbe
         /// </param>
         /// <param name="deliveredAt">
-        /// Time when the webhook delivery occurred.
+        /// Time when the webhook delivery occurred.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </param>
         /// <param name="redelivery">
         /// Whether the webhook delivery is a redelivery.<br/>
@@ -165,7 +170,8 @@ namespace G
         /// Example: 123
         /// </param>
         /// <param name="throttledAt">
-        /// Time when the webhook delivery was throttled.
+        /// Time when the webhook delivery was throttled.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

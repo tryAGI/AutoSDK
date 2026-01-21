@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("likelihood")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Likelihood { get; set; }
+        public required string Token { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("likelihood")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
+        public required double Likelihood { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,17 +32,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SingleGenerationTokenLikelihood" /> class.
         /// </summary>
-        /// <param name="likelihood"></param>
         /// <param name="token"></param>
+        /// <param name="likelihood"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SingleGenerationTokenLikelihood(
-            double likelihood,
-            string token)
+            string token,
+            double likelihood)
         {
-            this.Likelihood = likelihood;
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Likelihood = likelihood;
         }
 
         /// <summary>

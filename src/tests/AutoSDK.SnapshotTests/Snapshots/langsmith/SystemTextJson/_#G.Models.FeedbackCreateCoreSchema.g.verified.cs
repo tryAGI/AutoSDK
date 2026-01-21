@@ -34,15 +34,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?>))]
-        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
+        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
-        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>))]
+        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string>))]
-        public global::G.AnyOf<object, string>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::G.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -79,8 +79,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>))]
-        public global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? FeedbackSource { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource, object>))]
+        public global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource, object>? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -123,14 +123,14 @@ namespace G
             string key,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
-            global::G.AnyOf<double?, int?, bool?>? score,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            global::G.AnyOf<double?, int?, bool?, object>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object, object>? value,
             string? comment,
-            global::G.AnyOf<object, string>? correction,
+            global::G.AnyOf<object, string, object>? correction,
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? id,
-            global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? feedbackSource,
+            global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource, object>? feedbackSource,
             global::G.FeedbackConfig? feedbackConfig,
             object? extra)
         {

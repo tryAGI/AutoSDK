@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<byte[]> Messages { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
         /// <param name="templateFormat"></param>
         /// <param name="inputs"></param>
         public InvokePromptPayload(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
+            global::System.Collections.Generic.IList<byte[]> messages,
             string templateFormat,
             object inputs)
         {

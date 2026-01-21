@@ -35,8 +35,7 @@ namespace G
         /// Default Value: FunctionMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FunctionMessageChunkTypeJsonConverter))]
-        public global::G.FunctionMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -76,7 +75,7 @@ namespace G
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.FunctionMessageChunkType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

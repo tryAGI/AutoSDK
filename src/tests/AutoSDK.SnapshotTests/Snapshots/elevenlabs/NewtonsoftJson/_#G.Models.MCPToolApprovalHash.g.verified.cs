@@ -22,7 +22,8 @@ namespace G
         public string ToolHash { get; set; } = default!;
 
         /// <summary>
-        /// Defines the tool-level approval policy.
+        /// The approval policy for this tool<br/>
+        /// Default Value: requires_approval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
         public global::G.MCPToolApprovalPolicy? ApprovalPolicy { get; set; }
@@ -43,7 +44,8 @@ namespace G
         /// SHA256 hash of the tool's parameters and description
         /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the tool-level approval policy.
+        /// The approval policy for this tool<br/>
+        /// Default Value: requires_approval
         /// </param>
         public MCPToolApprovalHash(
             string toolName,

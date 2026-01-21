@@ -28,9 +28,6 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::G.ValidateGraderResponse> ValidateGraderAsync(
             global::G.ValidateGraderRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -177,9 +174,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::G.ValidateGraderResponse> ValidateGraderAsync(
             global::G.OneOf<global::G.GraderStringCheck, global::G.GraderTextSimilarity, global::G.GraderPython, global::G.GraderScoreModel, global::G.GraderMulti> grader,
             global::System.Threading.CancellationToken cancellationToken = default)

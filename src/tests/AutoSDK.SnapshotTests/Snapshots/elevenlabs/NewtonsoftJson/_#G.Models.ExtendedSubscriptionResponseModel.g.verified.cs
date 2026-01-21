@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"has_open_invoices":false,"next_invoice":{"amount_due_cents":1000,"next_payment_attempt_unix":1738356858}}
     /// </summary>
     public sealed partial class ExtendedSubscriptionResponseModel
     {
@@ -49,7 +49,7 @@ namespace G
         /// The Unix timestamp of the next character count reset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_character_count_reset_unix")]
-        public global::System.DateTimeOffset? NextCharacterCountResetUnix { get; set; }
+        public int? NextCharacterCountResetUnix { get; set; }
 
         /// <summary>
         /// The number of voice slots used by the user.
@@ -109,10 +109,10 @@ namespace G
         /// The currency of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currency")]
-        public global::G.ExtendedSubscriptionResponseModelCurrency? Currency { get; set; }
+        public global::G.ExtendedSubscriptionResponseModelCurrency2? Currency { get; set; }
 
         /// <summary>
-        /// 
+        /// The status of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.SubscriptionStatusType Status { get; set; } = default!;
@@ -121,16 +121,16 @@ namespace G
         /// The billing period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_period")]
-        public global::G.ExtendedSubscriptionResponseModelBillingPeriod? BillingPeriod { get; set; }
+        public global::G.ExtendedSubscriptionResponseModelBillingPeriod2? BillingPeriod { get; set; }
 
         /// <summary>
         /// The character refresh period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_refresh_period")]
-        public global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
+        public global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod2? CharacterRefreshPeriod { get; set; }
 
         /// <summary>
-        /// 
+        /// The next invoice for the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_invoice")]
         public global::G.InvoiceResponseModel? NextInvoice { get; set; }
@@ -201,14 +201,18 @@ namespace G
         /// <param name="currency">
         /// The currency of the user's subscription.
         /// </param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// The status of the user's subscription.
+        /// </param>
         /// <param name="billingPeriod">
         /// The billing period of the user's subscription.
         /// </param>
         /// <param name="characterRefreshPeriod">
         /// The character refresh period of the user's subscription.
         /// </param>
-        /// <param name="nextInvoice"></param>
+        /// <param name="nextInvoice">
+        /// The next invoice for the user.
+        /// </param>
         /// <param name="hasOpenInvoices">
         /// Whether the user has open invoices.
         /// </param>
@@ -229,17 +233,17 @@ namespace G
             bool canUseProfessionalVoiceCloning,
             global::G.SubscriptionStatusType status,
             bool hasOpenInvoices,
-            global::System.DateTimeOffset? nextCharacterCountResetUnix,
+            int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
-            global::G.ExtendedSubscriptionResponseModelCurrency? currency,
-            global::G.ExtendedSubscriptionResponseModelBillingPeriod? billingPeriod,
-            global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod? characterRefreshPeriod,
+            global::G.ExtendedSubscriptionResponseModelCurrency2? currency,
+            global::G.ExtendedSubscriptionResponseModelBillingPeriod2? billingPeriod,
+            global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod2? characterRefreshPeriod,
             global::G.InvoiceResponseModel? nextInvoice)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;
             this.CharacterLimit = characterLimit;
-            this.MaxCharacterLimitExtension = maxCharacterLimitExtension;
+            this.MaxCharacterLimitExtension = maxCharacterLimitExtension ?? throw new global::System.ArgumentNullException(nameof(maxCharacterLimitExtension));
             this.CanExtendCharacterLimit = canExtendCharacterLimit;
             this.AllowedToExtendCharacterLimit = allowedToExtendCharacterLimit;
             this.VoiceSlotsUsed = voiceSlotsUsed;

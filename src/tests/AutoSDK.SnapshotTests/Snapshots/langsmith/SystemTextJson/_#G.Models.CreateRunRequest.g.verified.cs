@@ -22,7 +22,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        public object? Inputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -36,105 +37,120 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?>))]
-        public global::G.OneOf<string, double?>? StartTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?, object>))]
+        public global::G.OneOf<string, double?, object>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?>))]
-        public global::G.OneOf<string, double?>? EndTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?, object>))]
+        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        public object? Extra { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
+        public global::G.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
-        public object? Serialized { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public object? Outputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
-        public global::System.Guid? ParentRunId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<object>? Events { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]
+        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public global::System.Guid? TraceId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
-        public string? DottedOrder { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
+        public global::G.OneOf<string, object>? DottedOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public global::System.Guid? SessionId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
-        public string? SessionName { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
+        public global::G.OneOf<string, object>? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example_id")]
-        public global::System.Guid? ReferenceExampleId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_attachments")]
-        public object? InputAttachments { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_attachments")]
-        public object? OutputAttachments { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -171,24 +187,24 @@ namespace G
         public CreateRunRequest(
             string name,
             global::G.CreateRunRequestRunType runType,
-            object? inputs,
-            global::G.OneOf<string, double?>? startTime,
-            global::G.OneOf<string, double?>? endTime,
-            object? extra,
-            string? error,
-            object? serialized,
-            object? outputs,
-            global::System.Guid? parentRunId,
-            global::System.Collections.Generic.IList<object>? events,
-            global::System.Collections.Generic.IList<string>? tags,
-            global::System.Guid? traceId,
-            string? dottedOrder,
-            global::System.Guid? id,
-            global::System.Guid? sessionId,
-            string? sessionName,
-            global::System.Guid? referenceExampleId,
-            object? inputAttachments,
-            object? outputAttachments)
+            global::G.OneOf<object, object>? inputs,
+            global::G.OneOf<string, double?, object>? startTime,
+            global::G.OneOf<string, double?, object>? endTime,
+            global::G.OneOf<object, object>? extra,
+            global::G.OneOf<string, object>? error,
+            global::G.OneOf<object, object>? serialized,
+            global::G.OneOf<object, object>? outputs,
+            global::G.OneOf<global::System.Guid?, object>? parentRunId,
+            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
+            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::G.OneOf<global::System.Guid?, object>? traceId,
+            global::G.OneOf<string, object>? dottedOrder,
+            global::G.OneOf<global::System.Guid?, object>? id,
+            global::G.OneOf<global::System.Guid?, object>? sessionId,
+            global::G.OneOf<string, object>? sessionName,
+            global::G.OneOf<global::System.Guid?, object>? referenceExampleId,
+            global::G.OneOf<object, object>? inputAttachments,
+            global::G.OneOf<object, object>? outputAttachments)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;

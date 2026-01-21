@@ -10,8 +10,7 @@ namespace G
         /// Patches an Agent settings
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -30,8 +29,7 @@ namespace G
         /// Patches an Agent settings
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -43,12 +41,10 @@ namespace G
         /// Platform settings for the agent are all settings that aren't related to the conversation orchestration and content.
         /// </param>
         /// <param name="name">
-        /// A name to make the agent easier to find<br/>
-        /// Example: My agent
+        /// A name to make the agent easier to find
         /// </param>
         /// <param name="tags">
-        /// Tags to help classify and filter the agent<br/>
-        /// Example: [Customer Support, Technical Help, Eleven]
+        /// Tags to help classify and filter the agent
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

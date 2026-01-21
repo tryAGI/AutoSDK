@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the repository invitation.<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -50,8 +50,9 @@ namespace G
         public required global::G.RepositoryInvitationPermissions Permissions { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-06-13T14:52:50-05:00
         /// </summary>
+        /// <example>2016-06-13T14:52:50-05:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -97,7 +98,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier of the repository invitation.<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="repository">
         /// Minimal Repository
@@ -112,7 +113,9 @@ namespace G
         /// The permission associated with the invitation.<br/>
         /// Example: read
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-06-13T14:52:50-05:00
+        /// </param>
         /// <param name="expired">
         /// Whether or not the invitation has expired
         /// </param>

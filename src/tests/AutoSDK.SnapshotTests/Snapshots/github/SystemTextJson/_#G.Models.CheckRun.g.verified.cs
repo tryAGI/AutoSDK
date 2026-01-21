@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// The id of the check.<br/>
-        /// Example: 21L
+        /// Example: 21
         /// </summary>
-        /// <example>21L</example>
+        /// <example>21</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -87,15 +87,17 @@ namespace G
         public required global::G.CheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-05-04T01:14:52Z
         /// </summary>
+        /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-05-04T01:14:52Z
         /// </summary>
+        /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? CompletedAt { get; set; }
@@ -154,7 +156,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// The id of the check.<br/>
-        /// Example: 21L
+        /// Example: 21
         /// </param>
         /// <param name="headSha">
         /// The SHA of the commit that is being checked.<br/>
@@ -182,8 +184,12 @@ namespace G
         /// <param name="conclusion">
         /// Example: neutral
         /// </param>
-        /// <param name="startedAt"></param>
-        /// <param name="completedAt"></param>
+        /// <param name="startedAt">
+        /// Example: 2018-05-04T01:14:52Z
+        /// </param>
+        /// <param name="completedAt">
+        /// Example: 2018-05-04T01:14:52Z
+        /// </param>
         /// <param name="output"></param>
         /// <param name="name">
         /// The name of the check.<br/>

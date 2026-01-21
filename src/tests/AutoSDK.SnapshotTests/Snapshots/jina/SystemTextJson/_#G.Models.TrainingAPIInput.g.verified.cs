@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for train the classifier. OpenAI compatible
+    /// The input to the API for train the classifier. OpenAI compatible<br/>
+    /// Example: {"model":"jina-embeddings-v2-base-en","visibility":"public","input":[{"text":"text1","label":"label1"},{"text":"text2","label":"label2"}]}
     /// </summary>
     public sealed partial class TrainingAPIInput
     {

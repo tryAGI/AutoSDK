@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for text embedding. OpenAI compatible
+    /// The input to the API for text embedding. OpenAI compatible<br/>
+    /// Example: {"model":"clip","input":["bytes or URL"]}
     /// </summary>
     public sealed partial class MixedEmbeddingInput
     {

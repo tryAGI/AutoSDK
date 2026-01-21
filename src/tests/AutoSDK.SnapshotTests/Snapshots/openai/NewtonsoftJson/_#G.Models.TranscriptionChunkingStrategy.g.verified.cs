@@ -34,6 +34,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.VadConfig? Value2 { get; init; }
+#else
+        public global::G.VadConfig? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptionChunkingStrategy(global::G.TranscriptionChunkingStrategyEnum value) => new TranscriptionChunkingStrategy((global::G.TranscriptionChunkingStrategyEnum?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.VadConfig? Value2 { get; init; }
-#else
-        public global::G.VadConfig? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

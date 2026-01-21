@@ -16,7 +16,7 @@ namespace G
         public string? FirstMessage { get; set; }
 
         /// <summary>
-        /// 
+        /// The text contents for the selected language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_contents")]
         public global::G.WidgetTextContents? TextContents { get; set; }
@@ -31,7 +31,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WidgetLanguagePresetResponse" /> class.
         /// </summary>
         /// <param name="firstMessage"></param>
-        /// <param name="textContents"></param>
+        /// <param name="textContents">
+        /// The text contents for the selected language
+        /// </param>
         public WidgetLanguagePresetResponse(
             string? firstMessage,
             global::G.WidgetTextContents? textContents)

@@ -57,7 +57,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace G
             string toolCallId,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ToolMessageType? type,
+            string? type,
             string? name,
             string? id,
             object? artifact,

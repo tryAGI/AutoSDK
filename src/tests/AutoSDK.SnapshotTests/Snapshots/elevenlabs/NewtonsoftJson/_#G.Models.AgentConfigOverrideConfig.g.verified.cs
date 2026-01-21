@@ -24,7 +24,7 @@ namespace G
         public bool? Language { get; set; }
 
         /// <summary>
-        /// 
+        /// Configures overrides for nested fields.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public global::G.PromptAgentOverrideConfig? Prompt { get; set; }
@@ -46,7 +46,9 @@ namespace G
         /// Whether to allow overriding the language field.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">
+        /// Configures overrides for nested fields.
+        /// </param>
         public AgentConfigOverrideConfig(
             bool? firstMessage,
             bool? language,

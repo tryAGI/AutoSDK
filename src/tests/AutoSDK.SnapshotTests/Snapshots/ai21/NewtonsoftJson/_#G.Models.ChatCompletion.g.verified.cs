@@ -24,7 +24,8 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ChatCompletionResponseChoice> Choices { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The token counts for this request. Per-token billing is based on the<br/>
+        /// prompt token and completion token counts and rates.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.UsageInfo Usage { get; set; } = default!;
@@ -52,7 +53,10 @@ namespace G
         /// <param name="choices">
         /// One or more responses, depending on the `n` parameter from the request.
         /// </param>
-        /// <param name="usage"></param>
+        /// <param name="usage">
+        /// The token counts for this request. Per-token billing is based on the<br/>
+        /// prompt token and completion token counts and rates.
+        /// </param>
         /// <param name="meta"></param>
         public ChatCompletion(
             string id,

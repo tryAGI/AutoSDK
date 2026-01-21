@@ -22,6 +22,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
+        public string? ToolCallId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -33,12 +39,6 @@ namespace G
         public global::G.ToolMessageRole? Role { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_call_id")]
-        public string? ToolCallId { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,24 +48,24 @@ namespace G
         /// Initializes a new instance of the <see cref="ToolMessage" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="toolCallId"></param>
         /// <param name="name"></param>
         /// <param name="role">
         /// Default Value: tool
         /// </param>
-        /// <param name="toolCallId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolMessage(
             global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
+            string? toolCallId,
             string? name,
-            global::G.ToolMessageRole? role,
-            string? toolCallId)
+            global::G.ToolMessageRole? role)
         {
             this.Content = content;
+            this.ToolCallId = toolCallId;
             this.Name = name;
             this.Role = role;
-            this.ToolCallId = toolCallId;
         }
 
         /// <summary>

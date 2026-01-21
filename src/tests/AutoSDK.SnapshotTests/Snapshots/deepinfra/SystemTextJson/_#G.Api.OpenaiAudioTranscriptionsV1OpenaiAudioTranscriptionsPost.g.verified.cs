@@ -122,7 +122,7 @@ namespace G
             if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
                     name: "response_format");
             } 
             if (request.Temperature != default)
@@ -134,7 +134,7 @@ namespace G
             if (request.TimestampGranularities != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                    content: new global::System.Net.Http.StringContent($"{request.TimestampGranularities}"),
                     name: "timestamp_granularities");
             }
             __httpRequest.Content = __httpRequestContent;
@@ -293,9 +293,9 @@ namespace G
             string? xiApiKey = default,
             string? language = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
             double? temperature = default,
-            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitie>? timestampGranularities = default,
+            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost

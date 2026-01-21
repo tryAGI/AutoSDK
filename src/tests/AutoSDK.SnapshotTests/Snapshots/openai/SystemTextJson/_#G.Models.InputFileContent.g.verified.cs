@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.InputFileContent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -24,8 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? FileId { get; set; }
+        public string? FileId { get; set; }
 
         /// <summary>
         /// The name of the file to be sent to the model.
@@ -63,7 +60,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputFileContent(
-            global::G.AnyOf<string, object>? fileId,
+            string? fileId,
             string? filename,
             string? fileData,
             global::G.InputFileContentType type = global::G.InputFileContentType.InputFile)

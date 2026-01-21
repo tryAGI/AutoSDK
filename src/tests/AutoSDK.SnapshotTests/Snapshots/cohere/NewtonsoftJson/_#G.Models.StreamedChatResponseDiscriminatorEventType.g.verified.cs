@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="citation-generation")]
-        CitationGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="debug")]
-        Debug,
+        [global::System.Runtime.Serialization.EnumMember(Value="stream-start")]
+        StreamStart,
         /// <summary>
         /// 
         /// </summary>
@@ -33,18 +28,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stream-end")]
-        StreamEnd,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stream-start")]
-        StreamStart,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
         TextGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="citation-generation")]
+        CitationGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tool-calls-generation")]
+        ToolCallsGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="stream-end")]
+        StreamEnd,
         /// <summary>
         /// 
         /// </summary>
@@ -53,8 +53,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool-calls-generation")]
-        ToolCallsGeneration,
+        [global::System.Runtime.Serialization.EnumMember(Value="debug")]
+        Debug,
     }
 
     /// <summary>
@@ -69,15 +69,15 @@ namespace G
         {
             return value switch
             {
-                StreamedChatResponseDiscriminatorEventType.CitationGeneration => "citation-generation",
-                StreamedChatResponseDiscriminatorEventType.Debug => "debug",
+                StreamedChatResponseDiscriminatorEventType.StreamStart => "stream-start",
                 StreamedChatResponseDiscriminatorEventType.SearchQueriesGeneration => "search-queries-generation",
                 StreamedChatResponseDiscriminatorEventType.SearchResults => "search-results",
-                StreamedChatResponseDiscriminatorEventType.StreamEnd => "stream-end",
-                StreamedChatResponseDiscriminatorEventType.StreamStart => "stream-start",
                 StreamedChatResponseDiscriminatorEventType.TextGeneration => "text-generation",
-                StreamedChatResponseDiscriminatorEventType.ToolCallsChunk => "tool-calls-chunk",
+                StreamedChatResponseDiscriminatorEventType.CitationGeneration => "citation-generation",
                 StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration => "tool-calls-generation",
+                StreamedChatResponseDiscriminatorEventType.StreamEnd => "stream-end",
+                StreamedChatResponseDiscriminatorEventType.ToolCallsChunk => "tool-calls-chunk",
+                StreamedChatResponseDiscriminatorEventType.Debug => "debug",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -88,15 +88,15 @@ namespace G
         {
             return value switch
             {
-                "citation-generation" => StreamedChatResponseDiscriminatorEventType.CitationGeneration,
-                "debug" => StreamedChatResponseDiscriminatorEventType.Debug,
+                "stream-start" => StreamedChatResponseDiscriminatorEventType.StreamStart,
                 "search-queries-generation" => StreamedChatResponseDiscriminatorEventType.SearchQueriesGeneration,
                 "search-results" => StreamedChatResponseDiscriminatorEventType.SearchResults,
-                "stream-end" => StreamedChatResponseDiscriminatorEventType.StreamEnd,
-                "stream-start" => StreamedChatResponseDiscriminatorEventType.StreamStart,
                 "text-generation" => StreamedChatResponseDiscriminatorEventType.TextGeneration,
-                "tool-calls-chunk" => StreamedChatResponseDiscriminatorEventType.ToolCallsChunk,
+                "citation-generation" => StreamedChatResponseDiscriminatorEventType.CitationGeneration,
                 "tool-calls-generation" => StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration,
+                "stream-end" => StreamedChatResponseDiscriminatorEventType.StreamEnd,
+                "tool-calls-chunk" => StreamedChatResponseDiscriminatorEventType.ToolCallsChunk,
+                "debug" => StreamedChatResponseDiscriminatorEventType.Debug,
                 _ => null,
             };
         }

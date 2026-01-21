@@ -33,8 +33,7 @@ namespace G
         /// Get a list of agents depending on this knowledge base document
         /// </summary>
         /// <param name="documentationId">
-        /// The id of a document from the knowledge base. This is returned on document addition.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of a document from the knowledge base. This is returned on document addition.
         /// </param>
         /// <param name="cursor">
         /// Used for fetching next page. Cursor is returned in the response.

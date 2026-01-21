@@ -28,10 +28,9 @@ namespace G
         public global::System.Guid? ParentRun { get; set; }
 
         /// <summary>
-        /// Enum for run types.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunTypeEnumJsonConverter))]
         public global::G.RunTypeEnum? RunType { get; set; }
 
         /// <summary>
@@ -101,10 +100,9 @@ namespace G
         public bool? IsRoot { get; set; }
 
         /// <summary>
-        /// Enum for run data source types.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter))]
         public global::G.RunsFilterDataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
@@ -126,7 +124,7 @@ namespace G
         public bool? UseExperimentalSearch { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public global::G.RunStatsGroupBy? GroupBy { get; set; }
@@ -143,9 +141,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType">
-        /// Enum for run types.
-        /// </param>
+        /// <param name="runType"></param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -157,17 +153,13 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType">
-        /// Enum for run data source types.
-        /// </param>
+        /// <param name="dataSourceType"></param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

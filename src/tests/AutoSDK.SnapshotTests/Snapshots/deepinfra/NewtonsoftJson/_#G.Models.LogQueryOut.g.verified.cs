@@ -13,7 +13,7 @@ namespace G
         /// list of log lines ordered by increasing timestamp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entries")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Entries { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Entries { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// list of log lines ordered by increasing timestamp
         /// </param>
         public LogQueryOut(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? entries)
+            global::System.Collections.Generic.IList<byte[]>? entries)
         {
             this.Entries = entries;
         }

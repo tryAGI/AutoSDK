@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
         Assistant,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool")]
         Tool,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                ChatMessageV2DiscriminatorRole.User => "user",
                 ChatMessageV2DiscriminatorRole.Assistant => "assistant",
                 ChatMessageV2DiscriminatorRole.System => "system",
                 ChatMessageV2DiscriminatorRole.Tool => "tool",
-                ChatMessageV2DiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "user" => ChatMessageV2DiscriminatorRole.User,
                 "assistant" => ChatMessageV2DiscriminatorRole.Assistant,
                 "system" => ChatMessageV2DiscriminatorRole.System,
                 "tool" => ChatMessageV2DiscriminatorRole.Tool,
-                "user" => ChatMessageV2DiscriminatorRole.User,
                 _ => null,
             };
         }

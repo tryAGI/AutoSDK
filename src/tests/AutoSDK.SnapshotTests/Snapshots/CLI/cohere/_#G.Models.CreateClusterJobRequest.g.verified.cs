@@ -19,21 +19,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("generate_descriptions")]
-        public bool? GenerateDescriptions { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dataset_id")]
         public string? InputDatasetId { get; set; }
-
-        /// <summary>
-        /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
-        public bool? IsDeterministic { get; set; }
 
         /// <summary>
         /// Defaults to `10`. Parameter for HDBSCAN. Only clusters with this number of elements will be returned with a positive cluster number.<br/>
@@ -50,6 +37,19 @@ namespace G
         public int? NNeighbors { get; set; }
 
         /// <summary>
+        /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
+        public bool? IsDeterministic { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("generate_descriptions")]
+        public bool? GenerateDescriptions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,12 +59,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateClusterJobRequest" /> class.
         /// </summary>
         /// <param name="embeddingsUrl"></param>
-        /// <param name="generateDescriptions"></param>
         /// <param name="inputDatasetId"></param>
-        /// <param name="isDeterministic">
-        /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
-        /// Default Value: true
-        /// </param>
         /// <param name="minClusterSize">
         /// Defaults to `10`. Parameter for HDBSCAN. Only clusters with this number of elements will be returned with a positive cluster number.<br/>
         /// Default Value: 10
@@ -73,23 +68,28 @@ namespace G
         /// Parameter for UMAP. A scalar governing how to balance global vs local structure in the data.<br/>
         /// Default Value: 15
         /// </param>
+        /// <param name="isDeterministic">
+        /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="generateDescriptions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateClusterJobRequest(
             string embeddingsUrl,
-            bool? generateDescriptions,
             string? inputDatasetId,
-            bool? isDeterministic,
             int? minClusterSize,
-            int? nNeighbors)
+            int? nNeighbors,
+            bool? isDeterministic,
+            bool? generateDescriptions)
         {
             this.EmbeddingsUrl = embeddingsUrl ?? throw new global::System.ArgumentNullException(nameof(embeddingsUrl));
-            this.GenerateDescriptions = generateDescriptions;
             this.InputDatasetId = inputDatasetId;
-            this.IsDeterministic = isDeterministic;
             this.MinClusterSize = minClusterSize;
             this.NNeighbors = nNeighbors;
+            this.IsDeterministic = isDeterministic;
+            this.GenerateDescriptions = generateDescriptions;
         }
 
         /// <summary>

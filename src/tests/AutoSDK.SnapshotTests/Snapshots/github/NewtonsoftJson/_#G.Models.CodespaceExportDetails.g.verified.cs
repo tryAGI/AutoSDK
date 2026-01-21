@@ -18,8 +18,10 @@ namespace G
         public string? State { get; set; }
 
         /// <summary>
-        /// Completion time of the last export operation
+        /// Completion time of the last export operation<br/>
+        /// Example: 2021-01-01T19:01:12Z
         /// </summary>
+        /// <example>2021-01-01T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
@@ -77,7 +79,8 @@ namespace G
         /// Example: succeeded | failed | in_progress
         /// </param>
         /// <param name="completedAt">
-        /// Completion time of the last export operation
+        /// Completion time of the last export operation<br/>
+        /// Example: 2021-01-01T19:01:12Z
         /// </param>
         /// <param name="branch">
         /// Name of the exported branch<br/>

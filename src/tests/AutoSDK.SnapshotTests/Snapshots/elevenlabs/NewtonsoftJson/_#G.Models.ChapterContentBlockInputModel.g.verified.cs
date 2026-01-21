@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sub_type")]
-        public global::G.ChapterContentBlockInputModelSubType? SubType { get; set; }
+        public global::G.ChapterContentBlockInputModelSubType2? SubType { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// <param name="blockId"></param>
         public ChapterContentBlockInputModel(
             global::System.Collections.Generic.IList<global::G.ChapterContentParagraphTtsNodeInputModel> nodes,
-            global::G.ChapterContentBlockInputModelSubType? subType,
+            global::G.ChapterContentBlockInputModelSubType2? subType,
             string? blockId)
         {
             this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));

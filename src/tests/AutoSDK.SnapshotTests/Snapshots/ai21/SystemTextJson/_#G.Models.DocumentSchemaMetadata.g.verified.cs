@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Default Value: {}
     /// </summary>
     public sealed partial class DocumentSchemaMetadata
     {

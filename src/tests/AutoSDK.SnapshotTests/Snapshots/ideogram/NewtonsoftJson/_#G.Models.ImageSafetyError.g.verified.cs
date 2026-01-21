@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"error":"Image provided failed safety check due to the inclusion of prohibited content."}
     /// </summary>
     public sealed partial class ImageSafetyError
     {

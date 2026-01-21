@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Prompt { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Prompt { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         public EvaluatorStructuredOutput(
             object model,
             string? hubRef,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? prompt,
+            global::System.Collections.Generic.IList<byte[]>? prompt,
             string? templateFormat,
             object? schema,
             global::System.Collections.Generic.Dictionary<string, string>? variableMapping)

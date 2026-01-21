@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"amount_due_cents":1000,"next_payment_attempt_unix":1738356858}
     /// </summary>
     public sealed partial class InvoiceResponseModel
     {

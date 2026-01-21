@@ -32,7 +32,8 @@ namespace G
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

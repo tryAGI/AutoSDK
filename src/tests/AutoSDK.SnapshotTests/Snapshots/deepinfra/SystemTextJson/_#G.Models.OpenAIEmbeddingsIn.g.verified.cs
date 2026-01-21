@@ -12,19 +12,15 @@ namespace G
     public sealed partial class OpenAIEmbeddingsIn
     {
         /// <summary>
-        /// model name<br/>
-        /// Example: thenlper/gte-large
+        /// model name
         /// </summary>
-        /// <example>thenlper/gte-large</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
 
         /// <summary>
-        /// sequences to embed<br/>
-        /// Example: [I like chocolate]
+        /// sequences to embed
         /// </summary>
-        /// <example>[I like chocolate]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,8 +31,7 @@ namespace G
         /// Default Value: float
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIEmbeddingsInEncodingFormatJsonConverter))]
-        public global::G.OpenAIEmbeddingsInEncodingFormat? EncodingFormat { get; set; }
+        public string? EncodingFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,12 +43,10 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAIEmbeddingsIn" /> class.
         /// </summary>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: thenlper/gte-large
+        /// model name
         /// </param>
         /// <param name="input">
-        /// sequences to embed<br/>
-        /// Example: [I like chocolate]
+        /// sequences to embed
         /// </param>
         /// <param name="encodingFormat">
         /// format used when encoding<br/>
@@ -65,7 +58,7 @@ namespace G
         public OpenAIEmbeddingsIn(
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string> input,
-            global::G.OpenAIEmbeddingsInEncodingFormat? encodingFormat)
+            string? encodingFormat)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Input = input;

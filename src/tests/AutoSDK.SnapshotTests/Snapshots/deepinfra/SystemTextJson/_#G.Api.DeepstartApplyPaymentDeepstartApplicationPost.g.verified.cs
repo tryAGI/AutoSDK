@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareDeepstartApplyPaymentDeepstartApplicationPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? session,
+            object? session,
             global::G.DeepStartApplicationIn request);
         partial void PrepareDeepstartApplyPaymentDeepstartApplicationPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? session,
+            object? session,
             global::G.DeepStartApplicationIn request);
         partial void ProcessDeepstartApplyPaymentDeepstartApplicationPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeepStartApplicationOut> DeepstartApplyPaymentDeepstartApplicationPostAsync(
             global::G.DeepStartApplicationIn request,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,7 +42,7 @@ namespace G
                 client: HttpClient);
             PrepareDeepstartApplyPaymentDeepstartApplicationPostArguments(
                 httpClient: HttpClient,
-                session: ref session,
+                session: session,
                 request: request);
 
             var __pathBuilder = new global::G.PathBuilder(
@@ -233,7 +233,7 @@ namespace G
             string funding,
             string foundedOn,
             string website,
-            string? session = default,
+            object? session = default,
             string? id = default,
             string? uid = default,
             int? createdAt = default,

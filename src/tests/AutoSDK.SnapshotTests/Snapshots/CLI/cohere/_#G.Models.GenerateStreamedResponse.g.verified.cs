@@ -35,6 +35,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GenerateStreamEnd? StreamEnd { get; init; }
+#else
+        public global::G.GenerateStreamEnd? StreamEnd { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
+#endif
+        public bool IsStreamEnd => StreamEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GenerateStreamError? StreamError { get; init; }
+#else
+        public global::G.GenerateStreamError? StreamError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
+#endif
+        public bool IsStreamError => StreamError != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamText value) => new GenerateStreamedResponse((global::G.GenerateStreamText?)value);
 
         /// <summary>
@@ -53,23 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GenerateStreamEnd? StreamEnd { get; init; }
-#else
-        public global::G.GenerateStreamEnd? StreamEnd { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
-#endif
-        public bool IsStreamEnd => StreamEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamEnd value) => new GenerateStreamedResponse((global::G.GenerateStreamEnd?)value);
 
         /// <summary>
@@ -84,23 +100,6 @@ namespace G
         {
             StreamEnd = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GenerateStreamError? StreamError { get; init; }
-#else
-        public global::G.GenerateStreamError? StreamError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
-#endif
-        public bool IsStreamError => StreamError != null;
 
         /// <summary>
         /// 

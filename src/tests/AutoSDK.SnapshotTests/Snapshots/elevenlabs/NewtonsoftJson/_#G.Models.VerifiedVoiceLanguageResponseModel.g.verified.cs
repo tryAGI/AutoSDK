@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"accent":"American","language":"en","model_id":"eleven_turbo_v2_5"}
     /// </summary>
     public sealed partial class VerifiedVoiceLanguageResponseModel
     {

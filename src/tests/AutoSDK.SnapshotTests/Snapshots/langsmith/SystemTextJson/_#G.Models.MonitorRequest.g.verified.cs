@@ -23,13 +23,15 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> Groups { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":7,"minutes":0,"hours":0}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         public global::G.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }
@@ -48,10 +50,12 @@ namespace G
         /// </param>
         /// <param name="groups"></param>
         /// <param name="interval">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":7,"minutes":0,"hours":0}
         /// </param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

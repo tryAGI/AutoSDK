@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for text embedding. OpenAI compatible
+    /// The input to the API for text embedding. OpenAI compatible<br/>
+    /// Example: {"model":"jina-reranker-v1-base-en","query":"Search query","documents":["Document to rank 1","Document to rank 2"]}
     /// </summary>
     public sealed partial class RankAPIInput
     {

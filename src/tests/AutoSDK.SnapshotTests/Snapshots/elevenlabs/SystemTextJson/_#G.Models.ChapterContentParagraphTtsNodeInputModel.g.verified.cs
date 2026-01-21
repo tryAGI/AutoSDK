@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChapterContentParagraphTtsNodeInputModelTypeJsonConverter))]
-        public global::G.ChapterContentParagraphTtsNodeInputModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -46,13 +46,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChapterContentParagraphTtsNodeInputModel(
+            string type,
             string text,
-            string voiceId,
-            global::G.ChapterContentParagraphTtsNodeInputModelType type)
+            string voiceId)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
-            this.Type = type;
         }
 
         /// <summary>

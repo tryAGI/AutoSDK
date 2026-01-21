@@ -38,14 +38,16 @@ namespace G
         public string? Version { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("last_accessed_at")]
         public global::System.DateTime? LastAccessedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
@@ -77,8 +79,12 @@ namespace G
         /// <param name="version">
         /// Example: 73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0
         /// </param>
-        /// <param name="lastAccessedAt"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="lastAccessedAt">
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </param>
         /// <param name="sizeInBytes">
         /// Example: 1024
         /// </param>

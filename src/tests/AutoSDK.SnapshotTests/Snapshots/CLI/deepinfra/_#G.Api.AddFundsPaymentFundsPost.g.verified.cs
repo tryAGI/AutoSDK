@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareAddFundsPaymentFundsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? session,
+            object? session,
             global::G.AddFundsIn request);
         partial void PrepareAddFundsPaymentFundsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? session,
+            object? session,
             global::G.AddFundsIn request);
         partial void ProcessAddFundsPaymentFundsPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> AddFundsPaymentFundsPostAsync(
             global::G.AddFundsIn request,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,7 +42,7 @@ namespace G
                 client: HttpClient);
             PrepareAddFundsPaymentFundsPostArguments(
                 httpClient: HttpClient,
-                session: ref session,
+                session: session,
                 request: request);
 
             var __pathBuilder = new global::G.PathBuilder(
@@ -216,7 +216,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> AddFundsPaymentFundsPostAsync(
             int amount,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.AddFundsIn

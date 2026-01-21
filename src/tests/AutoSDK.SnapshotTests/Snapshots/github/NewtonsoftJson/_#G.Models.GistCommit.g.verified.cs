@@ -36,8 +36,9 @@ namespace G
         public global::G.GistCommitChangeStatus ChangeStatus { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2010-04-14T02:15:15Z
         /// </summary>
+        /// <example>2010-04-14T02:15:15Z</example>
         [global::Newtonsoft.Json.JsonProperty("committed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CommittedAt { get; set; } = default!;
 
@@ -60,7 +61,9 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="changeStatus"></param>
-        /// <param name="committedAt"></param>
+        /// <param name="committedAt">
+        /// Example: 2010-04-14T02:15:15Z
+        /// </param>
         public GistCommit(
             string url,
             string version,

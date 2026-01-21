@@ -10,12 +10,6 @@ namespace G
     public sealed partial class ApiMetaBilledUnits
     {
         /// <summary>
-        /// The number of billed classifications units.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("classifications")]
-        public double? Classifications { get; set; }
-
-        /// <summary>
         /// The number of billed images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("images")]
@@ -40,6 +34,12 @@ namespace G
         public double? SearchUnits { get; set; }
 
         /// <summary>
+        /// The number of billed classifications units.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("classifications")]
+        public double? Classifications { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiMetaBilledUnits" /> class.
         /// </summary>
-        /// <param name="classifications">
-        /// The number of billed classifications units.
-        /// </param>
         /// <param name="images">
         /// The number of billed images.
         /// </param>
@@ -63,18 +60,21 @@ namespace G
         /// <param name="searchUnits">
         /// The number of billed search units.
         /// </param>
+        /// <param name="classifications">
+        /// The number of billed classifications units.
+        /// </param>
         public ApiMetaBilledUnits(
-            double? classifications,
             double? images,
             double? inputTokens,
             double? outputTokens,
-            double? searchUnits)
+            double? searchUnits,
+            double? classifications)
         {
-            this.Classifications = classifications;
             this.Images = images;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
             this.SearchUnits = searchUnits;
+            this.Classifications = classifications;
         }
 
         /// <summary>

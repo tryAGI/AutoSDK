@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UsageOut> UsagePaymentUsageGetAsync(
             string from,
             string? to = default,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

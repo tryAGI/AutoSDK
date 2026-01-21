@@ -44,6 +44,90 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEvent? Run { get; init; }
+#else
+        public global::G.RunStreamEvent? Run { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
+#endif
+        public bool IsRun => Run != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStepStreamEvent? RunStep { get; init; }
+#else
+        public global::G.RunStepStreamEvent? RunStep { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStep))]
+#endif
+        public bool IsRunStep => RunStep != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MessageStreamEvent? Message { get; init; }
+#else
+        public global::G.MessageStreamEvent? Message { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
+#endif
+        public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ErrorEvent? Error { get; init; }
+#else
+        public global::G.ErrorEvent? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+
+        /// <summary>
+        /// Occurs when a stream ends.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DoneEvent? Done { get; init; }
+#else
+        public global::G.DoneEvent? Done { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
+#endif
+        public bool IsDone => Done != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.ThreadStreamEvent value) => new AssistantStreamEvent((global::G.ThreadStreamEvent?)value);
 
         /// <summary>
@@ -58,23 +142,6 @@ namespace G
         {
             Thread = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEvent? Run { get; init; }
-#else
-        public global::G.RunStreamEvent? Run { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
-#endif
-        public bool IsRun => Run != null;
 
         /// <summary>
         /// 
@@ -97,23 +164,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStepStreamEvent? RunStep { get; init; }
-#else
-        public global::G.RunStepStreamEvent? RunStep { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStep))]
-#endif
-        public bool IsRunStep => RunStep != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.RunStepStreamEvent value) => new AssistantStreamEvent((global::G.RunStepStreamEvent?)value);
 
         /// <summary>
@@ -128,23 +178,6 @@ namespace G
         {
             RunStep = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MessageStreamEvent? Message { get; init; }
-#else
-        public global::G.MessageStreamEvent? Message { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
-#endif
-        public bool IsMessage => Message != null;
 
         /// <summary>
         /// 
@@ -165,23 +198,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ErrorEvent? Error { get; init; }
-#else
-        public global::G.ErrorEvent? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.ErrorEvent value) => new AssistantStreamEvent((global::G.ErrorEvent?)value);
@@ -198,23 +214,6 @@ namespace G
         {
             Error = value;
         }
-
-        /// <summary>
-        /// Occurs when a stream ends.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DoneEvent? Done { get; init; }
-#else
-        public global::G.DoneEvent? Done { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
-#endif
-        public bool IsDone => Done != null;
 
         /// <summary>
         /// 

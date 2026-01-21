@@ -13,15 +13,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BetaToolTypeJsonConverter))]
-        public global::G.BetaToolType? Type { get; set; }
+        public global::G.BetaToolType2? Type { get; set; }
 
         /// <summary>
         /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
-        /// Example: Get the current weather in a given location
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
         /// </summary>
-        /// <example>Get the current weather in a given location</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -45,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant113? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +56,7 @@ namespace G
         /// <param name="type"></param>
         /// <param name="description">
         /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
-        /// Example: Get the current weather in a given location
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
         /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
@@ -77,9 +73,9 @@ namespace G
         public BetaTool(
             string name,
             global::G.BetaInputSchema inputSchema,
-            global::G.BetaToolType? type,
+            global::G.BetaToolType2? type,
             string? description,
-            global::G.BetaCacheControlEphemeral? cacheControl)
+            global::G.CacheControlVariant113? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));

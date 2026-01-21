@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class CreateAgentResponseModel
     {

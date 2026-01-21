@@ -43,8 +43,9 @@ namespace G
         public required string BodyVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-15T23:53:58Z
         /// </summary>
+        /// <example>2018-01-15T23:53:58Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -90,8 +91,9 @@ namespace G
         public required int Number { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-15T23:53:58Z
         /// </summary>
+        /// <example>2018-01-15T23:53:58Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -133,7 +135,9 @@ namespace G
         /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
         /// Example: 0307116bbf7ced493b8d8a346c650b71
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2018-01-15T23:53:58Z
+        /// </param>
         /// <param name="lastEditedAt"></param>
         /// <param name="discussionUrl">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
@@ -148,7 +152,9 @@ namespace G
         /// The unique sequence number of a team discussion comment.<br/>
         /// Example: 42
         /// </param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2018-01-15T23:53:58Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1
         /// </param>

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A system tool is a tool that is used to call a system method in the server
+    /// A system tool is a tool that is used to call a system method in the server<br/>
+    /// Example: {"type":"system"}
     /// </summary>
     public sealed partial class SystemToolConfigInput
     {
@@ -41,8 +42,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SystemToolConfigInputTypeJsonConverter))]
-        public global::G.SystemToolConfigInputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -82,7 +82,7 @@ namespace G
             global::G.Params @params,
             string? id,
             int? responseTimeoutSecs,
-            global::G.SystemToolConfigInputType? type)
+            string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

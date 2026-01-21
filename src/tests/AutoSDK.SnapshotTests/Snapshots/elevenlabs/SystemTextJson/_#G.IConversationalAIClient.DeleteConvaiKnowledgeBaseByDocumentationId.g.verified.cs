@@ -10,8 +10,7 @@ namespace G
         /// Delete a document from the knowledge base
         /// </summary>
         /// <param name="documentationId">
-        /// The id of a document from the knowledge base. This is returned on document addition.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of a document from the knowledge base. This is returned on document addition.
         /// </param>
         /// <param name="force">
         /// If set to true, the document will be deleted regardless of whether it is used by any agents and it will be deleted from the dependent agents.<br/>

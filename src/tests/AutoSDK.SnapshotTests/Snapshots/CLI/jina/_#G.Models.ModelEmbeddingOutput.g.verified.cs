@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Output of the embedding service
+    /// Output of the embedding service<br/>
+    /// Example: {"data":[{"index":0,"embedding":[0.1,0.2,0.3],"object":"embedding"},{"index":1,"embedding":[0.3,0.2,0.1],"object":"embedding"}],"usage":{"total_tokens":15,"prompt_tokens":15}}
     /// </summary>
     public sealed partial class ModelEmbeddingOutput
     {

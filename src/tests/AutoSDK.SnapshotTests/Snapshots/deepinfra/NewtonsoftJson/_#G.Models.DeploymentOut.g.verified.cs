@@ -10,89 +10,73 @@ namespace G
     public sealed partial class DeploymentOut
     {
         /// <summary>
-        /// 
+        /// Default Value: legacy
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.DeployType? Type { get; set; }
 
         /// <summary>
-        /// Deploy Id<br/>
-        /// Example: fkj843kjh8
+        /// Deploy Id
         /// </summary>
-        /// <example>fkj843kjh8</example>
         [global::Newtonsoft.Json.JsonProperty("deploy_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DeployId { get; set; } = default!;
 
         /// <summary>
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </summary>
-        /// <example>google/vit-base-patch16-224</example>
         [global::Newtonsoft.Json.JsonProperty("model_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string ModelName { get; set; } = default!;
 
         /// <summary>
-        /// Model version<br/>
-        /// Example: d8b79b422843bd59d628bf25b01aded94a9ec1a9b917e69fe460df9ff39ec42b
+        /// Model version
         /// </summary>
-        /// <example>d8b79b422843bd59d628bf25b01aded94a9ec1a9b917e69fe460df9ff39ec42b</example>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
         public string Version { get; set; } = default!;
 
         /// <summary>
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </summary>
-        /// <example>image-classification</example>
         [global::Newtonsoft.Json.JsonProperty("task", Required = global::Newtonsoft.Json.Required.Always)]
         public string Task { get; set; } = default!;
 
         /// <summary>
-        /// Status<br/>
-        /// Example: deployed
+        /// Status
         /// </summary>
-        /// <example>deployed</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
 
         /// <summary>
-        /// Failure reason<br/>
-        /// Example: Initialization failed
+        /// Failure reason
         /// </summary>
-        /// <example>Initialization failed</example>
         [global::Newtonsoft.Json.JsonProperty("fail_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public string FailReason { get; set; } = default!;
 
         /// <summary>
-        /// Created at<br/>
-        /// Example: 2021-08-27T17:19:21+00:00
+        /// Created at
         /// </summary>
-        /// <example>2021-08-27T17:19:21+00:00</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public string CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// Updated at<br/>
-        /// Example: 2021-08-27T17:19:21+00:00
+        /// Updated at
         /// </summary>
-        /// <example>2021-08-27T17:19:21+00:00</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public string UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Details about number of instances running right now
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instances")]
         public global::G.DeployInstances? Instances { get; set; }
 
         /// <summary>
-        /// 
+        /// Immutable deploy configuration
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config")]
         public global::G.DeployLLMConfig? Config { get; set; }
 
         /// <summary>
-        /// 
+        /// Scale Settings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings")]
         public global::G.ScaleSettings? Settings { get; set; }
@@ -106,42 +90,42 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentOut" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Default Value: legacy
+        /// </param>
         /// <param name="deployId">
-        /// Deploy Id<br/>
-        /// Example: fkj843kjh8
+        /// Deploy Id
         /// </param>
         /// <param name="modelName">
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </param>
         /// <param name="version">
-        /// Model version<br/>
-        /// Example: d8b79b422843bd59d628bf25b01aded94a9ec1a9b917e69fe460df9ff39ec42b
+        /// Model version
         /// </param>
         /// <param name="task">
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </param>
         /// <param name="status">
-        /// Status<br/>
-        /// Example: deployed
+        /// Status
         /// </param>
         /// <param name="failReason">
-        /// Failure reason<br/>
-        /// Example: Initialization failed
+        /// Failure reason
         /// </param>
         /// <param name="createdAt">
-        /// Created at<br/>
-        /// Example: 2021-08-27T17:19:21+00:00
+        /// Created at
         /// </param>
         /// <param name="updatedAt">
-        /// Updated at<br/>
-        /// Example: 2021-08-27T17:19:21+00:00
+        /// Updated at
         /// </param>
-        /// <param name="instances"></param>
-        /// <param name="config"></param>
-        /// <param name="settings"></param>
+        /// <param name="instances">
+        /// Details about number of instances running right now
+        /// </param>
+        /// <param name="config">
+        /// Immutable deploy configuration
+        /// </param>
+        /// <param name="settings">
+        /// Scale Settings
+        /// </param>
         public DeploymentOut(
             string deployId,
             string modelName,

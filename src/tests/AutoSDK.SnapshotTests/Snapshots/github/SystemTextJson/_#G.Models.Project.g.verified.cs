@@ -100,15 +100,17 @@ namespace G
         public required global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-10T20:09:31Z
         /// </summary>
+        /// <example>2011-04-10T20:09:31Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2014-03-03T18:58:10Z
         /// </summary>
+        /// <example>2014-03-03T18:58:10Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -171,8 +173,12 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-10T20:09:31Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2014-03-03T18:58:10Z
+        /// </param>
         /// <param name="organizationPermission">
         /// The baseline permission that all organization members have on this project. Only present if owner is an organization.
         /// </param>

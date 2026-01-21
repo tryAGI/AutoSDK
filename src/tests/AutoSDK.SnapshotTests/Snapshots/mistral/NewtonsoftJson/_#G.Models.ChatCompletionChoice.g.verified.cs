@@ -10,13 +10,6 @@ namespace G
     public sealed partial class ChatCompletionChoice
     {
         /// <summary>
-        /// Example: stop
-        /// </summary>
-        /// <example>stop</example>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
-
-        /// <summary>
         /// Example: 0
         /// </summary>
         /// <example>0</example>
@@ -30,6 +23,13 @@ namespace G
         public global::G.AssistantMessage Message { get; set; } = default!;
 
         /// <summary>
+        /// Example: stop
+        /// </summary>
+        /// <example>stop</example>
+        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -38,21 +38,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChoice" /> class.
         /// </summary>
-        /// <param name="finishReason">
-        /// Example: stop
-        /// </param>
         /// <param name="index">
         /// Example: 0
         /// </param>
         /// <param name="message"></param>
+        /// <param name="finishReason">
+        /// Example: stop
+        /// </param>
         public ChatCompletionChoice(
-            global::G.ChatCompletionChoiceFinishReason finishReason,
             int index,
-            global::G.AssistantMessage message)
+            global::G.AssistantMessage message,
+            global::G.ChatCompletionChoiceFinishReason finishReason)
         {
-            this.FinishReason = finishReason;
             this.Index = index;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

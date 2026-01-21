@@ -22,7 +22,7 @@ namespace G
         public string PhoneNumberId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: twilio
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phone_provider")]
         public global::G.TelephonyProvider? PhoneProvider { get; set; }
@@ -92,7 +92,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumberId"></param>
-        /// <param name="phoneProvider"></param>
+        /// <param name="phoneProvider">
+        /// Default Value: twilio
+        /// </param>
         /// <param name="name"></param>
         /// <param name="agentId"></param>
         /// <param name="createdAtUnix"></param>

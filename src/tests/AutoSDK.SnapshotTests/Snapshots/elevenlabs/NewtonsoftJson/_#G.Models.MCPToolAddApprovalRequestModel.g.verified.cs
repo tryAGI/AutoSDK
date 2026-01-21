@@ -28,7 +28,8 @@ namespace G
         public object? InputSchema { get; set; }
 
         /// <summary>
-        /// Defines the tool-level approval policy.
+        /// The tool-level approval policy<br/>
+        /// Default Value: requires_approval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
         public global::G.MCPToolApprovalPolicy? ApprovalPolicy { get; set; }
@@ -52,7 +53,8 @@ namespace G
         /// The input schema of the MCP tool (the schema defined on the MCP server before ElevenLabs does any extra processing)
         /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the tool-level approval policy.
+        /// The tool-level approval policy<br/>
+        /// Default Value: requires_approval
         /// </param>
         public MCPToolAddApprovalRequestModel(
             string toolName,

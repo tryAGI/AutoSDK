@@ -7,26 +7,29 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"action_text":"Call","bg_color":"#ffffff","border_color":"#e1e1e1","border_radius":10,"btn_color":"#000000","btn_radius":10,"btn_text_color":"#ffffff","disable_banner":false,"end_call_text":"End Call","expand_text":"Expand","expandable":"never","feedback_mode":"none","focus_color":"#000000","listening_text":"Listening...","mic_muting_enabled":false,"shareable_page_show_terms":true,"shareable_page_text":"Share","speaking_text":"Speaking...","start_call_text":"Start Call","terms_html":"\u003Cp\u003ETerms and Conditions\u003C/p\u003E","terms_key":"terms","terms_text":"Terms and Conditions","text_color":"#000000","variant":"full"}
     /// </summary>
     public sealed partial class WidgetConfigResponseModel
     {
         /// <summary>
-        /// 
+        /// The variant of the widget<br/>
+        /// Default Value: full
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variant")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedVariantJsonConverter))]
         public global::G.EmbedVariant? Variant { get; set; }
 
         /// <summary>
-        /// 
+        /// The placement of the widget on the screen<br/>
+        /// Default Value: bottom-right
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("placement")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WidgetPlacementJsonConverter))]
         public global::G.WidgetPlacement? Placement { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the widget is expandable<br/>
+        /// Default Value: never
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expandable")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WidgetExpandableJsonConverter))]
@@ -40,7 +43,8 @@ namespace G
         public global::G.AnyOf<global::G.OrbAvatar, global::G.URLAvatar, global::G.ImageAvatar>? Avatar { get; set; }
 
         /// <summary>
-        /// 
+        /// The feedback mode of the widget<br/>
+        /// Default Value: none
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WidgetFeedbackModeJsonConverter))]
@@ -209,13 +213,13 @@ namespace G
         public bool? TextInputEnabled { get; set; }
 
         /// <summary>
-        /// 
+        /// Text contents of the widget
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_contents")]
         public global::G.WidgetTextContents? TextContents { get; set; }
 
         /// <summary>
-        /// 
+        /// Styles for the widget
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("styles")]
         public global::G.WidgetStyles? Styles { get; set; }
@@ -268,13 +272,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WidgetConfigResponseModel" /> class.
         /// </summary>
-        /// <param name="variant"></param>
-        /// <param name="placement"></param>
-        /// <param name="expandable"></param>
+        /// <param name="variant">
+        /// The variant of the widget<br/>
+        /// Default Value: full
+        /// </param>
+        /// <param name="placement">
+        /// The placement of the widget on the screen<br/>
+        /// Default Value: bottom-right
+        /// </param>
+        /// <param name="expandable">
+        /// Whether the widget is expandable<br/>
+        /// Default Value: never
+        /// </param>
         /// <param name="avatar">
         /// The avatar of the widget
         /// </param>
-        /// <param name="feedbackMode"></param>
+        /// <param name="feedbackMode">
+        /// The feedback mode of the widget<br/>
+        /// Default Value: none
+        /// </param>
         /// <param name="bgColor">
         /// The background color of the widget<br/>
         /// Default Value: #ffffff
@@ -362,8 +378,12 @@ namespace G
         /// Whether the user should be able to send text messages<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="textContents"></param>
-        /// <param name="styles"></param>
+        /// <param name="textContents">
+        /// Text contents of the widget
+        /// </param>
+        /// <param name="styles">
+        /// Styles for the widget
+        /// </param>
         /// <param name="language"></param>
         /// <param name="supportedLanguageOverrides"></param>
         /// <param name="languagePresets">

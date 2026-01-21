@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delimiter")]
-        public string? Delimiter { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("separator")]
+        public string? Separator { get; set; }
 
         /// <summary>
         /// Included only in requests
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("separator")]
-        public string? Separator { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("delimiter")]
+        public string? Delimiter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ParseInfo" /> class.
         /// </summary>
-        /// <param name="delimiter">
-        /// Included only in requests
-        /// </param>
         /// <param name="separator">
         /// Included only in requests
         /// </param>
+        /// <param name="delimiter">
+        /// Included only in requests
+        /// </param>
         public ParseInfo(
-            string? delimiter,
-            string? separator)
+            string? separator,
+            string? delimiter)
         {
-            this.Delimiter = delimiter;
             this.Separator = separator;
+            this.Delimiter = delimiter;
         }
 
         /// <summary>

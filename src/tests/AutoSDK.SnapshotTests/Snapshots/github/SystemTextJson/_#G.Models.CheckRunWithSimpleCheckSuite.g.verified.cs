@@ -24,8 +24,9 @@ namespace G
         public required global::G.SimpleCheckSuite CheckSuite { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-05-04T01:14:52Z
         /// </summary>
+        /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? CompletedAt { get; set; }
@@ -119,8 +120,9 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.PullRequestMinimal> PullRequests { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-05-04T01:14:52Z
         /// </summary>
+        /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartedAt { get; set; }
@@ -158,7 +160,9 @@ namespace G
         /// <param name="checkSuite">
         /// A suite of checks performed on the code of a given code change
         /// </param>
-        /// <param name="completedAt"></param>
+        /// <param name="completedAt">
+        /// Example: 2018-05-04T01:14:52Z
+        /// </param>
         /// <param name="conclusion">
         /// Example: neutral
         /// </param>
@@ -191,7 +195,9 @@ namespace G
         /// </param>
         /// <param name="output"></param>
         /// <param name="pullRequests"></param>
-        /// <param name="startedAt"></param>
+        /// <param name="startedAt">
+        /// Example: 2018-05-04T01:14:52Z
+        /// </param>
         /// <param name="status">
         /// The phase of the lifecycle that the check is currently in.<br/>
         /// Example: queued

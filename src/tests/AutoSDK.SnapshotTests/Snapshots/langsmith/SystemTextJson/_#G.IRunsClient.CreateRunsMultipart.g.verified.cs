@@ -67,6 +67,9 @@ namespace G
         /// <param name="attachment_runId__filename_">
         /// Binary attachment linked to run {run_id}
         /// </param>
+        /// <param name="attachment_runId__filename_name">
+        /// Binary attachment linked to run {run_id}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> CreateRunsMultipartAsync(
@@ -81,6 +84,7 @@ namespace G
             byte[]? feedback_runId_ = default,
             string? feedback_runId_name = default,
             byte[]? attachment_runId__filename_ = default,
+            string? attachment_runId__filename_name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

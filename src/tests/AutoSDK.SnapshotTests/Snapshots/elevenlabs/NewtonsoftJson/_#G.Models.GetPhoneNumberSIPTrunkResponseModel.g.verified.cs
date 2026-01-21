@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetPhoneNumberSIPTrunkResponseModel
     {
@@ -28,7 +28,7 @@ namespace G
         public string PhoneNumberId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The agent that is assigned to the phone number
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assigned_agent")]
         public global::G.PhoneNumberAgentInfo? AssignedAgent { get; set; }
@@ -38,10 +38,10 @@ namespace G
         /// Default Value: sip_trunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::G.GetPhoneNumberSIPTrunkResponseModelProvider? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
-        /// SIP Trunk configuration details for a phone number
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_config")]
         public global::G.SIPTrunkConfigResponseModel? ProviderConfig { get; set; }
@@ -64,20 +64,20 @@ namespace G
         /// <param name="phoneNumberId">
         /// The ID of the phone number
         /// </param>
-        /// <param name="assignedAgent"></param>
+        /// <param name="assignedAgent">
+        /// The agent that is assigned to the phone number
+        /// </param>
         /// <param name="provider">
         /// Phone provider<br/>
         /// Default Value: sip_trunk
         /// </param>
-        /// <param name="providerConfig">
-        /// SIP Trunk configuration details for a phone number
-        /// </param>
+        /// <param name="providerConfig"></param>
         public GetPhoneNumberSIPTrunkResponseModel(
             string phoneNumber,
             string label,
             string phoneNumberId,
             global::G.PhoneNumberAgentInfo? assignedAgent,
-            global::G.GetPhoneNumberSIPTrunkResponseModelProvider? provider,
+            string? provider,
             global::G.SIPTrunkConfigResponseModel? providerConfig)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));

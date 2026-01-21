@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PatchWorkspaceSecretRequestTypeJsonConverter))]
-        public global::G.PatchWorkspaceSecretRequestType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -46,13 +46,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PatchWorkspaceSecretRequest(
+            string type,
             string name,
-            string value,
-            global::G.PatchWorkspaceSecretRequestType type)
+            string value)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Type = type;
         }
 
         /// <summary>

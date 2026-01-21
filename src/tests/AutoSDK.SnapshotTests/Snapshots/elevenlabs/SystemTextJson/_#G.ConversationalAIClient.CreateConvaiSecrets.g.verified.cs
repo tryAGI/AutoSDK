@@ -215,10 +215,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PostWorkspaceSecretResponseModel> CreateConvaiSecretsAsync(
+            string type,
             string name,
             string value,
             string? xiApiKey = default,
-            global::G.PostWorkspaceSecretRequestType type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PostWorkspaceSecretRequest

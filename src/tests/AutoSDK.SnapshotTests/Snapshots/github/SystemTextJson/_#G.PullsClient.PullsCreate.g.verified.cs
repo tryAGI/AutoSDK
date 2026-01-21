@@ -281,7 +281,7 @@ namespace G
         /// </param>
         /// <param name="issue">
         /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

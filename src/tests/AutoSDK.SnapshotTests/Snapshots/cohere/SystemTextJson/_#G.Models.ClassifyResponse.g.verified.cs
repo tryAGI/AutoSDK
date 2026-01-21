@@ -13,15 +13,15 @@ namespace G
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Included only in responses
         /// </summary>
         /// <default>default!</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string Id { get; set; } = default!;
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
+        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
         /// </summary>
-        /// <param name="classifications">
+        /// <param name="id">
         /// Included only in responses
         /// </param>
-        /// <param name="id">
+        /// <param name="classifications">
         /// Included only in responses
         /// </param>
         /// <param name="meta"></param>
@@ -50,11 +50,11 @@ namespace G
 #endif
         public ClassifyResponse(
             global::G.ApiMeta? meta,
-            global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> classifications = default!,
-            string id = default!)
+            string id = default!,
+            global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> classifications = default!)
         {
-            this.Classifications = classifications;
             this.Id = id;
+            this.Classifications = classifications;
             this.Meta = meta;
         }
 

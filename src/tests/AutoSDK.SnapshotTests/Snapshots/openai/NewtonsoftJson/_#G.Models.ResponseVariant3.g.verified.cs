@@ -88,7 +88,6 @@ namespace G
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls", Required = global::Newtonsoft.Json.Required.Always)]
         public bool ParallelToolCalls { get; set; } = default!;
 

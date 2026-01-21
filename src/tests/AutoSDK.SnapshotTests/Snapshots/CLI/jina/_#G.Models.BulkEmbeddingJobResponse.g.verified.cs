@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"000000000000000000000000","model_name":"model_1","status":"in-progress","file_name":"input.csv","used_token_count":1000}
     /// </summary>
     public sealed partial class BulkEmbeddingJobResponse
     {

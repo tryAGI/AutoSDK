@@ -178,20 +178,20 @@ namespace G
         /// Update a model name or description.
         /// </summary>
         /// <param name="modelId"></param>
-        /// <param name="description"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponse> JobsApiRoutesFineTuningUpdateFineTunedModelAsync(
             string modelId,
-            string? description = default,
             string? name = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UpdateFTModelIn
             {
-                Description = description,
                 Name = name,
+                Description = description,
             };
 
             return await JobsApiRoutesFineTuningUpdateFineTunedModelAsync(

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Request.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,75 +10,64 @@ namespace G
     public sealed partial class Request
     {
         /// <summary>
-        /// Batch size for fine-tuning<br/>
-        /// Default Value: 32
+        /// A description of the desired images. Maximum length varies by model.<br/>
+        /// Default Value: cat floating in space, cinematic<br/>
+        /// Example: cat floating in space, cinematic
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public int? BatchSize { get; set; }
+        /// <default>"cat floating in space, cinematic"</default>
+        /// <example>cat floating in space, cinematic</example>
+        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
-        /// Learning rate multiplier to use for training<br/>
-        /// Default Value: 1E-05F
+        /// The model to use for image generation.<br/>
+        /// Default Value: stabilityai/stable-diffusion-xl-base-1.0<br/>
+        /// Example: stabilityai/stable-diffusion-xl-base-1.0
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public float? LearningRate { get; set; }
-
-        /// <summary>
-        /// Name of the base model to run fine-tune job on
-        /// </summary>
+        /// <default>"stabilityai/stable-diffusion-xl-base-1.0"</default>
+        /// <example>stabilityai/stable-diffusion-xl-base-1.0</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// Number of checkpoints to save during fine-tuning<br/>
+        /// Number of generation steps.<br/>
+        /// Default Value: 20
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("steps")]
+        public int? Steps { get; set; }
+
+        /// <summary>
+        /// Seed used for generation. Can be used to reproduce image generations.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// Number of image results to generate.<br/>
         /// Default Value: 1
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
-        public int? NCheckpoints { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("n")]
+        public int? N { get; set; }
 
         /// <summary>
-        /// Number of epochs for fine-tuning<br/>
-        /// Default Value: 1
+        /// Height of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("n_epochs")]
-        public int? NEpochs { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("height")]
+        public int? Height { get; set; }
 
         /// <summary>
-        /// Number of evaluations to be run on a given validation set during training<br/>
-        /// Default Value: 0
+        /// Width of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("n_evals")]
-        public int? NEvals { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("width")]
+        public int? Width { get; set; }
 
         /// <summary>
-        /// Suffix that will be added to your fine-tuned model name
+        /// The prompt or prompts not to guide the image generation.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("suffix")]
-        public string? Suffix { get; set; }
-
-        /// <summary>
-        /// File-ID of a training file uploaded to the Together API
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("training_file", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TrainingFile { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("training_type")]
-        public global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? TrainingType { get; set; }
-
-        /// <summary>
-        /// File-ID of a validation file uploaded to the Together API
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("validation_file")]
-        public string? ValidationFile { get; set; }
-
-        /// <summary>
-        /// API key for Weights &amp; Biases integration
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("wandb_api_key")]
-        public string? WandbApiKey { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("negative_prompt")]
+        public string? NegativePrompt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,66 +78,56 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Request" /> class.
         /// </summary>
-        /// <param name="batchSize">
-        /// Batch size for fine-tuning<br/>
-        /// Default Value: 32
-        /// </param>
-        /// <param name="learningRate">
-        /// Learning rate multiplier to use for training<br/>
-        /// Default Value: 1E-05F
+        /// <param name="prompt">
+        /// A description of the desired images. Maximum length varies by model.<br/>
+        /// Default Value: cat floating in space, cinematic<br/>
+        /// Example: cat floating in space, cinematic
         /// </param>
         /// <param name="model">
-        /// Name of the base model to run fine-tune job on
+        /// The model to use for image generation.<br/>
+        /// Default Value: stabilityai/stable-diffusion-xl-base-1.0<br/>
+        /// Example: stabilityai/stable-diffusion-xl-base-1.0
         /// </param>
-        /// <param name="nCheckpoints">
-        /// Number of checkpoints to save during fine-tuning<br/>
+        /// <param name="steps">
+        /// Number of generation steps.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="seed">
+        /// Seed used for generation. Can be used to reproduce image generations.
+        /// </param>
+        /// <param name="n">
+        /// Number of image results to generate.<br/>
         /// Default Value: 1
         /// </param>
-        /// <param name="nEpochs">
-        /// Number of epochs for fine-tuning<br/>
-        /// Default Value: 1
+        /// <param name="height">
+        /// Height of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </param>
-        /// <param name="nEvals">
-        /// Number of evaluations to be run on a given validation set during training<br/>
-        /// Default Value: 0
+        /// <param name="width">
+        /// Width of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </param>
-        /// <param name="suffix">
-        /// Suffix that will be added to your fine-tuned model name
-        /// </param>
-        /// <param name="trainingFile">
-        /// File-ID of a training file uploaded to the Together API
-        /// </param>
-        /// <param name="trainingType"></param>
-        /// <param name="validationFile">
-        /// File-ID of a validation file uploaded to the Together API
-        /// </param>
-        /// <param name="wandbApiKey">
-        /// API key for Weights &amp; Biases integration
+        /// <param name="negativePrompt">
+        /// The prompt or prompts not to guide the image generation.
         /// </param>
         public Request(
+            string prompt,
             string model,
-            string trainingFile,
-            int? batchSize,
-            float? learningRate,
-            int? nCheckpoints,
-            int? nEpochs,
-            int? nEvals,
-            string? suffix,
-            global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? trainingType,
-            string? validationFile,
-            string? wandbApiKey)
+            int? steps,
+            int? seed,
+            int? n,
+            int? height,
+            int? width,
+            string? negativePrompt)
         {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
-            this.BatchSize = batchSize;
-            this.LearningRate = learningRate;
-            this.NCheckpoints = nCheckpoints;
-            this.NEpochs = nEpochs;
-            this.NEvals = nEvals;
-            this.Suffix = suffix;
-            this.TrainingType = trainingType;
-            this.ValidationFile = validationFile;
-            this.WandbApiKey = wandbApiKey;
+            this.Steps = steps;
+            this.Seed = seed;
+            this.N = n;
+            this.Height = height;
+            this.Width = width;
+            this.NegativePrompt = negativePrompt;
         }
 
         /// <summary>

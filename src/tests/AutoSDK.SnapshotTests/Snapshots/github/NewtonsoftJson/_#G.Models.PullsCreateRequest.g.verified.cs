@@ -55,9 +55,9 @@ namespace G
 
         /// <summary>
         /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("issue")]
         public long? Issue { get; set; }
 
@@ -94,7 +94,7 @@ namespace G
         /// </param>
         /// <param name="issue">
         /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         public PullsCreateRequest(
             string head,

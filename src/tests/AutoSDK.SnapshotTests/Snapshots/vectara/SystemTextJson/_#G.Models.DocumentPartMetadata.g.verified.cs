@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
+    /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.<br/>
+    /// Example: {"nice_rank":9000}
     /// </summary>
     public sealed partial class DocumentPartMetadata
     {

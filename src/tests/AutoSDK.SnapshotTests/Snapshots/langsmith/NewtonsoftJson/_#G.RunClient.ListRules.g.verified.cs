@@ -8,9 +8,9 @@ namespace G
     {
         partial void PrepareListRulesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid? datasetId,
-            ref global::System.Guid? sessionId,
-            ref global::G.ListRulesApiV1RunsRulesGetType? type,
+            global::System.Guid? datasetId,
+            global::System.Guid? sessionId,
+            global::G.ListRulesApiV1RunsRulesGetType2? type,
             ref string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void PrepareListRulesRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? datasetId,
             global::System.Guid? sessionId,
-            global::G.ListRulesApiV1RunsRulesGetType? type,
+            global::G.ListRulesApiV1RunsRulesGetType2? type,
             string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void ProcessListRulesResponse(
@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -53,27 +53,21 @@ namespace G
                 client: HttpClient);
             PrepareListRulesArguments(
                 httpClient: HttpClient,
-                datasetId: ref datasetId,
-                sessionId: ref sessionId,
-                type: ref type,
+                datasetId: datasetId,
+                sessionId: sessionId,
+                type: type,
                 nameContains: ref nameContains,
                 id: id);
 
-            var typeValue = type switch
-            {
-                global::G.ListRulesApiV1RunsRulesGetType.Session => "session",
-                global::G.ListRulesApiV1RunsRulesGetType.Dataset => "dataset",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
                 .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("type", type?.ToString()) 
                 .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

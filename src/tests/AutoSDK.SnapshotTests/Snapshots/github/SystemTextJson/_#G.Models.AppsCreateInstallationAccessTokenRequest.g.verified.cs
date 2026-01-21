@@ -24,8 +24,10 @@ namespace G
         public global::System.Collections.Generic.IList<int>? RepositoryIds { get; set; }
 
         /// <summary>
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </summary>
+        /// <example>{"contents":"read","issues":"read","deployments":"write","single_file":"read"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         public global::G.AppPermissions? Permissions { get; set; }
 
@@ -46,7 +48,8 @@ namespace G
         /// Example: [1]
         /// </param>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

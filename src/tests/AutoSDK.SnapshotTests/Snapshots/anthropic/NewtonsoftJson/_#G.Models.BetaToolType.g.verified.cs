@@ -7,42 +7,13 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum BetaToolType
+    public sealed partial class BetaToolType
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="custom")]
-        Custom,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class BetaToolTypeExtensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this BetaToolType value)
-        {
-            return value switch
-            {
-                BetaToolType.Custom => "custom",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static BetaToolType? ToEnum(string value)
-        {
-            return value switch
-            {
-                "custom" => BetaToolType.Custom,
-                _ => null,
-            };
-        }
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

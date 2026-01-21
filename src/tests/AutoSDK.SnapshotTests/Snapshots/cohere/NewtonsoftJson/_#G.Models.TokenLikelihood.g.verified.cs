@@ -10,16 +10,16 @@ namespace G
     public sealed partial class TokenLikelihood
     {
         /// <summary>
-        /// Detokenized text
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("decoded")]
-        public string? Decoded { get; set; }
-
-        /// <summary>
         /// Tokenized text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoded")]
         public int? Encoded { get; set; }
+
+        /// <summary>
+        /// Detokenized text
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("decoded")]
+        public string? Decoded { get; set; }
 
         /// <summary>
         /// Non normalized probability of the token
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenLikelihood" /> class.
         /// </summary>
-        /// <param name="decoded">
-        /// Detokenized text
-        /// </param>
         /// <param name="encoded">
         /// Tokenized text
+        /// </param>
+        /// <param name="decoded">
+        /// Detokenized text
         /// </param>
         /// <param name="logLikelihood">
         /// Non normalized probability of the token
         /// </param>
         public TokenLikelihood(
-            string? decoded,
             int? encoded,
+            string? decoded,
             double? logLikelihood)
         {
-            this.Decoded = decoded;
             this.Encoded = encoded;
+            this.Decoded = decoded;
             this.LogLikelihood = logLikelihood;
         }
 

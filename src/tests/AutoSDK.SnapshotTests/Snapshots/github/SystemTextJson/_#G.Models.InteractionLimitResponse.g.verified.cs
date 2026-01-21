@@ -28,8 +28,9 @@ namespace G
         public required string Origin { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-08-17T04:18:39Z
         /// </summary>
+        /// <example>2018-08-17T04:18:39Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime ExpiresAt { get; set; }
@@ -50,7 +51,9 @@ namespace G
         /// <param name="origin">
         /// Example: repository
         /// </param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// Example: 2018-08-17T04:18:39Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

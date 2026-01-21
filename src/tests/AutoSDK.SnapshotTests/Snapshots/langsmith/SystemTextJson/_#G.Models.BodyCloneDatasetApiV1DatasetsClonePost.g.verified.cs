@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.BodyCloneDatasetApiV1DatasetsClonePost.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -24,10 +26,10 @@ namespace G
         public required global::System.Guid SourceDatasetId { get; set; }
 
         /// <summary>
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
-        public object? AsOf { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, string>? AsOf { get; set; }
 
         /// <summary>
         /// Default Value: []
@@ -46,9 +48,7 @@ namespace G
         /// </summary>
         /// <param name="targetDatasetId"></param>
         /// <param name="sourceDatasetId"></param>
-        /// <param name="asOf">
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
-        /// </param>
+        /// <param name="asOf"></param>
         /// <param name="examples">
         /// Default Value: []
         /// </param>
@@ -58,7 +58,7 @@ namespace G
         public BodyCloneDatasetApiV1DatasetsClonePost(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
-            object? asOf,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.Collections.Generic.IList<global::System.Guid>? examples)
         {
             this.TargetDatasetId = targetDatasetId;

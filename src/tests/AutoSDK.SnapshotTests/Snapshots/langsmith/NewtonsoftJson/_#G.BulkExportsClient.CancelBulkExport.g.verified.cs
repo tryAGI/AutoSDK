@@ -220,7 +220,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
-            global::G.BulkExportUpdateStatus status = default,
+            string status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BulkExportUpdate

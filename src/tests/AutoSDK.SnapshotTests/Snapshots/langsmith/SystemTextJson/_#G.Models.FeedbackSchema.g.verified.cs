@@ -34,15 +34,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?>))]
-        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, object>))]
+        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object>))]
-        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, int?, bool?, string, object, object>))]
+        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string>))]
-        public global::G.AnyOf<object, string>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string, object>))]
+        public global::G.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace G
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// The feedback source loaded from the database.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
         public global::G.FeedbackSource3? FeedbackSource { get; set; }
@@ -121,9 +121,7 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
         /// <param name="id"></param>
-        /// <param name="feedbackSource">
-        /// The feedback source loaded from the database.
-        /// </param>
+        /// <param name="feedbackSource"></param>
         /// <param name="extra"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -133,10 +131,10 @@ namespace G
             global::System.Guid id,
             global::System.DateTime? createdAt,
             global::System.DateTime? modifiedAt,
-            global::G.AnyOf<double?, int?, bool?>? score,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            global::G.AnyOf<double?, int?, bool?, object>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object, object>? value,
             string? comment,
-            global::G.AnyOf<object, string>? correction,
+            global::G.AnyOf<object, string, object>? correction,
             global::System.Guid? feedbackGroupId,
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,

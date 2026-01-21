@@ -78,7 +78,7 @@ namespace G
         private global::System.CommandLine.Option<global::G.HFTasksE?> ReportedType { get; } = new(
             name: "reportedType")
         {
-            Description = @"",
+            Description = @"model type",
         };
         public ModelMetaUpdateModelsModelNameMetaPostCommand(
             G.IApi client,

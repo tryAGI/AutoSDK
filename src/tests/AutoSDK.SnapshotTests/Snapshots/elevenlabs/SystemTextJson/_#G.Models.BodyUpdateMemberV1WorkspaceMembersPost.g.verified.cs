@@ -26,8 +26,7 @@ namespace G
         /// Role dictating permissions in the workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRoleJsonConverter))]
-        public global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole? WorkspaceRole { get; set; }
+        public global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? WorkspaceRole { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +52,7 @@ namespace G
         public BodyUpdateMemberV1WorkspaceMembersPost(
             string email,
             bool? isLocked,
-            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole? workspaceRole)
+            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? workspaceRole)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.IsLocked = isLocked;

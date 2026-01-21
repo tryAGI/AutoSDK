@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
+        TextGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream-end")]
         StreamEnd,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream-error")]
         StreamError,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
-        TextGeneration,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                GenerateStreamedResponseDiscriminatorEventType.TextGeneration => "text-generation",
                 GenerateStreamedResponseDiscriminatorEventType.StreamEnd => "stream-end",
                 GenerateStreamedResponseDiscriminatorEventType.StreamError => "stream-error",
-                GenerateStreamedResponseDiscriminatorEventType.TextGeneration => "text-generation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "text-generation" => GenerateStreamedResponseDiscriminatorEventType.TextGeneration,
                 "stream-end" => GenerateStreamedResponseDiscriminatorEventType.StreamEnd,
                 "stream-error" => GenerateStreamedResponseDiscriminatorEventType.StreamError,
-                "text-generation" => GenerateStreamedResponseDiscriminatorEventType.TextGeneration,
                 _ => null,
             };
         }

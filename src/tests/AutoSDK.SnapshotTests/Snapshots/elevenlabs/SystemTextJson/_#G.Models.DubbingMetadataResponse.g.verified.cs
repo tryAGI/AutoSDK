@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"dubbing_id":"21m00Tcm4TlvDq8ikWAM","media_metadata":{"content_type":"video/mp4","duration":127.5},"name":"My Dubbing Project","status":"dubbed","target_languages":["es","fr","de"]}
     /// </summary>
     public sealed partial class DubbingMetadataResponse
     {
@@ -38,7 +38,7 @@ namespace G
         public required global::System.Collections.Generic.IList<string> TargetLanguages { get; set; }
 
         /// <summary>
-        /// 
+        /// The media metadata of the dubbing project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_metadata")]
         public global::G.DubbingMediaMetadata? MediaMetadata { get; set; }
@@ -70,7 +70,9 @@ namespace G
         /// <param name="targetLanguages">
         /// The target languages of the dubbing project.
         /// </param>
-        /// <param name="mediaMetadata"></param>
+        /// <param name="mediaMetadata">
+        /// The media metadata of the dubbing project.
+        /// </param>
         /// <param name="error">
         /// Optional error message if the dubbing project failed.
         /// </param>

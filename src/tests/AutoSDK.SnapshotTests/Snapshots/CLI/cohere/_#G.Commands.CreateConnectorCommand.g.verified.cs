@@ -13,14 +13,14 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
+            string name,
+            string? description,
+            string url,
+            global::System.Collections.Generic.IList<string>? excludes,
+            global::G.CreateConnectorOAuth? oauth,
             bool? active,
             bool? continueOnFailure,
-            string? description,
-            global::System.Collections.Generic.IList<string>? excludes,
-            string name,
-            global::G.CreateConnectorOAuth? oauth,
             global::G.CreateConnectorServiceAuth? serviceAuth,
-            string url,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -45,18 +45,6 @@ namespace G
             Description = @"The name of the project that is making the request.",
         };
 
-        private global::System.CommandLine.Option<bool?> Active { get; } = new(
-            name: "active")
-        {
-            Description = @"Whether the connector is active or not.",
-        };
-
-        private global::System.CommandLine.Option<bool?> ContinueOnFailure { get; } = new(
-            name: "continueOnFailure")
-        {
-            Description = @"Whether a chat request should continue or not if the request to this connector fails.",
-        };
-
         private new global::System.CommandLine.Option<string?> Description { get; } = new(
             name: "description")
         {
@@ -72,13 +60,25 @@ namespace G
         private global::System.CommandLine.Option<global::G.CreateConnectorOAuth?> Oauth { get; } = new(
             name: "oauth")
         {
-            Description = @"",
+            Description = @"The OAuth 2.0 configuration for the connector. Cannot be specified if service_auth is specified.",
+        };
+
+        private global::System.CommandLine.Option<bool?> Active { get; } = new(
+            name: "active")
+        {
+            Description = @"Whether the connector is active or not.",
+        };
+
+        private global::System.CommandLine.Option<bool?> ContinueOnFailure { get; } = new(
+            name: "continueOnFailure")
+        {
+            Description = @"Whether a chat request should continue or not if the request to this connector fails.",
         };
 
         private global::System.CommandLine.Option<global::G.CreateConnectorServiceAuth?> ServiceAuth { get; } = new(
             name: "serviceAuth")
         {
-            Description = @"",
+            Description = @"The service to service authentication configuration for the connector. Cannot be specified if oauth is specified.",
         };
         public CreateConnectorCommand(
             G.IApi client,
@@ -92,11 +92,11 @@ namespace G
             Arguments.Add(Name);
             Arguments.Add(Url);
             Options.Add(XClientName);
-            Options.Add(Active);
-            Options.Add(ContinueOnFailure);
             Options.Add(Description);
             Options.Add(Excludes);
             Options.Add(Oauth);
+            Options.Add(Active);
+            Options.Add(ContinueOnFailure);
             Options.Add(ServiceAuth);
 
             Initialize();
@@ -109,39 +109,39 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
+            var name = parseResult.GetRequiredValue(Name);
+            var description = parseResult.GetRequiredValue(Description);
+            var url = parseResult.GetRequiredValue(Url);
+            var excludes = parseResult.GetRequiredValue(Excludes);
+            var oauth = parseResult.GetRequiredValue(Oauth);
             var active = parseResult.GetRequiredValue(Active);
             var continueOnFailure = parseResult.GetRequiredValue(ContinueOnFailure);
-            var description = parseResult.GetRequiredValue(Description);
-            var excludes = parseResult.GetRequiredValue(Excludes);
-            var name = parseResult.GetRequiredValue(Name);
-            var oauth = parseResult.GetRequiredValue(Oauth);
             var serviceAuth = parseResult.GetRequiredValue(ServiceAuth);
-            var url = parseResult.GetRequiredValue(Url);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
+                name: name,
+                description: description,
+                url: url,
+                excludes: excludes,
+                oauth: oauth,
                 active: active,
                 continueOnFailure: continueOnFailure,
-                description: description,
-                excludes: excludes,
-                name: name,
-                oauth: oauth,
                 serviceAuth: serviceAuth,
-                url: url,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.Connectors.CreateConnectorAsync(
                 xClientName: xClientName,
+                name: name,
+                description: description,
+                url: url,
+                excludes: excludes,
+                oauth: oauth,
                 active: active,
                 continueOnFailure: continueOnFailure,
-                description: description,
-                excludes: excludes,
-                name: name,
-                oauth: oauth,
                 serviceAuth: serviceAuth,
-                url: url,
                 cancellationToken: cancellationToken);
 
             Complete(

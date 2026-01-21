@@ -28,23 +28,19 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="gender">
-        /// Category code corresponding to the gender of the generated voice. Possible values: female, male.<br/>
-        /// Example: female
+        /// Category code corresponding to the gender of the generated voice. Possible values: female, male.
         /// </param>
         /// <param name="accent">
-        /// Category code corresponding to the accent of the generated voice. Possible values: british, american, african, australian, indian.<br/>
-        /// Example: british
+        /// Category code corresponding to the accent of the generated voice. Possible values: british, american, african, australian, indian.
         /// </param>
         /// <param name="age">
-        /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.<br/>
-        /// Example: young
+        /// Category code corresponding to the age of the generated voice. Possible values: young, middle_aged, old.
         /// </param>
         /// <param name="accentStrength">
         /// The strength of the accent of the generated voice. Has to be between 0.3 and 2.0.
         /// </param>
         /// <param name="text">
-        /// Text to generate, text length has to be between 100 and 1000.<br/>
-        /// Example: Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted.
+        /// Text to generate, text length has to be between 100 and 1000.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

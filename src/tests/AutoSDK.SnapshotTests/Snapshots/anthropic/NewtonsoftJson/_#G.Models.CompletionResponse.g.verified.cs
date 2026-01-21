@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"completion":" Hello! My name is Claude.","id":"compl_018CKm6gsux7P8yMcwZbeCPw","model":"claude-2.1","stop_reason":"stop_sequence","type":"completion"}
     /// </summary>
     public sealed partial class CompletionResponse
     {
@@ -26,10 +26,8 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The resulting completion up to and excluding the stop sequences.<br/>
-        /// Example:  Hello! My name is Claude.
+        /// The resulting completion up to and excluding the stop sequences.
         /// </summary>
-        /// <example> Hello! My name is Claude.</example>
         [global::Newtonsoft.Json.JsonProperty("completion", Required = global::Newtonsoft.Json.Required.Always)]
         public string Completion { get; set; } = default!;
 
@@ -37,10 +35,8 @@ namespace G
         /// The reason that we stopped.<br/>
         /// This may be one the following values:<br/>
         /// * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model<br/>
-        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum<br/>
-        /// Example: stop_sequence
+        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </summary>
-        /// <example>stop_sequence</example>
         [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public string? StopReason { get; set; } = default!;
 
@@ -69,15 +65,13 @@ namespace G
         /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="completion">
-        /// The resulting completion up to and excluding the stop sequences.<br/>
-        /// Example:  Hello! My name is Claude.
+        /// The resulting completion up to and excluding the stop sequences.
         /// </param>
         /// <param name="stopReason">
         /// The reason that we stopped.<br/>
         /// This may be one the following values:<br/>
         /// * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model<br/>
-        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum<br/>
-        /// Example: stop_sequence
+        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.

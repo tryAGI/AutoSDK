@@ -34,7 +34,7 @@ namespace G
         private global::System.CommandLine.Argument<global::G.DeployGPUs> Gpu { get; } = new(
             name: "gpu")
         {
-            Description = @"",
+            Description = @"The GPU you want to run on",
         };
 
         private global::System.CommandLine.Option<string?> XiApiKey { get; } = new(

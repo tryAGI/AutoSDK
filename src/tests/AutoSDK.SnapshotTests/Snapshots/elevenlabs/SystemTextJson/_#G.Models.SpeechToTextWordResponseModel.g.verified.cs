@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Word-level detail of the transcription with timing information.
+    /// Word-level detail of the transcription with timing information.<br/>
+    /// Example: {"characters":[{"char":"H","end":0.1,"start":0},{"char":"e","end":0.2,"start":0.1},{"char":"l","end":0.3,"start":0.2},{"char":"l","end":0.4,"start":0.3},{"char":"o","end":0.5,"start":0.4}],"end":0.5,"logprob":-0.124,"speaker_id":"speaker_1","start":0,"text":"Hello","type":"word"}
     /// </summary>
     public sealed partial class SpeechToTextWordResponseModel
     {

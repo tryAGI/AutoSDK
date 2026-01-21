@@ -53,7 +53,7 @@ namespace G
         public string? FullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
@@ -127,7 +127,9 @@ namespace G
         /// <param name="workspaceRoleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
-        /// <param name="accessScope"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="id"></param>
         /// <param name="userId"></param>
         /// <param name="tenantId"></param>

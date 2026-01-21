@@ -10,18 +10,14 @@ namespace G
     public sealed partial class HFModel
     {
         /// <summary>
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </summary>
-        /// <example>google/vit-base-patch16-224</example>
         [global::Newtonsoft.Json.JsonProperty("model_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string ModelName { get; set; } = default!;
 
         /// <summary>
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </summary>
-        /// <example>image-classification</example>
         [global::Newtonsoft.Json.JsonProperty("task")]
         public string? Task { get; set; }
 
@@ -35,12 +31,10 @@ namespace G
         /// Initializes a new instance of the <see cref="HFModel" /> class.
         /// </summary>
         /// <param name="modelName">
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </param>
         /// <param name="task">
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </param>
         public HFModel(
             string modelName,

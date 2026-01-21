@@ -6,8 +6,7 @@ namespace G
 {
     /// <summary>
     /// Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.<br/>
-    /// Default Value: wav<br/>
-    /// Example: mp3
+    /// Default Value: wav
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TtsResponseFormat

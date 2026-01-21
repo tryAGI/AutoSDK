@@ -23,7 +23,7 @@ namespace G
             double? minP,
             int? topK,
             int? maxTokens,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
             int? n,
             double? presencePenalty,
             double? frequencyPenalty,
@@ -35,7 +35,7 @@ namespace G
             int? seed,
             bool? logprobs,
             global::G.StreamOptions? streamOptions,
-            global::G.OpenAIChatCompletionsInReasoningEffort? reasoningEffort,
+            global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -110,7 +110,7 @@ namespace G
 The total length of input tokens and generated tokens is limited by the model's context length. If explicitly set to None it will be the model's max context length minus input length or 16384, whichever is smaller.",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Stop { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?> Stop { get; } = new(
             name: "stop")
         {
             Description = @"up to 16 sequences where the API will stop generating further tokens",
@@ -149,7 +149,7 @@ The total length of input tokens and generated tokens is limited by the model's 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = @"",
+            Description = @"The format of the response. Currently, only json is supported.",
         };
 
         private global::System.CommandLine.Option<double?> RepetitionPenalty { get; } = new(
@@ -179,10 +179,10 @@ The total length of input tokens and generated tokens is limited by the model's 
         private global::System.CommandLine.Option<global::G.StreamOptions?> StreamOptions { get; } = new(
             name: "streamOptions")
         {
-            Description = @"",
+            Description = @"streaming options",
         };
 
-        private global::System.CommandLine.Option<global::G.OpenAIChatCompletionsInReasoningEffort?> ReasoningEffort { get; } = new(
+        private global::System.CommandLine.Option<global::G.OpenAIChatCompletionsInReasoningEffort2?> ReasoningEffort { get; } = new(
             name: "reasoningEffort")
         {
             Description = @"Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.",

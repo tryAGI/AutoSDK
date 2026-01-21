@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.MessagesItem3> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InstructRequest(
-            global::System.Collections.Generic.IList<global::G.MessagesItem3> messages)
+            global::System.Collections.Generic.IList<global::G.MessagesItem2> messages)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
         }

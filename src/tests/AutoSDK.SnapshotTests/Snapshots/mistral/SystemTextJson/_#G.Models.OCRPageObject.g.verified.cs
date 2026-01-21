@@ -10,20 +10,6 @@ namespace G
     public sealed partial class OCRPageObject
     {
         /// <summary>
-        /// The dimensions of the PDF Page's screenshot image
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Dimensions { get; set; }
-
-        /// <summary>
-        /// List of all extracted images in the page
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OCRImageObject> Images { get; set; }
-
-        /// <summary>
         /// The page index in a pdf document starting from 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -38,6 +24,20 @@ namespace G
         public required string Markdown { get; set; }
 
         /// <summary>
+        /// List of all extracted images in the page
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("images")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.OCRImageObject> Images { get; set; }
+
+        /// <summary>
+        /// The dimensions of the PDF Page's screenshot image
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.OCRPageDimensions? Dimensions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,31 +46,31 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRPageObject" /> class.
         /// </summary>
-        /// <param name="dimensions">
-        /// The dimensions of the PDF Page's screenshot image
-        /// </param>
-        /// <param name="images">
-        /// List of all extracted images in the page
-        /// </param>
         /// <param name="index">
         /// The page index in a pdf document starting from 0
         /// </param>
         /// <param name="markdown">
         /// The markdown string response of the page
         /// </param>
+        /// <param name="images">
+        /// List of all extracted images in the page
+        /// </param>
+        /// <param name="dimensions">
+        /// The dimensions of the PDF Page's screenshot image
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OCRPageObject(
-            object? dimensions,
-            global::System.Collections.Generic.IList<global::G.OCRImageObject> images,
             int index,
-            string markdown)
+            string markdown,
+            global::System.Collections.Generic.IList<global::G.OCRImageObject> images,
+            global::G.OCRPageDimensions? dimensions)
         {
-            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
-            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
+            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
+            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
         }
 
         /// <summary>

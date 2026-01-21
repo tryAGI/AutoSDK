@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The notification when the transcript status is completed or error.
+    /// The notification when the transcript status is completed or error.<br/>
+    /// Example: {"transcript_id":"9ea68fd3-f953-42c1-9742-976c447fb463","status":"completed"}
     /// </summary>
     public sealed partial class TranscriptReadyNotification
     {

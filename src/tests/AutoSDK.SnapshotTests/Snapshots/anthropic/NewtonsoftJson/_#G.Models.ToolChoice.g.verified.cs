@@ -33,6 +33,39 @@ namespace G
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// The model will use any available tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolChoiceAny? Any { get; init; }
+#else
+        public global::G.ToolChoiceAny? Any { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
+#endif
+        public bool IsAny => Any != null;
+
+        /// <summary>
+        /// The model will use the specified tool with `tool_choice.name`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolChoiceTool? Tool { get; init; }
+#else
+        public global::G.ToolChoiceTool? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ToolChoice(global::G.ToolChoiceAuto value) => new ToolChoice((global::G.ToolChoiceAuto?)value);
@@ -51,23 +84,6 @@ namespace G
         }
 
         /// <summary>
-        /// The model will use any available tools.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ToolChoiceAny? Any { get; init; }
-#else
-        public global::G.ToolChoiceAny? Any { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
-#endif
-        public bool IsAny => Any != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ToolChoice(global::G.ToolChoiceAny value) => new ToolChoice((global::G.ToolChoiceAny?)value);
@@ -84,23 +100,6 @@ namespace G
         {
             Any = value;
         }
-
-        /// <summary>
-        /// The model will use the specified tool with `tool_choice.name`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ToolChoiceTool? Tool { get; init; }
-#else
-        public global::G.ToolChoiceTool? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
 
         /// <summary>
         /// 

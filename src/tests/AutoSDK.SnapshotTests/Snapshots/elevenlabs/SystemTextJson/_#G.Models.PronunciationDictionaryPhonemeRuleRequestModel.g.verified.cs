@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"alphabet":"ipa","phoneme":"/\u02C8ta\u026A.l\u00E6nd/","string_to_replace":"Thailand","type":"phoneme"}
     /// </summary>
     public sealed partial class PronunciationDictionaryPhonemeRuleRequestModel
     {
@@ -20,8 +20,8 @@ namespace G
         /// The type of the rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeJsonConverter))]
-        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// The phoneme rule.
@@ -63,14 +63,14 @@ namespace G
 #endif
         public PronunciationDictionaryPhonemeRuleRequestModel(
             string stringToReplace,
+            string type,
             string phoneme,
-            string alphabet,
-            global::G.PronunciationDictionaryPhonemeRuleRequestModelType type)
+            string alphabet)
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
             this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
-            this.Type = type;
         }
 
         /// <summary>

@@ -10,18 +10,10 @@ namespace G
     public sealed partial class UpdateFinetunedModelRequest
     {
         /// <summary>
-        /// Timestamp for the completed fine-tuning.<br/>
-        /// Included only in responses
+        /// FinetunedModel name (e.g. `foobar`).
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completed_at")]
-        public global::System.DateTime? CompletedAt { get; set; }
-
-        /// <summary>
-        /// Creation timestamp.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// User ID of the creator.<br/>
@@ -31,19 +23,6 @@ namespace G
         public string? CreatorId { get; set; }
 
         /// <summary>
-        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("last_used")]
-        public global::System.DateTime? LastUsed { get; set; }
-
-        /// <summary>
-        /// FinetunedModel name (e.g. `foobar`).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
-
-        /// <summary>
         /// Organization ID.<br/>
         /// Included only in responses
         /// </summary>
@@ -51,26 +30,25 @@ namespace G
         public string? OrganizationId { get; set; }
 
         /// <summary>
-        /// The configuration used for fine-tuning.
+        /// FinetunedModel settings such as dataset, hyperparameters...
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.Settings Settings { get; set; } = default!;
 
         /// <summary>
-        /// The possible stages of a fine-tuned model life-cycle.<br/>
-        ///  - STATUS_UNSPECIFIED: Unspecified status.<br/>
-        ///  - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.<br/>
-        ///  - STATUS_DEPLOYING_API: Deprecated: The fine-tuned model is being deployed.<br/>
-        ///  - STATUS_READY: The fine-tuned model is ready to receive requests.<br/>
-        ///  - STATUS_FAILED: The fine-tuned model failed.<br/>
-        ///  - STATUS_DELETED: The fine-tuned model was deleted.<br/>
-        ///  - STATUS_TEMPORARILY_OFFLINE: Deprecated: The fine-tuned model is temporarily unavailable.<br/>
-        ///  - STATUS_PAUSED: Deprecated: The fine-tuned model is paused (Vanilla only).<br/>
-        ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
-        /// Default Value: STATUS_UNSPECIFIED
+        /// Current stage in the life-cycle of the fine-tuned model.<br/>
+        /// Default Value: STATUS_UNSPECIFIED<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public global::G.Status? Status { get; set; }
+
+        /// <summary>
+        /// Creation timestamp.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Latest update timestamp.<br/>
@@ -78,6 +56,20 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        public global::System.DateTime? CompletedAt { get; set; }
+
+        /// <summary>
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("last_used")]
+        public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -88,69 +80,61 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
         /// </summary>
-        /// <param name="completedAt">
-        /// Timestamp for the completed fine-tuning.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="createdAt">
-        /// Creation timestamp.<br/>
-        /// Included only in responses
+        /// <param name="name">
+        /// FinetunedModel name (e.g. `foobar`).
         /// </param>
         /// <param name="creatorId">
         /// User ID of the creator.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="lastUsed">
-        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// FinetunedModel name (e.g. `foobar`).
         /// </param>
         /// <param name="organizationId">
         /// Organization ID.<br/>
         /// Included only in responses
         /// </param>
         /// <param name="settings">
-        /// The configuration used for fine-tuning.
+        /// FinetunedModel settings such as dataset, hyperparameters...
         /// </param>
         /// <param name="status">
-        /// The possible stages of a fine-tuned model life-cycle.<br/>
-        ///  - STATUS_UNSPECIFIED: Unspecified status.<br/>
-        ///  - STATUS_FINETUNING: The fine-tuned model is being fine-tuned.<br/>
-        ///  - STATUS_DEPLOYING_API: Deprecated: The fine-tuned model is being deployed.<br/>
-        ///  - STATUS_READY: The fine-tuned model is ready to receive requests.<br/>
-        ///  - STATUS_FAILED: The fine-tuned model failed.<br/>
-        ///  - STATUS_DELETED: The fine-tuned model was deleted.<br/>
-        ///  - STATUS_TEMPORARILY_OFFLINE: Deprecated: The fine-tuned model is temporarily unavailable.<br/>
-        ///  - STATUS_PAUSED: Deprecated: The fine-tuned model is paused (Vanilla only).<br/>
-        ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
-        /// Default Value: STATUS_UNSPECIFIED
+        /// Current stage in the life-cycle of the fine-tuned model.<br/>
+        /// Default Value: STATUS_UNSPECIFIED<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdAt">
+        /// Creation timestamp.<br/>
+        /// Included only in responses
         /// </param>
         /// <param name="updatedAt">
         /// Latest update timestamp.<br/>
         /// Included only in responses
         /// </param>
+        /// <param name="completedAt">
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="lastUsed">
+        /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
+        /// </param>
         public UpdateFinetunedModelRequest(
             string name,
             global::G.Settings settings,
-            global::System.DateTime? completedAt,
-            global::System.DateTime? createdAt,
             string? creatorId,
-            global::System.DateTime? lastUsed,
             string? organizationId,
             global::G.Status? status,
-            global::System.DateTime? updatedAt)
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.DateTime? completedAt,
+            global::System.DateTime? lastUsed)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
-            this.CompletedAt = completedAt;
-            this.CreatedAt = createdAt;
             this.CreatorId = creatorId;
-            this.LastUsed = lastUsed;
             this.OrganizationId = organizationId;
             this.Status = status;
+            this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.CompletedAt = completedAt;
+            this.LastUsed = lastUsed;
         }
 
         /// <summary>

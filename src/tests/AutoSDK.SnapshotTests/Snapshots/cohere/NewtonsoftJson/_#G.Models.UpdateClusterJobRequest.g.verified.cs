@@ -12,20 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.UpdateClusterJobRequestStatus? Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("clusters")]
         public global::System.Collections.Generic.IList<global::G.Cluster>? Clusters { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("error")]
-        public string? Error { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("input_tracking_metrics")]
-        public object? InputTrackingMetrics { get; set; }
 
         /// <summary>
         /// 
@@ -42,14 +36,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("output_tracking_metrics")]
-        public object? OutputTrackingMetrics { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("error")]
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.UpdateClusterJobRequestStatus? Status { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("input_tracking_metrics")]
+        public object? InputTrackingMetrics { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("output_tracking_metrics")]
+        public object? OutputTrackingMetrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,29 +60,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateClusterJobRequest" /> class.
         /// </summary>
+        /// <param name="status"></param>
         /// <param name="clusters"></param>
-        /// <param name="error"></param>
-        /// <param name="inputTrackingMetrics"></param>
         /// <param name="outputClustersGsPath"></param>
         /// <param name="outputOutliersGsPath"></param>
+        /// <param name="error"></param>
+        /// <param name="inputTrackingMetrics"></param>
         /// <param name="outputTrackingMetrics"></param>
-        /// <param name="status"></param>
         public UpdateClusterJobRequest(
+            global::G.UpdateClusterJobRequestStatus? status,
             global::System.Collections.Generic.IList<global::G.Cluster>? clusters,
-            string? error,
-            object? inputTrackingMetrics,
             string? outputClustersGsPath,
             string? outputOutliersGsPath,
-            object? outputTrackingMetrics,
-            global::G.UpdateClusterJobRequestStatus? status)
+            string? error,
+            object? inputTrackingMetrics,
+            object? outputTrackingMetrics)
         {
+            this.Status = status;
             this.Clusters = clusters;
-            this.Error = error;
-            this.InputTrackingMetrics = inputTrackingMetrics;
             this.OutputClustersGsPath = outputClustersGsPath;
             this.OutputOutliersGsPath = outputOutliersGsPath;
+            this.Error = error;
+            this.InputTrackingMetrics = inputTrackingMetrics;
             this.OutputTrackingMetrics = outputTrackingMetrics;
-            this.Status = status;
         }
 
         /// <summary>

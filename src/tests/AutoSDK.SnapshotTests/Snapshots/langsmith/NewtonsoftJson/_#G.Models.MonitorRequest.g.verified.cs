@@ -22,13 +22,15 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> Groups { get; set; } = default!;
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":7,"minutes":0,"hours":0}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval")]
         public global::G.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }
@@ -47,10 +49,12 @@ namespace G
         /// </param>
         /// <param name="groups"></param>
         /// <param name="interval">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":7,"minutes":0,"hours":0}
         /// </param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
         public MonitorRequest(
             global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> groups,

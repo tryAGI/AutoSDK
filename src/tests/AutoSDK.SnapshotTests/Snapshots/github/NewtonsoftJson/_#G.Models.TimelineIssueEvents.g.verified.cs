@@ -28,6 +28,362 @@ namespace G
         public bool IsLabeledEvent => LabeledEvent != null;
 
         /// <summary>
+        /// Unlabeled Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; init; }
+#else
+        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnlabeledEvent))]
+#endif
+        public bool IsUnlabeledEvent => UnlabeledEvent != null;
+
+        /// <summary>
+        /// Milestoned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MilestonedIssueEvent? MilestonedEvent { get; init; }
+#else
+        public global::G.MilestonedIssueEvent? MilestonedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MilestonedEvent))]
+#endif
+        public bool IsMilestonedEvent => MilestonedEvent != null;
+
+        /// <summary>
+        /// Demilestoned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; init; }
+#else
+        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DemilestonedEvent))]
+#endif
+        public bool IsDemilestonedEvent => DemilestonedEvent != null;
+
+        /// <summary>
+        /// Renamed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RenamedIssueEvent? RenamedEvent { get; init; }
+#else
+        public global::G.RenamedIssueEvent? RenamedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenamedEvent))]
+#endif
+        public bool IsRenamedEvent => RenamedEvent != null;
+
+        /// <summary>
+        /// Review Requested Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; init; }
+#else
+        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestedEvent))]
+#endif
+        public bool IsReviewRequestedEvent => ReviewRequestedEvent != null;
+
+        /// <summary>
+        /// Review Request Removed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; init; }
+#else
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemovedEvent))]
+#endif
+        public bool IsReviewRequestRemovedEvent => ReviewRequestRemovedEvent != null;
+
+        /// <summary>
+        /// Review Dismissed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; init; }
+#else
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissedEvent))]
+#endif
+        public bool IsReviewDismissedEvent => ReviewDismissedEvent != null;
+
+        /// <summary>
+        /// Locked Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LockedIssueEvent? LockedEvent { get; init; }
+#else
+        public global::G.LockedIssueEvent? LockedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LockedEvent))]
+#endif
+        public bool IsLockedEvent => LockedEvent != null;
+
+        /// <summary>
+        /// Added to Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; init; }
+#else
+        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProjectEvent))]
+#endif
+        public bool IsAddedToProjectEvent => AddedToProjectEvent != null;
+
+        /// <summary>
+        /// Moved Column in Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; init; }
+#else
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProjectEvent))]
+#endif
+        public bool IsMovedColumnInProjectEvent => MovedColumnInProjectEvent != null;
+
+        /// <summary>
+        /// Removed from Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; init; }
+#else
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProjectEvent))]
+#endif
+        public bool IsRemovedFromProjectEvent => RemovedFromProjectEvent != null;
+
+        /// <summary>
+        /// Converted Note to Issue Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; init; }
+#else
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteToEvent))]
+#endif
+        public bool IsConvertedNoteToEvent => ConvertedNoteToEvent != null;
+
+        /// <summary>
+        /// Timeline Comment Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineCommentEvent? CommentEvent { get; init; }
+#else
+        public global::G.TimelineCommentEvent? CommentEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommentEvent))]
+#endif
+        public bool IsCommentEvent => CommentEvent != null;
+
+        /// <summary>
+        /// Timeline Cross Referenced Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; init; }
+#else
+        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CrossReferencedEvent))]
+#endif
+        public bool IsCrossReferencedEvent => CrossReferencedEvent != null;
+
+        /// <summary>
+        /// Timeline Committed Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineCommittedEvent? CommittedEvent { get; init; }
+#else
+        public global::G.TimelineCommittedEvent? CommittedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommittedEvent))]
+#endif
+        public bool IsCommittedEvent => CommittedEvent != null;
+
+        /// <summary>
+        /// Timeline Reviewed Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineReviewedEvent? ReviewedEvent { get; init; }
+#else
+        public global::G.TimelineReviewedEvent? ReviewedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewedEvent))]
+#endif
+        public bool IsReviewedEvent => ReviewedEvent != null;
+
+        /// <summary>
+        /// Timeline Line Commented Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; init; }
+#else
+        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LineCommentedEvent))]
+#endif
+        public bool IsLineCommentedEvent => LineCommentedEvent != null;
+
+        /// <summary>
+        /// Timeline Commit Commented Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; init; }
+#else
+        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommitCommentedEvent))]
+#endif
+        public bool IsCommitCommentedEvent => CommitCommentedEvent != null;
+
+        /// <summary>
+        /// Timeline Assigned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; init; }
+#else
+        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssignedEvent))]
+#endif
+        public bool IsAssignedEvent => AssignedEvent != null;
+
+        /// <summary>
+        /// Timeline Unassigned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; init; }
+#else
+        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnassignedEvent))]
+#endif
+        public bool IsUnassignedEvent => UnassignedEvent != null;
+
+        /// <summary>
+        /// State Change Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StateChangeIssueEvent? StateChangeEvent { get; init; }
+#else
+        public global::G.StateChangeIssueEvent? StateChangeEvent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StateChangeEvent))]
+#endif
+        public bool IsStateChangeEvent => StateChangeEvent != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.LabeledIssueEvent value) => new TimelineIssueEvents((global::G.LabeledIssueEvent?)value);
@@ -44,23 +400,6 @@ namespace G
         {
             LabeledEvent = value;
         }
-
-        /// <summary>
-        /// Unlabeled Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; init; }
-#else
-        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnlabeledEvent))]
-#endif
-        public bool IsUnlabeledEvent => UnlabeledEvent != null;
 
         /// <summary>
         /// 
@@ -81,23 +420,6 @@ namespace G
         }
 
         /// <summary>
-        /// Milestoned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MilestonedIssueEvent? MilestonedEvent { get; init; }
-#else
-        public global::G.MilestonedIssueEvent? MilestonedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MilestonedEvent))]
-#endif
-        public bool IsMilestonedEvent => MilestonedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.MilestonedIssueEvent value) => new TimelineIssueEvents((global::G.MilestonedIssueEvent?)value);
@@ -114,23 +436,6 @@ namespace G
         {
             MilestonedEvent = value;
         }
-
-        /// <summary>
-        /// Demilestoned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; init; }
-#else
-        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DemilestonedEvent))]
-#endif
-        public bool IsDemilestonedEvent => DemilestonedEvent != null;
 
         /// <summary>
         /// 
@@ -151,23 +456,6 @@ namespace G
         }
 
         /// <summary>
-        /// Renamed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RenamedIssueEvent? RenamedEvent { get; init; }
-#else
-        public global::G.RenamedIssueEvent? RenamedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenamedEvent))]
-#endif
-        public bool IsRenamedEvent => RenamedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.RenamedIssueEvent value) => new TimelineIssueEvents((global::G.RenamedIssueEvent?)value);
@@ -184,23 +472,6 @@ namespace G
         {
             RenamedEvent = value;
         }
-
-        /// <summary>
-        /// Review Requested Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; init; }
-#else
-        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestedEvent))]
-#endif
-        public bool IsReviewRequestedEvent => ReviewRequestedEvent != null;
 
         /// <summary>
         /// 
@@ -221,23 +492,6 @@ namespace G
         }
 
         /// <summary>
-        /// Review Request Removed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; init; }
-#else
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemovedEvent))]
-#endif
-        public bool IsReviewRequestRemovedEvent => ReviewRequestRemovedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.ReviewRequestRemovedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewRequestRemovedIssueEvent?)value);
@@ -254,23 +508,6 @@ namespace G
         {
             ReviewRequestRemovedEvent = value;
         }
-
-        /// <summary>
-        /// Review Dismissed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; init; }
-#else
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissedEvent))]
-#endif
-        public bool IsReviewDismissedEvent => ReviewDismissedEvent != null;
 
         /// <summary>
         /// 
@@ -291,23 +528,6 @@ namespace G
         }
 
         /// <summary>
-        /// Locked Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LockedIssueEvent? LockedEvent { get; init; }
-#else
-        public global::G.LockedIssueEvent? LockedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LockedEvent))]
-#endif
-        public bool IsLockedEvent => LockedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.LockedIssueEvent value) => new TimelineIssueEvents((global::G.LockedIssueEvent?)value);
@@ -324,23 +544,6 @@ namespace G
         {
             LockedEvent = value;
         }
-
-        /// <summary>
-        /// Added to Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; init; }
-#else
-        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProjectEvent))]
-#endif
-        public bool IsAddedToProjectEvent => AddedToProjectEvent != null;
 
         /// <summary>
         /// 
@@ -361,23 +564,6 @@ namespace G
         }
 
         /// <summary>
-        /// Moved Column in Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; init; }
-#else
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProjectEvent))]
-#endif
-        public bool IsMovedColumnInProjectEvent => MovedColumnInProjectEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.MovedColumnInProjectIssueEvent value) => new TimelineIssueEvents((global::G.MovedColumnInProjectIssueEvent?)value);
@@ -394,23 +580,6 @@ namespace G
         {
             MovedColumnInProjectEvent = value;
         }
-
-        /// <summary>
-        /// Removed from Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; init; }
-#else
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProjectEvent))]
-#endif
-        public bool IsRemovedFromProjectEvent => RemovedFromProjectEvent != null;
 
         /// <summary>
         /// 
@@ -431,23 +600,6 @@ namespace G
         }
 
         /// <summary>
-        /// Converted Note to Issue Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; init; }
-#else
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteToEvent))]
-#endif
-        public bool IsConvertedNoteToEvent => ConvertedNoteToEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.ConvertedNoteToIssueIssueEvent value) => new TimelineIssueEvents((global::G.ConvertedNoteToIssueIssueEvent?)value);
@@ -464,23 +616,6 @@ namespace G
         {
             ConvertedNoteToEvent = value;
         }
-
-        /// <summary>
-        /// Timeline Comment Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineCommentEvent? CommentEvent { get; init; }
-#else
-        public global::G.TimelineCommentEvent? CommentEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommentEvent))]
-#endif
-        public bool IsCommentEvent => CommentEvent != null;
 
         /// <summary>
         /// 
@@ -501,23 +636,6 @@ namespace G
         }
 
         /// <summary>
-        /// Timeline Cross Referenced Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; init; }
-#else
-        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CrossReferencedEvent))]
-#endif
-        public bool IsCrossReferencedEvent => CrossReferencedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineCrossReferencedEvent value) => new TimelineIssueEvents((global::G.TimelineCrossReferencedEvent?)value);
@@ -534,23 +652,6 @@ namespace G
         {
             CrossReferencedEvent = value;
         }
-
-        /// <summary>
-        /// Timeline Committed Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineCommittedEvent? CommittedEvent { get; init; }
-#else
-        public global::G.TimelineCommittedEvent? CommittedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommittedEvent))]
-#endif
-        public bool IsCommittedEvent => CommittedEvent != null;
 
         /// <summary>
         /// 
@@ -571,23 +672,6 @@ namespace G
         }
 
         /// <summary>
-        /// Timeline Reviewed Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineReviewedEvent? ReviewedEvent { get; init; }
-#else
-        public global::G.TimelineReviewedEvent? ReviewedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewedEvent))]
-#endif
-        public bool IsReviewedEvent => ReviewedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineReviewedEvent value) => new TimelineIssueEvents((global::G.TimelineReviewedEvent?)value);
@@ -604,23 +688,6 @@ namespace G
         {
             ReviewedEvent = value;
         }
-
-        /// <summary>
-        /// Timeline Line Commented Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; init; }
-#else
-        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LineCommentedEvent))]
-#endif
-        public bool IsLineCommentedEvent => LineCommentedEvent != null;
 
         /// <summary>
         /// 
@@ -641,23 +708,6 @@ namespace G
         }
 
         /// <summary>
-        /// Timeline Commit Commented Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; init; }
-#else
-        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommitCommentedEvent))]
-#endif
-        public bool IsCommitCommentedEvent => CommitCommentedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineCommitCommentedEvent value) => new TimelineIssueEvents((global::G.TimelineCommitCommentedEvent?)value);
@@ -674,23 +724,6 @@ namespace G
         {
             CommitCommentedEvent = value;
         }
-
-        /// <summary>
-        /// Timeline Assigned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; init; }
-#else
-        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssignedEvent))]
-#endif
-        public bool IsAssignedEvent => AssignedEvent != null;
 
         /// <summary>
         /// 
@@ -711,23 +744,6 @@ namespace G
         }
 
         /// <summary>
-        /// Timeline Unassigned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; init; }
-#else
-        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnassignedEvent))]
-#endif
-        public bool IsUnassignedEvent => UnassignedEvent != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineUnassignedIssueEvent value) => new TimelineIssueEvents((global::G.TimelineUnassignedIssueEvent?)value);
@@ -744,23 +760,6 @@ namespace G
         {
             UnassignedEvent = value;
         }
-
-        /// <summary>
-        /// State Change Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StateChangeIssueEvent? StateChangeEvent { get; init; }
-#else
-        public global::G.StateChangeIssueEvent? StateChangeEvent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StateChangeEvent))]
-#endif
-        public bool IsStateChangeEvent => StateChangeEvent != null;
 
         /// <summary>
         /// 

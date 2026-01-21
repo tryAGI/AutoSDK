@@ -25,7 +25,7 @@ namespace G
         /// Default Value: twilio
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::G.CreateTwilioPhoneNumberRequestProvider? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
         /// Twilio Account SID
@@ -68,7 +68,7 @@ namespace G
             string label,
             string sid,
             string token,
-            global::G.CreateTwilioPhoneNumberRequestProvider? provider)
+            string? provider)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));

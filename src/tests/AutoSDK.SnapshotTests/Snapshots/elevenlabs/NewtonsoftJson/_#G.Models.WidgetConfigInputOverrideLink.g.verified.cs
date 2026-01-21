@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.WidgetConfigInputOverrideLink.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The override link for the widget
+    /// </summary>
+    public sealed partial class WidgetConfigInputOverrideLink
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

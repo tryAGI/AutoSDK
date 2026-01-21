@@ -10,7 +10,7 @@ namespace G
     public sealed partial class BodySimulatesAConversationV1ConvaiAgentsAgentIdSimulateConversationPost
     {
         /// <summary>
-        /// A specification that will be used to simulate a conversation between an agent and an AI user.
+        /// A specification detailing how the conversation should be simulated
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("simulation_specification")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BodySimulatesAConversationV1ConvaiAgentsAgentIdSimulateConversationPost" /> class.
         /// </summary>
         /// <param name="simulationSpecification">
-        /// A specification that will be used to simulate a conversation between an agent and an AI user.
+        /// A specification detailing how the conversation should be simulated
         /// </param>
         /// <param name="extraEvaluationCriteria">
         /// A list of evaluation criteria to test

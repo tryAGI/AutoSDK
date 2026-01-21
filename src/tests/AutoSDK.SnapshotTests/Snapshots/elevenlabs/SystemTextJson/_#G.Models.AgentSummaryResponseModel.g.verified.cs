@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB","created_at_unix_secs":1716153600,"name":"My Agent","tags":["Customer Support","Technical Help","Eleven"]}
     /// </summary>
     public sealed partial class AgentSummaryResponseModel
     {
@@ -38,8 +38,10 @@ namespace G
         public required int CreatedAtUnixSecs { get; set; }
 
         /// <summary>
-        /// 
+        /// The access information of the agent<br/>
+        /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </summary>
+        /// <example>{"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_info")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ResourceAccessInfo AccessInfo { get; set; }
@@ -65,7 +67,10 @@ namespace G
         /// <param name="createdAtUnixSecs">
         /// The creation time of the agent in unix seconds
         /// </param>
-        /// <param name="accessInfo"></param>
+        /// <param name="accessInfo">
+        /// The access information of the agent<br/>
+        /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

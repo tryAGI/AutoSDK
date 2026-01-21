@@ -14,45 +14,28 @@ namespace G
         /// <summary>
         /// List of pronunciation rules. Rule can be either:<br/>
         ///     an alias rule: {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b', }<br/>
-        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }<br/>
-        /// Example: <br/>
-        ///     [<br/>
-        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
-        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
-        ///     ]
+        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }
         /// </summary>
-        /// <example>
-        ///     [<br/>
-        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
-        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
-        ///     ]
-        /// </example>
         [global::Newtonsoft.Json.JsonProperty("rules", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> Rules { get; set; } = default!;
 
         /// <summary>
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </summary>
-        /// <example>My Dictionary</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </summary>
-        /// <example>Contains pronunciation's of our character names</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </summary>
-        /// <example>viewer</example>
         [global::Newtonsoft.Json.JsonProperty("workspace_access")]
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? WorkspaceAccess { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? WorkspaceAccess { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,30 +49,22 @@ namespace G
         /// <param name="rules">
         /// List of pronunciation rules. Rule can be either:<br/>
         ///     an alias rule: {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b', }<br/>
-        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }<br/>
-        /// Example: <br/>
-        ///     [<br/>
-        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
-        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
-        ///     ]
+        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }
         /// </param>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </param>
         public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost(
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> rules,
             string name,
             string? description,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? workspaceAccess)
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? workspaceAccess)
         {
             this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

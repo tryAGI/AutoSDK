@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"emails":["octocat@github.com","mona@github.com"]}
     /// </summary>
     public sealed partial class UsersAddEmailForAuthenticatedUserRequest2
     {

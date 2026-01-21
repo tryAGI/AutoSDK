@@ -13,8 +13,7 @@ namespace G
         /// Default Value: webhook
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationHistoryTranscriptToolCallWebhookDetailsTypeJsonConverter))]
-        public global::G.ConversationHistoryTranscriptToolCallWebhookDetailsType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -78,7 +77,7 @@ namespace G
         public ConversationHistoryTranscriptToolCallWebhookDetails(
             string method,
             string url,
-            global::G.ConversationHistoryTranscriptToolCallWebhookDetailsType? type,
+            string? type,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::System.Collections.Generic.Dictionary<string, string>? pathParams,
             global::System.Collections.Generic.Dictionary<string, string>? queryParams,

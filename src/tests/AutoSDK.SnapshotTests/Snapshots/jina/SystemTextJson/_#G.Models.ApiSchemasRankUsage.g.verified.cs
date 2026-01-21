@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"total_tokens":15,"prompt_tokens":15}
     /// </summary>
     public sealed partial class ApiSchemasRankUsage
     {

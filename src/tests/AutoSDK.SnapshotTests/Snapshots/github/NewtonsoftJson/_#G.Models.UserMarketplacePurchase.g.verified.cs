@@ -17,8 +17,9 @@ namespace G
         public string BillingCycle { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-11-11T00:00:00Z
         /// </summary>
+        /// <example>2017-11-11T00:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("next_billing_date", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? NextBillingDate { get; set; } = default!;
 
@@ -36,14 +37,16 @@ namespace G
         public bool OnFreeTrial { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-11-11T00:00:00Z
         /// </summary>
+        /// <example>2017-11-11T00:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? FreeTrialEndsOn { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-11-02T01:12:12Z
         /// </summary>
+        /// <example>2017-11-02T01:12:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
@@ -71,13 +74,19 @@ namespace G
         /// <param name="billingCycle">
         /// Example: monthly
         /// </param>
-        /// <param name="nextBillingDate"></param>
+        /// <param name="nextBillingDate">
+        /// Example: 2017-11-11T00:00:00Z
+        /// </param>
         /// <param name="unitCount"></param>
         /// <param name="onFreeTrial">
         /// Example: true
         /// </param>
-        /// <param name="freeTrialEndsOn"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="freeTrialEndsOn">
+        /// Example: 2017-11-11T00:00:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2017-11-02T01:12:12Z
+        /// </param>
         /// <param name="account"></param>
         /// <param name="plan">
         /// Marketplace Listing Plan

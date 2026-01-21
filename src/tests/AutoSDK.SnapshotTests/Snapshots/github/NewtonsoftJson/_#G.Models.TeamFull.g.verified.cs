@@ -120,14 +120,16 @@ namespace G
         public int ReposCount { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-14T16:53:42Z
         /// </summary>
+        /// <example>2017-07-14T16:53:42Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-08-17T12:37:15Z
         /// </summary>
+        /// <example>2017-08-17T12:37:15Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -205,8 +207,12 @@ namespace G
         /// <param name="reposCount">
         /// Example: 10
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2017-07-14T16:53:42Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2017-08-17T12:37:15Z
+        /// </param>
         /// <param name="organization">
         /// Team Organization
         /// </param>

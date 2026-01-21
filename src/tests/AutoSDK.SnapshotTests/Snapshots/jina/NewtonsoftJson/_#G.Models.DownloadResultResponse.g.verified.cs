@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"000000000000000000000000","download_url":"https://example.com"}
     /// </summary>
     public sealed partial class DownloadResultResponse
     {

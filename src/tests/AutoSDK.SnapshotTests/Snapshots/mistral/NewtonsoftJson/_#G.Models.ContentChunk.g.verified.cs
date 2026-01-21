@@ -33,6 +33,56 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ImageURLChunk? ImageUrl { get; init; }
+#else
+        public global::G.ImageURLChunk? ImageUrl { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
+#endif
+        public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DocumentURLChunk? DocumentUrl { get; init; }
+#else
+        public global::G.DocumentURLChunk? DocumentUrl { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentUrl))]
+#endif
+        public bool IsDocumentUrl => DocumentUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReferenceChunk? Reference { get; init; }
+#else
+        public global::G.ReferenceChunk? Reference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
+#endif
+        public bool IsReference => Reference != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ContentChunk(global::G.TextChunk value) => new ContentChunk((global::G.TextChunk?)value);
@@ -49,23 +99,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ImageURLChunk? ImageUrl { get; init; }
-#else
-        public global::G.ImageURLChunk? ImageUrl { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
-#endif
-        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DocumentURLChunk? DocumentUrl { get; init; }
-#else
-        public global::G.DocumentURLChunk? DocumentUrl { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DocumentUrl))]
-#endif
-        public bool IsDocumentUrl => DocumentUrl != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ContentChunk(global::G.DocumentURLChunk value) => new ContentChunk((global::G.DocumentURLChunk?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace G
         {
             DocumentUrl = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReferenceChunk? Reference { get; init; }
-#else
-        public global::G.ReferenceChunk? Reference { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
-#endif
-        public bool IsReference => Reference != null;
 
         /// <summary>
         /// 

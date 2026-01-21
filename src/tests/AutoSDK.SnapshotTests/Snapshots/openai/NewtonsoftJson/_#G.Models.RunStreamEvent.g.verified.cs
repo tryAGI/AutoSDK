@@ -28,6 +28,158 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant2? Value2 { get; init; }
+#else
+        public global::G.RunStreamEventVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant3? Value3 { get; init; }
+#else
+        public global::G.RunStreamEventVariant3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant4? Value4 { get; init; }
+#else
+        public global::G.RunStreamEventVariant4? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant5? Value5 { get; init; }
+#else
+        public global::G.RunStreamEventVariant5? Value5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+#endif
+        public bool IsValue5 => Value5 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant6? Value6 { get; init; }
+#else
+        public global::G.RunStreamEventVariant6? Value6 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+#endif
+        public bool IsValue6 => Value6 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) fails.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant7? Value7 { get; init; }
+#else
+        public global::G.RunStreamEventVariant7? Value7 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+#endif
+        public bool IsValue7 => Value7 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant8? Value8 { get; init; }
+#else
+        public global::G.RunStreamEventVariant8? Value8 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+#endif
+        public bool IsValue8 => Value8 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant9? Value9 { get; init; }
+#else
+        public global::G.RunStreamEventVariant9? Value9 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+#endif
+        public bool IsValue9 => Value9 != null;
+
+        /// <summary>
+        /// Occurs when a [run](/docs/api-reference/runs/object) expires.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant10? Value10 { get; init; }
+#else
+        public global::G.RunStreamEventVariant10? Value10 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+#endif
+        public bool IsValue10 => Value10 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant1 value) => new RunStreamEvent((global::G.RunStreamEventVariant1?)value);
@@ -44,23 +196,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant2? Value2 { get; init; }
-#else
-        public global::G.RunStreamEventVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 
@@ -81,23 +216,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant3? Value3 { get; init; }
-#else
-        public global::G.RunStreamEventVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant3 value) => new RunStreamEvent((global::G.RunStreamEventVariant3?)value);
@@ -114,23 +232,6 @@ namespace G
         {
             Value3 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant4? Value4 { get; init; }
-#else
-        public global::G.RunStreamEventVariant4? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
 
         /// <summary>
         /// 
@@ -151,23 +252,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant5? Value5 { get; init; }
-#else
-        public global::G.RunStreamEventVariant5? Value5 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
-#endif
-        public bool IsValue5 => Value5 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant5 value) => new RunStreamEvent((global::G.RunStreamEventVariant5?)value);
@@ -184,23 +268,6 @@ namespace G
         {
             Value5 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant6? Value6 { get; init; }
-#else
-        public global::G.RunStreamEventVariant6? Value6 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
-#endif
-        public bool IsValue6 => Value6 != null;
 
         /// <summary>
         /// 
@@ -221,23 +288,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) fails.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant7? Value7 { get; init; }
-#else
-        public global::G.RunStreamEventVariant7? Value7 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
-#endif
-        public bool IsValue7 => Value7 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant7 value) => new RunStreamEvent((global::G.RunStreamEventVariant7?)value);
@@ -254,23 +304,6 @@ namespace G
         {
             Value7 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant8? Value8 { get; init; }
-#else
-        public global::G.RunStreamEventVariant8? Value8 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
-#endif
-        public bool IsValue8 => Value8 != null;
 
         /// <summary>
         /// 
@@ -291,23 +324,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant9? Value9 { get; init; }
-#else
-        public global::G.RunStreamEventVariant9? Value9 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
-#endif
-        public bool IsValue9 => Value9 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant9 value) => new RunStreamEvent((global::G.RunStreamEventVariant9?)value);
@@ -324,23 +340,6 @@ namespace G
         {
             Value9 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) expires.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant10? Value10 { get; init; }
-#else
-        public global::G.RunStreamEventVariant10? Value10 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
-#endif
-        public bool IsValue10 => Value10 != null;
 
         /// <summary>
         /// 

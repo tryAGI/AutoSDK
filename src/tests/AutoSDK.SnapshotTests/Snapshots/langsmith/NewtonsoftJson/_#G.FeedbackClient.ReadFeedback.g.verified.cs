@@ -9,7 +9,7 @@ namespace G
         partial void PrepareReadFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid feedbackId,
-            ref bool? includeUserNames);
+            bool? includeUserNames);
         partial void PrepareReadFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -42,7 +42,7 @@ namespace G
             PrepareReadFeedbackArguments(
                 httpClient: HttpClient,
                 feedbackId: ref feedbackId,
-                includeUserNames: ref includeUserNames);
+                includeUserNames: includeUserNames);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/feedback/{feedbackId}",

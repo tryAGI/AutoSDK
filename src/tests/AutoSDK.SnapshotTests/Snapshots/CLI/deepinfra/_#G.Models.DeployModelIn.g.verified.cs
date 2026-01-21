@@ -10,7 +10,8 @@ namespace G
     public sealed partial class DeployModelIn
     {
         /// <summary>
-        /// 
+        /// namespace for the model name<br/>
+        /// Default Value: cnt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelProviderJsonConverter))]
@@ -38,7 +39,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeployModelIn" /> class.
         /// </summary>
-        /// <param name="provider"></param>
+        /// <param name="provider">
+        /// namespace for the model name<br/>
+        /// Default Value: cnt
+        /// </param>
         /// <param name="modelName">
         /// model name in specified provider
         /// </param>

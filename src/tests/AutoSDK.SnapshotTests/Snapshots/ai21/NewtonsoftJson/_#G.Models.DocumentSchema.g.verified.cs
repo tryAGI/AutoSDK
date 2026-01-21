@@ -24,7 +24,7 @@ namespace G
         public string Content { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: {}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
@@ -44,7 +44,9 @@ namespace G
         /// for all responses in the stream.
         /// </param>
         /// <param name="content"></param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// Default Value: {}
+        /// </param>
         public DocumentSchema(
             string content,
             string? id,

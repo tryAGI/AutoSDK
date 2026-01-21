@@ -25,9 +25,9 @@ namespace G
         public required int Total { get; set; }
 
         /// <summary>
-        /// Example: []
+        /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
         /// </summary>
-        /// <example>[]</example>
+        /// <example>[{"w":"1367712000","a":6898,"d":77,"c":10}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("weeks")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> Weeks { get; set; }
@@ -48,7 +48,7 @@ namespace G
         /// Example: 135
         /// </param>
         /// <param name="weeks">
-        /// Example: []
+        /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

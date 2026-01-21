@@ -18,9 +18,9 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -77,15 +77,17 @@ namespace G
         public required string TargetUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -141,7 +143,7 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/example/deployments/42/statuses/1
         /// </param>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="nodeId">
         /// Example: MDE2OkRlcGxveW1lbnRTdGF0dXMx
@@ -165,8 +167,12 @@ namespace G
         /// Deprecated: the URL to associate with this status.<br/>
         /// Example: https://example.com/deployment/42/output
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
         /// <param name="deploymentUrl">
         /// Example: https://api.github.com/repos/octocat/example/deployments/42
         /// </param>

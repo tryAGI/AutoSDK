@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
             ref string? search,
-            ref global::System.Guid? example,
+            global::System.Guid? example,
             ref int? limit,
             ref int? offset);
         partial void PrepareGetDatasetVersionsRequest(
@@ -59,7 +59,7 @@ namespace G
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
                 search: ref search,
-                example: ref example,
+                example: example,
                 limit: ref limit,
                 offset: ref offset);
 

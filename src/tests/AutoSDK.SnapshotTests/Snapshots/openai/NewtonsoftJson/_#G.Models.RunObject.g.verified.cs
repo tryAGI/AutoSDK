@@ -170,7 +170,6 @@ namespace G
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls", Required = global::Newtonsoft.Json.Required.Always)]
         public bool ParallelToolCalls { get; set; } = default!;
 

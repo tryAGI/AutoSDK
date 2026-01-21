@@ -29,24 +29,6 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Container(string value) => new Container((string?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator string?(Container @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Container(string? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
         /// Configuration for a code interpreter container. Optionally specify the IDs<br/>
         /// of the files to run the code on.
         /// </summary>
@@ -63,6 +45,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Container(string value) => new Container((string?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator string?(Container @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Container(string? value)
+        {
+            Value1 = value;
+        }
 
         /// <summary>
         /// 

@@ -33,6 +33,22 @@ namespace G
         public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
+        /// Text content of the input.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.EmbedText? Text { get; init; }
+#else
+        public global::G.EmbedText? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator EmbedContent(global::G.EmbedImage value) => new EmbedContent((global::G.EmbedImage?)value);
@@ -49,23 +65,6 @@ namespace G
         {
             ImageUrl = value;
         }
-
-        /// <summary>
-        /// Text content of the input.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.EmbedText? Text { get; init; }
-#else
-        public global::G.EmbedText? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 

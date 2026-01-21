@@ -13,7 +13,7 @@ namespace G
         /// Default Value: transfer_to_number
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
-        public global::G.TransferToNumberToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
         /// </param>
         public TransferToNumberToolConfig(
             global::System.Collections.Generic.IList<global::G.PhoneNumberTransfer> transfers,
-            global::G.TransferToNumberToolConfigSystemToolType? systemToolType,
+            string? systemToolType,
             bool? enableClientMessage)
         {
             this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));

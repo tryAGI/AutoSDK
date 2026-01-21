@@ -5,13 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"api_terms":{"terms_url":"terms_url","terms_id":"terms_id"}}
     /// </summary>
     public sealed partial class GetApiTermsResponse
     {
         /// <summary>
-        /// 
+        /// Example: {"terms_url":"terms_url","terms_id":"terms_id"}
         /// </summary>
+        /// <example>{"terms_url":"terms_url","terms_id":"terms_id"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_terms")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ApiTerms ApiTerms { get; set; }
@@ -25,7 +26,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetApiTermsResponse" /> class.
         /// </summary>
-        /// <param name="apiTerms"></param>
+        /// <param name="apiTerms">
+        /// Example: {"terms_url":"terms_url","terms_id":"terms_id"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -26,7 +26,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
-
         /// <summary>
         /// 
         /// </summary>

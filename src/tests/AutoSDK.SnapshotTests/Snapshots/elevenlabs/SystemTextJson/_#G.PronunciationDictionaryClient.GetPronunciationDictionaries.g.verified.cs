@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref int? pageSize,
-            ref global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort,
+            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort2? sort,
             ref string? sortDirection,
             ref string? xiApiKey);
         partial void PrepareGetPronunciationDictionariesRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? cursor,
             int? pageSize,
-            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort,
+            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort2? sort,
             string? sortDirection,
             string? xiApiKey);
         partial void ProcessGetPronunciationDictionariesResponse(
@@ -43,13 +43,11 @@ namespace G
         /// </param>
         /// <param name="sort">
         /// Which field to sort by, one of 'created_at_unix' or 'name'.<br/>
-        /// Default Value: creation_time_unix<br/>
-        /// Example: creation_time_unix
+        /// Default Value: creation_time_unix
         /// </param>
         /// <param name="sortDirection">
         /// Which direction to sort the voices in. 'ascending' or 'descending'.<br/>
-        /// Default Value: DESCENDING<br/>
-        /// Example: descending
+        /// Default Value: DESCENDING
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -59,7 +57,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionariesMetadataResponseModel> GetPronunciationDictionariesAsync(
             string? cursor = default,
             int? pageSize = default,
-            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort? sort = default,
+            global::G.GetPronunciationDictionariesV1PronunciationDictionariesGetSort2? sort = default,
             string? sortDirection = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -70,7 +68,7 @@ namespace G
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 pageSize: ref pageSize,
-                sort: ref sort,
+                sort: sort,
                 sortDirection: ref sortDirection,
                 xiApiKey: ref xiApiKey);
 
@@ -80,7 +78,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("cursor", cursor) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToString()) 
                 .AddOptionalParameter("sort_direction", sortDirection) 
                 ; 
             var __path = __pathBuilder.ToString();

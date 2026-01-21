@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TenantShareDatasetTokenTypeJsonConverter))]
-        public global::G.TenantShareDatasetTokenType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -61,16 +61,16 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TenantShareDatasetToken(
+            string type,
             string shareToken,
             global::System.DateTime createdAt,
             global::System.Guid datasetId,
-            global::G.TenantShareDatasetTokenType type,
             string? datasetName)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.DatasetId = datasetId;
-            this.Type = type;
             this.DatasetName = datasetName;
         }
 

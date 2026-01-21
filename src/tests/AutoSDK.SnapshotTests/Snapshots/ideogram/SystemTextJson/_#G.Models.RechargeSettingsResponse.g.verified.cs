@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"is_active":true}
     /// </summary>
     public sealed partial class RechargeSettingsResponse
     {

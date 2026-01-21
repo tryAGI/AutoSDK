@@ -26,8 +26,7 @@ namespace G
         /// Run a conversation between the agent and a simulated user and stream back the response. Response is streamed back as partial lists of messages that should be concatenated and once the conversation has complete a single final message with the conversation analysis will be sent.
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -201,14 +200,13 @@ namespace G
         /// Run a conversation between the agent and a simulated user and stream back the response. Response is streamed back as partial lists of messages that should be concatenated and once the conversation has complete a single final message with the conversation analysis will be sent.
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="simulationSpecification">
-        /// A specification that will be used to simulate a conversation between an agent and an AI user.
+        /// A specification detailing how the conversation should be simulated
         /// </param>
         /// <param name="extraEvaluationCriteria">
         /// A list of evaluation criteria to test

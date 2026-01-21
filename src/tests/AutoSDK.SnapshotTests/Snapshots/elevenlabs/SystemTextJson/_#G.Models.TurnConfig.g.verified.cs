@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"mode":"turn","silence_end_call_timeout":-1,"turn_timeout":7}
     /// </summary>
     public sealed partial class TurnConfig
     {
@@ -24,7 +24,8 @@ namespace G
         public double? SilenceEndCallTimeout { get; set; }
 
         /// <summary>
-        /// 
+        /// The mode of turn detection<br/>
+        /// Default Value: turn
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TurnModeJsonConverter))]
@@ -47,7 +48,10 @@ namespace G
         /// Maximum wait time since the user last spoke before terminating the call<br/>
         /// Default Value: -1
         /// </param>
-        /// <param name="mode"></param>
+        /// <param name="mode">
+        /// The mode of turn detection<br/>
+        /// Default Value: turn
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

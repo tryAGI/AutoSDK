@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="info")]
         Info,
         /// <summary>
@@ -54,6 +59,7 @@ namespace G
         {
             return value switch
             {
+                FineTuneEventLevel.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 FineTuneEventLevel.Info => "info",
                 FineTuneEventLevel.Warning => "warning",
                 FineTuneEventLevel.Error => "error",
@@ -70,6 +76,7 @@ namespace G
         {
             return value switch
             {
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => FineTuneEventLevel.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "info" => FineTuneEventLevel.Info,
                 "warning" => FineTuneEventLevel.Warning,
                 "error" => FineTuneEventLevel.Error,

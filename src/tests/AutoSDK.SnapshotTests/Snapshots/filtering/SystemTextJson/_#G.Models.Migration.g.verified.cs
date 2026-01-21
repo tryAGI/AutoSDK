@@ -10,9 +10,9 @@ namespace G
     public sealed partial class Migration
     {
         /// <summary>
-        /// Example: 79L
+        /// Example: 79
         /// </summary>
-        /// <example>79L</example>
+        /// <example>79</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -106,15 +106,17 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2015-07-06T15:33:38-07:00
         /// </summary>
+        /// <example>2015-07-06T15:33:38-07:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2015-07-06T15:33:38-07:00
         /// </summary>
+        /// <example>2015-07-06T15:33:38-07:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -148,7 +150,7 @@ namespace G
         /// Initializes a new instance of the <see cref="Migration" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: 79L
+        /// Example: 79
         /// </param>
         /// <param name="owner">
         /// A GitHub user.
@@ -174,8 +176,12 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/orgs/octo-org/migrations/79
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2015-07-06T15:33:38-07:00
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2015-07-06T15:33:38-07:00
+        /// </param>
         /// <param name="nodeId"></param>
         /// <param name="archiveUrl"></param>
         /// <param name="exclude">

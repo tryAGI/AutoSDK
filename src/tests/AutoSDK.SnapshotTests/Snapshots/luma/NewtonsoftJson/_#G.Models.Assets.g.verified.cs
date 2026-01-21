@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Assets
     {
         /// <summary>
-        /// The URL of the image
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("image")]
-        public string? Image { get; set; }
-
-        /// <summary>
         /// The URL of the video
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("video")]
         public string? Video { get; set; }
+
+        /// <summary>
+        /// The URL of the image
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("image")]
+        public string? Image { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Assets" /> class.
         /// </summary>
-        /// <param name="image">
-        /// The URL of the image
-        /// </param>
         /// <param name="video">
         /// The URL of the video
         /// </param>
+        /// <param name="image">
+        /// The URL of the image
+        /// </param>
         public Assets(
-            string? image,
-            string? video)
+            string? video,
+            string? image)
         {
-            this.Image = image;
             this.Video = video;
+            this.Image = image;
         }
 
         /// <summary>

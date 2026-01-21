@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionMessageParamDiscriminatorRole? Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="role"></param>
         public ChatCompletionMessageParamDiscriminator(
-            global::G.ChatCompletionMessageParamDiscriminatorRole? role)
+            string? role)
         {
             this.Role = role;
         }

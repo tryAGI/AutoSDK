@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only 24h is supported.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completion_window")]
-        public global::G.OpenAIBatchesInCompletionWindow CompletionWindow { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("completion_window", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CompletionWindow { get; set; } = default!;
 
         /// <summary>
         /// Optional metadata to be stored with the batch.
@@ -57,13 +57,13 @@ namespace G
         public OpenAIBatchesIn(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            object? metadata,
-            global::G.OpenAIBatchesInCompletionWindow completionWindow)
+            string completionWindow,
+            object? metadata)
         {
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.Endpoint = endpoint;
+            this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.CompletionWindow = completionWindow;
         }
 
         /// <summary>

@@ -10,19 +10,15 @@ namespace G
     public sealed partial class BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost
     {
         /// <summary>
-        /// The email of the customer<br/>
-        /// Example: john.doe@testmail.com
+        /// The email of the customer
         /// </summary>
-        /// <example>john.doe@testmail.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Emails { get; set; }
 
         /// <summary>
-        /// The group ids of the user<br/>
-        /// Example: [group_id_1, group_id_2]
+        /// The group ids of the user
         /// </summary>
-        /// <example>[group_id_1, group_id_2]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_ids")]
         public global::System.Collections.Generic.IList<string>? GroupIds { get; set; }
 
@@ -36,12 +32,10 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost" /> class.
         /// </summary>
         /// <param name="emails">
-        /// The email of the customer<br/>
-        /// Example: john.doe@testmail.com
+        /// The email of the customer
         /// </param>
         /// <param name="groupIds">
-        /// The group ids of the user<br/>
-        /// Example: [group_id_1, group_id_2]
+        /// The group ids of the user
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

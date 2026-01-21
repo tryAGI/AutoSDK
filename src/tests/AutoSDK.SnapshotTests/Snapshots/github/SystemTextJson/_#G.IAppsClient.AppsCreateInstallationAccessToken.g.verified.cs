@@ -39,7 +39,8 @@ namespace G
         /// Example: [1]
         /// </param>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

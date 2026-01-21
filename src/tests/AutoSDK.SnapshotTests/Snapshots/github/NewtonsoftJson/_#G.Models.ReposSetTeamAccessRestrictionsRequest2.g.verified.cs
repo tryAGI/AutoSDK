@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"teams":["justice-league"]}
     /// </summary>
     public sealed partial class ReposSetTeamAccessRestrictionsRequest2
     {

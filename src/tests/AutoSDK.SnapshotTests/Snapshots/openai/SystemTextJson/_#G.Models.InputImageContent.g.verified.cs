@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.InputImageContent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -24,15 +22,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? FileId { get; set; }
+        public string? FileId { get; set; }
 
         /// <summary>
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
@@ -65,8 +61,8 @@ namespace G
 #endif
         public InputImageContent(
             global::G.InputImageContentDetail detail,
-            global::G.AnyOf<string, object>? imageUrl,
-            global::G.AnyOf<string, object>? fileId,
+            string? imageUrl,
+            string? fileId,
             global::G.InputImageContentType type = global::G.InputImageContentType.InputImage)
         {
             this.Detail = detail;

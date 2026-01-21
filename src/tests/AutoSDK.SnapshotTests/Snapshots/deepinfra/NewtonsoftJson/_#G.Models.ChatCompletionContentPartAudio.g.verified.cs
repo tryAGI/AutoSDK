@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatCompletionContentPartAudioType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,11 +33,11 @@ namespace G
         /// <param name="type"></param>
         /// <param name="inputAudio"></param>
         public ChatCompletionContentPartAudio(
-            global::G.InputAudio inputAudio,
-            global::G.ChatCompletionContentPartAudioType type)
+            string type,
+            global::G.InputAudio inputAudio)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
-            this.Type = type;
         }
 
         /// <summary>

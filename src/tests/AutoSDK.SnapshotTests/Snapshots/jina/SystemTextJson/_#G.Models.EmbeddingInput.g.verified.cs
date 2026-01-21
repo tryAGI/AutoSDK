@@ -11,7 +11,8 @@ namespace G
     public readonly partial struct EmbeddingInput : global::System.IEquatable<EmbeddingInput>
     {
         /// <summary>
-        /// The input to the API for text embedding. OpenAI compatible
+        /// The input to the API for text embedding. OpenAI compatible<br/>
+        /// Example: {"model":"jina-embeddings-v2-base-en","input":["Hello, world!"]}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextEmbeddingInput? Text { get; init; }
@@ -27,6 +28,41 @@ namespace G
 #endif
         public bool IsText => Text != null;
 
+        /// <summary>
+        /// The input to the API for text embedding. OpenAI compatible<br/>
+        /// Example: {"model":"clip","input":["bytes or URL"]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ImageEmbeddingInput? Image { get; init; }
+#else
+        public global::G.ImageEmbeddingInput? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// The input to the API for text embedding. OpenAI compatible<br/>
+        /// Example: {"model":"clip","input":["bytes or URL"]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MixedEmbeddingInput? Mixed { get; init; }
+#else
+        public global::G.MixedEmbeddingInput? Mixed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mixed))]
+#endif
+        public bool IsMixed => Mixed != null;
         /// <summary>
         /// 
         /// </summary>
@@ -46,23 +82,6 @@ namespace G
         }
 
         /// <summary>
-        /// The input to the API for text embedding. OpenAI compatible
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ImageEmbeddingInput? Image { get; init; }
-#else
-        public global::G.ImageEmbeddingInput? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator EmbeddingInput(global::G.ImageEmbeddingInput value) => new EmbeddingInput((global::G.ImageEmbeddingInput?)value);
@@ -79,23 +98,6 @@ namespace G
         {
             Image = value;
         }
-
-        /// <summary>
-        /// The input to the API for text embedding. OpenAI compatible
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MixedEmbeddingInput? Mixed { get; init; }
-#else
-        public global::G.MixedEmbeddingInput? Mixed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mixed))]
-#endif
-        public bool IsMixed => Mixed != null;
 
         /// <summary>
         /// 

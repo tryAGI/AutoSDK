@@ -16,17 +16,17 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// The type of the parameter. Must be a valid Python type.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
+
+        /// <summary>
         /// Denotes whether the parameter is always present (required) or not. Defaults to not required.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required")]
         public bool? Required { get; set; }
-
-        /// <summary>
-        /// The type of the parameter. Must be a valid Python type.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,12 +40,12 @@ namespace G
         /// <param name="description">
         /// The description of the parameter.
         /// </param>
+        /// <param name="type">
+        /// The type of the parameter. Must be a valid Python type.
+        /// </param>
         /// <param name="required">
         /// Denotes whether the parameter is always present (required) or not. Defaults to not required.<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="type">
-        /// The type of the parameter. Must be a valid Python type.
         /// </param>
         public ToolParameterDefinitions2(
             string type,

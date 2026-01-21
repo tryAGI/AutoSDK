@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionToolFunction Function { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ChatCompletionToolType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatCompletionToolType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionToolFunction Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionTool" /> class.
         /// </summary>
-        /// <param name="function"></param>
         /// <param name="type"></param>
+        /// <param name="function"></param>
         public ChatCompletionTool(
             global::G.ChatCompletionToolFunction function,
             global::G.ChatCompletionToolType type)

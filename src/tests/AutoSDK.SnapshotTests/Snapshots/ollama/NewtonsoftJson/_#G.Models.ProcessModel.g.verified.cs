@@ -20,9 +20,9 @@ namespace G
 
         /// <summary>
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500L
+        /// Example: 7323310500
         /// </summary>
-        /// <example>7323310500L</example>
+        /// <example>7323310500</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public long? Size { get; set; }
 
@@ -41,16 +41,17 @@ namespace G
         public global::G.ModelDetails? Details { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2023-08-02T17:02:23.7134544-07:00
         /// </summary>
+        /// <example>2023-08-02T17:02:23.7134544-07:00</example>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500L
+        /// Example: 7323310500
         /// </summary>
-        /// <example>7323310500L</example>
+        /// <example>7323310500</example>
         [global::Newtonsoft.Json.JsonProperty("size_vram")]
         public long? SizeVram { get; set; }
 
@@ -70,7 +71,7 @@ namespace G
         /// </param>
         /// <param name="size">
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500L
+        /// Example: 7323310500
         /// </param>
         /// <param name="digest">
         /// The model's digest.<br/>
@@ -79,10 +80,12 @@ namespace G
         /// <param name="details">
         /// Details about a model.
         /// </param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// Example: 2023-08-02T17:02:23.7134544-07:00
+        /// </param>
         /// <param name="sizeVram">
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500L
+        /// Example: 7323310500
         /// </param>
         public ProcessModel(
             string? model,

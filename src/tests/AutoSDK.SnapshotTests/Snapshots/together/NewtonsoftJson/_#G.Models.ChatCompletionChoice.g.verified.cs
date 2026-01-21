@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionChoiceDelta Delta { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::G.LogprobsPart? Logprobs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public global::G.LogprobsPart? Logprobs { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionChoiceDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,19 +42,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChoice" /> class.
         /// </summary>
-        /// <param name="delta"></param>
-        /// <param name="finishReason"></param>
         /// <param name="index"></param>
+        /// <param name="finishReason"></param>
         /// <param name="logprobs"></param>
+        /// <param name="delta"></param>
         public ChatCompletionChoice(
-            global::G.ChatCompletionChoiceDelta delta,
-            global::G.FinishReason finishReason,
             int index,
+            global::G.FinishReason finishReason,
+            global::G.ChatCompletionChoiceDelta delta,
             global::G.LogprobsPart? logprobs)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.FinishReason = finishReason;
             this.Index = index;
+            this.FinishReason = finishReason;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Logprobs = logprobs;
         }
 

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"audio_base_64":"audio_base_64","duration_secs":5,"media_type":"audio/mpeg","sample_id":"DCwhRBWXzGAHq8TQ4Fs18","voice_id":"DCwhRBWXzGAHq8TQ4Fs18"}
     /// </summary>
     public sealed partial class VoiceSamplePreviewResponseModel
     {

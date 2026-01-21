@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"contexts":["contexts"]}
     /// </summary>
     public sealed partial class ReposRemoveStatusCheckContextsRequest2
     {

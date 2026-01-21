@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost
     {
         /// <summary>
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </summary>
-        /// <example>My Dictionary</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -25,27 +23,16 @@ namespace G
         public byte[]? File { get; set; }
 
         /// <summary>
-        /// A lexicon .pls file which we will use to initialize the project with.
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
-        public string? Filename { get; set; }
-
-        /// <summary>
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
-        /// </summary>
-        /// <example>Contains pronunciation's of our character names</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </summary>
-        /// <example>viewer</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_access")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessJsonConverter))]
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? WorkspaceAccess { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? WorkspaceAccess { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,22 +44,16 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="file">
         /// A lexicon .pls file which we will use to initialize the project with.
         /// </param>
-        /// <param name="filename">
-        /// A lexicon .pls file which we will use to initialize the project with.
-        /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,13 +61,11 @@ namespace G
         public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost(
             string name,
             byte[]? file,
-            string? filename,
             string? description,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? workspaceAccess)
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? workspaceAccess)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.File = file;
-            this.Filename = filename;
             this.Description = description;
             this.WorkspaceAccess = workspaceAccess;
         }

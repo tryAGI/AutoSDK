@@ -12,9 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Labels { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Weight { get; set; }
 
         /// <summary>
         /// 
@@ -25,20 +39,6 @@ namespace G
         public required global::G.FTClassifierLossFunction LossFunction { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Weight { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,23 +47,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifierTargetOut" /> class.
         /// </summary>
-        /// <param name="labels"></param>
-        /// <param name="lossFunction"></param>
         /// <param name="name"></param>
+        /// <param name="labels"></param>
         /// <param name="weight"></param>
+        /// <param name="lossFunction"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifierTargetOut(
-            global::System.Collections.Generic.IList<string> labels,
-            global::G.FTClassifierLossFunction lossFunction,
             string name,
-            double weight)
+            global::System.Collections.Generic.IList<string> labels,
+            double weight,
+            global::G.FTClassifierLossFunction lossFunction)
         {
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.LossFunction = lossFunction;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Weight = weight;
+            this.LossFunction = lossFunction;
         }
 
         /// <summary>

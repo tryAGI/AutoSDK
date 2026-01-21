@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"requires_verification":false,"voice_id":"c38kUX8pkfYO2kHyqfFy"}
     /// </summary>
     public sealed partial class AddVoiceIVCResponseModel
     {

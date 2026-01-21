@@ -24,8 +24,10 @@ namespace G
         public int WaitTimer { get; set; } = default!;
 
         /// <summary>
-        /// The time that the wait timer began.
+        /// The time that the wait timer began.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::Newtonsoft.Json.JsonProperty("wait_timer_started_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? WaitTimerStartedAt { get; set; } = default!;
 
@@ -58,7 +60,8 @@ namespace G
         /// Example: 30
         /// </param>
         /// <param name="waitTimerStartedAt">
-        /// The time that the wait timer began.
+        /// The time that the wait timer began.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
         /// <param name="currentUserCanApprove">
         /// Whether the currently authenticated user can approve the deployment<br/>

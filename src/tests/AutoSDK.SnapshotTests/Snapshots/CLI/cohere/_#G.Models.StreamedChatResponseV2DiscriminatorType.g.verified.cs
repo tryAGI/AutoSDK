@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CitationEnd,
+        MessageStart,
         /// <summary>
         /// 
         /// </summary>
-        CitationStart,
+        ContentStart,
         /// <summary>
         /// 
         /// </summary>
@@ -28,19 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ContentStart,
+        ToolPlanDelta,
         /// <summary>
         /// 
         /// </summary>
-        Debug,
-        /// <summary>
-        /// 
-        /// </summary>
-        MessageEnd,
-        /// <summary>
-        /// 
-        /// </summary>
-        MessageStart,
+        ToolCallStart,
         /// <summary>
         /// 
         /// </summary>
@@ -52,11 +44,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ToolCallStart,
+        CitationStart,
         /// <summary>
         /// 
         /// </summary>
-        ToolPlanDelta,
+        CitationEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        MessageEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        Debug,
     }
 
     /// <summary>
@@ -71,18 +71,18 @@ namespace G
         {
             return value switch
             {
-                StreamedChatResponseV2DiscriminatorType.CitationEnd => "citation-end",
-                StreamedChatResponseV2DiscriminatorType.CitationStart => "citation-start",
+                StreamedChatResponseV2DiscriminatorType.MessageStart => "message-start",
+                StreamedChatResponseV2DiscriminatorType.ContentStart => "content-start",
                 StreamedChatResponseV2DiscriminatorType.ContentDelta => "content-delta",
                 StreamedChatResponseV2DiscriminatorType.ContentEnd => "content-end",
-                StreamedChatResponseV2DiscriminatorType.ContentStart => "content-start",
-                StreamedChatResponseV2DiscriminatorType.Debug => "debug",
-                StreamedChatResponseV2DiscriminatorType.MessageEnd => "message-end",
-                StreamedChatResponseV2DiscriminatorType.MessageStart => "message-start",
+                StreamedChatResponseV2DiscriminatorType.ToolPlanDelta => "tool-plan-delta",
+                StreamedChatResponseV2DiscriminatorType.ToolCallStart => "tool-call-start",
                 StreamedChatResponseV2DiscriminatorType.ToolCallDelta => "tool-call-delta",
                 StreamedChatResponseV2DiscriminatorType.ToolCallEnd => "tool-call-end",
-                StreamedChatResponseV2DiscriminatorType.ToolCallStart => "tool-call-start",
-                StreamedChatResponseV2DiscriminatorType.ToolPlanDelta => "tool-plan-delta",
+                StreamedChatResponseV2DiscriminatorType.CitationStart => "citation-start",
+                StreamedChatResponseV2DiscriminatorType.CitationEnd => "citation-end",
+                StreamedChatResponseV2DiscriminatorType.MessageEnd => "message-end",
+                StreamedChatResponseV2DiscriminatorType.Debug => "debug",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -93,18 +93,18 @@ namespace G
         {
             return value switch
             {
-                "citation-end" => StreamedChatResponseV2DiscriminatorType.CitationEnd,
-                "citation-start" => StreamedChatResponseV2DiscriminatorType.CitationStart,
+                "message-start" => StreamedChatResponseV2DiscriminatorType.MessageStart,
+                "content-start" => StreamedChatResponseV2DiscriminatorType.ContentStart,
                 "content-delta" => StreamedChatResponseV2DiscriminatorType.ContentDelta,
                 "content-end" => StreamedChatResponseV2DiscriminatorType.ContentEnd,
-                "content-start" => StreamedChatResponseV2DiscriminatorType.ContentStart,
-                "debug" => StreamedChatResponseV2DiscriminatorType.Debug,
-                "message-end" => StreamedChatResponseV2DiscriminatorType.MessageEnd,
-                "message-start" => StreamedChatResponseV2DiscriminatorType.MessageStart,
+                "tool-plan-delta" => StreamedChatResponseV2DiscriminatorType.ToolPlanDelta,
+                "tool-call-start" => StreamedChatResponseV2DiscriminatorType.ToolCallStart,
                 "tool-call-delta" => StreamedChatResponseV2DiscriminatorType.ToolCallDelta,
                 "tool-call-end" => StreamedChatResponseV2DiscriminatorType.ToolCallEnd,
-                "tool-call-start" => StreamedChatResponseV2DiscriminatorType.ToolCallStart,
-                "tool-plan-delta" => StreamedChatResponseV2DiscriminatorType.ToolPlanDelta,
+                "citation-start" => StreamedChatResponseV2DiscriminatorType.CitationStart,
+                "citation-end" => StreamedChatResponseV2DiscriminatorType.CitationEnd,
+                "message-end" => StreamedChatResponseV2DiscriminatorType.MessageEnd,
+                "debug" => StreamedChatResponseV2DiscriminatorType.Debug,
                 _ => null,
             };
         }

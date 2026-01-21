@@ -14,8 +14,7 @@ namespace G
         /// Default Value: unknown
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependentUnknownAgentIdentifierTypeJsonConverter))]
-        public global::G.DependentUnknownAgentIdentifierType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DependentUnknownAgentIdentifier(
-            global::G.DependentUnknownAgentIdentifierType? type)
+            string? type)
         {
             this.Type = type;
         }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"token":"fe4145dd1e7a2e149488dcd2d553a8018a89833fc5084837d66fd1bcf5a105d4"}
     /// </summary>
     public sealed partial class RealtimeTemporaryTokenResponse
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB","created_at_unix_secs":1716153600,"name":"My Agent","tags":["Customer Support","Technical Help","Eleven"]}
     /// </summary>
     public sealed partial class AgentSummaryResponseModel
     {
@@ -34,8 +34,10 @@ namespace G
         public int CreatedAtUnixSecs { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The access information of the agent<br/>
+        /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </summary>
+        /// <example>{"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}</example>
         [global::Newtonsoft.Json.JsonProperty("access_info", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ResourceAccessInfo AccessInfo { get; set; } = default!;
 
@@ -60,7 +62,10 @@ namespace G
         /// <param name="createdAtUnixSecs">
         /// The creation time of the agent in unix seconds
         /// </param>
-        /// <param name="accessInfo"></param>
+        /// <param name="accessInfo">
+        /// The access information of the agent<br/>
+        /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
+        /// </param>
         public AgentSummaryResponseModel(
             string agentId,
             string name,

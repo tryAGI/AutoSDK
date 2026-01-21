@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"creation_progress":0.5,"status":"pending","type":"blank"}
     /// </summary>
     public sealed partial class ProjectCreationMetaResponseModel
     {

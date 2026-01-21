@@ -6,12 +6,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Here are some potential action items based on the transcript:\n\n- Monitor air quality levels in affected areas and issue warnings as needed.\n\n- Advise vulnerable populations like children, the elderly, and those with respiratory conditions to limit time outdoors.\n\n- Have schools cancel outdoor activities when air quality is poor.\n\n- Educate the public on health impacts of smoke inhalation and precautions to take.\n\n- Track progression of smoke plumes using weather and air quality monitoring systems.\n\n- Coordinate cross-regionally to manage smoke exposure as air masses shift.\n\n- Plan for likely increase in such events due to climate change. Expand monitoring and forecasting capabilities.\n\n- Conduct research to better understand health impacts of wildfire smoke and mitigation strategies.\n\n- Develop strategies to prevent and manage wildfires to limit air quality impacts.\n","usage":{"input_tokens":27,"output_tokens":3}}
     /// </summary>
     public readonly partial struct LemurActionItemsResponse : global::System.IEquatable<LemurActionItemsResponse>
     {
         /// <summary>
-        /// 
+        /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LemurStringResponse? String { get; init; }
@@ -26,7 +26,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
 #endif
         public bool IsString => String != null;
-
         /// <summary>
         /// 
         /// </summary>

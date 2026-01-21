@@ -64,22 +64,25 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-10T20:09:31Z
         /// </summary>
+        /// <example>2011-04-10T20:09:31Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2014-03-03T18:58:10Z
         /// </summary>
+        /// <example>2014-03-03T18:58:10Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2014-03-03T18:58:10Z
         /// </summary>
+        /// <example>2014-03-03T18:58:10Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
         public global::System.DateTime? DeletedAt { get; set; }
 
@@ -119,9 +122,15 @@ namespace G
         /// Example: MIT
         /// </param>
         /// <param name="description"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="deletedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-10T20:09:31Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2014-03-03T18:58:10Z
+        /// </param>
+        /// <param name="deletedAt">
+        /// Example: 2014-03-03T18:58:10Z
+        /// </param>
         /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

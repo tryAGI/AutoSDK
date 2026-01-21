@@ -24,7 +24,7 @@ namespace G
         public bool? Language { get; set; }
 
         /// <summary>
-        /// 
+        /// Configures overrides for nested fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::G.PromptAgentOverrideConfig? Prompt { get; set; }
@@ -46,7 +46,9 @@ namespace G
         /// Whether to allow overriding the language field.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">
+        /// Configures overrides for nested fields.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -5,24 +5,24 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
     /// </summary>
     public sealed partial class ConversationConfigClientOverrideOutput
     {
         /// <summary>
-        /// 
+        /// Configuration for conversational text to speech
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tts")]
         public global::G.TTSConversationalConfigOverride? Tts { get; set; }
 
         /// <summary>
-        /// 
+        /// Configuration for conversational events
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::G.ConversationConfigOverride? Conversation { get; set; }
 
         /// <summary>
-        /// 
+        /// Agent specific configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::G.AgentConfigOverride? Agent { get; set; }
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideOutput" /> class.
         /// </summary>
-        /// <param name="tts"></param>
-        /// <param name="conversation"></param>
-        /// <param name="agent"></param>
+        /// <param name="tts">
+        /// Configuration for conversational text to speech
+        /// </param>
+        /// <param name="conversation">
+        /// Configuration for conversational events
+        /// </param>
+        /// <param name="agent">
+        /// Agent specific configuration
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

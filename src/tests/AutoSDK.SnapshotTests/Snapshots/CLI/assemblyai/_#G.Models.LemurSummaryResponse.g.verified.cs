@@ -6,12 +6,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"- Wildfires in Canada are sending smoke and air pollution across parts of the US, triggering air quality alerts from Maine to Minnesota. Concentrations of particulate matter have exceeded safety levels.\n\n- Weather systems are channeling the smoke through Pennsylvania into the Mid-Atlantic and Northeast regions. New York City has canceled outdoor activities to keep children and vulnerable groups indoors.\n\n- Very small particulate matter can enter the lungs and impact respiratory, cardiovascular and neurological health. Young children, the elderly and those with preexisting conditions are most at risk.\n\n- The conditions causing the poor air quality could get worse or shift to different areas in coming days depending on weather patterns. More wildfires may also contribute to higher concentrations.\n\n- Climate change is leading to longer and more severe fire seasons. Events of smoke traveling long distances and affecting air quality over wide areas will likely become more common in the future.\u0022\n","usage":{"input_tokens":27,"output_tokens":3}}
     /// </summary>
     public readonly partial struct LemurSummaryResponse : global::System.IEquatable<LemurSummaryResponse>
     {
         /// <summary>
-        /// 
+        /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LemurStringResponse? String { get; init; }
@@ -26,7 +26,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
 #endif
         public bool IsString => String != null;
-
         /// <summary>
         /// 
         /// </summary>

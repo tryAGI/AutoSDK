@@ -10,16 +10,16 @@ namespace G
     public sealed partial class EmbedText
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; }
-
-        /// <summary>
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.EmbedContentType? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedText" /> class.
         /// </summary>
-        /// <param name="text"></param>
         /// <param name="type">
         /// Included only in requests
         /// </param>
+        /// <param name="text"></param>
         public EmbedText(
-            string? text,
-            global::G.EmbedContentType? type)
+            global::G.EmbedContentType? type,
+            string? text)
         {
-            this.Text = text;
             this.Type = type;
+            this.Text = text;
         }
 
         /// <summary>

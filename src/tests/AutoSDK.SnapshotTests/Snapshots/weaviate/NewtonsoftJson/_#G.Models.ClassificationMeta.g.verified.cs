@@ -10,14 +10,18 @@ namespace G
     public sealed partial class ClassificationMeta
     {
         /// <summary>
-        /// time when this classification was started
+        /// time when this classification was started<br/>
+        /// Example: 2017-07-21T17:32:28.0000000+00:00
         /// </summary>
+        /// <example>2017-07-21T17:32:28.0000000+00:00</example>
         [global::Newtonsoft.Json.JsonProperty("started")]
         public global::System.DateTime? Started { get; set; }
 
         /// <summary>
-        /// time when this classification finished
+        /// time when this classification finished<br/>
+        /// Example: 2017-07-21T17:32:28.0000000+00:00
         /// </summary>
+        /// <example>2017-07-21T17:32:28.0000000+00:00</example>
         [global::Newtonsoft.Json.JsonProperty("completed")]
         public global::System.DateTime? Completed { get; set; }
 
@@ -55,10 +59,12 @@ namespace G
         /// Initializes a new instance of the <see cref="ClassificationMeta" /> class.
         /// </summary>
         /// <param name="started">
-        /// time when this classification was started
+        /// time when this classification was started<br/>
+        /// Example: 2017-07-21T17:32:28.0000000+00:00
         /// </param>
         /// <param name="completed">
-        /// time when this classification finished
+        /// time when this classification finished<br/>
+        /// Example: 2017-07-21T17:32:28.0000000+00:00
         /// </param>
         /// <param name="count">
         /// number of objects which were taken into consideration for classification<br/>

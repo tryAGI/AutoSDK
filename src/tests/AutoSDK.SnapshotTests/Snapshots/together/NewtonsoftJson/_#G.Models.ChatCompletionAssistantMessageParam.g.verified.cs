@@ -18,9 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionAssistantMessageParamFunctionCall? FunctionCall { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionAssistantMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 
@@ -31,14 +30,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionAssistantMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("tool_calls")]
+        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionAssistantMessageParamFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,18 +50,18 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatCompletionAssistantMessageParam" /> class.
         /// </summary>
         /// <param name="content"></param>
-        /// <param name="name"></param>
         /// <param name="role"></param>
+        /// <param name="name"></param>
         /// <param name="toolCalls"></param>
         public ChatCompletionAssistantMessageParam(
             string? content,
-            string? name,
             global::G.ChatCompletionAssistantMessageParamRole role,
+            string? name,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
             this.Content = content;
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
             this.ToolCalls = toolCalls;
         }
 

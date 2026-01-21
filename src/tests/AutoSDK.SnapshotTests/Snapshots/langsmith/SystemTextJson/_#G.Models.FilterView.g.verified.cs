@@ -41,7 +41,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: runs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilterViewTypeJsonConverter))]
@@ -88,7 +88,9 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Default Value: runs
+        /// </param>
         /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="createdAt"></param>

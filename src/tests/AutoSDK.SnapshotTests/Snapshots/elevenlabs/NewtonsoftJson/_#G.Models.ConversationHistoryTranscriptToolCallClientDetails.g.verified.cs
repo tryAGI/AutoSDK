@@ -13,7 +13,7 @@ namespace G
         /// Default Value: client
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ConversationHistoryTranscriptToolCallClientDetailsType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace G
         /// <param name="parameters"></param>
         public ConversationHistoryTranscriptToolCallClientDetails(
             string parameters,
-            global::G.ConversationHistoryTranscriptToolCallClientDetailsType? type)
+            string? type)
         {
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Type = type;

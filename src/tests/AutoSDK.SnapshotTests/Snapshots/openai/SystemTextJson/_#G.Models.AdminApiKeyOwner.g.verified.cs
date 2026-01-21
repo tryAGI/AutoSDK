@@ -43,9 +43,9 @@ namespace G
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the user was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </summary>
-        /// <example>1711471533L</example>
+        /// <example>1711471533</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CreatedAt { get; set; }
@@ -85,7 +85,7 @@ namespace G
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the user was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </param>
         /// <param name="role">
         /// Always `owner`<br/>

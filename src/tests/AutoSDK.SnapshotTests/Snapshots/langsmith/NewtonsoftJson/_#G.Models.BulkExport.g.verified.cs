@@ -34,13 +34,13 @@ namespace G
         public global::System.DateTime EndTime { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: Parquet
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
         public global::G.BulkExportFormat? Format { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: gzip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compression")]
         public global::G.BulkExportCompression? Compression { get; set; }
@@ -94,8 +94,12 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="format"></param>
-        /// <param name="compression"></param>
+        /// <param name="format">
+        /// Default Value: Parquet
+        /// </param>
+        /// <param name="compression">
+        /// Default Value: gzip
+        /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="status"></param>
@@ -125,7 +129,7 @@ namespace G
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt;
+            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.Format = format;
             this.Compression = compression;
         }

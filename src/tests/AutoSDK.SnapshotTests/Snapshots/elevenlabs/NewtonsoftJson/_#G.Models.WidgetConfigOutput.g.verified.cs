@@ -7,24 +7,27 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"custom_avatar_path":"https://example.com/avatar.png","language_selector":false}
     /// </summary>
     public sealed partial class WidgetConfigOutput
     {
         /// <summary>
-        /// 
+        /// The variant of the widget<br/>
+        /// Default Value: full
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variant")]
         public global::G.EmbedVariant? Variant { get; set; }
 
         /// <summary>
-        /// 
+        /// The placement of the widget on the screen<br/>
+        /// Default Value: bottom-right
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("placement")]
         public global::G.WidgetPlacement? Placement { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the widget is expandable<br/>
+        /// Default Value: never
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expandable")]
         public global::G.WidgetExpandable? Expandable { get; set; }
@@ -36,7 +39,8 @@ namespace G
         public global::G.AnyOf<global::G.OrbAvatar, global::G.URLAvatar, global::G.ImageAvatar>? Avatar { get; set; }
 
         /// <summary>
-        /// 
+        /// The feedback mode of the widget<br/>
+        /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_mode")]
         public global::G.WidgetFeedbackMode? FeedbackMode { get; set; }
@@ -204,13 +208,13 @@ namespace G
         public bool? TextInputEnabled { get; set; }
 
         /// <summary>
-        /// 
+        /// Text contents of the widget
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_contents")]
         public global::G.WidgetTextContents? TextContents { get; set; }
 
         /// <summary>
-        /// 
+        /// Styles for the widget
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("styles")]
         public global::G.WidgetStyles? Styles { get; set; }
@@ -250,13 +254,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WidgetConfigOutput" /> class.
         /// </summary>
-        /// <param name="variant"></param>
-        /// <param name="placement"></param>
-        /// <param name="expandable"></param>
+        /// <param name="variant">
+        /// The variant of the widget<br/>
+        /// Default Value: full
+        /// </param>
+        /// <param name="placement">
+        /// The placement of the widget on the screen<br/>
+        /// Default Value: bottom-right
+        /// </param>
+        /// <param name="expandable">
+        /// Whether the widget is expandable<br/>
+        /// Default Value: never
+        /// </param>
         /// <param name="avatar">
         /// The avatar of the widget
         /// </param>
-        /// <param name="feedbackMode"></param>
+        /// <param name="feedbackMode">
+        /// The feedback mode of the widget<br/>
+        /// Default Value: none
+        /// </param>
         /// <param name="bgColor">
         /// The background color of the widget<br/>
         /// Default Value: #ffffff
@@ -344,8 +360,12 @@ namespace G
         /// Whether the user should be able to send text messages<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="textContents"></param>
-        /// <param name="styles"></param>
+        /// <param name="textContents">
+        /// Text contents of the widget
+        /// </param>
+        /// <param name="styles">
+        /// Styles for the widget
+        /// </param>
         /// <param name="languageSelector">
         /// Whether to show the language selector<br/>
         /// Default Value: false

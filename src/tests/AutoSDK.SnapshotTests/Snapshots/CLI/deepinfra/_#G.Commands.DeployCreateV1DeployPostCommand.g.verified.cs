@@ -37,7 +37,7 @@ namespace G
         private global::System.CommandLine.Option<global::G.ModelProvider?> Provider { get; } = new(
             name: "provider")
         {
-            Description = @"",
+            Description = @"namespace for the model name",
         };
 
         private global::System.CommandLine.Option<string?> Version { get; } = new(

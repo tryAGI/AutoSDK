@@ -20,8 +20,10 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Names and content for the files that make up the gist
+        /// Names and content for the files that make up the gist<br/>
+        /// Example: {"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}
         /// </summary>
+        /// <example>{"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.Dictionary<string, global::G.GistsCreateRequestFiles2> Files { get; set; }
@@ -47,7 +49,8 @@ namespace G
         /// Example: Example Ruby script
         /// </param>
         /// <param name="files">
-        /// Names and content for the files that make up the gist
+        /// Names and content for the files that make up the gist<br/>
+        /// Example: {"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}
         /// </param>
         /// <param name="public"></param>
 #if NET7_0_OR_GREATER

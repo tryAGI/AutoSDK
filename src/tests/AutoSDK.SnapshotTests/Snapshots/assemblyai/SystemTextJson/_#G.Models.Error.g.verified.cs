@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"error":"format_text must be a Boolean"}
     /// </summary>
     public sealed partial class Error
     {

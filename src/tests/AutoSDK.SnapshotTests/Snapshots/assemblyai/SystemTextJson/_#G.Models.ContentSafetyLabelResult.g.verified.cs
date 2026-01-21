@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"text":"Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what\u0027s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.","labels":[{"label":"disasters","confidence":0.8142836093902588,"severity":0.4093044400215149}],"sentences_idx_start":0,"sentences_idx_end":5,"timestamp":{"start":250,"end":28840}}
     /// </summary>
     public sealed partial class ContentSafetyLabelResult
     {
@@ -38,8 +38,10 @@ namespace G
         public required int SentencesIdxEnd { get; set; }
 
         /// <summary>
-        /// Timestamp containing a start and end property in milliseconds
+        /// Timestamp containing a start and end property in milliseconds<br/>
+        /// Example: {"start":3978,"end":5114}
         /// </summary>
+        /// <example>{"start":3978,"end":5114}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.Timestamp Timestamp { get; set; }
@@ -66,7 +68,8 @@ namespace G
         /// The sentence index at which the section ends
         /// </param>
         /// <param name="timestamp">
-        /// Timestamp containing a start and end property in milliseconds
+        /// Timestamp containing a start and end property in milliseconds<br/>
+        /// Example: {"start":3978,"end":5114}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

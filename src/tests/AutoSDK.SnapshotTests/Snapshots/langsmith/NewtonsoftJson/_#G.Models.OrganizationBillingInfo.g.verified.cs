@@ -52,7 +52,7 @@ namespace G
         public global::G.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// Stripe customer billing info.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payment_method")]
         public global::G.StripePaymentMethodInfo? PaymentMethod { get; set; }
@@ -64,13 +64,13 @@ namespace G
         public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_plan")]
         public global::G.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upcoming_plan")]
         public global::G.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
@@ -105,16 +105,10 @@ namespace G
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
         /// <param name="tier"></param>
-        /// <param name="paymentMethod">
-        /// Stripe customer billing info.
-        /// </param>
+        /// <param name="paymentMethod"></param>
         /// <param name="endOfBillingPeriod"></param>
-        /// <param name="currentPlan">
-        /// Customer visible plan information.
-        /// </param>
-        /// <param name="upcomingPlan">
-        /// Customer visible plan information.
-        /// </param>
+        /// <param name="currentPlan"></param>
+        /// <param name="upcomingPlan"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
         /// </param>

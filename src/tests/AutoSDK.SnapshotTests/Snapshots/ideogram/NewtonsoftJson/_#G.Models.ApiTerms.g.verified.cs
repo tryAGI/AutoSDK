@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"terms_url":"terms_url","terms_id":"terms_id"}
     /// </summary>
     public sealed partial class ApiTerms
     {

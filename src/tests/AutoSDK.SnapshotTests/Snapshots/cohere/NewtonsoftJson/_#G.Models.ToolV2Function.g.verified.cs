@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ToolV2Function
     {
         /// <summary>
-        /// The description of the function.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
         /// The name of the function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// The description of the function.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// The parameters of the function as a JSON schema.
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolV2Function" /> class.
         /// </summary>
-        /// <param name="description">
-        /// The description of the function.
-        /// </param>
         /// <param name="name">
         /// The name of the function.
+        /// </param>
+        /// <param name="description">
+        /// The description of the function.
         /// </param>
         /// <param name="parameters">
         /// The parameters of the function as a JSON schema.

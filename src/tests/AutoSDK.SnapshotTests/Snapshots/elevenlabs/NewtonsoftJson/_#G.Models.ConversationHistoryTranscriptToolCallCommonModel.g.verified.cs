@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_details")]
-        public global::G.ToolDetails? ToolDetails { get; set; }
+        public global::G.ToolDetailsVariant1? ToolDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,7 +66,7 @@ namespace G
             string paramsAsJson,
             bool toolHasBeenCalled,
             string? type,
-            global::G.ToolDetails? toolDetails)
+            global::G.ToolDetailsVariant1? toolDetails)
         {
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));

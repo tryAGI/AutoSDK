@@ -27,17 +27,17 @@ namespace G
 
         /// <summary>
         /// total size of the model<br/>
-        /// Example: 2142590208L
+        /// Example: 2142590208
         /// </summary>
-        /// <example>2142590208L</example>
+        /// <example>2142590208</example>
         [global::Newtonsoft.Json.JsonProperty("total")]
         public long? Total { get; set; }
 
         /// <summary>
         /// Total bytes transferred.<br/>
-        /// Example: 2142590208L
+        /// Example: 2142590208
         /// </summary>
-        /// <example>2142590208L</example>
+        /// <example>2142590208</example>
         [global::Newtonsoft.Json.JsonProperty("completed")]
         public long? Completed { get; set; }
 
@@ -59,11 +59,11 @@ namespace G
         /// </param>
         /// <param name="total">
         /// total size of the model<br/>
-        /// Example: 2142590208L
+        /// Example: 2142590208
         /// </param>
         /// <param name="completed">
         /// Total bytes transferred.<br/>
-        /// Example: 2142590208L
+        /// Example: 2142590208
         /// </param>
         public PushModelResponse(
             global::G.AnyOf<string, global::G.PushModelResponseStatus?>? status,

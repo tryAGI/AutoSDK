@@ -35,6 +35,141 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
+#else
+        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
+#endif
+        public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatSearchResultsEvent? SearchResults { get; init; }
+#else
+        public global::G.ChatSearchResultsEvent? SearchResults { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
+#endif
+        public bool IsSearchResults => SearchResults != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatTextGenerationEvent? TextGeneration { get; init; }
+#else
+        public global::G.ChatTextGenerationEvent? TextGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
+#endif
+        public bool IsTextGeneration => TextGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; init; }
+#else
+        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
+#endif
+        public bool IsCitationGeneration => CitationGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
+#else
+        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
+#endif
+        public bool IsToolCallsGeneration => ToolCallsGeneration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatStreamEndEvent? StreamEnd { get; init; }
+#else
+        public global::G.ChatStreamEndEvent? StreamEnd { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
+#endif
+        public bool IsStreamEnd => StreamEnd != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
+#else
+        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
+#endif
+        public bool IsToolCallsChunk => ToolCallsChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatDebugEvent? Debug { get; init; }
+#else
+        public global::G.ChatDebugEvent? Debug { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
+#endif
+        public bool IsDebug => Debug != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponse(global::G.ChatStreamStartEvent value) => new StreamedChatResponse((global::G.ChatStreamStartEvent?)value);
 
         /// <summary>
@@ -49,23 +184,6 @@ namespace G
         {
             StreamStart = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
-#else
-        public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchQueriesGeneration))]
-#endif
-        public bool IsSearchQueriesGeneration => SearchQueriesGeneration != null;
 
         /// <summary>
         /// 
@@ -88,23 +206,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatSearchResultsEvent? SearchResults { get; init; }
-#else
-        public global::G.ChatSearchResultsEvent? SearchResults { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
-#endif
-        public bool IsSearchResults => SearchResults != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::G.ChatSearchResultsEvent value) => new StreamedChatResponse((global::G.ChatSearchResultsEvent?)value);
 
         /// <summary>
@@ -119,23 +220,6 @@ namespace G
         {
             SearchResults = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatTextGenerationEvent? TextGeneration { get; init; }
-#else
-        public global::G.ChatTextGenerationEvent? TextGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGeneration))]
-#endif
-        public bool IsTextGeneration => TextGeneration != null;
 
         /// <summary>
         /// 
@@ -158,23 +242,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; init; }
-#else
-        public global::G.ChatCitationGenerationEvent? CitationGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationGeneration))]
-#endif
-        public bool IsCitationGeneration => CitationGeneration != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::G.ChatCitationGenerationEvent value) => new StreamedChatResponse((global::G.ChatCitationGenerationEvent?)value);
 
         /// <summary>
@@ -189,23 +256,6 @@ namespace G
         {
             CitationGeneration = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
-#else
-        public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsGeneration))]
-#endif
-        public bool IsToolCallsGeneration => ToolCallsGeneration != null;
 
         /// <summary>
         /// 
@@ -228,23 +278,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatStreamEndEvent? StreamEnd { get; init; }
-#else
-        public global::G.ChatStreamEndEvent? StreamEnd { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
-#endif
-        public bool IsStreamEnd => StreamEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::G.ChatStreamEndEvent value) => new StreamedChatResponse((global::G.ChatStreamEndEvent?)value);
 
         /// <summary>
@@ -263,23 +296,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
-#else
-        public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallsChunk))]
-#endif
-        public bool IsToolCallsChunk => ToolCallsChunk != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator StreamedChatResponse(global::G.ChatToolCallsChunkEvent value) => new StreamedChatResponse((global::G.ChatToolCallsChunkEvent?)value);
 
         /// <summary>
@@ -294,23 +310,6 @@ namespace G
         {
             ToolCallsChunk = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatDebugEvent? Debug { get; init; }
-#else
-        public global::G.ChatDebugEvent? Debug { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
-#endif
-        public bool IsDebug => Debug != null;
 
         /// <summary>
         /// 

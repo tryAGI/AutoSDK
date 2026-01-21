@@ -20,7 +20,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_limit_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TenantUsageLimitTypeJsonConverter))]
         public global::G.TenantUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>

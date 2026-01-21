@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_concurrency_limit":-1,"bursting_enabled":true,"daily_limit":100000}
     /// </summary>
     public sealed partial class AgentCallLimits
     {

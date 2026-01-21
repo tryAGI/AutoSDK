@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"text":"Smoke","start":250,"end":650,"confidence":0.97465,"speaker":""}
     /// </summary>
     public sealed partial class TranscriptWord
     {

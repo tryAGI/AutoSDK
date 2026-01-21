@@ -62,8 +62,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("exclusiveMinimum")]
+        public double? ExclusiveMinimum { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maximum")]
         public double? Maximum { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("exclusiveMaximum")]
+        public double? ExclusiveMaximum { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,7 +96,9 @@ namespace G
         /// Default Value: []
         /// </param>
         /// <param name="minimum"></param>
+        /// <param name="exclusiveMinimum"></param>
         /// <param name="maximum"></param>
+        /// <param name="exclusiveMaximum"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +111,9 @@ namespace G
             object? @default,
             global::System.Collections.Generic.IList<object>? examples,
             double? minimum,
-            double? maximum)
+            double? exclusiveMinimum,
+            double? maximum,
+            double? exclusiveMaximum)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Ftype = ftype ?? throw new global::System.ArgumentNullException(nameof(ftype));
@@ -107,7 +123,9 @@ namespace G
             this.Default = @default;
             this.Examples = examples;
             this.Minimum = minimum;
+            this.ExclusiveMinimum = exclusiveMinimum;
             this.Maximum = maximum;
+            this.ExclusiveMaximum = exclusiveMaximum;
         }
 
         /// <summary>

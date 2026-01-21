@@ -34,6 +34,22 @@ namespace G
         public bool IsCHATBOT => CHATBOT != null;
 
         /// <summary>
+        /// Represents tool result in the chat history.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolMessage? TOOL { get; init; }
+#else
+        public global::G.ToolMessage? TOOL { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TOOL))]
+#endif
+        public bool IsTOOL => TOOL != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Message(global::G.ChatMessage value) => new Message((global::G.ChatMessage?)value);
@@ -50,23 +66,6 @@ namespace G
         {
             CHATBOT = value;
         }
-
-        /// <summary>
-        /// Represents tool result in the chat history.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ToolMessage? TOOL { get; init; }
-#else
-        public global::G.ToolMessage? TOOL { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TOOL))]
-#endif
-        public bool IsTOOL => TOOL != null;
 
         /// <summary>
         /// 

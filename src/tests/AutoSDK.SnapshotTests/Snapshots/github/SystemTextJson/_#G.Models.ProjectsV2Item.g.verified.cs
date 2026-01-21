@@ -50,22 +50,25 @@ namespace G
         public global::G.SimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? ArchivedAt { get; set; }
@@ -89,9 +92,15 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="archivedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="archivedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

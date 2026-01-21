@@ -13,8 +13,7 @@ namespace G
         /// Default Value: language_detection
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_tool_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LanguageDetectionToolConfigSystemToolTypeJsonConverter))]
-        public global::G.LanguageDetectionToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LanguageDetectionToolConfig(
-            global::G.LanguageDetectionToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.SystemToolType = systemToolType;
         }

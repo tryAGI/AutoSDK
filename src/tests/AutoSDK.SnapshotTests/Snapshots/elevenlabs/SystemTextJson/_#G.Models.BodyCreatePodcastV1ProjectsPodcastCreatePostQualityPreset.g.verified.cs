@@ -10,8 +10,7 @@ namespace G
     /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
     /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
     /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
-    /// Default Value: standard<br/>
-    /// Example: standard
+    /// Default Value: standard
     /// </summary>
     public enum BodyCreatePodcastV1ProjectsPodcastCreatePostQualityPreset
     {

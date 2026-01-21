@@ -42,8 +42,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationHistoryTwilioPhoneCallModelTypeJsonConverter))]
-        public global::G.ConversationHistoryTwilioPhoneCallModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -83,17 +83,17 @@ namespace G
             string phoneNumberId,
             string agentNumber,
             string externalNumber,
+            string type,
             string streamSid,
-            string callSid,
-            global::G.ConversationHistoryTwilioPhoneCallModelType type)
+            string callSid)
         {
             this.Direction = direction;
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.AgentNumber = agentNumber ?? throw new global::System.ArgumentNullException(nameof(agentNumber));
             this.ExternalNumber = externalNumber ?? throw new global::System.ArgumentNullException(nameof(externalNumber));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.StreamSid = streamSid ?? throw new global::System.ArgumentNullException(nameof(streamSid));
             this.CallSid = callSid ?? throw new global::System.ArgumentNullException(nameof(callSid));
-            this.Type = type;
         }
 
         /// <summary>

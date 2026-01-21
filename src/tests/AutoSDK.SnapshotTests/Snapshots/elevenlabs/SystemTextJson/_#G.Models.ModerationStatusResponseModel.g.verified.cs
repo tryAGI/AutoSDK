@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false}
     /// </summary>
     public sealed partial class ModerationStatusResponseModel
     {
@@ -55,15 +55,13 @@ namespace G
         /// The safety status of the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModerationStatusResponseModelSafetyStatusJsonConverter))]
-        public global::G.ModerationStatusResponseModelSafetyStatus? SafetyStatus { get; set; }
+        public global::G.ModerationStatusResponseModelSafetyStatus2? SafetyStatus { get; set; }
 
         /// <summary>
         /// The warning status of the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warning_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModerationStatusResponseModelWarningStatusJsonConverter))]
-        public global::G.ModerationStatusResponseModelWarningStatus? WarningStatus { get; set; }
+        public global::G.ModerationStatusResponseModelWarningStatus2? WarningStatus { get; set; }
 
         /// <summary>
         /// Whether the user is on the watchlist.
@@ -119,8 +117,8 @@ namespace G
             int nogoVoiceSimilarVoiceUploadCount,
             bool enterpriseBackgroundModerationEnabled,
             bool onWatchlist,
-            global::G.ModerationStatusResponseModelSafetyStatus? safetyStatus,
-            global::G.ModerationStatusResponseModelWarningStatus? warningStatus)
+            global::G.ModerationStatusResponseModelSafetyStatus2? safetyStatus,
+            global::G.ModerationStatusResponseModelWarningStatus2? warningStatus)
         {
             this.IsInProbation = isInProbation;
             this.EnterpriseCheckNogoVoice = enterpriseCheckNogoVoice;

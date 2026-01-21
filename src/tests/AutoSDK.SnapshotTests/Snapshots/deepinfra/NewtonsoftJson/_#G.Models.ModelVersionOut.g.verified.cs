@@ -10,26 +10,20 @@ namespace G
     public sealed partial class ModelVersionOut
     {
         /// <summary>
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </summary>
-        /// <example>microsoft/resnet-50</example>
         [global::Newtonsoft.Json.JsonProperty("model_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string ModelName { get; set; } = default!;
 
         /// <summary>
-        /// Version identifier<br/>
-        /// Example: 06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a
+        /// Version identifier
         /// </summary>
-        /// <example>06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a</example>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
         public string Version { get; set; } = default!;
 
         /// <summary>
-        /// Upload time<br/>
-        /// Example: 2023-01-19T21:52:03.626241+00:00
+        /// Upload time
         /// </summary>
-        /// <example>2023-01-19T21:52:03.626241+00:00</example>
         [global::Newtonsoft.Json.JsonProperty("uploaded_at", Required = global::Newtonsoft.Json.Required.Always)]
         public string UploadedAt { get; set; } = default!;
 
@@ -43,16 +37,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelVersionOut" /> class.
         /// </summary>
         /// <param name="modelName">
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </param>
         /// <param name="version">
-        /// Version identifier<br/>
-        /// Example: 06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a
+        /// Version identifier
         /// </param>
         /// <param name="uploadedAt">
-        /// Upload time<br/>
-        /// Example: 2023-01-19T21:52:03.626241+00:00
+        /// Upload time
         /// </param>
         public ModelVersionOut(
             string modelName,

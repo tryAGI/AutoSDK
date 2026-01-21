@@ -43,7 +43,8 @@ namespace G
         /// <summary>
         /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
         /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
-        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
+        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_noise_reduction")]
         public global::G.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? InputAudioNoiseReduction { get; set; }
@@ -91,7 +92,8 @@ namespace G
         /// <param name="inputAudioNoiseReduction">
         /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
         /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
-        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
+        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="include">
         /// The set of items to include in the transcription. Current available items are:<br/>

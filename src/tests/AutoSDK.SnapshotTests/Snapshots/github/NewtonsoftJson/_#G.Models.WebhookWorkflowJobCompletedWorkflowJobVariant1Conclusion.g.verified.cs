@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
         Skipped,
         /// <summary>
@@ -61,6 +66,7 @@ namespace G
             {
                 WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Success => "success",
                 WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Failure => "failure",
+                WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Skipped => "skipped",
                 WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.ActionRequired => "action_required",
@@ -78,6 +84,7 @@ namespace G
             {
                 "success" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Success,
                 "failure" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Failure,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "skipped" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Skipped,
                 "cancelled" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.Cancelled,
                 "action_required" => WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion.ActionRequired,

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant15? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         public BetaComputerUseTool20250124(
             int displayHeightPx,
             int displayWidthPx,
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant15? cacheControl,
             global::G.BetaComputerUseTool20250124Type type,
             global::G.BetaComputerUseTool20250124Name name,
             int? displayNumber)

@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleDiscriminatorTypeJsonConverter))]
-        public global::G.RepositoryRuleDiscriminatorType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RepositoryRuleDiscriminator(
-            global::G.RepositoryRuleDiscriminatorType? type)
+            string? type)
         {
             this.Type = type;
         }

@@ -238,12 +238,10 @@ namespace G
         /// <param name="userAgent"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: thenlper/gte-large
+        /// model name
         /// </param>
         /// <param name="input">
-        /// sequences to embed<br/>
-        /// Example: [I like chocolate]
+        /// sequences to embed
         /// </param>
         /// <param name="encodingFormat">
         /// format used when encoding<br/>
@@ -257,7 +255,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? userAgent = default,
             string? xiApiKey = default,
-            global::G.OpenAIEmbeddingsInEncodingFormat? encodingFormat = default,
+            string? encodingFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.OpenAIEmbeddingsIn

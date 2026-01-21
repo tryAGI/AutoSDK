@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Prediction
     {
         /// <summary>
+        /// Default Value: content
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
         public string? Content { get; set; }
-
-        /// <summary>
-        /// Default Value: content
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PredictionType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Prediction" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="type">
         /// Default Value: content
         /// </param>
+        /// <param name="content"></param>
         public Prediction(
-            string? content,
-            global::G.PredictionType? type)
+            string? type,
+            string? content)
         {
-            this.Content = content;
             this.Type = type;
+            this.Content = content;
         }
 
         /// <summary>

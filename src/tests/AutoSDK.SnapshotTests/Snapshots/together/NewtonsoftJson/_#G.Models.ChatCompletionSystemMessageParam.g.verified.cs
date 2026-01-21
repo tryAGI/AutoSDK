@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionSystemMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionSystemMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatCompletionSystemMessageParam" /> class.
         /// </summary>
         /// <param name="content"></param>
-        /// <param name="name"></param>
         /// <param name="role"></param>
+        /// <param name="name"></param>
         public ChatCompletionSystemMessageParam(
             string content,
-            string? name,
-            global::G.ChatCompletionSystemMessageParamRole role)
+            global::G.ChatCompletionSystemMessageParamRole role,
+            string? name)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
         }
 
         /// <summary>

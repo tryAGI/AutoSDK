@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The response for a describe request encapsulates a list of descriptions
+    /// The response for a describe request encapsulates a list of descriptions<br/>
+    /// Example: {"descriptions":[{"text":"A meticulously illustrated cat with striped patterns, sitting upright. The cat\u0027s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image."},{"text":"A meticulously illustrated cat with striped patterns, sitting upright. The cat\u0027s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image."}]}
     /// </summary>
     public sealed partial class DescribeResponse
     {

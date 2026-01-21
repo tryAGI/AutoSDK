@@ -10,31 +10,31 @@ namespace G
     public sealed partial class BuiltInTools
     {
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The end call tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_call")]
         public global::G.SystemToolConfigInput? EndCall { get; set; }
 
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The language detection tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_detection")]
         public global::G.SystemToolConfigInput? LanguageDetection { get; set; }
 
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The transfer to agent tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_to_agent")]
         public global::G.SystemToolConfigInput? TransferToAgent { get; set; }
 
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The transfer to number tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_to_number")]
         public global::G.SystemToolConfigInput? TransferToNumber { get; set; }
 
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The skip turn tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skip_turn")]
         public global::G.SystemToolConfigInput? SkipTurn { get; set; }
@@ -49,19 +49,19 @@ namespace G
         /// Initializes a new instance of the <see cref="BuiltInTools" /> class.
         /// </summary>
         /// <param name="endCall">
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The end call tool
         /// </param>
         /// <param name="languageDetection">
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The language detection tool
         /// </param>
         /// <param name="transferToAgent">
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The transfer to agent tool
         /// </param>
         /// <param name="transferToNumber">
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The transfer to number tool
         /// </param>
         /// <param name="skipTurn">
-        /// A system tool is a tool that is used to call a system method in the server
+        /// The skip turn tool
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

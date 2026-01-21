@@ -24,7 +24,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ChatCompletionResponseDeltaChoice> Choices { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included in the last message only. Total token counts for the message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
         public global::G.UsageInfo? Usage { get; set; }
@@ -52,7 +52,9 @@ namespace G
         /// <param name="choices">
         /// The message
         /// </param>
-        /// <param name="usage"></param>
+        /// <param name="usage">
+        /// Included in the last message only. Total token counts for the message.
+        /// </param>
         /// <param name="meta"></param>
         public ChatCompletionVllmStreamingMessage(
             string id,

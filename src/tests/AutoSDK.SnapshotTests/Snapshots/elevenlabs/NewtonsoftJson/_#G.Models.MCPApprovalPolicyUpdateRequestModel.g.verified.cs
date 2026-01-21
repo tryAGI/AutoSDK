@@ -10,7 +10,7 @@ namespace G
     public sealed partial class MCPApprovalPolicyUpdateRequestModel
     {
         /// <summary>
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval mode to set for the MCP server
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MCPApprovalPolicy ApprovalPolicy { get; set; } = default!;
@@ -25,7 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="MCPApprovalPolicyUpdateRequestModel" /> class.
         /// </summary>
         /// <param name="approvalPolicy">
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval mode to set for the MCP server
         /// </param>
         public MCPApprovalPolicyUpdateRequestModel(
             global::G.MCPApprovalPolicy approvalPolicy)

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        TextGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
         StreamEnd,
         /// <summary>
         /// 
         /// </summary>
         StreamError,
-        /// <summary>
-        /// 
-        /// </summary>
-        TextGeneration,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                GenerateStreamedResponseDiscriminatorEventType.TextGeneration => "text-generation",
                 GenerateStreamedResponseDiscriminatorEventType.StreamEnd => "stream-end",
                 GenerateStreamedResponseDiscriminatorEventType.StreamError => "stream-error",
-                GenerateStreamedResponseDiscriminatorEventType.TextGeneration => "text-generation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "text-generation" => GenerateStreamedResponseDiscriminatorEventType.TextGeneration,
                 "stream-end" => GenerateStreamedResponseDiscriminatorEventType.StreamEnd,
                 "stream-error" => GenerateStreamedResponseDiscriminatorEventType.StreamError,
-                "text-generation" => GenerateStreamedResponseDiscriminatorEventType.TextGeneration,
                 _ => null,
             };
         }

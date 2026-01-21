@@ -22,16 +22,16 @@ namespace G
         public bool? CompletionFim { get; set; }
 
         /// <summary>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuning")]
-        public bool? FineTuning { get; set; }
-
-        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_calling")]
         public bool? FunctionCalling { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuning")]
+        public bool? FineTuning { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -54,11 +54,11 @@ namespace G
         /// <param name="completionFim">
         /// Default Value: false
         /// </param>
-        /// <param name="fineTuning">
-        /// Default Value: false
-        /// </param>
         /// <param name="functionCalling">
         /// Default Value: true
+        /// </param>
+        /// <param name="fineTuning">
+        /// Default Value: false
         /// </param>
         /// <param name="vision">
         /// Default Value: false
@@ -69,14 +69,14 @@ namespace G
         public ModelCapabilities(
             bool? completionChat,
             bool? completionFim,
-            bool? fineTuning,
             bool? functionCalling,
+            bool? fineTuning,
             bool? vision)
         {
             this.CompletionChat = completionChat;
             this.CompletionFim = completionFim;
-            this.FineTuning = fineTuning;
             this.FunctionCalling = functionCalling;
+            this.FineTuning = fineTuning;
             this.Vision = vision;
         }
 

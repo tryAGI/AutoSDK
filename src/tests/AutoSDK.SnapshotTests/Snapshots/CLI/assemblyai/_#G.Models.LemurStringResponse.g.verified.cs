@@ -6,7 +6,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
     /// </summary>
     public readonly partial struct LemurStringResponse : global::System.IEquatable<LemurStringResponse>
     {
@@ -28,6 +28,22 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","usage":{"input_tokens":27,"output_tokens":3}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LemurBaseResponse? Value2 { get; init; }
+#else
+        public global::G.LemurBaseResponse? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator LemurStringResponse(global::G.LemurStringResponseVariant1 value) => new LemurStringResponse((global::G.LemurStringResponseVariant1?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LemurBaseResponse? Value2 { get; init; }
-#else
-        public global::G.LemurBaseResponse? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

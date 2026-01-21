@@ -12,6 +12,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_files")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::System.Guid> InputFiles { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ApiEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -20,22 +27,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_files")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Guid> InputFiles { get; set; }
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
 
         /// <summary>
         /// Default Value: 24
@@ -52,10 +52,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobIn" /> class.
         /// </summary>
-        /// <param name="endpoint"></param>
         /// <param name="inputFiles"></param>
-        /// <param name="metadata"></param>
+        /// <param name="endpoint"></param>
         /// <param name="model"></param>
+        /// <param name="metadata"></param>
         /// <param name="timeoutHours">
         /// Default Value: 24
         /// </param>
@@ -63,14 +63,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchJobIn(
-            global::G.ApiEndpoint endpoint,
             global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
+            global::G.ApiEndpoint endpoint,
             string model,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             int? timeoutHours)
         {
-            this.Endpoint = endpoint;
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
+            this.Endpoint = endpoint;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Metadata = metadata;
             this.TimeoutHours = timeoutHours;

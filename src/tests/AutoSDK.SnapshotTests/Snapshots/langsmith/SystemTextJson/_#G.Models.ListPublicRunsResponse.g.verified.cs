@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string?> Cursors { get; set; }
+        public required object Cursors { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
 #endif
         public ListPublicRunsResponse(
             global::System.Collections.Generic.IList<global::G.RunPublicSchema> runs,
-            global::System.Collections.Generic.Dictionary<string, string?> cursors,
+            object cursors,
             string? parsedQuery)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));

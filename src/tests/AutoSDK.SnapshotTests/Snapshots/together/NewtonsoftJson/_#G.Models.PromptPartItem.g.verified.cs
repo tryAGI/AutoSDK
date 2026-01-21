@@ -10,17 +10,17 @@ namespace G
     public sealed partial class PromptPartItem
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public global::G.LogprobsPart? Logprobs { get; set; }
-
-        /// <summary>
         /// Example: &lt;s&gt;[INST] What is the capital of France? [/INST]
         /// </summary>
         /// <example>&lt;s&gt;[INST] What is the capital of France? [/INST]</example>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public string? Text { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::G.LogprobsPart? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptPartItem" /> class.
         /// </summary>
-        /// <param name="logprobs"></param>
         /// <param name="text">
         /// Example: &lt;s&gt;[INST] What is the capital of France? [/INST]
         /// </param>
+        /// <param name="logprobs"></param>
         public PromptPartItem(
-            global::G.LogprobsPart? logprobs,
-            string? text)
+            string? text,
+            global::G.LogprobsPart? logprobs)
         {
-            this.Logprobs = logprobs;
             this.Text = text;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

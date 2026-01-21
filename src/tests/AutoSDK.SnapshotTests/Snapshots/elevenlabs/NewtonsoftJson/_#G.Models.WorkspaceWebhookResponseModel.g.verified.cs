@@ -46,7 +46,7 @@ namespace G
         public int CreatedAtUnix { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The authentication mode used to secure the webhook.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.WebhookAuthMethodType AuthType { get; set; } = default!;
@@ -96,7 +96,9 @@ namespace G
         /// <param name="createdAtUnix">
         /// Original creation time of the webhook.
         /// </param>
-        /// <param name="authType"></param>
+        /// <param name="authType">
+        /// The authentication mode used to secure the webhook.
+        /// </param>
         /// <param name="usage">
         /// The list of products that are currently configured to trigger this webhook.
         /// </param>

@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("likelihood", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Likelihood { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Token { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Token { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("likelihood", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Likelihood { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SingleGenerationTokenLikelihood" /> class.
         /// </summary>
-        /// <param name="likelihood"></param>
         /// <param name="token"></param>
+        /// <param name="likelihood"></param>
         public SingleGenerationTokenLikelihood(
-            double likelihood,
-            string token)
+            string token,
+            double likelihood)
         {
-            this.Likelihood = likelihood;
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Likelihood = likelihood;
         }
 
         /// <summary>

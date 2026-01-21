@@ -13,7 +13,6 @@ namespace G
         /// If any resource is allowed for the operation.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("allow_any_resource", Required = global::Newtonsoft.Json.Required.Always)]
         public bool AllowAnyResource { get; set; } = default!;
 

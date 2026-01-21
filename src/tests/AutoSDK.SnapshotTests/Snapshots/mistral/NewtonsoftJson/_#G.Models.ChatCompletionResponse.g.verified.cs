@@ -30,6 +30,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionResponseVariant2? Value2 { get; init; }
+#else
+        public global::G.ChatCompletionResponseVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseBase value) => new ChatCompletionResponse((global::G.ChatCompletionResponseBase?)value);
 
         /// <summary>
@@ -44,23 +60,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionResponseVariant2? Value2 { get; init; }
-#else
-        public global::G.ChatCompletionResponseVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

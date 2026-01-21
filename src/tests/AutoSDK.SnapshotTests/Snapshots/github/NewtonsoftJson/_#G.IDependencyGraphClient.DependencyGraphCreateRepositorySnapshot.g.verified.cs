@@ -52,7 +52,8 @@ namespace G
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
         /// </param>
         /// <param name="scanned">
-        /// The time at which the snapshot was scanned.
+        /// The time at which the snapshot was scanned.<br/>
+        /// Example: 2020-06-13T14:52:50-05:00
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -65,7 +66,7 @@ namespace G
             string @ref,
             global::G.SnapshotDetector detector,
             global::System.DateTime scanned,
-            object? metadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? metadata = default,
             global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? manifests = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

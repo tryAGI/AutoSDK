@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        JsonObject,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        JsonObject,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ResponseFormatDiscriminatorType.JsonObject => "json_object",
                 ResponseFormatDiscriminatorType.Text => "text",
+                ResponseFormatDiscriminatorType.JsonObject => "json_object",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "json_object" => ResponseFormatDiscriminatorType.JsonObject,
                 "text" => ResponseFormatDiscriminatorType.Text,
+                "json_object" => ResponseFormatDiscriminatorType.JsonObject,
                 _ => null,
             };
         }

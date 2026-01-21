@@ -35,6 +35,73 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
+#else
+        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
+#endif
+        public bool IsInputJsonDelta => InputJsonDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CitationsDelta? CitationsDelta { get; init; }
+#else
+        public global::G.CitationsDelta? CitationsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
+#endif
+        public bool IsCitationsDelta => CitationsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
+#else
+        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
+#endif
+        public bool IsThinkingDelta => ThinkingDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SignatureContentBlockDelta? SignatureDelta { get; init; }
+#else
+        public global::G.SignatureContentBlockDelta? SignatureDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
+#endif
+        public bool IsSignatureDelta => SignatureDelta != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::G.TextContentBlockDelta value) => new Delta2((global::G.TextContentBlockDelta?)value);
 
         /// <summary>
@@ -49,23 +116,6 @@ namespace G
         {
             TextDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
-#else
-        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
-#endif
-        public bool IsInputJsonDelta => InputJsonDelta != null;
 
         /// <summary>
         /// 
@@ -88,23 +138,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CitationsDelta? CitationsDelta { get; init; }
-#else
-        public global::G.CitationsDelta? CitationsDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
-#endif
-        public bool IsCitationsDelta => CitationsDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Delta2(global::G.CitationsDelta value) => new Delta2((global::G.CitationsDelta?)value);
 
         /// <summary>
@@ -123,23 +156,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
-#else
-        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
-#endif
-        public bool IsThinkingDelta => ThinkingDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Delta2(global::G.ThinkingContentBlockDelta value) => new Delta2((global::G.ThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -154,23 +170,6 @@ namespace G
         {
             ThinkingDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.SignatureContentBlockDelta? SignatureDelta { get; init; }
-#else
-        public global::G.SignatureContentBlockDelta? SignatureDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
-#endif
-        public bool IsSignatureDelta => SignatureDelta != null;
 
         /// <summary>
         /// 

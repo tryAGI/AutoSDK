@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the issue comment<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -64,14 +64,16 @@ namespace G
         public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -112,7 +114,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier of the issue comment<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId"></param>
         /// <param name="url">
@@ -129,8 +131,12 @@ namespace G
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
         /// <param name="issueUrl"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.<br/>

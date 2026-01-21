@@ -10,28 +10,22 @@ namespace G
     public sealed partial class BodyCreatePVCVoiceV1VoicesPvcPost
     {
         /// <summary>
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
-        /// Example: John Smith
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </summary>
-        /// <example>John Smith</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Language used in the samples.<br/>
-        /// Example: en
+        /// Language used in the samples.
         /// </summary>
-        /// <example>en</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Language { get; set; }
 
         /// <summary>
-        /// Description to use for the created voice.<br/>
-        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
+        /// Description to use for the created voice.
         /// </summary>
-        /// <example>An old American male voice with a slight hoarseness in his throat. Perfect for news.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -51,16 +45,13 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyCreatePVCVoiceV1VoicesPvcPost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
-        /// Example: John Smith
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </param>
         /// <param name="language">
-        /// Language used in the samples.<br/>
-        /// Example: en
+        /// Language used in the samples.
         /// </param>
         /// <param name="description">
-        /// Description to use for the created voice.<br/>
-        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
+        /// Description to use for the created voice.
         /// </param>
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.

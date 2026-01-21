@@ -28,6 +28,22 @@ namespace G
         public bool IsTranscriptTextDelta => TranscriptTextDelta != null;
 
         /// <summary>
+        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TranscriptTextDoneEvent? TranscriptTextDone { get; init; }
+#else
+        public global::G.TranscriptTextDoneEvent? TranscriptTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
+#endif
+        public bool IsTranscriptTextDone => TranscriptTextDone != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDeltaEvent value) => new CreateTranscriptionResponseStreamEvent((global::G.TranscriptTextDeltaEvent?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             TranscriptTextDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TranscriptTextDoneEvent? TranscriptTextDone { get; init; }
-#else
-        public global::G.TranscriptTextDoneEvent? TranscriptTextDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
-#endif
-        public bool IsTranscriptTextDone => TranscriptTextDone != null;
 
         /// <summary>
         /// 

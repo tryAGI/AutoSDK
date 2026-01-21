@@ -28,15 +28,19 @@ namespace G
         public required string Value { get; set; }
 
         /// <summary>
-        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -59,10 +63,12 @@ namespace G
         /// Example: octocat
         /// </param>
         /// <param name="createdAt">
-        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </param>
         /// <param name="updatedAt">
-        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

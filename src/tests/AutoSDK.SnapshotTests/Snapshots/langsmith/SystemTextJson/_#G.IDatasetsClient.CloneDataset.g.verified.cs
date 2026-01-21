@@ -22,9 +22,7 @@ namespace G
         /// </summary>
         /// <param name="targetDatasetId"></param>
         /// <param name="sourceDatasetId"></param>
-        /// <param name="asOf">
-        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
-        /// </param>
+        /// <param name="asOf"></param>
         /// <param name="examples">
         /// Default Value: []
         /// </param>
@@ -33,7 +31,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> CloneDatasetAsync(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
-            object? asOf = default,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -35,19 +35,19 @@ namespace G
         public int? MinTokens { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topP")]
         public double? TopP { get; set; }
 
         /// <summary>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minP")]
         public double? MinP { get; set; }
@@ -71,19 +71,19 @@ namespace G
         public object? LogitBias { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequencyPenalty")]
         public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presencePenalty")]
         public global::G.Penalty? PresencePenalty { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("countPenalty")]
         public global::G.Penalty? CountPenalty { get; set; }
@@ -114,13 +114,13 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="temperature">
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="topP">
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="minP">
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="stopSequences">
         /// Default Value: []
@@ -129,9 +129,15 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="logitBias"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="countPenalty"></param>
+        /// <param name="frequencyPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="countPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
         /// <param name="epoch"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

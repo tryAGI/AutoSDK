@@ -28,7 +28,7 @@ namespace G
         /// Paraphrase
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -198,7 +198,7 @@ namespace G
         /// Paraphrase
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="text"></param>
         /// <param name="style">

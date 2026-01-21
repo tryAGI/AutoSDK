@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"similarity_boost":1,"stability":1}
     /// </summary>
     public sealed partial class ModelSettingsResponseModel
     {

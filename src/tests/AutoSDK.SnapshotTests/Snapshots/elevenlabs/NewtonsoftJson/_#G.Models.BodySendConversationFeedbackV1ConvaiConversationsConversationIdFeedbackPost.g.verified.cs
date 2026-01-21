@@ -10,7 +10,7 @@ namespace G
     public sealed partial class BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost
     {
         /// <summary>
-        /// 
+        /// Either 'like' or 'dislike' to indicate the feedback for the conversation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.UserFeedbackScore Feedback { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost" /> class.
         /// </summary>
-        /// <param name="feedback"></param>
+        /// <param name="feedback">
+        /// Either 'like' or 'dislike' to indicate the feedback for the conversation.
+        /// </param>
         public BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost(
             global::G.UserFeedbackScore feedback)
         {

@@ -10,13 +10,13 @@ namespace G
     public sealed partial class StripeBusinessInfoInput
     {
         /// <summary>
-        /// Stripe customer billing information.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company_info")]
         public global::G.StripeBusinessBillingInfo? CompanyInfo { get; set; }
 
         /// <summary>
-        /// Stripe tax ID.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tax_id")]
         public global::G.StripeTaxId? TaxId { get; set; }
@@ -42,12 +42,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="StripeBusinessInfoInput" /> class.
         /// </summary>
-        /// <param name="companyInfo">
-        /// Stripe customer billing information.
-        /// </param>
-        /// <param name="taxId">
-        /// Stripe tax ID.
-        /// </param>
+        /// <param name="companyInfo"></param>
+        /// <param name="taxId"></param>
         /// <param name="invoiceEmail"></param>
         /// <param name="isBusiness">
         /// Default Value: false

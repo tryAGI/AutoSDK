@@ -12,52 +12,52 @@ namespace G
     public sealed partial class CustomChartUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public global::G.AnyOf<string, global::G.Missing>? Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public global::G.AnyOf<int?, global::G.Missing>? Index { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chart_type")]
         public global::G.AnyOf<global::G.CustomChartType?, global::G.Missing>? ChartType { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("series")]
         public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? Series { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("section_id")]
         public global::G.AnyOf<global::System.Guid?, global::G.Missing>? SectionId { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, global::G.Missing>? Metadata { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? CommonFilters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,23 +68,39 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomChartUpdate" /> class.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
-        /// <param name="chartType"></param>
-        /// <param name="series"></param>
-        /// <param name="sectionId"></param>
-        /// <param name="metadata"></param>
-        /// <param name="commonFilters"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="chartType">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="series">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="sectionId">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="metadata">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="commonFilters">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         public CustomChartUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing>? description,
+            global::G.AnyOf<string, global::G.Missing, object>? description,
             global::G.AnyOf<int?, global::G.Missing>? index,
             global::G.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId,
-            global::G.AnyOf<object, global::G.Missing>? metadata,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? commonFilters)
+            global::G.AnyOf<object, global::G.Missing, object>? metadata,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? commonFilters)
         {
             this.Title = title;
             this.Description = description;

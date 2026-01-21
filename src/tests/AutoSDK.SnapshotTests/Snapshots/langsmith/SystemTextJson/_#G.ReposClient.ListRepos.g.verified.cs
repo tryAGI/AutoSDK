@@ -12,17 +12,17 @@ namespace G
             ref int? limit,
             ref int? offset,
             ref string? tenantHandle,
-            ref global::System.Guid? tenantId,
+            global::System.Guid? tenantId,
             ref string? query,
-            ref bool? hasCommits,
+            bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            ref global::G.ListReposApiV1ReposGetIsArchived? isArchived,
-            ref global::G.ListReposApiV1ReposGetIsPublic? isPublic,
+            global::G.ListReposApiV1ReposGetIsArchived2? isArchived,
+            global::G.ListReposApiV1ReposGetIsPublic2? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref string? sortField,
-            ref global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
+            ref global::G.AnyOf<string, string, object>? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -34,13 +34,13 @@ namespace G
             string? query,
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            global::G.ListReposApiV1ReposGetIsArchived? isArchived,
-            global::G.ListReposApiV1ReposGetIsPublic? isPublic,
+            global::G.ListReposApiV1ReposGetIsArchived2? isArchived,
+            global::G.ListReposApiV1ReposGetIsPublic2? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             string? sortField,
-            global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection);
+            global::G.AnyOf<string, string, object>? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -86,13 +86,13 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListReposApiV1ReposGetIsArchived? isArchived = default,
-            global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
+            global::G.ListReposApiV1ReposGetIsArchived2? isArchived = default,
+            global::G.ListReposApiV1ReposGetIsPublic2? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
+            global::G.AnyOf<string, string, object>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -103,12 +103,12 @@ namespace G
                 limit: ref limit,
                 offset: ref offset,
                 tenantHandle: ref tenantHandle,
-                tenantId: ref tenantId,
+                tenantId: tenantId,
                 query: ref query,
-                hasCommits: ref hasCommits,
+                hasCommits: hasCommits,
                 tags: tags,
-                isArchived: ref isArchived,
-                isPublic: ref isPublic,
+                isArchived: isArchived,
+                isPublic: isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId,
@@ -126,12 +126,12 @@ namespace G
                 .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
                 .AddOptionalParameter("query", query) 
                 .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true) 
-                .AddOptionalParameter("is_archived", isArchived?.ToValueString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
+                .AddOptionalParameter("tags", tags?.ToString()) 
+                .AddOptionalParameter("is_archived", isArchived?.ToString()) 
+                .AddOptionalParameter("is_public", isPublic?.ToString()) 
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 .AddOptionalParameter("sort_field", sortField) 
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
                 ; 

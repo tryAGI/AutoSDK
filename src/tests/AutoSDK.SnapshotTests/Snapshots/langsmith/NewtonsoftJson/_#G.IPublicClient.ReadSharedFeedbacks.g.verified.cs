@@ -22,9 +22,7 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadSharedFeedbacksAsync(

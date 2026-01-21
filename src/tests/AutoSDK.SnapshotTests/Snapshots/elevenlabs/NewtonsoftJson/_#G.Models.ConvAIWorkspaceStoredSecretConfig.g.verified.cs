@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ConvAIWorkspaceStoredSecretConfigType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -47,15 +47,15 @@ namespace G
         /// <param name="name"></param>
         /// <param name="usedBy"></param>
         public ConvAIWorkspaceStoredSecretConfig(
+            string type,
             string secretId,
             string name,
-            global::G.ConvAIStoredSecretDependencies usedBy,
-            global::G.ConvAIWorkspaceStoredSecretConfigType type)
+            global::G.ConvAIStoredSecretDependencies usedBy)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SecretId = secretId ?? throw new global::System.ArgumentNullException(nameof(secretId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.UsedBy = usedBy ?? throw new global::System.ArgumentNullException(nameof(usedBy));
-            this.Type = type;
         }
 
         /// <summary>

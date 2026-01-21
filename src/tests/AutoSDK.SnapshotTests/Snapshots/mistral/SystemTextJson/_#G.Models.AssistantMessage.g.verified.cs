@@ -19,6 +19,12 @@ namespace G
         public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? ToolCalls { get; set; }
+
+        /// <summary>
         /// Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.<br/>
         /// Default Value: false
         /// </summary>
@@ -33,12 +39,6 @@ namespace G
         public global::G.AssistantMessageRole? Role { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolCall>? ToolCalls { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +48,7 @@ namespace G
         /// Initializes a new instance of the <see cref="AssistantMessage" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="toolCalls"></param>
         /// <param name="prefix">
         /// Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.<br/>
         /// Default Value: false
@@ -55,20 +56,19 @@ namespace G
         /// <param name="role">
         /// Default Value: assistant
         /// </param>
-        /// <param name="toolCalls"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantMessage(
             global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
+            global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls,
             bool? prefix,
-            global::G.AssistantMessageRole? role,
-            global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
+            global::G.AssistantMessageRole? role)
         {
             this.Content = content;
+            this.ToolCalls = toolCalls;
             this.Prefix = prefix;
             this.Role = role;
-            this.ToolCalls = toolCalls;
         }
 
         /// <summary>

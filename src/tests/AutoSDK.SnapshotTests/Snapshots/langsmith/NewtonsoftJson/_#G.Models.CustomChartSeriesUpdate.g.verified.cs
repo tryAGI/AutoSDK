@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.CustomChartSeriesFilters? Filters { get; set; }
+        public global::G.CustomChartSeriesFilters2? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
@@ -40,7 +40,7 @@ namespace G
         public global::System.Guid? WorkspaceId { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_by")]
         public global::G.RunStatsGroupBy? GroupBy { get; set; }
@@ -67,14 +67,12 @@ namespace G
         /// </param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="groupBy"></param>
         /// <param name="id"></param>
         public CustomChartSeriesUpdate(
             string name,
             global::G.CustomChartMetric metric,
-            global::G.CustomChartSeriesFilters? filters,
+            global::G.CustomChartSeriesFilters2? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
             global::G.RunStatsGroupBy? groupBy,

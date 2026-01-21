@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BetaCountMessageTokensResponse
     {
         /// <summary>
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </summary>
-        /// <example>2095</example>
         [global::Newtonsoft.Json.JsonProperty("input_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int InputTokens { get; set; } = default!;
 
@@ -27,8 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensResponse" /> class.
         /// </summary>
         /// <param name="inputTokens">
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </param>
         public BetaCountMessageTokensResponse(
             int inputTokens)

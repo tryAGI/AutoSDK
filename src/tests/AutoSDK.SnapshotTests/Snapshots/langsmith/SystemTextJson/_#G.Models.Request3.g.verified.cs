@@ -76,6 +76,12 @@ namespace G
         public byte[]? Attachment_runId__filename_ { get; set; }
 
         /// <summary>
+        /// Binary attachment linked to run {run_id}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachment.{run_id}.{filename}name")]
+        public string? Attachment_runId__filename_name { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -117,6 +123,9 @@ namespace G
         /// <param name="attachment_runId__filename_">
         /// Binary attachment linked to run {run_id}
         /// </param>
+        /// <param name="attachment_runId__filename_name">
+        /// Binary attachment linked to run {run_id}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -131,7 +140,8 @@ namespace G
             string? patch_runId_Outputsname,
             byte[]? feedback_runId_,
             string? feedback_runId_name,
-            byte[]? attachment_runId__filename_)
+            byte[]? attachment_runId__filename_,
+            string? attachment_runId__filename_name)
         {
             this.Post_runId_ = post_runId_;
             this.Post_runId_name = post_runId_name;
@@ -144,6 +154,7 @@ namespace G
             this.Feedback_runId_ = feedback_runId_;
             this.Feedback_runId_name = feedback_runId_name;
             this.Attachment_runId__filename_ = attachment_runId__filename_;
+            this.Attachment_runId__filename_name = attachment_runId__filename_name;
         }
 
         /// <summary>

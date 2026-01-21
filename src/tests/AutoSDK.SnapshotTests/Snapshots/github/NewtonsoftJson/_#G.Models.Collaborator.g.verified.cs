@@ -17,9 +17,9 @@ namespace G
         public string Login { get; set; } = default!;
 
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -172,7 +172,7 @@ namespace G
         /// Example: octocat
         /// </param>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="email"></param>
         /// <param name="name"></param>

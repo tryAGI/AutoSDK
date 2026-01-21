@@ -11,34 +11,26 @@ namespace G
     {
         /// <summary>
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </summary>
-        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove_background_noise")]
         public bool? RemoveBackgroundNoise { get; set; }
 
         /// <summary>
-        /// Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.<br/>
-        /// Example: speaker_0
+        /// Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.
         /// </summary>
-        /// <example>speaker_0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_speaker_ids")]
         public global::System.Collections.Generic.IList<string>? SelectedSpeakerIds { get; set; }
 
         /// <summary>
-        /// The start time of the audio to be used for PVC training. Time should be in milliseconds<br/>
-        /// Example: 0
+        /// The start time of the audio to be used for PVC training. Time should be in milliseconds
         /// </summary>
-        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trim_start_time")]
         public int? TrimStartTime { get; set; }
 
         /// <summary>
-        /// The end time of the audio to be used for PVC training. Time should be in milliseconds<br/>
-        /// Example: 10
+        /// The end time of the audio to be used for PVC training. Time should be in milliseconds
         /// </summary>
-        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trim_end_time")]
         public int? TrimEndTime { get; set; }
 
@@ -53,20 +45,16 @@ namespace G
         /// </summary>
         /// <param name="removeBackgroundNoise">
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="selectedSpeakerIds">
-        /// Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.<br/>
-        /// Example: speaker_0
+        /// Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.
         /// </param>
         /// <param name="trimStartTime">
-        /// The start time of the audio to be used for PVC training. Time should be in milliseconds<br/>
-        /// Example: 0
+        /// The start time of the audio to be used for PVC training. Time should be in milliseconds
         /// </param>
         /// <param name="trimEndTime">
-        /// The end time of the audio to be used for PVC training. Time should be in milliseconds<br/>
-        /// Example: 10
+        /// The end time of the audio to be used for PVC training. Time should be in milliseconds
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

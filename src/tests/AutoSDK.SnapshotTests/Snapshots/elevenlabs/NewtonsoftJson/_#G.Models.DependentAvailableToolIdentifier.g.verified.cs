@@ -25,7 +25,7 @@ namespace G
         /// Default Value: available
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.DependentAvailableToolIdentifierType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace G
             string name,
             int createdAtUnixSecs,
             global::G.DependentAvailableToolIdentifierAccessLevel accessLevel,
-            global::G.DependentAvailableToolIdentifierType? type)
+            string? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

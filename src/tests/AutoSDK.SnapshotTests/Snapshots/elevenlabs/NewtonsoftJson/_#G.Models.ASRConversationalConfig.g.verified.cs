@@ -5,24 +5,27 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"keywords":["hello","world"],"provider":"elevenlabs","quality":"high","user_input_audio_format":"pcm_16000"}
     /// </summary>
     public sealed partial class ASRConversationalConfig
     {
         /// <summary>
-        /// 
+        /// The quality of the transcription<br/>
+        /// Default Value: high
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality")]
         public global::G.ASRQuality? Quality { get; set; }
 
         /// <summary>
-        /// 
+        /// The provider of the transcription service<br/>
+        /// Default Value: elevenlabs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
         public global::G.ASRProvider? Provider { get; set; }
 
         /// <summary>
-        /// 
+        /// The format of the audio to be transcribed<br/>
+        /// Default Value: pcm_16000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_input_audio_format")]
         public global::G.ASRInputFormat? UserInputAudioFormat { get; set; }
@@ -42,9 +45,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASRConversationalConfig" /> class.
         /// </summary>
-        /// <param name="quality"></param>
-        /// <param name="provider"></param>
-        /// <param name="userInputAudioFormat"></param>
+        /// <param name="quality">
+        /// The quality of the transcription<br/>
+        /// Default Value: high
+        /// </param>
+        /// <param name="provider">
+        /// The provider of the transcription service<br/>
+        /// Default Value: elevenlabs
+        /// </param>
+        /// <param name="userInputAudioFormat">
+        /// The format of the audio to be transcribed<br/>
+        /// Default Value: pcm_16000
+        /// </param>
         /// <param name="keywords">
         /// Keywords to boost prediction probability for
         /// </param>

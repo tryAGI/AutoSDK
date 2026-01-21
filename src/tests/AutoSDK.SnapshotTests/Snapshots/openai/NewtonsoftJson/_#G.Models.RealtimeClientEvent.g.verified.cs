@@ -33,24 +33,6 @@ namespace G
         public bool IsConversationItemCreate => ConversationItemCreate != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemCreate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventConversationItemCreate?(RealtimeClientEvent @this) => @this.ConversationItemCreate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate? value)
-        {
-            ConversationItemCreate = value;
-        }
-
-        /// <summary>
         /// Send this event when you want to remove any item from the conversation <br/>
         /// history. The server will respond with a `conversation.item.deleted` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -71,24 +53,6 @@ namespace G
         public bool IsConversationItemDelete => ConversationItemDelete != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemDelete?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventConversationItemDelete?(RealtimeClientEvent @this) => @this.ConversationItemDelete;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete? value)
-        {
-            ConversationItemDelete = value;
-        }
-
-        /// <summary>
         /// Send this event when you want to retrieve the server's representation of a specific item in the conversation history. This is useful, for example, to inspect user audio after noise cancellation and VAD.<br/>
         /// The server will respond with a `conversation.item.retrieved` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -107,24 +71,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieve))]
 #endif
         public bool IsConversationItemRetrieve => ConversationItemRetrieve != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemRetrieve?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventConversationItemRetrieve?(RealtimeClientEvent @this) => @this.ConversationItemRetrieve;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve? value)
-        {
-            ConversationItemRetrieve = value;
-        }
 
         /// <summary>
         /// Send this event to truncate a previous assistant message’s audio. The server <br/>
@@ -152,24 +98,6 @@ namespace G
         public bool IsConversationItemTruncate => ConversationItemTruncate != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemTruncate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventConversationItemTruncate?(RealtimeClientEvent @this) => @this.ConversationItemTruncate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate? value)
-        {
-            ConversationItemTruncate = value;
-        }
-
-        /// <summary>
         /// Send this event to append audio bytes to the input audio buffer. The audio <br/>
         /// buffer is temporary storage you can write to and later commit. In Server VAD <br/>
         /// mode, the audio buffer is used to detect speech and the server will decide <br/>
@@ -195,24 +123,6 @@ namespace G
         public bool IsInputAudioBufferAppend => InputAudioBufferAppend != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferAppend?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventInputAudioBufferAppend?(RealtimeClientEvent @this) => @this.InputAudioBufferAppend;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend? value)
-        {
-            InputAudioBufferAppend = value;
-        }
-
-        /// <summary>
         /// Send this event to clear the audio bytes in the buffer. The server will <br/>
         /// respond with an `input_audio_buffer.cleared` event.
         /// </summary>
@@ -229,24 +139,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferClear))]
 #endif
         public bool IsInputAudioBufferClear => InputAudioBufferClear != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferClear?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventInputAudioBufferClear?(RealtimeClientEvent @this) => @this.InputAudioBufferClear;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear? value)
-        {
-            InputAudioBufferClear = value;
-        }
 
         /// <summary>
         /// **WebRTC Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
@@ -268,24 +160,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferClear))]
 #endif
         public bool IsOutputAudioBufferClear => OutputAudioBufferClear != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventOutputAudioBufferClear?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventOutputAudioBufferClear?(RealtimeClientEvent @this) => @this.OutputAudioBufferClear;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear? value)
-        {
-            OutputAudioBufferClear = value;
-        }
 
         /// <summary>
         /// Send this event to commit the user input audio buffer, which will create a <br/>
@@ -313,24 +187,6 @@ namespace G
         public bool IsInputAudioBufferCommit => InputAudioBufferCommit != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferCommit?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventInputAudioBufferCommit?(RealtimeClientEvent @this) => @this.InputAudioBufferCommit;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit? value)
-        {
-            InputAudioBufferCommit = value;
-        }
-
-        /// <summary>
         /// Send this event to cancel an in-progress response. The server will respond <br/>
         /// with a `response.cancelled` event or an error if there is no response to <br/>
         /// cancel.
@@ -348,24 +204,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCancel))]
 #endif
         public bool IsResponseCancel => ResponseCancel != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCancel?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventResponseCancel?(RealtimeClientEvent @this) => @this.ResponseCancel;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel? value)
-        {
-            ResponseCancel = value;
-        }
 
         /// <summary>
         /// This event instructs the server to create a Response, which means triggering <br/>
@@ -396,24 +234,6 @@ namespace G
         public bool IsResponseCreate => ResponseCreate != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCreate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeClientEventResponseCreate?(RealtimeClientEvent @this) => @this.ResponseCreate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate? value)
-        {
-            ResponseCreate = value;
-        }
-
-        /// <summary>
         /// Send this event to update the session’s default configuration.<br/>
         /// The client may send this event at any time to update any field,<br/>
         /// except for `voice`. However, note that once a session has been<br/>
@@ -439,6 +259,202 @@ namespace G
         public bool IsSessionUpdate => SessionUpdate != null;
 
         /// <summary>
+        /// Send this event to update a transcription session.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; init; }
+#else
+        public global::G.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdate))]
+#endif
+        public bool IsTranscriptionSessionUpdate => TranscriptionSessionUpdate != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemCreate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventConversationItemCreate?(RealtimeClientEvent @this) => @this.ConversationItemCreate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemCreate? value)
+        {
+            ConversationItemCreate = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemDelete?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventConversationItemDelete?(RealtimeClientEvent @this) => @this.ConversationItemDelete;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemDelete? value)
+        {
+            ConversationItemDelete = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemRetrieve?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventConversationItemRetrieve?(RealtimeClientEvent @this) => @this.ConversationItemRetrieve;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemRetrieve? value)
+        {
+            ConversationItemRetrieve = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::G.RealtimeClientEventConversationItemTruncate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventConversationItemTruncate?(RealtimeClientEvent @this) => @this.ConversationItemTruncate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventConversationItemTruncate? value)
+        {
+            ConversationItemTruncate = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferAppend?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventInputAudioBufferAppend?(RealtimeClientEvent @this) => @this.InputAudioBufferAppend;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferAppend? value)
+        {
+            InputAudioBufferAppend = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferClear?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventInputAudioBufferClear?(RealtimeClientEvent @this) => @this.InputAudioBufferClear;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferClear? value)
+        {
+            InputAudioBufferClear = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent((global::G.RealtimeClientEventOutputAudioBufferClear?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventOutputAudioBufferClear?(RealtimeClientEvent @this) => @this.OutputAudioBufferClear;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventOutputAudioBufferClear? value)
+        {
+            OutputAudioBufferClear = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::G.RealtimeClientEventInputAudioBufferCommit?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventInputAudioBufferCommit?(RealtimeClientEvent @this) => @this.InputAudioBufferCommit;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventInputAudioBufferCommit? value)
+        {
+            InputAudioBufferCommit = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCancel?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventResponseCancel?(RealtimeClientEvent @this) => @this.ResponseCancel;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventResponseCancel? value)
+        {
+            ResponseCancel = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::G.RealtimeClientEventResponseCreate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeClientEventResponseCreate?(RealtimeClientEvent @this) => @this.ResponseCreate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::G.RealtimeClientEventResponseCreate? value)
+        {
+            ResponseCreate = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeClientEvent(global::G.RealtimeClientEventSessionUpdate value) => new RealtimeClientEvent((global::G.RealtimeClientEventSessionUpdate?)value);
@@ -455,23 +471,6 @@ namespace G
         {
             SessionUpdate = value;
         }
-
-        /// <summary>
-        /// Send this event to update a transcription session.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; init; }
-#else
-        public global::G.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdate))]
-#endif
-        public bool IsTranscriptionSessionUpdate => TranscriptionSessionUpdate != null;
 
         /// <summary>
         /// 

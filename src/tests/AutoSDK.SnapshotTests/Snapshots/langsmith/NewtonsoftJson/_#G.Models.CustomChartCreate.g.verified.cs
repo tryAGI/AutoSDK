@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.CustomChartSeriesFilters? CommonFilters { get; set; }
+        public global::G.CustomChartSeriesFilters2? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,7 +84,7 @@ namespace G
             int? index,
             global::System.Guid? sectionId,
             object? metadata,
-            global::G.CustomChartSeriesFilters? commonFilters)
+            global::G.CustomChartSeriesFilters2? commonFilters)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.ChartType = chartType;

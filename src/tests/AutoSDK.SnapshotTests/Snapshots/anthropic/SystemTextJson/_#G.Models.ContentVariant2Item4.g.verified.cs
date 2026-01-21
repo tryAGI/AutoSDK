@@ -35,6 +35,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestImageBlock? Image { get; init; }
+#else
+        public global::G.RequestImageBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item4(global::G.RequestTextBlock value) => new ContentVariant2Item4((global::G.RequestTextBlock?)value);
 
         /// <summary>
@@ -49,23 +65,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestImageBlock? Image { get; init; }
-#else
-        public global::G.RequestImageBlock? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 

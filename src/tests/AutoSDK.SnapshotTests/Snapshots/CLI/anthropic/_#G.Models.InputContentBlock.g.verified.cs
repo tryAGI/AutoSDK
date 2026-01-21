@@ -35,6 +35,107 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestImageBlock? Image { get; init; }
+#else
+        public global::G.RequestImageBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestToolUseBlock? ToolUse { get; init; }
+#else
+        public global::G.RequestToolUseBlock? ToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
+#endif
+        public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestToolResultBlock? ToolResult { get; init; }
+#else
+        public global::G.RequestToolResultBlock? ToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
+#endif
+        public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestDocumentBlock? Document { get; init; }
+#else
+        public global::G.RequestDocumentBlock? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestThinkingBlock? Thinking { get; init; }
+#else
+        public global::G.RequestThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::G.RequestTextBlock value) => new InputContentBlock((global::G.RequestTextBlock?)value);
 
         /// <summary>
@@ -49,23 +150,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestImageBlock? Image { get; init; }
-#else
-        public global::G.RequestImageBlock? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -88,23 +172,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestToolUseBlock? ToolUse { get; init; }
-#else
-        public global::G.RequestToolUseBlock? ToolUse { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
-#endif
-        public bool IsToolUse => ToolUse != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator InputContentBlock(global::G.RequestToolUseBlock value) => new InputContentBlock((global::G.RequestToolUseBlock?)value);
 
         /// <summary>
@@ -119,23 +186,6 @@ namespace G
         {
             ToolUse = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestToolResultBlock? ToolResult { get; init; }
-#else
-        public global::G.RequestToolResultBlock? ToolResult { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
-#endif
-        public bool IsToolResult => ToolResult != null;
 
         /// <summary>
         /// 
@@ -158,23 +208,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestDocumentBlock? Document { get; init; }
-#else
-        public global::G.RequestDocumentBlock? Document { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
-#endif
-        public bool IsDocument => Document != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator InputContentBlock(global::G.RequestDocumentBlock value) => new InputContentBlock((global::G.RequestDocumentBlock?)value);
 
         /// <summary>
@@ -193,23 +226,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestThinkingBlock? Thinking { get; init; }
-#else
-        public global::G.RequestThinkingBlock? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator InputContentBlock(global::G.RequestThinkingBlock value) => new InputContentBlock((global::G.RequestThinkingBlock?)value);
 
         /// <summary>
@@ -224,23 +240,6 @@ namespace G
         {
             Thinking = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; init; }
-#else
-        public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
         /// 

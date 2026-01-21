@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ApproximateLocation.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -23,25 +21,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country")]
-        public global::G.AnyOf<string, object>? Country { get; set; }
+        public string? Country { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
-        public global::G.AnyOf<string, object>? Region { get; set; }
+        public string? Region { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("city")]
-        public global::G.AnyOf<string, object>? City { get; set; }
+        public string? City { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timezone")]
-        public global::G.AnyOf<string, object>? Timezone { get; set; }
+        public string? Timezone { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +59,10 @@ namespace G
         /// <param name="city"></param>
         /// <param name="timezone"></param>
         public ApproximateLocation(
-            global::G.AnyOf<string, object>? country,
-            global::G.AnyOf<string, object>? region,
-            global::G.AnyOf<string, object>? city,
-            global::G.AnyOf<string, object>? timezone,
+            string? country,
+            string? region,
+            string? city,
+            string? timezone,
             global::G.ApproximateLocationType type = global::G.ApproximateLocationType.Approximate)
         {
             this.Type = type;

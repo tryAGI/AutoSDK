@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DubbingMediaReference MediaRef { get; set; } = default!;
+        public global::G.DubbingMediaReference? MediaRef { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +58,7 @@ namespace G
             double endTime,
             string? text,
             bool audioStale,
-            global::G.DubbingMediaReference mediaRef)
+            global::G.DubbingMediaReference? mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;

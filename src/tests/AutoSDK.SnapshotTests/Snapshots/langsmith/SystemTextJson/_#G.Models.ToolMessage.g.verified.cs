@@ -59,8 +59,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolMessageTypeJsonConverter))]
-        public global::G.ToolMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +123,7 @@ namespace G
             string toolCallId,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ToolMessageType? type,
+            string? type,
             string? name,
             string? id,
             object? artifact,

@@ -20,19 +20,15 @@ namespace G
         public global::G.BetaModelInfoType Type { get; set; } = global::G.BetaModelInfoType.Model;
 
         /// <summary>
-        /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
+        /// Unique model identifier.
         /// </summary>
-        /// <example>claude-3-7-sonnet-20250219</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.7 Sonnet
+        /// A human-readable name for the model.
         /// </summary>
-        /// <example>Claude 3.7 Sonnet</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
@@ -59,12 +55,10 @@ namespace G
         /// Default Value: model
         /// </param>
         /// <param name="id">
-        /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
+        /// Unique model identifier.
         /// </param>
         /// <param name="displayName">
-        /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.7 Sonnet
+        /// A human-readable name for the model.
         /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.

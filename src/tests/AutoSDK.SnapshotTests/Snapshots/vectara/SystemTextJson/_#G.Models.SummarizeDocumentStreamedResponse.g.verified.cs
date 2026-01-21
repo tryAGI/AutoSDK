@@ -33,24 +33,6 @@ namespace G
         public bool IsGenerationChunk => GenerationChunk != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk value) => new SummarizeDocumentStreamedResponse((global::G.StreamGenerationChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.StreamGenerationChunk?(SummarizeDocumentStreamedResponse @this) => @this.GenerationChunk;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk? value)
-        {
-            GenerationChunk = value;
-        }
-
-        /// <summary>
         /// Event containing information on how the generation was accomplished.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -66,24 +48,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationInfo))]
 #endif
         public bool IsGenerationInfo => GenerationInfo != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator SummarizeDocumentStreamedResponse(global::G.GenerationInfo value) => new SummarizeDocumentStreamedResponse((global::G.GenerationInfo?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.GenerationInfo?(SummarizeDocumentStreamedResponse @this) => @this.GenerationInfo;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SummarizeDocumentStreamedResponse(global::G.GenerationInfo? value)
-        {
-            GenerationInfo = value;
-        }
 
         /// <summary>
         /// The end of generation. There may still be more information such as the<br/>
@@ -104,6 +68,75 @@ namespace G
         public bool IsGenerationEnd => GenerationEnd != null;
 
         /// <summary>
+        /// The end of a query response stream.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StreamResponseEnd? End { get; init; }
+#else
+        public global::G.StreamResponseEnd? End { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
+#endif
+        public bool IsEnd => End != null;
+
+        /// <summary>
+        /// Event signaling there was an error with the request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StreamError? Error { get; init; }
+#else
+        public global::G.StreamError? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk value) => new SummarizeDocumentStreamedResponse((global::G.StreamGenerationChunk?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.StreamGenerationChunk?(SummarizeDocumentStreamedResponse @this) => @this.GenerationChunk;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SummarizeDocumentStreamedResponse(global::G.StreamGenerationChunk? value)
+        {
+            GenerationChunk = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator SummarizeDocumentStreamedResponse(global::G.GenerationInfo value) => new SummarizeDocumentStreamedResponse((global::G.GenerationInfo?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.GenerationInfo?(SummarizeDocumentStreamedResponse @this) => @this.GenerationInfo;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SummarizeDocumentStreamedResponse(global::G.GenerationInfo? value)
+        {
+            GenerationInfo = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamGenerationEnd value) => new SummarizeDocumentStreamedResponse((global::G.StreamGenerationEnd?)value);
@@ -122,23 +155,6 @@ namespace G
         }
 
         /// <summary>
-        /// The end of a query response stream.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StreamResponseEnd? End { get; init; }
-#else
-        public global::G.StreamResponseEnd? End { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
-#endif
-        public bool IsEnd => End != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamResponseEnd value) => new SummarizeDocumentStreamedResponse((global::G.StreamResponseEnd?)value);
@@ -155,23 +171,6 @@ namespace G
         {
             End = value;
         }
-
-        /// <summary>
-        /// Event signaling there was an error with the request.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StreamError? Error { get; init; }
-#else
-        public global::G.StreamError? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
 
         /// <summary>
         /// 

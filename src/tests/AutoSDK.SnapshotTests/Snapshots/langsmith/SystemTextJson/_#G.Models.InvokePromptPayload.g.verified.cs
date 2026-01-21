@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<byte[]> Messages { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InvokePromptPayload(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
+            global::System.Collections.Generic.IList<byte[]> messages,
             string templateFormat,
             object inputs)
         {

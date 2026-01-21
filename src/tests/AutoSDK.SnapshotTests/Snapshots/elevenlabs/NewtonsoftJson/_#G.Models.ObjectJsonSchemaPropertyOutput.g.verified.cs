@@ -13,7 +13,7 @@ namespace G
         /// Default Value: object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ObjectJsonSchemaPropertyOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// <param name="description"></param>
         /// <param name="properties"></param>
         public ObjectJsonSchemaPropertyOutput(
-            global::G.ObjectJsonSchemaPropertyOutputType? type,
+            string? type,
             global::System.Collections.Generic.IList<string>? required,
             string? description,
             object? properties)

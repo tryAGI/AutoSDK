@@ -22,7 +22,7 @@ namespace G
         public string Type { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// the function that the model called
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.Function Function { get; set; } = default!;
@@ -42,7 +42,9 @@ namespace G
         /// <param name="type">
         /// the type of the tool call. only function is supported currently
         /// </param>
-        /// <param name="function"></param>
+        /// <param name="function">
+        /// the function that the model called
+        /// </param>
         public ChatCompletionMessageToolCall(
             string id,
             string type,

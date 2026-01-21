@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PostWorkspaceSecretResponseModelTypeJsonConverter))]
-        public global::G.PostWorkspaceSecretResponseModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -46,13 +46,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PostWorkspaceSecretResponseModel(
+            string type,
             string secretId,
-            string name,
-            global::G.PostWorkspaceSecretResponseModelType type)
+            string name)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SecretId = secretId ?? throw new global::System.ArgumentNullException(nameof(secretId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type;
         }
 
         /// <summary>

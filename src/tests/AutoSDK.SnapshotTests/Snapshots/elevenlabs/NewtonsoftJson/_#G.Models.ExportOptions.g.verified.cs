@@ -35,6 +35,90 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DocxExportOptions? Docx { get; init; }
+#else
+        public global::G.DocxExportOptions? Docx { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Docx))]
+#endif
+        public bool IsDocx => Docx != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.PdfExportOptions? Pdf { get; init; }
+#else
+        public global::G.PdfExportOptions? Pdf { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pdf))]
+#endif
+        public bool IsPdf => Pdf != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TxtExportOptions? Txt { get; init; }
+#else
+        public global::G.TxtExportOptions? Txt { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Txt))]
+#endif
+        public bool IsTxt => Txt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.HtmlExportOptions? Html { get; init; }
+#else
+        public global::G.HtmlExportOptions? Html { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html))]
+#endif
+        public bool IsHtml => Html != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SrtExportOptions? Srt { get; init; }
+#else
+        public global::G.SrtExportOptions? Srt { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Srt))]
+#endif
+        public bool IsSrt => Srt != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExportOptions(global::G.SegmentedJsonExportOptions value) => new ExportOptions((global::G.SegmentedJsonExportOptions?)value);
 
         /// <summary>
@@ -49,23 +133,6 @@ namespace G
         {
             SegmentedJson = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DocxExportOptions? Docx { get; init; }
-#else
-        public global::G.DocxExportOptions? Docx { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Docx))]
-#endif
-        public bool IsDocx => Docx != null;
 
         /// <summary>
         /// 
@@ -88,23 +155,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.PdfExportOptions? Pdf { get; init; }
-#else
-        public global::G.PdfExportOptions? Pdf { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pdf))]
-#endif
-        public bool IsPdf => Pdf != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ExportOptions(global::G.PdfExportOptions value) => new ExportOptions((global::G.PdfExportOptions?)value);
 
         /// <summary>
@@ -119,23 +169,6 @@ namespace G
         {
             Pdf = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TxtExportOptions? Txt { get; init; }
-#else
-        public global::G.TxtExportOptions? Txt { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Txt))]
-#endif
-        public bool IsTxt => Txt != null;
 
         /// <summary>
         /// 
@@ -158,23 +191,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.HtmlExportOptions? Html { get; init; }
-#else
-        public global::G.HtmlExportOptions? Html { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html))]
-#endif
-        public bool IsHtml => Html != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ExportOptions(global::G.HtmlExportOptions value) => new ExportOptions((global::G.HtmlExportOptions?)value);
 
         /// <summary>
@@ -189,23 +205,6 @@ namespace G
         {
             Html = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.SrtExportOptions? Srt { get; init; }
-#else
-        public global::G.SrtExportOptions? Srt { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Srt))]
-#endif
-        public bool IsSrt => Srt != null;
 
         /// <summary>
         /// 

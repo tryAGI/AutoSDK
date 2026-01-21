@@ -146,8 +146,7 @@ namespace G
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </param>
         /// <param name="thinking">
         /// Configuration for enabling Claude's extended thinking. <br/>
@@ -167,7 +166,7 @@ namespace G
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::G.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::G.ToolsItem>? tools = default,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.BetaTool, global::G.BetaComputerUseTool20241022, global::G.BetaBashTool20241022, global::G.BetaTextEditor20241022, global::G.BetaComputerUseTool20250124, global::G.BetaBashTool20250124, global::G.BetaTextEditor20250124>>? tools = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system = default,
             global::G.BetaThinkingConfigParam? thinking = default,
             global::System.Threading.CancellationToken cancellationToken = default);

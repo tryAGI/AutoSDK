@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"alias":"tie-land","string_to_replace":"Thailand","type":"alias"}
     /// </summary>
     public sealed partial class PronunciationDictionaryAliasRuleRequestModel
     {
@@ -20,8 +20,8 @@ namespace G
         /// The type of the rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PronunciationDictionaryAliasRuleRequestModelTypeJsonConverter))]
-        public global::G.PronunciationDictionaryAliasRuleRequestModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// The alias for the string to be replaced.
@@ -53,12 +53,12 @@ namespace G
 #endif
         public PronunciationDictionaryAliasRuleRequestModel(
             string stringToReplace,
-            string alias,
-            global::G.PronunciationDictionaryAliasRuleRequestModelType type)
+            string type,
+            string alias)
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
-            this.Type = type;
         }
 
         /// <summary>

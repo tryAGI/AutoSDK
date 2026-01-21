@@ -15,12 +15,12 @@ namespace G
             ref int? limit,
             ref int? offset,
             global::System.Collections.Generic.IList<global::System.Guid>? user,
-            ref bool? hasComment,
-            ref bool? hasScore,
-            ref global::G.FeedbackLevel? level,
-            ref global::System.DateTime? maxCreatedAt,
-            ref global::System.DateTime? minCreatedAt,
-            ref bool? includeUserNames);
+            bool? hasComment,
+            bool? hasScore,
+            global::G.FeedbackLevel? level,
+            global::System.DateTime? maxCreatedAt,
+            global::System.DateTime? minCreatedAt,
+            bool? includeUserNames);
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -63,9 +63,7 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>
@@ -98,35 +96,29 @@ namespace G
                 limit: ref limit,
                 offset: ref offset,
                 user: user,
-                hasComment: ref hasComment,
-                hasScore: ref hasScore,
-                level: ref level,
-                maxCreatedAt: ref maxCreatedAt,
-                minCreatedAt: ref minCreatedAt,
-                includeUserNames: ref includeUserNames);
+                hasComment: hasComment,
+                hasScore: hasScore,
+                level: level,
+                maxCreatedAt: maxCreatedAt,
+                minCreatedAt: minCreatedAt,
+                includeUserNames: includeUserNames);
 
-            var levelValue = level switch
-            {
-                global::G.FeedbackLevel.Run => "run",
-                global::G.FeedbackLevel.Session => "session",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
-                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("run", run?.ToString()) 
+                .AddOptionalParameter("key", key?.ToString()) 
+                .AddOptionalParameter("session", session?.ToString()) 
+                .AddOptionalParameter("source", source?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("user", user?.ToString()) 
                 .AddOptionalParameter("has_comment", hasComment?.ToString()) 
                 .AddOptionalParameter("has_score", hasScore?.ToString()) 
-                .AddOptionalParameter("level", level?.ToValueString()) 
-                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("level", level?.ToString()) 
+                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString()) 
+                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString()) 
                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -39,6 +39,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.JSONResponseFormat? JsonObject { get; init; }
+#else
+        public global::G.JSONResponseFormat? JsonObject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
+#endif
+        public bool IsJsonObject => JsonObject != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormat(global::G.TextResponseFormat value) => new ResponseFormat((global::G.TextResponseFormat?)value);
 
         /// <summary>
@@ -53,23 +69,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.JSONResponseFormat? JsonObject { get; init; }
-#else
-        public global::G.JSONResponseFormat? JsonObject { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
-#endif
-        public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
         /// 

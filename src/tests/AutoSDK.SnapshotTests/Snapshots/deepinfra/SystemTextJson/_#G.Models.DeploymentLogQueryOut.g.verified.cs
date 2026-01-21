@@ -13,7 +13,7 @@ namespace G
         /// mapping of pod names to log lines ordered by increasing timestamp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entries")]
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>>? Entries { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<byte[]>>? Entries { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeploymentLogQueryOut(
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>>? entries)
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<byte[]>>? entries)
         {
             this.Entries = entries;
         }

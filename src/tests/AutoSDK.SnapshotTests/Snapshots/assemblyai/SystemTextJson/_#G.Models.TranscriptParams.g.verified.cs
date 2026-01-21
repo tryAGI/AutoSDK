@@ -6,7 +6,8 @@
 namespace G
 {
     /// <summary>
-    /// The parameters for creating a transcript
+    /// The parameters for creating a transcript<br/>
+    /// Example: {"speech_model":"","language_code":"en_us","language_detection":true,"language_confidence_threshold":0.7,"audio_url":"https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3","punctuate":true,"format_text":true,"dual_channel":true,"webhook_url":"https://your-webhook-url/path","webhook_auth_header_name":"webhook-secret","webhook_auth_header_value":"webhook-secret-value","auto_highlights":true,"audio_start_from":10,"audio_end_at":280,"word_boost":["aws","azure","google cloud"],"boost_param":"high","filter_profanity":true,"redact_pii":true,"redact_pii_audio":true,"redact_pii_audio_quality":"mp3","redact_pii_policies":["us_social_security_number","credit_card_number"],"redact_pii_sub":"hash","speaker_labels":true,"speakers_expected":2,"content_safety":true,"iab_categories":true,"custom_spelling":[],"disfluencies":false,"sentiment_analysis":true,"auto_chapters":true,"entity_detection":true,"speech_threshold":0.5,"summarization":true,"summary_model":"informative","summary_type":"bullets","custom_topics":true,"topics":[]}
     /// </summary>
     public readonly partial struct TranscriptParams : global::System.IEquatable<TranscriptParams>
     {
@@ -28,6 +29,23 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// The parameters for creating a transcript<br/>
+        /// Example: {"speech_model":"","language_code":"en_us","language_detection":true,"language_confidence_threshold":0.7,"punctuate":true,"format_text":true,"dual_channel":true,"webhook_url":"https://your-webhook-url.tld/path","webhook_auth_header_name":"webhook-secret","webhook_auth_header_value":"webhook-secret-value","auto_highlights":true,"audio_start_from":10,"audio_end_at":280,"word_boost":["aws","azure","google cloud"],"boost_param":"high","filter_profanity":true,"redact_pii":true,"redact_pii_audio":true,"redact_pii_audio_quality":"mp3","redact_pii_policies":["us_social_security_number","credit_card_number"],"redact_pii_sub":"hash","speaker_labels":true,"speakers_expected":2,"content_safety":true,"iab_categories":true,"custom_spelling":[],"disfluencies":false,"sentiment_analysis":true,"auto_chapters":true,"entity_detection":true,"speech_threshold":0.5,"summarization":true,"summary_model":"informative","summary_type":"bullets","custom_topics":true,"topics":[]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TranscriptOptionalParams? Value2 { get; init; }
+#else
+        public global::G.TranscriptOptionalParams? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator TranscriptParams(global::G.TranscriptParamsVariant1 value) => new TranscriptParams((global::G.TranscriptParamsVariant1?)value);
@@ -44,23 +62,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// The parameters for creating a transcript
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TranscriptOptionalParams? Value2 { get; init; }
-#else
-        public global::G.TranscriptOptionalParams? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

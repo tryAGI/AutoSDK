@@ -41,7 +41,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.LanguageAddedResponse> CreateDubbingResourceByDubbingIdLanguageAsync(
             string dubbingId,
-            string? language,
+            string language,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

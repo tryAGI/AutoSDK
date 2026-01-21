@@ -35,6 +35,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ClassifierJobOut? Classifier { get; init; }
+#else
+        public global::G.ClassifierJobOut? Classifier { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
+#endif
+        public bool IsClassifier => Classifier != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1(global::G.CompletionJobOut value) => new JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1((global::G.CompletionJobOut?)value);
 
         /// <summary>
@@ -49,23 +65,6 @@ namespace G
         {
             Completion = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ClassifierJobOut? Classifier { get; init; }
-#else
-        public global::G.ClassifierJobOut? Classifier { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
-#endif
-        public bool IsClassifier => Classifier != null;
 
         /// <summary>
         /// 

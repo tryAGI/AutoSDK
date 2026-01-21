@@ -34,15 +34,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact_length")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLengthJsonConverter))]
-        public global::G.PlaygroundPromptCanvasPayloadArtifactLength? ArtifactLength { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadArtifactLength2? ArtifactLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reading_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevelJsonConverter))]
-        public global::G.PlaygroundPromptCanvasPayloadReadingLevel? ReadingLevel { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadReadingLevel2? ReadingLevel { get; set; }
 
         /// <summary>
         /// 
@@ -91,8 +89,8 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::G.Highlight? highlighted,
             global::G.Artifact? artifact,
-            global::G.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength,
-            global::G.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel,
+            global::G.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength,
+            global::G.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel,
             string? customAction)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

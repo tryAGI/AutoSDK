@@ -9,12 +9,12 @@ namespace G
         partial void PrepareBillingPortalPaymentBillingPortalGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? returnUrl,
-            ref string? session);
+            object? session);
         partial void PrepareBillingPortalPaymentBillingPortalGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? returnUrl,
-            string? session);
+            object? session);
         partial void ProcessBillingPortalPaymentBillingPortalGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BillingPortalOut> BillingPortalPaymentBillingPortalGetAsync(
             string? returnUrl = default,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -41,7 +41,7 @@ namespace G
             PrepareBillingPortalPaymentBillingPortalGetArguments(
                 httpClient: HttpClient,
                 returnUrl: ref returnUrl,
-                session: ref session);
+                session: session);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/billing-portal",

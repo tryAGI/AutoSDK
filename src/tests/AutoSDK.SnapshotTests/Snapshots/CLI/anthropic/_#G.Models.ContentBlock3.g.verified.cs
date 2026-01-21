@@ -35,6 +35,56 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseToolUseBlock? ToolUse { get; init; }
+#else
+        public global::G.ResponseToolUseBlock? ToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
+#endif
+        public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseThinkingBlock? Thinking { get; init; }
+#else
+        public global::G.ResponseThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentBlock3(global::G.ResponseTextBlock value) => new ContentBlock3((global::G.ResponseTextBlock?)value);
 
         /// <summary>
@@ -49,23 +99,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseToolUseBlock? ToolUse { get; init; }
-#else
-        public global::G.ResponseToolUseBlock? ToolUse { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
-#endif
-        public bool IsToolUse => ToolUse != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseThinkingBlock? Thinking { get; init; }
-#else
-        public global::G.ResponseThinkingBlock? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ContentBlock3(global::G.ResponseThinkingBlock value) => new ContentBlock3((global::G.ResponseThinkingBlock?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace G
         {
             Thinking = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
-#else
-        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
         /// 

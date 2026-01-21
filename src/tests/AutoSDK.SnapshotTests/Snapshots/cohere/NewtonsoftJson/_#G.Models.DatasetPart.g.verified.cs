@@ -16,16 +16,28 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
+        /// The name of the dataset part
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// The download url of the file
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
         /// The index of the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public int? Index { get; set; }
 
         /// <summary>
-        /// The name of the dataset part
+        /// The size of the file in bytes
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("size_bytes")]
+        public int? SizeBytes { get; set; }
 
         /// <summary>
         /// The number of rows in the file
@@ -46,18 +58,6 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Samples { get; set; }
 
         /// <summary>
-        /// The size of the file in bytes
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("size_bytes")]
-        public int? SizeBytes { get; set; }
-
-        /// <summary>
-        /// The download url of the file
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url")]
-        public string? Url { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -69,11 +69,17 @@ namespace G
         /// <param name="id">
         /// The dataset part ID
         /// </param>
+        /// <param name="name">
+        /// The name of the dataset part
+        /// </param>
+        /// <param name="url">
+        /// The download url of the file
+        /// </param>
         /// <param name="index">
         /// The index of the file
         /// </param>
-        /// <param name="name">
-        /// The name of the dataset part
+        /// <param name="sizeBytes">
+        /// The size of the file in bytes
         /// </param>
         /// <param name="numRows">
         /// The number of rows in the file
@@ -84,30 +90,24 @@ namespace G
         /// <param name="samples">
         /// The first few rows of the parsed file
         /// </param>
-        /// <param name="sizeBytes">
-        /// The size of the file in bytes
-        /// </param>
-        /// <param name="url">
-        /// The download url of the file
-        /// </param>
         public DatasetPart(
             string id,
             string name,
+            string? url,
             int? index,
+            int? sizeBytes,
             int? numRows,
             string? originalUrl,
-            global::System.Collections.Generic.IList<string>? samples,
-            int? sizeBytes,
-            string? url)
+            global::System.Collections.Generic.IList<string>? samples)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url;
             this.Index = index;
+            this.SizeBytes = sizeBytes;
             this.NumRows = numRows;
             this.OriginalUrl = originalUrl;
             this.Samples = samples;
-            this.SizeBytes = sizeBytes;
-            this.Url = url;
         }
 
         /// <summary>

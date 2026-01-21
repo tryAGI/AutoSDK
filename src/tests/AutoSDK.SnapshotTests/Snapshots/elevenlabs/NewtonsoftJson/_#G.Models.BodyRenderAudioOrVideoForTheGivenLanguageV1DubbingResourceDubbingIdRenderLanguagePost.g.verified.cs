@@ -10,10 +10,10 @@ namespace G
     public sealed partial class BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost
     {
         /// <summary>
-        /// 
+        /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("render_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RenderType RenderType { get; set; } = default!;
+        public global::G.RenderType2 RenderType { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,9 +24,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost" /> class.
         /// </summary>
-        /// <param name="renderType"></param>
+        /// <param name="renderType">
+        /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
+        /// </param>
         public BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost(
-            global::G.RenderType renderType)
+            global::G.RenderType2 renderType)
         {
             this.RenderType = renderType;
         }

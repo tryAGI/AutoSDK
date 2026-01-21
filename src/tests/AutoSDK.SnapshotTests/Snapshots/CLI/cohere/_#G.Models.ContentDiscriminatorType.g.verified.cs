@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ImageUrl,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        ImageUrl,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ContentDiscriminatorType.ImageUrl => "image_url",
                 ContentDiscriminatorType.Text => "text",
+                ContentDiscriminatorType.ImageUrl => "image_url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "image_url" => ContentDiscriminatorType.ImageUrl,
                 "text" => ContentDiscriminatorType.Text,
+                "image_url" => ContentDiscriminatorType.ImageUrl,
                 _ => null,
             };
         }

@@ -10,9 +10,9 @@ namespace G
     public sealed partial class IssueEvent
     {
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -65,8 +65,9 @@ namespace G
         public required string? CommitUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -168,7 +169,7 @@ namespace G
         /// Initializes a new instance of the <see cref="IssueEvent" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="nodeId">
         /// Example: MDEwOklzc3VlRXZlbnQx
@@ -188,7 +189,9 @@ namespace G
         /// <param name="commitUrl">
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
         /// <param name="issue">
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
         /// </param>

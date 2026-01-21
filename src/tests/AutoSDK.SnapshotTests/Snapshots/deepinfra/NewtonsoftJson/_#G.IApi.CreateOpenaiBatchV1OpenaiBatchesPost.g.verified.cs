@@ -38,9 +38,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            object? metadata,
+            string completionWindow,
+            object metadata,
             string? xiApiKey = default,
-            global::G.OpenAIBatchesInCompletionWindow completionWindow = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

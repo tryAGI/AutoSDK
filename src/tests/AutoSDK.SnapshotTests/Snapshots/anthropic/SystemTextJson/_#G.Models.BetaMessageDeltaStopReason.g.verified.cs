@@ -5,60 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
-    public enum BetaMessageDeltaStopReason
+    public sealed partial class BetaMessageDeltaStopReason
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        EndTurn,
-        /// <summary>
-        /// 
-        /// </summary>
-        MaxTokens,
-        /// <summary>
-        /// 
-        /// </summary>
-        StopSequence,
-        /// <summary>
-        /// 
-        /// </summary>
-        ToolUse,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class BetaMessageDeltaStopReasonExtensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this BetaMessageDeltaStopReason value)
-        {
-            return value switch
-            {
-                BetaMessageDeltaStopReason.EndTurn => "end_turn",
-                BetaMessageDeltaStopReason.MaxTokens => "max_tokens",
-                BetaMessageDeltaStopReason.StopSequence => "stop_sequence",
-                BetaMessageDeltaStopReason.ToolUse => "tool_use",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static BetaMessageDeltaStopReason? ToEnum(string value)
-        {
-            return value switch
-            {
-                "end_turn" => BetaMessageDeltaStopReason.EndTurn,
-                "max_tokens" => BetaMessageDeltaStopReason.MaxTokens,
-                "stop_sequence" => BetaMessageDeltaStopReason.StopSequence,
-                "tool_use" => BetaMessageDeltaStopReason.ToolUse,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

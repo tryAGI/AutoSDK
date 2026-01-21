@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Details of the transcript page. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
+    /// Details of the transcript page. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.<br/>
+    /// Example: {"limit":10,"result_count":10,"current_url":"https://api.assemblyai.com/v2/transcript?limit=10","prev_url":"https://api.assemblyai.com/v2/transcript?limit=10\u0026before_id=62npeahu2b-a8ea-4112-854c-69542c20d90c","next_url":"https://api.assemblyai.com/v2/transcript?limit=10\u0026after_id=62nfw3mlar-01ad-4631-92f6-629929496eed"}
     /// </summary>
     public sealed partial class PageDetails
     {

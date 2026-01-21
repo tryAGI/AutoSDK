@@ -45,7 +45,7 @@ namespace G
         public required string PricingType { get; set; }
 
         /// <summary>
-        /// Inclusive, in ms
+        /// time interval with this particular pricing
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -74,7 +74,7 @@ namespace G
         /// pricing type
         /// </param>
         /// <param name="interval">
-        /// Inclusive, in ms
+        /// time interval with this particular pricing
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

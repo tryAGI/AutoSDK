@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"language_id":"en","name":"English"}
     /// </summary>
     public sealed partial class LanguageResponseModel
     {

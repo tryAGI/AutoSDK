@@ -134,7 +134,7 @@ namespace G
         public string? SystemPrompt { get; set; }
 
         /// <summary>
-        /// Default Value: 0
+        /// Default Value: 0.0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
@@ -287,7 +287,7 @@ namespace G
         /// </param>
         /// <param name="systemPrompt"></param>
         /// <param name="temperature">
-        /// Default Value: 0
+        /// Default Value: 0.0
         /// </param>
         /// <param name="timeExceededMessage"></param>
         /// <param name="voice"></param>

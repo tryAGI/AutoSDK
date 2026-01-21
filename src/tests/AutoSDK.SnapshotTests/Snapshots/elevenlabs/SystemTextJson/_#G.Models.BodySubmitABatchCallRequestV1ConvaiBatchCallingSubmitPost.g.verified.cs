@@ -71,7 +71,7 @@ namespace G
             this.CallName = callName ?? throw new global::System.ArgumentNullException(nameof(callName));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentPhoneNumberId = agentPhoneNumberId ?? throw new global::System.ArgumentNullException(nameof(agentPhoneNumberId));
-            this.ScheduledTimeUnix = scheduledTimeUnix;
+            this.ScheduledTimeUnix = scheduledTimeUnix ?? throw new global::System.ArgumentNullException(nameof(scheduledTimeUnix));
             this.Recipients = recipients ?? throw new global::System.ArgumentNullException(nameof(recipients));
         }
 

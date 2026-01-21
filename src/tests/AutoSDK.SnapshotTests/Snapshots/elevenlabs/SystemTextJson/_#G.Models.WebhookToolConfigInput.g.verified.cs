@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A webhook tool is a tool that calls an external webhook from our server
+    /// A webhook tool is a tool that calls an external webhook from our server<br/>
+    /// Example: {"response_timeout_secs":20,"type":"webhook"}
     /// </summary>
     public sealed partial class WebhookToolConfigInput
     {
@@ -41,19 +42,22 @@ namespace G
         /// Default Value: webhook
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookToolConfigInputTypeJsonConverter))]
-        public global::G.WebhookToolConfigInputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
-        /// Configuration for a webhook that will be called by an LLM tool.
+        /// The schema for the outgoing webhoook, including parameters and URL specification<br/>
+        /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
         /// </summary>
+        /// <example>{"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookToolApiSchemaConfigInput ApiSchema { get; set; }
 
         /// <summary>
-        /// 
+        /// Configuration for dynamic variables<br/>
+        /// Example: {"dynamic_variable_placeholders":{"user_name":"John Doe"}}
         /// </summary>
+        /// <example>{"dynamic_variable_placeholders":{"user_name":"John Doe"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("dynamic_variables")]
         public global::G.DynamicVariablesConfig? DynamicVariables { get; set; }
 
@@ -78,9 +82,13 @@ namespace G
         /// Default Value: webhook
         /// </param>
         /// <param name="apiSchema">
-        /// Configuration for a webhook that will be called by an LLM tool.
+        /// The schema for the outgoing webhoook, including parameters and URL specification<br/>
+        /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
         /// </param>
-        /// <param name="dynamicVariables"></param>
+        /// <param name="dynamicVariables">
+        /// Configuration for dynamic variables<br/>
+        /// Example: {"dynamic_variable_placeholders":{"user_name":"John Doe"}}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +98,7 @@ namespace G
             global::G.WebhookToolApiSchemaConfigInput apiSchema,
             string? id,
             int? responseTimeoutSecs,
-            global::G.WebhookToolConfigInputType? type,
+            string? type,
             global::G.DynamicVariablesConfig? dynamicVariables)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

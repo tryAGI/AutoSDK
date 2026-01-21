@@ -30,6 +30,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="spam")]
         Spam,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
     }
 
     /// <summary>
@@ -48,6 +53,7 @@ namespace G
                 WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.OffTopic => "off-topic",
                 WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.TooHeated => "too heated",
                 WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.Spam => "spam",
+                WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +68,7 @@ namespace G
                 "off-topic" => WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.OffTopic,
                 "too heated" => WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.TooHeated,
                 "spam" => WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.Spam,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookPullRequestReviewThreadResolvedPullRequestActiveLockReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 _ => null,
             };
         }

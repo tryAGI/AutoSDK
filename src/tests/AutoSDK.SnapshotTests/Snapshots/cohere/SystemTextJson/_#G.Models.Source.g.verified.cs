@@ -28,6 +28,22 @@ namespace G
         public bool IsTool => Tool != null;
 
         /// <summary>
+        /// A document source object containing the unique identifier of the document and the document itself.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DocumentSource? Document { get; init; }
+#else
+        public global::G.DocumentSource? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Source(global::G.ToolSource value) => new Source((global::G.ToolSource?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Tool = value;
         }
-
-        /// <summary>
-        /// A document source object containing the unique identifier of the document and the document itself.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DocumentSource? Document { get; init; }
-#else
-        public global::G.DocumentSource? Document { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
-#endif
-        public bool IsDocument => Document != null;
 
         /// <summary>
         /// 

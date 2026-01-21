@@ -28,7 +28,8 @@ namespace G
         public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }
@@ -40,7 +41,7 @@ namespace G
         public bool? OmitData { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public global::G.RunStatsGroupBy? GroupBy { get; set; }
@@ -60,14 +61,13 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
         /// <param name="omitData">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

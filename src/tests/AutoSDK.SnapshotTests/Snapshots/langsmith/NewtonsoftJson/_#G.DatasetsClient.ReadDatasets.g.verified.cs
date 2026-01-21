@@ -9,7 +9,7 @@ namespace G
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
             ref string? name,
             ref string? nameContains,
             ref string? metadata,
@@ -22,7 +22,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
             string? name,
             string? nameContains,
             string? metadata,
@@ -56,7 +56,8 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available dataset columns to sort by.
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -66,7 +67,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -105,7 +106,7 @@ namespace G
                 path: "/api/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id?.ToString()) 
                 .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("name_contains", nameContains) 
@@ -114,7 +115,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

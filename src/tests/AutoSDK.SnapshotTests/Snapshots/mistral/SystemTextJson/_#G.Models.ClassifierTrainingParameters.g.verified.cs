@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("epochs")]
-        public double? Epochs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("training_steps")]
+        public int? TrainingSteps { get; set; }
 
         /// <summary>
         /// Default Value: 0.0001
@@ -22,16 +22,10 @@ namespace G
         public double? LearningRate { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: 0.1
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seq_len")]
-        public int? SeqLen { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("training_steps")]
-        public int? TrainingSteps { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("weight_decay")]
+        public double? WeightDecay { get; set; }
 
         /// <summary>
         /// Default Value: 0.05
@@ -40,10 +34,16 @@ namespace G
         public double? WarmupFraction { get; set; }
 
         /// <summary>
-        /// Default Value: 0.1
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("weight_decay")]
-        public double? WeightDecay { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("epochs")]
+        public double? Epochs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seq_len")]
+        public int? SeqLen { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,35 +54,35 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifierTrainingParameters" /> class.
         /// </summary>
-        /// <param name="epochs"></param>
+        /// <param name="trainingSteps"></param>
         /// <param name="learningRate">
         /// Default Value: 0.0001
-        /// </param>
-        /// <param name="seqLen"></param>
-        /// <param name="trainingSteps"></param>
-        /// <param name="warmupFraction">
-        /// Default Value: 0.05
         /// </param>
         /// <param name="weightDecay">
         /// Default Value: 0.1
         /// </param>
+        /// <param name="warmupFraction">
+        /// Default Value: 0.05
+        /// </param>
+        /// <param name="epochs"></param>
+        /// <param name="seqLen"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassifierTrainingParameters(
-            double? epochs,
-            double? learningRate,
-            int? seqLen,
             int? trainingSteps,
+            double? learningRate,
+            double? weightDecay,
             double? warmupFraction,
-            double? weightDecay)
+            double? epochs,
+            int? seqLen)
         {
-            this.Epochs = epochs;
-            this.LearningRate = learningRate;
-            this.SeqLen = seqLen;
             this.TrainingSteps = trainingSteps;
-            this.WarmupFraction = warmupFraction;
+            this.LearningRate = learningRate;
             this.WeightDecay = weightDecay;
+            this.WarmupFraction = warmupFraction;
+            this.Epochs = epochs;
+            this.SeqLen = seqLen;
         }
 
         /// <summary>

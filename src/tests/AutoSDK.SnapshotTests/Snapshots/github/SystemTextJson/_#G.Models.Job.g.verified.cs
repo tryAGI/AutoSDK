@@ -97,22 +97,28 @@ namespace G
         public required global::G.JobConclusion? Conclusion { get; set; }
 
         /// <summary>
-        /// The time that the job created, in ISO 8601 format.
+        /// The time that the job created, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </summary>
+        /// <example>2019-08-08T08:00:00-07:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// The time that the job started, in ISO 8601 format.
+        /// The time that the job started, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </summary>
+        /// <example>2019-08-08T08:00:00-07:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime StartedAt { get; set; }
 
         /// <summary>
-        /// The time that the job finished, in ISO 8601 format.
+        /// The time that the job finished, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </summary>
+        /// <example>2019-08-08T08:00:00-07:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? CompletedAt { get; set; }
@@ -249,13 +255,16 @@ namespace G
         /// Example: success
         /// </param>
         /// <param name="createdAt">
-        /// The time that the job created, in ISO 8601 format.
+        /// The time that the job created, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </param>
         /// <param name="startedAt">
-        /// The time that the job started, in ISO 8601 format.
+        /// The time that the job started, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </param>
         /// <param name="completedAt">
-        /// The time that the job finished, in ISO 8601 format.
+        /// The time that the job finished, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
         /// </param>
         /// <param name="name">
         /// The name of the job.<br/>

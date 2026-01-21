@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant110? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
             string id,
             string name,
             object input,
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant110? cacheControl,
             global::G.BetaRequestToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

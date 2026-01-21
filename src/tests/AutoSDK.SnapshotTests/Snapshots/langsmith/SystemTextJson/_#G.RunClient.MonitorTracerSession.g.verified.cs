@@ -213,10 +213,12 @@ namespace G
         /// </param>
         /// <param name="groups"></param>
         /// <param name="interval">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":7,"minutes":0,"hours":0}
         /// </param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

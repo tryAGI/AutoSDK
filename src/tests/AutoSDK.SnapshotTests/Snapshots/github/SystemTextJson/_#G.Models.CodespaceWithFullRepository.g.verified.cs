@@ -10,9 +10,9 @@ namespace G
     public sealed partial class CodespaceWithFullRepository
     {
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -89,22 +89,26 @@ namespace G
         public required bool? Prebuild { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// Last known time this codespace was started.
+        /// Last known time this codespace was started.<br/>
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime LastUsedAt { get; set; }
@@ -233,8 +237,10 @@ namespace G
         public int? RetentionPeriodMinutes { get; set; }
 
         /// <summary>
-        /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+        /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"<br/>
+        /// Example: 2011-01-26T20:01:12Z
         /// </summary>
+        /// <example>2011-01-26T20:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("retention_expires_at")]
         public global::System.DateTime? RetentionExpiresAt { get; set; }
 
@@ -248,7 +254,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CodespaceWithFullRepository" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="name">
         /// Automatically generated name of this codespace.<br/>
@@ -282,10 +288,15 @@ namespace G
         /// Whether the codespace was created from a prebuild.<br/>
         /// Example: false
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
         /// <param name="lastUsedAt">
-        /// Last known time this codespace was started.
+        /// Last known time this codespace was started.<br/>
+        /// Example: 2011-01-26T19:01:12Z
         /// </param>
         /// <param name="state">
         /// State of this codespace.<br/>
@@ -339,7 +350,8 @@ namespace G
         /// Example: 60
         /// </param>
         /// <param name="retentionExpiresAt">
-        /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+        /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"<br/>
+        /// Example: 2011-01-26T20:01:12Z
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

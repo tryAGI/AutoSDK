@@ -35,6 +35,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DashboardCriteriaChartModel? Criteria { get; init; }
+#else
+        public global::G.DashboardCriteriaChartModel? Criteria { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Criteria))]
+#endif
+        public bool IsCriteria => Criteria != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DashboardDataCollectionChartModel? DataCollection { get; init; }
+#else
+        public global::G.DashboardDataCollectionChartModel? DataCollection { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataCollection))]
+#endif
+        public bool IsDataCollection => DataCollection != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChartsItem(global::G.DashboardCallSuccessChartModel value) => new ChartsItem((global::G.DashboardCallSuccessChartModel?)value);
 
         /// <summary>
@@ -53,23 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DashboardCriteriaChartModel? Criteria { get; init; }
-#else
-        public global::G.DashboardCriteriaChartModel? Criteria { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Criteria))]
-#endif
-        public bool IsCriteria => Criteria != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ChartsItem(global::G.DashboardCriteriaChartModel value) => new ChartsItem((global::G.DashboardCriteriaChartModel?)value);
 
         /// <summary>
@@ -84,23 +100,6 @@ namespace G
         {
             Criteria = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DashboardDataCollectionChartModel? DataCollection { get; init; }
-#else
-        public global::G.DashboardDataCollectionChartModel? DataCollection { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataCollection))]
-#endif
-        public bool IsDataCollection => DataCollection != null;
 
         /// <summary>
         /// 

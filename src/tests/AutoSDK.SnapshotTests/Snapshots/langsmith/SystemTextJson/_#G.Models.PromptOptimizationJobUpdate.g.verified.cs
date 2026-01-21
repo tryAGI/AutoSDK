@@ -13,7 +13,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EPromptOptimizationJobStatusJsonConverter))]
         public global::G.EPromptOptimizationJobStatus? Status { get; set; }
 
         /// <summary>

@@ -48,6 +48,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="startup_failure")]
         StartupFailure,
     }
@@ -71,6 +76,7 @@ namespace G
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut => "timed_out",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired => "action_required",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale => "stale",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.StartupFailure => "startup_failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -89,6 +95,7 @@ namespace G
                 "timed_out" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut,
                 "action_required" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired,
                 "stale" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "startup_failure" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.StartupFailure,
                 _ => null,
             };

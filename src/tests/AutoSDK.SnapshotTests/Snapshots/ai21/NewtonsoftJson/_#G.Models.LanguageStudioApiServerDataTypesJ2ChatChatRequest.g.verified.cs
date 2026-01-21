@@ -22,19 +22,19 @@ namespace G
         public string System { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
         public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presencePenalty")]
         public global::G.Penalty? PresencePenalty { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("countPenalty")]
         public global::G.Penalty? CountPenalty { get; set; }
@@ -46,7 +46,7 @@ namespace G
         public int? NumResults { get; set; }
 
         /// <summary>
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
@@ -64,7 +64,7 @@ namespace G
         public int? MinTokens { get; set; }
 
         /// <summary>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topP")]
         public double? TopP { get; set; }
@@ -94,14 +94,20 @@ namespace G
         /// messages
         /// </param>
         /// <param name="system"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="countPenalty"></param>
+        /// <param name="frequencyPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="countPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
         /// <param name="numResults">
         /// Default Value: 1
         /// </param>
         /// <param name="temperature">
-        /// Default Value: 0.7
+        /// Default Value: 0.7F
         /// </param>
         /// <param name="maxTokens">
         /// Default Value: 300
@@ -110,7 +116,7 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="topP">
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="topKReturn">
         /// Default Value: 0

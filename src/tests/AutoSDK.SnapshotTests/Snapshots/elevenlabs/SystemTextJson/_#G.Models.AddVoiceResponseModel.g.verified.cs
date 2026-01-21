@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"voice_id":"b38kUX8pkfYO2kHyqfFy"}
     /// </summary>
     public sealed partial class AddVoiceResponseModel
     {

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Tool
     {
         /// <summary>
-        /// 
+        /// Default Value: function
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Function Function { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ToolTypes? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolTypes? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Function Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,8 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
+        /// <param name="type">
+        /// Default Value: function
+        /// </param>
         /// <param name="function"></param>
-        /// <param name="type"></param>
         public Tool(
             global::G.Function function,
             global::G.ToolTypes? type)

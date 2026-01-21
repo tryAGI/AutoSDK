@@ -33,24 +33,6 @@ namespace G
         public bool IsAvailable => Available != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier value) => new AgentToolsItem((global::G.DependentAvailableAgentToolIdentifier?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.DependentAvailableAgentToolIdentifier?(AgentToolsItem @this) => @this.Available;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier? value)
-        {
-            Available = value;
-        }
-
-        /// <summary>
         /// A model that represents an tool dependent on a knowledge base/tools<br/>
         /// to which the user has no direct access.
         /// </summary>
@@ -67,6 +49,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unknown))]
 #endif
         public bool IsUnknown => Unknown != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier value) => new AgentToolsItem((global::G.DependentAvailableAgentToolIdentifier?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.DependentAvailableAgentToolIdentifier?(AgentToolsItem @this) => @this.Available;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentToolsItem(global::G.DependentAvailableAgentToolIdentifier? value)
+        {
+            Available = value;
+        }
 
         /// <summary>
         /// 

@@ -33,6 +33,22 @@ namespace G
         public bool IsBearer => Bearer != null;
 
         /// <summary>
+        /// Custom header-based authentication
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.HeaderAuth? Header { get; init; }
+#else
+        public global::G.HeaderAuth? Header { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Header))]
+#endif
+        public bool IsHeader => Header != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RemoteAuth(global::G.BearerAuth value) => new RemoteAuth((global::G.BearerAuth?)value);
@@ -49,23 +65,6 @@ namespace G
         {
             Bearer = value;
         }
-
-        /// <summary>
-        /// Custom header-based authentication
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.HeaderAuth? Header { get; init; }
-#else
-        public global::G.HeaderAuth? Header { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Header))]
-#endif
-        public bool IsHeader => Header != null;
 
         /// <summary>
         /// 

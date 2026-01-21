@@ -24,7 +24,7 @@ namespace G
         public required string PhoneNumberId { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: twilio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TelephonyProviderJsonConverter))]
@@ -112,7 +112,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumberId"></param>
-        /// <param name="phoneProvider"></param>
+        /// <param name="phoneProvider">
+        /// Default Value: twilio
+        /// </param>
         /// <param name="name"></param>
         /// <param name="agentId"></param>
         /// <param name="createdAtUnix"></param>

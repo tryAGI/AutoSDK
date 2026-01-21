@@ -13,17 +13,30 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            string datasetId,
-            global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes,
-            global::G.EmbedInputType inputType,
             string model,
+            string datasetId,
+            global::G.EmbedInputType inputType,
             string? name,
+            global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes,
             global::G.CreateEmbedJobRequestTruncate? truncate,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.CreateEmbedJobResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+        private global::System.CommandLine.Argument<string> Model { get; } = new(
+            name: "model")
+        {
+            Description = @"ID of the embedding model.
+
+Available models and corresponding embedding dimensions:
+
+- `embed-english-v3.0` : 1024
+- `embed-multilingual-v3.0` : 1024
+- `embed-english-light-v3.0` : 384
+- `embed-multilingual-light-v3.0` : 384",
+        };
 
         private global::System.CommandLine.Argument<string> DatasetId { get; } = new(
             name: "datasetId")
@@ -43,23 +56,16 @@ namespace G
 - `""image""`: Used for embeddings with image input.",
         };
 
-        private global::System.CommandLine.Argument<string> Model { get; } = new(
-            name: "model")
-        {
-            Description = @"ID of the embedding model.
-
-Available models and corresponding embedding dimensions:
-
-- `embed-english-v3.0` : 1024
-- `embed-multilingual-v3.0` : 1024
-- `embed-english-light-v3.0` : 384
-- `embed-multilingual-light-v3.0` : 384",
-        };
-
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
             Description = @"The name of the project that is making the request.",
+        };
+
+        private new global::System.CommandLine.Option<string?> Name { get; } = new(
+            name: "name")
+        {
+            Description = @"The name of the embed job.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.EmbeddingType>?> EmbeddingTypes { get; } = new(
@@ -72,12 +78,6 @@ Available models and corresponding embedding dimensions:
 * `""uint8""`: Use this when you want to get back unsigned int8 embeddings. Valid for v3 and newer model versions.
 * `""binary""`: Use this when you want to get back signed binary embeddings. Valid for v3 and newer model versions.
 * `""ubinary""`: Use this when you want to get back unsigned binary embeddings. Valid for v3 and newer model versions.",
-        };
-
-        private new global::System.CommandLine.Option<string?> Name { get; } = new(
-            name: "name")
-        {
-            Description = @"The name of the embed job.",
         };
 
         private global::System.CommandLine.Option<global::G.CreateEmbedJobRequestTruncate?> Truncate { get; } = new(
@@ -96,12 +96,12 @@ Passing `START` will discard the start of the input. `END` will discard the end 
             _client = client;
             _serviceProvider = serviceProvider;
 
+            Arguments.Add(Model);
             Arguments.Add(DatasetId);
             Arguments.Add(InputType);
-            Arguments.Add(Model);
             Options.Add(XClientName);
-            Options.Add(EmbeddingTypes);
             Options.Add(Name);
+            Options.Add(EmbeddingTypes);
             Options.Add(Truncate);
 
             Initialize();
@@ -114,32 +114,32 @@ Passing `START` will discard the start of the input. `END` will discard the end 
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var datasetId = parseResult.GetRequiredValue(DatasetId);
-            var embeddingTypes = parseResult.GetRequiredValue(EmbeddingTypes);
-            var inputType = parseResult.GetRequiredValue(InputType);
             var model = parseResult.GetRequiredValue(Model);
+            var datasetId = parseResult.GetRequiredValue(DatasetId);
+            var inputType = parseResult.GetRequiredValue(InputType);
             var name = parseResult.GetRequiredValue(Name);
+            var embeddingTypes = parseResult.GetRequiredValue(EmbeddingTypes);
             var truncate = parseResult.GetRequiredValue(Truncate);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                datasetId: datasetId,
-                embeddingTypes: embeddingTypes,
-                inputType: inputType,
                 model: model,
+                datasetId: datasetId,
+                inputType: inputType,
                 name: name,
+                embeddingTypes: embeddingTypes,
                 truncate: truncate,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.EmbedJobs.CreateEmbedJobAsync(
                 xClientName: xClientName,
-                datasetId: datasetId,
-                embeddingTypes: embeddingTypes,
-                inputType: inputType,
                 model: model,
+                datasetId: datasetId,
+                inputType: inputType,
                 name: name,
+                embeddingTypes: embeddingTypes,
                 truncate: truncate,
                 cancellationToken: cancellationToken);
 

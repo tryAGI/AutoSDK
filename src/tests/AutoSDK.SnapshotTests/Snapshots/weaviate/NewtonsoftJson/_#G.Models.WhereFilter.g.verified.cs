@@ -33,9 +33,9 @@ namespace G
 
         /// <summary>
         /// value as integer<br/>
-        /// Example: 2000L
+        /// Example: 2000
         /// </summary>
-        /// <example>2000L</example>
+        /// <example>2000</example>
         [global::Newtonsoft.Json.JsonProperty("valueInt")]
         public long? ValueInt { get; set; }
 
@@ -155,7 +155,7 @@ namespace G
         /// </param>
         /// <param name="valueInt">
         /// value as integer<br/>
-        /// Example: 2000L
+        /// Example: 2000
         /// </param>
         /// <param name="valueNumber">
         /// value as number/float<br/>

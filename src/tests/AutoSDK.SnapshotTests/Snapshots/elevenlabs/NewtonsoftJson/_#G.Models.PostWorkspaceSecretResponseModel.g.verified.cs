@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PostWorkspaceSecretResponseModelType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,13 +40,13 @@ namespace G
         /// <param name="secretId"></param>
         /// <param name="name"></param>
         public PostWorkspaceSecretResponseModel(
+            string type,
             string secretId,
-            string name,
-            global::G.PostWorkspaceSecretResponseModelType type)
+            string name)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SecretId = secretId ?? throw new global::System.ArgumentNullException(nameof(secretId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type;
         }
 
         /// <summary>

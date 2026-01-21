@@ -13,107 +13,106 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOutDataItemDiscriminatorJobType? JobType { get; }
+        public global::G.ModelListDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CompletionJobOut? Completion { get; init; }
+        public global::G.BaseModelCard? Base { get; init; }
 #else
-        public global::G.CompletionJobOut? Completion { get; }
+        public global::G.BaseModelCard? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completion))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsCompletion => Completion != null;
+        public bool IsBase => Base != null;
+
+        /// <summary>
+        /// Extra fields for fine-tuned models.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.FTModelCard? FineTuned { get; init; }
+#else
+        public global::G.FTModelCard? FineTuned { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::G.CompletionJobOut value) => new DataItem((global::G.CompletionJobOut?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
+#endif
+        public bool IsFineTuned => FineTuned != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DataItem(global::G.BaseModelCard value) => new DataItem((global::G.BaseModelCard?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CompletionJobOut?(DataItem @this) => @this.Completion;
+        public static implicit operator global::G.BaseModelCard?(DataItem @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
-        public DataItem(global::G.CompletionJobOut? value)
+        public DataItem(global::G.BaseModelCard? value)
         {
-            Completion = value;
+            Base = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ClassifierJobOut? Classifier { get; init; }
-#else
-        public global::G.ClassifierJobOut? Classifier { get; }
-#endif
+        public static implicit operator DataItem(global::G.FTModelCard value) => new DataItem((global::G.FTModelCard?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
-#endif
-        public bool IsClassifier => Classifier != null;
+        public static implicit operator global::G.FTModelCard?(DataItem @this) => @this.FineTuned;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::G.ClassifierJobOut value) => new DataItem((global::G.ClassifierJobOut?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ClassifierJobOut?(DataItem @this) => @this.Classifier;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataItem(global::G.ClassifierJobOut? value)
+        public DataItem(global::G.FTModelCard? value)
         {
-            Classifier = value;
+            FineTuned = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem(
-            global::G.JobsOutDataItemDiscriminatorJobType? jobType,
-            global::G.CompletionJobOut? completion,
-            global::G.ClassifierJobOut? classifier
+            global::G.ModelListDataItemDiscriminatorType? type,
+            global::G.BaseModelCard? @base,
+            global::G.FTModelCard? fineTuned
             )
         {
-            JobType = jobType;
+            Type = type;
 
-            Completion = completion;
-            Classifier = classifier;
+            Base = @base;
+            FineTuned = fineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Classifier as object ??
-            Completion as object 
+            FineTuned as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Completion?.ToString() ??
-            Classifier?.ToString() 
+            Base?.ToString() ??
+            FineTuned?.ToString() 
             ;
 
         /// <summary>
@@ -121,15 +120,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCompletion && !IsClassifier || !IsCompletion && IsClassifier;
+            return IsBase && !IsFineTuned || !IsBase && IsFineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CompletionJobOut?, TResult>? completion = null,
-            global::System.Func<global::G.ClassifierJobOut?, TResult>? classifier = null,
+            global::System.Func<global::G.BaseModelCard?, TResult>? @base = null,
+            global::System.Func<global::G.FTModelCard?, TResult>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -137,13 +136,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletion && completion != null)
+            if (IsBase && @base != null)
             {
-                return completion(Completion!);
+                return @base(Base!);
             }
-            else if (IsClassifier && classifier != null)
+            else if (IsFineTuned && fineTuned != null)
             {
-                return classifier(Classifier!);
+                return fineTuned(FineTuned!);
             }
 
             return default(TResult);
@@ -153,8 +152,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CompletionJobOut?>? completion = null,
-            global::System.Action<global::G.ClassifierJobOut?>? classifier = null,
+            global::System.Action<global::G.BaseModelCard?>? @base = null,
+            global::System.Action<global::G.FTModelCard?>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -162,13 +161,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletion)
+            if (IsBase)
             {
-                completion?.Invoke(Completion!);
+                @base?.Invoke(Base!);
             }
-            else if (IsClassifier)
+            else if (IsFineTuned)
             {
-                classifier?.Invoke(Classifier!);
+                fineTuned?.Invoke(FineTuned!);
             }
         }
 
@@ -179,10 +178,10 @@ namespace G
         {
             var fields = new object?[]
             {
-                Completion,
-                typeof(global::G.CompletionJobOut),
-                Classifier,
-                typeof(global::G.ClassifierJobOut),
+                Base,
+                typeof(global::G.BaseModelCard),
+                FineTuned,
+                typeof(global::G.FTModelCard),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -199,8 +198,8 @@ namespace G
         public bool Equals(DataItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CompletionJobOut?>.Default.Equals(Completion, other.Completion) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ClassifierJobOut?>.Default.Equals(Classifier, other.Classifier) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BaseModelCard?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned) 
                 ;
         }
 

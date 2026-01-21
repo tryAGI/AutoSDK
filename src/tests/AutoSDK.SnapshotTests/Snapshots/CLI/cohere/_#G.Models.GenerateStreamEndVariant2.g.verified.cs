@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
-        public global::G.FinishReason? FinishReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_finished")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IsFinished { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_finished")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsFinished { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -39,8 +39,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamEndVariant2" /> class.
         /// </summary>
-        /// <param name="finishReason"></param>
         /// <param name="isFinished"></param>
+        /// <param name="finishReason"></param>
         /// <param name="response"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -16,7 +16,7 @@ namespace G
         /// Default Value: user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionUserMessageRole? Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// the message content
@@ -49,7 +49,7 @@ namespace G
         /// <param name="name"></param>
         public ChatCompletionUserMessage(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>>> content,
-            global::G.ChatCompletionUserMessageRole? role,
+            string? role,
             string? name)
         {
             this.Content = content;

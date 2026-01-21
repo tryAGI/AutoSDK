@@ -35,6 +35,141 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AuthenticationError? AuthenticationError { get; init; }
+#else
+        public global::G.AuthenticationError? AuthenticationError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
+#endif
+        public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BillingError? BillingError { get; init; }
+#else
+        public global::G.BillingError? BillingError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
+#endif
+        public bool IsBillingError => BillingError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.PermissionError? PermissionError { get; init; }
+#else
+        public global::G.PermissionError? PermissionError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
+#endif
+        public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.NotFoundError? NotFoundError { get; init; }
+#else
+        public global::G.NotFoundError? NotFoundError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NotFoundError))]
+#endif
+        public bool IsNotFoundError => NotFoundError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RateLimitError? RateLimitError { get; init; }
+#else
+        public global::G.RateLimitError? RateLimitError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
+#endif
+        public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GatewayTimeoutError? TimeoutError { get; init; }
+#else
+        public global::G.GatewayTimeoutError? TimeoutError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
+#endif
+        public bool IsTimeoutError => TimeoutError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.APIError? ApiError { get; init; }
+#else
+        public global::G.APIError? ApiError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiError))]
+#endif
+        public bool IsApiError => ApiError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.OverloadedError? OverloadedError { get; init; }
+#else
+        public global::G.OverloadedError? OverloadedError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
+#endif
+        public bool IsOverloadedError => OverloadedError != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.InvalidRequestError value) => new Error2((global::G.InvalidRequestError?)value);
 
         /// <summary>
@@ -49,23 +184,6 @@ namespace G
         {
             InvalidRequestError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AuthenticationError? AuthenticationError { get; init; }
-#else
-        public global::G.AuthenticationError? AuthenticationError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
-#endif
-        public bool IsAuthenticationError => AuthenticationError != null;
 
         /// <summary>
         /// 
@@ -88,23 +206,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BillingError? BillingError { get; init; }
-#else
-        public global::G.BillingError? BillingError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
-#endif
-        public bool IsBillingError => BillingError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::G.BillingError value) => new Error2((global::G.BillingError?)value);
 
         /// <summary>
@@ -119,23 +220,6 @@ namespace G
         {
             BillingError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.PermissionError? PermissionError { get; init; }
-#else
-        public global::G.PermissionError? PermissionError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
-#endif
-        public bool IsPermissionError => PermissionError != null;
 
         /// <summary>
         /// 
@@ -158,23 +242,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.NotFoundError? NotFoundError { get; init; }
-#else
-        public global::G.NotFoundError? NotFoundError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NotFoundError))]
-#endif
-        public bool IsNotFoundError => NotFoundError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::G.NotFoundError value) => new Error2((global::G.NotFoundError?)value);
 
         /// <summary>
@@ -189,23 +256,6 @@ namespace G
         {
             NotFoundError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RateLimitError? RateLimitError { get; init; }
-#else
-        public global::G.RateLimitError? RateLimitError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
-#endif
-        public bool IsRateLimitError => RateLimitError != null;
 
         /// <summary>
         /// 
@@ -228,23 +278,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GatewayTimeoutError? TimeoutError { get; init; }
-#else
-        public global::G.GatewayTimeoutError? TimeoutError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
-#endif
-        public bool IsTimeoutError => TimeoutError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::G.GatewayTimeoutError value) => new Error2((global::G.GatewayTimeoutError?)value);
 
         /// <summary>
@@ -263,23 +296,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.APIError? ApiError { get; init; }
-#else
-        public global::G.APIError? ApiError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiError))]
-#endif
-        public bool IsApiError => ApiError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::G.APIError value) => new Error2((global::G.APIError?)value);
 
         /// <summary>
@@ -294,23 +310,6 @@ namespace G
         {
             ApiError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.OverloadedError? OverloadedError { get; init; }
-#else
-        public global::G.OverloadedError? OverloadedError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
-#endif
-        public bool IsOverloadedError => OverloadedError != null;
 
         /// <summary>
         /// 

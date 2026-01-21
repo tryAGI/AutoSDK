@@ -19,7 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);

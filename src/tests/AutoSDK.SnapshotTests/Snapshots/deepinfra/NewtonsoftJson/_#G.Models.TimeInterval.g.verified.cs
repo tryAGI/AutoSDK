@@ -16,7 +16,7 @@ namespace G
         public int? Fr { get; set; }
 
         /// <summary>
-        /// Default Value: 4000000000000
+        /// Default Value: 4000000000000L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to")]
         public int? To { get; set; }
@@ -34,7 +34,7 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="to">
-        /// Default Value: 4000000000000
+        /// Default Value: 4000000000000L
         /// </param>
         public TimeInterval(
             int? fr,

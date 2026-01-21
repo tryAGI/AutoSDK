@@ -13,8 +13,7 @@ namespace G
         /// Default Value: transfer_to_agent
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_tool_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TransferToAgentToolConfigSystemToolTypeJsonConverter))]
-        public global::G.TransferToAgentToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +40,7 @@ namespace G
 #endif
         public TransferToAgentToolConfig(
             global::System.Collections.Generic.IList<global::G.AgentTransfer> transfers,
-            global::G.TransferToAgentToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
             this.SystemToolType = systemToolType;

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"accepted":true,"date_unix":1714204800,"levenshtein_distance":2,"recording":{"mime_type":"audio/mpeg","recording_id":"CwhRBWXzGAHq8TQ4Fs17","size_bytes":1000000,"transcription":"Hello, how are you?","upload_date_unix":1714204800},"similarity":0.95,"text":"Hello, how are you?"}
     /// </summary>
     public sealed partial class VerificationAttemptResponseModel
     {
@@ -40,7 +40,7 @@ namespace G
         public double LevenshteinDistance { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The recording of the verification attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("recording")]
         public global::G.RecordingResponseModel? Recording { get; set; }
@@ -69,7 +69,9 @@ namespace G
         /// <param name="levenshteinDistance">
         /// The Levenshtein distance of the verification attempt.
         /// </param>
-        /// <param name="recording"></param>
+        /// <param name="recording">
+        /// The recording of the verification attempt.
+        /// </param>
         public VerificationAttemptResponseModel(
             string text,
             int dateUnix,

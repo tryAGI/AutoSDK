@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Configuration for a webhook that will be called by an LLM tool.
+    /// Configuration for a webhook that will be called by an LLM tool.<br/>
+    /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
     /// </summary>
     public sealed partial class WebhookToolApiSchemaConfigInput
     {
@@ -31,13 +32,13 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.LiteralJsonSchemaProperty>? PathParamsSchema { get; set; }
 
         /// <summary>
-        /// 
+        /// Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_params_schema")]
         public global::G.QueryParamsJsonSchema? QueryParamsSchema { get; set; }
 
         /// <summary>
-        /// 
+        /// Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_body_schema")]
         public global::G.ObjectJsonSchemaPropertyInput? RequestBodySchema { get; set; }
@@ -67,8 +68,12 @@ namespace G
         /// <param name="pathParamsSchema">
         /// Schema for path parameters, if any. The keys should match the placeholders in the URL.
         /// </param>
-        /// <param name="queryParamsSchema"></param>
-        /// <param name="requestBodySchema"></param>
+        /// <param name="queryParamsSchema">
+        /// Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types
+        /// </param>
+        /// <param name="requestBodySchema">
+        /// Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body
+        /// </param>
         /// <param name="requestHeaders">
         /// Headers that should be included in the request
         /// </param>

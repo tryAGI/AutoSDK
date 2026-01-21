@@ -19,9 +19,9 @@ namespace G
 
         /// <summary>
         /// The diversity bias. Higher values indicate more diversity.<br/>
-        /// Example: 0.3F
+        /// Example: 0.3
         /// </summary>
-        /// <example>0.3F</example>
+        /// <example>0.3</example>
         [global::Newtonsoft.Json.JsonProperty("diversity_bias")]
         public float? DiversityBias { get; set; }
 
@@ -68,7 +68,7 @@ namespace G
         /// </param>
         /// <param name="diversityBias">
         /// The diversity bias. Higher values indicate more diversity.<br/>
-        /// Example: 0.3F
+        /// Example: 0.3
         /// </param>
         /// <param name="limit">
         /// Specifies the maximum number of results to be returned after the reranking process. <br/>

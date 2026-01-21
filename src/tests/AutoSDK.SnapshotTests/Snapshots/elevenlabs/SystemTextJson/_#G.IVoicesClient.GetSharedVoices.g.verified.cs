@@ -14,70 +14,54 @@ namespace G
         /// Default Value: 30
         /// </param>
         /// <param name="category">
-        /// Voice category used for filtering<br/>
-        /// Example: professional
+        /// Voice category used for filtering
         /// </param>
         /// <param name="gender">
-        /// Gender used for filtering<br/>
-        /// Example: male
+        /// Gender used for filtering
         /// </param>
         /// <param name="age">
-        /// Age used for filtering<br/>
-        /// Example: young
+        /// Age used for filtering
         /// </param>
         /// <param name="accent">
-        /// Accent used for filtering<br/>
-        /// Example: american
+        /// Accent used for filtering
         /// </param>
         /// <param name="language">
-        /// Language used for filtering<br/>
-        /// Example: en
+        /// Language used for filtering
         /// </param>
         /// <param name="locale">
-        /// Locale used for filtering<br/>
-        /// Example: en-US
+        /// Locale used for filtering
         /// </param>
         /// <param name="search">
-        /// Search term used for filtering<br/>
-        /// Example: tiktok
+        /// Search term used for filtering
         /// </param>
         /// <param name="useCases">
-        /// Use-case used for filtering<br/>
-        /// Example: audiobook
+        /// Use-case used for filtering
         /// </param>
         /// <param name="descriptives">
-        /// Search term used for filtering<br/>
-        /// Example: tiktok
+        /// Search term used for filtering
         /// </param>
         /// <param name="featured">
         /// Filter featured voices<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="minNoticePeriodDays">
-        /// Filter voices with a minimum notice period of the given number of days.<br/>
-        /// Example: 30
+        /// Filter voices with a minimum notice period of the given number of days.
         /// </param>
         /// <param name="includeCustomRates">
-        /// Include/exclude voices with custom rates<br/>
-        /// Example: true
+        /// Include/exclude voices with custom rates
         /// </param>
         /// <param name="includeLiveModerated">
-        /// Include/exclude voices that are live moderated<br/>
-        /// Example: true
+        /// Include/exclude voices that are live moderated
         /// </param>
         /// <param name="readerAppEnabled">
         /// Filter voices that are enabled for the reader app<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="ownerId">
-        /// Filter voices by public owner ID<br/>
-        /// Example: 7c9fab611d9a0e1fb2e7448a0c294a8804efc2bcc324b0a366a5d5232b7d1532
+        /// Filter voices by public owner ID
         /// </param>
         /// <param name="sort">
-        /// Sort criteria<br/>
-        /// Example: created_date
+        /// Sort criteria
         /// </param>
         /// <param name="page">
         /// Default Value: 0
@@ -89,7 +73,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetLibraryVoicesResponseModel> GetSharedVoicesAsync(
             int? pageSize = default,
-            global::G.GetVoicesV1SharedVoicesGetCategory? category = default,
+            string? category = default,
             string? gender = default,
             string? age = default,
             string? accent = default,

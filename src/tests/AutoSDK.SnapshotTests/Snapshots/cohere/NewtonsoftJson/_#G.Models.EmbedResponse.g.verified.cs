@@ -35,6 +35,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.EmbedByTypeResponse? EmbeddingsByType { get; init; }
+#else
+        public global::G.EmbedByTypeResponse? EmbeddingsByType { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
+#endif
+        public bool IsEmbeddingsByType => EmbeddingsByType != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedResponse(global::G.EmbedFloatsResponse value) => new EmbedResponse((global::G.EmbedFloatsResponse?)value);
 
         /// <summary>
@@ -49,23 +65,6 @@ namespace G
         {
             EmbeddingsFloats = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.EmbedByTypeResponse? EmbeddingsByType { get; init; }
-#else
-        public global::G.EmbedByTypeResponse? EmbeddingsByType { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
-#endif
-        public bool IsEmbeddingsByType => EmbeddingsByType != null;
 
         /// <summary>
         /// 

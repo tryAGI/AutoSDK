@@ -13,7 +13,6 @@ namespace G
         /// Number of tokens in the generated completion.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int CompletionTokens { get; set; } = default!;
 
@@ -21,7 +20,6 @@ namespace G
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int PromptTokens { get; set; } = default!;
 
@@ -29,7 +27,6 @@ namespace G
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::Newtonsoft.Json.JsonProperty("total_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalTokens { get; set; } = default!;
 

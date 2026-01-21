@@ -206,21 +206,21 @@ namespace G
         /// <summary>
         /// Chat Classifications
         /// </summary>
+        /// <param name="model"></param>
         /// <param name="input">
         /// Chat to classify
         /// </param>
-        /// <param name="model"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ClassificationResponse> ChatClassificationsV1ChatClassificationsPostAsync(
-            global::G.ChatClassificationRequestInputs input,
             string model,
+            global::G.ChatClassificationRequestInputs input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ChatClassificationRequest
             {
-                Input = input,
                 Model = model,
+                Input = input,
             };
 
             return await ChatClassificationsV1ChatClassificationsPostAsync(

@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class EmbedJobGroupCommand : global::System.CommandLine.Command
     {
         public EmbedJobGroupCommand(
-            ListEmbedJobsCommand command0,
-            CreateEmbedJobCommand command1,
+            CreateEmbedJobCommand command0,
+            ListEmbedJobsCommand command1,
             GetEmbedJobCommand command2,
             CancelEmbedJobCommand command3)
             : base(

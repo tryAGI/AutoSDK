@@ -12,6 +12,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
+        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<double> Embedding { get; set; }
@@ -24,13 +31,6 @@ namespace G
         public required int Index { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
-        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,9 +39,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsResponseDataItem" /> class.
         /// </summary>
+        /// <param name="object"></param>
         /// <param name="embedding"></param>
         /// <param name="index"></param>
-        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

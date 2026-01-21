@@ -91,7 +91,7 @@ namespace G
             this.BillableMetricName = billableMetricName ?? throw new global::System.ArgumentNullException(nameof(billableMetricName));
             this.StartTimestamp = startTimestamp ?? throw new global::System.ArgumentNullException(nameof(startTimestamp));
             this.EndTimestamp = endTimestamp ?? throw new global::System.ArgumentNullException(nameof(endTimestamp));
-            this.Value = value;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
         }
 

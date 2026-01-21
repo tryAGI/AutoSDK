@@ -10,70 +10,22 @@ namespace G
     public sealed partial class CompletionFTModelOut
     {
         /// <summary>
-        /// Default Value: []
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("aliases")]
-        public global::System.Collections.Generic.IList<string>? Aliases { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Archived { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("capabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FTModelCapabilitiesOut Capabilities { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Created { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("job", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid Job { get; set; } = default!;
-
-        /// <summary>
-        /// Default Value: 32768
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_context_length")]
-        public int? MaxContextLength { get; set; }
-
-        /// <summary>
-        /// Default Value: completion
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model_type")]
-        public global::G.CompletionFTModelOutModelType? ModelType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
         public global::G.CompletionFTModelOutObject? Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Created { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -88,6 +40,54 @@ namespace G
         public string Root { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Archived { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("capabilities", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FTModelCapabilitiesOut Capabilities { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: 32768
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_context_length")]
+        public int? MaxContextLength { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("aliases")]
+        public global::System.Collections.Generic.IList<string>? Aliases { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("job", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid Job { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: completion
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model_type")]
+        public global::G.CompletionFTModelOutModelType? ModelType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -96,55 +96,55 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionFTModelOut" /> class.
         /// </summary>
-        /// <param name="aliases">
-        /// Default Value: []
-        /// </param>
-        /// <param name="archived"></param>
-        /// <param name="capabilities"></param>
-        /// <param name="created"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
-        /// <param name="job"></param>
-        /// <param name="maxContextLength">
-        /// Default Value: 32768
-        /// </param>
-        /// <param name="modelType">
-        /// Default Value: completion
-        /// </param>
-        /// <param name="name"></param>
         /// <param name="object">
         /// Default Value: model
         /// </param>
+        /// <param name="created"></param>
         /// <param name="ownedBy"></param>
         /// <param name="root"></param>
+        /// <param name="archived"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="capabilities"></param>
+        /// <param name="maxContextLength">
+        /// Default Value: 32768
+        /// </param>
+        /// <param name="aliases">
+        /// Default Value: []
+        /// </param>
+        /// <param name="job"></param>
+        /// <param name="modelType">
+        /// Default Value: completion
+        /// </param>
         public CompletionFTModelOut(
-            bool archived,
-            global::G.FTModelCapabilitiesOut capabilities,
-            int created,
             string id,
-            global::System.Guid job,
+            int created,
             string ownedBy,
             string root,
-            global::System.Collections.Generic.IList<string>? aliases,
+            bool archived,
+            global::G.FTModelCapabilitiesOut capabilities,
+            global::System.Guid job,
+            global::G.CompletionFTModelOutObject? @object,
+            string? name,
             string? description,
             int? maxContextLength,
-            global::G.CompletionFTModelOutModelType? modelType,
-            string? name,
-            global::G.CompletionFTModelOutObject? @object)
+            global::System.Collections.Generic.IList<string>? aliases,
+            global::G.CompletionFTModelOutModelType? modelType)
         {
-            this.Archived = archived;
-            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
-            this.Created = created;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Job = job;
+            this.Created = created;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
-            this.Aliases = aliases;
+            this.Archived = archived;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
+            this.Job = job;
+            this.Object = @object;
+            this.Name = name;
             this.Description = description;
             this.MaxContextLength = maxContextLength;
+            this.Aliases = aliases;
             this.ModelType = modelType;
-            this.Name = name;
-            this.Object = @object;
         }
 
         /// <summary>

@@ -55,9 +55,9 @@ namespace G
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </summary>
-        /// <example>1711471533L</example>
+        /// <example>1711471533</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -65,9 +65,9 @@ namespace G
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
+        /// Example: 1711471534
         /// </summary>
-        /// <example>1711471534L</example>
+        /// <example>1711471534</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -111,11 +111,11 @@ namespace G
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </param>
         /// <param name="lastUsedAt">
         /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
+        /// Example: 1711471534
         /// </param>
         /// <param name="owner"></param>
 #if NET7_0_OR_GREATER

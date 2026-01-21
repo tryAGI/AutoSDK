@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatDataMetrics
     {
         /// <summary>
-        /// The sum of all turns of valid eval examples.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_eval_turns")]
-        public double? NumEvalTurns { get; set; }
-
-        /// <summary>
         /// The sum of all turns of valid train examples.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_train_turns")]
         public double? NumTrainTurns { get; set; }
+
+        /// <summary>
+        /// The sum of all turns of valid eval examples.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_eval_turns")]
+        public double? NumEvalTurns { get; set; }
 
         /// <summary>
         /// The preamble of this dataset.
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatDataMetrics" /> class.
         /// </summary>
-        /// <param name="numEvalTurns">
-        /// The sum of all turns of valid eval examples.
-        /// </param>
         /// <param name="numTrainTurns">
         /// The sum of all turns of valid train examples.
+        /// </param>
+        /// <param name="numEvalTurns">
+        /// The sum of all turns of valid eval examples.
         /// </param>
         /// <param name="preamble">
         /// The preamble of this dataset.
@@ -49,12 +49,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatDataMetrics(
-            double? numEvalTurns,
             double? numTrainTurns,
+            double? numEvalTurns,
             string? preamble)
         {
-            this.NumEvalTurns = numEvalTurns;
             this.NumTrainTurns = numTrainTurns;
+            this.NumEvalTurns = numEvalTurns;
             this.Preamble = preamble;
         }
 

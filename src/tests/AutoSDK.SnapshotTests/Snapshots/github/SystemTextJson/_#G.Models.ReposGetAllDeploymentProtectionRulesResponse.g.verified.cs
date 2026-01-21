@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"$ref":"#/components/examples/deployment-protection-rules"}
     /// </summary>
     public sealed partial class ReposGetAllDeploymentProtectionRulesResponse
     {

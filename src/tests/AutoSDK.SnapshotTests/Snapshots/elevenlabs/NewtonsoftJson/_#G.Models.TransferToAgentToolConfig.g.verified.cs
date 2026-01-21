@@ -13,7 +13,7 @@ namespace G
         /// Default Value: transfer_to_agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
-        public global::G.TransferToAgentToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace G
         /// <param name="transfers"></param>
         public TransferToAgentToolConfig(
             global::System.Collections.Generic.IList<global::G.AgentTransfer> transfers,
-            global::G.TransferToAgentToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
             this.SystemToolType = systemToolType;

@@ -76,14 +76,16 @@ namespace G
         public global::G.SimpleUser User { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -145,8 +147,12 @@ namespace G
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
         /// <param name="issueUrl"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.<br/>

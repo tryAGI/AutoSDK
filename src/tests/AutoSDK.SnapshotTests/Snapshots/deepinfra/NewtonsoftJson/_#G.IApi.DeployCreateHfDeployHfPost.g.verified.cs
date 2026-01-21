@@ -22,12 +22,10 @@ namespace G
         /// </summary>
         /// <param name="xiApiKey"></param>
         /// <param name="modelName">
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </param>
         /// <param name="task">
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

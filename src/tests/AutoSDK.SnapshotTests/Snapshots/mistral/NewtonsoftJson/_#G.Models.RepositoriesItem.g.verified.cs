@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionDetailedJobOutRepositorieDiscriminatorType? Type { get; }
+        public global::G.CompletionJobOutRepositorieDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -31,7 +31,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
 #endif
         public bool IsGithub => Github != null;
-
         /// <summary>
         /// 
         /// </summary>
@@ -54,7 +53,7 @@ namespace G
         /// 
         /// </summary>
         public RepositoriesItem(
-            global::G.CompletionDetailedJobOutRepositorieDiscriminatorType? type,
+            global::G.CompletionJobOutRepositorieDiscriminatorType? type,
             global::G.GithubRepositoryOut? github
             )
         {

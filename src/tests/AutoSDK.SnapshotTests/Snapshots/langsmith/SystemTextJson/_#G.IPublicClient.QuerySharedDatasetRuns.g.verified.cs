@@ -26,9 +26,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType">
-        /// Enum for run types.
-        /// </param>
+        /// <param name="runType"></param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -40,9 +38,7 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType">
-        /// Enum for run data source types.
-        /// </param>
+        /// <param name="dataSourceType"></param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
         /// <param name="useExperimentalSearch">
@@ -56,7 +52,8 @@ namespace G
         /// Default Value: [id, name, run_type, start_time, end_time, status, error, extra, events, inputs, outputs, parent_run_id, manifest_id, manifest_s3_id, manifest, session_id, serialized, reference_example_id, reference_dataset_id, total_tokens, prompt_tokens, completion_tokens, total_cost, prompt_cost, completion_cost, price_model_id, first_token_time, trace_id, dotted_order, last_queued_at, feedback_stats, parent_run_ids, tags, in_dataset, app_path, share_token, trace_tier, trace_first_received_at, ttl_seconds, trace_upgrade, thread_id]
         /// </param>
         /// <param name="order">
-        /// Enum for run start date order.
+        /// Enum for run start date order.<br/>
+        /// Default Value: desc
         /// </param>
         /// <param name="skipPrevCursor">
         /// Default Value: false

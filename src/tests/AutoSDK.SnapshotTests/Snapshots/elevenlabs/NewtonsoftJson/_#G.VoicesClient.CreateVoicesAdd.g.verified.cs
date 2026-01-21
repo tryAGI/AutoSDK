@@ -236,20 +236,17 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
-        /// Example: John Smith
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </param>
         /// <param name="files">
         /// A list of file paths to audio recordings intended for voice cloning.
         /// </param>
         /// <param name="removeBackgroundNoise">
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="description">
-        /// A description of the voice.<br/>
-        /// Example: An old American male voice with a slight hoarseness in his throat. Perfect for news.
+        /// A description of the voice.
         /// </param>
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.

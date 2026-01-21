@@ -27,111 +27,111 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AspectRatio? Type0 { get; set; }
+        public global::G.Error? Type0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Assets? Type1 { get; set; }
+        public string? Type1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string? Type2 { get; set; }
+        public global::G.State? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Credits? Type3 { get; set; }
+        public global::G.ListGenerationResponse? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type4 { get; set; }
+        public bool? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Error? Type5 { get; set; }
+        public int? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Generation? Type6 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Generation>? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type7 { get; set; }
+        public global::G.Generation? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationType? Type8 { get; set; }
+        public global::System.Guid? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type9 { get; set; }
+        public global::G.GenerationType? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request? Type10 { get; set; }
+        public global::System.DateTime? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequest? Type11 { get; set; }
+        public global::G.Assets? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestGenerationType? Type12 { get; set; }
+        public global::G.Request? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Keyframes? Type13 { get; set; }
+        public global::G.GenerationRequest? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Keyframe? Type14 { get; set; }
+        public global::G.GenerationRequestGenerationType? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationReference? Type15 { get; set; }
+        public global::G.AspectRatio? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationReferenceType? Type16 { get; set; }
+        public global::G.Keyframes? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageReference? Type17 { get; set; }
+        public global::G.Keyframe? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageReferenceType? Type18 { get; set; }
+        public global::G.GenerationReference? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyframeDiscriminator? Type19 { get; set; }
+        public global::G.GenerationReferenceType? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyframeDiscriminatorType? Type20 { get; set; }
+        public global::G.ImageReference? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type21 { get; set; }
+        public global::G.ImageReferenceType? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationRequest? Type22 { get; set; }
+        public global::G.KeyframeDiscriminator? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationRequestCharacterRef? Type23 { get; set; }
+        public global::G.KeyframeDiscriminatorType? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageIdentity? Type24 { get; set; }
+        public global::G.ImageGenerationRequest? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type25 { get; set; }
+        public global::G.ImageGenerationRequestGenerationType? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationRequestGenerationType? Type26 { get; set; }
+        public global::G.ImageModel? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -147,38 +147,34 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageModel? Type30 { get; set; }
+        public global::G.ImageGenerationRequestCharacterRef? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyImageRef? Type31 { get; set; }
+        public global::G.ImageIdentity? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestDiscriminator? Type32 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestDiscriminatorGenerationType? Type33 { get; set; }
+        public global::G.ModifyImageRef? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.State? Type34 { get; set; }
+        public global::G.GenerationRequestDiscriminator? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListGenerationResponse? Type35 { get; set; }
+        public global::G.Credits? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type36 { get; set; }
+        public float? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Generation>? Type37 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.PingResponse? Type38 { get; set; }
+        public global::G.PingResponse? Type37 { get; set; }
     }
 }

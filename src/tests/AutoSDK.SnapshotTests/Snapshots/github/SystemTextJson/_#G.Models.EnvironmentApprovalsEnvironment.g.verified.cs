@@ -47,14 +47,18 @@ namespace G
         public string? HtmlUrl { get; set; }
 
         /// <summary>
-        /// The time that the environment was created, in ISO 8601 format.
+        /// The time that the environment was created, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The time that the environment was last updated, in ISO 8601 format.
+        /// The time that the environment was last updated, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -85,10 +89,12 @@ namespace G
         /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
         /// </param>
         /// <param name="createdAt">
-        /// The time that the environment was created, in ISO 8601 format.
+        /// The time that the environment was created, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
         /// <param name="updatedAt">
-        /// The time that the environment was last updated, in ISO 8601 format.
+        /// The time that the environment was last updated, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

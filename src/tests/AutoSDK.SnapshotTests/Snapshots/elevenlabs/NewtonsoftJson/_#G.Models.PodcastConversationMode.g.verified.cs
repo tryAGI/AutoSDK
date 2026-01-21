@@ -5,19 +5,21 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"conversation":{"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"},"type":"conversation"}
     /// </summary>
     public sealed partial class PodcastConversationMode
     {
         /// <summary>
         /// The type of podcast to create.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PodcastConversationModeType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The voice settings for the conversation.<br/>
+        /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
         /// </summary>
+        /// <example>{"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}</example>
         [global::Newtonsoft.Json.JsonProperty("conversation", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PodcastConversationModeData Conversation { get; set; } = default!;
 
@@ -33,13 +35,16 @@ namespace G
         /// <param name="type">
         /// The type of podcast to create.
         /// </param>
-        /// <param name="conversation"></param>
+        /// <param name="conversation">
+        /// The voice settings for the conversation.<br/>
+        /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
+        /// </param>
         public PodcastConversationMode(
-            global::G.PodcastConversationModeData conversation,
-            global::G.PodcastConversationModeType type)
+            string type,
+            global::G.PodcastConversationModeData conversation)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
-            this.Type = type;
         }
 
         /// <summary>

@@ -35,6 +35,107 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestImageBlock? Image { get; init; }
+#else
+        public global::G.BetaRequestImageBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestToolUseBlock? ToolUse { get; init; }
+#else
+        public global::G.BetaRequestToolUseBlock? ToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
+#endif
+        public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestToolResultBlock? ToolResult { get; init; }
+#else
+        public global::G.BetaRequestToolResultBlock? ToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
+#endif
+        public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestDocumentBlock? Document { get; init; }
+#else
+        public global::G.BetaRequestDocumentBlock? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestThinkingBlock? Thinking { get; init; }
+#else
+        public global::G.BetaRequestThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestTextBlock value) => new BetaInputContentBlock((global::G.BetaRequestTextBlock?)value);
 
         /// <summary>
@@ -49,23 +150,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestImageBlock? Image { get; init; }
-#else
-        public global::G.BetaRequestImageBlock? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -88,23 +172,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestToolUseBlock? ToolUse { get; init; }
-#else
-        public global::G.BetaRequestToolUseBlock? ToolUse { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
-#endif
-        public bool IsToolUse => ToolUse != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestToolUseBlock value) => new BetaInputContentBlock((global::G.BetaRequestToolUseBlock?)value);
 
         /// <summary>
@@ -119,23 +186,6 @@ namespace G
         {
             ToolUse = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestToolResultBlock? ToolResult { get; init; }
-#else
-        public global::G.BetaRequestToolResultBlock? ToolResult { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
-#endif
-        public bool IsToolResult => ToolResult != null;
 
         /// <summary>
         /// 
@@ -158,23 +208,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestDocumentBlock? Document { get; init; }
-#else
-        public global::G.BetaRequestDocumentBlock? Document { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
-#endif
-        public bool IsDocument => Document != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestDocumentBlock value) => new BetaInputContentBlock((global::G.BetaRequestDocumentBlock?)value);
 
         /// <summary>
@@ -193,23 +226,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestThinkingBlock? Thinking { get; init; }
-#else
-        public global::G.BetaRequestThinkingBlock? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestThinkingBlock value) => new BetaInputContentBlock((global::G.BetaRequestThinkingBlock?)value);
 
         /// <summary>
@@ -224,23 +240,6 @@ namespace G
         {
             Thinking = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; init; }
-#else
-        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
         /// 

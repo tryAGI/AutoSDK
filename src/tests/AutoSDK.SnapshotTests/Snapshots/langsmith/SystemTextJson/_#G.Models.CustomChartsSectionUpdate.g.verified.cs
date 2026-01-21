@@ -12,21 +12,21 @@ namespace G
     public sealed partial class CustomChartsSectionUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>))]
         public global::G.AnyOf<string, global::G.Missing>? Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>))]
-        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing, object>))]
+        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Missing>))]
@@ -41,15 +41,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomChartsSectionUpdate" /> class.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomChartsSectionUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing>? description,
+            global::G.AnyOf<string, global::G.Missing, object>? description,
             global::G.AnyOf<int?, global::G.Missing>? index)
         {
             this.Title = title;

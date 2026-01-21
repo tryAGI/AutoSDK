@@ -11,10 +11,8 @@ namespace G
     {
         /// <summary>
         /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
-        /// Example: Get the current weather in a given location
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
         /// </summary>
-        /// <example>Get the current weather in a given location</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -36,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant120? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,8 +47,7 @@ namespace G
         /// </summary>
         /// <param name="description">
         /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
-        /// Example: Get the current weather in a given location
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
         /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
@@ -65,7 +62,7 @@ namespace G
             string name,
             global::G.InputSchema inputSchema,
             string? description,
-            global::G.CacheControlEphemeral? cacheControl)
+            global::G.CacheControlVariant120? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));

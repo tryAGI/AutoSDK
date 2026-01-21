@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConfigOut> SetConfigPaymentConfigPostAsync(
             global::G.ConfigIn request,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConfigOut> SetConfigPaymentConfigPostAsync(
-            string? session = default,
+            object? session = default,
             double? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

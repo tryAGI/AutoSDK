@@ -31,8 +31,7 @@ namespace G
         /// Update Phone Number details by ID
         /// </summary>
         /// <param name="phoneNumberId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: TeaqRRdTcIfIu2i7BYfT
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -216,8 +215,7 @@ namespace G
         /// Update Phone Number details by ID
         /// </summary>
         /// <param name="phoneNumberId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: TeaqRRdTcIfIu2i7BYfT
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

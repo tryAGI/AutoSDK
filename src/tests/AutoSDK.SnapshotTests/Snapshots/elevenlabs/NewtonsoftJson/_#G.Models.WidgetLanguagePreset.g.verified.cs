@@ -10,7 +10,7 @@ namespace G
     public sealed partial class WidgetLanguagePreset
     {
         /// <summary>
-        /// 
+        /// The text contents for the selected language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_contents")]
         public global::G.WidgetTextContents? TextContents { get; set; }
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WidgetLanguagePreset" /> class.
         /// </summary>
-        /// <param name="textContents"></param>
+        /// <param name="textContents">
+        /// The text contents for the selected language
+        /// </param>
         public WidgetLanguagePreset(
             global::G.WidgetTextContents? textContents)
         {

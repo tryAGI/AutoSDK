@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("valid", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Valid { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
@@ -22,12 +28,6 @@ namespace G
         public string? OwnerId { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("valid", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Valid { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,9 +36,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
         /// </summary>
+        /// <param name="valid"></param>
         /// <param name="organizationId"></param>
         /// <param name="ownerId"></param>
-        /// <param name="valid"></param>
         public CheckAPIKeyResponse(
             bool valid,
             string? organizationId,

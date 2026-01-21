@@ -17,7 +17,7 @@ namespace G
         public required string Period { get; set; }
 
         /// <summary>
-        /// Inclusive, in ms
+        /// time interval in this period
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -57,7 +57,7 @@ namespace G
         /// YYYY.MM formatted period
         /// </param>
         /// <param name="interval">
-        /// Inclusive, in ms
+        /// time interval in this period
         /// </param>
         /// <param name="items"></param>
         /// <param name="totalCost">

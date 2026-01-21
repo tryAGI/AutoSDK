@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost
     {
         /// <summary>
-        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.<br/>
-        /// Example: [, ]
+        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.
         /// </summary>
-        /// <example>[, ]</example>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.DialogueInput> Inputs { get; set; } = default!;
 
@@ -25,24 +23,20 @@ namespace G
         public string? ModelId { get; set; }
 
         /// <summary>
-        /// 
+        /// Settings controlling the dialogue generation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings")]
         public global::G.ModelSettingsResponseModel? Settings { get; set; }
 
         /// <summary>
-        /// A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request<br/>
-        /// Example: []
+        /// A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request
         /// </summary>
-        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("pronunciation_dictionary_locators")]
         public global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorRequestModel>? PronunciationDictionaryLocators { get; set; }
 
         /// <summary>
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
-        /// Example: 12345
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </summary>
-        /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("seed")]
         public int? Seed { get; set; }
 
@@ -56,21 +50,20 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost" /> class.
         /// </summary>
         /// <param name="inputs">
-        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.<br/>
-        /// Example: [, ]
+        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.
         /// </param>
         /// <param name="modelId">
         /// Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.<br/>
         /// Default Value: eleven_v3
         /// </param>
-        /// <param name="settings"></param>
+        /// <param name="settings">
+        /// Settings controlling the dialogue generation.
+        /// </param>
         /// <param name="pronunciationDictionaryLocators">
-        /// A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request<br/>
-        /// Example: []
+        /// A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request
         /// </param>
         /// <param name="seed">
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
-        /// Example: 12345
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </param>
         public BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost(
             global::System.Collections.Generic.IList<global::G.DialogueInput> inputs,

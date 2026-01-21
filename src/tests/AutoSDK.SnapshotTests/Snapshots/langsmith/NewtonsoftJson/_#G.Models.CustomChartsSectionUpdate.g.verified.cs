@@ -12,19 +12,19 @@ namespace G
     public sealed partial class CustomChartsSectionUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public global::G.AnyOf<string, global::G.Missing>? Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public global::G.AnyOf<int?, global::G.Missing>? Index { get; set; }
@@ -38,12 +38,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomChartsSectionUpdate" /> class.
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
+        /// <param name="title">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="index">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         public CustomChartsSectionUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing>? description,
+            global::G.AnyOf<string, global::G.Missing, object>? description,
             global::G.AnyOf<int?, global::G.Missing>? index)
         {
             this.Title = title;

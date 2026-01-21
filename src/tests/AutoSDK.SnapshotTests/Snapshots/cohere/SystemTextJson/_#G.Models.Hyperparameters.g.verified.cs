@@ -23,6 +23,19 @@ namespace G
         public double? EarlyStoppingThreshold { get; set; }
 
         /// <summary>
+        /// The batch size is the number of training examples included in a single<br/>
+        /// training pass.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("train_batch_size")]
+        public int? TrainBatchSize { get; set; }
+
+        /// <summary>
+        /// The number of epochs to train for.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("train_epochs")]
+        public int? TrainEpochs { get; set; }
+
+        /// <summary>
         /// The learning rate to be used during training.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
@@ -43,29 +56,12 @@ namespace G
         public int? LoraRank { get; set; }
 
         /// <summary>
-        /// The possible combinations of LoRA modules to target.<br/>
-        ///  - LORA_TARGET_MODULES_UNSPECIFIED: Unspecified LoRA target modules.<br/>
-        ///  - LORA_TARGET_MODULES_QV: LoRA adapts the query and value matrices in transformer attention layers.<br/>
-        ///  - LORA_TARGET_MODULES_QKVO: LoRA adapts query, key, value, and output matrices in attention layers.<br/>
-        ///  - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN).<br/>
+        /// The combination of LoRA modules to target.<br/>
         /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lora_target_modules")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LoraTargetModulesJsonConverter))]
         public global::G.LoraTargetModules? LoraTargetModules { get; set; }
-
-        /// <summary>
-        /// The batch size is the number of training examples included in a single<br/>
-        /// training pass.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("train_batch_size")]
-        public int? TrainBatchSize { get; set; }
-
-        /// <summary>
-        /// The number of epochs to train for.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("train_epochs")]
-        public int? TrainEpochs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,6 +79,13 @@ namespace G
         /// <param name="earlyStoppingThreshold">
         /// How much the loss must improve to prevent early stopping.
         /// </param>
+        /// <param name="trainBatchSize">
+        /// The batch size is the number of training examples included in a single<br/>
+        /// training pass.
+        /// </param>
+        /// <param name="trainEpochs">
+        /// The number of epochs to train for.
+        /// </param>
         /// <param name="learningRate">
         /// The learning rate to be used during training.
         /// </param>
@@ -95,19 +98,8 @@ namespace G
         /// but may limit model flexibility.
         /// </param>
         /// <param name="loraTargetModules">
-        /// The possible combinations of LoRA modules to target.<br/>
-        ///  - LORA_TARGET_MODULES_UNSPECIFIED: Unspecified LoRA target modules.<br/>
-        ///  - LORA_TARGET_MODULES_QV: LoRA adapts the query and value matrices in transformer attention layers.<br/>
-        ///  - LORA_TARGET_MODULES_QKVO: LoRA adapts query, key, value, and output matrices in attention layers.<br/>
-        ///  - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN).<br/>
+        /// The combination of LoRA modules to target.<br/>
         /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
-        /// </param>
-        /// <param name="trainBatchSize">
-        /// The batch size is the number of training examples included in a single<br/>
-        /// training pass.
-        /// </param>
-        /// <param name="trainEpochs">
-        /// The number of epochs to train for.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -115,21 +107,21 @@ namespace G
         public Hyperparameters(
             int? earlyStoppingPatience,
             double? earlyStoppingThreshold,
+            int? trainBatchSize,
+            int? trainEpochs,
             double? learningRate,
             int? loraAlpha,
             int? loraRank,
-            global::G.LoraTargetModules? loraTargetModules,
-            int? trainBatchSize,
-            int? trainEpochs)
+            global::G.LoraTargetModules? loraTargetModules)
         {
             this.EarlyStoppingPatience = earlyStoppingPatience;
             this.EarlyStoppingThreshold = earlyStoppingThreshold;
+            this.TrainBatchSize = trainBatchSize;
+            this.TrainEpochs = trainEpochs;
             this.LearningRate = learningRate;
             this.LoraAlpha = loraAlpha;
             this.LoraRank = loraRank;
             this.LoraTargetModules = loraTargetModules;
-            this.TrainBatchSize = trainBatchSize;
-            this.TrainEpochs = trainEpochs;
         }
 
         /// <summary>

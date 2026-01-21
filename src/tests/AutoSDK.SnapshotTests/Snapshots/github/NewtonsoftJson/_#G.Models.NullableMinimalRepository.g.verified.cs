@@ -10,9 +10,9 @@ namespace G
     public sealed partial class NullableMinimalRepository
     {
         /// <summary>
-        /// Example: 1296269L
+        /// Example: 1296269
         /// </summary>
-        /// <example>1296269L</example>
+        /// <example>1296269</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -473,20 +473,23 @@ namespace G
         public string? Visibility { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("pushed_at")]
         public global::System.DateTime? PushedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:14:43Z
         /// </summary>
+        /// <example>2011-01-26T19:14:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -589,7 +592,7 @@ namespace G
         /// Initializes a new instance of the <see cref="NullableMinimalRepository" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: 1296269L
+        /// Example: 1296269
         /// </param>
         /// <param name="nodeId">
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
@@ -748,9 +751,15 @@ namespace G
         /// <param name="archived"></param>
         /// <param name="disabled"></param>
         /// <param name="visibility"></param>
-        /// <param name="pushedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="pushedAt">
+        /// Example: 2011-01-26T19:06:43Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:14:43Z
+        /// </param>
         /// <param name="permissions"></param>
         /// <param name="roleName">
         /// Example: admin

@@ -57,11 +57,10 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
-        /// <default>false</default>
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_404")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Custom404 { get; set; } = false;
+        public required bool Custom404 { get; set; }
 
         /// <summary>
         /// The web address the Page can be accessed from.<br/>

@@ -31,7 +31,7 @@ namespace G
         /// unix timestamp when the token should expire
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// only allow spending that much USD until the token becomes invalid
@@ -65,7 +65,7 @@ namespace G
             string apiTokenName,
             global::System.Collections.Generic.IList<string>? models,
             int? expiresDelta,
-            global::System.DateTimeOffset? expiresAt,
+            int? expiresAt,
             double? spendingLimit)
         {
             this.ApiTokenName = apiTokenName ?? throw new global::System.ArgumentNullException(nameof(apiTokenName));

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ChatCompletionChoicesDataItem.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -12,9 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
-        public global::G.FinishReason? FinishReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -25,8 +26,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::G.LogprobsPart? Logprobs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -37,14 +45,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<object, global::G.LogprobsPart>))]
+        public global::G.AllOf<object, global::G.LogprobsPart>? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,29 +58,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChoicesDataItem" /> class.
         /// </summary>
-        /// <param name="finishReason"></param>
-        /// <param name="index"></param>
-        /// <param name="logprobs"></param>
-        /// <param name="message"></param>
-        /// <param name="seed"></param>
         /// <param name="text"></param>
+        /// <param name="index"></param>
+        /// <param name="seed"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="message"></param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionChoicesDataItem(
-            global::G.FinishReason? finishReason,
+            string? text,
             int? index,
-            global::G.LogprobsPart? logprobs,
-            global::G.ChatCompletionMessage? message,
             int? seed,
-            string? text)
+            global::G.FinishReason? finishReason,
+            global::G.ChatCompletionMessage? message,
+            global::G.AllOf<object, global::G.LogprobsPart>? logprobs)
         {
-            this.FinishReason = finishReason;
-            this.Index = index;
-            this.Logprobs = logprobs;
-            this.Message = message;
-            this.Seed = seed;
             this.Text = text;
+            this.Index = index;
+            this.Seed = seed;
+            this.FinishReason = finishReason;
+            this.Message = message;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

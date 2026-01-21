@@ -20,8 +20,7 @@ namespace G
         /// Default Value: criteria
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DashboardCriteriaChartModelTypeJsonConverter))]
-        public global::G.DashboardCriteriaChartModelType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +49,7 @@ namespace G
         public DashboardCriteriaChartModel(
             string name,
             string criteriaId,
-            global::G.DashboardCriteriaChartModelType? type)
+            string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CriteriaId = criteriaId ?? throw new global::System.ArgumentNullException(nameof(criteriaId));

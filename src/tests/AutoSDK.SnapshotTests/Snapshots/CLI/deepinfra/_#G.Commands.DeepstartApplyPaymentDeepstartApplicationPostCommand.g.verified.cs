@@ -12,7 +12,7 @@ namespace G
         partial void Initialize();
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
-            string? session,
+            object? session,
             string? id,
             string? uid,
             string company,
@@ -59,7 +59,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<string?> Session { get; } = new(
+        private global::System.CommandLine.Option<object?> Session { get; } = new(
             name: "session")
         {
             Description = @"",

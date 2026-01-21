@@ -18,6 +18,10 @@ namespace G
         /// 
         /// </summary>
         RIGHT,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
     }
 
     /// <summary>
@@ -34,6 +38,7 @@ namespace G
             {
                 WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.LEFT => "LEFT",
                 WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.RIGHT => "RIGHT",
+                WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,6 +51,7 @@ namespace G
             {
                 "LEFT" => WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.LEFT,
                 "RIGHT" => WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.RIGHT,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookPullRequestReviewThreadResolvedThreadCommentStartSide.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 _ => null,
             };
         }

@@ -17,7 +17,7 @@ namespace G
         public required string Address { get; set; }
 
         /// <summary>
-        /// 
+        /// Protocol to use for SIP transport
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SIPTrunkTransportEnumJsonConverter))]
@@ -25,7 +25,7 @@ namespace G
         public required global::G.SIPTrunkTransportEnum Transport { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether or not to encrypt media (data layer).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_encryption")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SIPMediaEncryptionEnumJsonConverter))]
@@ -70,8 +70,12 @@ namespace G
         /// <param name="address">
         /// Hostname or IP the SIP INVITE is sent to
         /// </param>
-        /// <param name="transport"></param>
-        /// <param name="mediaEncryption"></param>
+        /// <param name="transport">
+        /// Protocol to use for SIP transport
+        /// </param>
+        /// <param name="mediaEncryption">
+        /// Whether or not to encrypt media (data layer).
+        /// </param>
         /// <param name="headers">
         /// SIP headers for INVITE request
         /// </param>

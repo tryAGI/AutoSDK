@@ -10,26 +10,14 @@ namespace G
     public sealed partial class OpenAITextToSpeechIn
     {
         /// <summary>
-        /// model name<br/>
-        /// Example: deepinfra/tts
+        /// model name
         /// </summary>
-        /// <example>deepinfra/tts</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// Text to convert to speech<br/>
-        /// Example: I'm beginnin' to feel like a Rap God, Rap God<br/>
-        /// All my people from the front to the back nod, back nod<br/>
-        /// Now, who thinks their arms are long enough to slap box, slap box?<br/>
-        /// They said I rap like a robot, so call me Rap-bot
+        /// Text to convert to speech
         /// </summary>
-        /// <example>
-        /// I'm beginnin' to feel like a Rap God, Rap God<br/>
-        /// All my people from the front to the back nod, back nod<br/>
-        /// Now, who thinks their arms are long enough to slap box, slap box?<br/>
-        /// They said I rap like a robot, so call me Rap-bot
-        /// </example>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
         public string Input { get; set; } = default!;
 
@@ -40,17 +28,15 @@ namespace G
         public string? Voice { get; set; }
 
         /// <summary>
-        /// Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.<br/>
-        /// Default Value: wav<br/>
-        /// Example: mp3
+        /// response format for the speech<br/>
+        /// Default Value: wav
         /// </summary>
-        /// <example>mp3</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.TtsResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// speed of the speech<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
         public double? Speed { get; set; }
@@ -71,27 +57,21 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAITextToSpeechIn" /> class.
         /// </summary>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: deepinfra/tts
+        /// model name
         /// </param>
         /// <param name="input">
-        /// Text to convert to speech<br/>
-        /// Example: I'm beginnin' to feel like a Rap God, Rap God<br/>
-        /// All my people from the front to the back nod, back nod<br/>
-        /// Now, who thinks their arms are long enough to slap box, slap box?<br/>
-        /// They said I rap like a robot, so call me Rap-bot
+        /// Text to convert to speech
         /// </param>
         /// <param name="voice">
         /// Preset voices to use for the speech.
         /// </param>
         /// <param name="responseFormat">
-        /// Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.<br/>
-        /// Default Value: wav<br/>
-        /// Example: mp3
+        /// response format for the speech<br/>
+        /// Default Value: wav
         /// </param>
         /// <param name="speed">
         /// speed of the speech<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="extraBody">
         /// Extra body parameters for the model.

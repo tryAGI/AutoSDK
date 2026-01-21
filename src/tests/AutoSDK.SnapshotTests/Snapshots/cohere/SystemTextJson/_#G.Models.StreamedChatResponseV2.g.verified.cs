@@ -33,24 +33,6 @@ namespace G
         public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::G.ChatMessageStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatMessageStartEvent?(StreamedChatResponseV2 @this) => @this.MessageStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatMessageStartEvent? value)
-        {
-            MessageStart = value;
-        }
-
-        /// <summary>
         /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -66,24 +48,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentStart))]
 #endif
         public bool IsContentStart => ContentStart != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentStartEvent value) => new StreamedChatResponseV2((global::G.ChatContentStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatContentStartEvent?(StreamedChatResponseV2 @this) => @this.ContentStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatContentStartEvent? value)
-        {
-            ContentStart = value;
-        }
 
         /// <summary>
         /// A streamed delta event which contains a delta of chat text content.
@@ -103,24 +67,6 @@ namespace G
         public bool IsContentDelta => ContentDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatContentDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatContentDeltaEvent?(StreamedChatResponseV2 @this) => @this.ContentDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatContentDeltaEvent? value)
-        {
-            ContentDelta = value;
-        }
-
-        /// <summary>
         /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -136,24 +82,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentEnd))]
 #endif
         public bool IsContentEnd => ContentEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatContentEndEvent value) => new StreamedChatResponseV2((global::G.ChatContentEndEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatContentEndEvent?(StreamedChatResponseV2 @this) => @this.ContentEnd;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatContentEndEvent? value)
-        {
-            ContentEnd = value;
-        }
 
         /// <summary>
         /// A streamed event which contains a delta of tool plan text.
@@ -173,24 +101,6 @@ namespace G
         public bool IsToolPlanDelta => ToolPlanDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolPlanDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatToolPlanDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolPlanDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent? value)
-        {
-            ToolPlanDelta = value;
-        }
-
-        /// <summary>
         /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -206,24 +116,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallStart))]
 #endif
         public bool IsToolCallStart => ToolCallStart != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallStartEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatToolCallStartEvent?(StreamedChatResponseV2 @this) => @this.ToolCallStart;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatToolCallStartEvent? value)
-        {
-            ToolCallStart = value;
-        }
 
         /// <summary>
         /// A streamed event delta which signifies a delta in tool call arguments.
@@ -243,24 +135,6 @@ namespace G
         public bool IsToolCallDelta => ToolCallDelta != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatToolCallDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolCallDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent? value)
-        {
-            ToolCallDelta = value;
-        }
-
-        /// <summary>
         /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -276,24 +150,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCallEnd))]
 #endif
         public bool IsToolCallEnd => ToolCallEnd != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallEndEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatToolCallEndEvent?(StreamedChatResponseV2 @this) => @this.ToolCallEnd;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StreamedChatResponseV2(global::G.ChatToolCallEndEvent? value)
-        {
-            ToolCallEnd = value;
-        }
 
         /// <summary>
         /// A streamed event which signifies that the chat message has ended.
@@ -315,6 +171,166 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatDebugEvent? Debug { get; init; }
+#else
+        public global::G.ChatDebugEvent? Debug { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
+#endif
+        public bool IsDebug => Debug != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatMessageStartEvent value) => new StreamedChatResponseV2((global::G.ChatMessageStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatMessageStartEvent?(StreamedChatResponseV2 @this) => @this.MessageStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatMessageStartEvent? value)
+        {
+            MessageStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentStartEvent value) => new StreamedChatResponseV2((global::G.ChatContentStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatContentStartEvent?(StreamedChatResponseV2 @this) => @this.ContentStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatContentStartEvent? value)
+        {
+            ContentStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatContentDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatContentDeltaEvent?(StreamedChatResponseV2 @this) => @this.ContentDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatContentDeltaEvent? value)
+        {
+            ContentDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatContentEndEvent value) => new StreamedChatResponseV2((global::G.ChatContentEndEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatContentEndEvent?(StreamedChatResponseV2 @this) => @this.ContentEnd;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatContentEndEvent? value)
+        {
+            ContentEnd = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolPlanDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatToolPlanDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolPlanDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatToolPlanDeltaEvent? value)
+        {
+            ToolPlanDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallStartEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatToolCallStartEvent?(StreamedChatResponseV2 @this) => @this.ToolCallStart;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatToolCallStartEvent? value)
+        {
+            ToolCallStart = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatToolCallDeltaEvent?(StreamedChatResponseV2 @this) => @this.ToolCallDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatToolCallDeltaEvent? value)
+        {
+            ToolCallDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallEndEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatToolCallEndEvent?(StreamedChatResponseV2 @this) => @this.ToolCallEnd;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StreamedChatResponseV2(global::G.ChatToolCallEndEvent? value)
+        {
+            ToolCallEnd = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatMessageEndEvent value) => new StreamedChatResponseV2((global::G.ChatMessageEndEvent?)value);
 
         /// <summary>
@@ -329,23 +345,6 @@ namespace G
         {
             MessageEnd = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatDebugEvent? Debug { get; init; }
-#else
-        public global::G.ChatDebugEvent? Debug { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Debug))]
-#endif
-        public bool IsDebug => Debug != null;
 
         /// <summary>
         /// 

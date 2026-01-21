@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"can_be_downloaded":true,"chapter_id":"aw1NgEzBg83R7vgmiJt6","conversion_progress":0.5,"last_conversion_date_unix":1714204800,"last_conversion_error":"Error message","name":"Chapter 1","state":"converting","statistics":{"characters_converted":500,"characters_unconverted":1000,"paragraphs_converted":20,"paragraphs_unconverted":10}}
     /// </summary>
     public sealed partial class ChapterWithContentResponseModel
     {
@@ -46,7 +46,7 @@ namespace G
         public global::G.ChapterWithContentResponseModelState State { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The statistics of the chapter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statistics")]
         public global::G.ChapterStatisticsResponseModel? Statistics { get; set; }
@@ -90,7 +90,9 @@ namespace G
         /// <param name="state">
         /// The state of the chapter.
         /// </param>
-        /// <param name="statistics"></param>
+        /// <param name="statistics">
+        /// The statistics of the chapter.
+        /// </param>
         /// <param name="lastConversionError">
         /// The last conversion error of the chapter.
         /// </param>

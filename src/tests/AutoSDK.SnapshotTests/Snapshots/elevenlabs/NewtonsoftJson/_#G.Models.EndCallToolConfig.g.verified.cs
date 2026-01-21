@@ -13,7 +13,7 @@ namespace G
         /// Default Value: end_call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
-        public global::G.EndCallToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Default Value: end_call
         /// </param>
         public EndCallToolConfig(
-            global::G.EndCallToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.SystemToolType = systemToolType;
         }

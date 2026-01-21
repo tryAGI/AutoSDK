@@ -138,8 +138,10 @@ namespace G
         public string Language { get; set; } = default!;
 
         /// <summary>
-        /// The time at which the assignment is due.
+        /// The time at which the assignment is due.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("deadline", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? Deadline { get; set; } = default!;
 
@@ -229,7 +231,8 @@ namespace G
         /// Example: elixir
         /// </param>
         /// <param name="deadline">
-        /// The time at which the assignment is due.
+        /// The time at which the assignment is due.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </param>
         /// <param name="starterCodeRepository">
         /// A GitHub repository view for Classroom

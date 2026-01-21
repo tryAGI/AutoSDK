@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
             int? offset,
             int? limit,
             bool? preview,
-            global::G.QueryExampleSchemaWithRunsFormat? format,
+            string? format,
             global::System.Guid? comparativeExperimentId,
             global::G.SortParamsForRunsComparisonView? sortParams,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)

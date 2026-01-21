@@ -5,66 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// The type of Studio project to create.<br/>
-    /// Example: book
+    /// The type of Studio project to create.
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum BodyAddProjectV1ProjectsAddPostSourceType
+    public sealed partial class BodyAddProjectV1ProjectsAddPostSourceType
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="blank")]
-        Blank,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="book")]
-        Book,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="article")]
-        Article,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="genfm")]
-        Genfm,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class BodyAddProjectV1ProjectsAddPostSourceTypeExtensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this BodyAddProjectV1ProjectsAddPostSourceType value)
-        {
-            return value switch
-            {
-                BodyAddProjectV1ProjectsAddPostSourceType.Blank => "blank",
-                BodyAddProjectV1ProjectsAddPostSourceType.Book => "book",
-                BodyAddProjectV1ProjectsAddPostSourceType.Article => "article",
-                BodyAddProjectV1ProjectsAddPostSourceType.Genfm => "genfm",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static BodyAddProjectV1ProjectsAddPostSourceType? ToEnum(string value)
-        {
-            return value switch
-            {
-                "blank" => BodyAddProjectV1ProjectsAddPostSourceType.Blank,
-                "book" => BodyAddProjectV1ProjectsAddPostSourceType.Book,
-                "article" => BodyAddProjectV1ProjectsAddPostSourceType.Article,
-                "genfm" => BodyAddProjectV1ProjectsAddPostSourceType.Genfm,
-                _ => null,
-            };
-        }
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

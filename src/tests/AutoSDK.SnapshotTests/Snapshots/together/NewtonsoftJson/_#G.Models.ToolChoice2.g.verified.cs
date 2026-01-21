@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolChoiceFunction Function { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Index { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ToolChoiceType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolChoiceType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ToolChoiceFunction Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,19 +42,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoice2" /> class.
         /// </summary>
-        /// <param name="function"></param>
-        /// <param name="id"></param>
         /// <param name="index"></param>
+        /// <param name="id"></param>
         /// <param name="type"></param>
+        /// <param name="function"></param>
         public ToolChoice2(
-            global::G.ToolChoiceFunction function,
-            string id,
             double index,
+            string id,
+            global::G.ToolChoiceFunction function,
             global::G.ToolChoiceType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Index = index;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
         }
 

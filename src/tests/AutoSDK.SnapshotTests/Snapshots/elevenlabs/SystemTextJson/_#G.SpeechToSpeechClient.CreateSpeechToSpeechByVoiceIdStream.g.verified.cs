@@ -12,7 +12,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string voiceId,
             ref bool? enableLogging,
-            ref int? optimizeStreamingLatency,
+            int? optimizeStreamingLatency,
             ref global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat,
             ref string? xiApiKey,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request);
@@ -39,8 +39,7 @@ namespace G
         /// Stream audio from one voice to another. Maintain full control over emotion, timing and delivery.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
         /// </param>
         /// <param name="enableLogging">
         /// When enable_logging is set to false zero retention mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Zero retention mode may only be used by enterprise customers.<br/>
@@ -82,7 +81,7 @@ namespace G
                 httpClient: HttpClient,
                 voiceId: ref voiceId,
                 enableLogging: ref enableLogging,
-                optimizeStreamingLatency: ref optimizeStreamingLatency,
+                optimizeStreamingLatency: optimizeStreamingLatency,
                 outputFormat: ref outputFormat,
                 xiApiKey: ref xiApiKey,
                 request: request);
@@ -168,7 +167,7 @@ namespace G
             if (request.FileFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat}"),
                     name: "file_format");
             }
             __httpRequest.Content = __httpRequestContent;
@@ -303,8 +302,7 @@ namespace G
         /// Stream audio from one voice to another. Maintain full control over emotion, timing and delivery.
         /// </summary>
         /// <param name="voiceId">
-        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
         /// </param>
         /// <param name="enableLogging">
         /// When enable_logging is set to false zero retention mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Zero retention mode may only be used by enterprise customers.<br/>
@@ -340,18 +338,15 @@ namespace G
         /// Voice settings overriding stored settings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.
         /// </param>
         /// <param name="seed">
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
-        /// Example: 12345
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </param>
         /// <param name="removeBackgroundNoise">
         /// If set, will remove the background noise from your audio input using our audio isolation model. Only applies to Voice Changer.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="fileFormat">
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -367,7 +362,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat = default,
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost

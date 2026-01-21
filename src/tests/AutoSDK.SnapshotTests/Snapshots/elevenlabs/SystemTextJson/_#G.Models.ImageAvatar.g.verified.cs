@@ -14,8 +14,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageAvatarTypeJsonConverter))]
-        public global::G.ImageAvatarType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The URL of the avatar
@@ -43,7 +42,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageAvatar(
-            global::G.ImageAvatarType? type,
+            string? type,
             string? url)
         {
             this.Type = type;

@@ -28,7 +28,7 @@ namespace G
         public global::System.Guid? ParentRun { get; set; }
 
         /// <summary>
-        /// Enum for run types.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
         public global::G.RunTypeEnum? RunType { get; set; }
@@ -100,7 +100,7 @@ namespace G
         public bool? IsRoot { get; set; }
 
         /// <summary>
-        /// Enum for run data source types.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_source_type")]
         public global::G.RunsFilterDataSourceTypeEnum? DataSourceType { get; set; }
@@ -124,7 +124,7 @@ namespace G
         public bool? UseExperimentalSearch { get; set; }
 
         /// <summary>
-        /// Group by param for run stats.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_by")]
         public global::G.RunStatsGroupBy? GroupBy { get; set; }
@@ -141,9 +141,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType">
-        /// Enum for run types.
-        /// </param>
+        /// <param name="runType"></param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -155,17 +153,13 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType">
-        /// Enum for run data source types.
-        /// </param>
+        /// <param name="dataSourceType"></param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="groupBy"></param>
         public RunStatsQueryParams(
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? trace,

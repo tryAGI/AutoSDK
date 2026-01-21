@@ -31,7 +31,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientCredentials))]
 #endif
         public bool IsClientCredentials => ClientCredentials != null;
-
         /// <summary>
         /// 
         /// </summary>

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant17? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
 #endif
         public BetaRequestImageBlock(
             global::G.Source2 source,
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant17? cacheControl,
             global::G.BetaRequestImageBlockType type)
         {
             this.Source = source;

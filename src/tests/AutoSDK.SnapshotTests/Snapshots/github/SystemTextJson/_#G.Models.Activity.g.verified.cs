@@ -53,8 +53,10 @@ namespace G
         public required string Ref { get; set; }
 
         /// <summary>
-        /// The time when the activity occurred.
+        /// The time when the activity occurred.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime Timestamp { get; set; }
@@ -104,7 +106,8 @@ namespace G
         /// Example: refs/heads/main
         /// </param>
         /// <param name="timestamp">
-        /// The time when the activity occurred.
+        /// The time when the activity occurred.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </param>
         /// <param name="activityType">
         /// The type of the activity that was performed.<br/>

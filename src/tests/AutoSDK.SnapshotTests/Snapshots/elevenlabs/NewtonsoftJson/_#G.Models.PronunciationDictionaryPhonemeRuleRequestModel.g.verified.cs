@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"alphabet":"ipa","phoneme":"/\u02C8ta\u026A.l\u00E6nd/","string_to_replace":"Thailand","type":"phoneme"}
     /// </summary>
     public sealed partial class PronunciationDictionaryPhonemeRuleRequestModel
     {
@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The type of the rule.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PronunciationDictionaryPhonemeRuleRequestModelType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// The phoneme rule.
@@ -56,14 +56,14 @@ namespace G
         /// </param>
         public PronunciationDictionaryPhonemeRuleRequestModel(
             string stringToReplace,
+            string type,
             string phoneme,
-            string alphabet,
-            global::G.PronunciationDictionaryPhonemeRuleRequestModelType type)
+            string alphabet)
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
             this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
-            this.Type = type;
         }
 
         /// <summary>

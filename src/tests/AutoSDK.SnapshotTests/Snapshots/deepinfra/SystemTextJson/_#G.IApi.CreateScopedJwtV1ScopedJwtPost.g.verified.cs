@@ -41,7 +41,7 @@ namespace G
             string? xiApiKey = default,
             global::System.Collections.Generic.IList<string>? models = default,
             int? expiresDelta = default,
-            global::System.DateTimeOffset? expiresAt = default,
+            int? expiresAt = default,
             double? spendingLimit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

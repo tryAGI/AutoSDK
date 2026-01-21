@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetPhoneNumberTwilioResponseModel
     {
@@ -31,7 +31,7 @@ namespace G
         public required string PhoneNumberId { get; set; }
 
         /// <summary>
-        /// 
+        /// The agent that is assigned to the phone number
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigned_agent")]
         public global::G.PhoneNumberAgentInfo? AssignedAgent { get; set; }
@@ -41,8 +41,7 @@ namespace G
         /// Default Value: twilio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetPhoneNumberTwilioResponseModelProviderJsonConverter))]
-        public global::G.GetPhoneNumberTwilioResponseModelProvider? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +61,9 @@ namespace G
         /// <param name="phoneNumberId">
         /// The ID of the phone number
         /// </param>
-        /// <param name="assignedAgent"></param>
+        /// <param name="assignedAgent">
+        /// The agent that is assigned to the phone number
+        /// </param>
         /// <param name="provider">
         /// Phone provider<br/>
         /// Default Value: twilio
@@ -75,7 +76,7 @@ namespace G
             string label,
             string phoneNumberId,
             global::G.PhoneNumberAgentInfo? assignedAgent,
-            global::G.GetPhoneNumberTwilioResponseModelProvider? provider)
+            string? provider)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));

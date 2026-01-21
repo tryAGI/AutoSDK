@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// A JSON schema object describing the parameters of the function.
     /// </summary>
     public sealed partial class FunctionToolParameters2
     {

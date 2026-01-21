@@ -10,10 +10,10 @@ namespace G
     public sealed partial class EventOut
     {
         /// <summary>
-        /// The UNIX timestamp (in seconds) of the event.
+        /// The name of the event.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -22,10 +22,10 @@ namespace G
         public object? Data { get; set; }
 
         /// <summary>
-        /// The name of the event.
+        /// The UNIX timestamp (in seconds) of the event.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,20 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EventOut" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The UNIX timestamp (in seconds) of the event.
-        /// </param>
-        /// <param name="data"></param>
         /// <param name="name">
         /// The name of the event.
         /// </param>
+        /// <param name="data"></param>
+        /// <param name="createdAt">
+        /// The UNIX timestamp (in seconds) of the event.
+        /// </param>
         public EventOut(
-            global::System.DateTimeOffset createdAt,
             string name,
+            global::System.DateTimeOffset createdAt,
             object? data)
         {
-            this.CreatedAt = createdAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
             this.Data = data;
         }
 

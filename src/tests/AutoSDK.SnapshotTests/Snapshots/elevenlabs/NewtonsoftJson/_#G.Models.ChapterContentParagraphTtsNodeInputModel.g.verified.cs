@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChapterContentParagraphTtsNodeInputModelType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,13 +40,13 @@ namespace G
         /// <param name="text"></param>
         /// <param name="voiceId"></param>
         public ChapterContentParagraphTtsNodeInputModel(
+            string type,
             string text,
-            string voiceId,
-            global::G.ChapterContentParagraphTtsNodeInputModelType type)
+            string voiceId)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
-            this.Type = type;
         }
 
         /// <summary>

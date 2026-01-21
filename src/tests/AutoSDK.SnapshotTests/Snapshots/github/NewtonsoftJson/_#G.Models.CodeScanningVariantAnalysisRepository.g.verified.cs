@@ -47,8 +47,9 @@ namespace G
         public int StargazersCount { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:14:43Z
         /// </summary>
+        /// <example>2011-01-26T19:14:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
@@ -79,7 +80,9 @@ namespace G
         /// <param name="stargazersCount">
         /// Example: 80
         /// </param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:14:43Z
+        /// </param>
         public CodeScanningVariantAnalysisRepository(
             int id,
             string name,

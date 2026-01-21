@@ -40,7 +40,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: runs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.FilterViewType? Type { get; set; }
@@ -83,7 +83,9 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// Default Value: runs
+        /// </param>
         /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="createdAt"></param>

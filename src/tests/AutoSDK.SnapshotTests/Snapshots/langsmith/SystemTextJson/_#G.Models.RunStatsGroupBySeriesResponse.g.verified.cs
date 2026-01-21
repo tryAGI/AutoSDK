@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("set_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStatsGroupBySeriesResponseSetByJsonConverter))]
-        public global::G.RunStatsGroupBySeriesResponseSetBy? SetBy { get; set; }
+        public global::G.RunStatsGroupBySeriesResponseSetBy2? SetBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +47,7 @@ namespace G
         public RunStatsGroupBySeriesResponse(
             global::G.RunStatsGroupBySeriesResponseAttribute attribute,
             string? path,
-            global::G.RunStatsGroupBySeriesResponseSetBy? setBy)
+            global::G.RunStatsGroupBySeriesResponseSetBy2? setBy)
         {
             this.Attribute = attribute;
             this.Path = path;

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"low":0.5733263024656846,"medium":0.42667369753431533,"high":0}
     /// </summary>
     public sealed partial class SeverityScoreSummary
     {

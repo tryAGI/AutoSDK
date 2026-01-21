@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"enabled":true,"settings":{"audio_path":"audio/my_project.mp3","audio_url":"https://example.com/audio/my_project.mp3","author":"John Doe","background_color":"#FFFFFF","image":"https://example.com/image.jpg","sessionization":1,"small":false,"status":"ready","text_color":"#000000","title":"My Project"},"snapshot_id":"JBFqnCBsd6RMkjVDRZzb"}
     /// </summary>
     public sealed partial class GetAudioNativeProjectSettingsResponseModel
     {
@@ -22,7 +22,7 @@ namespace G
         public string? SnapshotId { get; set; }
 
         /// <summary>
-        /// 
+        /// The settings of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings")]
         public global::G.AudioNativeProjectSettingsResponseModel? Settings { get; set; }
@@ -42,7 +42,9 @@ namespace G
         /// <param name="snapshotId">
         /// The ID of the latest snapshot of the project.
         /// </param>
-        /// <param name="settings"></param>
+        /// <param name="settings">
+        /// The settings of the project.
+        /// </param>
         public GetAudioNativeProjectSettingsResponseModel(
             bool enabled,
             string? snapshotId,

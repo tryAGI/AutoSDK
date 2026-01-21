@@ -5,18 +5,19 @@
 namespace G
 {
     /// <summary>
-    /// The keyframes of the generation
+    /// The keyframes of the generation<br/>
+    /// Example: {"frame0":{"type":"image","url":"https://example.com/image.jpg"},"frame1":{"type":"generation","id":"123e4567-e89b-12d3-a456-426614174000"}}
     /// </summary>
     public sealed partial class Keyframes
     {
         /// <summary>
-        /// A keyframe can be either a Generation reference, an Image, or a Video
+        /// The frame 0 of the generation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frame0")]
         public global::G.Keyframe? Frame0 { get; set; }
 
         /// <summary>
-        /// A keyframe can be either a Generation reference, an Image, or a Video
+        /// The frame 1 of the generation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frame1")]
         public global::G.Keyframe? Frame1 { get; set; }
@@ -31,10 +32,10 @@ namespace G
         /// Initializes a new instance of the <see cref="Keyframes" /> class.
         /// </summary>
         /// <param name="frame0">
-        /// A keyframe can be either a Generation reference, an Image, or a Video
+        /// The frame 0 of the generation
         /// </param>
         /// <param name="frame1">
-        /// A keyframe can be either a Generation reference, an Image, or a Video
+        /// The frame 1 of the generation
         /// </param>
         public Keyframes(
             global::G.Keyframe? frame0,

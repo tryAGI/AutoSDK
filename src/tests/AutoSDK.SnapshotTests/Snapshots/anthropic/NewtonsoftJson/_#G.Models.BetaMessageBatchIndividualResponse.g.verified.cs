@@ -11,10 +11,8 @@ namespace G
     {
         /// <summary>
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </summary>
-        /// <example>my-custom-id-1</example>
         [global::Newtonsoft.Json.JsonProperty("custom_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string CustomId { get; set; } = default!;
 
@@ -36,8 +34,7 @@ namespace G
         /// </summary>
         /// <param name="customId">
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </param>
         /// <param name="result">
         /// Processing result for this request.<br/>

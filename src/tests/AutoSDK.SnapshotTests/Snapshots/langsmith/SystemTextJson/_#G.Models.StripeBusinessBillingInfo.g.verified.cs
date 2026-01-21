@@ -17,7 +17,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// Stripe customer address.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
         public global::G.StripeCustomerAddress? Address { get; set; }
@@ -32,9 +32,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StripeBusinessBillingInfo" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="address">
-        /// Stripe customer address.
-        /// </param>
+        /// <param name="address"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

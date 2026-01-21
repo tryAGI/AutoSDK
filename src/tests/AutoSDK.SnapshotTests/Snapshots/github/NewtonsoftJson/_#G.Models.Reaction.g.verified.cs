@@ -38,8 +38,9 @@ namespace G
         public global::G.ReactionContent Content { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2016-05-20T20:09:31Z
         /// </summary>
+        /// <example>2016-05-20T20:09:31Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -65,7 +66,9 @@ namespace G
         /// The reaction to use<br/>
         /// Example: heart
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-05-20T20:09:31Z
+        /// </param>
         public Reaction(
             int id,
             string nodeId,

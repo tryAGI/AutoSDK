@@ -14,8 +14,7 @@ namespace G
         /// Default Value: assistant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionAssistantMessageRoleJsonConverter))]
-        public global::G.ChatCompletionAssistantMessageRole? Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// the message content
@@ -59,7 +58,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionAssistantMessage(
-            global::G.ChatCompletionAssistantMessageRole? role,
+            string? role,
             string? content,
             string? name,
             global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCall>? toolCalls)

@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RenderType Type { get; set; } = default!;
+        public global::G.RenderType2? Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DubbingMediaReference MediaRef { get; set; } = default!;
+        public global::G.DubbingMediaReference? MediaRef { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -64,14 +64,14 @@ namespace G
             string id,
             int version,
             string? language,
-            global::G.RenderType type,
-            global::G.DubbingMediaReference mediaRef,
+            global::G.RenderType2? type,
+            global::G.DubbingMediaReference? mediaRef,
             global::G.RenderStatus status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
             this.Status = status;
         }

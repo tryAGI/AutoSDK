@@ -10,8 +10,9 @@ namespace G
     public sealed partial class ConversationSimulationSpecification
     {
         /// <summary>
-        /// 
+        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
         /// </summary>
+        /// <example>{"first_message":"Hello, how can I help you today?","language":"en"}</example>
         [global::Newtonsoft.Json.JsonProperty("simulated_user_config", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AgentConfigDBModel SimulatedUserConfig { get; set; } = default!;
 
@@ -42,7 +43,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationSimulationSpecification" /> class.
         /// </summary>
-        /// <param name="simulatedUserConfig"></param>
+        /// <param name="simulatedUserConfig">
+        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// </param>
         /// <param name="toolMockConfig"></param>
         /// <param name="partialConversationHistory">
         /// A partial conversation history to start the simulation from. If empty, simulation starts fresh.

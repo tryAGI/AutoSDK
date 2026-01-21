@@ -54,14 +54,16 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:18:44Z
         /// </summary>
+        /// <example>2016-09-05T14:18:44Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:22:28Z
         /// </summary>
+        /// <example>2016-09-05T14:22:28Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -94,8 +96,12 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-09-05T14:18:44Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2016-09-05T14:22:28Z
+        /// </param>
         public ProjectColumn(
             string url,
             string projectUrl,

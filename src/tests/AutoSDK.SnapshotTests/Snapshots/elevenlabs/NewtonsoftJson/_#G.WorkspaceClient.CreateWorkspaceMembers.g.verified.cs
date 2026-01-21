@@ -224,7 +224,7 @@ namespace G
             string email,
             string? xiApiKey = default,
             bool? isLocked = default,
-            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole? workspaceRole = default,
+            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? workspaceRole = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyUpdateMemberV1WorkspaceMembersPost

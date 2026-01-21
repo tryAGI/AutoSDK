@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        public global::G.CustomChartSeriesFilters? CommonFilters { get; set; }
+        public global::G.CustomChartSeriesFilters2? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
 #endif
         public CustomChartCreatePreview(
             global::System.Collections.Generic.IList<global::G.CustomChartSeries> series,
-            global::G.CustomChartSeriesFilters? commonFilters)
+            global::G.CustomChartSeriesFilters2? commonFilters)
         {
             this.Series = series ?? throw new global::System.ArgumentNullException(nameof(series));
             this.CommonFilters = commonFilters;

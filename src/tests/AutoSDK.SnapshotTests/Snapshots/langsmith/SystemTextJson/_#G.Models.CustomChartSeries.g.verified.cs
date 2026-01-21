@@ -22,7 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::G.CustomChartSeriesFilters? Filters { get; set; }
+        public global::G.CustomChartSeriesFilters2? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
@@ -53,7 +53,7 @@ namespace G
         public required global::G.AnyOf<global::System.Guid?, string> Id { get; set; }
 
         /// <summary>
-        /// Include additional information about where the group_by param was set.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_by")]
         public global::G.RunStatsGroupBySeriesResponse? GroupBy { get; set; }
@@ -75,9 +75,7 @@ namespace G
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
         /// <param name="id"></param>
-        /// <param name="groupBy">
-        /// Include additional information about where the group_by param was set.
-        /// </param>
+        /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,7 +83,7 @@ namespace G
             string name,
             global::G.CustomChartMetric metric,
             global::G.AnyOf<global::System.Guid?, string> id,
-            global::G.CustomChartSeriesFilters? filters,
+            global::G.CustomChartSeriesFilters2? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
             global::G.RunStatsGroupBySeriesResponse? groupBy)

@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="document_url")]
-        DocumentUrl,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image_url")]
         ImageUrl,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reference")]
-        Reference,
+        [global::System.Runtime.Serialization.EnumMember(Value="document_url")]
+        DocumentUrl,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reference")]
+        Reference,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ContentChunkDiscriminatorType.DocumentUrl => "document_url",
                 ContentChunkDiscriminatorType.ImageUrl => "image_url",
-                ContentChunkDiscriminatorType.Reference => "reference",
+                ContentChunkDiscriminatorType.DocumentUrl => "document_url",
                 ContentChunkDiscriminatorType.Text => "text",
+                ContentChunkDiscriminatorType.Reference => "reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
                 "image_url" => ContentChunkDiscriminatorType.ImageUrl,
-                "reference" => ContentChunkDiscriminatorType.Reference,
+                "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
                 "text" => ContentChunkDiscriminatorType.Text,
+                "reference" => ContentChunkDiscriminatorType.Reference,
                 _ => null,
             };
         }

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant118? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
             string id,
             string name,
             object input,
-            global::G.CacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant118? cacheControl,
             global::G.RequestToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

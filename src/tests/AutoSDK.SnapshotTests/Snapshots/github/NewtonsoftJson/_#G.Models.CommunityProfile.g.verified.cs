@@ -37,8 +37,9 @@ namespace G
         public global::G.CommunityProfileFiles Files { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-02-28T19:09:29Z
         /// </summary>
+        /// <example>2017-02-28T19:09:29Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
@@ -68,7 +69,9 @@ namespace G
         /// Example: example.com
         /// </param>
         /// <param name="files"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2017-02-28T19:09:29Z
+        /// </param>
         /// <param name="contentReportsEnabled">
         /// Example: true
         /// </param>

@@ -17,9 +17,9 @@ namespace G
         public string? ProjectId { get; set; }
 
         /// <summary>
-        /// Example: []
+        /// Example: [{"email":"john@mail.com","first_name":"John"}]
         /// </summary>
-        /// <example>[]</example>
+        /// <example>[{"email":"john@mail.com","first_name":"John"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables_list")]
         public global::System.Collections.Generic.IList<global::G.PersonalizedVideoAddContactRequestVariablesListItem>? VariablesList { get; set; }
 
@@ -36,7 +36,7 @@ namespace G
         /// Example: &lt;project_id&gt;
         /// </param>
         /// <param name="variablesList">
-        /// Example: []
+        /// Example: [{"email":"john@mail.com","first_name":"John"}]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

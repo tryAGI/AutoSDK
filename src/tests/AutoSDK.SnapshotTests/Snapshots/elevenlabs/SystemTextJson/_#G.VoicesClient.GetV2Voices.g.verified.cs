@@ -47,8 +47,7 @@ namespace G
         /// Gets a list of all available voices for a user with search, filtering and pagination.
         /// </summary>
         /// <param name="nextPageToken">
-        /// The next page token to use for pagination. Returned from the previous request.<br/>
-        /// Example: 0
+        /// The next page token to use for pagination. Returned from the previous request.
         /// </param>
         /// <param name="pageSize">
         /// How many voices to return at maximum. Can not exceed 100, defaults to 10. Page 0 may include more voices due to default voices being included.<br/>
@@ -58,12 +57,10 @@ namespace G
         /// Search term to filter voices by. Searches in name, description, labels, category.
         /// </param>
         /// <param name="sort">
-        /// Which field to sort by, one of 'created_at_unix' or 'name'. 'created_at_unix' may not be available for older voices.<br/>
-        /// Example: created_at_unix
+        /// Which field to sort by, one of 'created_at_unix' or 'name'. 'created_at_unix' may not be available for older voices.
         /// </param>
         /// <param name="sortDirection">
-        /// Which direction to sort the voices in. 'asc' or 'desc'.<br/>
-        /// Example: desc
+        /// Which direction to sort the voices in. 'asc' or 'desc'.
         /// </param>
         /// <param name="voiceType">
         /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace', 'non-default'. 'non-default' is equal to all but 'default'.
@@ -79,8 +76,7 @@ namespace G
         /// </param>
         /// <param name="includeTotalCount">
         /// Whether to include the total count of voices found in the response. Incurs a performance cost.<br/>
-        /// Default Value: true<br/>
-        /// Example: true
+        /// Default Value: true
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

@@ -35,6 +35,90 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaMessageDeltaEvent? MessageDelta { get; init; }
+#else
+        public global::G.BetaMessageDeltaEvent? MessageDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
+#endif
+        public bool IsMessageDelta => MessageDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaMessageStopEvent? MessageStop { get; init; }
+#else
+        public global::G.BetaMessageStopEvent? MessageStop { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
+#endif
+        public bool IsMessageStop => MessageStop != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
+#else
+        public global::G.BetaContentBlockStartEvent? ContentBlockStart { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
+#endif
+        public bool IsContentBlockStart => ContentBlockStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaContentBlockDeltaEvent? ContentBlockDelta { get; init; }
+#else
+        public global::G.BetaContentBlockDeltaEvent? ContentBlockDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockDelta))]
+#endif
+        public bool IsContentBlockDelta => ContentBlockDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
+#else
+        public global::G.BetaContentBlockStopEvent? ContentBlockStop { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
+#endif
+        public bool IsContentBlockStop => ContentBlockStop != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStartEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageStartEvent?)value);
 
         /// <summary>
@@ -49,23 +133,6 @@ namespace G
         {
             MessageStart = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaMessageDeltaEvent? MessageDelta { get; init; }
-#else
-        public global::G.BetaMessageDeltaEvent? MessageDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
-#endif
-        public bool IsMessageDelta => MessageDelta != null;
 
         /// <summary>
         /// 
@@ -88,23 +155,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaMessageStopEvent? MessageStop { get; init; }
-#else
-        public global::G.BetaMessageStopEvent? MessageStop { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
-#endif
-        public bool IsMessageStop => MessageStop != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageStopEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageStopEvent?)value);
 
         /// <summary>
@@ -119,23 +169,6 @@ namespace G
         {
             MessageStop = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
-#else
-        public global::G.BetaContentBlockStartEvent? ContentBlockStart { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
-#endif
-        public bool IsContentBlockStart => ContentBlockStart != null;
 
         /// <summary>
         /// 
@@ -158,23 +191,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaContentBlockDeltaEvent? ContentBlockDelta { get; init; }
-#else
-        public global::G.BetaContentBlockDeltaEvent? ContentBlockDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockDelta))]
-#endif
-        public bool IsContentBlockDelta => ContentBlockDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockDeltaEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockDeltaEvent?)value);
 
         /// <summary>
@@ -189,23 +205,6 @@ namespace G
         {
             ContentBlockDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
-#else
-        public global::G.BetaContentBlockStopEvent? ContentBlockStop { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
-#endif
-        public bool IsContentBlockStop => ContentBlockStop != null;
 
         /// <summary>
         /// 

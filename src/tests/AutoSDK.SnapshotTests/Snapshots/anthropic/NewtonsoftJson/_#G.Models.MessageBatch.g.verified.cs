@@ -11,10 +11,8 @@ namespace G
     {
         /// <summary>
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -73,10 +71,8 @@ namespace G
 
         /// <summary>
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
-        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>
-        /// Example: https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results
+        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
         /// </summary>
-        /// <example>https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results</example>
         [global::Newtonsoft.Json.JsonProperty("results_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? ResultsUrl { get; set; } = default!;
 
@@ -91,8 +87,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -124,8 +119,7 @@ namespace G
         /// </param>
         /// <param name="resultsUrl">
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
-        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>
-        /// Example: https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results
+        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
         /// </param>
         public MessageBatch(
             string id,
@@ -142,11 +136,11 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessingStatus = processingStatus;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
-            this.EndedAt = endedAt;
+            this.EndedAt = endedAt ?? throw new global::System.ArgumentNullException(nameof(endedAt));
             this.CreatedAt = createdAt;
             this.ExpiresAt = expiresAt;
-            this.ArchivedAt = archivedAt;
-            this.CancelInitiatedAt = cancelInitiatedAt;
+            this.ArchivedAt = archivedAt ?? throw new global::System.ArgumentNullException(nameof(archivedAt));
+            this.CancelInitiatedAt = cancelInitiatedAt ?? throw new global::System.ArgumentNullException(nameof(cancelInitiatedAt));
             this.ResultsUrl = resultsUrl ?? throw new global::System.ArgumentNullException(nameof(resultsUrl));
             this.Type = type;
         }

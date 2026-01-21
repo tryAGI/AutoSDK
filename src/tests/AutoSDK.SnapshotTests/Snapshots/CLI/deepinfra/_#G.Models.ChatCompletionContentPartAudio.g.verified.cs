@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionContentPartAudioTypeJsonConverter))]
-        public global::G.ChatCompletionContentPartAudioType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -38,11 +38,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionContentPartAudio(
-            global::G.InputAudio inputAudio,
-            global::G.ChatCompletionContentPartAudioType type)
+            string type,
+            global::G.InputAudio inputAudio)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
-            this.Type = type;
         }
 
         /// <summary>

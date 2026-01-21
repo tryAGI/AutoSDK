@@ -29,7 +29,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
-        public global::System.Guid? ParentRunId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
+        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -43,49 +44,57 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
+        public global::G.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        public object? Inputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public object? Outputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<object>? Events { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]
+        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        public object? Extra { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_attachments")]
-        public object? InputAttachments { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_attachments")]
-        public object? OutputAttachments { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, object>))]
+        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// 
@@ -124,15 +133,15 @@ namespace G
             string dottedOrder,
             global::G.OneOf<string, double?> endTime,
             global::System.Guid id,
-            global::System.Guid? parentRunId,
-            string? error,
-            object? inputs,
-            object? outputs,
-            global::System.Collections.Generic.IList<object>? events,
-            global::System.Collections.Generic.IList<string>? tags,
-            object? extra,
-            object? inputAttachments,
-            object? outputAttachments)
+            global::G.OneOf<global::System.Guid?, object>? parentRunId,
+            global::G.OneOf<string, object>? error,
+            global::G.OneOf<object, object>? inputs,
+            global::G.OneOf<object, object>? outputs,
+            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
+            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::G.OneOf<object, object>? extra,
+            global::G.OneOf<object, object>? inputAttachments,
+            global::G.OneOf<object, object>? outputAttachments)
         {
             this.TraceId = traceId;
             this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));

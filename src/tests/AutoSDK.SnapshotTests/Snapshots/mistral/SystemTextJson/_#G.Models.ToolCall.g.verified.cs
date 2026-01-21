@@ -10,6 +10,19 @@ namespace G
     public sealed partial class ToolCall
     {
         /// <summary>
+        /// Default Value: null
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: function
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolTypesJsonConverter))]
+        public global::G.ToolTypes? Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
@@ -17,23 +30,10 @@ namespace G
         public required global::G.FunctionCall Function { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public int? Index { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolTypesJsonConverter))]
-        public global::G.ToolTypes? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,25 +44,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCall" /> class.
         /// </summary>
+        /// <param name="id">
+        /// Default Value: null
+        /// </param>
+        /// <param name="type">
+        /// Default Value: function
+        /// </param>
         /// <param name="function"></param>
-        /// <param name="id"></param>
         /// <param name="index">
         /// Default Value: 0
         /// </param>
-        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolCall(
             global::G.FunctionCall function,
             string? id,
-            int? index,
-            global::G.ToolTypes? type)
+            global::G.ToolTypes? type,
+            int? index)
         {
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id;
-            this.Index = index;
             this.Type = type;
+            this.Index = index;
         }
 
         /// <summary>

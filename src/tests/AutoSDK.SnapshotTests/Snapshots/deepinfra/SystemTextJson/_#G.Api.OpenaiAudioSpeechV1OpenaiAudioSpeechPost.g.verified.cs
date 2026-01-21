@@ -227,27 +227,21 @@ namespace G
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: deepinfra/tts
+        /// model name
         /// </param>
         /// <param name="input">
-        /// Text to convert to speech<br/>
-        /// Example: I'm beginnin' to feel like a Rap God, Rap God<br/>
-        /// All my people from the front to the back nod, back nod<br/>
-        /// Now, who thinks their arms are long enough to slap box, slap box?<br/>
-        /// They said I rap like a robot, so call me Rap-bot
+        /// Text to convert to speech
         /// </param>
         /// <param name="voice">
         /// Preset voices to use for the speech.
         /// </param>
         /// <param name="responseFormat">
-        /// Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.<br/>
-        /// Default Value: wav<br/>
-        /// Example: mp3
+        /// response format for the speech<br/>
+        /// Default Value: wav
         /// </param>
         /// <param name="speed">
         /// speed of the speech<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="extraBody">
         /// Extra body parameters for the model.

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"conversation":{"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"},"type":"conversation"}
     /// </summary>
     public sealed partial class PodcastConversationMode
     {
@@ -13,12 +13,14 @@ namespace G
         /// The type of podcast to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PodcastConversationModeTypeJsonConverter))]
-        public global::G.PodcastConversationModeType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The voice settings for the conversation.<br/>
+        /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
         /// </summary>
+        /// <example>{"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PodcastConversationModeData Conversation { get; set; }
@@ -35,16 +37,19 @@ namespace G
         /// <param name="type">
         /// The type of podcast to create.
         /// </param>
-        /// <param name="conversation"></param>
+        /// <param name="conversation">
+        /// The voice settings for the conversation.<br/>
+        /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastConversationMode(
-            global::G.PodcastConversationModeData conversation,
-            global::G.PodcastConversationModeType type)
+            string type,
+            global::G.PodcastConversationModeData conversation)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
-            this.Type = type;
         }
 
         /// <summary>

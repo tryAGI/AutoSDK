@@ -14,14 +14,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<object, string> Arguments { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.AnyOf<object, string> Arguments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,14 +32,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionCall" /> class.
         /// </summary>
-        /// <param name="arguments"></param>
         /// <param name="name"></param>
+        /// <param name="arguments"></param>
         public FunctionCall(
-            global::G.AnyOf<object, string> arguments,
-            string name)
+            string name,
+            global::G.AnyOf<object, string> arguments)
         {
-            this.Arguments = arguments;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments;
         }
 
         /// <summary>

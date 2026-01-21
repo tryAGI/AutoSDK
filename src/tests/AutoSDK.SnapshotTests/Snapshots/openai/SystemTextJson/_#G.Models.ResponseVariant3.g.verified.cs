@@ -97,10 +97,9 @@ namespace G
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ParallelToolCalls { get; set; } = true;
+        public required bool ParallelToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"1234567890","members_emails":["john.doe@example.com","jane.smith@example.com"],"name":"My Workspace Group"}
     /// </summary>
     public sealed partial class WorkspaceGroupByNameResponseModel
     {

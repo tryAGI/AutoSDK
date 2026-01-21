@@ -17,9 +17,9 @@ namespace G
         public string Login { get; set; } = default!;
 
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -225,14 +225,16 @@ namespace G
         public int Following { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2008-01-14T04:33:35Z
         /// </summary>
+        /// <example>2008-01-14T04:33:35Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2008-01-14T04:33:35Z
         /// </summary>
+        /// <example>2008-01-14T04:33:35Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -315,7 +317,7 @@ namespace G
         /// Example: octocat
         /// </param>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="nodeId">
         /// Example: MDQ6VXNlcjE=
@@ -400,8 +402,12 @@ namespace G
         /// <param name="following">
         /// Example: 0
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
         /// <param name="privateGists">
         /// Example: 81
         /// </param>

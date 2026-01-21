@@ -29,8 +29,7 @@ namespace G
         /// Retrieve config for an agent
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

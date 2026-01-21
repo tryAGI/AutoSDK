@@ -14,7 +14,7 @@ namespace G
             ref int? offset,
             ref int? limit,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
-            ref global::System.Guid? datasetId);
+            global::System.Guid? datasetId);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -70,18 +70,18 @@ namespace G
                 offset: ref offset,
                 limit: ref limit,
                 tagValueId: tagValueId,
-                datasetId: ref datasetId);
+                datasetId: datasetId);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ids", ids?.ToString()) 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("name_contains", nameContains) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

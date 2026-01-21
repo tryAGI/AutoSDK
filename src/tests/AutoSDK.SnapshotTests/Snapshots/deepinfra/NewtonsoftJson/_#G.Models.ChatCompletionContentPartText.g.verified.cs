@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatCompletionContentPartTextType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,11 +33,11 @@ namespace G
         /// <param name="type"></param>
         /// <param name="text"></param>
         public ChatCompletionContentPartText(
-            string text,
-            global::G.ChatCompletionContentPartTextType type)
+            string type,
+            string text)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
         }
 
         /// <summary>

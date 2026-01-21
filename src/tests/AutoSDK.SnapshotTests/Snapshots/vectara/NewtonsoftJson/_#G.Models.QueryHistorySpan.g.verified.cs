@@ -33,6 +33,91 @@ namespace G
         public bool IsRephrase => Rephrase != null;
 
         /// <summary>
+        /// The search portion of the query pipeline. This occurs before any reranking span.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SearchSpan? Search { get; init; }
+#else
+        public global::G.SearchSpan? Search { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
+#endif
+        public bool IsSearch => Search != null;
+
+        /// <summary>
+        /// The reranking of the search result.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RerankSpan? Rerank { get; init; }
+#else
+        public global::G.RerankSpan? Rerank { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rerank))]
+#endif
+        public bool IsRerank => Rerank != null;
+
+        /// <summary>
+        /// The generation by an LLM.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GenerationSpan? Generation { get; init; }
+#else
+        public global::G.GenerationSpan? Generation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Generation))]
+#endif
+        public bool IsGeneration => Generation != null;
+
+        /// <summary>
+        /// The factual consistency of the generation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.FactualConsistencyScoreSpan? Fcs { get; init; }
+#else
+        public global::G.FactualConsistencyScoreSpan? Fcs { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fcs))]
+#endif
+        public bool IsFcs => Fcs != null;
+
+        /// <summary>
+        /// Provides detailed information about a rewritten query generated for a specific corpus<br/>
+        /// when intelligent query rewriting is enabled.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RewrittenQuerySpan? RewrittenQuery { get; init; }
+#else
+        public global::G.RewrittenQuerySpan? RewrittenQuery { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RewrittenQuery))]
+#endif
+        public bool IsRewrittenQuery => RewrittenQuery != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator QueryHistorySpan(global::G.RephraseSpan value) => new QueryHistorySpan((global::G.RephraseSpan?)value);
@@ -49,23 +134,6 @@ namespace G
         {
             Rephrase = value;
         }
-
-        /// <summary>
-        /// The search portion of the query pipeline. This occurs before any reranking span.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.SearchSpan? Search { get; init; }
-#else
-        public global::G.SearchSpan? Search { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
-#endif
-        public bool IsSearch => Search != null;
 
         /// <summary>
         /// 
@@ -86,23 +154,6 @@ namespace G
         }
 
         /// <summary>
-        /// The reranking of the search result.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RerankSpan? Rerank { get; init; }
-#else
-        public global::G.RerankSpan? Rerank { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rerank))]
-#endif
-        public bool IsRerank => Rerank != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator QueryHistorySpan(global::G.RerankSpan value) => new QueryHistorySpan((global::G.RerankSpan?)value);
@@ -119,23 +170,6 @@ namespace G
         {
             Rerank = value;
         }
-
-        /// <summary>
-        /// The generation by an LLM.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GenerationSpan? Generation { get; init; }
-#else
-        public global::G.GenerationSpan? Generation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Generation))]
-#endif
-        public bool IsGeneration => Generation != null;
 
         /// <summary>
         /// 
@@ -156,23 +190,6 @@ namespace G
         }
 
         /// <summary>
-        /// The factual consistency of the generation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.FactualConsistencyScoreSpan? Fcs { get; init; }
-#else
-        public global::G.FactualConsistencyScoreSpan? Fcs { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fcs))]
-#endif
-        public bool IsFcs => Fcs != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator QueryHistorySpan(global::G.FactualConsistencyScoreSpan value) => new QueryHistorySpan((global::G.FactualConsistencyScoreSpan?)value);
@@ -189,24 +206,6 @@ namespace G
         {
             Fcs = value;
         }
-
-        /// <summary>
-        /// Provides detailed information about a rewritten query generated for a specific corpus<br/>
-        /// when intelligent query rewriting is enabled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RewrittenQuerySpan? RewrittenQuery { get; init; }
-#else
-        public global::G.RewrittenQuerySpan? RewrittenQuery { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RewrittenQuery))]
-#endif
-        public bool IsRewrittenQuery => RewrittenQuery != null;
 
         /// <summary>
         /// 

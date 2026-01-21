@@ -30,24 +30,6 @@ namespace G
         public bool IsDeveloper => Developer != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestDeveloperMessage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestDeveloperMessage?(ChatCompletionRequestMessage @this) => @this.Developer;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage? value)
-        {
-            Developer = value;
-        }
-
-        /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
         /// messages sent by the user. With o1 models and newer, use `developer` messages<br/>
         /// for this purpose instead.
@@ -65,24 +47,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
 #endif
         public bool IsSystem => System != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestSystemMessage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestSystemMessage?(ChatCompletionRequestMessage @this) => @this.System;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage? value)
-        {
-            System = value;
-        }
 
         /// <summary>
         /// Messages sent by an end user, containing prompts or additional context<br/>
@@ -103,6 +67,92 @@ namespace G
         public bool IsUser => User != null;
 
         /// <summary>
+        /// Messages sent by the model in response to user messages.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; init; }
+#else
+        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestToolMessage? Tool { get; init; }
+#else
+        public global::G.ChatCompletionRequestToolMessage? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestFunctionMessage? Function { get; init; }
+#else
+        public global::G.ChatCompletionRequestFunctionMessage? Function { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
+#endif
+        public bool IsFunction => Function != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestDeveloperMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatCompletionRequestDeveloperMessage?(ChatCompletionRequestMessage @this) => @this.Developer;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage? value)
+        {
+            Developer = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestSystemMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatCompletionRequestSystemMessage?(ChatCompletionRequestMessage @this) => @this.System;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage? value)
+        {
+            System = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestUserMessage?)value);
@@ -119,23 +169,6 @@ namespace G
         {
             User = value;
         }
-
-        /// <summary>
-        /// Messages sent by the model in response to user messages.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; init; }
-#else
-        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         /// 
@@ -158,23 +191,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestToolMessage? Tool { get; init; }
-#else
-        public global::G.ChatCompletionRequestToolMessage? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestToolMessage?)value);
 
         /// <summary>
@@ -189,23 +205,6 @@ namespace G
         {
             Tool = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestFunctionMessage? Function { get; init; }
-#else
-        public global::G.ChatCompletionRequestFunctionMessage? Function { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
-#endif
-        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 

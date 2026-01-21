@@ -22,9 +22,7 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="includeUserNames"></param>

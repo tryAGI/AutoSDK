@@ -30,15 +30,10 @@ namespace G
         public required object InputSchema { get; set; }
 
         /// <summary>
-        /// Additional properties describing a Tool to clients.<br/>
-        /// NOTE: all properties in ToolAnnotations are **hints**.<br/>
-        /// They are not guaranteed to provide a faithful description of<br/>
-        /// tool behavior (including descriptive properties like `title`).<br/>
-        /// Clients should never make tool use decisions based on ToolAnnotations<br/>
-        /// received from untrusted servers.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::G.ToolAnnotations? Annotations { get; set; }
+        public global::G.ToolAnnotations2? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,14 +47,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="inputSchema"></param>
-        /// <param name="annotations">
-        /// Additional properties describing a Tool to clients.<br/>
-        /// NOTE: all properties in ToolAnnotations are **hints**.<br/>
-        /// They are not guaranteed to provide a faithful description of<br/>
-        /// tool behavior (including descriptive properties like `title`).<br/>
-        /// Clients should never make tool use decisions based on ToolAnnotations<br/>
-        /// received from untrusted servers.
-        /// </param>
+        /// <param name="annotations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,7 +55,7 @@ namespace G
             string name,
             object inputSchema,
             string? description,
-            global::G.ToolAnnotations? annotations)
+            global::G.ToolAnnotations2? annotations)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));

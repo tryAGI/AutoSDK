@@ -10,12 +10,12 @@ namespace G
     public sealed partial class BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost
     {
         /// <summary>
-        /// 
+        /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("render_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RenderTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RenderType2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RenderType RenderType { get; set; }
+        public required global::G.RenderType2 RenderType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,12 +26,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost" /> class.
         /// </summary>
-        /// <param name="renderType"></param>
+        /// <param name="renderType">
+        /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost(
-            global::G.RenderType renderType)
+            global::G.RenderType2 renderType)
         {
             this.RenderType = renderType;
         }

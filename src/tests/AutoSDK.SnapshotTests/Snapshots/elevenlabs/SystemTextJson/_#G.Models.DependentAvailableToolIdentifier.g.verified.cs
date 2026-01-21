@@ -27,8 +27,7 @@ namespace G
         /// Default Value: available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependentAvailableToolIdentifierTypeJsonConverter))]
-        public global::G.DependentAvailableToolIdentifierType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +68,7 @@ namespace G
             string name,
             int createdAtUnixSecs,
             global::G.DependentAvailableToolIdentifierAccessLevel accessLevel,
-            global::G.DependentAvailableToolIdentifierType? type)
+            string? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

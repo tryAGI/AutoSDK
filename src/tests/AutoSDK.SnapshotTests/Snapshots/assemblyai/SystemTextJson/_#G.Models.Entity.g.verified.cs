@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A detected entity
+    /// A detected entity<br/>
+    /// Example: {"entity_type":"location","text":"Canada","start":2548,"end":3130}
     /// </summary>
     public sealed partial class Entity
     {

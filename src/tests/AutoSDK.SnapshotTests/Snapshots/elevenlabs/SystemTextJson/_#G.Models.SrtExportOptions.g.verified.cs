@@ -31,11 +31,11 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SrtExportOptionsFormatJsonConverter))]
-        public global::G.SrtExportOptionsFormat Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Format { get; set; }
 
         /// <summary>
-        /// Default Value: 0.6
+        /// Default Value: 0.6F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment_on_silence_longer_than_s")]
         public double? SegmentOnSilenceLongerThanS { get; set; }
@@ -72,7 +72,7 @@ namespace G
         /// </param>
         /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS">
-        /// Default Value: 0.6
+        /// Default Value: 0.6F
         /// </param>
         /// <param name="maxSegmentDurationS">
         /// Default Value: 5
@@ -84,18 +84,18 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SrtExportOptions(
+            string format,
             int? maxCharactersPerLine,
             bool? includeSpeakers,
             bool? includeTimestamps,
-            global::G.SrtExportOptionsFormat format,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
             int? maxSegmentChars)
         {
+            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.MaxCharactersPerLine = maxCharactersPerLine;
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
-            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

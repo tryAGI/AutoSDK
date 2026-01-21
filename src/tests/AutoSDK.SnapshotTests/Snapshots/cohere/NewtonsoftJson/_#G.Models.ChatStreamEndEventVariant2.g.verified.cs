@@ -20,7 +20,7 @@ namespace G
         public global::G.ChatStreamEndEventVariant2FinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.NonStreamedChatResponse Response { get; set; } = default!;
@@ -41,7 +41,9 @@ namespace G
         /// - `ERROR` - something went wrong when generating the reply<br/>
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </param>
-        /// <param name="response"></param>
+        /// <param name="response">
+        /// The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.
+        /// </param>
         public ChatStreamEndEventVariant2(
             global::G.ChatStreamEndEventVariant2FinishReason finishReason,
             global::G.NonStreamedChatResponse response)

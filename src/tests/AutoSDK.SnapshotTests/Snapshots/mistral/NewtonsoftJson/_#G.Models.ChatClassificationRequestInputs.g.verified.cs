@@ -30,24 +30,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatClassificationRequestInputs(global::G.InstructRequest value) => new ChatClassificationRequestInputs((global::G.InstructRequest?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.InstructRequest?(ChatClassificationRequestInputs @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatClassificationRequestInputs(global::G.InstructRequest? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.InstructRequest>? Value2 { get; init; }
 #else
@@ -61,13 +43,22 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatClassificationRequestInputs(global::G.InstructRequest value) => new ChatClassificationRequestInputs((global::G.InstructRequest?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClassificationRequestInputs(global::System.Collections.Generic.IList<global::G.InstructRequest>? value)
+        public static implicit operator global::G.InstructRequest?(ChatClassificationRequestInputs @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatClassificationRequestInputs(global::G.InstructRequest? value)
         {
-            Value2 = value;
+            Value1 = value;
         }
 
         /// <summary>

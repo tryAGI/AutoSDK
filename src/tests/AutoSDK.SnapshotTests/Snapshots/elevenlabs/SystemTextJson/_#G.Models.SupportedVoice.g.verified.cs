@@ -39,7 +39,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_family")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TTSModelFamilyJsonConverter))]
         public global::G.TTSModelFamily? ModelFamily { get; set; }
 
         /// <summary>

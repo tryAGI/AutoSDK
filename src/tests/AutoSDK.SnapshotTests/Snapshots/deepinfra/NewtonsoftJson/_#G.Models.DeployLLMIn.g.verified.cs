@@ -16,7 +16,7 @@ namespace G
         public string ModelName { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The GPU you want to run on
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gpu", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DeployGPUs Gpu { get; set; } = default!;
@@ -59,7 +59,9 @@ namespace G
         /// <param name="modelName">
         /// model name for deepinfra (username/mode-name format)
         /// </param>
-        /// <param name="gpu"></param>
+        /// <param name="gpu">
+        /// The GPU you want to run on
+        /// </param>
         /// <param name="numGpus">
         /// Number of GPUs you want for this model<br/>
         /// Default Value: 1

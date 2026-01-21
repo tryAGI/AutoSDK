@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"text":"This is a test podcast.","type":"text"}
     /// </summary>
     public sealed partial class PodcastTextSource
     {
@@ -13,8 +13,8 @@ namespace G
         /// The type of source to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PodcastTextSourceTypeJsonConverter))]
-        public global::G.PodcastTextSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// The text to create the podcast from.
@@ -42,11 +42,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastTextSource(
-            string text,
-            global::G.PodcastTextSourceType type)
+            string type,
+            string text)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
         }
 
         /// <summary>

@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ImageContent
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("image_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ImageUrl ImageUrl { get; set; } = default!;
-
-        /// <summary>
         /// Type of message content
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ContentType Type { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("image_url", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ImageUrl ImageUrl { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageContent" /> class.
         /// </summary>
-        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// Type of message content
         /// </param>
+        /// <param name="imageUrl"></param>
         public ImageContent(
-            global::G.ImageUrl imageUrl,
-            global::G.ContentType type)
+            global::G.ContentType type,
+            global::G.ImageUrl imageUrl)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

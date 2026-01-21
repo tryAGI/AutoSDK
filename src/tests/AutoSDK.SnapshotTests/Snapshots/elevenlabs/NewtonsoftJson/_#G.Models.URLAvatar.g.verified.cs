@@ -14,7 +14,7 @@ namespace G
         /// Default Value: url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.URLAvatarType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The custom URL of the avatar
@@ -39,7 +39,7 @@ namespace G
         /// The custom URL of the avatar
         /// </param>
         public URLAvatar(
-            global::G.URLAvatarType? type,
+            string? type,
             string? customUrl)
         {
             this.Type = type;

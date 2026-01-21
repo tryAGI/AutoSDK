@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Manifest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -28,7 +30,7 @@ namespace G
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? Metadata { get; set; }
 
         /// <summary>
         /// A collection of resolved package dependencies.
@@ -62,7 +64,7 @@ namespace G
         public Manifest(
             string name,
             global::G.ManifestFile? file,
-            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? metadata,
             global::System.Collections.Generic.Dictionary<string, global::G.Dependency>? resolved)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

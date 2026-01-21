@@ -33,7 +33,7 @@ namespace G
         /// Default Value: chat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -76,7 +76,7 @@ namespace G
             string role,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ChatMessageType? type,
+            string? type,
             string? name,
             string? id)
         {

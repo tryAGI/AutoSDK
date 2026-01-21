@@ -28,8 +28,8 @@ namespace G
         /// The time frame within which the batch should be processed. Currently only 24h is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIBatchesInCompletionWindowJsonConverter))]
-        public global::G.OpenAIBatchesInCompletionWindow CompletionWindow { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CompletionWindow { get; set; }
 
         /// <summary>
         /// Optional metadata to be stored with the batch.
@@ -65,13 +65,13 @@ namespace G
         public OpenAIBatchesIn(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            object? metadata,
-            global::G.OpenAIBatchesInCompletionWindow completionWindow)
+            string completionWindow,
+            object? metadata)
         {
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.Endpoint = endpoint;
+            this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.CompletionWindow = completionWindow;
         }
 
         /// <summary>

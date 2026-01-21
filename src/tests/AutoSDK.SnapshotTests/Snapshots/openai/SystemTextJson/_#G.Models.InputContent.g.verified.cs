@@ -28,6 +28,39 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.InputImageContent? Image { get; init; }
+#else
+        public global::G.InputImageContent? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// A file input to the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.InputFileContent? File { get; init; }
+#else
+        public global::G.InputFileContent? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator InputContent(global::G.InputTextContent value) => new InputContent((global::G.InputTextContent?)value);
@@ -46,23 +79,6 @@ namespace G
         }
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.InputImageContent? Image { get; init; }
-#else
-        public global::G.InputImageContent? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator InputContent(global::G.InputImageContent value) => new InputContent((global::G.InputImageContent?)value);
@@ -79,23 +95,6 @@ namespace G
         {
             Image = value;
         }
-
-        /// <summary>
-        /// A file input to the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.InputFileContent? File { get; init; }
-#else
-        public global::G.InputFileContent? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 

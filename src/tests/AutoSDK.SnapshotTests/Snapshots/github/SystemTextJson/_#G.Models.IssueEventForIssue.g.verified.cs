@@ -28,6 +28,243 @@ namespace G
         public bool IsLabeled => Labeled != null;
 
         /// <summary>
+        /// Unlabeled Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UnlabeledIssueEvent? Unlabeled { get; init; }
+#else
+        public global::G.UnlabeledIssueEvent? Unlabeled { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unlabeled))]
+#endif
+        public bool IsUnlabeled => Unlabeled != null;
+
+        /// <summary>
+        /// Assigned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AssignedIssueEvent? Assigned { get; init; }
+#else
+        public global::G.AssignedIssueEvent? Assigned { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assigned))]
+#endif
+        public bool IsAssigned => Assigned != null;
+
+        /// <summary>
+        /// Unassigned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UnassignedIssueEvent? Unassigned { get; init; }
+#else
+        public global::G.UnassignedIssueEvent? Unassigned { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unassigned))]
+#endif
+        public bool IsUnassigned => Unassigned != null;
+
+        /// <summary>
+        /// Milestoned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MilestonedIssueEvent? Milestoned { get; init; }
+#else
+        public global::G.MilestonedIssueEvent? Milestoned { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Milestoned))]
+#endif
+        public bool IsMilestoned => Milestoned != null;
+
+        /// <summary>
+        /// Demilestoned Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DemilestonedIssueEvent? Demilestoned { get; init; }
+#else
+        public global::G.DemilestonedIssueEvent? Demilestoned { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Demilestoned))]
+#endif
+        public bool IsDemilestoned => Demilestoned != null;
+
+        /// <summary>
+        /// Renamed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RenamedIssueEvent? Renamed { get; init; }
+#else
+        public global::G.RenamedIssueEvent? Renamed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Renamed))]
+#endif
+        public bool IsRenamed => Renamed != null;
+
+        /// <summary>
+        /// Review Requested Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewRequestedIssueEvent? ReviewRequested { get; init; }
+#else
+        public global::G.ReviewRequestedIssueEvent? ReviewRequested { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequested))]
+#endif
+        public bool IsReviewRequested => ReviewRequested != null;
+
+        /// <summary>
+        /// Review Request Removed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemoved { get; init; }
+#else
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemoved { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemoved))]
+#endif
+        public bool IsReviewRequestRemoved => ReviewRequestRemoved != null;
+
+        /// <summary>
+        /// Review Dismissed Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissed { get; init; }
+#else
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissed))]
+#endif
+        public bool IsReviewDismissed => ReviewDismissed != null;
+
+        /// <summary>
+        /// Locked Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LockedIssueEvent? Locked { get; init; }
+#else
+        public global::G.LockedIssueEvent? Locked { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Locked))]
+#endif
+        public bool IsLocked => Locked != null;
+
+        /// <summary>
+        /// Added to Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AddedToProjectIssueEvent? AddedToProject { get; init; }
+#else
+        public global::G.AddedToProjectIssueEvent? AddedToProject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProject))]
+#endif
+        public bool IsAddedToProject => AddedToProject != null;
+
+        /// <summary>
+        /// Moved Column in Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProject { get; init; }
+#else
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProject))]
+#endif
+        public bool IsMovedColumnInProject => MovedColumnInProject != null;
+
+        /// <summary>
+        /// Removed from Project Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProject { get; init; }
+#else
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProject))]
+#endif
+        public bool IsRemovedFromProject => RemovedFromProject != null;
+
+        /// <summary>
+        /// Converted Note to Issue Issue Event
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteTo { get; init; }
+#else
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteTo { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteTo))]
+#endif
+        public bool IsConvertedNoteTo => ConvertedNoteTo != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.LabeledIssueEvent value) => new IssueEventForIssue((global::G.LabeledIssueEvent?)value);
@@ -44,23 +281,6 @@ namespace G
         {
             Labeled = value;
         }
-
-        /// <summary>
-        /// Unlabeled Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UnlabeledIssueEvent? Unlabeled { get; init; }
-#else
-        public global::G.UnlabeledIssueEvent? Unlabeled { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unlabeled))]
-#endif
-        public bool IsUnlabeled => Unlabeled != null;
 
         /// <summary>
         /// 
@@ -81,23 +301,6 @@ namespace G
         }
 
         /// <summary>
-        /// Assigned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AssignedIssueEvent? Assigned { get; init; }
-#else
-        public global::G.AssignedIssueEvent? Assigned { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assigned))]
-#endif
-        public bool IsAssigned => Assigned != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.AssignedIssueEvent value) => new IssueEventForIssue((global::G.AssignedIssueEvent?)value);
@@ -114,23 +317,6 @@ namespace G
         {
             Assigned = value;
         }
-
-        /// <summary>
-        /// Unassigned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UnassignedIssueEvent? Unassigned { get; init; }
-#else
-        public global::G.UnassignedIssueEvent? Unassigned { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unassigned))]
-#endif
-        public bool IsUnassigned => Unassigned != null;
 
         /// <summary>
         /// 
@@ -151,23 +337,6 @@ namespace G
         }
 
         /// <summary>
-        /// Milestoned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MilestonedIssueEvent? Milestoned { get; init; }
-#else
-        public global::G.MilestonedIssueEvent? Milestoned { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Milestoned))]
-#endif
-        public bool IsMilestoned => Milestoned != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.MilestonedIssueEvent value) => new IssueEventForIssue((global::G.MilestonedIssueEvent?)value);
@@ -184,23 +353,6 @@ namespace G
         {
             Milestoned = value;
         }
-
-        /// <summary>
-        /// Demilestoned Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DemilestonedIssueEvent? Demilestoned { get; init; }
-#else
-        public global::G.DemilestonedIssueEvent? Demilestoned { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Demilestoned))]
-#endif
-        public bool IsDemilestoned => Demilestoned != null;
 
         /// <summary>
         /// 
@@ -221,23 +373,6 @@ namespace G
         }
 
         /// <summary>
-        /// Renamed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RenamedIssueEvent? Renamed { get; init; }
-#else
-        public global::G.RenamedIssueEvent? Renamed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Renamed))]
-#endif
-        public bool IsRenamed => Renamed != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.RenamedIssueEvent value) => new IssueEventForIssue((global::G.RenamedIssueEvent?)value);
@@ -254,23 +389,6 @@ namespace G
         {
             Renamed = value;
         }
-
-        /// <summary>
-        /// Review Requested Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewRequestedIssueEvent? ReviewRequested { get; init; }
-#else
-        public global::G.ReviewRequestedIssueEvent? ReviewRequested { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequested))]
-#endif
-        public bool IsReviewRequested => ReviewRequested != null;
 
         /// <summary>
         /// 
@@ -291,23 +409,6 @@ namespace G
         }
 
         /// <summary>
-        /// Review Request Removed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemoved { get; init; }
-#else
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemoved { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemoved))]
-#endif
-        public bool IsReviewRequestRemoved => ReviewRequestRemoved != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.ReviewRequestRemovedIssueEvent value) => new IssueEventForIssue((global::G.ReviewRequestRemovedIssueEvent?)value);
@@ -324,23 +425,6 @@ namespace G
         {
             ReviewRequestRemoved = value;
         }
-
-        /// <summary>
-        /// Review Dismissed Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissed { get; init; }
-#else
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissed))]
-#endif
-        public bool IsReviewDismissed => ReviewDismissed != null;
 
         /// <summary>
         /// 
@@ -361,23 +445,6 @@ namespace G
         }
 
         /// <summary>
-        /// Locked Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LockedIssueEvent? Locked { get; init; }
-#else
-        public global::G.LockedIssueEvent? Locked { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Locked))]
-#endif
-        public bool IsLocked => Locked != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.LockedIssueEvent value) => new IssueEventForIssue((global::G.LockedIssueEvent?)value);
@@ -394,23 +461,6 @@ namespace G
         {
             Locked = value;
         }
-
-        /// <summary>
-        /// Added to Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AddedToProjectIssueEvent? AddedToProject { get; init; }
-#else
-        public global::G.AddedToProjectIssueEvent? AddedToProject { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProject))]
-#endif
-        public bool IsAddedToProject => AddedToProject != null;
 
         /// <summary>
         /// 
@@ -431,23 +481,6 @@ namespace G
         }
 
         /// <summary>
-        /// Moved Column in Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProject { get; init; }
-#else
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProject { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProject))]
-#endif
-        public bool IsMovedColumnInProject => MovedColumnInProject != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.MovedColumnInProjectIssueEvent value) => new IssueEventForIssue((global::G.MovedColumnInProjectIssueEvent?)value);
@@ -466,23 +499,6 @@ namespace G
         }
 
         /// <summary>
-        /// Removed from Project Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProject { get; init; }
-#else
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProject { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProject))]
-#endif
-        public bool IsRemovedFromProject => RemovedFromProject != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator IssueEventForIssue(global::G.RemovedFromProjectIssueEvent value) => new IssueEventForIssue((global::G.RemovedFromProjectIssueEvent?)value);
@@ -499,23 +515,6 @@ namespace G
         {
             RemovedFromProject = value;
         }
-
-        /// <summary>
-        /// Converted Note to Issue Issue Event
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteTo { get; init; }
-#else
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteTo { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteTo))]
-#endif
-        public bool IsConvertedNoteTo => ConvertedNoteTo != null;
 
         /// <summary>
         /// 

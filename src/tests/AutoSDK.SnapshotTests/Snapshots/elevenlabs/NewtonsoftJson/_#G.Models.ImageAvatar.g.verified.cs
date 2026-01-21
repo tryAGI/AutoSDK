@@ -14,7 +14,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ImageAvatarType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The URL of the avatar
@@ -39,7 +39,7 @@ namespace G
         /// The URL of the avatar
         /// </param>
         public ImageAvatar(
-            global::G.ImageAvatarType? type,
+            string? type,
             string? url)
         {
             this.Type = type;

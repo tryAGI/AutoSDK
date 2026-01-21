@@ -10,6 +10,19 @@ namespace G
     public sealed partial class Generation
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// Prompt used for generations.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
         /// List of generated results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generations")]
@@ -19,21 +32,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::G.ApiMeta? Meta { get; set; }
-
-        /// <summary>
-        /// Prompt used for generations.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public string? Prompt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,27 +44,27 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Generation" /> class.
         /// </summary>
-        /// <param name="generations">
-        /// List of generated results
-        /// </param>
         /// <param name="id"></param>
-        /// <param name="meta"></param>
         /// <param name="prompt">
         /// Prompt used for generations.
         /// </param>
+        /// <param name="generations">
+        /// List of generated results
+        /// </param>
+        /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Generation(
-            global::System.Collections.Generic.IList<global::G.SingleGeneration> generations,
             string id,
-            global::G.ApiMeta? meta,
-            string? prompt)
+            global::System.Collections.Generic.IList<global::G.SingleGeneration> generations,
+            string? prompt,
+            global::G.ApiMeta? meta)
         {
-            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Meta = meta;
+            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
             this.Prompt = prompt;
+            this.Meta = meta;
         }
 
         /// <summary>

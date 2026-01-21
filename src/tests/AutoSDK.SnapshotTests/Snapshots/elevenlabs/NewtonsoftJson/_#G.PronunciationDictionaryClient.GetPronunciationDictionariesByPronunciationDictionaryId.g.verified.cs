@@ -29,8 +29,7 @@ namespace G
         /// Get metadata for a pronunciation dictionary
         /// </summary>
         /// <param name="pronunciationDictionaryId">
-        /// The id of the pronunciation dictionary<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of the pronunciation dictionary
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

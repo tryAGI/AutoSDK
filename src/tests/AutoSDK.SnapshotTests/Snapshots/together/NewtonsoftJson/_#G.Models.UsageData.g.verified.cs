@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CompletionTokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int PromptTokens { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PromptTokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageData" /> class.
         /// </summary>
-        /// <param name="completionTokens"></param>
         /// <param name="promptTokens"></param>
+        /// <param name="completionTokens"></param>
         /// <param name="totalTokens"></param>
         public UsageData(
-            int completionTokens,
             int promptTokens,
+            int completionTokens,
             int totalTokens)
         {
-            this.CompletionTokens = completionTokens;
             this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
             this.TotalTokens = totalTokens;
         }
 

@@ -10,8 +10,10 @@ namespace G
     public sealed partial class NullableScopedInstallation
     {
         /// <summary>
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </summary>
+        /// <example>{"contents":"read","issues":"read","deployments":"write","single_file":"read"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AppPermissions Permissions { get; set; }
@@ -71,7 +73,8 @@ namespace G
         /// Initializes a new instance of the <see cref="NullableScopedInstallation" /> class.
         /// </summary>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
         /// <param name="repositorySelection">
         /// Describe whether all repositories have been selected or there's a selection involved

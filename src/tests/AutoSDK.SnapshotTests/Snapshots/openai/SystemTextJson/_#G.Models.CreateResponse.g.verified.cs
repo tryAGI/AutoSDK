@@ -30,6 +30,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseProperties? Value2 { get; init; }
+#else
+        public global::G.ResponseProperties? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CreateResponseVariant3? Value3 { get; init; }
+#else
+        public global::G.CreateResponseVariant3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateResponse(global::G.CreateModelResponseProperties value) => new CreateResponse((global::G.CreateModelResponseProperties?)value);
 
         /// <summary>
@@ -48,23 +81,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseProperties? Value2 { get; init; }
-#else
-        public global::G.ResponseProperties? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator CreateResponse(global::G.ResponseProperties value) => new CreateResponse((global::G.ResponseProperties?)value);
 
         /// <summary>
@@ -79,23 +95,6 @@ namespace G
         {
             Value2 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CreateResponseVariant3? Value3 { get; init; }
-#else
-        public global::G.CreateResponseVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 

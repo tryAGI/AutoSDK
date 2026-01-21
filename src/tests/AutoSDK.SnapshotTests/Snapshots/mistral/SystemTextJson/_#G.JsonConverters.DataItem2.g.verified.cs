@@ -18,29 +18,29 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelListDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelListDataItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ModelListDataItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JobsOutDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JobsOutDataItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobsOutDataItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BaseModelCard? @base = default;
-            if (discriminator?.Type == global::G.ModelListDataItemDiscriminatorType.Base)
+            global::G.CompletionJobOut? completion = default;
+            if (discriminator?.JobType == global::G.JobsOutDataItemDiscriminatorJobType.Completion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseModelCard> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BaseModelCard)}");
-                @base = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CompletionJobOut)}");
+                completion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.FTModelCard? fineTuned = default;
-            if (discriminator?.Type == global::G.ModelListDataItemDiscriminatorType.FineTuned)
+            global::G.ClassifierJobOut? classifier = default;
+            if (discriminator?.JobType == global::G.JobsOutDataItemDiscriminatorJobType.Classifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FTModelCard> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FTModelCard)}");
-                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierJobOut> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClassifierJobOut)}");
+                classifier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.DataItem2(
-                discriminator?.Type,
-                @base,
-                fineTuned
+                discriminator?.JobType,
+                completion,
+                classifier
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBase)
+            if (value.IsCompletion)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseModelCard?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
             }
-            else if (value.IsFineTuned)
+            else if (value.IsClassifier)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FTModelCard?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FTModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierJobOut?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClassifierJobOut).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeInfo);
             }
         }
     }

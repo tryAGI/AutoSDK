@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.FineTuneEvent> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.FineTuneEvent2> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FinetuneListEvents(
-            global::System.Collections.Generic.IList<global::G.FineTuneEvent> data)
+            global::System.Collections.Generic.IList<global::G.FineTuneEvent2> data)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }

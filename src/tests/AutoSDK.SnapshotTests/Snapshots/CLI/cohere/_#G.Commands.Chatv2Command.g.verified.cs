@@ -13,31 +13,37 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            global::G.CitationOptions? citationOptions,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? documents,
-            float? frequencyPenalty,
-            int? k,
-            bool? logprobs,
-            int? maxTokens,
-            global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
+            bool? stream,
             string model,
-            float? p,
-            float? presencePenalty,
+            global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             global::G.ReasoningEffort? reasoningEffort,
+            global::System.Collections.Generic.IList<global::G.ToolV2>? tools,
+            bool? strictTools,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? documents,
+            global::G.CitationOptions? citationOptions,
             global::G.ResponseFormatV2? responseFormat,
             global::G.Chatv2RequestSafetyMode? safetyMode,
-            int? seed,
+            int? maxTokens,
             global::System.Collections.Generic.IList<string>? stopSequences,
-            bool? stream,
-            bool? strictTools,
             float? temperature,
+            int? seed,
+            float? frequencyPenalty,
+            float? presencePenalty,
+            int? k,
+            float? p,
+            bool? logprobs,
             global::G.Chatv2RequestToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::G.ToolV2>? tools,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?> response,
             global::System.Threading.CancellationToken cancellationToken);
+
+        private global::System.CommandLine.Argument<string> Model { get; } = new(
+            name: "model")
+        {
+            Description = @"The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.",
+        };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.ChatMessageV2>> Messages { get; } = new(
             name: "messages")
@@ -47,22 +53,42 @@ namespace G
 Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/v2/docs/chat-api).",
         };
 
-        private global::System.CommandLine.Argument<string> Model { get; } = new(
-            name: "model")
-        {
-            Description = @"The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.",
-        };
-
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
             Description = @"The name of the project that is making the request.",
         };
 
-        private global::System.CommandLine.Option<global::G.CitationOptions?> CitationOptions { get; } = new(
-            name: "citationOptions")
+        private global::System.CommandLine.Option<bool?> Stream { get; } = new(
+            name: "stream")
         {
-            Description = @"Options for controlling citation generation.",
+            Description = @"Defaults to `false`.
+
+When `true`, the response will be a SSE stream of events.
+
+Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.",
+        };
+
+        private global::System.CommandLine.Option<global::G.ReasoningEffort?> ReasoningEffort { get; } = new(
+            name: "reasoningEffort")
+        {
+            Description = @"The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.",
+        };
+
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolV2>?> Tools { get; } = new(
+            name: "tools")
+        {
+            Description = @"A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.
+
+Learn more in the [Tool Use guide](https://docs.cohere.com/docs/tools).",
+        };
+
+        private global::System.CommandLine.Option<bool?> StrictTools { get; } = new(
+            name: "strictTools")
+        {
+            Description = @"When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).
+
+**Note**: The first few requests with a new set of tools will take longer to process.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>?> Documents { get; } = new(
@@ -71,52 +97,10 @@ Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more 
             Description = @"A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.",
         };
 
-        private global::System.CommandLine.Option<float?> FrequencyPenalty { get; } = new(
-            name: "frequencyPenalty")
+        private global::System.CommandLine.Option<global::G.CitationOptions?> CitationOptions { get; } = new(
+            name: "citationOptions")
         {
-            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
-Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.",
-        };
-
-        private global::System.CommandLine.Option<int?> K { get; } = new(
-            name: "k")
-        {
-            Description = @"Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.
-Defaults to `0`, min value of `0`, max value of `500`.",
-        };
-
-        private global::System.CommandLine.Option<bool?> Logprobs { get; } = new(
-            name: "logprobs")
-        {
-            Description = @"Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.",
-        };
-
-        private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
-            name: "maxTokens")
-        {
-            Description = @"The maximum number of tokens the model will generate as part of the response.
-
-**Note**: Setting a low value may result in incomplete generations.",
-        };
-
-        private global::System.CommandLine.Option<float?> P { get; } = new(
-            name: "p")
-        {
-            Description = @"Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.
-Defaults to `0.75`. min value of `0.01`, max value of `0.99`.",
-        };
-
-        private global::System.CommandLine.Option<float?> PresencePenalty { get; } = new(
-            name: "presencePenalty")
-        {
-            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
-Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.",
-        };
-
-        private global::System.CommandLine.Option<global::G.ReasoningEffort?> ReasoningEffort { get; } = new(
-            name: "reasoningEffort")
-        {
-            Description = @"The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.",
+            Description = @"Options for controlling citation generation.",
         };
 
         private global::System.CommandLine.Option<global::G.ResponseFormatV2?> ResponseFormat { get; } = new(
@@ -148,37 +132,18 @@ Safety modes are not yet configurable in combination with `tools` and `documents
 **Note**: `command-r7b-12-2024` and newer models only support `""CONTEXTUAL""` and `""STRICT""` modes.",
         };
 
-        private global::System.CommandLine.Option<int?> Seed { get; } = new(
-            name: "seed")
+        private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
+            name: "maxTokens")
         {
-            Description = @"If specified, the backend will make a best effort to sample tokens
-deterministically, such that repeated requests with the same
-seed and parameters should return the same result. However,
-determinism cannot be totally guaranteed.",
+            Description = @"The maximum number of tokens the model will generate as part of the response.
+
+**Note**: Setting a low value may result in incomplete generations.",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> StopSequences { get; } = new(
             name: "stopSequences")
         {
             Description = @"A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.",
-        };
-
-        private global::System.CommandLine.Option<bool?> Stream { get; } = new(
-            name: "stream")
-        {
-            Description = @"Defaults to `false`.
-
-When `true`, the response will be a SSE stream of events.
-
-Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.",
-        };
-
-        private global::System.CommandLine.Option<bool?> StrictTools { get; } = new(
-            name: "strictTools")
-        {
-            Description = @"When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).
-
-**Note**: The first few requests with a new set of tools will take longer to process.",
         };
 
         private global::System.CommandLine.Option<float?> Temperature { get; } = new(
@@ -189,6 +154,49 @@ Streaming is beneficial for user interfaces that render the contents of the resp
 A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations, and higher temperatures mean more random generations.
 
 Randomness can be further maximized by increasing the  value of the `p` parameter.",
+        };
+
+        private global::System.CommandLine.Option<int?> Seed { get; } = new(
+            name: "seed")
+        {
+            Description = @"If specified, the backend will make a best effort to sample tokens
+deterministically, such that repeated requests with the same
+seed and parameters should return the same result. However,
+determinism cannot be totally guaranteed.",
+        };
+
+        private global::System.CommandLine.Option<float?> FrequencyPenalty { get; } = new(
+            name: "frequencyPenalty")
+        {
+            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
+Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.",
+        };
+
+        private global::System.CommandLine.Option<float?> PresencePenalty { get; } = new(
+            name: "presencePenalty")
+        {
+            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
+Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.",
+        };
+
+        private global::System.CommandLine.Option<int?> K { get; } = new(
+            name: "k")
+        {
+            Description = @"Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.
+Defaults to `0`, min value of `0`, max value of `500`.",
+        };
+
+        private global::System.CommandLine.Option<float?> P { get; } = new(
+            name: "p")
+        {
+            Description = @"Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.
+Defaults to `0.75`. min value of `0.01`, max value of `0.99`.",
+        };
+
+        private global::System.CommandLine.Option<bool?> Logprobs { get; } = new(
+            name: "logprobs")
+        {
+            Description = @"Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.",
         };
 
         private global::System.CommandLine.Option<global::G.Chatv2RequestToolChoice?> ToolChoice { get; } = new(
@@ -202,14 +210,6 @@ If tool_choice isn't specified, then the model is free to choose whether to use 
 
 **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.",
         };
-
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolV2>?> Tools { get; } = new(
-            name: "tools")
-        {
-            Description = @"A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.
-
-Learn more in the [Tool Use guide](https://docs.cohere.com/docs/tools).",
-        };
         public Chatv2Command(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -221,27 +221,27 @@ Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2)
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Messages);
             Arguments.Add(Model);
+            Arguments.Add(Messages);
             Options.Add(XClientName);
-            Options.Add(CitationOptions);
-            Options.Add(Documents);
-            Options.Add(FrequencyPenalty);
-            Options.Add(K);
-            Options.Add(Logprobs);
-            Options.Add(MaxTokens);
-            Options.Add(P);
-            Options.Add(PresencePenalty);
+            Options.Add(Stream);
             Options.Add(ReasoningEffort);
+            Options.Add(Tools);
+            Options.Add(StrictTools);
+            Options.Add(Documents);
+            Options.Add(CitationOptions);
             Options.Add(ResponseFormat);
             Options.Add(SafetyMode);
-            Options.Add(Seed);
+            Options.Add(MaxTokens);
             Options.Add(StopSequences);
-            Options.Add(Stream);
-            Options.Add(StrictTools);
             Options.Add(Temperature);
+            Options.Add(Seed);
+            Options.Add(FrequencyPenalty);
+            Options.Add(PresencePenalty);
+            Options.Add(K);
+            Options.Add(P);
+            Options.Add(Logprobs);
             Options.Add(ToolChoice);
-            Options.Add(Tools);
 
             Initialize();
 
@@ -253,75 +253,75 @@ Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2)
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var citationOptions = parseResult.GetRequiredValue(CitationOptions);
-            var documents = parseResult.GetRequiredValue(Documents);
-            var frequencyPenalty = parseResult.GetRequiredValue(FrequencyPenalty);
-            var k = parseResult.GetRequiredValue(K);
-            var logprobs = parseResult.GetRequiredValue(Logprobs);
-            var maxTokens = parseResult.GetRequiredValue(MaxTokens);
-            var messages = parseResult.GetRequiredValue(Messages);
+            var stream = parseResult.GetRequiredValue(Stream);
             var model = parseResult.GetRequiredValue(Model);
-            var p = parseResult.GetRequiredValue(P);
-            var presencePenalty = parseResult.GetRequiredValue(PresencePenalty);
+            var messages = parseResult.GetRequiredValue(Messages);
             var reasoningEffort = parseResult.GetRequiredValue(ReasoningEffort);
+            var tools = parseResult.GetRequiredValue(Tools);
+            var strictTools = parseResult.GetRequiredValue(StrictTools);
+            var documents = parseResult.GetRequiredValue(Documents);
+            var citationOptions = parseResult.GetRequiredValue(CitationOptions);
             var responseFormat = parseResult.GetRequiredValue(ResponseFormat);
             var safetyMode = parseResult.GetRequiredValue(SafetyMode);
-            var seed = parseResult.GetRequiredValue(Seed);
+            var maxTokens = parseResult.GetRequiredValue(MaxTokens);
             var stopSequences = parseResult.GetRequiredValue(StopSequences);
-            var stream = parseResult.GetRequiredValue(Stream);
-            var strictTools = parseResult.GetRequiredValue(StrictTools);
             var temperature = parseResult.GetRequiredValue(Temperature);
+            var seed = parseResult.GetRequiredValue(Seed);
+            var frequencyPenalty = parseResult.GetRequiredValue(FrequencyPenalty);
+            var presencePenalty = parseResult.GetRequiredValue(PresencePenalty);
+            var k = parseResult.GetRequiredValue(K);
+            var p = parseResult.GetRequiredValue(P);
+            var logprobs = parseResult.GetRequiredValue(Logprobs);
             var toolChoice = parseResult.GetRequiredValue(ToolChoice);
-            var tools = parseResult.GetRequiredValue(Tools);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                citationOptions: citationOptions,
-                documents: documents,
-                frequencyPenalty: frequencyPenalty,
-                k: k,
-                logprobs: logprobs,
-                maxTokens: maxTokens,
-                messages: messages,
+                stream: stream,
                 model: model,
-                p: p,
-                presencePenalty: presencePenalty,
+                messages: messages,
                 reasoningEffort: reasoningEffort,
+                tools: tools,
+                strictTools: strictTools,
+                documents: documents,
+                citationOptions: citationOptions,
                 responseFormat: responseFormat,
                 safetyMode: safetyMode,
-                seed: seed,
+                maxTokens: maxTokens,
                 stopSequences: stopSequences,
-                stream: stream,
-                strictTools: strictTools,
                 temperature: temperature,
+                seed: seed,
+                frequencyPenalty: frequencyPenalty,
+                presencePenalty: presencePenalty,
+                k: k,
+                p: p,
+                logprobs: logprobs,
                 toolChoice: toolChoice,
-                tools: tools,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.Chatv2Async(
                 xClientName: xClientName,
-                citationOptions: citationOptions,
-                documents: documents,
-                frequencyPenalty: frequencyPenalty,
-                k: k,
-                logprobs: logprobs,
-                maxTokens: maxTokens,
-                messages: messages,
+                stream: stream,
                 model: model,
-                p: p,
-                presencePenalty: presencePenalty,
+                messages: messages,
                 reasoningEffort: reasoningEffort,
+                tools: tools,
+                strictTools: strictTools,
+                documents: documents,
+                citationOptions: citationOptions,
                 responseFormat: responseFormat,
                 safetyMode: safetyMode,
-                seed: seed,
+                maxTokens: maxTokens,
                 stopSequences: stopSequences,
-                stream: stream,
-                strictTools: strictTools,
                 temperature: temperature,
+                seed: seed,
+                frequencyPenalty: frequencyPenalty,
+                presencePenalty: presencePenalty,
+                k: k,
+                p: p,
+                logprobs: logprobs,
                 toolChoice: toolChoice,
-                tools: tools,
                 cancellationToken: cancellationToken);
 
             Complete(

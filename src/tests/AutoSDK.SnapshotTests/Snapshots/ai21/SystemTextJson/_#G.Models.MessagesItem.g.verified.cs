@@ -35,6 +35,56 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AssistantMessage? Assistant { get; init; }
+#else
+        public global::G.AssistantMessage? Assistant { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolMessage? Tool { get; init; }
+#else
+        public global::G.ToolMessage? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SystemMessage? System { get; init; }
+#else
+        public global::G.SystemMessage? System { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
+#endif
+        public bool IsSystem => System != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesItem(global::G.UserMessage value) => new MessagesItem((global::G.UserMessage?)value);
 
         /// <summary>
@@ -49,23 +99,6 @@ namespace G
         {
             User = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AssistantMessage? Assistant { get; init; }
-#else
-        public global::G.AssistantMessage? Assistant { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ToolMessage? Tool { get; init; }
-#else
-        public global::G.ToolMessage? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator MessagesItem(global::G.ToolMessage value) => new MessagesItem((global::G.ToolMessage?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace G
         {
             Tool = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.SystemMessage? System { get; init; }
-#else
-        public global::G.SystemMessage? System { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
-#endif
-        public bool IsSystem => System != null;
 
         /// <summary>
         /// 

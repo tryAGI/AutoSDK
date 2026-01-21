@@ -15,8 +15,8 @@ namespace G
             string? xiApiKey,
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            global::G.OpenAIBatchesInCompletionWindow completionWindow,
-            object? metadata,
+            string completionWindow,
+            object metadata,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -35,7 +35,13 @@ namespace G
             Description = @"The endpoint to be used for all requests in the batch. Currently /v1/chat/completions, /v1/completions are supported.",
         };
 
-        private global::System.CommandLine.Argument<object?> Metadata { get; } = new(
+        private global::System.CommandLine.Argument<string> CompletionWindow { get; } = new(
+            name: "completionWindow")
+        {
+            Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
+        };
+
+        private global::System.CommandLine.Argument<object> Metadata { get; } = new(
             name: "metadata")
         {
             Description = @"Optional metadata to be stored with the batch.",
@@ -45,12 +51,6 @@ namespace G
             name: "xiApiKey")
         {
             Description = @"",
-        };
-
-        private global::System.CommandLine.Option<global::G.OpenAIBatchesInCompletionWindow> CompletionWindow { get; } = new(
-            name: "completionWindow")
-        {
-            Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
         };
         public CreateOpenaiBatchV1OpenaiBatchesPostCommand(
             G.IApi client,
@@ -63,9 +63,9 @@ namespace G
 
             Arguments.Add(InputFileId);
             Arguments.Add(Endpoint);
+            Arguments.Add(CompletionWindow);
             Arguments.Add(Metadata);
             Options.Add(XiApiKey);
-            Options.Add(CompletionWindow);
 
             Initialize();
 

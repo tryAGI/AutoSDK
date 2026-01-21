@@ -13,7 +13,7 @@ namespace G
             ref string commit,
             ref bool? getExamples,
             ref bool? isView,
-            ref bool? includeModel);
+            bool? includeModel);
         partial void PrepareGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -68,7 +68,7 @@ namespace G
                 commit: ref commit,
                 getExamples: ref getExamples,
                 isView: ref isView,
-                includeModel: ref includeModel);
+                includeModel: includeModel);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/commits/{owner}/{repo}/{commit}",

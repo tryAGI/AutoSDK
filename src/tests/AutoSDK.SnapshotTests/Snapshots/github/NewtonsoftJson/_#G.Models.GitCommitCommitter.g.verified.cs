@@ -10,8 +10,10 @@ namespace G
     public sealed partial class GitCommitCommitter
     {
         /// <summary>
-        /// Timestamp of the commit
+        /// Timestamp of the commit<br/>
+        /// Example: 2014-08-09T08:02:04+12:00
         /// </summary>
+        /// <example>2014-08-09T08:02:04+12:00</example>
         [global::Newtonsoft.Json.JsonProperty("date", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime Date { get; set; } = default!;
 
@@ -41,7 +43,8 @@ namespace G
         /// Initializes a new instance of the <see cref="GitCommitCommitter" /> class.
         /// </summary>
         /// <param name="date">
-        /// Timestamp of the commit
+        /// Timestamp of the commit<br/>
+        /// Example: 2014-08-09T08:02:04+12:00
         /// </param>
         /// <param name="email">
         /// Git email address of the user<br/>

@@ -60,15 +60,17 @@ namespace G
         public required global::G.WebhookConfig Config { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-09-06T20:39:23Z
         /// </summary>
+        /// <example>2011-09-06T20:39:23Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-09-06T17:26:27Z
         /// </summary>
+        /// <example>2011-09-06T17:26:27Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -140,8 +142,12 @@ namespace G
         /// <param name="config">
         /// Configuration object of the webhook
         /// </param>
-        /// <param name="updatedAt"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2011-09-06T20:39:23Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-09-06T17:26:27Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1
         /// </param>

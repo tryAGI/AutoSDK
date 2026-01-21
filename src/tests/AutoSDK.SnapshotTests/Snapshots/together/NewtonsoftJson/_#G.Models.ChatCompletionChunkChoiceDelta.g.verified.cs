@@ -12,15 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public string? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionChunkChoiceDeltaFunctionCall? FunctionCall { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("token_id")]
+        public int? TokenId { get; set; }
 
         /// <summary>
         /// 
@@ -31,14 +24,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_id")]
-        public int? TokenId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
         public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionChunkChoiceDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,19 +49,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChunkChoiceDelta" /> class.
         /// </summary>
-        /// <param name="content"></param>
-        /// <param name="role"></param>
         /// <param name="tokenId"></param>
+        /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="toolCalls"></param>
         public ChatCompletionChunkChoiceDelta(
             global::G.ChatCompletionChunkChoiceDeltaRole role,
-            string? content,
             int? tokenId,
+            string? content,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
             this.Role = role;
-            this.Content = content;
             this.TokenId = tokenId;
+            this.Content = content;
             this.ToolCalls = toolCalls;
         }
 

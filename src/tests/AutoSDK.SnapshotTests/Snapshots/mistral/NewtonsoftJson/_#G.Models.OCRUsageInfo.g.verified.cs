@@ -10,16 +10,16 @@ namespace G
     public sealed partial class OCRUsageInfo
     {
         /// <summary>
-        /// Document size in bytes
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("doc_size_bytes")]
-        public int? DocSizeBytes { get; set; }
-
-        /// <summary>
         /// Number of pages processed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pages_processed", Required = global::Newtonsoft.Json.Required.Always)]
         public int PagesProcessed { get; set; } = default!;
+
+        /// <summary>
+        /// Document size in bytes
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("doc_size_bytes")]
+        public int? DocSizeBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRUsageInfo" /> class.
         /// </summary>
-        /// <param name="docSizeBytes">
-        /// Document size in bytes
-        /// </param>
         /// <param name="pagesProcessed">
         /// Number of pages processed
+        /// </param>
+        /// <param name="docSizeBytes">
+        /// Document size in bytes
         /// </param>
         public OCRUsageInfo(
             int pagesProcessed,

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.MessagesItem3> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="messages"></param>
         public InstructRequest(
-            global::System.Collections.Generic.IList<global::G.MessagesItem3> messages)
+            global::System.Collections.Generic.IList<global::G.MessagesItem2> messages)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
         }

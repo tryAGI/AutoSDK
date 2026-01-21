@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Dependency.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -21,7 +23,7 @@ namespace G
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? Metadata { get; set; }
 
         /// <summary>
         /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.<br/>
@@ -82,7 +84,7 @@ namespace G
 #endif
         public Dependency(
             string? packageUrl,
-            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? metadata,
             global::G.DependencyRelationship? relationship,
             global::G.DependencyScope? scope,
             global::System.Collections.Generic.IList<string>? dependencies)

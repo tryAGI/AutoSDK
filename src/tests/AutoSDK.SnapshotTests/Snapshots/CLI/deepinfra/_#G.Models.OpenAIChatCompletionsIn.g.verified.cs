@@ -12,10 +12,8 @@ namespace G
     public sealed partial class OpenAIChatCompletionsIn
     {
         /// <summary>
-        /// model name<br/>
-        /// Example: meta-llama/Llama-2-70b-chat-hf
+        /// model name
         /// </summary>
-        /// <example>meta-llama/Llama-2-70b-chat-hf</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
@@ -36,21 +34,21 @@ namespace G
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
         /// <summary>
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
 
         /// <summary>
         /// Float that represents the minimum probability for a token to be considered, relative to the probability of the most likely token. Must be in [0, 1]. Set to 0 to disable this.<br/>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_p")]
         public double? MinP { get; set; }
@@ -73,8 +71,8 @@ namespace G
         /// up to 16 sequences where the API will stop generating further tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
 
         /// <summary>
         /// number of sequences to return<br/>
@@ -110,7 +108,7 @@ namespace G
         public string? ToolChoice { get; set; }
 
         /// <summary>
-        /// 
+        /// The format of the response. Currently, only json is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         public global::G.ResponseFormat? ResponseFormat { get; set; }
@@ -141,7 +139,7 @@ namespace G
         public bool? Logprobs { get; set; }
 
         /// <summary>
-        /// 
+        /// streaming options
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
         public global::G.StreamOptions? StreamOptions { get; set; }
@@ -150,8 +148,7 @@ namespace G
         /// Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffortJsonConverter))]
-        public global::G.OpenAIChatCompletionsInReasoningEffort? ReasoningEffort { get; set; }
+        public global::G.OpenAIChatCompletionsInReasoningEffort2? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -163,8 +160,7 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAIChatCompletionsIn" /> class.
         /// </summary>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: meta-llama/Llama-2-70b-chat-hf
+        /// model name
         /// </param>
         /// <param name="messages">
         /// conversation messages: (user,assistant,tool)*,user including one system message anywhere
@@ -175,15 +171,15 @@ namespace G
         /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="topP">
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="minP">
         /// Float that represents the minimum probability for a token to be considered, relative to the probability of the most likely token. Must be in [0, 1]. Set to 0 to disable this.<br/>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="topK">
         /// Sample from the best k (number of) tokens. 0 means off<br/>
@@ -214,7 +210,9 @@ namespace G
         /// <param name="toolChoice">
         /// Controls which (if any) function is called by the model. none means the model will not call a function and instead generates a message. auto means the model can pick between generating a message or calling a function. specifying a particular function choice is not supported currently.none is the default when no functions are present. auto is the default if functions are present.
         /// </param>
-        /// <param name="responseFormat"></param>
+        /// <param name="responseFormat">
+        /// The format of the response. Currently, only json is supported.
+        /// </param>
         /// <param name="repetitionPenalty">
         /// Alternative penalty for repetition, but multiplicative instead of additive (&gt; 1 penalize, &lt; 1 encourage)<br/>
         /// Default Value: 1
@@ -228,7 +226,9 @@ namespace G
         /// <param name="logprobs">
         /// Whether to return log probabilities of the output tokens or not.If true, returns the log probabilities of each output token returned in the `content` of `message`.
         /// </param>
-        /// <param name="streamOptions"></param>
+        /// <param name="streamOptions">
+        /// streaming options
+        /// </param>
         /// <param name="reasoningEffort">
         /// Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.
         /// </param>
@@ -244,7 +244,7 @@ namespace G
             double? minP,
             int? topK,
             int? maxTokens,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
             int? n,
             double? presencePenalty,
             double? frequencyPenalty,
@@ -256,7 +256,7 @@ namespace G
             int? seed,
             bool? logprobs,
             global::G.StreamOptions? streamOptions,
-            global::G.OpenAIChatCompletionsInReasoningEffort? reasoningEffort)
+            global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

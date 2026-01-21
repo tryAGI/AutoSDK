@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost
     {
         /// <summary>
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
-        /// Example: John Smith
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </summary>
-        /// <example>John Smith</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NewName { get; set; }
@@ -28,8 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost" /> class.
         /// </summary>
         /// <param name="newName">
-        /// The name that identifies this voice. This will be displayed in the dropdown of the website.<br/>
-        /// Example: John Smith
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -74,7 +74,7 @@ namespace G
             if (request.FileFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat}"),
                     name: "file_format");
             }
             __httpRequest.Content = __httpRequestContent;
@@ -209,8 +209,7 @@ namespace G
         /// </param>
         /// <param name="fileFormat">
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -218,7 +217,7 @@ namespace G
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost

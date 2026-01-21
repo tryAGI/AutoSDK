@@ -48,9 +48,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PronunciationDictionaryVersionResponseModelPermissionOnResourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get; set; }
+        public required global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
 
         /// <summary>
         /// 
@@ -99,7 +98,7 @@ namespace G
             string pronunciationDictionaryId,
             string dictionaryName,
             string versionName,
-            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? permissionOnResource,
+            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? permissionOnResource,
             string createdBy,
             int creationTimeUnix,
             int? archivedTimeUnix)
@@ -109,7 +108,7 @@ namespace G
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
-            this.PermissionOnResource = permissionOnResource;
+            this.PermissionOnResource = permissionOnResource ?? throw new global::System.ArgumentNullException(nameof(permissionOnResource));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
             this.ArchivedTimeUnix = archivedTimeUnix;

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetAgentLinkResponseModel
     {
@@ -16,7 +16,7 @@ namespace G
         public string AgentId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The token data for the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token")]
         public global::G.ConversationTokenDBModel? Token { get; set; }
@@ -33,7 +33,9 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent
         /// </param>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// The token data for the agent
+        /// </param>
         public GetAgentLinkResponseModel(
             string agentId,
             global::G.ConversationTokenDBModel? token)

@@ -12,12 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("document", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RerankResponseResultDocument Document { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 
@@ -28,6 +22,12 @@ namespace G
         public double RelevanceScore { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("document", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RerankResponseResultDocument Document { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankResponseResult" /> class.
         /// </summary>
-        /// <param name="document"></param>
         /// <param name="index"></param>
         /// <param name="relevanceScore"></param>
+        /// <param name="document"></param>
         public RerankResponseResult(
-            global::G.RerankResponseResultDocument document,
             int index,
-            double relevanceScore)
+            double relevanceScore,
+            global::G.RerankResponseResultDocument document)
         {
-            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
             this.Index = index;
             this.RelevanceScore = relevanceScore;
+            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
         }
 
         /// <summary>

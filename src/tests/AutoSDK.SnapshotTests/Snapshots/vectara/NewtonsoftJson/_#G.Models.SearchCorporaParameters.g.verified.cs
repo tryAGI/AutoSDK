@@ -28,6 +28,22 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Search parameters to retrieve knowledge for the query.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SearchParameters? Value2 { get; init; }
+#else
+        public global::G.SearchParameters? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SearchCorporaParameters(global::G.SearchCorporaParametersVariant1 value) => new SearchCorporaParameters((global::G.SearchCorporaParametersVariant1?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Search parameters to retrieve knowledge for the query.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.SearchParameters? Value2 { get; init; }
-#else
-        public global::G.SearchParameters? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

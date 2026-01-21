@@ -33,24 +33,6 @@ namespace G
         public bool IsAvailable => Available != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator DependentAgentsItem3(global::G.DependentAvailableAgentIdentifier value) => new DependentAgentsItem3((global::G.DependentAvailableAgentIdentifier?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.DependentAvailableAgentIdentifier?(DependentAgentsItem3 @this) => @this.Available;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DependentAgentsItem3(global::G.DependentAvailableAgentIdentifier? value)
-        {
-            Available = value;
-        }
-
-        /// <summary>
         /// A model that represents an agent dependent on a knowledge base/tools<br/>
         /// to which the user has no direct access.
         /// </summary>
@@ -67,6 +49,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unknown))]
 #endif
         public bool IsUnknown => Unknown != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DependentAgentsItem3(global::G.DependentAvailableAgentIdentifier value) => new DependentAgentsItem3((global::G.DependentAvailableAgentIdentifier?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.DependentAvailableAgentIdentifier?(DependentAgentsItem3 @this) => @this.Available;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DependentAgentsItem3(global::G.DependentAvailableAgentIdentifier? value)
+        {
+            Available = value;
+        }
 
         /// <summary>
         /// 

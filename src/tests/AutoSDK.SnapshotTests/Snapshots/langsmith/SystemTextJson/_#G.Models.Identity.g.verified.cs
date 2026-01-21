@@ -70,7 +70,7 @@ namespace G
         public string? RoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
@@ -94,7 +94,9 @@ namespace G
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
-        /// <param name="accessScope"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

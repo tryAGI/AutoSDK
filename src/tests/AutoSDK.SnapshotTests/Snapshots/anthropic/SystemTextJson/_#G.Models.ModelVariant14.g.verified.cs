@@ -7,40 +7,14 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public enum ModelVariant14
+    [global::System.Obsolete("This model marked as deprecated.")]
+    public sealed partial class ModelVariant14
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        Claude20,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class ModelVariant14Extensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this ModelVariant14 value)
-        {
-            return value switch
-            {
-                ModelVariant14.Claude20 => "claude-2.0",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static ModelVariant14? ToEnum(string value)
-        {
-            return value switch
-            {
-                "claude-2.0" => ModelVariant14.Claude20,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

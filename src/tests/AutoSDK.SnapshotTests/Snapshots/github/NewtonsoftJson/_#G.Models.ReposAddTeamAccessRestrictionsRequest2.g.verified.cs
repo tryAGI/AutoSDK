@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"teams":["my-team"]}
     /// </summary>
     public sealed partial class ReposAddTeamAccessRestrictionsRequest2
     {

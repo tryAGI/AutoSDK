@@ -36,6 +36,56 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaErroredResult? Errored { get; init; }
+#else
+        public global::G.BetaErroredResult? Errored { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
+#endif
+        public bool IsErrored => Errored != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaCanceledResult? Canceled { get; init; }
+#else
+        public global::G.BetaCanceledResult? Canceled { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Canceled))]
+#endif
+        public bool IsCanceled => Canceled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaExpiredResult? Expired { get; init; }
+#else
+        public global::G.BetaExpiredResult? Expired { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
+#endif
+        public bool IsExpired => Expired != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::G.BetaSucceededResult value) => new Result((global::G.BetaSucceededResult?)value);
 
         /// <summary>
@@ -50,23 +100,6 @@ namespace G
         {
             Succeeded = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaErroredResult? Errored { get; init; }
-#else
-        public global::G.BetaErroredResult? Errored { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
-#endif
-        public bool IsErrored => Errored != null;
 
         /// <summary>
         /// 
@@ -89,23 +122,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaCanceledResult? Canceled { get; init; }
-#else
-        public global::G.BetaCanceledResult? Canceled { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Canceled))]
-#endif
-        public bool IsCanceled => Canceled != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Result(global::G.BetaCanceledResult value) => new Result((global::G.BetaCanceledResult?)value);
 
         /// <summary>
@@ -120,23 +136,6 @@ namespace G
         {
             Canceled = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaExpiredResult? Expired { get; init; }
-#else
-        public global::G.BetaExpiredResult? Expired { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
-#endif
-        public bool IsExpired => Expired != null;
 
         /// <summary>
         /// 

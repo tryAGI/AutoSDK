@@ -24,6 +24,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         Cancelled,
     }
 
@@ -42,6 +46,7 @@ namespace G
                 WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Failure => "failure",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Skipped => "skipped",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Success => "success",
+                WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Cancelled => "cancelled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -56,6 +61,7 @@ namespace G
                 "failure" => WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Failure,
                 "skipped" => WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Skipped,
                 "success" => WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Success,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "cancelled" => WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion.Cancelled,
                 _ => null,
             };

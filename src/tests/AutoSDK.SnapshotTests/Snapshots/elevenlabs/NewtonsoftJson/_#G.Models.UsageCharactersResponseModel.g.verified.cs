@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"time":[1738252091000,1739404800000],"usage":{"All":[49,1053]}}
     /// </summary>
     public sealed partial class UsageCharactersResponseModel
     {

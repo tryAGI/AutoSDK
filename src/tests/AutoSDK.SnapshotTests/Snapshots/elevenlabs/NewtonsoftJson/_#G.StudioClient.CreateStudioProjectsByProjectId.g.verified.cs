@@ -31,8 +31,7 @@ namespace G
         /// Updates the specified Studio project by setting the values of the parameters passed.
         /// </summary>
         /// <param name="projectId">
-        /// The ID of the Studio project.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the Studio project.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -216,40 +215,32 @@ namespace G
         /// Updates the specified Studio project by setting the values of the parameters passed.
         /// </summary>
         /// <param name="projectId">
-        /// The ID of the Studio project.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the Studio project.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name of the Studio project, used for identification only.<br/>
-        /// Example: Project 1
+        /// The name of the Studio project, used for identification only.
         /// </param>
         /// <param name="defaultTitleVoiceId">
-        /// The voice_id that corresponds to the default voice used for new titles.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new titles.
         /// </param>
         /// <param name="defaultParagraphVoiceId">
-        /// The voice_id that corresponds to the default voice used for new paragraphs.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new paragraphs.
         /// </param>
         /// <param name="title">
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: Romeo and Juliet
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="author">
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: William Shakespeare
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="isbnNumber">
-        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: 0-306-40615-2
+        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="volumeNormalization">
         /// When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
-        /// Default Value: false<br/>
-        /// Example: false
+        /// Default Value: false
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

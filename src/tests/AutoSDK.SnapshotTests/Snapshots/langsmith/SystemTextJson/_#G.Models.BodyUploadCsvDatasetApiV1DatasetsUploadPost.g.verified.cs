@@ -37,7 +37,8 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DataTypeJsonConverter))]
@@ -69,7 +70,8 @@ namespace G
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
         /// <param name="outputKeys">
         /// Default Value: []

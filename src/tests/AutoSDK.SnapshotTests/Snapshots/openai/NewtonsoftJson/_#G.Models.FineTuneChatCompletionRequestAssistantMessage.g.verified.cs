@@ -28,6 +28,22 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Messages sent by the model in response to user messages.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestAssistantMessage? Value2 { get; init; }
+#else
+        public global::G.ChatCompletionRequestAssistantMessage? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage((global::G.FineTuneChatCompletionRequestAssistantMessageVariant1?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Messages sent by the model in response to user messages.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestAssistantMessage? Value2 { get; init; }
-#else
-        public global::G.ChatCompletionRequestAssistantMessage? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneResponseTrainingTypeDiscriminatorType? Type { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FullTrainingType? Full { get; init; }
 #else
@@ -32,6 +27,22 @@ namespace G
 #endif
         public bool IsFull => Full != null;
 
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LoRATrainingType? LoRA { get; init; }
+#else
+        public global::G.LoRATrainingType? LoRA { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LoRA))]
+#endif
+        public bool IsLoRA => LoRA != null;
         /// <summary>
         /// 
         /// </summary>
@@ -53,58 +64,38 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LoRATrainingType? Lora { get; init; }
-#else
-        public global::G.LoRATrainingType? Lora { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lora))]
-#endif
-        public bool IsLora => Lora != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator FinetuneResponseTrainingType(global::G.LoRATrainingType value) => new FinetuneResponseTrainingType((global::G.LoRATrainingType?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LoRATrainingType?(FinetuneResponseTrainingType @this) => @this.Lora;
+        public static implicit operator global::G.LoRATrainingType?(FinetuneResponseTrainingType @this) => @this.LoRA;
 
         /// <summary>
         /// 
         /// </summary>
         public FinetuneResponseTrainingType(global::G.LoRATrainingType? value)
         {
-            Lora = value;
+            LoRA = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FinetuneResponseTrainingType(
-            global::G.FinetuneResponseTrainingTypeDiscriminatorType? type,
             global::G.FullTrainingType? full,
-            global::G.LoRATrainingType? lora
+            global::G.LoRATrainingType? loRA
             )
         {
-            Type = type;
-
             Full = full;
-            Lora = lora;
+            LoRA = loRA;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Lora as object ??
+            LoRA as object ??
             Full as object 
             ;
 
@@ -113,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Full?.ToString() ??
-            Lora?.ToString() 
+            LoRA?.ToString() 
             ;
 
         /// <summary>
@@ -121,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFull && !IsLora || !IsFull && IsLora;
+            return IsFull && !IsLoRA || !IsFull && IsLoRA;
         }
 
         /// <summary>
@@ -129,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.FullTrainingType?, TResult>? full = null,
-            global::System.Func<global::G.LoRATrainingType?, TResult>? lora = null,
+            global::System.Func<global::G.LoRATrainingType?, TResult>? loRA = null,
             bool validate = true)
         {
             if (validate)
@@ -141,9 +132,9 @@ namespace G
             {
                 return full(Full!);
             }
-            else if (IsLora && lora != null)
+            else if (IsLoRA && loRA != null)
             {
-                return lora(Lora!);
+                return loRA(LoRA!);
             }
 
             return default(TResult);
@@ -154,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.FullTrainingType?>? full = null,
-            global::System.Action<global::G.LoRATrainingType?>? lora = null,
+            global::System.Action<global::G.LoRATrainingType?>? loRA = null,
             bool validate = true)
         {
             if (validate)
@@ -166,9 +157,9 @@ namespace G
             {
                 full?.Invoke(Full!);
             }
-            else if (IsLora)
+            else if (IsLoRA)
             {
-                lora?.Invoke(Lora!);
+                loRA?.Invoke(LoRA!);
             }
         }
 
@@ -181,7 +172,7 @@ namespace G
             {
                 Full,
                 typeof(global::G.FullTrainingType),
-                Lora,
+                LoRA,
                 typeof(global::G.LoRATrainingType),
             };
             const int offset = unchecked((int)2166136261);
@@ -200,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.FullTrainingType?>.Default.Equals(Full, other.Full) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LoRATrainingType?>.Default.Equals(Lora, other.Lora) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LoRATrainingType?>.Default.Equals(LoRA, other.LoRA) 
                 ;
         }
 

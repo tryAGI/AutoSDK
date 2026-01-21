@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DocumentUrl,
-        /// <summary>
-        /// 
-        /// </summary>
         ImageUrl,
         /// <summary>
         /// 
         /// </summary>
-        Reference,
+        DocumentUrl,
         /// <summary>
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Reference,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ContentChunkDiscriminatorType.DocumentUrl => "document_url",
                 ContentChunkDiscriminatorType.ImageUrl => "image_url",
-                ContentChunkDiscriminatorType.Reference => "reference",
+                ContentChunkDiscriminatorType.DocumentUrl => "document_url",
                 ContentChunkDiscriminatorType.Text => "text",
+                ContentChunkDiscriminatorType.Reference => "reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
                 "image_url" => ContentChunkDiscriminatorType.ImageUrl,
-                "reference" => ContentChunkDiscriminatorType.Reference,
+                "document_url" => ContentChunkDiscriminatorType.DocumentUrl,
                 "text" => ContentChunkDiscriminatorType.Text,
+                "reference" => ContentChunkDiscriminatorType.Reference,
                 _ => null,
             };
         }

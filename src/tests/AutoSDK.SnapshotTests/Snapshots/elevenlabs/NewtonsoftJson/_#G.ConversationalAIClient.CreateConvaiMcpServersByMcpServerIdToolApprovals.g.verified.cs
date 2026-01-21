@@ -230,7 +230,8 @@ namespace G
         /// The input schema of the MCP tool (the schema defined on the MCP server before ElevenLabs does any extra processing)
         /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the tool-level approval policy.
+        /// The tool-level approval policy<br/>
+        /// Default Value: requires_approval
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

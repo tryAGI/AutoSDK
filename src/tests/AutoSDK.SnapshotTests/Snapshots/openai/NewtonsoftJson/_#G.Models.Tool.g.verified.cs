@@ -28,24 +28,6 @@ namespace G
         public bool IsFunction => Function != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Tool(global::G.FunctionTool value) => new Tool((global::G.FunctionTool?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.FunctionTool?(Tool @this) => @this.Function;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Tool(global::G.FunctionTool? value)
-        {
-            Function = value;
-        }
-
-        /// <summary>
         /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -61,24 +43,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
         public bool IsFileSearch => FileSearch != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Tool(global::G.FileSearchTool value) => new Tool((global::G.FileSearchTool?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.FileSearchTool?(Tool @this) => @this.FileSearch;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Tool(global::G.FileSearchTool? value)
-        {
-            FileSearch = value;
-        }
 
         /// <summary>
         /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
@@ -98,24 +62,6 @@ namespace G
         public bool IsWebSearchPreview => WebSearchPreview != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Tool(global::G.WebSearchPreviewTool value) => new Tool((global::G.WebSearchPreviewTool?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.WebSearchPreviewTool?(Tool @this) => @this.WebSearchPreview;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Tool(global::G.WebSearchPreviewTool? value)
-        {
-            WebSearchPreview = value;
-        }
-
-        /// <summary>
         /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,24 +77,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUsePreview))]
 #endif
         public bool IsComputerUsePreview => ComputerUsePreview != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool((global::G.ComputerUsePreviewTool?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ComputerUsePreviewTool?(Tool @this) => @this.ComputerUsePreview;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Tool(global::G.ComputerUsePreviewTool? value)
-        {
-            ComputerUsePreview = value;
-        }
 
         /// <summary>
         /// Give the model access to additional tools via remote Model Context Protocol <br/>
@@ -169,6 +97,128 @@ namespace G
         public bool IsMCP => MCP != null;
 
         /// <summary>
+        /// A tool that runs Python code to help generate a response to a prompt.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CodeInterpreterTool? CodeInterpreter { get; init; }
+#else
+        public global::G.CodeInterpreterTool? CodeInterpreter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
+#endif
+        public bool IsCodeInterpreter => CodeInterpreter != null;
+
+        /// <summary>
+        /// A tool that generates images using a model like `gpt-image-1`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ImageGenTool? ImageGen { get; init; }
+#else
+        public global::G.ImageGenTool? ImageGen { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGen))]
+#endif
+        public bool IsImageGen => ImageGen != null;
+
+        /// <summary>
+        /// A tool that allows the model to execute shell commands in a local environment.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LocalShellTool? LocalShell { get; init; }
+#else
+        public global::G.LocalShellTool? LocalShell { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShell))]
+#endif
+        public bool IsLocalShell => LocalShell != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::G.FunctionTool value) => new Tool((global::G.FunctionTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.FunctionTool?(Tool @this) => @this.Function;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::G.FunctionTool? value)
+        {
+            Function = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::G.FileSearchTool value) => new Tool((global::G.FileSearchTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.FileSearchTool?(Tool @this) => @this.FileSearch;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::G.FileSearchTool? value)
+        {
+            FileSearch = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::G.WebSearchPreviewTool value) => new Tool((global::G.WebSearchPreviewTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.WebSearchPreviewTool?(Tool @this) => @this.WebSearchPreview;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::G.WebSearchPreviewTool? value)
+        {
+            WebSearchPreview = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool((global::G.ComputerUsePreviewTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ComputerUsePreviewTool?(Tool @this) => @this.ComputerUsePreview;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::G.ComputerUsePreviewTool? value)
+        {
+            ComputerUsePreview = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Tool(global::G.MCPTool value) => new Tool((global::G.MCPTool?)value);
@@ -185,23 +235,6 @@ namespace G
         {
             MCP = value;
         }
-
-        /// <summary>
-        /// A tool that runs Python code to help generate a response to a prompt.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterTool? CodeInterpreter { get; init; }
-#else
-        public global::G.CodeInterpreterTool? CodeInterpreter { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
-#endif
-        public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
         /// 
@@ -222,23 +255,6 @@ namespace G
         }
 
         /// <summary>
-        /// A tool that generates images using a model like `gpt-image-1`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ImageGenTool? ImageGen { get; init; }
-#else
-        public global::G.ImageGenTool? ImageGen { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGen))]
-#endif
-        public bool IsImageGen => ImageGen != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Tool(global::G.ImageGenTool value) => new Tool((global::G.ImageGenTool?)value);
@@ -255,23 +271,6 @@ namespace G
         {
             ImageGen = value;
         }
-
-        /// <summary>
-        /// A tool that allows the model to execute shell commands in a local environment.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LocalShellTool? LocalShell { get; init; }
-#else
-        public global::G.LocalShellTool? LocalShell { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShell))]
-#endif
-        public bool IsLocalShell => LocalShell != null;
 
         /// <summary>
         /// 

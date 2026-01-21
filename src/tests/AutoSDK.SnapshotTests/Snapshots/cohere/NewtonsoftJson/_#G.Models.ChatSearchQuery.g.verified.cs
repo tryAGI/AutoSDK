@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatSearchQuery
     {
         /// <summary>
-        /// Unique identifier for the generated search query. Useful for submitting feedback.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("generation_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid GenerationId { get; set; } = default!;
-
-        /// <summary>
         /// The text of the search query.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
+
+        /// <summary>
+        /// Unique identifier for the generated search query. Useful for submitting feedback.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("generation_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid GenerationId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatSearchQuery" /> class.
         /// </summary>
-        /// <param name="generationId">
-        /// Unique identifier for the generated search query. Useful for submitting feedback.
-        /// </param>
         /// <param name="text">
         /// The text of the search query.
         /// </param>
+        /// <param name="generationId">
+        /// Unique identifier for the generated search query. Useful for submitting feedback.
+        /// </param>
         public ChatSearchQuery(
-            global::System.Guid generationId,
-            string text)
+            string text,
+            global::System.Guid generationId)
         {
-            this.GenerationId = generationId;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.GenerationId = generationId;
         }
 
         /// <summary>

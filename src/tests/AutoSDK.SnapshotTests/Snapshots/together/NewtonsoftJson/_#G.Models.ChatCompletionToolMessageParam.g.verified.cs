@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionToolMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionToolMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Content { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionToolMessageParam" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="toolCallId"></param>
         public ChatCompletionToolMessageParam(
             string content,

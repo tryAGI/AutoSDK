@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -77,7 +77,7 @@ namespace G
             object? outputs,
             global::G.AttachmentsOperations? attachmentsOperations,
             object? metadata,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
             bool? overwrite)
         {
             this.DatasetId = datasetId;

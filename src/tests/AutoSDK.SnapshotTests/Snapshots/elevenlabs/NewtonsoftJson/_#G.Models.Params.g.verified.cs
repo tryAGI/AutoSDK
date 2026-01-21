@@ -35,24 +35,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Params(global::G.EndCallToolConfig value) => new Params((global::G.EndCallToolConfig?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.EndCallToolConfig?(Params @this) => @this.EndCall;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Params(global::G.EndCallToolConfig? value)
-        {
-            EndCall = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LanguageDetectionToolConfig? LanguageDetection { get; init; }
 #else
@@ -66,24 +48,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageDetection))]
 #endif
         public bool IsLanguageDetection => LanguageDetection != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Params(global::G.LanguageDetectionToolConfig value) => new Params((global::G.LanguageDetectionToolConfig?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.LanguageDetectionToolConfig?(Params @this) => @this.LanguageDetection;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Params(global::G.LanguageDetectionToolConfig? value)
-        {
-            LanguageDetection = value;
-        }
 
         /// <summary>
         /// 
@@ -105,24 +69,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Params(global::G.TransferToAgentToolConfig value) => new Params((global::G.TransferToAgentToolConfig?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.TransferToAgentToolConfig?(Params @this) => @this.TransferToAgent;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Params(global::G.TransferToAgentToolConfig? value)
-        {
-            TransferToAgent = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToNumberToolConfig? TransferToNumber { get; init; }
 #else
@@ -136,24 +82,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferToNumber))]
 #endif
         public bool IsTransferToNumber => TransferToNumber != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Params(global::G.TransferToNumberToolConfig value) => new Params((global::G.TransferToNumberToolConfig?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.TransferToNumberToolConfig?(Params @this) => @this.TransferToNumber;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Params(global::G.TransferToNumberToolConfig? value)
-        {
-            TransferToNumber = value;
-        }
 
         /// <summary>
         /// Allows the agent to explicitly skip its turn.<br/>
@@ -178,6 +106,77 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SkipTurn))]
 #endif
         public bool IsSkipTurn => SkipTurn != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Params(global::G.EndCallToolConfig value) => new Params((global::G.EndCallToolConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.EndCallToolConfig?(Params @this) => @this.EndCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Params(global::G.EndCallToolConfig? value)
+        {
+            EndCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Params(global::G.LanguageDetectionToolConfig value) => new Params((global::G.LanguageDetectionToolConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.LanguageDetectionToolConfig?(Params @this) => @this.LanguageDetection;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Params(global::G.LanguageDetectionToolConfig? value)
+        {
+            LanguageDetection = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Params(global::G.TransferToAgentToolConfig value) => new Params((global::G.TransferToAgentToolConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.TransferToAgentToolConfig?(Params @this) => @this.TransferToAgent;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Params(global::G.TransferToAgentToolConfig? value)
+        {
+            TransferToAgent = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Params(global::G.TransferToNumberToolConfig value) => new Params((global::G.TransferToNumberToolConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.TransferToNumberToolConfig?(Params @this) => @this.TransferToNumber;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Params(global::G.TransferToNumberToolConfig? value)
+        {
+            TransferToNumber = value;
+        }
 
         /// <summary>
         /// 

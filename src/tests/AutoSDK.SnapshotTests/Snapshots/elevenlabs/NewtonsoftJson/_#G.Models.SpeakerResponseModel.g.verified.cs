@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"duration_secs":5,"speaker_id":"DCwhRBWXzGAHq8TQ4Fs18"}
     /// </summary>
     public sealed partial class SpeakerResponseModel
     {

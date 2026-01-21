@@ -75,20 +75,24 @@ namespace G
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2017-07-08T16:18:44-04:00</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2017-07-08T16:18:44-04:00</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The set of permissions for the GitHub app
+        /// The set of permissions for the GitHub app<br/>
+        /// Example: {"issues":"read","deployments":"write"}
         /// </summary>
+        /// <example>{"issues":"read","deployments":"write"}</example>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.NullableIntegrationPermissions Permissions { get; set; } = default!;
 
@@ -168,10 +172,15 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/apps/super-ci
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2017-07-08T16:18:44-04:00
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2017-07-08T16:18:44-04:00
+        /// </param>
         /// <param name="permissions">
-        /// The set of permissions for the GitHub app
+        /// The set of permissions for the GitHub app<br/>
+        /// Example: {"issues":"read","deployments":"write"}
         /// </param>
         /// <param name="events">
         /// The list of events for the GitHub app<br/>

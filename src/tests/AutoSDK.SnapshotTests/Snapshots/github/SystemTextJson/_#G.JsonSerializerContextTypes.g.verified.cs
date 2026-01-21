@@ -1919,1355 +1919,1355 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleDiscriminatorType? Type473 { get; set; }
+        public global::G.RepositoryRuleset? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleset? Type474 { get; set; }
+        public global::G.RepositoryRulesetTarget? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetTarget? Type475 { get; set; }
+        public global::G.RepositoryRulesetSourceType? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetSourceType? Type476 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? Type477 { get; set; }
+        public global::G.RepositoryRulesetCurrentUserCanBypass? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetCurrentUserCanBypass? Type478 { get; set; }
+        public global::G.RepositoryRulesetLinks? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetLinks? Type479 { get; set; }
+        public global::G.RepositoryRulesetLinksSelf? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetLinksSelf? Type480 { get; set; }
+        public global::G.RepositoryRulesetLinksHtml? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulesetLinksHtml? Type481 { get; set; }
+        public global::G.AnyOf<global::G.RepositoryRulesetConditions, global::G.OrgRulesetConditions?>? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.RepositoryRulesetConditions, global::G.OrgRulesetConditions?>? Type482 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRule>? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryRule>? Type483 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RuleSuite>? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RuleSuite>? Type484 { get; set; }
+        public global::G.RuleSuite? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuite? Type485 { get; set; }
+        public global::G.RuleSuiteResult? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteResult? Type486 { get; set; }
+        public global::G.RuleSuiteEvaluationResult? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteEvaluationResult? Type487 { get; set; }
+        public global::G.RuleSuite2? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuite2? Type488 { get; set; }
+        public global::G.RuleSuiteResult2? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteResult2? Type489 { get; set; }
+        public global::G.RuleSuiteEvaluationResult2? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteEvaluationResult2? Type490 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluation>? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluation>? Type491 { get; set; }
+        public global::G.RuleSuiteRuleEvaluation? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteRuleEvaluation? Type492 { get; set; }
+        public global::G.RuleSuiteRuleEvaluationRuleSource? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteRuleEvaluationRuleSource? Type493 { get; set; }
+        public global::G.RuleSuiteRuleEvaluationEnforcement? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteRuleEvaluationEnforcement? Type494 { get; set; }
+        public global::G.RuleSuiteRuleEvaluationResult? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RuleSuiteRuleEvaluationResult? Type495 { get; set; }
+        public global::G.RepositoryAdvisoryVulnerability? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryVulnerability? Type496 { get; set; }
+        public global::G.RepositoryAdvisoryVulnerabilityPackage? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryVulnerabilityPackage? Type497 { get; set; }
+        public global::G.RepositoryAdvisoryCredit? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryCredit? Type498 { get; set; }
+        public global::G.RepositoryAdvisoryCreditState? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryCreditState? Type499 { get; set; }
+        public global::G.RepositoryAdvisory? Type499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisory? Type500 { get; set; }
+        public global::G.RepositoryAdvisorySeverity? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisorySeverity? Type501 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier>? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier>? Type502 { get; set; }
+        public global::G.RepositoryAdvisoryIdentifier? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryIdentifier? Type503 { get; set; }
+        public global::G.RepositoryAdvisoryIdentifierType? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryIdentifierType? Type504 { get; set; }
+        public global::G.RepositoryAdvisoryState? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryState? Type505 { get; set; }
+        public global::G.RepositoryAdvisorySubmission? Type505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisorySubmission? Type506 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Type507 { get; set; }
+        public global::G.RepositoryAdvisoryCvss? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryCvss? Type508 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Type509 { get; set; }
+        public global::G.RepositoryAdvisoryCwe? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryCwe? Type510 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Type511 { get; set; }
+        public global::G.RepositoryAdvisoryCredit2? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryAdvisoryCredit2? Type512 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? Type513 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Team>? Type513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Team>? Type514 { get; set; }
+        public global::G.ActionsBillingUsage? Type514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsBillingUsage? Type515 { get; set; }
+        public global::G.ActionsBillingUsageMinutesUsedBreakdown? Type515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsBillingUsageMinutesUsedBreakdown? Type516 { get; set; }
+        public global::G.PackagesBillingUsage? Type516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PackagesBillingUsage? Type517 { get; set; }
+        public global::G.CombinedBillingUsage? Type517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CombinedBillingUsage? Type518 { get; set; }
+        public global::G.TeamOrganization? Type518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamOrganization? Type519 { get; set; }
+        public global::G.TeamOrganizationPlan? Type519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamOrganizationPlan? Type520 { get; set; }
+        public global::G.TeamFull? Type520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamFull? Type521 { get; set; }
+        public global::G.TeamFullPrivacy? Type521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamFullPrivacy? Type522 { get; set; }
+        public global::G.TeamFullNotificationSetting? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamFullNotificationSetting? Type523 { get; set; }
+        public global::G.TeamDiscussion? Type523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamDiscussion? Type524 { get; set; }
+        public global::G.TeamDiscussionComment? Type524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamDiscussionComment? Type525 { get; set; }
+        public global::G.Reaction? Type525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Reaction? Type526 { get; set; }
+        public global::G.ReactionContent? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReactionContent? Type527 { get; set; }
+        public global::G.TeamMembership? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamMembership? Type528 { get; set; }
+        public global::G.TeamMembershipRole? Type528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamMembershipRole? Type529 { get; set; }
+        public global::G.TeamMembershipState? Type529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamMembershipState? Type530 { get; set; }
+        public global::G.TeamProject? Type530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamProject? Type531 { get; set; }
+        public global::G.TeamProjectPermissions? Type531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamProjectPermissions? Type532 { get; set; }
+        public global::G.TeamRepository? Type532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamRepository? Type533 { get; set; }
+        public global::G.TeamRepositoryPermissions? Type533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TeamRepositoryPermissions? Type534 { get; set; }
+        public global::G.ProjectCard? Type534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectCard? Type535 { get; set; }
+        public global::G.ProjectColumn? Type535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectColumn? Type536 { get; set; }
+        public global::G.ProjectCollaboratorPermission? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectCollaboratorPermission? Type537 { get; set; }
+        public global::G.RateLimit? Type537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimit? Type538 { get; set; }
+        public global::G.RateLimitOverview? Type538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitOverview? Type539 { get; set; }
+        public global::G.RateLimitOverviewResources? Type539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitOverviewResources? Type540 { get; set; }
+        public global::G.Artifact? Type540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Artifact? Type541 { get; set; }
+        public global::G.ArtifactWorkflowRun? Type541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactWorkflowRun? Type542 { get; set; }
+        public global::G.ActionsCacheList? Type542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsCacheList? Type543 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCache>? Type543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCache>? Type544 { get; set; }
+        public global::G.ActionsCacheListActionsCache? Type544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsCacheListActionsCache? Type545 { get; set; }
+        public global::G.Job? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Job? Type546 { get; set; }
+        public global::G.JobStatus? Type546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobStatus? Type547 { get; set; }
+        public global::G.JobConclusion? Type547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobConclusion? Type548 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.JobStep>? Type548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.JobStep>? Type549 { get; set; }
+        public global::G.JobStep? Type549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobStep? Type550 { get; set; }
+        public global::G.JobStepStatus? Type550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobStepStatus? Type551 { get; set; }
+        public global::G.OidcCustomSubRepo? Type551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OidcCustomSubRepo? Type552 { get; set; }
+        public global::G.ActionsSecret? Type552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsSecret? Type553 { get; set; }
+        public global::G.ActionsVariable? Type553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsVariable? Type554 { get; set; }
+        public global::G.ActionsRepositoryPermissions? Type554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsRepositoryPermissions? Type555 { get; set; }
+        public global::G.ActionsWorkflowAccessToRepository? Type555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsWorkflowAccessToRepository? Type556 { get; set; }
+        public global::G.ActionsWorkflowAccessToRepositoryAccessLevel? Type556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActionsWorkflowAccessToRepositoryAccessLevel? Type557 { get; set; }
+        public global::G.ReferencedWorkflow? Type557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReferencedWorkflow? Type558 { get; set; }
+        public global::G.PullRequestMinimal? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestMinimal? Type559 { get; set; }
+        public global::G.PullRequestMinimalHead? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestMinimalHead? Type560 { get; set; }
+        public global::G.PullRequestMinimalHeadRepo? Type560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestMinimalHeadRepo? Type561 { get; set; }
+        public global::G.PullRequestMinimalBase? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestMinimalBase? Type562 { get; set; }
+        public global::G.PullRequestMinimalBaseRepo? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestMinimalBaseRepo? Type563 { get; set; }
+        public global::G.NullableSimpleCommit? Type563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableSimpleCommit? Type564 { get; set; }
+        public global::G.NullableSimpleCommitAuthor? Type564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableSimpleCommitAuthor? Type565 { get; set; }
+        public global::G.NullableSimpleCommitCommitter? Type565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableSimpleCommitCommitter? Type566 { get; set; }
+        public global::G.WorkflowRun? Type566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRun? Type567 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ReferencedWorkflow>? Type567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ReferencedWorkflow>? Type568 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? Type568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? Type569 { get; set; }
+        public global::G.EnvironmentApprovals? Type569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EnvironmentApprovals? Type570 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironment>? Type570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironment>? Type571 { get; set; }
+        public global::G.EnvironmentApprovalsEnvironment? Type571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EnvironmentApprovalsEnvironment? Type572 { get; set; }
+        public global::G.EnvironmentApprovalsState? Type572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EnvironmentApprovalsState? Type573 { get; set; }
+        public global::G.ReviewCustomGatesCommentRequired? Type573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewCustomGatesCommentRequired? Type574 { get; set; }
+        public global::G.ReviewCustomGatesStateRequired? Type574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewCustomGatesStateRequired? Type575 { get; set; }
+        public global::G.ReviewCustomGatesStateRequiredState? Type575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewCustomGatesStateRequiredState? Type576 { get; set; }
+        public global::G.DeploymentReviewerType? Type576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentReviewerType? Type577 { get; set; }
+        public global::G.PendingDeployment? Type577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PendingDeployment? Type578 { get; set; }
+        public global::G.PendingDeploymentEnvironment? Type578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PendingDeploymentEnvironment? Type579 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewer>? Type579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewer>? Type580 { get; set; }
+        public global::G.PendingDeploymentReviewer? Type580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PendingDeploymentReviewer? Type581 { get; set; }
+        public global::G.AnyOf<global::G.SimpleUser, global::G.Team>? Type581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.SimpleUser, global::G.Team>? Type582 { get; set; }
+        public global::G.Deployment? Type582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Deployment? Type583 { get; set; }
+        public global::G.OneOf<object, string>? Type583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<object, string>? Type584 { get; set; }
+        public global::G.WorkflowRunUsage? Type584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsage? Type585 { get; set; }
+        public global::G.WorkflowRunUsageBillable? Type585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillable? Type586 { get; set; }
+        public global::G.WorkflowRunUsageBillableUBUNTU? Type586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableUBUNTU? Type587 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? Type587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? Type588 { get; set; }
+        public global::G.WorkflowRunUsageBillableUBUNTUJobRun? Type588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableUBUNTUJobRun? Type589 { get; set; }
+        public global::G.WorkflowRunUsageBillableMACOS? Type589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableMACOS? Type590 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? Type590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? Type591 { get; set; }
+        public global::G.WorkflowRunUsageBillableMACOSJobRun? Type591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableMACOSJobRun? Type592 { get; set; }
+        public global::G.WorkflowRunUsageBillableWINDOWS? Type592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableWINDOWS? Type593 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? Type593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? Type594 { get; set; }
+        public global::G.WorkflowRunUsageBillableWINDOWSJobRun? Type594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableWINDOWSJobRun? Type595 { get; set; }
+        public global::G.Workflow? Type595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Workflow? Type596 { get; set; }
+        public global::G.WorkflowState? Type596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowState? Type597 { get; set; }
+        public global::G.WorkflowUsage? Type597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsage? Type598 { get; set; }
+        public global::G.WorkflowUsageBillable? Type598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillable? Type599 { get; set; }
+        public global::G.WorkflowUsageBillableUBUNTU? Type599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableUBUNTU? Type600 { get; set; }
+        public global::G.WorkflowUsageBillableMACOS? Type600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableMACOS? Type601 { get; set; }
+        public global::G.WorkflowUsageBillableWINDOWS? Type601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableWINDOWS? Type602 { get; set; }
+        public global::G.Activity? Type602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Activity? Type603 { get; set; }
+        public global::G.ActivityActivityType? Type603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ActivityActivityType? Type604 { get; set; }
+        public global::G.Autolink? Type604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Autolink? Type605 { get; set; }
+        public global::G.CheckAutomatedSecurityFixes? Type605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckAutomatedSecurityFixes? Type606 { get; set; }
+        public global::G.ProtectedBranchRequiredStatusCheck? Type606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredStatusCheck? Type607 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProtectedBranchRequiredStatusCheckCheck>? Type607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProtectedBranchRequiredStatusCheckCheck>? Type608 { get; set; }
+        public global::G.ProtectedBranchRequiredStatusCheckCheck? Type608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredStatusCheckCheck? Type609 { get; set; }
+        public global::G.ProtectedBranchAdminEnforced? Type609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchAdminEnforced? Type610 { get; set; }
+        public global::G.ProtectedBranchPullRequestReview? Type610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchPullRequestReview? Type611 { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewDismissalRestrictions? Type611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchPullRequestReviewDismissalRestrictions? Type612 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration>? Type612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Integration>? Type613 { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Type613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Type614 { get; set; }
+        public global::G.BranchRestrictionPolicy? Type614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicy? Type615 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyUser>? Type615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyUser>? Type616 { get; set; }
+        public global::G.BranchRestrictionPolicyUser? Type616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicyUser? Type617 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyTeam>? Type617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyTeam>? Type618 { get; set; }
+        public global::G.BranchRestrictionPolicyTeam? Type618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicyTeam? Type619 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyApp>? Type619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyApp>? Type620 { get; set; }
+        public global::G.BranchRestrictionPolicyApp? Type620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicyApp? Type621 { get; set; }
+        public global::G.BranchRestrictionPolicyAppOwner? Type621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicyAppOwner? Type622 { get; set; }
+        public global::G.BranchRestrictionPolicyAppPermissions? Type622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchRestrictionPolicyAppPermissions? Type623 { get; set; }
+        public global::G.BranchProtection? Type623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtection? Type624 { get; set; }
+        public global::G.BranchProtectionRequiredLinearHistory? Type624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionRequiredLinearHistory? Type625 { get; set; }
+        public global::G.BranchProtectionAllowForcePushes? Type625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionAllowForcePushes? Type626 { get; set; }
+        public global::G.BranchProtectionAllowDeletions? Type626 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionAllowDeletions? Type627 { get; set; }
+        public global::G.BranchProtectionBlockCreations? Type627 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionBlockCreations? Type628 { get; set; }
+        public global::G.BranchProtectionRequiredConversationResolution? Type628 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionRequiredConversationResolution? Type629 { get; set; }
+        public global::G.BranchProtectionRequiredSignatures? Type629 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionRequiredSignatures? Type630 { get; set; }
+        public global::G.BranchProtectionLockBranch? Type630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionLockBranch? Type631 { get; set; }
+        public global::G.BranchProtectionAllowForkSyncing? Type631 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchProtectionAllowForkSyncing? Type632 { get; set; }
+        public global::G.ShortBranch? Type632 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShortBranch? Type633 { get; set; }
+        public global::G.ShortBranchCommit? Type633 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShortBranchCommit? Type634 { get; set; }
+        public global::G.NullableGitUser? Type634 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableGitUser? Type635 { get; set; }
+        public global::G.Verification? Type635 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Verification? Type636 { get; set; }
+        public global::G.DiffEntry? Type636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DiffEntry? Type637 { get; set; }
+        public global::G.DiffEntryStatus? Type637 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DiffEntryStatus? Type638 { get; set; }
+        public global::G.Commit? Type638 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Commit? Type639 { get; set; }
+        public global::G.CommitCommit1? Type639 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitCommit1? Type640 { get; set; }
+        public global::G.CommitCommit1Tree? Type640 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitCommit1Tree? Type641 { get; set; }
+        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Type641 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Type642 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CommitParent>? Type642 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CommitParent>? Type643 { get; set; }
+        public global::G.CommitParent? Type643 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitParent? Type644 { get; set; }
+        public global::G.CommitStats? Type644 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitStats? Type645 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DiffEntry>? Type645 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DiffEntry>? Type646 { get; set; }
+        public global::G.BranchWithProtection? Type646 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchWithProtection? Type647 { get; set; }
+        public global::G.BranchWithProtectionLinks? Type647 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchWithProtectionLinks? Type648 { get; set; }
+        public global::G.StatusCheckPolicy? Type648 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StatusCheckPolicy? Type649 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.StatusCheckPolicyCheck>? Type649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.StatusCheckPolicyCheck>? Type650 { get; set; }
+        public global::G.StatusCheckPolicyCheck? Type650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StatusCheckPolicyCheck? Type651 { get; set; }
+        public global::G.ProtectedBranch? Type651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranch? Type652 { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviews? Type652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredPullRequestReviews? Type653 { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? Type653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? Type654 { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? Type654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? Type655 { get; set; }
+        public global::G.ProtectedBranchRequiredSignatures? Type655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredSignatures? Type656 { get; set; }
+        public global::G.ProtectedBranchEnforceAdmins? Type656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchEnforceAdmins? Type657 { get; set; }
+        public global::G.ProtectedBranchRequiredLinearHistory? Type657 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredLinearHistory? Type658 { get; set; }
+        public global::G.ProtectedBranchAllowForcePushes? Type658 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchAllowForcePushes? Type659 { get; set; }
+        public global::G.ProtectedBranchAllowDeletions? Type659 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchAllowDeletions? Type660 { get; set; }
+        public global::G.ProtectedBranchRequiredConversationResolution? Type660 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchRequiredConversationResolution? Type661 { get; set; }
+        public global::G.ProtectedBranchBlockCreations? Type661 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchBlockCreations? Type662 { get; set; }
+        public global::G.ProtectedBranchLockBranch? Type662 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchLockBranch? Type663 { get; set; }
+        public global::G.ProtectedBranchAllowForkSyncing? Type663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProtectedBranchAllowForkSyncing? Type664 { get; set; }
+        public global::G.DeploymentSimple? Type664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentSimple? Type665 { get; set; }
+        public global::G.CheckRun? Type665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRun? Type666 { get; set; }
+        public global::G.CheckRunStatus? Type666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRunStatus? Type667 { get; set; }
+        public global::G.CheckRunConclusion? Type667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRunConclusion? Type668 { get; set; }
+        public global::G.CheckRunOutput? Type668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRunOutput? Type669 { get; set; }
+        public global::G.CheckRunCheckSuite? Type669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRunCheckSuite? Type670 { get; set; }
+        public global::G.CheckAnnotation? Type670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckAnnotation? Type671 { get; set; }
+        public global::G.SimpleCommit? Type671 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SimpleCommit? Type672 { get; set; }
+        public global::G.SimpleCommitAuthor? Type672 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SimpleCommitAuthor? Type673 { get; set; }
+        public global::G.SimpleCommitCommitter? Type673 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SimpleCommitCommitter? Type674 { get; set; }
+        public global::G.CheckSuite? Type674 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuite? Type675 { get; set; }
+        public global::G.CheckSuiteStatus? Type675 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuiteStatus? Type676 { get; set; }
+        public global::G.CheckSuiteConclusion? Type676 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuiteConclusion? Type677 { get; set; }
+        public global::G.CheckSuitePreference? Type677 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuitePreference? Type678 { get; set; }
+        public global::G.CheckSuitePreferencePreferences? Type678 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuitePreferencePreferences? Type679 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CheckSuitePreferencePreferencesAutoTriggerCheck>? Type679 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CheckSuitePreferencePreferencesAutoTriggerCheck>? Type680 { get; set; }
+        public global::G.CheckSuitePreferencePreferencesAutoTriggerCheck? Type680 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckSuitePreferencePreferencesAutoTriggerCheck? Type681 { get; set; }
+        public global::G.CodeScanningAlertItems? Type681 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlertItems? Type682 { get; set; }
+        public global::G.CodeScanningAlertRule? Type682 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlertRule? Type683 { get; set; }
+        public global::G.CodeScanningAlertRuleSeverity? Type683 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlertRuleSeverity? Type684 { get; set; }
+        public global::G.CodeScanningAlertRuleSecuritySeverityLevel? Type684 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlertRuleSecuritySeverityLevel? Type685 { get; set; }
+        public global::G.CodeScanningAlert? Type685 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlert? Type686 { get; set; }
+        public global::G.CodeScanningAlertSetState? Type686 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAlertSetState? Type687 { get; set; }
+        public global::G.CodeScanningAnalysis? Type687 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAnalysis? Type688 { get; set; }
+        public global::G.CodeScanningAnalysisDeletion? Type688 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningAnalysisDeletion? Type689 { get; set; }
+        public global::G.CodeScanningCodeqlDatabase? Type689 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningCodeqlDatabase? Type690 { get; set; }
+        public global::G.CodeScanningVariantAnalysisLanguage? Type690 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisLanguage? Type691 { get; set; }
+        public global::G.CodeScanningVariantAnalysisRepository? Type691 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisRepository? Type692 { get; set; }
+        public global::G.CodeScanningVariantAnalysisStatus? Type692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisStatus? Type693 { get; set; }
+        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup? Type693 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup? Type694 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisRepository>? Type694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisRepository>? Type695 { get; set; }
+        public global::G.CodeScanningVariantAnalysis? Type695 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysis? Type696 { get; set; }
+        public global::G.CodeScanningVariantAnalysisStatus2? Type696 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisStatus2? Type697 { get; set; }
+        public global::G.CodeScanningVariantAnalysisFailureReason? Type697 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisFailureReason? Type698 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositorie>? Type698 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositorie>? Type699 { get; set; }
+        public global::G.CodeScanningVariantAnalysisScannedRepositorie? Type699 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisScannedRepositorie? Type700 { get; set; }
+        public global::G.CodeScanningVariantAnalysisSkippedRepositories? Type700 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisSkippedRepositories? Type701 { get; set; }
+        public global::G.CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos? Type701 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos? Type702 { get; set; }
+        public global::G.CodeScanningVariantAnalysisRepoTask? Type702 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningVariantAnalysisRepoTask? Type703 { get; set; }
+        public global::G.CodeScanningDefaultSetup? Type703 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetup? Type704 { get; set; }
+        public global::G.CodeScanningDefaultSetupState? Type704 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupState? Type705 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguage>? Type705 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguage>? Type706 { get; set; }
+        public global::G.CodeScanningDefaultSetupLanguage? Type706 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupLanguage? Type707 { get; set; }
+        public global::G.CodeScanningDefaultSetupQuerySuite? Type707 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupQuerySuite? Type708 { get; set; }
+        public global::G.CodeScanningDefaultSetupSchedule? Type708 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupSchedule? Type709 { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdate? Type709 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupUpdate? Type710 { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateState? Type710 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupUpdateState? Type711 { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateQuerySuite? Type711 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupUpdateQuerySuite? Type712 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguage>? Type712 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguage>? Type713 { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateLanguage? Type713 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupUpdateLanguage? Type714 { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateResponse? Type714 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningDefaultSetupUpdateResponse? Type715 { get; set; }
+        public global::G.CodeScanningSarifsReceipt? Type715 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningSarifsReceipt? Type716 { get; set; }
+        public global::G.CodeScanningSarifsStatus? Type716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningSarifsStatus? Type717 { get; set; }
+        public global::G.CodeScanningSarifsStatusProcessingStatus? Type717 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeScanningSarifsStatusProcessingStatus? Type718 { get; set; }
+        public global::G.CodeSecurityConfigurationForRepository? Type718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeSecurityConfigurationForRepository? Type719 { get; set; }
+        public global::G.CodeSecurityConfigurationForRepositoryStatus? Type719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeSecurityConfigurationForRepositoryStatus? Type720 { get; set; }
+        public global::G.CodeownersErrors? Type720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeownersErrors? Type721 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeownersErrorsError>? Type721 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CodeownersErrorsError>? Type722 { get; set; }
+        public global::G.CodeownersErrorsError? Type722 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeownersErrorsError? Type723 { get; set; }
+        public global::G.CodespaceMachine? Type723 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodespaceMachine? Type724 { get; set; }
+        public global::G.CodespaceMachinePrebuildAvailability? Type724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodespaceMachinePrebuildAvailability? Type725 { get; set; }
+        public global::G.CodespacesPermissionsCheckForDevcontainer? Type725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodespacesPermissionsCheckForDevcontainer? Type726 { get; set; }
+        public global::G.RepoCodespacesSecret? Type726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepoCodespacesSecret? Type727 { get; set; }
+        public global::G.Collaborator? Type727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Collaborator? Type728 { get; set; }
+        public global::G.CollaboratorPermissions? Type728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CollaboratorPermissions? Type729 { get; set; }
+        public global::G.RepositoryInvitation? Type729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryInvitation? Type730 { get; set; }
+        public global::G.RepositoryInvitationPermissions? Type730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryInvitationPermissions? Type731 { get; set; }
+        public global::G.NullableCollaborator? Type731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableCollaborator? Type732 { get; set; }
+        public global::G.NullableCollaboratorPermissions? Type732 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableCollaboratorPermissions? Type733 { get; set; }
+        public global::G.RepositoryCollaboratorPermission? Type733 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryCollaboratorPermission? Type734 { get; set; }
+        public global::G.CommitComment? Type734 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitComment? Type735 { get; set; }
+        public global::G.BranchShort? Type735 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchShort? Type736 { get; set; }
+        public global::G.BranchShortCommit? Type736 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchShortCommit? Type737 { get; set; }
+        public global::G.Link? Type737 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Link? Type738 { get; set; }
+        public global::G.AutoMerge? Type738 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoMerge? Type739 { get; set; }
+        public global::G.AutoMergeMergeMethod? Type739 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoMergeMergeMethod? Type740 { get; set; }
+        public global::G.PullRequestSimple? Type740 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestSimple? Type741 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabel>? Type741 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabel>? Type742 { get; set; }
+        public global::G.PullRequestSimpleLabel? Type742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestSimpleLabel? Type743 { get; set; }
+        public global::G.PullRequestSimpleHead? Type743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestSimpleHead? Type744 { get; set; }
+        public global::G.PullRequestSimpleBase? Type744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestSimpleBase? Type745 { get; set; }
+        public global::G.PullRequestSimpleLinks? Type745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestSimpleLinks? Type746 { get; set; }
+        public global::G.SimpleCommitStatus? Type746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SimpleCommitStatus? Type747 { get; set; }
+        public global::G.CombinedCommitStatus? Type747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CombinedCommitStatus? Type748 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleCommitStatus>? Type748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SimpleCommitStatus>? Type749 { get; set; }
+        public global::G.Status? Type749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Status? Type750 { get; set; }
+        public global::G.NullableCodeOfConductSimple? Type750 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableCodeOfConductSimple? Type751 { get; set; }
+        public global::G.NullableCommunityHealthFile? Type751 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableCommunityHealthFile? Type752 { get; set; }
+        public global::G.CommunityProfile? Type752 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommunityProfile? Type753 { get; set; }
+        public global::G.CommunityProfileFiles? Type753 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommunityProfileFiles? Type754 { get; set; }
+        public global::G.CommitComparison? Type754 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitComparison? Type755 { get; set; }
+        public global::G.CommitComparisonStatus? Type755 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommitComparisonStatus? Type756 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Commit>? Type756 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Commit>? Type757 { get; set; }
+        public global::G.ContentTree? Type757 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentTree? Type758 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentTreeEntrie>? Type758 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentTreeEntrie>? Type759 { get; set; }
+        public global::G.ContentTreeEntrie? Type759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentTreeEntrie? Type760 { get; set; }
+        public global::G.ContentTreeEntrieLinks? Type760 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentTreeEntrieLinks? Type761 { get; set; }
+        public global::G.ContentTreeLinks? Type761 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentTreeLinks? Type762 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? Type762 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? Type763 { get; set; }
+        public global::G.ContentDirectoryItem? Type763 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentDirectoryItem? Type764 { get; set; }
+        public global::G.ContentDirectoryItemType? Type764 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentDirectoryItemType? Type765 { get; set; }
+        public global::G.ContentDirectoryItemLinks? Type765 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentDirectoryItemLinks? Type766 { get; set; }
+        public global::G.ContentFile? Type766 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentFile? Type767 { get; set; }
+        public global::G.ContentFileType? Type767 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentFileType? Type768 { get; set; }
+        public global::G.ContentFileLinks? Type768 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentFileLinks? Type769 { get; set; }
+        public global::G.ContentSymlink? Type769 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSymlink? Type770 { get; set; }
+        public global::G.ContentSymlinkType? Type770 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSymlinkType? Type771 { get; set; }
+        public global::G.ContentSymlinkLinks? Type771 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSymlinkLinks? Type772 { get; set; }
+        public global::G.ContentSubmodule? Type772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSubmodule? Type773 { get; set; }
+        public global::G.ContentSubmoduleType? Type773 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSubmoduleType? Type774 { get; set; }
+        public global::G.ContentSubmoduleLinks? Type774 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSubmoduleLinks? Type775 { get; set; }
+        public global::G.FileCommit? Type775 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommit? Type776 { get; set; }
+        public global::G.FileCommitContent? Type776 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitContent? Type777 { get; set; }
+        public global::G.FileCommitContentLinks? Type777 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitContentLinks? Type778 { get; set; }
+        public global::G.FileCommitCommit? Type778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommit? Type779 { get; set; }
+        public global::G.FileCommitCommitAuthor? Type779 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommitAuthor? Type780 { get; set; }
+        public global::G.FileCommitCommitCommitter? Type780 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommitCommitter? Type781 { get; set; }
+        public global::G.FileCommitCommitTree? Type781 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommitTree? Type782 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FileCommitCommitParent>? Type782 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FileCommitCommitParent>? Type783 { get; set; }
+        public global::G.FileCommitCommitParent? Type783 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommitParent? Type784 { get; set; }
+        public global::G.FileCommitCommitVerification? Type784 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCommitCommitVerification? Type785 { get; set; }
+        public global::G.RepositoryRuleViolationError? Type785 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleViolationError? Type786 { get; set; }
+        public global::G.RepositoryRuleViolationErrorMetadata? Type786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleViolationErrorMetadata? Type787 { get; set; }
+        public global::G.RepositoryRuleViolationErrorMetadataSecretScanning? Type787 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleViolationErrorMetadataSecretScanning? Type788 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder>? Type788 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder>? Type789 { get; set; }
+        public global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder? Type789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder? Type790 { get; set; }
+        public global::G.Contributor? Type790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Contributor? Type791 { get; set; }
+        public global::G.DependabotAlert? Type791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotAlert? Type792 { get; set; }
+        public global::G.DependabotAlertState? Type792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotAlertState? Type793 { get; set; }
+        public global::G.DependabotAlertDependency? Type793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotAlertDependency? Type794 { get; set; }
+        public global::G.DependabotAlertDependencyScope? Type794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotAlertDependencyScope? Type795 { get; set; }
+        public global::G.DependabotAlertDismissedReason? Type795 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotAlertDismissedReason? Type796 { get; set; }
+        public global::G.DependabotSecret? Type796 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependabotSecret? Type797 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItem>? Type797 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItem>? Type798 { get; set; }
+        public global::G.DependencyGraphDiffItem? Type798 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphDiffItem? Type799 { get; set; }
+        public global::G.DependencyGraphDiffItemChangeType? Type799 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphDiffItemChangeType? Type800 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItemVulnerabilitie>? Type800 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItemVulnerabilitie>? Type801 { get; set; }
+        public global::G.DependencyGraphDiffItemVulnerabilitie? Type801 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphDiffItemVulnerabilitie? Type802 { get; set; }
+        public global::G.DependencyGraphDiffItemScope? Type802 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphDiffItemScope? Type803 { get; set; }
+        public global::G.DependencyGraphSpdxSbom? Type803 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphSpdxSbom? Type804 { get; set; }
+        public global::G.DependencyGraphSpdxSbomSbom? Type804 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphSpdxSbomSbom? Type805 { get; set; }
+        public global::G.DependencyGraphSpdxSbomSbomCreationInfo? Type805 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphSpdxSbomSbomCreationInfo? Type806 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackage>? Type806 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackage>? Type807 { get; set; }
+        public global::G.DependencyGraphSpdxSbomSbomPackage? Type807 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphSpdxSbomSbomPackage? Type808 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackageExternalRef>? Type808 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackageExternalRef>? Type809 { get; set; }
+        public global::G.DependencyGraphSpdxSbomSbomPackageExternalRef? Type809 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependencyGraphSpdxSbomSbomPackageExternalRef? Type810 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? Type810 { get; set; }
         /// <summary>
         /// 
         /// </summary>

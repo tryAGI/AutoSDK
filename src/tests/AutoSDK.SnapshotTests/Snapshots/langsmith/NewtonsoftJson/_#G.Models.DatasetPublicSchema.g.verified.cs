@@ -54,7 +54,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.DatasetTransformation>? Transformations { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
         public global::G.DataType? DataType { get; set; }
@@ -90,7 +90,7 @@ namespace G
         /// </param>
         /// <param name="transformations"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="id"></param>
         /// <param name="exampleCount"></param>

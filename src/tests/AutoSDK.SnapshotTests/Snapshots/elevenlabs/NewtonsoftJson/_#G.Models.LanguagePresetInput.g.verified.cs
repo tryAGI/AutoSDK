@@ -10,13 +10,15 @@ namespace G
     public sealed partial class LanguagePresetInput
     {
         /// <summary>
-        /// 
+        /// The overrides for the language preset<br/>
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
         /// </summary>
+        /// <example>{"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}</example>
         [global::Newtonsoft.Json.JsonProperty("overrides", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ConversationConfigClientOverrideInput Overrides { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The translation of the first message
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_message_translation")]
         public global::G.LanguagePresetTranslation? FirstMessageTranslation { get; set; }
@@ -30,8 +32,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LanguagePresetInput" /> class.
         /// </summary>
-        /// <param name="overrides"></param>
-        /// <param name="firstMessageTranslation"></param>
+        /// <param name="overrides">
+        /// The overrides for the language preset<br/>
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
+        /// </param>
+        /// <param name="firstMessageTranslation">
+        /// The translation of the first message
+        /// </param>
         public LanguagePresetInput(
             global::G.ConversationConfigClientOverrideInput overrides,
             global::G.LanguagePresetTranslation? firstMessageTranslation)

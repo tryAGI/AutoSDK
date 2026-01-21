@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Model representing a single word with its timing information from the aligner.
+    /// Model representing a single word with its timing information from the aligner.<br/>
+    /// Example: {"end":1.02,"start":0,"text":"Hello"}
     /// </summary>
     public sealed partial class ForcedAlignmentWordResponseModel
     {

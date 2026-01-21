@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"extra_text":"Please verify the voice is that of a female.","files":[{"file_id":"CwhRBWXzGAHq8TQ4Fs18","file_name":"file.mp3","mime_type":"audio/mpeg","size_bytes":1000000,"upload_date_unix":1714204800}],"request_time_unix":1714204800}
     /// </summary>
     public sealed partial class ManualVerificationResponseModel
     {

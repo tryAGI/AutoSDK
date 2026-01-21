@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeepStartApplicationOut> DeepstartApplyPaymentDeepstartApplicationPostAsync(
             global::G.DeepStartApplicationIn request,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
             string funding,
             string foundedOn,
             string website,
-            string? session = default,
+            object? session = default,
             string? id = default,
             string? uid = default,
             int? createdAt = default,

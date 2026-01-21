@@ -30,24 +30,16 @@ namespace G
         /// <param name="rules">
         /// List of pronunciation rules. Rule can be either:<br/>
         ///     an alias rule: {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b', }<br/>
-        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }<br/>
-        /// Example: <br/>
-        ///     [<br/>
-        ///         {'string_to_replace': 'a', 'type': 'alias', 'alias': 'b' },<br/>
-        ///         {'string_to_replace': 'c', 'type': 'phoneme', 'phoneme': 'd', 'alphabet': 'ipa' }<br/>
-        ///     ]
+        ///     or a phoneme rule: {'string_to_replace': 'a', 'type': 'phoneme', 'phoneme': 'b', 'alphabet': 'ipa' }
         /// </param>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -56,7 +48,7 @@ namespace G
             string name,
             string? xiApiKey = default,
             string? description = default,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? workspaceAccess = default,
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? workspaceAccess = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

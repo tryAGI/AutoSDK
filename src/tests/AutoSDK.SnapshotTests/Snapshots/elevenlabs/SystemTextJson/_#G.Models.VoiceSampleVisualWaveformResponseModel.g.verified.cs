@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"sample_id":"DCwhRBWXzGAHq8TQ4Fs18","visual_waveform":[0.1,0.2,0.3,0.4,0.5]}
     /// </summary>
     public sealed partial class VoiceSampleVisualWaveformResponseModel
     {

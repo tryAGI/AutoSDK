@@ -10,7 +10,7 @@ namespace G
     public sealed partial class FeedbackIngestTokenCreateSchema
     {
         /// <summary>
-        /// Timedelta input.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_in")]
         public global::G.TimedeltaInput? ExpiresIn { get; set; }
@@ -48,9 +48,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
         /// </summary>
-        /// <param name="expiresIn">
-        /// Timedelta input.
-        /// </param>
+        /// <param name="expiresIn"></param>
         /// <param name="expiresAt"></param>
         /// <param name="runId"></param>
         /// <param name="feedbackKey"></param>

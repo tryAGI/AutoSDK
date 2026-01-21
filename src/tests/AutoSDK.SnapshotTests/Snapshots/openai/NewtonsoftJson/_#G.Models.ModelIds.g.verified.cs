@@ -28,6 +28,22 @@ namespace G
         public bool IsShared => Shared != null;
 
         /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ModelIdsResponses? Responses { get; init; }
+#else
+        public global::G.ModelIdsResponses? Responses { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
+#endif
+        public bool IsResponses => Responses != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ModelIds(global::G.ModelIdsShared value) => new ModelIds((global::G.ModelIdsShared?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Shared = value;
         }
-
-        /// <summary>
-        /// Example: gpt-4o
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelIdsResponses? Responses { get; init; }
-#else
-        public global::G.ModelIdsResponses? Responses { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
-#endif
-        public bool IsResponses => Responses != null;
 
         /// <summary>
         /// 

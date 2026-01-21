@@ -308,7 +308,8 @@ namespace G
         /// Example: Example Ruby script
         /// </param>
         /// <param name="files">
-        /// Names and content for the files that make up the gist
+        /// Names and content for the files that make up the gist<br/>
+        /// Example: {"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}
         /// </param>
         /// <param name="public"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

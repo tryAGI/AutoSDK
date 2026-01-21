@@ -73,8 +73,10 @@ namespace G
         public string TargetType { get; set; } = default!;
 
         /// <summary>
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </summary>
+        /// <example>{"contents":"read","issues":"read","deployments":"write","single_file":"read"}</example>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AppPermissions Permissions { get; set; } = default!;
 
@@ -179,7 +181,8 @@ namespace G
         /// Example: Organization
         /// </param>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
         /// <param name="events"></param>
         /// <param name="createdAt"></param>

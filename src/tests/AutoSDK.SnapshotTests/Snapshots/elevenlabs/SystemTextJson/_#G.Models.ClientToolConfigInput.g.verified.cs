@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A client tool is one that sends an event to the user's client to trigger something client side
+    /// A client tool is one that sends an event to the user's client to trigger something client side<br/>
+    /// Example: {"expects_response":false,"type":"client"}
     /// </summary>
     public sealed partial class ClientToolConfigInput
     {
@@ -41,11 +42,10 @@ namespace G
         /// Default Value: client
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClientToolConfigInputTypeJsonConverter))]
-        public global::G.ClientToolConfigInputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Schema for any parameters to pass to the client
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::G.ObjectJsonSchemaPropertyInput? Parameters { get; set; }
@@ -58,8 +58,10 @@ namespace G
         public bool? ExpectsResponse { get; set; }
 
         /// <summary>
-        /// 
+        /// Configuration for dynamic variables<br/>
+        /// Example: {"dynamic_variable_placeholders":{"user_name":"John Doe"}}
         /// </summary>
+        /// <example>{"dynamic_variable_placeholders":{"user_name":"John Doe"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("dynamic_variables")]
         public global::G.DynamicVariablesConfig? DynamicVariables { get; set; }
 
@@ -83,12 +85,17 @@ namespace G
         /// The type of tool<br/>
         /// Default Value: client
         /// </param>
-        /// <param name="parameters"></param>
+        /// <param name="parameters">
+        /// Schema for any parameters to pass to the client
+        /// </param>
         /// <param name="expectsResponse">
         /// If true, calling this tool should block the conversation until the client responds with some response which is passed to the llm. If false then we will continue the conversation without waiting for the client to respond, this is useful to show content to a user but not block the conversation<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="dynamicVariables"></param>
+        /// <param name="dynamicVariables">
+        /// Configuration for dynamic variables<br/>
+        /// Example: {"dynamic_variable_placeholders":{"user_name":"John Doe"}}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +104,7 @@ namespace G
             string description,
             string? id,
             int? responseTimeoutSecs,
-            global::G.ClientToolConfigInputType? type,
+            string? type,
             global::G.ObjectJsonSchemaPropertyInput? parameters,
             bool? expectsResponse,
             global::G.DynamicVariablesConfig? dynamicVariables)

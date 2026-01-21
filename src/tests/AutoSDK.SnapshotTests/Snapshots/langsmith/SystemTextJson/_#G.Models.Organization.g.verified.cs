@@ -53,11 +53,10 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::G.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// Stripe customer billing info.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_method")]
         public global::G.StripePaymentMethodInfo? PaymentMethod { get; set; }
@@ -76,13 +75,13 @@ namespace G
         public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_plan")]
         public global::G.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// Customer visible plan information.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upcoming_plan")]
         public global::G.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
@@ -129,17 +128,11 @@ namespace G
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
         /// <param name="tier"></param>
-        /// <param name="paymentMethod">
-        /// Stripe customer billing info.
-        /// </param>
+        /// <param name="paymentMethod"></param>
         /// <param name="hasCancelled"></param>
         /// <param name="endOfBillingPeriod"></param>
-        /// <param name="currentPlan">
-        /// Customer visible plan information.
-        /// </param>
-        /// <param name="upcomingPlan">
-        /// Customer visible plan information.
-        /// </param>
+        /// <param name="currentPlan"></param>
+        /// <param name="upcomingPlan"></param>
         /// <param name="reachedMaxWorkspaces">
         /// Default Value: false
         /// </param>

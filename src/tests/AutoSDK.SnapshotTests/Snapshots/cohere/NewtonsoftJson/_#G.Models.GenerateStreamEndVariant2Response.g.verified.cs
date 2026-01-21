@@ -12,12 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("generations")]
-        public global::System.Collections.Generic.IList<global::G.SingleGenerationInStream>? Generations { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -28,6 +22,12 @@ namespace G
         public string? Prompt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("generations")]
+        public global::System.Collections.Generic.IList<global::G.SingleGenerationInStream>? Generations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamEndVariant2Response" /> class.
         /// </summary>
-        /// <param name="generations"></param>
         /// <param name="id"></param>
         /// <param name="prompt"></param>
+        /// <param name="generations"></param>
         public GenerateStreamEndVariant2Response(
             string id,
-            global::System.Collections.Generic.IList<global::G.SingleGenerationInStream>? generations,
-            string? prompt)
+            string? prompt,
+            global::System.Collections.Generic.IList<global::G.SingleGenerationInStream>? generations)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Generations = generations;
             this.Prompt = prompt;
+            this.Generations = generations;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"request_id":"914fe7e4-f10a-4364-8946-34614c2873f6","request_id_to_purge":"b7eb03ec-1650-4181-949b-75d9de317de1","deleted":true}
     /// </summary>
     public sealed partial class PurgeLemurRequestDataResponse
     {

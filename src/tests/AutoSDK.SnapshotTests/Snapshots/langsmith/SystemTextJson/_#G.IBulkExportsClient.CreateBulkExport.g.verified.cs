@@ -24,8 +24,12 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="format"></param>
-        /// <param name="compression"></param>
+        /// <param name="format">
+        /// Default Value: Parquet
+        /// </param>
+        /// <param name="compression">
+        /// Default Value: gzip
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BulkExport> CreateBulkExportAsync(

@@ -36,24 +36,6 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatText value) => new TextResponseFormatConfiguration((global::G.ResponseFormatText?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ResponseFormatText?(TextResponseFormatConfiguration @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TextResponseFormatConfiguration(global::G.ResponseFormatText? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -70,24 +52,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration((global::G.TextResponseFormatJsonSchema?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.TextResponseFormatJsonSchema?(TextResponseFormatConfiguration @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema? value)
-        {
-            Value2 = value;
-        }
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -108,6 +72,41 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
 #endif
         public bool IsValue3 => Value3 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatText value) => new TextResponseFormatConfiguration((global::G.ResponseFormatText?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFormatText?(TextResponseFormatConfiguration @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextResponseFormatConfiguration(global::G.ResponseFormatText? value)
+        {
+            Value1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration((global::G.TextResponseFormatJsonSchema?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.TextResponseFormatJsonSchema?(TextResponseFormatConfiguration @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema? value)
+        {
+            Value2 = value;
+        }
 
         /// <summary>
         /// 

@@ -1,0 +1,30 @@
+﻿[
+  {
+    Message: $recursiveAnchor is not a valid property at #/components/schemas/CompoundFilter,
+    Pointer: 
+  },
+  {
+    Message: $recursiveRef is not a valid property at #/components/schemas/CompoundFilter/properties/filters/items/oneOf,
+    Pointer: 
+  },
+  {
+    Message: optional is not a valid property at #/components/schemas/CreateTranscriptionResponseJson/properties/logprobs,
+    Pointer: 
+  },
+  {
+    Message: unevaluatedProperties is not a valid property at #/components/schemas/FineTuneReinforcementRequestInput,
+    Pointer: 
+  },
+  {
+    Message: min_items is not a valid property at #/components/schemas/GraderScoreModel/properties/range/items,
+    Pointer: 
+  },
+  {
+    Message: max_items is not a valid property at #/components/schemas/GraderScoreModel/properties/range/items,
+    Pointer: 
+  },
+  {
+    Message: propertyNames is not a valid property at #/components/schemas/VectorStoreFileAttributes,
+    Pointer: 
+  }
+]

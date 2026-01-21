@@ -29,8 +29,9 @@ namespace G
         public string? Reason { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2012-10-06T21:34:12Z
         /// </summary>
+        /// <example>2012-10-06T21:34:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? CreatedAt { get; set; } = default!;
 
@@ -69,7 +70,9 @@ namespace G
         /// </param>
         /// <param name="ignored"></param>
         /// <param name="reason"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-10-06T21:34:12Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/notifications/threads/1/subscription
         /// </param>

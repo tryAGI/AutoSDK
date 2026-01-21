@@ -40,11 +40,10 @@ namespace G
         /// Default Value: mcp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPToolConfigOutputTypeJsonConverter))]
-        public global::G.MCPToolConfigOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The type of MCP tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integration_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IntegrationTypeJsonConverter))]
@@ -52,13 +51,14 @@ namespace G
         public required global::G.IntegrationType IntegrationType { get; set; }
 
         /// <summary>
-        /// 
+        /// Schema for any parameters the LLM needs to provide to the MCP tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::G.ObjectJsonSchemaPropertyOutput? Parameters { get; set; }
 
         /// <summary>
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval policy for the MCP tool<br/>
+        /// Default Value: require_approval_all
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_policy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalPolicyJsonConverter))]
@@ -117,10 +117,15 @@ namespace G
         /// <param name="type">
         /// Default Value: mcp
         /// </param>
-        /// <param name="integrationType"></param>
-        /// <param name="parameters"></param>
+        /// <param name="integrationType">
+        /// The type of MCP tool
+        /// </param>
+        /// <param name="parameters">
+        /// Schema for any parameters the LLM needs to provide to the MCP tool.
+        /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval policy for the MCP tool<br/>
+        /// Default Value: require_approval_all
         /// </param>
         /// <param name="mcpToolName">
         /// The name of the MCP tool to call
@@ -150,7 +155,7 @@ namespace G
             string mcpServerName,
             string? id,
             int? responseTimeoutSecs,
-            global::G.MCPToolConfigOutputType? type,
+            string? type,
             global::G.ObjectJsonSchemaPropertyOutput? parameters,
             global::G.MCPApprovalPolicy? approvalPolicy,
             object? mcpInputSchema)

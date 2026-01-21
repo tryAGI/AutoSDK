@@ -35,6 +35,73 @@ namespace G
         public bool IsCustomerReranker => CustomerReranker != null;
 
         /// <summary>
+        /// A reranker that uses user-defined functions to reorder search results.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UserFunctionReranker? Userfn { get; init; }
+#else
+        public global::G.UserFunctionReranker? Userfn { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Userfn))]
+#endif
+        public bool IsUserfn => Userfn != null;
+
+        /// <summary>
+        /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MMRReranker? Mmr { get; init; }
+#else
+        public global::G.MMRReranker? Mmr { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mmr))]
+#endif
+        public bool IsMmr => Mmr != null;
+
+        /// <summary>
+        /// A reranker that applies multiple rerankers in sequence to produce the final search results.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChainReranker? Chain { get; init; }
+#else
+        public global::G.ChainReranker? Chain { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chain))]
+#endif
+        public bool IsChain => Chain != null;
+
+        /// <summary>
+        /// A placeholder reranker that does not modify the original search results ordering.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.NoneReranker? None { get; init; }
+#else
+        public global::G.NoneReranker? None { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
+#endif
+        public bool IsNone => None != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SearchReranker(global::G.CustomerSpecificReranker value) => new SearchReranker((global::G.CustomerSpecificReranker?)value);
@@ -51,23 +118,6 @@ namespace G
         {
             CustomerReranker = value;
         }
-
-        /// <summary>
-        /// A reranker that uses user-defined functions to reorder search results.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UserFunctionReranker? Userfn { get; init; }
-#else
-        public global::G.UserFunctionReranker? Userfn { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Userfn))]
-#endif
-        public bool IsUserfn => Userfn != null;
 
         /// <summary>
         /// 
@@ -88,23 +138,6 @@ namespace G
         }
 
         /// <summary>
-        /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MMRReranker? Mmr { get; init; }
-#else
-        public global::G.MMRReranker? Mmr { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mmr))]
-#endif
-        public bool IsMmr => Mmr != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SearchReranker(global::G.MMRReranker value) => new SearchReranker((global::G.MMRReranker?)value);
@@ -123,23 +156,6 @@ namespace G
         }
 
         /// <summary>
-        /// A reranker that applies multiple rerankers in sequence to produce the final search results.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChainReranker? Chain { get; init; }
-#else
-        public global::G.ChainReranker? Chain { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chain))]
-#endif
-        public bool IsChain => Chain != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator SearchReranker(global::G.ChainReranker value) => new SearchReranker((global::G.ChainReranker?)value);
@@ -156,23 +172,6 @@ namespace G
         {
             Chain = value;
         }
-
-        /// <summary>
-        /// A placeholder reranker that does not modify the original search results ordering.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.NoneReranker? None { get; init; }
-#else
-        public global::G.NoneReranker? None { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
-#endif
-        public bool IsNone => None != null;
 
         /// <summary>
         /// 

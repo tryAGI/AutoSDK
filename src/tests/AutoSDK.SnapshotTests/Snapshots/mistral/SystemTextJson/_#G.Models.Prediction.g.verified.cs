@@ -10,17 +10,16 @@ namespace G
     public sealed partial class Prediction
     {
         /// <summary>
+        /// Default Value: content
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public string? Content { get; set; }
-
-        /// <summary>
-        /// Default Value: content
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PredictionTypeJsonConverter))]
-        public global::G.PredictionType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,19 +30,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Prediction" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="type">
         /// Default Value: content
         /// </param>
+        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Prediction(
-            string? content,
-            global::G.PredictionType? type)
+            string? type,
+            string? content)
         {
-            this.Content = content;
             this.Type = type;
+            this.Content = content;
         }
 
         /// <summary>

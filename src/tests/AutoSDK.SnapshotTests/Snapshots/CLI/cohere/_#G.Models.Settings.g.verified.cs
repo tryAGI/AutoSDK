@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Settings
     {
         /// <summary>
-        /// The base model used for fine-tuning.
+        /// The base model to fine-tune.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,7 @@ namespace G
         public required string DatasetId { get; set; }
 
         /// <summary>
-        /// The fine-tuning hyperparameters.
+        /// Fine-tuning hyper-parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         public global::G.Hyperparameters? Hyperparameters { get; set; }
@@ -37,7 +37,7 @@ namespace G
         public bool? MultiLabel { get; set; }
 
         /// <summary>
-        /// The Weights &amp; Biases configuration.
+        /// The Weights &amp; Biases configuration (Chat fine-tuning only).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
         public global::G.WandbConfig? Wandb { get; set; }
@@ -52,20 +52,20 @@ namespace G
         /// Initializes a new instance of the <see cref="Settings" /> class.
         /// </summary>
         /// <param name="baseModel">
-        /// The base model used for fine-tuning.
+        /// The base model to fine-tune.
         /// </param>
         /// <param name="datasetId">
         /// The data used for training and evaluating the fine-tuned model.
         /// </param>
         /// <param name="hyperparameters">
-        /// The fine-tuning hyperparameters.
+        /// Fine-tuning hyper-parameters.
         /// </param>
         /// <param name="multiLabel">
         /// read-only. Whether the model is single-label or multi-label (only for classification).<br/>
         /// Included only in responses
         /// </param>
         /// <param name="wandb">
-        /// The Weights &amp; Biases configuration.
+        /// The Weights &amp; Biases configuration (Chat fine-tuning only).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -18,15 +18,15 @@ namespace G
         /// <summary>
         /// Chat Classifications
         /// </summary>
+        /// <param name="model"></param>
         /// <param name="input">
         /// Chat to classify
         /// </param>
-        /// <param name="model"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ClassificationResponse> ChatClassificationsV1ChatClassificationsPostAsync(
-            global::G.ChatClassificationRequestInputs input,
             string model,
+            global::G.ChatClassificationRequestInputs input,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

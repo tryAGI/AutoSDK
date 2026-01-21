@@ -15,7 +15,7 @@ namespace G
             string? anthropicBeta,
             string? anthropicVersion,
             global::G.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::G.ToolsItem>? tools,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.BetaTool, global::G.BetaComputerUseTool20241022, global::G.BetaBashTool20241022, global::G.BetaTextEditor20241022, global::G.BetaComputerUseTool20250124, global::G.BetaBashTool20250124, global::G.BetaTextEditor20250124>>? tools,
             global::System.Collections.Generic.IList<global::G.BetaInputMessage> messages,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system,
             global::G.BetaThinkingConfigParam? thinking,
@@ -123,7 +123,7 @@ Read more about versioning and our version history [here](https://docs.anthropic
             Description = @"How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.ToolsItem>?> Tools { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.OneOf<global::G.BetaTool, global::G.BetaComputerUseTool20241022, global::G.BetaBashTool20241022, global::G.BetaTextEditor20241022, global::G.BetaComputerUseTool20250124, global::G.BetaBashTool20250124, global::G.BetaTextEditor20250124>>?> Tools { get; } = new(
             name: "tools")
         {
             Description = @"Definitions of tools that the model may use.

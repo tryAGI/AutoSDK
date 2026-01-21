@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<double> Embedding { get; set; } = default!;
 
@@ -22,12 +28,6 @@ namespace G
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,9 +36,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsResponseDataItem" /> class.
         /// </summary>
+        /// <param name="object"></param>
         /// <param name="embedding"></param>
         /// <param name="index"></param>
-        /// <param name="object"></param>
         public EmbeddingsResponseDataItem(
             global::System.Collections.Generic.IList<double> embedding,
             int index,

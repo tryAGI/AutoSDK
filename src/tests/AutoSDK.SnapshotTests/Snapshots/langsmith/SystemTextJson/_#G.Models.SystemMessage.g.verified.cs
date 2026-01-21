@@ -50,8 +50,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SystemMessageTypeJsonConverter))]
-        public global::G.SystemMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -89,7 +88,7 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.SystemMessageType? type,
+            string? type,
             string? name,
             string? id)
         {

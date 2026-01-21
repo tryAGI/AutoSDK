@@ -35,6 +35,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TenantShareDatasetToken? Dataset { get; init; }
+#else
+        public global::G.TenantShareDatasetToken? Dataset { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
+#endif
+        public bool IsDataset => Dataset != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EntitiesItem(global::G.TenantShareRunToken value) => new EntitiesItem((global::G.TenantShareRunToken?)value);
 
         /// <summary>
@@ -49,23 +65,6 @@ namespace G
         {
             Run = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.TenantShareDatasetToken? Dataset { get; init; }
-#else
-        public global::G.TenantShareDatasetToken? Dataset { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
-#endif
-        public bool IsDataset => Dataset != null;
 
         /// <summary>
         /// 

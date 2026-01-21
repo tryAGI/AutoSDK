@@ -7,46 +7,13 @@ namespace G
     /// <summary>
     /// The currency of the user's subscription.
     /// </summary>
-    public enum ExtendedSubscriptionResponseModelCurrency
+    public sealed partial class ExtendedSubscriptionResponseModelCurrency
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        Usd,
-        /// <summary>
-        /// 
-        /// </summary>
-        Eur,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class ExtendedSubscriptionResponseModelCurrencyExtensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this ExtendedSubscriptionResponseModelCurrency value)
-        {
-            return value switch
-            {
-                ExtendedSubscriptionResponseModelCurrency.Usd => "usd",
-                ExtendedSubscriptionResponseModelCurrency.Eur => "eur",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static ExtendedSubscriptionResponseModelCurrency? ToEnum(string value)
-        {
-            return value switch
-            {
-                "usd" => ExtendedSubscriptionResponseModelCurrency.Usd,
-                "eur" => ExtendedSubscriptionResponseModelCurrency.Eur,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

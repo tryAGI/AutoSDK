@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatClassificationRequest
     {
         /// <summary>
-        /// Chat to classify
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatClassificationRequestInputs Input { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
+
+        /// <summary>
+        /// Chat to classify
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatClassificationRequestInputs Input { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatClassificationRequest" /> class.
         /// </summary>
+        /// <param name="model"></param>
         /// <param name="input">
         /// Chat to classify
         /// </param>
-        /// <param name="model"></param>
         public ChatClassificationRequest(
-            global::G.ChatClassificationRequestInputs input,
-            string model)
+            string model,
+            global::G.ChatClassificationRequestInputs input)
         {
-            this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input;
         }
 
         /// <summary>

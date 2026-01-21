@@ -25,6 +25,10 @@ namespace G
         /// 
         /// </summary>
         Spam,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
     }
 
     /// <summary>
@@ -43,6 +47,7 @@ namespace G
                 WebhookIssuesLabeledIssueActiveLockReason.OffTopic => "off-topic",
                 WebhookIssuesLabeledIssueActiveLockReason.TooHeated => "too heated",
                 WebhookIssuesLabeledIssueActiveLockReason.Spam => "spam",
+                WebhookIssuesLabeledIssueActiveLockReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,6 +62,7 @@ namespace G
                 "off-topic" => WebhookIssuesLabeledIssueActiveLockReason.OffTopic,
                 "too heated" => WebhookIssuesLabeledIssueActiveLockReason.TooHeated,
                 "spam" => WebhookIssuesLabeledIssueActiveLockReason.Spam,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookIssuesLabeledIssueActiveLockReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 _ => null,
             };
         }

@@ -14,14 +14,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public string? Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public string? Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -38,16 +38,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeltaMessage" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="toolCalls"></param>
         public DeltaMessage(
-            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             string? role,
+            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.ToolCalls = toolCalls;
         }
 

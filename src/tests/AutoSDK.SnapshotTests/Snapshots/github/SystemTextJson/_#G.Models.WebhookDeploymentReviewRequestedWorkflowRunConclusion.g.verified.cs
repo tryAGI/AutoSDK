@@ -37,6 +37,10 @@ namespace G
         /// 
         /// </summary>
         Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
     }
 
     /// <summary>
@@ -58,6 +62,7 @@ namespace G
                 WebhookDeploymentReviewRequestedWorkflowRunConclusion.TimedOut => "timed_out",
                 WebhookDeploymentReviewRequestedWorkflowRunConclusion.ActionRequired => "action_required",
                 WebhookDeploymentReviewRequestedWorkflowRunConclusion.Stale => "stale",
+                WebhookDeploymentReviewRequestedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,6 +80,7 @@ namespace G
                 "timed_out" => WebhookDeploymentReviewRequestedWorkflowRunConclusion.TimedOut,
                 "action_required" => WebhookDeploymentReviewRequestedWorkflowRunConclusion.ActionRequired,
                 "stale" => WebhookDeploymentReviewRequestedWorkflowRunConclusion.Stale,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentReviewRequestedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 _ => null,
             };
         }

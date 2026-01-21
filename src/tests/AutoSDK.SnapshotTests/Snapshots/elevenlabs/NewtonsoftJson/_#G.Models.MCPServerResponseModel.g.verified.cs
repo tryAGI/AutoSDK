@@ -22,7 +22,7 @@ namespace G
         public global::G.MCPServerConfigOutput Config { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The access information of the MCP Server
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_info")]
         public global::G.ResourceAccessInfo? AccessInfo { get; set; }
@@ -34,7 +34,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.DependentAgentsItem4>? DependentAgents { get; set; }
 
         /// <summary>
-        /// 
+        /// The metadata of the MCP Server
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MCPServerMetadataResponseModel Metadata { get; set; } = default!;
@@ -50,11 +50,15 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="config"></param>
-        /// <param name="accessInfo"></param>
+        /// <param name="accessInfo">
+        /// The access information of the MCP Server
+        /// </param>
         /// <param name="dependentAgents">
         /// List of agents that depend on this MCP Server.
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// The metadata of the MCP Server
+        /// </param>
         public MCPServerResponseModel(
             string id,
             global::G.MCPServerConfigOutput config,

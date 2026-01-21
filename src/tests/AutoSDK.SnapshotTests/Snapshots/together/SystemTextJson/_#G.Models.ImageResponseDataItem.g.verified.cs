@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("b64_json")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string B64Json { get; set; }
+        public required int Index { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("b64_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        public required string B64Json { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,17 +32,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageResponseDataItem" /> class.
         /// </summary>
-        /// <param name="b64Json"></param>
         /// <param name="index"></param>
+        /// <param name="b64Json"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageResponseDataItem(
-            string b64Json,
-            int index)
+            int index,
+            string b64Json)
         {
-            this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
             this.Index = index;
+            this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
         }
 
         /// <summary>

@@ -32,6 +32,39 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Content item used to generate a response.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Item? Value2 { get; init; }
+#else
+        public global::G.Item? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// An internal identifier for an item to reference.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ItemReferenceParam? Value3 { get; init; }
+#else
+        public global::G.ItemReferenceParam? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator InputItem(global::G.EasyInputMessage value) => new InputItem((global::G.EasyInputMessage?)value);
@@ -50,23 +83,6 @@ namespace G
         }
 
         /// <summary>
-        /// Content item used to generate a response.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Item? Value2 { get; init; }
-#else
-        public global::G.Item? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator InputItem(global::G.Item value) => new InputItem((global::G.Item?)value);
@@ -83,23 +99,6 @@ namespace G
         {
             Value2 = value;
         }
-
-        /// <summary>
-        /// An internal identifier for an item to reference.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ItemReferenceParam? Value3 { get; init; }
-#else
-        public global::G.ItemReferenceParam? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 

@@ -39,8 +39,9 @@ namespace G
         public string BodyVersion { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-15T23:53:58Z
         /// </summary>
+        /// <example>2018-01-15T23:53:58Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -80,8 +81,9 @@ namespace G
         public int Number { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-15T23:53:58Z
         /// </summary>
+        /// <example>2018-01-15T23:53:58Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -121,7 +123,9 @@ namespace G
         /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
         /// Example: 0307116bbf7ced493b8d8a346c650b71
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2018-01-15T23:53:58Z
+        /// </param>
         /// <param name="lastEditedAt"></param>
         /// <param name="discussionUrl">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
@@ -136,7 +140,9 @@ namespace G
         /// The unique sequence number of a team discussion comment.<br/>
         /// Example: 42
         /// </param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2018-01-15T23:53:58Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1
         /// </param>

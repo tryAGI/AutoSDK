@@ -211,8 +211,9 @@ namespace G
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2008-01-14T04:33:35Z
         /// </summary>
+        /// <example>2008-01-14T04:33:35Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -457,7 +458,9 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
         /// <param name="type">
         /// Example: Organization
         /// </param>

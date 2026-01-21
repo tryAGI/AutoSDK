@@ -10,10 +10,8 @@ namespace G
     public sealed partial class DeployResult
     {
         /// <summary>
-        /// Deploy Id<br/>
-        /// Example: fkj843kjh8
+        /// Deploy Id
         /// </summary>
-        /// <example>fkj843kjh8</example>
         [global::Newtonsoft.Json.JsonProperty("deploy_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DeployId { get; set; } = default!;
 
@@ -27,8 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="DeployResult" /> class.
         /// </summary>
         /// <param name="deployId">
-        /// Deploy Id<br/>
-        /// Example: fkj843kjh8
+        /// Deploy Id
         /// </param>
         public DeployResult(
             string deployId)

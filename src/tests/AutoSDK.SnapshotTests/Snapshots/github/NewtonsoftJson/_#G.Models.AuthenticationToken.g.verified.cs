@@ -18,14 +18,17 @@ namespace G
         public string Token { get; set; } = default!;
 
         /// <summary>
-        /// The time this token expires
+        /// The time this token expires<br/>
+        /// Example: 2016-07-11T22:14:10Z
         /// </summary>
+        /// <example>2016-07-11T22:14:10Z</example>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime ExpiresAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: {"issues":"read","deployments":"write"}
         /// </summary>
+        /// <example>{"issues":"read","deployments":"write"}</example>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
         public object? Permissions { get; set; }
 
@@ -62,9 +65,12 @@ namespace G
         /// Example: v1.1f699f1069f60xxx
         /// </param>
         /// <param name="expiresAt">
-        /// The time this token expires
+        /// The time this token expires<br/>
+        /// Example: 2016-07-11T22:14:10Z
         /// </param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">
+        /// Example: {"issues":"read","deployments":"write"}
+        /// </param>
         /// <param name="repositories">
         /// The repositories this token has access to
         /// </param>

@@ -10,6 +10,13 @@ namespace G
     public sealed partial class WandbConfig
     {
         /// <summary>
+        /// The WandB project name to be used during training.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Project { get; set; }
+
+        /// <summary>
         /// The WandB API key to be used during training.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
@@ -23,13 +30,6 @@ namespace G
         public string? Entity { get; set; }
 
         /// <summary>
-        /// The WandB project name to be used during training.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("project")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Project { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,25 +38,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WandbConfig" /> class.
         /// </summary>
+        /// <param name="project">
+        /// The WandB project name to be used during training.
+        /// </param>
         /// <param name="apiKey">
         /// The WandB API key to be used during training.
         /// </param>
         /// <param name="entity">
         /// The WandB entity name to be used during training.
         /// </param>
-        /// <param name="project">
-        /// The WandB project name to be used during training.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WandbConfig(
-            string apiKey,
             string project,
+            string apiKey,
             string? entity)
         {
-            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
+            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
             this.Entity = entity;
         }
 

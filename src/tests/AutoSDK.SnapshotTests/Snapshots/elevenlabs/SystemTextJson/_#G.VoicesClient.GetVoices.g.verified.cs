@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareGetVoicesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? showLegacy,
+            bool? showLegacy,
             ref string? xiApiKey);
         partial void PrepareGetVoicesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -30,8 +30,7 @@ namespace G
         /// </summary>
         /// <param name="showLegacy">
         /// If set to true, legacy premade voices will be included in responses from /v1/voices<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -47,7 +46,7 @@ namespace G
                 client: HttpClient);
             PrepareGetVoicesArguments(
                 httpClient: HttpClient,
-                showLegacy: ref showLegacy,
+                showLegacy: showLegacy,
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(

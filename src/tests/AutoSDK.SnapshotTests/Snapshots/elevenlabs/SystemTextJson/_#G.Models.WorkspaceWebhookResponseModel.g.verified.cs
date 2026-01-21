@@ -52,7 +52,7 @@ namespace G
         public required int CreatedAtUnix { get; set; }
 
         /// <summary>
-        /// 
+        /// The authentication mode used to secure the webhook.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookAuthMethodTypeJsonConverter))]
@@ -104,7 +104,9 @@ namespace G
         /// <param name="createdAtUnix">
         /// Original creation time of the webhook.
         /// </param>
-        /// <param name="authType"></param>
+        /// <param name="authType">
+        /// The authentication mode used to secure the webhook.
+        /// </param>
         /// <param name="usage">
         /// The list of products that are currently configured to trigger this webhook.
         /// </param>

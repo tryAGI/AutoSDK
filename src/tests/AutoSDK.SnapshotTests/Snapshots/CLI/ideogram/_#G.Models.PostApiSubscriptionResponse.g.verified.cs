@@ -5,13 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// The updated API subscription.
+    /// The updated API subscription.<br/>
+    /// Example: {"recharge_settings":{"is_active":true}}
     /// </summary>
     public sealed partial class PostApiSubscriptionResponse
     {
         /// <summary>
-        /// 
+        /// Example: {"is_active":true}
         /// </summary>
+        /// <example>{"is_active":true}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("recharge_settings")]
         public global::G.RechargeSettingsResponse? RechargeSettings { get; set; }
 
@@ -24,7 +26,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PostApiSubscriptionResponse" /> class.
         /// </summary>
-        /// <param name="rechargeSettings"></param>
+        /// <param name="rechargeSettings">
+        /// Example: {"is_active":true}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference MediaRef { get; set; }
+        public required global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,7 +66,7 @@ namespace G
             double endTime,
             string? text,
             bool audioStale,
-            global::G.DubbingMediaReference mediaRef)
+            global::G.DubbingMediaReference? mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;

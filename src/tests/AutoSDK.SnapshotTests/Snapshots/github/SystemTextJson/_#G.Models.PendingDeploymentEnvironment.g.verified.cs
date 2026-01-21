@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// The id of the environment.<br/>
-        /// Example: 56780428L
+        /// Example: 56780428
         /// </summary>
-        /// <example>56780428L</example>
+        /// <example>56780428</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public long? Id { get; set; }
 
@@ -57,7 +57,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// The id of the environment.<br/>
-        /// Example: 56780428L
+        /// Example: 56780428
         /// </param>
         /// <param name="nodeId">
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=

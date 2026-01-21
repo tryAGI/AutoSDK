@@ -10,18 +10,18 @@ namespace G
     public sealed partial class UsageInfo
     {
         /// <summary>
-        /// Example: 34
-        /// </summary>
-        /// <example>34</example>
-        [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CompletionTokens { get; set; } = default!;
-
-        /// <summary>
         /// Example: 16
         /// </summary>
         /// <example>16</example>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int PromptTokens { get; set; } = default!;
+
+        /// <summary>
+        /// Example: 34
+        /// </summary>
+        /// <example>34</example>
+        [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// Example: 50
@@ -39,22 +39,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageInfo" /> class.
         /// </summary>
-        /// <param name="completionTokens">
-        /// Example: 34
-        /// </param>
         /// <param name="promptTokens">
         /// Example: 16
+        /// </param>
+        /// <param name="completionTokens">
+        /// Example: 34
         /// </param>
         /// <param name="totalTokens">
         /// Example: 50
         /// </param>
         public UsageInfo(
-            int completionTokens,
             int promptTokens,
+            int completionTokens,
             int totalTokens)
         {
-            this.CompletionTokens = completionTokens;
             this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
             this.TotalTokens = totalTokens;
         }
 

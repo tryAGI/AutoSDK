@@ -17,7 +17,8 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available dataset columns to sort by.
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true

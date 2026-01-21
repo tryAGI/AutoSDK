@@ -28,14 +28,6 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public ReposGetContentResponse(global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
         /// Content File
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -51,24 +43,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ReposGetContentResponse(global::G.ContentFile value) => new ReposGetContentResponse((global::G.ContentFile?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ContentFile?(ReposGetContentResponse @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ReposGetContentResponse(global::G.ContentFile? value)
-        {
-            Value2 = value;
-        }
 
         /// <summary>
         /// An object describing a symlink
@@ -88,6 +62,40 @@ namespace G
         public bool IsValue3 => Value3 != null;
 
         /// <summary>
+        /// An object describing a submodule
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ContentSubmodule? Value4 { get; init; }
+#else
+        public global::G.ContentSubmodule? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ReposGetContentResponse(global::G.ContentFile value) => new ReposGetContentResponse((global::G.ContentFile?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ContentFile?(ReposGetContentResponse @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReposGetContentResponse(global::G.ContentFile? value)
+        {
+            Value2 = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ReposGetContentResponse(global::G.ContentSymlink value) => new ReposGetContentResponse((global::G.ContentSymlink?)value);
@@ -104,23 +112,6 @@ namespace G
         {
             Value3 = value;
         }
-
-        /// <summary>
-        /// An object describing a submodule
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ContentSubmodule? Value4 { get; init; }
-#else
-        public global::G.ContentSubmodule? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
 
         /// <summary>
         /// 

@@ -33,6 +33,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
     }
@@ -53,6 +58,7 @@ namespace G
                 WebhookCheckSuiteCompletedCheckSuiteStatus.InProgress => "in_progress",
                 WebhookCheckSuiteCompletedCheckSuiteStatus.Completed => "completed",
                 WebhookCheckSuiteCompletedCheckSuiteStatus.Queued => "queued",
+                WebhookCheckSuiteCompletedCheckSuiteStatus.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookCheckSuiteCompletedCheckSuiteStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,6 +74,7 @@ namespace G
                 "in_progress" => WebhookCheckSuiteCompletedCheckSuiteStatus.InProgress,
                 "completed" => WebhookCheckSuiteCompletedCheckSuiteStatus.Completed,
                 "queued" => WebhookCheckSuiteCompletedCheckSuiteStatus.Queued,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCheckSuiteCompletedCheckSuiteStatus.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "pending" => WebhookCheckSuiteCompletedCheckSuiteStatus.Pending,
                 _ => null,
             };

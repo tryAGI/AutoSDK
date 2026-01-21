@@ -24,7 +24,7 @@ namespace G
         public required string Type { get; set; }
 
         /// <summary>
-        /// 
+        /// the function that the model called
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,7 +45,9 @@ namespace G
         /// <param name="type">
         /// the type of the tool call. only function is supported currently
         /// </param>
-        /// <param name="function"></param>
+        /// <param name="function">
+        /// the function that the model called
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetPhoneNumberSIPTrunkResponseModel
     {
@@ -31,7 +31,7 @@ namespace G
         public required string PhoneNumberId { get; set; }
 
         /// <summary>
-        /// 
+        /// The agent that is assigned to the phone number
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigned_agent")]
         public global::G.PhoneNumberAgentInfo? AssignedAgent { get; set; }
@@ -41,11 +41,10 @@ namespace G
         /// Default Value: sip_trunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetPhoneNumberSIPTrunkResponseModelProviderJsonConverter))]
-        public global::G.GetPhoneNumberSIPTrunkResponseModelProvider? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
-        /// SIP Trunk configuration details for a phone number
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_config")]
         public global::G.SIPTrunkConfigResponseModel? ProviderConfig { get; set; }
@@ -68,14 +67,14 @@ namespace G
         /// <param name="phoneNumberId">
         /// The ID of the phone number
         /// </param>
-        /// <param name="assignedAgent"></param>
+        /// <param name="assignedAgent">
+        /// The agent that is assigned to the phone number
+        /// </param>
         /// <param name="provider">
         /// Phone provider<br/>
         /// Default Value: sip_trunk
         /// </param>
-        /// <param name="providerConfig">
-        /// SIP Trunk configuration details for a phone number
-        /// </param>
+        /// <param name="providerConfig"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,7 +83,7 @@ namespace G
             string label,
             string phoneNumberId,
             global::G.PhoneNumberAgentInfo? assignedAgent,
-            global::G.GetPhoneNumberSIPTrunkResponseModelProvider? provider,
+            string? provider,
             global::G.SIPTrunkConfigResponseModel? providerConfig)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));

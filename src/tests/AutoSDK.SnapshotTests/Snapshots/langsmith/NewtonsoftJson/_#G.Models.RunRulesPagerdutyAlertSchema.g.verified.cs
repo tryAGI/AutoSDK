@@ -10,7 +10,7 @@ namespace G
     public sealed partial class RunRulesPagerdutyAlertSchema
     {
         /// <summary>
-        /// Enum for alert types.
+        /// Default Value: pagerduty
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RunRulesAlertType? Type { get; set; }
@@ -28,7 +28,7 @@ namespace G
         public string? Summary { get; set; }
 
         /// <summary>
-        /// Enum for severity.
+        /// Default Value: warning
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
         public global::G.PagerdutySeverity? Severity { get; set; }
@@ -43,12 +43,12 @@ namespace G
         /// Initializes a new instance of the <see cref="RunRulesPagerdutyAlertSchema" /> class.
         /// </summary>
         /// <param name="type">
-        /// Enum for alert types.
+        /// Default Value: pagerduty
         /// </param>
         /// <param name="routingKey"></param>
         /// <param name="summary"></param>
         /// <param name="severity">
-        /// Enum for severity.
+        /// Default Value: warning
         /// </param>
         public RunRulesPagerdutyAlertSchema(
             string routingKey,

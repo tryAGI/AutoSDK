@@ -16,7 +16,7 @@ namespace G
         public global::G.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole Role { get; set; } = default!;
 
         /// <summary>
-        /// Resource types that can be shared in the workspace. The name always need to match the collection names
+        /// Resource type of the target resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.WorkspaceResourceType ResourceType { get; set; } = default!;
@@ -52,7 +52,7 @@ namespace G
         /// Role to update the target principal with.
         /// </param>
         /// <param name="resourceType">
-        /// Resource types that can be shared in the workspace. The name always need to match the collection names
+        /// Resource type of the target resource.
         /// </param>
         /// <param name="userEmail">
         /// The email of the user or service account.

@@ -33,7 +33,7 @@ namespace G
         /// Default Value: ToolMessageChunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -92,7 +92,7 @@ namespace G
             string toolCallId,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ToolMessageChunkType? type,
+            string? type,
             string? name,
             string? id,
             object? artifact,

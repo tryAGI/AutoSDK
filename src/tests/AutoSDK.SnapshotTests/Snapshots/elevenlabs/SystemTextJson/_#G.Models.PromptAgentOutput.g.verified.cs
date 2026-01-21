@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"knowledge_base":[],"llm":"gemini-2.0-flash-001","max_tokens":-1,"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation.","temperature":0,"tool_ids":[],"tools":[]}
     /// </summary>
     public sealed partial class PromptAgentOutput
     {
@@ -16,7 +16,8 @@ namespace G
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        /// The LLM to query with the prompt and the chat history<br/>
+        /// Default Value: gemini-2.0-flash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LLMJsonConverter))]
@@ -67,7 +68,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.KnowledgeBaseLocator>? KnowledgeBase { get; set; }
 
         /// <summary>
-        /// 
+        /// Definition for a custom LLM if LLM field is set to 'CUSTOM_LLM'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_llm")]
         public global::G.CustomLLM? CustomLlm { get; set; }
@@ -80,7 +81,7 @@ namespace G
         public bool? IgnoreDefaultPersonality { get; set; }
 
         /// <summary>
-        /// 
+        /// Configuration for RAG
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rag")]
         public global::G.RagConfig? Rag { get; set; }
@@ -97,7 +98,10 @@ namespace G
         /// <param name="prompt">
         /// The prompt for the agent
         /// </param>
-        /// <param name="llm"></param>
+        /// <param name="llm">
+        /// The LLM to query with the prompt and the chat history<br/>
+        /// Default Value: gemini-2.0-flash
+        /// </param>
         /// <param name="temperature">
         /// The temperature for the LLM<br/>
         /// Default Value: 0
@@ -121,12 +125,16 @@ namespace G
         /// <param name="knowledgeBase">
         /// A list of knowledge bases to be used by the agent
         /// </param>
-        /// <param name="customLlm"></param>
+        /// <param name="customLlm">
+        /// Definition for a custom LLM if LLM field is set to 'CUSTOM_LLM'
+        /// </param>
         /// <param name="ignoreDefaultPersonality">
         /// Whether to ignore the default personality<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="rag"></param>
+        /// <param name="rag">
+        /// Configuration for RAG
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

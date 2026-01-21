@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Snapshot.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -52,7 +54,7 @@ namespace G
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? Metadata { get; set; }
 
         /// <summary>
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
@@ -61,8 +63,10 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? Manifests { get; set; }
 
         /// <summary>
-        /// The time at which the snapshot was scanned.
+        /// The time at which the snapshot was scanned.<br/>
+        /// Example: 2020-06-13T14:52:50-05:00
         /// </summary>
+        /// <example>2020-06-13T14:52:50-05:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("scanned")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime Scanned { get; set; }
@@ -98,7 +102,8 @@ namespace G
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
         /// </param>
         /// <param name="scanned">
-        /// The time at which the snapshot was scanned.
+        /// The time at which the snapshot was scanned.<br/>
+        /// Example: 2020-06-13T14:52:50-05:00
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -110,7 +115,7 @@ namespace G
             string @ref,
             global::G.SnapshotDetector detector,
             global::System.DateTime scanned,
-            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? metadata,
             global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? manifests)
         {
             this.Version = version;

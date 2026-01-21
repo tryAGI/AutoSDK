@@ -30,6 +30,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StreamSentinel? Sentinel { get; init; }
+#else
+        public global::G.StreamSentinel? Sentinel { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sentinel))]
+#endif
+        public bool IsSentinel => Sentinel != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionStream(global::G.ChatCompletionEvent value) => new ChatCompletionStream((global::G.ChatCompletionEvent?)value);
 
         /// <summary>
@@ -44,23 +60,6 @@ namespace G
         {
             Event = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StreamSentinel? Sentinel { get; init; }
-#else
-        public global::G.StreamSentinel? Sentinel { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sentinel))]
-#endif
-        public bool IsSentinel => Sentinel != null;
 
         /// <summary>
         /// 

@@ -7,7 +7,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"constant_value":"Constant value","description":"My property","dynamic_variable":"Dynamic variable"}
     /// </summary>
     public sealed partial class LiteralJsonSchemaProperty
     {

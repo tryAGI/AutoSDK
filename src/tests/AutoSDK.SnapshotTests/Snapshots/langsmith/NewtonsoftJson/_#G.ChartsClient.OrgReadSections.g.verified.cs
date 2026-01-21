@@ -13,7 +13,7 @@ namespace G
             ref string? titleContains,
             global::System.Collections.Generic.IList<global::System.Guid>? ids,
             ref string? sortBy,
-            ref bool? sortByDesc,
+            bool? sortByDesc,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
         partial void PrepareOrgReadSectionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -74,7 +74,7 @@ namespace G
                 titleContains: ref titleContains,
                 ids: ids,
                 sortBy: ref sortBy,
-                sortByDesc: ref sortByDesc,
+                sortByDesc: sortByDesc,
                 tagValueId: tagValueId);
 
             var __pathBuilder = new global::G.PathBuilder(
@@ -84,10 +84,10 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("title_contains", titleContains) 
-                .AddOptionalParameter("ids", ids, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ids", ids?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

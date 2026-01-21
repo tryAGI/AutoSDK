@@ -10,59 +10,45 @@ namespace G
     public sealed partial class BodyEditBasicProjectInfoV1ProjectsProjectIdPost
     {
         /// <summary>
-        /// The name of the Studio project, used for identification only.<br/>
-        /// Example: Project 1
+        /// The name of the Studio project, used for identification only.
         /// </summary>
-        /// <example>Project 1</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The voice_id that corresponds to the default voice used for new titles.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new titles.
         /// </summary>
-        /// <example>21m00Tcm4TlvDq8ikWAM</example>
         [global::Newtonsoft.Json.JsonProperty("default_title_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultTitleVoiceId { get; set; } = default!;
 
         /// <summary>
-        /// The voice_id that corresponds to the default voice used for new paragraphs.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new paragraphs.
         /// </summary>
-        /// <example>21m00Tcm4TlvDq8ikWAM</example>
         [global::Newtonsoft.Json.JsonProperty("default_paragraph_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultParagraphVoiceId { get; set; } = default!;
 
         /// <summary>
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: Romeo and Juliet
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </summary>
-        /// <example>Romeo and Juliet</example>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: William Shakespeare
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </summary>
-        /// <example>William Shakespeare</example>
         [global::Newtonsoft.Json.JsonProperty("author")]
         public string? Author { get; set; }
 
         /// <summary>
-        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: 0-306-40615-2
+        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </summary>
-        /// <example>0-306-40615-2</example>
         [global::Newtonsoft.Json.JsonProperty("isbn_number")]
         public string? IsbnNumber { get; set; }
 
         /// <summary>
         /// When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
-        /// Default Value: false<br/>
-        /// Example: false
+        /// Default Value: false
         /// </summary>
-        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("volume_normalization")]
         public bool? VolumeNormalization { get; set; }
 
@@ -76,33 +62,26 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyEditBasicProjectInfoV1ProjectsProjectIdPost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the Studio project, used for identification only.<br/>
-        /// Example: Project 1
+        /// The name of the Studio project, used for identification only.
         /// </param>
         /// <param name="defaultTitleVoiceId">
-        /// The voice_id that corresponds to the default voice used for new titles.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new titles.
         /// </param>
         /// <param name="defaultParagraphVoiceId">
-        /// The voice_id that corresponds to the default voice used for new paragraphs.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The voice_id that corresponds to the default voice used for new paragraphs.
         /// </param>
         /// <param name="title">
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: Romeo and Juliet
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="author">
-        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: William Shakespeare
+        /// An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="isbnNumber">
-        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.<br/>
-        /// Example: 0-306-40615-2
+        /// An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.
         /// </param>
         /// <param name="volumeNormalization">
         /// When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
-        /// Default Value: false<br/>
-        /// Example: false
+        /// Default Value: false
         /// </param>
         public BodyEditBasicProjectInfoV1ProjectsProjectIdPost(
             string name,

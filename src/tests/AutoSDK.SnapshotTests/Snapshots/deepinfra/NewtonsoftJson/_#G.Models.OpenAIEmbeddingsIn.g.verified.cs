@@ -12,18 +12,14 @@ namespace G
     public sealed partial class OpenAIEmbeddingsIn
     {
         /// <summary>
-        /// model name<br/>
-        /// Example: thenlper/gte-large
+        /// model name
         /// </summary>
-        /// <example>thenlper/gte-large</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// sequences to embed<br/>
-        /// Example: [I like chocolate]
+        /// sequences to embed
         /// </summary>
-        /// <example>[I like chocolate]</example>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string> Input { get; set; } = default!;
 
@@ -32,7 +28,7 @@ namespace G
         /// Default Value: float
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
-        public global::G.OpenAIEmbeddingsInEncodingFormat? EncodingFormat { get; set; }
+        public string? EncodingFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,12 +40,10 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAIEmbeddingsIn" /> class.
         /// </summary>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: thenlper/gte-large
+        /// model name
         /// </param>
         /// <param name="input">
-        /// sequences to embed<br/>
-        /// Example: [I like chocolate]
+        /// sequences to embed
         /// </param>
         /// <param name="encodingFormat">
         /// format used when encoding<br/>
@@ -58,7 +52,7 @@ namespace G
         public OpenAIEmbeddingsIn(
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string> input,
-            global::G.OpenAIEmbeddingsInEncodingFormat? encodingFormat)
+            string? encodingFormat)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Input = input;

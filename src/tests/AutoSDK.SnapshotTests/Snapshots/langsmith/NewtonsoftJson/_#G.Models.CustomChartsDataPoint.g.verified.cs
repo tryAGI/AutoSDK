@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<int?, double?, object>? Value { get; set; } = default!;
+        public global::G.AnyOf<int?, double?, object, object> Value { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         public CustomChartsDataPoint(
             string seriesId,
             global::System.DateTime timestamp,
-            global::G.AnyOf<int?, double?, object>? value,
+            global::G.AnyOf<int?, double?, object, object> value,
             string? group)
         {
             this.SeriesId = seriesId ?? throw new global::System.ArgumentNullException(nameof(seriesId));

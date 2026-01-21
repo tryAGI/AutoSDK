@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"resource_id":"FCwhRBWXzGAHq8TQ4Fs18","resource_type":"read"}
     /// </summary>
     public sealed partial class ReaderResourceResponseModel
     {

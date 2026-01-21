@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.FineTuneEvent.Json.g.cs
+﻿//HintName: G.Models.FinetuneEvent.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class FineTuneEvent
+    public sealed partial class FinetuneEvent
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.FineTuneEvent? FromJson(
+        public static global::G.FinetuneEvent? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.FineTuneEvent>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.FinetuneEvent>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.FineTuneEvent?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.FinetuneEvent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.FineTuneEvent?>(serializer.Deserialize<global::G.FineTuneEvent>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.FinetuneEvent?>(serializer.Deserialize<global::G.FinetuneEvent>(jsonReader));
         }
     }
 }

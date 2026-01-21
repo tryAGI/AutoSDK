@@ -123,122 +123,118 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, object>? Type24 { get; set; }
+        public object? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type25 { get; set; }
+        public global::G.Status? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Status? Type26 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object>>? Type27 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationSource>? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CitationSource>? Type28 { get; set; }
+        public global::G.CitationSource? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationSource? Type29 { get; set; }
+        public global::G.SafetySetting? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SafetySetting? Type30 { get; set; }
+        public global::G.SafetySettingCategory? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SafetySettingCategory? Type31 { get; set; }
+        public global::G.SafetySettingThreshold? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SafetySettingThreshold? Type32 { get; set; }
+        public global::G.GenerationConfig? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationConfig? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type34 { get; set; }
+        public global::G.CountTokensRequest? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountTokensRequest? Type35 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Content>? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Content>? Type36 { get; set; }
+        public byte[]? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type37 { get; set; }
+        public global::G.ListModelsResponse? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListModelsResponse? Type38 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Model>? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Model>? Type39 { get; set; }
+        public global::G.Model? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Model? Type40 { get; set; }
+        public global::System.Collections.Generic.IList<float>? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float>? Type41 { get; set; }
+        public global::G.PromptFeedback? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptFeedback? Type42 { get; set; }
+        public global::G.PromptFeedbackBlockReason? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptFeedbackBlockReason? Type43 { get; set; }
+        public global::G.EmbedContentRequestTaskType? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedContentRequestTaskType? Type44 { get; set; }
+        public global::G.ListOperationsResponse? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListOperationsResponse? Type45 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Operation>? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Operation>? Type46 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Part>? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Part>? Type47 { get; set; }
+        public global::G.EmbedContentResponse? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedContentResponse? Type48 { get; set; }
+        public global::G.CountTokensResponse? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountTokensResponse? Type49 { get; set; }
+        public global::G.GenerateContentResponse? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateContentResponse? Type50 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Candidate>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Candidate>? Type51 { get; set; }
+        public global::G.GenerateContentRequest? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateContentRequest? Type52 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type53 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type52 { get; set; }
     }
 }

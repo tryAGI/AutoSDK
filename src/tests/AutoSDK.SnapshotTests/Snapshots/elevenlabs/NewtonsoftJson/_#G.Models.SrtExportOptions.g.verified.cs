@@ -30,11 +30,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.SrtExportOptionsFormat Format { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Format { get; set; } = default!;
 
         /// <summary>
-        /// Default Value: 0.6
+        /// Default Value: 0.6F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment_on_silence_longer_than_s")]
         public double? SegmentOnSilenceLongerThanS { get; set; }
@@ -71,7 +71,7 @@ namespace G
         /// </param>
         /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS">
-        /// Default Value: 0.6
+        /// Default Value: 0.6F
         /// </param>
         /// <param name="maxSegmentDurationS">
         /// Default Value: 5
@@ -80,18 +80,18 @@ namespace G
         /// Default Value: 90
         /// </param>
         public SrtExportOptions(
+            string format,
             int? maxCharactersPerLine,
             bool? includeSpeakers,
             bool? includeTimestamps,
-            global::G.SrtExportOptionsFormat format,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
             int? maxSegmentChars)
         {
+            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.MaxCharactersPerLine = maxCharactersPerLine;
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
-            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

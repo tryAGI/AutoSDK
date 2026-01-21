@@ -51,8 +51,8 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace G
             global::System.DateTime? createdAt,
             object? metadata,
             global::System.Guid? sourceRunId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
             global::System.Guid? id,
             bool? useSourceRunIo,
             bool? overwrite)

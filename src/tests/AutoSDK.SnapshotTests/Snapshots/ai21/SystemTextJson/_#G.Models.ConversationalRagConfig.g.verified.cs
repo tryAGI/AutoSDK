@@ -48,7 +48,7 @@ namespace G
         public global::G.ConversationalRagConfigRetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrieval_similarity_threshold")]
         public double? RetrievalSimilarityThreshold { get; set; }
@@ -60,7 +60,7 @@ namespace G
         public int? MaxNeighbors { get; set; }
 
         /// <summary>
-        /// Default Value: 0.98
+        /// Default Value: 0.98F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hybrid_search_alpha")]
         public double? HybridSearchAlpha { get; set; }
@@ -87,11 +87,11 @@ namespace G
         /// Default Value: default
         /// </param>
         /// <param name="retrievalSimilarityThreshold">
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </param>
         /// <param name="maxNeighbors"></param>
         /// <param name="hybridSearchAlpha">
-        /// Default Value: 0.98
+        /// Default Value: 0.98F
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

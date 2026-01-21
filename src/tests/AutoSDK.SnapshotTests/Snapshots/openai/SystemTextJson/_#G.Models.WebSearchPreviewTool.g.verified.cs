@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.WebSearchPreviewTool.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -25,8 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ApproximateLocation, object>))]
-        public global::G.AnyOf<global::G.ApproximateLocation, object>? UserLocation { get; set; }
+        public global::G.ApproximateLocation? UserLocation { get; set; }
 
         /// <summary>
         /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
@@ -57,7 +54,7 @@ namespace G
 #endif
         public WebSearchPreviewTool(
             global::G.WebSearchPreviewToolType type,
-            global::G.AnyOf<global::G.ApproximateLocation, object>? userLocation,
+            global::G.ApproximateLocation? userLocation,
             global::G.WebSearchPreviewToolSearchContextSize? searchContextSize)
         {
             this.Type = type;

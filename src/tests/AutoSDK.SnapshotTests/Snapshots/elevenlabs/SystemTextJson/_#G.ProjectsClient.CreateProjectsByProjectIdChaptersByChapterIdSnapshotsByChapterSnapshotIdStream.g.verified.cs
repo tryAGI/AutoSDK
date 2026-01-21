@@ -30,16 +30,13 @@ namespace G
         /// Stream the audio from a chapter snapshot. Use `GET /v1/projects/{project_id}/chapters/{chapter_id}/snapshots` to return the chapter snapshots of a chapter.
         /// </summary>
         /// <param name="projectId">
-        /// The ID of the Studio project.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the Studio project.
         /// </param>
         /// <param name="chapterId">
-        /// The ID of the chapter.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the chapter.
         /// </param>
         /// <param name="chapterSnapshotId">
-        /// The ID of the chapter snapshot.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the chapter snapshot.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -220,16 +217,13 @@ namespace G
         /// Stream the audio from a chapter snapshot. Use `GET /v1/projects/{project_id}/chapters/{chapter_id}/snapshots` to return the chapter snapshots of a chapter.
         /// </summary>
         /// <param name="projectId">
-        /// The ID of the Studio project.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the Studio project.
         /// </param>
         /// <param name="chapterId">
-        /// The ID of the chapter.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the chapter.
         /// </param>
         /// <param name="chapterSnapshotId">
-        /// The ID of the chapter snapshot.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the chapter snapshot.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

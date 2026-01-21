@@ -21,9 +21,9 @@ namespace G
 
         /// <summary>
         /// Unique identifier of the deployment<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -102,15 +102,17 @@ namespace G
         public required global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -167,7 +169,7 @@ namespace G
         /// </param>
         /// <param name="id">
         /// Unique identifier of the deployment<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId">
         /// Example: MDEwOkRlcGxveW1lbnQx
@@ -197,8 +199,12 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
         /// <param name="statusesUrl">
         /// Example: https://api.github.com/repos/octocat/example/deployments/1/statuses
         /// </param>

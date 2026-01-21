@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.SpeechToTextChunkResponseModelAdditionalFormats.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Requested additional formats of the transcript.
+    /// </summary>
+    public sealed partial class SpeechToTextChunkResponseModelAdditionalFormats
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

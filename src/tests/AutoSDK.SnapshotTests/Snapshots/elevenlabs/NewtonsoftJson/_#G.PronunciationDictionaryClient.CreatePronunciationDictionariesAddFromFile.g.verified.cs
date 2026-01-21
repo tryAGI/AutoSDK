@@ -78,9 +78,8 @@ namespace G
             if (request.File != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                    name: "file",
-                    fileName: request.Filename ?? string.Empty);
+                    content: new global::System.Net.Http.StringContent($"{request.File}"),
+                    name: "file");
             } 
             if (request.Description != default)
             {
@@ -91,7 +90,7 @@ namespace G
             if (request.WorkspaceAccess != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.WorkspaceAccess?.ToValueString()}"),
+                    content: new global::System.Net.Http.StringContent($"{request.WorkspaceAccess}"),
                     name: "workspace_access");
             }
             __httpRequest.Content = __httpRequestContent;
@@ -234,22 +233,16 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
-        /// The name of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: My Dictionary
+        /// The name of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="file">
         /// A lexicon .pls file which we will use to initialize the project with.
         /// </param>
-        /// <param name="filename">
-        /// A lexicon .pls file which we will use to initialize the project with.
-        /// </param>
         /// <param name="description">
-        /// A description of the pronunciation dictionary, used for identification only.<br/>
-        /// Example: Contains pronunciation's of our character names
+        /// A description of the pronunciation dictionary, used for identification only.
         /// </param>
         /// <param name="workspaceAccess">
-        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.<br/>
-        /// Example: viewer
+        /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -257,16 +250,14 @@ namespace G
             string name,
             string? xiApiKey = default,
             byte[]? file = default,
-            string? filename = default,
             string? description = default,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? workspaceAccess = default,
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? workspaceAccess = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost
             {
                 Name = name,
                 File = file,
-                Filename = filename,
                 Description = description,
                 WorkspaceAccess = workspaceAccess,
             };

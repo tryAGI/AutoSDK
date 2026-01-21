@@ -52,8 +52,9 @@ namespace G
         public required int StargazersCount { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:14:43Z
         /// </summary>
+        /// <example>2011-01-26T19:14:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? UpdatedAt { get; set; }
@@ -85,7 +86,9 @@ namespace G
         /// <param name="stargazersCount">
         /// Example: 80
         /// </param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:14:43Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

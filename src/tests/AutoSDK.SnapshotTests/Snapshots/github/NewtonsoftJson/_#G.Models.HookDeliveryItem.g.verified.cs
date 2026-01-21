@@ -26,8 +26,10 @@ namespace G
         public string Guid { get; set; } = default!;
 
         /// <summary>
-        /// Time when the webhook delivery occurred.
+        /// Time when the webhook delivery occurred.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </summary>
+        /// <example>2021-05-12T20:33:44Z</example>
         [global::Newtonsoft.Json.JsonProperty("delivered_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime DeliveredAt { get; set; } = default!;
 
@@ -96,8 +98,10 @@ namespace G
         public int? RepositoryId { get; set; } = default!;
 
         /// <summary>
-        /// Time when the webhook delivery was throttled.
+        /// Time when the webhook delivery was throttled.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </summary>
+        /// <example>2021-05-12T20:33:44Z</example>
         [global::Newtonsoft.Json.JsonProperty("throttled_at")]
         public global::System.DateTime? ThrottledAt { get; set; }
 
@@ -119,7 +123,8 @@ namespace G
         /// Example: 58474f00-b361-11eb-836d-0e4f3503ccbe
         /// </param>
         /// <param name="deliveredAt">
-        /// Time when the webhook delivery occurred.
+        /// Time when the webhook delivery occurred.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </param>
         /// <param name="redelivery">
         /// Whether the webhook delivery is a redelivery.<br/>
@@ -154,7 +159,8 @@ namespace G
         /// Example: 123
         /// </param>
         /// <param name="throttledAt">
-        /// Time when the webhook delivery was throttled.
+        /// Time when the webhook delivery was throttled.<br/>
+        /// Example: 2021-05-12T20:33:44Z
         /// </param>
         public HookDeliveryItem(
             int id,

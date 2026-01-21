@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the repository<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -74,10 +74,9 @@ namespace G
         /// Whether the repository is private or public.<br/>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Private { get; set; } = false;
+        public required bool Private { get; set; }
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World
@@ -523,33 +522,30 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasIssues { get; set; } = true;
+        public required bool HasIssues { get; set; }
 
         /// <summary>
         /// Whether projects are enabled.<br/>
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasProjects { get; set; } = true;
+        public required bool HasProjects { get; set; }
 
         /// <summary>
         /// Whether the wiki is enabled.<br/>
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasWiki { get; set; } = true;
+        public required bool HasWiki { get; set; }
 
         /// <summary>
         /// 
@@ -563,11 +559,10 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasDownloads { get; set; } = true;
+        public required bool HasDownloads { get; set; }
 
         /// <summary>
         /// Whether discussions are enabled.<br/>
@@ -582,10 +577,9 @@ namespace G
         /// Whether the repository is archived.<br/>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Archived { get; set; } = false;
+        public required bool Archived { get; set; }
 
         /// <summary>
         /// Returns whether or not this repository disabled.
@@ -602,22 +596,25 @@ namespace G
         public string? Visibility { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? PushedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:14:43Z
         /// </summary>
+        /// <example>2011-01-26T19:14:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? UpdatedAt { get; set; }
@@ -785,7 +782,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier of the repository<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId">
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
@@ -1009,9 +1006,15 @@ namespace G
         /// The repository visibility: public, private, or internal.<br/>
         /// Default Value: public
         /// </param>
-        /// <param name="pushedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="pushedAt">
+        /// Example: 2011-01-26T19:06:43Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:14:43Z
+        /// </param>
         /// <param name="allowRebaseMerge">
         /// Whether to allow rebase merges for pull requests.<br/>
         /// Default Value: true<br/>

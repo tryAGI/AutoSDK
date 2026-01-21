@@ -41,13 +41,15 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-        /// <param name="renderType"></param>
+        /// <param name="renderType">
+        /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DubbingRenderResponseModel> CreateDubbingResourceByDubbingIdRenderByLanguageAsync(
             string dubbingId,
             string language,
-            global::G.RenderType renderType,
+            global::G.RenderType2 renderType,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

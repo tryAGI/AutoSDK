@@ -84,8 +84,10 @@ namespace G
         public required string TargetType { get; set; }
 
         /// <summary>
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </summary>
+        /// <example>{"contents":"read","issues":"read","deployments":"write","single_file":"read"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AppPermissions Permissions { get; set; }
@@ -198,7 +200,8 @@ namespace G
         /// Example: Organization
         /// </param>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
         /// <param name="events"></param>
         /// <param name="createdAt"></param>

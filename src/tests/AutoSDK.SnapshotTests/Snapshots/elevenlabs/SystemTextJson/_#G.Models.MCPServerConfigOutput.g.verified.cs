@@ -12,7 +12,8 @@ namespace G
     public sealed partial class MCPServerConfigOutput
     {
         /// <summary>
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// Defines the MCP server-level approval policy for tool execution.<br/>
+        /// Default Value: require_approval_all
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_policy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalPolicyJsonConverter))]
@@ -25,7 +26,8 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.MCPToolApprovalHash>? ToolApprovalHashes { get; set; }
 
         /// <summary>
-        /// Supported MCP server transport types.
+        /// The transport type used to connect to the MCP server<br/>
+        /// Default Value: SSE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPServerTransportJsonConverter))]
@@ -43,8 +45,8 @@ namespace G
         /// The secret token (Authorization header) stored as a workspace secret or in-place secret
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_token")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel>))]
-        public global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel>? SecretToken { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>))]
+        public global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>? SecretToken { get; set; }
 
         /// <summary>
         /// The headers included in the request
@@ -75,13 +77,15 @@ namespace G
         /// Initializes a new instance of the <see cref="MCPServerConfigOutput" /> class.
         /// </summary>
         /// <param name="approvalPolicy">
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// Defines the MCP server-level approval policy for tool execution.<br/>
+        /// Default Value: require_approval_all
         /// </param>
         /// <param name="toolApprovalHashes">
         /// List of tool approval hashes for per-tool approval when approval_policy is REQUIRE_APPROVAL_PER_TOOL
         /// </param>
         /// <param name="transport">
-        /// Supported MCP server transport types.
+        /// The transport type used to connect to the MCP server<br/>
+        /// Default Value: SSE
         /// </param>
         /// <param name="url">
         /// The URL of the MCP server, if this contains a secret please store as a workspace secret, otherwise store as a plain string. Must use https
@@ -103,7 +107,7 @@ namespace G
             global::G.MCPApprovalPolicy? approvalPolicy,
             global::System.Collections.Generic.IList<global::G.MCPToolApprovalHash>? toolApprovalHashes,
             global::G.MCPServerTransport? transport,
-            global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel>? secretToken,
+            global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>? secretToken,
             object? requestHeaders,
             string? description)
         {

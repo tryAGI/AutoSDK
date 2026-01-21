@@ -24,7 +24,8 @@ namespace G
         public required string ToolHash { get; set; }
 
         /// <summary>
-        /// Defines the tool-level approval policy.
+        /// The approval policy for this tool<br/>
+        /// Default Value: requires_approval
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_policy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPToolApprovalPolicyJsonConverter))]
@@ -46,7 +47,8 @@ namespace G
         /// SHA256 hash of the tool's parameters and description
         /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the tool-level approval policy.
+        /// The approval policy for this tool<br/>
+        /// Default Value: requires_approval
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,9 +9,9 @@ namespace G
         public ConnectorGroupCommand(
             ListConnectorsCommand command0,
             CreateConnectorCommand command1,
-            DeleteConnectorCommand command2,
-            GetConnectorCommand command3,
-            UpdateConnectorCommand command4,
+            GetConnectorCommand command2,
+            UpdateConnectorCommand command3,
+            DeleteConnectorCommand command4,
             OAuthAuthorizeConnectorCommand command5)
             : base(
                 name: "connector")

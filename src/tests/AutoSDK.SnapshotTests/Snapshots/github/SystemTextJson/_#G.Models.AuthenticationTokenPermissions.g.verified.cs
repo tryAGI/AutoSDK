@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"issues":"read","deployments":"write"}
     /// </summary>
     public sealed partial class AuthenticationTokenPermissions
     {

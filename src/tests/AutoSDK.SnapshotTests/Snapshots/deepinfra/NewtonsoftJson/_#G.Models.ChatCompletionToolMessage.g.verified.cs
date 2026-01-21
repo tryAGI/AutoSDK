@@ -14,7 +14,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionToolMessageRole? Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// the message content
@@ -48,7 +48,7 @@ namespace G
         public ChatCompletionToolMessage(
             string content,
             string toolCallId,
-            global::G.ChatCompletionToolMessageRole? role)
+            string? role)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));

@@ -13,17 +13,29 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
-            global::System.Collections.Generic.IList<string>? images,
-            global::G.EmbedInputType? inputType,
-            string model,
             global::System.Collections.Generic.IList<string> texts,
+            global::System.Collections.Generic.IList<string>? images,
+            string model,
+            global::G.EmbedInputType? inputType,
+            global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
             global::G.EmbedRequestTruncate truncate,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.EmbedResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Texts { get; } = new(
+            name: "texts")
+        {
+            Description = @"An array of strings for the model to embed. Maximum number of texts per call is `96`.",
+        };
+
+        private global::System.CommandLine.Argument<string> Model { get; } = new(
+            name: "model")
+        {
+            Description = @"ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).",
+        };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.EmbeddingType>> EmbeddingTypes { get; } = new(
             name: "embeddingTypes")
@@ -35,18 +47,6 @@ namespace G
 * `""uint8""`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.
 * `""binary""`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.
 * `""ubinary""`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.",
-        };
-
-        private global::System.CommandLine.Argument<string> Model { get; } = new(
-            name: "model")
-        {
-            Description = @"ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).",
-        };
-
-        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Texts { get; } = new(
-            name: "texts")
-        {
-            Description = @"An array of strings for the model to embed. Maximum number of texts per call is `96`.",
         };
 
         private global::System.CommandLine.Argument<global::G.EmbedRequestTruncate> Truncate { get; } = new(
@@ -99,9 +99,9 @@ If you want to learn more how to use the embedding model, have a look at the [Se
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(EmbeddingTypes);
-            Arguments.Add(Model);
             Arguments.Add(Texts);
+            Arguments.Add(Model);
+            Arguments.Add(EmbeddingTypes);
             Arguments.Add(Truncate);
             Options.Add(XClientName);
             Options.Add(Images);
@@ -117,32 +117,32 @@ If you want to learn more how to use the embedding model, have a look at the [Se
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var embeddingTypes = parseResult.GetRequiredValue(EmbeddingTypes);
-            var images = parseResult.GetRequiredValue(Images);
-            var inputType = parseResult.GetRequiredValue(InputType);
-            var model = parseResult.GetRequiredValue(Model);
             var texts = parseResult.GetRequiredValue(Texts);
+            var images = parseResult.GetRequiredValue(Images);
+            var model = parseResult.GetRequiredValue(Model);
+            var inputType = parseResult.GetRequiredValue(InputType);
+            var embeddingTypes = parseResult.GetRequiredValue(EmbeddingTypes);
             var truncate = parseResult.GetRequiredValue(Truncate);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                embeddingTypes: embeddingTypes,
-                images: images,
-                inputType: inputType,
-                model: model,
                 texts: texts,
+                images: images,
+                model: model,
+                inputType: inputType,
+                embeddingTypes: embeddingTypes,
                 truncate: truncate,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.EmbedAsync(
                 xClientName: xClientName,
-                embeddingTypes: embeddingTypes,
-                images: images,
-                inputType: inputType,
-                model: model,
                 texts: texts,
+                images: images,
+                model: model,
+                inputType: inputType,
+                embeddingTypes: embeddingTypes,
                 truncate: truncate,
                 cancellationToken: cancellationToken);
 

@@ -40,8 +40,9 @@ namespace G
         public required global::G.GistCommitChangeStatus ChangeStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2010-04-14T02:15:15Z
         /// </summary>
+        /// <example>2010-04-14T02:15:15Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("committed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CommittedAt { get; set; }
@@ -65,7 +66,9 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="changeStatus"></param>
-        /// <param name="committedAt"></param>
+        /// <param name="committedAt">
+        /// Example: 2010-04-14T02:15:15Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

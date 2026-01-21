@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"status":"ok"}
     /// </summary>
     public sealed partial class StartSpeakerSeparationResponseModel
     {

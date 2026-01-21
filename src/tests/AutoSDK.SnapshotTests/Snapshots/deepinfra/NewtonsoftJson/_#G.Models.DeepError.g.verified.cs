@@ -10,10 +10,8 @@ namespace G
     public sealed partial class DeepError
     {
         /// <summary>
-        /// Error<br/>
-        /// Example: Model not found
+        /// Error
         /// </summary>
-        /// <example>Model not found</example>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
         public string Error { get; set; } = default!;
 
@@ -27,8 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="DeepError" /> class.
         /// </summary>
         /// <param name="error">
-        /// Error<br/>
-        /// Example: Model not found
+        /// Error
         /// </param>
         public DeepError(
             string error)

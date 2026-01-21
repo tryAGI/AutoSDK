@@ -11,14 +11,14 @@ namespace G
             ref string apiToken,
             ref string from,
             ref string? to,
-            ref string? session);
+            object? session);
         partial void PrepareUsageApiTokenPaymentUsageApiTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string apiToken,
             string from,
             string? to,
-            string? session);
+            object? session);
         partial void ProcessUsageApiTokenPaymentUsageApiTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,7 +45,7 @@ namespace G
             string apiToken,
             string from,
             string? to = default,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -55,7 +55,7 @@ namespace G
                 apiToken: ref apiToken,
                 from: ref from,
                 to: ref to,
-                session: ref session);
+                session: session);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/payment/usage/{apiToken}",

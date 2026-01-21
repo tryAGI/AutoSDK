@@ -12,14 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora_alpha", Required = global::Newtonsoft.Json.Required.Always)]
-        public int LoraAlpha { get; set; } = default!;
-
-        /// <summary>
-        /// Default Value: 0F
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora_dropout")]
-        public float? LoraDropout { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.LoRATrainingTypeType Type { get; set; }
 
         /// <summary>
         /// 
@@ -28,16 +22,22 @@ namespace G
         public int LoraR { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("lora_alpha", Required = global::Newtonsoft.Json.Required.Always)]
+        public int LoraAlpha { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: 0.0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("lora_dropout")]
+        public float? LoraDropout { get; set; }
+
+        /// <summary>
         /// Default Value: all-linear
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_trainable_modules")]
         public string? LoraTrainableModules { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.LoRATrainingTypeType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,27 +48,27 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LoRATrainingType" /> class.
         /// </summary>
+        /// <param name="type"></param>
+        /// <param name="loraR"></param>
         /// <param name="loraAlpha"></param>
         /// <param name="loraDropout">
-        /// Default Value: 0F
+        /// Default Value: 0.0
         /// </param>
-        /// <param name="loraR"></param>
         /// <param name="loraTrainableModules">
         /// Default Value: all-linear
         /// </param>
-        /// <param name="type"></param>
         public LoRATrainingType(
-            int loraAlpha,
             int loraR,
+            int loraAlpha,
+            global::G.LoRATrainingTypeType type,
             float? loraDropout,
-            string? loraTrainableModules,
-            global::G.LoRATrainingTypeType type)
+            string? loraTrainableModules)
         {
-            this.LoraAlpha = loraAlpha;
             this.LoraR = loraR;
+            this.LoraAlpha = loraAlpha;
+            this.Type = type;
             this.LoraDropout = loraDropout;
             this.LoraTrainableModules = loraTrainableModules;
-            this.Type = type;
         }
 
         /// <summary>

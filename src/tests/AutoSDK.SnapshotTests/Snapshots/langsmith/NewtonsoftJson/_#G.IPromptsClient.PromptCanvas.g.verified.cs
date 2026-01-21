@@ -34,8 +34,8 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::G.Highlight? highlighted = default,
             global::G.Artifact? artifact = default,
-            global::G.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength = default,
-            global::G.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel = default,
+            global::G.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength = default,
+            global::G.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel = default,
             string? customAction = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

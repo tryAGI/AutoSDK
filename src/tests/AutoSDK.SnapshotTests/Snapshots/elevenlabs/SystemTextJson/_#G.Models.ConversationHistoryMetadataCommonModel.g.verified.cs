@@ -48,7 +48,7 @@ namespace G
         public global::G.ConversationHistoryFeedbackCommonModel? Feedback { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: public
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authorization_method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorizationMethodJsonConverter))]
@@ -64,8 +64,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PhoneCallJsonConverter))]
-        public global::G.PhoneCall? PhoneCall { get; set; }
+        public global::G.PhoneCallVariant1? PhoneCall { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +123,9 @@ namespace G
         /// <param name="cost"></param>
         /// <param name="deletionSettings"></param>
         /// <param name="feedback"></param>
-        /// <param name="authorizationMethod"></param>
+        /// <param name="authorizationMethod">
+        /// Default Value: public
+        /// </param>
         /// <param name="charging"></param>
         /// <param name="phoneCall"></param>
         /// <param name="batchCall"></param>
@@ -148,7 +149,7 @@ namespace G
             global::G.ConversationHistoryFeedbackCommonModel? feedback,
             global::G.AuthorizationMethod? authorizationMethod,
             global::G.ConversationChargingCommonModel? charging,
-            global::G.PhoneCall? phoneCall,
+            global::G.PhoneCallVariant1? phoneCall,
             global::G.ConversationHistoryBatchCallModel? batchCall,
             string? terminationReason,
             global::G.ConversationHistoryErrorCommonModel? error,

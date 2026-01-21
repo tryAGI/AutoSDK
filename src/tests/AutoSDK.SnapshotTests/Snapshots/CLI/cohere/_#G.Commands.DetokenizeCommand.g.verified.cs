@@ -13,24 +13,24 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            string model,
             global::System.Collections.Generic.IList<int> tokens,
+            string model,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.DetokenizeResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
-        private global::System.CommandLine.Argument<string> Model { get; } = new(
-            name: "model")
-        {
-            Description = @"An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.",
-        };
-
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<int>> Tokens { get; } = new(
             name: "tokens")
         {
             Description = @"The list of tokens to be detokenized.",
+        };
+
+        private global::System.CommandLine.Argument<string> Model { get; } = new(
+            name: "model")
+        {
+            Description = @"An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
@@ -47,8 +47,8 @@ namespace G
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Model);
             Arguments.Add(Tokens);
+            Arguments.Add(Model);
             Options.Add(XClientName);
 
             Initialize();
@@ -61,21 +61,21 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var model = parseResult.GetRequiredValue(Model);
             var tokens = parseResult.GetRequiredValue(Tokens);
+            var model = parseResult.GetRequiredValue(Model);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                model: model,
                 tokens: tokens,
+                model: model,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.DetokenizeAsync(
                 xClientName: xClientName,
-                model: model,
                 tokens: tokens,
+                model: model,
                 cancellationToken: cancellationToken);
 
             Complete(

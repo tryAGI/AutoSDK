@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"character_count_change_from":17189,"character_count_change_to":17231,"content_type":"audio/mpeg","date_unix":1714650306,"history_item_id":"ja9xsmfGhxYcymxGcOGB","model_id":"eleven_multilingual_v2","request_id":"BF0BZg4IwLGBlaVjv9Im","settings":{"similarity_boost":0.5,"stability":0.71,"style":0,"use_speaker_boost":true},"source":"TTS","state":"created","text":"Hello, world!","voice_category":"premade","voice_id":"21m00Tcm4TlvDq8ikWAM","voice_name":"Rachel"}
     /// </summary>
     public sealed partial class SpeechHistoryItemResponseModel
     {
@@ -44,8 +44,7 @@ namespace G
         /// The category of the voice. Either 'premade', 'cloned', 'generated' or 'professional'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_category")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter))]
-        public global::G.SpeechHistoryItemResponseModelVoiceCategory? VoiceCategory { get; set; }
+        public global::G.SpeechHistoryItemResponseModelVoiceCategory2? VoiceCategory { get; set; }
 
         /// <summary>
         /// The text used to generate the audio item.
@@ -97,7 +96,7 @@ namespace G
         public object? Settings { get; set; }
 
         /// <summary>
-        /// 
+        /// Feedback associated with the generated item. Returns null if no feedback has been provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback")]
         public global::G.FeedbackResponseModel? Feedback { get; set; }
@@ -112,11 +111,10 @@ namespace G
         /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelSourceJsonConverter))]
-        public global::G.SpeechHistoryItemResponseModelSource? Source { get; set; }
+        public global::G.SpeechHistoryItemResponseModelSource2? Source { get; set; }
 
         /// <summary>
-        /// 
+        /// The alignments of the history item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignments")]
         public global::G.HistoryAlignmentsResponseModel? Alignments { get; set; }
@@ -175,14 +173,18 @@ namespace G
         /// <param name="settings">
         /// The settings of the history item.
         /// </param>
-        /// <param name="feedback"></param>
+        /// <param name="feedback">
+        /// Feedback associated with the generated item. Returns null if no feedback has been provided.
+        /// </param>
         /// <param name="shareLinkId">
         /// The ID of the share link.
         /// </param>
         /// <param name="source">
         /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
         /// </param>
-        /// <param name="alignments"></param>
+        /// <param name="alignments">
+        /// The alignments of the history item.
+        /// </param>
         /// <param name="dialogue">
         /// The dialogue (voice and text pairs) used to generate the audio item. If this is set then the top level `text` and `voice_id` fields will be empty.
         /// </param>
@@ -200,12 +202,12 @@ namespace G
             string? voiceId,
             string? modelId,
             string? voiceName,
-            global::G.SpeechHistoryItemResponseModelVoiceCategory? voiceCategory,
+            global::G.SpeechHistoryItemResponseModelVoiceCategory2? voiceCategory,
             string? text,
             object? settings,
             global::G.FeedbackResponseModel? feedback,
             string? shareLinkId,
-            global::G.SpeechHistoryItemResponseModelSource? source,
+            global::G.SpeechHistoryItemResponseModelSource2? source,
             global::G.HistoryAlignmentsResponseModel? alignments,
             global::System.Collections.Generic.IList<global::G.DialogueInputResponseModel>? dialogue)
         {

@@ -40,7 +40,7 @@ namespace G
         public string PricingType { get; set; } = default!;
 
         /// <summary>
-        /// Inclusive, in ms
+        /// time interval with this particular pricing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.TimeInterval Interval { get; set; } = default!;
@@ -68,7 +68,7 @@ namespace G
         /// pricing type
         /// </param>
         /// <param name="interval">
-        /// Inclusive, in ms
+        /// time interval with this particular pricing
         /// </param>
         public UsageItem(
             global::G.ModelMeta model,

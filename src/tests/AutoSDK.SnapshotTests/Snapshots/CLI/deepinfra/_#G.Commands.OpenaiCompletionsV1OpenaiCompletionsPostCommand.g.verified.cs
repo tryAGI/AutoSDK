@@ -26,7 +26,7 @@ namespace G
             bool? stream,
             int? logprobs,
             bool? echo,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
             double? presencePenalty,
             double? frequencyPenalty,
             global::G.ResponseFormat? responseFormat,
@@ -126,7 +126,7 @@ The total length of input tokens and generated tokens is limited by the model's 
             Description = @"return prompt as part of the respons",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Stop { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?> Stop { get; } = new(
             name: "stop")
         {
             Description = @"up to 16 sequences where the API will stop generating further tokens",
@@ -147,7 +147,7 @@ The total length of input tokens and generated tokens is limited by the model's 
         private global::System.CommandLine.Option<global::G.ResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = @"",
+            Description = @"The format of the response. Currently, only json is supported.",
         };
 
         private global::System.CommandLine.Option<double?> RepetitionPenalty { get; } = new(
@@ -171,7 +171,7 @@ The total length of input tokens and generated tokens is limited by the model's 
         private global::System.CommandLine.Option<global::G.StreamOptions?> StreamOptions { get; } = new(
             name: "streamOptions")
         {
-            Description = @"",
+            Description = @"streaming options",
         };
         public OpenaiCompletionsV1OpenaiCompletionsPostCommand(
             G.IApi client,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetPhoneNumberTwilioResponseModel
     {
@@ -28,7 +28,7 @@ namespace G
         public string PhoneNumberId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The agent that is assigned to the phone number
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assigned_agent")]
         public global::G.PhoneNumberAgentInfo? AssignedAgent { get; set; }
@@ -38,7 +38,7 @@ namespace G
         /// Default Value: twilio
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::G.GetPhoneNumberTwilioResponseModelProvider? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +58,9 @@ namespace G
         /// <param name="phoneNumberId">
         /// The ID of the phone number
         /// </param>
-        /// <param name="assignedAgent"></param>
+        /// <param name="assignedAgent">
+        /// The agent that is assigned to the phone number
+        /// </param>
         /// <param name="provider">
         /// Phone provider<br/>
         /// Default Value: twilio
@@ -68,7 +70,7 @@ namespace G
             string label,
             string phoneNumberId,
             global::G.PhoneNumberAgentInfo? assignedAgent,
-            global::G.GetPhoneNumberTwilioResponseModelProvider? provider)
+            string? provider)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));

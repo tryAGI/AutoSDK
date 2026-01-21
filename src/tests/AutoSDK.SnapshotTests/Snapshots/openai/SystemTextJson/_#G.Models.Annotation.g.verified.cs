@@ -28,6 +28,56 @@ namespace G
         public bool IsFileCitationBody => FileCitationBody != null;
 
         /// <summary>
+        /// A citation for a web resource used to generate a model response.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UrlCitationBody? UrlCitationBody { get; init; }
+#else
+        public global::G.UrlCitationBody? UrlCitationBody { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitationBody))]
+#endif
+        public bool IsUrlCitationBody => UrlCitationBody != null;
+
+        /// <summary>
+        /// A citation for a container file used to generate a model response.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; init; }
+#else
+        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitationBody))]
+#endif
+        public bool IsContainerFileCitationBody => ContainerFileCitationBody != null;
+
+        /// <summary>
+        /// A path to a file.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.FilePath? FilePath { get; init; }
+#else
+        public global::G.FilePath? FilePath { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
+#endif
+        public bool IsFilePath => FilePath != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Annotation(global::G.FileCitationBody value) => new Annotation((global::G.FileCitationBody?)value);
@@ -44,23 +94,6 @@ namespace G
         {
             FileCitationBody = value;
         }
-
-        /// <summary>
-        /// A citation for a web resource used to generate a model response.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UrlCitationBody? UrlCitationBody { get; init; }
-#else
-        public global::G.UrlCitationBody? UrlCitationBody { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitationBody))]
-#endif
-        public bool IsUrlCitationBody => UrlCitationBody != null;
 
         /// <summary>
         /// 
@@ -81,23 +114,6 @@ namespace G
         }
 
         /// <summary>
-        /// A citation for a container file used to generate a model response.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; init; }
-#else
-        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitationBody))]
-#endif
-        public bool IsContainerFileCitationBody => ContainerFileCitationBody != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Annotation(global::G.ContainerFileCitationBody value) => new Annotation((global::G.ContainerFileCitationBody?)value);
@@ -114,23 +130,6 @@ namespace G
         {
             ContainerFileCitationBody = value;
         }
-
-        /// <summary>
-        /// A path to a file.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.FilePath? FilePath { get; init; }
-#else
-        public global::G.FilePath? FilePath { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
-#endif
-        public bool IsFilePath => FilePath != null;
 
         /// <summary>
         /// 

@@ -12,18 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("citations")]
-        public global::System.Collections.Generic.IList<global::G.Citation>? Citations { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.Collections.Generic.IList<global::G.ContentItem>? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
         public global::G.AssistantMessageResponseRole Role { get; set; }
 
@@ -40,6 +28,18 @@ namespace G
         public string? ToolPlan { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::System.Collections.Generic.IList<global::G.ContentItem>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("citations")]
+        public global::System.Collections.Generic.IList<global::G.Citation>? Citations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -48,25 +48,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantMessageResponse" /> class.
         /// </summary>
-        /// <param name="citations"></param>
-        /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="toolCalls"></param>
         /// <param name="toolPlan">
         /// A chain-of-thought style reflection and plan that the model generates when working with Tools.
         /// </param>
+        /// <param name="content"></param>
+        /// <param name="citations"></param>
         public AssistantMessageResponse(
-            global::System.Collections.Generic.IList<global::G.Citation>? citations,
-            global::System.Collections.Generic.IList<global::G.ContentItem>? content,
             global::G.AssistantMessageResponseRole role,
             global::System.Collections.Generic.IList<global::G.ToolCallV2>? toolCalls,
-            string? toolPlan)
+            string? toolPlan,
+            global::System.Collections.Generic.IList<global::G.ContentItem>? content,
+            global::System.Collections.Generic.IList<global::G.Citation>? citations)
         {
-            this.Citations = citations;
-            this.Content = content;
             this.Role = role;
             this.ToolCalls = toolCalls;
             this.ToolPlan = toolPlan;
+            this.Content = content;
+            this.Citations = citations;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"request_headers":{"Content-Type":"application/json"},"url":"https://example.com/webhook"}
     /// </summary>
     public sealed partial class ConversationInitiationClientDataWebhook
     {

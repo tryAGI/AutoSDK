@@ -10,19 +10,15 @@ namespace G
     public sealed partial class HFModel
     {
         /// <summary>
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </summary>
-        /// <example>google/vit-base-patch16-224</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ModelName { get; set; }
 
         /// <summary>
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </summary>
-        /// <example>image-classification</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("task")]
         public string? Task { get; set; }
 
@@ -36,12 +32,10 @@ namespace G
         /// Initializes a new instance of the <see cref="HFModel" /> class.
         /// </summary>
         /// <param name="modelName">
-        /// Model Id from huggingface<br/>
-        /// Example: google/vit-base-patch16-224
+        /// Model Id from huggingface
         /// </param>
         /// <param name="task">
-        /// Task<br/>
-        /// Example: image-classification
+        /// Task
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

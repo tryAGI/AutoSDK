@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        public bool? Deleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        public bool? Deleted { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,17 +30,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileDeleteResponse" /> class.
         /// </summary>
-        /// <param name="deleted"></param>
         /// <param name="id"></param>
+        /// <param name="deleted"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileDeleteResponse(
-            bool? deleted,
-            string? id)
+            string? id,
+            bool? deleted)
         {
-            this.Deleted = deleted;
             this.Id = id;
+            this.Deleted = deleted;
         }
 
         /// <summary>

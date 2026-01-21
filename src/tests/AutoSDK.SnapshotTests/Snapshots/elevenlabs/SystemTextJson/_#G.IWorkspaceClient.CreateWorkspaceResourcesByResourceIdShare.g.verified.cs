@@ -38,7 +38,7 @@ namespace G
         /// Role to update the target principal with.
         /// </param>
         /// <param name="resourceType">
-        /// Resource types that can be shared in the workspace. The name always need to match the collection names
+        /// Resource type of the target resource.
         /// </param>
         /// <param name="userEmail">
         /// The email of the user or service account.

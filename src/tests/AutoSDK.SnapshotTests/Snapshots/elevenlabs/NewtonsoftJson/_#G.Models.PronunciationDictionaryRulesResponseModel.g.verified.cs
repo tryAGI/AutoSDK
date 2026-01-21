@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"5xM3yVvZQKV0EfqQpLrJ","version_id":"5xM3yVvZQKV0EfqQpLr2"}
     /// </summary>
     public sealed partial class PronunciationDictionaryRulesResponseModel
     {

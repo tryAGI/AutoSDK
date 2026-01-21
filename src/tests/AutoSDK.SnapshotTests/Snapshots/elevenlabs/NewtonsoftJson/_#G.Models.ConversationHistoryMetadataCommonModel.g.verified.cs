@@ -46,7 +46,7 @@ namespace G
         public global::G.ConversationHistoryFeedbackCommonModel? Feedback { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authorization_method")]
         public global::G.AuthorizationMethod? AuthorizationMethod { get; set; }
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phone_call")]
-        public global::G.PhoneCall? PhoneCall { get; set; }
+        public global::G.PhoneCallVariant1? PhoneCall { get; set; }
 
         /// <summary>
         /// 
@@ -120,7 +120,9 @@ namespace G
         /// <param name="cost"></param>
         /// <param name="deletionSettings"></param>
         /// <param name="feedback"></param>
-        /// <param name="authorizationMethod"></param>
+        /// <param name="authorizationMethod">
+        /// Default Value: public
+        /// </param>
         /// <param name="charging"></param>
         /// <param name="phoneCall"></param>
         /// <param name="batchCall"></param>
@@ -141,7 +143,7 @@ namespace G
             global::G.ConversationHistoryFeedbackCommonModel? feedback,
             global::G.AuthorizationMethod? authorizationMethod,
             global::G.ConversationChargingCommonModel? charging,
-            global::G.PhoneCall? phoneCall,
+            global::G.PhoneCallVariant1? phoneCall,
             global::G.ConversationHistoryBatchCallModel? batchCall,
             string? terminationReason,
             global::G.ConversationHistoryErrorCommonModel? error,

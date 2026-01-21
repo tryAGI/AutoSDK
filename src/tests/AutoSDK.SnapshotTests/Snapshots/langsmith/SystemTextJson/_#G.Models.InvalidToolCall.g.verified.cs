@@ -43,8 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InvalidToolCallTypeJsonConverter))]
-        public global::G.InvalidToolCallType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,7 +67,7 @@ namespace G
             string? args,
             string? id,
             string? error,
-            global::G.InvalidToolCallType? type)
+            string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));

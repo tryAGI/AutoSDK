@@ -5,15 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"text":"This is a test podcast.","type":"text"}
     /// </summary>
     public sealed partial class PodcastTextSource
     {
         /// <summary>
         /// The type of source to create.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PodcastTextSourceType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// The text to create the podcast from.
@@ -37,11 +37,11 @@ namespace G
         /// The text to create the podcast from.
         /// </param>
         public PodcastTextSource(
-            string text,
-            global::G.PodcastTextSourceType type)
+            string type,
+            string text)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
         }
 
         /// <summary>

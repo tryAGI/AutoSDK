@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for text embedding. OpenAI compatible
+    /// The input to the API for text embedding. OpenAI compatible<br/>
+    /// Example: {"model":"jina-colbert-v1-en","input":["Hello, world!"]}
     /// </summary>
     public sealed partial class TextEmbeddingAPIInput
     {

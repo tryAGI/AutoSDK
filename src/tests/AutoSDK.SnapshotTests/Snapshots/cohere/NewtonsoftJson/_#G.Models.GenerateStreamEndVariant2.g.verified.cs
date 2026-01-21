@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public global::G.FinishReason? FinishReason { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("is_finished", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool IsFinished { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("is_finished", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool IsFinished { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamEndVariant2" /> class.
         /// </summary>
-        /// <param name="finishReason"></param>
         /// <param name="isFinished"></param>
+        /// <param name="finishReason"></param>
         /// <param name="response"></param>
         public GenerateStreamEndVariant2(
             bool isFinished,

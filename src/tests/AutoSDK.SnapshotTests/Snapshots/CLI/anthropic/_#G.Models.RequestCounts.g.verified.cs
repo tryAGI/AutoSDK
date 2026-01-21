@@ -11,62 +11,47 @@ namespace G
     {
         /// <summary>
         /// Number of requests in the Message Batch that are processing.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 100
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Processing { get; set; } = 0;
+        public required int Processing { get; set; }
 
         /// <summary>
         /// Number of requests in the Message Batch that have completed successfully.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 50
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("succeeded")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Succeeded { get; set; } = 0;
+        public required int Succeeded { get; set; }
 
         /// <summary>
         /// Number of requests in the Message Batch that encountered an error.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 30
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("errored")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Errored { get; set; } = 0;
+        public required int Errored { get; set; }
 
         /// <summary>
         /// Number of requests in the Message Batch that have been canceled.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("canceled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Canceled { get; set; } = 0;
+        public required int Canceled { get; set; }
 
         /// <summary>
         /// Number of requests in the Message Batch that have expired.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Expired { get; set; } = 0;
+        public required int Expired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -79,32 +64,27 @@ namespace G
         /// </summary>
         /// <param name="processing">
         /// Number of requests in the Message Batch that are processing.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 100
+        /// Default Value: 0
         /// </param>
         /// <param name="succeeded">
         /// Number of requests in the Message Batch that have completed successfully.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 50
+        /// Default Value: 0
         /// </param>
         /// <param name="errored">
         /// Number of requests in the Message Batch that encountered an error.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 30
+        /// Default Value: 0
         /// </param>
         /// <param name="canceled">
         /// Number of requests in the Message Batch that have been canceled.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
+        /// Default Value: 0
         /// </param>
         /// <param name="expired">
         /// Number of requests in the Message Batch that have expired.<br/>
         /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
+        /// Default Value: 0
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -10,6 +10,13 @@ namespace G
     public sealed partial class JSONResponseFormat
     {
         /// <summary>
+        /// Defaults to `"text"`.<br/>
+        /// When set to `"json_object"`, the model's output will be a valid JSON Object.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ResponseFormatType Type { get; set; } = default!;
+
+        /// <summary>
         /// A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.<br/>
         /// Example (required name and age object):<br/>
         /// ```json<br/>
@@ -28,13 +35,6 @@ namespace G
         public object? Schema { get; set; }
 
         /// <summary>
-        /// Defaults to `"text"`.<br/>
-        /// When set to `"json_object"`, the model's output will be a valid JSON Object.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ResponseFormatType Type { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -43,6 +43,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JSONResponseFormat" /> class.
         /// </summary>
+        /// <param name="type">
+        /// Defaults to `"text"`.<br/>
+        /// When set to `"json_object"`, the model's output will be a valid JSON Object.
+        /// </param>
         /// <param name="schema">
         /// A JSON schema object that the output will adhere to. There are some restrictions we have on the schema, refer to [our guide](https://docs.cohere.com/docs/structured-outputs-json#schema-constraints) for more information.<br/>
         /// Example (required name and age object):<br/>
@@ -57,10 +61,6 @@ namespace G
         /// }<br/>
         /// ```<br/>
         /// **Note**: This field must not be specified when the `type` is set to `"text"`.
-        /// </param>
-        /// <param name="type">
-        /// Defaults to `"text"`.<br/>
-        /// When set to `"json_object"`, the model's output will be a valid JSON Object.
         /// </param>
         public JSONResponseFormat(
             global::G.ResponseFormatType type,

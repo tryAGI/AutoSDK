@@ -10,34 +10,10 @@ namespace G
     public sealed partial class FinetuneDatasetMetrics
     {
         /// <summary>
-        /// 
+        /// The number of tokens of valid examples that can be used for training.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("chat_data_metrics")]
-        public global::G.ChatDataMetrics? ChatDataMetrics { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("classify_data_metrics")]
-        public global::G.ClassifyDataMetrics? ClassifyDataMetrics { get; set; }
-
-        /// <summary>
-        /// Number of evaluation examples.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("eval_examples")]
-        public double? EvalExamples { get; set; }
-
-        /// <summary>
-        /// The size in bytes of all eval examples.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("eval_size_bytes")]
-        public double? EvalSizeBytes { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reranker_data_metrics")]
-        public global::G.RerankerDataMetrics? RerankerDataMetrics { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("trainable_token_count")]
+        public double? TrainableTokenCount { get; set; }
 
         /// <summary>
         /// The overall number of examples.
@@ -58,10 +34,34 @@ namespace G
         public double? TrainSizeBytes { get; set; }
 
         /// <summary>
-        /// The number of tokens of valid examples that can be used for training.
+        /// Number of evaluation examples.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trainable_token_count")]
-        public double? TrainableTokenCount { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("eval_examples")]
+        public double? EvalExamples { get; set; }
+
+        /// <summary>
+        /// The size in bytes of all eval examples.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("eval_size_bytes")]
+        public double? EvalSizeBytes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reranker_data_metrics")]
+        public global::G.RerankerDataMetrics? RerankerDataMetrics { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chat_data_metrics")]
+        public global::G.ChatDataMetrics? ChatDataMetrics { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classify_data_metrics")]
+        public global::G.ClassifyDataMetrics? ClassifyDataMetrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,15 +72,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FinetuneDatasetMetrics" /> class.
         /// </summary>
-        /// <param name="chatDataMetrics"></param>
-        /// <param name="classifyDataMetrics"></param>
-        /// <param name="evalExamples">
-        /// Number of evaluation examples.
+        /// <param name="trainableTokenCount">
+        /// The number of tokens of valid examples that can be used for training.
         /// </param>
-        /// <param name="evalSizeBytes">
-        /// The size in bytes of all eval examples.
-        /// </param>
-        /// <param name="rerankerDataMetrics"></param>
         /// <param name="totalExamples">
         /// The overall number of examples.
         /// </param>
@@ -90,32 +84,38 @@ namespace G
         /// <param name="trainSizeBytes">
         /// The size in bytes of all training examples.
         /// </param>
-        /// <param name="trainableTokenCount">
-        /// The number of tokens of valid examples that can be used for training.
+        /// <param name="evalExamples">
+        /// Number of evaluation examples.
         /// </param>
+        /// <param name="evalSizeBytes">
+        /// The size in bytes of all eval examples.
+        /// </param>
+        /// <param name="rerankerDataMetrics"></param>
+        /// <param name="chatDataMetrics"></param>
+        /// <param name="classifyDataMetrics"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FinetuneDatasetMetrics(
-            global::G.ChatDataMetrics? chatDataMetrics,
-            global::G.ClassifyDataMetrics? classifyDataMetrics,
-            double? evalExamples,
-            double? evalSizeBytes,
-            global::G.RerankerDataMetrics? rerankerDataMetrics,
+            double? trainableTokenCount,
             double? totalExamples,
             double? trainExamples,
             double? trainSizeBytes,
-            double? trainableTokenCount)
+            double? evalExamples,
+            double? evalSizeBytes,
+            global::G.RerankerDataMetrics? rerankerDataMetrics,
+            global::G.ChatDataMetrics? chatDataMetrics,
+            global::G.ClassifyDataMetrics? classifyDataMetrics)
         {
-            this.ChatDataMetrics = chatDataMetrics;
-            this.ClassifyDataMetrics = classifyDataMetrics;
-            this.EvalExamples = evalExamples;
-            this.EvalSizeBytes = evalSizeBytes;
-            this.RerankerDataMetrics = rerankerDataMetrics;
+            this.TrainableTokenCount = trainableTokenCount;
             this.TotalExamples = totalExamples;
             this.TrainExamples = trainExamples;
             this.TrainSizeBytes = trainSizeBytes;
-            this.TrainableTokenCount = trainableTokenCount;
+            this.EvalExamples = evalExamples;
+            this.EvalSizeBytes = evalSizeBytes;
+            this.RerankerDataMetrics = rerankerDataMetrics;
+            this.ChatDataMetrics = chatDataMetrics;
+            this.ClassifyDataMetrics = classifyDataMetrics;
         }
 
         /// <summary>

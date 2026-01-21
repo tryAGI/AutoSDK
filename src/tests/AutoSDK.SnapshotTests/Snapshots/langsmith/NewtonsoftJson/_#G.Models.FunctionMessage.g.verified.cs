@@ -38,7 +38,7 @@ namespace G
         /// Default Value: function
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FunctionMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace G
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.FunctionMessageType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

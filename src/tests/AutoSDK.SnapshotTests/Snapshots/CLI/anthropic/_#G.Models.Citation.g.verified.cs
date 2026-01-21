@@ -35,6 +35,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaResponsePageLocationCitation? PageLocation { get; init; }
+#else
+        public global::G.BetaResponsePageLocationCitation? PageLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
+#endif
+        public bool IsPageLocation => PageLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
+#else
+        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
+#endif
+        public bool IsContentBlockLocation => ContentBlockLocation != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation(global::G.BetaResponseCharLocationCitation value) => new Citation((global::G.BetaResponseCharLocationCitation?)value);
 
         /// <summary>
@@ -53,23 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaResponsePageLocationCitation? PageLocation { get; init; }
-#else
-        public global::G.BetaResponsePageLocationCitation? PageLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
-#endif
-        public bool IsPageLocation => PageLocation != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Citation(global::G.BetaResponsePageLocationCitation value) => new Citation((global::G.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
@@ -84,23 +100,6 @@ namespace G
         {
             PageLocation = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
-#else
-        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
-#endif
-        public bool IsContentBlockLocation => ContentBlockLocation != null;
 
         /// <summary>
         /// 

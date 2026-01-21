@@ -111,7 +111,7 @@ namespace G
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt;
+            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.RetryNumber = retryNumber;
             this.Errors = errors;
         }

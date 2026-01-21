@@ -16,7 +16,7 @@ namespace G
         public string Period { get; set; } = default!;
 
         /// <summary>
-        /// Inclusive, in ms
+        /// time interval in this period
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.TimeInterval Interval { get; set; } = default!;
@@ -53,7 +53,7 @@ namespace G
         /// YYYY.MM formatted period
         /// </param>
         /// <param name="interval">
-        /// Inclusive, in ms
+        /// time interval in this period
         /// </param>
         /// <param name="items"></param>
         /// <param name="totalCost">

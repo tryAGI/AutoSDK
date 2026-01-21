@@ -630,46 +630,34 @@ namespace G
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="citationOptions">
-        /// Options for controlling citation generation.
+        /// <param name="stream">
+        /// Defaults to `false`.<br/>
+        /// When `true`, the response will be a SSE stream of events.<br/>
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </param>
-        /// <param name="documents">
-        /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
-        /// </param>
-        /// <param name="frequencyPenalty">
-        /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
-        /// Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.
-        /// </param>
-        /// <param name="k">
-        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.<br/>
-        /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
-        /// Default Value: 0
-        /// </param>
-        /// <param name="logprobs">
-        /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
-        /// </param>
-        /// <param name="maxTokens">
-        /// The maximum number of tokens the model will generate as part of the response.<br/>
-        /// **Note**: Setting a low value may result in incomplete generations.
+        /// <param name="model">
+        /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
         /// <param name="messages">
         /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
         /// Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/v2/docs/chat-api).
         /// </param>
-        /// <param name="model">
-        /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
-        /// </param>
-        /// <param name="p">
-        /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
-        /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
-        /// Default Value: 0.75F
-        /// </param>
-        /// <param name="presencePenalty">
-        /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
-        /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
-        /// </param>
         /// <param name="reasoningEffort">
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
+        /// </param>
+        /// <param name="tools">
+        /// A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.<br/>
+        /// Learn more in the [Tool Use guide](https://docs.cohere.com/docs/tools).
+        /// </param>
+        /// <param name="strictTools">
+        /// When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).<br/>
+        /// **Note**: The first few requests with a new set of tools will take longer to process.
+        /// </param>
+        /// <param name="documents">
+        /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
+        /// </param>
+        /// <param name="citationOptions">
+        /// Options for controlling citation generation.
         /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/v2/docs/command-r), [Command R+](https://docs.cohere.com/v2/docs/command-r-plus) and newer models.<br/>
@@ -686,28 +674,44 @@ namespace G
         /// **Note**: This parameter is only compatible newer Cohere models, starting with [Command R 08-2024](https://docs.cohere.com/docs/command-r#august-2024-release) and [Command R+ 08-2024](https://docs.cohere.com/docs/command-r-plus#august-2024-release).<br/>
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens the model will generate as part of the response.<br/>
+        /// **Note**: Setting a low value may result in incomplete generations.
+        /// </param>
+        /// <param name="stopSequences">
+        /// A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.
+        /// </param>
+        /// <param name="temperature">
+        /// Defaults to `0.3`.<br/>
+        /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations, and higher temperatures mean more random generations.<br/>
+        /// Randomness can be further maximized by increasing the  value of the `p` parameter.
+        /// </param>
         /// <param name="seed">
         /// If specified, the backend will make a best effort to sample tokens<br/>
         /// deterministically, such that repeated requests with the same<br/>
         /// seed and parameters should return the same result. However,<br/>
         /// determinism cannot be totally guaranteed.
         /// </param>
-        /// <param name="stopSequences">
-        /// A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.
+        /// <param name="frequencyPenalty">
+        /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
+        /// Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.
         /// </param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
+        /// <param name="presencePenalty">
+        /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
+        /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </param>
-        /// <param name="strictTools">
-        /// When set to `true`, tool calls in the Assistant message will be forced to follow the tool definition strictly. Learn more in the [Structured Outputs (Tools) guide](https://docs.cohere.com/docs/structured-outputs-json#structured-outputs-tools).<br/>
-        /// **Note**: The first few requests with a new set of tools will take longer to process.
+        /// <param name="k">
+        /// Ensures that only the top `k` most likely tokens are considered for generation at each step. When `k` is set to `0`, k-sampling is disabled.<br/>
+        /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
+        /// Default Value: 0
         /// </param>
-        /// <param name="temperature">
-        /// Defaults to `0.3`.<br/>
-        /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations, and higher temperatures mean more random generations.<br/>
-        /// Randomness can be further maximized by increasing the  value of the `p` parameter.
+        /// <param name="p">
+        /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
+        /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
+        /// Default Value: 0.75
+        /// </param>
+        /// <param name="logprobs">
+        /// Defaults to `false`. When set to `true`, the log probabilities of the generated tokens will be included in the response.
         /// </param>
         /// <param name="toolChoice">
         /// Used to control whether or not the model will be forced to use a tool when answering. When `REQUIRED` is specified, the model will be forced to use at least one of the user-defined tools, and the `tools` parameter must be passed in the request.<br/>
@@ -716,58 +720,54 @@ namespace G
         /// **Note**: This parameter is only compatible with models [Command-r7b](https://docs.cohere.com/v2/docs/command-r7b) and newer.<br/>
         /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
         /// </param>
-        /// <param name="tools">
-        /// A list of tools (functions) available to the model. The model response may contain 'tool_calls' to the specified tools.<br/>
-        /// Learn more in the [Tool Use guide](https://docs.cohere.com/docs/tools).
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chatv2Async(
-            global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string model,
+            global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string? xClientName = default,
-            global::G.CitationOptions? citationOptions = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? documents = default,
-            float? frequencyPenalty = default,
-            int? k = default,
-            bool? logprobs = default,
-            int? maxTokens = default,
-            float? p = default,
-            float? presencePenalty = default,
+            bool? stream = default,
             global::G.ReasoningEffort? reasoningEffort = default,
+            global::System.Collections.Generic.IList<global::G.ToolV2>? tools = default,
+            bool? strictTools = default,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? documents = default,
+            global::G.CitationOptions? citationOptions = default,
             global::G.ResponseFormatV2? responseFormat = default,
             global::G.Chatv2RequestSafetyMode? safetyMode = default,
-            int? seed = default,
+            int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            bool? stream = default,
-            bool? strictTools = default,
             float? temperature = default,
+            int? seed = default,
+            float? frequencyPenalty = default,
+            float? presencePenalty = default,
+            int? k = default,
+            float? p = default,
+            bool? logprobs = default,
             global::G.Chatv2RequestToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::G.ToolV2>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.Chatv2Request
             {
-                CitationOptions = citationOptions,
-                Documents = documents,
-                FrequencyPenalty = frequencyPenalty,
-                K = k,
-                Logprobs = logprobs,
-                MaxTokens = maxTokens,
-                Messages = messages,
+                Stream = stream,
                 Model = model,
-                P = p,
-                PresencePenalty = presencePenalty,
+                Messages = messages,
                 ReasoningEffort = reasoningEffort,
+                Tools = tools,
+                StrictTools = strictTools,
+                Documents = documents,
+                CitationOptions = citationOptions,
                 ResponseFormat = responseFormat,
                 SafetyMode = safetyMode,
-                Seed = seed,
+                MaxTokens = maxTokens,
                 StopSequences = stopSequences,
-                Stream = stream,
-                StrictTools = strictTools,
                 Temperature = temperature,
+                Seed = seed,
+                FrequencyPenalty = frequencyPenalty,
+                PresencePenalty = presencePenalty,
+                K = k,
+                P = p,
+                Logprobs = logprobs,
                 ToolChoice = toolChoice,
-                Tools = tools,
             };
 
             return await Chatv2Async(

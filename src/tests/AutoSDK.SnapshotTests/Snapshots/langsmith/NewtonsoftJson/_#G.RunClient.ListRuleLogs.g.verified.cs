@@ -11,8 +11,8 @@ namespace G
             ref global::System.Guid ruleId,
             ref int? limit,
             ref int? offset,
-            ref global::System.DateTime? startTime,
-            ref global::System.DateTime? endTime);
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -60,8 +60,8 @@ namespace G
                 ruleId: ref ruleId,
                 limit: ref limit,
                 offset: ref offset,
-                startTime: ref startTime,
-                endTime: ref endTime);
+                startTime: startTime,
+                endTime: endTime);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/logs",
@@ -69,8 +69,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("start_time", startTime?.ToString()) 
+                .AddOptionalParameter("end_time", endTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -12,46 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("auto_start")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool AutoStart { get; set; }
-
-        /// <summary>
-        /// Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("checkpoints")]
-        public global::System.Collections.Generic.IList<global::G.CheckpointOut>? Checkpoints { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
-
-        /// <summary>
-        /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
-        /// Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<global::G.EventOut>? Events { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuned_model")]
-        public string? FineTunedModel { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CompletionTrainingParameters Hyperparameters { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -59,21 +19,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::G.IntegrationsItem3>? Integrations { get; set; }
-
-        /// <summary>
-        /// Default Value: completion
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("job_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionDetailedJobOutJobTypeJsonConverter))]
-        public global::G.CompletionDetailedJobOutJobType? JobType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("auto_start")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool AutoStart { get; set; }
 
         /// <summary>
         /// The name of the model to fine-tune.
@@ -86,26 +34,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ModifiedAt { get; set; }
-
-        /// <summary>
-        /// Default Value: job
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionDetailedJobOutObjectJsonConverter))]
-        public global::G.CompletionDetailedJobOutObject? Object { get; set; }
-
-        /// <summary>
-        /// Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<global::G.RepositoriesItem>? Repositories { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionDetailedJobOutStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -114,14 +42,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
-        public string? Suffix { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("trained_tokens")]
-        public int? TrainedTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ModifiedAt { get; set; }
 
         /// <summary>
         /// 
@@ -137,6 +67,76 @@ namespace G
         public global::System.Collections.Generic.IList<global::System.Guid>? ValidationFiles { get; set; }
 
         /// <summary>
+        /// Default Value: job
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionDetailedJobOutObjectJsonConverter))]
+        public global::G.CompletionDetailedJobOutObject? Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuned_model")]
+        public string? FineTunedModel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
+        public string? Suffix { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? Integrations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trained_tokens")]
+        public int? TrainedTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::G.JobMetadataOut? Metadata { get; set; }
+
+        /// <summary>
+        /// Default Value: completion
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("job_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionDetailedJobOutJobTypeJsonConverter))]
+        public global::G.CompletionDetailedJobOutJobType? JobType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.CompletionTrainingParameters Hyperparameters { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? Repositories { get; set; }
+
+        /// <summary>
+        /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("events")]
+        public global::System.Collections.Generic.IList<global::G.EventOut>? Events { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("checkpoints")]
+        public global::System.Collections.Generic.IList<global::G.CheckpointOut>? Checkpoints { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -145,83 +145,83 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionDetailedJobOut" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="autoStart"></param>
-        /// <param name="checkpoints">
+        /// <param name="model">
+        /// The name of the model to fine-tune.
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="trainingFiles"></param>
+        /// <param name="validationFiles">
         /// Default Value: []
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="object">
+        /// Default Value: job
+        /// </param>
+        /// <param name="fineTunedModel"></param>
+        /// <param name="suffix"></param>
+        /// <param name="integrations"></param>
+        /// <param name="trainedTokens"></param>
+        /// <param name="metadata"></param>
+        /// <param name="jobType">
+        /// Default Value: completion
+        /// </param>
+        /// <param name="hyperparameters"></param>
+        /// <param name="repositories">
+        /// Default Value: []
+        /// </param>
         /// <param name="events">
         /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
         /// Default Value: []
         /// </param>
-        /// <param name="fineTunedModel"></param>
-        /// <param name="hyperparameters"></param>
-        /// <param name="id"></param>
-        /// <param name="integrations"></param>
-        /// <param name="jobType">
-        /// Default Value: completion
-        /// </param>
-        /// <param name="metadata"></param>
-        /// <param name="model">
-        /// The name of the model to fine-tune.
-        /// </param>
-        /// <param name="modifiedAt"></param>
-        /// <param name="object">
-        /// Default Value: job
-        /// </param>
-        /// <param name="repositories">
-        /// Default Value: []
-        /// </param>
-        /// <param name="status"></param>
-        /// <param name="suffix"></param>
-        /// <param name="trainedTokens"></param>
-        /// <param name="trainingFiles"></param>
-        /// <param name="validationFiles">
+        /// <param name="checkpoints">
         /// Default Value: []
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionDetailedJobOut(
-            bool autoStart,
-            int createdAt,
-            global::G.CompletionTrainingParameters hyperparameters,
             global::System.Guid id,
+            bool autoStart,
             global::G.FineTuneableModel model,
-            int modifiedAt,
             global::G.CompletionDetailedJobOutStatus status,
+            int createdAt,
+            int modifiedAt,
             global::System.Collections.Generic.IList<global::System.Guid> trainingFiles,
-            global::System.Collections.Generic.IList<global::G.CheckpointOut>? checkpoints,
-            global::System.Collections.Generic.IList<global::G.EventOut>? events,
-            string? fineTunedModel,
-            global::System.Collections.Generic.IList<global::G.IntegrationsItem3>? integrations,
-            global::G.CompletionDetailedJobOutJobType? jobType,
-            object? metadata,
+            global::G.CompletionTrainingParameters hyperparameters,
+            global::System.Collections.Generic.IList<global::System.Guid>? validationFiles,
             global::G.CompletionDetailedJobOutObject? @object,
-            global::System.Collections.Generic.IList<global::G.RepositoriesItem>? repositories,
+            string? fineTunedModel,
             string? suffix,
+            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? integrations,
             int? trainedTokens,
-            global::System.Collections.Generic.IList<global::System.Guid>? validationFiles)
+            global::G.JobMetadataOut? metadata,
+            global::G.CompletionDetailedJobOutJobType? jobType,
+            global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? repositories,
+            global::System.Collections.Generic.IList<global::G.EventOut>? events,
+            global::System.Collections.Generic.IList<global::G.CheckpointOut>? checkpoints)
         {
-            this.AutoStart = autoStart;
-            this.CreatedAt = createdAt;
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.Id = id;
+            this.AutoStart = autoStart;
             this.Model = model;
-            this.ModifiedAt = modifiedAt;
             this.Status = status;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
             this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
-            this.Checkpoints = checkpoints;
-            this.Events = events;
-            this.FineTunedModel = fineTunedModel;
-            this.Integrations = integrations;
-            this.JobType = jobType;
-            this.Metadata = metadata;
-            this.Object = @object;
-            this.Repositories = repositories;
-            this.Suffix = suffix;
-            this.TrainedTokens = trainedTokens;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.ValidationFiles = validationFiles;
+            this.Object = @object;
+            this.FineTunedModel = fineTunedModel;
+            this.Suffix = suffix;
+            this.Integrations = integrations;
+            this.TrainedTokens = trainedTokens;
+            this.Metadata = metadata;
+            this.JobType = jobType;
+            this.Repositories = repositories;
+            this.Events = events;
+            this.Checkpoints = checkpoints;
         }
 
         /// <summary>

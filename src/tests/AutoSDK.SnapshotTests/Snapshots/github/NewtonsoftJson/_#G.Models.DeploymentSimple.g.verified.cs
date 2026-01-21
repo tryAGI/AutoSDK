@@ -62,14 +62,16 @@ namespace G
         public string? Description { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -142,8 +144,12 @@ namespace G
         /// <param name="description">
         /// Example: Deploy request from hubot
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
         /// <param name="statusesUrl">
         /// Example: https://api.github.com/repos/octocat/example/deployments/1/statuses
         /// </param>

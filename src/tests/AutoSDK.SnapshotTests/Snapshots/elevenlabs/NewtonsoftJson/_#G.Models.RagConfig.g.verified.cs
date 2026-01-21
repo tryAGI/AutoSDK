@@ -16,35 +16,29 @@ namespace G
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: e5_mistral_7b_instruct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_model")]
         public global::G.EmbeddingModelEnum? EmbeddingModel { get; set; }
 
         /// <summary>
         /// Maximum vector distance of retrieved chunks.<br/>
-        /// Default Value: 0.6<br/>
-        /// Example: 0.5
+        /// Default Value: 0.6F
         /// </summary>
-        /// <example>0.5</example>
         [global::Newtonsoft.Json.JsonProperty("max_vector_distance")]
         public double? MaxVectorDistance { get; set; }
 
         /// <summary>
         /// Maximum total length of document chunks retrieved from RAG.<br/>
-        /// Default Value: 50000<br/>
-        /// Example: 50000
+        /// Default Value: 50000
         /// </summary>
-        /// <example>50000</example>
         [global::Newtonsoft.Json.JsonProperty("max_documents_length")]
         public int? MaxDocumentsLength { get; set; }
 
         /// <summary>
         /// Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.<br/>
-        /// Default Value: 20<br/>
-        /// Example: 5
+        /// Default Value: 20
         /// </summary>
-        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("max_retrieved_rag_chunks_count")]
         public int? MaxRetrievedRagChunksCount { get; set; }
 
@@ -60,21 +54,20 @@ namespace G
         /// <param name="enabled">
         /// Default Value: false
         /// </param>
-        /// <param name="embeddingModel"></param>
+        /// <param name="embeddingModel">
+        /// Default Value: e5_mistral_7b_instruct
+        /// </param>
         /// <param name="maxVectorDistance">
         /// Maximum vector distance of retrieved chunks.<br/>
-        /// Default Value: 0.6<br/>
-        /// Example: 0.5
+        /// Default Value: 0.6F
         /// </param>
         /// <param name="maxDocumentsLength">
         /// Maximum total length of document chunks retrieved from RAG.<br/>
-        /// Default Value: 50000<br/>
-        /// Example: 50000
+        /// Default Value: 50000
         /// </param>
         /// <param name="maxRetrievedRagChunksCount">
         /// Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.<br/>
-        /// Default Value: 20<br/>
-        /// Example: 5
+        /// Default Value: 20
         /// </param>
         public RagConfig(
             bool? enabled,

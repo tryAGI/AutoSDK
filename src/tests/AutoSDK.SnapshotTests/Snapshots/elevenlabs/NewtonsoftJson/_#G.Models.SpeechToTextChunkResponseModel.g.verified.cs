@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Chunk-level detail of the transcription with timing information.
+    /// Chunk-level detail of the transcription with timing information.<br/>
+    /// Example: {"language_code":"en","language_probability":0.98,"text":"Hello world!","words":[{"end":0.5,"speaker_id":"speaker_1","start":0,"text":"Hello","type":"word"},{"end":0.5,"speaker_id":"speaker_1","start":0.5,"text":" ","type":"spacing"},{"end":1.2,"speaker_id":"speaker_1","start":0.5,"text":"world!","type":"word"}]}
     /// </summary>
     public sealed partial class SpeechToTextChunkResponseModel
     {

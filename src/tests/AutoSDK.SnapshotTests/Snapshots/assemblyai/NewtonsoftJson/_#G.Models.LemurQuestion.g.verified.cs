@@ -7,7 +7,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"question":"Where are there wildfires?","answer_format":"List of countries in ISO 3166-1 alpha-2 format"}
     /// </summary>
     public sealed partial class LemurQuestion
     {

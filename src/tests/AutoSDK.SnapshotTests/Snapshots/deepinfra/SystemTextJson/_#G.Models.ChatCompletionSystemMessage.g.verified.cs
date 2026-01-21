@@ -16,8 +16,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionSystemMessageRoleJsonConverter))]
-        public global::G.ChatCompletionSystemMessageRole? Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// the message content
@@ -55,7 +54,7 @@ namespace G
 #endif
         public ChatCompletionSystemMessage(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>> content,
-            global::G.ChatCompletionSystemMessageRole? role,
+            string? role,
             string? name)
         {
             this.Content = content;

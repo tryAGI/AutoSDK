@@ -13,8 +13,7 @@ namespace G
         /// Default Value: client
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationHistoryTranscriptToolCallClientDetailsTypeJsonConverter))]
-        public global::G.ConversationHistoryTranscriptToolCallClientDetailsType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +40,7 @@ namespace G
 #endif
         public ConversationHistoryTranscriptToolCallClientDetails(
             string parameters,
-            global::G.ConversationHistoryTranscriptToolCallClientDetailsType? type)
+            string? type)
         {
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Type = type;

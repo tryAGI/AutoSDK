@@ -12,12 +12,6 @@ namespace G
     public sealed partial class ToolMessageV2
     {
         /// <summary>
-        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> Content { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
@@ -30,6 +24,12 @@ namespace G
         public string ToolCallId { get; set; } = default!;
 
         /// <summary>
+        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> Content { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -38,20 +38,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessageV2" /> class.
         /// </summary>
-        /// <param name="content">
-        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
-        /// </param>
         /// <param name="role"></param>
         /// <param name="toolCallId">
         /// The id of the associated tool call that has provided the given content
         /// </param>
+        /// <param name="content">
+        /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
+        /// </param>
         public ToolMessageV2(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> content,
             string toolCallId,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> content,
             global::G.ToolMessageV2Role role)
         {
-            this.Content = content;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Content = content;
             this.Role = role;
         }
 

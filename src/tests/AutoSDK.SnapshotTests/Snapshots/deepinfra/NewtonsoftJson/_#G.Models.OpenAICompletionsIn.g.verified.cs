@@ -12,10 +12,8 @@ namespace G
     public sealed partial class OpenAICompletionsIn
     {
         /// <summary>
-        /// model name<br/>
-        /// Example: meta-llama/Llama-2-70b-chat-hf
+        /// model name
         /// </summary>
-        /// <example>meta-llama/Llama-2-70b-chat-hf</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
@@ -34,21 +32,21 @@ namespace G
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
         /// <summary>
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 
         /// <summary>
         /// Float that represents the minimum probability for a token to be considered, relative to the probability of the most likely token. Must be in [0, 1]. Set to 0 to disable this.<br/>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_p")]
         public double? MinP { get; set; }
@@ -90,7 +88,7 @@ namespace G
         /// up to 16 sequences where the API will stop generating further tokens
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
 
         /// <summary>
         /// Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
@@ -107,7 +105,7 @@ namespace G
         public double? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// 
+        /// The format of the response. Currently, only json is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.ResponseFormat? ResponseFormat { get; set; }
@@ -132,7 +130,7 @@ namespace G
         public int? Seed { get; set; }
 
         /// <summary>
-        /// 
+        /// streaming options
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream_options")]
         public global::G.StreamOptions? StreamOptions { get; set; }
@@ -147,8 +145,7 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAICompletionsIn" /> class.
         /// </summary>
         /// <param name="model">
-        /// model name<br/>
-        /// Example: meta-llama/Llama-2-70b-chat-hf
+        /// model name
         /// </param>
         /// <param name="prompt">
         /// input prompt - a single string is currently supported
@@ -159,15 +156,15 @@ namespace G
         /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="topP">
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="minP">
         /// Float that represents the minimum probability for a token to be considered, relative to the probability of the most likely token. Must be in [0, 1]. Set to 0 to disable this.<br/>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="topK">
         /// Sample from the best k (number of) tokens. 0 means off<br/>
@@ -198,7 +195,9 @@ namespace G
         /// Positive values penalize new tokens based on how many times they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="responseFormat"></param>
+        /// <param name="responseFormat">
+        /// The format of the response. Currently, only json is supported.
+        /// </param>
         /// <param name="repetitionPenalty">
         /// Alternative penalty for repetition, but multiplicative instead of additive (&gt; 1 penalize, &lt; 1 encourage)<br/>
         /// Default Value: 1
@@ -209,7 +208,9 @@ namespace G
         /// <param name="seed">
         /// Seed for random number generator. If not provided, a random seed is used. Determinism is not guaranteed.
         /// </param>
-        /// <param name="streamOptions"></param>
+        /// <param name="streamOptions">
+        /// streaming options
+        /// </param>
         public OpenAICompletionsIn(
             string model,
             string prompt,
@@ -222,7 +223,7 @@ namespace G
             bool? stream,
             int? logprobs,
             bool? echo,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
             double? presencePenalty,
             double? frequencyPenalty,
             global::G.ResponseFormat? responseFormat,

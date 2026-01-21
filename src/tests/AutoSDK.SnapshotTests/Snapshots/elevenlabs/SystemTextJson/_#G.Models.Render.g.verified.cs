@@ -34,16 +34,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RenderTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RenderType Type { get; set; }
+        public required global::G.RenderType2? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference MediaRef { get; set; }
+        public required global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// 
@@ -75,14 +74,14 @@ namespace G
             string id,
             int version,
             string? language,
-            global::G.RenderType type,
-            global::G.DubbingMediaReference mediaRef,
+            global::G.RenderType2? type,
+            global::G.DubbingMediaReference? mediaRef,
             global::G.RenderStatus status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
             this.Status = status;
         }

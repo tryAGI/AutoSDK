@@ -1,13 +1,13 @@
-﻿//HintName: G.JsonConverters.FineTuneEventType.g.cs
+﻿//HintName: G.JsonConverters.FinetuneEventType.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class FineTuneEventTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FineTuneEventType>
+    public sealed class FinetuneEventTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FinetuneEventType>
     {
         /// <inheritdoc />
-        public override global::G.FineTuneEventType Read(
+        public override global::G.FinetuneEventType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.FineTuneEventTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.FinetuneEventTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,11 +27,11 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.FineTuneEventType)numValue;
+                    return (global::G.FinetuneEventType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::G.FineTuneEventType);
+                    return default(global::G.FinetuneEventType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -43,12 +43,12 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.FineTuneEventType value,
+            global::G.FinetuneEventType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.FineTuneEventTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::G.FinetuneEventTypeExtensions.ToValueString(value));
         }
     }
 }

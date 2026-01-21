@@ -42,7 +42,9 @@ namespace G
         /// <param name="coverImgUrl">
         /// dataurl or regular url to cover image (empty to delete)
         /// </param>
-        /// <param name="reportedType"></param>
+        /// <param name="reportedType">
+        /// model type
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ModelMetaUpdateModelsModelNameMetaPostAsync(

@@ -22,8 +22,10 @@ namespace G
         public string ExpiresAt { get; set; } = default!;
 
         /// <summary>
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </summary>
+        /// <example>{"contents":"read","issues":"read","deployments":"write","single_file":"read"}</example>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
         public global::G.AppPermissions? Permissions { get; set; }
 
@@ -72,7 +74,8 @@ namespace G
         /// <param name="token"></param>
         /// <param name="expiresAt"></param>
         /// <param name="permissions">
-        /// The permissions granted to the user access token.
+        /// The permissions granted to the user access token.<br/>
+        /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
         /// <param name="repositorySelection"></param>
         /// <param name="repositories"></param>

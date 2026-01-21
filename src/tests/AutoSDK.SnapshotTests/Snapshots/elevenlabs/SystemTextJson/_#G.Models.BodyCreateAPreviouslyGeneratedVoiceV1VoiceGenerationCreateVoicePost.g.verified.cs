@@ -10,28 +10,22 @@ namespace G
     public sealed partial class BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost
     {
         /// <summary>
-        /// Name to use for the created voice.<br/>
-        /// Example: Sassy squeaky mouse
+        /// Name to use for the created voice.
         /// </summary>
-        /// <example>Sassy squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceName { get; set; }
 
         /// <summary>
-        /// Description to use for the created voice.<br/>
-        /// Example: A sassy squeaky mouse
+        /// Description to use for the created voice.
         /// </summary>
-        /// <example>A sassy squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceDescription { get; set; }
 
         /// <summary>
-        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.<br/>
-        /// Example: 37HceQefKmEi3bGovXjL
+        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.
         /// </summary>
-        /// <example>37HceQefKmEi3bGovXjL</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_voice_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GeneratedVoiceId { get; set; }
@@ -58,16 +52,13 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost" /> class.
         /// </summary>
         /// <param name="voiceName">
-        /// Name to use for the created voice.<br/>
-        /// Example: Sassy squeaky mouse
+        /// Name to use for the created voice.
         /// </param>
         /// <param name="voiceDescription">
-        /// Description to use for the created voice.<br/>
-        /// Example: A sassy squeaky mouse
+        /// Description to use for the created voice.
         /// </param>
         /// <param name="generatedVoiceId">
-        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.<br/>
-        /// Example: 37HceQefKmEi3bGovXjL
+        /// The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don't have one yet.
         /// </param>
         /// <param name="playedNotSelectedVoiceIds">
         /// List of voice ids that the user has played but not selected. Used for RLHF.

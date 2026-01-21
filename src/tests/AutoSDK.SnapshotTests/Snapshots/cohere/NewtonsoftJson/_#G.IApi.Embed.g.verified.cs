@@ -27,19 +27,18 @@ namespace G
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="embeddingTypes">
-        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
-        /// * `"float"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.<br/>
-        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
-        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
-        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// <param name="texts">
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="images">
         /// An array of image data URIs for the model to embed. Maximum number of images per call is `1`.<br/>
         /// The image must be a valid [data URI](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). The image must be in either `image/jpeg` or `image/png` format and has a maximum size of 5MB.<br/>
         /// Images are only supported with Embed v3.0 and newer models.
+        /// </param>
+        /// <param name="model">
+        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="inputType">
         /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
@@ -49,12 +48,13 @@ namespace G
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
         /// - `"image"`: Used for embeddings with image input.
         /// </param>
-        /// <param name="model">
-        /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
-        /// Included only in requests
-        /// </param>
-        /// <param name="texts">
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
+        /// <param name="embeddingTypes">
+        /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>
+        /// * `"float"`: Use this when you want to get back the default float embeddings. Supported with all Embed models.<br/>
+        /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"binary"`: Use this when you want to get back signed binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Supported with Embed v3.0 and newer Embed models.<br/>
         /// Included only in requests
         /// </param>
         /// <param name="truncate">
@@ -67,9 +67,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedResponse> EmbedAsync(
-            global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
-            string model,
             global::System.Collections.Generic.IList<string> texts,
+            string model,
+            global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
             global::G.EmbedRequestTruncate truncate,
             string? xClientName = default,
             global::System.Collections.Generic.IList<string>? images = default,

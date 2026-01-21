@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"agent_J3Pbu5gP6NNKBscdCdwB","conversation_id":"conv_J3Pbu5gP6NNKBscdCdwB","conversation_token":"1234567890","expiration_time_unix_secs":1716153600,"purpose":"signed_url"}
     /// </summary>
     public sealed partial class ConversationTokenDBModel
     {
@@ -36,7 +36,8 @@ namespace G
         public string? ConversationId { get; set; }
 
         /// <summary>
-        /// 
+        /// The purpose of the token<br/>
+        /// Default Value: signed_url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationTokenPurposeJsonConverter))]
@@ -63,7 +64,10 @@ namespace G
         /// <param name="conversationId">
         /// The ID of the conversation
         /// </param>
-        /// <param name="purpose"></param>
+        /// <param name="purpose">
+        /// The purpose of the token<br/>
+        /// Default Value: signed_url
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

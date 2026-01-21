@@ -12,7 +12,7 @@ namespace G
         partial void Initialize();
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
-            string? session,
+            object? session,
             double? limit,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -21,7 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        private global::System.CommandLine.Option<string?> Session { get; } = new(
+        private global::System.CommandLine.Option<object?> Session { get; } = new(
             name: "session")
         {
             Description = @"",

@@ -52,20 +52,23 @@ namespace G
         public bool Public { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ClosedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -82,8 +85,9 @@ namespace G
         public string? ShortDescription { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("deleted_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? DeletedAt { get; set; } = default!;
 
@@ -113,12 +117,20 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="public"></param>
-        /// <param name="closedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="closedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
         /// <param name="number"></param>
         /// <param name="shortDescription"></param>
-        /// <param name="deletedAt"></param>
+        /// <param name="deletedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
         /// <param name="deletedBy">
         /// A GitHub user.
         /// </param>

@@ -13,9 +13,9 @@ namespace G
     {
         /// <summary>
         /// The id of the environment.<br/>
-        /// Example: 56780428L
+        /// Example: 56780428
         /// </summary>
-        /// <example>56780428L</example>
+        /// <example>56780428</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -54,15 +54,19 @@ namespace G
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// The time that the environment was created, in ISO 8601 format.
+        /// The time that the environment was created, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// The time that the environment was last updated, in ISO 8601 format.
+        /// The time that the environment was last updated, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -90,7 +94,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// The id of the environment.<br/>
-        /// Example: 56780428L
+        /// Example: 56780428
         /// </param>
         /// <param name="nodeId">
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
@@ -106,10 +110,12 @@ namespace G
         /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
         /// </param>
         /// <param name="createdAt">
-        /// The time that the environment was created, in ISO 8601 format.
+        /// The time that the environment was created, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
         /// <param name="updatedAt">
-        /// The time that the environment was last updated, in ISO 8601 format.
+        /// The time that the environment was last updated, in ISO 8601 format.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
         /// <param name="protectionRules">
         /// Built-in deployment protection rules for the environment.

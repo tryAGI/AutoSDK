@@ -9,7 +9,7 @@ namespace G
         partial void PrepareDownloadDatasetOpenaiArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.DateTime? asOf);
+            global::System.DateTime? asOf);
         partial void PrepareDownloadDatasetOpenaiRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -44,13 +44,13 @@ namespace G
             PrepareDownloadDatasetOpenaiArguments(
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
-                asOf: ref asOf);
+                asOf: asOf);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/openai",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("as_of", asOf?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("as_of", asOf?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

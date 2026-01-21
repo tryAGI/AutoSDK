@@ -34,7 +34,7 @@ namespace G
         public bool? Suspended { get; set; }
 
         /// <summary>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overdue_invoices")]
         public double? OverdueInvoices { get; set; }
@@ -63,9 +63,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspend_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SuspendReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SuspendReason SuspendReason { get; set; }
+        public required global::G.SuspendReason? SuspendReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -89,7 +88,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="overdueInvoices">
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="lastChecked">
         /// Default Value: 0
@@ -105,7 +104,7 @@ namespace G
         public Checklist(
             double stripeBalance,
             double? limit,
-            global::G.SuspendReason suspendReason,
+            global::G.SuspendReason? suspendReason,
             bool? email,
             bool? billingAddress,
             bool? paymentMethod,
@@ -114,8 +113,8 @@ namespace G
             int? lastChecked)
         {
             this.StripeBalance = stripeBalance;
-            this.Limit = limit;
-            this.SuspendReason = suspendReason;
+            this.Limit = limit ?? throw new global::System.ArgumentNullException(nameof(limit));
+            this.SuspendReason = suspendReason ?? throw new global::System.ArgumentNullException(nameof(suspendReason));
             this.Email = email;
             this.BillingAddress = billingAddress;
             this.PaymentMethod = paymentMethod;

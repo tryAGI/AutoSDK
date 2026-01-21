@@ -153,8 +153,10 @@ namespace G
         public required string Language { get; set; }
 
         /// <summary>
-        /// The time at which the assignment is due.
+        /// The time at which the assignment is due.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deadline")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? Deadline { get; set; }
@@ -240,7 +242,8 @@ namespace G
         /// Example: elixir
         /// </param>
         /// <param name="deadline">
-        /// The time at which the assignment is due.
+        /// The time at which the assignment is due.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </param>
         /// <param name="classroom">
         /// A GitHub Classroom classroom

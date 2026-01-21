@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"after_id":"a7c5cafd-2c2e-4bdd-b0b2-69dade2f7a1b","before_id":"9ea68fd3-f953-42c1-9742-976c447fb463","created_on":"2023-11-03","limit":2,"status":"completed","throttled_only":false}
     /// </summary>
     public sealed partial class ListTranscriptParams
     {
         /// <summary>
         /// Maximum amount of transcripts to retrieve<br/>
-        /// Default Value: 10L
+        /// Default Value: 10
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
         public long? Limit { get; set; }
@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         /// <param name="limit">
         /// Maximum amount of transcripts to retrieve<br/>
-        /// Default Value: 10L
+        /// Default Value: 10
         /// </param>
         /// <param name="status">
         /// The status of your transcript. Possible values are queued, processing, completed, or error.

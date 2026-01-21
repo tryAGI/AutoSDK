@@ -10,6 +10,14 @@ namespace G
     public sealed partial class RerankResponse
     {
         /// <summary>
+        /// Object type<br/>
+        /// Example: rerank
+        /// </summary>
+        /// <example>rerank</example>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.RerankResponseObject Object { get; set; }
+
+        /// <summary>
         /// Request ID<br/>
         /// Example: 9dfa1a09-5ebc-4a40-970f-586cb8f4ae47
         /// </summary>
@@ -26,17 +34,9 @@ namespace G
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// Object type<br/>
-        /// Example: rerank
+        /// Example: [{"index":0,"relevance_score":0.29980177813003117,"document":{"text":"{\u0022title\u0022:\u0022Llama\u0022,\u0022text\u0022:\u0022The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.\u0022}"}}, {"index":2,"relevance_score":0.2752447527354349,"document":{"text":"{\u0022title\u0022:\u0022Guanaco\u0022,\u0022text\u0022:\u0022The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicu\u00F1a, which lives at higher elevations.\u0022}"}}]
         /// </summary>
-        /// <example>rerank</example>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.RerankResponseObject Object { get; set; }
-
-        /// <summary>
-        /// Example: [, ]
-        /// </summary>
-        /// <example>[, ]</example>
+        /// <example>[{"index":0,"relevance_score":0.29980177813003117,"document":{"text":"{\u0022title\u0022:\u0022Llama\u0022,\u0022text\u0022:\u0022The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.\u0022}"}}, {"index":2,"relevance_score":0.2752447527354349,"document":{"text":"{\u0022title\u0022:\u0022Guanaco\u0022,\u0022text\u0022:\u0022The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicu\u00F1a, which lives at higher elevations.\u0022}"}}]</example>
         [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.RerankResponseResult> Results { get; set; } = default!;
 
@@ -55,6 +55,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankResponse" /> class.
         /// </summary>
+        /// <param name="object">
+        /// Object type<br/>
+        /// Example: rerank
+        /// </param>
         /// <param name="id">
         /// Request ID<br/>
         /// Example: 9dfa1a09-5ebc-4a40-970f-586cb8f4ae47
@@ -63,25 +67,21 @@ namespace G
         /// The model to be used for the rerank request.<br/>
         /// Example: salesforce/turboranker-0.8-3778-6328
         /// </param>
-        /// <param name="object">
-        /// Object type<br/>
-        /// Example: rerank
-        /// </param>
         /// <param name="results">
-        /// Example: [, ]
+        /// Example: [{"index":0,"relevance_score":0.29980177813003117,"document":{"text":"{\u0022title\u0022:\u0022Llama\u0022,\u0022text\u0022:\u0022The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.\u0022}"}}, {"index":2,"relevance_score":0.2752447527354349,"document":{"text":"{\u0022title\u0022:\u0022Guanaco\u0022,\u0022text\u0022:\u0022The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicu\u00F1a, which lives at higher elevations.\u0022}"}}]
         /// </param>
         /// <param name="usage"></param>
         public RerankResponse(
             string model,
             global::System.Collections.Generic.IList<global::G.RerankResponseResult> results,
-            string? id,
             global::G.RerankResponseObject @object,
+            string? id,
             global::G.UsageData? usage)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
-            this.Id = id;
             this.Object = @object;
+            this.Id = id;
             this.Usage = usage;
         }
 

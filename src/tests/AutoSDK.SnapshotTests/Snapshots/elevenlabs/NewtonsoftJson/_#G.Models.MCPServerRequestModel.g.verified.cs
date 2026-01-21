@@ -10,7 +10,7 @@ namespace G
     public sealed partial class MCPServerRequestModel
     {
         /// <summary>
-        /// 
+        /// Configuration details for the MCP Server.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MCPServerConfigInput Config { get; set; } = default!;
@@ -24,7 +24,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPServerRequestModel" /> class.
         /// </summary>
-        /// <param name="config"></param>
+        /// <param name="config">
+        /// Configuration details for the MCP Server.
+        /// </param>
         public MCPServerRequestModel(
             global::G.MCPServerConfigInput config)
         {

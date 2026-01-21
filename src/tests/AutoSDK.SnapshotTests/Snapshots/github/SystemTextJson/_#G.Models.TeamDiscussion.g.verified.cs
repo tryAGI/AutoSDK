@@ -59,8 +59,9 @@ namespace G
         public required string CommentsUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-25T18:56:31Z
         /// </summary>
+        /// <example>2018-01-25T18:56:31Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -133,8 +134,9 @@ namespace G
         public required string Title { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2018-01-25T18:56:31Z
         /// </summary>
+        /// <example>2018-01-25T18:56:31Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -182,7 +184,9 @@ namespace G
         /// <param name="commentsUrl">
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1/comments
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2018-01-25T18:56:31Z
+        /// </param>
         /// <param name="lastEditedAt"></param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1
@@ -209,7 +213,9 @@ namespace G
         /// The title of the discussion.<br/>
         /// Example: How can we improve our workflow?
         /// </param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2018-01-25T18:56:31Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
         /// </param>

@@ -43,8 +43,9 @@ namespace G
         public required global::G.ReactionContent Content { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-05-20T20:09:31Z
         /// </summary>
+        /// <example>2016-05-20T20:09:31Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -71,7 +72,9 @@ namespace G
         /// The reaction to use<br/>
         /// Example: heart
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-05-20T20:09:31Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The permissions granted to the user access token.
+    /// The permissions granted to the user access token.<br/>
+    /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
     /// </summary>
     public sealed partial class AppPermissions
     {

@@ -13,8 +13,8 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            global::System.Collections.Generic.IList<global::G.ClassifyExample> examples,
             global::System.Collections.Generic.IList<string> inputs,
+            global::System.Collections.Generic.IList<global::G.ClassifyExample> examples,
             string model,
             string preset,
             global::G.ClassifyRequestTruncate truncate,
@@ -24,19 +24,19 @@ namespace G
             global::G.ClassifyResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
-        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.ClassifyExample>> Examples { get; } = new(
-            name: "examples")
-        {
-            Description = @"An array of examples to provide context to the model. Each example is a text string and its associated label/class. Each unique label requires at least 2 examples associated with it; the maximum number of examples is 2500, and each example has a maximum length of 512 tokens. The values should be structured as `{text: ""..."",label: ""...""}`.
-Note: [Fine-tuned Models](https://docs.cohere.com/docs/classify-fine-tuning) trained on classification examples don't require the `examples` parameter to be passed in explicitly.",
-        };
-
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> Inputs { get; } = new(
             name: "inputs")
         {
             Description = @"A list of up to 96 texts to be classified. Each one must be a non-empty string.
 There is, however, no consistent, universal limit to the length a particular input can be. We perform classification on the first `x` tokens of each input, and `x` varies depending on which underlying model is powering classification. The maximum token length for each model is listed in the ""max tokens"" column [here](https://docs.cohere.com/docs/models).
 Note: by default the `truncate` parameter is set to `END`, so tokens exceeding the limit will be automatically dropped. This behavior can be disabled by setting `truncate` to `NONE`, which will result in validation errors for longer texts.",
+        };
+
+        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.ClassifyExample>> Examples { get; } = new(
+            name: "examples")
+        {
+            Description = @"An array of examples to provide context to the model. Each example is a text string and its associated label/class. Each unique label requires at least 2 examples associated with it; the maximum number of examples is 2500, and each example has a maximum length of 512 tokens. The values should be structured as `{text: ""..."",label: ""...""}`.
+Note: [Fine-tuned Models](https://docs.cohere.com/docs/classify-fine-tuning) trained on classification examples don't require the `examples` parameter to be passed in explicitly.",
         };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
@@ -74,8 +74,8 @@ Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) tra
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Examples);
             Arguments.Add(Inputs);
+            Arguments.Add(Examples);
             Arguments.Add(Model);
             Arguments.Add(Preset);
             Arguments.Add(Truncate);
@@ -91,8 +91,8 @@ Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) tra
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var examples = parseResult.GetRequiredValue(Examples);
             var inputs = parseResult.GetRequiredValue(Inputs);
+            var examples = parseResult.GetRequiredValue(Examples);
             var model = parseResult.GetRequiredValue(Model);
             var preset = parseResult.GetRequiredValue(Preset);
             var truncate = parseResult.GetRequiredValue(Truncate);
@@ -100,8 +100,8 @@ Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) tra
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                examples: examples,
                 inputs: inputs,
+                examples: examples,
                 model: model,
                 preset: preset,
                 truncate: truncate,
@@ -110,8 +110,8 @@ Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) tra
             // ReSharper disable once RedundantAssignment
             var response = await _client.ClassifyAsync(
                 xClientName: xClientName,
-                examples: examples,
                 inputs: inputs,
+                examples: examples,
                 model: model,
                 preset: preset,
                 truncate: truncate,

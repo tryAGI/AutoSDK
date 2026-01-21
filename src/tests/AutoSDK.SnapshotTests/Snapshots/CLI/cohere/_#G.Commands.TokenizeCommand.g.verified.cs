@@ -13,24 +13,24 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            string model,
             string text,
+            string model,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.TokenizeResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
-        private global::System.CommandLine.Argument<string> Model { get; } = new(
-            name: "model")
-        {
-            Description = @"The input will be tokenized by the tokenizer that is used by this model.",
-        };
-
         private global::System.CommandLine.Argument<string> Text { get; } = new(
             name: "text")
         {
             Description = @"The string to be tokenized, the minimum text length is 1 character, and the maximum text length is 65536 characters.",
+        };
+
+        private global::System.CommandLine.Argument<string> Model { get; } = new(
+            name: "model")
+        {
+            Description = @"The input will be tokenized by the tokenizer that is used by this model.",
         };
 
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
@@ -47,8 +47,8 @@ namespace G
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Model);
             Arguments.Add(Text);
+            Arguments.Add(Model);
             Options.Add(XClientName);
 
             Initialize();
@@ -61,21 +61,21 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var model = parseResult.GetRequiredValue(Model);
             var text = parseResult.GetRequiredValue(Text);
+            var model = parseResult.GetRequiredValue(Model);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                model: model,
                 text: text,
+                model: model,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.TokenizeAsync(
                 xClientName: xClientName,
-                model: model,
                 text: text,
+                model: model,
                 cancellationToken: cancellationToken);
 
             Complete(

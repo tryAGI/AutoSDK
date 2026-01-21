@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}}
     /// </summary>
     public sealed partial class AgentConfigOverride
     {
@@ -22,7 +22,7 @@ namespace G
         public string? Language { get; set; }
 
         /// <summary>
-        /// 
+        /// The prompt for the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public global::G.PromptAgentOverride? Prompt { get; set; }
@@ -42,7 +42,9 @@ namespace G
         /// <param name="language">
         /// Language of the agent - used for ASR and TTS
         /// </param>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">
+        /// The prompt for the agent
+        /// </param>
         public AgentConfigOverride(
             string? firstMessage,
             string? language,

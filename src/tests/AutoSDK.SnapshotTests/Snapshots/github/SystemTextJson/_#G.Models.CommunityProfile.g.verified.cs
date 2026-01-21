@@ -41,8 +41,9 @@ namespace G
         public required global::G.CommunityProfileFiles Files { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2017-02-28T19:09:29Z
         /// </summary>
+        /// <example>2017-02-28T19:09:29Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? UpdatedAt { get; set; }
@@ -73,7 +74,9 @@ namespace G
         /// Example: example.com
         /// </param>
         /// <param name="files"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2017-02-28T19:09:29Z
+        /// </param>
         /// <param name="contentReportsEnabled">
         /// Example: true
         /// </param>

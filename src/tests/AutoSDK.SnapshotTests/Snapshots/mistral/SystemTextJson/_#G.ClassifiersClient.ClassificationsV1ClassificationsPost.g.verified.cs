@@ -206,23 +206,23 @@ namespace G
         /// <summary>
         /// Classifications
         /// </summary>
-        /// <param name="input">
-        /// Text to classify.
-        /// </param>
         /// <param name="model">
         /// ID of the model to use.
+        /// </param>
+        /// <param name="input">
+        /// Text to classify.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ClassificationResponse> ClassificationsV1ClassificationsPostAsync(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string model,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ClassificationRequest
             {
-                Input = input,
                 Model = model,
+                Input = input,
             };
 
             return await ClassificationsV1ClassificationsPostAsync(

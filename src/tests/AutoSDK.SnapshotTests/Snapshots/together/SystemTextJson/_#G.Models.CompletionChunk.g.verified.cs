@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CompletionChunk.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -12,30 +14,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CompletionChoice> Choices { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FinishReason FinishReason { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
 
         /// <summary>
         /// 
@@ -47,9 +28,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.UsageData? Usage { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CompletionChoice> Choices { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.UsageData, object>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.AllOf<global::G.UsageData, object> Usage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.FinishReason?, object>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.AllOf<global::G.FinishReason?, object> FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,28 +63,28 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionChunk" /> class.
         /// </summary>
-        /// <param name="choices"></param>
-        /// <param name="finishReason"></param>
         /// <param name="id"></param>
-        /// <param name="seed"></param>
         /// <param name="token"></param>
+        /// <param name="choices"></param>
         /// <param name="usage"></param>
+        /// <param name="seed"></param>
+        /// <param name="finishReason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionChunk(
-            global::System.Collections.Generic.IList<global::G.CompletionChoice> choices,
-            global::G.FinishReason finishReason,
             string id,
             global::G.CompletionToken token,
-            global::G.UsageData? usage,
+            global::System.Collections.Generic.IList<global::G.CompletionChoice> choices,
+            global::G.AllOf<global::G.UsageData, object> usage,
+            global::G.AllOf<global::G.FinishReason?, object> finishReason,
             int? seed)
         {
-            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
-            this.FinishReason = finishReason;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.Usage = usage;
+            this.FinishReason = finishReason;
             this.Seed = seed;
         }
 

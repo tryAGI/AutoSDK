@@ -31,12 +31,10 @@ namespace G
         /// Get a PLS file with a pronunciation dictionary version rules
         /// </summary>
         /// <param name="dictionaryId">
-        /// The id of the pronunciation dictionary<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of the pronunciation dictionary
         /// </param>
         /// <param name="versionId">
-        /// The id of the version of the pronunciation dictionary<br/>
-        /// Example: BdF0s0aZ3oFoKnDYdTox
+        /// The id of the version of the pronunciation dictionary
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

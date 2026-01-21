@@ -10,17 +10,17 @@ namespace G
     public sealed partial class DocumentURLChunk
     {
         /// <summary>
-        /// The filename of the document
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document_name")]
-        public string? DocumentName { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DocumentUrl { get; set; }
+
+        /// <summary>
+        /// The filename of the document
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document_name")]
+        public string? DocumentName { get; set; }
 
         /// <summary>
         /// Default Value: document_url
@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentURLChunk" /> class.
         /// </summary>
+        /// <param name="documentUrl"></param>
         /// <param name="documentName">
         /// The filename of the document
         /// </param>
-        /// <param name="documentUrl"></param>
         /// <param name="type">
         /// Default Value: document_url
         /// </param>

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Output of the training service
+    /// Output of the training service<br/>
+    /// Example: {"classifier_id":"classifier_id","num_samples":10,"usage":{"total_tokens":15,"prompt_tokens":15}}
     /// </summary>
     public sealed partial class TrainingOutput
     {

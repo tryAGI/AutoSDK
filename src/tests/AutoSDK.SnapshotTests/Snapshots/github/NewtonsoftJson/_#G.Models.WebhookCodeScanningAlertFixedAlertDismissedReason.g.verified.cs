@@ -25,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="used in tests")]
         UsedInTests,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
     }
 
     /// <summary>
@@ -42,6 +47,7 @@ namespace G
                 WebhookCodeScanningAlertFixedAlertDismissedReason.FalsePositive => "false positive",
                 WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix => "won't fix",
                 WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests => "used in tests",
+                WebhookCodeScanningAlertFixedAlertDismissedReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,6 +61,7 @@ namespace G
                 "false positive" => WebhookCodeScanningAlertFixedAlertDismissedReason.FalsePositive,
                 "won't fix" => WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix,
                 "used in tests" => WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertFixedAlertDismissedReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 _ => null,
             };
         }

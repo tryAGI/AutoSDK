@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChapterContentBlockInputModelSubTypeJsonConverter))]
-        public global::G.ChapterContentBlockInputModelSubType? SubType { get; set; }
+        public global::G.ChapterContentBlockInputModelSubType2? SubType { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +45,7 @@ namespace G
 #endif
         public ChapterContentBlockInputModel(
             global::System.Collections.Generic.IList<global::G.ChapterContentParagraphTtsNodeInputModel> nodes,
-            global::G.ChapterContentBlockInputModelSubType? subType,
+            global::G.ChapterContentBlockInputModelSubType2? subType,
             string? blockId)
         {
             this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));

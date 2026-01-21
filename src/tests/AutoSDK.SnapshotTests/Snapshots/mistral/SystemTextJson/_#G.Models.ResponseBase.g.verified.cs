@@ -17,18 +17,18 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// Example: mistral-small-latest
-        /// </summary>
-        /// <example>mistral-small-latest</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
-
-        /// <summary>
         /// Example: chat.completion
         /// </summary>
         /// <example>chat.completion</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         public string? Object { get; set; }
+
+        /// <summary>
+        /// Example: mistral-small-latest
+        /// </summary>
+        /// <example>mistral-small-latest</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
 
         /// <summary>
         /// 
@@ -48,11 +48,11 @@ namespace G
         /// <param name="id">
         /// Example: cmpl-e5cc70bb28c444948073e77776eb30ef
         /// </param>
-        /// <param name="model">
-        /// Example: mistral-small-latest
-        /// </param>
         /// <param name="object">
         /// Example: chat.completion
+        /// </param>
+        /// <param name="model">
+        /// Example: mistral-small-latest
         /// </param>
         /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
@@ -60,13 +60,13 @@ namespace G
 #endif
         public ResponseBase(
             string? id,
-            string? model,
             string? @object,
+            string? model,
             global::G.UsageInfo? usage)
         {
             this.Id = id;
-            this.Model = model;
             this.Object = @object;
+            this.Model = model;
             this.Usage = usage;
         }
 

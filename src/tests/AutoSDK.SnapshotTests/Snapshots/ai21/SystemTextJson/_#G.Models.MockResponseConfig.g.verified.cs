@@ -16,7 +16,7 @@ namespace G
         public double? ResponseDelaySeconds { get; set; }
 
         /// <summary>
-        /// Default Value: 0.1
+        /// Default Value: 0.1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_response_delay_between_deltas_seconds")]
         public double? StreamResponseDelayBetweenDeltasSeconds { get; set; }
@@ -34,7 +34,7 @@ namespace G
         /// Default Value: 1
         /// </param>
         /// <param name="streamResponseDelayBetweenDeltasSeconds">
-        /// Default Value: 0.1
+        /// Default Value: 0.1F
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

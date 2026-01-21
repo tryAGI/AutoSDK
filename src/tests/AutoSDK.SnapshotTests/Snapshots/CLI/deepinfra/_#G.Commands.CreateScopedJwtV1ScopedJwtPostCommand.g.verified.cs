@@ -16,7 +16,7 @@ namespace G
             string apiTokenName,
             global::System.Collections.Generic.IList<string>? models,
             int? expiresDelta,
-            global::System.DateTimeOffset? expiresAt,
+            int? expiresAt,
             double? spendingLimit,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -48,7 +48,7 @@ namespace G
             Description = @"how many seconds in the future should the token be valid for",
         };
 
-        private global::System.CommandLine.Option<global::System.DateTimeOffset?> ExpiresAt { get; } = new(
+        private global::System.CommandLine.Option<int?> ExpiresAt { get; } = new(
             name: "expiresAt")
         {
             Description = @"unix timestamp when the token should expire",

@@ -28,24 +28,6 @@ namespace G
         public bool IsConversationCreated => ConversationCreated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationCreated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationCreated?(RealtimeServerEvent @this) => @this.ConversationCreated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationCreated? value)
-        {
-            ConversationCreated = value;
-        }
-
-        /// <summary>
         /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
         ///   - The server is generating a Response, which if successful will produce <br/>
         ///     either one or two Items, which will be of type `message` <br/>
@@ -71,24 +53,6 @@ namespace G
         public bool IsConversationItemCreated => ConversationItemCreated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemCreated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemCreated?(RealtimeServerEvent @this) => @this.ConversationItemCreated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemCreated? value)
-        {
-            ConversationItemCreated = value;
-        }
-
-        /// <summary>
         /// Returned when an item in the conversation is deleted by the client with a <br/>
         /// `conversation.item.delete` event. This event is used to synchronize the <br/>
         /// server's understanding of the conversation history with the client's view.
@@ -106,24 +70,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
 #endif
         public bool IsConversationItemDeleted => ConversationItemDeleted != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemDeleted value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemDeleted?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemDeleted?(RealtimeServerEvent @this) => @this.ConversationItemDeleted;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemDeleted? value)
-        {
-            ConversationItemDeleted = value;
-        }
 
         /// <summary>
         /// This event is the output of audio transcription for user audio written to the <br/>
@@ -151,24 +97,6 @@ namespace G
         public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionCompleted;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value)
-        {
-            ConversationItemInputAudioTranscriptionCompleted = value;
-        }
-
-        /// <summary>
         /// Returned when the text value of an input audio transcription content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -184,24 +112,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionDelta))]
 #endif
         public bool IsConversationItemInputAudioTranscriptionDelta => ConversationItemInputAudioTranscriptionDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value)
-        {
-            ConversationItemInputAudioTranscriptionDelta = value;
-        }
 
         /// <summary>
         /// Returned when input audio transcription is configured, and a transcription <br/>
@@ -223,24 +133,6 @@ namespace G
         public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionFailed;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value)
-        {
-            ConversationItemInputAudioTranscriptionFailed = value;
-        }
-
-        /// <summary>
         /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -256,24 +148,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieved))]
 #endif
         public bool IsConversationItemRetrieved => ConversationItemRetrieved != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemRetrieved value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemRetrieved?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemRetrieved?(RealtimeServerEvent @this) => @this.ConversationItemRetrieved;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemRetrieved? value)
-        {
-            ConversationItemRetrieved = value;
-        }
 
         /// <summary>
         /// Returned when an earlier assistant audio message item is truncated by the <br/>
@@ -297,24 +171,6 @@ namespace G
         public bool IsConversationItemTruncated => ConversationItemTruncated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemTruncated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemTruncated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventConversationItemTruncated?(RealtimeServerEvent @this) => @this.ConversationItemTruncated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemTruncated? value)
-        {
-            ConversationItemTruncated = value;
-        }
-
-        /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server <br/>
         /// problem. Most errors are recoverable and the session will stay open, we <br/>
         /// recommend to implementors to monitor and log error messages by default.
@@ -332,24 +188,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventError value) => new RealtimeServerEvent((global::G.RealtimeServerEventError?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventError?(RealtimeServerEvent @this) => @this.Error;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventError? value)
-        {
-            Error = value;
-        }
 
         /// <summary>
         /// Returned when the input audio buffer is cleared by the client with a <br/>
@@ -370,24 +208,6 @@ namespace G
         public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCleared value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferCleared?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventInputAudioBufferCleared?(RealtimeServerEvent @this) => @this.InputAudioBufferCleared;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCleared? value)
-        {
-            InputAudioBufferCleared = value;
-        }
-
-        /// <summary>
         /// Returned when an input audio buffer is committed, either by the client or <br/>
         /// automatically in server VAD mode. The `item_id` property is the ID of the user<br/>
         /// message item that will be created, thus a `conversation.item.created` event <br/>
@@ -406,24 +226,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommitted))]
 #endif
         public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCommitted value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferCommitted?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventInputAudioBufferCommitted?(RealtimeServerEvent @this) => @this.InputAudioBufferCommitted;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCommitted? value)
-        {
-            InputAudioBufferCommitted = value;
-        }
 
         /// <summary>
         /// Sent by the server when in `server_vad` mode to indicate that speech has been <br/>
@@ -451,24 +253,6 @@ namespace G
         public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferSpeechStarted?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventInputAudioBufferSpeechStarted?(RealtimeServerEvent @this) => @this.InputAudioBufferSpeechStarted;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStarted? value)
-        {
-            InputAudioBufferSpeechStarted = value;
-        }
-
-        /// <summary>
         /// Returned in `server_vad` mode when the server detects the end of speech in <br/>
         /// the audio buffer. The server will also send an `conversation.item.created` <br/>
         /// event with the user message item that is created from the audio buffer.
@@ -486,24 +270,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
 #endif
         public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStopped value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferSpeechStopped?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventInputAudioBufferSpeechStopped?(RealtimeServerEvent @this) => @this.InputAudioBufferSpeechStopped;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStopped? value)
-        {
-            InputAudioBufferSpeechStopped = value;
-        }
 
         /// <summary>
         /// Emitted at the beginning of a Response to indicate the updated rate limits. <br/>
@@ -526,24 +292,6 @@ namespace G
         public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventRateLimitsUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventRateLimitsUpdated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventRateLimitsUpdated?(RealtimeServerEvent @this) => @this.RateLimitsUpdated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventRateLimitsUpdated? value)
-        {
-            RateLimitsUpdated = value;
-        }
-
-        /// <summary>
         /// Returned when the model-generated audio is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -559,24 +307,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDelta))]
 #endif
         public bool IsResponseAudioDelta => ResponseAudioDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioDelta?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseAudioDelta?(RealtimeServerEvent @this) => @this.ResponseAudioDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDelta? value)
-        {
-            ResponseAudioDelta = value;
-        }
 
         /// <summary>
         /// Returned when the model-generated audio is done. Also emitted when a Response<br/>
@@ -597,24 +327,6 @@ namespace G
         public bool IsResponseAudioDone => ResponseAudioDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseAudioDone?(RealtimeServerEvent @this) => @this.ResponseAudioDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDone? value)
-        {
-            ResponseAudioDone = value;
-        }
-
-        /// <summary>
         /// Returned when the model-generated transcription of audio output is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -630,24 +342,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDelta))]
 #endif
         public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioTranscriptDelta?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseAudioTranscriptDelta?(RealtimeServerEvent @this) => @this.ResponseAudioTranscriptDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDelta? value)
-        {
-            ResponseAudioTranscriptDelta = value;
-        }
 
         /// <summary>
         /// Returned when the model-generated transcription of audio output is done<br/>
@@ -669,24 +363,6 @@ namespace G
         public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioTranscriptDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseAudioTranscriptDone?(RealtimeServerEvent @this) => @this.ResponseAudioTranscriptDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDone? value)
-        {
-            ResponseAudioTranscriptDone = value;
-        }
-
-        /// <summary>
         /// Returned when a new content part is added to an assistant message item during<br/>
         /// response generation.
         /// </summary>
@@ -703,24 +379,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
 #endif
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartAdded value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseContentPartAdded?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseContentPartAdded?(RealtimeServerEvent @this) => @this.ResponseContentPartAdded;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartAdded? value)
-        {
-            ResponseContentPartAdded = value;
-        }
 
         /// <summary>
         /// Returned when a content part is done streaming in an assistant message item.<br/>
@@ -741,24 +399,6 @@ namespace G
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseContentPartDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseContentPartDone?(RealtimeServerEvent @this) => @this.ResponseContentPartDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartDone? value)
-        {
-            ResponseContentPartDone = value;
-        }
-
-        /// <summary>
         /// Returned when a new Response is created. The first event of response creation,<br/>
         /// where the response is in an initial state of `in_progress`.
         /// </summary>
@@ -775,24 +415,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
 #endif
         public bool IsResponseCreated => ResponseCreated != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseCreated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseCreated?(RealtimeServerEvent @this) => @this.ResponseCreated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseCreated? value)
-        {
-            ResponseCreated = value;
-        }
 
         /// <summary>
         /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
@@ -814,24 +436,6 @@ namespace G
         public bool IsResponseDone => ResponseDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseDone?(RealtimeServerEvent @this) => @this.ResponseDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseDone? value)
-        {
-            ResponseDone = value;
-        }
-
-        /// <summary>
         /// Returned when the model-generated function call arguments are updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -847,24 +451,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
 #endif
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?(RealtimeServerEvent @this) => @this.ResponseFunctionCallArgumentsDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta? value)
-        {
-            ResponseFunctionCallArgumentsDelta = value;
-        }
 
         /// <summary>
         /// Returned when the model-generated function call arguments are done streaming.<br/>
@@ -885,24 +471,6 @@ namespace G
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?(RealtimeServerEvent @this) => @this.ResponseFunctionCallArgumentsDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone? value)
-        {
-            ResponseFunctionCallArgumentsDone = value;
-        }
-
-        /// <summary>
         /// Returned when a new Item is created during Response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -918,24 +486,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
 #endif
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemAdded value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseOutputItemAdded?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseOutputItemAdded?(RealtimeServerEvent @this) => @this.ResponseOutputItemAdded;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemAdded? value)
-        {
-            ResponseOutputItemAdded = value;
-        }
 
         /// <summary>
         /// Returned when an Item is done streaming. Also emitted when a Response is <br/>
@@ -956,24 +506,6 @@ namespace G
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseOutputItemDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseOutputItemDone?(RealtimeServerEvent @this) => @this.ResponseOutputItemDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemDone? value)
-        {
-            ResponseOutputItemDone = value;
-        }
-
-        /// <summary>
         /// Returned when the text value of a "text" content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -989,24 +521,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDelta))]
 #endif
         public bool IsResponseTextDelta => ResponseTextDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseTextDelta?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseTextDelta?(RealtimeServerEvent @this) => @this.ResponseTextDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDelta? value)
-        {
-            ResponseTextDelta = value;
-        }
 
         /// <summary>
         /// Returned when the text value of a "text" content part is done streaming. Also<br/>
@@ -1025,24 +539,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDone))]
 #endif
         public bool IsResponseTextDone => ResponseTextDone != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseTextDone?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventResponseTextDone?(RealtimeServerEvent @this) => @this.ResponseTextDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDone? value)
-        {
-            ResponseTextDone = value;
-        }
 
         /// <summary>
         /// Returned when a Session is created. Emitted automatically when a new <br/>
@@ -1064,24 +560,6 @@ namespace G
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventSessionCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventSessionCreated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventSessionCreated?(RealtimeServerEvent @this) => @this.SessionCreated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventSessionCreated? value)
-        {
-            SessionCreated = value;
-        }
-
-        /// <summary>
         /// Returned when a session is updated with a `session.update` event, unless <br/>
         /// there is an error.
         /// </summary>
@@ -1100,24 +578,6 @@ namespace G
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventSessionUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventSessionUpdated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventSessionUpdated?(RealtimeServerEvent @this) => @this.SessionUpdated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventSessionUpdated? value)
-        {
-            SessionUpdated = value;
-        }
-
-        /// <summary>
         /// Returned when a transcription session is updated with a `transcription_session.update` event, unless <br/>
         /// there is an error.
         /// </summary>
@@ -1134,24 +594,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdated))]
 #endif
         public bool IsTranscriptionSessionUpdated => TranscriptionSessionUpdated != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventTranscriptionSessionUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventTranscriptionSessionUpdated?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventTranscriptionSessionUpdated?(RealtimeServerEvent @this) => @this.TranscriptionSessionUpdated;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventTranscriptionSessionUpdated? value)
-        {
-            TranscriptionSessionUpdated = value;
-        }
 
         /// <summary>
         /// **WebRTC Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
@@ -1174,24 +616,6 @@ namespace G
         public bool IsOutputAudioBufferStarted => OutputAudioBufferStarted != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferStarted?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventOutputAudioBufferStarted?(RealtimeServerEvent @this) => @this.OutputAudioBufferStarted;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStarted? value)
-        {
-            OutputAudioBufferStarted = value;
-        }
-
-        /// <summary>
         /// **WebRTC Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
@@ -1210,24 +634,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferStopped))]
 #endif
         public bool IsOutputAudioBufferStopped => OutputAudioBufferStopped != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStopped value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferStopped?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RealtimeServerEventOutputAudioBufferStopped?(RealtimeServerEvent @this) => @this.OutputAudioBufferStopped;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStopped? value)
-        {
-            OutputAudioBufferStopped = value;
-        }
 
         /// <summary>
         /// **WebRTC Only:** Emitted when the output audio buffer is cleared. This happens either in VAD<br/>
@@ -1249,6 +655,599 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferCleared))]
 #endif
         public bool IsOutputAudioBufferCleared => OutputAudioBufferCleared != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationCreated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationCreated?(RealtimeServerEvent @this) => @this.ConversationCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationCreated? value)
+        {
+            ConversationCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemCreated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemCreated?(RealtimeServerEvent @this) => @this.ConversationItemCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemCreated? value)
+        {
+            ConversationItemCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemDeleted value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemDeleted?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemDeleted?(RealtimeServerEvent @this) => @this.ConversationItemDeleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemDeleted? value)
+        {
+            ConversationItemDeleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value)
+        {
+            ConversationItemInputAudioTranscriptionCompleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value)
+        {
+            ConversationItemInputAudioTranscriptionDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?(RealtimeServerEvent @this) => @this.ConversationItemInputAudioTranscriptionFailed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value)
+        {
+            ConversationItemInputAudioTranscriptionFailed = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemRetrieved value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemRetrieved?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemRetrieved?(RealtimeServerEvent @this) => @this.ConversationItemRetrieved;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemRetrieved? value)
+        {
+            ConversationItemRetrieved = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemTruncated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemTruncated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventConversationItemTruncated?(RealtimeServerEvent @this) => @this.ConversationItemTruncated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventConversationItemTruncated? value)
+        {
+            ConversationItemTruncated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventError value) => new RealtimeServerEvent((global::G.RealtimeServerEventError?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventError?(RealtimeServerEvent @this) => @this.Error;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventError? value)
+        {
+            Error = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCleared value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferCleared?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventInputAudioBufferCleared?(RealtimeServerEvent @this) => @this.InputAudioBufferCleared;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCleared? value)
+        {
+            InputAudioBufferCleared = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCommitted value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferCommitted?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventInputAudioBufferCommitted?(RealtimeServerEvent @this) => @this.InputAudioBufferCommitted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCommitted? value)
+        {
+            InputAudioBufferCommitted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferSpeechStarted?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventInputAudioBufferSpeechStarted?(RealtimeServerEvent @this) => @this.InputAudioBufferSpeechStarted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStarted? value)
+        {
+            InputAudioBufferSpeechStarted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStopped value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferSpeechStopped?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventInputAudioBufferSpeechStopped?(RealtimeServerEvent @this) => @this.InputAudioBufferSpeechStopped;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStopped? value)
+        {
+            InputAudioBufferSpeechStopped = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventRateLimitsUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventRateLimitsUpdated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventRateLimitsUpdated?(RealtimeServerEvent @this) => @this.RateLimitsUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventRateLimitsUpdated? value)
+        {
+            RateLimitsUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioDelta?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseAudioDelta?(RealtimeServerEvent @this) => @this.ResponseAudioDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDelta? value)
+        {
+            ResponseAudioDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseAudioDone?(RealtimeServerEvent @this) => @this.ResponseAudioDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDone? value)
+        {
+            ResponseAudioDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioTranscriptDelta?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseAudioTranscriptDelta?(RealtimeServerEvent @this) => @this.ResponseAudioTranscriptDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDelta? value)
+        {
+            ResponseAudioTranscriptDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioTranscriptDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseAudioTranscriptDone?(RealtimeServerEvent @this) => @this.ResponseAudioTranscriptDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDone? value)
+        {
+            ResponseAudioTranscriptDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartAdded value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseContentPartAdded?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseContentPartAdded?(RealtimeServerEvent @this) => @this.ResponseContentPartAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartAdded? value)
+        {
+            ResponseContentPartAdded = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseContentPartDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseContentPartDone?(RealtimeServerEvent @this) => @this.ResponseContentPartDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartDone? value)
+        {
+            ResponseContentPartDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseCreated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseCreated?(RealtimeServerEvent @this) => @this.ResponseCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseCreated? value)
+        {
+            ResponseCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseDone?(RealtimeServerEvent @this) => @this.ResponseDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseDone? value)
+        {
+            ResponseDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?(RealtimeServerEvent @this) => @this.ResponseFunctionCallArgumentsDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta? value)
+        {
+            ResponseFunctionCallArgumentsDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?(RealtimeServerEvent @this) => @this.ResponseFunctionCallArgumentsDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone? value)
+        {
+            ResponseFunctionCallArgumentsDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemAdded value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseOutputItemAdded?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseOutputItemAdded?(RealtimeServerEvent @this) => @this.ResponseOutputItemAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemAdded? value)
+        {
+            ResponseOutputItemAdded = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseOutputItemDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseOutputItemDone?(RealtimeServerEvent @this) => @this.ResponseOutputItemDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemDone? value)
+        {
+            ResponseOutputItemDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDelta value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseTextDelta?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseTextDelta?(RealtimeServerEvent @this) => @this.ResponseTextDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDelta? value)
+        {
+            ResponseTextDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseTextDone?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventResponseTextDone?(RealtimeServerEvent @this) => @this.ResponseTextDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDone? value)
+        {
+            ResponseTextDone = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventSessionCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventSessionCreated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventSessionCreated?(RealtimeServerEvent @this) => @this.SessionCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventSessionCreated? value)
+        {
+            SessionCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventSessionUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventSessionUpdated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventSessionUpdated?(RealtimeServerEvent @this) => @this.SessionUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventSessionUpdated? value)
+        {
+            SessionUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventTranscriptionSessionUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventTranscriptionSessionUpdated?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventTranscriptionSessionUpdated?(RealtimeServerEvent @this) => @this.TranscriptionSessionUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventTranscriptionSessionUpdated? value)
+        {
+            TranscriptionSessionUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferStarted?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventOutputAudioBufferStarted?(RealtimeServerEvent @this) => @this.OutputAudioBufferStarted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStarted? value)
+        {
+            OutputAudioBufferStarted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStopped value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferStopped?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RealtimeServerEventOutputAudioBufferStopped?(RealtimeServerEvent @this) => @this.OutputAudioBufferStopped;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStopped? value)
+        {
+            OutputAudioBufferStopped = value;
+        }
 
         /// <summary>
         /// 

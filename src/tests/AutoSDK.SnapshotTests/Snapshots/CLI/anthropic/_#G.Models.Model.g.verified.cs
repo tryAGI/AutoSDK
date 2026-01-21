@@ -28,6 +28,226 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Our most intelligent model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value2 { get; init; }
+#else
+        public string? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// Our most intelligent model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value3 { get; init; }
+#else
+        public string? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// Fastest and most compact model for near-instant responsiveness
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value4 { get; init; }
+#else
+        public string? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// Our fastest model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value5 { get; init; }
+#else
+        public string? Value5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+#endif
+        public bool IsValue5 => Value5 != null;
+
+        /// <summary>
+        /// Our previous most intelligent model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value6 { get; init; }
+#else
+        public string? Value6 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+#endif
+        public bool IsValue6 => Value6 != null;
+
+        /// <summary>
+        /// Our previous most intelligent model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value7 { get; init; }
+#else
+        public string? Value7 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+#endif
+        public bool IsValue7 => Value7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value8 { get; init; }
+#else
+        public string? Value8 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+#endif
+        public bool IsValue8 => Value8 != null;
+
+        /// <summary>
+        /// Excels at writing and complex tasks
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value9 { get; init; }
+#else
+        public string? Value9 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+#endif
+        public bool IsValue9 => Value9 != null;
+
+        /// <summary>
+        /// Excels at writing and complex tasks
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value10 { get; init; }
+#else
+        public string? Value10 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+#endif
+        public bool IsValue10 => Value10 != null;
+
+        /// <summary>
+        /// Balance of speed and intelligence
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value11 { get; init; }
+#else
+        public string? Value11 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+#endif
+        public bool IsValue11 => Value11 != null;
+
+        /// <summary>
+        /// Our previous most fast and cost-effective
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value12 { get; init; }
+#else
+        public string? Value12 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+#endif
+        public bool IsValue12 => Value12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value13 { get; init; }
+#else
+        public string? Value13 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+#endif
+        public bool IsValue13 => Value13 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? Value14 { get; init; }
+#else
+        public string? Value14 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+#endif
+        public bool IsValue14 => Value14 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Model(string value) => new Model((string?)value);
@@ -46,478 +266,23 @@ namespace G
         }
 
         /// <summary>
-        /// Our most intelligent model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant2? Value2 { get; init; }
-#else
-        public global::G.ModelVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant2 value) => new Model((global::G.ModelVariant2?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant2?(Model @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant2? value)
-        {
-            Value2 = value;
-        }
-
-        /// <summary>
-        /// Our most intelligent model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant3? Value3 { get; init; }
-#else
-        public global::G.ModelVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant3 value) => new Model((global::G.ModelVariant3?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant3?(Model @this) => @this.Value3;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant3? value)
-        {
-            Value3 = value;
-        }
-
-        /// <summary>
-        /// Fastest and most compact model for near-instant responsiveness
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant4? Value4 { get; init; }
-#else
-        public global::G.ModelVariant4? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant4 value) => new Model((global::G.ModelVariant4?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant4?(Model @this) => @this.Value4;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant4? value)
-        {
-            Value4 = value;
-        }
-
-        /// <summary>
-        /// Our fastest model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant5? Value5 { get; init; }
-#else
-        public global::G.ModelVariant5? Value5 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
-#endif
-        public bool IsValue5 => Value5 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant5 value) => new Model((global::G.ModelVariant5?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant5?(Model @this) => @this.Value5;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant5? value)
-        {
-            Value5 = value;
-        }
-
-        /// <summary>
-        /// Our previous most intelligent model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant6? Value6 { get; init; }
-#else
-        public global::G.ModelVariant6? Value6 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
-#endif
-        public bool IsValue6 => Value6 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant6 value) => new Model((global::G.ModelVariant6?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant6?(Model @this) => @this.Value6;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant6? value)
-        {
-            Value6 = value;
-        }
-
-        /// <summary>
-        /// Our previous most intelligent model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant7? Value7 { get; init; }
-#else
-        public global::G.ModelVariant7? Value7 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
-#endif
-        public bool IsValue7 => Value7 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant7 value) => new Model((global::G.ModelVariant7?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant7?(Model @this) => @this.Value7;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant7? value)
-        {
-            Value7 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant8? Value8 { get; init; }
-#else
-        public global::G.ModelVariant8? Value8 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
-#endif
-        public bool IsValue8 => Value8 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant8 value) => new Model((global::G.ModelVariant8?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant8?(Model @this) => @this.Value8;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant8? value)
-        {
-            Value8 = value;
-        }
-
-        /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant9? Value9 { get; init; }
-#else
-        public global::G.ModelVariant9? Value9 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
-#endif
-        public bool IsValue9 => Value9 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant9 value) => new Model((global::G.ModelVariant9?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant9?(Model @this) => @this.Value9;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant9? value)
-        {
-            Value9 = value;
-        }
-
-        /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant10? Value10 { get; init; }
-#else
-        public global::G.ModelVariant10? Value10 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
-#endif
-        public bool IsValue10 => Value10 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant10 value) => new Model((global::G.ModelVariant10?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant10?(Model @this) => @this.Value10;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant10? value)
-        {
-            Value10 = value;
-        }
-
-        /// <summary>
-        /// Balance of speed and intelligence
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant11? Value11 { get; init; }
-#else
-        public global::G.ModelVariant11? Value11 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
-#endif
-        public bool IsValue11 => Value11 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant11 value) => new Model((global::G.ModelVariant11?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant11?(Model @this) => @this.Value11;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant11? value)
-        {
-            Value11 = value;
-        }
-
-        /// <summary>
-        /// Our previous most fast and cost-effective
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant12? Value12 { get; init; }
-#else
-        public global::G.ModelVariant12? Value12 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
-#endif
-        public bool IsValue12 => Value12 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant12 value) => new Model((global::G.ModelVariant12?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant12?(Model @this) => @this.Value12;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant12? value)
-        {
-            Value12 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant13? Value13 { get; init; }
-#else
-        public global::G.ModelVariant13? Value13 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
-#endif
-        public bool IsValue13 => Value13 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant13 value) => new Model((global::G.ModelVariant13?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant13?(Model @this) => @this.Value13;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant13? value)
-        {
-            Value13 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ModelVariant14? Value14 { get; init; }
-#else
-        public global::G.ModelVariant14? Value14 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
-#endif
-        public bool IsValue14 => Value14 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::G.ModelVariant14 value) => new Model((global::G.ModelVariant14?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ModelVariant14?(Model @this) => @this.Value14;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::G.ModelVariant14? value)
-        {
-            Value14 = value;
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         public Model(
             string? value1,
-            global::G.ModelVariant2? value2,
-            global::G.ModelVariant3? value3,
-            global::G.ModelVariant4? value4,
-            global::G.ModelVariant5? value5,
-            global::G.ModelVariant6? value6,
-            global::G.ModelVariant7? value7,
-            global::G.ModelVariant8? value8,
-            global::G.ModelVariant9? value9,
-            global::G.ModelVariant10? value10,
-            global::G.ModelVariant11? value11,
-            global::G.ModelVariant12? value12,
-            global::G.ModelVariant13? value13,
-            global::G.ModelVariant14? value14
+            string? value2,
+            string? value3,
+            string? value4,
+            string? value5,
+            string? value6,
+            string? value7,
+            string? value8,
+            string? value9,
+            string? value10,
+            string? value11,
+            string? value12,
+            string? value13,
+            string? value14
             )
         {
             Value1 = value1;
@@ -561,19 +326,19 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Value1?.ToString() ??
-            Value2?.ToValueString() ??
-            Value3?.ToValueString() ??
-            Value4?.ToValueString() ??
-            Value5?.ToValueString() ??
-            Value6?.ToValueString() ??
-            Value7?.ToValueString() ??
-            Value8?.ToValueString() ??
-            Value9?.ToValueString() ??
-            Value10?.ToValueString() ??
-            Value11?.ToValueString() ??
-            Value12?.ToValueString() ??
-            Value13?.ToValueString() ??
-            Value14?.ToValueString() 
+            Value2?.ToString() ??
+            Value3?.ToString() ??
+            Value4?.ToString() ??
+            Value5?.ToString() ??
+            Value6?.ToString() ??
+            Value7?.ToString() ??
+            Value8?.ToString() ??
+            Value9?.ToString() ??
+            Value10?.ToString() ??
+            Value11?.ToString() ??
+            Value12?.ToString() ??
+            Value13?.ToString() ??
+            Value14?.ToString() 
             ;
 
         /// <summary>
@@ -589,19 +354,19 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.ModelVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.ModelVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.ModelVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.ModelVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.ModelVariant6?, TResult>? value6 = null,
-            global::System.Func<global::G.ModelVariant7?, TResult>? value7 = null,
-            global::System.Func<global::G.ModelVariant8?, TResult>? value8 = null,
-            global::System.Func<global::G.ModelVariant9?, TResult>? value9 = null,
-            global::System.Func<global::G.ModelVariant10?, TResult>? value10 = null,
-            global::System.Func<global::G.ModelVariant11?, TResult>? value11 = null,
-            global::System.Func<global::G.ModelVariant12?, TResult>? value12 = null,
-            global::System.Func<global::G.ModelVariant13?, TResult>? value13 = null,
-            global::System.Func<global::G.ModelVariant14?, TResult>? value14 = null,
+            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? value4 = null,
+            global::System.Func<string?, TResult>? value5 = null,
+            global::System.Func<string?, TResult>? value6 = null,
+            global::System.Func<string?, TResult>? value7 = null,
+            global::System.Func<string?, TResult>? value8 = null,
+            global::System.Func<string?, TResult>? value9 = null,
+            global::System.Func<string?, TResult>? value10 = null,
+            global::System.Func<string?, TResult>? value11 = null,
+            global::System.Func<string?, TResult>? value12 = null,
+            global::System.Func<string?, TResult>? value13 = null,
+            global::System.Func<string?, TResult>? value14 = null,
             bool validate = true)
         {
             if (validate)
@@ -674,19 +439,19 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.ModelVariant2?>? value2 = null,
-            global::System.Action<global::G.ModelVariant3?>? value3 = null,
-            global::System.Action<global::G.ModelVariant4?>? value4 = null,
-            global::System.Action<global::G.ModelVariant5?>? value5 = null,
-            global::System.Action<global::G.ModelVariant6?>? value6 = null,
-            global::System.Action<global::G.ModelVariant7?>? value7 = null,
-            global::System.Action<global::G.ModelVariant8?>? value8 = null,
-            global::System.Action<global::G.ModelVariant9?>? value9 = null,
-            global::System.Action<global::G.ModelVariant10?>? value10 = null,
-            global::System.Action<global::G.ModelVariant11?>? value11 = null,
-            global::System.Action<global::G.ModelVariant12?>? value12 = null,
-            global::System.Action<global::G.ModelVariant13?>? value13 = null,
-            global::System.Action<global::G.ModelVariant14?>? value14 = null,
+            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? value3 = null,
+            global::System.Action<string?>? value4 = null,
+            global::System.Action<string?>? value5 = null,
+            global::System.Action<string?>? value6 = null,
+            global::System.Action<string?>? value7 = null,
+            global::System.Action<string?>? value8 = null,
+            global::System.Action<string?>? value9 = null,
+            global::System.Action<string?>? value10 = null,
+            global::System.Action<string?>? value11 = null,
+            global::System.Action<string?>? value12 = null,
+            global::System.Action<string?>? value13 = null,
+            global::System.Action<string?>? value14 = null,
             bool validate = true)
         {
             if (validate)
@@ -762,31 +527,31 @@ namespace G
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::G.ModelVariant2),
+                typeof(string),
                 Value3,
-                typeof(global::G.ModelVariant3),
+                typeof(string),
                 Value4,
-                typeof(global::G.ModelVariant4),
+                typeof(string),
                 Value5,
-                typeof(global::G.ModelVariant5),
+                typeof(string),
                 Value6,
-                typeof(global::G.ModelVariant6),
+                typeof(string),
                 Value7,
-                typeof(global::G.ModelVariant7),
+                typeof(string),
                 Value8,
-                typeof(global::G.ModelVariant8),
+                typeof(string),
                 Value9,
-                typeof(global::G.ModelVariant9),
+                typeof(string),
                 Value10,
-                typeof(global::G.ModelVariant10),
+                typeof(string),
                 Value11,
-                typeof(global::G.ModelVariant11),
+                typeof(string),
                 Value12,
-                typeof(global::G.ModelVariant12),
+                typeof(string),
                 Value13,
-                typeof(global::G.ModelVariant13),
+                typeof(string),
                 Value14,
-                typeof(global::G.ModelVariant14),
+                typeof(string),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -804,19 +569,19 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant6?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant7?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant8?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant9?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant10?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant11?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant12?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant13?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant14?>.Default.Equals(Value14, other.Value14) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value4, other.Value4) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value5, other.Value5) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value6, other.Value6) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value7, other.Value7) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value8, other.Value8) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value9, other.Value9) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value10, other.Value10) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value11, other.Value11) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value12, other.Value12) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value13, other.Value13) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value14, other.Value14) 
                 ;
         }
 

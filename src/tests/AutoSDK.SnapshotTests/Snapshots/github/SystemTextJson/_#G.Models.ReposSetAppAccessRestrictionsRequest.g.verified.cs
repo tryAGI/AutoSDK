@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"apps":["my-app"]}
     /// </summary>
     public sealed partial class ReposSetAppAccessRestrictionsRequest
     {

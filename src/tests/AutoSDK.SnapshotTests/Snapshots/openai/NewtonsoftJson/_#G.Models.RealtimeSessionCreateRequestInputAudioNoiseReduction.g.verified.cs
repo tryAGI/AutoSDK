@@ -7,7 +7,8 @@ namespace G
     /// <summary>
     /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
     /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
-    /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
+    /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
     public sealed partial class RealtimeSessionCreateRequestInputAudioNoiseReduction
     {

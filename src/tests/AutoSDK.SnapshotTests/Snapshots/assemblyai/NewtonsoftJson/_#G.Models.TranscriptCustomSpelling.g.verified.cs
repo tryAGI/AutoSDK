@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Object containing words or phrases to replace, and the word or phrase to replace with
+    /// Object containing words or phrases to replace, and the word or phrase to replace with<br/>
+    /// Example: {"from":["dicarlo"],"to":"Decarlo"}
     /// </summary>
     public sealed partial class TranscriptCustomSpelling
     {

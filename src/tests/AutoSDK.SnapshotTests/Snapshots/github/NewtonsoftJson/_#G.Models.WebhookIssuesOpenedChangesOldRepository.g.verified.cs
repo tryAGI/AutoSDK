@@ -61,7 +61,6 @@ namespace G
         /// Whether the repository is archived.<br/>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Archived { get; set; } = default!;
 
@@ -244,7 +243,6 @@ namespace G
         /// Whether downloads are enabled.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("has_downloads", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDownloads { get; set; } = default!;
 
@@ -252,7 +250,6 @@ namespace G
         /// Whether issues are enabled.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("has_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasIssues { get; set; } = default!;
 
@@ -266,7 +263,6 @@ namespace G
         /// Whether projects are enabled.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("has_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasProjects { get; set; } = default!;
 
@@ -274,7 +270,6 @@ namespace G
         /// Whether the wiki is enabled.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::Newtonsoft.Json.JsonProperty("has_wiki", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasWiki { get; set; } = default!;
 

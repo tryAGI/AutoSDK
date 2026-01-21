@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter))]
-        public global::G.GenerationRequestDiscriminatorGenerationType? GenerationType { get; set; }
+        public string? GenerationType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerationRequestDiscriminator(
-            global::G.GenerationRequestDiscriminatorGenerationType? generationType)
+            string? generationType)
         {
             this.GenerationType = generationType;
         }

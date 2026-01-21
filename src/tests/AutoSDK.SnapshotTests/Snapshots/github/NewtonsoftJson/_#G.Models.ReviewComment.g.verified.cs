@@ -17,16 +17,16 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("pull_request_review_id", Required = global::Newtonsoft.Json.Required.Always)]
         public long? PullRequestReviewId { get; set; } = default!;
 
         /// <summary>
-        /// Example: 10L
+        /// Example: 10
         /// </summary>
-        /// <example>10L</example>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -100,14 +100,16 @@ namespace G
         public string Body { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -216,10 +218,10 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </param>
         /// <param name="pullRequestReviewId">
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="id">
-        /// Example: 10L
+        /// Example: 10
         /// </param>
         /// <param name="nodeId">
         /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
@@ -251,8 +253,12 @@ namespace G
         /// <param name="body">
         /// Example: Great stuff
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </param>

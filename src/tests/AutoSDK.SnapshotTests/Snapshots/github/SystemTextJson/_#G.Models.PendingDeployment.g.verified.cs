@@ -26,8 +26,10 @@ namespace G
         public required int WaitTimer { get; set; }
 
         /// <summary>
-        /// The time that the wait timer began.
+        /// The time that the wait timer began.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </summary>
+        /// <example>2020-11-23T22:00:40Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer_started_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? WaitTimerStartedAt { get; set; }
@@ -63,7 +65,8 @@ namespace G
         /// Example: 30
         /// </param>
         /// <param name="waitTimerStartedAt">
-        /// The time that the wait timer began.
+        /// The time that the wait timer began.<br/>
+        /// Example: 2020-11-23T22:00:40Z
         /// </param>
         /// <param name="currentUserCanApprove">
         /// Whether the currently authenticated user can approve the deployment<br/>

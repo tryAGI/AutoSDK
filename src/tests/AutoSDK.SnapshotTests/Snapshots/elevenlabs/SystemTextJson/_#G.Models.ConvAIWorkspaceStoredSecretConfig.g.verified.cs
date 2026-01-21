@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConvAIWorkspaceStoredSecretConfigTypeJsonConverter))]
-        public global::G.ConvAIWorkspaceStoredSecretConfigType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -54,15 +54,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConvAIWorkspaceStoredSecretConfig(
+            string type,
             string secretId,
             string name,
-            global::G.ConvAIStoredSecretDependencies usedBy,
-            global::G.ConvAIWorkspaceStoredSecretConfigType type)
+            global::G.ConvAIStoredSecretDependencies usedBy)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SecretId = secretId ?? throw new global::System.ArgumentNullException(nameof(secretId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.UsedBy = usedBy ?? throw new global::System.ArgumentNullException(nameof(usedBy));
-            this.Type = type;
         }
 
         /// <summary>

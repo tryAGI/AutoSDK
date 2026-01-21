@@ -34,14 +34,16 @@ namespace G
         public global::G.SimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -52,14 +54,16 @@ namespace G
         public global::G.ProjectsV2StatusUpdateStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28
         /// </summary>
+        /// <example>2022-04-28</example>
         [global::Newtonsoft.Json.JsonProperty("start_date")]
         public global::System.DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28
         /// </summary>
+        /// <example>2022-04-28</example>
         [global::Newtonsoft.Json.JsonProperty("target_date")]
         public global::System.DateTime? TargetDate { get; set; }
 
@@ -86,11 +90,19 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
         /// <param name="status"></param>
-        /// <param name="startDate"></param>
-        /// <param name="targetDate"></param>
+        /// <param name="startDate">
+        /// Example: 2022-04-28
+        /// </param>
+        /// <param name="targetDate">
+        /// Example: 2022-04-28
+        /// </param>
         /// <param name="body">
         /// Body of the status update<br/>
         /// Example: The project is off to a great start!

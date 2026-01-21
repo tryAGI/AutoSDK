@@ -10,18 +10,18 @@ namespace G
     public sealed partial class ImageUrl
     {
         /// <summary>
-        /// Controls the level of detail in image processing. `"auto"` is the default and lets the system choose, `"low"` is faster but less detailed, and `"high"` preserves maximum detail. You can save tokens and speed up responses by using detail: `"low"`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageUrlDetailJsonConverter))]
-        public global::G.ImageUrlDetail? Detail { get; set; }
-
-        /// <summary>
         /// URL of an image. Can be either a base64 data URI or a web URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
+
+        /// <summary>
+        /// Controls the level of detail in image processing. `"auto"` is the default and lets the system choose, `"low"` is faster but less detailed, and `"high"` preserves maximum detail. You can save tokens and speed up responses by using detail: `"low"`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageUrlDetailJsonConverter))]
+        public global::G.ImageUrlDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageUrl" /> class.
         /// </summary>
-        /// <param name="detail">
-        /// Controls the level of detail in image processing. `"auto"` is the default and lets the system choose, `"low"` is faster but less detailed, and `"high"` preserves maximum detail. You can save tokens and speed up responses by using detail: `"low"`.
-        /// </param>
         /// <param name="url">
         /// URL of an image. Can be either a base64 data URI or a web URL.
+        /// </param>
+        /// <param name="detail">
+        /// Controls the level of detail in image processing. `"auto"` is the default and lets the system choose, `"low"` is faster but less detailed, and `"high"` preserves maximum detail. You can save tokens and speed up responses by using detail: `"low"`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -98,26 +98,30 @@ namespace G
         public int ClosedIssues { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-10T20:09:31Z
         /// </summary>
+        /// <example>2011-04-10T20:09:31Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2014-03-03T18:58:10Z
         /// </summary>
+        /// <example>2014-03-03T18:58:10Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2013-02-12T13:22:01Z
         /// </summary>
+        /// <example>2013-02-12T13:22:01Z</example>
         [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ClosedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2012-10-09T23:39:01Z
         /// </summary>
+        /// <example>2012-10-09T23:39:01Z</example>
         [global::Newtonsoft.Json.JsonProperty("due_on", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? DueOn { get; set; } = default!;
 
@@ -170,10 +174,18 @@ namespace G
         /// <param name="closedIssues">
         /// Example: 8
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="closedAt"></param>
-        /// <param name="dueOn"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-10T20:09:31Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2014-03-03T18:58:10Z
+        /// </param>
+        /// <param name="closedAt">
+        /// Example: 2013-02-12T13:22:01Z
+        /// </param>
+        /// <param name="dueOn">
+        /// Example: 2012-10-09T23:39:01Z
+        /// </param>
         public Milestone(
             string url,
             string htmlUrl,

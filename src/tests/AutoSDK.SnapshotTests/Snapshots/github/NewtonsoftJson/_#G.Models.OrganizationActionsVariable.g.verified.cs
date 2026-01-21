@@ -26,14 +26,18 @@ namespace G
         public string Value { get; set; } = default!;
 
         /// <summary>
-        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -68,10 +72,12 @@ namespace G
         /// Example: octocat
         /// </param>
         /// <param name="createdAt">
-        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </param>
         /// <param name="updatedAt">
-        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+        /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.<br/>
+        /// Example: 2019-01-24T22:45:36.000Z
         /// </param>
         /// <param name="visibility">
         /// Visibility of a variable

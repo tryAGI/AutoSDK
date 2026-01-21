@@ -5,12 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}
     /// </summary>
     public sealed partial class TTSConversationalConfigInput
     {
         /// <summary>
-        /// 
+        /// The model to use for TTS<br/>
+        /// Default Value: eleven_turbo_v2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TTSConversationalModelJsonConverter))]
@@ -30,21 +31,23 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.SupportedVoice>? SupportedVoices { get; set; }
 
         /// <summary>
-        /// 
+        /// The audio format to use for TTS<br/>
+        /// Default Value: pcm_16000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_output_audio_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TTSOutputFormatJsonConverter))]
         public global::G.TTSOutputFormat? AgentOutputAudioFormat { get; set; }
 
         /// <summary>
-        /// 
+        /// The optimization for streaming latency<br/>
+        /// Default Value: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimize_streaming_latency")]
         public int? OptimizeStreamingLatency { get; set; }
 
         /// <summary>
         /// The stability of generated speech<br/>
-        /// Default Value: 0.5
+        /// Default Value: 0.5F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stability")]
         public double? Stability { get; set; }
@@ -58,7 +61,7 @@ namespace G
 
         /// <summary>
         /// The similarity boost for generated speech<br/>
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("similarity_boost")]
         public double? SimilarityBoost { get; set; }
@@ -78,7 +81,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSConversationalConfigInput" /> class.
         /// </summary>
-        /// <param name="modelId"></param>
+        /// <param name="modelId">
+        /// The model to use for TTS<br/>
+        /// Default Value: eleven_turbo_v2
+        /// </param>
         /// <param name="voiceId">
         /// The voice ID to use for TTS<br/>
         /// Default Value: cjVigY5qzO86Huf0OWal
@@ -86,11 +92,17 @@ namespace G
         /// <param name="supportedVoices">
         /// Additional supported voices for the agent
         /// </param>
-        /// <param name="agentOutputAudioFormat"></param>
-        /// <param name="optimizeStreamingLatency"></param>
+        /// <param name="agentOutputAudioFormat">
+        /// The audio format to use for TTS<br/>
+        /// Default Value: pcm_16000
+        /// </param>
+        /// <param name="optimizeStreamingLatency">
+        /// The optimization for streaming latency<br/>
+        /// Default Value: 3
+        /// </param>
         /// <param name="stability">
         /// The stability of generated speech<br/>
-        /// Default Value: 0.5
+        /// Default Value: 0.5F
         /// </param>
         /// <param name="speed">
         /// The speed of generated speech<br/>
@@ -98,7 +110,7 @@ namespace G
         /// </param>
         /// <param name="similarityBoost">
         /// The similarity boost for generated speech<br/>
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </param>
         /// <param name="pronunciationDictionaryLocators">
         /// The pronunciation dictionary locators

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"text":"smoke","count":6,"timestamps":[[250,650],[49168,49398],[55284,55594],[168888,169118],[215108,215386],[225944,226170]],"indexes":[0,136,156,486,652,698]}
     /// </summary>
     public sealed partial class WordSearchMatch
     {

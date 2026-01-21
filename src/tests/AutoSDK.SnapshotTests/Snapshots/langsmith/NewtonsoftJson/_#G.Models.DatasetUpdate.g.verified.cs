@@ -12,28 +12,28 @@ namespace G
     public sealed partial class DatasetUpdate
     {
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::G.AnyOf<string, global::G.Missing>? Name { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<object, global::G.Missing>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<object, global::G.Missing>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
@@ -42,10 +42,10 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? PatchExamples { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformations")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? Transformations { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? Transformations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,19 +56,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetUpdate" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="inputsSchemaDefinition"></param>
-        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="name">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="description">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="inputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
+        /// <param name="outputsSchemaDefinition">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         /// <param name="patchExamples"></param>
-        /// <param name="transformations"></param>
+        /// <param name="transformations">
+        /// Default Value: {"__missing__":"__missing__"}
+        /// </param>
         public DatasetUpdate(
-            global::G.AnyOf<string, global::G.Missing>? name,
-            global::G.AnyOf<string, global::G.Missing>? description,
-            global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition,
-            global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition,
+            global::G.AnyOf<string, global::G.Missing, object>? name,
+            global::G.AnyOf<string, global::G.Missing, object>? description,
+            global::G.AnyOf<object, global::G.Missing, object>? inputsSchemaDefinition,
+            global::G.AnyOf<object, global::G.Missing, object>? outputsSchemaDefinition,
             global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? transformations)
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? transformations)
         {
             this.Name = name;
             this.Description = description;

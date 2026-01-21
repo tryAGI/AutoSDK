@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.TxtExportOptionsFormat Format { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Format { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -74,18 +74,18 @@ namespace G
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
         public TxtExportOptions(
+            string format,
             int? maxCharactersPerLine,
             bool? includeSpeakers,
             bool? includeTimestamps,
-            global::G.TxtExportOptionsFormat format,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
             int? maxSegmentChars)
         {
+            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.MaxCharactersPerLine = maxCharactersPerLine;
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
-            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

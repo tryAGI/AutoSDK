@@ -35,6 +35,56 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.PlainTextSource? Text { get; init; }
+#else
+        public global::G.PlainTextSource? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ContentBlockSource? Content { get; init; }
+#else
+        public global::G.ContentBlockSource? Content { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
+#endif
+        public bool IsContent => Content != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.URLPDFSource? Url { get; init; }
+#else
+        public global::G.URLPDFSource? Url { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source3(global::G.Base64PDFSource value) => new Source3((global::G.Base64PDFSource?)value);
 
         /// <summary>
@@ -49,23 +99,6 @@ namespace G
         {
             Base64 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.PlainTextSource? Text { get; init; }
-#else
-        public global::G.PlainTextSource? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ContentBlockSource? Content { get; init; }
-#else
-        public global::G.ContentBlockSource? Content { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
-#endif
-        public bool IsContent => Content != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Source3(global::G.ContentBlockSource value) => new Source3((global::G.ContentBlockSource?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace G
         {
             Content = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.URLPDFSource? Url { get; init; }
-#else
-        public global::G.URLPDFSource? Url { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
-#endif
-        public bool IsUrl => Url != null;
 
         /// <summary>
         /// 

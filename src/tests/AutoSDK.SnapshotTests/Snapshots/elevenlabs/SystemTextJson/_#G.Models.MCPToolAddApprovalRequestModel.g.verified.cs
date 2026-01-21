@@ -30,7 +30,8 @@ namespace G
         public object? InputSchema { get; set; }
 
         /// <summary>
-        /// Defines the tool-level approval policy.
+        /// The tool-level approval policy<br/>
+        /// Default Value: requires_approval
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_policy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MCPToolApprovalPolicyJsonConverter))]
@@ -55,7 +56,8 @@ namespace G
         /// The input schema of the MCP tool (the schema defined on the MCP server before ElevenLabs does any extra processing)
         /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the tool-level approval policy.
+        /// The tool-level approval policy<br/>
+        /// Default Value: requires_approval
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

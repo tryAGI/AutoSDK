@@ -10,17 +10,17 @@ namespace G
     public sealed partial class BatchError
     {
         /// <summary>
-        /// Default Value: 1
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("count")]
-        public int? Count { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; }
+
+        /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("count")]
+        public int? Count { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchError" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="count">
         /// Default Value: 1
         /// </param>
-        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

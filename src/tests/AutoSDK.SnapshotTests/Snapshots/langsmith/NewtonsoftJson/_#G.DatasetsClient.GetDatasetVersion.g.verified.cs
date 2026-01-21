@@ -9,7 +9,7 @@ namespace G
         partial void PrepareGetDatasetVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.DateTime? asOf,
+            global::System.DateTime? asOf,
             ref string? tag);
         partial void PrepareGetDatasetVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,14 +46,14 @@ namespace G
             PrepareGetDatasetVersionArguments(
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
-                asOf: ref asOf,
+                asOf: asOf,
                 tag: ref tag);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/version",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("as_of", asOf?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("as_of", asOf?.ToString()) 
                 .AddOptionalParameter("tag", tag) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -11,10 +11,10 @@ namespace G
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
-        /// Default Value: 0L
+        /// Default Value: 0
         /// </param>
         /// <param name="limit">
-        /// Default Value: 25L
+        /// Default Value: 25
         /// </param>
         /// <param name="include"></param>
         /// <param name="sort"></param>

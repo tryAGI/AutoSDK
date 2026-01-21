@@ -59,7 +59,7 @@ namespace G
         private global::System.CommandLine.Option<global::G.TtsResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
-            Description = @"Select the desired format for the speech output. Supported formats include mp3, opus, flac, wav, and pcm.",
+            Description = @"response format for the speech",
         };
 
         private global::System.CommandLine.Option<double?> Speed { get; } = new(

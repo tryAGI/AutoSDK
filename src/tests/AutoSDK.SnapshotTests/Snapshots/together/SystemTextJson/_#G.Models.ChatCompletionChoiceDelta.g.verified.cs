@@ -12,15 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionChoiceDeltaFunctionCall? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("token_id")]
+        public int? TokenId { get; set; }
 
         /// <summary>
         /// 
@@ -33,14 +26,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token_id")]
-        public int? TokenId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionChoiceDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,22 +51,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChoiceDelta" /> class.
         /// </summary>
-        /// <param name="content"></param>
-        /// <param name="role"></param>
         /// <param name="tokenId"></param>
+        /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="toolCalls"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionChoiceDelta(
             global::G.ChatCompletionChoiceDeltaRole role,
-            string? content,
             int? tokenId,
+            string? content,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
             this.Role = role;
-            this.Content = content;
             this.TokenId = tokenId;
+            this.Content = content;
             this.ToolCalls = toolCalls;
         }
 

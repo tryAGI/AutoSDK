@@ -12,7 +12,7 @@ namespace G
             ref int? pageSize,
             ref string? model,
             object? metadata,
-            ref global::System.DateTime? createdAfter,
+            global::System.DateTime? createdAfter,
             ref bool? createdByMe,
             global::System.Collections.Generic.IList<global::G.BatchJobStatus>? status);
         partial void PrepareJobsApiRoutesBatchGetBatchJobsRequest(
@@ -71,7 +71,7 @@ namespace G
                 pageSize: ref pageSize,
                 model: ref model,
                 metadata: metadata,
-                createdAfter: ref createdAfter,
+                createdAfter: createdAfter,
                 createdByMe: ref createdByMe,
                 status: status);
 
@@ -83,9 +83,9 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("model", model) 
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
-                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("created_after", createdAfter?.ToString()) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
-                .AddOptionalParameter("status", status, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

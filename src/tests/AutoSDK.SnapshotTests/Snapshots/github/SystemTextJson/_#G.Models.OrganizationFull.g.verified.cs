@@ -425,8 +425,9 @@ namespace G
         public string? SecretScanningPushProtectionCustomLink { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2008-01-14T04:33:35Z
         /// </summary>
+        /// <example>2008-01-14T04:33:35Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -593,7 +594,9 @@ namespace G
         /// An optional URL string to display to contributors who are blocked from pushing a secret.<br/>
         /// Example: https://github.com/test-org/test-repo/blob/main/README.md
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
         /// <param name="updatedAt"></param>
         /// <param name="archivedAt"></param>
 #if NET7_0_OR_GREATER

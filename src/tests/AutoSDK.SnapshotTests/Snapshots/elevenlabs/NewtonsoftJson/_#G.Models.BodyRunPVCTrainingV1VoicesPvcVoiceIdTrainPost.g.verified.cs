@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost
     {
         /// <summary>
-        /// The model ID to use for the conversion.<br/>
-        /// Example: eleven_turbo_v2
+        /// The model ID to use for the conversion.
         /// </summary>
-        /// <example>eleven_turbo_v2</example>
         [global::Newtonsoft.Json.JsonProperty("model_id")]
         public string? ModelId { get; set; }
 
@@ -27,8 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost" /> class.
         /// </summary>
         /// <param name="modelId">
-        /// The model ID to use for the conversion.<br/>
-        /// Example: eleven_turbo_v2
+        /// The model ID to use for the conversion.
         /// </param>
         public BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost(
             string? modelId)

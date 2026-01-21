@@ -12,13 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RerankResponseResultDocument Document { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
@@ -31,6 +24,13 @@ namespace G
         public required double RelevanceScore { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RerankResponseResultDocument Document { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,20 +39,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankResponseResult" /> class.
         /// </summary>
-        /// <param name="document"></param>
         /// <param name="index"></param>
         /// <param name="relevanceScore"></param>
+        /// <param name="document"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankResponseResult(
-            global::G.RerankResponseResultDocument document,
             int index,
-            double relevanceScore)
+            double relevanceScore,
+            global::G.RerankResponseResultDocument document)
         {
-            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
             this.Index = index;
             this.RelevanceScore = relevanceScore;
+            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
         }
 
         /// <summary>

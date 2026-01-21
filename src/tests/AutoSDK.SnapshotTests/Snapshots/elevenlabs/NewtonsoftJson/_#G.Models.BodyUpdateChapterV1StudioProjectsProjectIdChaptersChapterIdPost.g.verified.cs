@@ -10,15 +10,13 @@ namespace G
     public sealed partial class BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost
     {
         /// <summary>
-        /// The name of the chapter, used for identification only.<br/>
-        /// Example: Chapter 1
+        /// The name of the chapter, used for identification only.
         /// </summary>
-        /// <example>Chapter 1</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// The chapter content to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
         public global::G.ChapterContentInputModel? Content { get; set; }
@@ -33,10 +31,11 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the chapter, used for identification only.<br/>
-        /// Example: Chapter 1
+        /// The name of the chapter, used for identification only.
         /// </param>
-        /// <param name="content"></param>
+        /// <param name="content">
+        /// The chapter content to use.
+        /// </param>
         public BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost(
             string? name,
             global::G.ChapterContentInputModel? content)

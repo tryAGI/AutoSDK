@@ -65,14 +65,16 @@ namespace G
         public global::G.OrgHookConfig Config { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-09-06T20:39:23Z
         /// </summary>
+        /// <example>2011-09-06T20:39:23Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-09-06T17:26:27Z
         /// </summary>
+        /// <example>2011-09-06T17:26:27Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -113,8 +115,12 @@ namespace G
         /// Example: true
         /// </param>
         /// <param name="config"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="updatedAt">
+        /// Example: 2011-09-06T20:39:23Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-09-06T17:26:27Z
+        /// </param>
         /// <param name="type"></param>
         public OrgHook(
             int id,

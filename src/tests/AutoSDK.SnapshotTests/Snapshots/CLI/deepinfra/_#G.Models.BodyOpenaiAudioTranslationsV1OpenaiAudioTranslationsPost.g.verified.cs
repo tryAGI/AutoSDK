@@ -40,8 +40,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormatJsonConverter))]
-        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? ResponseFormat { get; set; }
+        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? ResponseFormat { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -76,7 +75,7 @@ namespace G
             string filename,
             string model,
             string? prompt,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat,
             double? temperature)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

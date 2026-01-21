@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FunctionTool.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -29,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<object, object> Parameters { get; set; } = default!;
+        public object? Parameters { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strict", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<bool?, object> Strict { get; set; } = default!;
+        public bool? Strict { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,14 +62,14 @@ namespace G
         /// <param name="strict"></param>
         public FunctionTool(
             string name,
-            global::G.AnyOf<object, object> parameters,
-            global::G.AnyOf<bool?, object> strict,
-            global::G.AnyOf<string, object>? description,
+            object? parameters,
+            bool? strict,
+            string? description,
             global::G.FunctionToolType type = global::G.FunctionToolType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters;
-            this.Strict = strict;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
+            this.Strict = strict ?? throw new global::System.ArgumentNullException(nameof(strict));
             this.Type = type;
             this.Description = description;
         }

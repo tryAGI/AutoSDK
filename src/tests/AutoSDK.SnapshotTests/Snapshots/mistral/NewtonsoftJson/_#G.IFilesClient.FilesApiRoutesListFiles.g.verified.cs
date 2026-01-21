@@ -27,7 +27,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SampleType>? sampleType = default,
             global::System.Collections.Generic.IList<global::G.Source>? source = default,
             string? search = default,
-            object? purpose = default,
+            global::G.FilePurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

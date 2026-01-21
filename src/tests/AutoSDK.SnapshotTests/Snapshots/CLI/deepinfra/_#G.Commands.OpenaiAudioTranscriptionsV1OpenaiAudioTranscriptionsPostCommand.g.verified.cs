@@ -19,9 +19,9 @@ namespace G
             string model,
             string? language,
             string? prompt,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat,
             double? temperature,
-            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitie>? timestampGranularities,
+            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -70,7 +70,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat?> ResponseFormat { get; } = new(
+        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
             Description = @"",
@@ -82,7 +82,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitie>?> TimestampGranularities { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>?> TimestampGranularities { get; } = new(
             name: "timestampGranularities")
         {
             Description = @"",

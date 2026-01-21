@@ -19,15 +19,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter))]
+        public global::G.ChatCompletionUserMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter))]
-        public global::G.ChatCompletionUserMessageParamRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,19 +39,19 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatCompletionUserMessageParam" /> class.
         /// </summary>
         /// <param name="content"></param>
-        /// <param name="name"></param>
         /// <param name="role"></param>
+        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionUserMessageParam(
             string content,
-            string? name,
-            global::G.ChatCompletionUserMessageParamRole role)
+            global::G.ChatCompletionUserMessageParamRole role,
+            string? name)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
         }
 
         /// <summary>

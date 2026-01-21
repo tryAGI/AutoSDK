@@ -14,7 +14,7 @@ namespace G
         /// token is generated, rather than waiting for the entire response.
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
@@ -35,11 +35,11 @@ namespace G
         /// token is generated, rather than waiting for the entire response.
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="authorization"></param>
         /// <param name="model">
-        /// An enumeration.
+        /// Name of this model
         /// </param>
         /// <param name="messages">
         /// messages
@@ -68,7 +68,9 @@ namespace G
         /// <param name="documents">
         /// Default Value: []
         /// </param>
-        /// <param name="responseFormat"></param>
+        /// <param name="responseFormat">
+        /// Default Value: {"type":"text"}
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(

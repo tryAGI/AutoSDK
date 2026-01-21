@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB","name":"My Agent"}
     /// </summary>
     public sealed partial class GetAgentResponseModel
     {
@@ -22,19 +22,19 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The conversation configuration of the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conversation_config", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ConversationalConfigAPIModelOutput ConversationConfig { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The metadata of the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AgentMetadataResponseModel Metadata { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The platform settings of the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("platform_settings")]
         public global::G.AgentPlatformSettingsResponseModel? PlatformSettings { get; set; }
@@ -46,7 +46,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.PhoneNumbersItem>? PhoneNumbers { get; set; }
 
         /// <summary>
-        /// 
+        /// The access information of the agent for the user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_info")]
         public global::G.ResourceAccessInfo? AccessInfo { get; set; }
@@ -72,13 +72,21 @@ namespace G
         /// <param name="name">
         /// The name of the agent
         /// </param>
-        /// <param name="conversationConfig"></param>
-        /// <param name="metadata"></param>
-        /// <param name="platformSettings"></param>
+        /// <param name="conversationConfig">
+        /// The conversation configuration of the agent
+        /// </param>
+        /// <param name="metadata">
+        /// The metadata of the agent
+        /// </param>
+        /// <param name="platformSettings">
+        /// The platform settings of the agent
+        /// </param>
         /// <param name="phoneNumbers">
         /// The phone numbers of the agent
         /// </param>
-        /// <param name="accessInfo"></param>
+        /// <param name="accessInfo">
+        /// The access information of the agent for the user
+        /// </param>
         /// <param name="tags">
         /// Agent tags used to categorize the agent
         /// </param>

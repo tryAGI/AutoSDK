@@ -29,9 +29,9 @@ namespace G
 
         /// <summary>
         /// How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.<br/>
-        /// Example: 0.025F
+        /// Example: 0.025
         /// </summary>
-        /// <example>0.025F</example>
+        /// <example>0.025</example>
         [global::Newtonsoft.Json.JsonProperty("lexical_interpolation")]
         public float? LexicalInterpolation { get; set; }
 
@@ -64,7 +64,7 @@ namespace G
         /// </param>
         /// <param name="lexicalInterpolation">
         /// How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.<br/>
-        /// Example: 0.025F
+        /// Example: 0.025
         /// </param>
         /// <param name="semantics">
         /// Indicates whether to consider a query against this corpus as a query or a response.<br/>

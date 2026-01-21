@@ -30,14 +30,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public QueryFilter(object? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? Value2 { get; init; }
 #else
@@ -55,6 +47,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; init; }
+#else
+        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?)value);
 
         /// <summary>
@@ -69,23 +77,6 @@ namespace G
         {
             Value2 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; init; }
-#else
-        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 

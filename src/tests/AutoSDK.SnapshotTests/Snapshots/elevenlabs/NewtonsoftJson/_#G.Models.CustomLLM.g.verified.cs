@@ -22,7 +22,7 @@ namespace G
         public string? ModelId { get; set; }
 
         /// <summary>
-        /// Used to reference a secret from the agent's secret store.
+        /// The API key for authentication
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_key")]
         public global::G.ConvAISecretLocator? ApiKey { get; set; }
@@ -49,7 +49,7 @@ namespace G
         /// The model ID to be used if URL serves multiple models
         /// </param>
         /// <param name="apiKey">
-        /// Used to reference a secret from the agent's secret store.
+        /// The API key for authentication
         /// </param>
         /// <param name="requestHeaders">
         /// Headers that should be included in the request

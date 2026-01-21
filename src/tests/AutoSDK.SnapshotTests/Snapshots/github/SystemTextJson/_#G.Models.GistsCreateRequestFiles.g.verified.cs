@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Names and content for the files that make up the gist
+    /// Names and content for the files that make up the gist<br/>
+    /// Example: {"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}
     /// </summary>
     public sealed partial class GistsCreateRequestFiles
     {

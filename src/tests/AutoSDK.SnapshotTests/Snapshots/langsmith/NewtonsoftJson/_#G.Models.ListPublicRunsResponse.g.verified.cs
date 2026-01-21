@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursors", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, string?> Cursors { get; set; } = default!;
+        public object Cursors { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// <param name="parsedQuery"></param>
         public ListPublicRunsResponse(
             global::System.Collections.Generic.IList<global::G.RunPublicSchema> runs,
-            global::System.Collections.Generic.Dictionary<string, string?> cursors,
+            object cursors,
             string? parsedQuery)
         {
             this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));

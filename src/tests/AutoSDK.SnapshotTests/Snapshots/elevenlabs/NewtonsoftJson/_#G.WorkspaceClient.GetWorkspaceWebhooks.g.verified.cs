@@ -30,8 +30,7 @@ namespace G
         /// </summary>
         /// <param name="includeUsages">
         /// Whether to include active usages of the webhook, only usable by admins<br/>
-        /// Default Value: false<br/>
-        /// Example: false
+        /// Default Value: false
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

@@ -9,11 +9,11 @@ namespace G
         public FinetuningGroupCommand(
             ListFinetunedModelsCommand command0,
             CreateFinetunedModelCommand command1,
-            ListEventsCommand command2,
-            ListTrainingStepMetricsCommand command3,
+            UpdateFinetunedModelCommand command2,
+            GetFinetunedModelCommand command3,
             DeleteFinetunedModelCommand command4,
-            GetFinetunedModelCommand command5,
-            UpdateFinetunedModelCommand command6)
+            ListEventsCommand command5,
+            ListTrainingStepMetricsCommand command6)
             : base(
                 name: "finetuning")
         {

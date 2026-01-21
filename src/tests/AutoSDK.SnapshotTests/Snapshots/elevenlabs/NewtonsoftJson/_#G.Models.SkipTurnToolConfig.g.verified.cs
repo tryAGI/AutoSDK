@@ -20,7 +20,7 @@ namespace G
         /// Default Value: skip_turn
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
-        public global::G.SkipTurnToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: skip_turn
         /// </param>
         public SkipTurnToolConfig(
-            global::G.SkipTurnToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.SystemToolType = systemToolType;
         }

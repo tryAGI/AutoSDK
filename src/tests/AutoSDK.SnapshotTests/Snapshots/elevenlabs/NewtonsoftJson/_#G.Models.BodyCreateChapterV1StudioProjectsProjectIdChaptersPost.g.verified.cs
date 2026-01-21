@@ -10,18 +10,14 @@ namespace G
     public sealed partial class BodyCreateChapterV1StudioProjectsProjectIdChaptersPost
     {
         /// <summary>
-        /// The name of the chapter, used for identification only.<br/>
-        /// Example: Chapter 1
+        /// The name of the chapter, used for identification only.
         /// </summary>
-        /// <example>Chapter 1</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
-        /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </summary>
-        /// <example>https://blog.elevenlabs.io/the_first_ai_that_can_laugh/</example>
         [global::Newtonsoft.Json.JsonProperty("from_url")]
         public string? FromUrl { get; set; }
 
@@ -35,12 +31,10 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyCreateChapterV1StudioProjectsProjectIdChaptersPost" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the chapter, used for identification only.<br/>
-        /// Example: Chapter 1
+        /// The name of the chapter, used for identification only.
         /// </param>
         /// <param name="fromUrl">
-        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
-        /// Example: https://blog.elevenlabs.io/the_first_ai_that_can_laugh/
+        /// An optional URL from which we will extract content to initialize the Studio project. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </param>
         public BodyCreateChapterV1StudioProjectsProjectIdChaptersPost(
             string name,

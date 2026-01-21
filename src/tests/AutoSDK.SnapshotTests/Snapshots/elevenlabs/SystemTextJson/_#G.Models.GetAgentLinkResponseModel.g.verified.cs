@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"agent_id":"J3Pbu5gP6NNKBscdCdwB"}
     /// </summary>
     public sealed partial class GetAgentLinkResponseModel
     {
@@ -17,7 +17,7 @@ namespace G
         public required string AgentId { get; set; }
 
         /// <summary>
-        /// 
+        /// The token data for the agent
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         public global::G.ConversationTokenDBModel? Token { get; set; }
@@ -34,7 +34,9 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent
         /// </param>
-        /// <param name="token"></param>
+        /// <param name="token">
+        /// The token data for the agent
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

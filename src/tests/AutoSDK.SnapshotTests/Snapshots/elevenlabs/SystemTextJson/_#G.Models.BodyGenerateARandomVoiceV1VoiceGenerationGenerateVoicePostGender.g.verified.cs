@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Category code corresponding to the gender of the generated voice. Possible values: female, male.<br/>
-    /// Example: female
+    /// Category code corresponding to the gender of the generated voice. Possible values: female, male.
     /// </summary>
     public enum BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostGender
     {

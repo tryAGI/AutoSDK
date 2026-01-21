@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"chapter_id":"aw1NgEzBg83R7vgmiJt3","chapter_snapshot_id":"aw1NgEzBg83R7vgmiJt1","created_at_unix":1714204800,"name":"My Chapter Snapshot","project_id":"aw1NgEzBg83R7vgmiJt2"}
     /// </summary>
     public sealed partial class ChapterSnapshotExtendedResponseModel
     {

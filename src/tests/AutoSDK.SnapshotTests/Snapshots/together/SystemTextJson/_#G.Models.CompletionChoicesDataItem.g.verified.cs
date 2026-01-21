@@ -10,6 +10,19 @@ namespace G
     public sealed partial class CompletionChoicesDataItem
     {
         /// <summary>
+        /// Example: The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.
+        /// </summary>
+        /// <example>The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
@@ -23,19 +36,6 @@ namespace G
         public global::G.LogprobsPart? Logprobs { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
-
-        /// <summary>
-        /// Example: The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.
-        /// </summary>
-        /// <example>The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,25 +44,25 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionChoicesDataItem" /> class.
         /// </summary>
-        /// <param name="finishReason"></param>
-        /// <param name="logprobs"></param>
-        /// <param name="seed"></param>
         /// <param name="text">
         /// Example: The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.
         /// </param>
+        /// <param name="seed"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionChoicesDataItem(
-            global::G.FinishReason? finishReason,
-            global::G.LogprobsPart? logprobs,
+            string? text,
             int? seed,
-            string? text)
+            global::G.FinishReason? finishReason,
+            global::G.LogprobsPart? logprobs)
         {
+            this.Text = text;
+            this.Seed = seed;
             this.FinishReason = finishReason;
             this.Logprobs = logprobs;
-            this.Seed = seed;
-            this.Text = text;
         }
 
         /// <summary>

@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant19? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
 #endif
         public BetaRequestToolResultBlock(
             string toolUseId,
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant19? cacheControl,
             global::G.BetaRequestToolResultBlockType type,
             bool? isError,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? content)

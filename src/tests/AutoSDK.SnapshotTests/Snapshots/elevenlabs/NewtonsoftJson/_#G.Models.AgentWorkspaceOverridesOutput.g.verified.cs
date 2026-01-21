@@ -10,7 +10,7 @@ namespace G
     public sealed partial class AgentWorkspaceOverridesOutput
     {
         /// <summary>
-        /// 
+        /// The webhook to send conversation initiation client data to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conversation_initiation_client_data_webhook")]
         public global::G.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
@@ -30,7 +30,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentWorkspaceOverridesOutput" /> class.
         /// </summary>
-        /// <param name="conversationInitiationClientDataWebhook"></param>
+        /// <param name="conversationInitiationClientDataWebhook">
+        /// The webhook to send conversation initiation client data to
+        /// </param>
         /// <param name="webhooks"></param>
         public AgentWorkspaceOverridesOutput(
             global::G.ConversationInitiationClientDataWebhook? conversationInitiationClientDataWebhook,

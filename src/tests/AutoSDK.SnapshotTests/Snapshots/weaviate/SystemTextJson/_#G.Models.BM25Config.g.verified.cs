@@ -11,14 +11,14 @@ namespace G
     {
         /// <summary>
         /// Calibrates term-weight scaling based on the term frequency within a document<br/>
-        /// Default Value: 1.2F
+        /// Default Value: 1.2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k1")]
         public float? K1 { get; set; }
 
         /// <summary>
         /// Calibrates term-weight scaling based on the document length<br/>
-        /// Default Value: 0.75F
+        /// Default Value: 0.75
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("b")]
         public float? B { get; set; }
@@ -34,11 +34,11 @@ namespace G
         /// </summary>
         /// <param name="k1">
         /// Calibrates term-weight scaling based on the term frequency within a document<br/>
-        /// Default Value: 1.2F
+        /// Default Value: 1.2
         /// </param>
         /// <param name="b">
         /// Calibrates term-weight scaling based on the document length<br/>
-        /// Default Value: 0.75F
+        /// Default Value: 0.75
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -24,7 +24,7 @@ namespace G
         public required global::G.MCPServerConfigOutput Config { get; set; }
 
         /// <summary>
-        /// 
+        /// The access information of the MCP Server
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_info")]
         public global::G.ResourceAccessInfo? AccessInfo { get; set; }
@@ -36,7 +36,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.DependentAgentsItem4>? DependentAgents { get; set; }
 
         /// <summary>
-        /// 
+        /// The metadata of the MCP Server
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,11 +53,15 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="config"></param>
-        /// <param name="accessInfo"></param>
+        /// <param name="accessInfo">
+        /// The access information of the MCP Server
+        /// </param>
         /// <param name="dependentAgents">
         /// List of agents that depend on this MCP Server.
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// The metadata of the MCP Server
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

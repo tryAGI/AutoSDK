@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"color_1":"#2792dc","color_2":"#9ce6e6","type":"orb"}
     /// </summary>
     public sealed partial class OrbAvatar
     {
@@ -14,7 +14,7 @@ namespace G
         /// Default Value: orb
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.OrbAvatarType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The first color of the avatar<br/>
@@ -52,7 +52,7 @@ namespace G
         /// Default Value: #9ce6e6
         /// </param>
         public OrbAvatar(
-            global::G.OrbAvatarType? type,
+            string? type,
             string? color1,
             string? color2)
         {

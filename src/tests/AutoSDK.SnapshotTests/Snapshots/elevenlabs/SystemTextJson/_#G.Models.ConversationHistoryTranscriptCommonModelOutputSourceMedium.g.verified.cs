@@ -7,46 +7,13 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public enum ConversationHistoryTranscriptCommonModelOutputSourceMedium
+    public sealed partial class ConversationHistoryTranscriptCommonModelOutputSourceMedium
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        Audio,
-        /// <summary>
-        /// 
-        /// </summary>
-        Text,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class ConversationHistoryTranscriptCommonModelOutputSourceMediumExtensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this ConversationHistoryTranscriptCommonModelOutputSourceMedium value)
-        {
-            return value switch
-            {
-                ConversationHistoryTranscriptCommonModelOutputSourceMedium.Audio => "audio",
-                ConversationHistoryTranscriptCommonModelOutputSourceMedium.Text => "text",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static ConversationHistoryTranscriptCommonModelOutputSourceMedium? ToEnum(string value)
-        {
-            return value switch
-            {
-                "audio" => ConversationHistoryTranscriptCommonModelOutputSourceMedium.Audio,
-                "text" => ConversationHistoryTranscriptCommonModelOutputSourceMedium.Text,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

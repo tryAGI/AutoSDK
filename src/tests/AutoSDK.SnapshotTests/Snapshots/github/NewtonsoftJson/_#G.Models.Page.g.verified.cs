@@ -52,7 +52,6 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
-        /// <default>false</default>
         /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("custom_404", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Custom404 { get; set; } = default!;

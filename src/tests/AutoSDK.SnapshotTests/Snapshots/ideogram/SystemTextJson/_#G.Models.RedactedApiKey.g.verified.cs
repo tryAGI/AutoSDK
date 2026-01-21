@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A representation of an API key that does not contain the full key.
+    /// A representation of an API key that does not contain the full key.<br/>
+    /// Example: {"creation_time":"2000-01-23T04:56:07.0000000\u002B00:00","redacted_api_key":"vkpDja","api_key_id":"JRPVD7jWR1aTBYiJ0UFVOg=="}
     /// </summary>
     public sealed partial class RedactedApiKey
     {

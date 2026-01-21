@@ -18,9 +18,9 @@ namespace G
 
         /// <summary>
         /// The project card's ID<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -45,14 +45,16 @@ namespace G
         public global::G.NullableSimpleUser? Creator { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:21:06Z
         /// </summary>
+        /// <example>2016-09-05T14:21:06Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:20:22Z
         /// </summary>
+        /// <example>2016-09-05T14:20:22Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
@@ -111,7 +113,7 @@ namespace G
         /// </param>
         /// <param name="id">
         /// The project card's ID<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId">
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==
@@ -122,8 +124,12 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-09-05T14:21:06Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2016-09-05T14:20:22Z
+        /// </param>
         /// <param name="archived">
         /// Whether or not the card is archived<br/>
         /// Example: false

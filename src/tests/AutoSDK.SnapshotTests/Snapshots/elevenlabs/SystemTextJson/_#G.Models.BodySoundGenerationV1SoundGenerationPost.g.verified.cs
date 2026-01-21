@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BodySoundGenerationV1SoundGenerationPost
     {
         /// <summary>
-        /// The text that will get converted into a sound effect.<br/>
-        /// Example: A large, ancient wooden door slowly opening in an eerie, abandoned castle..
+        /// The text that will get converted into a sound effect.
         /// </summary>
-        /// <example>A large, ancient wooden door slowly opening in an eerie, abandoned castle..</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
@@ -26,7 +24,7 @@ namespace G
 
         /// <summary>
         /// A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.<br/>
-        /// Default Value: 0.3
+        /// Default Value: 0.3F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_influence")]
         public double? PromptInfluence { get; set; }
@@ -41,15 +39,14 @@ namespace G
         /// Initializes a new instance of the <see cref="BodySoundGenerationV1SoundGenerationPost" /> class.
         /// </summary>
         /// <param name="text">
-        /// The text that will get converted into a sound effect.<br/>
-        /// Example: A large, ancient wooden door slowly opening in an eerie, abandoned castle..
+        /// The text that will get converted into a sound effect.
         /// </param>
         /// <param name="durationSeconds">
         /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 22. If set to None we will guess the optimal duration using the prompt. Defaults to None.
         /// </param>
         /// <param name="promptInfluence">
         /// A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.<br/>
-        /// Default Value: 0.3
+        /// Default Value: 0.3F
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

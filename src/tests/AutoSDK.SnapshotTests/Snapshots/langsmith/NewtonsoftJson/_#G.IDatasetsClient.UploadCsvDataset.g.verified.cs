@@ -25,7 +25,8 @@ namespace G
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
         /// <param name="outputKeys">
         /// Default Value: []

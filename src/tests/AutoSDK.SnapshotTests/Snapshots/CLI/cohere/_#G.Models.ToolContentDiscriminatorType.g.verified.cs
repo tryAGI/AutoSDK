@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Document,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Document,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ToolContentDiscriminatorType.Document => "document",
                 ToolContentDiscriminatorType.Text => "text",
+                ToolContentDiscriminatorType.Document => "document",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "document" => ToolContentDiscriminatorType.Document,
                 "text" => ToolContentDiscriminatorType.Text,
+                "document" => ToolContentDiscriminatorType.Document,
                 _ => null,
             };
         }

@@ -116,7 +116,7 @@ namespace G
             if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
                     name: "response_format");
             } 
             if (request.Temperature != default)
@@ -278,7 +278,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat = default,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat = default,
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

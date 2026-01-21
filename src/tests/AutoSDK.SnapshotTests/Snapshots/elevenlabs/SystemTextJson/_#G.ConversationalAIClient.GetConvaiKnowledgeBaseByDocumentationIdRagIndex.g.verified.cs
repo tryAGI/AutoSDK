@@ -29,8 +29,7 @@ namespace G
         /// Provides information about all RAG indexes of the specified knowledgebase document.
         /// </summary>
         /// <param name="documentationId">
-        /// The id of a document from the knowledge base. This is returned on document addition.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of a document from the knowledge base. This is returned on document addition.
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.

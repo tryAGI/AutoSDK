@@ -28,6 +28,22 @@ namespace G
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
+        /// Combine multiple filters using `and` or `or`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CompoundFilter? CompoundFilter { get; init; }
+#else
+        public global::G.CompoundFilter? CompoundFilter { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
+#endif
+        public bool IsCompoundFilter => CompoundFilter != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Filters2(global::G.ComparisonFilter value) => new Filters2((global::G.ComparisonFilter?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             ComparisonFilter = value;
         }
-
-        /// <summary>
-        /// Combine multiple filters using `and` or `or`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CompoundFilter? CompoundFilter { get; init; }
-#else
-        public global::G.CompoundFilter? CompoundFilter { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
-#endif
-        public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
         /// 

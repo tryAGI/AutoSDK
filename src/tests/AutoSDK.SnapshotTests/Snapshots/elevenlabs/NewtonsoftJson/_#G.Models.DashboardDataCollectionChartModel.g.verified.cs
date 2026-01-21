@@ -19,7 +19,7 @@ namespace G
         /// Default Value: data_collection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.DashboardDataCollectionChartModelType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         public DashboardDataCollectionChartModel(
             string name,
             string dataCollectionId,
-            global::G.DashboardDataCollectionChartModelType? type)
+            string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DataCollectionId = dataCollectionId ?? throw new global::System.ArgumentNullException(nameof(dataCollectionId));

@@ -1,1 +1,27 @@
-﻿[]
+﻿[
+  {
+    Location: /*
+                .AddRequiredParameter("type", type.ToValueString()) 
+                .AddRequiredParameter("color_scheme", colorScheme.ToString()) 
+                                                      ^^^^^^^^^^^^^^^^^^^^^^
+                ; 
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.OrgsClient.GetDashboard.g.cs: (51,54)-(51,76),
+    Message: Possible null reference argument for parameter 'value' in 'PathBuilder PathBuilder.AddRequiredParameter(string name, string value)'.,
+    Severity: Warning,
+    WarningLevel: 1,
+    Descriptor: {
+      Id: CS8604,
+      Title: Possible null reference argument.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8604),
+      MessageFormat: Possible null reference argument for parameter '{0}' in '{1}'.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  }
+]

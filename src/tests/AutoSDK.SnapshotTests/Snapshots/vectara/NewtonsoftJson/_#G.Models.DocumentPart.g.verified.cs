@@ -18,8 +18,10 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
+        /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.<br/>
+        /// Example: {"nice_rank":9000}
         /// </summary>
+        /// <example>{"nice_rank":9000}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public object? Metadata { get; set; }
 
@@ -49,7 +51,8 @@ namespace G
         /// Example: I'm a nice document part.
         /// </param>
         /// <param name="metadata">
-        /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
+        /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.<br/>
+        /// Example: {"nice_rank":9000}
         /// </param>
         /// <param name="context">
         /// The context text for the document part.

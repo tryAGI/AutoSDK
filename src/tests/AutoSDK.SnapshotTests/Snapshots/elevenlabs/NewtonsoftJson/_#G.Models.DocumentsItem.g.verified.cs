@@ -35,6 +35,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GetKnowledgeBaseSummaryFileResponseModel? File { get; init; }
+#else
+        public global::G.GetKnowledgeBaseSummaryFileResponseModel? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; init; }
+#else
+        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryURLResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryURLResponseModel?)value);
 
         /// <summary>
@@ -53,23 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GetKnowledgeBaseSummaryFileResponseModel? File { get; init; }
-#else
-        public global::G.GetKnowledgeBaseSummaryFileResponseModel? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFileResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryFileResponseModel?)value);
 
         /// <summary>
@@ -84,23 +100,6 @@ namespace G
         {
             File = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; init; }
-#else
-        public global::G.GetKnowledgeBaseSummaryTextResponseModel? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 

@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier for the label.<br/>
-        /// Example: 208045946L
+        /// Example: 208045946
         /// </summary>
-        /// <example>208045946L</example>
+        /// <example>208045946</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -82,7 +82,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier for the label.<br/>
-        /// Example: 208045946L
+        /// Example: 208045946
         /// </param>
         /// <param name="nodeId">
         /// Example: MDU6TGFiZWwyMDgwNDU5NDY=

@@ -40,6 +40,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         Skipped,
         /// <summary>
         /// 
@@ -66,6 +70,7 @@ namespace G
                 WebhookWorkflowRunRequestedWorkflowRunConclusion.TimedOut => "timed_out",
                 WebhookWorkflowRunRequestedWorkflowRunConclusion.ActionRequired => "action_required",
                 WebhookWorkflowRunRequestedWorkflowRunConclusion.Stale => "stale",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowRunRequestedWorkflowRunConclusion.Skipped => "skipped",
                 WebhookWorkflowRunRequestedWorkflowRunConclusion.StartupFailure => "startup_failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -85,6 +90,7 @@ namespace G
                 "timed_out" => WebhookWorkflowRunRequestedWorkflowRunConclusion.TimedOut,
                 "action_required" => WebhookWorkflowRunRequestedWorkflowRunConclusion.ActionRequired,
                 "stale" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Stale,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowRunRequestedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "skipped" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Skipped,
                 "startup_failure" => WebhookWorkflowRunRequestedWorkflowRunConclusion.StartupFailure,
                 _ => null,

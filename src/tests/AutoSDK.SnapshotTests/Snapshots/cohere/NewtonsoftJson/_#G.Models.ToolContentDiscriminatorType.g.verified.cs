@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="document")]
-        Document,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="document")]
+        Document,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ToolContentDiscriminatorType.Document => "document",
                 ToolContentDiscriminatorType.Text => "text",
+                ToolContentDiscriminatorType.Document => "document",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "document" => ToolContentDiscriminatorType.Document,
                 "text" => ToolContentDiscriminatorType.Text,
+                "document" => ToolContentDiscriminatorType.Document,
                 _ => null,
             };
         }

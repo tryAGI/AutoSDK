@@ -33,8 +33,9 @@ namespace G
         public required string? Reason { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-10-06T21:34:12Z
         /// </summary>
+        /// <example>2012-10-06T21:34:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -72,7 +73,9 @@ namespace G
         /// Determines if all notifications should be blocked from this repository.
         /// </param>
         /// <param name="reason"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-10-06T21:34:12Z
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/example/subscription
         /// </param>

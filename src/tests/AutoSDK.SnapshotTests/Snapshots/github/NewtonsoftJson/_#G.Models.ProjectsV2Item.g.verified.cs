@@ -46,20 +46,23 @@ namespace G
         public global::G.SimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-04-28T12:00:00Z
         /// </summary>
+        /// <example>2022-04-28T12:00:00Z</example>
         [global::Newtonsoft.Json.JsonProperty("archived_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ArchivedAt { get; set; } = default!;
 
@@ -82,9 +85,15 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="archivedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="archivedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
         public ProjectsV2Item(
             double id,
             string contentNodeId,

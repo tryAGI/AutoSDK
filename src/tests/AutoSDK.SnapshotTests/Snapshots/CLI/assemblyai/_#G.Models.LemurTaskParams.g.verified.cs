@@ -6,7 +6,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"transcript_ids":["64nygnr62k-405c-4ae8-8a6b-d90b40ff3cce"],"prompt":"List all the locations affected by wildfires.","context":"This is an interview about wildfires.","final_model":"default","temperature":0,"max_output_size":3000}
     /// </summary>
     public readonly partial struct LemurTaskParams : global::System.IEquatable<LemurTaskParams>
     {
@@ -28,6 +28,22 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Example: {"transcript_ids":["85f9b381-e90c-46ed-beca-7d76245d375e","7c3acd18-df4d-4432-88f5-1e89f8827eea"],"context":"This is an interview about wildfires.","final_model":"default","temperature":0,"max_output_size":3000}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LemurBaseParams? Value2 { get; init; }
+#else
+        public global::G.LemurBaseParams? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator LemurTaskParams(global::G.LemurTaskParamsVariant1 value) => new LemurTaskParams((global::G.LemurTaskParamsVariant1?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LemurBaseParams? Value2 { get; init; }
-#else
-        public global::G.LemurBaseParams? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

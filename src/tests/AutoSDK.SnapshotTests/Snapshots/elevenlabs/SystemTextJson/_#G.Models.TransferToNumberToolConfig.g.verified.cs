@@ -13,8 +13,7 @@ namespace G
         /// Default Value: transfer_to_number
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_tool_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TransferToNumberToolConfigSystemToolTypeJsonConverter))]
-        public global::G.TransferToNumberToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +51,7 @@ namespace G
 #endif
         public TransferToNumberToolConfig(
             global::System.Collections.Generic.IList<global::G.PhoneNumberTransfer> transfers,
-            global::G.TransferToNumberToolConfigSystemToolType? systemToolType,
+            string? systemToolType,
             bool? enableClientMessage)
         {
             this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));

@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BulkExportUpdateStatusJsonConverter))]
-        public global::G.BulkExportUpdateStatus Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,9 +30,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BulkExportUpdate(
-            global::G.BulkExportUpdateStatus status)
+            string status)
         {
-            this.Status = status;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
         }
 
         /// <summary>

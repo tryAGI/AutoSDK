@@ -5,15 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"type":"url","url":"https://www.example.com"}
     /// </summary>
     public sealed partial class PodcastURLSource
     {
         /// <summary>
         /// The type of source to create.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PodcastURLSourceType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// The URL to create the podcast from.
@@ -37,11 +37,11 @@ namespace G
         /// The URL to create the podcast from.
         /// </param>
         public PodcastURLSource(
-            string url,
-            global::G.PodcastURLSourceType type)
+            string type,
+            string url)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

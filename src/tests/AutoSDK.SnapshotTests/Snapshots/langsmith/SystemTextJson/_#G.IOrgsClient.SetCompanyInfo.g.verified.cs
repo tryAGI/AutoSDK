@@ -18,12 +18,8 @@ namespace G
         /// <summary>
         /// Set Company Info
         /// </summary>
-        /// <param name="companyInfo">
-        /// Stripe customer billing information.
-        /// </param>
-        /// <param name="taxId">
-        /// Stripe tax ID.
-        /// </param>
+        /// <param name="companyInfo"></param>
+        /// <param name="taxId"></param>
         /// <param name="invoiceEmail"></param>
         /// <param name="isBusiness">
         /// Default Value: false

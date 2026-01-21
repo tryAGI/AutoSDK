@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"users":["mona"]}
     /// </summary>
     public sealed partial class ReposSetUserAccessRestrictionsRequest
     {

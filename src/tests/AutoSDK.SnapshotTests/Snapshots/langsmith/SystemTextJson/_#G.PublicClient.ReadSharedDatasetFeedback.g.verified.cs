@@ -16,9 +16,9 @@ namespace G
             ref int? limit,
             ref int? offset,
             global::System.Collections.Generic.IList<global::System.Guid>? user,
-            ref bool? hasComment,
-            ref bool? hasScore,
-            ref global::G.FeedbackLevel? level);
+            bool? hasComment,
+            bool? hasScore,
+            global::G.FeedbackLevel? level);
         partial void PrepareReadSharedDatasetFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -60,9 +60,7 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level">
-        /// Enum for feedback levels.
-        /// </param>
+        /// <param name="level"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadSharedDatasetFeedbackAsync(
@@ -91,24 +89,24 @@ namespace G
                 limit: ref limit,
                 offset: ref offset,
                 user: user,
-                hasComment: ref hasComment,
-                hasScore: ref hasScore,
-                level: ref level);
+                hasComment: hasComment,
+                hasScore: hasScore,
+                level: level);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/feedback",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
-                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("run", run?.ToString()) 
+                .AddOptionalParameter("key", key?.ToString()) 
+                .AddOptionalParameter("session", session?.ToString()) 
+                .AddOptionalParameter("source", source?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("user", user?.ToString()) 
                 .AddOptionalParameter("has_comment", hasComment?.ToString()) 
                 .AddOptionalParameter("has_score", hasScore?.ToString()) 
-                .AddOptionalParameter("level", level?.ToValueString()) 
+                .AddOptionalParameter("level", level?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

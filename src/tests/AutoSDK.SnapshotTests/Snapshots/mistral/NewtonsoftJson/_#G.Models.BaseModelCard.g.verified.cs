@@ -10,10 +10,28 @@ namespace G
     public sealed partial class BaseModelCard
     {
         /// <summary>
-        /// Default Value: []
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("aliases")]
-        public global::System.Collections.Generic.IList<string>? Aliases { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: model
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public string? Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created")]
+        public int? Created { get; set; }
+
+        /// <summary>
+        /// Default Value: mistralai
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("owned_by")]
+        public string? OwnedBy { get; set; }
 
         /// <summary>
         /// 
@@ -24,14 +42,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created")]
-        public int? Created { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("default_model_temperature")]
-        public double? DefaultModelTemperature { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Default Value: 32768
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_context_length")]
+        public int? MaxContextLength { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("aliases")]
+        public global::System.Collections.Generic.IList<string>? Aliases { get; set; }
 
         /// <summary>
         /// 
@@ -42,38 +72,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// Default Value: 32768
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_context_length")]
-        public int? MaxContextLength { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
-        /// Default Value: model
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; }
-
-        /// <summary>
-        /// Default Value: mistralai
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owned_by")]
-        public string? OwnedBy { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("default_model_temperature")]
+        public double? DefaultModelTemperature { get; set; }
 
         /// <summary>
         /// Default Value: base
@@ -90,53 +90,53 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseModelCard" /> class.
         /// </summary>
-        /// <param name="aliases">
-        /// Default Value: []
-        /// </param>
-        /// <param name="capabilities"></param>
-        /// <param name="created"></param>
-        /// <param name="defaultModelTemperature"></param>
-        /// <param name="deprecation"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
-        /// <param name="maxContextLength">
-        /// Default Value: 32768
-        /// </param>
-        /// <param name="name"></param>
         /// <param name="object">
         /// Default Value: model
         /// </param>
+        /// <param name="created"></param>
         /// <param name="ownedBy">
         /// Default Value: mistralai
         /// </param>
+        /// <param name="capabilities"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="maxContextLength">
+        /// Default Value: 32768
+        /// </param>
+        /// <param name="aliases">
+        /// Default Value: []
+        /// </param>
+        /// <param name="deprecation"></param>
+        /// <param name="defaultModelTemperature"></param>
         /// <param name="type">
         /// Default Value: base
         /// </param>
         public BaseModelCard(
-            global::G.ModelCapabilities capabilities,
             string id,
-            global::System.Collections.Generic.IList<string>? aliases,
+            global::G.ModelCapabilities capabilities,
+            string? @object,
             int? created,
-            double? defaultModelTemperature,
-            global::System.DateTime? deprecation,
+            string? ownedBy,
+            string? name,
             string? description,
             int? maxContextLength,
-            string? name,
-            string? @object,
-            string? ownedBy,
+            global::System.Collections.Generic.IList<string>? aliases,
+            global::System.DateTime? deprecation,
+            double? defaultModelTemperature,
             global::G.BaseModelCardType? type)
         {
-            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Aliases = aliases;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
+            this.Object = @object;
             this.Created = created;
-            this.DefaultModelTemperature = defaultModelTemperature;
-            this.Deprecation = deprecation;
+            this.OwnedBy = ownedBy;
+            this.Name = name;
             this.Description = description;
             this.MaxContextLength = maxContextLength;
-            this.Name = name;
-            this.Object = @object;
-            this.OwnedBy = ownedBy;
+            this.Aliases = aliases;
+            this.Deprecation = deprecation;
+            this.DefaultModelTemperature = defaultModelTemperature;
             this.Type = type;
         }
 

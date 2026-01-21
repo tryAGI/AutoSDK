@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DeltaMessage Delta { get; set; } = default!;
 
@@ -22,12 +28,6 @@ namespace G
         public global::G.CompletionResponseStreamChoiceFinishReason? FinishReason { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionResponseStreamChoice" /> class.
         /// </summary>
+        /// <param name="index"></param>
         /// <param name="delta"></param>
         /// <param name="finishReason"></param>
-        /// <param name="index"></param>
         public CompletionResponseStreamChoice(
+            int index,
             global::G.DeltaMessage delta,
-            global::G.CompletionResponseStreamChoiceFinishReason? finishReason,
-            int index)
+            global::G.CompletionResponseStreamChoiceFinishReason? finishReason)
         {
+            this.Index = index;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.FinishReason = finishReason;
-            this.Index = index;
         }
 
         /// <summary>

@@ -20,12 +20,10 @@ namespace G
         /// Voice ID to be filtered for, you can use GET https://api.elevenlabs.io/v1/voices to receive a list of voices and their IDs.
         /// </param>
         /// <param name="search">
-        /// search term used for filtering<br/>
-        /// Example: In the land far far away
+        /// search term used for filtering
         /// </param>
         /// <param name="source">
-        /// Source of the generated history item<br/>
-        /// Example: TTS
+        /// Source of the generated history item
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -37,7 +35,7 @@ namespace G
             string? startAfterHistoryItemId = default,
             string? voiceId = default,
             string? search = default,
-            global::G.ListGeneratedItemsV1HistoryGetSource? source = default,
+            global::G.ListGeneratedItemsV1HistoryGetSource2? source = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

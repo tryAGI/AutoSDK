@@ -51,7 +51,8 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Enum for available comparative experiment columns to sort by.
+        /// Enum for available comparative experiment columns to sort by.<br/>
+        /// Default Value: created_at
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -94,7 +95,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 

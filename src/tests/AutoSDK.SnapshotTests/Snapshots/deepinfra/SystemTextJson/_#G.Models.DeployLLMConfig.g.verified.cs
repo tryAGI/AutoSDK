@@ -10,7 +10,7 @@ namespace G
     public sealed partial class DeployLLMConfig
     {
         /// <summary>
-        /// 
+        /// The type of GPU the deployment is running on
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gpu")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeployGPUsJsonConverter))]
@@ -32,7 +32,7 @@ namespace G
         public required int MaxBatchSize { get; set; }
 
         /// <summary>
-        /// 
+        /// Model weights information
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weights")]
         public global::G.HFWeights? Weights { get; set; }
@@ -46,14 +46,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeployLLMConfig" /> class.
         /// </summary>
-        /// <param name="gpu"></param>
+        /// <param name="gpu">
+        /// The type of GPU the deployment is running on
+        /// </param>
         /// <param name="numGpus">
         /// Number of GPUs used by one instance
         /// </param>
         /// <param name="maxBatchSize">
         /// Maximum number of concurrent requests
         /// </param>
-        /// <param name="weights"></param>
+        /// <param name="weights">
+        /// Model weights information
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

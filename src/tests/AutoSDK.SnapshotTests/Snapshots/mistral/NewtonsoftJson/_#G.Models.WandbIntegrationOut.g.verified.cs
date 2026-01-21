@@ -10,10 +10,10 @@ namespace G
     public sealed partial class WandbIntegrationOut
     {
         /// <summary>
-        /// A display name to set for the run. If not set, will use the job ID as the name.
+        /// Default Value: wandb
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>
         /// The name of the project that the new run will be created under.
@@ -22,16 +22,16 @@ namespace G
         public string Project { get; set; } = default!;
 
         /// <summary>
+        /// A display name to set for the run. If not set, will use the job ID as the name.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
         public string? RunName { get; set; }
-
-        /// <summary>
-        /// Default Value: wandb
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -48,28 +48,28 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WandbIntegrationOut" /> class.
         /// </summary>
-        /// <param name="name">
-        /// A display name to set for the run. If not set, will use the job ID as the name.
+        /// <param name="type">
+        /// Default Value: wandb
         /// </param>
         /// <param name="project">
         /// The name of the project that the new run will be created under.
         /// </param>
-        /// <param name="runName"></param>
-        /// <param name="type">
-        /// Default Value: wandb
+        /// <param name="name">
+        /// A display name to set for the run. If not set, will use the job ID as the name.
         /// </param>
+        /// <param name="runName"></param>
         /// <param name="url"></param>
         public WandbIntegrationOut(
             string project,
+            global::G.WandbIntegrationOutType? type,
             string? name,
             string? runName,
-            global::G.WandbIntegrationOutType? type,
             string? url)
         {
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
+            this.Type = type;
             this.Name = name;
             this.RunName = runName;
-            this.Type = type;
             this.Url = url;
         }
 

@@ -88,8 +88,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_medium")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationHistoryTranscriptCommonModelOutputSourceMediumJsonConverter))]
-        public global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium? SourceMedium { get; set; }
+        public global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium2? SourceMedium { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -131,7 +130,7 @@ namespace G
             global::G.LLMUsageOutput? llmUsage,
             bool? interrupted,
             string? originalMessage,
-            global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium? sourceMedium)
+            global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium2? sourceMedium)
         {
             this.Role = role;
             this.TimeInCallSecs = timeInCallSecs;

@@ -51,17 +51,17 @@ namespace G
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </summary>
-        /// <example>1711471533L</example>
+        /// <example>1711471533</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
+        /// Example: 1711471534
         /// </summary>
-        /// <example>1711471534L</example>
+        /// <example>1711471534</example>
         [global::Newtonsoft.Json.JsonProperty("last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTimeOffset? LastUsedAt { get; set; } = default!;
 
@@ -102,11 +102,11 @@ namespace G
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// Example: 1711471533
         /// </param>
         /// <param name="lastUsedAt">
         /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
+        /// Example: 1711471534
         /// </param>
         /// <param name="owner"></param>
         public AdminApiKey(

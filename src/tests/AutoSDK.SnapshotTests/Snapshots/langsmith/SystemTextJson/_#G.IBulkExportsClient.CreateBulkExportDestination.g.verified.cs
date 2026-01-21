@@ -20,7 +20,9 @@ namespace G
         /// Create Bulk Export Destination<br/>
         /// Create a new bulk export destination
         /// </summary>
-        /// <param name="destinationType"></param>
+        /// <param name="destinationType">
+        /// Default Value: s3
+        /// </param>
         /// <param name="displayName"></param>
         /// <param name="config"></param>
         /// <param name="credentials"></param>

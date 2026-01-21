@@ -19,6 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprob")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Logprob { get; set; }
@@ -31,13 +38,6 @@ namespace G
         public required bool Special { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,22 +47,22 @@ namespace G
         /// Initializes a new instance of the <see cref="CompletionToken" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="text"></param>
         /// <param name="logprob"></param>
         /// <param name="special"></param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionToken(
             int id,
+            string text,
             double logprob,
-            bool special,
-            string text)
+            bool special)
         {
             this.Id = id;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprob = logprob;
             this.Special = special;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

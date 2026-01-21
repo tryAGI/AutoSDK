@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.InputImageContent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -23,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_url")]
-        public global::G.AnyOf<string, object>? ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_id")]
-        public global::G.AnyOf<string, object>? FileId { get; set; }
+        public string? FileId { get; set; }
 
         /// <summary>
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
@@ -57,8 +55,8 @@ namespace G
         /// </param>
         public InputImageContent(
             global::G.InputImageContentDetail detail,
-            global::G.AnyOf<string, object>? imageUrl,
-            global::G.AnyOf<string, object>? fileId,
+            string? imageUrl,
+            string? fileId,
             global::G.InputImageContentType type = global::G.InputImageContentType.InputImage)
         {
             this.Detail = detail;

@@ -26,7 +26,8 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="stride">
-        /// Timedelta input.
+        /// Timedelta input.<br/>
+        /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
         /// <param name="omitData">
         /// Default Value: false

@@ -48,7 +48,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.SystemMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -83,7 +83,7 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.SystemMessageType? type,
+            string? type,
             string? name,
             string? id)
         {

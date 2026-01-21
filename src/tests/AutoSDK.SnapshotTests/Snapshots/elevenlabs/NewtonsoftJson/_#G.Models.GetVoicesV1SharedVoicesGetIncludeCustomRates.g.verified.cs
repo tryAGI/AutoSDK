@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.GetVoicesV1SharedVoicesGetIncludeCustomRates.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Include/exclude voices with custom rates
+    /// </summary>
+    public sealed partial class GetVoicesV1SharedVoicesGetIncludeCustomRates
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

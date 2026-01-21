@@ -13,6 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string Content { get; set; } = default!;
@@ -25,13 +32,6 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -40,9 +40,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionFunctionMessageParam" /> class.
         /// </summary>
+        /// <param name="role"></param>
         /// <param name="content"></param>
         /// <param name="name"></param>
-        /// <param name="role"></param>
         public ChatCompletionFunctionMessageParam(
             string content,
             string name,

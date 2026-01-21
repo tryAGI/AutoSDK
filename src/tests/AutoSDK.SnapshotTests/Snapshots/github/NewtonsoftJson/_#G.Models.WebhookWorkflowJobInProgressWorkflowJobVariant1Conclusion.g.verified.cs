@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
         Cancelled,
         /// <summary>
@@ -46,6 +51,7 @@ namespace G
             {
                 WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Success => "success",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Failure => "failure",
+                WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Neutral => "neutral",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,6 +66,7 @@ namespace G
             {
                 "success" => WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Success,
                 "failure" => WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Failure,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
                 "cancelled" => WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Cancelled,
                 "neutral" => WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.Neutral,
                 _ => null,

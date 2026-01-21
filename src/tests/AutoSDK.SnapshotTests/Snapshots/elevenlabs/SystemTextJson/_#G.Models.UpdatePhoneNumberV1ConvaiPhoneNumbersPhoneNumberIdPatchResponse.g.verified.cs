@@ -16,7 +16,7 @@ namespace G
         public global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponseDiscriminatorProvider? Provider { get; }
 
         /// <summary>
-        /// 
+        /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetPhoneNumberTwilioResponseModel? Twilio { get; init; }
@@ -32,6 +32,22 @@ namespace G
 #endif
         public bool IsTwilio => Twilio != null;
 
+        /// <summary>
+        /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GetPhoneNumberSIPTrunkResponseModel? SipTrunk { get; init; }
+#else
+        public global::G.GetPhoneNumberSIPTrunkResponseModel? SipTrunk { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SipTrunk))]
+#endif
+        public bool IsSipTrunk => SipTrunk != null;
         /// <summary>
         /// 
         /// </summary>
@@ -49,23 +65,6 @@ namespace G
         {
             Twilio = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GetPhoneNumberSIPTrunkResponseModel? SipTrunk { get; init; }
-#else
-        public global::G.GetPhoneNumberSIPTrunkResponseModel? SipTrunk { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SipTrunk))]
-#endif
-        public bool IsSipTrunk => SipTrunk != null;
 
         /// <summary>
         /// 

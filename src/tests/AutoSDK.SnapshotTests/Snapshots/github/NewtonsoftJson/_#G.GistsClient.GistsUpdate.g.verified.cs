@@ -256,7 +256,8 @@ namespace G
         /// The gist files to be updated, renamed, or deleted. Each `key` must match the current filename<br/>
         /// (including extension) of the targeted gist file. For example: `hello.py`.<br/>
         /// To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be<br/>
-        /// deleted if the specified object does not contain at least one of `content` or `filename`.
+        /// deleted if the specified object does not contain at least one of `content` or `filename`.<br/>
+        /// Example: {"hello.rb":{"content":"blah","filename":"goodbye.rb"}}
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

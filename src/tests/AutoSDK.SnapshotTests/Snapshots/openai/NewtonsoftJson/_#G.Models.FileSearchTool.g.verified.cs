@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FileSearchTool.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -41,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.AnyOf<global::G.Filters2?, object>? Filters { get; set; }
+        public global::G.Filters2? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,7 +66,7 @@ namespace G
             global::System.Collections.Generic.IList<string> vectorStoreIds,
             int? maxNumResults,
             global::G.RankingOptions? rankingOptions,
-            global::G.AnyOf<global::G.Filters2?, object>? filters,
+            global::G.Filters2? filters,
             global::G.FileSearchToolType type = global::G.FileSearchToolType.FileSearch)
         {
             this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant112? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaTextEditor20250124(
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant112? cacheControl,
             global::G.BetaTextEditor20250124Type type,
             global::G.BetaTextEditor20250124Name name)
         {

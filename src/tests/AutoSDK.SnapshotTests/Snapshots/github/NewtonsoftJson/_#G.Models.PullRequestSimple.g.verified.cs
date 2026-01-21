@@ -17,9 +17,9 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -154,26 +154,30 @@ namespace G
         public string? ActiveLockReason { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ClosedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("merged_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? MergedAt { get; set; } = default!;
 
@@ -261,7 +265,7 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347
         /// </param>
         /// <param name="id">
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="nodeId">
         /// Example: MDExOlB1bGxSZXF1ZXN0MQ==
@@ -318,10 +322,18 @@ namespace G
         /// <param name="activeLockReason">
         /// Example: too heated
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="closedAt"></param>
-        /// <param name="mergedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="closedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="mergedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
         /// <param name="mergeCommitSha">
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </param>

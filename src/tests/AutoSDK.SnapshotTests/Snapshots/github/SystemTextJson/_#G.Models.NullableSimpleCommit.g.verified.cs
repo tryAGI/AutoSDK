@@ -35,8 +35,10 @@ namespace G
         public required string Message { get; set; }
 
         /// <summary>
-        /// Timestamp of the commit
+        /// Timestamp of the commit<br/>
+        /// Example: 2014-08-09T08:02:04+12:00
         /// </summary>
+        /// <example>2014-08-09T08:02:04+12:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime Timestamp { get; set; }
@@ -76,7 +78,8 @@ namespace G
         /// Example: Fix #42
         /// </param>
         /// <param name="timestamp">
-        /// Timestamp of the commit
+        /// Timestamp of the commit<br/>
+        /// Example: 2014-08-09T08:02:04+12:00
         /// </param>
         /// <param name="author">
         /// Information about the Git author

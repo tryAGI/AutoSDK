@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatToolCallsChunkEventVariant2
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; }
-
-        /// <summary>
         /// Contains the chunk of the tool call generation in the stream.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call_delta", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ToolCallDelta ToolCallDelta { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallsChunkEventVariant2" /> class.
         /// </summary>
-        /// <param name="text"></param>
         /// <param name="toolCallDelta">
         /// Contains the chunk of the tool call generation in the stream.
         /// </param>
+        /// <param name="text"></param>
         public ChatToolCallsChunkEventVariant2(
             global::G.ToolCallDelta toolCallDelta,
             string? text)

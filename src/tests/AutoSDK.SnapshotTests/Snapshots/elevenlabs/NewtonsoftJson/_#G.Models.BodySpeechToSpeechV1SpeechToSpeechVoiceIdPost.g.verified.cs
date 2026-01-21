@@ -35,30 +35,24 @@ namespace G
         public string? VoiceSettings { get; set; }
 
         /// <summary>
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
-        /// Example: 12345
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </summary>
-        /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("seed")]
         public int? Seed { get; set; }
 
         /// <summary>
         /// If set, will remove the background noise from your audio input using our audio isolation model. Only applies to Voice Changer.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </summary>
-        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("remove_background_noise")]
         public bool? RemoveBackgroundNoise { get; set; }
 
         /// <summary>
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </summary>
-        /// <example>pcm_s16le_16</example>
         [global::Newtonsoft.Json.JsonProperty("file_format")]
-        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? FileFormat { get; set; }
+        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? FileFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,18 +77,15 @@ namespace G
         /// Voice settings overriding stored settings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.
         /// </param>
         /// <param name="seed">
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.<br/>
-        /// Example: 12345
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </param>
         /// <param name="removeBackgroundNoise">
         /// If set, will remove the background noise from your audio input using our audio isolation model. Only applies to Voice Changer.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
+        /// Default Value: false
         /// </param>
         /// <param name="fileFormat">
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-        /// Default Value: other<br/>
-        /// Example: pcm_s16le_16
+        /// Default Value: other
         /// </param>
         public BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost(
             byte[] audio,
@@ -103,7 +94,7 @@ namespace G
             string? voiceSettings,
             int? seed,
             bool? removeBackgroundNoise,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat)
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));

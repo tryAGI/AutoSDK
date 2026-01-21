@@ -10,7 +10,7 @@ namespace G
     public sealed partial class BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost
     {
         /// <summary>
-        /// 
+        /// Either 'like' or 'dislike' to indicate the feedback for the conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserFeedbackScoreJsonConverter))]
@@ -26,7 +26,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost" /> class.
         /// </summary>
-        /// <param name="feedback"></param>
+        /// <param name="feedback">
+        /// Either 'like' or 'dislike' to indicate the feedback for the conversation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

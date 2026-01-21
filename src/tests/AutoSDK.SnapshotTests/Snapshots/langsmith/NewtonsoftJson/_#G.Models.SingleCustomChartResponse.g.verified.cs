@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.CustomChartSeriesFilters? CommonFilters { get; set; }
+        public global::G.CustomChartSeriesFilters2? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,7 +94,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CustomChartSeries> series,
             string? description,
             object? metadata,
-            global::G.CustomChartSeriesFilters? commonFilters)
+            global::G.CustomChartSeriesFilters2? commonFilters)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id;

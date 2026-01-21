@@ -74,7 +74,6 @@ namespace G
         /// Whether the repository is private or public.<br/>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::Newtonsoft.Json.JsonProperty("private", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Private { get; set; } = default!;
 
@@ -468,7 +467,6 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasIssues { get; set; } = default!;
@@ -478,7 +476,6 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasProjects { get; set; } = default!;
@@ -488,7 +485,6 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_wiki", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasWiki { get; set; } = default!;
@@ -504,7 +500,6 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
-        /// <default>true</default>
         /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_downloads", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDownloads { get; set; } = default!;
@@ -513,7 +508,6 @@ namespace G
         /// Whether the repository is archived.<br/>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Archived { get; set; } = default!;
 
@@ -531,20 +525,23 @@ namespace G
         public string? Visibility { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("pushed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? PushedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:14:43Z
         /// </summary>
+        /// <example>2011-01-26T19:14:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
@@ -879,9 +876,15 @@ namespace G
         /// The repository visibility: public, private, or internal.<br/>
         /// Default Value: public
         /// </param>
-        /// <param name="pushedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="pushedAt">
+        /// Example: 2011-01-26T19:06:43Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:14:43Z
+        /// </param>
         /// <param name="allowRebaseMerge">
         /// Whether to allow rebase merges for pull requests.<br/>
         /// Default Value: true<br/>

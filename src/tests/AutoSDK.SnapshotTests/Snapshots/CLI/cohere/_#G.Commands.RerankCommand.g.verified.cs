@@ -13,18 +13,24 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
-            int? maxChunksPerDoc,
             string? model,
             string query,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
+            int? topN,
             global::System.Collections.Generic.IList<string>? rankFields,
             bool? returnDocuments,
-            int? topN,
+            int? maxChunksPerDoc,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
             global::G.RerankResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+        private global::System.CommandLine.Argument<string> Query { get; } = new(
+            name: "query")
+        {
+            Description = @"The search query",
+        };
 
         private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>>> Documents { get; } = new(
             name: "documents")
@@ -37,28 +43,22 @@ The total max chunks (length of documents * max_chunks_per_doc) must be less tha
 We recommend a maximum of 1,000 documents for optimal endpoint performance.",
         };
 
-        private global::System.CommandLine.Argument<string> Query { get; } = new(
-            name: "query")
-        {
-            Description = @"The search query",
-        };
-
         private global::System.CommandLine.Option<string?> XClientName { get; } = new(
             name: "xClientName")
         {
             Description = @"The name of the project that is making the request.",
         };
 
-        private global::System.CommandLine.Option<int?> MaxChunksPerDoc { get; } = new(
-            name: "maxChunksPerDoc")
-        {
-            Description = @"The maximum number of chunks to produce internally from a document",
-        };
-
         private global::System.CommandLine.Option<string?> Model { get; } = new(
             name: "model")
         {
             Description = @"The identifier of the model to use, eg `rerank-v3.5`.",
+        };
+
+        private global::System.CommandLine.Option<int?> TopN { get; } = new(
+            name: "topN")
+        {
+            Description = @"The number of most relevant documents or indices to return, defaults to the length of the documents",
         };
 
         private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> RankFields { get; } = new(
@@ -74,10 +74,10 @@ We recommend a maximum of 1,000 documents for optimal endpoint performance.",
 - If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request.",
         };
 
-        private global::System.CommandLine.Option<int?> TopN { get; } = new(
-            name: "topN")
+        private global::System.CommandLine.Option<int?> MaxChunksPerDoc { get; } = new(
+            name: "maxChunksPerDoc")
         {
-            Description = @"The number of most relevant documents or indices to return, defaults to the length of the documents",
+            Description = @"The maximum number of chunks to produce internally from a document",
         };
         public RerankCommand(
             G.IApi client,
@@ -88,14 +88,14 @@ We recommend a maximum of 1,000 documents for optimal endpoint performance.",
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Documents);
             Arguments.Add(Query);
+            Arguments.Add(Documents);
             Options.Add(XClientName);
-            Options.Add(MaxChunksPerDoc);
             Options.Add(Model);
+            Options.Add(TopN);
             Options.Add(RankFields);
             Options.Add(ReturnDocuments);
-            Options.Add(TopN);
+            Options.Add(MaxChunksPerDoc);
 
             Initialize();
 
@@ -107,36 +107,36 @@ We recommend a maximum of 1,000 documents for optimal endpoint performance.",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var xClientName = parseResult.GetRequiredValue(XClientName);
-            var documents = parseResult.GetRequiredValue(Documents);
-            var maxChunksPerDoc = parseResult.GetRequiredValue(MaxChunksPerDoc);
             var model = parseResult.GetRequiredValue(Model);
             var query = parseResult.GetRequiredValue(Query);
+            var documents = parseResult.GetRequiredValue(Documents);
+            var topN = parseResult.GetRequiredValue(TopN);
             var rankFields = parseResult.GetRequiredValue(RankFields);
             var returnDocuments = parseResult.GetRequiredValue(ReturnDocuments);
-            var topN = parseResult.GetRequiredValue(TopN);
+            var maxChunksPerDoc = parseResult.GetRequiredValue(MaxChunksPerDoc);
 
             Validate(
                 parseResult: parseResult,
                 xClientName: xClientName,
-                documents: documents,
-                maxChunksPerDoc: maxChunksPerDoc,
                 model: model,
                 query: query,
+                documents: documents,
+                topN: topN,
                 rankFields: rankFields,
                 returnDocuments: returnDocuments,
-                topN: topN,
+                maxChunksPerDoc: maxChunksPerDoc,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             var response = await _client.RerankAsync(
                 xClientName: xClientName,
-                documents: documents,
-                maxChunksPerDoc: maxChunksPerDoc,
                 model: model,
                 query: query,
+                documents: documents,
+                topN: topN,
                 rankFields: rankFields,
                 returnDocuments: returnDocuments,
-                topN: topN,
+                maxChunksPerDoc: maxChunksPerDoc,
                 cancellationToken: cancellationToken);
 
             Complete(

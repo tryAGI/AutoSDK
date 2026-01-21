@@ -68,15 +68,17 @@ namespace G
         public required string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2012-07-20T01:19:13Z
         /// </summary>
+        /// <example>2012-07-20T01:19:13Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -152,8 +154,12 @@ namespace G
         /// <param name="description">
         /// Example: Deploy request from hubot
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2012-07-20T01:19:13Z
+        /// </param>
         /// <param name="statusesUrl">
         /// Example: https://api.github.com/repos/octocat/example/deployments/1/statuses
         /// </param>

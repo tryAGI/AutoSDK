@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"available_for_tiers":["creator","enterprise"],"category":"professional","description":"A warm, expressive voice with a touch of humor.","fine_tuning":{"is_allowed_to_fine_tune":true,"manual_verification_requested":false,"state":{"eleven_multilingual_v2":"fine_tuned"},"verification_attempts_count":2,"verification_failures":[]},"high_quality_base_model_ids":["eleven_v2_flash","eleven_flash_v2","eleven_turbo_v2_5","eleven_multilingual_v2","eleven_v2_5_flash","eleven_flash_v2_5","eleven_turbo_v2"],"is_legacy":false,"is_mixed":false,"is_owner":false,"labels":{"accent":"American","age":"middle-aged","description":"expressive","gender":"female","use_case":"social media"},"name":"Rachel","preview_url":"https://storage.googleapis.com/eleven-public-prod/premade/voices/9BWtsMINqrJLrRacOk9x/405766b8-1f4e-4d3c-aba1-6f25333823ec.mp3","settings":{"similarity_boost":1,"speed":1,"stability":1,"style":0,"use_speaker_boost":true},"sharing":{"category":"professional","cloned_by_count":50,"date_unix":1714204800,"description":"A female voice with a soft and friendly tone.","disable_at_unix":1714204800,"enabled_in_library":true,"featured":true,"financial_rewards_enabled":true,"free_users_allowed":true,"history_item_sample_id":"DCwhRBWXzGAHq8TQ4Fs18","labels":{"accent":"American","gender":"female"},"liked_by_count":100,"live_moderation_enabled":true,"moderation_check":{"captcha_checks":[0.95,0.98],"captcha_ids":["captcha1","captcha2"],"date_checked_unix":1714204800,"description_check":true,"description_value":"A female voice with a soft and friendly tone.","name_check":true,"name_value":"Rachel","sample_checks":[0.95,0.98],"sample_ids":["sample1","sample2"]},"name":"Rachel","notice_period":30,"original_voice_id":"DCwhRBWXzGAHq8TQ4Fs18","public_owner_id":"DCwhRBWXzGAHq8TQ4Fs18","rate":0.05,"reader_app_enabled":true,"reader_restricted_on":[{"resource_id":"FCwhRBWXzGAHq8TQ4Fs18","resource_type":"read"}],"review_status":"allowed","status":"enabled","voice_mixing_allowed":false,"whitelisted_emails":["example@example.com"]},"verified_languages":{"accent":"American","language":"en","model_id":"eleven_turbo_v2_5"},"voice_id":"21m00Tcm4TlvDq8ikWAM","voice_verification":{"is_verified":true,"language":"en","requires_verification":false,"verification_attempts":[{"accepted":true,"date_unix":1714204800,"levenshtein_distance":2,"recording":{"mime_type":"audio/mpeg","recording_id":"CwhRBWXzGAHq8TQ4Fs17","size_bytes":1000000,"transcription":"Hello, how are you?","upload_date_unix":1714204800},"similarity":0.95,"text":"Hello, how are you?"}],"verification_attempts_count":0,"verification_failures":[]}}
     /// </summary>
     public sealed partial class VoiceResponseModel
     {
@@ -34,7 +34,7 @@ namespace G
         public global::G.VoiceResponseModelCategory Category { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Fine-tuning information for the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fine_tuning")]
         public global::G.FineTuningResponseModel? FineTuning { get; set; }
@@ -64,13 +64,13 @@ namespace G
         public global::System.Collections.Generic.IList<string> AvailableForTiers { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The settings of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings")]
         public global::G.VoiceSettingsResponseModel? Settings { get; set; }
 
         /// <summary>
-        /// 
+        /// The sharing information of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sharing")]
         public global::G.VoiceSharingResponseModel? Sharing { get; set; }
@@ -91,10 +91,10 @@ namespace G
         /// The safety controls of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safety_control")]
-        public global::G.VoiceResponseModelSafetyControl? SafetyControl { get; set; }
+        public global::G.VoiceResponseModelSafetyControl2? SafetyControl { get; set; }
 
         /// <summary>
-        /// 
+        /// The voice verification of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_verification")]
         public global::G.VoiceVerificationResponseModel? VoiceVerification { get; set; }
@@ -152,7 +152,9 @@ namespace G
         /// <param name="category">
         /// The category of the voice.
         /// </param>
-        /// <param name="fineTuning"></param>
+        /// <param name="fineTuning">
+        /// Fine-tuning information for the voice.
+        /// </param>
         /// <param name="labels">
         /// Labels associated with the voice.
         /// </param>
@@ -165,8 +167,12 @@ namespace G
         /// <param name="availableForTiers">
         /// The tiers the voice is available for.
         /// </param>
-        /// <param name="settings"></param>
-        /// <param name="sharing"></param>
+        /// <param name="settings">
+        /// The settings of the voice.
+        /// </param>
+        /// <param name="sharing">
+        /// The sharing information of the voice.
+        /// </param>
         /// <param name="highQualityBaseModelIds">
         /// The base model IDs for high-quality voices.
         /// </param>
@@ -176,7 +182,9 @@ namespace G
         /// <param name="safetyControl">
         /// The safety controls of the voice.
         /// </param>
-        /// <param name="voiceVerification"></param>
+        /// <param name="voiceVerification">
+        /// The voice verification of the voice.
+        /// </param>
         /// <param name="permissionOnResource">
         /// The permission on the resource of the voice.
         /// </param>
@@ -208,7 +216,7 @@ namespace G
             global::G.VoiceSettingsResponseModel? settings,
             global::G.VoiceSharingResponseModel? sharing,
             global::System.Collections.Generic.IList<global::G.VerifiedVoiceLanguageResponseModel>? verifiedLanguages,
-            global::G.VoiceResponseModelSafetyControl? safetyControl,
+            global::G.VoiceResponseModelSafetyControl2? safetyControl,
             global::G.VoiceVerificationResponseModel? voiceVerification,
             string? permissionOnResource,
             bool? isOwner,

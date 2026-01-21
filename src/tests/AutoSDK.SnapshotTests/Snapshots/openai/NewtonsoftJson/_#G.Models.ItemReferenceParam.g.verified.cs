@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ItemReferenceParam.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.AnyOf<global::G.ItemReferenceParamType?, object>? Type { get; set; }
+        public global::G.ItemReferenceParamType2? Type { get; set; }
 
         /// <summary>
         /// The ID of the item to reference.
@@ -38,7 +36,7 @@ namespace G
         /// </param>
         public ItemReferenceParam(
             string id,
-            global::G.AnyOf<global::G.ItemReferenceParamType?, object>? type)
+            global::G.ItemReferenceParamType2? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

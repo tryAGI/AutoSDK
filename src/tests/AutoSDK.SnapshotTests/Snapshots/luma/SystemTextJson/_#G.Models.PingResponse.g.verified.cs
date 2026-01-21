@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"message":"pong"}
     /// </summary>
     public sealed partial class PingResponse
     {

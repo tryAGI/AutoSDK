@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Output of the embedding service
+    /// Output of the embedding service<br/>
+    /// Example: {"data":[{"index":0,"embeddings":[[0.1,0.2,0.3],[0.4,0.5,0.6]],"object":"embeddings"},{"index":1,"embeddings":[[0.6,0.5,0.4],[0.3,0.2,0.1]],"object":"embeddings"}],"usage":{"total_tokens":15,"prompt_tokens":15}}
     /// </summary>
     public sealed partial class ColbertModelEmbeddingsOutput
     {

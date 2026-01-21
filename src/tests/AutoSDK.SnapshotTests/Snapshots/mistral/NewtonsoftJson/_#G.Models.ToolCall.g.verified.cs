@@ -10,28 +10,28 @@ namespace G
     public sealed partial class ToolCall
     {
         /// <summary>
+        /// Default Value: null
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: function
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ToolTypes? Type { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.FunctionCall Function { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public int? Index { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolTypes? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,22 +42,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCall" /> class.
         /// </summary>
+        /// <param name="id">
+        /// Default Value: null
+        /// </param>
+        /// <param name="type">
+        /// Default Value: function
+        /// </param>
         /// <param name="function"></param>
-        /// <param name="id"></param>
         /// <param name="index">
         /// Default Value: 0
         /// </param>
-        /// <param name="type"></param>
         public ToolCall(
             global::G.FunctionCall function,
             string? id,
-            int? index,
-            global::G.ToolTypes? type)
+            global::G.ToolTypes? type,
+            int? index)
         {
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id;
-            this.Index = index;
             this.Type = type;
+            this.Index = index;
         }
 
         /// <summary>

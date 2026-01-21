@@ -41,13 +41,13 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListReposApiV1ReposGetIsArchived? isArchived = default,
-            global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
+            global::G.ListReposApiV1ReposGetIsArchived2? isArchived = default,
+            global::G.ListReposApiV1ReposGetIsPublic2? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,
+            global::G.AnyOf<string, string, object>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

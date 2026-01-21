@@ -19,9 +19,9 @@ namespace G
 
         /// <summary>
         /// The project card's ID<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -50,15 +50,17 @@ namespace G
         public required global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:21:06Z
         /// </summary>
+        /// <example>2016-09-05T14:21:06Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:20:22Z
         /// </summary>
+        /// <example>2016-09-05T14:20:22Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -120,7 +122,7 @@ namespace G
         /// </param>
         /// <param name="id">
         /// The project card's ID<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId">
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==
@@ -131,8 +133,12 @@ namespace G
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-09-05T14:21:06Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2016-09-05T14:20:22Z
+        /// </param>
         /// <param name="archived">
         /// Whether or not the card is archived<br/>
         /// Example: false

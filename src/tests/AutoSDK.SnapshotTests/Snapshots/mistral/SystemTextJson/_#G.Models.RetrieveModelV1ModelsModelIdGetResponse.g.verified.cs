@@ -33,6 +33,22 @@ namespace G
         public bool IsBase => Base != null;
 
         /// <summary>
+        /// Extra fields for fine-tuned models.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.FTModelCard? FineTuned { get; init; }
+#else
+        public global::G.FTModelCard? FineTuned { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
+#endif
+        public bool IsFineTuned => FineTuned != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.BaseModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::G.BaseModelCard?)value);
@@ -49,23 +65,6 @@ namespace G
         {
             Base = value;
         }
-
-        /// <summary>
-        /// Extra fields for fine-tuned models.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.FTModelCard? FineTuned { get; init; }
-#else
-        public global::G.FTModelCard? FineTuned { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
-#endif
-        public bool IsFineTuned => FineTuned != null;
 
         /// <summary>
         /// 

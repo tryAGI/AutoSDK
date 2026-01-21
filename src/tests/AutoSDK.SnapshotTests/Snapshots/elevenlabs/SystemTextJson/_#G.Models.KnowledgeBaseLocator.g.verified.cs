@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"123","name":"My Knowledge Base","type":"file","usage_mode":"auto"}
     /// </summary>
     public sealed partial class KnowledgeBaseLocator
     {
         /// <summary>
-        /// 
+        /// The type of the knowledge base
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseDocumentTypeJsonConverter))]
@@ -32,7 +32,8 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The usage mode of the knowledge base<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DocumentUsageModeEnumJsonConverter))]
@@ -47,14 +48,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeBaseLocator" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// The type of the knowledge base
+        /// </param>
         /// <param name="name">
         /// The name of the knowledge base
         /// </param>
         /// <param name="id">
         /// The ID of the knowledge base
         /// </param>
-        /// <param name="usageMode"></param>
+        /// <param name="usageMode">
+        /// The usage mode of the knowledge base<br/>
+        /// Default Value: auto
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

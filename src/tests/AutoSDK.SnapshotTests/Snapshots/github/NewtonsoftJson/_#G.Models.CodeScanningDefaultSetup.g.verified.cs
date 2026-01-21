@@ -28,8 +28,10 @@ namespace G
         public global::G.CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
-        /// Timestamp of latest configuration update.
+        /// Timestamp of latest configuration update.<br/>
+        /// Example: 2023-12-06T14:20:20.000Z
         /// </summary>
+        /// <example>2023-12-06T14:20:20.000Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -58,7 +60,8 @@ namespace G
         /// CodeQL query suite to be used.
         /// </param>
         /// <param name="updatedAt">
-        /// Timestamp of latest configuration update.
+        /// Timestamp of latest configuration update.<br/>
+        /// Example: 2023-12-06T14:20:20.000Z
         /// </param>
         /// <param name="schedule">
         /// The frequency of the periodic analysis.

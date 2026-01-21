@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"account_urls":["https://www.linkedin.com/company/github/","https://twitter.com/github"]}
     /// </summary>
     public sealed partial class UsersAddSocialAccountForAuthenticatedUserRequest
     {

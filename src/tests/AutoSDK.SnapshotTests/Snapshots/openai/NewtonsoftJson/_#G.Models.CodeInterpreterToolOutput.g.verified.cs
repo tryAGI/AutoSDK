@@ -28,6 +28,22 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// The output of a code interpreter tool call that is a file.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CodeInterpreterFileOutput? File { get; init; }
+#else
+        public global::G.CodeInterpreterFileOutput? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterTextOutput value) => new CodeInterpreterToolOutput((global::G.CodeInterpreterTextOutput?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// The output of a code interpreter tool call that is a file.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterFileOutput? File { get; init; }
-#else
-        public global::G.CodeInterpreterFileOutput? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 

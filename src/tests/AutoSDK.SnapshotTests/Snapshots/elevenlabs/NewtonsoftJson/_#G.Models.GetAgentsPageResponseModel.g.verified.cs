@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"has_more":false,"next_cursor":"123"}
     /// </summary>
     public sealed partial class GetAgentsPageResponseModel
     {

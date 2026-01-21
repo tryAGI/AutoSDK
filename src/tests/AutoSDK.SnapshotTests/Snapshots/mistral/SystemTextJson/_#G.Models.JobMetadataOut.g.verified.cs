@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expected_duration_seconds")]
+        public int? ExpectedDurationSeconds { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
 
@@ -20,6 +26,18 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_currency")]
         public string? CostCurrency { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens_per_step")]
+        public int? TrainTokensPerStep { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens")]
+        public int? TrainTokens { get; set; }
 
         /// <summary>
         /// 
@@ -34,24 +52,6 @@ namespace G
         public int? EstimatedStartTime { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expected_duration_seconds")]
-        public int? ExpectedDurationSeconds { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens")]
-        public int? TrainTokens { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens_per_step")]
-        public int? TrainTokensPerStep { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,32 +60,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JobMetadataOut" /> class.
         /// </summary>
+        /// <param name="expectedDurationSeconds"></param>
         /// <param name="cost"></param>
         /// <param name="costCurrency"></param>
+        /// <param name="trainTokensPerStep"></param>
+        /// <param name="trainTokens"></param>
         /// <param name="dataTokens"></param>
         /// <param name="estimatedStartTime"></param>
-        /// <param name="expectedDurationSeconds"></param>
-        /// <param name="trainTokens"></param>
-        /// <param name="trainTokensPerStep"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public JobMetadataOut(
+            int? expectedDurationSeconds,
             double? cost,
             string? costCurrency,
-            int? dataTokens,
-            int? estimatedStartTime,
-            int? expectedDurationSeconds,
+            int? trainTokensPerStep,
             int? trainTokens,
-            int? trainTokensPerStep)
+            int? dataTokens,
+            int? estimatedStartTime)
         {
+            this.ExpectedDurationSeconds = expectedDurationSeconds;
             this.Cost = cost;
             this.CostCurrency = costCurrency;
+            this.TrainTokensPerStep = trainTokensPerStep;
+            this.TrainTokens = trainTokens;
             this.DataTokens = dataTokens;
             this.EstimatedStartTime = estimatedStartTime;
-            this.ExpectedDurationSeconds = expectedDurationSeconds;
-            this.TrainTokens = trainTokens;
-            this.TrainTokensPerStep = trainTokensPerStep;
         }
 
         /// <summary>

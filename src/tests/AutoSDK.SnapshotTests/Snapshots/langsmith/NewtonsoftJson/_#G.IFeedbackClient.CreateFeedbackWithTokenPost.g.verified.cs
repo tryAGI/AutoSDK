@@ -32,10 +32,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string>? value = default,
+            global::G.AnyOf<double?, int?, bool?, object>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
-            global::G.AnyOf<object, string>? correction = default,
+            global::G.AnyOf<object, string, object>? correction = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

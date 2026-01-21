@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"webhooks":[{"auth_type":"hmac","created_at_unix":123456789,"is_auto_disabled":false,"is_disabled":false,"most_recent_failure_error_code":404,"most_recent_failure_timestamp":123456799,"name":"My Webhook","usage":[{"usage_type":"CONVAI_PLATFORM"}],"webhook_id":"123","webhook_url":"https://elevenlabs.io/example-callback-url"}]}
     /// </summary>
     public sealed partial class WorkspaceWebhookListResponseModel
     {

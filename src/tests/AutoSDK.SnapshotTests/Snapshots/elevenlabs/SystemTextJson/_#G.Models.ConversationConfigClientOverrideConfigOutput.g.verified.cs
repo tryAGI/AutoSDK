@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ConversationConfigClientOverrideConfigOutput
     {
         /// <summary>
-        /// 
+        /// Configures overrides for nested fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tts")]
         public global::G.TTSConversationalConfigOverrideConfig? Tts { get; set; }
 
         /// <summary>
-        /// 
+        /// Configures overrides for nested fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::G.ConversationConfigOverrideConfig? Conversation { get; set; }
 
         /// <summary>
-        /// 
+        /// Configures overrides for nested fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::G.AgentConfigOverrideConfig? Agent { get; set; }
@@ -36,9 +36,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideConfigOutput" /> class.
         /// </summary>
-        /// <param name="tts"></param>
-        /// <param name="conversation"></param>
-        /// <param name="agent"></param>
+        /// <param name="tts">
+        /// Configures overrides for nested fields.
+        /// </param>
+        /// <param name="conversation">
+        /// Configures overrides for nested fields.
+        /// </param>
+        /// <param name="agent">
+        /// Configures overrides for nested fields.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

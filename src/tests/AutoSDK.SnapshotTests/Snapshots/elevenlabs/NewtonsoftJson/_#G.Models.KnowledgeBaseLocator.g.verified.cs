@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"id":"123","name":"My Knowledge Base","type":"file","usage_mode":"auto"}
     /// </summary>
     public sealed partial class KnowledgeBaseLocator
     {
         /// <summary>
-        /// 
+        /// The type of the knowledge base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.KnowledgeBaseDocumentType Type { get; set; } = default!;
@@ -28,7 +28,8 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The usage mode of the knowledge base<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_mode")]
         public global::G.DocumentUsageModeEnum? UsageMode { get; set; }
@@ -42,14 +43,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeBaseLocator" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">
+        /// The type of the knowledge base
+        /// </param>
         /// <param name="name">
         /// The name of the knowledge base
         /// </param>
         /// <param name="id">
         /// The ID of the knowledge base
         /// </param>
-        /// <param name="usageMode"></param>
+        /// <param name="usageMode">
+        /// The usage mode of the knowledge base<br/>
+        /// Default Value: auto
+        /// </param>
         public KnowledgeBaseLocator(
             global::G.KnowledgeBaseDocumentType type,
             string name,

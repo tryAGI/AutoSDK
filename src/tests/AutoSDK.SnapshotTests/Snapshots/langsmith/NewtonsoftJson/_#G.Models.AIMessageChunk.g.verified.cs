@@ -33,7 +33,7 @@ namespace G
         /// Default Value: AIMessageChunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.AIMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -66,26 +66,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.InvalidToolCall>? InvalidToolCalls { get; set; }
 
         /// <summary>
-        /// Usage metadata for a message, such as token counts.<br/>
-        /// This is a standard representation of token usage that is consistent across models.<br/>
-        /// Example:<br/>
-        ///     .. code-block:: python<br/>
-        ///         {<br/>
-        ///             "input_tokens": 350,<br/>
-        ///             "output_tokens": 240,<br/>
-        ///             "total_tokens": 590,<br/>
-        ///             "input_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "cache_creation": 200,<br/>
-        ///                 "cache_read": 100,<br/>
-        ///             },<br/>
-        ///             "output_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "reasoning": 200,<br/>
-        ///             }<br/>
-        ///         }<br/>
-        /// .. versionchanged:: 0.3.9<br/>
-        ///     Added ``input_token_details`` and ``output_token_details``.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_metadata")]
         public global::G.UsageMetadata? UsageMetadata { get; set; }
@@ -122,28 +103,7 @@ namespace G
         /// <param name="invalidToolCalls">
         /// Default Value: []
         /// </param>
-        /// <param name="usageMetadata">
-        /// Usage metadata for a message, such as token counts.<br/>
-        /// This is a standard representation of token usage that is consistent across models.<br/>
-        /// Example:<br/>
-        ///     .. code-block:: python<br/>
-        ///         {<br/>
-        ///             "input_tokens": 350,<br/>
-        ///             "output_tokens": 240,<br/>
-        ///             "total_tokens": 590,<br/>
-        ///             "input_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "cache_creation": 200,<br/>
-        ///                 "cache_read": 100,<br/>
-        ///             },<br/>
-        ///             "output_token_details": {<br/>
-        ///                 "audio": 10,<br/>
-        ///                 "reasoning": 200,<br/>
-        ///             }<br/>
-        ///         }<br/>
-        /// .. versionchanged:: 0.3.9<br/>
-        ///     Added ``input_token_details`` and ``output_token_details``.
-        /// </param>
+        /// <param name="usageMetadata"></param>
         /// <param name="toolCallChunks">
         /// Default Value: []
         /// </param>
@@ -151,7 +111,7 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.AIMessageChunkType? type,
+            string? type,
             string? name,
             string? id,
             bool? example,

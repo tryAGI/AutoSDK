@@ -12,19 +12,19 @@ namespace G
     public sealed partial class ClassificationRequest
     {
         /// <summary>
+        /// ID of the model to use.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
+
+        /// <summary>
         /// Text to classify.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
-
-        /// <summary>
-        /// ID of the model to use.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,21 +35,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationRequest" /> class.
         /// </summary>
-        /// <param name="input">
-        /// Text to classify.
-        /// </param>
         /// <param name="model">
         /// ID of the model to use.
+        /// </param>
+        /// <param name="input">
+        /// Text to classify.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClassificationRequest(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
-            string model)
+            string model,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input)
         {
-            this.Input = input;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input;
         }
 
         /// <summary>

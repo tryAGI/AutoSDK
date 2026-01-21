@@ -17,7 +17,7 @@ namespace G
             string? xiApiKey,
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string> input,
-            global::G.OpenAIEmbeddingsInEncodingFormat? encodingFormat,
+            string? encodingFormat,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -54,7 +54,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.OpenAIEmbeddingsInEncodingFormat?> EncodingFormat { get; } = new(
+        private global::System.CommandLine.Option<string?> EncodingFormat { get; } = new(
             name: "encodingFormat")
         {
             Description = @"format used when encoding",

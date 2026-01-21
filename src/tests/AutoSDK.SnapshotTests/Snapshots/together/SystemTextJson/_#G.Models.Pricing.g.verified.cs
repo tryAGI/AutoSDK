@@ -13,22 +13,6 @@ namespace G
         /// Example: 0
         /// </summary>
         /// <example>0</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("base")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Base { get; set; }
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        /// <example>0</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finetune")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Finetune { get; set; }
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hourly")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Hourly { get; set; }
@@ -50,6 +34,22 @@ namespace G
         public required double Output { get; set; }
 
         /// <summary>
+        /// Example: 0
+        /// </summary>
+        /// <example>0</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("base")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Base { get; set; }
+
+        /// <summary>
+        /// Example: 0
+        /// </summary>
+        /// <example>0</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finetune")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Finetune { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -58,12 +58,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Pricing" /> class.
         /// </summary>
-        /// <param name="base">
-        /// Example: 0
-        /// </param>
-        /// <param name="finetune">
-        /// Example: 0
-        /// </param>
         /// <param name="hourly">
         /// Example: 0
         /// </param>
@@ -73,21 +67,27 @@ namespace G
         /// <param name="output">
         /// Example: 0.3
         /// </param>
+        /// <param name="base">
+        /// Example: 0
+        /// </param>
+        /// <param name="finetune">
+        /// Example: 0
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Pricing(
-            double @base,
-            double finetune,
             double hourly,
             double input,
-            double output)
+            double output,
+            double @base,
+            double finetune)
         {
-            this.Base = @base;
-            this.Finetune = finetune;
             this.Hourly = hourly;
             this.Input = input;
             this.Output = output;
+            this.Base = @base;
+            this.Finetune = finetune;
         }
 
         /// <summary>

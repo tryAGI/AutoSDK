@@ -11,13 +11,6 @@ namespace G
     public sealed partial class EmbedByTypeResponseEmbeddings
     {
         /// <summary>
-        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
-        /// Included only in responses
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("binary")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Binary { get; set; }
-
-        /// <summary>
         /// An array of float embeddings.<br/>
         /// Included only in responses
         /// </summary>
@@ -32,17 +25,24 @@ namespace G
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Int8 { get; set; }
 
         /// <summary>
-        /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ubinary")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Ubinary { get; set; }
-
-        /// <summary>
         /// An array of unsigned int8 embeddings. Each value is between 0 and 255.<br/>
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uint8")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Uint8 { get; set; }
+
+        /// <summary>
+        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("binary")]
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Binary { get; set; }
+
+        /// <summary>
+        /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("ubinary")]
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Ubinary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,10 +53,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedByTypeResponseEmbeddings" /> class.
         /// </summary>
-        /// <param name="binary">
-        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="float">
         /// An array of float embeddings.<br/>
         /// Included only in responses
@@ -65,25 +61,29 @@ namespace G
         /// An array of signed int8 embeddings. Each value is between -128 and 127.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="ubinary">
-        /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
-        /// </param>
         /// <param name="uint8">
         /// An array of unsigned int8 embeddings. Each value is between 0 and 255.<br/>
         /// Included only in responses
         /// </param>
+        /// <param name="binary">
+        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="ubinary">
+        /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
+        /// </param>
         public EmbedByTypeResponseEmbeddings(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? binary,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? @float,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? int8,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? ubinary,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? uint8)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? uint8,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? binary,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? ubinary)
         {
-            this.Binary = binary;
             this.Float = @float;
             this.Int8 = int8;
-            this.Ubinary = ubinary;
             this.Uint8 = uint8;
+            this.Binary = binary;
+            this.Ubinary = ubinary;
         }
 
         /// <summary>

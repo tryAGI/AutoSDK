@@ -28,6 +28,73 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MessageStreamEventVariant2? Value2 { get; init; }
+#else
+        public global::G.MessageStreamEventVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MessageStreamEventVariant3? Value3 { get; init; }
+#else
+        public global::G.MessageStreamEventVariant3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MessageStreamEventVariant4? Value4 { get; init; }
+#else
+        public global::G.MessageStreamEventVariant4? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MessageStreamEventVariant5? Value5 { get; init; }
+#else
+        public global::G.MessageStreamEventVariant5? Value5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+#endif
+        public bool IsValue5 => Value5 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant1 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant1?)value);
@@ -44,23 +111,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant2? Value2 { get; init; }
-#else
-        public global::G.MessageStreamEventVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 
@@ -81,23 +131,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant3? Value3 { get; init; }
-#else
-        public global::G.MessageStreamEventVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant3 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant3?)value);
@@ -116,23 +149,6 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant4? Value4 { get; init; }
-#else
-        public global::G.MessageStreamEventVariant4? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant4 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant4?)value);
@@ -149,23 +165,6 @@ namespace G
         {
             Value4 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant5? Value5 { get; init; }
-#else
-        public global::G.MessageStreamEventVariant5? Value5 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
-#endif
-        public bool IsValue5 => Value5 != null;
 
         /// <summary>
         /// 

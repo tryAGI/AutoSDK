@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score")]
-        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
+        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.AnyOf<double?, int?, bool?, string>? Value { get; set; }
+        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::G.AnyOf<object, string>? Correction { get; set; }
+        public global::G.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
@@ -56,10 +56,10 @@ namespace G
         /// <param name="correction"></param>
         /// <param name="metadata"></param>
         public FeedbackCreateWithTokenExtendedSchema(
-            global::G.AnyOf<double?, int?, bool?>? score,
-            global::G.AnyOf<double?, int?, bool?, string>? value,
+            global::G.AnyOf<double?, int?, bool?, object>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
-            global::G.AnyOf<object, string>? correction,
+            global::G.AnyOf<object, string, object>? correction,
             object? metadata)
         {
             this.Score = score;

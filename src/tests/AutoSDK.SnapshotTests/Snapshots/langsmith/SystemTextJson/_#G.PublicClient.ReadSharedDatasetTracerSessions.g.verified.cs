@@ -53,7 +53,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy"></param>
+        /// <param name="sortBy">
+        /// Default Value: start_time
+        /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -106,7 +108,7 @@ namespace G
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id?.ToString()) 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("name_contains", nameContains) 
                 .AddOptionalParameter("dataset_version", datasetVersion) 

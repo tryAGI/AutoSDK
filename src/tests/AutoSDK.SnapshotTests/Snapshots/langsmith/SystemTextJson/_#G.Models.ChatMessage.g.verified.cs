@@ -35,8 +35,7 @@ namespace G
         /// Default Value: chat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatMessageTypeJsonConverter))]
-        public global::G.ChatMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -83,7 +82,7 @@ namespace G
             string role,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ChatMessageType? type,
+            string? type,
             string? name,
             string? id)
         {

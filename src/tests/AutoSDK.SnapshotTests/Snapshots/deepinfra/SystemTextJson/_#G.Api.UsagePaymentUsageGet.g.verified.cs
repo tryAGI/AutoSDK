@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string from,
             ref string? to,
-            ref string? session);
+            object? session);
         partial void PrepareUsagePaymentUsageGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string from,
             string? to,
-            string? session);
+            object? session);
         partial void ProcessUsagePaymentUsageGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UsageOut> UsagePaymentUsageGetAsync(
             string from,
             string? to = default,
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -50,7 +50,7 @@ namespace G
                 httpClient: HttpClient,
                 from: ref from,
                 to: ref to,
-                session: ref session);
+                session: session);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/usage",

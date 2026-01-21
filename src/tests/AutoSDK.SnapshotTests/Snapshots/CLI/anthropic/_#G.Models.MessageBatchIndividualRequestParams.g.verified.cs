@@ -11,10 +11,8 @@ namespace G
     {
         /// <summary>
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </summary>
-        /// <example>my-custom-id-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CustomId { get; set; }
@@ -38,8 +36,7 @@ namespace G
         /// </summary>
         /// <param name="customId">
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </param>
         /// <param name="params">
         /// Messages API creation parameters for the individual request. <br/>

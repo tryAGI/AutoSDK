@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier for the label.<br/>
-        /// Example: 208045946L
+        /// Example: 208045946
         /// </summary>
-        /// <example>208045946L</example>
+        /// <example>208045946</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -75,7 +75,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier for the label.<br/>
-        /// Example: 208045946L
+        /// Example: 208045946
         /// </param>
         /// <param name="nodeId">
         /// Example: MDU6TGFiZWwyMDgwNDU5NDY=

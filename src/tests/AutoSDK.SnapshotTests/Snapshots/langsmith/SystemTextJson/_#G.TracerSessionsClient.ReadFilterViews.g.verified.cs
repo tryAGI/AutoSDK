@@ -9,7 +9,7 @@ namespace G
         partial void PrepareReadFilterViewsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::G.FilterViewType? type);
+            global::G.FilterViewType? type);
         partial void PrepareReadFilterViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -42,13 +42,13 @@ namespace G
             PrepareReadFilterViewsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                type: ref type);
+                type: type);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/sessions/{sessionId}/views",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("type", type?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

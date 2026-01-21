@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+        public global::G.InstructRequestMessageDiscriminatorRole? Role { get; }
 
         /// <summary>
         /// 
@@ -35,6 +35,56 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.UserMessage? User { get; init; }
+#else
+        public global::G.UserMessage? User { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
+#endif
+        public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AssistantMessage? Assistant { get; init; }
+#else
+        public global::G.AssistantMessage? Assistant { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolMessage? Tool { get; init; }
+#else
+        public global::G.ToolMessage? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesItem2(global::G.SystemMessage value) => new MessagesItem2((global::G.SystemMessage?)value);
 
         /// <summary>
@@ -49,23 +99,6 @@ namespace G
         {
             System = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.UserMessage? User { get; init; }
-#else
-        public global::G.UserMessage? User { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
-#endif
-        public bool IsUser => User != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AssistantMessage? Assistant { get; init; }
-#else
-        public global::G.AssistantMessage? Assistant { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator MessagesItem2(global::G.AssistantMessage value) => new MessagesItem2((global::G.AssistantMessage?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace G
         {
             Assistant = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ToolMessage? Tool { get; init; }
-#else
-        public global::G.ToolMessage? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
 
         /// <summary>
         /// 
@@ -159,7 +158,7 @@ namespace G
         /// 
         /// </summary>
         public MessagesItem2(
-            global::G.ChatCompletionRequestMessageDiscriminatorRole? role,
+            global::G.InstructRequestMessageDiscriminatorRole? role,
             global::G.SystemMessage? system,
             global::G.UserMessage? user,
             global::G.AssistantMessage? assistant,

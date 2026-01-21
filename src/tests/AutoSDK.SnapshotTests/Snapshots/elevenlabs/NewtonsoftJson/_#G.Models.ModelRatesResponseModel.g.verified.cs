@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"character_cost_multiplier":1}
     /// </summary>
     public sealed partial class ModelRatesResponseModel
     {

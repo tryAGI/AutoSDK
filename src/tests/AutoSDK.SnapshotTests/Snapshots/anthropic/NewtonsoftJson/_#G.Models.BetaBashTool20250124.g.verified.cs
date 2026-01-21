@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant13? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
         public BetaBashTool20250124(
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant13? cacheControl,
             global::G.BetaBashTool20250124Type type,
             global::G.BetaBashTool20250124Name name)
         {

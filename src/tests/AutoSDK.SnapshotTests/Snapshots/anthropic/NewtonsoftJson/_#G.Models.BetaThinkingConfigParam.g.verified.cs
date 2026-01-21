@@ -37,6 +37,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaThinkingConfigDisabled? Disabled { get; init; }
+#else
+        public global::G.BetaThinkingConfigDisabled? Disabled { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Disabled))]
+#endif
+        public bool IsDisabled => Disabled != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigEnabled value) => new BetaThinkingConfigParam((global::G.BetaThinkingConfigEnabled?)value);
 
         /// <summary>
@@ -51,23 +67,6 @@ namespace G
         {
             Enabled = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.BetaThinkingConfigDisabled? Disabled { get; init; }
-#else
-        public global::G.BetaThinkingConfigDisabled? Disabled { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Disabled))]
-#endif
-        public bool IsDisabled => Disabled != null;
 
         /// <summary>
         /// 

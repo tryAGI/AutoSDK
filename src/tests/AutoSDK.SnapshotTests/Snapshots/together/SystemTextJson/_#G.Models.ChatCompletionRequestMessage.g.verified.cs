@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ChatCompletionRequestMessage
     {
         /// <summary>
-        /// The contents of the message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
-
-        /// <summary>
         /// The role of the messages author. Choice between: system, user, or assistant.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatCompletionRequestMessageRole Role { get; set; }
+
+        /// <summary>
+        /// The contents of the message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,21 +33,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The contents of the message.
-        /// </param>
         /// <param name="role">
         /// The role of the messages author. Choice between: system, user, or assistant.
+        /// </param>
+        /// <param name="content">
+        /// The contents of the message.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestMessage(
-            string content,
-            global::G.ChatCompletionRequestMessageRole role)
+            global::G.ChatCompletionRequestMessageRole role,
+            string content)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

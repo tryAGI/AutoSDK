@@ -60,15 +60,17 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:18:44Z
         /// </summary>
+        /// <example>2016-09-05T14:18:44Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-09-05T14:22:28Z
         /// </summary>
+        /// <example>2016-09-05T14:22:28Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -102,8 +104,12 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-09-05T14:18:44Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2016-09-05T14:22:28Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

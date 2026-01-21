@@ -10,19 +10,8 @@ namespace G
     public sealed partial class DeleteModelOut
     {
         /// <summary>
-        /// The deletion status<br/>
-        /// Default Value: true<br/>
-        /// Example: true
+        /// The ID of the deleted model.
         /// </summary>
-        /// <example>true</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        public bool? Deleted { get; set; }
-
-        /// <summary>
-        /// The ID of the deleted model.<br/>
-        /// Example: ft:open-mistral-7b:587a6b29:20240514:7e773925
-        /// </summary>
-        /// <example>ft:open-mistral-7b:587a6b29:20240514:7e773925</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -35,6 +24,13 @@ namespace G
         public string? Object { get; set; }
 
         /// <summary>
+        /// The deletion status<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        public bool? Deleted { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,30 +39,28 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteModelOut" /> class.
         /// </summary>
-        /// <param name="deleted">
-        /// The deletion status<br/>
-        /// Default Value: true<br/>
-        /// Example: true
-        /// </param>
         /// <param name="id">
-        /// The ID of the deleted model.<br/>
-        /// Example: ft:open-mistral-7b:587a6b29:20240514:7e773925
+        /// The ID of the deleted model.
         /// </param>
         /// <param name="object">
         /// The object type that was deleted<br/>
         /// Default Value: model
+        /// </param>
+        /// <param name="deleted">
+        /// The deletion status<br/>
+        /// Default Value: true
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteModelOut(
             string id,
-            bool? deleted,
-            string? @object)
+            string? @object,
+            bool? deleted)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>

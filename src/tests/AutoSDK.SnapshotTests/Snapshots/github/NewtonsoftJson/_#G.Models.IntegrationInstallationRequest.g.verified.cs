@@ -39,8 +39,9 @@ namespace G
         public global::G.SimpleUser Requester { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2022-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2022-07-08T16:18:44-04:00</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -64,7 +65,9 @@ namespace G
         /// <param name="requester">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2022-07-08T16:18:44-04:00
+        /// </param>
         public IntegrationInstallationRequest(
             int id,
             global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise> account,

@@ -20,18 +20,18 @@ namespace G
 
         /// <summary>
         /// The ID of the pull request review to which the comment belongs.<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// The ID of the pull request review comment.<br/>
-        /// Example: 1L
+        /// Example: 1
         /// </summary>
-        /// <example>1L</example>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -122,15 +122,17 @@ namespace G
         public required string Body { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-04-14T16:00:49Z
         /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -260,11 +262,11 @@ namespace G
         /// </param>
         /// <param name="pullRequestReviewId">
         /// The ID of the pull request review to which the comment belongs.<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="id">
         /// The ID of the pull request review comment.<br/>
-        /// Example: 1L
+        /// Example: 1
         /// </param>
         /// <param name="nodeId">
         /// The node ID of the pull request review comment.<br/>
@@ -305,8 +307,12 @@ namespace G
         /// The text of the comment.<br/>
         /// Example: We should probably include a check for null values here.
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
         /// <param name="htmlUrl">
         /// HTML URL for the pull request review comment.<br/>
         /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1

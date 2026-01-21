@@ -12,7 +12,7 @@ namespace G
             ref string? startAfterHistoryItemId,
             ref string? voiceId,
             ref string? search,
-            ref global::G.ListGeneratedItemsV1HistoryGetSource? source,
+            global::G.ListGeneratedItemsV1HistoryGetSource2? source,
             ref string? xiApiKey);
         partial void PrepareGetHistoryRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -21,7 +21,7 @@ namespace G
             string? startAfterHistoryItemId,
             string? voiceId,
             string? search,
-            global::G.ListGeneratedItemsV1HistoryGetSource? source,
+            global::G.ListGeneratedItemsV1HistoryGetSource2? source,
             string? xiApiKey);
         partial void ProcessGetHistoryResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,12 +47,10 @@ namespace G
         /// Voice ID to be filtered for, you can use GET https://api.elevenlabs.io/v1/voices to receive a list of voices and their IDs.
         /// </param>
         /// <param name="search">
-        /// search term used for filtering<br/>
-        /// Example: In the land far far away
+        /// search term used for filtering
         /// </param>
         /// <param name="source">
-        /// Source of the generated history item<br/>
-        /// Example: TTS
+        /// Source of the generated history item
         /// </param>
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
@@ -64,7 +62,7 @@ namespace G
             string? startAfterHistoryItemId = default,
             string? voiceId = default,
             string? search = default,
-            global::G.ListGeneratedItemsV1HistoryGetSource? source = default,
+            global::G.ListGeneratedItemsV1HistoryGetSource2? source = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,15 +74,9 @@ namespace G
                 startAfterHistoryItemId: ref startAfterHistoryItemId,
                 voiceId: ref voiceId,
                 search: ref search,
-                source: ref source,
+                source: source,
                 xiApiKey: ref xiApiKey);
 
-            var sourceValue = source switch
-            {
-                global::G.ListGeneratedItemsV1HistoryGetSource.TTS => "TTS",
-                global::G.ListGeneratedItemsV1HistoryGetSource.STS => "STS",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/history",
                 baseUri: HttpClient.BaseAddress); 
@@ -93,7 +85,7 @@ namespace G
                 .AddOptionalParameter("start_after_history_item_id", startAfterHistoryItemId) 
                 .AddOptionalParameter("voice_id", voiceId) 
                 .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("source", source?.ToValueString()) 
+                .AddOptionalParameter("source", source?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

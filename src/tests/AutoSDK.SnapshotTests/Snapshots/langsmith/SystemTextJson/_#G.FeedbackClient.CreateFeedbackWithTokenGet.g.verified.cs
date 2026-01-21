@@ -9,16 +9,16 @@ namespace G
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
-            ref global::G.AnyOf<double?, int?, bool?>? score,
-            ref global::G.AnyOf<double?, int?, bool?, string>? value,
+            ref global::G.AnyOf<double?, int?, bool?, object>? score,
+            ref global::G.AnyOf<double?, int?, bool?, string, object>? value,
             ref string? comment,
             ref string? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?>? score,
-            global::G.AnyOf<double?, int?, bool?, string>? value,
+            global::G.AnyOf<double?, int?, bool?, object>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
             string? comment,
             string? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
@@ -43,8 +43,8 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string>? value = default,
+            global::G.AnyOf<double?, int?, bool?, object>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
             string? comment = default,
             string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)

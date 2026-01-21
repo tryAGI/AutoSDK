@@ -10,14 +10,6 @@ namespace G
     public sealed partial class CheckpointOut
     {
         /// <summary>
-        /// The UNIX timestamp (in seconds) for when the checkpoint was created.<br/>
-        /// Example: 1716963433
-        /// </summary>
-        /// <example>1716963433</example>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
-
-        /// <summary>
         /// Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metrics", Required = global::Newtonsoft.Json.Required.Always)]
@@ -30,6 +22,12 @@ namespace G
         public int StepNumber { get; set; } = default!;
 
         /// <summary>
+        /// The UNIX timestamp (in seconds) for when the checkpoint was created.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -38,24 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckpointOut" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The UNIX timestamp (in seconds) for when the checkpoint was created.<br/>
-        /// Example: 1716963433
-        /// </param>
         /// <param name="metrics">
         /// Metrics at the step number during the fine-tuning job. Use these metrics to assess if the training is going smoothly (loss should decrease, token accuracy should increase).
         /// </param>
         /// <param name="stepNumber">
         /// The step number that the checkpoint was created at.
         /// </param>
+        /// <param name="createdAt">
+        /// The UNIX timestamp (in seconds) for when the checkpoint was created.
+        /// </param>
         public CheckpointOut(
-            global::System.DateTimeOffset createdAt,
             global::G.MetricOut metrics,
-            int stepNumber)
+            int stepNumber,
+            global::System.DateTimeOffset createdAt)
         {
-            this.CreatedAt = createdAt;
             this.Metrics = metrics ?? throw new global::System.ArgumentNullException(nameof(metrics));
             this.StepNumber = stepNumber;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

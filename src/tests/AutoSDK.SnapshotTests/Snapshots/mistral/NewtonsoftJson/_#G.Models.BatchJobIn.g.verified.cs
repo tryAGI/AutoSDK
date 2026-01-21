@@ -12,26 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("endpoint", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ApiEndpoint Endpoint { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_files", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::System.Guid> InputFiles { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("endpoint", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ApiEndpoint Endpoint { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: 24
@@ -48,22 +48,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobIn" /> class.
         /// </summary>
-        /// <param name="endpoint"></param>
         /// <param name="inputFiles"></param>
-        /// <param name="metadata"></param>
+        /// <param name="endpoint"></param>
         /// <param name="model"></param>
+        /// <param name="metadata"></param>
         /// <param name="timeoutHours">
         /// Default Value: 24
         /// </param>
         public BatchJobIn(
-            global::G.ApiEndpoint endpoint,
             global::System.Collections.Generic.IList<global::System.Guid> inputFiles,
+            global::G.ApiEndpoint endpoint,
             string model,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             int? timeoutHours)
         {
-            this.Endpoint = endpoint;
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
+            this.Endpoint = endpoint;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Metadata = metadata;
             this.TimeoutHours = timeoutHours;

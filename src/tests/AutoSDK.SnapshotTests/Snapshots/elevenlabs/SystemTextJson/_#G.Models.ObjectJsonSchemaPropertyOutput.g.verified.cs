@@ -13,8 +13,7 @@ namespace G
         /// Default Value: object
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ObjectJsonSchemaPropertyOutputTypeJsonConverter))]
-        public global::G.ObjectJsonSchemaPropertyOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +52,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ObjectJsonSchemaPropertyOutput(
-            global::G.ObjectJsonSchemaPropertyOutputType? type,
+            string? type,
             global::System.Collections.Generic.IList<string>? required,
             string? description,
             object? properties)

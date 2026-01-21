@@ -66,7 +66,7 @@ namespace G
                 path: $"/api/v1/public/{shareToken}/examples/count",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("id", id?.ToString()) 
                 .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("metadata", metadata) 
                 .AddOptionalParameter("filter", filter) 

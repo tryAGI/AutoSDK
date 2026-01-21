@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("b64_json", Required = global::Newtonsoft.Json.Required.Always)]
-        public string B64Json { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("b64_json", Required = global::Newtonsoft.Json.Required.Always)]
+        public string B64Json { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageResponseDataItem" /> class.
         /// </summary>
-        /// <param name="b64Json"></param>
         /// <param name="index"></param>
+        /// <param name="b64Json"></param>
         public ImageResponseDataItem(
-            string b64Json,
-            int index)
+            int index,
+            string b64Json)
         {
-            this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
             this.Index = index;
+            this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
         }
 
         /// <summary>

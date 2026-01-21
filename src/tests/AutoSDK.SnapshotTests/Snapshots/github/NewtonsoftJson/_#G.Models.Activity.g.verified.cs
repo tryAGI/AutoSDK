@@ -48,8 +48,10 @@ namespace G
         public string Ref { get; set; } = default!;
 
         /// <summary>
-        /// The time when the activity occurred.
+        /// The time when the activity occurred.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("timestamp", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime Timestamp { get; set; } = default!;
 
@@ -95,7 +97,8 @@ namespace G
         /// Example: refs/heads/main
         /// </param>
         /// <param name="timestamp">
-        /// The time when the activity occurred.
+        /// The time when the activity occurred.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </param>
         /// <param name="activityType">
         /// The type of the activity that was performed.<br/>

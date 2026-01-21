@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonSchema" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="schema"></param>
         /// <param name="strict">
         /// Default Value: false

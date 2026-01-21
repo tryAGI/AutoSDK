@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant18? CacheControl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citations")]
-        public global::System.Collections.Generic.IList<global::G.CitationsItem>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <param name="type"></param>
         public BetaRequestTextBlock(
             string text,
-            global::G.BetaCacheControlEphemeral? cacheControl,
-            global::System.Collections.Generic.IList<global::G.CitationsItem>? citations,
+            global::G.CacheControlVariant18? cacheControl,
+            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? citations,
             global::G.BetaRequestTextBlockType type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));

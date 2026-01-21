@@ -12,13 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> Data { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -39,6 +32,13 @@ namespace G
         public global::G.ImageResponseObject Object { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> Data { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,24 +47,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageResponse" /> class.
         /// </summary>
-        /// <param name="data"></param>
         /// <param name="id"></param>
         /// <param name="model"></param>
         /// <param name="object">
         /// Example: list
         /// </param>
+        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageResponse(
-            global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> data,
             string id,
             string model,
+            global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> data,
             global::G.ImageResponseObject @object)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;
         }
 

@@ -36,7 +36,7 @@ namespace G
         /// Default Value: j2-light
         /// </param>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -217,7 +217,7 @@ namespace G
         /// Default Value: j2-light
         /// </param>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="prompt"></param>
         /// <param name="numResults">
@@ -230,13 +230,13 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="temperature">
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="topP">
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
         /// <param name="minP">
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="stopSequences">
         /// Default Value: []
@@ -245,9 +245,15 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="logitBias"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="presencePenalty"></param>
-        /// <param name="countPenalty"></param>
+        /// <param name="frequencyPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
+        /// <param name="countPenalty">
+        /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
+        /// </param>
         /// <param name="epoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

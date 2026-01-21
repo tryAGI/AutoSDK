@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ComputerCallSafetyCheckParam.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,15 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? Code { get; set; }
+        public string? Code { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,8 +47,8 @@ namespace G
 #endif
         public ComputerCallSafetyCheckParam(
             string id,
-            global::G.AnyOf<string, object>? code,
-            global::G.AnyOf<string, object>? message)
+            string? code,
+            string? message)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Code = code;

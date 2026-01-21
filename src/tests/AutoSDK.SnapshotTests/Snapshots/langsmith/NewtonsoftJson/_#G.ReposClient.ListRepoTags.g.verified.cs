@@ -11,12 +11,12 @@ namespace G
             ref int? limit,
             ref int? offset,
             ref string? tenantHandle,
-            ref global::System.Guid? tenantId,
+            global::System.Guid? tenantId,
             ref string? query,
-            ref bool? hasCommits,
+            bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            ref global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
-            ref global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
@@ -30,8 +30,8 @@ namespace G
             string? query,
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? isPublic,
             string? upstreamRepoOwner,
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId);
@@ -74,8 +74,8 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
@@ -88,29 +88,16 @@ namespace G
                 limit: ref limit,
                 offset: ref offset,
                 tenantHandle: ref tenantHandle,
-                tenantId: ref tenantId,
+                tenantId: tenantId,
                 query: ref query,
-                hasCommits: ref hasCommits,
+                hasCommits: hasCommits,
                 tags: tags,
-                isArchived: ref isArchived,
-                isPublic: ref isPublic,
+                isArchived: isArchived,
+                isPublic: isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId);
 
-            var isArchivedValue = isArchived switch
-            {
-                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.True => "true",
-                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.Allow => "allow",
-                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.False => "false",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
-            var isPublicValue = isPublic switch
-            {
-                global::G.ListRepoTagsApiV1ReposTagsGetIsPublic.True => "true",
-                global::G.ListRepoTagsApiV1ReposTagsGetIsPublic.False => "false",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/repos/tags",
                 baseUri: HttpClient.BaseAddress); 
@@ -121,12 +108,12 @@ namespace G
                 .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
                 .AddOptionalParameter("query", query) 
                 .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true) 
-                .AddOptionalParameter("is_archived", isArchived?.ToValueString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToValueString()) 
+                .AddOptionalParameter("tags", tags?.ToString()) 
+                .AddOptionalParameter("is_archived", isArchived?.ToString()) 
+                .AddOptionalParameter("is_public", isPublic?.ToString()) 
                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

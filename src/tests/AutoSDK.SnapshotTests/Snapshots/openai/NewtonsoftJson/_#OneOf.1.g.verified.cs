@@ -25,7 +25,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
 #endif
         public bool IsValue1 => Value1 != null;
-
         /// <summary>
         /// 
         /// </summary>

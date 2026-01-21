@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A system tool is a tool that is used to call a system method in the server
+    /// A system tool is a tool that is used to call a system method in the server<br/>
+    /// Example: {"type":"system"}
     /// </summary>
     public sealed partial class SystemToolConfigOutput
     {
@@ -39,7 +40,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.SystemToolConfigOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -74,7 +75,7 @@ namespace G
             global::G.Params2 @params,
             string? id,
             int? responseTimeoutSecs,
-            global::G.SystemToolConfigOutputType? type)
+            string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

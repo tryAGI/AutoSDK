@@ -10,9 +10,9 @@ namespace G
     public sealed partial class GpgKey
     {
         /// <summary>
-        /// Example: 3L
+        /// Example: 3
         /// </summary>
-        /// <example>3L</example>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -48,17 +48,17 @@ namespace G
         public required string PublicKey { get; set; }
 
         /// <summary>
-        /// Example: []
+        /// Example: [{"email":"octocat@users.noreply.github.com","verified":true}]
         /// </summary>
-        /// <example>[]</example>
+        /// <example>[{"email":"octocat@users.noreply.github.com","verified":true}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.GpgKeyEmail> Emails { get; set; }
 
         /// <summary>
-        /// Example: []
+        /// Example: [{"id":4,"primary_key_id":3,"key_id":"4A595D4C72EE49C7","public_key":"zsBNBFayYZ...","emails":[],"can_sign":false,"can_encrypt_comms":true,"can_encrypt_storage":true,"can_certify":false,"created_at":"2016-03-24T11:31:04-06:00","expires_at":"","revoked":false}]
         /// </summary>
-        /// <example>[]</example>
+        /// <example>[{"id":4,"primary_key_id":3,"key_id":"4A595D4C72EE49C7","public_key":"zsBNBFayYZ...","emails":[],"can_sign":false,"can_encrypt_comms":true,"can_encrypt_storage":true,"can_certify":false,"created_at":"2016-03-24T11:31:04-06:00","expires_at":"","revoked":false}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subkeys")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.GpgKeySubkey> Subkeys { get; set; }
@@ -94,8 +94,9 @@ namespace G
         public required bool CanCertify { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2016-03-24T11:31:04-06:00
         /// </summary>
+        /// <example>2016-03-24T11:31:04-06:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -132,7 +133,7 @@ namespace G
         /// Initializes a new instance of the <see cref="GpgKey" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: 3L
+        /// Example: 3
         /// </param>
         /// <param name="name">
         /// Example: Octocat's GPG Key
@@ -145,10 +146,10 @@ namespace G
         /// Example: xsBNBFayYZ...
         /// </param>
         /// <param name="emails">
-        /// Example: []
+        /// Example: [{"email":"octocat@users.noreply.github.com","verified":true}]
         /// </param>
         /// <param name="subkeys">
-        /// Example: []
+        /// Example: [{"id":4,"primary_key_id":3,"key_id":"4A595D4C72EE49C7","public_key":"zsBNBFayYZ...","emails":[],"can_sign":false,"can_encrypt_comms":true,"can_encrypt_storage":true,"can_certify":false,"created_at":"2016-03-24T11:31:04-06:00","expires_at":"","revoked":false}]
         /// </param>
         /// <param name="canSign">
         /// Example: true
@@ -158,7 +159,9 @@ namespace G
         /// <param name="canCertify">
         /// Example: true
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2016-03-24T11:31:04-06:00
+        /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="revoked">
         /// Example: true

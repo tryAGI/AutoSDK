@@ -10,8 +10,9 @@ namespace G
     public sealed partial class ConversationInitiationClientDataRequestOutput
     {
         /// <summary>
-        /// 
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
         /// </summary>
+        /// <example>{"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}</example>
         [global::Newtonsoft.Json.JsonProperty("conversation_config_override")]
         public global::G.ConversationConfigClientOverrideOutput? ConversationConfigOverride { get; set; }
 
@@ -36,7 +37,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationInitiationClientDataRequestOutput" /> class.
         /// </summary>
-        /// <param name="conversationConfigOverride"></param>
+        /// <param name="conversationConfigOverride">
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
+        /// </param>
         /// <param name="customLlmExtraBody"></param>
         /// <param name="dynamicVariables"></param>
         public ConversationInitiationClientDataRequestOutput(

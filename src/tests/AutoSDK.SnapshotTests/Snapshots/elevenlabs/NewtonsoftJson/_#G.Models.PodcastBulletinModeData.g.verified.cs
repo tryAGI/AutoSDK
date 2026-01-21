@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
     /// </summary>
     public sealed partial class PodcastBulletinModeData
     {

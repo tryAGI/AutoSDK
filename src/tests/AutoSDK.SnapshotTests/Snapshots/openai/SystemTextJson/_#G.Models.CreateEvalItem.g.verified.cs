@@ -28,24 +28,6 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator CreateEvalItem(global::G.CreateEvalItemVariant1 value) => new CreateEvalItem((global::G.CreateEvalItemVariant1?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.CreateEvalItemVariant1?(CreateEvalItem @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CreateEvalItem(global::G.CreateEvalItemVariant1? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
         /// hierarchy. Instructions given with the `developer` or `system` role take<br/>
         /// precedence over instructions given with the `user` role. Messages with the<br/>
@@ -65,6 +47,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator CreateEvalItem(global::G.CreateEvalItemVariant1 value) => new CreateEvalItem((global::G.CreateEvalItemVariant1?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.CreateEvalItemVariant1?(CreateEvalItem @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateEvalItem(global::G.CreateEvalItemVariant1? value)
+        {
+            Value1 = value;
+        }
 
         /// <summary>
         /// 

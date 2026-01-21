@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionContentPartImageTypeJsonConverter))]
-        public global::G.ChatCompletionContentPartImageType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// 
@@ -38,11 +38,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionContentPartImage(
-            global::G.ImageURL imageUrl,
-            global::G.ChatCompletionContentPartImageType type)
+            string type,
+            global::G.ImageURL imageUrl)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
-            this.Type = type;
         }
 
         /// <summary>

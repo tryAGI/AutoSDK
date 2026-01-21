@@ -134,15 +134,17 @@ namespace G
         public required int ReposCount { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-14T16:53:42Z
         /// </summary>
+        /// <example>2017-07-14T16:53:42Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2017-08-17T12:37:15Z
         /// </summary>
+        /// <example>2017-08-17T12:37:15Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -222,8 +224,12 @@ namespace G
         /// <param name="reposCount">
         /// Example: 10
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2017-07-14T16:53:42Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2017-08-17T12:37:15Z
+        /// </param>
         /// <param name="organization">
         /// Team Organization
         /// </param>

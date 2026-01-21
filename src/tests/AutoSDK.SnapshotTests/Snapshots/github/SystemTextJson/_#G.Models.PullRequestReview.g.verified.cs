@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the review<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </summary>
-        /// <example>42L</example>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -121,7 +121,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique identifier of the review<br/>
-        /// Example: 42L
+        /// Example: 42
         /// </param>
         /// <param name="nodeId">
         /// Example: MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=

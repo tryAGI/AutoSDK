@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CreateFinetunedModelResponse
     {
         /// <summary>
-        /// This resource represents a fine-tuned model.
+        /// Information about the fine-tuned model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finetuned_model")]
         public global::G.FinetunedModel? FinetunedModel { get; set; }
@@ -25,7 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateFinetunedModelResponse" /> class.
         /// </summary>
         /// <param name="finetunedModel">
-        /// This resource represents a fine-tuned model.
+        /// Information about the fine-tuned model.
         /// </param>
         public CreateFinetunedModelResponse(
             global::G.FinetunedModel? finetunedModel)

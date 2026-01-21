@@ -10,14 +10,16 @@ namespace G
     public sealed partial class LanguagePresetInput
     {
         /// <summary>
-        /// 
+        /// The overrides for the language preset<br/>
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
         /// </summary>
+        /// <example>{"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("overrides")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ConversationConfigClientOverrideInput Overrides { get; set; }
 
         /// <summary>
-        /// 
+        /// The translation of the first message
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_message_translation")]
         public global::G.LanguagePresetTranslation? FirstMessageTranslation { get; set; }
@@ -31,8 +33,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LanguagePresetInput" /> class.
         /// </summary>
-        /// <param name="overrides"></param>
-        /// <param name="firstMessageTranslation"></param>
+        /// <param name="overrides">
+        /// The overrides for the language preset<br/>
+        /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
+        /// </param>
+        /// <param name="firstMessageTranslation">
+        /// The translation of the first message
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

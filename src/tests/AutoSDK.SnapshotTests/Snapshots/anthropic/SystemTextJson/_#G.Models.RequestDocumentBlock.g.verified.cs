@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant114? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
 #endif
         public RequestDocumentBlock(
             global::G.Source3 source,
-            global::G.CacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant114? cacheControl,
             global::G.RequestDocumentBlockType type,
             string? title,
             string? context,

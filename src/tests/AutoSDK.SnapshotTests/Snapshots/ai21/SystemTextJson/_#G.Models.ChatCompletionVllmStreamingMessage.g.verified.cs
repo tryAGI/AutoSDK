@@ -26,7 +26,7 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.ChatCompletionResponseDeltaChoice> Choices { get; set; }
 
         /// <summary>
-        /// 
+        /// Included in the last message only. Total token counts for the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::G.UsageInfo? Usage { get; set; }
@@ -54,7 +54,9 @@ namespace G
         /// <param name="choices">
         /// The message
         /// </param>
-        /// <param name="usage"></param>
+        /// <param name="usage">
+        /// Included in the last message only. Total token counts for the message.
+        /// </param>
         /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

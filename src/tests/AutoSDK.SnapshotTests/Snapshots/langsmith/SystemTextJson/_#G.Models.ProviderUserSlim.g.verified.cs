@@ -20,7 +20,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthProviderJsonConverter))]
         public global::G.AuthProvider? Provider { get; set; }
 
         /// <summary>

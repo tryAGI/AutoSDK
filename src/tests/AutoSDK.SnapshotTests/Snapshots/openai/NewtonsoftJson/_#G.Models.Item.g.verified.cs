@@ -30,24 +30,6 @@ namespace G
         public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.InputMessage value) => new Item((global::G.InputMessage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.InputMessage?(Item @this) => @this.InputMessage;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.InputMessage? value)
-        {
-            InputMessage = value;
-        }
-
-        /// <summary>
         /// An output message from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -63,24 +45,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessage))]
 #endif
         public bool IsOutputMessage => OutputMessage != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.OutputMessage value) => new Item((global::G.OutputMessage?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.OutputMessage?(Item @this) => @this.OutputMessage;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.OutputMessage? value)
-        {
-            OutputMessage = value;
-        }
 
         /// <summary>
         /// The results of a file search tool call. See the <br/>
@@ -101,24 +65,6 @@ namespace G
         public bool IsFileSearchToolCall => FileSearchToolCall != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.FileSearchToolCall value) => new Item((global::G.FileSearchToolCall?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.FileSearchToolCall?(Item @this) => @this.FileSearchToolCall;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.FileSearchToolCall? value)
-        {
-            FileSearchToolCall = value;
-        }
-
-        /// <summary>
         /// A tool call to a computer use tool. See the <br/>
         /// [computer use guide](/docs/guides/tools-computer-use) for more information.
         /// </summary>
@@ -137,24 +83,6 @@ namespace G
         public bool IsComputerToolCall => ComputerToolCall != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.ComputerToolCall value) => new Item((global::G.ComputerToolCall?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ComputerToolCall?(Item @this) => @this.ComputerToolCall;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.ComputerToolCall? value)
-        {
-            ComputerToolCall = value;
-        }
-
-        /// <summary>
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -170,24 +98,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutputParam))]
 #endif
         public bool IsComputerCallOutputParam => ComputerCallOutputParam != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.ComputerCallOutputItemParam value) => new Item((global::G.ComputerCallOutputItemParam?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutputParam;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.ComputerCallOutputItemParam? value)
-        {
-            ComputerCallOutputParam = value;
-        }
 
         /// <summary>
         /// The results of a web search tool call. See the <br/>
@@ -208,24 +118,6 @@ namespace G
         public bool IsWebSearchToolCall => WebSearchToolCall != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.WebSearchToolCall value) => new Item((global::G.WebSearchToolCall?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.WebSearchToolCall?(Item @this) => @this.WebSearchToolCall;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.WebSearchToolCall? value)
-        {
-            WebSearchToolCall = value;
-        }
-
-        /// <summary>
         /// A tool call to run a function. See the <br/>
         /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
@@ -244,24 +136,6 @@ namespace G
         public bool IsFunctionToolCall => FunctionToolCall != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.FunctionToolCall value) => new Item((global::G.FunctionToolCall?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.FunctionToolCall?(Item @this) => @this.FunctionToolCall;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.FunctionToolCall? value)
-        {
-            FunctionToolCall = value;
-        }
-
-        /// <summary>
         /// The output of a function tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -277,24 +151,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputParam))]
 #endif
         public bool IsFunctionCallOutputParam => FunctionCallOutputParam != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item((global::G.FunctionCallOutputItemParam?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutputParam;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Item(global::G.FunctionCallOutputItemParam? value)
-        {
-            FunctionCallOutputParam = value;
-        }
 
         /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
@@ -317,6 +173,285 @@ namespace G
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
+        /// An image generation request made by the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ImageGenToolCall? ImageGenToolCall { get; init; }
+#else
+        public global::G.ImageGenToolCall? ImageGenToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenToolCall))]
+#endif
+        public bool IsImageGenToolCall => ImageGenToolCall != null;
+
+        /// <summary>
+        /// A tool call to run code.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; init; }
+#else
+        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterToolCall))]
+#endif
+        public bool IsCodeInterpreterToolCall => CodeInterpreterToolCall != null;
+
+        /// <summary>
+        /// A tool call to run a command on the local shell.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LocalShellToolCall? LocalShellToolCall { get; init; }
+#else
+        public global::G.LocalShellToolCall? LocalShellToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCall))]
+#endif
+        public bool IsLocalShellToolCall => LocalShellToolCall != null;
+
+        /// <summary>
+        /// The output of a local shell tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; init; }
+#else
+        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCallOutput))]
+#endif
+        public bool IsLocalShellToolCallOutput => LocalShellToolCallOutput != null;
+
+        /// <summary>
+        /// A list of tools available on an MCP server.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MCPListTools? MCPListTools { get; init; }
+#else
+        public global::G.MCPListTools? MCPListTools { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListTools))]
+#endif
+        public bool IsMCPListTools => MCPListTools != null;
+
+        /// <summary>
+        /// A request for human approval of a tool invocation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; init; }
+#else
+        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalRequest))]
+#endif
+        public bool IsMCPApprovalRequest => MCPApprovalRequest != null;
+
+        /// <summary>
+        /// A response to an MCP approval request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; init; }
+#else
+        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalResponse))]
+#endif
+        public bool IsMCPApprovalResponse => MCPApprovalResponse != null;
+
+        /// <summary>
+        /// An invocation of a tool on an MCP server.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.MCPToolCall? MCPToolCall { get; init; }
+#else
+        public global::G.MCPToolCall? MCPToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPToolCall))]
+#endif
+        public bool IsMCPToolCall => MCPToolCall != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.InputMessage value) => new Item((global::G.InputMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.InputMessage?(Item @this) => @this.InputMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.InputMessage? value)
+        {
+            InputMessage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.OutputMessage value) => new Item((global::G.OutputMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.OutputMessage?(Item @this) => @this.OutputMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.OutputMessage? value)
+        {
+            OutputMessage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.FileSearchToolCall value) => new Item((global::G.FileSearchToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.FileSearchToolCall?(Item @this) => @this.FileSearchToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.FileSearchToolCall? value)
+        {
+            FileSearchToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.ComputerToolCall value) => new Item((global::G.ComputerToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ComputerToolCall?(Item @this) => @this.ComputerToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.ComputerToolCall? value)
+        {
+            ComputerToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.ComputerCallOutputItemParam value) => new Item((global::G.ComputerCallOutputItemParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutputParam;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.ComputerCallOutputItemParam? value)
+        {
+            ComputerCallOutputParam = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.WebSearchToolCall value) => new Item((global::G.WebSearchToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.WebSearchToolCall?(Item @this) => @this.WebSearchToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.WebSearchToolCall? value)
+        {
+            WebSearchToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.FunctionToolCall value) => new Item((global::G.FunctionToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.FunctionToolCall?(Item @this) => @this.FunctionToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.FunctionToolCall? value)
+        {
+            FunctionToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item((global::G.FunctionCallOutputItemParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutputParam;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Item(global::G.FunctionCallOutputItemParam? value)
+        {
+            FunctionCallOutputParam = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Item(global::G.ReasoningItem value) => new Item((global::G.ReasoningItem?)value);
@@ -333,23 +468,6 @@ namespace G
         {
             Reasoning = value;
         }
-
-        /// <summary>
-        /// An image generation request made by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ImageGenToolCall? ImageGenToolCall { get; init; }
-#else
-        public global::G.ImageGenToolCall? ImageGenToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenToolCall))]
-#endif
-        public bool IsImageGenToolCall => ImageGenToolCall != null;
 
         /// <summary>
         /// 
@@ -370,23 +488,6 @@ namespace G
         }
 
         /// <summary>
-        /// A tool call to run code.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; init; }
-#else
-        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterToolCall))]
-#endif
-        public bool IsCodeInterpreterToolCall => CodeInterpreterToolCall != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Item(global::G.CodeInterpreterToolCall value) => new Item((global::G.CodeInterpreterToolCall?)value);
@@ -403,23 +504,6 @@ namespace G
         {
             CodeInterpreterToolCall = value;
         }
-
-        /// <summary>
-        /// A tool call to run a command on the local shell.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LocalShellToolCall? LocalShellToolCall { get; init; }
-#else
-        public global::G.LocalShellToolCall? LocalShellToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCall))]
-#endif
-        public bool IsLocalShellToolCall => LocalShellToolCall != null;
 
         /// <summary>
         /// 
@@ -440,23 +524,6 @@ namespace G
         }
 
         /// <summary>
-        /// The output of a local shell tool call.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; init; }
-#else
-        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCallOutput))]
-#endif
-        public bool IsLocalShellToolCallOutput => LocalShellToolCallOutput != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Item(global::G.LocalShellToolCallOutput value) => new Item((global::G.LocalShellToolCallOutput?)value);
@@ -473,23 +540,6 @@ namespace G
         {
             LocalShellToolCallOutput = value;
         }
-
-        /// <summary>
-        /// A list of tools available on an MCP server.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MCPListTools? MCPListTools { get; init; }
-#else
-        public global::G.MCPListTools? MCPListTools { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListTools))]
-#endif
-        public bool IsMCPListTools => MCPListTools != null;
 
         /// <summary>
         /// 
@@ -510,23 +560,6 @@ namespace G
         }
 
         /// <summary>
-        /// A request for human approval of a tool invocation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; init; }
-#else
-        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalRequest))]
-#endif
-        public bool IsMCPApprovalRequest => MCPApprovalRequest != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Item(global::G.MCPApprovalRequest value) => new Item((global::G.MCPApprovalRequest?)value);
@@ -545,23 +578,6 @@ namespace G
         }
 
         /// <summary>
-        /// A response to an MCP approval request.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; init; }
-#else
-        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalResponse))]
-#endif
-        public bool IsMCPApprovalResponse => MCPApprovalResponse != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator Item(global::G.MCPApprovalResponse value) => new Item((global::G.MCPApprovalResponse?)value);
@@ -578,23 +594,6 @@ namespace G
         {
             MCPApprovalResponse = value;
         }
-
-        /// <summary>
-        /// An invocation of a tool on an MCP server.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MCPToolCall? MCPToolCall { get; init; }
-#else
-        public global::G.MCPToolCall? MCPToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPToolCall))]
-#endif
-        public bool IsMCPToolCall => MCPToolCall != null;
 
         /// <summary>
         /// 

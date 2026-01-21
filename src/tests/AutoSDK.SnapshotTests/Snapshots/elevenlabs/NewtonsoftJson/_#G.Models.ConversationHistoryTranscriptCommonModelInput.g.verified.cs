@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_medium")]
-        public global::G.ConversationHistoryTranscriptCommonModelInputSourceMedium? SourceMedium { get; set; }
+        public global::G.ConversationHistoryTranscriptCommonModelInputSourceMedium2? SourceMedium { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,7 +124,7 @@ namespace G
             global::G.LLMUsageInput? llmUsage,
             bool? interrupted,
             string? originalMessage,
-            global::G.ConversationHistoryTranscriptCommonModelInputSourceMedium? sourceMedium)
+            global::G.ConversationHistoryTranscriptCommonModelInputSourceMedium2? sourceMedium)
         {
             this.Role = role;
             this.TimeInCallSecs = timeInCallSecs;

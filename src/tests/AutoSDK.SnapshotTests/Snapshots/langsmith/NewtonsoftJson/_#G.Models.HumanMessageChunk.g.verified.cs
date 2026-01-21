@@ -33,7 +33,7 @@ namespace G
         /// Default Value: HumanMessageChunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.HumanMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>> content,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.HumanMessageChunkType? type,
+            string? type,
             string? name,
             string? id,
             bool? example)

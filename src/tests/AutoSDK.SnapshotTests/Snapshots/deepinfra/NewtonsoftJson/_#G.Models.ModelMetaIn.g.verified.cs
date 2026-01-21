@@ -46,7 +46,7 @@ namespace G
         public string? CoverImgUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// model type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reported_type")]
         public global::G.HFTasksE? ReportedType { get; set; }
@@ -78,7 +78,9 @@ namespace G
         /// <param name="coverImgUrl">
         /// dataurl or regular url to cover image (empty to delete)
         /// </param>
-        /// <param name="reportedType"></param>
+        /// <param name="reportedType">
+        /// model type
+        /// </param>
         public ModelMetaIn(
             string? description,
             string? githubUrl,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"access_level":"viewer","author":"John Doe","can_be_downloaded":true,"content_type":"Novel","cover_image_url":"https://example.com/cover.jpg","create_date_unix":1714204800,"creation_meta":{"creation_progress":0.5,"status":"pending","type":"blank"},"default_model_id":"eleven_multilingual_v2","default_paragraph_voice_id":"JBFqnCBsd6RMkjVDRZzb","default_title_voice_id":"JBFqnCBsd6RMkjVDRZzb","description":"This is a description of my project.","fiction":"fiction","genres":["Novel","Short Story"],"isbn_number":"978-90-274-3964-2","language":"en","last_conversion_date_unix":1714204800,"mature_content":false,"name":"My Project","original_publication_date":"2025-01-01","project_id":"aw1NgEzBg83R7vgmiJt6","quality_check_on":false,"quality_check_on_when_bulk_convert":false,"state":"default","target_audience":"Young Adults","title":"My Project","volume_normalization":true}
     /// </summary>
     public sealed partial class ProjectExtendedResponseModel
     {
@@ -91,7 +91,7 @@ namespace G
         /// The target audience of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_audience")]
-        public global::G.ProjectExtendedResponseModelTargetAudience? TargetAudience { get; set; }
+        public global::G.ProjectExtendedResponseModelTargetAudience2? TargetAudience { get; set; }
 
         /// <summary>
         /// Two-letter language code (ISO 639-1) of the language of the project.
@@ -145,7 +145,7 @@ namespace G
         /// Whether the project is fiction.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fiction")]
-        public global::G.ProjectExtendedResponseModelFiction? Fiction { get; set; }
+        public global::G.ProjectExtendedResponseModelFiction2? Fiction { get; set; }
 
         /// <summary>
         /// Whether quality check is enabled for this project.
@@ -160,7 +160,7 @@ namespace G
         public bool QualityCheckOnWhenBulkConvert { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The creation meta of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creation_meta")]
         public global::G.ProjectCreationMetaResponseModel? CreationMeta { get; set; }
@@ -169,7 +169,7 @@ namespace G
         /// The source type of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type")]
-        public global::G.ProjectExtendedResponseModelSourceType? SourceType { get; set; }
+        public global::G.ProjectExtendedResponseModelSourceType2? SourceType { get; set; }
 
         /// <summary>
         /// Whether chapters are enabled for the project.<br/>
@@ -298,7 +298,9 @@ namespace G
         /// <param name="qualityCheckOnWhenBulkConvert">
         /// Whether quality check is enabled on the project when bulk converting.
         /// </param>
-        /// <param name="creationMeta"></param>
+        /// <param name="creationMeta">
+        /// The creation meta of the project.
+        /// </param>
         /// <param name="sourceType">
         /// The source type of the project.
         /// </param>
@@ -349,15 +351,15 @@ namespace G
             string? description,
             global::System.Collections.Generic.IList<string>? genres,
             string? coverImageUrl,
-            global::G.ProjectExtendedResponseModelTargetAudience? targetAudience,
+            global::G.ProjectExtendedResponseModelTargetAudience2? targetAudience,
             string? language,
             string? contentType,
             string? originalPublicationDate,
             bool? matureContent,
             string? isbnNumber,
-            global::G.ProjectExtendedResponseModelFiction? fiction,
+            global::G.ProjectExtendedResponseModelFiction2? fiction,
             global::G.ProjectCreationMetaResponseModel? creationMeta,
-            global::G.ProjectExtendedResponseModelSourceType? sourceType,
+            global::G.ProjectExtendedResponseModelSourceType2? sourceType,
             bool? chaptersEnabled)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));

@@ -10,19 +10,15 @@ namespace G
     public sealed partial class VoicePreviewsRequestModel
     {
         /// <summary>
-        /// Description to use for the created voice.<br/>
-        /// Example: A sassy squeaky mouse
+        /// Description to use for the created voice.
         /// </summary>
-        /// <example>A sassy squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceDescription { get; set; }
 
         /// <summary>
-        /// Text to generate, text length has to be between 100 and 1000.<br/>
-        /// Example: Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted.
+        /// Text to generate, text length has to be between 100 and 1000.
         /// </summary>
-        /// <example>Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }
 
@@ -35,36 +31,28 @@ namespace G
 
         /// <summary>
         /// Controls the volume level of the generated voice. -1 is quietest, 1 is loudest, 0 corresponds to roughly -24 LUFS.<br/>
-        /// Default Value: 0.5<br/>
-        /// Example: 0.5
+        /// Default Value: 0.5F
         /// </summary>
-        /// <example>0.5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("loudness")]
         public double? Loudness { get; set; }
 
         /// <summary>
         /// Higher quality results in better voice output but less variety.<br/>
-        /// Default Value: 0.9<br/>
-        /// Example: 0.9
+        /// Default Value: 0.9F
         /// </summary>
-        /// <example>0.9</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         public double? Quality { get; set; }
 
         /// <summary>
-        /// Random number that controls the voice generation. Same seed with same inputs produces same voice.<br/>
-        /// Example: 11
+        /// Random number that controls the voice generation. Same seed with same inputs produces same voice.
         /// </summary>
-        /// <example>11</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         public int? Seed { get; set; }
 
         /// <summary>
         /// Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.<br/>
-        /// Default Value: 5<br/>
-        /// Example: 5
+        /// Default Value: 5
         /// </summary>
-        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("guidance_scale")]
         public double? GuidanceScale { get; set; }
 
@@ -78,12 +66,10 @@ namespace G
         /// Initializes a new instance of the <see cref="VoicePreviewsRequestModel" /> class.
         /// </summary>
         /// <param name="voiceDescription">
-        /// Description to use for the created voice.<br/>
-        /// Example: A sassy squeaky mouse
+        /// Description to use for the created voice.
         /// </param>
         /// <param name="text">
-        /// Text to generate, text length has to be between 100 and 1000.<br/>
-        /// Example: Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted.
+        /// Text to generate, text length has to be between 100 and 1000.
         /// </param>
         /// <param name="autoGenerateText">
         /// Whether to automatically generate a text suitable for the voice description.<br/>
@@ -91,22 +77,18 @@ namespace G
         /// </param>
         /// <param name="loudness">
         /// Controls the volume level of the generated voice. -1 is quietest, 1 is loudest, 0 corresponds to roughly -24 LUFS.<br/>
-        /// Default Value: 0.5<br/>
-        /// Example: 0.5
+        /// Default Value: 0.5F
         /// </param>
         /// <param name="quality">
         /// Higher quality results in better voice output but less variety.<br/>
-        /// Default Value: 0.9<br/>
-        /// Example: 0.9
+        /// Default Value: 0.9F
         /// </param>
         /// <param name="seed">
-        /// Random number that controls the voice generation. Same seed with same inputs produces same voice.<br/>
-        /// Example: 11
+        /// Random number that controls the voice generation. Same seed with same inputs produces same voice.
         /// </param>
         /// <param name="guidanceScale">
         /// Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.<br/>
-        /// Default Value: 5<br/>
-        /// Example: 5
+        /// Default Value: 5
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

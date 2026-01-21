@@ -28,6 +28,22 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// A refusal from the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RefusalContent? Refusal { get; init; }
+#else
+        public global::G.RefusalContent? Refusal { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
+#endif
+        public bool IsRefusal => Refusal != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator OutputContent(global::G.OutputTextContent value) => new OutputContent((global::G.OutputTextContent?)value);
@@ -44,23 +60,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// A refusal from the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RefusalContent? Refusal { get; init; }
-#else
-        public global::G.RefusalContent? Refusal { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
-#endif
-        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         /// 

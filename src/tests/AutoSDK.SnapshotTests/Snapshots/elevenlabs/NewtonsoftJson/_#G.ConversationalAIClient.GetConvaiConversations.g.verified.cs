@@ -10,9 +10,9 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref string? agentId,
-            ref global::G.EvaluationSuccessResult? callSuccessful,
-            ref global::System.DateTimeOffset? callStartBeforeUnix,
-            ref global::System.DateTimeOffset? callStartAfterUnix,
+            global::G.EvaluationSuccessResult? callSuccessful,
+            int? callStartBeforeUnix,
+            int? callStartAfterUnix,
             ref int? pageSize,
             ref string? xiApiKey);
         partial void PrepareGetConvaiConversationsRequest(
@@ -21,8 +21,8 @@ namespace G
             string? cursor,
             string? agentId,
             global::G.EvaluationSuccessResult? callSuccessful,
-            global::System.DateTimeOffset? callStartBeforeUnix,
-            global::System.DateTimeOffset? callStartAfterUnix,
+            int? callStartBeforeUnix,
+            int? callStartAfterUnix,
             int? pageSize,
             string? xiApiKey);
         partial void ProcessGetConvaiConversationsResponse(
@@ -42,10 +42,11 @@ namespace G
         /// Used for fetching next page. Cursor is returned in the response.
         /// </param>
         /// <param name="agentId">
-        /// The id of the agent you're taking the action on.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of the agent you're taking the action on.
         /// </param>
-        /// <param name="callSuccessful"></param>
+        /// <param name="callSuccessful">
+        /// The result of the success evaluation
+        /// </param>
         /// <param name="callStartBeforeUnix">
         /// Unix timestamp (in seconds) to filter conversations up to this start date.
         /// </param>
@@ -65,8 +66,8 @@ namespace G
             string? cursor = default,
             string? agentId = default,
             global::G.EvaluationSuccessResult? callSuccessful = default,
-            global::System.DateTimeOffset? callStartBeforeUnix = default,
-            global::System.DateTimeOffset? callStartAfterUnix = default,
+            int? callStartBeforeUnix = default,
+            int? callStartAfterUnix = default,
             int? pageSize = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -77,26 +78,19 @@ namespace G
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 agentId: ref agentId,
-                callSuccessful: ref callSuccessful,
-                callStartBeforeUnix: ref callStartBeforeUnix,
-                callStartAfterUnix: ref callStartAfterUnix,
+                callSuccessful: callSuccessful,
+                callStartBeforeUnix: callStartBeforeUnix,
+                callStartAfterUnix: callStartAfterUnix,
                 pageSize: ref pageSize,
                 xiApiKey: ref xiApiKey);
 
-            var callSuccessfulValue = callSuccessful switch
-            {
-                global::G.EvaluationSuccessResult.Success => "success",
-                global::G.EvaluationSuccessResult.Failure => "failure",
-                global::G.EvaluationSuccessResult.Unknown => "unknown",
-                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
-            };
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/conversations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("cursor", cursor) 
                 .AddOptionalParameter("agent_id", agentId) 
-                .AddOptionalParameter("call_successful", callSuccessful?.ToValueString()) 
+                .AddOptionalParameter("call_successful", callSuccessful?.ToString()) 
                 .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString()) 
                 .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 

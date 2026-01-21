@@ -37,6 +37,22 @@ namespace G
         public bool IsCore => Core != null;
 
         /// <summary>
+        /// A document with layout features.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StructuredDocument? Structured { get; init; }
+#else
+        public global::G.StructuredDocument? Structured { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Structured))]
+#endif
+        public bool IsStructured => Structured != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator CreateDocumentRequest(global::G.CoreDocument value) => new CreateDocumentRequest((global::G.CoreDocument?)value);
@@ -53,23 +69,6 @@ namespace G
         {
             Core = value;
         }
-
-        /// <summary>
-        /// A document with layout features.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StructuredDocument? Structured { get; init; }
-#else
-        public global::G.StructuredDocument? Structured { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Structured))]
-#endif
-        public bool IsStructured => Structured != null;
 
         /// <summary>
         /// 

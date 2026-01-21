@@ -49,7 +49,7 @@ namespace G
                 path: "/api/v1/feedback-configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
+                .AddOptionalParameter("key", key?.ToString()) 
                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

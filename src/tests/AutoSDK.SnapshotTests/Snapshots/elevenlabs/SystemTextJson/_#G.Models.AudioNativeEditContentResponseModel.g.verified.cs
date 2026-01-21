@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"converting":false,"html_snippet":"\u003Cdiv id=\u0027audio-native-player\u0027\u003E\u003C/div\u003E","project_id":"JBFqnCBsd6RMkjVDRZzb","publishing":false}
     /// </summary>
     public sealed partial class AudioNativeEditContentResponseModel
     {

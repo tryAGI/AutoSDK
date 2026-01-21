@@ -10,30 +10,23 @@ namespace G
     public sealed partial class BodyInviteUserV1WorkspaceInvitesAddPost
     {
         /// <summary>
-        /// The email of the customer<br/>
-        /// Example: john.doe@testmail.com
+        /// The email of the customer
         /// </summary>
-        /// <example>john.doe@testmail.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// The group ids of the user<br/>
-        /// Example: [group_id_1, group_id_2]
+        /// The group ids of the user
         /// </summary>
-        /// <example>[group_id_1, group_id_2]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_ids")]
         public global::System.Collections.Generic.IList<string>? GroupIds { get; set; }
 
         /// <summary>
-        /// The workspace permission of the user<br/>
-        /// Example: workspace_member
+        /// The workspace permission of the user
         /// </summary>
-        /// <example>workspace_member</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_permission")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermissionJsonConverter))]
-        public global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission? WorkspacePermission { get; set; }
+        public global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission2? WorkspacePermission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,16 +38,13 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyInviteUserV1WorkspaceInvitesAddPost" /> class.
         /// </summary>
         /// <param name="email">
-        /// The email of the customer<br/>
-        /// Example: john.doe@testmail.com
+        /// The email of the customer
         /// </param>
         /// <param name="groupIds">
-        /// The group ids of the user<br/>
-        /// Example: [group_id_1, group_id_2]
+        /// The group ids of the user
         /// </param>
         /// <param name="workspacePermission">
-        /// The workspace permission of the user<br/>
-        /// Example: workspace_member
+        /// The workspace permission of the user
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,7 +52,7 @@ namespace G
         public BodyInviteUserV1WorkspaceInvitesAddPost(
             string email,
             global::System.Collections.Generic.IList<string>? groupIds,
-            global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission? workspacePermission)
+            global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission2? workspacePermission)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.GroupIds = groupIds;

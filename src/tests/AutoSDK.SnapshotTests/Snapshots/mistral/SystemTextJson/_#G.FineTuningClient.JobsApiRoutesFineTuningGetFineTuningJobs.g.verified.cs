@@ -11,10 +11,10 @@ namespace G
             ref int? page,
             ref int? pageSize,
             ref string? model,
-            ref global::System.DateTime? createdAfter,
-            ref global::System.DateTime? createdBefore,
+            global::System.DateTime? createdAfter,
+            global::System.DateTime? createdBefore,
             ref bool? createdByMe,
-            ref global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status,
+            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
             ref string? wandbProject,
             ref string? wandbName,
             ref string? suffix);
@@ -27,7 +27,7 @@ namespace G
             global::System.DateTime? createdAfter,
             global::System.DateTime? createdBefore,
             bool? createdByMe,
-            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status,
+            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
             string? wandbProject,
             string? wandbName,
             string? suffix);
@@ -69,7 +69,7 @@ namespace G
             global::System.DateTime? createdAfter = default,
             global::System.DateTime? createdBefore = default,
             bool? createdByMe = default,
-            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
+            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status = default,
             string? wandbProject = default,
             string? wandbName = default,
             string? suffix = default,
@@ -82,10 +82,10 @@ namespace G
                 page: ref page,
                 pageSize: ref pageSize,
                 model: ref model,
-                createdAfter: ref createdAfter,
-                createdBefore: ref createdBefore,
+                createdAfter: createdAfter,
+                createdBefore: createdBefore,
                 createdByMe: ref createdByMe,
-                status: ref status,
+                status: status,
                 wandbProject: ref wandbProject,
                 wandbName: ref wandbName,
                 suffix: ref suffix);
@@ -97,10 +97,10 @@ namespace G
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 .AddOptionalParameter("model", model) 
-                .AddOptionalParameter("created_after", createdAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("created_before", createdBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("created_after", createdAfter?.ToString()) 
+                .AddOptionalParameter("created_before", createdBefore?.ToString()) 
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("status", status?.ToString()) 
                 .AddOptionalParameter("wandb_project", wandbProject) 
                 .AddOptionalParameter("wandb_name", wandbName) 
                 .AddOptionalParameter("suffix", suffix) 

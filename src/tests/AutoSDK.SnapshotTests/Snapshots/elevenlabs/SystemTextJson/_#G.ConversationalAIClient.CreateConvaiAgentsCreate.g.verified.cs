@@ -209,15 +209,17 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-        /// <param name="conversationConfig"></param>
-        /// <param name="platformSettings"></param>
+        /// <param name="conversationConfig">
+        /// Conversation configuration for an agent
+        /// </param>
+        /// <param name="platformSettings">
+        /// Platform settings for the agent are all settings that aren't related to the conversation orchestration and content.
+        /// </param>
         /// <param name="name">
-        /// A name to make the agent easier to find<br/>
-        /// Example: My agent
+        /// A name to make the agent easier to find
         /// </param>
         /// <param name="tags">
-        /// Tags to help classify and filter the agent<br/>
-        /// Example: [Customer Support, Technical Help, Eleven]
+        /// Tags to help classify and filter the agent
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

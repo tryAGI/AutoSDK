@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamDiscriminatorRole? Role { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionSystemMessageParam? System { get; init; }
 #else
@@ -35,6 +30,73 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionUserMessageParam? User { get; init; }
+#else
+        public global::G.ChatCompletionUserMessageParam? User { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
+#endif
+        public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionAssistantMessageParam? Assistant { get; init; }
+#else
+        public global::G.ChatCompletionAssistantMessageParam? Assistant { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+#endif
+        public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionToolMessageParam? Tool { get; init; }
+#else
+        public global::G.ChatCompletionToolMessageParam? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionFunctionMessageParam? Function { get; init; }
+#else
+        public global::G.ChatCompletionFunctionMessageParam? Function { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
+#endif
+        public bool IsFunction => Function != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionSystemMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionSystemMessageParam?)value);
 
         /// <summary>
@@ -49,23 +111,6 @@ namespace G
         {
             System = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionUserMessageParam? User { get; init; }
-#else
-        public global::G.ChatCompletionUserMessageParam? User { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
-#endif
-        public bool IsUser => User != null;
 
         /// <summary>
         /// 
@@ -88,23 +133,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionAssistantMessageParam? Assistant { get; init; }
-#else
-        public global::G.ChatCompletionAssistantMessageParam? Assistant { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
-#endif
-        public bool IsAssistant => Assistant != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionAssistantMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionAssistantMessageParam?)value);
 
         /// <summary>
@@ -123,23 +151,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionToolMessageParam? Tool { get; init; }
-#else
-        public global::G.ChatCompletionToolMessageParam? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionToolMessageParam value) => new ChatCompletionMessageParam((global::G.ChatCompletionToolMessageParam?)value);
 
         /// <summary>
@@ -154,23 +165,6 @@ namespace G
         {
             Tool = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionFunctionMessageParam? Function { get; init; }
-#else
-        public global::G.ChatCompletionFunctionMessageParam? Function { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
-#endif
-        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
@@ -194,7 +188,6 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionMessageParam(
-            global::G.ChatCompletionMessageParamDiscriminatorRole? role,
             global::G.ChatCompletionSystemMessageParam? system,
             global::G.ChatCompletionUserMessageParam? user,
             global::G.ChatCompletionAssistantMessageParam? assistant,
@@ -202,8 +195,6 @@ namespace G
             global::G.ChatCompletionFunctionMessageParam? function
             )
         {
-            Role = role;
-
             System = system;
             User = user;
             Assistant = assistant;

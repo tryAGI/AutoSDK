@@ -33,7 +33,7 @@ namespace G
         /// Default Value: FunctionMessageChunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FunctionMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.FunctionMessageChunkType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

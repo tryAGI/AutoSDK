@@ -31,24 +31,6 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption((global::G.AssistantsApiResponseFormatOptionEnum?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,24 +46,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatText value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatText?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ResponseFormatText?(AssistantsApiResponseFormatOption @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AssistantsApiResponseFormatOption(global::G.ResponseFormatText? value)
-        {
-            Value2 = value;
-        }
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -104,24 +68,6 @@ namespace G
         public bool IsValue3 => Value3 != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatJsonObject?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ResponseFormatJsonObject?(AssistantsApiResponseFormatOption @this) => @this.Value3;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AssistantsApiResponseFormatOption(global::G.ResponseFormatJsonObject? value)
-        {
-            Value3 = value;
-        }
-
-        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -138,6 +84,59 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
 #endif
         public bool IsValue4 => Value4 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption((global::G.AssistantsApiResponseFormatOptionEnum?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum? value)
+        {
+            Value1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatText value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatText?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFormatText?(AssistantsApiResponseFormatOption @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantsApiResponseFormatOption(global::G.ResponseFormatText? value)
+        {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatJsonObject?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFormatJsonObject?(AssistantsApiResponseFormatOption @this) => @this.Value3;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantsApiResponseFormatOption(global::G.ResponseFormatJsonObject? value)
+        {
+            Value3 = value;
+        }
 
         /// <summary>
         /// 

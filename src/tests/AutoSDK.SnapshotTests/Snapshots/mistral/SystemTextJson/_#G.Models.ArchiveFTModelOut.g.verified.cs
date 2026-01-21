@@ -10,12 +10,6 @@ namespace G
     public sealed partial class ArchiveFTModelOut
     {
         /// <summary>
-        /// Default Value: true
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool? Archived { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -30,6 +24,12 @@ namespace G
         public global::G.ArchiveFTModelOutObject? Object { get; set; }
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
+        public bool? Archived { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,24 +38,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchiveFTModelOut" /> class.
         /// </summary>
-        /// <param name="archived">
-        /// Default Value: true
-        /// </param>
         /// <param name="id"></param>
         /// <param name="object">
         /// Default Value: model
+        /// </param>
+        /// <param name="archived">
+        /// Default Value: true
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ArchiveFTModelOut(
             string id,
-            bool? archived,
-            global::G.ArchiveFTModelOutObject? @object)
+            global::G.ArchiveFTModelOutObject? @object,
+            bool? archived)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Archived = archived;
             this.Object = @object;
+            this.Archived = archived;
         }
 
         /// <summary>

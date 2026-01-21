@@ -64,7 +64,7 @@ namespace G
         public string? RoleName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
         public global::G.AccessScope? AccessScope { get; set; }
@@ -129,7 +129,9 @@ namespace G
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
-        /// <param name="accessScope"></param>
+        /// <param name="accessScope">
+        /// Default Value: workspace
+        /// </param>
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>

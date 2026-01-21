@@ -13,7 +13,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SampleType>? sampleType,
             global::System.Collections.Generic.IList<global::G.Source>? source,
             ref string? search,
-            object? purpose);
+            global::G.FilePurpose? purpose);
         partial void PrepareFilesApiRoutesListFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SampleType>? sampleType,
             global::System.Collections.Generic.IList<global::G.Source>? source,
             string? search,
-            object? purpose);
+            global::G.FilePurpose? purpose);
         partial void ProcessFilesApiRoutesListFilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,7 +54,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SampleType>? sampleType = default,
             global::System.Collections.Generic.IList<global::G.Source>? source = default,
             string? search = default,
-            object? purpose = default,
+            global::G.FilePurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -74,8 +74,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("sample_type", sampleType, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("sample_type", sampleType?.ToString()) 
+                .AddOptionalParameter("source", source?.ToString()) 
                 .AddOptionalParameter("search", search) 
                 .AddOptionalParameter("purpose", purpose?.ToString()) 
                 ; 

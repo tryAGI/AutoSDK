@@ -31,7 +31,7 @@ namespace G
         /// Default Value: available
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.DependentAvailableAgentToolIdentifierType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
             global::System.Collections.Generic.IList<string> usedBy,
             int createdAtUnixSecs,
             global::G.DependentAvailableAgentToolIdentifierAccessLevel accessLevel,
-            global::G.DependentAvailableAgentToolIdentifierType? type)
+            string? type)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));

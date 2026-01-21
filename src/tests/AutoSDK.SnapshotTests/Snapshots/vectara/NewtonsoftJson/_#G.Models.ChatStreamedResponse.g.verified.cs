@@ -33,24 +33,6 @@ namespace G
         public bool IsSearchResults => SearchResults != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamSearchResponse value) => new ChatStreamedResponse((global::G.StreamSearchResponse?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.StreamSearchResponse?(ChatStreamedResponse @this) => @this.SearchResults;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatStreamedResponse(global::G.StreamSearchResponse? value)
-        {
-            SearchResults = value;
-        }
-
-        /// <summary>
         /// Information about the chat.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,24 +50,6 @@ namespace G
         public bool IsChatInfo => ChatInfo != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.ChatInfoResponse value) => new ChatStreamedResponse((global::G.ChatInfoResponse?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ChatInfoResponse?(ChatStreamedResponse @this) => @this.ChatInfo;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatStreamedResponse(global::G.ChatInfoResponse? value)
-        {
-            ChatInfo = value;
-        }
-
-        /// <summary>
         /// The chunk response from the generation, which may be a partial generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -101,24 +65,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationChunk))]
 #endif
         public bool IsGenerationChunk => GenerationChunk != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationChunk value) => new ChatStreamedResponse((global::G.StreamGenerationChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.StreamGenerationChunk?(ChatStreamedResponse @this) => @this.GenerationChunk;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChatStreamedResponse(global::G.StreamGenerationChunk? value)
-        {
-            GenerationChunk = value;
-        }
 
         /// <summary>
         /// The end of generation. There may still be more information such as the<br/>
@@ -139,6 +85,127 @@ namespace G
         public bool IsGenerationEnd => GenerationEnd != null;
 
         /// <summary>
+        /// Event containing the factual consistency score.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.FactualConsistencyScore? FactualConsistencyScore { get; init; }
+#else
+        public global::G.FactualConsistencyScore? FactualConsistencyScore { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FactualConsistencyScore))]
+#endif
+        public bool IsFactualConsistencyScore => FactualConsistencyScore != null;
+
+        /// <summary>
+        /// The end of a query response stream.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StreamResponseEnd? End { get; init; }
+#else
+        public global::G.StreamResponseEnd? End { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
+#endif
+        public bool IsEnd => End != null;
+
+        /// <summary>
+        /// Event containing information on how the generation was accomplished.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GenerationInfo? GenerationInfo { get; init; }
+#else
+        public global::G.GenerationInfo? GenerationInfo { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationInfo))]
+#endif
+        public bool IsGenerationInfo => GenerationInfo != null;
+
+        /// <summary>
+        /// Event signaling there was an error with the request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.StreamError? Error { get; init; }
+#else
+        public global::G.StreamError? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatStreamedResponse(global::G.StreamSearchResponse value) => new ChatStreamedResponse((global::G.StreamSearchResponse?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.StreamSearchResponse?(ChatStreamedResponse @this) => @this.SearchResults;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamedResponse(global::G.StreamSearchResponse? value)
+        {
+            SearchResults = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatStreamedResponse(global::G.ChatInfoResponse value) => new ChatStreamedResponse((global::G.ChatInfoResponse?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatInfoResponse?(ChatStreamedResponse @this) => @this.ChatInfo;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamedResponse(global::G.ChatInfoResponse? value)
+        {
+            ChatInfo = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatStreamedResponse(global::G.StreamGenerationChunk value) => new ChatStreamedResponse((global::G.StreamGenerationChunk?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.StreamGenerationChunk?(ChatStreamedResponse @this) => @this.GenerationChunk;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatStreamedResponse(global::G.StreamGenerationChunk? value)
+        {
+            GenerationChunk = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatStreamedResponse(global::G.StreamGenerationEnd value) => new ChatStreamedResponse((global::G.StreamGenerationEnd?)value);
@@ -155,23 +222,6 @@ namespace G
         {
             GenerationEnd = value;
         }
-
-        /// <summary>
-        /// Event containing the factual consistency score.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.FactualConsistencyScore? FactualConsistencyScore { get; init; }
-#else
-        public global::G.FactualConsistencyScore? FactualConsistencyScore { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FactualConsistencyScore))]
-#endif
-        public bool IsFactualConsistencyScore => FactualConsistencyScore != null;
 
         /// <summary>
         /// 
@@ -192,23 +242,6 @@ namespace G
         }
 
         /// <summary>
-        /// The end of a query response stream.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StreamResponseEnd? End { get; init; }
-#else
-        public global::G.StreamResponseEnd? End { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
-#endif
-        public bool IsEnd => End != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatStreamedResponse(global::G.StreamResponseEnd value) => new ChatStreamedResponse((global::G.StreamResponseEnd?)value);
@@ -227,23 +260,6 @@ namespace G
         }
 
         /// <summary>
-        /// Event containing information on how the generation was accomplished.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.GenerationInfo? GenerationInfo { get; init; }
-#else
-        public global::G.GenerationInfo? GenerationInfo { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationInfo))]
-#endif
-        public bool IsGenerationInfo => GenerationInfo != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatStreamedResponse(global::G.GenerationInfo value) => new ChatStreamedResponse((global::G.GenerationInfo?)value);
@@ -260,23 +276,6 @@ namespace G
         {
             GenerationInfo = value;
         }
-
-        /// <summary>
-        /// Event signaling there was an error with the request.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.StreamError? Error { get; init; }
-#else
-        public global::G.StreamError? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
 
         /// <summary>
         /// 

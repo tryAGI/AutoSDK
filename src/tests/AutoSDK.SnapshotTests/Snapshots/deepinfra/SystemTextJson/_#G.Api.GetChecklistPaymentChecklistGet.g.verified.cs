@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGetChecklistPaymentChecklistGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? session);
+            object? session);
         partial void PrepareGetChecklistPaymentChecklistGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? session);
+            object? session);
         partial void ProcessGetChecklistPaymentChecklistGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,14 +29,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Checklist> GetChecklistPaymentChecklistGetAsync(
-            string? session = default,
+            object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetChecklistPaymentChecklistGetArguments(
                 httpClient: HttpClient,
-                session: ref session);
+                session: session);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/checklist",

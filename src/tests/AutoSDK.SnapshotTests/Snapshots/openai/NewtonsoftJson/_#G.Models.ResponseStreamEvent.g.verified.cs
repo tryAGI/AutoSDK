@@ -28,6 +28,889 @@ namespace G
         public bool IsAudioDelta => AudioDelta != null;
 
         /// <summary>
+        /// Emitted when the audio response is complete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioDoneEvent? AudioDone { get; init; }
+#else
+        public global::G.ResponseAudioDoneEvent? AudioDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDone))]
+#endif
+        public bool IsAudioDone => AudioDone != null;
+
+        /// <summary>
+        /// Emitted when there is a partial transcript of audio.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; init; }
+#else
+        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDelta))]
+#endif
+        public bool IsAudioTranscriptDelta => AudioTranscriptDelta != null;
+
+        /// <summary>
+        /// Emitted when the full audio transcript is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; init; }
+#else
+        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDone))]
+#endif
+        public bool IsAudioTranscriptDone => AudioTranscriptDone != null;
+
+        /// <summary>
+        /// Emitted when a partial code snippet is added by the code interpreter.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDelta))]
+#endif
+        public bool IsCodeInterpreterCallDelta => CodeInterpreterCallDelta != null;
+
+        /// <summary>
+        /// Emitted when code snippet output is finalized by the code interpreter.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDone))]
+#endif
+        public bool IsCodeInterpreterCallDone => CodeInterpreterCallDone != null;
+
+        /// <summary>
+        /// Emitted when the code interpreter call is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallCompleted))]
+#endif
+        public bool IsCodeInterpreterCallCompleted => CodeInterpreterCallCompleted != null;
+
+        /// <summary>
+        /// Emitted when a code interpreter call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInProgress))]
+#endif
+        public bool IsCodeInterpreterCallInProgress => CodeInterpreterCallInProgress != null;
+
+        /// <summary>
+        /// Emitted when the code interpreter is actively interpreting the code snippet.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInterpreting))]
+#endif
+        public bool IsCodeInterpreterCallInterpreting => CodeInterpreterCallInterpreting != null;
+
+        /// <summary>
+        /// Emitted when the model response is complete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCompletedEvent? Completed { get; init; }
+#else
+        public global::G.ResponseCompletedEvent? Completed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completed))]
+#endif
+        public bool IsCompleted => Completed != null;
+
+        /// <summary>
+        /// Emitted when a new content part is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; init; }
+#else
+        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartAdded))]
+#endif
+        public bool IsContentPartAdded => ContentPartAdded != null;
+
+        /// <summary>
+        /// Emitted when a content part is done.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; init; }
+#else
+        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartDone))]
+#endif
+        public bool IsContentPartDone => ContentPartDone != null;
+
+        /// <summary>
+        /// An event that is emitted when a response is created.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCreatedEvent? Created { get; init; }
+#else
+        public global::G.ResponseCreatedEvent? Created { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Created))]
+#endif
+        public bool IsCreated => Created != null;
+
+        /// <summary>
+        /// Emitted when an error occurs.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseErrorEvent? Error { get; init; }
+#else
+        public global::G.ResponseErrorEvent? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+
+        /// <summary>
+        /// Emitted when a file search call is completed (results found).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; init; }
+#else
+        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallCompleted))]
+#endif
+        public bool IsFileSearchCallCompleted => FileSearchCallCompleted != null;
+
+        /// <summary>
+        /// Emitted when a file search call is initiated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; init; }
+#else
+        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallInProgress))]
+#endif
+        public bool IsFileSearchCallInProgress => FileSearchCallInProgress != null;
+
+        /// <summary>
+        /// Emitted when a file search is currently searching.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; init; }
+#else
+        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallSearching))]
+#endif
+        public bool IsFileSearchCallSearching => FileSearchCallSearching != null;
+
+        /// <summary>
+        /// Emitted when there is a partial function-call arguments delta.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; init; }
+#else
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDelta))]
+#endif
+        public bool IsFunctionCallArgumentsDelta => FunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// Emitted when function-call arguments are finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; init; }
+#else
+        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDone))]
+#endif
+        public bool IsFunctionCallArgumentsDone => FunctionCallArgumentsDone != null;
+
+        /// <summary>
+        /// Emitted when the response is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseInProgressEvent? InProgress { get; init; }
+#else
+        public global::G.ResponseInProgressEvent? InProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InProgress))]
+#endif
+        public bool IsInProgress => InProgress != null;
+
+        /// <summary>
+        /// An event that is emitted when a response fails.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFailedEvent? Failed { get; init; }
+#else
+        public global::G.ResponseFailedEvent? Failed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failed))]
+#endif
+        public bool IsFailed => Failed != null;
+
+        /// <summary>
+        /// An event that is emitted when a response finishes as incomplete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseIncompleteEvent? Incomplete { get; init; }
+#else
+        public global::G.ResponseIncompleteEvent? Incomplete { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Incomplete))]
+#endif
+        public bool IsIncomplete => Incomplete != null;
+
+        /// <summary>
+        /// Emitted when a new output item is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; init; }
+#else
+        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemAdded))]
+#endif
+        public bool IsOutputItemAdded => OutputItemAdded != null;
+
+        /// <summary>
+        /// Emitted when an output item is marked done.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; init; }
+#else
+        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemDone))]
+#endif
+        public bool IsOutputItemDone => OutputItemDone != null;
+
+        /// <summary>
+        /// Emitted when a new reasoning summary part is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartAdded))]
+#endif
+        public bool IsReasoningSummaryPartAdded => ReasoningSummaryPartAdded != null;
+
+        /// <summary>
+        /// Emitted when a reasoning summary part is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartDone))]
+#endif
+        public bool IsReasoningSummaryPartDone => ReasoningSummaryPartDone != null;
+
+        /// <summary>
+        /// Emitted when a delta is added to a reasoning summary text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDelta))]
+#endif
+        public bool IsReasoningSummaryTextDelta => ReasoningSummaryTextDelta != null;
+
+        /// <summary>
+        /// Emitted when a reasoning summary text is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDone))]
+#endif
+        public bool IsReasoningSummaryTextDone => ReasoningSummaryTextDone != null;
+
+        /// <summary>
+        /// Emitted when there is a partial refusal text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; init; }
+#else
+        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDelta))]
+#endif
+        public bool IsRefusalDelta => RefusalDelta != null;
+
+        /// <summary>
+        /// Emitted when refusal text is finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; init; }
+#else
+        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDone))]
+#endif
+        public bool IsRefusalDone => RefusalDone != null;
+
+        /// <summary>
+        /// Emitted when there is an additional text delta.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseTextDeltaEvent? TextDelta { get; init; }
+#else
+        public global::G.ResponseTextDeltaEvent? TextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
+#endif
+        public bool IsTextDelta => TextDelta != null;
+
+        /// <summary>
+        /// Emitted when text content is finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseTextDoneEvent? TextDone { get; init; }
+#else
+        public global::G.ResponseTextDoneEvent? TextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDone))]
+#endif
+        public bool IsTextDone => TextDone != null;
+
+        /// <summary>
+        /// Emitted when a web search call is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; init; }
+#else
+        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallCompleted))]
+#endif
+        public bool IsWebSearchCallCompleted => WebSearchCallCompleted != null;
+
+        /// <summary>
+        /// Emitted when a web search call is initiated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; init; }
+#else
+        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallInProgress))]
+#endif
+        public bool IsWebSearchCallInProgress => WebSearchCallInProgress != null;
+
+        /// <summary>
+        /// Emitted when a web search call is executing.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; init; }
+#else
+        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallSearching))]
+#endif
+        public bool IsWebSearchCallSearching => WebSearchCallSearching != null;
+
+        /// <summary>
+        /// Emitted when an image generation tool call has completed and the final image is available.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; init; }
+#else
+        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallCompleted))]
+#endif
+        public bool IsImageGenCallCompleted => ImageGenCallCompleted != null;
+
+        /// <summary>
+        /// Emitted when an image generation tool call is actively generating an image (intermediate state).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; init; }
+#else
+        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallGenerating))]
+#endif
+        public bool IsImageGenCallGenerating => ImageGenCallGenerating != null;
+
+        /// <summary>
+        /// Emitted when an image generation tool call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; init; }
+#else
+        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallInProgress))]
+#endif
+        public bool IsImageGenCallInProgress => ImageGenCallInProgress != null;
+
+        /// <summary>
+        /// Emitted when a partial image is available during image generation streaming.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; init; }
+#else
+        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallPartial))]
+#endif
+        public bool IsImageGenCallPartial => ImageGenCallPartial != null;
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; init; }
+#else
+        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDelta))]
+#endif
+        public bool IsMCPCallArgumentsDelta => MCPCallArgumentsDelta != null;
+
+        /// <summary>
+        /// Emitted when the arguments for an MCP tool call are finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; init; }
+#else
+        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDone))]
+#endif
+        public bool IsMCPCallArgumentsDone => MCPCallArgumentsDone != null;
+
+        /// <summary>
+        /// Emitted when an MCP  tool call has completed successfully.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; init; }
+#else
+        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallCompleted))]
+#endif
+        public bool IsMCPCallCompleted => MCPCallCompleted != null;
+
+        /// <summary>
+        /// Emitted when an MCP  tool call has failed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; init; }
+#else
+        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallFailed))]
+#endif
+        public bool IsMCPCallFailed => MCPCallFailed != null;
+
+        /// <summary>
+        /// Emitted when an MCP  tool call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; init; }
+#else
+        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallInProgress))]
+#endif
+        public bool IsMCPCallInProgress => MCPCallInProgress != null;
+
+        /// <summary>
+        /// Emitted when the list of available MCP tools has been successfully retrieved.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; init; }
+#else
+        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsCompleted))]
+#endif
+        public bool IsMCPListToolsCompleted => MCPListToolsCompleted != null;
+
+        /// <summary>
+        /// Emitted when the attempt to list available MCP tools has failed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; init; }
+#else
+        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsFailed))]
+#endif
+        public bool IsMCPListToolsFailed => MCPListToolsFailed != null;
+
+        /// <summary>
+        /// Emitted when the system is in the process of retrieving the list of available MCP tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; init; }
+#else
+        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsInProgress))]
+#endif
+        public bool IsMCPListToolsInProgress => MCPListToolsInProgress != null;
+
+        /// <summary>
+        /// Emitted when an annotation is added to output text content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; init; }
+#else
+        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextAnnotationAdded))]
+#endif
+        public bool IsOutputTextAnnotationAdded => OutputTextAnnotationAdded != null;
+
+        /// <summary>
+        /// Emitted when a response is queued and waiting to be processed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseQueuedEvent? Queued { get; init; }
+#else
+        public global::G.ResponseQueuedEvent? Queued { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Queued))]
+#endif
+        public bool IsQueued => Queued != null;
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the reasoning content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; init; }
+#else
+        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDelta))]
+#endif
+        public bool IsReasoningDelta => ReasoningDelta != null;
+
+        /// <summary>
+        /// Emitted when the reasoning content is finalized for an item.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; init; }
+#else
+        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDone))]
+#endif
+        public bool IsReasoningDone => ReasoningDone != null;
+
+        /// <summary>
+        /// Emitted when there is a delta (partial update) to the reasoning summary content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDelta))]
+#endif
+        public bool IsReasoningSummaryDelta => ReasoningSummaryDelta != null;
+
+        /// <summary>
+        /// Emitted when the reasoning summary content is finalized for an item.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; init; }
+#else
+        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDone))]
+#endif
+        public bool IsReasoningSummaryDone => ReasoningSummaryDone != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseAudioDeltaEvent?)value);
@@ -44,23 +927,6 @@ namespace G
         {
             AudioDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the audio response is complete.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseAudioDoneEvent? AudioDone { get; init; }
-#else
-        public global::G.ResponseAudioDoneEvent? AudioDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDone))]
-#endif
-        public bool IsAudioDone => AudioDone != null;
 
         /// <summary>
         /// 
@@ -81,23 +947,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when there is a partial transcript of audio.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; init; }
-#else
-        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDelta))]
-#endif
-        public bool IsAudioTranscriptDelta => AudioTranscriptDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseAudioTranscriptDeltaEvent?)value);
@@ -114,23 +963,6 @@ namespace G
         {
             AudioTranscriptDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the full audio transcript is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; init; }
-#else
-        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDone))]
-#endif
-        public bool IsAudioTranscriptDone => AudioTranscriptDone != null;
 
         /// <summary>
         /// 
@@ -151,23 +983,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a partial code snippet is added by the code interpreter.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; init; }
-#else
-        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDelta))]
-#endif
-        public bool IsCodeInterpreterCallDelta => CodeInterpreterCallDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallCodeDeltaEvent?)value);
@@ -184,23 +999,6 @@ namespace G
         {
             CodeInterpreterCallDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when code snippet output is finalized by the code interpreter.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; init; }
-#else
-        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDone))]
-#endif
-        public bool IsCodeInterpreterCallDone => CodeInterpreterCallDone != null;
 
         /// <summary>
         /// 
@@ -221,23 +1019,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the code interpreter call is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; init; }
-#else
-        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallCompleted))]
-#endif
-        public bool IsCodeInterpreterCallCompleted => CodeInterpreterCallCompleted != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallCompletedEvent?)value);
@@ -254,23 +1035,6 @@ namespace G
         {
             CodeInterpreterCallCompleted = value;
         }
-
-        /// <summary>
-        /// Emitted when a code interpreter call is in progress.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; init; }
-#else
-        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInProgress))]
-#endif
-        public bool IsCodeInterpreterCallInProgress => CodeInterpreterCallInProgress != null;
 
         /// <summary>
         /// 
@@ -291,23 +1055,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the code interpreter is actively interpreting the code snippet.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; init; }
-#else
-        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInterpreting))]
-#endif
-        public bool IsCodeInterpreterCallInterpreting => CodeInterpreterCallInterpreting != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent((global::G.ResponseCodeInterpreterCallInterpretingEvent?)value);
@@ -324,23 +1071,6 @@ namespace G
         {
             CodeInterpreterCallInterpreting = value;
         }
-
-        /// <summary>
-        /// Emitted when the model response is complete.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCompletedEvent? Completed { get; init; }
-#else
-        public global::G.ResponseCompletedEvent? Completed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completed))]
-#endif
-        public bool IsCompleted => Completed != null;
 
         /// <summary>
         /// 
@@ -361,23 +1091,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a new content part is added.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; init; }
-#else
-        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartAdded))]
-#endif
-        public bool IsContentPartAdded => ContentPartAdded != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartAddedEvent value) => new ResponseStreamEvent((global::G.ResponseContentPartAddedEvent?)value);
@@ -394,23 +1107,6 @@ namespace G
         {
             ContentPartAdded = value;
         }
-
-        /// <summary>
-        /// Emitted when a content part is done.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; init; }
-#else
-        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartDone))]
-#endif
-        public bool IsContentPartDone => ContentPartDone != null;
 
         /// <summary>
         /// 
@@ -431,23 +1127,6 @@ namespace G
         }
 
         /// <summary>
-        /// An event that is emitted when a response is created.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseCreatedEvent? Created { get; init; }
-#else
-        public global::G.ResponseCreatedEvent? Created { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Created))]
-#endif
-        public bool IsCreated => Created != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseCreatedEvent value) => new ResponseStreamEvent((global::G.ResponseCreatedEvent?)value);
@@ -464,23 +1143,6 @@ namespace G
         {
             Created = value;
         }
-
-        /// <summary>
-        /// Emitted when an error occurs.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseErrorEvent? Error { get; init; }
-#else
-        public global::G.ResponseErrorEvent? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
 
         /// <summary>
         /// 
@@ -501,23 +1163,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a file search call is completed (results found).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; init; }
-#else
-        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallCompleted))]
-#endif
-        public bool IsFileSearchCallCompleted => FileSearchCallCompleted != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseFileSearchCallCompletedEvent?)value);
@@ -534,23 +1179,6 @@ namespace G
         {
             FileSearchCallCompleted = value;
         }
-
-        /// <summary>
-        /// Emitted when a file search call is initiated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; init; }
-#else
-        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallInProgress))]
-#endif
-        public bool IsFileSearchCallInProgress => FileSearchCallInProgress != null;
 
         /// <summary>
         /// 
@@ -571,23 +1199,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a file search is currently searching.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; init; }
-#else
-        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallSearching))]
-#endif
-        public bool IsFileSearchCallSearching => FileSearchCallSearching != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent((global::G.ResponseFileSearchCallSearchingEvent?)value);
@@ -604,23 +1215,6 @@ namespace G
         {
             FileSearchCallSearching = value;
         }
-
-        /// <summary>
-        /// Emitted when there is a partial function-call arguments delta.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; init; }
-#else
-        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDelta))]
-#endif
-        public bool IsFunctionCallArgumentsDelta => FunctionCallArgumentsDelta != null;
 
         /// <summary>
         /// 
@@ -641,23 +1235,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when function-call arguments are finalized.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; init; }
-#else
-        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDone))]
-#endif
-        public bool IsFunctionCallArgumentsDone => FunctionCallArgumentsDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::G.ResponseFunctionCallArgumentsDoneEvent?)value);
@@ -674,23 +1251,6 @@ namespace G
         {
             FunctionCallArgumentsDone = value;
         }
-
-        /// <summary>
-        /// Emitted when the response is in progress.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseInProgressEvent? InProgress { get; init; }
-#else
-        public global::G.ResponseInProgressEvent? InProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InProgress))]
-#endif
-        public bool IsInProgress => InProgress != null;
 
         /// <summary>
         /// 
@@ -711,23 +1271,6 @@ namespace G
         }
 
         /// <summary>
-        /// An event that is emitted when a response fails.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseFailedEvent? Failed { get; init; }
-#else
-        public global::G.ResponseFailedEvent? Failed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failed))]
-#endif
-        public bool IsFailed => Failed != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseFailedEvent value) => new ResponseStreamEvent((global::G.ResponseFailedEvent?)value);
@@ -744,23 +1287,6 @@ namespace G
         {
             Failed = value;
         }
-
-        /// <summary>
-        /// An event that is emitted when a response finishes as incomplete.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseIncompleteEvent? Incomplete { get; init; }
-#else
-        public global::G.ResponseIncompleteEvent? Incomplete { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Incomplete))]
-#endif
-        public bool IsIncomplete => Incomplete != null;
 
         /// <summary>
         /// 
@@ -781,23 +1307,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a new output item is added.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; init; }
-#else
-        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemAdded))]
-#endif
-        public bool IsOutputItemAdded => OutputItemAdded != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent((global::G.ResponseOutputItemAddedEvent?)value);
@@ -814,23 +1323,6 @@ namespace G
         {
             OutputItemAdded = value;
         }
-
-        /// <summary>
-        /// Emitted when an output item is marked done.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; init; }
-#else
-        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemDone))]
-#endif
-        public bool IsOutputItemDone => OutputItemDone != null;
 
         /// <summary>
         /// 
@@ -851,23 +1343,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a new reasoning summary part is added.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartAdded))]
-#endif
-        public bool IsReasoningSummaryPartAdded => ReasoningSummaryPartAdded != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryPartAddedEvent?)value);
@@ -884,23 +1359,6 @@ namespace G
         {
             ReasoningSummaryPartAdded = value;
         }
-
-        /// <summary>
-        /// Emitted when a reasoning summary part is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartDone))]
-#endif
-        public bool IsReasoningSummaryPartDone => ReasoningSummaryPartDone != null;
 
         /// <summary>
         /// 
@@ -921,23 +1379,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a delta is added to a reasoning summary text.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDelta))]
-#endif
-        public bool IsReasoningSummaryTextDelta => ReasoningSummaryTextDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryTextDeltaEvent?)value);
@@ -954,23 +1395,6 @@ namespace G
         {
             ReasoningSummaryTextDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when a reasoning summary text is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDone))]
-#endif
-        public bool IsReasoningSummaryTextDone => ReasoningSummaryTextDone != null;
 
         /// <summary>
         /// 
@@ -991,23 +1415,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when there is a partial refusal text.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; init; }
-#else
-        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDelta))]
-#endif
-        public bool IsRefusalDelta => RefusalDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseRefusalDeltaEvent?)value);
@@ -1024,23 +1431,6 @@ namespace G
         {
             RefusalDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when refusal text is finalized.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; init; }
-#else
-        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDone))]
-#endif
-        public bool IsRefusalDone => RefusalDone != null;
 
         /// <summary>
         /// 
@@ -1061,23 +1451,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when there is an additional text delta.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseTextDeltaEvent? TextDelta { get; init; }
-#else
-        public global::G.ResponseTextDeltaEvent? TextDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
-#endif
-        public bool IsTextDelta => TextDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseTextDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseTextDeltaEvent?)value);
@@ -1094,23 +1467,6 @@ namespace G
         {
             TextDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when text content is finalized.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseTextDoneEvent? TextDone { get; init; }
-#else
-        public global::G.ResponseTextDoneEvent? TextDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDone))]
-#endif
-        public bool IsTextDone => TextDone != null;
 
         /// <summary>
         /// 
@@ -1131,23 +1487,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a web search call is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; init; }
-#else
-        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallCompleted))]
-#endif
-        public bool IsWebSearchCallCompleted => WebSearchCallCompleted != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseWebSearchCallCompletedEvent?)value);
@@ -1164,23 +1503,6 @@ namespace G
         {
             WebSearchCallCompleted = value;
         }
-
-        /// <summary>
-        /// Emitted when a web search call is initiated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; init; }
-#else
-        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallInProgress))]
-#endif
-        public bool IsWebSearchCallInProgress => WebSearchCallInProgress != null;
 
         /// <summary>
         /// 
@@ -1201,23 +1523,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a web search call is executing.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; init; }
-#else
-        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallSearching))]
-#endif
-        public bool IsWebSearchCallSearching => WebSearchCallSearching != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent((global::G.ResponseWebSearchCallSearchingEvent?)value);
@@ -1234,23 +1539,6 @@ namespace G
         {
             WebSearchCallSearching = value;
         }
-
-        /// <summary>
-        /// Emitted when an image generation tool call has completed and the final image is available.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; init; }
-#else
-        public global::G.ResponseImageGenCallCompletedEvent? ImageGenCallCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallCompleted))]
-#endif
-        public bool IsImageGenCallCompleted => ImageGenCallCompleted != null;
 
         /// <summary>
         /// 
@@ -1271,23 +1559,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when an image generation tool call is actively generating an image (intermediate state).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; init; }
-#else
-        public global::G.ResponseImageGenCallGeneratingEvent? ImageGenCallGenerating { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallGenerating))]
-#endif
-        public bool IsImageGenCallGenerating => ImageGenCallGenerating != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallGeneratingEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallGeneratingEvent?)value);
@@ -1304,23 +1575,6 @@ namespace G
         {
             ImageGenCallGenerating = value;
         }
-
-        /// <summary>
-        /// Emitted when an image generation tool call is in progress.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; init; }
-#else
-        public global::G.ResponseImageGenCallInProgressEvent? ImageGenCallInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallInProgress))]
-#endif
-        public bool IsImageGenCallInProgress => ImageGenCallInProgress != null;
 
         /// <summary>
         /// 
@@ -1341,23 +1595,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a partial image is available during image generation streaming.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; init; }
-#else
-        public global::G.ResponseImageGenCallPartialImageEvent? ImageGenCallPartial { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenCallPartial))]
-#endif
-        public bool IsImageGenCallPartial => ImageGenCallPartial != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseImageGenCallPartialImageEvent value) => new ResponseStreamEvent((global::G.ResponseImageGenCallPartialImageEvent?)value);
@@ -1374,23 +1611,6 @@ namespace G
         {
             ImageGenCallPartial = value;
         }
-
-        /// <summary>
-        /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; init; }
-#else
-        public global::G.ResponseMCPCallArgumentsDeltaEvent? MCPCallArgumentsDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDelta))]
-#endif
-        public bool IsMCPCallArgumentsDelta => MCPCallArgumentsDelta != null;
 
         /// <summary>
         /// 
@@ -1411,23 +1631,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the arguments for an MCP tool call are finalized.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; init; }
-#else
-        public global::G.ResponseMCPCallArgumentsDoneEvent? MCPCallArgumentsDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallArgumentsDone))]
-#endif
-        public bool IsMCPCallArgumentsDone => MCPCallArgumentsDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallArgumentsDoneEvent?)value);
@@ -1444,23 +1647,6 @@ namespace G
         {
             MCPCallArgumentsDone = value;
         }
-
-        /// <summary>
-        /// Emitted when an MCP  tool call has completed successfully.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; init; }
-#else
-        public global::G.ResponseMCPCallCompletedEvent? MCPCallCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallCompleted))]
-#endif
-        public bool IsMCPCallCompleted => MCPCallCompleted != null;
 
         /// <summary>
         /// 
@@ -1481,23 +1667,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when an MCP  tool call has failed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; init; }
-#else
-        public global::G.ResponseMCPCallFailedEvent? MCPCallFailed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallFailed))]
-#endif
-        public bool IsMCPCallFailed => MCPCallFailed != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseMCPCallFailedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPCallFailedEvent?)value);
@@ -1514,23 +1683,6 @@ namespace G
         {
             MCPCallFailed = value;
         }
-
-        /// <summary>
-        /// Emitted when an MCP  tool call is in progress.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; init; }
-#else
-        public global::G.ResponseMCPCallInProgressEvent? MCPCallInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPCallInProgress))]
-#endif
-        public bool IsMCPCallInProgress => MCPCallInProgress != null;
 
         /// <summary>
         /// 
@@ -1551,23 +1703,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the list of available MCP tools has been successfully retrieved.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; init; }
-#else
-        public global::G.ResponseMCPListToolsCompletedEvent? MCPListToolsCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsCompleted))]
-#endif
-        public bool IsMCPListToolsCompleted => MCPListToolsCompleted != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseMCPListToolsCompletedEvent value) => new ResponseStreamEvent((global::G.ResponseMCPListToolsCompletedEvent?)value);
@@ -1584,23 +1719,6 @@ namespace G
         {
             MCPListToolsCompleted = value;
         }
-
-        /// <summary>
-        /// Emitted when the attempt to list available MCP tools has failed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; init; }
-#else
-        public global::G.ResponseMCPListToolsFailedEvent? MCPListToolsFailed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsFailed))]
-#endif
-        public bool IsMCPListToolsFailed => MCPListToolsFailed != null;
 
         /// <summary>
         /// 
@@ -1621,23 +1739,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the system is in the process of retrieving the list of available MCP tools.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; init; }
-#else
-        public global::G.ResponseMCPListToolsInProgressEvent? MCPListToolsInProgress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListToolsInProgress))]
-#endif
-        public bool IsMCPListToolsInProgress => MCPListToolsInProgress != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseMCPListToolsInProgressEvent value) => new ResponseStreamEvent((global::G.ResponseMCPListToolsInProgressEvent?)value);
@@ -1654,23 +1755,6 @@ namespace G
         {
             MCPListToolsInProgress = value;
         }
-
-        /// <summary>
-        /// Emitted when an annotation is added to output text content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; init; }
-#else
-        public global::G.ResponseOutputTextAnnotationAddedEvent? OutputTextAnnotationAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextAnnotationAdded))]
-#endif
-        public bool IsOutputTextAnnotationAdded => OutputTextAnnotationAdded != null;
 
         /// <summary>
         /// 
@@ -1691,23 +1775,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when a response is queued and waiting to be processed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseQueuedEvent? Queued { get; init; }
-#else
-        public global::G.ResponseQueuedEvent? Queued { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Queued))]
-#endif
-        public bool IsQueued => Queued != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseQueuedEvent value) => new ResponseStreamEvent((global::G.ResponseQueuedEvent?)value);
@@ -1724,23 +1791,6 @@ namespace G
         {
             Queued = value;
         }
-
-        /// <summary>
-        /// Emitted when there is a delta (partial update) to the reasoning content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; init; }
-#else
-        public global::G.ResponseReasoningDeltaEvent? ReasoningDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDelta))]
-#endif
-        public bool IsReasoningDelta => ReasoningDelta != null;
 
         /// <summary>
         /// 
@@ -1761,23 +1811,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when the reasoning content is finalized for an item.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; init; }
-#else
-        public global::G.ResponseReasoningDoneEvent? ReasoningDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDone))]
-#endif
-        public bool IsReasoningDone => ReasoningDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningDoneEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningDoneEvent?)value);
@@ -1796,23 +1829,6 @@ namespace G
         }
 
         /// <summary>
-        /// Emitted when there is a delta (partial update) to the reasoning summary content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryDeltaEvent? ReasoningSummaryDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDelta))]
-#endif
-        public bool IsReasoningSummaryDelta => ReasoningSummaryDelta != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::G.ResponseReasoningSummaryDeltaEvent value) => new ResponseStreamEvent((global::G.ResponseReasoningSummaryDeltaEvent?)value);
@@ -1829,23 +1845,6 @@ namespace G
         {
             ReasoningSummaryDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the reasoning summary content is finalized for an item.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; init; }
-#else
-        public global::G.ResponseReasoningSummaryDoneEvent? ReasoningSummaryDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryDone))]
-#endif
-        public bool IsReasoningSummaryDone => ReasoningSummaryDone != null;
 
         /// <summary>
         /// 

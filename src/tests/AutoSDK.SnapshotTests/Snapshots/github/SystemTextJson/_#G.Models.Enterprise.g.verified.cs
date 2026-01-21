@@ -65,15 +65,17 @@ namespace G
         public required string Slug { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-26T19:01:12Z
         /// </summary>
+        /// <example>2019-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-26T19:14:43Z
         /// </summary>
+        /// <example>2019-01-26T19:14:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? UpdatedAt { get; set; }
@@ -118,8 +120,12 @@ namespace G
         /// The slug url identifier for the enterprise.<br/>
         /// Example: octo-business
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2019-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2019-01-26T19:14:43Z
+        /// </param>
         /// <param name="avatarUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -192,8 +192,9 @@ namespace G
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2008-01-14T04:33:35Z
         /// </summary>
+        /// <example>2008-01-14T04:33:35Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -434,7 +435,9 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
         /// <param name="type">
         /// Example: Organization
         /// </param>

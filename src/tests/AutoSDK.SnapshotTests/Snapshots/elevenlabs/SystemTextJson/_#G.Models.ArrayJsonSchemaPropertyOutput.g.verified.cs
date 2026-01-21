@@ -15,8 +15,7 @@ namespace G
         /// Default Value: array
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ArrayJsonSchemaPropertyOutputTypeJsonConverter))]
-        public global::G.ArrayJsonSchemaPropertyOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +50,7 @@ namespace G
 #endif
         public ArrayJsonSchemaPropertyOutput(
             global::G.OneOf<global::G.LiteralJsonSchemaProperty, global::G.ObjectJsonSchemaPropertyOutput, global::G.ArrayJsonSchemaPropertyOutput> items,
-            global::G.ArrayJsonSchemaPropertyOutputType? type,
+            string? type,
             string? description)
         {
             this.Items = items;

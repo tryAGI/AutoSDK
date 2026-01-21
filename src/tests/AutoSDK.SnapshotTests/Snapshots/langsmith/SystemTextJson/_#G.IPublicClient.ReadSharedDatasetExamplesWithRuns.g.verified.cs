@@ -45,7 +45,7 @@ namespace G
             int? offset = default,
             int? limit = default,
             bool? preview = default,
-            global::G.QueryExampleSchemaWithRunsFormat? format = default,
+            string? format = default,
             global::System.Guid? comparativeExperimentId = default,
             global::G.SortParamsForRunsComparisonView? sortParams = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,

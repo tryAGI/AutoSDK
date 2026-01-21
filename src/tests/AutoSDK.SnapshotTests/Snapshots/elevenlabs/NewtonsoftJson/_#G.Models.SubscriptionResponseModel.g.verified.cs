@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
     /// </summary>
     public sealed partial class SubscriptionResponseModel
     {
@@ -49,7 +49,7 @@ namespace G
         /// The Unix timestamp of the next character count reset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_character_count_reset_unix")]
-        public global::System.DateTimeOffset? NextCharacterCountResetUnix { get; set; }
+        public int? NextCharacterCountResetUnix { get; set; }
 
         /// <summary>
         /// The number of voice slots used by the user.
@@ -109,10 +109,10 @@ namespace G
         /// The currency of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currency")]
-        public global::G.SubscriptionResponseModelCurrency? Currency { get; set; }
+        public global::G.SubscriptionResponseModelCurrency2? Currency { get; set; }
 
         /// <summary>
-        /// 
+        /// The status of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.SubscriptionStatusType Status { get; set; } = default!;
@@ -121,13 +121,13 @@ namespace G
         /// The billing period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_period")]
-        public global::G.SubscriptionResponseModelBillingPeriod? BillingPeriod { get; set; }
+        public global::G.SubscriptionResponseModelBillingPeriod2? BillingPeriod { get; set; }
 
         /// <summary>
         /// The character refresh period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_refresh_period")]
-        public global::G.SubscriptionResponseModelCharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
+        public global::G.SubscriptionResponseModelCharacterRefreshPeriod2? CharacterRefreshPeriod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -189,7 +189,9 @@ namespace G
         /// <param name="currency">
         /// The currency of the user's subscription.
         /// </param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// The status of the user's subscription.
+        /// </param>
         /// <param name="billingPeriod">
         /// The billing period of the user's subscription.
         /// </param>
@@ -212,16 +214,16 @@ namespace G
             bool canUseInstantVoiceCloning,
             bool canUseProfessionalVoiceCloning,
             global::G.SubscriptionStatusType status,
-            global::System.DateTimeOffset? nextCharacterCountResetUnix,
+            int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
-            global::G.SubscriptionResponseModelCurrency? currency,
-            global::G.SubscriptionResponseModelBillingPeriod? billingPeriod,
-            global::G.SubscriptionResponseModelCharacterRefreshPeriod? characterRefreshPeriod)
+            global::G.SubscriptionResponseModelCurrency2? currency,
+            global::G.SubscriptionResponseModelBillingPeriod2? billingPeriod,
+            global::G.SubscriptionResponseModelCharacterRefreshPeriod2? characterRefreshPeriod)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;
             this.CharacterLimit = characterLimit;
-            this.MaxCharacterLimitExtension = maxCharacterLimitExtension;
+            this.MaxCharacterLimitExtension = maxCharacterLimitExtension ?? throw new global::System.ArgumentNullException(nameof(maxCharacterLimitExtension));
             this.CanExtendCharacterLimit = canExtendCharacterLimit;
             this.AllowedToExtendCharacterLimit = allowedToExtendCharacterLimit;
             this.VoiceSlotsUsed = voiceSlotsUsed;

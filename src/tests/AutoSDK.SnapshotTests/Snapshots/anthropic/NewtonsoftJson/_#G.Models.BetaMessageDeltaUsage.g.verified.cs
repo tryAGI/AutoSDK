@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BetaMessageDeltaUsage
     {
         /// <summary>
-        /// The cumulative number of output tokens which were used.<br/>
-        /// Example: 503
+        /// The cumulative number of output tokens which were used.
         /// </summary>
-        /// <example>503</example>
         [global::Newtonsoft.Json.JsonProperty("output_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int OutputTokens { get; set; } = default!;
 
@@ -27,8 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaMessageDeltaUsage" /> class.
         /// </summary>
         /// <param name="outputTokens">
-        /// The cumulative number of output tokens which were used.<br/>
-        /// Example: 503
+        /// The cumulative number of output tokens which were used.
         /// </param>
         public BetaMessageDeltaUsage(
             int outputTokens)

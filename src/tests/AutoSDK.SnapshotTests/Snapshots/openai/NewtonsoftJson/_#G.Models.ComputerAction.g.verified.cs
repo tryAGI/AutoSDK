@@ -28,6 +28,141 @@ namespace G
         public bool IsClick => Click != null;
 
         /// <summary>
+        /// A double click action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DoubleClick? DoubleClick { get; init; }
+#else
+        public global::G.DoubleClick? DoubleClick { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoubleClick))]
+#endif
+        public bool IsDoubleClick => DoubleClick != null;
+
+        /// <summary>
+        /// A drag action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Drag? Drag { get; init; }
+#else
+        public global::G.Drag? Drag { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Drag))]
+#endif
+        public bool IsDrag => Drag != null;
+
+        /// <summary>
+        /// A collection of keypresses the model would like to perform.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.KeyPress? KeyPress { get; init; }
+#else
+        public global::G.KeyPress? KeyPress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyPress))]
+#endif
+        public bool IsKeyPress => KeyPress != null;
+
+        /// <summary>
+        /// A mouse move action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Move? Move { get; init; }
+#else
+        public global::G.Move? Move { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Move))]
+#endif
+        public bool IsMove => Move != null;
+
+        /// <summary>
+        /// A screenshot action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Screenshot? Screenshot { get; init; }
+#else
+        public global::G.Screenshot? Screenshot { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Screenshot))]
+#endif
+        public bool IsScreenshot => Screenshot != null;
+
+        /// <summary>
+        /// A scroll action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Scroll? Scroll { get; init; }
+#else
+        public global::G.Scroll? Scroll { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Scroll))]
+#endif
+        public bool IsScroll => Scroll != null;
+
+        /// <summary>
+        /// An action to type in text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Type? Type { get; init; }
+#else
+        public global::G.Type? Type { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
+#endif
+        public bool IsType => Type != null;
+
+        /// <summary>
+        /// A wait action.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.Wait? Wait { get; init; }
+#else
+        public global::G.Wait? Wait { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
+#endif
+        public bool IsWait => Wait != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ComputerAction(global::G.Click value) => new ComputerAction((global::G.Click?)value);
@@ -44,23 +179,6 @@ namespace G
         {
             Click = value;
         }
-
-        /// <summary>
-        /// A double click action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.DoubleClick? DoubleClick { get; init; }
-#else
-        public global::G.DoubleClick? DoubleClick { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoubleClick))]
-#endif
-        public bool IsDoubleClick => DoubleClick != null;
 
         /// <summary>
         /// 
@@ -81,23 +199,6 @@ namespace G
         }
 
         /// <summary>
-        /// A drag action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Drag? Drag { get; init; }
-#else
-        public global::G.Drag? Drag { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Drag))]
-#endif
-        public bool IsDrag => Drag != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ComputerAction(global::G.Drag value) => new ComputerAction((global::G.Drag?)value);
@@ -114,23 +215,6 @@ namespace G
         {
             Drag = value;
         }
-
-        /// <summary>
-        /// A collection of keypresses the model would like to perform.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.KeyPress? KeyPress { get; init; }
-#else
-        public global::G.KeyPress? KeyPress { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyPress))]
-#endif
-        public bool IsKeyPress => KeyPress != null;
 
         /// <summary>
         /// 
@@ -151,23 +235,6 @@ namespace G
         }
 
         /// <summary>
-        /// A mouse move action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Move? Move { get; init; }
-#else
-        public global::G.Move? Move { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Move))]
-#endif
-        public bool IsMove => Move != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ComputerAction(global::G.Move value) => new ComputerAction((global::G.Move?)value);
@@ -184,23 +251,6 @@ namespace G
         {
             Move = value;
         }
-
-        /// <summary>
-        /// A screenshot action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Screenshot? Screenshot { get; init; }
-#else
-        public global::G.Screenshot? Screenshot { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Screenshot))]
-#endif
-        public bool IsScreenshot => Screenshot != null;
 
         /// <summary>
         /// 
@@ -221,23 +271,6 @@ namespace G
         }
 
         /// <summary>
-        /// A scroll action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Scroll? Scroll { get; init; }
-#else
-        public global::G.Scroll? Scroll { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Scroll))]
-#endif
-        public bool IsScroll => Scroll != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ComputerAction(global::G.Scroll value) => new ComputerAction((global::G.Scroll?)value);
@@ -256,23 +289,6 @@ namespace G
         }
 
         /// <summary>
-        /// An action to type in text.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Type? Type { get; init; }
-#else
-        public global::G.Type? Type { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
-#endif
-        public bool IsType => Type != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ComputerAction(global::G.Type value) => new ComputerAction((global::G.Type?)value);
@@ -289,23 +305,6 @@ namespace G
         {
             Type = value;
         }
-
-        /// <summary>
-        /// A wait action.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.Wait? Wait { get; init; }
-#else
-        public global::G.Wait? Wait { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
-#endif
-        public bool IsWait => Wait != null;
 
         /// <summary>
         /// 

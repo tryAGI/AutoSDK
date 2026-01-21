@@ -10,20 +10,20 @@ namespace G
     public sealed partial class UsageInfo
     {
         /// <summary>
-        /// Example: 34
-        /// </summary>
-        /// <example>34</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletionTokens { get; set; }
-
-        /// <summary>
         /// Example: 16
         /// </summary>
         /// <example>16</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptTokens { get; set; }
+
+        /// <summary>
+        /// Example: 34
+        /// </summary>
+        /// <example>34</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int CompletionTokens { get; set; }
 
         /// <summary>
         /// Example: 50
@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageInfo" /> class.
         /// </summary>
-        /// <param name="completionTokens">
-        /// Example: 34
-        /// </param>
         /// <param name="promptTokens">
         /// Example: 16
+        /// </param>
+        /// <param name="completionTokens">
+        /// Example: 34
         /// </param>
         /// <param name="totalTokens">
         /// Example: 50
@@ -55,12 +55,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageInfo(
-            int completionTokens,
             int promptTokens,
+            int completionTokens,
             int totalTokens)
         {
-            this.CompletionTokens = completionTokens;
             this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
             this.TotalTokens = totalTokens;
         }
 

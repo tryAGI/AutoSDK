@@ -10,8 +10,7 @@ namespace G
         /// Retrieve the widget configuration for an agent
         /// </summary>
         /// <param name="agentId">
-        /// The id of an agent. This is returned on agent creation.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The id of an agent. This is returned on agent creation.
         /// </param>
         /// <param name="conversationSignature">
         /// An expiring token that enables a websocket conversation to start. These can be generated for an agent using the /v1/convai/conversation/get-signed-url endpoint

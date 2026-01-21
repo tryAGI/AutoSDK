@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"file_name":"sample.mp3","hash":"1234567890","mime_type":"audio/mpeg","sample_id":"DCwhRBWXzGAHq8TQ4Fs18","size_bytes":1000000}
     /// </summary>
     public sealed partial class SampleResponseModel
     {

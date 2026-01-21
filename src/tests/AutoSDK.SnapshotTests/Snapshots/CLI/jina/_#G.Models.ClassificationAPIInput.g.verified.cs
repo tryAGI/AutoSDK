@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for classify endpoint. OpenAI compatible
+    /// The input to the API for classify endpoint. OpenAI compatible<br/>
+    /// Example: {"classifier_id":"classifier_id","input":[{"text":"text1"},{"text":"text2"}]}
     /// </summary>
     public sealed partial class ClassificationAPIInput
     {

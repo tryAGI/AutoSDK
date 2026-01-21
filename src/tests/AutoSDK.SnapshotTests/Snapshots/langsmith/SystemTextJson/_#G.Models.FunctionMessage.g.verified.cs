@@ -40,8 +40,7 @@ namespace G
         /// Default Value: function
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FunctionMessageTypeJsonConverter))]
-        public global::G.FunctionMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +80,7 @@ namespace G
             string name,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.FunctionMessageType? type,
+            string? type,
             string? id)
         {
             this.Content = content;

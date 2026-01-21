@@ -10,10 +10,8 @@ namespace G
     public sealed partial class BetaDeleteMessageBatchResponse
     {
         /// <summary>
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -36,8 +34,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaDeleteMessageBatchResponse" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </param>
         /// <param name="type">
         /// Deleted object type.<br/>

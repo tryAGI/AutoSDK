@@ -13,20 +13,6 @@ namespace G
         /// Example: 0
         /// </summary>
         /// <example>0</example>
-        [global::Newtonsoft.Json.JsonProperty("base", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Base { get; set; } = default!;
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        /// <example>0</example>
-        [global::Newtonsoft.Json.JsonProperty("finetune", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Finetune { get; set; } = default!;
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("hourly", Required = global::Newtonsoft.Json.Required.Always)]
         public double Hourly { get; set; } = default!;
 
@@ -45,6 +31,20 @@ namespace G
         public double Output { get; set; } = default!;
 
         /// <summary>
+        /// Example: 0
+        /// </summary>
+        /// <example>0</example>
+        [global::Newtonsoft.Json.JsonProperty("base", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Base { get; set; } = default!;
+
+        /// <summary>
+        /// Example: 0
+        /// </summary>
+        /// <example>0</example>
+        [global::Newtonsoft.Json.JsonProperty("finetune", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Finetune { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -53,12 +53,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Pricing" /> class.
         /// </summary>
-        /// <param name="base">
-        /// Example: 0
-        /// </param>
-        /// <param name="finetune">
-        /// Example: 0
-        /// </param>
         /// <param name="hourly">
         /// Example: 0
         /// </param>
@@ -68,18 +62,24 @@ namespace G
         /// <param name="output">
         /// Example: 0.3
         /// </param>
+        /// <param name="base">
+        /// Example: 0
+        /// </param>
+        /// <param name="finetune">
+        /// Example: 0
+        /// </param>
         public Pricing(
-            double @base,
-            double finetune,
             double hourly,
             double input,
-            double output)
+            double output,
+            double @base,
+            double finetune)
         {
-            this.Base = @base;
-            this.Finetune = finetune;
             this.Hourly = hourly;
             this.Input = input;
             this.Output = output;
+            this.Base = @base;
+            this.Finetune = finetune;
         }
 
         /// <summary>

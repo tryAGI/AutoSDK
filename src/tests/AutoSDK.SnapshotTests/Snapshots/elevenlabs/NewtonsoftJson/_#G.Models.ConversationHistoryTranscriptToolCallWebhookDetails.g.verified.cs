@@ -13,7 +13,7 @@ namespace G
         /// Default Value: webhook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ConversationHistoryTranscriptToolCallWebhookDetailsType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
         public ConversationHistoryTranscriptToolCallWebhookDetails(
             string method,
             string url,
-            global::G.ConversationHistoryTranscriptToolCallWebhookDetailsType? type,
+            string? type,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::System.Collections.Generic.Dictionary<string, string>? pathParams,
             global::System.Collections.Generic.Dictionary<string, string>? queryParams,

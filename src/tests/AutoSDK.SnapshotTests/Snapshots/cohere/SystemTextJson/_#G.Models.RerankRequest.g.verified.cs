@@ -12,23 +12,6 @@ namespace G
     public sealed partial class RerankRequest
     {
         /// <summary>
-        /// A list of document objects or strings to rerank.<br/>
-        /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
-        /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
-        /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> Documents { get; set; }
-
-        /// <summary>
-        /// The maximum number of chunks to produce internally from a document<br/>
-        /// Default Value: 10
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_chunks_per_doc")]
-        public int? MaxChunksPerDoc { get; set; }
-
-        /// <summary>
         /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -40,6 +23,22 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Query { get; set; }
+
+        /// <summary>
+        /// A list of document objects or strings to rerank.<br/>
+        /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
+        /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
+        /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> Documents { get; set; }
+
+        /// <summary>
+        /// The number of most relevant documents or indices to return, defaults to the length of the documents
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_n")]
+        public int? TopN { get; set; }
 
         /// <summary>
         /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
@@ -56,10 +55,11 @@ namespace G
         public bool? ReturnDocuments { get; set; }
 
         /// <summary>
-        /// The number of most relevant documents or indices to return, defaults to the length of the documents
+        /// The maximum number of chunks to produce internally from a document<br/>
+        /// Default Value: 10
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_n")]
-        public int? TopN { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_chunks_per_doc")]
+        public int? MaxChunksPerDoc { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,21 +70,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankRequest" /> class.
         /// </summary>
+        /// <param name="model">
+        /// The identifier of the model to use, eg `rerank-v3.5`.
+        /// </param>
+        /// <param name="query">
+        /// The search query
+        /// </param>
         /// <param name="documents">
         /// A list of document objects or strings to rerank.<br/>
         /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
         /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
         /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
         /// </param>
-        /// <param name="maxChunksPerDoc">
-        /// The maximum number of chunks to produce internally from a document<br/>
-        /// Default Value: 10
-        /// </param>
-        /// <param name="model">
-        /// The identifier of the model to use, eg `rerank-v3.5`.
-        /// </param>
-        /// <param name="query">
-        /// The search query
+        /// <param name="topN">
+        /// The number of most relevant documents or indices to return, defaults to the length of the documents
         /// </param>
         /// <param name="rankFields">
         /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
@@ -94,28 +93,29 @@ namespace G
         /// - If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="topN">
-        /// The number of most relevant documents or indices to return, defaults to the length of the documents
+        /// <param name="maxChunksPerDoc">
+        /// The maximum number of chunks to produce internally from a document<br/>
+        /// Default Value: 10
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankRequest(
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
             string query,
-            int? maxChunksPerDoc,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> documents,
             string? model,
+            int? topN,
             global::System.Collections.Generic.IList<string>? rankFields,
             bool? returnDocuments,
-            int? topN)
+            int? maxChunksPerDoc)
         {
-            this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
-            this.MaxChunksPerDoc = maxChunksPerDoc;
+            this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
             this.Model = model;
+            this.TopN = topN;
             this.RankFields = rankFields;
             this.ReturnDocuments = returnDocuments;
-            this.TopN = topN;
+            this.MaxChunksPerDoc = maxChunksPerDoc;
         }
 
         /// <summary>

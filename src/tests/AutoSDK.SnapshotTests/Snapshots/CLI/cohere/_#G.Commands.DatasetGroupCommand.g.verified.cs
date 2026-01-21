@@ -7,11 +7,11 @@ namespace G
     internal sealed partial class DatasetGroupCommand : global::System.CommandLine.Command
     {
         public DatasetGroupCommand(
-            ListDatasetsCommand command0,
-            CreateDatasetCommand command1,
+            CreateDatasetCommand command0,
+            ListDatasetsCommand command1,
             GetDatasetUsageCommand command2,
-            DeleteDatasetCommand command3,
-            GetDatasetCommand command4)
+            GetDatasetCommand command3,
+            DeleteDatasetCommand command4)
             : base(
                 name: "dataset")
         {

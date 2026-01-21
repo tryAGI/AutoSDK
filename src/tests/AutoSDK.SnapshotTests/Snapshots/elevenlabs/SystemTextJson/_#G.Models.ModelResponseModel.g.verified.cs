@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"can_be_finetuned":true,"can_do_text_to_speech":true,"can_do_voice_conversion":true,"can_use_speaker_boost":true,"can_use_style":true,"concurrency_group":"standard","description":"Our state of the art multilingual speech synthesis model, able to generate life-like speech in 29 languages.","languages":[{"language_id":"en","name":"English"}],"max_characters_request_free_user":2500,"max_characters_request_subscribed_user":5000,"maximum_text_length_per_request":1000000,"model_id":"eleven_multilingual_v2","model_rates":{"character_cost_multiplier":1},"name":"Eleven Multilingual v2","requires_alpha_access":false,"serves_pro_voices":false,"token_cost_factor":1}
     /// </summary>
     public sealed partial class ModelResponseModel
     {
@@ -115,8 +115,10 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.LanguageResponseModel> Languages { get; set; }
 
         /// <summary>
-        /// 
+        /// The rates for the model.<br/>
+        /// Example: {"character_cost_multiplier":1}
         /// </summary>
+        /// <example>{"character_cost_multiplier":1}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_rates")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ModelRatesResponseModel ModelRates { get; set; }
@@ -183,7 +185,10 @@ namespace G
         /// <param name="languages">
         /// The languages supported by the model.
         /// </param>
-        /// <param name="modelRates"></param>
+        /// <param name="modelRates">
+        /// The rates for the model.<br/>
+        /// Example: {"character_cost_multiplier":1}
+        /// </param>
         /// <param name="concurrencyGroup">
         /// The concurrency group for the model.
         /// </param>

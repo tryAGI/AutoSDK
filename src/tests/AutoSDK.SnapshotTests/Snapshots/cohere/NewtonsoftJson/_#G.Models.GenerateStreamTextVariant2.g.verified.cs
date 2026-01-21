@@ -10,6 +10,12 @@ namespace G
     public sealed partial class GenerateStreamTextVariant2
     {
         /// <summary>
+        /// A segment of text of the generation.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
+
+        /// <summary>
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
@@ -22,12 +28,6 @@ namespace G
         public bool IsFinished { get; set; } = default!;
 
         /// <summary>
-        /// A segment of text of the generation.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,20 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamTextVariant2" /> class.
         /// </summary>
+        /// <param name="text">
+        /// A segment of text of the generation.
+        /// </param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
         /// </param>
         /// <param name="isFinished"></param>
-        /// <param name="text">
-        /// A segment of text of the generation.
-        /// </param>
         public GenerateStreamTextVariant2(
-            bool isFinished,
             string text,
+            bool isFinished,
             int? index)
         {
-            this.IsFinished = isFinished;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.IsFinished = isFinished;
             this.Index = index;
         }
 

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Options for streaming response. Only set this when you set `stream: true`.
+    /// Options for streaming response. Only set this when you set `stream: true`.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
     public sealed partial class ChatCompletionStreamOptions
     {

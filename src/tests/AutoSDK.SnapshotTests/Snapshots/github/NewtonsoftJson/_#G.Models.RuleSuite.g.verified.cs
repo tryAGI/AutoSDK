@@ -58,8 +58,9 @@ namespace G
         public string? RepositoryName { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2011-01-26T19:06:43Z
         /// </summary>
+        /// <example>2011-01-26T19:06:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("pushed_at")]
         public global::System.DateTime? PushedAt { get; set; }
 
@@ -108,7 +109,9 @@ namespace G
         /// <param name="repositoryName">
         /// The name of the repository without the `.git` extension.
         /// </param>
-        /// <param name="pushedAt"></param>
+        /// <param name="pushedAt">
+        /// Example: 2011-01-26T19:06:43Z
+        /// </param>
         /// <param name="result">
         /// The result of the rule evaluations for rules with the `active` enforcement status.
         /// </param>

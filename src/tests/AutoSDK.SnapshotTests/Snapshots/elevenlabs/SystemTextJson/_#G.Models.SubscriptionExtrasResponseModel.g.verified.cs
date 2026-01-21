@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"can_bypass_voice_captcha":true,"can_request_manual_pro_voice_verification":true,"concurrency":10,"convai_asr_chars_per_minute":1000,"convai_chars_per_minute":1000,"convai_concurrency":10,"force_logging_disabled":false,"moderation":{"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false},"overused_characters_rolled_over_from_previous_period":1000,"unused_characters_rolled_over_from_previous_period":1000,"usage":{"actual_reported_credits":1000,"manually_gifted_credits_quota":1000,"manually_gifted_credits_used":1000,"paid_usage_based_credits_used":1000,"rollover_credits_quota":1000,"rollover_credits_used":1000,"subscription_cycle_credits_quota":1000,"subscription_cycle_credits_used":1000}}
     /// </summary>
     public sealed partial class SubscriptionExtrasResponseModel
     {
@@ -57,8 +57,10 @@ namespace G
         public required bool CanBypassVoiceCaptcha { get; set; }
 
         /// <summary>
-        /// 
+        /// The moderation status of the user.<br/>
+        /// Example: {"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false}
         /// </summary>
+        /// <example>{"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ModerationStatusResponseModel Moderation { get; set; }
@@ -76,7 +78,7 @@ namespace G
         public int? OverusedCharactersRolledOverFromPreviousPeriod { get; set; }
 
         /// <summary>
-        /// 
+        /// Data on how the subscription is being used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::G.SubscriptionUsageResponseModel? Usage { get; set; }
@@ -111,14 +113,19 @@ namespace G
         /// <param name="canBypassVoiceCaptcha">
         /// Whether the user can bypass the voice captcha.
         /// </param>
-        /// <param name="moderation"></param>
+        /// <param name="moderation">
+        /// The moderation status of the user.<br/>
+        /// Example: {"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false}
+        /// </param>
         /// <param name="unusedCharactersRolledOverFromPreviousPeriod">
         /// The unused characters rolled over from the previous period.
         /// </param>
         /// <param name="overusedCharactersRolledOverFromPreviousPeriod">
         /// The overused characters rolled over from the previous period.
         /// </param>
-        /// <param name="usage"></param>
+        /// <param name="usage">
+        /// Data on how the subscription is being used.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

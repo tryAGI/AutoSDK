@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Chapter of the audio file
+    /// Chapter of the audio file<br/>
+    /// Example: {"summary":"Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. In some places, the air quality warnings include the warning to stay inside.","gist":"Smoggy air quality alerts across US","headline":"Smoke from hundreds of wildfires in Canada is triggering air quality alerts across US","start":250,"end":28840}
     /// </summary>
     public sealed partial class Chapter
     {

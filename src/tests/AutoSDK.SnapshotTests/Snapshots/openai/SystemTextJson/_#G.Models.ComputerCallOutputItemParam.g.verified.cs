@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ComputerCallOutputItemParam.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::G.AnyOf<string, object>? Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// The ID of the computer tool call that produced the output.
@@ -45,15 +42,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>, object>? AcknowledgedSafetyChecks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ComputerCallOutputItemParamStatus?, object>))]
-        public global::G.AnyOf<global::G.ComputerCallOutputItemParamStatus?, object>? Status { get; set; }
+        public global::G.ComputerCallOutputItemParamStatus2? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,9 +78,9 @@ namespace G
         public ComputerCallOutputItemParam(
             string callId,
             global::G.ComputerScreenshotImage output,
-            global::G.AnyOf<string, object>? id,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>, object>? acknowledgedSafetyChecks,
-            global::G.AnyOf<global::G.ComputerCallOutputItemParamStatus?, object>? status,
+            string? id,
+            global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
+            global::G.ComputerCallOutputItemParamStatus2? status,
             global::G.ComputerCallOutputItemParamType type = global::G.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

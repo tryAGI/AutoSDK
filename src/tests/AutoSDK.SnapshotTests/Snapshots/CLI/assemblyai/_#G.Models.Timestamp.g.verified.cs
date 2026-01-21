@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Timestamp containing a start and end property in milliseconds
+    /// Timestamp containing a start and end property in milliseconds<br/>
+    /// Example: {"start":3978,"end":5114}
     /// </summary>
     public sealed partial class Timestamp
     {

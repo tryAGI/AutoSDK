@@ -11,10 +11,8 @@ namespace G
     {
         /// <summary>
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msg_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>msg_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -54,10 +52,8 @@ namespace G
         /// Then the response `content` might be:<br/>
         /// ```json<br/>
         /// [{"type": "text", "text": "B)"}]<br/>
-        /// ```<br/>
-        /// Example: []
+        /// ```
         /// </summary>
-        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.BetaContentBlock> Content { get; set; } = default!;
 
@@ -77,11 +73,12 @@ namespace G
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BetaMessageStopReason? StopReason { get; set; } = default!;
+        public global::G.BetaMessageStopReason2? StopReason { get; set; } = default!;
 
         /// <summary>
         /// Which custom stop sequence was generated, if any.<br/>
-        /// This value will be a non-null string if one of your custom stop sequences was generated.
+        /// This value will be a non-null string if one of your custom stop sequences was generated.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop_sequence", Required = global::Newtonsoft.Json.Required.Always)]
         public string? StopSequence { get; set; } = default!;
@@ -107,8 +104,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msg_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -138,8 +134,7 @@ namespace G
         /// Then the response `content` might be:<br/>
         /// ```json<br/>
         /// [{"type": "text", "text": "B)"}]<br/>
-        /// ```<br/>
-        /// Example: []
+        /// ```
         /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
@@ -155,7 +150,8 @@ namespace G
         /// </param>
         /// <param name="stopSequence">
         /// Which custom stop sequence was generated, if any.<br/>
-        /// This value will be a non-null string if one of your custom stop sequences was generated.
+        /// This value will be a non-null string if one of your custom stop sequences was generated.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="usage">
         /// Billing and rate-limit usage.<br/>
@@ -168,7 +164,7 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<global::G.BetaContentBlock> content,
             global::G.Model model,
-            global::G.BetaMessageStopReason? stopReason,
+            global::G.BetaMessageStopReason2? stopReason,
             string? stopSequence,
             global::G.BetaUsage usage,
             global::G.BetaMessageType type = global::G.BetaMessageType.Message,
@@ -177,7 +173,7 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Model = model;
-            this.StopReason = stopReason;
+            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
             this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;

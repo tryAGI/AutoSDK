@@ -16,13 +16,13 @@ namespace G
         public string Address { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Protocol to use for SIP transport
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.SIPTrunkTransportEnum Transport { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Whether or not to encrypt media (data layer).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_encryption", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.SIPMediaEncryptionEnum MediaEncryption { get; set; } = default!;
@@ -64,8 +64,12 @@ namespace G
         /// <param name="address">
         /// Hostname or IP the SIP INVITE is sent to
         /// </param>
-        /// <param name="transport"></param>
-        /// <param name="mediaEncryption"></param>
+        /// <param name="transport">
+        /// Protocol to use for SIP transport
+        /// </param>
+        /// <param name="mediaEncryption">
+        /// Whether or not to encrypt media (data layer).
+        /// </param>
         /// <param name="headers">
         /// SIP headers for INVITE request
         /// </param>

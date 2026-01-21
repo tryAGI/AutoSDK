@@ -43,8 +43,9 @@ namespace G
         public required global::G.SimpleUser Requester { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2022-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2022-07-08T16:18:44-04:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -69,7 +70,9 @@ namespace G
         /// <param name="requester">
         /// A GitHub user.
         /// </param>
-        /// <param name="createdAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2022-07-08T16:18:44-04:00
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

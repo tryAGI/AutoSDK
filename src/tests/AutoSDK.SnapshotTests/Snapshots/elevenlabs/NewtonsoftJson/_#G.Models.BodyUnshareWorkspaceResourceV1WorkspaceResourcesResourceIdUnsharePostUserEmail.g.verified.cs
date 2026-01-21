@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The email of the user or service account.
+    /// </summary>
+    public sealed partial class BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

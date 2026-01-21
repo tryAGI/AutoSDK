@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonSchema" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="schema"></param>
         /// <param name="strict">
         /// Default Value: false

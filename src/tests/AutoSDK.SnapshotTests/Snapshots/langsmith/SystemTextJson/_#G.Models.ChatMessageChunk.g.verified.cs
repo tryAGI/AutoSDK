@@ -35,8 +35,7 @@ namespace G
         /// Default Value: ChatMessageChunk
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatMessageChunkTypeJsonConverter))]
-        public global::G.ChatMessageChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -83,7 +82,7 @@ namespace G
             string role,
             object? additionalKwargs,
             object? responseMetadata,
-            global::G.ChatMessageChunkType? type,
+            string? type,
             string? name,
             string? id)
         {

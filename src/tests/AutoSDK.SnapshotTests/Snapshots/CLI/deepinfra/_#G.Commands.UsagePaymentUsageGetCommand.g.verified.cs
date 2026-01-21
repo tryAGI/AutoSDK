@@ -14,7 +14,7 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             string from,
             string? to,
-            string? session,
+            object? session,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -33,7 +33,7 @@ namespace G
             Description = @"end of period (if missing a single month marked by from is return), same format as from",
         };
 
-        private global::System.CommandLine.Option<string?> Session { get; } = new(
+        private global::System.CommandLine.Option<object?> Session { get; } = new(
             name: "session")
         {
             Description = @"",

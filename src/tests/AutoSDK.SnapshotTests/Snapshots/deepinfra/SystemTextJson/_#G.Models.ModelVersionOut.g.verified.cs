@@ -10,28 +10,22 @@ namespace G
     public sealed partial class ModelVersionOut
     {
         /// <summary>
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </summary>
-        /// <example>microsoft/resnet-50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ModelName { get; set; }
 
         /// <summary>
-        /// Version identifier<br/>
-        /// Example: 06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a
+        /// Version identifier
         /// </summary>
-        /// <example>06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Version { get; set; }
 
         /// <summary>
-        /// Upload time<br/>
-        /// Example: 2023-01-19T21:52:03.626241+00:00
+        /// Upload time
         /// </summary>
-        /// <example>2023-01-19T21:52:03.626241+00:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploaded_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UploadedAt { get; set; }
@@ -46,16 +40,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelVersionOut" /> class.
         /// </summary>
         /// <param name="modelName">
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </param>
         /// <param name="version">
-        /// Version identifier<br/>
-        /// Example: 06dbf5f73be4b5eca79e137e00c4825f467cd5b172c64b6c9255dc4b5a25a03a
+        /// Version identifier
         /// </param>
         /// <param name="uploadedAt">
-        /// Upload time<br/>
-        /// Example: 2023-01-19T21:52:03.626241+00:00
+        /// Upload time
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -11,7 +11,8 @@ namespace G
     public readonly partial struct TranscriptWebhookNotification : global::System.IEquatable<TranscriptWebhookNotification>
     {
         /// <summary>
-        /// The notification when the transcript status is completed or error.
+        /// The notification when the transcript status is completed or error.<br/>
+        /// Example: {"transcript_id":"9ea68fd3-f953-42c1-9742-976c447fb463","status":"completed"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TranscriptReadyNotification? Ready { get; init; }
@@ -26,24 +27,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ready))]
 #endif
         public bool IsReady => Ready != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator TranscriptWebhookNotification(global::G.TranscriptReadyNotification value) => new TranscriptWebhookNotification((global::G.TranscriptReadyNotification?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.TranscriptReadyNotification?(TranscriptWebhookNotification @this) => @this.Ready;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TranscriptWebhookNotification(global::G.TranscriptReadyNotification? value)
-        {
-            Ready = value;
-        }
 
         /// <summary>
         /// The notification when the redacted audio is ready.
@@ -61,6 +44,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedAudio))]
 #endif
         public bool IsRedactedAudio => RedactedAudio != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator TranscriptWebhookNotification(global::G.TranscriptReadyNotification value) => new TranscriptWebhookNotification((global::G.TranscriptReadyNotification?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.TranscriptReadyNotification?(TranscriptWebhookNotification @this) => @this.Ready;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TranscriptWebhookNotification(global::G.TranscriptReadyNotification? value)
+        {
+            Ready = value;
+        }
 
         /// <summary>
         /// 

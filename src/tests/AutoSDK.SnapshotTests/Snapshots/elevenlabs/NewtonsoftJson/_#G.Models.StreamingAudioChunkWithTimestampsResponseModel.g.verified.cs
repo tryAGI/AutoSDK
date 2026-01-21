@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0,0.1],"characters":["H","e"]},"audio_base64":"base64_encoded_audio_chunk","normalized_alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0,0.1],"characters":["H","e"]}}
     /// </summary>
     public sealed partial class StreamingAudioChunkWithTimestampsResponseModel
     {
@@ -16,13 +16,13 @@ namespace G
         public string AudioBase64 { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Timestamp information for each character in the original text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alignment")]
         public global::G.CharacterAlignmentResponseModel? Alignment { get; set; }
 
         /// <summary>
-        /// 
+        /// Timestamp information for each character in the normalized text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("normalized_alignment")]
         public global::G.CharacterAlignmentResponseModel? NormalizedAlignment { get; set; }
@@ -39,8 +39,12 @@ namespace G
         /// <param name="audioBase64">
         /// Base64 encoded audio data
         /// </param>
-        /// <param name="alignment"></param>
-        /// <param name="normalizedAlignment"></param>
+        /// <param name="alignment">
+        /// Timestamp information for each character in the original text
+        /// </param>
+        /// <param name="normalizedAlignment">
+        /// Timestamp information for each character in the normalized text
+        /// </param>
         public StreamingAudioChunkWithTimestampsResponseModel(
             string audioBase64,
             global::G.CharacterAlignmentResponseModel? alignment,

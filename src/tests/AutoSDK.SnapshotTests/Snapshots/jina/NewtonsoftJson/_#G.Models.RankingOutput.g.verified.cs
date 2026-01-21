@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Output of the embedding service
+    /// Output of the embedding service<br/>
+    /// Example: {"results":[{"index":0,"document":{"text":"Document to rank 1"},"relevance_score":0.9},{"index":1,"document":{"text":"Document to rank 2"},"relevance_score":0.8}],"usage":{"total_tokens":15,"prompt_tokens":15}}
     /// </summary>
     public sealed partial class RankingOutput
     {

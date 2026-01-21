@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.AgentsCompletionRequestMaxTokens.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
+    /// </summary>
+    public sealed partial class AgentsCompletionRequestMaxTokens
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

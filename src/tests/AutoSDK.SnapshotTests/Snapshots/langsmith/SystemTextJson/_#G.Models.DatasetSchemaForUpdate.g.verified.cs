@@ -53,10 +53,9 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.DatasetTransformation>? Transformations { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DataTypeJsonConverter))]
         public global::G.DataType? DataType { get; set; }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace G
         /// </param>
         /// <param name="transformations"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>

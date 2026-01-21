@@ -34,7 +34,7 @@ namespace G
             global::System.DateTime? createdAfter = default,
             global::System.DateTime? createdBefore = default,
             bool? createdByMe = default,
-            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
+            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status = default,
             string? wandbProject = default,
             string? wandbName = default,
             string? suffix = default,

@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("set_by")]
-        public global::G.RunStatsGroupBySeriesResponseSetBy? SetBy { get; set; }
+        public global::G.RunStatsGroupBySeriesResponseSetBy2? SetBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         public RunStatsGroupBySeriesResponse(
             global::G.RunStatsGroupBySeriesResponseAttribute attribute,
             string? path,
-            global::G.RunStatsGroupBySeriesResponseSetBy? setBy)
+            global::G.RunStatsGroupBySeriesResponseSetBy2? setBy)
         {
             this.Attribute = attribute;
             this.Path = path;

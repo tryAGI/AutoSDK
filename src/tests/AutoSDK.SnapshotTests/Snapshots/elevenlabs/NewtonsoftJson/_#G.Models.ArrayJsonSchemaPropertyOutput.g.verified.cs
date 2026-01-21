@@ -15,7 +15,7 @@ namespace G
         /// Default Value: array
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ArrayJsonSchemaPropertyOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// <param name="items"></param>
         public ArrayJsonSchemaPropertyOutput(
             global::G.OneOf<global::G.LiteralJsonSchemaProperty, global::G.ObjectJsonSchemaPropertyOutput, global::G.ArrayJsonSchemaPropertyOutput> items,
-            global::G.ArrayJsonSchemaPropertyOutputType? type,
+            string? type,
             string? description)
         {
             this.Items = items;

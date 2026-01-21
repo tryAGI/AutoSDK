@@ -23,9 +23,9 @@ namespace G
         public int Total { get; set; } = default!;
 
         /// <summary>
-        /// Example: []
+        /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
         /// </summary>
-        /// <example>[]</example>
+        /// <example>[{"w":"1367712000","a":6898,"d":77,"c":10}]</example>
         [global::Newtonsoft.Json.JsonProperty("weeks", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> Weeks { get; set; } = default!;
 
@@ -45,7 +45,7 @@ namespace G
         /// Example: 135
         /// </param>
         /// <param name="weeks">
-        /// Example: []
+        /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
         /// </param>
         public ContributorActivity(
             global::G.NullableSimpleUser? author,

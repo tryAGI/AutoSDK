@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"created_by":"ar6633Es2kUjFXBdR1iVc9ztsXl1","creation_time_unix":1714156800,"description":"This is a test dictionary","id":"5xM3yVvZQKV0EfqQpLrJ","latest_version_id":"5xM3yVvZQKV0EfqQpLr2","latest_version_rules_num":2,"name":"My Dictionary"}
     /// </summary>
     public sealed partial class GetPronunciationDictionaryMetadataResponseModel
     {
@@ -37,7 +37,7 @@ namespace G
         /// The permission on the resource of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission_on_resource", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource? PermissionOnResource { get; set; } = default!;
+        public global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? PermissionOnResource { get; set; } = default!;
 
         /// <summary>
         /// The user ID of the creator of the pronunciation dictionary.
@@ -55,7 +55,7 @@ namespace G
         /// The archive time of the pronunciation dictionary in Unix timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived_time_unix", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? ArchivedTimeUnix { get; set; } = default!;
+        public int? ArchivedTimeUnix { get; set; } = default!;
 
         /// <summary>
         /// The description of the pronunciation dictionary.
@@ -104,20 +104,20 @@ namespace G
             string latestVersionId,
             int latestVersionRulesNum,
             string name,
-            global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource? permissionOnResource,
+            global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? permissionOnResource,
             string createdBy,
             global::System.DateTimeOffset creationTimeUnix,
-            global::System.DateTimeOffset? archivedTimeUnix,
+            int? archivedTimeUnix,
             string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.LatestVersionId = latestVersionId ?? throw new global::System.ArgumentNullException(nameof(latestVersionId));
             this.LatestVersionRulesNum = latestVersionRulesNum;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.PermissionOnResource = permissionOnResource;
+            this.PermissionOnResource = permissionOnResource ?? throw new global::System.ArgumentNullException(nameof(permissionOnResource));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
-            this.ArchivedTimeUnix = archivedTimeUnix;
+            this.ArchivedTimeUnix = archivedTimeUnix ?? throw new global::System.ArgumentNullException(nameof(archivedTimeUnix));
             this.Description = description;
         }
 

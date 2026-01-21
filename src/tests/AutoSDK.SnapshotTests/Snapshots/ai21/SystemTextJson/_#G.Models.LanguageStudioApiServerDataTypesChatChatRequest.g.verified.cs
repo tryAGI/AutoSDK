@@ -12,7 +12,7 @@ namespace G
     public sealed partial class LanguageStudioApiServerDataTypesChatChatRequest
     {
         /// <summary>
-        /// An enumeration.
+        /// Name of this model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelNameJsonConverter))]
@@ -87,7 +87,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.DocumentSchema>? Documents { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: {"type":"text"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         public global::G.ResponseFormat? ResponseFormat { get; set; }
@@ -102,7 +102,7 @@ namespace G
         /// Initializes a new instance of the <see cref="LanguageStudioApiServerDataTypesChatChatRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// An enumeration.
+        /// Name of this model
         /// </param>
         /// <param name="messages">
         /// messages
@@ -131,7 +131,9 @@ namespace G
         /// <param name="documents">
         /// Default Value: []
         /// </param>
-        /// <param name="responseFormat"></param>
+        /// <param name="responseFormat">
+        /// Default Value: {"type":"text"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

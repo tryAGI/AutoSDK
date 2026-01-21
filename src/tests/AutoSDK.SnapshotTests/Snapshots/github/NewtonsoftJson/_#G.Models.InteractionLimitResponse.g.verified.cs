@@ -25,8 +25,9 @@ namespace G
         public string Origin { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2018-08-17T04:18:39Z
         /// </summary>
+        /// <example>2018-08-17T04:18:39Z</example>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime ExpiresAt { get; set; } = default!;
 
@@ -46,7 +47,9 @@ namespace G
         /// <param name="origin">
         /// Example: repository
         /// </param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// Example: 2018-08-17T04:18:39Z
+        /// </param>
         public InteractionLimitResponse(
             global::G.InteractionGroup limit,
             string origin,

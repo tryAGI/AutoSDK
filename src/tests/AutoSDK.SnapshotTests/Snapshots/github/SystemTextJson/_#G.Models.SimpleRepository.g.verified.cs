@@ -11,9 +11,9 @@ namespace G
     {
         /// <summary>
         /// A unique identifier of the repository.<br/>
-        /// Example: 1296269L
+        /// Example: 1296269
         /// </summary>
-        /// <example>1296269L</example>
+        /// <example>1296269</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -428,7 +428,7 @@ namespace G
         /// </summary>
         /// <param name="id">
         /// A unique identifier of the repository.<br/>
-        /// Example: 1296269L
+        /// Example: 1296269
         /// </param>
         /// <param name="nodeId">
         /// The GraphQL identifier of the repository.<br/>

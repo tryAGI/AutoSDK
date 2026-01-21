@@ -10,14 +10,14 @@ namespace G
     public sealed partial class HistoryAlignmentsResponseModel
     {
         /// <summary>
-        /// 
+        /// The alignment of the text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignment")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.HistoryAlignmentResponseModel Alignment { get; set; }
 
         /// <summary>
-        /// 
+        /// The normalized alignment of the text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("normalized_alignment")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,8 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="HistoryAlignmentsResponseModel" /> class.
         /// </summary>
-        /// <param name="alignment"></param>
-        /// <param name="normalizedAlignment"></param>
+        /// <param name="alignment">
+        /// The alignment of the text.
+        /// </param>
+        /// <param name="normalizedAlignment">
+        /// The normalized alignment of the text.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

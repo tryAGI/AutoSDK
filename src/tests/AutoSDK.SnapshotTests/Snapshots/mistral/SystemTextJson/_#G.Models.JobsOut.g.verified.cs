@@ -13,7 +13,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -50,7 +50,7 @@ namespace G
 #endif
         public JobsOut(
             int total,
-            global::System.Collections.Generic.IList<global::G.DataItem>? data,
+            global::System.Collections.Generic.IList<global::G.DataItem2>? data,
             global::G.JobsOutObject? @object)
         {
             this.Total = total;

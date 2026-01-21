@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Output of the classification service
+    /// Output of the classification service<br/>
+    /// Example: {"data":[{"index":0,"prediction":"label1","object":"classification","score":0.75},{"index":1,"prediction":"label2","object":"classification","score":0.54}],"usage":{"total_tokens":15,"prompt_tokens":15}}
     /// </summary>
     public sealed partial class ClassificationOutput
     {

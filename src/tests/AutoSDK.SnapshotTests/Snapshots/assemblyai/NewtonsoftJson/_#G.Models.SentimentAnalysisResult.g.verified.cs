@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The result of the Sentiment Analysis model
+    /// The result of the Sentiment Analysis model<br/>
+    /// Example: {"text":"Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US.","start":250,"end":6350,"sentiment":"NEGATIVE","confidence":0.8181032538414001,"speaker":""}
     /// </summary>
     public sealed partial class SentimentAnalysisResult
     {

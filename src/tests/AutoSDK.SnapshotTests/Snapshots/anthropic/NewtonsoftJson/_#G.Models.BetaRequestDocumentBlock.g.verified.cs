@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::G.CacheControlVariant16? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace G
         /// <param name="citations"></param>
         public BetaRequestDocumentBlock(
             global::G.Source source,
-            global::G.BetaCacheControlEphemeral? cacheControl,
+            global::G.CacheControlVariant16? cacheControl,
             global::G.BetaRequestDocumentBlockType type,
             string? title,
             string? context,

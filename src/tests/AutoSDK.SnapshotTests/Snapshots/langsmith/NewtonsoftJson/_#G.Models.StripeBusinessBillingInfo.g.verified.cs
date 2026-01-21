@@ -16,7 +16,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Stripe customer address.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("address")]
         public global::G.StripeCustomerAddress? Address { get; set; }
@@ -31,9 +31,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StripeBusinessBillingInfo" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="address">
-        /// Stripe customer address.
-        /// </param>
+        /// <param name="address"></param>
         public StripeBusinessBillingInfo(
             string name,
             global::G.StripeCustomerAddress? address)

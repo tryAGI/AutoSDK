@@ -35,6 +35,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.URLImageSource? Url { get; init; }
+#else
+        public global::G.URLImageSource? Url { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::G.Base64ImageSource value) => new Source4((global::G.Base64ImageSource?)value);
 
         /// <summary>
@@ -49,23 +65,6 @@ namespace G
         {
             Base64 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.URLImageSource? Url { get; init; }
-#else
-        public global::G.URLImageSource? Url { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
-#endif
-        public bool IsUrl => Url != null;
 
         /// <summary>
         /// 

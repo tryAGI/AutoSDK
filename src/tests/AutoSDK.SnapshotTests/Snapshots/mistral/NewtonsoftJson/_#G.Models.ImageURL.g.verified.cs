@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("detail")]
-        public string? Detail { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("detail")]
+        public string? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageURL" /> class.
         /// </summary>
-        /// <param name="detail"></param>
         /// <param name="url"></param>
+        /// <param name="detail"></param>
         public ImageURL(
             string url,
             string? detail)

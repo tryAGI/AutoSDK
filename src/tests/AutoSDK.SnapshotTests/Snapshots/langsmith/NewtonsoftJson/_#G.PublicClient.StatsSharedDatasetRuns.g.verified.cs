@@ -202,9 +202,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType">
-        /// Enum for run types.
-        /// </param>
+        /// <param name="runType"></param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -216,17 +214,13 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType">
-        /// Enum for run data source types.
-        /// </param>
+        /// <param name="dataSourceType"></param>
         /// <param name="skipPagination"></param>
         /// <param name="searchFilter"></param>
         /// <param name="useExperimentalSearch">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy">
-        /// Group by param for run stats.
-        /// </param>
+        /// <param name="groupBy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(

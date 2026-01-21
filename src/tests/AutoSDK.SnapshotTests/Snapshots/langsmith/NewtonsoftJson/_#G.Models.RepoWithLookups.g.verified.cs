@@ -142,7 +142,7 @@ namespace G
         public string? UpstreamRepoFullName { get; set; }
 
         /// <summary>
-        /// Response model for get_commit_manifest.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latest_commit_manifest")]
         public global::G.CommitManifestResponse? LatestCommitManifest { get; set; }
@@ -178,9 +178,7 @@ namespace G
         /// <param name="numCommits"></param>
         /// <param name="originalRepoFullName"></param>
         /// <param name="upstreamRepoFullName"></param>
-        /// <param name="latestCommitManifest">
-        /// Response model for get_commit_manifest.
-        /// </param>
+        /// <param name="latestCommitManifest"></param>
         public RepoWithLookups(
             string repoHandle,
             global::System.Guid id,

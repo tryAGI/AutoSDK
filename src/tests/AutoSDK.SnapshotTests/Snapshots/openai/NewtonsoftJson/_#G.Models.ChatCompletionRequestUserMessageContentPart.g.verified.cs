@@ -28,6 +28,56 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// Learn about [image inputs](/docs/guides/vision).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
+#else
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// Learn about [audio inputs](/docs/guides/audio).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
+#else
+        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
+#endif
+        public bool IsAudio => Audio != null;
+
+        /// <summary>
+        /// Learn about [file inputs](/docs/guides/text) for text generation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; init; }
+#else
+        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestUserMessageContentPart((global::G.ChatCompletionRequestMessageContentPartText?)value);
@@ -44,23 +94,6 @@ namespace G
         {
             Text = value;
         }
-
-        /// <summary>
-        /// Learn about [image inputs](/docs/guides/vision).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
-#else
-        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -81,23 +114,6 @@ namespace G
         }
 
         /// <summary>
-        /// Learn about [audio inputs](/docs/guides/audio).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
-#else
-        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
-#endif
-        public bool IsAudio => Audio != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartAudio value) => new ChatCompletionRequestUserMessageContentPart((global::G.ChatCompletionRequestMessageContentPartAudio?)value);
@@ -114,23 +130,6 @@ namespace G
         {
             Audio = value;
         }
-
-        /// <summary>
-        /// Learn about [file inputs](/docs/guides/text) for text generation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; init; }
-#else
-        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 

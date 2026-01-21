@@ -138,7 +138,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.SchemaVariant> Schemas { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: {}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("meta")]
         public object? Meta { get; set; }
@@ -211,7 +211,9 @@ namespace G
         /// <param name="pricing"></param>
         /// <param name="docBlocks"></param>
         /// <param name="schemas"></param>
-        /// <param name="meta"></param>
+        /// <param name="meta">
+        /// Default Value: {}
+        /// </param>
         /// <param name="maxTokens"></param>
         /// <param name="replacedBy"></param>
         /// <param name="deprecated"></param>

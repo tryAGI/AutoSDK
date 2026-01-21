@@ -13,7 +13,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserFeedbackScoreJsonConverter))]
         public global::G.UserFeedbackScore? OverallScore { get; set; }
 
         /// <summary>

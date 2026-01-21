@@ -38,8 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.QueryExampleSchemaWithRunsFormatJsonConverter))]
-        public global::G.QueryExampleSchemaWithRunsFormat? Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// 
@@ -90,7 +89,7 @@ namespace G
             int? offset,
             int? limit,
             bool? preview,
-            global::G.QueryExampleSchemaWithRunsFormat? format,
+            string? format,
             global::System.Guid? comparativeExperimentId,
             global::G.SortParamsForRunsComparisonView? sortParams,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters)

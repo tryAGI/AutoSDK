@@ -12,10 +12,8 @@ namespace G
     public sealed partial class BodyCreatePodcastV1StudioPodcastsPost
     {
         /// <summary>
-        /// The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.
         /// </summary>
-        /// <example>21m00Tcm4TlvDq8ikWAM</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ModelId { get; set; }
@@ -42,10 +40,8 @@ namespace G
         /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
         /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
         /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
-        /// Default Value: standard<br/>
-        /// Example: standard
+        /// Default Value: standard
         /// </summary>
-        /// <example>standard</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality_preset")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostQualityPresetJsonConverter))]
         public global::G.BodyCreatePodcastV1StudioPodcastsPostQualityPreset? QualityPreset { get; set; }
@@ -55,27 +51,21 @@ namespace G
         /// short - produces podcasts shorter than 3 minutes.<br/>
         /// default - produces podcasts roughly between 3-7 minutes.<br/>
         /// long - prodces podcasts longer than 7 minutes.<br/>
-        /// Default Value: default<br/>
-        /// Example: short
+        /// Default Value: default
         /// </summary>
-        /// <example>short</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration_scale")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostDurationScaleJsonConverter))]
         public global::G.BodyCreatePodcastV1StudioPodcastsPostDurationScale? DurationScale { get; set; }
 
         /// <summary>
-        /// An optional language of the Studio project. Two-letter language code (ISO 639-1).<br/>
-        /// Example: en
+        /// An optional language of the Studio project. Two-letter language code (ISO 639-1).
         /// </summary>
-        /// <example>en</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         public string? Language { get; set; }
 
         /// <summary>
-        /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.<br/>
-        /// Example: [Emphasize the importance of AI on education]
+        /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.
         /// </summary>
-        /// <example>[Emphasize the importance of AI on education]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("highlights")]
         public global::System.Collections.Generic.IList<string>? Highlights { get; set; }
 
@@ -132,10 +122,8 @@ namespace G
         ///         error_details: "Error details if conversion failed"<br/>
         ///       }<br/>
         ///     }<br/>
-        ///     <br/>
-        /// Example: [https://www.test.com/my-api/projects-status]
+        ///     
         /// </summary>
-        /// <example>[https://www.test.com/my-api/projects-status]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
         public string? CallbackUrl { get; set; }
 
@@ -149,8 +137,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyCreatePodcastV1StudioPodcastsPost" /> class.
         /// </summary>
         /// <param name="modelId">
-        /// The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.<br/>
-        /// Example: 21m00Tcm4TlvDq8ikWAM
+        /// The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.
         /// </param>
         /// <param name="mode">
         /// The type of podcast to generate. Can be 'conversation', an interaction between two voices, or 'bulletin', a monologue.
@@ -164,24 +151,20 @@ namespace G
         /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
         /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
         /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
-        /// Default Value: standard<br/>
-        /// Example: standard
+        /// Default Value: standard
         /// </param>
         /// <param name="durationScale">
         /// Duration of the generated podcast. Must be one of:<br/>
         /// short - produces podcasts shorter than 3 minutes.<br/>
         /// default - produces podcasts roughly between 3-7 minutes.<br/>
         /// long - prodces podcasts longer than 7 minutes.<br/>
-        /// Default Value: default<br/>
-        /// Example: short
+        /// Default Value: default
         /// </param>
         /// <param name="language">
-        /// An optional language of the Studio project. Two-letter language code (ISO 639-1).<br/>
-        /// Example: en
+        /// An optional language of the Studio project. Two-letter language code (ISO 639-1).
         /// </param>
         /// <param name="highlights">
-        /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.<br/>
-        /// Example: [Emphasize the importance of AI on education]
+        /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.
         /// </param>
         /// <param name="callbackUrl">
         ///     A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
@@ -236,8 +219,7 @@ namespace G
         ///         error_details: "Error details if conversion failed"<br/>
         ///       }<br/>
         ///     }<br/>
-        ///     <br/>
-        /// Example: [https://www.test.com/my-api/projects-status]
+        ///     
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

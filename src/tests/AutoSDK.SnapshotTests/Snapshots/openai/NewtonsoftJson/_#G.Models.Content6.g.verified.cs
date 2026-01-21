@@ -30,6 +30,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.OutputContent? OutputContent { get; init; }
+#else
+        public global::G.OutputContent? OutputContent { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContent))]
+#endif
+        public bool IsOutputContent => OutputContent != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Content6(global::G.InputContent value) => new Content6((global::G.InputContent?)value);
 
         /// <summary>
@@ -44,23 +60,6 @@ namespace G
         {
             InputContent = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.OutputContent? OutputContent { get; init; }
-#else
-        public global::G.OutputContent? OutputContent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContent))]
-#endif
-        public bool IsOutputContent => OutputContent != null;
 
         /// <summary>
         /// 

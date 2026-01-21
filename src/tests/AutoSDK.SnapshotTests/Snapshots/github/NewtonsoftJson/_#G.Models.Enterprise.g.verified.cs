@@ -60,14 +60,16 @@ namespace G
         public string Slug { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-26T19:01:12Z
         /// </summary>
+        /// <example>2019-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 2019-01-26T19:14:43Z
         /// </summary>
+        /// <example>2019-01-26T19:14:43Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
@@ -110,8 +112,12 @@ namespace G
         /// The slug url identifier for the enterprise.<br/>
         /// Example: octo-business
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2019-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2019-01-26T19:14:43Z
+        /// </param>
         /// <param name="avatarUrl"></param>
         public Enterprise(
             string htmlUrl,

@@ -5,19 +5,21 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"bulletin":{"host_voice_id":"aw1NgEzBg83R7vgmiJt6"},"type":"bulletin"}
     /// </summary>
     public sealed partial class PodcastBulletinMode
     {
         /// <summary>
         /// The type of podcast to create.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PodcastBulletinModeType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The voice settings for the bulletin.<br/>
+        /// Example: {"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
         /// </summary>
+        /// <example>{"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}</example>
         [global::Newtonsoft.Json.JsonProperty("bulletin", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PodcastBulletinModeData Bulletin { get; set; } = default!;
 
@@ -33,13 +35,16 @@ namespace G
         /// <param name="type">
         /// The type of podcast to create.
         /// </param>
-        /// <param name="bulletin"></param>
+        /// <param name="bulletin">
+        /// The voice settings for the bulletin.<br/>
+        /// Example: {"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
+        /// </param>
         public PodcastBulletinMode(
-            global::G.PodcastBulletinModeData bulletin,
-            global::G.PodcastBulletinModeType type)
+            string type,
+            global::G.PodcastBulletinModeData bulletin)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Bulletin = bulletin ?? throw new global::System.ArgumentNullException(nameof(bulletin));
-            this.Type = type;
         }
 
         /// <summary>

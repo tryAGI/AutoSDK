@@ -12,37 +12,29 @@ namespace G
     public sealed partial class ModelOut
     {
         /// <summary>
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </summary>
-        /// <example>microsoft/resnet-50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ModelName { get; set; }
 
         /// <summary>
-        /// raw type of the model<br/>
-        /// Example: image-classification
+        /// raw type of the model
         /// </summary>
-        /// <example>image-classification</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// reported type of the model<br/>
-        /// Example: text-generation
+        /// reported type of the model
         /// </summary>
-        /// <example>text-generation</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("reported_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReportedType { get; set; }
 
         /// <summary>
-        /// description of the model<br/>
-        /// Example: ResNet-50 is a convolutional neural network that is trained on more than a million images from the ImageNet database. It is a 50-layer deep neural network.
+        /// description of the model
         /// </summary>
-        /// <example>ResNet-50 is a convolutional neural network that is trained on more than a million images from the ImageNet database. It is a 50-layer deep neural network.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -118,20 +110,16 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelOut" /> class.
         /// </summary>
         /// <param name="modelName">
-        /// Model Name<br/>
-        /// Example: microsoft/resnet-50
+        /// Model Name
         /// </param>
         /// <param name="type">
-        /// raw type of the model<br/>
-        /// Example: image-classification
+        /// raw type of the model
         /// </param>
         /// <param name="reportedType">
-        /// reported type of the model<br/>
-        /// Example: text-generation
+        /// reported type of the model
         /// </param>
         /// <param name="description">
-        /// description of the model<br/>
-        /// Example: ResNet-50 is a convolutional neural network that is trained on more than a million images from the ImageNet database. It is a 50-layer deep neural network.
+        /// description of the model
         /// </param>
         /// <param name="coverImgUrl">
         /// cover image link

@@ -38,22 +38,23 @@ namespace G
         /// Default Value: mcp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MCPToolConfigOutputType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        /// The type of MCP tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integration_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.IntegrationType IntegrationType { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Schema for any parameters the LLM needs to provide to the MCP tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters")]
         public global::G.ObjectJsonSchemaPropertyOutput? Parameters { get; set; }
 
         /// <summary>
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval policy for the MCP tool<br/>
+        /// Default Value: require_approval_all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
         public global::G.MCPApprovalPolicy? ApprovalPolicy { get; set; }
@@ -107,10 +108,15 @@ namespace G
         /// <param name="type">
         /// Default Value: mcp
         /// </param>
-        /// <param name="integrationType"></param>
-        /// <param name="parameters"></param>
+        /// <param name="integrationType">
+        /// The type of MCP tool
+        /// </param>
+        /// <param name="parameters">
+        /// Schema for any parameters the LLM needs to provide to the MCP tool.
+        /// </param>
         /// <param name="approvalPolicy">
-        /// Defines the MCP server-level approval policy for tool execution.
+        /// The approval policy for the MCP tool<br/>
+        /// Default Value: require_approval_all
         /// </param>
         /// <param name="mcpToolName">
         /// The name of the MCP tool to call
@@ -137,7 +143,7 @@ namespace G
             string mcpServerName,
             string? id,
             int? responseTimeoutSecs,
-            global::G.MCPToolConfigOutputType? type,
+            string? type,
             global::G.ObjectJsonSchemaPropertyOutput? parameters,
             global::G.MCPApprovalPolicy? approvalPolicy,
             object? mcpInputSchema)

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// An evaluation using the transcript and a prompt for a yes/no achieved answer
+    /// An evaluation using the transcript and a prompt for a yes/no achieved answer<br/>
+    /// Example: {"conversation_goal_prompt":"You are a helpful assistant that can answer questions about the topic of the conversation.","id":"1234567890","use_knowledge_base":false}
     /// </summary>
     public sealed partial class PromptEvaluationCriteria
     {
@@ -28,8 +29,7 @@ namespace G
         /// Default Value: prompt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptEvaluationCriteriaTypeJsonConverter))]
-        public global::G.PromptEvaluationCriteriaType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The prompt that the agent should use to evaluate the conversation
@@ -76,7 +76,7 @@ namespace G
             string id,
             string name,
             string conversationGoalPrompt,
-            global::G.PromptEvaluationCriteriaType? type,
+            string? type,
             bool? useKnowledgeBase)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

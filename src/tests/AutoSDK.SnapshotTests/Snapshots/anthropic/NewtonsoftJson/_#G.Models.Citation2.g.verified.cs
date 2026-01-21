@@ -35,6 +35,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponsePageLocationCitation? PageLocation { get; init; }
+#else
+        public global::G.ResponsePageLocationCitation? PageLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
+#endif
+        public bool IsPageLocation => PageLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
+#else
+        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
+#endif
+        public bool IsContentBlockLocation => ContentBlockLocation != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation2(global::G.ResponseCharLocationCitation value) => new Citation2((global::G.ResponseCharLocationCitation?)value);
 
         /// <summary>
@@ -53,23 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponsePageLocationCitation? PageLocation { get; init; }
-#else
-        public global::G.ResponsePageLocationCitation? PageLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
-#endif
-        public bool IsPageLocation => PageLocation != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Citation2(global::G.ResponsePageLocationCitation value) => new Citation2((global::G.ResponsePageLocationCitation?)value);
 
         /// <summary>
@@ -84,23 +100,6 @@ namespace G
         {
             PageLocation = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
-#else
-        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
-#endif
-        public bool IsContentBlockLocation => ContentBlockLocation != null;
 
         /// <summary>
         /// 

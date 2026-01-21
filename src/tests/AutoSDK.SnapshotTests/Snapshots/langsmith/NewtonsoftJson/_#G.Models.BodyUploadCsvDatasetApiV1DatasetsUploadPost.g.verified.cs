@@ -34,7 +34,8 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
         public global::G.DataType? DataType { get; set; }
@@ -65,7 +66,8 @@ namespace G
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Enum for dataset data types.<br/>
+        /// Default Value: kv
         /// </param>
         /// <param name="outputKeys">
         /// Default Value: []

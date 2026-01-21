@@ -14,8 +14,7 @@ namespace G
         /// Default Value: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.URLAvatarTypeJsonConverter))]
-        public global::G.URLAvatarType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The custom URL of the avatar
@@ -43,7 +42,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public URLAvatar(
-            global::G.URLAvatarType? type,
+            string? type,
             string? customUrl)
         {
             this.Type = type;

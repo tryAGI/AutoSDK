@@ -34,7 +34,7 @@ namespace G
         public bool? Suspended { get; set; }
 
         /// <summary>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("overdue_invoices")]
         public double? OverdueInvoices { get; set; }
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("suspend_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SuspendReason SuspendReason { get; set; } = default!;
+        public global::G.SuspendReason? SuspendReason { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,7 +85,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="overdueInvoices">
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         /// <param name="lastChecked">
         /// Default Value: 0
@@ -98,7 +98,7 @@ namespace G
         public Checklist(
             double stripeBalance,
             double? limit,
-            global::G.SuspendReason suspendReason,
+            global::G.SuspendReason? suspendReason,
             bool? email,
             bool? billingAddress,
             bool? paymentMethod,
@@ -107,8 +107,8 @@ namespace G
             int? lastChecked)
         {
             this.StripeBalance = stripeBalance;
-            this.Limit = limit;
-            this.SuspendReason = suspendReason;
+            this.Limit = limit ?? throw new global::System.ArgumentNullException(nameof(limit));
+            this.SuspendReason = suspendReason ?? throw new global::System.ArgumentNullException(nameof(suspendReason));
             this.Email = email;
             this.BillingAddress = billingAddress;
             this.PaymentMethod = paymentMethod;

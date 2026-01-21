@@ -82,22 +82,26 @@ namespace G
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2017-07-08T16:18:44-04:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 2017-07-08T16:18:44-04:00
         /// </summary>
+        /// <example>2017-07-08T16:18:44-04:00</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// The set of permissions for the GitHub app
+        /// The set of permissions for the GitHub app<br/>
+        /// Example: {"issues":"read","deployments":"write"}
         /// </summary>
+        /// <example>{"issues":"read","deployments":"write"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.NullableIntegrationPermissions Permissions { get; set; }
@@ -179,10 +183,15 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/apps/super-ci
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Example: 2017-07-08T16:18:44-04:00
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2017-07-08T16:18:44-04:00
+        /// </param>
         /// <param name="permissions">
-        /// The set of permissions for the GitHub app
+        /// The set of permissions for the GitHub app<br/>
+        /// Example: {"issues":"read","deployments":"write"}
         /// </param>
         /// <param name="events">
         /// The list of events for the GitHub app<br/>

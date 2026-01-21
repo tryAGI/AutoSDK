@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinetuneEvent2.g.cs
+﻿//HintName: G.Models.FineTuneEvent2.g.cs
 
 #nullable enable
 
@@ -7,61 +7,91 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class FinetuneEvent2
+    public sealed partial class FineTuneEvent2
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.FineTuneEventObject2 Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hash")]
-        public string? Hash { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
-        public global::G.FinetuneEventLevels? Level { get; set; }
+        public global::G.FineTuneEventLevel? Level { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("message")]
-        public string? Message { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.FinetuneEventObject2? Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FineTuneEventType2 Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("param_count")]
-        public int? ParamCount { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("param_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ParamCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_count")]
-        public int? TokenCount { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("token_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int TokenCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FinetuneEventType2? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("total_steps", Required = global::Newtonsoft.Json.Required.Always)]
+        public int TotalSteps { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("wandb_url")]
-        public string? WandbUrl { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("wandb_url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string WandbUrl { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("step", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Step { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("checkpoint_path", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CheckpointPath { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model_path", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ModelPath { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("training_offset", Required = global::Newtonsoft.Json.Required.Always)]
+        public int TrainingOffset { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hash", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Hash { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,43 +100,58 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneEvent2" /> class.
+        /// Initializes a new instance of the <see cref="FineTuneEvent2" /> class.
         /// </summary>
+        /// <param name="object"></param>
         /// <param name="createdAt"></param>
-        /// <param name="hash"></param>
         /// <param name="level"></param>
         /// <param name="message"></param>
-        /// <param name="object"></param>
+        /// <param name="type"></param>
         /// <param name="paramCount"></param>
         /// <param name="tokenCount"></param>
-        /// <param name="type"></param>
+        /// <param name="totalSteps"></param>
         /// <param name="wandbUrl"></param>
-        public FinetuneEvent2(
-            string? createdAt,
-            string? hash,
-            global::G.FinetuneEventLevels? level,
-            string? message,
-            global::G.FinetuneEventObject2? @object,
-            int? paramCount,
-            int? tokenCount,
-            global::G.FinetuneEventType2? type,
-            string? wandbUrl)
+        /// <param name="step"></param>
+        /// <param name="checkpointPath"></param>
+        /// <param name="modelPath"></param>
+        /// <param name="trainingOffset"></param>
+        /// <param name="hash"></param>
+        public FineTuneEvent2(
+            string createdAt,
+            string message,
+            global::G.FineTuneEventType2 type,
+            int paramCount,
+            int tokenCount,
+            int totalSteps,
+            string wandbUrl,
+            int step,
+            string checkpointPath,
+            string modelPath,
+            int trainingOffset,
+            string hash,
+            global::G.FineTuneEventObject2 @object,
+            global::G.FineTuneEventLevel? level)
         {
-            this.CreatedAt = createdAt;
-            this.Hash = hash;
-            this.Level = level;
-            this.Message = message;
-            this.Object = @object;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Type = type;
             this.ParamCount = paramCount;
             this.TokenCount = tokenCount;
-            this.Type = type;
-            this.WandbUrl = wandbUrl;
+            this.TotalSteps = totalSteps;
+            this.WandbUrl = wandbUrl ?? throw new global::System.ArgumentNullException(nameof(wandbUrl));
+            this.Step = step;
+            this.CheckpointPath = checkpointPath ?? throw new global::System.ArgumentNullException(nameof(checkpointPath));
+            this.ModelPath = modelPath ?? throw new global::System.ArgumentNullException(nameof(modelPath));
+            this.TrainingOffset = trainingOffset;
+            this.Hash = hash ?? throw new global::System.ArgumentNullException(nameof(hash));
+            this.Object = @object;
+            this.Level = level;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneEvent2" /> class.
+        /// Initializes a new instance of the <see cref="FineTuneEvent2" /> class.
         /// </summary>
-        public FinetuneEvent2()
+        public FineTuneEvent2()
         {
         }
     }

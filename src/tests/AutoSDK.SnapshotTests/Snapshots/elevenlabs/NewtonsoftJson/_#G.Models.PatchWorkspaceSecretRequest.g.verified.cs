@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.PatchWorkspaceSecretRequestType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,13 +40,13 @@ namespace G
         /// <param name="name"></param>
         /// <param name="value"></param>
         public PatchWorkspaceSecretRequest(
+            string type,
             string name,
-            string value,
-            global::G.PatchWorkspaceSecretRequestType type)
+            string value)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Type = type;
         }
 
         /// <summary>

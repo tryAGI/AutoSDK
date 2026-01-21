@@ -33,6 +33,22 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Specifies a tool the model should use. Use to force the model to call a specific function.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionNamedToolChoice? Value2 { get; init; }
+#else
+        public global::G.ChatCompletionNamedToolChoice? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption((global::G.ChatCompletionToolChoiceOptionEnum?)value);
@@ -49,23 +65,6 @@ namespace G
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Specifies a tool the model should use. Use to force the model to call a specific function.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ChatCompletionNamedToolChoice? Value2 { get; init; }
-#else
-        public global::G.ChatCompletionNamedToolChoice? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

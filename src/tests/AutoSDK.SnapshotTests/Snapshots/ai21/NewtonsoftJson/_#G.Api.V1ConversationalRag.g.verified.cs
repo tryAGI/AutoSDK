@@ -28,7 +28,7 @@ namespace G
         /// Conversational Rag
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -202,7 +202,7 @@ namespace G
         /// Conversational Rag
         /// </summary>
         /// <param name="requestStartTime">
-        /// Default Value: 1730898830008
+        /// Default Value: 1730898830008L
         /// </param>
         /// <param name="messages">
         /// messages
@@ -217,11 +217,11 @@ namespace G
         /// Default Value: default
         /// </param>
         /// <param name="retrievalSimilarityThreshold">
-        /// Default Value: 0.8
+        /// Default Value: 0.8F
         /// </param>
         /// <param name="maxNeighbors"></param>
         /// <param name="hybridSearchAlpha">
-        /// Default Value: 0.98
+        /// Default Value: 0.98F
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"creator_user_id":"5zavrE1kZXv2lFw9BKgEkf0B5Wqo","resource_id":"4ZUqyldxf71HqUbcP2Lc","resource_type":"voice","role_to_group_ids":{"admin":["5zavrE1kZXv2lFw9BKgEkf0B5Wqo"],"editor":["8ruQDGM2R4w1mFbHI5aROCUjIpJZ"],"viewer":[]},"share_options":[{"id":"i2YYI6huwBmcgYydAXARmQJc3pmX","name":"user@example.com","type":"user"},{"id":"x1AfvYKAmiqxCnbvZeNXHqqthJaC","name":"mygroup","type":"group"}]}
     /// </summary>
     public sealed partial class ResourceMetadataResponseModel
     {
@@ -17,7 +17,7 @@ namespace G
         public required string ResourceId { get; set; }
 
         /// <summary>
-        /// Resource types that can be shared in the workspace. The name always need to match the collection names
+        /// The type of the resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WorkspaceResourceTypeJsonConverter))]
@@ -58,7 +58,7 @@ namespace G
         /// The ID of the resource.
         /// </param>
         /// <param name="resourceType">
-        /// Resource types that can be shared in the workspace. The name always need to match the collection names
+        /// The type of the resource.
         /// </param>
         /// <param name="creatorUserId">
         /// The ID of the user who created the resource.

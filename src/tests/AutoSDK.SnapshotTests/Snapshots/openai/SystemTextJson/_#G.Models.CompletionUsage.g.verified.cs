@@ -13,28 +13,25 @@ namespace G
         /// Number of tokens in the generated completion.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletionTokens { get; set; } = 0;
+        public required int CompletionTokens { get; set; }
 
         /// <summary>
         /// Number of tokens in the prompt.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptTokens { get; set; } = 0;
+        public required int PromptTokens { get; set; }
 
         /// <summary>
         /// Total number of tokens used in the request (prompt + completion).<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; } = 0;
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Breakdown of tokens used in a completion.

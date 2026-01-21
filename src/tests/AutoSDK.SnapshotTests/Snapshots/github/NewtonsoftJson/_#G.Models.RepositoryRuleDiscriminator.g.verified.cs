@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RepositoryRuleDiscriminatorType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         public RepositoryRuleDiscriminator(
-            global::G.RepositoryRuleDiscriminatorType? type)
+            string? type)
         {
             this.Type = type;
         }

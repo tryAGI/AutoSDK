@@ -35,24 +35,6 @@ namespace G
         public bool IsMaxCharsChunkingStrategy => MaxCharsChunkingStrategy != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ChunkingStrategy(global::G.MaxCharsChunkingStrategy value) => new ChunkingStrategy((global::G.MaxCharsChunkingStrategy?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.MaxCharsChunkingStrategy?(ChunkingStrategy @this) => @this.MaxCharsChunkingStrategy;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChunkingStrategy(global::G.MaxCharsChunkingStrategy? value)
-        {
-            MaxCharsChunkingStrategy = value;
-        }
-
-        /// <summary>
         /// Sets a chunking strategy that creates one chunk per sentence.<br/>
         /// This is the default strategy used when no chunking strategy is specified.
         /// </summary>
@@ -69,6 +51,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SentenceChunkingStrategy))]
 #endif
         public bool IsSentenceChunkingStrategy => SentenceChunkingStrategy != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChunkingStrategy(global::G.MaxCharsChunkingStrategy value) => new ChunkingStrategy((global::G.MaxCharsChunkingStrategy?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.MaxCharsChunkingStrategy?(ChunkingStrategy @this) => @this.MaxCharsChunkingStrategy;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChunkingStrategy(global::G.MaxCharsChunkingStrategy? value)
+        {
+            MaxCharsChunkingStrategy = value;
+        }
 
         /// <summary>
         /// 

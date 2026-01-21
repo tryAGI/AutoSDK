@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"dubbing_id":"21m00Tcm4TlvDq8ikWAM","expected_duration_sec":127.5}
     /// </summary>
     public sealed partial class DoDubbingResponseModel
     {

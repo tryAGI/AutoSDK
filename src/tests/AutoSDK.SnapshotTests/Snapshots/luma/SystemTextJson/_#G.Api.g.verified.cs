@@ -41,12 +41,14 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.AspectRatioJsonConverter(),
-                    new global::G.JsonConverters.AspectRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.StateJsonConverter(),
+                    new global::G.JsonConverters.StateNullableJsonConverter(),
                     new global::G.JsonConverters.GenerationTypeJsonConverter(),
                     new global::G.JsonConverters.GenerationTypeNullableJsonConverter(),
                     new global::G.JsonConverters.GenerationRequestGenerationTypeJsonConverter(),
                     new global::G.JsonConverters.GenerationRequestGenerationTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.AspectRatioJsonConverter(),
+                    new global::G.JsonConverters.AspectRatioNullableJsonConverter(),
                     new global::G.JsonConverters.GenerationReferenceTypeJsonConverter(),
                     new global::G.JsonConverters.GenerationReferenceTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageReferenceTypeJsonConverter(),
@@ -57,10 +59,6 @@ namespace G
                     new global::G.JsonConverters.ImageGenerationRequestGenerationTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageModelJsonConverter(),
                     new global::G.JsonConverters.ImageModelNullableJsonConverter(),
-                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter(),
-                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.StateJsonConverter(),
-                    new global::G.JsonConverters.StateNullableJsonConverter(),
                     new global::G.JsonConverters.RequestJsonConverter(),
                     new global::G.JsonConverters.KeyframeJsonConverter(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
@@ -71,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CreditsClient Credits => new CreditsClient(HttpClient, authorizations: Authorizations)
+        public PingClient Ping => new PingClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -89,7 +87,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
+        public CreditsClient Credits => new CreditsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -98,7 +96,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PingClient Ping => new PingClient(HttpClient, authorizations: Authorizations)
+        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

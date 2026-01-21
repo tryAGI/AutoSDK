@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatMessageStartEventVariant2
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta")]
-        public global::G.ChatMessageStartEventVariant2Delta? Delta { get; set; }
-
-        /// <summary>
         /// Unique identifier for the generated reply.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("delta")]
+        public global::G.ChatMessageStartEventVariant2Delta? Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessageStartEventVariant2" /> class.
         /// </summary>
-        /// <param name="delta"></param>
         /// <param name="id">
         /// Unique identifier for the generated reply.
         /// </param>
+        /// <param name="delta"></param>
         public ChatMessageStartEventVariant2(
-            global::G.ChatMessageStartEventVariant2Delta? delta,
-            string? id)
+            string? id,
+            global::G.ChatMessageStartEventVariant2Delta? delta)
         {
-            this.Delta = delta;
             this.Id = id;
+            this.Delta = delta;
         }
 
         /// <summary>

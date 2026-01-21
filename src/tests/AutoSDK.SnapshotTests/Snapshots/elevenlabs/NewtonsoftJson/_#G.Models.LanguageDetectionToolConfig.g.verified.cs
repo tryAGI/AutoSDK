@@ -13,7 +13,7 @@ namespace G
         /// Default Value: language_detection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
-        public global::G.LanguageDetectionToolConfigSystemToolType? SystemToolType { get; set; }
+        public string? SystemToolType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Default Value: language_detection
         /// </param>
         public LanguageDetectionToolConfig(
-            global::G.LanguageDetectionToolConfigSystemToolType? systemToolType)
+            string? systemToolType)
         {
             this.SystemToolType = systemToolType;
         }

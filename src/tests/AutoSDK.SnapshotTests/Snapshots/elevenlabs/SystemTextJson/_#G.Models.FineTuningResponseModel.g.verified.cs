@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: {"is_allowed_to_fine_tune":true,"manual_verification_requested":false,"state":{"eleven_multilingual_v2":"fine_tuned"},"verification_attempts_count":2,"verification_failures":[]}
     /// </summary>
     public sealed partial class FineTuningResponseModel
     {
@@ -81,7 +81,7 @@ namespace G
         public global::System.Collections.Generic.IList<string>? SliceIds { get; set; }
 
         /// <summary>
-        /// 
+        /// The manual verification of the fine-tuning process.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manual_verification")]
         public global::G.ManualVerificationResponseModel? ManualVerification { get; set; }
@@ -140,7 +140,9 @@ namespace G
         /// <param name="sliceIds">
         /// List of slice IDs.
         /// </param>
-        /// <param name="manualVerification"></param>
+        /// <param name="manualVerification">
+        /// The manual verification of the fine-tuning process.
+        /// </param>
         /// <param name="maxVerificationAttempts">
         /// The maximum number of verification attempts.
         /// </param>
