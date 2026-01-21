@@ -9,6 +9,6 @@ fi
 autosdk generate openapi.yaml \
   --namespace $SolutionName$ \
   --clientClassName $ClientName$ \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations

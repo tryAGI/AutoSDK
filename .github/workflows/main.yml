@@ -75,7 +75,7 @@ jobs:
         run: dotnet run --framework net10.0 --project src/libs/AutoSDK.CLI
           generate specs/${{ matrix.spec }}
           --namespace TestSolution
-          --targetFramework net9.0
+          --targetFramework net10.0
           --output TestProject/src/libs/TestSolution/Generated
           --ignore-openapi-errors
 

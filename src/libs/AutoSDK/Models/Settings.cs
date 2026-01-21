@@ -51,7 +51,7 @@ public record struct Settings(
     bool GenerateCli)
 {
     public static Settings Default => new(
-        TargetFramework: "net8.0",
+        TargetFramework: "net10.0",
         Namespace: string.Empty,
         ClassName: string.Empty,
         ClsCompliantEnumPrefix: string.Empty,
