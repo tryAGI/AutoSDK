@@ -33,7 +33,14 @@ public static class OpenApiSchemaExtensions
             JsonSchemaType.Object => "object",
             0 when (type.Value & JsonSchemaType.Null) == JsonSchemaType.Null => "null", // Only null type
             0 => null, // No type specified (e.g., for anyOf/oneOf)
-            _ => nonNullType.ToString()?.ToLowerInvariant(),
+
+            // Handle combined types (OpenAPI 3.1 type arrays like ["integer", "string"])
+            // If string is one of the types, use string as it can represent all primitive types
+            _ when (nonNullType & JsonSchemaType.String) == JsonSchemaType.String => "string",
+            // If integer and number, use number (integer is subset of number)
+            JsonSchemaType.Integer | JsonSchemaType.Number => "number",
+            // For other combinations (e.g., object | array), use object as catch-all
+            _ => "object",
         };
     }
 
