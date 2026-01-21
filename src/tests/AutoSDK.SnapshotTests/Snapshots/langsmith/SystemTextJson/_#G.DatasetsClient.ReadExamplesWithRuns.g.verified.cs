@@ -56,7 +56,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("format", format) 
                 ; 
             var __path = __pathBuilder.ToString();

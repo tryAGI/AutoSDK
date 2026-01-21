@@ -51,8 +51,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organizations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("since", since?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("since", since?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -81,9 +81,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/releases/{releaseId}/reactions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("content", content?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("content", content?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

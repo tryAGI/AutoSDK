@@ -89,12 +89,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/deployments",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("sha", sha) 
-                .AddOptionalParameter("ref", @ref) 
-                .AddOptionalParameter("task", task) 
-                .AddOptionalParameter("environment", environment) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("sha", sha)
+                .AddOptionalParameter("ref", @ref)
+                .AddOptionalParameter("task", task)
+                .AddOptionalParameter("environment", environment)
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

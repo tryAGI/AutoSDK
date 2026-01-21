@@ -51,8 +51,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/tools/{toolId}/history",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

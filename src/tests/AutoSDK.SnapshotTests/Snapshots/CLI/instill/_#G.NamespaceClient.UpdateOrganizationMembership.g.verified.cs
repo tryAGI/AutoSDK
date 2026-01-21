@@ -59,7 +59,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/organizations/{organizationId}/memberships/{userId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("updateMask", updateMask) 
                 ; 
             var __path = __pathBuilder.ToString();

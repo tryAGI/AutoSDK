@@ -60,10 +60,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/polls",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("first", first) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("first", first)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

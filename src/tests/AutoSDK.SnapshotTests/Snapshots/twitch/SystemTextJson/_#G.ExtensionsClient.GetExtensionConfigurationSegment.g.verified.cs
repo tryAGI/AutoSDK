@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions/configurations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("extension_id", extensionId) 
+            __pathBuilder
+                .AddOptionalParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("extension_id", extensionId)
                 .AddRequiredParameter("segment", segment.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

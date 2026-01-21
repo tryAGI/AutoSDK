@@ -47,8 +47,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/tokens",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("pageToken", pageToken) 
                 ; 
             var __path = __pathBuilder.ToString();

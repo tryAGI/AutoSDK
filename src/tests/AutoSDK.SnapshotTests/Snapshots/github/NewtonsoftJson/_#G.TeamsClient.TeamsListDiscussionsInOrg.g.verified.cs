@@ -82,10 +82,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/teams/{teamSlug}/discussions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("pinned", pinned) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -58,9 +58,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/responses/{responseId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("stream", stream?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("stream", stream?.ToString())
                 .AddOptionalParameter("starting_after", startingAfter?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

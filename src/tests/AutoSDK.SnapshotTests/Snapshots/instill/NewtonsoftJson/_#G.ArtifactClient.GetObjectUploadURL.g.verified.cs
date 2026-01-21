@@ -62,10 +62,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/object-upload-url",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("objectName", objectName) 
-                .AddOptionalParameter("urlExpireDays", urlExpireDays?.ToString()) 
-                .AddOptionalParameter("lastModifiedTime", lastModifiedTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddRequiredParameter("objectName", objectName)
+                .AddOptionalParameter("urlExpireDays", urlExpireDays?.ToString())
+                .AddOptionalParameter("lastModifiedTime", lastModifiedTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("objectExpireDays", objectExpireDays?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

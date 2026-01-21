@@ -60,7 +60,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/git/trees/{treeSha}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("recursive", recursive) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -61,7 +61,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets/{rulesetId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("includes_parents", includesParents?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

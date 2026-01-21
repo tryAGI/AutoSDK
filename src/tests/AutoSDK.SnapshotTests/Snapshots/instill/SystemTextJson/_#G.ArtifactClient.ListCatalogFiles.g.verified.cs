@@ -62,9 +62,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("filter.fileUids", filterFileUids, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

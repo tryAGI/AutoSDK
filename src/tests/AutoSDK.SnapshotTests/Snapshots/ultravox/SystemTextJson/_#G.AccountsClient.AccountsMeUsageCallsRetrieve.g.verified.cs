@@ -71,13 +71,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/accounts/me/usage/calls",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("durationMax", durationMax) 
-                .AddOptionalParameter("durationMin", durationMin) 
-                .AddOptionalParameter("fromDate", fromDate?.ToString("yyyy-MM-dd")) 
-                .AddOptionalParameter("metadata", metadata?.ToString()) 
-                .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("toDate", toDate?.ToString("yyyy-MM-dd")) 
+            __pathBuilder
+                .AddOptionalParameter("durationMax", durationMax)
+                .AddOptionalParameter("durationMin", durationMin)
+                .AddOptionalParameter("fromDate", fromDate?.ToString("yyyy-MM-dd"))
+                .AddOptionalParameter("metadata", metadata?.ToString())
+                .AddOptionalParameter("search", search)
+                .AddOptionalParameter("toDate", toDate?.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("voiceId", voiceId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

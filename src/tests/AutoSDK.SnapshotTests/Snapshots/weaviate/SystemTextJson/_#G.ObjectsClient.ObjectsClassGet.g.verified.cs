@@ -69,10 +69,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("include", include) 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
-                .AddOptionalParameter("node_name", nodeName) 
+            __pathBuilder
+                .AddOptionalParameter("include", include)
+                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString())
+                .AddOptionalParameter("node_name", nodeName)
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

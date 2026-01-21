@@ -101,18 +101,18 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/repos/tags",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("tenant_handle", tenantHandle) 
-                .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
-                .AddOptionalParameter("query", query) 
-                .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags?.ToString()) 
-                .AddOptionalParameter("is_archived", isArchived?.ToString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToString()) 
-                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
-                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("tenant_handle", tenantHandle)
+                .AddOptionalParameter("tenant_id", tenantId?.ToString())
+                .AddOptionalParameter("query", query)
+                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("tags", tags?.ToString())
+                .AddOptionalParameter("is_archived", isArchived?.ToString())
+                .AddOptionalParameter("is_public", isPublic?.ToString())
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -67,9 +67,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/hooks/{hookId}/deliveries",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("cursor", cursor) 
+            __pathBuilder
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("redelivery", redelivery?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

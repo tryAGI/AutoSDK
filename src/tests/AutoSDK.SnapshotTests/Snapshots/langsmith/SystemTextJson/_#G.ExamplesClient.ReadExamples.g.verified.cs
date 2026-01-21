@@ -108,18 +108,18 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString()) 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString()) 
-                .AddOptionalParameter("splits", splits?.ToString()) 
-                .AddOptionalParameter("dataset", dataset?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("random_seed", randomSeed?.ToString()) 
-                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("id", id?.ToString())
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString())
+                .AddOptionalParameter("splits", splits?.ToString())
+                .AddOptionalParameter("dataset", dataset?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("random_seed", randomSeed?.ToString())
+                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

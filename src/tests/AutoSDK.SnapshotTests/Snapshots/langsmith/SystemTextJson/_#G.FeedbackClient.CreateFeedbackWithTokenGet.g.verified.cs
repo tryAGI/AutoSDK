@@ -62,10 +62,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/feedback/tokens/{token}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("score", score?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("value", value?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("comment", comment) 
+            __pathBuilder
+                .AddOptionalParameter("score", score?.ToString() ?? string.Empty)
+                .AddOptionalParameter("value", value?.ToString() ?? string.Empty)
+                .AddOptionalParameter("comment", comment)
                 .AddOptionalParameter("correction", correction) 
                 ; 
             var __path = __pathBuilder.ToString();

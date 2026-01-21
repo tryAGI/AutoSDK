@@ -107,7 +107,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/analyses/{analysisId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("confirm_delete", confirmDelete) 
                 ; 
             var __path = __pathBuilder.ToString();

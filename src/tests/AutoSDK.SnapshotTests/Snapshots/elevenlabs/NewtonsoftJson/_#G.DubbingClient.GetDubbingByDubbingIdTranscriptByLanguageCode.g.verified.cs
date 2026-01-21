@@ -72,7 +72,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/dubbing/{dubbingId}/transcript/{languageCode}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("format_type", formatType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -49,8 +49,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions/jwt/secrets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("extension_id", extensionId) 
+            __pathBuilder
+                .AddRequiredParameter("extension_id", extensionId)
                 .AddOptionalParameter("delay", delay?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

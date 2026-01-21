@@ -49,7 +49,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/share",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("share_projects", shareProjects?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/projects",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("include_archived", includeArchived?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

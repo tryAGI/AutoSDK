@@ -297,14 +297,15 @@ namespace {endPoint.Settings.Namespace}
             {
                 additionalArguments = $", selector: static x => {parameter.Selector}" + additionalArguments;
             }
-            if (parameter.IsRequired)
+            // Use AddOptionalParameter for nullable types even if required (required + nullable = value can be null)
+            if (parameter.IsRequired && !parameter.Type.IsNullable)
             {
-                code += $@" 
+                code += $@"
                 .AddRequiredParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
             }
             else
             {
-                code += $@" 
+                code += $@"
                 .AddOptionalParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
             }
         }

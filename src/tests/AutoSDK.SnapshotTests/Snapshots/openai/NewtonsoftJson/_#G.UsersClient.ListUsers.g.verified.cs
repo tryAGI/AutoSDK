@@ -53,9 +53,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

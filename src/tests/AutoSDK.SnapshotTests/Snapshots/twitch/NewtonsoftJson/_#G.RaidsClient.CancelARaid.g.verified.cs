@@ -41,7 +41,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/raids",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId) 
                 ; 
             var __path = __pathBuilder.ToString();

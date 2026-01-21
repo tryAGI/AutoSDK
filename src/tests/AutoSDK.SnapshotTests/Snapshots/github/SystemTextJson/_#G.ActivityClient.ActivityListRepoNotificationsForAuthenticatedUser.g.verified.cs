@@ -85,12 +85,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/notifications",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("all", all?.ToString()) 
-                .AddOptionalParameter("participating", participating?.ToString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("all", all?.ToString())
+                .AddOptionalParameter("participating", participating?.ToString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

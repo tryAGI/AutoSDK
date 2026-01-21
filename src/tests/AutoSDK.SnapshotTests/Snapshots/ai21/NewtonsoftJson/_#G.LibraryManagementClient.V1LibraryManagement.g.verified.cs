@@ -88,13 +88,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/library/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("path", path) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("label", label, delimiter: ",", explode: true) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString())
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("path", path)
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("label", label, delimiter: ",", explode: true)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

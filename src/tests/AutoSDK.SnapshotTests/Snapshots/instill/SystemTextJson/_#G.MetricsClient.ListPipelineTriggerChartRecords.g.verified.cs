@@ -49,8 +49,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/metrics/vdp/pipeline/charts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("aggregationWindow", aggregationWindow?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("aggregationWindow", aggregationWindow?.ToString())
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

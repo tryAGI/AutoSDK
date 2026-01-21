@@ -63,9 +63,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/outside_collaborators",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("filter", filter?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("filter", filter?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

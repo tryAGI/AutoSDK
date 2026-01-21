@@ -47,8 +47,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/validate2factor",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("username", username) 
+            __pathBuilder
+                .AddRequiredParameter("username", username)
                 .AddRequiredParameter("authToken", authToken) 
                 ; 
             var __path = __pathBuilder.ToString();

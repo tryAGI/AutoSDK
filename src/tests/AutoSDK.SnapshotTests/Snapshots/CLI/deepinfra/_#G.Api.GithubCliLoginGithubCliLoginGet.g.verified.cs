@@ -43,7 +43,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/github/cli/login",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("login_id", loginId) 
                 ; 
             var __path = __pathBuilder.ToString();

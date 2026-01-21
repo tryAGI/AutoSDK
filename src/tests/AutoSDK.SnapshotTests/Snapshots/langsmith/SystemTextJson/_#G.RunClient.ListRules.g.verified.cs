@@ -62,11 +62,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
-                .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("type", type?.ToString()) 
-                .AddOptionalParameter("name_contains", nameContains) 
+            __pathBuilder
+                .AddOptionalParameter("dataset_id", datasetId?.ToString())
+                .AddOptionalParameter("session_id", sessionId?.ToString())
+                .AddOptionalParameter("type", type?.ToString())
+                .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("id", id?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -51,7 +51,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("upsert", upsert?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

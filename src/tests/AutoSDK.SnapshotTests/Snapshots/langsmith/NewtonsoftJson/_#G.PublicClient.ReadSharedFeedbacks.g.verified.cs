@@ -95,16 +95,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/feedbacks",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("run", run?.ToString()) 
-                .AddOptionalParameter("key", key?.ToString()) 
-                .AddOptionalParameter("session", session?.ToString()) 
-                .AddOptionalParameter("source", source?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user?.ToString()) 
-                .AddOptionalParameter("has_comment", hasComment?.ToString()) 
-                .AddOptionalParameter("has_score", hasScore?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("run", run?.ToString())
+                .AddOptionalParameter("key", key?.ToString())
+                .AddOptionalParameter("session", session?.ToString())
+                .AddOptionalParameter("source", source?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("user", user?.ToString())
+                .AddOptionalParameter("has_comment", hasComment?.ToString())
+                .AddOptionalParameter("has_score", hasScore?.ToString())
                 .AddOptionalParameter("level", level?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

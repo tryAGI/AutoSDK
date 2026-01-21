@@ -50,8 +50,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/custom-model",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("includeMetadata", includeMetadata?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("includeMetadata", includeMetadata?.ToString())
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

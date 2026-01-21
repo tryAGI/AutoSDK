@@ -66,9 +66,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/rerankers",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page_key", pageKey) 
                 ; 
             var __path = __pathBuilder.ToString();

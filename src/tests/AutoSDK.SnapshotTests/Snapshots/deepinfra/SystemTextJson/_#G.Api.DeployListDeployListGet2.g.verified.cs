@@ -48,7 +48,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/deploy/list",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("status", status) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -145,20 +145,20 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/dependabot/alerts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("state", state) 
-                .AddOptionalParameter("severity", severity) 
-                .AddOptionalParameter("ecosystem", ecosystem) 
-                .AddOptionalParameter("package", package) 
-                .AddOptionalParameter("manifest", manifest) 
-                .AddOptionalParameter("scope", scope?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("state", state)
+                .AddOptionalParameter("severity", severity)
+                .AddOptionalParameter("ecosystem", ecosystem)
+                .AddOptionalParameter("package", package)
+                .AddOptionalParameter("manifest", manifest)
+                .AddOptionalParameter("scope", scope?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("last", last?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -82,10 +82,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/enterprises/{enterprise}/team/{teamSlug}/copilot/usage",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("since", since) 
-                .AddOptionalParameter("until", until) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("since", since)
+                .AddOptionalParameter("until", until)
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

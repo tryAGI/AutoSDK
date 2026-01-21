@@ -138,24 +138,24 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/advisories",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("ghsa_id", ghsaId) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("cve_id", cveId) 
-                .AddOptionalParameter("ecosystem", ecosystem?.ToValueString()) 
-                .AddOptionalParameter("severity", severity?.ToValueString()) 
-                .AddOptionalParameter("cwes", cwes?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString()) 
-                .AddOptionalParameter("affects", affects?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("published", published) 
-                .AddOptionalParameter("updated", updated) 
-                .AddOptionalParameter("modified", modified) 
-                .AddOptionalParameter("epss_percentage", epssPercentage) 
-                .AddOptionalParameter("epss_percentile", epssPercentile) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("ghsa_id", ghsaId)
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("cve_id", cveId)
+                .AddOptionalParameter("ecosystem", ecosystem?.ToValueString())
+                .AddOptionalParameter("severity", severity?.ToValueString())
+                .AddOptionalParameter("cwes", cwes?.ToString() ?? string.Empty)
+                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString())
+                .AddOptionalParameter("affects", affects?.ToString() ?? string.Empty)
+                .AddOptionalParameter("published", published)
+                .AddOptionalParameter("updated", updated)
+                .AddOptionalParameter("modified", modified)
+                .AddOptionalParameter("epss_percentage", epssPercentage)
+                .AddOptionalParameter("epss_percentile", epssPercentile)
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("sort", sort?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -59,7 +59,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/speech-to-text",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("enable_logging", enableLogging?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -51,8 +51,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/tenants",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("skip_create", skipCreate?.ToString())
                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

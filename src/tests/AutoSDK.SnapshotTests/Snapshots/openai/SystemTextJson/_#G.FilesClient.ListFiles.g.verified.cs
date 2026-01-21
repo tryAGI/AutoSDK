@@ -60,10 +60,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("purpose", purpose) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("purpose", purpose)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

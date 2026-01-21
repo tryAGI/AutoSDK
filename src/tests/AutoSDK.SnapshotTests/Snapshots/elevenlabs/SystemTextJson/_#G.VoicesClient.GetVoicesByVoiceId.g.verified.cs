@@ -61,7 +61,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/voices/{voiceId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("with_settings", withSettings?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

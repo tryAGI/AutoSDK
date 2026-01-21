@@ -55,8 +55,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                 .AddOptionalParameter("login", login, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

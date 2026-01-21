@@ -52,7 +52,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/connectors/{id}/oauth/authorize",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("after_token_redirect", afterTokenRedirect) 
                 ; 
             var __path = __pathBuilder.ToString();

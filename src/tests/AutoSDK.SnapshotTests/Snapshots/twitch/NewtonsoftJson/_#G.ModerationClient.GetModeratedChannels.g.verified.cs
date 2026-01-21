@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/channels",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("user_id", userId) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddRequiredParameter("user_id", userId)
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("first", first?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -60,11 +60,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/slot",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("moderator_id", moderatorId) 
-                .AddRequiredParameter("session_id", sessionId) 
-                .AddRequiredParameter("source_slot_id", sourceSlotId) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("moderator_id", moderatorId)
+                .AddRequiredParameter("session_id", sessionId)
+                .AddRequiredParameter("source_slot_id", sourceSlotId)
                 .AddOptionalParameter("destination_slot_id", destinationSlotId) 
                 ; 
             var __path = __pathBuilder.ToString();

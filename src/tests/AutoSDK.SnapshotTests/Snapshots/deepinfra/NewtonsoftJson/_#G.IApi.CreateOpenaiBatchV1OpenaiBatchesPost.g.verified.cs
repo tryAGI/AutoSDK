@@ -39,7 +39,7 @@ namespace G
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
             string completionWindow,
-            object metadata,
+            object? metadata,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

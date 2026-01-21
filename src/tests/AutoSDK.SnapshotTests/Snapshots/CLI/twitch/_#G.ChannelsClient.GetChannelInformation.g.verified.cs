@@ -44,7 +44,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/channels",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

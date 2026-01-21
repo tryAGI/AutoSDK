@@ -121,15 +121,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/analyses",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("tool_name", toolName) 
-                .AddOptionalParameter("tool_guid", toolGuid) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("pr", pr?.ToString()) 
-                .AddOptionalParameter("ref", @ref) 
-                .AddOptionalParameter("sarif_id", sarifId) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("tool_name", toolName)
+                .AddOptionalParameter("tool_guid", toolGuid)
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("pr", pr?.ToString())
+                .AddOptionalParameter("ref", @ref)
+                .AddOptionalParameter("sarif_id", sarifId)
+                .AddOptionalParameter("direction", direction?.ToValueString())
                 .AddOptionalParameter("sort", sort?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

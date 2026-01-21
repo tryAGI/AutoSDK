@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/games",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("name", name, delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("name", name, delimiter: ",", explode: true)
                 .AddOptionalParameter("igdb_id", igdbId, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

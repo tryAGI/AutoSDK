@@ -46,7 +46,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/emotes/set",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("emote_set_id", emoteSetId, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

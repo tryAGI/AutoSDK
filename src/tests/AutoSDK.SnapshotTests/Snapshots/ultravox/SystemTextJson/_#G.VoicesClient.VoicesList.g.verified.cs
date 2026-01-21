@@ -56,10 +56,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/voices",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
-                .AddOptionalParameter("ownership", ownership) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("ownership", ownership)
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("search", search) 
                 ; 
             var __path = __pathBuilder.ToString();

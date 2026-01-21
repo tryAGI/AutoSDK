@@ -42,7 +42,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/catalogs/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("fileUid", fileUid) 
                 ; 
             var __path = __pathBuilder.ToString();

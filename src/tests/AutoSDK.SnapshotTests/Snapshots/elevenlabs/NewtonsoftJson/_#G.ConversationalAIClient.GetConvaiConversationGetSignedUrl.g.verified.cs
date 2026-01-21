@@ -51,7 +51,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/conversation/get-signed-url",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("agent_id", agentId) 
                 ; 
             var __path = __pathBuilder.ToString();

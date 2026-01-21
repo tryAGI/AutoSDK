@@ -66,10 +66,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/runs/rules/{ruleId}/logs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("start_time", startTime?.ToString())
                 .AddOptionalParameter("end_time", endTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

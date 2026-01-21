@@ -62,8 +62,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/codespaces/permissions_check",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("ref", @ref) 
+            __pathBuilder
+                .AddRequiredParameter("ref", @ref)
                 .AddRequiredParameter("devcontainer_path", devcontainerPath) 
                 ; 
             var __path = __pathBuilder.ToString();

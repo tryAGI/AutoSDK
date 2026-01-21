@@ -67,10 +67,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/catalogs/{catalogId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("filter", filter) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("orderBy", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

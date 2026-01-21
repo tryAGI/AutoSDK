@@ -110,16 +110,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/code-scanning/alerts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("tool_name", toolName) 
-                .AddOptionalParameter("tool_guid", toolGuid) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("tool_name", toolName)
+                .AddOptionalParameter("tool_guid", toolGuid)
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
                 .AddOptionalParameter("severity", severity?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

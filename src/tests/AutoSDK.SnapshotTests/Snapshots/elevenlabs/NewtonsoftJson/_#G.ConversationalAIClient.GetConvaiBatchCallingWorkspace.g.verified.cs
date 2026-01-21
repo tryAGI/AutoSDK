@@ -56,8 +56,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/batch-calling/workspace",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("last_doc", lastDoc) 
                 ; 
             var __path = __pathBuilder.ToString();

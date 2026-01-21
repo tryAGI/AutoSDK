@@ -84,13 +84,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/models",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("view", view?.ToValueString()) 
-                .AddOptionalParameter("showDeleted", showDeleted?.ToString()) 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("view", view?.ToValueString())
+                .AddOptionalParameter("showDeleted", showDeleted?.ToString())
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("visibility", visibility?.ToValueString())
                 .AddOptionalParameter("orderBy", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

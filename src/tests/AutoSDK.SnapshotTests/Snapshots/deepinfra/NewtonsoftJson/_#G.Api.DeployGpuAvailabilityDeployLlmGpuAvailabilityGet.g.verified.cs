@@ -51,8 +51,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/deploy/llm/gpu_availability",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("source", source) 
+            __pathBuilder
+                .AddOptionalParameter("source", source)
                 .AddOptionalParameter("base_model", baseModel) 
                 ; 
             var __path = __pathBuilder.ToString();

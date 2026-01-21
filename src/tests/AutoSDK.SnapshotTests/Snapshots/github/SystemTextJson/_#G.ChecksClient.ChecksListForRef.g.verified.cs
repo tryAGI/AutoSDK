@@ -92,12 +92,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits/{@ref}/check-runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("check_name", checkName) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("filter", filter?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("check_name", checkName)
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("filter", filter?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("app_id", appId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

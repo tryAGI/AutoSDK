@@ -87,12 +87,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/conversations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
-                .AddOptionalParameter("agent_id", agentId) 
-                .AddOptionalParameter("call_successful", callSuccessful?.ToString()) 
-                .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString()) 
-                .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("agent_id", agentId)
+                .AddOptionalParameter("call_successful", callSuccessful?.ToString())
+                .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString())
+                .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

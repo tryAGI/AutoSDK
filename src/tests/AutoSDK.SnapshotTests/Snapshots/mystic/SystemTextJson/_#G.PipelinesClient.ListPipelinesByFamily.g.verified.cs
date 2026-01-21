@@ -97,14 +97,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/by-family/{pipelineFamilyName}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("skip", skip?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order_by", orderBy) 
-                .AddOptionalParameter("public", @public?.ToString()) 
-                .AddOptionalParameter("hardware", hardware?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("cluster_id", clusterId) 
-                .AddOptionalParameter("node_pool", nodePool) 
+            __pathBuilder
+                .AddOptionalParameter("skip", skip?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order_by", orderBy)
+                .AddOptionalParameter("public", @public?.ToString())
+                .AddOptionalParameter("hardware", hardware?.ToString() ?? string.Empty)
+                .AddOptionalParameter("cluster_id", clusterId)
+                .AddOptionalParameter("node_pool", nodePool)
                 .AddOptionalParameter("created_at", createdAt) 
                 ; 
             var __path = __pathBuilder.ToString();

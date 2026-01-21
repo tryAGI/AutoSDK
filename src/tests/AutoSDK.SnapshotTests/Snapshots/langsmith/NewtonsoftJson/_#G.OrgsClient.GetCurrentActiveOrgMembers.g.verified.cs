@@ -71,11 +71,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/members/active",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
-                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
+                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
                 .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

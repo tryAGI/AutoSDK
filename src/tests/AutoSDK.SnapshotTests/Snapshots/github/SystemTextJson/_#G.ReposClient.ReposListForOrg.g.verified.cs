@@ -77,11 +77,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/repos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

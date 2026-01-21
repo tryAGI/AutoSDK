@@ -93,16 +93,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("model", model) 
-                .AddOptionalParameter("created_after", createdAfter?.ToString()) 
-                .AddOptionalParameter("created_before", createdBefore?.ToString()) 
-                .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
-                .AddOptionalParameter("status", status?.ToString()) 
-                .AddOptionalParameter("wandb_project", wandbProject) 
-                .AddOptionalParameter("wandb_name", wandbName) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("model", model)
+                .AddOptionalParameter("created_after", createdAfter?.ToString())
+                .AddOptionalParameter("created_before", createdBefore?.ToString())
+                .AddOptionalParameter("created_by_me", createdByMe?.ToString())
+                .AddOptionalParameter("status", status?.ToString())
+                .AddOptionalParameter("wandb_project", wandbProject)
+                .AddOptionalParameter("wandb_name", wandbName)
                 .AddOptionalParameter("suffix", suffix) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -41,7 +41,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/cloud/provider/gcp/auth",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("credential_id", credentialId) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -83,10 +83,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}/instances",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("ref", @ref) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("ref", @ref)
                 .AddOptionalParameter("pr", pr?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

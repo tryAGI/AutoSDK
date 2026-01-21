@@ -75,13 +75,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/annotation-queues",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("ids", ids?.ToString()) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("ids", ids?.ToString())
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                 .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

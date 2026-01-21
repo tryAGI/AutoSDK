@@ -45,7 +45,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/repositories",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("since", since?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

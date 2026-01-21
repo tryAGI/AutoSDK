@@ -114,15 +114,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/enterprises/{enterprise}/secret-scanning/alerts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("secret_type", secretType) 
-                .AddOptionalParameter("resolution", resolution) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("secret_type", secretType)
+                .AddOptionalParameter("resolution", resolution)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("validity", validity) 
                 ; 
             var __path = __pathBuilder.ToString();

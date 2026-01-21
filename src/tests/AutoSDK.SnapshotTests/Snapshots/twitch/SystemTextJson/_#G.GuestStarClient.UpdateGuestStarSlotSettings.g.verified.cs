@@ -75,14 +75,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/slot_settings",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("moderator_id", moderatorId) 
-                .AddRequiredParameter("session_id", sessionId) 
-                .AddRequiredParameter("slot_id", slotId) 
-                .AddOptionalParameter("is_audio_enabled", isAudioEnabled?.ToString()) 
-                .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString()) 
-                .AddOptionalParameter("is_live", isLive?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("moderator_id", moderatorId)
+                .AddRequiredParameter("session_id", sessionId)
+                .AddRequiredParameter("slot_id", slotId)
+                .AddOptionalParameter("is_audio_enabled", isAudioEnabled?.ToString())
+                .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString())
+                .AddOptionalParameter("is_live", isLive?.ToString())
                 .AddOptionalParameter("volume", volume?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

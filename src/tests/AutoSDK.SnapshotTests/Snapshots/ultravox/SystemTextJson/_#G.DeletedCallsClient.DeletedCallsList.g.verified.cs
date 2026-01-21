@@ -81,15 +81,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/deleted_calls",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
-                .AddOptionalParameter("durationMax", durationMax) 
-                .AddOptionalParameter("durationMin", durationMin) 
-                .AddOptionalParameter("fromDate", fromDate?.ToString("yyyy-MM-dd")) 
-                .AddOptionalParameter("metadata", metadata?.ToString()) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("toDate", toDate?.ToString("yyyy-MM-dd")) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("durationMax", durationMax)
+                .AddOptionalParameter("durationMin", durationMin)
+                .AddOptionalParameter("fromDate", fromDate?.ToString("yyyy-MM-dd"))
+                .AddOptionalParameter("metadata", metadata?.ToString())
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("search", search)
+                .AddOptionalParameter("toDate", toDate?.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("voiceId", voiceId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

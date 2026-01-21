@@ -103,14 +103,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("name", name) 
-                .AddRequiredParameter("type", type.ToValueString()) 
-                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString()) 
-                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString()) 
-                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true) 
-                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true) 
-                .AddOptionalParameter("text_separator", textSeparator) 
+            __pathBuilder
+                .AddRequiredParameter("name", name)
+                .AddRequiredParameter("type", type.ToValueString())
+                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString())
+                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString())
+                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true)
+                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true)
+                .AddOptionalParameter("text_separator", textSeparator)
                 .AddOptionalParameter("csv_delimiter", csvDelimiter) 
                 ; 
             var __path = __pathBuilder.ToString();

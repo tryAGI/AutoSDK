@@ -49,7 +49,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("dry_run", dryRun?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

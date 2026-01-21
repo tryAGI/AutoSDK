@@ -44,7 +44,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/videos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("id", id, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

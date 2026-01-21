@@ -69,12 +69,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/schedule",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("utc_offset", utcOffset) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("utc_offset", utcOffset)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

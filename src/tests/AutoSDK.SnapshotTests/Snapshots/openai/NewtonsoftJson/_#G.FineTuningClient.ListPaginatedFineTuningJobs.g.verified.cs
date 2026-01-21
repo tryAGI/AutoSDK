@@ -53,9 +53,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

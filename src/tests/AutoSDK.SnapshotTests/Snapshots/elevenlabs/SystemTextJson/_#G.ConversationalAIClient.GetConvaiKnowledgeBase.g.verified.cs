@@ -89,12 +89,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convai/knowledge-base",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString()) 
-                .AddOptionalParameter("types", types?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("search", search)
+                .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString())
+                .AddOptionalParameter("types", types?.ToString())
                 .AddOptionalParameter("use_typesense", useTypesense?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

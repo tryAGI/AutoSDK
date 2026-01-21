@@ -44,7 +44,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/color",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("user_id", userId, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

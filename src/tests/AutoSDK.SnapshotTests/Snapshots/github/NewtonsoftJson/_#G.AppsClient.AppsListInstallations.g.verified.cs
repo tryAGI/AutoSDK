@@ -62,10 +62,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/app/installations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("outdated", outdated) 
                 ; 
             var __path = __pathBuilder.ToString();

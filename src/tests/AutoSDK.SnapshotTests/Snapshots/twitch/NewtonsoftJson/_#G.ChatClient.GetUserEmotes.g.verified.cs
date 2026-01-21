@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/emotes/user",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("user_id", userId) 
-                .AddOptionalParameter("broadcaster_id", broadcasterId) 
+            __pathBuilder
+                .AddRequiredParameter("user_id", userId)
+                .AddOptionalParameter("broadcaster_id", broadcasterId)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

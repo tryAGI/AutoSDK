@@ -65,10 +65,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/examples/count",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString()) 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata) 
+            __pathBuilder
+                .AddOptionalParameter("id", id?.ToString())
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("metadata", metadata)
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

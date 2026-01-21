@@ -173,24 +173,24 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/shared-voices",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("category", category) 
-                .AddOptionalParameter("gender", gender) 
-                .AddOptionalParameter("age", age) 
-                .AddOptionalParameter("accent", accent) 
-                .AddOptionalParameter("language", language) 
-                .AddOptionalParameter("locale", locale) 
-                .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("use_cases", useCases?.ToString()) 
-                .AddOptionalParameter("descriptives", descriptives?.ToString()) 
-                .AddOptionalParameter("featured", featured?.ToString()) 
-                .AddOptionalParameter("min_notice_period_days", minNoticePeriodDays?.ToString()) 
-                .AddOptionalParameter("include_custom_rates", includeCustomRates?.ToString()) 
-                .AddOptionalParameter("include_live_moderated", includeLiveModerated?.ToString()) 
-                .AddOptionalParameter("reader_app_enabled", readerAppEnabled?.ToString()) 
-                .AddOptionalParameter("owner_id", ownerId) 
-                .AddOptionalParameter("sort", sort) 
+            __pathBuilder
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("category", category)
+                .AddOptionalParameter("gender", gender)
+                .AddOptionalParameter("age", age)
+                .AddOptionalParameter("accent", accent)
+                .AddOptionalParameter("language", language)
+                .AddOptionalParameter("locale", locale)
+                .AddOptionalParameter("search", search)
+                .AddOptionalParameter("use_cases", useCases?.ToString())
+                .AddOptionalParameter("descriptives", descriptives?.ToString())
+                .AddOptionalParameter("featured", featured?.ToString())
+                .AddOptionalParameter("min_notice_period_days", minNoticePeriodDays?.ToString())
+                .AddOptionalParameter("include_custom_rates", includeCustomRates?.ToString())
+                .AddOptionalParameter("include_live_moderated", includeLiveModerated?.ToString())
+                .AddOptionalParameter("reader_app_enabled", readerAppEnabled?.ToString())
+                .AddOptionalParameter("owner_id", ownerId)
+                .AddOptionalParameter("sort", sort)
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -84,10 +84,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/packages",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("package_type", packageType.ToValueString()) 
-                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("package_type", packageType.ToValueString())
+                .AddOptionalParameter("visibility", visibility?.ToValueString())
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

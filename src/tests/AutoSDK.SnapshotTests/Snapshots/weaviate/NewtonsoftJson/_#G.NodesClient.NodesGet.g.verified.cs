@@ -50,7 +50,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("output", output?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

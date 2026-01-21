@@ -56,9 +56,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/containers",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

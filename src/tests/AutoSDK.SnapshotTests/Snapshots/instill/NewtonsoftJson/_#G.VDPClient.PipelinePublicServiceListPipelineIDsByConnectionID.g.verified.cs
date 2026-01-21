@@ -64,9 +64,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/connections/{connectionId}/referenced-pipelines",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

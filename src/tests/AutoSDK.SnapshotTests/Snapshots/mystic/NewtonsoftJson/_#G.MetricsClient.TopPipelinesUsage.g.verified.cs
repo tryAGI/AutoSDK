@@ -81,12 +81,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/top-pipelines-usage",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("num_pipelines", numPipelines?.ToString()) 
-                .AddOptionalParameter("cluster_id", clusterId) 
-                .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddRequiredParameter("interval_unit", intervalUnit.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("num_pipelines", numPipelines?.ToString())
+                .AddOptionalParameter("cluster_id", clusterId)
+                .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("interval_unit", intervalUnit.ToValueString())
                 .AddRequiredParameter("interval_value", intervalValue.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

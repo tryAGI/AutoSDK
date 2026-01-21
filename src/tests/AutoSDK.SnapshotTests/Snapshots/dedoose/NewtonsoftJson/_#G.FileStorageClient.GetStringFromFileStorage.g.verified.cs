@@ -42,7 +42,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/api/v1/filestorage/getstring",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("dataPath", dataPath) 
                 ; 
             var __path = __pathBuilder.ToString();

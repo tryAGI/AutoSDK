@@ -82,7 +82,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/text-to-voice/create-previews",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("output_format", outputFormat?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -50,7 +50,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/summarize",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

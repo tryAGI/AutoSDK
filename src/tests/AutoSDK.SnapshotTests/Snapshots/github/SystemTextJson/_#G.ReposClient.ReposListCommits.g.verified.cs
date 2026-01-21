@@ -114,14 +114,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("sha", sha) 
-                .AddOptionalParameter("path", path) 
-                .AddOptionalParameter("author", author) 
-                .AddOptionalParameter("committer", committer) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("until", until?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("sha", sha)
+                .AddOptionalParameter("path", path)
+                .AddOptionalParameter("author", author)
+                .AddOptionalParameter("committer", committer)
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("until", until?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

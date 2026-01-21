@@ -51,7 +51,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/workspace/groups/search",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("name", name) 
                 ; 
             var __path = __pathBuilder.ToString();

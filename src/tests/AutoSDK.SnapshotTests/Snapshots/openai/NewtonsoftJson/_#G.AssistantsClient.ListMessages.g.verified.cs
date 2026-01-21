@@ -76,11 +76,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/threads/{threadId}/messages",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("before", before) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("before", before)
                 .AddOptionalParameter("run_id", runId) 
                 ; 
             var __path = __pathBuilder.ToString();

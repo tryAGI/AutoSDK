@@ -49,7 +49,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/files/{fileId}/url",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("expiry", expiry?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

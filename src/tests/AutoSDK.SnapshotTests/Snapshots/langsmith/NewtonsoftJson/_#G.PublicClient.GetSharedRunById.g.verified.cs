@@ -54,7 +54,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/run/{id}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

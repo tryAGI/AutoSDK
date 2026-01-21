@@ -75,10 +75,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/pronunciation-dictionaries/",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("sort", sort?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("sort", sort?.ToString())
                 .AddOptionalParameter("sort_direction", sortDirection) 
                 ; 
             var __path = __pathBuilder.ToString();

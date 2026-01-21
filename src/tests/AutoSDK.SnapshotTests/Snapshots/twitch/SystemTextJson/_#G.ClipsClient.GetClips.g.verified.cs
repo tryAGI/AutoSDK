@@ -86,15 +86,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/clips",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("game_id", gameId) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("ended_at", endedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("first", first?.ToString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("game_id", gameId)
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("ended_at", endedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("first", first?.ToString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("is_featured", isFeatured?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

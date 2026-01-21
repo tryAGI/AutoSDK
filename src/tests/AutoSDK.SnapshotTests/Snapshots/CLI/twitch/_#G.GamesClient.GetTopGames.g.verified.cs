@@ -54,9 +54,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/games/top",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("first", first?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("first", first?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

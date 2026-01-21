@@ -59,10 +59,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/model-runs:query-charts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("requesterId", requesterId) 
-                .AddOptionalParameter("aggregationWindow", aggregationWindow) 
-                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddRequiredParameter("requesterId", requesterId)
+                .AddOptionalParameter("aggregationWindow", aggregationWindow)
+                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

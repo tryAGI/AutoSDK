@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/channel_points/custom_rewards",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                 .AddOptionalParameter("only_manageable_rewards", onlyManageableRewards?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

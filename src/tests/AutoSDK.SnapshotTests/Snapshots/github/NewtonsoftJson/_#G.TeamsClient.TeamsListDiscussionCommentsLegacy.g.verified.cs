@@ -78,9 +78,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/teams/{teamId}/discussions/{discussionNumber}/comments",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

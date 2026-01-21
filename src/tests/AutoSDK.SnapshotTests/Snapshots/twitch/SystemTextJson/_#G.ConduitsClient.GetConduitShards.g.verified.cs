@@ -54,9 +54,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/conduits/shards",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("conduit_id", conduitId) 
-                .AddOptionalParameter("status", status) 
+            __pathBuilder
+                .AddRequiredParameter("conduit_id", conduitId)
+                .AddOptionalParameter("status", status)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

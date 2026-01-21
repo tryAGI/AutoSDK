@@ -68,10 +68,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/code-security/configurations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("target_type", targetType?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("before", before) 
+            __pathBuilder
+                .AddOptionalParameter("target_type", targetType?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("before", before)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -46,7 +46,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/scoped-jwt",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("jwtoken", jwtoken) 
                 ; 
             var __path = __pathBuilder.ToString();

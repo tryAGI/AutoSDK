@@ -62,9 +62,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/migrations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("exclude", exclude, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -74,13 +74,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/channel_points/custom_rewards/redemptions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("reward_id", rewardId) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("reward_id", rewardId)
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("first", first?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

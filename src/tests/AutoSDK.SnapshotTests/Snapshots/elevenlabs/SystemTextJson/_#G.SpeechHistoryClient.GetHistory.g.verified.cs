@@ -80,11 +80,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/history",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("start_after_history_item_id", startAfterHistoryItemId) 
-                .AddOptionalParameter("voice_id", voiceId) 
-                .AddOptionalParameter("search", search) 
+            __pathBuilder
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("start_after_history_item_id", startAfterHistoryItemId)
+                .AddOptionalParameter("voice_id", voiceId)
+                .AddOptionalParameter("search", search)
                 .AddOptionalParameter("source", source?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

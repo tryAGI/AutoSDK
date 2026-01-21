@@ -83,13 +83,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/pipeline-families",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("user_id", userId) 
-                .AddOptionalParameter("team_id", teamId) 
-                .AddOptionalParameter("order_by", orderBy?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("search", search) 
-                .AddOptionalParameter("include_all_run", includeAllRun?.ToString()) 
-                .AddOptionalParameter("skip", skip?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("user_id", userId)
+                .AddOptionalParameter("team_id", teamId)
+                .AddOptionalParameter("order_by", orderBy?.ToString() ?? string.Empty)
+                .AddOptionalParameter("search", search)
+                .AddOptionalParameter("include_all_run", includeAllRun?.ToString())
+                .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

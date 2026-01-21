@@ -62,10 +62,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("user_id", userId) 
+            __pathBuilder
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("user_id", userId)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

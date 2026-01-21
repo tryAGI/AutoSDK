@@ -57,9 +57,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/members/pending",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

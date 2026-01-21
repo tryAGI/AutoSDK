@@ -96,16 +96,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString()) 
-                .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name", name) 
-                .AddOptionalParameter("name_contains", nameContains) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("id", id?.ToString())
+                .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty)
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("name_contains", nameContains)
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

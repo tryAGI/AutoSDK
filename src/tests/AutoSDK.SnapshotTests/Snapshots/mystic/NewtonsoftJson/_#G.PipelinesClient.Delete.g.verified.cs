@@ -47,8 +47,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/{pipelineId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pointer", pointer) 
+            __pathBuilder
+                .AddOptionalParameter("pointer", pointer)
                 .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
                 ; 
             var __path = __pathBuilder.ToString();

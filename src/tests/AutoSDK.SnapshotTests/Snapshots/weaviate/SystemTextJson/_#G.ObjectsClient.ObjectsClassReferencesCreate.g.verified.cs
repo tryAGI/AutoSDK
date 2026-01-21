@@ -66,8 +66,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{className}/{id}/references/{propertyName}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString())
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

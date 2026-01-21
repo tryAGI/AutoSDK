@@ -67,9 +67,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("page_key", pageKey) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("page_key", pageKey)
                 .AddOptionalParameter("corpus_key", corpusKey) 
                 ; 
             var __path = __pathBuilder.ToString();

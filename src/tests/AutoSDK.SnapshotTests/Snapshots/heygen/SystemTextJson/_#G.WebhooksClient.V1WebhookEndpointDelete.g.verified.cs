@@ -39,7 +39,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/webhook/endpoint.delete",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("endpoint_id", endpointId) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -48,7 +48,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/objects/{id}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include", include) 
                 ; 
             var __path = __pathBuilder.ToString();

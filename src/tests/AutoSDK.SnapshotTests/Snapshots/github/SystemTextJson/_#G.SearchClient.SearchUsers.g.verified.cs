@@ -73,11 +73,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/search/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("q", q) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("q", q)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

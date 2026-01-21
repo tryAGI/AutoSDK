@@ -72,10 +72,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/models/{modelId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("orderBy", orderBy) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("orderBy", orderBy)
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

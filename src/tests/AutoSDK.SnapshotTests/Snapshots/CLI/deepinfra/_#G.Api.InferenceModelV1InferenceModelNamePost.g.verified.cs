@@ -63,7 +63,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/inference/{modelName}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("version", version) 
                 ; 
             var __path = __pathBuilder.ToString();

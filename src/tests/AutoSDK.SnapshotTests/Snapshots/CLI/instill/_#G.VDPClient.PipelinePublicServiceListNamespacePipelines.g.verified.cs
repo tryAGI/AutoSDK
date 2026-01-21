@@ -77,13 +77,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("view", view?.ToValueString()) 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("showDeleted", showDeleted?.ToString()) 
-                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("view", view?.ToValueString())
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("showDeleted", showDeleted?.ToString())
+                .AddOptionalParameter("visibility", visibility?.ToValueString())
                 .AddOptionalParameter("orderBy", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

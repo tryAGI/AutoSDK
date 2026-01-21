@@ -84,10 +84,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/api_keys",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("page_key", pageKey) 
-                .AddOptionalParameter("corpus_key", corpusKey) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("page_key", pageKey)
+                .AddOptionalParameter("corpus_key", corpusKey)
                 .AddOptionalParameter("api_key_role", apiKeyRole?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

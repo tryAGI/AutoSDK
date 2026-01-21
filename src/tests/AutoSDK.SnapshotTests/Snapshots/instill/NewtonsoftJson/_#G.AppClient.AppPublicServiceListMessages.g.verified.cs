@@ -82,12 +82,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("latestK", latestK?.ToString()) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("includeSystemMessages", includeSystemMessages?.ToString()) 
-                .AddOptionalParameter("ifAll", ifAll?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("latestK", latestK?.ToString())
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("includeSystemMessages", includeSystemMessages?.ToString())
+                .AddOptionalParameter("ifAll", ifAll?.ToString())
                 .AddOptionalParameter("messageUid", messageUid) 
                 ; 
             var __path = __pathBuilder.ToString();

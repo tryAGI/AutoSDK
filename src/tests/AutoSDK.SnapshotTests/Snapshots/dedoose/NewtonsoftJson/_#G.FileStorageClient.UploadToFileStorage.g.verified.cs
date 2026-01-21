@@ -59,9 +59,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/login/api/v1/filestorage/upload",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("name", name) 
-                .AddRequiredParameter("projectId", projectId.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("name", name)
+                .AddRequiredParameter("projectId", projectId.ToString())
                 .AddRequiredParameter("uploadType", uploadType.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

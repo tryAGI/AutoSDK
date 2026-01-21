@@ -52,8 +52,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/clips",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddOptionalParameter("has_delay", hasDelay?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

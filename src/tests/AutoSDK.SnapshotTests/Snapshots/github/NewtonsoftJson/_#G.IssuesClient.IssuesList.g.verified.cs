@@ -148,18 +148,18 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/issues",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("filter", filter?.ToValueString()) 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("labels", labels) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("collab", collab?.ToString()) 
-                .AddOptionalParameter("orgs", orgs?.ToString()) 
-                .AddOptionalParameter("owned", owned?.ToString()) 
-                .AddOptionalParameter("pulls", pulls?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("filter", filter?.ToValueString())
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("labels", labels)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("collab", collab?.ToString())
+                .AddOptionalParameter("orgs", orgs?.ToString())
+                .AddOptionalParameter("owned", owned?.ToString())
+                .AddOptionalParameter("pulls", pulls?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

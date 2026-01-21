@@ -48,7 +48,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/operations/{operationId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("view", view?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

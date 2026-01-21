@@ -102,15 +102,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/personal-access-tokens",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("owner", owner, delimiter: ",", explode: true) 
-                .AddOptionalParameter("repository", repository) 
-                .AddOptionalParameter("permission", permission) 
-                .AddOptionalParameter("last_used_before", lastUsedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("owner", owner, delimiter: ",", explode: true)
+                .AddOptionalParameter("repository", repository)
+                .AddOptionalParameter("permission", permission)
+                .AddOptionalParameter("last_used_before", lastUsedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("last_used_after", lastUsedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

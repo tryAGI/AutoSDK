@@ -60,10 +60,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/metrics/credit/charts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("namespaceId", namespaceId) 
-                .AddOptionalParameter("aggregationWindow", aggregationWindow) 
-                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddRequiredParameter("namespaceId", namespaceId)
+                .AddOptionalParameter("aggregationWindow", aggregationWindow)
+                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

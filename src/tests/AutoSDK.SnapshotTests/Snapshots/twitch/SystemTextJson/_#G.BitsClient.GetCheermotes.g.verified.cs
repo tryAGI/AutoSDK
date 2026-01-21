@@ -44,7 +44,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/bits/cheermotes",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("broadcaster_id", broadcasterId) 
                 ; 
             var __path = __pathBuilder.ToString();

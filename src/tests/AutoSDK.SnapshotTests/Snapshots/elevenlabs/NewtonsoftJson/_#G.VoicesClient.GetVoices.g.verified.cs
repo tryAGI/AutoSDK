@@ -52,7 +52,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/voices",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("show_legacy", showLegacy?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

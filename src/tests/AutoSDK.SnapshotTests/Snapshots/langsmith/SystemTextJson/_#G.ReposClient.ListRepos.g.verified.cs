@@ -118,21 +118,21 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("tenant_handle", tenantHandle) 
-                .AddOptionalParameter("tenant_id", tenantId?.ToString()) 
-                .AddOptionalParameter("query", query) 
-                .AddOptionalParameter("has_commits", hasCommits?.ToString()) 
-                .AddOptionalParameter("tags", tags?.ToString()) 
-                .AddOptionalParameter("is_archived", isArchived?.ToString()) 
-                .AddOptionalParameter("is_public", isPublic?.ToString()) 
-                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner) 
-                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle) 
-                .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
-                .AddOptionalParameter("sort_field", sortField) 
+            __pathBuilder
+                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("tenant_handle", tenantHandle)
+                .AddOptionalParameter("tenant_id", tenantId?.ToString())
+                .AddOptionalParameter("query", query)
+                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("tags", tags?.ToString())
+                .AddOptionalParameter("is_archived", isArchived?.ToString())
+                .AddOptionalParameter("is_public", isPublic?.ToString())
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                .AddOptionalParameter("sort_field", sortField)
                 .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

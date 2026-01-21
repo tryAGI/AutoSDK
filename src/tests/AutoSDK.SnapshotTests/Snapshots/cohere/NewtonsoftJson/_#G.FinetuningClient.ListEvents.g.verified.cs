@@ -61,9 +61,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/finetuning/finetuned-models/{finetunedModelId}/events",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("page_token", pageToken) 
+            __pathBuilder
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("page_token", pageToken)
                 .AddOptionalParameter("order_by", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

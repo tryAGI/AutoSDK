@@ -67,9 +67,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/codespaces/machines",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("location", location) 
-                .AddOptionalParameter("client_ip", clientIp) 
+            __pathBuilder
+                .AddOptionalParameter("location", location)
+                .AddOptionalParameter("client_ip", clientIp)
                 .AddOptionalParameter("ref", @ref) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -52,9 +52,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/finetune/download",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("ft_id", ftId) 
-                .AddOptionalParameter("checkpoint_step", checkpointStep?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("ft_id", ftId)
+                .AddOptionalParameter("checkpoint_step", checkpointStep?.ToString())
                 .AddOptionalParameter("output", output) 
                 ; 
             var __path = __pathBuilder.ToString();

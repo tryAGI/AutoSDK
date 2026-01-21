@@ -71,12 +71,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("sample_type", sampleType?.ToString()) 
-                .AddOptionalParameter("source", source?.ToString()) 
-                .AddOptionalParameter("search", search) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("sample_type", sampleType?.ToString())
+                .AddOptionalParameter("source", source?.ToString())
+                .AddOptionalParameter("search", search)
                 .AddOptionalParameter("purpose", purpose?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

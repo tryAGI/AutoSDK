@@ -79,14 +79,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/streams",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true) 
-                .AddOptionalParameter("user_login", userLogin, delimiter: ",", explode: true) 
-                .AddOptionalParameter("game_id", gameId, delimiter: ",", explode: true) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("language", language, delimiter: ",", explode: true) 
-                .AddOptionalParameter("first", first?.ToString()) 
-                .AddOptionalParameter("before", before) 
+            __pathBuilder
+                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true)
+                .AddOptionalParameter("user_login", userLogin, delimiter: ",", explode: true)
+                .AddOptionalParameter("game_id", gameId, delimiter: ",", explode: true)
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("language", language, delimiter: ",", explode: true)
+                .AddOptionalParameter("first", first?.ToString())
+                .AddOptionalParameter("before", before)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -49,9 +49,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/chat",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("moderator_id", moderatorId) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("moderator_id", moderatorId)
                 .AddOptionalParameter("message_id", messageId) 
                 ; 
             var __path = __pathBuilder.ToString();

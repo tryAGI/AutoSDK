@@ -74,7 +74,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/contents/{path}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("ref", @ref) 
                 ; 
             var __path = __pathBuilder.ToString();

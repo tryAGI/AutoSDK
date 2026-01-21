@@ -113,16 +113,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/videos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("user_id", userId) 
-                .AddOptionalParameter("game_id", gameId) 
-                .AddOptionalParameter("language", language) 
-                .AddOptionalParameter("period", period?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("first", first) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("user_id", userId)
+                .AddOptionalParameter("game_id", gameId)
+                .AddOptionalParameter("language", language)
+                .AddOptionalParameter("period", period?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("first", first)
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

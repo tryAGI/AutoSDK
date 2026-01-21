@@ -45,8 +45,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/guest_star/session",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddRequiredParameter("session_id", sessionId) 
                 ; 
             var __path = __pathBuilder.ToString();

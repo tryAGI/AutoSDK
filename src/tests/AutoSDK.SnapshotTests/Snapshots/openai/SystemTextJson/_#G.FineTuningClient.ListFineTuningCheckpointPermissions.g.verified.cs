@@ -68,10 +68,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("project_id", projectId) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("project_id", projectId)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

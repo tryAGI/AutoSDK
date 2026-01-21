@@ -85,12 +85,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/security-advisories",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("state", state?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -77,11 +77,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pipeline_id", pipelineId) 
-                .AddOptionalParameter("include_pointers", includePointers?.ToString()) 
-                .AddOptionalParameter("skip", skip?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("pipeline_id", pipelineId)
+                .AddOptionalParameter("include_pointers", includePointers?.ToString())
+                .AddOptionalParameter("skip", skip?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -54,8 +54,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/hovercard",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("subject_type", subjectType?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("subject_type", subjectType?.ToValueString())
                 .AddOptionalParameter("subject_id", subjectId) 
                 ; 
             var __path = __pathBuilder.ToString();

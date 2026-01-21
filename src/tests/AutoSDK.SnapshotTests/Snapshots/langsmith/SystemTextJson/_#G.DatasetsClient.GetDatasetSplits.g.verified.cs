@@ -49,7 +49,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/splits",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -86,13 +86,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/public/{shareToken}/examples",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString()) 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+            __pathBuilder
+                .AddOptionalParameter("id", id?.ToString())
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("select", select, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

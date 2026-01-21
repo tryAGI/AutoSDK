@@ -72,11 +72,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("model", model) 
-                .AddOptionalParameter("metadata", metadata?.ToString()) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("model", model)
+                .AddOptionalParameter("metadata", metadata?.ToString())
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -42,7 +42,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/octocat",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("s", s) 
                 ; 
             var __path = __pathBuilder.ToString();

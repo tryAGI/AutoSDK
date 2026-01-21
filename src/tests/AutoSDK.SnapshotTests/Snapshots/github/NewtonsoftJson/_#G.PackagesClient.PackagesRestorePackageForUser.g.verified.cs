@@ -67,7 +67,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{username}/packages/{packageTypeValue}/{packageName}/restore",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("token", token) 
                 ; 
             var __path = __pathBuilder.ToString();

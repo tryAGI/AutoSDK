@@ -56,7 +56,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/import/authors",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("since", since?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

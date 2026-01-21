@@ -69,9 +69,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/packages/{packageType}/{packageName}/versions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("state", state?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -42,7 +42,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("example_ids", exampleIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

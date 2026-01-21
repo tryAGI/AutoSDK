@@ -52,9 +52,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/model-definitions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("view", view?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

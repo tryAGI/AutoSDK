@@ -59,10 +59,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/channels/followed",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("user_id", userId) 
-                .AddOptionalParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("user_id", userId)
+                .AddOptionalParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

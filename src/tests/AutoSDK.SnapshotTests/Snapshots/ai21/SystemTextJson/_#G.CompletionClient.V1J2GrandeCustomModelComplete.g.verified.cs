@@ -62,8 +62,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/studio/v1/j2-grande/{customModelName}/complete",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("custom_model_type", customModelType) 
+            __pathBuilder
+                .AddOptionalParameter("custom_model_type", customModelType)
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

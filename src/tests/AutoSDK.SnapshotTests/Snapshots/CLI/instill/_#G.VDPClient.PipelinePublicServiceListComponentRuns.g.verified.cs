@@ -72,11 +72,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/pipeline-runs/{pipelineRunId}/component-runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("orderBy", orderBy) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("orderBy", orderBy)
                 .AddOptionalParameter("view", view?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

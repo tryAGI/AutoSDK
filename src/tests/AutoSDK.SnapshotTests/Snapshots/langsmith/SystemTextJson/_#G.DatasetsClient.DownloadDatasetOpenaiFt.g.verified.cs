@@ -49,7 +49,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/openai_ft",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("as_of", asOf?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

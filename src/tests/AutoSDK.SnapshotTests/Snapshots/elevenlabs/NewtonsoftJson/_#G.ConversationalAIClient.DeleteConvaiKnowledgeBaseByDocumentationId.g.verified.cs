@@ -59,7 +59,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/knowledge-base/{documentationId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("force", force?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

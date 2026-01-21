@@ -75,12 +75,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/notifications",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("all", all?.ToString()) 
-                .AddOptionalParameter("participating", participating?.ToString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("all", all?.ToString())
+                .AddOptionalParameter("participating", participating?.ToString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

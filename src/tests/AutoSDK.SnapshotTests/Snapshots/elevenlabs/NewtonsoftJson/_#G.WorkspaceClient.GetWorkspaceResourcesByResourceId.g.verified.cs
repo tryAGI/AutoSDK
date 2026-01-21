@@ -76,7 +76,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/workspace/resources/{resourceId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("resource_type", resourceType.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

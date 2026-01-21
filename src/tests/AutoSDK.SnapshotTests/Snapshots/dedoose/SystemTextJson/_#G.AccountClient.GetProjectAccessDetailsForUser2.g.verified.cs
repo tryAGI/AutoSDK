@@ -42,7 +42,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/account/getprojectaccessdetailsforuser2",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("userId", userId.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

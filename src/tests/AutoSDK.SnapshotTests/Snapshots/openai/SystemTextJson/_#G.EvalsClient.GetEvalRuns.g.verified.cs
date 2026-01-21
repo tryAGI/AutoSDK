@@ -65,10 +65,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/evals/{evalId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("status", status?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

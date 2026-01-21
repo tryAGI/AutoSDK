@@ -59,9 +59,9 @@ namespace G
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
             } 
-            __pathBuilder 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -16,7 +16,7 @@ namespace G
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
             string completionWindow,
-            object metadata,
+            object? metadata,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -41,7 +41,7 @@ namespace G
             Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
         };
 
-        private global::System.CommandLine.Argument<object> Metadata { get; } = new(
+        private global::System.CommandLine.Argument<object?> Metadata { get; } = new(
             name: "metadata")
         {
             Description = @"Optional metadata to be stored with the batch.",

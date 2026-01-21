@@ -52,8 +52,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/object-download-url",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("objectUid", objectUid) 
+            __pathBuilder
+                .AddRequiredParameter("objectUid", objectUid)
                 .AddOptionalParameter("urlExpireDays", urlExpireDays?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

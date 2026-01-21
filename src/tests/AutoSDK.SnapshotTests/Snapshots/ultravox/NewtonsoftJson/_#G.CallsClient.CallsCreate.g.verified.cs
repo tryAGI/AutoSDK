@@ -55,8 +55,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/calls",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("enableGreetingPrompt", enableGreetingPrompt?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("enableGreetingPrompt", enableGreetingPrompt?.ToString())
                 .AddOptionalParameter("priorCallId", priorCallId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

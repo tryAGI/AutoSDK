@@ -39,7 +39,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/users/blocks",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("target_user_id", targetUserId) 
                 ; 
             var __path = __pathBuilder.ToString();

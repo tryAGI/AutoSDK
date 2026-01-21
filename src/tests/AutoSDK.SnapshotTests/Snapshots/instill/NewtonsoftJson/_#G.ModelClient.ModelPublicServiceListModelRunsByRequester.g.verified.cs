@@ -78,13 +78,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/dashboard/models/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("orderBy", orderBy) 
-                .AddOptionalParameter("filter", filter) 
-                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("orderBy", orderBy)
+                .AddOptionalParameter("filter", filter)
+                .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("requesterId", requesterId) 
                 ; 
             var __path = __pathBuilder.ToString();

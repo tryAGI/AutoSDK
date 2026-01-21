@@ -53,8 +53,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/projects/{projectId}/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -48,8 +48,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/batches",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

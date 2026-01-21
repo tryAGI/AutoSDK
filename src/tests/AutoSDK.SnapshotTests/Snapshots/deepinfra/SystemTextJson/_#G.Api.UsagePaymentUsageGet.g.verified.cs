@@ -55,8 +55,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/usage",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("from", from) 
+            __pathBuilder
+                .AddRequiredParameter("from", from)
                 .AddOptionalParameter("to", to) 
                 ; 
             var __path = __pathBuilder.ToString();

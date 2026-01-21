@@ -44,7 +44,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/bits/extensions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("should_include_all", shouldIncludeAll?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -51,8 +51,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/annotation-queues/{queueId}/total_archived",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("start_time", startTime?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("start_time", startTime?.ToString())
                 .AddOptionalParameter("end_time", endTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

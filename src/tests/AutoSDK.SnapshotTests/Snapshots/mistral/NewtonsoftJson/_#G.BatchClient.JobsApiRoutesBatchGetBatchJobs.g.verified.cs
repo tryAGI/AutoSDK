@@ -78,13 +78,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/batch/jobs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("page_size", pageSize?.ToString()) 
-                .AddOptionalParameter("model", model) 
-                .AddOptionalParameter("metadata", metadata?.ToString()) 
-                .AddOptionalParameter("created_after", createdAfter?.ToString()) 
-                .AddOptionalParameter("created_by_me", createdByMe?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("page_size", pageSize?.ToString())
+                .AddOptionalParameter("model", model)
+                .AddOptionalParameter("metadata", metadata?.ToString())
+                .AddOptionalParameter("created_after", createdAfter?.ToString())
+                .AddOptionalParameter("created_by_me", createdByMe?.ToString())
                 .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

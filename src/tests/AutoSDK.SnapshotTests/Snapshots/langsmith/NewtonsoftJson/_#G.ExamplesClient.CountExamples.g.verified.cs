@@ -75,13 +75,13 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples/count",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString()) 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("metadata", metadata) 
-                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString()) 
-                .AddOptionalParameter("splits", splits?.ToString()) 
-                .AddOptionalParameter("dataset", dataset?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("id", id?.ToString())
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("metadata", metadata)
+                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString())
+                .AddOptionalParameter("splits", splits?.ToString())
+                .AddOptionalParameter("dataset", dataset?.ToString())
                 .AddOptionalParameter("filter", filter) 
                 ; 
             var __path = __pathBuilder.ToString();

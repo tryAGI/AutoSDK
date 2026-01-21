@@ -52,9 +52,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chat/shoutouts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("from_broadcaster_id", fromBroadcasterId) 
-                .AddRequiredParameter("to_broadcaster_id", toBroadcasterId) 
+            __pathBuilder
+                .AddRequiredParameter("from_broadcaster_id", fromBroadcasterId)
+                .AddRequiredParameter("to_broadcaster_id", toBroadcasterId)
                 .AddRequiredParameter("moderator_id", moderatorId) 
                 ; 
             var __path = __pathBuilder.ToString();

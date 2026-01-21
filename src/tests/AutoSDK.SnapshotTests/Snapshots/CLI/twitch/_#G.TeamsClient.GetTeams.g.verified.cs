@@ -49,8 +49,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/teams",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("name", name) 
+            __pathBuilder
+                .AddOptionalParameter("name", name)
                 .AddOptionalParameter("id", id) 
                 ; 
             var __path = __pathBuilder.ToString();

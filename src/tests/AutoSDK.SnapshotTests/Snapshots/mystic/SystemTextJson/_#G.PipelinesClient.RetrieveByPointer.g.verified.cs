@@ -70,10 +70,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/by-pointer/{pointer}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("include_pointers", includePointers?.ToString()) 
-                .AddOptionalParameter("include_extras", includeExtras?.ToString()) 
-                .AddOptionalParameter("pipeline_id", pipelineId) 
+            __pathBuilder
+                .AddOptionalParameter("include_pointers", includePointers?.ToString())
+                .AddOptionalParameter("include_extras", includeExtras?.ToString())
+                .AddOptionalParameter("pipeline_id", pipelineId)
                 .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
                 ; 
             var __path = __pathBuilder.ToString();

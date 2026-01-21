@@ -102,12 +102,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets/rule-suites",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("ref", @ref) 
-                .AddOptionalParameter("time_period", timePeriod?.ToValueString()) 
-                .AddOptionalParameter("actor_name", actorName) 
-                .AddOptionalParameter("rule_suite_result", ruleSuiteResult?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("ref", @ref)
+                .AddOptionalParameter("time_period", timePeriod?.ToValueString())
+                .AddOptionalParameter("actor_name", actorName)
+                .AddOptionalParameter("rule_suite_result", ruleSuiteResult?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

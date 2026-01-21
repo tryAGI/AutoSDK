@@ -66,10 +66,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/vector_stores",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

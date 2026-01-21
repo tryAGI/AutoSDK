@@ -173,7 +173,7 @@ public record struct TypeData(
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
             IsValueType: ContextIsValueType(context),
-            IsNullable: context.Schema.IsNullable(),
+            IsNullable: context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
             IsArray: context.Schema.IsArray(),
             IsEnum: context.Schema.IsEnum(),
             IsBase64: context.Schema.IsBase64(),

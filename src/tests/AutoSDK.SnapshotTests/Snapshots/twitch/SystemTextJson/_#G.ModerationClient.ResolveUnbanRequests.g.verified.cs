@@ -65,11 +65,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/unban_requests",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("moderator_id", moderatorId) 
-                .AddRequiredParameter("unban_request_id", unbanRequestId) 
-                .AddRequiredParameter("status", status) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("moderator_id", moderatorId)
+                .AddRequiredParameter("unban_request_id", unbanRequestId)
+                .AddRequiredParameter("status", status)
                 .AddOptionalParameter("resolution_text", resolutionText) 
                 ; 
             var __path = __pathBuilder.ToString();

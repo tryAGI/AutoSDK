@@ -51,9 +51,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/metrics/overall-usage-summary",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("pipeline_id", pipelineId) 
                 ; 
             var __path = __pathBuilder.ToString();

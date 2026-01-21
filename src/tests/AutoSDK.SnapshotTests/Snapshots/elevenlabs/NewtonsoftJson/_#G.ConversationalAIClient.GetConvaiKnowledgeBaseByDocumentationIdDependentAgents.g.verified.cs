@@ -66,8 +66,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/convai/knowledge-base/{documentationId}/dependent-agents",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("cursor", cursor) 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("page_size", pageSize?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

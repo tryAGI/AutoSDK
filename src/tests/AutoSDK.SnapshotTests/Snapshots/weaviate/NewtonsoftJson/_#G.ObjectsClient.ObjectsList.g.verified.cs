@@ -87,14 +87,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/objects",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("include", include) 
-                .AddOptionalParameter("sort", sort) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("class", @class) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("include", include)
+                .AddOptionalParameter("sort", sort)
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("class", @class)
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

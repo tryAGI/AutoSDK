@@ -58,9 +58,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/tokens",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("all_team", allTeam?.ToString()) 
-                .AddOptionalParameter("skip", skip?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("all_team", allTeam?.ToString())
+                .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

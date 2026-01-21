@@ -70,9 +70,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/projects/columns/{columnId}/cards",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("archived_state", archivedState?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("archived_state", archivedState?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

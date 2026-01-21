@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/search/categories",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("query", query) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("query", query)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

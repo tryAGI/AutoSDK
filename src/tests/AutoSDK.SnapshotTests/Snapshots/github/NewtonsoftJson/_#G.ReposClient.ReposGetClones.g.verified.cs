@@ -60,7 +60,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/traffic/clones",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("per", per?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

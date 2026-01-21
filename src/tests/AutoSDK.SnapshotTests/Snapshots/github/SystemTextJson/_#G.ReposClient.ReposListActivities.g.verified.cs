@@ -93,14 +93,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/activity",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("ref", @ref) 
-                .AddOptionalParameter("actor", actor) 
-                .AddOptionalParameter("time_period", timePeriod?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("ref", @ref)
+                .AddOptionalParameter("actor", actor)
+                .AddOptionalParameter("time_period", timePeriod?.ToValueString())
                 .AddOptionalParameter("activity_type", activityType?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

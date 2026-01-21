@@ -59,10 +59,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/extensions/transactions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("extension_id", extensionId) 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("extension_id", extensionId)
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

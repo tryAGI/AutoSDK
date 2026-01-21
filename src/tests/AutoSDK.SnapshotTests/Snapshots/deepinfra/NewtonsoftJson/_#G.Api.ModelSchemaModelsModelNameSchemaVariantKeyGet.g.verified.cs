@@ -75,7 +75,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelName}/schema/{variantKeyValue}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("version", version) 
                 ; 
             var __path = __pathBuilder.ToString();

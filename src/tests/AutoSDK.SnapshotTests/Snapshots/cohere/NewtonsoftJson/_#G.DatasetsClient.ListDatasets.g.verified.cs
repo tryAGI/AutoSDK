@@ -84,12 +84,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/datasets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("datasetType", datasetType) 
-                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("after", after?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("datasetType", datasetType)
+                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("after", after?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("validationStatus", validationStatus?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

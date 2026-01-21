@@ -50,9 +50,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/bans",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddRequiredParameter("moderator_id", moderatorId) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddRequiredParameter("moderator_id", moderatorId)
                 .AddRequiredParameter("user_id", userId) 
                 ; 
             var __path = __pathBuilder.ToString();

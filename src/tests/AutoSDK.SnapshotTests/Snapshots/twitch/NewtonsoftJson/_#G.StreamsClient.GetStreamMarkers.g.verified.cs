@@ -64,11 +64,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/streams/markers",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("user_id", userId) 
-                .AddOptionalParameter("video_id", videoId) 
-                .AddOptionalParameter("first", first) 
-                .AddOptionalParameter("before", before) 
+            __pathBuilder
+                .AddOptionalParameter("user_id", userId)
+                .AddOptionalParameter("video_id", videoId)
+                .AddOptionalParameter("first", first)
+                .AddOptionalParameter("before", before)
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

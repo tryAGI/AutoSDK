@@ -41,7 +41,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/taggings",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

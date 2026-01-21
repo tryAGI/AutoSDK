@@ -73,11 +73,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines/{pipelineId}/releases",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("view", view?.ToValueString()) 
-                .AddOptionalParameter("filter", filter) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("view", view?.ToValueString())
+                .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("showDeleted", showDeleted?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

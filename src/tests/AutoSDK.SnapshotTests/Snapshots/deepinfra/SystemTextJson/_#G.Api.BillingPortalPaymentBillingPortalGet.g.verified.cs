@@ -46,7 +46,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/payment/billing-portal",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("return_url", returnUrl) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -92,11 +92,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/query",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("query", query) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("save_history", saveHistory?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("query", query)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("save_history", saveHistory?.ToString())
                 .AddOptionalParameter("intelligent_query_rewriting", intelligentQueryRewriting?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

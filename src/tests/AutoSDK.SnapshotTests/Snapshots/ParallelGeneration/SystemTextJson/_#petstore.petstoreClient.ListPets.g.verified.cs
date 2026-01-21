@@ -41,7 +41,7 @@ namespace petstore
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/pets",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

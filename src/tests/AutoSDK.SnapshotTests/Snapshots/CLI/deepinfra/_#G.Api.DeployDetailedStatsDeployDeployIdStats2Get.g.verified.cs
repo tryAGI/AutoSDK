@@ -61,8 +61,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/deploy/{deployId}/stats2",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("from", from) 
+            __pathBuilder
+                .AddRequiredParameter("from", from)
                 .AddOptionalParameter("to", to) 
                 ; 
             var __path = __pathBuilder.ToString();

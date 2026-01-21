@@ -40,7 +40,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddRequiredParameter("id", id) 
                 ; 
             var __path = __pathBuilder.ToString();

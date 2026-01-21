@@ -52,7 +52,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/user/migrations/{migrationId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("exclude", exclude, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

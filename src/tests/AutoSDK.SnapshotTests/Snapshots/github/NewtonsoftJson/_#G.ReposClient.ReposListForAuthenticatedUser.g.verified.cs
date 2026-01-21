@@ -125,15 +125,15 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/user/repos",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
-                .AddOptionalParameter("affiliation", affiliation) 
-                .AddOptionalParameter("type", type?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddOptionalParameter("visibility", visibility?.ToValueString())
+                .AddOptionalParameter("affiliation", affiliation)
+                .AddOptionalParameter("type", type?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();

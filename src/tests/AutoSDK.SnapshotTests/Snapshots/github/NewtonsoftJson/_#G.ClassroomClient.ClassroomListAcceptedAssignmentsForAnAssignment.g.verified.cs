@@ -56,8 +56,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/assignments/{assignmentId}/accepted_assignments",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

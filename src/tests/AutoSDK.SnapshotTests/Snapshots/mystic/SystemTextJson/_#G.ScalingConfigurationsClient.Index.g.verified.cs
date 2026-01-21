@@ -63,10 +63,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/scaling-configs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("public", @public?.ToString()) 
-                .AddOptionalParameter("skip", skip?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("public", @public?.ToString())
+                .AddOptionalParameter("skip", skip?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy) 
                 ; 
             var __path = __pathBuilder.ToString();

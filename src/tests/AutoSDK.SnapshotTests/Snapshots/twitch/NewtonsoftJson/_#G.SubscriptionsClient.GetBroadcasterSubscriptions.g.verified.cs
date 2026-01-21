@@ -65,11 +65,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true) 
-                .AddOptionalParameter("first", first) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true)
+                .AddOptionalParameter("first", first)
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -66,7 +66,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -56,9 +56,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/tags/streams",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("tag_id", tagId, delimiter: ",", explode: true) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("tag_id", tagId, delimiter: ",", explode: true)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

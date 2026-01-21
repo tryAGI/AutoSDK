@@ -139,17 +139,17 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/issues",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("milestone", milestone) 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("assignee", assignee) 
-                .AddOptionalParameter("creator", creator) 
-                .AddOptionalParameter("mentioned", mentioned) 
-                .AddOptionalParameter("labels", labels) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("milestone", milestone)
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("assignee", assignee)
+                .AddOptionalParameter("creator", creator)
+                .AddOptionalParameter("mentioned", mentioned)
+                .AddOptionalParameter("labels", labels)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

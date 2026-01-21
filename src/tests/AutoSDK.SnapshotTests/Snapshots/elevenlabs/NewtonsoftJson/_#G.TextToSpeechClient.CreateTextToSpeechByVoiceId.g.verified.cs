@@ -112,9 +112,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/text-to-speech/{voiceId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("enable_logging", enableLogging?.ToString()) 
-                .AddOptionalParameter("optimize_streaming_latency", optimizeStreamingLatency?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("enable_logging", enableLogging?.ToString())
+                .AddOptionalParameter("optimize_streaming_latency", optimizeStreamingLatency?.ToString())
                 .AddOptionalParameter("output_format", outputFormat?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

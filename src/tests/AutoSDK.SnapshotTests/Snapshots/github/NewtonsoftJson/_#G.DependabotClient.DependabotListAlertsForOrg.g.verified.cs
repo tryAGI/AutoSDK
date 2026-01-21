@@ -130,18 +130,18 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/dependabot/alerts",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("state", state) 
-                .AddOptionalParameter("severity", severity) 
-                .AddOptionalParameter("ecosystem", ecosystem) 
-                .AddOptionalParameter("package", package) 
-                .AddOptionalParameter("scope", scope?.ToValueString()) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("before", before) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("first", first?.ToString()) 
-                .AddOptionalParameter("last", last?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("state", state)
+                .AddOptionalParameter("severity", severity)
+                .AddOptionalParameter("ecosystem", ecosystem)
+                .AddOptionalParameter("package", package)
+                .AddOptionalParameter("scope", scope?.ToValueString())
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("before", before)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("first", first?.ToString())
+                .AddOptionalParameter("last", last?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

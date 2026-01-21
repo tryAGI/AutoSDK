@@ -126,14 +126,14 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/user/issues",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("filter", filter?.ToValueString()) 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("labels", labels) 
-                .AddOptionalParameter("sort", sort?.ToValueString()) 
-                .AddOptionalParameter("direction", direction?.ToValueString()) 
-                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("filter", filter?.ToValueString())
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("labels", labels)
+                .AddOptionalParameter("sort", sort?.ToValueString())
+                .AddOptionalParameter("direction", direction?.ToValueString())
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

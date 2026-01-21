@@ -73,9 +73,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/commits/{owner}/{repo}/{commit}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("get_examples", getExamples?.ToString()) 
-                .AddOptionalParameter("is_view", isView?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("get_examples", getExamples?.ToString())
+                .AddOptionalParameter("is_view", isView?.ToString())
                 .AddOptionalParameter("include_model", includeModel?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -57,8 +57,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("fileId", fileId) 
+            __pathBuilder
+                .AddOptionalParameter("fileId", fileId)
                 .AddOptionalParameter("fileUid", fileUid) 
                 ; 
             var __path = __pathBuilder.ToString();

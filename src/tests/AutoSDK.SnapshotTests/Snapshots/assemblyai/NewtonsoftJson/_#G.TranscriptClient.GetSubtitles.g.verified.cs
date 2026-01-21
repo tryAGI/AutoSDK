@@ -60,7 +60,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/transcript/{transcriptId}/{subtitleFormatValue}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("chars_per_caption", charsPerCaption?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

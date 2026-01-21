@@ -73,10 +73,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/invitations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("role", role?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("role", role?.ToValueString())
                 .AddOptionalParameter("invitation_source", invitationSource?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

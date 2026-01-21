@@ -58,8 +58,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/caches",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("key", key) 
+            __pathBuilder
+                .AddRequiredParameter("key", key)
                 .AddOptionalParameter("ref", @ref) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -220,7 +220,7 @@ namespace G
             string callName,
             string agentId,
             string agentPhoneNumberId,
-            int scheduledTimeUnix,
+            int? scheduledTimeUnix,
             global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

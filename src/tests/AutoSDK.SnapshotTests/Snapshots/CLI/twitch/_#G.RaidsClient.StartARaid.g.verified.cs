@@ -53,8 +53,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/raids",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("from_broadcaster_id", fromBroadcasterId) 
+            __pathBuilder
+                .AddOptionalParameter("from_broadcaster_id", fromBroadcasterId)
                 .AddOptionalParameter("to_broadcaster_id", toBroadcasterId) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -106,19 +106,19 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/feedback",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("run", run?.ToString()) 
-                .AddOptionalParameter("key", key?.ToString()) 
-                .AddOptionalParameter("session", session?.ToString()) 
-                .AddOptionalParameter("source", source?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user?.ToString()) 
-                .AddOptionalParameter("has_comment", hasComment?.ToString()) 
-                .AddOptionalParameter("has_score", hasScore?.ToString()) 
-                .AddOptionalParameter("level", level?.ToString()) 
-                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString()) 
-                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("run", run?.ToString())
+                .AddOptionalParameter("key", key?.ToString())
+                .AddOptionalParameter("session", session?.ToString())
+                .AddOptionalParameter("source", source?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("user", user?.ToString())
+                .AddOptionalParameter("has_comment", hasComment?.ToString())
+                .AddOptionalParameter("has_score", hasScore?.ToString())
+                .AddOptionalParameter("level", level?.ToString())
+                .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString())
+                .AddOptionalParameter("min_created_at", minCreatedAt?.ToString())
                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

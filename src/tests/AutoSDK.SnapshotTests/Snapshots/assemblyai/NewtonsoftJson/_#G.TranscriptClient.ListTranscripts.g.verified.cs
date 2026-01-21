@@ -88,12 +88,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/transcript",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("created_on", createdOn?.ToString("yyyy-MM-dd")) 
-                .AddOptionalParameter("before_id", beforeId?.ToString()) 
-                .AddOptionalParameter("after_id", afterId?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("created_on", createdOn?.ToString("yyyy-MM-dd"))
+                .AddOptionalParameter("before_id", beforeId?.ToString())
+                .AddOptionalParameter("after_id", afterId?.ToString())
                 .AddOptionalParameter("throttled_only", throttledOnly?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

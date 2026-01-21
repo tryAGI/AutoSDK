@@ -66,9 +66,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/admin_api_keys",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

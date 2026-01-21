@@ -74,9 +74,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/corpora/{corpusKey}/documents",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("metadata_filter", metadataFilter) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("metadata_filter", metadataFilter)
                 .AddOptionalParameter("page_key", pageKey) 
                 ; 
             var __path = __pathBuilder.ToString();

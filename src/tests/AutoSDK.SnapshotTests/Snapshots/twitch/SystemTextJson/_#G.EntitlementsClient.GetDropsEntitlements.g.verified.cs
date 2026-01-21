@@ -81,12 +81,12 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/entitlements/drops",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
-                .AddOptionalParameter("user_id", userId) 
-                .AddOptionalParameter("game_id", gameId) 
-                .AddOptionalParameter("fulfillment_status", fulfillmentStatus?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true)
+                .AddOptionalParameter("user_id", userId)
+                .AddOptionalParameter("game_id", gameId)
+                .AddOptionalParameter("fulfillment_status", fulfillmentStatus?.ToValueString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("first", first?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

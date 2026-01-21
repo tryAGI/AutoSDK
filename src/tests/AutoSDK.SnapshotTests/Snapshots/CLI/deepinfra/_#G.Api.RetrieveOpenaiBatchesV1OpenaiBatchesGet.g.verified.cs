@@ -53,8 +53,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/openai/batches",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("after", after) 
+            __pathBuilder
+                .AddRequiredParameter("after", after)
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -61,9 +61,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/certificates",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

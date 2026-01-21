@@ -66,10 +66,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("session_id", sessionId?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString()) 
-                .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("session_id", sessionId?.ToString())
+                .AddOptionalParameter("start_time", startTime?.ToString())
+                .AddOptionalParameter("exclude_s3_stored_attributes", excludeS3StoredAttributes?.ToString())
                 .AddOptionalParameter("exclude_serialized", excludeSerialized?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

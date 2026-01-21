@@ -58,7 +58,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/batch/references",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

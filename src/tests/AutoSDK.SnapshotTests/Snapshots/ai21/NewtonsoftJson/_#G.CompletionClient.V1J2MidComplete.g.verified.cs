@@ -57,8 +57,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/studio/v1/j2-mid/complete",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("model", model) 
+            __pathBuilder
+                .AddOptionalParameter("model", model)
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

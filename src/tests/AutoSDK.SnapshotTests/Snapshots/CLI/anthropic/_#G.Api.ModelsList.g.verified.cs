@@ -77,9 +77,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("before_id", beforeId) 
-                .AddOptionalParameter("after_id", afterId) 
+            __pathBuilder
+                .AddOptionalParameter("before_id", beforeId)
+                .AddOptionalParameter("after_id", afterId)
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -54,8 +54,8 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/whispers",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("from_user_id", fromUserId) 
+            __pathBuilder
+                .AddRequiredParameter("from_user_id", fromUserId)
                 .AddRequiredParameter("to_user_id", toUserId) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -55,9 +55,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/dashboard",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("type", type.ToValueString()) 
-                .AddRequiredParameter("color_scheme", colorScheme.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("type", type.ToValueString())
+                .AddOptionalParameter("color_scheme", colorScheme.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

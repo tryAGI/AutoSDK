@@ -53,9 +53,9 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/billing/usage",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("starting_on", startingOn.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddRequiredParameter("ending_before", endingBefore.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+            __pathBuilder
+                .AddRequiredParameter("starting_on", startingOn.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("ending_before", endingBefore.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("on_current_plan", onCurrentPlan?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

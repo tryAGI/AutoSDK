@@ -59,10 +59,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/channels/vips",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true) 
-                .AddRequiredParameter("broadcaster_id", broadcasterId) 
-                .AddOptionalParameter("first", first?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true)
+                .AddRequiredParameter("broadcaster_id", broadcasterId)
+                .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

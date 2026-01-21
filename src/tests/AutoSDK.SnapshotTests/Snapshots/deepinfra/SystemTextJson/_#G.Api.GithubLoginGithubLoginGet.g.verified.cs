@@ -57,10 +57,10 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/github/login",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("login_id", loginId) 
-                .AddOptionalParameter("origin", origin) 
-                .AddOptionalParameter("deal", deal) 
+            __pathBuilder
+                .AddOptionalParameter("login_id", loginId)
+                .AddOptionalParameter("origin", origin)
+                .AddOptionalParameter("deal", deal)
                 .AddOptionalParameter("ti_token", tiToken) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -106,16 +106,16 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/actions/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("actor", actor) 
-                .AddOptionalParameter("branch", branch) 
-                .AddOptionalParameter("event", @event) 
-                .AddOptionalParameter("status", status?.ToValueString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString()) 
-                .AddOptionalParameter("check_suite_id", checkSuiteId?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("actor", actor)
+                .AddOptionalParameter("branch", branch)
+                .AddOptionalParameter("event", @event)
+                .AddOptionalParameter("status", status?.ToValueString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString())
+                .AddOptionalParameter("check_suite_id", checkSuiteId?.ToString())
                 .AddOptionalParameter("head_sha", headSha) 
                 ; 
             var __path = __pathBuilder.ToString();

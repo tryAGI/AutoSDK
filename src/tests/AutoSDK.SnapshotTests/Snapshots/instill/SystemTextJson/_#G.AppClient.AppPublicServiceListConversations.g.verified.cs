@@ -72,11 +72,11 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                .AddOptionalParameter("pageToken", pageToken) 
-                .AddOptionalParameter("conversationUid", conversationUid) 
-                .AddOptionalParameter("conversationId", conversationId) 
+            __pathBuilder
+                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                .AddOptionalParameter("pageToken", pageToken)
+                .AddOptionalParameter("conversationUid", conversationUid)
+                .AddOptionalParameter("conversationId", conversationId)
                 .AddOptionalParameter("ifAll", ifAll?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

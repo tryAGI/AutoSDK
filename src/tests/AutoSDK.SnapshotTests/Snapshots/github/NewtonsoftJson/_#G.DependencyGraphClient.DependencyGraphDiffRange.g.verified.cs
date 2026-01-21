@@ -57,7 +57,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("name", name) 
                 ; 
             var __path = __pathBuilder.ToString();

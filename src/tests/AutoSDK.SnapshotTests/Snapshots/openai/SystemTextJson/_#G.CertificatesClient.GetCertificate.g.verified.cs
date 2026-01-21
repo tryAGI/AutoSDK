@@ -47,7 +47,7 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/organization/certificates/{certificateId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
