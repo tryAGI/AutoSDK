@@ -314,7 +314,7 @@ components:
             "CreateAssistantRequest",
             "CreateAssistantRequestModel", // Optimized name
             "CreateAssistantRequestToolDiscriminator",
-            "CreateAssistantRequestToolDiscriminatorType",
+            // "CreateAssistantRequestToolDiscriminatorType", // No longer generated in Microsoft.OpenApi 3.x
             "CreateAssistantRequestToolResources",
             "CreateAssistantRequestToolResourcesCodeInterpreter",
             "CreateAssistantRequestToolResourcesFileSearch",
@@ -326,7 +326,7 @@ components:
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type",
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static",
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminator",
-            "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType",
+            // "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType", // No longer generated in Microsoft.OpenApi 3.x
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreMetadata",
             "CreateAssistantRequestToolResourcesFileSearchVariant1",
             "CreateAssistantRequestToolResourcesFileSearchVariant2",

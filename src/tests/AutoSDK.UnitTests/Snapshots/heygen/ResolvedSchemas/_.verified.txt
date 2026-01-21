@@ -1,7 +1,7 @@
 ﻿[
   V2VideoGenerateRequest(class)[Create Video API],
-    V2VideoGenerateRequestAspectRatio(class)[Create Video API],
-    V2VideoGenerateRequestCallbackId(class)[Create Video API],
+    AspectRatio(null)[Create Video API],
+    CallbackId(null)[Create Video API],
     V2VideoGenerateRequestDimension(class)[Create Video API],
       Height(double)[Create Video API],
       Width(double)[Create Video API],

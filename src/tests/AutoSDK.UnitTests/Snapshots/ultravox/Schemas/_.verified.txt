@@ -84,7 +84,7 @@
     Voice(string),
     UltravoxV1ExternalVoice(ref),
     ErrorCount(int),
-    CallStageExperimentalSettings(class),
+    ExperimentalSettings(null),
     CallStageInitialState(class),
       CallStageInitialState2(class),
   CallStatistics(class),

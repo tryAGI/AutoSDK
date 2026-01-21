@@ -132,7 +132,7 @@ namespace {endPoint.Settings.Namespace}
                 request: request")});
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
-    .Where(x => x is { Location: not null, Type.EnumValues.Length: > 0 })
+    .Where(x => x is { Location: not null, Type.IsEnum: true, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch
             {{

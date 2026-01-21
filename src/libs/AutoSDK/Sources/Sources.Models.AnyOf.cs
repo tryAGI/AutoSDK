@@ -88,15 +88,20 @@ namespace {anyOfData.Namespace}
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif
         public bool Is{x.Name} => {x.Name} != null;
-{(className != x.Type.CSharpTypeWithoutNullability &&
-  x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) != true && 
-  x.Type.CSharpTypeWithoutNullability != "object"? $@"
+").Inject()}
+{anyOfData.Properties
+    .GroupBy(x => x.Type.CSharpTypeWithoutNullability) // Deduplicate by type
+    .Select(g => g.First()) // Take first property of each type
+    .Where(x =>
+        className != x.Type.CSharpTypeWithoutNullability &&
+        !x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) &&
+        x.Type.CSharpTypeWithoutNullability != "object")
+    .Select(x => $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(({x.Type.CSharpTypeWithNullability})value);
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {x.Type.CSharpTypeWithNullability}({className} @this) => @this.{x.Name};
- " : " ")}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}({x.Type.CSharpTypeWithNullability} value)

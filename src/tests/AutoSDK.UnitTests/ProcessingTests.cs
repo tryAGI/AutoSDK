@@ -1,5 +1,7 @@
 ﻿using AutoSDK.Extensions;
 using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using Microsoft.OpenApi.YamlReader;
 
 namespace AutoSDK.UnitTests;
 
@@ -12,8 +14,14 @@ public class ProcessingTests : VerifyBase
     public async Task ComputeDiscriminators(string resourceName)
     {
         var yamlOrJson = new H.Resource(resourceName).AsString();
-        
-        var (document, diagnostics) = OpenApiDocument.Parse(yamlOrJson);
+
+        var readerSettings = new OpenApiReaderSettings
+        {
+            RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+        };
+        readerSettings.AddYamlReader();
+
+        var (document, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
         if (document == null)
         {
             throw new InvalidOperationException("Document is null");

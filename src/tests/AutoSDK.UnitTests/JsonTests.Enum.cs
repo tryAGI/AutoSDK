@@ -10,7 +10,8 @@ public partial class JsonTests
     {
         const string json = "{\n  \"status\": \"pulling manifest\"\n}";
 
-        Assert.ThrowsException<JsonException>(() => JsonSerializer.Deserialize<PullModelResponse>(json));
+        var action = () => JsonSerializer.Deserialize<PullModelResponse>(json);
+        action.Should().Throw<JsonException>();
     }
     
     [TestMethod]

@@ -244,6 +244,10 @@ public record struct TypeData(
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
 
+            // Handle nullable anyOf pattern: anyOf: [X, {type: null}] -> nullable X
+            (_, _) when context.Schema.IsNullableAnyOf() =>
+                context.Children.FirstOrDefault(x => x.Hint == Hint.AnyOf && !x.Schema.IsNullType())?.TypeData.CSharpTypeWithoutNullability ?? "object",
+
             (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
@@ -313,6 +317,8 @@ public record struct TypeData(
 
             (null, null) when (context.IsClass && context.ClassData?.Properties.Length > 0) || context.IsEnum =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
+            // Schema with const value should be treated as string
+            (null, null) when context.Schema.IsConst() => "string",
             (null, null) => "object",
             ("null", _) => "object",
             ("any", _) => "object",
@@ -329,6 +335,7 @@ public record struct TypeData(
         context = context ?? throw new ArgumentNullException(nameof(context));
 
         return context.Schema.IsNullable() ||
+               context.Schema.IsNullableAnyOf() || // anyOf: [X, {type: null}] is nullable
                !context.IsRequired && additionalContext?.IsRequired != true;
     }
 }

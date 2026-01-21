@@ -1,7 +1,0 @@
-﻿[
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/GenerateEmbeddingResponse/properties/embedding/example/2
-  }
-]

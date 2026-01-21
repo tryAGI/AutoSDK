@@ -1,7 +1,7 @@
 ﻿[
   V2VideoGenerateRequest(class),
-    V2VideoGenerateRequestAspectRatio(class),
-    V2VideoGenerateRequestCallbackId(class),
+    AspectRatio(null),
+    CallbackId(null),
     V2VideoGenerateRequestDimension(class),
       Height(double),
       Width(double),

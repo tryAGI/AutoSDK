@@ -278,7 +278,7 @@
     Voice(string)[calls],
     UltravoxV1ExternalVoice(ref)[calls],
     ErrorCount(int)[calls],
-    CallStageExperimentalSettings(class)[calls],
+    ExperimentalSettings(null)[calls],
     CallStageInitialState(class)[calls],
       CallStageInitialState2(class)[calls],
   CallStatistics(class)[accounts],

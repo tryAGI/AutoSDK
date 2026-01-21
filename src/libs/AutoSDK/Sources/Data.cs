@@ -44,15 +44,35 @@ public static class Data
             .Where(x => x.IsComponent)
             .ToDictionary(x => x.ComponentId!, x => x);
         
-        foreach (var context in schemas.Where(x => x.IsReference))
+        var unresolvedReferences = new HashSet<SchemaContext>();
+        foreach (var context in schemas.Where(x => x.IsReference).ToArray())
         {
-            context.ResolvedReference = componentSchemas[context.ReferenceId!];
-            context.Id = context.ResolvedReference.Id;
-            context.TypeData = context.ResolvedReference.TypeData;
-            
-            context.ResolvedReference.Links.Add(context);
+            if (componentSchemas.TryGetValue(context.ReferenceId!, out var resolvedReference))
+            {
+                context.ResolvedReference = resolvedReference;
+                context.Id = context.ResolvedReference.Id;
+                context.TypeData = context.ResolvedReference.TypeData;
+
+                context.ResolvedReference.Links.Add(context);
+            }
+            else if (!settings.IgnoreOpenApiErrors)
+            {
+                throw new KeyNotFoundException($"Schema reference '{context.ReferenceId}' could not be resolved. " +
+                    $"This may indicate a malformed OpenAPI specification (e.g., using #/definitions/ in an OpenAPI 3.x spec).");
+            }
+            else
+            {
+                // Mark unresolved references for removal
+                unresolvedReferences.Add(context);
+            }
         }
-        
+
+        // Filter out unresolved references
+        if (unresolvedReferences.Count > 0)
+        {
+            schemas = schemas.Where(x => !unresolvedReferences.Contains(x)).ToArray();
+        }
+
         resolveReferencesTime.Stop();
         
         var filteringTime = Stopwatch.StartNew();

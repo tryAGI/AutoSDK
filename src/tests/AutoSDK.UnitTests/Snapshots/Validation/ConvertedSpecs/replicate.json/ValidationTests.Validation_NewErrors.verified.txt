@@ -1,6 +1,0 @@
-﻿[
-  {
-    Message: query is not a valid property at #/paths/~1models,
-    Pointer: 
-  }
-]

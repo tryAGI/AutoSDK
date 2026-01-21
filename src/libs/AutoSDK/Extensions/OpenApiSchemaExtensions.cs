@@ -108,6 +108,12 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        // Don't treat anyOf: [X, {type: null}] as a true AnyOf - it's just nullable X
+        if (schema.IsNullableAnyOf())
+        {
+            return false;
+        }
+
         return
             (schema.AnyOf?.Any() ?? false) &&
             (schema.Properties?.Count ?? 0) == 0; // AnyOf with properties is not supported
@@ -138,9 +144,83 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        // Don't treat schemas with nullable anyOf pattern as enums
+        // Even if they have enum values, they're being used as nullable strings
+        if (schema.IsNullableAnyOf())
+        {
+            return false;
+        }
+
         // Check if String flag is set (handles nullable types like ["string", "null"])
         return (schema.Enum?.Any() ?? false) &&
                (schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String);
+    }
+
+    /// <summary>
+    /// Checks if the schema has a const value (a single constant string value).
+    /// In OpenAPI 3.1+, const is used to define a single allowed value.
+    /// </summary>
+    public static bool IsConst(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return !string.IsNullOrEmpty(schema.Const);
+    }
+
+    /// <summary>
+    /// Checks if the schema is a null-only type (type: "null" with no other content).
+    /// In OpenAPI 3.1+, this is used in anyOf/oneOf to express nullability.
+    /// </summary>
+    public static bool IsNullType(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        // Check if type is exactly "null" (only the Null flag is set)
+        return schema.Type == JsonSchemaType.Null;
+    }
+
+    /// <summary>
+    /// Checks if the anyOf is just expressing nullability (anyOf: [X, {type: null}]).
+    /// This pattern should be simplified to nullable X rather than AnyOf.
+    /// </summary>
+    public static bool IsNullableAnyOf(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        var anyOfItems = schema.AnyOf?.ToList();
+        if (anyOfItems == null || anyOfItems.Count != 2)
+        {
+            return false;
+        }
+
+        // Check if exactly one item is null-type and one is not
+        var hasNullType = anyOfItems.Any(x => x.IsNullType());
+        var hasNonNullType = anyOfItems.Any(x => !x.IsNullType());
+
+        return hasNullType && hasNonNullType;
+    }
+
+    /// <summary>
+    /// Checks if the schema is a string type or has a string const value.
+    /// This handles schemas with const values that don't have an explicit type.
+    /// </summary>
+    public static bool IsStringOrConst(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        // Explicit string type
+        if (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String)
+        {
+            return true;
+        }
+
+        // Has a const value (which is always a string in OpenAPI)
+        if (!string.IsNullOrEmpty(schema.Const))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public static bool IsBoolean(
