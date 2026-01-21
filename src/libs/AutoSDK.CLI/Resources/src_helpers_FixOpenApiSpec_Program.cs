@@ -1,8 +1,7 @@
 using AutoSDK.Helpers;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi;
-using Microsoft.OpenApi.Readers;
+using Microsoft.OpenApi.Reader;
+using Microsoft.OpenApi.YamlReader;
 
 var path = args[0];
 var yamlOrJson = await File.ReadAllTextAsync(path);
@@ -12,14 +11,20 @@ if (OpenApi31Support.IsOpenApi31(yamlOrJson))
     yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
 }
 
-var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
+var readerSettings = new OpenApiReaderSettings
+{
+    RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+};
+readerSettings.AddYamlReader();
+
+var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
 
 //openApiDocument.Components.Schemas["GenerateCompletionRequest"]!.Properties["stream"]!.Default = new OpenApiBoolean(true);
 
-yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(yamlOrJson, out diagnostics);
+yamlOrJson = await openApiDocument!.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_0);
+(_, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
 
-if (diagnostics.Errors.Count > 0)
+if (diagnostics?.Errors.Count > 0)
 {
     foreach (var error in diagnostics.Errors)
     {
