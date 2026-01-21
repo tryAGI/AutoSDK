@@ -6,7 +6,7 @@ namespace AutoSDK.SnapshotTests;
 
 public partial class Tests
 {
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", JsonSerializerType.SystemTextJson)]
     // To test some private API
@@ -160,7 +160,7 @@ public partial class Tests
         ], Path.GetFileNameWithoutExtension(fileName), globalOptions, additionalGenerators: [new CliGenerator()]);
     }
     
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("")]
     //[DataRow("ai21.json")]
     [DataRow("anthropic.yaml")]

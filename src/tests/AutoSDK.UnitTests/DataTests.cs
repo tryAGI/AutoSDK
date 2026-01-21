@@ -5,7 +5,7 @@ namespace AutoSDK.UnitTests;
 
 public partial class DataTests
 {
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("ai21.json")]
     [DataRow("anthropic.yaml")]
     [DataRow("assemblyai.yaml")]
