@@ -39,7 +39,7 @@
     <CallTarget Targets="Publish"/>
   </Target>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.12" />
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="10.0.2" />
   </ItemGroup>
 
 </Project>
