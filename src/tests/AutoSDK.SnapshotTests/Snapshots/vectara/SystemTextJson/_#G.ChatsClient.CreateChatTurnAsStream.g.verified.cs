@@ -151,7 +151,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::G.ChatStreamedResponse.FromJson<global::G.ChatStreamedResponse>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.ChatStreamedResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return __streamedResponse;

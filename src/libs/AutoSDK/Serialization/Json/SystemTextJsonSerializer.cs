@@ -109,7 +109,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
     public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
-        var typeToDeserializeIfRequired = type.IsDerivedClass || type.IsBaseClass ? $"<{type.CSharpTypeWithoutNullability}>" : "";
+        var typeToDeserializeIfRequired = (type.IsDerivedClass || type.IsBaseClass) && !type.IsAnyOfLike ? $"<{type.CSharpTypeWithoutNullability}>" : "";
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
@@ -124,7 +124,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
     public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
-        var typeToDeserializeIfRequired = type.IsDerivedClass || type.IsBaseClass ? $"<{type.CSharpTypeWithoutNullability}>" : "";
+        var typeToDeserializeIfRequired = (type.IsDerivedClass || type.IsBaseClass) && !type.IsAnyOfLike ? $"<{type.CSharpTypeWithoutNullability}>" : "";
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)

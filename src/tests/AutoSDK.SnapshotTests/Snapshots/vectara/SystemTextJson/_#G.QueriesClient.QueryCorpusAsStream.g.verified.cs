@@ -162,7 +162,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::G.QueryStreamedResponse.FromJson<global::G.QueryStreamedResponse>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.QueryStreamedResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return __streamedResponse;
