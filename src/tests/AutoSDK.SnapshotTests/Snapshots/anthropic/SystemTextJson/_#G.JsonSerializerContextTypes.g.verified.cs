@@ -15,10 +15,12 @@ namespace G
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -2088,5 +2090,138 @@ namespace G
         /// 
         /// </summary>
         public global::G.AnthropicBetaEnum? Type515 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item>>? ListType0 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item>? ListType1 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CitationsVariant1Item>? ListType2 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CitationsVariant1Item2>? ListType3 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.BetaTool, global::G.BetaComputerUseTool20241022, global::G.BetaBashTool20241022, global::G.BetaTextEditor20241022, global::G.BetaComputerUseTool20250124, global::G.BetaBashTool20250124, global::G.BetaTextEditor20250124>>? ListType4 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaInputMessage>? ListType5 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.BetaInputContentBlock>>? ListType6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaInputContentBlock>? ListType7 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item2>>? ListType8 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item2>? ListType9 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.BetaRequestTextBlock>>? ListType10 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaRequestTextBlock>? ListType11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaMessageBatchIndividualRequestParams>? ListType12 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaMessageBatch>? ListType14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaModelInfo>? ListType15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BetaContentBlock>? ListType16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item3>>? ListType17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item3>? ListType18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CitationsVariant1Item3>? ListType19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CitationsVariant1Item4>? ListType20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? ListType21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.InputMessage>? ListType22 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputContentBlock>>? ListType23 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.InputContentBlock>? ListType24 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item4>>? ListType25 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item4>? ListType26 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.RequestTextBlock>>? ListType27 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RequestTextBlock>? ListType28 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MessageBatchIndividualRequestParams>? ListType29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MessageBatch>? ListType30 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ModelInfo>? ListType31 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentBlock3>? ListType32 { get; set; }
     }
 }

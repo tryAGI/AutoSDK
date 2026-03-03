@@ -15,10 +15,12 @@ namespace petstore
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -48,5 +50,10 @@ namespace petstore
         /// 
         /// </summary>
         public int? Type5 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::petstore.Pet>? ListType0 { get; set; }
     }
 }

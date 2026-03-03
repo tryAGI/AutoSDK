@@ -17,6 +17,20 @@ public static partial class Sources
             return string.Empty;
         }
         
+        var distinctTypes = types
+            .Select(x => x.CSharpTypeWithNullability)
+            .Distinct()
+            .ToArray();
+
+        // Generate concrete List<T> counterparts for IList<T> types
+        var concreteListTypes = distinctTypes
+            .Where(x => x.Contains("System.Collections.Generic.IList<"))
+            .Select(x => x.Replace(
+                "System.Collections.Generic.IList<",
+                "System.Collections.Generic.List<"))
+            .Distinct()
+            .ToArray();
+
         return $@"
 #nullable enable
 
@@ -29,16 +43,20 @@ namespace {types[0].Namespace}
     {{
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary {{ get; set; }}
-        
+
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary {{ get; set; }}
-        
+
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.JsonElement? JsonElement {{ get; set; }}
 
-{types.Select(x => x.CSharpTypeWithNullability).Distinct().Select((type, i) => @$"
+{distinctTypes.Select((type, i) => @$"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {type} Type{i} {{ get; set; }}").Inject()}
+
+{concreteListTypes.Select((type, i) => @$"
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public {type} ListType{i} {{ get; set; }}").Inject()}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

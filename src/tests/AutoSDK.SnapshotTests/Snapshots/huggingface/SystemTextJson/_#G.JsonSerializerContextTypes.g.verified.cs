@@ -15,10 +15,12 @@ namespace G
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -72,5 +74,18 @@ namespace G
         /// 
         /// </summary>
         public global::G.GenerateTextResponseValue? Type11 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType0 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType1 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GenerateTextResponseValue>? ListType2 { get; set; }
     }
 }

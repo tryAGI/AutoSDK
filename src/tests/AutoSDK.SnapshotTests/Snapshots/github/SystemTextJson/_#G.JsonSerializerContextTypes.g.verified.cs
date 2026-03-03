@@ -15,10 +15,12 @@ namespace G
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -26308,5 +26310,2042 @@ namespace G
         /// 
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.DateTime>? Type6570 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType0 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GlobalAdvisoryIdentifier>? ListType1 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Vulnerability>? ListType2 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GlobalAdvisoryCwe>? ListType3 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GlobalAdvisoryCredit>? ListType4 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ValidationErrorError>? ListType5 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<string, int?, global::System.Collections.Generic.List<string>>? ListType6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Repository>? ListType7 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SimpleClassroomUser>? ListType8 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CopilotUsageMetricsBreakdownItem>? ListType9 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlertSecurityVulnerability>? ListType10 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlertSecurityAdvisoryCwe>? ListType11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlertSecurityAdvisoryIdentifier>? ListType12 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlertSecurityAdvisoryReference>? ListType13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<string, global::G.IssueLabel>>? ListType14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SimpleUser>? ListType15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EventPayloadPage>? ListType16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.LinkWithType>? ListType17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<object>? ListType18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GistSimpleFork>? ListType19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GistHistory>? ListType20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RunnerLabel>? ListType21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningAlertClassification>? ListType22 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeSecurityDefaultConfiguration>? ListType23 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<string, global::System.Collections.Generic.List<string>>? ListType24 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CustomPropertyValue>? ListType25 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<int>? ListType26 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? ListType27 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleParamsStatusCheckConfiguration>? ListType28 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleParamsWorkflowFileReference>? ListType29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleParamsCodeScanningTool>? ListType30 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRulesetBypassActor>? ListType31 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRule>? ListType32 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RuleSuite>? ListType33 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RuleSuiteRuleEvaluation>? ListType34 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryIdentifier>? ListType35 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryVulnerability>? ListType36 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryCwe>? ListType37 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryCredit2>? ListType38 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryCredit>? ListType39 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Team>? ListType40 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ActionsCacheListActionsCache>? ListType41 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.JobStep>? ListType42 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReferencedWorkflow>? ListType43 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestMinimal>? ListType44 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EnvironmentApprovalsEnvironment>? ListType45 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PendingDeploymentReviewer>? ListType46 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? ListType47 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableMACOSJobRun>? ListType48 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? ListType49 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProtectedBranchRequiredStatusCheckCheck>? ListType50 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Integration>? ListType51 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BranchRestrictionPolicyUser>? ListType52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BranchRestrictionPolicyTeam>? ListType53 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BranchRestrictionPolicyApp>? ListType54 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CommitParent>? ListType55 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DiffEntry>? ListType56 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.StatusCheckPolicyCheck>? ListType57 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CheckSuitePreferencePreferencesAutoTriggerCheck>? ListType58 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningVariantAnalysisRepository>? ListType59 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningVariantAnalysisScannedRepositorie>? ListType60 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningDefaultSetupLanguage>? ListType61 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningDefaultSetupUpdateLanguage>? ListType62 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeownersErrorsError>? ListType63 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestSimpleLabel>? ListType64 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SimpleCommitStatus>? ListType65 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Commit>? ListType66 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentTreeEntrie>? ListType67 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentDirectoryItem>? ListType68 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.FileCommitCommitParent>? ListType69 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder>? ListType70 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependencyGraphDiffItem>? ListType71 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependencyGraphDiffItemVulnerabilitie>? ListType72 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependencyGraphSpdxSbomSbomPackage>? ListType73 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependencyGraphSpdxSbomSbomPackageExternalRef>? ListType74 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.AnyOf<global::G.EnvironmentProtectionRuleVariant1, global::G.EnvironmentProtectionRuleVariant2, global::G.EnvironmentProtectionRuleVariant3>>? ListType75 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EnvironmentProtectionRuleVariant2Reviewer>? ListType76 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GitCommitParent>? ListType77 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GitTreeTreeItem>? ListType78 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ImportProjectChoice>? ListType79 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<string, global::G.NullableIssueLabel>>? ListType80 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TimelineCommittedEventParent>? ListType81 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestReviewComment>? ListType82 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CommitComment>? ListType83 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestLabel>? ListType84 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamSimple>? ListType85 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReleaseAsset>? ListType86 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryCreateVulnerabilitie>? ListType87 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryCreateCredit>? ListType88 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PrivateVulnerabilityReportCreateVulnerabilitie>? ListType89 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryUpdateVulnerabilitie>? ListType90 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisoryUpdateCredit>? ListType91 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContributorActivityWeek>? ListType92 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Traffic>? ListType93 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SearchResultTextMatche>? ListType94 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SearchResultTextMatcheMatche>? ListType95 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CommitSearchResultItemParent>? ListType96 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssueSearchResultItemLabel>? ListType97 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TopicSearchResultItemRelatedItem>? ListType98 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TopicSearchResultItemAliase>? ListType99 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GpgKeyEmail>? ListType100 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GpgKeySubkey>? ListType101 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GpgKeySubkeyEmail>? ListType102 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SigstoreBundle0VerificationMaterialX509CertificateChainCertificate>? ListType103 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SigstoreBundle0VerificationMaterialTlogEntrie>? ListType104 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SigstoreBundle0DsseEnvelopeSignature>? ListType105 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.HovercardContext>? ListType106 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksReviewer>? ListType107 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Label>? ListType108 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksRepositorie>? ListType109 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksRepositoriesAddedItem>? ListType110 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssueAssignee2>? ListType111 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssueLabel>? ListType112 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssuePerformedViaGithubAppEvent>? ListType113 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssue2Assignee2>? ListType114 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssue2Label>? ListType115 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksIssue2PerformedViaGithubAppEvent>? ListType116 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PersonalAccessTokenRequestRepositorie>? ListType117 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksPullRequest5Assignee2>? ListType118 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksPullRequest5Label>? ListType119 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>>? ListType120 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksPullRequest5RequestedTeam>? ListType121 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksReleaseAsset>? ListType122 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksRelease1Asset>? ListType123 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksSecurityAdvisoryCwe>? ListType124 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksSecurityAdvisoryIdentifier>? ListType125 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksSecurityAdvisoryReference>? ListType126 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhooksSecurityAdvisoryVulnerabilitie>? ListType127 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteCompletedCheckSuiteAppEvent>? ListType128 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteCompletedCheckSuitePullRequest>? ListType129 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteRequestedCheckSuiteAppEvent>? ListType130 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequest>? ListType131 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteRerequestedCheckSuiteAppEvent>? ListType132 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequest>? ListType133 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvent>? ListType134 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentCreatedWorkflowRunPullRequest>? ListType135 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentCreatedWorkflowRunReferencedWorkflow>? ListType136 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequest>? ListType137 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewApprovedWorkflowJobRun>? ListType138 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewApprovedWorkflowRunPullRequest>? ListType139 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflow>? ListType140 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRejectedWorkflowJobRun>? ListType141 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRejectedWorkflowRunPullRequest>? ListType142 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRejectedWorkflowRunReferencedWorkflow>? ListType143 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRequestedReviewer>? ListType144 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequest>? ListType145 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflow>? ListType146 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvent>? ListType147 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent>? ListType148 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentStatusCreatedWorkflowRunPullRequest>? ListType149 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflow>? ListType150 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookGollumPage>? ListType151 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookInstallationRepositoriesAddedRepositoriesRemovedItem>? ListType152 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem>? ListType153 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1Assignee2>? ListType154 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1Label>? ListType155 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppEvent>? ListType156 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant2Label>? ListType157 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1Assignee2>? ListType158 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1Label>? ListType159 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppEvent>? ListType160 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant2Label>? ListType161 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1Assignee2>? ListType162 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1Label>? ListType163 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppEvent>? ListType164 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant2Label>? ListType165 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1Assignee2>? ListType166 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1Label>? ListType167 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppEvent>? ListType168 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDeletedIssueAssignee2>? ListType169 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDeletedIssueLabel>? ListType170 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppEvent>? ListType171 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDemilestonedIssueAssignee2>? ListType172 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDemilestonedIssueLabel>? ListType173 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent>? ListType174 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesEditedIssueAssignee2>? ListType175 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesEditedIssueLabel>? ListType176 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesEditedIssuePerformedViaGithubAppEvent>? ListType177 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLabeledIssueAssignee2>? ListType178 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLabeledIssueLabel>? ListType179 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLabeledIssuePerformedViaGithubAppEvent>? ListType180 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLockedIssueAssignee2>? ListType181 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLockedIssueLabel>? ListType182 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesLockedIssuePerformedViaGithubAppEvent>? ListType183 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesMilestonedIssueAssignee2>? ListType184 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesMilestonedIssueLabel>? ListType185 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesMilestonedIssuePerformedViaGithubAppEvent>? ListType186 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedChangesOldIssueAssignee2>? ListType187 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedChangesOldIssueLabel>? ListType188 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent>? ListType189 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedIssueAssignee2>? ListType190 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedIssueLabel>? ListType191 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesOpenedIssuePerformedViaGithubAppEvent>? ListType192 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesReopenedIssueAssignee2>? ListType193 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesReopenedIssueLabel>? ListType194 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesReopenedIssuePerformedViaGithubAppEvent>? ListType195 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesTransferredChangesNewIssueAssignee2>? ListType196 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesTransferredChangesNewIssueLabel>? ListType197 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent>? ListType198 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesUnlockedIssueAssignee2>? ListType199 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesUnlockedIssueLabel>? ListType200 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesUnlockedIssuePerformedViaGithubAppEvent>? ListType201 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookMetaDeletedHookEvent>? ListType202 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.Dictionary<string, string>>? ListType203 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadataItem>? ListType204 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadataItem>? ListType205 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPackagePublishedPackagePackageVersionPackageFile>? ListType206 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRubygemsMetadata>? ListType207 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPackageUpdatedPackagePackageVersionDockerMetadataItem>? ListType208 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPackageUpdatedPackagePackageVersionPackageFile>? ListType209 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAssignedPullRequestAssignee2>? ListType210 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAssignedPullRequestLabel>? ListType211 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2>>? ListType212 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAssignedPullRequestRequestedTeam>? ListType213 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeDisabledPullRequestAssignee2>? ListType214 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeDisabledPullRequestLabel>? ListType215 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2>>? ListType216 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeam>? ListType217 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeEnabledPullRequestAssignee2>? ListType218 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeEnabledPullRequestLabel>? ListType219 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2>>? ListType220 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeam>? ListType221 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestDequeuedPullRequestAssignee2>? ListType222 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestDequeuedPullRequestLabel>? ListType223 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2>>? ListType224 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestDequeuedPullRequestRequestedTeam>? ListType225 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestEnqueuedPullRequestAssignee2>? ListType226 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestEnqueuedPullRequestLabel>? ListType227 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2>>? ListType228 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestEnqueuedPullRequestRequestedTeam>? ListType229 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLabeledPullRequestAssignee2>? ListType230 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLabeledPullRequestLabel>? ListType231 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2>>? ListType232 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLabeledPullRequestRequestedTeam>? ListType233 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLockedPullRequestAssignee2>? ListType234 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLockedPullRequestLabel>? ListType235 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>>? ListType236 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestLockedPullRequestRequestedTeam>? ListType237 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentCreatedPullRequestAssignee2>? ListType238 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentCreatedPullRequestLabel>? ListType239 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2>>? ListType240 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedTeam>? ListType241 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2>? ListType242 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentDeletedPullRequestLabel>? ListType243 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2>>? ListType244 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeam>? ListType245 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee2>? ListType246 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentEditedPullRequestLabel>? ListType247 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>>? ListType248 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedTeam>? ListType249 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewDismissedPullRequestAssignee2>? ListType250 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewDismissedPullRequestLabel>? ListType251 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2>>? ListType252 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedTeam>? ListType253 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewEditedPullRequestAssignee2>? ListType254 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewEditedPullRequestLabel>? ListType255 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2>>? ListType256 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewEditedPullRequestRequestedTeam>? ListType257 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAssignee2>? ListType258 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestLabel>? ListType259 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2>>? ListType260 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedTeam>? ListType261 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee2>? ListType262 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestLabel>? ListType263 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2>>? ListType264 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedTeam>? ListType265 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestAssignee2>? ListType266 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestLabel>? ListType267 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2>>? ListType268 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedTeam>? ListType269 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAssignee2>? ListType270 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestLabel>? ListType271 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>>? ListType272 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedTeam>? ListType273 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewSubmittedPullRequestAssignee2>? ListType274 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewSubmittedPullRequestLabel>? ListType275 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2>>? ListType276 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedTeam>? ListType277 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadResolvedPullRequestAssignee2>? ListType278 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadResolvedPullRequestLabel>? ListType279 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2>>? ListType280 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeam>? ListType281 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadResolvedThreadComment>? ListType282 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee2>? ListType283 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLabel>? ListType284 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2>>? ListType285 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeam>? ListType286 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComment>? ListType287 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestSynchronizePullRequestAssignee2>? ListType288 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestSynchronizePullRequestLabel>? ListType289 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2>>? ListType290 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestSynchronizePullRequestRequestedTeam>? ListType291 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnassignedPullRequestAssignee2>? ListType292 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnassignedPullRequestLabel>? ListType293 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2>>? ListType294 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnassignedPullRequestRequestedTeam>? ListType295 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlabeledPullRequestAssignee2>? ListType296 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlabeledPullRequestLabel>? ListType297 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2>>? ListType298 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlabeledPullRequestRequestedTeam>? ListType299 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlockedPullRequestAssignee2>? ListType300 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlockedPullRequestLabel>? ListType301 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2>>? ListType302 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPullRequestUnlockedPullRequestRequestedTeam>? ListType303 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookPushCommit>? ListType304 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>? ListType305 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>? ListType306 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile>? ListType307 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem>? ListType308 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile>? ListType309 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookReleasePrereleasedReleaseAsset>? ListType310 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRulesetConditions>? ListType311 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItem>? ListType312 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItem>? ListType313 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe>? ListType314 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifier>? ListType315 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReference>? ListType316 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie>? ListType317 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookStatusBranche>? ListType318 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookStatusCommitParent>? ListType319 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Step>? ListType320 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Step>? ListType321 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2Step>? ListType322 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobQueuedWorkflowJobStep>? ListType323 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobWaitingWorkflowJobStep>? ListType324 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunCompletedWorkflowRunPullRequest>? ListType325 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflow>? ListType326 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest>? ListType327 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflow>? ListType328 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunRequestedWorkflowRunPullRequest>? ListType329 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflow>? ListType330 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MigrationsStartForOrgRequestExcludeItem>? ListType331 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CustomProperty>? ListType332 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck>? ListType333 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReposUpdateStatusCheckProtectionRequestCheck>? ListType334 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposAddStatusCheckContextsRequest2, global::System.Collections.Generic.List<string>>? ListType335 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposSetStatusCheckContextsRequest2, global::System.Collections.Generic.List<string>>? ListType336 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposRemoveStatusCheckContextsRequest2, global::System.Collections.Generic.List<string>>? ListType337 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposAddTeamAccessRestrictionsRequest2, global::System.Collections.Generic.List<string>>? ListType338 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposSetTeamAccessRestrictionsRequest2, global::System.Collections.Generic.List<string>>? ListType339 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.ReposRemoveTeamAccessRestrictionsRequest2, global::System.Collections.Generic.List<string>>? ListType340 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksCreateRequestOutputAnnotation>? ListType341 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksCreateRequestOutputImage>? ListType342 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksCreateRequestAction>? ListType343 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksUpdateRequestOutputAnnotation>? ListType344 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksUpdateRequestOutputImage>? ListType345 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksUpdateRequestAction>? ListType346 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ChecksSetSuitesPreferencesRequestAutoTriggerCheck>? ListType347 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReposCreateOrUpdateEnvironmentRequestReviewer>? ListType348 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GitCreateTreeRequestTreeItem>? ListType349 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<string, global::G.IssuesCreateRequestLabel>>? ListType350 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OneOf<string, global::G.IssuesUpdateRequestLabel>>? ListType351 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.IssuesAddLabelsRequestVariant1, global::System.Collections.Generic.List<string>, global::G.IssuesAddLabelsRequestVariant3, global::System.Collections.Generic.List<global::G.IssuesAddLabelsRequestVariant4Item>, string>? ListType352 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssuesAddLabelsRequestVariant3Label>? ListType353 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssuesAddLabelsRequestVariant4Item>? ListType354 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.IssuesSetLabelsRequestVariant1, global::System.Collections.Generic.List<string>, global::G.IssuesSetLabelsRequestVariant3, global::System.Collections.Generic.List<global::G.IssuesSetLabelsRequestVariant4Item>, string>? ListType355 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssuesSetLabelsRequestVariant3Label>? ListType356 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssuesSetLabelsRequestVariant4Item>? ListType357 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullsCreateReviewRequestComment>? ListType358 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.AnyOf<int?, string>>? ListType359 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.List<string>, string>? ListType360 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.List<string>, string>? ListType361 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? ListType362 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MigrationsListForOrgExcludeItem>? ListType363 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MigrationsGetStatusForOrgExcludeItem>? ListType364 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GlobalAdvisory>? ListType365 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.HookDeliveryItem>? ListType366 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IntegrationInstallationRequest>? ListType367 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Installation>? ListType368 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ClassroomAcceptedAssignment>? ListType369 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ClassroomAssignmentGrade>? ListType370 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SimpleClassroom>? ListType371 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SimpleClassroomAssignment>? ListType372 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeOfConduct>? ListType373 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CopilotSeatDetails>? ListType374 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CopilotUsageMetrics>? ListType375 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlertWithRepository>? ListType376 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationSecretScanningAlert>? ListType377 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Event>? ListType378 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BaseGist>? ListType379 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GistComment>? ListType380 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GistCommit>? ListType381 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GistSimple>? ListType382 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Issue>? ListType383 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.LicenseSimple>? ListType384 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MarketplaceListingPlan>? ListType385 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MarketplacePurchase>? ListType386 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Thread>? ListType387 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationSimple>? ListType388 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ActionsCacheUsageByRepository>? ListType389 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RunnerGroupsOrg>? ListType390 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.MinimalRepository>? ListType391 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Runner>? ListType392 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RunnerApplication>? ListType393 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationActionsSecret>? ListType394 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationActionsVariable>? ListType395 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrgsListAttestationsResponseAttestation>? ListType396 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningOrganizationAlertItems>? ListType397 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeSecurityConfiguration>? ListType398 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeSecurityConfigurationRepositories>? ListType399 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Codespace>? ListType400 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodespacesOrgSecret>? ListType401 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationDependabotSecret>? ListType402 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Package>? ListType403 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationInvitation>? ListType404 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrgHook>? ListType405 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Migration>? ListType406 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationRole>? ListType407 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamRoleAssignment>? ListType408 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.UserRoleAssignment>? ListType409 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PackageVersion>? ListType410 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationProgrammaticAccessGrantRequest>? ListType411 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrganizationProgrammaticAccessGrant>? ListType412 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Project>? ListType413 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrgRepoCustomPropertyValues>? ListType414 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleset>? ListType415 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryAdvisory>? ListType416 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamDiscussion>? ListType417 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamDiscussionComment>? ListType418 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Reaction>? ListType419 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamProject>? ListType420 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProjectsMoveCardResponseError>? ListType421 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProjectsMoveCardResponseError2>? ListType422 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProjectCard>? ListType423 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProjectsCreateCardResponseError>? ListType424 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ProjectColumn>? ListType425 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Artifact>? ListType426 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ActionsSecret>? ListType427 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ActionsVariable>? ListType428 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.WorkflowRun>? ListType429 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EnvironmentApprovals>? ListType430 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Job>? ListType431 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PendingDeployment>? ListType432 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Deployment>? ListType433 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Workflow>? ListType434 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Activity>? ListType435 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReposListAttestationsResponseAttestation>? ListType436 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Autolink>? ListType437 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ShortBranch>? ListType438 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CheckAnnotation>? ListType439 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CheckRun>? ListType440 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningAlertItems>? ListType441 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningAlertInstance>? ListType442 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningAnalysis>? ListType443 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeScanningCodeqlDatabase>? ListType444 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainer>? ListType445 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodespaceMachine>? ListType446 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepoCodespacesSecret>? ListType447 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Collaborator>? ListType448 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.BranchShort>? ListType449 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestSimple>? ListType450 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CheckSuite>? ListType451 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Status>? ListType452 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Contributor>? ListType453 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotAlert>? ListType454 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DependabotSecret>? ListType455 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DeploymentStatus>? ListType456 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Environment>? ListType457 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DeploymentBranchPolicy>? ListType458 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DeploymentProtectionRule>? ListType459 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CustomDeploymentRuleApp>? ListType460 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GitRef>? ListType461 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Hook>? ListType462 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PorterAuthor>? ListType463 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PorterLargeFile>? ListType464 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryInvitation>? ListType465 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssueComment>? ListType466 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssueEvent>? ListType467 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssueEventForIssue>? ListType468 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TimelineIssueEvents>? ListType469 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.DeployKey>? ListType470 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Milestone>? ListType471 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PageBuild>? ListType472 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.PullRequestReview>? ListType473 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReviewComment>? ListType474 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Release>? ListType475 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepositoryRuleDetailed>? ListType476 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SecretScanningAlert>? ListType477 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SecretScanningLocation>? ListType478 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.SimpleUser>, global::System.Collections.Generic.List<global::G.Stargazer>>? ListType479 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Stargazer>? ListType480 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<int>>? ListType481 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CommitActivity>? ListType482 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContributorActivity>? ListType483 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Tag>? ListType484 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TagProtection>? ListType485 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ContentTraffic>? ListType486 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.ReferrerTraffic>? ListType487 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodeSearchResultItem>? ListType488 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CommitSearchResultItem>? ListType489 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.IssueSearchResultItem>? ListType490 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.LabelSearchResultItem>? ListType491 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.RepoSearchResultItem>? ListType492 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TopicSearchResultItem>? ListType493 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.UserSearchResultItem>? ListType494 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.CodespacesSecret>? ListType495 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Email>? ListType496 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.GpgKey>? ListType497 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Key>? ListType498 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.UserMarketplacePurchase>? ListType499 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.OrgMembership>? ListType500 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SocialAccount>? ListType501 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.SshSigningKey>? ListType502 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.StarredRepository>? ListType503 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.TeamFull>? ListType504 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.UsersListAttestationsResponseAttestation>? ListType505 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.KeySimple>? ListType506 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.StarredRepository>, global::System.Collections.Generic.List<global::G.Repository>>? ListType507 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::System.DateTime>? ListType508 { get; set; }
     }
 }
