@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the broadcaster that’s adding the user as a VIP. This ID must match the user ID in the access token.",
         };
 
+
+
         public AddChannelVipCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

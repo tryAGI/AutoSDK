@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetReleasedExtensionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"The version of the extension to get. If not specified, it returns the latest version.",
         };
+
+
         public GetReleasedExtensionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -73,6 +76,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

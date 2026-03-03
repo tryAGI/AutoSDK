@@ -36,6 +36,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -210,6 +211,8 @@ If tool_choice isn't specified, then the model is free to choose whether to use 
 
 **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.",
         };
+
+
         public Chatv2Command(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -326,6 +329,7 @@ Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2)
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

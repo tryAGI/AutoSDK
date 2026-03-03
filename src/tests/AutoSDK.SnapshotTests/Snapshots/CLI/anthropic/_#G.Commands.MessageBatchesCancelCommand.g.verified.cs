@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.MessageBatch response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -33,6 +34,8 @@ namespace G
 
 Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
+
+
         public MessageBatchesCancelCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -75,6 +78,7 @@ Learn more about the Message Batches API in our [user guide](/en/docs/build-with
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

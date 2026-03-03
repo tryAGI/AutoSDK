@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateUserResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -26,6 +27,8 @@ namespace G
             Description = @"The string to update the channel’s description to. The description is limited to a maximum of 300 characters.  
 To remove the description, specify this parameter but don’t set it’s value (for example, `?description=`).",
         };
+
+
         public UpdateUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -66,6 +69,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

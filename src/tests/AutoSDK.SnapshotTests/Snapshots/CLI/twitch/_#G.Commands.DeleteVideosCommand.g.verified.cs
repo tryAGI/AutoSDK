@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.DeleteVideosResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -25,6 +26,8 @@ namespace G
             Description = @"The list of videos to delete. To specify more than one video, include the _id_ parameter for each video to delete. For example, `id=1234&id=5678`. You can delete a maximum of 5 videos per request. Ignores invalid video IDs.  
 If the user doesn’t have permission to delete one of the videos in the list, none of the videos are deleted.",
         };
+
+
 
         public DeleteVideosCommand(
             G.IApi client,
@@ -64,6 +67,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

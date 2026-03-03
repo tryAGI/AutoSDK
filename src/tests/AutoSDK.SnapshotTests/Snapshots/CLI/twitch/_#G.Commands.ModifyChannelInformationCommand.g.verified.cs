@@ -73,6 +73,8 @@ A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 
         {
             Description = @"Boolean flag indicating if the channel has branded content.",
         };
+
+
         public ModifyChannelInformationCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

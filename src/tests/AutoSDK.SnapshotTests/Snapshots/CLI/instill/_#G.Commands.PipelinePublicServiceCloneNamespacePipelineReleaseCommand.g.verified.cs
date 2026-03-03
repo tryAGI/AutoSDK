@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -66,6 +67,8 @@ namespace G
         {
             Description = @"Pipeline sharing information.",
         };
+
+
         public PipelinePublicServiceCloneNamespacePipelineReleaseCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -125,6 +128,7 @@ parent, and this can be either a namespace or an organization.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

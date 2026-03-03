@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUserChatColorResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -25,6 +26,8 @@ namespace G
             Description = @"The ID of the user whose username color you want to get. To specify more than one user, include the _user\_id_ parameter for each user to get. For example, `&user_id=1234&user_id=5678`. The maximum number of IDs that you may specify is 100.  
 The API ignores duplicate IDs and IDs that weren’t found.",
         };
+
+
 
         public GetUserChatColorCommand(
             G.IApi client,
@@ -64,6 +67,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

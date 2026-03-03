@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateNamespaceSecretResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -48,6 +49,8 @@ character maximum.",
         {
             Description = @"",
         };
+
+
         public PipelinePublicServiceCreateNamespaceSecretCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -94,6 +97,7 @@ character maximum.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

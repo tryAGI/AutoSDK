@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListNamespacePipelineReleasesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -74,6 +75,8 @@ expression.
         {
             Description = @"Include soft-deleted pipelines in the result.",
         };
+
+
         public PipelinePublicServiceListNamespacePipelineReleasesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -133,6 +136,7 @@ name, which is formed by the parent namespace and ID of the pipeline.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

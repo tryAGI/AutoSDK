@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -67,6 +68,8 @@ namespace G
         {
             Description = @"String with length between 1 and 39 characters. Only alphanumeric characters and dashes allowed. Must contain no leading, trailing or consecutive dashes.",
         };
+
+
         public AccountUpdateDetailsV1MePatchCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -125,6 +128,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

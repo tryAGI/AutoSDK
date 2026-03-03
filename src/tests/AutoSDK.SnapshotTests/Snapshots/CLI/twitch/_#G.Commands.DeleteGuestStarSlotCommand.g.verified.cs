@@ -58,6 +58,8 @@ namespace G
         {
             Description = @"Flag signaling that the guest should be reinvited to the session, sending them back to the invite queue.",
         };
+
+
         public DeleteGuestStarSlotCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

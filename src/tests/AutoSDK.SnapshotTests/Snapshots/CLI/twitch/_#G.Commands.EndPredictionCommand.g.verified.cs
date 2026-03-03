@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.EndPredictionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -50,6 +51,8 @@ The broadcaster has up to 24 hours after the prediction window closes to resolve
         {
             Description = @"The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.",
         };
+
+
         public EndPredictionCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -100,6 +103,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

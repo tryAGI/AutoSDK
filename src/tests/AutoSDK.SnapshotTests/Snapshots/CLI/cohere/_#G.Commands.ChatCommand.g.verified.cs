@@ -42,6 +42,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -349,6 +350,8 @@ Safety modes are not yet configurable in combination with `tools`, `tool_results
 
 Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
         };
+
+
         public ChatCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -488,6 +491,7 @@ To learn how to use the Chat API and RAG follow our [Text Generation guides](htt
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

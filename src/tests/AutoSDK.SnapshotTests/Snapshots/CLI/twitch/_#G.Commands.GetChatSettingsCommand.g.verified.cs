@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetChatSettingsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -33,6 +34,8 @@ namespace G
 This field is required only if you want to include the `non_moderator_chat_delay` and `non_moderator_chat_delay_duration` settings in the response.  
 If you specify this field, this ID must match the user ID in the user access token.",
         };
+
+
         public GetChatSettingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -77,6 +80,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

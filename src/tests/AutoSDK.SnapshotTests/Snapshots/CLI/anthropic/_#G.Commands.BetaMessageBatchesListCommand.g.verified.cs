@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.BetaListResponseMessageBatch response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -68,6 +69,8 @@ Read more about versioning and our version history [here](https://docs.anthropic
 
 This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
         };
+
+
         public BetaMessageBatchesListCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -124,6 +127,7 @@ Learn more about the Message Batches API in our [user guide](/en/docs/build-with
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.AddBlockedTermResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -40,6 +41,8 @@ namespace G
 Terms may include a wildcard character (\*). The wildcard character must appear at the beginning or end of a word or set of characters. For example, \*foo or foo\*.  
 If the blocked term already exists, the response contains the existing blocked term.",
         };
+
+
 
         public AddBlockedTermCommand(
             G.IApi client,
@@ -87,6 +90,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

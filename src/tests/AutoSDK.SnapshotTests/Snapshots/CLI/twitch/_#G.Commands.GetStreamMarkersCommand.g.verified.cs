@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetStreamMarkersResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -55,6 +56,8 @@ This parameter and the _user\_id_ query parameter are mutually exclusive.",
         {
             Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
+
+
         public GetStreamMarkersCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -109,6 +112,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

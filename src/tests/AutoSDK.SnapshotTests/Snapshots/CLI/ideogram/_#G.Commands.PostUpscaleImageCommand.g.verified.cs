@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GenerateImageResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"An image binary; only JPEG, WEBPs and PNGs are supported at this time",
         };
+
+
 
         public PostUpscaleImageCommand(
             G.IApi client,
@@ -83,6 +86,7 @@ Supported image formats include JPEG, PNG, and WEBP")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListNamespaceConnectionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -52,6 +53,8 @@ The following filters are supported:
 - List connections where app name, vendor or connection ID match `googl`: `q=""googl""`.
 - List connections where the component type is `openai` (e.g. to setup a connector within a pipeline): `integrationId=""openai""`.",
         };
+
+
         public PipelinePublicServiceListNamespaceConnectionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -98,6 +101,7 @@ The following filters are supported:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

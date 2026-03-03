@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetAutoModSettingsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"The ID of the broadcaster or a user that has permission to moderate the broadcaster’s chat room. This ID must match the user ID in the user access token.",
         };
+
+
 
         public GetAutomodSettingsCommand(
             G.IApi client,
@@ -74,6 +77,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

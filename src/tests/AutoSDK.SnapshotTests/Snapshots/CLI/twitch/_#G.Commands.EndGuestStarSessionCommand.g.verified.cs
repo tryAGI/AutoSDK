@@ -31,6 +31,8 @@ namespace G
             Description = @"ID for the session to end on behalf of the broadcaster.",
         };
 
+
+
         public EndGuestStarSessionCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

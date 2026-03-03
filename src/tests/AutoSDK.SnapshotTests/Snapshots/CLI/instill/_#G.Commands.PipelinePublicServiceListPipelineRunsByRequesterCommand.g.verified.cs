@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListPipelineRunsByRequesterResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -83,6 +84,8 @@ The default value is the current timestamp.",
         {
             Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
+
+
         public PipelinePublicServiceListPipelineRunsByRequesterCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -146,6 +149,7 @@ The requester can view all the runs by the requester across different pipelines.
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

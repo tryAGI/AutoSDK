@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetCustomRewardResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ Duplicate IDs are ignored. The response contains only the IDs that were found. I
         {
             Description = @"A Boolean value that determines whether the response contains only the custom rewards that the app may manage (the app is identified by the ID in the Client-Id header). Set to **true** to get only the custom rewards that the app may manage. The default is **false**.",
         };
+
+
         public GetCustomRewardCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -87,6 +90,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateConduitsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"The number of shards to create for this conduit.",
         };
+
+
 
         public CreateConduitsCommand(
             G.IApi client,
@@ -63,6 +66,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

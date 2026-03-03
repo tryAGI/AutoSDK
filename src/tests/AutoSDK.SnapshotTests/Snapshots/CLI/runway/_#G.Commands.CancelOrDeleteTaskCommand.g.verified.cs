@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the task.",
         };
 
+
+
         public CancelOrDeleteTaskCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

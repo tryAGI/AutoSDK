@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CorpusUploadsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"The MIME type of the file to be uploaded.",
         };
+
+
 
         public CorporaUploadsCreateCommand(
             G.IApi client,
@@ -70,6 +73,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

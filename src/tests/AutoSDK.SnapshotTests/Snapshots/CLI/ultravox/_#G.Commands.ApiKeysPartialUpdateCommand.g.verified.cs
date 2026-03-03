@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.APIKey response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)",
         };
+
+
         public ApiKeysPartialUpdateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -69,6 +72,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -568,6 +568,15 @@ namespace {endPoint.Settings.Namespace}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
+        if (endPoint.RequestType.IsBinary || endPoint.RequestMediaType == "application/octet-stream")
+        {
+            return @"
+            var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
+            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""application/octet-stream"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
         var requestContent = endPoint.RequestType.IsBase64
             ? "global::System.Convert.ToBase64String(request)"
             : jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext);
@@ -589,6 +598,7 @@ namespace {endPoint.Settings.Namespace}
             endPoint.RequestType.IsArray ||
             endPoint.RequestType.IsEnum ||
             endPoint.RequestType.IsBase64 ||
+            endPoint.RequestType.IsBinary ||
             endPoint.RequestType.CSharpTypeWithoutNullability is "string")
         {
             return " ";

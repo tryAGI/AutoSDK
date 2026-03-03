@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.RenameNamespaceModelResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ namespace G
             Description = @"The new resource ID. This will transform the resource name into
 `namespaces/{namespace.id}/models/{new_model_id}`.",
         };
+
+
 
         public ModelPublicServiceRenameNamespaceModelCommand(
             G.IApi client,
@@ -83,6 +86,7 @@ parent namespace and the ID of the model.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

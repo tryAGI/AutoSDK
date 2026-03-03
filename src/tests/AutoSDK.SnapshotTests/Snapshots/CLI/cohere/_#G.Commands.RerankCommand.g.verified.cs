@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.RerankResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -79,6 +80,8 @@ We recommend a maximum of 1,000 documents for optimal endpoint performance.",
         {
             Description = @"The maximum number of chunks to produce internally from a document",
         };
+
+
         public RerankCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -141,6 +144,7 @@ We recommend a maximum of 1,000 documents for optimal endpoint performance.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

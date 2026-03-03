@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.BatchEmbedContentsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"Required. Embed requests for the batch. The model in each of these requests must match the model specified `BatchEmbedContentsRequest.model`.",
         };
+
+
         public BatchEmbedContentsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -69,6 +72,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

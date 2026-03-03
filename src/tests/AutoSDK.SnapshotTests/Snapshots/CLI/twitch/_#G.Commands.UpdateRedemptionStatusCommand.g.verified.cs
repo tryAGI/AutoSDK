@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateRedemptionStatusResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -48,6 +49,8 @@ namespace G
 * FULFILLED
 Setting the status to CANCELED refunds the user’s channel points.",
         };
+
+
 
         public UpdateRedemptionStatusCommand(
             G.IApi client,
@@ -99,6 +102,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

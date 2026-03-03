@@ -31,6 +31,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateCustomRewardResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -129,6 +130,8 @@ namespace G
         {
             Description = @"A Boolean value that determines whether redemptions should be set to FULFILLED status immediately when a reward is redeemed. If **false**, status is set to UNFULFILLED and follows the normal request queue process.",
         };
+
+
         public UpdateCustomRewardCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -231,6 +234,7 @@ The body of the request should contain only the fields you’re updating.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

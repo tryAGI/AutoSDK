@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ToolDetail response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ namespace G
             Description = @"The base definition of a tool that can be used during a call. Exactly one
  implementation (http or client) should be set.",
         };
+
+
 
         public ToolsUpdateCommand(
             G.IApi client,
@@ -82,6 +85,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

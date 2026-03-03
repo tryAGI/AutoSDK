@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetTeamsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -32,6 +33,8 @@ namespace G
         {
             Description = @"The ID of the team to get. This parameter and the _name_ parameter are mutually exclusive; you must specify the team’s name or ID but not both.",
         };
+
+
         public GetTeamsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -74,6 +77,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

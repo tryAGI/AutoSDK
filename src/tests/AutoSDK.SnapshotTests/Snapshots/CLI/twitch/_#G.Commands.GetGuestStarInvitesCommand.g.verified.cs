@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetGuestStarInvitesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"The session ID to query for invite status.",
         };
+
+
 
         public GetGuestStarInvitesCommand(
             G.IApi client,
@@ -86,6 +89,7 @@ __Authorization:__
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

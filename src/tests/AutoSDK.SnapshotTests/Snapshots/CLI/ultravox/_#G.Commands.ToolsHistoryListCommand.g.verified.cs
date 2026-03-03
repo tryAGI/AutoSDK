@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.PaginatedToolHistoryList response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"Number of results to return per page.",
         };
+
+
         public ToolsHistoryListCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -80,6 +83,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

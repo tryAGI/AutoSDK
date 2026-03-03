@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"Model version",
         };
+
+
 
         public ModelPublicServiceDeleteNamespaceModelVersionCommand(
             G.IApi client,
@@ -82,6 +85,7 @@ parent namespace and the ID of the model, and version.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

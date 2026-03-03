@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListPipelineIDsByConnectionIDResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -54,6 +55,8 @@ namespace G
 The following filters are supported:
 - `q` (fuzzy search on pipeline ID)",
         };
+
+
         public PipelinePublicServiceListPipelineIDsByConnectionIDCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -106,6 +109,7 @@ the connection.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

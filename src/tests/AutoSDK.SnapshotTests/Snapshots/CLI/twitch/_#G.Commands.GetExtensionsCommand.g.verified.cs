@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetExtensionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"The version of the extension to get. If not specified, it returns the latest, released version. If you don’t have a released version, you must specify a version; otherwise, the list is empty.",
         };
+
+
         public GetExtensionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -73,6 +76,7 @@ Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

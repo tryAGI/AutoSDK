@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ParagraphsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"ID of the transcript",
         };
+
+
 
         public GetTranscriptParagraphsCommand(
             G.IApi client,
@@ -59,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

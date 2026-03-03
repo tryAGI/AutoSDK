@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.DeploymentsCreateResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"The 64-character string ID of the model version that you want to deploy.",
         };
+
+
 
         public CreateDeploymentsCommand(
             G.IApi client,
@@ -158,6 +161,7 @@ The response will be a JSON object describing the deployment:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

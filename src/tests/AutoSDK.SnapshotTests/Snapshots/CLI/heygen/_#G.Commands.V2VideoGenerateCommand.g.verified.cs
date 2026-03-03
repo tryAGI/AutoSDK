@@ -59,6 +59,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public V2VideoGenerateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

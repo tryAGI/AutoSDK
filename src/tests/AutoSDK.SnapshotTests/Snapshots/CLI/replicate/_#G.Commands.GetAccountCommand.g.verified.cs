@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.AccountGetResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetAccountCommand(
@@ -68,6 +71,7 @@ The response will be a JSON object describing the account:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

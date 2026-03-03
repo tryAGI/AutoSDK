@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ClassificationOutput response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -57,6 +58,8 @@ You can provide only either `model` or `classifier_id`",
         {
             Description = @"List of labels used for classification",
         };
+
+
         public ClassifyV1ClassifyPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -103,6 +106,7 @@ You can provide only either `model` or `classifier_id`",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

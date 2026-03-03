@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::System.Collections.Generic.IList<global::G.UltravoxV1CorpusQueryResult> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"The maximum number of results to return.",
         };
+
+
         public CorporaQueryCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -80,6 +83,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the prediction to cancel.",
         };
 
+
+
         public CancelPredictionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

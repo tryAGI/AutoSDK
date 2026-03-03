@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -73,6 +74,8 @@ namespace G
         {
             Description = @"Extra body parameters for the model.",
         };
+
+
         public OpenaiAudioSpeechV1OpenaiAudioSpeechPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -135,6 +138,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

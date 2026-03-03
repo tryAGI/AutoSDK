@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.SingleCommand.g.cs
+﻿//HintName: G.Commands.SingleGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class SingleCommand : global::System.CommandLine.Command
+    internal sealed partial class SingleGroupCommand : global::System.CommandLine.Command
     {
-        public SingleCommand(
+        public SingleGroupCommand(
             GetCurrentIpCommand command0,
             GetIpByIpCommand command1,
             GetCurrentHostnameCommand command2,

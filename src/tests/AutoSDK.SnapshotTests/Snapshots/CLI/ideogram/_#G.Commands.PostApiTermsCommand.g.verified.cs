@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the terms which are being accepted.",
         };
 
+
+
         public PostApiTermsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

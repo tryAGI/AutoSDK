@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ChatResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public AppPublicServiceChatCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -115,6 +118,7 @@ and the response needs to be processed incrementally.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

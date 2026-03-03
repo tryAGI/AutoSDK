@@ -45,6 +45,8 @@ namespace G
             Description = @"The required\_configuration string to use with the extension.",
         };
 
+
+
         public SetExtensionRequiredConfigurationCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

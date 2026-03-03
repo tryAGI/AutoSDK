@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetOperationResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -32,6 +33,8 @@ information in their response.",
         {
             Description = @"Indicates the authenticated user is making the request on behalf of another entity, typically an organization they belong to",
         };
+
+
         public PipelinePublicServiceGetOperationCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -71,6 +74,7 @@ long-running operations such as asynchronous pipeline triggers.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

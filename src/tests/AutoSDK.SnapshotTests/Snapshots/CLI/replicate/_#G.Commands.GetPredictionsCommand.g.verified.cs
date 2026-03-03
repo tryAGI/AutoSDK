@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the prediction to get.",
         };
 
+
+
         public GetPredictionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

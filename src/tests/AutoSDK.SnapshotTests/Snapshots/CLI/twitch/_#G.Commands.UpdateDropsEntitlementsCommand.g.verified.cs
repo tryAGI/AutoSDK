@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateDropsEntitlementsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -34,6 +35,8 @@ namespace G
 * CLAIMED — The user claimed the benefit.
 * FULFILLED — The developer granted the benefit that the user claimed.",
         };
+
+
         public UpdateDropsEntitlementsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -84,6 +87,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

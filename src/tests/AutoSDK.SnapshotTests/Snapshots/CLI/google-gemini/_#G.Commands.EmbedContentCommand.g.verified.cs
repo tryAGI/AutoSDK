@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.EmbedContentResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"Optional. Optional reduced dimension for the output embedding. If set, excessive values in the output embedding are truncated from the end. Supported by newer models since 2024, and the earlier model (`models/embedding-001`) cannot specify this value.",
         };
+
+
         public EmbedContentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -113,6 +116,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

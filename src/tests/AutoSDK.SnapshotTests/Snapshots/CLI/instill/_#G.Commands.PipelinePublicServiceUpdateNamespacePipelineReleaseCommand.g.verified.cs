@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateNamespacePipelineReleaseResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -76,6 +77,8 @@ layout.",
             Description = @"Recipe in YAML format describes the components of a pipeline and how they
 are connected.",
         };
+
+
         public PipelinePublicServiceUpdateNamespacePipelineReleaseCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -142,6 +145,7 @@ perform this action.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

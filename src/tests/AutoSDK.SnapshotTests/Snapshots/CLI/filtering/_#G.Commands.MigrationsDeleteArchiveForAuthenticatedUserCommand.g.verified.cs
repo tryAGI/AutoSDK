@@ -24,6 +24,8 @@ namespace G
             Description = @"The unique identifier of the migration.",
         };
 
+
+
         public MigrationsDeleteArchiveForAuthenticatedUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

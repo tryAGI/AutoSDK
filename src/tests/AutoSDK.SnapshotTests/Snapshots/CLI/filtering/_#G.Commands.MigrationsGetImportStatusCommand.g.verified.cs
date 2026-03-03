@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.Import response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"The name of the repository without the `.git` extension. The name is not case sensitive.",
         };
+
+
 
         public MigrationsGetImportStatusCommand(
             G.IApi client,
@@ -106,6 +109,7 @@ This section includes details about Git LFS related fields that may be present i
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

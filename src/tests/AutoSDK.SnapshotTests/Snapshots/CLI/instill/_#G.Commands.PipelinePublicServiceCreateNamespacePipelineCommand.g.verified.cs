@@ -28,6 +28,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateNamespacePipelineResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -112,6 +113,8 @@ are connected.",
         {
             Description = @"Pipeline profile image in base64 format.",
         };
+
+
         public PipelinePublicServiceCreateNamespacePipelineCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -194,6 +197,7 @@ are connected.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

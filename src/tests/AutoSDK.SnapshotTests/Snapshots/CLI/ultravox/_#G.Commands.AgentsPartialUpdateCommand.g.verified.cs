@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.Agent response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"A CallTemplate that can be used to create Ultravox calls with shared properties.",
         };
+
+
         public AgentsPartialUpdateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -80,6 +83,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

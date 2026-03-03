@@ -24,6 +24,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public V1VideoDeleteCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

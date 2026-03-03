@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ProcessCatalogFilesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
+
+
         public ProcessCatalogFilesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -69,6 +72,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

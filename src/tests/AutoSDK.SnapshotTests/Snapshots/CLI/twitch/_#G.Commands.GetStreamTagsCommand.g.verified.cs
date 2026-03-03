@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetStreamTagsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"The ID of the broadcaster whose stream tags you want to get.",
         };
+
+
 
         public GetStreamTagsCommand(
             G.IApi client,
@@ -65,6 +68,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.DomainCommand.g.cs
+﻿//HintName: G.Commands.DomainGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class DomainCommand : global::System.CommandLine.Command
+    internal sealed partial class DomainGroupCommand : global::System.CommandLine.Command
     {
-        public DomainCommand(
+        public DomainGroupCommand(
             GetDomainsCommand command0)
             : base(
                 name: "domain")

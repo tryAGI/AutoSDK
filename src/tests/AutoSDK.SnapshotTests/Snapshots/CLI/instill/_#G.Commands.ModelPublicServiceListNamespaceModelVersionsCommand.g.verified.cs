@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListNamespaceModelVersionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -46,6 +47,8 @@ and 100, respectively.",
         {
             Description = @"Page number.",
         };
+
+
         public ModelPublicServiceListNamespaceModelVersionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -93,6 +96,7 @@ Contains model version and digest.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateChannelStreamScheduleSegmentResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -66,6 +67,8 @@ namespace G
         {
             Description = @"The broadcast’s title. The title may contain a maximum of 140 characters.",
         };
+
+
         public CreateChannelStreamScheduleSegmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -128,6 +131,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreatePredictionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -45,6 +46,8 @@ namespace G
         {
             Description = @"The length of time (in seconds) that the prediction will run for. The minimum is 30 seconds and the maximum is 1800 seconds (30 minutes).",
         };
+
+
 
         public CreatePredictionCommand(
             G.IApi client,
@@ -98,6 +101,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

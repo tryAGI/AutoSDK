@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.EndPollResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -40,6 +41,8 @@ namespace G
 * TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.
 * ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.",
         };
+
+
 
         public EndPollCommand(
             G.IApi client,
@@ -87,6 +90,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

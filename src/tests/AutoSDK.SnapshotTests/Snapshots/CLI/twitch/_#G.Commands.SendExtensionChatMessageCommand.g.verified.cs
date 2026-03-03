@@ -45,6 +45,8 @@ namespace G
             Description = @"The extension’s version number.",
         };
 
+
+
         public SendExtensionChatMessageCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

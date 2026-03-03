@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetInformationByIpCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -15,20 +16,26 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.FullResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Ip { get; } = new(
             name: "ip")
         {
-            Description = "",
+            Description = @"A single IPv4 or IPv6 IP address.",
         };
 
-        public GetInformationByIpCommand(G.IApi client) : base(
+
+
+        public GetInformationByIpCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns information about the selected IP.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Ip);
 
@@ -55,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

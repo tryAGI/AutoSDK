@@ -24,6 +24,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetClipsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -81,6 +82,8 @@ namespace G
         {
             Description = @"A Boolean value that determines whether the response includes featured clips. If **true**, returns only clips that are featured. If **false**, returns only clips that aren’t featured. All clips are returned if this parameter is not present.",
         };
+
+
         public GetClipsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -155,6 +158,7 @@ The _id_, _game\_id_, and _broadcaster\_id_ query parameters are mutually exclus
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

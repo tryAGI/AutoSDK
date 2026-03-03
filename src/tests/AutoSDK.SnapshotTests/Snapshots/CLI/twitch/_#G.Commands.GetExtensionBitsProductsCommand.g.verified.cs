@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetExtensionBitsProductsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -25,6 +26,8 @@ namespace G
         {
             Description = @"A Boolean value that determines whether to include disabled or expired Bits products in the response. The default is **false**.",
         };
+
+
         public GetExtensionBitsProductsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -63,6 +66,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

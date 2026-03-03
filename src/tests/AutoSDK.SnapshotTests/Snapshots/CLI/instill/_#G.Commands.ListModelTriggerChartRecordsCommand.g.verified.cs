@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListModelTriggerChartRecordsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -50,6 +51,8 @@ The default value is the beginning of the current day, in UTC.",
             Description = @"End of the time range from which the records will be fetched.
 The default value is the current timestamp.",
         };
+
+
         public ListModelTriggerChartRecordsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -98,6 +101,7 @@ amount of triggers in a time bucket.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

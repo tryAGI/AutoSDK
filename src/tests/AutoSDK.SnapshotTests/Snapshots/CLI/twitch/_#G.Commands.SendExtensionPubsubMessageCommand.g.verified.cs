@@ -48,6 +48,8 @@ If `is_global_broadcast` is **true**, you must set this field to global. The bro
         {
             Description = @"A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.",
         };
+
+
         public SendExtensionPubsubMessageCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

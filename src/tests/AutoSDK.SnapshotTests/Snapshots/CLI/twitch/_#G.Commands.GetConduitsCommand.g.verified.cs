@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetConduitsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetConduitsCommand(
@@ -53,6 +56,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

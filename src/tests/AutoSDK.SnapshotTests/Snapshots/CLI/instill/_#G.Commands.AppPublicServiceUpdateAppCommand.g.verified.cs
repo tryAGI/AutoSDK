@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateAppResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -71,6 +72,8 @@ If the last AI assistant app catalog uid is empty, the last AI assistant app cat
             Description = @"last AI assistant app top k
 If the last AI assistant app top k is empty, the last AI assistant app top k will be set to empty.",
         };
+
+
         public AppPublicServiceUpdateAppCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -129,6 +132,7 @@ If the last AI assistant app top k is empty, the last AI assistant app top k wil
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

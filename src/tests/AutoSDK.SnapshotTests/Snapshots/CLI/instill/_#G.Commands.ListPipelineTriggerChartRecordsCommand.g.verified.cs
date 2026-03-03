@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListPipelineTriggerChartRecordsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -34,6 +35,8 @@ namespace G
 expression.
 - Example: `create_time>timestamp(""2000-06-19T23:31:08.657Z"")`.",
         };
+
+
         public ListPipelineTriggerChartRecordsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -74,6 +77,7 @@ NOTE: This method will soon return the trigger counts of a given requester.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

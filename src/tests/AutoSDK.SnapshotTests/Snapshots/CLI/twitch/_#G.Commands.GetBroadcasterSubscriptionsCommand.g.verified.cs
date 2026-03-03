@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetBroadcasterSubscriptionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -52,6 +53,8 @@ namespace G
         {
             Description = @"The cursor used to get the previous page of results. Do not specify if you set the _user\_id_ query parameter. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
+
+
         public GetBroadcasterSubscriptionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -108,6 +111,7 @@ A Twitch extensions may use an app access token if the broadcaster has granted t
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

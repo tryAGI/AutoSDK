@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::System.Collections.Generic.IList<global::G.Migration> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -32,6 +33,8 @@ namespace G
         {
             Description = @"The page number of the results to fetch. For more information, see ""[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).""",
         };
+
+
         public MigrationsListForAuthenticatedUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -70,6 +73,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

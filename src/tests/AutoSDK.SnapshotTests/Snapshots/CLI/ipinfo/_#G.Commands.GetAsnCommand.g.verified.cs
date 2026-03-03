@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetAsnCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -15,20 +16,26 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.AsnResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<int> Asn { get; } = new(
             name: "asn")
         {
-            Description = "",
+            Description = @"an ASN number.",
         };
 
-        public GetAsnCommand(G.IApi client) : base(
+
+
+        public GetAsnCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns information about an AS.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Asn);
 
@@ -55,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetDatasetUsageResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -25,6 +26,8 @@ namespace G
         {
             Description = @"The name of the project that is making the request.",
         };
+
+
         public GetDatasetUsageCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -59,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

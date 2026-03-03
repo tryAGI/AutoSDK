@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetContentClassificationLabelsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -26,6 +27,8 @@ namespace G
             Description = @"Locale for the Content Classification Labels. You may specify a maximum of 1 locale. Default: `“en-US”`  
 Supported locales: `""bg-BG"", ""cs-CZ"", ""da-DK"", ""da-DK"", ""de-DE"", ""el-GR"", ""en-GB"", ""en-US"", ""es-ES"", ""es-MX"", ""fi-FI"", ""fr-FR"", ""hu-HU"", ""it-IT"", ""ja-JP"", ""ko-KR"", ""nl-NL"", ""no-NO"", ""pl-PL"", ""pt-BT"", ""pt-PT"", ""ro-RO"", ""ru-RU"", ""sk-SK"", ""sv-SE"", ""th-TH"", ""tr-TR"", ""vi-VN"", ""zh-CN"", ""zh-TW""`",
         };
+
+
         public GetContentClassificationLabelsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -64,6 +67,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

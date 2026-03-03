@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateNamespaceSecretResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -55,6 +56,8 @@ character maximum.",
         {
             Description = @"",
         };
+
+
         public PipelinePublicServiceUpdateNamespaceSecretCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -108,6 +111,7 @@ account when updating the resource.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

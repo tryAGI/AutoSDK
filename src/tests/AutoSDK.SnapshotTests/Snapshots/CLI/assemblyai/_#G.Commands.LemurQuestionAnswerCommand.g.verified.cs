@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.LemurQuestionAnswerResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public LemurQuestionAnswerCommand(
@@ -50,6 +53,7 @@ The questions can be any whose answers you find useful, such as judging whether 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

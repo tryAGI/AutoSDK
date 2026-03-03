@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.DeployResult response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -45,6 +46,8 @@ namespace G
         {
             Description = @"A specific revision, if left empty uses the last one",
         };
+
+
         public DeployCreateV1DeployPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -91,6 +94,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

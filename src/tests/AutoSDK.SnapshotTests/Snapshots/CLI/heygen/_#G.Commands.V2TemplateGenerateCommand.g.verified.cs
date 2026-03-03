@@ -52,6 +52,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public V2TemplateGenerateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

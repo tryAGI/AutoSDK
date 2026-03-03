@@ -62,8 +62,8 @@ namespace G
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
             } 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetExtensionSecretsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetExtensionSecretsCommand(
@@ -53,6 +56,7 @@ Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

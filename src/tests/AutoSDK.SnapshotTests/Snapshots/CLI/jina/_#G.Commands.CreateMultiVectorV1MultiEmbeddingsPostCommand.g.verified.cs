@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ColbertModelEmbeddingsOutput response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -55,6 +56,8 @@ Available models and corresponding param size and dimension:
         {
             Description = @"Dimensions of the vectors to be returned. Only valid for v2 colbert models. Defaults to 128",
         };
+
+
         public CreateMultiVectorV1MultiEmbeddingsPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -105,6 +108,7 @@ Available models and corresponding param size and dimension:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

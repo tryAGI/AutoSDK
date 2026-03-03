@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.BetaMessageBatch response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -42,6 +43,8 @@ To use multiple betas, use a comma separated list like `beta1,beta2` or specify 
 
 Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).",
         };
+
+
         public BetaMessageBatchesCancelCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -88,6 +91,7 @@ Learn more about the Message Batches API in our [user guide](/en/docs/build-with
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

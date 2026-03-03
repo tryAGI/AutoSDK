@@ -31,6 +31,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public PersonalizedVideoAddContactCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

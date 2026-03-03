@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateNamespaceConnectionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -83,6 +84,8 @@ generated.",
 with some extra information that might vary across vendors. This
 information is passed as connection metadata.",
         };
+
+
         public PipelinePublicServiceCreateNamespaceConnectionCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -145,6 +148,7 @@ information is passed as connection metadata.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

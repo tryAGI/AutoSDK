@@ -24,6 +24,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public PersonalizedVideoProjectDetailCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

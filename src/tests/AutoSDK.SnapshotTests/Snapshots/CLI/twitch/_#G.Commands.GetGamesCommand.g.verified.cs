@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetGamesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ namespace G
         {
             Description = @"The [IGDB](https://www.igdb.com/) ID of the game to get. Include this parameter for each game you want to get. For example, `&igdb_id=1234&igdb_id=5678`. You may specify a maximum of 100 IDs. The endpoint ignores duplicate and invalid IDs or IDs that weren’t found.",
         };
+
+
         public GetGamesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -87,6 +90,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

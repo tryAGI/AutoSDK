@@ -25,6 +25,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CompletionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -115,6 +116,8 @@ Recommended for advanced use cases only. You usually only need to use `temperatu
 
 See [streaming](https://docs.anthropic.com/en/api/streaming) for details.",
         };
+
+
         public CompletePostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -189,6 +192,7 @@ Future models and features will not be compatible with Text Completions. See our
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

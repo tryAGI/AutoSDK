@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the broadcaster who owns the channel where the user has VIP status.",
         };
 
+
+
         public RemoveChannelVipCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CheckNamespaceResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"The namespace ID to be checked.",
         };
+
+
 
         public CheckNamespaceCommand(
             G.IApi client,
@@ -60,6 +63,7 @@ resource that is using it.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -18,6 +18,8 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
 
 
+
+
         public AccountsMeBillingSubscriptionRetrieveCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

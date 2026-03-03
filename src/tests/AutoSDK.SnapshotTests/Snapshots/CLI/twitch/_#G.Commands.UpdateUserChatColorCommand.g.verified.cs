@@ -47,6 +47,8 @@ namespace G
 Turbo and Prime users may specify a named color or a Hex color code like #9146FF. If you use a Hex color code, remember to URL encode it.",
         };
 
+
+
         public UpdateUserChatColorCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

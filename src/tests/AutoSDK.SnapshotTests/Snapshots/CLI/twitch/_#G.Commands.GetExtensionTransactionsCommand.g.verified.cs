@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetExtensionTransactionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -45,6 +46,8 @@ namespace G
         {
             Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
+
+
         public GetExtensionTransactionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -95,6 +98,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

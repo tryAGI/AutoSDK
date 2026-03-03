@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetRangesCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -15,20 +16,26 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.RangesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Domain { get; } = new(
             name: "domain")
         {
-            Description = "",
+            Description = @"a domain.",
         };
 
-        public GetRangesCommand(G.IApi client) : base(
+
+
+        public GetRangesCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns information about a domain ranges.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Domain);
 
@@ -55,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

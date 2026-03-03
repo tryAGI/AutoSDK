@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetCheermotesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -26,6 +27,8 @@ namespace G
             Description = @"The ID of the broadcaster whose custom Cheermotes you want to get. Specify the broadcaster’s ID if you want to include the broadcaster’s Cheermotes in the response (not all broadcasters upload Cheermotes). If not specified, the response contains only global Cheermotes.  
 If the broadcaster uploaded Cheermotes, the `type` field in the response is set to **channel\_custom**.",
         };
+
+
         public GetCheermotesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -64,6 +67,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

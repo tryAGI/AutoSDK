@@ -52,6 +52,8 @@ namespace G
             Description = @"The slot assignment to give to the user. Must be a numeric identifier between “1” and “N” where N is the max number of slots for the session. Max number of slots allowed for the session is reported by [Get Channel Guest Star Settings](https://dev.twitch.tv/docs/api/reference#get-channel-guest-star-settings).",
         };
 
+
+
         public AssignGuestStarSlotCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

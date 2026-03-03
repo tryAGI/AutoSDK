@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateEventSubSubscriptionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -45,6 +46,8 @@ namespace G
         {
             Description = @"The transport details that you want Twitch to use when sending you notifications.",
         };
+
+
 
         public CreateEventsubSubscriptionCommand(
             G.IApi client,
@@ -100,6 +103,7 @@ If you use [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-event
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

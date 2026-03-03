@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListPipelineRunsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -70,6 +71,8 @@ Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
         {
             Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
+
+
         public PipelinePublicServiceListPipelineRunsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -131,6 +134,7 @@ runs requested by themselves.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

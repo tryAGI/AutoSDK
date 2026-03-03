@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the custom reward to delete.",
         };
 
+
+
         public DeleteCustomRewardCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

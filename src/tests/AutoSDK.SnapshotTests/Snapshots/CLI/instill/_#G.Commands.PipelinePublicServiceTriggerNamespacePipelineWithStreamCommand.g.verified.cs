@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.PipelinePublicServiceTriggerNamespacePipelineWithStreamResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -52,6 +53,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public PipelinePublicServiceTriggerNamespacePipelineWithStreamCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -107,6 +110,7 @@ and ID of the pipeline.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

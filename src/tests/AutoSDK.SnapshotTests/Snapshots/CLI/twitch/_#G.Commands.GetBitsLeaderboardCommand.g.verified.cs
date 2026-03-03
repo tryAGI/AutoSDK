@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetBitsLeaderboardResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -53,6 +54,8 @@ If your start date uses the ‘+’ offset operator (for example, `2022-01-01T00
         {
             Description = @"An ID that identifies a user that cheered bits in the channel. If _count_ is greater than 1, the response may include users ranked above and below the specified user. To get the leaderboard’s top leaders, don’t specify a user ID.",
         };
+
+
         public GetBitsLeaderboardCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -103,6 +106,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

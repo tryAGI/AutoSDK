@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListIntegrationsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -44,6 +45,8 @@ The following filters are supported:
 **Examples**:
 - List integrations where app name or vendor match `googl`: `q=""googl""`.",
         };
+
+
         public PipelinePublicServiceListIntegrationsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -86,6 +89,7 @@ The following filters are supported:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

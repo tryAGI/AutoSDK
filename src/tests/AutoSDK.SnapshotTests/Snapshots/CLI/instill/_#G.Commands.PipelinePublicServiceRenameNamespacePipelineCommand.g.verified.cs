@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.RenameNamespacePipelineResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ namespace G
             Description = @"The new resource ID. This will transform the resource name into
 `namespaces/{namespace.id}/pipelines/{new_pipeline_id}`.",
         };
+
+
 
         public PipelinePublicServiceRenameNamespacePipelineCommand(
             G.IApi client,
@@ -90,6 +93,7 @@ perform this action.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

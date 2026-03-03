@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.PurgeLemurRequestDataResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"The ID of the LeMUR request whose data you want to delete. This would be found in the response of the original request.",
         };
+
+
 
         public PurgeLemurRequestDataCommand(
             G.IApi client,
@@ -60,6 +63,7 @@ The LLM response data, as well as any context provided in the original request w
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

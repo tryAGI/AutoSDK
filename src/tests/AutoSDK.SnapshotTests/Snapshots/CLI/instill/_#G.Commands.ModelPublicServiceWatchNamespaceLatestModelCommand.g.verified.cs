@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.WatchNamespaceLatestModelResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"Model ID",
         };
+
+
 
         public ModelPublicServiceWatchNamespaceLatestModelCommand(
             G.IApi client,
@@ -72,6 +75,7 @@ allows clients to track the state.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

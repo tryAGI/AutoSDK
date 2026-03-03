@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetGlobalEmotesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetGlobalEmotesCommand(
@@ -59,6 +62,7 @@ None")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

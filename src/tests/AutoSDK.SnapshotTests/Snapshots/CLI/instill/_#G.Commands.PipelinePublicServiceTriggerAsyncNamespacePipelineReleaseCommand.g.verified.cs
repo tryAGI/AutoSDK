@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.TriggerAsyncNamespacePipelineReleaseResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public PipelinePublicServiceTriggerAsyncNamespacePipelineReleaseCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -119,6 +122,7 @@ and ID.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

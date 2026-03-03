@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetEventSubSubscriptionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -62,6 +63,8 @@ namespace G
         {
             Description = @"The cursor used to get the next page of results. The `pagination` object in the response contains the cursor's value.",
         };
+
+
         public GetEventsubSubscriptionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -118,6 +121,7 @@ Use the _status_, _type_, and _user\_id_ query parameters to filter the list of 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

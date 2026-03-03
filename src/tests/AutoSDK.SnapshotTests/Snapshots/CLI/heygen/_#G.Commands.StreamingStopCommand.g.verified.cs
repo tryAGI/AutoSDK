@@ -24,6 +24,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public StreamingStopCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

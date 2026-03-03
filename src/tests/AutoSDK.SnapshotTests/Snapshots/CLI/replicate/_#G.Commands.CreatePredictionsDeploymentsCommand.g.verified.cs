@@ -104,6 +104,8 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.",
         };
+
+
         public CreatePredictionsDeploymentsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

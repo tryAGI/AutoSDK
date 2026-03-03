@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.BetaCountMessageTokensResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -204,6 +205,8 @@ When enabled, responses include `thinking` content blocks showing Claude's think
 
 See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.",
         };
+
+
         public BetaMessagesCountTokensPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -270,6 +273,7 @@ Learn more about token counting in our [user guide](/en/docs/build-with-claude/t
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

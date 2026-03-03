@@ -31,6 +31,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public StreamingIceCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

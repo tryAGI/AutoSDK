@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetChannelFollowersResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -46,6 +47,8 @@ Using this parameter requires both a user access token with the **moderator:read
         {
             Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read more](https://dev.twitch.tv/docs/api/guide#pagination).",
         };
+
+
         public GetChannelFollowersCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -99,6 +102,7 @@ This endpoint will return specific follower information only if both of the abov
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

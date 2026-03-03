@@ -45,6 +45,8 @@ namespace G
             Description = @"Twitch User ID for the guest to invite to the Guest Star session.",
         };
 
+
+
         public SendGuestStarInviteCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

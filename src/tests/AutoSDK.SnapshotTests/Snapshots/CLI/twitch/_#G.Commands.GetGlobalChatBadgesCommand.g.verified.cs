@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetGlobalChatBadgesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetGlobalChatBadgesCommand(
@@ -57,6 +60,7 @@ None")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

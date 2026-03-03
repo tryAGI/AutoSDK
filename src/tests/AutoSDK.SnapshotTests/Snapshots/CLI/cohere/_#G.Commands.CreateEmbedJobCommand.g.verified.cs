@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateEmbedJobResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -87,6 +88,8 @@ Available models and corresponding embedding dimensions:
 
 Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.",
         };
+
+
         public CreateEmbedJobCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -145,6 +148,7 @@ Passing `START` will discard the start of the input. `END` will discard the end 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

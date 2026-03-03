@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUserEmotesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"The cursor used to get the next page of results. The Pagination object in the response contains the cursor’s value.",
         };
+
+
         public GetUserEmotesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -85,6 +88,7 @@ __Authorization:__
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

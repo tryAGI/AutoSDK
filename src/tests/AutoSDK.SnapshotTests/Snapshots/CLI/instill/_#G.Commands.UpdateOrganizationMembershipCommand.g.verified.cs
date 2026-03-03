@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateOrganizationMembershipResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -48,6 +49,8 @@ https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fi
         {
             Description = @"Role of the user in the organization.",
         };
+
+
 
         public UpdateOrganizationMembershipCommand(
             G.IApi client,
@@ -95,6 +98,7 @@ https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fi
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

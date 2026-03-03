@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListComponentRunsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -75,6 +76,8 @@ The basic view excludes input / output data.
         {
             Description = @"Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to",
         };
+
+
         public PipelinePublicServiceListComponentRunsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -133,6 +136,7 @@ The basic view excludes input / output data.
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

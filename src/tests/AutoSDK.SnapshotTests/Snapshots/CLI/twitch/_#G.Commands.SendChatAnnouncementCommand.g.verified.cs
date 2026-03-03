@@ -50,6 +50,8 @@ namespace G
 * primary (default)
 If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).",
         };
+
+
         public SendChatAnnouncementCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

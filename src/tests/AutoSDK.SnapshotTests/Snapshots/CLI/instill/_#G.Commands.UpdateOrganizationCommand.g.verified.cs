@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateOrganizationResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -43,6 +44,8 @@ maximum.
 
 Note that the ID can be updated.",
         };
+
+
         public UpdateOrganizationCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -88,6 +91,7 @@ account when updating the resource.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

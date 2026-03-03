@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the broadcaster that initiated the raid. This ID must match the user ID in the user access token.",
         };
 
+
+
         public CancelARaidCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

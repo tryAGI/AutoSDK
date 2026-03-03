@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.RangeCommand.g.cs
+﻿//HintName: G.Commands.RangeGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class RangeCommand : global::System.CommandLine.Command
+    internal sealed partial class RangeGroupCommand : global::System.CommandLine.Command
     {
-        public RangeCommand(
+        public RangeGroupCommand(
             GetRangesCommand command0)
             : base(
                 name: "range")

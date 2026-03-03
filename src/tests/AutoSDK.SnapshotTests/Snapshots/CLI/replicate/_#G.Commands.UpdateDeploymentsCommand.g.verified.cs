@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.DeploymentsUpdateResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"The ID of the model version that you want to deploy",
         };
+
+
         public UpdateDeploymentsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -152,6 +155,7 @@ Updating any deployment properties will increment the `number` field of the `cur
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

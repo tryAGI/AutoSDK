@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of API key to operate on. Expected to be a URL safe Base64 encoded UUID.",
         };
 
+
+
         public DeleteSingleApiKeyCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

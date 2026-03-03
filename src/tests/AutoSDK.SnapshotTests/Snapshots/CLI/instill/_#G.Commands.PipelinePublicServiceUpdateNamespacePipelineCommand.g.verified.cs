@@ -29,6 +29,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateNamespacePipelineResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -119,6 +120,8 @@ are connected.",
         {
             Description = @"Pipeline profile image in base64 format.",
         };
+
+
         public PipelinePublicServiceUpdateNamespacePipelineCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -210,6 +213,7 @@ account when updating the resource.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

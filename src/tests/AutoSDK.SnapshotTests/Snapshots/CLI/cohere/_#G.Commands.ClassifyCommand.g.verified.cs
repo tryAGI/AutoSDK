@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ClassifyResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -64,6 +65,8 @@ If `NONE` is selected, when the input exceeds the maximum input token length an 
         {
             Description = @"The name of the project that is making the request.",
         };
+
+
         public ClassifyCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -119,6 +122,7 @@ Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) tra
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

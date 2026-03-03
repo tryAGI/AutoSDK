@@ -41,6 +41,8 @@ namespace G
 * The message must not belong to another moderator.
 If not specified, the request removes all messages in the broadcaster’s chat room.",
         };
+
+
         public DeleteChatMessagesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateStreamMarkerResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"A short description of the marker to help the user remember why they marked the location. The maximum length of the description is 140 characters.",
         };
+
+
         public CreateStreamMarkerCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -80,6 +83,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

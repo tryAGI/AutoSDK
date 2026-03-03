@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListEventsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -58,6 +59,8 @@ Supported sorting fields:
         {
             Description = @"The name of the project that is making the request.",
         };
+
+
         public ListEventsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -108,6 +111,7 @@ Supported sorting fields:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

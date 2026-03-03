@@ -25,6 +25,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UltravoxV1CorpusSource response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -87,6 +88,8 @@ namespace G
         {
             Description = @"Allows loading from a uploaded document.",
         };
+
+
         public CorporaSourcesCreateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -157,6 +160,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

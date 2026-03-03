@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the subscription to delete.",
         };
 
+
+
         public DeleteEventsubSubscriptionCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

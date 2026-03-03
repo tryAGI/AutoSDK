@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::System.Collections.Generic.IList<global::G.HardwareListResponseItem> response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public ListHardwareCommand(
@@ -66,6 +69,7 @@ The response will be a JSON array of hardware objects:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

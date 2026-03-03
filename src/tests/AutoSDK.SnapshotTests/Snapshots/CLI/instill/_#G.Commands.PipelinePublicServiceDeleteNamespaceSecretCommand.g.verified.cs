@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"Secret ID",
         };
+
+
 
         public PipelinePublicServiceDeleteNamespaceSecretCommand(
             G.IApi client,
@@ -71,6 +74,7 @@ the parent namespace and the ID of the secret.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

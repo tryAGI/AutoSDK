@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetNamespacePipelineReleaseResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -49,6 +50,8 @@ namespace G
  - VIEW_FULL: Full representation.
  - VIEW_RECIPE: Contains the recipe of the resource.",
         };
+
+
         public PipelinePublicServiceGetNamespacePipelineReleaseCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -96,6 +99,7 @@ by its resource name, formed by its parent namespace and ID.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

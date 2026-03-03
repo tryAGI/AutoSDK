@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the broadcaster that owns the streaming schedule you want to get.",
         };
 
+
+
         public GetChannelIcalendarCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

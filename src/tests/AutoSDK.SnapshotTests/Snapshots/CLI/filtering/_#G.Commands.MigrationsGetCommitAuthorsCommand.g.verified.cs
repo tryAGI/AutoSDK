@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::System.Collections.Generic.IList<global::G.PorterAuthor> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -38,6 +39,8 @@ namespace G
         {
             Description = @"A user ID. Only return users with an ID greater than this ID.",
         };
+
+
         public MigrationsGetCommitAuthorsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -85,6 +88,7 @@ This endpoint and the [Map a commit author](https://docs.github.com/rest/migrati
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.LemurSummaryResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public LemurSummaryCommand(
@@ -50,6 +53,7 @@ You can give the model context to obtain more targeted results while outputting 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

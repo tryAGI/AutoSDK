@@ -30,6 +30,8 @@ namespace G
         {
             Description = @"The name of the project that is making the request.",
         };
+
+
         public CancelEmbedJobCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

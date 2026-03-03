@@ -25,6 +25,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.EmbedByTypeResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -108,6 +109,8 @@ Image embeddings are supported with Embed v3.0 and newer models.",
             Description = @"The number of dimensions of the output embedding. This is only available for `embed-v4` and newer models.
 Possible values are `256`, `512`, `1024`, and `1536`. The default is `1536`.",
         };
+
+
         public Embedv2Command(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -182,6 +185,7 @@ If you want to learn more how to use the embedding model, have a look at the [Se
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

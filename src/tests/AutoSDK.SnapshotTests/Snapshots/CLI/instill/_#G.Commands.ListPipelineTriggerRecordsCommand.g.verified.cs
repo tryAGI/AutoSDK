@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListPipelineTriggerRecordsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -43,6 +44,8 @@ at most 100 pipelines will be returned. The cap value for this parameter is
 expression.
 - Example: `create_time>timestamp(""2000-06-19T23:31:08.657Z"")`.",
         };
+
+
         public ListPipelineTriggerRecordsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -85,6 +88,7 @@ expression.
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -24,6 +24,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListMessagesResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -80,6 +81,8 @@ namespace G
         {
             Description = @"message_uid this is optional, if provided, only the message with the given message_uid will be returned",
         };
+
+
         public AppPublicServiceListMessagesCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -146,6 +149,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

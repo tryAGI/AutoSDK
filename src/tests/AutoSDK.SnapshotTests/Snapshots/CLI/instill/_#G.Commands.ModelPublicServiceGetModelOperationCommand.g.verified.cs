@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetModelOperationResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -34,6 +35,8 @@ namespace G
  - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
  - VIEW_FULL: Full representation.",
         };
+
+
         public ModelPublicServiceGetModelOperationCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -73,6 +76,7 @@ long-running operations in a model, such as trigger.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

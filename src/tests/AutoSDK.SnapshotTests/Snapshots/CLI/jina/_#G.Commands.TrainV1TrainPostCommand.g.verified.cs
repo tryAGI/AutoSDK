@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.TrainingOutput response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -58,6 +59,8 @@ You can provide only either `model` or `classifier_id`",
         {
             Description = @"The visibility of the classifier when created. Will be ignored if `classifier_id` is provided",
         };
+
+
         public TrainV1TrainPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -104,6 +107,7 @@ You can provide only either `model` or `classifier_id`",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetCustomRewardRedemptionResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -75,6 +76,8 @@ The default is OLDEST.",
         {
             Description = @"The maximum number of redemptions to return per page in the response. The minimum page size is 1 redemption per page and the maximum is 50\. The default is 20.",
         };
+
+
         public GetCustomRewardRedemptionCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -137,6 +140,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

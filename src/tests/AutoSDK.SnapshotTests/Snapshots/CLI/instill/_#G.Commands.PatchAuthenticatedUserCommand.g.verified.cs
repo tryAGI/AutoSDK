@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.PatchAuthenticatedUserResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -81,6 +82,8 @@ It must be one of the following allowed roles:
         {
             Description = @"Onboarding Status.",
         };
+
+
         public PatchAuthenticatedUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -142,6 +145,7 @@ when updating the resource.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

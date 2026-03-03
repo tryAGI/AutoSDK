@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateTokenResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -53,6 +54,8 @@ This field can reflect the client(s) that will use the token.",
         {
             Description = @"Expiration time.",
         };
+
+
         public CreateTokenCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -99,6 +102,7 @@ This field can reflect the client(s) that will use the token.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

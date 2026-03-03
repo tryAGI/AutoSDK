@@ -26,6 +26,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateAutoModSettingsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -94,6 +95,8 @@ namespace G
         {
             Description = @"The Automod level for profanity.",
         };
+
+
         public UpdateAutomodSettingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -186,6 +189,7 @@ Valid values for all levels are from 0 (no filtering) through 4 (most aggressive
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

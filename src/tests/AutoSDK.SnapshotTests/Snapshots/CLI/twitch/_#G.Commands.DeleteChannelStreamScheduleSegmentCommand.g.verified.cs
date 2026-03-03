@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the broadcast segment to remove.",
         };
 
+
+
         public DeleteChannelStreamScheduleSegmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the training to get.",
         };
 
+
+
         public GetTrainingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -39,6 +39,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -187,6 +188,8 @@ The total length of input tokens and generated tokens is limited by the model's 
         {
             Description = @"Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.",
         };
+
+
         public OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -313,6 +316,7 @@ The total length of input tokens and generated tokens is limited by the model's 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

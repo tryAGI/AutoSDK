@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUserActiveExtensionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -26,6 +27,8 @@ namespace G
             Description = @"The ID of the broadcaster whose active extensions you want to get.  
 This parameter is required if you specify an app access token and is optional if you specify a user access token. If you specify a user access token and don’t specify this parameter, the API uses the user ID from the access token.",
         };
+
+
         public GetUserActiveExtensionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -66,6 +69,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

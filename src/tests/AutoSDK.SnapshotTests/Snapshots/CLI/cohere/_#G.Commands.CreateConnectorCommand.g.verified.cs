@@ -24,6 +24,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.CreateConnectorResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -80,6 +81,8 @@ namespace G
         {
             Description = @"The service to service authentication configuration for the connector. Cannot be specified if oauth is specified.",
         };
+
+
         public CreateConnectorCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -146,6 +149,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

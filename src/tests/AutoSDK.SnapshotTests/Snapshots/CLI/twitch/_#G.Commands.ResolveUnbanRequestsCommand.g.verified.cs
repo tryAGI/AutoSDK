@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ResolveUnbanRequestsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -54,6 +55,8 @@ namespace G
         {
             Description = @"Message supplied by the unban request resolver",
         };
+
+
         public ResolveUnbanRequestsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -109,6 +112,7 @@ __Authorization:__
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

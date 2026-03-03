@@ -31,6 +31,8 @@ namespace G
             Description = @"repo_name parameter",
         };
 
+
+
         public MigrationsUnlockRepoForAuthenticatedUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

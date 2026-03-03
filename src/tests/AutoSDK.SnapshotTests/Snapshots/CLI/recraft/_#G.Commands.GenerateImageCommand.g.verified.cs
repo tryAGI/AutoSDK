@@ -25,6 +25,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GenerateImageResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -87,6 +88,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public GenerateImageCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -157,6 +160,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

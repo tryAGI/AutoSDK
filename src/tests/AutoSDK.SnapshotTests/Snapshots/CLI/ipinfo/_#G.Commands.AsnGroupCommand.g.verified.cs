@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.AsnCommand.g.cs
+﻿//HintName: G.Commands.AsnGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class AsnCommand : global::System.CommandLine.Command
+    internal sealed partial class AsnGroupCommand : global::System.CommandLine.Command
     {
-        public AsnCommand(
+        public AsnGroupCommand(
             GetAsnCommand command0)
             : base(
                 name: "asn")

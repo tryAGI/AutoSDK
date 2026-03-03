@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.PorterAuthor response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -52,6 +53,8 @@ namespace G
         {
             Description = @"The new Git author name.",
         };
+
+
         public MigrationsMapCommitAuthorCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -106,6 +109,7 @@ new commits to the repository.
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

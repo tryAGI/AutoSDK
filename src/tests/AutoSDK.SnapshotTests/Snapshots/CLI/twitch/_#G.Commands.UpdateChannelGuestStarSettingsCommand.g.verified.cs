@@ -62,6 +62,8 @@ namespace G
         {
             Description = @"Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.",
         };
+
+
         public UpdateChannelGuestStarSettingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

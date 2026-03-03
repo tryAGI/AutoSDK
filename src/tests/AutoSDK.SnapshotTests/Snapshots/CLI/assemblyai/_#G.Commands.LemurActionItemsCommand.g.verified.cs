@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.LemurActionItemsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public LemurActionItemsCommand(
@@ -49,6 +52,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -26,6 +26,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateChatSettingsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -106,6 +107,8 @@ Set to **true** if the broadcaster restricts the chat room to subscribers only; 
             Description = @"A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  
 Set to **true** if the broadcaster allows only unique messages; otherwise, **false**. The default is **false**.",
         };
+
+
         public UpdateChatSettingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -194,6 +197,7 @@ To remove the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

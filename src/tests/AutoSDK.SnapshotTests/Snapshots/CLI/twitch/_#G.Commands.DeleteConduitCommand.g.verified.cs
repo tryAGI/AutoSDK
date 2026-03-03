@@ -24,6 +24,8 @@ namespace G
             Description = @"Conduit ID.",
         };
 
+
+
         public DeleteConduitCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

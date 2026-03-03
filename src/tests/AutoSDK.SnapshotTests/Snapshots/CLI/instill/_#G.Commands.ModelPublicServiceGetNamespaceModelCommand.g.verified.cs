@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetNamespaceModelResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -41,6 +42,8 @@ namespace G
  - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
  - VIEW_FULL: Full representation.",
         };
+
+
         public ModelPublicServiceGetNamespaceModelCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -83,6 +86,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

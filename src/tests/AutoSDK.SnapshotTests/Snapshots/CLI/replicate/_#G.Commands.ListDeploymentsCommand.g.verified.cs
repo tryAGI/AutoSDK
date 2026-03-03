@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.DeploymentsListResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public ListDeploymentsCommand(
@@ -89,6 +92,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

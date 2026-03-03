@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetRemainingCreditResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -24,6 +25,8 @@ namespace G
         {
             Description = @"Namespace ID",
         };
+
+
 
         public GetRemainingCreditCommand(
             G.IApi client,
@@ -63,6 +66,7 @@ On Instill Core, this endpoint will return a 404 Not Found status.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

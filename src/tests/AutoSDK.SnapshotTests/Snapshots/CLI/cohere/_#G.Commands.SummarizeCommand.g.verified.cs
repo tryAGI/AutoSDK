@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.SummarizeResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -73,6 +74,8 @@ namespace G
         {
             Description = @"The name of the project that is making the request.",
         };
+
+
         public SummarizeCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -138,6 +141,7 @@ Generates a summary in English for a given text.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

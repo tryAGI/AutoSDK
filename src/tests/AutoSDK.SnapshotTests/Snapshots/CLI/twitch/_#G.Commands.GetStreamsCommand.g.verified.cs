@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetStreamsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -78,6 +79,8 @@ You may specify a maximum of 100 language codes. To specify multiple languages, 
         {
             Description = @"The cursor used to get the next page of results. The **Pagination** object in the response contains the cursor’s value. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)",
         };
+
+
         public GetStreamsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -144,6 +147,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListTokensResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -34,6 +35,8 @@ at most 10 pipelines will be returned. The cap value for this parameter is
         {
             Description = @"Page token.",
         };
+
+
         public ListTokensCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -72,6 +75,7 @@ at most 10 pipelines will be returned. The cap value for this parameter is
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

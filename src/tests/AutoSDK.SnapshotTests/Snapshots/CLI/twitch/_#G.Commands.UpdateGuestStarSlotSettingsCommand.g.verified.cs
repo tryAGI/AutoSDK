@@ -72,6 +72,8 @@ namespace G
         {
             Description = @"Value from 0-100 that controls the audio volume for shared views containing the slot.",
         };
+
+
         public UpdateGuestStarSlotSettingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

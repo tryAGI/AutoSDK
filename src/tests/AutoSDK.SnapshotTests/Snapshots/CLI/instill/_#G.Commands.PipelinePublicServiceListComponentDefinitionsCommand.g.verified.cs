@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListComponentDefinitionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -55,6 +56,8 @@ expression.
         {
             Description = @"Page number.",
         };
+
+
         public PipelinePublicServiceListComponentDefinitionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -103,6 +106,7 @@ capabilities, for the components that might be used in a VDP pipeline.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

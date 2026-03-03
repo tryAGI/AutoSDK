@@ -99,6 +99,17 @@ public record struct EndPoint(
         var requestMediaType = requestMediaTypes
             .Select(x => x.Key)
             .FirstOrDefault() ?? "application/json";
+
+        // If media type is octet-stream but no schema was found, treat as byte[]
+        if (requestType == null && requestMediaType == "application/octet-stream")
+        {
+            requestType = TypeData.Default with
+            {
+                CSharpTypeRaw = "byte[]",
+                IsBinary = true,
+            };
+        }
+
         if (requestType?.IsBase64 == true)
         {
             requestMediaType = "application/octet-stream";

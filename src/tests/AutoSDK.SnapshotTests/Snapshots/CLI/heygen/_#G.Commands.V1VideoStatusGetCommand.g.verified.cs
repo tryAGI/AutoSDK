@@ -24,6 +24,8 @@ namespace G
         {
             Description = @"",
         };
+
+
         public V1VideoStatusGetCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

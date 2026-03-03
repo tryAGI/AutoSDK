@@ -45,6 +45,8 @@ namespace G
             Description = @"Twitch User ID for the guest to revoke the Guest Star session invite from.",
         };
 
+
+
         public DeleteGuestStarInviteCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

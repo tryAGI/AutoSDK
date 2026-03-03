@@ -24,6 +24,8 @@ namespace G
             Description = @"The ID of the training you want to cancel.",
         };
 
+
+
         public CancelTrainingsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

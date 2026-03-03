@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListModelsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -47,6 +48,8 @@ Defaults to `20`, min value of `1`, max value of `1000`.",
         {
             Description = @"When provided, filters the list of models to only the default model to the endpoint. This parameter is only valid when `endpoint` is provided.",
         };
+
+
         public ListModelsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -93,6 +96,7 @@ Defaults to `20`, min value of `1`, max value of `1000`.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

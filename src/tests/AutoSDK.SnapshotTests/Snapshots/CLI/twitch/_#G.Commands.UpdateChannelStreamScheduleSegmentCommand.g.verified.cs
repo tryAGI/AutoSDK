@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateChannelStreamScheduleSegmentResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -75,6 +76,8 @@ namespace G
         {
             Description = @"The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New\_York).",
         };
+
+
         public UpdateChannelStreamScheduleSegmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -143,6 +146,7 @@ Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-ac
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

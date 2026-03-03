@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetObjectUploadURLResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -56,6 +57,8 @@ it must be in RFC3339 formatted date-time string",
             Description = @"object live time in days
 minimum is 1 day. if set to 0, the object will not be deleted automatically",
         };
+
+
         public GetObjectUploadURLCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -106,6 +109,7 @@ minimum is 1 day. if set to 0, the object will not be deleted automatically",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

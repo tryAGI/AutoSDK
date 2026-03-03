@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetAbuseCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -15,20 +16,26 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.AbuseResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Ip { get; } = new(
             name: "ip")
         {
-            Description = "",
+            Description = @"A single IPv4 or IPv6 IP address.",
         };
 
-        public GetAbuseCommand(G.IApi client) : base(
+
+
+        public GetAbuseCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Our abuse contact API returns data containing information belonging to the abuse contact of every IP address on the Internet. Fields included in this response are the abuse contact's email address, postal/ZIP code, city, state, country, name, network, and phone number.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
             Arguments.Add(Ip);
 
@@ -55,6 +62,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

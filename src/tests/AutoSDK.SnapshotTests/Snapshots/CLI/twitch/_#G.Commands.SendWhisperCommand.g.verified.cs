@@ -42,6 +42,8 @@ The maximum message lengths are:
 Messages that exceed the maximum length are truncated.",
         };
 
+
+
         public SendWhisperCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

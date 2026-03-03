@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetDropsEntitlementsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -62,6 +63,8 @@ namespace G
         {
             Description = @"The maximum number of entitlements to return per page in the response. The minimum page size is 1 entitlement per page and the maximum is 1000\. The default is 20.",
         };
+
+
         public GetDropsEntitlementsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -136,6 +139,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

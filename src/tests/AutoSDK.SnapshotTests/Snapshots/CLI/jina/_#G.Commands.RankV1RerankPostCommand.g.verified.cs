@@ -20,6 +20,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.RankingOutput response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ Available models and corresponding param size and dimension:
         {
             Description = @"If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request. If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index + text refers to the list passed into the request. Defaults to true",
         };
+
+
         public RankV1RerankPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -109,6 +112,7 @@ Available models and corresponding param size and dimension:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListConversationsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -67,6 +68,8 @@ first check conversation_uid, then check conversation_id, then check if_all",
         {
             Description = @"If true, all conversations will be returned. This has higher priority over conversation_id, page_size, and page_token.",
         };
+
+
         public AppPublicServiceListConversationsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -125,6 +128,7 @@ first check conversation_uid, then check conversation_id, then check if_all",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

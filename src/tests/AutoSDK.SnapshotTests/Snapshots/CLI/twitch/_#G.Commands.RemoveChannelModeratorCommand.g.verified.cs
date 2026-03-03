@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the user to remove as a moderator from the broadcaster’s chat room.",
         };
 
+
+
         public RemoveChannelModeratorCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

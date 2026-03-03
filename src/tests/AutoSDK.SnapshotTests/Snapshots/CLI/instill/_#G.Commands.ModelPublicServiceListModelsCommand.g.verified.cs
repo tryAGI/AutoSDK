@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListModelsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -78,6 +79,8 @@ expression.
             Description = @"Order by field, with options for ordering by `id`, `create_time` or `update_time`.
 Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
         };
+
+
         public ModelPublicServiceListModelsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -136,6 +139,7 @@ Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

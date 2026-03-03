@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetExtensionConfigurationSegmentResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -42,6 +43,8 @@ You may specify one or more segments. To specify multiple segments, include the 
         {
             Description = @"The ID of the broadcaster that installed the extension. This parameter is required if you set the _segment_ parameter to broadcaster or developer. Do not specify this parameter if you set _segment_ to global.",
         };
+
+
         public GetExtensionConfigurationSegmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -90,6 +93,7 @@ Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

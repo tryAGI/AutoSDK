@@ -38,6 +38,8 @@ namespace G
             Description = @"The ID of the blocked term to remove from the broadcaster’s list of blocked terms.",
         };
 
+
+
         public RemoveBlockedTermCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

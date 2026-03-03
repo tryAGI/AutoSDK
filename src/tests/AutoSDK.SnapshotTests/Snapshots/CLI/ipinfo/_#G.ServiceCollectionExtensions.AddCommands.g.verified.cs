@@ -73,19 +73,19 @@ namespace G
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GeneralCommand>(services);
+                GeneralGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SingleCommand>(services);
+                SingleGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PrivacyDetectionCommand>(services);
+                PrivacyDetectionGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AsnCommand>(services);
+                AsnGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                RangeCommand>(services);
+                RangeGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DomainCommand>(services);
+                DomainGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AbuseCommand>(services);
+                AbuseGroupCommand>(services);
 
             // Register the main command service as a singleton
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

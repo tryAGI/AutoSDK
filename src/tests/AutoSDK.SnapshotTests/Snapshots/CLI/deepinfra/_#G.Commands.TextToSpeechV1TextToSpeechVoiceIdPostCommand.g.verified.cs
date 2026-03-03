@@ -23,6 +23,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -73,6 +74,8 @@ namespace G
         {
             Description = @"ISO 639-1, 2 letter language code",
         };
+
+
         public TextToSpeechV1TextToSpeechVoiceIdPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -135,6 +138,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

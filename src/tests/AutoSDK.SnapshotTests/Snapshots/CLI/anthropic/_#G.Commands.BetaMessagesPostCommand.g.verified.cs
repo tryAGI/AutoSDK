@@ -30,6 +30,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.BetaMessage response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -275,6 +276,8 @@ In nucleus sampling, we compute the cumulative distribution over all the options
 
 Recommended for advanced use cases only. You usually only need to use `temperature`.",
         };
+
+
         public BetaMessagesPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -369,6 +372,7 @@ Learn more about the Messages API in our [user guide](/en/docs/initial-setup)")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

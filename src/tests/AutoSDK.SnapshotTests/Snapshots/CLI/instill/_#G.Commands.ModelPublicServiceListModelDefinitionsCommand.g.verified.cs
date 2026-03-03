@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListModelDefinitionsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -44,6 +45,8 @@ this parameter is 100 (i.e. any value above that will be coerced to 100).",
  - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).
  - VIEW_FULL: Full representation.",
         };
+
+
         public ModelPublicServiceListModelDefinitionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -86,6 +89,7 @@ this parameter is 100 (i.e. any value above that will be coerced to 100).",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

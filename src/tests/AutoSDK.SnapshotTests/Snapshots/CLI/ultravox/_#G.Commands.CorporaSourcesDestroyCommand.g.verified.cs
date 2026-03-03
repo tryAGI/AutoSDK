@@ -31,6 +31,8 @@ namespace G
             Description = @"",
         };
 
+
+
         public CorporaSourcesDestroyCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -31,6 +31,8 @@ namespace G
             Description = @"The ID of the user to add as a moderator in the broadcaster’s chat room.",
         };
 
+
+
         public AddChannelModeratorCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

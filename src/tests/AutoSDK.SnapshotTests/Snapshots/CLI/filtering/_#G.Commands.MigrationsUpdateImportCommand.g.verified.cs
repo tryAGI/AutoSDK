@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.Import response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -59,6 +60,8 @@ namespace G
         {
             Description = @"For a tfvc import, the name of the project that is being imported.",
         };
+
+
         public MigrationsUpdateImportCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -121,6 +124,7 @@ You can select the project to import by providing one of the objects in the `pro
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

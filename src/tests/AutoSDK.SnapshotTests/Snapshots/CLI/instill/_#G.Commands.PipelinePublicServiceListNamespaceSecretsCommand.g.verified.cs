@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ListNamespaceSecretsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -40,6 +41,8 @@ at most 10 pipelines will be returned. The cap value for this parameter is
         {
             Description = @"Page secret.",
         };
+
+
         public PipelinePublicServiceListNamespaceSecretsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -83,6 +86,7 @@ namespace.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

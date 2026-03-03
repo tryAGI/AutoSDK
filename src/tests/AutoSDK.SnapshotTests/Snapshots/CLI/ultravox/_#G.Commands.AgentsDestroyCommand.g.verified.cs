@@ -24,6 +24,8 @@ namespace G
             Description = @"",
         };
 
+
+
         public AgentsDestroyCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

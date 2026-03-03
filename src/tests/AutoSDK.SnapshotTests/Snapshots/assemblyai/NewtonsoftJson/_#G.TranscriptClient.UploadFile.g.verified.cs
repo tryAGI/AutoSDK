@@ -7,10 +7,12 @@ namespace G
     public partial class TranscriptClient
     {
         partial void PrepareUploadFileArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            byte[] request);
         partial void PrepareUploadFileRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            byte[] request);
         partial void ProcessUploadFileResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -24,15 +26,20 @@ namespace G
         /// Upload a media file<br/>
         /// Upload a media file to AssemblyAI's servers.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UploadedFile> UploadFileAsync(
+            byte[] request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareUploadFileArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                request: request);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/upload",
@@ -62,12 +69,17 @@ namespace G
                 }
             }
 
+            var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
+            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+            __httpRequest.Content = __httpRequestContent;
+
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
             PrepareUploadFileRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                request: request);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

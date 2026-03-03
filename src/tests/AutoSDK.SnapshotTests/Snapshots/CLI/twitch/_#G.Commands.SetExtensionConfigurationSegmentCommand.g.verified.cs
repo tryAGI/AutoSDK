@@ -54,6 +54,8 @@ namespace G
         {
             Description = @"The version number that identifies this definition of the segment’s data. If not specified, the latest definition is updated.",
         };
+
+
         public SetExtensionConfigurationSegmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

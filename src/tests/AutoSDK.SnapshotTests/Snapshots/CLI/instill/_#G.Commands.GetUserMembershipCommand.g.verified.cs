@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUserMembershipResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -41,6 +42,8 @@ namespace G
  - VIEW_BASIC: Default view, only includes basic information.
  - VIEW_FULL: Full representation.",
         };
+
+
         public GetUserMembershipCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -84,6 +87,7 @@ organization. The authenticated must match the membership parent.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

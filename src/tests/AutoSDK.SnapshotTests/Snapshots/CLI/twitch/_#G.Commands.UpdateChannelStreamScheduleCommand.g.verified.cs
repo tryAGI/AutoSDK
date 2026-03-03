@@ -51,6 +51,8 @@ namespace G
         {
             Description = @"The time zone that the broadcaster broadcasts from. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New\_York). Required if _is\_vacation\_enabled_ is **true**.",
         };
+
+
         public UpdateChannelStreamScheduleCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

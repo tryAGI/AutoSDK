@@ -51,6 +51,8 @@ namespace G
         {
             Description = @"The slot to move this user assignment to. If the destination slot is occupied, the user assigned will be swapped into `source_slot_id`.",
         };
+
+
         public UpdateGuestStarSlotCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

@@ -7,6 +7,7 @@ namespace G
     internal sealed partial class GetCurrentOrganizationCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
+        private readonly global::System.IServiceProvider _serviceProvider;
 
         partial void Initialize();
         partial void Validate(
@@ -14,15 +15,21 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
 
-        public GetCurrentOrganizationCommand(G.IApi client) : base(
+
+
+        public GetCurrentOrganizationCommand(
+            G.IApi client,
+            global::System.IServiceProvider serviceProvider) : base(
             name: "get",
             description: @"Returns the current organization.")
         {
             _client = client;
+            _serviceProvider = serviceProvider;
 
 
             Initialize();
@@ -45,6 +52,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

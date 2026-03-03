@@ -33,6 +33,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.Generation response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -177,6 +178,8 @@ WARNING: `ALL` is deprecated, and will be removed in a future release.",
         {
             Description = @"When enabled, the user's prompt will be sent to the model without any pre-processing.",
         };
+
+
         public GenerateCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -282,6 +285,7 @@ Generates realistic text conditioned on a given input.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

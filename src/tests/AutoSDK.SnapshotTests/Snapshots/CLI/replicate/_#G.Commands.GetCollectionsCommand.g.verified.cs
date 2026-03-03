@@ -24,6 +24,8 @@ namespace G
             Description = @"The slug of the collection, like `super-resolution` or `image-restoration`. See [replicate.com/collections](https://replicate.com/collections).",
         };
 
+
+
         public GetCollectionsCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(

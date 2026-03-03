@@ -16,6 +16,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.LemurResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -25,6 +26,8 @@ namespace G
             Description = @"The ID of the LeMUR request you previously made.
 This would be found in the response of the original request.",
         };
+
+
 
         public GetLemurResponseCommand(
             G.IApi client,
@@ -60,6 +63,7 @@ This would be found in the response of the original request.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

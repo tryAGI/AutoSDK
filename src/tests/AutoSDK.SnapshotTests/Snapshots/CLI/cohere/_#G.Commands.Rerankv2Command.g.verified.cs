@@ -21,6 +21,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.Rerankv2Response response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -64,6 +65,8 @@ For optimal performance we recommend against sending more than 1,000 documents i
         {
             Description = @"Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.",
         };
+
+
         public Rerankv2Command(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -118,6 +121,7 @@ For optimal performance we recommend against sending more than 1,000 documents i
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

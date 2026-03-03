@@ -19,6 +19,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::System.Collections.Generic.IList<global::G.Migration> response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -45,6 +46,8 @@ namespace G
         {
             Description = @"Exclude attributes from the API response to improve performance",
         };
+
+
         public MigrationsListForOrgCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -93,6 +96,7 @@ A list of `repositories` is only returned for export migrations.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

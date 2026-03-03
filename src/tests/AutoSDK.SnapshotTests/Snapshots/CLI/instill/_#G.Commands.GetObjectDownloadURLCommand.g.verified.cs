@@ -18,6 +18,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetObjectDownloadURLResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -39,6 +40,8 @@ namespace G
             Description = @"expiration time in days for the URL.
 maximum is 7 days. if set to 0, URL will not expire.",
         };
+
+
         public GetObjectDownloadURLCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -81,6 +84,7 @@ maximum is 7 days. if set to 0, URL will not expire.",
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

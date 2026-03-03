@@ -15,8 +15,11 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.WebhooksDefaultSecretGetResponse response,
             global::System.Threading.CancellationToken cancellationToken);
+
+
 
 
         public GetSecretDefaultWebhooksCommand(
@@ -65,6 +68,7 @@ The response will be a JSON object with a `key` property:
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

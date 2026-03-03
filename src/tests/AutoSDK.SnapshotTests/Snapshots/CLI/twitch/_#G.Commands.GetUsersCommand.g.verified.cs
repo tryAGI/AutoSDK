@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUsersResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -32,6 +33,8 @@ namespace G
         {
             Description = @"The login name of the user to get. To specify more than one user, include the _login_ parameter for each user to get. For example, `login=foo&login=bar`. The maximum number of login names you may specify is 100.",
         };
+
+
         public GetUsersCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -77,6 +80,7 @@ Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-acc
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

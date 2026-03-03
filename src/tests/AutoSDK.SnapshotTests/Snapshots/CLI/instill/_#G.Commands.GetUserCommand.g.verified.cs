@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.GetUserResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -34,6 +35,8 @@ namespace G
  - VIEW_BASIC: Default view, only includes basic information.
  - VIEW_FULL: Full representation.",
         };
+
+
         public GetUserCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -72,6 +75,7 @@ namespace G
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

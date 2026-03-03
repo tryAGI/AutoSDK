@@ -30,6 +30,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.UpdateNamespaceModelResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -127,6 +128,8 @@ model definition).",
         {
             Description = @"Model profile image in base64 format.",
         };
+
+
         public ModelPublicServiceUpdateNamespaceModelCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -221,6 +224,7 @@ account when updating the resource.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

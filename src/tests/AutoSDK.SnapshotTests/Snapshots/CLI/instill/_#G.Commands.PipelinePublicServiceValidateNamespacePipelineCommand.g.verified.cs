@@ -17,6 +17,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.ValidateNamespacePipelineResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -31,6 +32,8 @@ namespace G
         {
             Description = @"Pipeline ID",
         };
+
+
 
         public PipelinePublicServiceValidateNamespacePipelineCommand(
             G.IApi client,
@@ -73,6 +76,7 @@ Validation checks the recipe of the pipeline and the status of its components.")
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

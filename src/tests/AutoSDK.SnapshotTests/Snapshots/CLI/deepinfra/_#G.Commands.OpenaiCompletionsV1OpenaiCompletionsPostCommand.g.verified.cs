@@ -37,6 +37,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             string response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -173,6 +174,8 @@ The total length of input tokens and generated tokens is limited by the model's 
         {
             Description = @"streaming options",
         };
+
+
         public OpenaiCompletionsV1OpenaiCompletionsPostCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -291,6 +294,7 @@ The total length of input tokens and generated tokens is limited by the model's 
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }

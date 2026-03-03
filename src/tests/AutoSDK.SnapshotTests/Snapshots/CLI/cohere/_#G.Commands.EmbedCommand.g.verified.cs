@@ -22,6 +22,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
             global::G.EmbedResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
@@ -86,6 +87,8 @@ Images are only supported with Embed v3.0 and newer models.",
 - `""clustering""`: Used for the embeddings run through a clustering algorithm.
 - `""image""`: Used for embeddings with image input.",
         };
+
+
         public EmbedCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -148,6 +151,7 @@ If you want to learn more how to use the embedding model, have a look at the [Se
 
             Complete(
                 parseResult: parseResult,
+
                 response: response,
                 cancellationToken: cancellationToken);
         }
