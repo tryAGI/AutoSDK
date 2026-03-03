@@ -397,18 +397,24 @@ public class SchemaContext(
         return [context, ..children];
     }
     
-    public void ComputeData(int level = 0, int maxDepth = 20)
+    public void ComputeData(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
         // Prevent infinite recursion for circular references
         if (level > maxDepth)
         {
             return;
         }
-        
-        ResolvedReference?.ComputeData(level + 1, maxDepth: maxDepth);
+
+        visited ??= [];
+        if (!visited.Add(this))
+        {
+            return;
+        }
+
+        ResolvedReference?.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
         foreach (var child in Children)
         {
-            child.ComputeData(level + 1, maxDepth: maxDepth);
+            child.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
         }
         
         TypeData = IsReference
@@ -457,36 +463,48 @@ public class SchemaContext(
         return Parent?.AnyParent(predicate) == true;
     }
     
-    public IReadOnlyCollection<SchemaContext> WithAllChildren(int level = 0, int maxDepth = 20)
+    public IReadOnlyCollection<SchemaContext> WithAllChildren(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
         // Prevent infinite recursion for circular references
         if (level > maxDepth)
         {
             return [];
         }
-        
+
+        visited ??= [];
+        if (!visited.Add(this))
+        {
+            return [];
+        }
+
         if (IsReference)
         {
-            return [this, ..ResolvedReference!.WithAllChildren(level + 1, maxDepth: maxDepth)];
+            return [this, ..ResolvedReference!.WithAllChildren(level + 1, maxDepth: maxDepth, visited: visited)];
         }
-        
+
         var result = new List<SchemaContext> { this };
         foreach (var child in Children)
         {
-            result.AddRange(child.WithAllChildren(level + 1, maxDepth: maxDepth));
+            result.AddRange(child.WithAllChildren(level + 1, maxDepth: maxDepth, visited: visited));
         }
-        
+
         return result;
     }
     
-    public void ComputeTags(HashSet<string>? parentTags = null, int level = 0, int maxDepth = 20)
+    public void ComputeTags(HashSet<string>? parentTags = null, int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
         // Prevent infinite recursion for circular references
         if (level > maxDepth)
         {
             return;
         }
-        
+
+        visited ??= [];
+        if (!visited.Add(this))
+        {
+            return;
+        }
+
         if (Operation?.Tags != null)
         {
             foreach (var tag in Operation.Tags)
@@ -501,11 +519,11 @@ public class SchemaContext(
         {
             Tags.Add(tag);
         }
-        
+
         foreach (var child in Children)
         {
-            child.ComputeTags(Tags, level + 1, maxDepth: maxDepth);
+            child.ComputeTags(Tags, level + 1, maxDepth: maxDepth, visited: visited);
         }
-        ResolvedReference?.ComputeTags(Tags, level + 1, maxDepth: maxDepth);
+        ResolvedReference?.ComputeTags(Tags, level + 1, maxDepth: maxDepth, visited: visited);
     }
 }
