@@ -1,43 +1,51 @@
-﻿//HintName: G.ModelsClient.CreateModel.g.cs
+﻿//HintName: G.ChatClient.CreateChatCompletionAsStream.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ModelsClient
+    public partial class ChatClient
     {
-        partial void PrepareCreateModelArguments(
+        partial void PrepareCreateChatCompletionAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.CreateModelRequest request);
-        partial void PrepareCreateModelRequest(
+            global::G.CreateChatCompletionRequest request);
+        partial void PrepareCreateChatCompletionAsStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.CreateModelRequest request);
-        partial void ProcessCreateModelResponse(
+            global::G.CreateChatCompletionRequest request);
+        partial void ProcessCreateChatCompletionAsStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Create a model from a Modelfile.<br/>
-        /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.
+        /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses) <br/>
+        /// to take advantage of the latest OpenAI platform features. Compare<br/>
+        /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).<br/>
+        /// ---<br/>
+        /// Creates a model response for the given chat conversation. Learn more in the<br/>
+        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
+        /// and [audio](/docs/guides/audio) guides.<br/>
+        /// Parameter support can differ depending on the model used to generate the<br/>
+        /// response, particularly for newer reasoning models. Parameters that are only<br/>
+        /// supported for reasoning models are noted below. For the current state of <br/>
+        /// unsupported parameters in reasoning models, <br/>
+        /// [refer to the reasoning guide](/docs/guides/reasoning).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
-            global::G.CreateModelRequest request,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
+            global::G.CreateChatCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateModelArguments(
+            PrepareCreateChatCompletionAsStreamArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::G.PathBuilder(
-                path: "/create",
+                path: "/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -47,6 +55,22 @@ namespace G
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -57,7 +81,7 @@ namespace G
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateModelRequest(
+            PrepareCreateChatCompletionAsStreamRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -70,7 +94,7 @@ namespace G
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateModelResponse(
+            ProcessCreateChatCompletionAsStreamResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -97,12 +121,17 @@ namespace G
                 cancellationToken
 #endif
             ).ConfigureAwait(false);
-            using var __reader = new global::System.IO.StreamReader(__stream);
 
-            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                .Create(__stream).EnumerateAsync(cancellationToken))
             {
-                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var __streamedResponse = global::G.CreateModelResponse.FromJson(__content, JsonSerializerOptions) ??
+                var __content = __sseEvent.Data;
+                if (__content == "[DONE]")
+                {
+                    yield break;
+                }
+
+                var __streamedResponse = global::G.CreateChatCompletionStreamResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return __streamedResponse;
@@ -110,48 +139,29 @@ namespace G
         }
 
         /// <summary>
-        /// Create a model from a Modelfile.<br/>
-        /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.
+        /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses) <br/>
+        /// to take advantage of the latest OpenAI platform features. Compare<br/>
+        /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).<br/>
+        /// ---<br/>
+        /// Creates a model response for the given chat conversation. Learn more in the<br/>
+        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
+        /// and [audio](/docs/guides/audio) guides.<br/>
+        /// Parameter support can differ depending on the model used to generate the<br/>
+        /// response, particularly for newer reasoning models. Parameters that are only<br/>
+        /// supported for reasoning models are noted below. For the current state of <br/>
+        /// unsupported parameters in reasoning models, <br/>
+        /// [refer to the reasoning guide](/docs/guides/reasoning).
         /// </summary>
-        /// <param name="model">
-        /// The model name. <br/>
-        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: mario
-        /// </param>
-        /// <param name="modelfile">
-        /// The contents of the Modelfile.<br/>
-        /// Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.
-        /// </param>
-        /// <param name="path">
-        /// Path to the Modelfile (optional)
-        /// </param>
-        /// <param name="quantize">
-        /// The quantization level of the model.
-        /// </param>
-        /// <param name="stream">
-        /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.<br/>
-        /// Default Value: true
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
-            string model,
-            string modelfile,
-            string? path = default,
-            string? quantize = default,
-            bool? stream = default,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateModelRequest
+            var __request = new global::G.CreateChatCompletionRequest
             {
-                Model = model,
-                Modelfile = modelfile,
-                Path = path,
-                Quantize = quantize,
-                Stream = stream,
             };
 
-            var __enumerable = CreateModelAsync(
+            var __enumerable = CreateChatCompletionAsStreamAsync(
                 request: __request,
                 cancellationToken: cancellationToken);
 

@@ -73,6 +73,7 @@ namespace G
             ProcessPushModelResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+
             try
             {
                 __response.EnsureSuccessStatusCode();

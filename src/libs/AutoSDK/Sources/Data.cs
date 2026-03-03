@@ -215,7 +215,35 @@ public static class Data
                 : [];
         
         var methods = filteredOperations
-            .Select(EndPoint.FromSchema)
+            .SelectMany(operation =>
+            {
+                // Check what response content types this operation produces
+                var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
+                    .SelectMany(r => (r.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                        .Where(c => r.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
+                        .Select(c => c.Key))
+                    .ToArray();
+
+                bool hasSse = responseContentTypes.Any(ct => ct.Contains("text/event-stream"));
+                bool hasJson = responseContentTypes.Any(ct =>
+                    ct.Contains("application/json") ||
+                    ct.Contains("application/x-ndjson"));
+
+                if (hasSse && hasJson)
+                {
+                    // Generate both a regular JSON endpoint and an SSE streaming endpoint
+                    var jsonEndPoint = EndPoint.FromSchema(operation, preferredMimeType: "application/json");
+                    var sseEndPoint = EndPoint.FromSchema(operation, preferredMimeType: "text/event-stream");
+                    return new[] { jsonEndPoint, sseEndPoint };
+                }
+
+                if (hasSse && !hasJson)
+                {
+                    return new[] { EndPoint.FromSchema(operation, preferredMimeType: "text/event-stream") };
+                }
+
+                return new[] { EndPoint.FromSchema(operation) };
+            })
             .ToImmutableArray();
 
         foreach (var group in methods

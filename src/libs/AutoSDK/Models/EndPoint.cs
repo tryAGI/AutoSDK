@@ -14,7 +14,7 @@ public record struct EndPoint(
     string ClassName,
     Tag Tag,
     string BaseUrl,
-    bool Stream,
+    StreamFormat StreamFormat,
     string Path,
     string RequestMediaType,
     EquatableArray<MethodParameter> Parameters,
@@ -35,6 +35,7 @@ public record struct EndPoint(
     TypeData RequestType
 )
 {
+    public bool Stream => StreamFormat != StreamFormat.None;
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
@@ -43,7 +44,7 @@ public record struct EndPoint(
     
     public string InterfaceFileNameWithoutExtension => $"{Settings.Namespace}.I{ClassName}.{Id.ToPropertyName()}";
     
-    public static EndPoint FromSchema(OperationContext operation)
+    public static EndPoint FromSchema(OperationContext operation, string? preferredMimeType = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
@@ -116,7 +117,7 @@ public record struct EndPoint(
         }
 
         var responses = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
-            .Select(x => EndPointResponse.FromResponse(x, operation))
+            .Select(x => EndPointResponse.FromResponse(x, operation, preferredMimeType: preferredMimeType))
             .ToArray();
         var contentType = responses
             .Any(x =>
@@ -157,9 +158,19 @@ public record struct EndPoint(
             });
         }
         
+        var streamFormat = preferredMimeType == "text/event-stream"
+            ? StreamFormat.ServerSentEvents
+            : responses.Any(x => x.MimeType.Contains("application/x-ndjson"))
+                ? StreamFormat.Ndjson
+                : responses.Any(x => x.MimeType.Contains("text/event-stream"))
+                    ? StreamFormat.ServerSentEvents
+                    : StreamFormat.None;
+
         var firstTag = (operation.Operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
         var endPoint = new EndPoint(
-            Id: operation.MethodName,
+            Id: streamFormat == StreamFormat.ServerSentEvents && preferredMimeType == "text/event-stream"
+                ? operation.MethodName + "AsStream"
+                : operation.MethodName,
             ClassName: operation.Settings.GroupByTags && firstTag != null
                 ? ClientNameGenerator.Generate(operation.Settings, firstTag)
                 : operation.Settings.ClassName.Replace(".", string.Empty),
@@ -167,8 +178,7 @@ public record struct EndPoint(
                 Tag.FromTag(firstTag, operation.GlobalSettings)
                 : Tag.Empty,
             BaseUrl: string.Empty,
-            Stream: responses
-                .Any(x => x.MimeType.Contains("application/x-ndjson")), // text/event-stream
+            StreamFormat: streamFormat,
             Path: preparedPath,
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),

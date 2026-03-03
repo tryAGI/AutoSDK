@@ -28,7 +28,7 @@ public record struct EndPointResponse(
         ContentType: ContentType.String,
         Type: TypeData.Default);
     
-    public static EndPointResponse FromResponse(KeyValuePair<string, IOpenApiResponse> responseWithStatusCode, OperationContext operation)
+    public static EndPointResponse FromResponse(KeyValuePair<string, IOpenApiResponse> responseWithStatusCode, OperationContext operation, string? preferredMimeType = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -46,13 +46,26 @@ public record struct EndPointResponse(
                 StatusCode = responseWithStatusCode.Key,
             };
         }
-        
+
+        // When a preferred MIME type is specified, filter to that content type
+        if (preferredMimeType != null)
+        {
+            var filtered = responses.Where(x => x.MimeType.Contains(preferredMimeType)).ToArray();
+            if (filtered.Length > 0)
+            {
+                responses = filtered;
+            }
+        }
+
         var response = responses.First();
-        
+
         var contentType = response.MimeType.Contains("application/octet-stream")
             ? ContentType.ByteArray
             : ContentType.String;
-        var responseContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Response && x.ResponseStatusCode == response.StatusCode);
+        var responseContext = operation.Schemas.FirstOrDefault(x =>
+            x.Hint == Hint.Response &&
+            x.ResponseStatusCode == response.StatusCode &&
+            (x.ContentType == null || x.ContentType == response.MimeType));
         TypeData? responseType = contentType switch
         {
             ContentType.ByteArray => TypeData.Default with

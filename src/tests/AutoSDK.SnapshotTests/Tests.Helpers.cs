@@ -45,9 +45,12 @@ public partial class Tests : VerifyBase
 
         var referenceAssemblies = jsonSerializerType switch
         {
-            JsonSerializerType.SystemTextJson => LatestReferenceAssemblies.Net80,
+            JsonSerializerType.SystemTextJson => LatestReferenceAssemblies.Net80.AddPackages([
+                new PackageIdentity("System.Net.ServerSentEvents", "9.0.0")
+            ]),
             JsonSerializerType.NewtonsoftJson => ReferenceAssemblies.Net.Net60.AddPackages([
-                new PackageIdentity("Newtonsoft.Json", "13.0.3")
+                new PackageIdentity("Newtonsoft.Json", "13.0.3"),
+                new PackageIdentity("System.Net.ServerSentEvents", "9.0.0")
             ]),
             _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
         };
@@ -123,6 +126,9 @@ namespace {@namespace}
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)
             .Where(x => x.Id != "CS0618")
+            .OrderBy(x => x.Location.GetLineSpan().Path)
+            .ThenBy(x => x.Location.GetLineSpan().StartLinePosition.Line)
+            .ThenBy(x => x.Id)
             .ToImmutableArray();
 
         await Task.WhenAll(
@@ -192,6 +198,9 @@ namespace {@namespace}
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)
             .Where(x => x.Id != "CS0618")
+            .OrderBy(x => x.Location.GetLineSpan().Path)
+            .ThenBy(x => x.Location.GetLineSpan().StartLinePosition.Line)
+            .ThenBy(x => x.Id)
             .ToImmutableArray();
 
         await Task.WhenAll(

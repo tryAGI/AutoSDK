@@ -73,6 +73,7 @@ namespace G
             ProcessGenerateChatCompletionResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+
             try
             {
                 __response.EnsureSuccessStatusCode();

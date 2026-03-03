@@ -327,9 +327,53 @@ namespace {endPoint.Settings.Namespace}
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
-        if (endPoint.Stream)
+        if (endPoint.StreamFormat == StreamFormat.ServerSentEvents)
         {
-            return $@" 
+            return $@"
+            try
+            {{
+                __response.EnsureSuccessStatusCode();
+            }}
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {{
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}
+
+            using var __stream = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                cancellationToken
+#endif
+            ).ConfigureAwait(false);
+
+            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                .Create(__stream).EnumerateAsync(cancellationToken))
+            {{
+                var __content = __sseEvent.Data;
+                if (__content == ""[DONE]"")
+                {{
+                    yield break;
+                }}
+
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
+
+                yield return __streamedResponse;
+            }}
+ ";
+        }
+
+        if (endPoint.StreamFormat == StreamFormat.Ndjson)
+        {
+            return $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
