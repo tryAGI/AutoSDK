@@ -1,0 +1,135 @@
+openapi: 3.0.1
+info:
+  title: Circular References Test API
+  description: Minimal spec to test circular/self-referencing schemas
+  version: '1.0'
+servers:
+  - url: https://api.example.com
+paths:
+  /trees:
+    get:
+      operationId: getTrees
+      tags:
+        - Trees
+      summary: Get trees
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TreeNode'
+    post:
+      operationId: createTree
+      tags:
+        - Trees
+      summary: Create a tree
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TreeNode'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TreeNode'
+  /schemas:
+    get:
+      operationId: getSchemas
+      tags:
+        - Schemas
+      summary: Get schemas
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchemaDefinition'
+  /chain:
+    get:
+      operationId: getChain
+      tags:
+        - Chain
+      summary: Get chain
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TypeA'
+components:
+  schemas:
+    # Self-referencing schema: children references itself
+    TreeNode:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/TreeNode'
+        parent:
+          $ref: '#/components/schemas/TreeNode'
+
+    # Schema with many self-references (like Onshape's Schema type)
+    SchemaDefinition:
+      type: object
+      properties:
+        type:
+          type: string
+        description:
+          type: string
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/SchemaDefinition'
+        items:
+          $ref: '#/components/schemas/SchemaDefinition'
+        allOf:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchemaDefinition'
+        anyOf:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchemaDefinition'
+        oneOf:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchemaDefinition'
+        not:
+          $ref: '#/components/schemas/SchemaDefinition'
+        if:
+          $ref: '#/components/schemas/SchemaDefinition'
+        then:
+          $ref: '#/components/schemas/SchemaDefinition'
+        else:
+          $ref: '#/components/schemas/SchemaDefinition'
+
+    # Chain cycle: TypeA -> TypeB -> TypeA
+    TypeA:
+      type: object
+      properties:
+        name:
+          type: string
+        linked:
+          $ref: '#/components/schemas/TypeB'
+
+    TypeB:
+      type: object
+      properties:
+        value:
+          type: integer
+        back:
+          $ref: '#/components/schemas/TypeA'

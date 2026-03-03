@@ -1,0 +1,28 @@
+﻿[
+  {
+    Location: /*
+
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TreeNode>?> Children { get; } = new(
+                                                                                                                 ^^^^^^^^
+            name: "children")
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTreeCommand.g.cs: (37,113)-(37,121),
+    Message: 'CreateTreeCommand.Children' hides inherited member 'Command.Children'. Use the new keyword if hiding was intended.,
+    Severity: Warning,
+    WarningLevel: 2,
+    Descriptor: {
+      Id: CS0108,
+      Title: Member hides inherited member; missing new keyword,
+      Description: A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108),
+      MessageFormat: '{0}' hides inherited member '{1}'. Use the new keyword if hiding was intended.,
+      Category: Compiler,
+      DefaultSeverity: Warning,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry
+      ]
+    }
+  }
+]

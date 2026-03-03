@@ -77,6 +77,8 @@ public partial class Tests
     [DataRow("ultravox.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("deepinfra.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("deepinfra.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("circular-refs.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("circular-refs.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -194,6 +196,7 @@ public partial class Tests
     //[DataRow("luma.yaml")]
     [DataRow("ultravox.yaml")]
     [DataRow("deepinfra.json")]
+    [DataRow("circular-refs.yaml")]
     public Task CliGenerator(string fileName)
     {
         if (fileName == "")
