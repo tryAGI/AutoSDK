@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PaginatedPipelineFamilyGet> IndexAsync(
             string? userId = default,
             string? teamId = default,
-            global::G.AllOf<global::G.OrderBy?>? orderBy = default,
+            global::G.OrderBy? orderBy = default,
             string? search = default,
             bool? includeAllRun = default,
             int? skip = default,

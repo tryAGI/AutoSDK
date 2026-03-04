@@ -18,41 +18,41 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.AutoChunkingStrategyRequestParam? auto = default;
+            global::G.AutoChunkingStrategyRequestParam? autoChunkingStrategy = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
-                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                autoChunkingStrategy = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.StaticChunkingStrategyRequestParam? @static = default;
+            global::G.StaticChunkingStrategyRequestParam? staticChunkingStrategy = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
-                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                staticChunkingStrategy = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.ChunkingStrategyRequestParam(
-                auto,
-                @static
+                autoChunkingStrategy,
+                staticChunkingStrategy
                 );
 
-            if (auto != null)
+            if (autoChunkingStrategy != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (@static != null)
+            else if (staticChunkingStrategy != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
@@ -71,17 +71,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAuto)
+            if (value.IsAutoChunkingStrategy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoChunkingStrategy, typeInfo);
             }
-            else if (value.IsStatic)
+            else if (value.IsStaticChunkingStrategy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticChunkingStrategy, typeInfo);
             }
         }
     }

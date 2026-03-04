@@ -41,7 +41,7 @@ namespace G
             int? limit = default,
             string? orderBy = default,
             bool? @public = default,
-            global::G.AllOf<global::G.Accelerator?>? hardware = default,
+            global::G.Accelerator? hardware = default,
             string? clusterId = default,
             string? nodePool = default,
             string? createdAt = default,

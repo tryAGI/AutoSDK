@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InstructRequest? Value1 { get; init; }
+        public global::G.InstructRequest? InstructRequest { get; init; }
 #else
-        public global::G.InstructRequest? Value1 { get; }
+        public global::G.InstructRequest? InstructRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InstructRequest))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInstructRequest => InstructRequest != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InstructRequest?(ChatClassificationRequestInputs @this) => @this.Value1;
+        public static implicit operator global::G.InstructRequest?(ChatClassificationRequestInputs @this) => @this.InstructRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatClassificationRequestInputs(global::G.InstructRequest? value)
         {
-            Value1 = value;
+            InstructRequest = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatClassificationRequestInputs(
-            global::G.InstructRequest? value1,
+            global::G.InstructRequest? instructRequest,
             global::System.Collections.Generic.IList<global::G.InstructRequest>? value2
             )
         {
-            Value1 = value1;
+            InstructRequest = instructRequest;
             Value2 = value2;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            InstructRequest as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            InstructRequest?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsInstructRequest || IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InstructRequest?, TResult>? value1 = null,
+            global::System.Func<global::G.InstructRequest?, TResult>? instructRequest = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.InstructRequest>?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInstructRequest && instructRequest != null)
             {
-                return value1(Value1!);
+                return instructRequest(InstructRequest!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InstructRequest?>? value1 = null,
+            global::System.Action<global::G.InstructRequest?>? instructRequest = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.InstructRequest>?>? value2 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInstructRequest)
             {
-                value1?.Invoke(Value1!);
+                instructRequest?.Invoke(InstructRequest!);
             }
             else if (IsValue2)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                InstructRequest,
                 typeof(global::G.InstructRequest),
                 Value2,
                 typeof(global::System.Collections.Generic.IList<global::G.InstructRequest>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(ChatClassificationRequestInputs other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.InstructRequest?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InstructRequest?>.Default.Equals(InstructRequest, other.InstructRequest) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.InstructRequest>?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

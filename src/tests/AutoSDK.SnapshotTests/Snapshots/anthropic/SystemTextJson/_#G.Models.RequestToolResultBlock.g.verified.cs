@@ -41,8 +41,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,7 +66,7 @@ namespace G
             global::G.CacheControlVariant117? cacheControl,
             global::G.RequestToolResultBlockType type,
             bool? isError,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>? content)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? content)
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.CacheControl = cacheControl;

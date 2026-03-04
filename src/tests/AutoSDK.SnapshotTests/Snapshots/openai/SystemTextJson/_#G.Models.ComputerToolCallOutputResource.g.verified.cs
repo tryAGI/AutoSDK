@@ -14,18 +14,18 @@ namespace G
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerToolCallOutput? Value1 { get; init; }
+        public global::G.ComputerToolCallOutput? ComputerToolCallOutput { get; init; }
 #else
-        public global::G.ComputerToolCallOutput? Value1 { get; }
+        public global::G.ComputerToolCallOutput? ComputerToolCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutput))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsComputerToolCallOutput => ComputerToolCallOutput != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerToolCallOutput?(ComputerToolCallOutputResource @this) => @this.Value1;
+        public static implicit operator global::G.ComputerToolCallOutput?(ComputerToolCallOutputResource @this) => @this.ComputerToolCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public ComputerToolCallOutputResource(global::G.ComputerToolCallOutput? value)
         {
-            Value1 = value;
+            ComputerToolCallOutput = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public ComputerToolCallOutputResource(
-            global::G.ComputerToolCallOutput? value1,
+            global::G.ComputerToolCallOutput? computerToolCallOutput,
             global::G.ComputerToolCallOutputResourceVariant2? value2
             )
         {
-            Value1 = value1;
+            ComputerToolCallOutput = computerToolCallOutput;
             Value2 = value2;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            ComputerToolCallOutput as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ComputerToolCallOutput?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsComputerToolCallOutput && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ComputerToolCallOutput?, TResult>? value1 = null,
+            global::System.Func<global::G.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
             global::System.Func<global::G.ComputerToolCallOutputResourceVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsComputerToolCallOutput && computerToolCallOutput != null)
             {
-                return value1(Value1!);
+                return computerToolCallOutput(ComputerToolCallOutput!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ComputerToolCallOutput?>? value1 = null,
+            global::System.Action<global::G.ComputerToolCallOutput?>? computerToolCallOutput = null,
             global::System.Action<global::G.ComputerToolCallOutputResourceVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsComputerToolCallOutput)
             {
-                value1?.Invoke(Value1!);
+                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
             }
             else if (IsValue2)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ComputerToolCallOutput,
                 typeof(global::G.ComputerToolCallOutput),
                 Value2,
                 typeof(global::G.ComputerToolCallOutputResourceVariant2),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(ComputerToolCallOutputResource other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutput?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutput?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutputResourceVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

@@ -18,41 +18,41 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.CreateEvalItemVariant1? value1 = default;
+            global::G.CreateEvalItemSimpleInputMessage? simpleInputMessage = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemVariant1).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemSimpleInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemSimpleInputMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemSimpleInputMessage).Name}");
+                simpleInputMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.EvalItem? value2 = default;
+            global::G.EvalItem? evalMessageObject = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalItem> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalItem).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                evalMessageObject = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.CreateEvalItem(
-                value1,
-                value2
+                simpleInputMessage,
+                evalMessageObject
                 );
 
-            if (value1 != null)
+            if (simpleInputMessage != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemSimpleInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemSimpleInputMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemSimpleInputMessage).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (value2 != null)
+            else if (evalMessageObject != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalItem> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalItem).Name}");
@@ -71,17 +71,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsSimpleInputMessage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemSimpleInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemSimpleInputMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemSimpleInputMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SimpleInputMessage, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEvalMessageObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalMessageObject, typeInfo);
             }
         }
     }

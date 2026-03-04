@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflow_job", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2> WorkflowJob { get; set; } = default!;
+        public global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2> WorkflowJob { get; set; } = default!;
 
         /// <summary>
         /// A request for a specific ref(branch,sha,tag) to be deployed
@@ -103,7 +103,7 @@ namespace G
         public WebhookWorkflowJobInProgress(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
-            global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2> workflowJob,
+            global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2> workflowJob,
             global::G.WebhookWorkflowJobInProgressAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,

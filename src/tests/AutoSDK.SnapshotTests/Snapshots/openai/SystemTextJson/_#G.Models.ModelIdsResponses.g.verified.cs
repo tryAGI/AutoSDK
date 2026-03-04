@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelIdsResponsesEnum? Value2 { get; init; }
+        public global::G.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
 #else
-        public global::G.ModelIdsResponsesEnum? Value2 { get; }
+        public global::G.ModelIdsResponsesEnum? ResponsesOnlyModel { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesOnlyModel))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResponsesOnlyModel => ResponsesOnlyModel != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelIdsResponsesEnum?(ModelIdsResponses @this) => @this.Value2;
+        public static implicit operator global::G.ModelIdsResponsesEnum?(ModelIdsResponses @this) => @this.ResponsesOnlyModel;
 
         /// <summary>
         /// 
         /// </summary>
         public ModelIdsResponses(global::G.ModelIdsResponsesEnum? value)
         {
-            Value2 = value;
+            ResponsesOnlyModel = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public ModelIdsResponses(
             global::G.ModelIdsShared? value1,
-            global::G.ModelIdsResponsesEnum? value2
+            global::G.ModelIdsResponsesEnum? responsesOnlyModel
             )
         {
             Value1 = value1;
-            Value2 = value2;
+            ResponsesOnlyModel = responsesOnlyModel;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            ResponsesOnlyModel as object ??
             Value1 as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Value1?.ToString() ??
-            Value2?.ToValueString() 
+            ResponsesOnlyModel?.ToValueString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsValue1 || IsResponsesOnlyModel;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ModelIdsShared?, TResult>? value1 = null,
-            global::System.Func<global::G.ModelIdsResponsesEnum?, TResult>? value2 = null,
+            global::System.Func<global::G.ModelIdsResponsesEnum?, TResult>? responsesOnlyModel = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return value1(Value1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResponsesOnlyModel && responsesOnlyModel != null)
             {
-                return value2(Value2!);
+                return responsesOnlyModel(ResponsesOnlyModel!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ModelIdsShared?>? value1 = null,
-            global::System.Action<global::G.ModelIdsResponsesEnum?>? value2 = null,
+            global::System.Action<global::G.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 value1?.Invoke(Value1!);
             }
-            else if (IsValue2)
+            else if (IsResponsesOnlyModel)
             {
-                value2?.Invoke(Value2!);
+                responsesOnlyModel?.Invoke(ResponsesOnlyModel!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 Value1,
                 typeof(global::G.ModelIdsShared),
-                Value2,
+                ResponsesOnlyModel,
                 typeof(global::G.ModelIdsResponsesEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsShared?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsResponsesEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsResponsesEnum?>.Default.Equals(ResponsesOnlyModel, other.ResponsesOnlyModel) 
                 ;
         }
 

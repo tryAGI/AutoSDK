@@ -18,12 +18,12 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ToolSource? tool = default;
+            global::G.ToolSource? toolOutput = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolSource).Name}");
-                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                toolOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -42,11 +42,11 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.Source(
-                tool,
+                toolOutput,
                 document
                 );
 
-            if (tool != null)
+            if (toolOutput != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolSource> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolSource).Name}");
@@ -71,11 +71,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsTool)
+            if (value.IsToolOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolOutput, typeInfo);
             }
             else if (value.IsDocument)
             {

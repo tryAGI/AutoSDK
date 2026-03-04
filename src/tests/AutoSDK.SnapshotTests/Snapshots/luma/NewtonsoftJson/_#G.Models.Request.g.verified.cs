@@ -14,35 +14,35 @@ namespace G
         /// The generation request object
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GenerationRequest? Generation { get; init; }
+        public global::G.GenerationRequest? Video { get; init; }
 #else
-        public global::G.GenerationRequest? Generation { get; }
+        public global::G.GenerationRequest? Video { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Generation))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Video))]
 #endif
-        public bool IsGeneration => Generation != null;
+        public bool IsVideo => Video != null;
 
         /// <summary>
         /// The image generation request object
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageGenerationRequest? ImageGeneration { get; init; }
+        public global::G.ImageGenerationRequest? Image { get; init; }
 #else
-        public global::G.ImageGenerationRequest? ImageGeneration { get; }
+        public global::G.ImageGenerationRequest? Image { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGeneration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
-        public bool IsImageGeneration => ImageGeneration != null;
+        public bool IsImage => Image != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GenerationRequest?(Request @this) => @this.Generation;
+        public static implicit operator global::G.GenerationRequest?(Request @this) => @this.Video;
 
         /// <summary>
         /// 
         /// </summary>
         public Request(global::G.GenerationRequest? value)
         {
-            Generation = value;
+            Video = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageGenerationRequest?(Request @this) => @this.ImageGeneration;
+        public static implicit operator global::G.ImageGenerationRequest?(Request @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
         public Request(global::G.ImageGenerationRequest? value)
         {
-            ImageGeneration = value;
+            Image = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Request(
-            global::G.GenerationRequest? generation,
-            global::G.ImageGenerationRequest? imageGeneration
+            global::G.GenerationRequest? video,
+            global::G.ImageGenerationRequest? image
             )
         {
-            Generation = generation;
-            ImageGeneration = imageGeneration;
+            Video = video;
+            Image = image;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ImageGeneration as object ??
-            Generation as object 
+            Image as object ??
+            Video as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Generation?.ToString() ??
-            ImageGeneration?.ToString() 
+            Video?.ToString() ??
+            Image?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsGeneration && !IsImageGeneration || !IsGeneration && IsImageGeneration;
+            return IsVideo && !IsImage || !IsVideo && IsImage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerationRequest?, TResult>? generation = null,
-            global::System.Func<global::G.ImageGenerationRequest?, TResult>? imageGeneration = null,
+            global::System.Func<global::G.GenerationRequest?, TResult>? video = null,
+            global::System.Func<global::G.ImageGenerationRequest?, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGeneration && generation != null)
+            if (IsVideo && video != null)
             {
-                return generation(Generation!);
+                return video(Video!);
             }
-            else if (IsImageGeneration && imageGeneration != null)
+            else if (IsImage && image != null)
             {
-                return imageGeneration(ImageGeneration!);
+                return image(Image!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerationRequest?>? generation = null,
-            global::System.Action<global::G.ImageGenerationRequest?>? imageGeneration = null,
+            global::System.Action<global::G.GenerationRequest?>? video = null,
+            global::System.Action<global::G.ImageGenerationRequest?>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGeneration)
+            if (IsVideo)
             {
-                generation?.Invoke(Generation!);
+                video?.Invoke(Video!);
             }
-            else if (IsImageGeneration)
+            else if (IsImage)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                image?.Invoke(Image!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Generation,
+                Video,
                 typeof(global::G.GenerationRequest),
-                ImageGeneration,
+                Image,
                 typeof(global::G.ImageGenerationRequest),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Request other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequest?>.Default.Equals(Generation, other.Generation) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenerationRequest?>.Default.Equals(ImageGeneration, other.ImageGeneration) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequest?>.Default.Equals(Video, other.Video) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenerationRequest?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

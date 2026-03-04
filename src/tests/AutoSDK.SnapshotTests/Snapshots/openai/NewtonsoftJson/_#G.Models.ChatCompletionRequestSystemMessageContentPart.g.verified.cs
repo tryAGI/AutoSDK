@@ -14,18 +14,18 @@ namespace G
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; }
+        public global::G.ChatCompletionRequestMessageContentPartText? TextContentPart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextContentPart => TextContentPart != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,28 +34,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestSystemMessageContentPart @this) => @this.Text;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestSystemMessageContentPart @this) => @this.TextContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestSystemMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText? value)
         {
-            Text = value;
+            TextContentPart = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Text as object 
+            TextContentPart as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() 
+            TextContentPart?.ToString() 
             ;
 
         /// <summary>
@@ -63,14 +63,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsTextContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -78,9 +78,9 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextContentPart && textContentPart != null)
             {
-                return text(Text!);
+                return textContentPart(TextContentPart!);
             }
 
             return default(TResult);
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -98,9 +98,9 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextContentPart)
             {
-                text?.Invoke(Text!);
+                textContentPart?.Invoke(TextContentPart!);
             }
         }
 
@@ -111,7 +111,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                TextContentPart,
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
             };
             const int offset = unchecked((int)2166136261);
@@ -129,7 +129,7 @@ namespace G
         public bool Equals(ChatCompletionRequestSystemMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart) 
                 ;
         }
 

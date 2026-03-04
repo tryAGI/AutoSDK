@@ -50,7 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_card", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2> ProjectCard { get; set; } = default!;
+        public global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2> ProjectCard { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -99,7 +99,7 @@ namespace G
         /// A GitHub user.
         /// </param>
         public WebhookProjectCardMoved(
-            global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2> projectCard,
+            global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2> projectCard,
             global::G.SimpleUser sender,
             global::G.WebhookProjectCardMovedAction action,
             global::G.WebhookProjectCardMovedChanges? changes,

@@ -51,19 +51,32 @@ public record struct AnyOfData(
                 : context.Schema.AllOf?.Count ?? 0;
         var discriminatorPropName = context.Schema.Discriminator?.PropertyName ?? string.Empty;
         var properties = context.IsNamedAnyOfLike
-            ? children.Select((x, i) => PropertyData.Default with
+            ? children.Select((x, i) =>
             {
-                Type = x.TypeData,
-                Name = SmartNamedAnyOfNames.ComputePropertyName(children, className, i),
-                Summary = x.Schema.GetSummary(),
-                DiscriminatorValue = context.Schema.Discriminator?.Mapping?
-                    .FirstOrDefault(y =>
-                        y.Value.Reference?.Id?.Contains(x.Id) == true ||
-                        ((x.Schema.Properties?.ContainsKey(discriminatorPropName) ?? false) &&
-                         (x.Schema.Properties![discriminatorPropName].Enum?.Count ?? 0) == 1 &&
-                         (x.Schema.Properties[discriminatorPropName].Enum?.FirstOrDefault())
-                             ?.GetString() == y.Key))
-                    .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
+                // Compute discriminator value from mapping, const, or single-enum
+                var discriminatorValue = ComputeDiscriminatorValue(context, x, discriminatorPropName);
+
+                // Fallback chain for property name:
+                // 1. Discriminator const/enum value
+                // 2. Schema title (if not same as enclosing type)
+                // 3. Smart name (existing logic)
+                // 4. Value{i+1} (inside SmartNamedAnyOfNames.ComputePropertyName fallback)
+                var titleName = !string.IsNullOrWhiteSpace(x.Schema.Title)
+                    ? x.Schema.Title!.ToClassName()
+                    : null;
+                var name = !string.IsNullOrWhiteSpace(discriminatorValue)
+                    ? discriminatorValue
+                    : titleName != null && !string.Equals(titleName, className, StringComparison.OrdinalIgnoreCase)
+                        ? titleName
+                        : SmartNamedAnyOfNames.ComputePropertyName(children, className, i);
+
+                return PropertyData.Default with
+                {
+                    Type = x.TypeData,
+                    Name = name,
+                    Summary = x.Schema.GetSummary(),
+                    DiscriminatorValue = discriminatorValue,
+                };
             }).ToImmutableArray().AsEquatableArray()
             : Enumerable
                 .Range(1, count)
@@ -76,16 +89,11 @@ public record struct AnyOfData(
                     },
                 })
                 .ToImmutableArray().AsEquatableArray();
-        if (context.IsNamedAnyOfLike &&
-            !properties.IsEmpty &&
-            properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue)))
+
+        // Deduplicate property names
+        if (context.IsNamedAnyOfLike && !properties.IsEmpty)
         {
-            properties = properties
-                .Select(x => x with
-                {
-                    Name = x.DiscriminatorValue,
-                })
-                .ToImmutableArray().AsEquatableArray();
+            properties = DeduplicatePropertyNames(properties);
         }
         
         return new AnyOfData(
@@ -110,5 +118,98 @@ public record struct AnyOfData(
                 : string.Empty,
             Properties: properties,
             Settings: context.Settings);
+    }
+
+    /// <summary>
+    /// Computes the discriminator value for a child schema.
+    /// Checks: discriminator mapping → const value on discriminator property → single-enum value.
+    /// </summary>
+    private static string ComputeDiscriminatorValue(
+        SchemaContext context,
+        SchemaContext child,
+        string discriminatorPropName)
+    {
+        if (string.IsNullOrEmpty(discriminatorPropName))
+        {
+            return string.Empty;
+        }
+
+        // 1. Try discriminator mapping (existing logic)
+        var mappingValue = context.Schema.Discriminator?.Mapping?
+            .FirstOrDefault(y =>
+                y.Value.Reference?.Id?.Contains(child.Id) == true ||
+                ((child.Schema.Properties?.ContainsKey(discriminatorPropName) ?? false) &&
+                 (child.Schema.Properties![discriminatorPropName].Enum?.Count ?? 0) == 1 &&
+                 (child.Schema.Properties[discriminatorPropName].Enum?.FirstOrDefault())
+                     ?.GetString() == y.Key))
+            .Key;
+        if (!string.IsNullOrEmpty(mappingValue))
+        {
+            return mappingValue!.ToEnumValue(string.Empty, context.Settings).Name;
+        }
+
+        // 2. Try const value on the discriminator property
+        if (child.Schema.Properties?.ContainsKey(discriminatorPropName) == true)
+        {
+            var discProp = child.Schema.Properties[discriminatorPropName];
+            if (!string.IsNullOrEmpty(discProp.Const))
+            {
+                return discProp.Const!.ToEnumValue(string.Empty, context.Settings).Name;
+            }
+
+            // 3. Try single-enum value on the discriminator property
+            if ((discProp.Enum?.Count ?? 0) == 1)
+            {
+                var enumValue = discProp.Enum?.FirstOrDefault()?.GetString();
+                if (!string.IsNullOrEmpty(enumValue))
+                {
+                    return enumValue!.ToEnumValue(string.Empty, context.Settings).Name;
+                }
+            }
+        }
+
+        return string.Empty;
+    }
+
+    /// <summary>
+    /// Deduplicates property names by appending index suffixes where names collide.
+    /// </summary>
+    private static EquatableArray<PropertyData> DeduplicatePropertyNames(
+        EquatableArray<PropertyData> properties)
+    {
+        var names = properties.Select(x => x.Name).ToList();
+        var duplicates = names
+            .Select((name, i) => (name, i))
+            .GroupBy(x => x.name, StringComparer.Ordinal)
+            .Where(g => g.Count() > 1);
+
+        foreach (var group in duplicates)
+        {
+            var suffix = 1;
+            foreach (var (_, i) in group)
+            {
+                names[i] = $"{names[i]}{suffix++}";
+            }
+        }
+
+        var hasChanges = false;
+        for (var i = 0; i < properties.Length; i++)
+        {
+            if (properties[i].Name != names[i])
+            {
+                hasChanges = true;
+                break;
+            }
+        }
+
+        if (!hasChanges)
+        {
+            return properties;
+        }
+
+        return properties
+            .Select((p, i) => p with { Name = names[i] })
+            .ToImmutableArray()
+            .AsEquatableArray();
     }
 }

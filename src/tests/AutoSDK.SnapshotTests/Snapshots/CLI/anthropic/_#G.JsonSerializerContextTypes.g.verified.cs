@@ -349,15 +349,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type80 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type81 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item? Type82 { get; set; }
+        public global::G.ContentBetaContentBlockSourceContentItem? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -369,11 +369,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlockSourceContentVariant2ItemDiscriminator? Type85 { get; set; }
+        public global::G.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminator? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? Type86 { get; set; }
+        public global::G.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorType? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -949,15 +949,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type230 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type231 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item2? Type232 { get; set; }
+        public global::G.ContentVariant2Item? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1265,15 +1265,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item3>>? Type309 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>>? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item3>? Type310 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item3? Type311 { get; set; }
+        public global::G.ContentContentBlockSourceContentItem? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1285,11 +1285,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSourceContentVariant2ItemDiscriminator? Type314 { get; set; }
+        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSourceContentVariant2ItemDiscriminatorType? Type315 { get; set; }
+        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1837,15 +1837,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>? Type452 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>? Type453 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item4? Type454 { get; set; }
+        public global::G.ContentVariant2Item2? Type454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2094,11 +2094,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item>>? ListType0 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentBetaContentBlockSourceContentItem>>? ListType0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentBetaContentBlockSourceContentItem>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2150,11 +2150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item2>>? ListType14 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item>>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item2>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2162,11 +2162,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item3>>? ListType17 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentContentBlockSourceContentItem>>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item3>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentContentBlockSourceContentItem>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2214,11 +2214,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item4>>? ListType30 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item2>>? ListType30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item4>? ListType31 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item2>? ListType31 { get; set; }
         /// <summary>
         /// 
         /// </summary>

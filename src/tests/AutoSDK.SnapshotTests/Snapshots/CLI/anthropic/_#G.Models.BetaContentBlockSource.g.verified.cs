@@ -22,9 +22,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> Content { get; set; }
+        public required global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaContentBlockSource(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>> content,
             global::G.BetaContentBlockSourceType type)
         {
             this.Content = content;

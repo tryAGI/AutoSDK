@@ -21,7 +21,7 @@ namespace G
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
-        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
+        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -57,7 +57,7 @@ namespace G
         /// </param>
         public CreateAssistantRequestToolResourcesFileSearchVectorStore(
             global::System.Collections.Generic.IList<string>? fileIds,
-            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
+            global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy>? chunkingStrategy,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.FileIds = fileIds;

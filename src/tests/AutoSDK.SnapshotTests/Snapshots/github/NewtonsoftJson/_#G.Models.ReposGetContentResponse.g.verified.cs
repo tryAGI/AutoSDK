@@ -14,69 +14,69 @@ namespace G
         /// A list of directory items
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? ContentDirectory { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? Value1 { get; }
+        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? ContentDirectory { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentDirectory))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsContentDirectory => ContentDirectory != null;
 
         /// <summary>
         /// Content File
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ContentFile? Value2 { get; init; }
+        public global::G.ContentFile? File { get; init; }
 #else
-        public global::G.ContentFile? Value2 { get; }
+        public global::G.ContentFile? File { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFile => File != null;
 
         /// <summary>
         /// An object describing a symlink
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ContentSymlink? Value3 { get; init; }
+        public global::G.ContentSymlink? Symlink { get; init; }
 #else
-        public global::G.ContentSymlink? Value3 { get; }
+        public global::G.ContentSymlink? Symlink { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Symlink))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsSymlink => Symlink != null;
 
         /// <summary>
         /// An object describing a submodule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ContentSubmodule? Value4 { get; init; }
+        public global::G.ContentSubmodule? Submodule { get; init; }
 #else
-        public global::G.ContentSubmodule? Value4 { get; }
+        public global::G.ContentSubmodule? Submodule { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Submodule))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsSubmodule => Submodule != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ContentFile?(ReposGetContentResponse @this) => @this.Value2;
+        public static implicit operator global::G.ContentFile?(ReposGetContentResponse @this) => @this.File;
 
         /// <summary>
         /// 
         /// </summary>
         public ReposGetContentResponse(global::G.ContentFile? value)
         {
-            Value2 = value;
+            File = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ContentSymlink?(ReposGetContentResponse @this) => @this.Value3;
+        public static implicit operator global::G.ContentSymlink?(ReposGetContentResponse @this) => @this.Symlink;
 
         /// <summary>
         /// 
         /// </summary>
         public ReposGetContentResponse(global::G.ContentSymlink? value)
         {
-            Value3 = value;
+            Symlink = value;
         }
 
         /// <summary>
@@ -121,50 +121,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ContentSubmodule?(ReposGetContentResponse @this) => @this.Value4;
+        public static implicit operator global::G.ContentSubmodule?(ReposGetContentResponse @this) => @this.Submodule;
 
         /// <summary>
         /// 
         /// </summary>
         public ReposGetContentResponse(global::G.ContentSubmodule? value)
         {
-            Value4 = value;
+            Submodule = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ReposGetContentResponse(
-            global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? value1,
-            global::G.ContentFile? value2,
-            global::G.ContentSymlink? value3,
-            global::G.ContentSubmodule? value4
+            global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? contentDirectory,
+            global::G.ContentFile? file,
+            global::G.ContentSymlink? symlink,
+            global::G.ContentSubmodule? submodule
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            ContentDirectory = contentDirectory;
+            File = file;
+            Symlink = symlink;
+            Submodule = submodule;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Submodule as object ??
+            Symlink as object ??
+            File as object ??
+            ContentDirectory as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            ContentDirectory?.ToString() ??
+            File?.ToString() ??
+            Symlink?.ToString() ??
+            Submodule?.ToString() 
             ;
 
         /// <summary>
@@ -172,17 +172,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
+            return IsContentDirectory && !IsFile && !IsSymlink && !IsSubmodule || !IsContentDirectory && IsFile && !IsSymlink && !IsSubmodule || !IsContentDirectory && !IsFile && IsSymlink && !IsSubmodule || !IsContentDirectory && !IsFile && !IsSymlink && IsSubmodule;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?, TResult>? value1 = null,
-            global::System.Func<global::G.ContentFile?, TResult>? value2 = null,
-            global::System.Func<global::G.ContentSymlink?, TResult>? value3 = null,
-            global::System.Func<global::G.ContentSubmodule?, TResult>? value4 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?, TResult>? contentDirectory = null,
+            global::System.Func<global::G.ContentFile?, TResult>? file = null,
+            global::System.Func<global::G.ContentSymlink?, TResult>? symlink = null,
+            global::System.Func<global::G.ContentSubmodule?, TResult>? submodule = null,
             bool validate = true)
         {
             if (validate)
@@ -190,21 +190,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsContentDirectory && contentDirectory != null)
             {
-                return value1(Value1!);
+                return contentDirectory(ContentDirectory!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFile && file != null)
             {
-                return value2(Value2!);
+                return file(File!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsSymlink && symlink != null)
             {
-                return value3(Value3!);
+                return symlink(Symlink!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsSubmodule && submodule != null)
             {
-                return value4(Value4!);
+                return submodule(Submodule!);
             }
 
             return default(TResult);
@@ -214,10 +214,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?>? value1 = null,
-            global::System.Action<global::G.ContentFile?>? value2 = null,
-            global::System.Action<global::G.ContentSymlink?>? value3 = null,
-            global::System.Action<global::G.ContentSubmodule?>? value4 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?>? contentDirectory = null,
+            global::System.Action<global::G.ContentFile?>? file = null,
+            global::System.Action<global::G.ContentSymlink?>? symlink = null,
+            global::System.Action<global::G.ContentSubmodule?>? submodule = null,
             bool validate = true)
         {
             if (validate)
@@ -225,21 +225,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsContentDirectory)
             {
-                value1?.Invoke(Value1!);
+                contentDirectory?.Invoke(ContentDirectory!);
             }
-            else if (IsValue2)
+            else if (IsFile)
             {
-                value2?.Invoke(Value2!);
+                file?.Invoke(File!);
             }
-            else if (IsValue3)
+            else if (IsSymlink)
             {
-                value3?.Invoke(Value3!);
+                symlink?.Invoke(Symlink!);
             }
-            else if (IsValue4)
+            else if (IsSubmodule)
             {
-                value4?.Invoke(Value4!);
+                submodule?.Invoke(Submodule!);
             }
         }
 
@@ -250,13 +250,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ContentDirectory,
                 typeof(global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>),
-                Value2,
+                File,
                 typeof(global::G.ContentFile),
-                Value3,
+                Symlink,
                 typeof(global::G.ContentSymlink),
-                Value4,
+                Submodule,
                 typeof(global::G.ContentSubmodule),
             };
             const int offset = unchecked((int)2166136261);
@@ -274,10 +274,10 @@ namespace G
         public bool Equals(ReposGetContentResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContentFile?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContentSymlink?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContentSubmodule?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?>.Default.Equals(ContentDirectory, other.ContentDirectory) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ContentFile?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ContentSymlink?>.Default.Equals(Symlink, other.Symlink) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ContentSubmodule?>.Default.Equals(Submodule, other.Submodule) 
                 ;
         }
 

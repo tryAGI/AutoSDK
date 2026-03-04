@@ -14,18 +14,18 @@ namespace G
         /// A TextSimilarityGrader object which grades text based on similarity metrics.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraderTextSimilarity? Value1 { get; init; }
+        public global::G.GraderTextSimilarity? TextSimilarityGrader { get; init; }
 #else
-        public global::G.GraderTextSimilarity? Value1 { get; }
+        public global::G.GraderTextSimilarity? TextSimilarityGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextSimilarityGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTextSimilarityGrader => TextSimilarityGrader != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraderTextSimilarity?(EvalGraderTextSimilarity @this) => @this.Value1;
+        public static implicit operator global::G.GraderTextSimilarity?(EvalGraderTextSimilarity @this) => @this.TextSimilarityGrader;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalGraderTextSimilarity(global::G.GraderTextSimilarity? value)
         {
-            Value1 = value;
+            TextSimilarityGrader = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public EvalGraderTextSimilarity(
-            global::G.GraderTextSimilarity? value1,
+            global::G.GraderTextSimilarity? textSimilarityGrader,
             global::G.EvalGraderTextSimilarityVariant2? value2
             )
         {
-            Value1 = value1;
+            TextSimilarityGrader = textSimilarityGrader;
             Value2 = value2;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            TextSimilarityGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            TextSimilarityGrader?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsTextSimilarityGrader && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderTextSimilarity?, TResult>? value1 = null,
+            global::System.Func<global::G.GraderTextSimilarity?, TResult>? textSimilarityGrader = null,
             global::System.Func<global::G.EvalGraderTextSimilarityVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTextSimilarityGrader && textSimilarityGrader != null)
             {
-                return value1(Value1!);
+                return textSimilarityGrader(TextSimilarityGrader!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderTextSimilarity?>? value1 = null,
+            global::System.Action<global::G.GraderTextSimilarity?>? textSimilarityGrader = null,
             global::System.Action<global::G.EvalGraderTextSimilarityVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTextSimilarityGrader)
             {
-                value1?.Invoke(Value1!);
+                textSimilarityGrader?.Invoke(TextSimilarityGrader!);
             }
             else if (IsValue2)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                TextSimilarityGrader,
                 typeof(global::G.GraderTextSimilarity),
                 Value2,
                 typeof(global::G.EvalGraderTextSimilarityVariant2),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(EvalGraderTextSimilarity other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GraderTextSimilarity?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraderTextSimilarity?>.Default.Equals(TextSimilarityGrader, other.TextSimilarityGrader) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.EvalGraderTextSimilarityVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

@@ -33,18 +33,18 @@ namespace G
         /// of the files to run the code on.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterToolAuto? Value2 { get; init; }
+        public global::G.CodeInterpreterToolAuto? Auto { get; init; }
 #else
-        public global::G.CodeInterpreterToolAuto? Value2 { get; }
+        public global::G.CodeInterpreterToolAuto? Auto { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAuto => Auto != null;
         /// <summary>
         /// 
         /// </summary>
@@ -71,14 +71,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CodeInterpreterToolAuto?(Container @this) => @this.Value2;
+        public static implicit operator global::G.CodeInterpreterToolAuto?(Container @this) => @this.Auto;
 
         /// <summary>
         /// 
         /// </summary>
         public Container(global::G.CodeInterpreterToolAuto? value)
         {
-            Value2 = value;
+            Auto = value;
         }
 
         /// <summary>
@@ -86,18 +86,18 @@ namespace G
         /// </summary>
         public Container(
             string? value1,
-            global::G.CodeInterpreterToolAuto? value2
+            global::G.CodeInterpreterToolAuto? auto
             )
         {
             Value1 = value1;
-            Value2 = value2;
+            Auto = auto;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            Auto as object ??
             Value1 as object 
             ;
 
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Value1?.ToString() ??
-            Value2?.ToString() 
+            Auto?.ToString() 
             ;
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsValue1 && !IsAuto || !IsValue1 && IsAuto;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.CodeInterpreterToolAuto?, TResult>? value2 = null,
+            global::System.Func<global::G.CodeInterpreterToolAuto?, TResult>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -134,9 +134,9 @@ namespace G
             {
                 return value1(Value1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAuto && auto != null)
             {
-                return value2(Value2!);
+                return auto(Auto!);
             }
 
             return default(TResult);
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.CodeInterpreterToolAuto?>? value2 = null,
+            global::System.Action<global::G.CodeInterpreterToolAuto?>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -159,9 +159,9 @@ namespace G
             {
                 value1?.Invoke(Value1!);
             }
-            else if (IsValue2)
+            else if (IsAuto)
             {
-                value2?.Invoke(Value2!);
+                auto?.Invoke(Auto!);
             }
         }
 
@@ -174,7 +174,7 @@ namespace G
             {
                 Value1,
                 typeof(string),
-                Value2,
+                Auto,
                 typeof(global::G.CodeInterpreterToolAuto),
             };
             const int offset = unchecked((int)2166136261);
@@ -193,7 +193,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterToolAuto?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterToolAuto?>.Default.Equals(Auto, other.Auto) 
                 ;
         }
 

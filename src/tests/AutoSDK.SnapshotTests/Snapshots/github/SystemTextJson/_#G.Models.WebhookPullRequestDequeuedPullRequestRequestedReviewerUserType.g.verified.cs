@@ -1,0 +1,58 @@
+﻿//HintName: G.Models.WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Bot,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
+        /// <summary>
+        /// 
+        /// </summary>
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestDequeuedPullRequestRequestedReviewerUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.Bot => "Bot",
+                WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.User => "User",
+                WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.Bot,
+                "User" => WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.User,
+                "Organization" => WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType.Organization,
+                _ => null,
+            };
+        }
+    }
+}

@@ -18,36 +18,36 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.FileCitationBody? fileCitationBody = default;
+            global::G.FileCitationBody? fileCitation = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileCitationBody).Name}");
-                fileCitationBody = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.UrlCitationBody? urlCitationBody = default;
+            global::G.UrlCitationBody? urlCitation = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UrlCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UrlCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UrlCitationBody).Name}");
-                urlCitationBody = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                urlCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ContainerFileCitationBody? containerFileCitationBody = default;
+            global::G.ContainerFileCitationBody? containerFileCitation = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContainerFileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContainerFileCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContainerFileCitationBody).Name}");
-                containerFileCitationBody = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                containerFileCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -66,25 +66,25 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.Annotation(
-                fileCitationBody,
-                urlCitationBody,
-                containerFileCitationBody,
+                fileCitation,
+                urlCitation,
+                containerFileCitation,
                 filePath
                 );
 
-            if (fileCitationBody != null)
+            if (fileCitation != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileCitationBody).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (urlCitationBody != null)
+            else if (urlCitation != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UrlCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UrlCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UrlCitationBody).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (containerFileCitationBody != null)
+            else if (containerFileCitation != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContainerFileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContainerFileCitationBody> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContainerFileCitationBody).Name}");
@@ -109,23 +109,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsFileCitationBody)
+            if (value.IsFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileCitationBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileCitationBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitationBody, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation, typeInfo);
             }
-            else if (value.IsUrlCitationBody)
+            else if (value.IsUrlCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UrlCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UrlCitationBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UrlCitationBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UrlCitationBody, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UrlCitation, typeInfo);
             }
-            else if (value.IsContainerFileCitationBody)
+            else if (value.IsContainerFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContainerFileCitationBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContainerFileCitationBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContainerFileCitationBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerFileCitationBody, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerFileCitation, typeInfo);
             }
             else if (value.IsFilePath)
             {

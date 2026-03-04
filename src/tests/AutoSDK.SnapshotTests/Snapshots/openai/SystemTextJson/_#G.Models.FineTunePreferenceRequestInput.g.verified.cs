@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FineTunePreferenceRequestInput.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -23,13 +21,13 @@ namespace G
         /// The preferred completion message for the output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preferred_output")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessage>? PreferredOutput { get; set; }
 
         /// <summary>
         /// The non-preferred completion message for the output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_preferred_output")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? NonPreferredOutput { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessage>? NonPreferredOutput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,8 +50,8 @@ namespace G
 #endif
         public FineTunePreferenceRequestInput(
             global::G.FineTunePreferenceRequestInputInput? input,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? preferredOutput,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput)
+            global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessage>? preferredOutput,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessage>? nonPreferredOutput)
         {
             this.Input = input;
             this.PreferredOutput = preferredOutput;

@@ -14,18 +14,18 @@ namespace G
         /// A ScoreModelGrader object that uses a model to assign a score to the input.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraderScoreModel? Value1 { get; init; }
+        public global::G.GraderScoreModel? ScoreModelGrader { get; init; }
 #else
-        public global::G.GraderScoreModel? Value1 { get; }
+        public global::G.GraderScoreModel? ScoreModelGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScoreModelGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsScoreModelGrader => ScoreModelGrader != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraderScoreModel?(EvalGraderScoreModel @this) => @this.Value1;
+        public static implicit operator global::G.GraderScoreModel?(EvalGraderScoreModel @this) => @this.ScoreModelGrader;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalGraderScoreModel(global::G.GraderScoreModel? value)
         {
-            Value1 = value;
+            ScoreModelGrader = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public EvalGraderScoreModel(
-            global::G.GraderScoreModel? value1,
+            global::G.GraderScoreModel? scoreModelGrader,
             global::G.EvalGraderScoreModelVariant2? value2
             )
         {
-            Value1 = value1;
+            ScoreModelGrader = scoreModelGrader;
             Value2 = value2;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            ScoreModelGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ScoreModelGrader?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsScoreModelGrader && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderScoreModel?, TResult>? value1 = null,
+            global::System.Func<global::G.GraderScoreModel?, TResult>? scoreModelGrader = null,
             global::System.Func<global::G.EvalGraderScoreModelVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsScoreModelGrader && scoreModelGrader != null)
             {
-                return value1(Value1!);
+                return scoreModelGrader(ScoreModelGrader!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderScoreModel?>? value1 = null,
+            global::System.Action<global::G.GraderScoreModel?>? scoreModelGrader = null,
             global::System.Action<global::G.EvalGraderScoreModelVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsScoreModelGrader)
             {
-                value1?.Invoke(Value1!);
+                scoreModelGrader?.Invoke(ScoreModelGrader!);
             }
             else if (IsValue2)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ScoreModelGrader,
                 typeof(global::G.GraderScoreModel),
                 Value2,
                 typeof(global::G.EvalGraderScoreModelVariant2),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(EvalGraderScoreModel other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GraderScoreModel?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraderScoreModel?>.Default.Equals(ScoreModelGrader, other.ScoreModelGrader) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.EvalGraderScoreModelVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

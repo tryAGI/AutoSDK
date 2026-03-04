@@ -18,41 +18,41 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.GenerationRequest? generation = default;
+            global::G.GenerationRequest? video = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequest).Name}");
-                generation = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                video = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ImageGenerationRequest? imageGeneration = default;
+            global::G.ImageGenerationRequest? image = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenerationRequest).Name}");
-                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.Request(
-                generation,
-                imageGeneration
+                video,
+                image
                 );
 
-            if (generation != null)
+            if (video != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequest).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (imageGeneration != null)
+            else if (image != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenerationRequest).Name}");
@@ -71,17 +71,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsGeneration)
+            if (value.IsVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Generation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video, typeInfo);
             }
-            else if (value.IsImageGeneration)
+            else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenerationRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenerationRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGeneration, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
             }
         }
     }

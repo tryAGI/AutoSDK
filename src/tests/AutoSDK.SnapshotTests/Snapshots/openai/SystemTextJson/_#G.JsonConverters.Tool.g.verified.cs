@@ -66,12 +66,12 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.MCPTool? mCP = default;
+            global::G.MCPTool? mcp = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                mCP = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                mcp = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -90,12 +90,12 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ImageGenTool? imageGen = default;
+            global::G.ImageGenTool? imageGeneration = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenTool).Name}");
-                imageGen = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -118,9 +118,9 @@ namespace G.JsonConverters
                 fileSearch,
                 webSearchPreview,
                 computerUsePreview,
-                mCP,
+                mcp,
                 codeInterpreter,
-                imageGen,
+                imageGeneration,
                 localShell
                 );
 
@@ -148,7 +148,7 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (mCP != null)
+            else if (mcp != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
@@ -160,7 +160,7 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterTool).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (imageGen != null)
+            else if (imageGeneration != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenTool).Name}");
@@ -209,11 +209,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerUsePreview, typeInfo);
             }
-            else if (value.IsMCP)
+            else if (value.IsMcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCP, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeInfo);
             }
             else if (value.IsCodeInterpreter)
             {
@@ -221,11 +221,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsImageGen)
+            else if (value.IsImageGeneration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGen, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGeneration, typeInfo);
             }
             else if (value.IsLocalShell)
             {

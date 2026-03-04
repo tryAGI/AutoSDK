@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2> Author { get; set; } = default!;
+        public global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2> Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2> Committer { get; set; } = default!;
+        public global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2> Committer { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -70,9 +70,9 @@ namespace G
         /// <param name="url"></param>
         /// <param name="verification"></param>
         public WebhookStatusCommitCommit(
-            global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2> author,
+            global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2> author,
             int commentCount,
-            global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2> committer,
+            global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2> committer,
             string message,
             global::G.WebhookStatusCommitCommitTree tree,
             string url,

@@ -43,7 +43,7 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2> Issue { get; set; } = default!;
+        public global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2> Issue { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -104,7 +104,7 @@ namespace G
         /// </param>
         public WebhookIssueCommentDeleted(
             global::G.WebhooksIssueComment comment,
-            global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2> issue,
+            global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2> issue,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookIssueCommentDeletedAction action,

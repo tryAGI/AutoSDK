@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionResponseVariant2? Value2 { get; init; }
+        public global::G.ChatCompletionResponseChatCompletionResponse1? Value2 { get; init; }
 #else
-        public global::G.ChatCompletionResponseVariant2? Value2 { get; }
+        public global::G.ChatCompletionResponseChatCompletionResponse1? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseVariant2 value) => new ChatCompletionResponse((global::G.ChatCompletionResponseVariant2?)value);
+        public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseChatCompletionResponse1 value) => new ChatCompletionResponse((global::G.ChatCompletionResponseChatCompletionResponse1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionResponseVariant2?(ChatCompletionResponse @this) => @this.Value2;
+        public static implicit operator global::G.ChatCompletionResponseChatCompletionResponse1?(ChatCompletionResponse @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatCompletionResponse(global::G.ChatCompletionResponseVariant2? value)
+        public ChatCompletionResponse(global::G.ChatCompletionResponseChatCompletionResponse1? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public ChatCompletionResponse(
             global::G.ChatCompletionResponseBase? value1,
-            global::G.ChatCompletionResponseVariant2? value2
+            global::G.ChatCompletionResponseChatCompletionResponse1? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatCompletionResponseBase?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatCompletionResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatCompletionResponseChatCompletionResponse1?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatCompletionResponseBase?>? value1 = null,
-            global::System.Action<global::G.ChatCompletionResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.ChatCompletionResponseChatCompletionResponse1?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.ChatCompletionResponseBase),
                 Value2,
-                typeof(global::G.ChatCompletionResponseVariant2),
+                typeof(global::G.ChatCompletionResponseChatCompletionResponse1),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponseBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponseChatCompletionResponse1?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

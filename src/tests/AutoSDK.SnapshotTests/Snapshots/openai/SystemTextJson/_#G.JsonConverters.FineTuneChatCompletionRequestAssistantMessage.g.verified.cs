@@ -18,41 +18,41 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.FineTuneChatCompletionRequestAssistantMessageVariant1? value1 = default;
+            global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? assistantMessage1 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage).Name}");
+                assistantMessage1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ChatCompletionRequestAssistantMessage? value2 = default;
+            global::G.ChatCompletionRequestAssistantMessage? assistantMessage2 = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestAssistantMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestAssistantMessage).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                assistantMessage2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.FineTuneChatCompletionRequestAssistantMessage(
-                value1,
-                value2
+                assistantMessage1,
+                assistantMessage2
                 );
 
-            if (value1 != null)
+            if (assistantMessage1 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (value2 != null)
+            else if (assistantMessage2 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestAssistantMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestAssistantMessage).Name}");
@@ -71,17 +71,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsAssistantMessage1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage1, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsAssistantMessage2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestAssistantMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestAssistantMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage2, typeInfo);
             }
         }
     }

@@ -60,9 +60,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_job")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> WorkflowJob { get; set; }
+        public required global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> WorkflowJob { get; set; }
 
         /// <summary>
         /// A request for a specific ref(branch,sha,tag) to be deployed
@@ -111,7 +111,7 @@ namespace G
         public WebhookWorkflowJobCompleted(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
-            global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> workflowJob,
+            global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> workflowJob,
             global::G.WebhookWorkflowJobCompletedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,

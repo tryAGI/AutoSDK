@@ -266,7 +266,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
@@ -441,7 +441,7 @@ namespace G
             string nodeId,
             int number,
             string patchUrl,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>> requestedReviewers,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam>> requestedReviewers,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestLockedPullRequestRequestedTeam> requestedTeams,
             string reviewCommentUrl,
             string reviewCommentsUrl,

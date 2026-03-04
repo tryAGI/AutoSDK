@@ -18,22 +18,22 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.GraderLabelModel? value1 = default;
+            global::G.GraderLabelModel? labelModelGrader = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderLabelModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderLabelModel).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                labelModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.EvalGraderLabelModel(
-                value1
+                labelModelGrader
                 );
 
-            if (value1 != null)
+            if (labelModelGrader != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderLabelModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderLabelModel).Name}");
@@ -52,11 +52,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsLabelModelGrader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderLabelModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderLabelModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabelModelGrader, typeInfo);
             }
         }
     }

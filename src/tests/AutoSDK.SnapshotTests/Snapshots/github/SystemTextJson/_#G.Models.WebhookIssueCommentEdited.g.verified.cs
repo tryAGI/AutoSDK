@@ -52,9 +52,9 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookIssueCommentEditedIssueIssue1, global::G.WebhookIssueCommentEditedIssueVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2> Issue { get; set; }
+        public required global::G.AllOf<global::G.WebhookIssueCommentEditedIssueIssue1, global::G.WebhookIssueCommentEditedIssueVariant2> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -124,7 +124,7 @@ namespace G
         public WebhookIssueCommentEdited(
             global::G.WebhooksChanges changes,
             global::G.WebhooksIssueComment comment,
-            global::G.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2> issue,
+            global::G.AllOf<global::G.WebhookIssueCommentEditedIssueIssue1, global::G.WebhookIssueCommentEditedIssueVariant2> issue,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookIssueCommentEditedAction action,

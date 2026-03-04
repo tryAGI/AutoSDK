@@ -181,13 +181,13 @@ public record struct TypeData(
             IsDateTime: context.Schema.IsDateTime(),
             IsBinary: context.Schema.IsBinary(),
             IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
-            AnyOfCount: context.Schema.IsAnyOf() // Sometimes here AnyOf with only required properties
+            AnyOfCount: context.Schema.IsAnyOf() && !IsCollapsedAnyOfLike(context)
                 ? context.Schema.AnyOf?.Count ?? 0
                 : 0,
-            OneOfCount: context.Schema.IsOneOf() // Sometimes here OneOf with only required properties
+            OneOfCount: context.Schema.IsOneOf() && !IsCollapsedAnyOfLike(context)
                 ? context.Schema.OneOf?.Count ?? 0
                 : 0,
-            AllOfCount: context.Schema.IsAllOf() // Sometimes here AllOf with only required properties
+            AllOfCount: context.Schema.IsAllOf() && !IsCollapsedAnyOfLike(context)
                 ? context.Schema.AllOf?.Count ?? 0
                 : 0,
             IsComponent: context.IsComponent,
@@ -247,6 +247,10 @@ public record struct TypeData(
             // Handle nullable anyOf pattern: anyOf: [X, {type: null}] -> nullable X
             (_, _) when context.Schema.IsNullableAnyOf() =>
                 context.Children.FirstOrDefault(x => x.Hint == Hint.AnyOf && !x.Schema.IsNullType())?.TypeData.CSharpTypeWithoutNullability ?? "object",
+
+            (_, _) when context.Schema.IsAnyOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],
+            (_, _) when context.Schema.IsOneOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
+            (_, _) when context.Schema.IsAllOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AllOf) is { Length: 1 } distinctAllOf => distinctAllOf[0],
 
             (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
@@ -326,6 +330,37 @@ public record struct TypeData(
         };
 
         return type;
+    }
+
+    /// <summary>
+    /// Returns distinct C# types from children of a union hint, or empty if no children.
+    /// Used to collapse identical anyOf/oneOf/allOf types.
+    /// </summary>
+    private static string[] GetDistinctChildTypes(SchemaContext context, Hint hint)
+    {
+        return context.Children
+            .Where(x => x.Hint == hint)
+            .Select(x => x.TypeData.CSharpTypeWithoutNullability)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+    }
+
+    /// <summary>
+    /// Returns true if all children of a union resolve to the same C# type
+    /// and the type is not a named/component anyOf-like (which needs its own class).
+    /// </summary>
+    public static bool IsCollapsedAnyOfLike(SchemaContext context)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+
+        if (context.IsNamedAnyOfLike)
+        {
+            return false;
+        }
+
+        var hint = context.IsAnyOf ? Hint.AnyOf : context.IsOneOf ? Hint.OneOf : Hint.AllOf;
+        var types = GetDistinctChildTypes(context, hint);
+        return types.Length == 1;
     }
 
     public static bool GetCSharpNullability(

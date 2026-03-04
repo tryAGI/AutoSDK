@@ -30,12 +30,12 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.CodeInterpreterToolAuto? value2 = default;
+            global::G.CodeInterpreterToolAuto? auto = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterToolAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterToolAuto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterToolAuto).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,7 +43,7 @@ namespace G.JsonConverters
 
             var result = new global::G.Container(
                 value1,
-                value2
+                auto
                 );
 
             if (value1 != null)
@@ -52,7 +52,7 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (value2 != null)
+            else if (auto != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterToolAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterToolAuto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterToolAuto).Name}");
@@ -77,11 +77,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsAuto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterToolAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterToolAuto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterToolAuto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
             }
         }
     }

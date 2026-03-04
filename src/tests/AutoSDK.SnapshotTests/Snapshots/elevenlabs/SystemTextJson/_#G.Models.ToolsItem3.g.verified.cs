@@ -11,75 +11,80 @@ namespace G
     public readonly partial struct ToolsItem3 : global::System.IEquatable<ToolsItem3>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptAgentOutputToolDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A webhook tool is a tool that calls an external webhook from our server<br/>
         /// Example: {"response_timeout_secs":20,"type":"webhook"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebhookToolConfigOutput? WebhookToolConfigOutput { get; init; }
+        public global::G.WebhookToolConfigOutput? Webhook { get; init; }
 #else
-        public global::G.WebhookToolConfigOutput? WebhookToolConfigOutput { get; }
+        public global::G.WebhookToolConfigOutput? Webhook { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookToolConfigOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Webhook))]
 #endif
-        public bool IsWebhookToolConfigOutput => WebhookToolConfigOutput != null;
+        public bool IsWebhook => Webhook != null;
 
         /// <summary>
         /// A client tool is one that sends an event to the user's client to trigger something client side<br/>
         /// Example: {"expects_response":false,"type":"client"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ClientToolConfigOutput? ClientToolConfigOutput { get; init; }
+        public global::G.ClientToolConfigOutput? Client { get; init; }
 #else
-        public global::G.ClientToolConfigOutput? ClientToolConfigOutput { get; }
+        public global::G.ClientToolConfigOutput? Client { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientToolConfigOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Client))]
 #endif
-        public bool IsClientToolConfigOutput => ClientToolConfigOutput != null;
+        public bool IsClient => Client != null;
 
         /// <summary>
         /// A system tool is a tool that is used to call a system method in the server<br/>
         /// Example: {"type":"system"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SystemToolConfigOutput? SystemToolConfigOutput { get; init; }
+        public global::G.SystemToolConfigOutput? System { get; init; }
 #else
-        public global::G.SystemToolConfigOutput? SystemToolConfigOutput { get; }
+        public global::G.SystemToolConfigOutput? System { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemToolConfigOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
 #endif
-        public bool IsSystemToolConfigOutput => SystemToolConfigOutput != null;
+        public bool IsSystem => System != null;
 
         /// <summary>
         /// An MCP tool configuration that can be used to call MCP servers
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPToolConfigOutput? MCPToolConfigOutput { get; init; }
+        public global::G.MCPToolConfigOutput? Mcp { get; init; }
 #else
-        public global::G.MCPToolConfigOutput? MCPToolConfigOutput { get; }
+        public global::G.MCPToolConfigOutput? Mcp { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPToolConfigOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
-        public bool IsMCPToolConfigOutput => MCPToolConfigOutput != null;
+        public bool IsMcp => Mcp != null;
         /// <summary>
         /// 
         /// </summary>
@@ -88,14 +93,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebhookToolConfigOutput?(ToolsItem3 @this) => @this.WebhookToolConfigOutput;
+        public static implicit operator global::G.WebhookToolConfigOutput?(ToolsItem3 @this) => @this.Webhook;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem3(global::G.WebhookToolConfigOutput? value)
         {
-            WebhookToolConfigOutput = value;
+            Webhook = value;
         }
 
         /// <summary>
@@ -106,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ClientToolConfigOutput?(ToolsItem3 @this) => @this.ClientToolConfigOutput;
+        public static implicit operator global::G.ClientToolConfigOutput?(ToolsItem3 @this) => @this.Client;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem3(global::G.ClientToolConfigOutput? value)
         {
-            ClientToolConfigOutput = value;
+            Client = value;
         }
 
         /// <summary>
@@ -124,14 +129,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SystemToolConfigOutput?(ToolsItem3 @this) => @this.SystemToolConfigOutput;
+        public static implicit operator global::G.SystemToolConfigOutput?(ToolsItem3 @this) => @this.System;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem3(global::G.SystemToolConfigOutput? value)
         {
-            SystemToolConfigOutput = value;
+            System = value;
         }
 
         /// <summary>
@@ -142,50 +147,53 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPToolConfigOutput?(ToolsItem3 @this) => @this.MCPToolConfigOutput;
+        public static implicit operator global::G.MCPToolConfigOutput?(ToolsItem3 @this) => @this.Mcp;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem3(global::G.MCPToolConfigOutput? value)
         {
-            MCPToolConfigOutput = value;
+            Mcp = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem3(
-            global::G.WebhookToolConfigOutput? webhookToolConfigOutput,
-            global::G.ClientToolConfigOutput? clientToolConfigOutput,
-            global::G.SystemToolConfigOutput? systemToolConfigOutput,
-            global::G.MCPToolConfigOutput? mCPToolConfigOutput
+            global::G.PromptAgentOutputToolDiscriminatorType? type,
+            global::G.WebhookToolConfigOutput? webhook,
+            global::G.ClientToolConfigOutput? client,
+            global::G.SystemToolConfigOutput? system,
+            global::G.MCPToolConfigOutput? mcp
             )
         {
-            WebhookToolConfigOutput = webhookToolConfigOutput;
-            ClientToolConfigOutput = clientToolConfigOutput;
-            SystemToolConfigOutput = systemToolConfigOutput;
-            MCPToolConfigOutput = mCPToolConfigOutput;
+            Type = type;
+
+            Webhook = webhook;
+            Client = client;
+            System = system;
+            Mcp = mcp;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MCPToolConfigOutput as object ??
-            SystemToolConfigOutput as object ??
-            ClientToolConfigOutput as object ??
-            WebhookToolConfigOutput as object 
+            Mcp as object ??
+            System as object ??
+            Client as object ??
+            Webhook as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            WebhookToolConfigOutput?.ToString() ??
-            ClientToolConfigOutput?.ToString() ??
-            SystemToolConfigOutput?.ToString() ??
-            MCPToolConfigOutput?.ToString() 
+            Webhook?.ToString() ??
+            Client?.ToString() ??
+            System?.ToString() ??
+            Mcp?.ToString() 
             ;
 
         /// <summary>
@@ -193,17 +201,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsWebhookToolConfigOutput && !IsClientToolConfigOutput && !IsSystemToolConfigOutput && !IsMCPToolConfigOutput || !IsWebhookToolConfigOutput && IsClientToolConfigOutput && !IsSystemToolConfigOutput && !IsMCPToolConfigOutput || !IsWebhookToolConfigOutput && !IsClientToolConfigOutput && IsSystemToolConfigOutput && !IsMCPToolConfigOutput || !IsWebhookToolConfigOutput && !IsClientToolConfigOutput && !IsSystemToolConfigOutput && IsMCPToolConfigOutput;
+            return IsWebhook && !IsClient && !IsSystem && !IsMcp || !IsWebhook && IsClient && !IsSystem && !IsMcp || !IsWebhook && !IsClient && IsSystem && !IsMcp || !IsWebhook && !IsClient && !IsSystem && IsMcp;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebhookToolConfigOutput?, TResult>? webhookToolConfigOutput = null,
-            global::System.Func<global::G.ClientToolConfigOutput?, TResult>? clientToolConfigOutput = null,
-            global::System.Func<global::G.SystemToolConfigOutput?, TResult>? systemToolConfigOutput = null,
-            global::System.Func<global::G.MCPToolConfigOutput?, TResult>? mCPToolConfigOutput = null,
+            global::System.Func<global::G.WebhookToolConfigOutput?, TResult>? webhook = null,
+            global::System.Func<global::G.ClientToolConfigOutput?, TResult>? client = null,
+            global::System.Func<global::G.SystemToolConfigOutput?, TResult>? system = null,
+            global::System.Func<global::G.MCPToolConfigOutput?, TResult>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -211,21 +219,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookToolConfigOutput && webhookToolConfigOutput != null)
+            if (IsWebhook && webhook != null)
             {
-                return webhookToolConfigOutput(WebhookToolConfigOutput!);
+                return webhook(Webhook!);
             }
-            else if (IsClientToolConfigOutput && clientToolConfigOutput != null)
+            else if (IsClient && client != null)
             {
-                return clientToolConfigOutput(ClientToolConfigOutput!);
+                return client(Client!);
             }
-            else if (IsSystemToolConfigOutput && systemToolConfigOutput != null)
+            else if (IsSystem && system != null)
             {
-                return systemToolConfigOutput(SystemToolConfigOutput!);
+                return system(System!);
             }
-            else if (IsMCPToolConfigOutput && mCPToolConfigOutput != null)
+            else if (IsMcp && mcp != null)
             {
-                return mCPToolConfigOutput(MCPToolConfigOutput!);
+                return mcp(Mcp!);
             }
 
             return default(TResult);
@@ -235,10 +243,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebhookToolConfigOutput?>? webhookToolConfigOutput = null,
-            global::System.Action<global::G.ClientToolConfigOutput?>? clientToolConfigOutput = null,
-            global::System.Action<global::G.SystemToolConfigOutput?>? systemToolConfigOutput = null,
-            global::System.Action<global::G.MCPToolConfigOutput?>? mCPToolConfigOutput = null,
+            global::System.Action<global::G.WebhookToolConfigOutput?>? webhook = null,
+            global::System.Action<global::G.ClientToolConfigOutput?>? client = null,
+            global::System.Action<global::G.SystemToolConfigOutput?>? system = null,
+            global::System.Action<global::G.MCPToolConfigOutput?>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -246,21 +254,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookToolConfigOutput)
+            if (IsWebhook)
             {
-                webhookToolConfigOutput?.Invoke(WebhookToolConfigOutput!);
+                webhook?.Invoke(Webhook!);
             }
-            else if (IsClientToolConfigOutput)
+            else if (IsClient)
             {
-                clientToolConfigOutput?.Invoke(ClientToolConfigOutput!);
+                client?.Invoke(Client!);
             }
-            else if (IsSystemToolConfigOutput)
+            else if (IsSystem)
             {
-                systemToolConfigOutput?.Invoke(SystemToolConfigOutput!);
+                system?.Invoke(System!);
             }
-            else if (IsMCPToolConfigOutput)
+            else if (IsMcp)
             {
-                mCPToolConfigOutput?.Invoke(MCPToolConfigOutput!);
+                mcp?.Invoke(Mcp!);
             }
         }
 
@@ -271,13 +279,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                WebhookToolConfigOutput,
+                Webhook,
                 typeof(global::G.WebhookToolConfigOutput),
-                ClientToolConfigOutput,
+                Client,
                 typeof(global::G.ClientToolConfigOutput),
-                SystemToolConfigOutput,
+                System,
                 typeof(global::G.SystemToolConfigOutput),
-                MCPToolConfigOutput,
+                Mcp,
                 typeof(global::G.MCPToolConfigOutput),
             };
             const int offset = unchecked((int)2166136261);
@@ -295,10 +303,10 @@ namespace G
         public bool Equals(ToolsItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.WebhookToolConfigOutput?>.Default.Equals(WebhookToolConfigOutput, other.WebhookToolConfigOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ClientToolConfigOutput?>.Default.Equals(ClientToolConfigOutput, other.ClientToolConfigOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SystemToolConfigOutput?>.Default.Equals(SystemToolConfigOutput, other.SystemToolConfigOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigOutput?>.Default.Equals(MCPToolConfigOutput, other.MCPToolConfigOutput) 
+                global::System.Collections.Generic.EqualityComparer<global::G.WebhookToolConfigOutput?>.Default.Equals(Webhook, other.Webhook) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ClientToolConfigOutput?>.Default.Equals(Client, other.Client) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SystemToolConfigOutput?>.Default.Equals(System, other.System) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigOutput?>.Default.Equals(Mcp, other.Mcp) 
                 ;
         }
 

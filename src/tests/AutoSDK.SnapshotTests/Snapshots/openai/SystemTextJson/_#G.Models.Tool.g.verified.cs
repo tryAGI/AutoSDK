@@ -83,18 +83,18 @@ namespace G
         /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPTool? MCP { get; init; }
+        public global::G.MCPTool? Mcp { get; init; }
 #else
-        public global::G.MCPTool? MCP { get; }
+        public global::G.MCPTool? Mcp { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCP))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
-        public bool IsMCP => MCP != null;
+        public bool IsMcp => Mcp != null;
 
         /// <summary>
         /// A tool that runs Python code to help generate a response to a prompt.
@@ -117,18 +117,18 @@ namespace G
         /// A tool that generates images using a model like `gpt-image-1`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageGenTool? ImageGen { get; init; }
+        public global::G.ImageGenTool? ImageGeneration { get; init; }
 #else
-        public global::G.ImageGenTool? ImageGen { get; }
+        public global::G.ImageGenTool? ImageGeneration { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGen))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGeneration))]
 #endif
-        public bool IsImageGen => ImageGen != null;
+        public bool IsImageGeneration => ImageGeneration != null;
 
         /// <summary>
         /// A tool that allows the model to execute shell commands in a local environment.
@@ -226,14 +226,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPTool?(Tool @this) => @this.MCP;
+        public static implicit operator global::G.MCPTool?(Tool @this) => @this.Mcp;
 
         /// <summary>
         /// 
         /// </summary>
         public Tool(global::G.MCPTool? value)
         {
-            MCP = value;
+            Mcp = value;
         }
 
         /// <summary>
@@ -262,14 +262,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageGenTool?(Tool @this) => @this.ImageGen;
+        public static implicit operator global::G.ImageGenTool?(Tool @this) => @this.ImageGeneration;
 
         /// <summary>
         /// 
         /// </summary>
         public Tool(global::G.ImageGenTool? value)
         {
-            ImageGen = value;
+            ImageGeneration = value;
         }
 
         /// <summary>
@@ -298,9 +298,9 @@ namespace G
             global::G.FileSearchTool? fileSearch,
             global::G.WebSearchPreviewTool? webSearchPreview,
             global::G.ComputerUsePreviewTool? computerUsePreview,
-            global::G.MCPTool? mCP,
+            global::G.MCPTool? mcp,
             global::G.CodeInterpreterTool? codeInterpreter,
-            global::G.ImageGenTool? imageGen,
+            global::G.ImageGenTool? imageGeneration,
             global::G.LocalShellTool? localShell
             )
         {
@@ -308,9 +308,9 @@ namespace G
             FileSearch = fileSearch;
             WebSearchPreview = webSearchPreview;
             ComputerUsePreview = computerUsePreview;
-            MCP = mCP;
+            Mcp = mcp;
             CodeInterpreter = codeInterpreter;
-            ImageGen = imageGen;
+            ImageGeneration = imageGeneration;
             LocalShell = localShell;
         }
 
@@ -319,9 +319,9 @@ namespace G
         /// </summary>
         public object? Object =>
             LocalShell as object ??
-            ImageGen as object ??
+            ImageGeneration as object ??
             CodeInterpreter as object ??
-            MCP as object ??
+            Mcp as object ??
             ComputerUsePreview as object ??
             WebSearchPreview as object ??
             FileSearch as object ??
@@ -336,9 +336,9 @@ namespace G
             FileSearch?.ToString() ??
             WebSearchPreview?.ToString() ??
             ComputerUsePreview?.ToString() ??
-            MCP?.ToString() ??
+            Mcp?.ToString() ??
             CodeInterpreter?.ToString() ??
-            ImageGen?.ToString() ??
+            ImageGeneration?.ToString() ??
             LocalShell?.ToString() 
             ;
 
@@ -347,7 +347,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && IsMCP && !IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && IsCodeInterpreter && !IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && IsImageGen && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMCP && !IsCodeInterpreter && !IsImageGen && IsLocalShell;
+            return IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && IsCodeInterpreter && !IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && IsImageGeneration && !IsLocalShell || !IsFunction && !IsFileSearch && !IsWebSearchPreview && !IsComputerUsePreview && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && IsLocalShell;
         }
 
         /// <summary>
@@ -358,9 +358,9 @@ namespace G
             global::System.Func<global::G.FileSearchTool?, TResult>? fileSearch = null,
             global::System.Func<global::G.WebSearchPreviewTool?, TResult>? webSearchPreview = null,
             global::System.Func<global::G.ComputerUsePreviewTool?, TResult>? computerUsePreview = null,
-            global::System.Func<global::G.MCPTool?, TResult>? mCP = null,
+            global::System.Func<global::G.MCPTool?, TResult>? mcp = null,
             global::System.Func<global::G.CodeInterpreterTool?, TResult>? codeInterpreter = null,
-            global::System.Func<global::G.ImageGenTool?, TResult>? imageGen = null,
+            global::System.Func<global::G.ImageGenTool?, TResult>? imageGeneration = null,
             global::System.Func<global::G.LocalShellTool?, TResult>? localShell = null,
             bool validate = true)
         {
@@ -385,17 +385,17 @@ namespace G
             {
                 return computerUsePreview(ComputerUsePreview!);
             }
-            else if (IsMCP && mCP != null)
+            else if (IsMcp && mcp != null)
             {
-                return mCP(MCP!);
+                return mcp(Mcp!);
             }
             else if (IsCodeInterpreter && codeInterpreter != null)
             {
                 return codeInterpreter(CodeInterpreter!);
             }
-            else if (IsImageGen && imageGen != null)
+            else if (IsImageGeneration && imageGeneration != null)
             {
-                return imageGen(ImageGen!);
+                return imageGeneration(ImageGeneration!);
             }
             else if (IsLocalShell && localShell != null)
             {
@@ -413,9 +413,9 @@ namespace G
             global::System.Action<global::G.FileSearchTool?>? fileSearch = null,
             global::System.Action<global::G.WebSearchPreviewTool?>? webSearchPreview = null,
             global::System.Action<global::G.ComputerUsePreviewTool?>? computerUsePreview = null,
-            global::System.Action<global::G.MCPTool?>? mCP = null,
+            global::System.Action<global::G.MCPTool?>? mcp = null,
             global::System.Action<global::G.CodeInterpreterTool?>? codeInterpreter = null,
-            global::System.Action<global::G.ImageGenTool?>? imageGen = null,
+            global::System.Action<global::G.ImageGenTool?>? imageGeneration = null,
             global::System.Action<global::G.LocalShellTool?>? localShell = null,
             bool validate = true)
         {
@@ -440,17 +440,17 @@ namespace G
             {
                 computerUsePreview?.Invoke(ComputerUsePreview!);
             }
-            else if (IsMCP)
+            else if (IsMcp)
             {
-                mCP?.Invoke(MCP!);
+                mcp?.Invoke(Mcp!);
             }
             else if (IsCodeInterpreter)
             {
                 codeInterpreter?.Invoke(CodeInterpreter!);
             }
-            else if (IsImageGen)
+            else if (IsImageGeneration)
             {
-                imageGen?.Invoke(ImageGen!);
+                imageGeneration?.Invoke(ImageGeneration!);
             }
             else if (IsLocalShell)
             {
@@ -473,11 +473,11 @@ namespace G
                 typeof(global::G.WebSearchPreviewTool),
                 ComputerUsePreview,
                 typeof(global::G.ComputerUsePreviewTool),
-                MCP,
+                Mcp,
                 typeof(global::G.MCPTool),
                 CodeInterpreter,
                 typeof(global::G.CodeInterpreterTool),
-                ImageGen,
+                ImageGeneration,
                 typeof(global::G.ImageGenTool),
                 LocalShell,
                 typeof(global::G.LocalShellTool),
@@ -501,9 +501,9 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.FileSearchTool?>.Default.Equals(FileSearch, other.FileSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.WebSearchPreviewTool?>.Default.Equals(WebSearchPreview, other.WebSearchPreview) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerUsePreviewTool?>.Default.Equals(ComputerUsePreview, other.ComputerUsePreview) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPTool?>.Default.Equals(MCP, other.MCP) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPTool?>.Default.Equals(Mcp, other.Mcp) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenTool?>.Default.Equals(ImageGen, other.ImageGen) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenTool?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.LocalShellTool?>.Default.Equals(LocalShell, other.LocalShell) 
                 ;
         }

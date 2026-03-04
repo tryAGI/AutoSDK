@@ -237,7 +237,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>> RequestedReviewers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam>> RequestedReviewers { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -399,7 +399,7 @@ namespace G
             string nodeId,
             int number,
             string patchUrl,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>> requestedReviewers,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam>> requestedReviewers,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedTeam> requestedTeams,
             string reviewCommentUrl,
             string reviewCommentsUrl,

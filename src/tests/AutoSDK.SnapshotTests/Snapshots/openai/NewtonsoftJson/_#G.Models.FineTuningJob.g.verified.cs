@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FineTuningJob.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -99,7 +97,7 @@ namespace G
         /// A list of integrations to enable for this fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.FineTuningIntegration>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FineTuningIntegration>? Integrations { get; set; }
 
         /// <summary>
         /// The seed used for the fine-tuning job.
@@ -215,7 +213,7 @@ namespace G
             string? validationFile,
             int seed,
             global::G.FineTuningJobObject @object,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.FineTuningIntegration>>? integrations,
+            global::System.Collections.Generic.IList<global::G.FineTuningIntegration>? integrations,
             global::System.DateTimeOffset? estimatedFinish,
             global::G.FineTuneMethod? method,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)

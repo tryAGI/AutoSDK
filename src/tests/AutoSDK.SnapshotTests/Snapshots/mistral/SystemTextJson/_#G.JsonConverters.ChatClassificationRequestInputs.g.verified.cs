@@ -18,12 +18,12 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.InstructRequest? value1 = default;
+            global::G.InstructRequest? instructRequest = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InstructRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InstructRequest).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                instructRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -42,11 +42,11 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.ChatClassificationRequestInputs(
-                value1,
+                instructRequest,
                 value2
                 );
 
-            if (value1 != null)
+            if (instructRequest != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InstructRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InstructRequest).Name}");
@@ -71,11 +71,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsInstructRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InstructRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InstructRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InstructRequest, typeInfo);
             }
             else if (value.IsValue2)
             {

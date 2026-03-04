@@ -1021,7 +1021,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionResponseBaseVariant2? Type248 { get; set; }
+        public global::G.ChatCompletionResponseBaseChatCompletionResponseBase1? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1029,7 +1029,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionResponseVariant2? Type250 { get; set; }
+        public global::G.ChatCompletionResponseChatCompletionResponse1? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>

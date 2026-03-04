@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFileNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFileNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile?>
+    {
+        /// <inheritdoc />
+        public override global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFileExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFileExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

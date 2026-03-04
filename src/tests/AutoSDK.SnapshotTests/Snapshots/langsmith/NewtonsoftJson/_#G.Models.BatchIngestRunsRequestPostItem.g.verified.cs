@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.OneOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -57,13 +57,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public global::G.OneOf<object, object>? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.OneOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -123,13 +123,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_attachments")]
-        public global::G.OneOf<object, object>? InputAttachments { get; set; }
+        public object? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_attachments")]
-        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
+        public object? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -169,18 +169,18 @@ namespace G
             global::System.Guid id,
             object? inputs,
             global::G.OneOf<string, double?, object>? endTime,
-            global::G.OneOf<object, object>? extra,
+            object? extra,
             global::G.OneOf<string, object>? error,
-            global::G.OneOf<object, object>? serialized,
-            global::G.OneOf<object, object>? outputs,
+            object? serialized,
+            object? outputs,
             global::G.OneOf<global::System.Guid?, object>? parentRunId,
             global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
             global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
             global::G.OneOf<global::System.Guid?, object>? sessionId,
             global::G.OneOf<string, object>? sessionName,
             global::G.OneOf<global::System.Guid?, object>? referenceExampleId,
-            global::G.OneOf<object, object>? inputAttachments,
-            global::G.OneOf<object, object>? outputAttachments)
+            object? inputAttachments,
+            object? outputAttachments)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunType = runType;

@@ -15,18 +15,18 @@ namespace G
         /// in the evaluation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraderLabelModel? Value1 { get; init; }
+        public global::G.GraderLabelModel? LabelModelGrader { get; init; }
 #else
-        public global::G.GraderLabelModel? Value1 { get; }
+        public global::G.GraderLabelModel? LabelModelGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabelModelGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsLabelModelGrader => LabelModelGrader != null;
         /// <summary>
         /// 
         /// </summary>
@@ -35,28 +35,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraderLabelModel?(EvalGraderLabelModel @this) => @this.Value1;
+        public static implicit operator global::G.GraderLabelModel?(EvalGraderLabelModel @this) => @this.LabelModelGrader;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalGraderLabelModel(global::G.GraderLabelModel? value)
         {
-            Value1 = value;
+            LabelModelGrader = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            LabelModelGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() 
+            LabelModelGrader?.ToString() 
             ;
 
         /// <summary>
@@ -64,14 +64,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsLabelModelGrader;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderLabelModel?, TResult>? value1 = null,
+            global::System.Func<global::G.GraderLabelModel?, TResult>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)
@@ -79,9 +79,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsLabelModelGrader && labelModelGrader != null)
             {
-                return value1(Value1!);
+                return labelModelGrader(LabelModelGrader!);
             }
 
             return default(TResult);
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderLabelModel?>? value1 = null,
+            global::System.Action<global::G.GraderLabelModel?>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)
@@ -99,9 +99,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsLabelModelGrader)
             {
-                value1?.Invoke(Value1!);
+                labelModelGrader?.Invoke(LabelModelGrader!);
             }
         }
 
@@ -112,7 +112,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                LabelModelGrader,
                 typeof(global::G.GraderLabelModel),
             };
             const int offset = unchecked((int)2166136261);
@@ -130,7 +130,7 @@ namespace G
         public bool Equals(EvalGraderLabelModel other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GraderLabelModel?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GraderLabelModel?>.Default.Equals(LabelModelGrader, other.LabelModelGrader) 
                 ;
         }
 

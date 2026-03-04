@@ -18,22 +18,22 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.GraderStringCheck? value1 = default;
+            global::G.GraderStringCheck? stringCheckGrader = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderStringCheck), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderStringCheck> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderStringCheck).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                stringCheckGrader = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.EvalGraderStringCheck(
-                value1
+                stringCheckGrader
                 );
 
-            if (value1 != null)
+            if (stringCheckGrader != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderStringCheck), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderStringCheck> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderStringCheck).Name}");
@@ -52,11 +52,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsStringCheckGrader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderStringCheck), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderStringCheck?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderStringCheck).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StringCheckGrader, typeInfo);
             }
         }
     }

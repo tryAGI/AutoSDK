@@ -18,18 +18,18 @@ namespace G
         /// interactions.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EasyInputMessage? Value1 { get; init; }
+        public global::G.EasyInputMessage? Message { get; init; }
 #else
-        public global::G.EasyInputMessage? Value1 { get; }
+        public global::G.EasyInputMessage? Message { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessage => Message != null;
 
         /// <summary>
         /// Content item used to generate a response.
@@ -52,18 +52,18 @@ namespace G
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ItemReferenceParam? Value3 { get; init; }
+        public global::G.ItemReferenceParam? ItemReference { get; init; }
 #else
-        public global::G.ItemReferenceParam? Value3 { get; }
+        public global::G.ItemReferenceParam? ItemReference { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ItemReference))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsItemReference => ItemReference != null;
         /// <summary>
         /// 
         /// </summary>
@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EasyInputMessage?(InputItem @this) => @this.Value1;
+        public static implicit operator global::G.EasyInputMessage?(InputItem @this) => @this.Message;
 
         /// <summary>
         /// 
         /// </summary>
         public InputItem(global::G.EasyInputMessage? value)
         {
-            Value1 = value;
+            Message = value;
         }
 
         /// <summary>
@@ -108,46 +108,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ItemReferenceParam?(InputItem @this) => @this.Value3;
+        public static implicit operator global::G.ItemReferenceParam?(InputItem @this) => @this.ItemReference;
 
         /// <summary>
         /// 
         /// </summary>
         public InputItem(global::G.ItemReferenceParam? value)
         {
-            Value3 = value;
+            ItemReference = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public InputItem(
-            global::G.EasyInputMessage? value1,
+            global::G.EasyInputMessage? message,
             global::G.Item? value2,
-            global::G.ItemReferenceParam? value3
+            global::G.ItemReferenceParam? itemReference
             )
         {
-            Value1 = value1;
+            Message = message;
             Value2 = value2;
-            Value3 = value3;
+            ItemReference = itemReference;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            ItemReference as object ??
             Value2 as object ??
-            Value1 as object 
+            Message as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            Message?.ToString() ??
             Value2?.ToString() ??
-            Value3?.ToString() 
+            ItemReference?.ToString() 
             ;
 
         /// <summary>
@@ -155,16 +155,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsMessage && !IsValue2 && !IsItemReference || !IsMessage && IsValue2 && !IsItemReference || !IsMessage && !IsValue2 && IsItemReference;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EasyInputMessage?, TResult>? value1 = null,
+            global::System.Func<global::G.EasyInputMessage?, TResult>? message = null,
             global::System.Func<global::G.Item?, TResult>? value2 = null,
-            global::System.Func<global::G.ItemReferenceParam?, TResult>? value3 = null,
+            global::System.Func<global::G.ItemReferenceParam?, TResult>? itemReference = null,
             bool validate = true)
         {
             if (validate)
@@ -172,17 +172,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessage && message != null)
             {
-                return value1(Value1!);
+                return message(Message!);
             }
             else if (IsValue2 && value2 != null)
             {
                 return value2(Value2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsItemReference && itemReference != null)
             {
-                return value3(Value3!);
+                return itemReference(ItemReference!);
             }
 
             return default(TResult);
@@ -192,9 +192,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EasyInputMessage?>? value1 = null,
+            global::System.Action<global::G.EasyInputMessage?>? message = null,
             global::System.Action<global::G.Item?>? value2 = null,
-            global::System.Action<global::G.ItemReferenceParam?>? value3 = null,
+            global::System.Action<global::G.ItemReferenceParam?>? itemReference = null,
             bool validate = true)
         {
             if (validate)
@@ -202,17 +202,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessage)
             {
-                value1?.Invoke(Value1!);
+                message?.Invoke(Message!);
             }
             else if (IsValue2)
             {
                 value2?.Invoke(Value2!);
             }
-            else if (IsValue3)
+            else if (IsItemReference)
             {
-                value3?.Invoke(Value3!);
+                itemReference?.Invoke(ItemReference!);
             }
         }
 
@@ -223,11 +223,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Message,
                 typeof(global::G.EasyInputMessage),
                 Value2,
                 typeof(global::G.Item),
-                Value3,
+                ItemReference,
                 typeof(global::G.ItemReferenceParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -245,9 +245,9 @@ namespace G
         public bool Equals(InputItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessage?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessage?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.Item?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ItemReferenceParam?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) 
                 ;
         }
 

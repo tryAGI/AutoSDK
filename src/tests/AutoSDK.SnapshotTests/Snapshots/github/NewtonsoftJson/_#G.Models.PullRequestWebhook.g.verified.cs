@@ -14,18 +14,18 @@ namespace G
         /// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PullRequest? Value1 { get; init; }
+        public global::G.PullRequest? PullRequest { get; init; }
 #else
-        public global::G.PullRequest? Value1 { get; }
+        public global::G.PullRequest? PullRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PullRequest))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPullRequest => PullRequest != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PullRequest?(PullRequestWebhook @this) => @this.Value1;
+        public static implicit operator global::G.PullRequest?(PullRequestWebhook @this) => @this.PullRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public PullRequestWebhook(global::G.PullRequest? value)
         {
-            Value1 = value;
+            PullRequest = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public PullRequestWebhook(
-            global::G.PullRequest? value1,
+            global::G.PullRequest? pullRequest,
             global::G.PullRequestWebhookVariant2? value2
             )
         {
-            Value1 = value1;
+            PullRequest = pullRequest;
             Value2 = value2;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            PullRequest as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            PullRequest?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsPullRequest && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PullRequest?, TResult>? value1 = null,
+            global::System.Func<global::G.PullRequest?, TResult>? pullRequest = null,
             global::System.Func<global::G.PullRequestWebhookVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPullRequest && pullRequest != null)
             {
-                return value1(Value1!);
+                return pullRequest(PullRequest!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PullRequest?>? value1 = null,
+            global::System.Action<global::G.PullRequest?>? pullRequest = null,
             global::System.Action<global::G.PullRequestWebhookVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPullRequest)
             {
-                value1?.Invoke(Value1!);
+                pullRequest?.Invoke(PullRequest!);
             }
             else if (IsValue2)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PullRequest,
                 typeof(global::G.PullRequest),
                 Value2,
                 typeof(global::G.PullRequestWebhookVariant2),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(PullRequestWebhook other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PullRequest?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PullRequest?>.Default.Equals(PullRequest, other.PullRequest) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.PullRequestWebhookVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

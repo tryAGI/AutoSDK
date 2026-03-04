@@ -13,7 +13,7 @@ namespace G
             ref int? limit,
             ref string? orderBy,
             ref bool? @public,
-            ref global::G.AllOf<global::G.Accelerator?>? hardware,
+            ref global::G.Accelerator? hardware,
             ref string? clusterId,
             ref string? nodePool,
             ref string? createdAt);
@@ -25,7 +25,7 @@ namespace G
             int? limit,
             string? orderBy,
             bool? @public,
-            global::G.AllOf<global::G.Accelerator?>? hardware,
+            global::G.Accelerator? hardware,
             string? clusterId,
             string? nodePool,
             string? createdAt);
@@ -74,7 +74,7 @@ namespace G
             int? limit = default,
             string? orderBy = default,
             bool? @public = default,
-            global::G.AllOf<global::G.Accelerator?>? hardware = default,
+            global::G.Accelerator? hardware = default,
             string? clusterId = default,
             string? nodePool = default,
             string? createdAt = default,
@@ -102,7 +102,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy)
                 .AddOptionalParameter("public", @public?.ToString())
-                .AddOptionalParameter("hardware", hardware?.ToString() ?? string.Empty)
+                .AddOptionalParameter("hardware", hardware?.ToString())
                 .AddOptionalParameter("cluster_id", clusterId)
                 .AddOptionalParameter("node_pool", nodePool)
                 .AddOptionalParameter("created_at", createdAt) 

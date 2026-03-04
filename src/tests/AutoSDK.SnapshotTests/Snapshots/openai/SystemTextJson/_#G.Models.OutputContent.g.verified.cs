@@ -14,18 +14,18 @@ namespace G
         /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OutputTextContent? Text { get; init; }
+        public global::G.OutputTextContent? OutputText { get; init; }
 #else
-        public global::G.OutputTextContent? Text { get; }
+        public global::G.OutputTextContent? OutputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsOutputText => OutputText != null;
 
         /// <summary>
         /// A refusal from the model.
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OutputTextContent?(OutputContent @this) => @this.Text;
+        public static implicit operator global::G.OutputTextContent?(OutputContent @this) => @this.OutputText;
 
         /// <summary>
         /// 
         /// </summary>
         public OutputContent(global::G.OutputTextContent? value)
         {
-            Text = value;
+            OutputText = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public OutputContent(
-            global::G.OutputTextContent? text,
+            global::G.OutputTextContent? outputText,
             global::G.RefusalContent? refusal
             )
         {
-            Text = text;
+            OutputText = outputText;
             Refusal = refusal;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Refusal as object ??
-            Text as object 
+            OutputText as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
+            OutputText?.ToString() ??
             Refusal?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsRefusal || !IsText && IsRefusal;
+            return IsOutputText && !IsRefusal || !IsOutputText && IsRefusal;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputTextContent?, TResult>? text = null,
+            global::System.Func<global::G.OutputTextContent?, TResult>? outputText = null,
             global::System.Func<global::G.RefusalContent?, TResult>? refusal = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsOutputText && outputText != null)
             {
-                return text(Text!);
+                return outputText(OutputText!);
             }
             else if (IsRefusal && refusal != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputTextContent?>? text = null,
+            global::System.Action<global::G.OutputTextContent?>? outputText = null,
             global::System.Action<global::G.RefusalContent?>? refusal = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsOutputText)
             {
-                text?.Invoke(Text!);
+                outputText?.Invoke(OutputText!);
             }
             else if (IsRefusal)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                OutputText,
                 typeof(global::G.OutputTextContent),
                 Refusal,
                 typeof(global::G.RefusalContent),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(OutputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.OutputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OutputTextContent?>.Default.Equals(OutputText, other.OutputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RefusalContent?>.Default.Equals(Refusal, other.Refusal) 
                 ;
         }

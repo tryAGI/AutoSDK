@@ -51,9 +51,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_card")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2> ProjectCard { get; set; }
+        public required global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2> ProjectCard { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -106,7 +106,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookProjectCardMoved(
-            global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2> projectCard,
+            global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2> projectCard,
             global::G.SimpleUser sender,
             global::G.WebhookProjectCardMovedAction action,
             global::G.WebhookProjectCardMovedChanges? changes,

@@ -23,7 +23,7 @@ namespace G
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_messages")]
-        public global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? InputMessages { get; set; }
+        public global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>? InputMessages { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
         /// </param>
         public CreateEvalCompletionsRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalStoredCompletionsSource> source,
-            global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? inputMessages,
+            global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>? inputMessages,
             global::G.CreateEvalCompletionsRunDataSourceSamplingParams? samplingParams,
             string? model,
             global::G.CreateEvalCompletionsRunDataSourceType type = global::G.CreateEvalCompletionsRunDataSourceType.Completions)

@@ -23,7 +23,7 @@ namespace G
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_messages")]
-        public global::G.OneOf<global::G.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::G.CreateEvalResponsesRunDataSourceInputMessagesVariant2>? InputMessages { get; set; }
+        public global::G.OneOf<global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplate, global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference>? InputMessages { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
         /// </param>
         public CreateEvalResponsesRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalResponsesSource> source,
-            global::G.OneOf<global::G.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::G.CreateEvalResponsesRunDataSourceInputMessagesVariant2>? inputMessages,
+            global::G.OneOf<global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplate, global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference>? inputMessages,
             global::G.CreateEvalResponsesRunDataSourceSamplingParams? samplingParams,
             string? model,
             global::G.CreateEvalResponsesRunDataSourceType type = global::G.CreateEvalResponsesRunDataSourceType.Responses)

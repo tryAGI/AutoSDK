@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> Content { get; set; } = default!;
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>> Content { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,7 +35,7 @@ namespace G
         /// <param name="type"></param>
         /// <param name="content"></param>
         public BetaContentBlockSource(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>> content,
             global::G.BetaContentBlockSourceType type)
         {
             this.Content = content;

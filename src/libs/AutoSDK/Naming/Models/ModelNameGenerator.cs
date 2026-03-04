@@ -15,7 +15,8 @@ public static class ModelNameGenerator
         IOpenApiParameter? parameter = null,
         string? propertyName = null,
         string? componentId = null,
-        int? index = null)
+        int? index = null,
+        string? title = null)
     {
         if (propertyName != null)
         {
@@ -32,6 +33,7 @@ public static class ModelNameGenerator
             Hint.Request => operation?.OperationId + "Request",
             Hint.Response => operation?.OperationId + "Response",
             Hint.Parameter => operation?.OperationId + "_" + parameter?.Name,
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(title) => title!.ToClassName(),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(index != null ? $"{index + 1}" : "")}",
             Hint.Discriminator => "Discriminator",
             //_ when propertyName != null => propertyName,
@@ -56,6 +58,7 @@ public static class ModelNameGenerator
             Hint.Request => context.Operation?.OperationId + "Request",
             Hint.Response => context.Operation?.OperationId + "Response",
             Hint.Parameter => context.Operation?.OperationId + "_" + context.Parameter?.Name,
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(context.Schema.Title) => context.Schema.Title!.ToClassName(),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(context.Index != null ? $"{context.Index + 1}" : "")}",
             Hint.Discriminator => "Discriminator",
             _ when context.PropertyName != null => context.PropertyName,

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaRequestTextBlock? Text { get; init; }
+        public global::G.RequestTextBlock? Text { get; init; }
 #else
-        public global::G.BetaRequestTextBlock? Text { get; }
+        public global::G.RequestTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -36,9 +36,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaRequestImageBlock? Image { get; init; }
+        public global::G.RequestImageBlock? Image { get; init; }
 #else
-        public global::G.BetaRequestImageBlock? Image { get; }
+        public global::G.RequestImageBlock? Image { get; }
 #endif
 
         /// <summary>
@@ -51,17 +51,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.BetaRequestTextBlock value) => new ContentVariant2Item2((global::G.BetaRequestTextBlock?)value);
+        public static implicit operator ContentVariant2Item2(global::G.RequestTextBlock value) => new ContentVariant2Item2((global::G.RequestTextBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaRequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
+        public static implicit operator global::G.RequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.BetaRequestTextBlock? value)
+        public ContentVariant2Item2(global::G.RequestTextBlock? value)
         {
             Text = value;
         }
@@ -69,17 +69,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.BetaRequestImageBlock value) => new ContentVariant2Item2((global::G.BetaRequestImageBlock?)value);
+        public static implicit operator ContentVariant2Item2(global::G.RequestImageBlock value) => new ContentVariant2Item2((global::G.RequestImageBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaRequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
+        public static implicit operator global::G.RequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.BetaRequestImageBlock? value)
+        public ContentVariant2Item2(global::G.RequestImageBlock? value)
         {
             Image = value;
         }
@@ -88,9 +88,9 @@ namespace G
         /// 
         /// </summary>
         public ContentVariant2Item2(
-            global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
-            global::G.BetaRequestTextBlock? text,
-            global::G.BetaRequestImageBlock? image
+            global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
+            global::G.RequestTextBlock? text,
+            global::G.RequestImageBlock? image
             )
         {
             Type = type;
@@ -127,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaRequestTextBlock?, TResult>? text = null,
-            global::System.Func<global::G.BetaRequestImageBlock?, TResult>? image = null,
+            global::System.Func<global::G.RequestTextBlock?, TResult>? text = null,
+            global::System.Func<global::G.RequestImageBlock?, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +152,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaRequestTextBlock?>? text = null,
-            global::System.Action<global::G.BetaRequestImageBlock?>? image = null,
+            global::System.Action<global::G.RequestTextBlock?>? text = null,
+            global::System.Action<global::G.RequestImageBlock?>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -179,9 +179,9 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.BetaRequestTextBlock),
+                typeof(global::G.RequestTextBlock),
                 Image,
-                typeof(global::G.BetaRequestImageBlock),
+                typeof(global::G.RequestImageBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -198,8 +198,8 @@ namespace G
         public bool Equals(ContentVariant2Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RequestImageBlock?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

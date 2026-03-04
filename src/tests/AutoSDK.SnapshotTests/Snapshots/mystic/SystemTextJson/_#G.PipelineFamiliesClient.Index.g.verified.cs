@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? userId,
             ref string? teamId,
-            ref global::G.AllOf<global::G.OrderBy?>? orderBy,
+            ref global::G.OrderBy? orderBy,
             ref string? search,
             ref bool? includeAllRun,
             ref int? skip,
@@ -20,7 +20,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? userId,
             string? teamId,
-            global::G.AllOf<global::G.OrderBy?>? orderBy,
+            global::G.OrderBy? orderBy,
             string? search,
             bool? includeAllRun,
             int? skip,
@@ -61,7 +61,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PaginatedPipelineFamilyGet> IndexAsync(
             string? userId = default,
             string? teamId = default,
-            global::G.AllOf<global::G.OrderBy?>? orderBy = default,
+            global::G.OrderBy? orderBy = default,
             string? search = default,
             bool? includeAllRun = default,
             int? skip = default,
@@ -86,7 +86,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("user_id", userId)
                 .AddOptionalParameter("team_id", teamId)
-                .AddOptionalParameter("order_by", orderBy?.ToString() ?? string.Empty)
+                .AddOptionalParameter("order_by", orderBy?.ToString())
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("include_all_run", includeAllRun?.ToString())
                 .AddOptionalParameter("skip", skip?.ToString())

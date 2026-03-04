@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacyNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacyNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy?>
+    {
+        /// <inheritdoc />
+        public override global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacyExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacyExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

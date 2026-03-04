@@ -14,375 +14,375 @@ namespace G
         /// Labeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LabeledIssueEvent? LabeledEvent { get; init; }
+        public global::G.LabeledIssueEvent? LabeledIssueEvent { get; init; }
 #else
-        public global::G.LabeledIssueEvent? LabeledEvent { get; }
+        public global::G.LabeledIssueEvent? LabeledIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabeledEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabeledIssueEvent))]
 #endif
-        public bool IsLabeledEvent => LabeledEvent != null;
+        public bool IsLabeledIssueEvent => LabeledIssueEvent != null;
 
         /// <summary>
         /// Unlabeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; init; }
+        public global::G.UnlabeledIssueEvent? UnlabeledIssueEvent { get; init; }
 #else
-        public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; }
+        public global::G.UnlabeledIssueEvent? UnlabeledIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnlabeledEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnlabeledIssueEvent))]
 #endif
-        public bool IsUnlabeledEvent => UnlabeledEvent != null;
+        public bool IsUnlabeledIssueEvent => UnlabeledIssueEvent != null;
 
         /// <summary>
         /// Milestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MilestonedIssueEvent? MilestonedEvent { get; init; }
+        public global::G.MilestonedIssueEvent? MilestonedIssueEvent { get; init; }
 #else
-        public global::G.MilestonedIssueEvent? MilestonedEvent { get; }
+        public global::G.MilestonedIssueEvent? MilestonedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MilestonedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MilestonedIssueEvent))]
 #endif
-        public bool IsMilestonedEvent => MilestonedEvent != null;
+        public bool IsMilestonedIssueEvent => MilestonedIssueEvent != null;
 
         /// <summary>
         /// Demilestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; init; }
+        public global::G.DemilestonedIssueEvent? DemilestonedIssueEvent { get; init; }
 #else
-        public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; }
+        public global::G.DemilestonedIssueEvent? DemilestonedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DemilestonedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DemilestonedIssueEvent))]
 #endif
-        public bool IsDemilestonedEvent => DemilestonedEvent != null;
+        public bool IsDemilestonedIssueEvent => DemilestonedIssueEvent != null;
 
         /// <summary>
         /// Renamed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RenamedIssueEvent? RenamedEvent { get; init; }
+        public global::G.RenamedIssueEvent? RenamedIssueEvent { get; init; }
 #else
-        public global::G.RenamedIssueEvent? RenamedEvent { get; }
+        public global::G.RenamedIssueEvent? RenamedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenamedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenamedIssueEvent))]
 #endif
-        public bool IsRenamedEvent => RenamedEvent != null;
+        public bool IsRenamedIssueEvent => RenamedIssueEvent != null;
 
         /// <summary>
         /// Review Requested Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; init; }
+        public global::G.ReviewRequestedIssueEvent? ReviewRequestedIssueEvent { get; init; }
 #else
-        public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; }
+        public global::G.ReviewRequestedIssueEvent? ReviewRequestedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestedIssueEvent))]
 #endif
-        public bool IsReviewRequestedEvent => ReviewRequestedEvent != null;
+        public bool IsReviewRequestedIssueEvent => ReviewRequestedIssueEvent != null;
 
         /// <summary>
         /// Review Request Removed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; init; }
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedIssueEvent { get; init; }
 #else
-        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; }
+        public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemovedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewRequestRemovedIssueEvent))]
 #endif
-        public bool IsReviewRequestRemovedEvent => ReviewRequestRemovedEvent != null;
+        public bool IsReviewRequestRemovedIssueEvent => ReviewRequestRemovedIssueEvent != null;
 
         /// <summary>
         /// Review Dismissed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; init; }
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissedIssueEvent { get; init; }
 #else
-        public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; }
+        public global::G.ReviewDismissedIssueEvent? ReviewDismissedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewDismissedIssueEvent))]
 #endif
-        public bool IsReviewDismissedEvent => ReviewDismissedEvent != null;
+        public bool IsReviewDismissedIssueEvent => ReviewDismissedIssueEvent != null;
 
         /// <summary>
         /// Locked Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LockedIssueEvent? LockedEvent { get; init; }
+        public global::G.LockedIssueEvent? LockedIssueEvent { get; init; }
 #else
-        public global::G.LockedIssueEvent? LockedEvent { get; }
+        public global::G.LockedIssueEvent? LockedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LockedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LockedIssueEvent))]
 #endif
-        public bool IsLockedEvent => LockedEvent != null;
+        public bool IsLockedIssueEvent => LockedIssueEvent != null;
 
         /// <summary>
         /// Added to Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; init; }
+        public global::G.AddedToProjectIssueEvent? AddedToProjectIssueEvent { get; init; }
 #else
-        public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; }
+        public global::G.AddedToProjectIssueEvent? AddedToProjectIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProjectEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AddedToProjectIssueEvent))]
 #endif
-        public bool IsAddedToProjectEvent => AddedToProjectEvent != null;
+        public bool IsAddedToProjectIssueEvent => AddedToProjectIssueEvent != null;
 
         /// <summary>
         /// Moved Column in Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; init; }
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectIssueEvent { get; init; }
 #else
-        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; }
+        public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProjectEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MovedColumnInProjectIssueEvent))]
 #endif
-        public bool IsMovedColumnInProjectEvent => MovedColumnInProjectEvent != null;
+        public bool IsMovedColumnInProjectIssueEvent => MovedColumnInProjectIssueEvent != null;
 
         /// <summary>
         /// Removed from Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; init; }
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectIssueEvent { get; init; }
 #else
-        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; }
+        public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProjectEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RemovedFromProjectIssueEvent))]
 #endif
-        public bool IsRemovedFromProjectEvent => RemovedFromProjectEvent != null;
+        public bool IsRemovedFromProjectIssueEvent => RemovedFromProjectIssueEvent != null;
 
         /// <summary>
         /// Converted Note to Issue Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; init; }
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToIssueIssueEvent { get; init; }
 #else
-        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; }
+        public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToIssueIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteToEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConvertedNoteToIssueIssueEvent))]
 #endif
-        public bool IsConvertedNoteToEvent => ConvertedNoteToEvent != null;
+        public bool IsConvertedNoteToIssueIssueEvent => ConvertedNoteToIssueIssueEvent != null;
 
         /// <summary>
         /// Timeline Comment Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineCommentEvent? CommentEvent { get; init; }
+        public global::G.TimelineCommentEvent? TimelineCommentEvent { get; init; }
 #else
-        public global::G.TimelineCommentEvent? CommentEvent { get; }
+        public global::G.TimelineCommentEvent? TimelineCommentEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommentEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineCommentEvent))]
 #endif
-        public bool IsCommentEvent => CommentEvent != null;
+        public bool IsTimelineCommentEvent => TimelineCommentEvent != null;
 
         /// <summary>
         /// Timeline Cross Referenced Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; init; }
+        public global::G.TimelineCrossReferencedEvent? TimelineCrossReferencedEvent { get; init; }
 #else
-        public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; }
+        public global::G.TimelineCrossReferencedEvent? TimelineCrossReferencedEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CrossReferencedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineCrossReferencedEvent))]
 #endif
-        public bool IsCrossReferencedEvent => CrossReferencedEvent != null;
+        public bool IsTimelineCrossReferencedEvent => TimelineCrossReferencedEvent != null;
 
         /// <summary>
         /// Timeline Committed Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineCommittedEvent? CommittedEvent { get; init; }
+        public global::G.TimelineCommittedEvent? TimelineCommittedEvent { get; init; }
 #else
-        public global::G.TimelineCommittedEvent? CommittedEvent { get; }
+        public global::G.TimelineCommittedEvent? TimelineCommittedEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommittedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineCommittedEvent))]
 #endif
-        public bool IsCommittedEvent => CommittedEvent != null;
+        public bool IsTimelineCommittedEvent => TimelineCommittedEvent != null;
 
         /// <summary>
         /// Timeline Reviewed Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineReviewedEvent? ReviewedEvent { get; init; }
+        public global::G.TimelineReviewedEvent? TimelineReviewedEvent { get; init; }
 #else
-        public global::G.TimelineReviewedEvent? ReviewedEvent { get; }
+        public global::G.TimelineReviewedEvent? TimelineReviewedEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReviewedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineReviewedEvent))]
 #endif
-        public bool IsReviewedEvent => ReviewedEvent != null;
+        public bool IsTimelineReviewedEvent => TimelineReviewedEvent != null;
 
         /// <summary>
         /// Timeline Line Commented Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; init; }
+        public global::G.TimelineLineCommentedEvent? TimelineLineCommentedEvent { get; init; }
 #else
-        public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; }
+        public global::G.TimelineLineCommentedEvent? TimelineLineCommentedEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LineCommentedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineLineCommentedEvent))]
 #endif
-        public bool IsLineCommentedEvent => LineCommentedEvent != null;
+        public bool IsTimelineLineCommentedEvent => TimelineLineCommentedEvent != null;
 
         /// <summary>
         /// Timeline Commit Commented Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; init; }
+        public global::G.TimelineCommitCommentedEvent? TimelineCommitCommentedEvent { get; init; }
 #else
-        public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; }
+        public global::G.TimelineCommitCommentedEvent? TimelineCommitCommentedEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommitCommentedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineCommitCommentedEvent))]
 #endif
-        public bool IsCommitCommentedEvent => CommitCommentedEvent != null;
+        public bool IsTimelineCommitCommentedEvent => TimelineCommitCommentedEvent != null;
 
         /// <summary>
         /// Timeline Assigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; init; }
+        public global::G.TimelineAssignedIssueEvent? TimelineAssignedIssueEvent { get; init; }
 #else
-        public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; }
+        public global::G.TimelineAssignedIssueEvent? TimelineAssignedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssignedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineAssignedIssueEvent))]
 #endif
-        public bool IsAssignedEvent => AssignedEvent != null;
+        public bool IsTimelineAssignedIssueEvent => TimelineAssignedIssueEvent != null;
 
         /// <summary>
         /// Timeline Unassigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; init; }
+        public global::G.TimelineUnassignedIssueEvent? TimelineUnassignedIssueEvent { get; init; }
 #else
-        public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; }
+        public global::G.TimelineUnassignedIssueEvent? TimelineUnassignedIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnassignedEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimelineUnassignedIssueEvent))]
 #endif
-        public bool IsUnassignedEvent => UnassignedEvent != null;
+        public bool IsTimelineUnassignedIssueEvent => TimelineUnassignedIssueEvent != null;
 
         /// <summary>
         /// State Change Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StateChangeIssueEvent? StateChangeEvent { get; init; }
+        public global::G.StateChangeIssueEvent? StateChangeIssueEvent { get; init; }
 #else
-        public global::G.StateChangeIssueEvent? StateChangeEvent { get; }
+        public global::G.StateChangeIssueEvent? StateChangeIssueEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StateChangeEvent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StateChangeIssueEvent))]
 #endif
-        public bool IsStateChangeEvent => StateChangeEvent != null;
+        public bool IsStateChangeIssueEvent => StateChangeIssueEvent != null;
         /// <summary>
         /// 
         /// </summary>
@@ -391,14 +391,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LabeledIssueEvent?(TimelineIssueEvents @this) => @this.LabeledEvent;
+        public static implicit operator global::G.LabeledIssueEvent?(TimelineIssueEvents @this) => @this.LabeledIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.LabeledIssueEvent? value)
         {
-            LabeledEvent = value;
+            LabeledIssueEvent = value;
         }
 
         /// <summary>
@@ -409,14 +409,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UnlabeledIssueEvent?(TimelineIssueEvents @this) => @this.UnlabeledEvent;
+        public static implicit operator global::G.UnlabeledIssueEvent?(TimelineIssueEvents @this) => @this.UnlabeledIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.UnlabeledIssueEvent? value)
         {
-            UnlabeledEvent = value;
+            UnlabeledIssueEvent = value;
         }
 
         /// <summary>
@@ -427,14 +427,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MilestonedIssueEvent?(TimelineIssueEvents @this) => @this.MilestonedEvent;
+        public static implicit operator global::G.MilestonedIssueEvent?(TimelineIssueEvents @this) => @this.MilestonedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.MilestonedIssueEvent? value)
         {
-            MilestonedEvent = value;
+            MilestonedIssueEvent = value;
         }
 
         /// <summary>
@@ -445,14 +445,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DemilestonedIssueEvent?(TimelineIssueEvents @this) => @this.DemilestonedEvent;
+        public static implicit operator global::G.DemilestonedIssueEvent?(TimelineIssueEvents @this) => @this.DemilestonedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.DemilestonedIssueEvent? value)
         {
-            DemilestonedEvent = value;
+            DemilestonedIssueEvent = value;
         }
 
         /// <summary>
@@ -463,14 +463,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RenamedIssueEvent?(TimelineIssueEvents @this) => @this.RenamedEvent;
+        public static implicit operator global::G.RenamedIssueEvent?(TimelineIssueEvents @this) => @this.RenamedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.RenamedIssueEvent? value)
         {
-            RenamedEvent = value;
+            RenamedIssueEvent = value;
         }
 
         /// <summary>
@@ -481,14 +481,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ReviewRequestedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewRequestedEvent;
+        public static implicit operator global::G.ReviewRequestedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewRequestedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.ReviewRequestedIssueEvent? value)
         {
-            ReviewRequestedEvent = value;
+            ReviewRequestedIssueEvent = value;
         }
 
         /// <summary>
@@ -499,14 +499,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ReviewRequestRemovedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewRequestRemovedEvent;
+        public static implicit operator global::G.ReviewRequestRemovedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewRequestRemovedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.ReviewRequestRemovedIssueEvent? value)
         {
-            ReviewRequestRemovedEvent = value;
+            ReviewRequestRemovedIssueEvent = value;
         }
 
         /// <summary>
@@ -517,14 +517,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ReviewDismissedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewDismissedEvent;
+        public static implicit operator global::G.ReviewDismissedIssueEvent?(TimelineIssueEvents @this) => @this.ReviewDismissedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.ReviewDismissedIssueEvent? value)
         {
-            ReviewDismissedEvent = value;
+            ReviewDismissedIssueEvent = value;
         }
 
         /// <summary>
@@ -535,14 +535,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LockedIssueEvent?(TimelineIssueEvents @this) => @this.LockedEvent;
+        public static implicit operator global::G.LockedIssueEvent?(TimelineIssueEvents @this) => @this.LockedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.LockedIssueEvent? value)
         {
-            LockedEvent = value;
+            LockedIssueEvent = value;
         }
 
         /// <summary>
@@ -553,14 +553,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AddedToProjectIssueEvent?(TimelineIssueEvents @this) => @this.AddedToProjectEvent;
+        public static implicit operator global::G.AddedToProjectIssueEvent?(TimelineIssueEvents @this) => @this.AddedToProjectIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.AddedToProjectIssueEvent? value)
         {
-            AddedToProjectEvent = value;
+            AddedToProjectIssueEvent = value;
         }
 
         /// <summary>
@@ -571,14 +571,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MovedColumnInProjectIssueEvent?(TimelineIssueEvents @this) => @this.MovedColumnInProjectEvent;
+        public static implicit operator global::G.MovedColumnInProjectIssueEvent?(TimelineIssueEvents @this) => @this.MovedColumnInProjectIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.MovedColumnInProjectIssueEvent? value)
         {
-            MovedColumnInProjectEvent = value;
+            MovedColumnInProjectIssueEvent = value;
         }
 
         /// <summary>
@@ -589,14 +589,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RemovedFromProjectIssueEvent?(TimelineIssueEvents @this) => @this.RemovedFromProjectEvent;
+        public static implicit operator global::G.RemovedFromProjectIssueEvent?(TimelineIssueEvents @this) => @this.RemovedFromProjectIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.RemovedFromProjectIssueEvent? value)
         {
-            RemovedFromProjectEvent = value;
+            RemovedFromProjectIssueEvent = value;
         }
 
         /// <summary>
@@ -607,14 +607,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConvertedNoteToIssueIssueEvent?(TimelineIssueEvents @this) => @this.ConvertedNoteToEvent;
+        public static implicit operator global::G.ConvertedNoteToIssueIssueEvent?(TimelineIssueEvents @this) => @this.ConvertedNoteToIssueIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.ConvertedNoteToIssueIssueEvent? value)
         {
-            ConvertedNoteToEvent = value;
+            ConvertedNoteToIssueIssueEvent = value;
         }
 
         /// <summary>
@@ -625,14 +625,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineCommentEvent?(TimelineIssueEvents @this) => @this.CommentEvent;
+        public static implicit operator global::G.TimelineCommentEvent?(TimelineIssueEvents @this) => @this.TimelineCommentEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineCommentEvent? value)
         {
-            CommentEvent = value;
+            TimelineCommentEvent = value;
         }
 
         /// <summary>
@@ -643,14 +643,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineCrossReferencedEvent?(TimelineIssueEvents @this) => @this.CrossReferencedEvent;
+        public static implicit operator global::G.TimelineCrossReferencedEvent?(TimelineIssueEvents @this) => @this.TimelineCrossReferencedEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineCrossReferencedEvent? value)
         {
-            CrossReferencedEvent = value;
+            TimelineCrossReferencedEvent = value;
         }
 
         /// <summary>
@@ -661,14 +661,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineCommittedEvent?(TimelineIssueEvents @this) => @this.CommittedEvent;
+        public static implicit operator global::G.TimelineCommittedEvent?(TimelineIssueEvents @this) => @this.TimelineCommittedEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineCommittedEvent? value)
         {
-            CommittedEvent = value;
+            TimelineCommittedEvent = value;
         }
 
         /// <summary>
@@ -679,14 +679,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineReviewedEvent?(TimelineIssueEvents @this) => @this.ReviewedEvent;
+        public static implicit operator global::G.TimelineReviewedEvent?(TimelineIssueEvents @this) => @this.TimelineReviewedEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineReviewedEvent? value)
         {
-            ReviewedEvent = value;
+            TimelineReviewedEvent = value;
         }
 
         /// <summary>
@@ -697,14 +697,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineLineCommentedEvent?(TimelineIssueEvents @this) => @this.LineCommentedEvent;
+        public static implicit operator global::G.TimelineLineCommentedEvent?(TimelineIssueEvents @this) => @this.TimelineLineCommentedEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineLineCommentedEvent? value)
         {
-            LineCommentedEvent = value;
+            TimelineLineCommentedEvent = value;
         }
 
         /// <summary>
@@ -715,14 +715,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineCommitCommentedEvent?(TimelineIssueEvents @this) => @this.CommitCommentedEvent;
+        public static implicit operator global::G.TimelineCommitCommentedEvent?(TimelineIssueEvents @this) => @this.TimelineCommitCommentedEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineCommitCommentedEvent? value)
         {
-            CommitCommentedEvent = value;
+            TimelineCommitCommentedEvent = value;
         }
 
         /// <summary>
@@ -733,14 +733,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineAssignedIssueEvent?(TimelineIssueEvents @this) => @this.AssignedEvent;
+        public static implicit operator global::G.TimelineAssignedIssueEvent?(TimelineIssueEvents @this) => @this.TimelineAssignedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineAssignedIssueEvent? value)
         {
-            AssignedEvent = value;
+            TimelineAssignedIssueEvent = value;
         }
 
         /// <summary>
@@ -751,14 +751,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TimelineUnassignedIssueEvent?(TimelineIssueEvents @this) => @this.UnassignedEvent;
+        public static implicit operator global::G.TimelineUnassignedIssueEvent?(TimelineIssueEvents @this) => @this.TimelineUnassignedIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.TimelineUnassignedIssueEvent? value)
         {
-            UnassignedEvent = value;
+            TimelineUnassignedIssueEvent = value;
         }
 
         /// <summary>
@@ -769,122 +769,122 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StateChangeIssueEvent?(TimelineIssueEvents @this) => @this.StateChangeEvent;
+        public static implicit operator global::G.StateChangeIssueEvent?(TimelineIssueEvents @this) => @this.StateChangeIssueEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(global::G.StateChangeIssueEvent? value)
         {
-            StateChangeEvent = value;
+            StateChangeIssueEvent = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TimelineIssueEvents(
-            global::G.LabeledIssueEvent? labeledEvent,
-            global::G.UnlabeledIssueEvent? unlabeledEvent,
-            global::G.MilestonedIssueEvent? milestonedEvent,
-            global::G.DemilestonedIssueEvent? demilestonedEvent,
-            global::G.RenamedIssueEvent? renamedEvent,
-            global::G.ReviewRequestedIssueEvent? reviewRequestedEvent,
-            global::G.ReviewRequestRemovedIssueEvent? reviewRequestRemovedEvent,
-            global::G.ReviewDismissedIssueEvent? reviewDismissedEvent,
-            global::G.LockedIssueEvent? lockedEvent,
-            global::G.AddedToProjectIssueEvent? addedToProjectEvent,
-            global::G.MovedColumnInProjectIssueEvent? movedColumnInProjectEvent,
-            global::G.RemovedFromProjectIssueEvent? removedFromProjectEvent,
-            global::G.ConvertedNoteToIssueIssueEvent? convertedNoteToEvent,
-            global::G.TimelineCommentEvent? commentEvent,
-            global::G.TimelineCrossReferencedEvent? crossReferencedEvent,
-            global::G.TimelineCommittedEvent? committedEvent,
-            global::G.TimelineReviewedEvent? reviewedEvent,
-            global::G.TimelineLineCommentedEvent? lineCommentedEvent,
-            global::G.TimelineCommitCommentedEvent? commitCommentedEvent,
-            global::G.TimelineAssignedIssueEvent? assignedEvent,
-            global::G.TimelineUnassignedIssueEvent? unassignedEvent,
-            global::G.StateChangeIssueEvent? stateChangeEvent
+            global::G.LabeledIssueEvent? labeledIssueEvent,
+            global::G.UnlabeledIssueEvent? unlabeledIssueEvent,
+            global::G.MilestonedIssueEvent? milestonedIssueEvent,
+            global::G.DemilestonedIssueEvent? demilestonedIssueEvent,
+            global::G.RenamedIssueEvent? renamedIssueEvent,
+            global::G.ReviewRequestedIssueEvent? reviewRequestedIssueEvent,
+            global::G.ReviewRequestRemovedIssueEvent? reviewRequestRemovedIssueEvent,
+            global::G.ReviewDismissedIssueEvent? reviewDismissedIssueEvent,
+            global::G.LockedIssueEvent? lockedIssueEvent,
+            global::G.AddedToProjectIssueEvent? addedToProjectIssueEvent,
+            global::G.MovedColumnInProjectIssueEvent? movedColumnInProjectIssueEvent,
+            global::G.RemovedFromProjectIssueEvent? removedFromProjectIssueEvent,
+            global::G.ConvertedNoteToIssueIssueEvent? convertedNoteToIssueIssueEvent,
+            global::G.TimelineCommentEvent? timelineCommentEvent,
+            global::G.TimelineCrossReferencedEvent? timelineCrossReferencedEvent,
+            global::G.TimelineCommittedEvent? timelineCommittedEvent,
+            global::G.TimelineReviewedEvent? timelineReviewedEvent,
+            global::G.TimelineLineCommentedEvent? timelineLineCommentedEvent,
+            global::G.TimelineCommitCommentedEvent? timelineCommitCommentedEvent,
+            global::G.TimelineAssignedIssueEvent? timelineAssignedIssueEvent,
+            global::G.TimelineUnassignedIssueEvent? timelineUnassignedIssueEvent,
+            global::G.StateChangeIssueEvent? stateChangeIssueEvent
             )
         {
-            LabeledEvent = labeledEvent;
-            UnlabeledEvent = unlabeledEvent;
-            MilestonedEvent = milestonedEvent;
-            DemilestonedEvent = demilestonedEvent;
-            RenamedEvent = renamedEvent;
-            ReviewRequestedEvent = reviewRequestedEvent;
-            ReviewRequestRemovedEvent = reviewRequestRemovedEvent;
-            ReviewDismissedEvent = reviewDismissedEvent;
-            LockedEvent = lockedEvent;
-            AddedToProjectEvent = addedToProjectEvent;
-            MovedColumnInProjectEvent = movedColumnInProjectEvent;
-            RemovedFromProjectEvent = removedFromProjectEvent;
-            ConvertedNoteToEvent = convertedNoteToEvent;
-            CommentEvent = commentEvent;
-            CrossReferencedEvent = crossReferencedEvent;
-            CommittedEvent = committedEvent;
-            ReviewedEvent = reviewedEvent;
-            LineCommentedEvent = lineCommentedEvent;
-            CommitCommentedEvent = commitCommentedEvent;
-            AssignedEvent = assignedEvent;
-            UnassignedEvent = unassignedEvent;
-            StateChangeEvent = stateChangeEvent;
+            LabeledIssueEvent = labeledIssueEvent;
+            UnlabeledIssueEvent = unlabeledIssueEvent;
+            MilestonedIssueEvent = milestonedIssueEvent;
+            DemilestonedIssueEvent = demilestonedIssueEvent;
+            RenamedIssueEvent = renamedIssueEvent;
+            ReviewRequestedIssueEvent = reviewRequestedIssueEvent;
+            ReviewRequestRemovedIssueEvent = reviewRequestRemovedIssueEvent;
+            ReviewDismissedIssueEvent = reviewDismissedIssueEvent;
+            LockedIssueEvent = lockedIssueEvent;
+            AddedToProjectIssueEvent = addedToProjectIssueEvent;
+            MovedColumnInProjectIssueEvent = movedColumnInProjectIssueEvent;
+            RemovedFromProjectIssueEvent = removedFromProjectIssueEvent;
+            ConvertedNoteToIssueIssueEvent = convertedNoteToIssueIssueEvent;
+            TimelineCommentEvent = timelineCommentEvent;
+            TimelineCrossReferencedEvent = timelineCrossReferencedEvent;
+            TimelineCommittedEvent = timelineCommittedEvent;
+            TimelineReviewedEvent = timelineReviewedEvent;
+            TimelineLineCommentedEvent = timelineLineCommentedEvent;
+            TimelineCommitCommentedEvent = timelineCommitCommentedEvent;
+            TimelineAssignedIssueEvent = timelineAssignedIssueEvent;
+            TimelineUnassignedIssueEvent = timelineUnassignedIssueEvent;
+            StateChangeIssueEvent = stateChangeIssueEvent;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            StateChangeEvent as object ??
-            UnassignedEvent as object ??
-            AssignedEvent as object ??
-            CommitCommentedEvent as object ??
-            LineCommentedEvent as object ??
-            ReviewedEvent as object ??
-            CommittedEvent as object ??
-            CrossReferencedEvent as object ??
-            CommentEvent as object ??
-            ConvertedNoteToEvent as object ??
-            RemovedFromProjectEvent as object ??
-            MovedColumnInProjectEvent as object ??
-            AddedToProjectEvent as object ??
-            LockedEvent as object ??
-            ReviewDismissedEvent as object ??
-            ReviewRequestRemovedEvent as object ??
-            ReviewRequestedEvent as object ??
-            RenamedEvent as object ??
-            DemilestonedEvent as object ??
-            MilestonedEvent as object ??
-            UnlabeledEvent as object ??
-            LabeledEvent as object 
+            StateChangeIssueEvent as object ??
+            TimelineUnassignedIssueEvent as object ??
+            TimelineAssignedIssueEvent as object ??
+            TimelineCommitCommentedEvent as object ??
+            TimelineLineCommentedEvent as object ??
+            TimelineReviewedEvent as object ??
+            TimelineCommittedEvent as object ??
+            TimelineCrossReferencedEvent as object ??
+            TimelineCommentEvent as object ??
+            ConvertedNoteToIssueIssueEvent as object ??
+            RemovedFromProjectIssueEvent as object ??
+            MovedColumnInProjectIssueEvent as object ??
+            AddedToProjectIssueEvent as object ??
+            LockedIssueEvent as object ??
+            ReviewDismissedIssueEvent as object ??
+            ReviewRequestRemovedIssueEvent as object ??
+            ReviewRequestedIssueEvent as object ??
+            RenamedIssueEvent as object ??
+            DemilestonedIssueEvent as object ??
+            MilestonedIssueEvent as object ??
+            UnlabeledIssueEvent as object ??
+            LabeledIssueEvent as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            LabeledEvent?.ToString() ??
-            UnlabeledEvent?.ToString() ??
-            MilestonedEvent?.ToString() ??
-            DemilestonedEvent?.ToString() ??
-            RenamedEvent?.ToString() ??
-            ReviewRequestedEvent?.ToString() ??
-            ReviewRequestRemovedEvent?.ToString() ??
-            ReviewDismissedEvent?.ToString() ??
-            LockedEvent?.ToString() ??
-            AddedToProjectEvent?.ToString() ??
-            MovedColumnInProjectEvent?.ToString() ??
-            RemovedFromProjectEvent?.ToString() ??
-            ConvertedNoteToEvent?.ToString() ??
-            CommentEvent?.ToString() ??
-            CrossReferencedEvent?.ToString() ??
-            CommittedEvent?.ToString() ??
-            ReviewedEvent?.ToString() ??
-            LineCommentedEvent?.ToString() ??
-            CommitCommentedEvent?.ToString() ??
-            AssignedEvent?.ToString() ??
-            UnassignedEvent?.ToString() ??
-            StateChangeEvent?.ToString() 
+            LabeledIssueEvent?.ToString() ??
+            UnlabeledIssueEvent?.ToString() ??
+            MilestonedIssueEvent?.ToString() ??
+            DemilestonedIssueEvent?.ToString() ??
+            RenamedIssueEvent?.ToString() ??
+            ReviewRequestedIssueEvent?.ToString() ??
+            ReviewRequestRemovedIssueEvent?.ToString() ??
+            ReviewDismissedIssueEvent?.ToString() ??
+            LockedIssueEvent?.ToString() ??
+            AddedToProjectIssueEvent?.ToString() ??
+            MovedColumnInProjectIssueEvent?.ToString() ??
+            RemovedFromProjectIssueEvent?.ToString() ??
+            ConvertedNoteToIssueIssueEvent?.ToString() ??
+            TimelineCommentEvent?.ToString() ??
+            TimelineCrossReferencedEvent?.ToString() ??
+            TimelineCommittedEvent?.ToString() ??
+            TimelineReviewedEvent?.ToString() ??
+            TimelineLineCommentedEvent?.ToString() ??
+            TimelineCommitCommentedEvent?.ToString() ??
+            TimelineAssignedIssueEvent?.ToString() ??
+            TimelineUnassignedIssueEvent?.ToString() ??
+            StateChangeIssueEvent?.ToString() 
             ;
 
         /// <summary>
@@ -892,35 +892,35 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsLabeledEvent || IsUnlabeledEvent || IsMilestonedEvent || IsDemilestonedEvent || IsRenamedEvent || IsReviewRequestedEvent || IsReviewRequestRemovedEvent || IsReviewDismissedEvent || IsLockedEvent || IsAddedToProjectEvent || IsMovedColumnInProjectEvent || IsRemovedFromProjectEvent || IsConvertedNoteToEvent || IsCommentEvent || IsCrossReferencedEvent || IsCommittedEvent || IsReviewedEvent || IsLineCommentedEvent || IsCommitCommentedEvent || IsAssignedEvent || IsUnassignedEvent || IsStateChangeEvent;
+            return IsLabeledIssueEvent || IsUnlabeledIssueEvent || IsMilestonedIssueEvent || IsDemilestonedIssueEvent || IsRenamedIssueEvent || IsReviewRequestedIssueEvent || IsReviewRequestRemovedIssueEvent || IsReviewDismissedIssueEvent || IsLockedIssueEvent || IsAddedToProjectIssueEvent || IsMovedColumnInProjectIssueEvent || IsRemovedFromProjectIssueEvent || IsConvertedNoteToIssueIssueEvent || IsTimelineCommentEvent || IsTimelineCrossReferencedEvent || IsTimelineCommittedEvent || IsTimelineReviewedEvent || IsTimelineLineCommentedEvent || IsTimelineCommitCommentedEvent || IsTimelineAssignedIssueEvent || IsTimelineUnassignedIssueEvent || IsStateChangeIssueEvent;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LabeledIssueEvent?, TResult>? labeledEvent = null,
-            global::System.Func<global::G.UnlabeledIssueEvent?, TResult>? unlabeledEvent = null,
-            global::System.Func<global::G.MilestonedIssueEvent?, TResult>? milestonedEvent = null,
-            global::System.Func<global::G.DemilestonedIssueEvent?, TResult>? demilestonedEvent = null,
-            global::System.Func<global::G.RenamedIssueEvent?, TResult>? renamedEvent = null,
-            global::System.Func<global::G.ReviewRequestedIssueEvent?, TResult>? reviewRequestedEvent = null,
-            global::System.Func<global::G.ReviewRequestRemovedIssueEvent?, TResult>? reviewRequestRemovedEvent = null,
-            global::System.Func<global::G.ReviewDismissedIssueEvent?, TResult>? reviewDismissedEvent = null,
-            global::System.Func<global::G.LockedIssueEvent?, TResult>? lockedEvent = null,
-            global::System.Func<global::G.AddedToProjectIssueEvent?, TResult>? addedToProjectEvent = null,
-            global::System.Func<global::G.MovedColumnInProjectIssueEvent?, TResult>? movedColumnInProjectEvent = null,
-            global::System.Func<global::G.RemovedFromProjectIssueEvent?, TResult>? removedFromProjectEvent = null,
-            global::System.Func<global::G.ConvertedNoteToIssueIssueEvent?, TResult>? convertedNoteToEvent = null,
-            global::System.Func<global::G.TimelineCommentEvent?, TResult>? commentEvent = null,
-            global::System.Func<global::G.TimelineCrossReferencedEvent?, TResult>? crossReferencedEvent = null,
-            global::System.Func<global::G.TimelineCommittedEvent?, TResult>? committedEvent = null,
-            global::System.Func<global::G.TimelineReviewedEvent?, TResult>? reviewedEvent = null,
-            global::System.Func<global::G.TimelineLineCommentedEvent?, TResult>? lineCommentedEvent = null,
-            global::System.Func<global::G.TimelineCommitCommentedEvent?, TResult>? commitCommentedEvent = null,
-            global::System.Func<global::G.TimelineAssignedIssueEvent?, TResult>? assignedEvent = null,
-            global::System.Func<global::G.TimelineUnassignedIssueEvent?, TResult>? unassignedEvent = null,
-            global::System.Func<global::G.StateChangeIssueEvent?, TResult>? stateChangeEvent = null,
+            global::System.Func<global::G.LabeledIssueEvent?, TResult>? labeledIssueEvent = null,
+            global::System.Func<global::G.UnlabeledIssueEvent?, TResult>? unlabeledIssueEvent = null,
+            global::System.Func<global::G.MilestonedIssueEvent?, TResult>? milestonedIssueEvent = null,
+            global::System.Func<global::G.DemilestonedIssueEvent?, TResult>? demilestonedIssueEvent = null,
+            global::System.Func<global::G.RenamedIssueEvent?, TResult>? renamedIssueEvent = null,
+            global::System.Func<global::G.ReviewRequestedIssueEvent?, TResult>? reviewRequestedIssueEvent = null,
+            global::System.Func<global::G.ReviewRequestRemovedIssueEvent?, TResult>? reviewRequestRemovedIssueEvent = null,
+            global::System.Func<global::G.ReviewDismissedIssueEvent?, TResult>? reviewDismissedIssueEvent = null,
+            global::System.Func<global::G.LockedIssueEvent?, TResult>? lockedIssueEvent = null,
+            global::System.Func<global::G.AddedToProjectIssueEvent?, TResult>? addedToProjectIssueEvent = null,
+            global::System.Func<global::G.MovedColumnInProjectIssueEvent?, TResult>? movedColumnInProjectIssueEvent = null,
+            global::System.Func<global::G.RemovedFromProjectIssueEvent?, TResult>? removedFromProjectIssueEvent = null,
+            global::System.Func<global::G.ConvertedNoteToIssueIssueEvent?, TResult>? convertedNoteToIssueIssueEvent = null,
+            global::System.Func<global::G.TimelineCommentEvent?, TResult>? timelineCommentEvent = null,
+            global::System.Func<global::G.TimelineCrossReferencedEvent?, TResult>? timelineCrossReferencedEvent = null,
+            global::System.Func<global::G.TimelineCommittedEvent?, TResult>? timelineCommittedEvent = null,
+            global::System.Func<global::G.TimelineReviewedEvent?, TResult>? timelineReviewedEvent = null,
+            global::System.Func<global::G.TimelineLineCommentedEvent?, TResult>? timelineLineCommentedEvent = null,
+            global::System.Func<global::G.TimelineCommitCommentedEvent?, TResult>? timelineCommitCommentedEvent = null,
+            global::System.Func<global::G.TimelineAssignedIssueEvent?, TResult>? timelineAssignedIssueEvent = null,
+            global::System.Func<global::G.TimelineUnassignedIssueEvent?, TResult>? timelineUnassignedIssueEvent = null,
+            global::System.Func<global::G.StateChangeIssueEvent?, TResult>? stateChangeIssueEvent = null,
             bool validate = true)
         {
             if (validate)
@@ -928,93 +928,93 @@ namespace G
                 Validate();
             }
 
-            if (IsLabeledEvent && labeledEvent != null)
+            if (IsLabeledIssueEvent && labeledIssueEvent != null)
             {
-                return labeledEvent(LabeledEvent!);
+                return labeledIssueEvent(LabeledIssueEvent!);
             }
-            else if (IsUnlabeledEvent && unlabeledEvent != null)
+            else if (IsUnlabeledIssueEvent && unlabeledIssueEvent != null)
             {
-                return unlabeledEvent(UnlabeledEvent!);
+                return unlabeledIssueEvent(UnlabeledIssueEvent!);
             }
-            else if (IsMilestonedEvent && milestonedEvent != null)
+            else if (IsMilestonedIssueEvent && milestonedIssueEvent != null)
             {
-                return milestonedEvent(MilestonedEvent!);
+                return milestonedIssueEvent(MilestonedIssueEvent!);
             }
-            else if (IsDemilestonedEvent && demilestonedEvent != null)
+            else if (IsDemilestonedIssueEvent && demilestonedIssueEvent != null)
             {
-                return demilestonedEvent(DemilestonedEvent!);
+                return demilestonedIssueEvent(DemilestonedIssueEvent!);
             }
-            else if (IsRenamedEvent && renamedEvent != null)
+            else if (IsRenamedIssueEvent && renamedIssueEvent != null)
             {
-                return renamedEvent(RenamedEvent!);
+                return renamedIssueEvent(RenamedIssueEvent!);
             }
-            else if (IsReviewRequestedEvent && reviewRequestedEvent != null)
+            else if (IsReviewRequestedIssueEvent && reviewRequestedIssueEvent != null)
             {
-                return reviewRequestedEvent(ReviewRequestedEvent!);
+                return reviewRequestedIssueEvent(ReviewRequestedIssueEvent!);
             }
-            else if (IsReviewRequestRemovedEvent && reviewRequestRemovedEvent != null)
+            else if (IsReviewRequestRemovedIssueEvent && reviewRequestRemovedIssueEvent != null)
             {
-                return reviewRequestRemovedEvent(ReviewRequestRemovedEvent!);
+                return reviewRequestRemovedIssueEvent(ReviewRequestRemovedIssueEvent!);
             }
-            else if (IsReviewDismissedEvent && reviewDismissedEvent != null)
+            else if (IsReviewDismissedIssueEvent && reviewDismissedIssueEvent != null)
             {
-                return reviewDismissedEvent(ReviewDismissedEvent!);
+                return reviewDismissedIssueEvent(ReviewDismissedIssueEvent!);
             }
-            else if (IsLockedEvent && lockedEvent != null)
+            else if (IsLockedIssueEvent && lockedIssueEvent != null)
             {
-                return lockedEvent(LockedEvent!);
+                return lockedIssueEvent(LockedIssueEvent!);
             }
-            else if (IsAddedToProjectEvent && addedToProjectEvent != null)
+            else if (IsAddedToProjectIssueEvent && addedToProjectIssueEvent != null)
             {
-                return addedToProjectEvent(AddedToProjectEvent!);
+                return addedToProjectIssueEvent(AddedToProjectIssueEvent!);
             }
-            else if (IsMovedColumnInProjectEvent && movedColumnInProjectEvent != null)
+            else if (IsMovedColumnInProjectIssueEvent && movedColumnInProjectIssueEvent != null)
             {
-                return movedColumnInProjectEvent(MovedColumnInProjectEvent!);
+                return movedColumnInProjectIssueEvent(MovedColumnInProjectIssueEvent!);
             }
-            else if (IsRemovedFromProjectEvent && removedFromProjectEvent != null)
+            else if (IsRemovedFromProjectIssueEvent && removedFromProjectIssueEvent != null)
             {
-                return removedFromProjectEvent(RemovedFromProjectEvent!);
+                return removedFromProjectIssueEvent(RemovedFromProjectIssueEvent!);
             }
-            else if (IsConvertedNoteToEvent && convertedNoteToEvent != null)
+            else if (IsConvertedNoteToIssueIssueEvent && convertedNoteToIssueIssueEvent != null)
             {
-                return convertedNoteToEvent(ConvertedNoteToEvent!);
+                return convertedNoteToIssueIssueEvent(ConvertedNoteToIssueIssueEvent!);
             }
-            else if (IsCommentEvent && commentEvent != null)
+            else if (IsTimelineCommentEvent && timelineCommentEvent != null)
             {
-                return commentEvent(CommentEvent!);
+                return timelineCommentEvent(TimelineCommentEvent!);
             }
-            else if (IsCrossReferencedEvent && crossReferencedEvent != null)
+            else if (IsTimelineCrossReferencedEvent && timelineCrossReferencedEvent != null)
             {
-                return crossReferencedEvent(CrossReferencedEvent!);
+                return timelineCrossReferencedEvent(TimelineCrossReferencedEvent!);
             }
-            else if (IsCommittedEvent && committedEvent != null)
+            else if (IsTimelineCommittedEvent && timelineCommittedEvent != null)
             {
-                return committedEvent(CommittedEvent!);
+                return timelineCommittedEvent(TimelineCommittedEvent!);
             }
-            else if (IsReviewedEvent && reviewedEvent != null)
+            else if (IsTimelineReviewedEvent && timelineReviewedEvent != null)
             {
-                return reviewedEvent(ReviewedEvent!);
+                return timelineReviewedEvent(TimelineReviewedEvent!);
             }
-            else if (IsLineCommentedEvent && lineCommentedEvent != null)
+            else if (IsTimelineLineCommentedEvent && timelineLineCommentedEvent != null)
             {
-                return lineCommentedEvent(LineCommentedEvent!);
+                return timelineLineCommentedEvent(TimelineLineCommentedEvent!);
             }
-            else if (IsCommitCommentedEvent && commitCommentedEvent != null)
+            else if (IsTimelineCommitCommentedEvent && timelineCommitCommentedEvent != null)
             {
-                return commitCommentedEvent(CommitCommentedEvent!);
+                return timelineCommitCommentedEvent(TimelineCommitCommentedEvent!);
             }
-            else if (IsAssignedEvent && assignedEvent != null)
+            else if (IsTimelineAssignedIssueEvent && timelineAssignedIssueEvent != null)
             {
-                return assignedEvent(AssignedEvent!);
+                return timelineAssignedIssueEvent(TimelineAssignedIssueEvent!);
             }
-            else if (IsUnassignedEvent && unassignedEvent != null)
+            else if (IsTimelineUnassignedIssueEvent && timelineUnassignedIssueEvent != null)
             {
-                return unassignedEvent(UnassignedEvent!);
+                return timelineUnassignedIssueEvent(TimelineUnassignedIssueEvent!);
             }
-            else if (IsStateChangeEvent && stateChangeEvent != null)
+            else if (IsStateChangeIssueEvent && stateChangeIssueEvent != null)
             {
-                return stateChangeEvent(StateChangeEvent!);
+                return stateChangeIssueEvent(StateChangeIssueEvent!);
             }
 
             return default(TResult);
@@ -1024,28 +1024,28 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LabeledIssueEvent?>? labeledEvent = null,
-            global::System.Action<global::G.UnlabeledIssueEvent?>? unlabeledEvent = null,
-            global::System.Action<global::G.MilestonedIssueEvent?>? milestonedEvent = null,
-            global::System.Action<global::G.DemilestonedIssueEvent?>? demilestonedEvent = null,
-            global::System.Action<global::G.RenamedIssueEvent?>? renamedEvent = null,
-            global::System.Action<global::G.ReviewRequestedIssueEvent?>? reviewRequestedEvent = null,
-            global::System.Action<global::G.ReviewRequestRemovedIssueEvent?>? reviewRequestRemovedEvent = null,
-            global::System.Action<global::G.ReviewDismissedIssueEvent?>? reviewDismissedEvent = null,
-            global::System.Action<global::G.LockedIssueEvent?>? lockedEvent = null,
-            global::System.Action<global::G.AddedToProjectIssueEvent?>? addedToProjectEvent = null,
-            global::System.Action<global::G.MovedColumnInProjectIssueEvent?>? movedColumnInProjectEvent = null,
-            global::System.Action<global::G.RemovedFromProjectIssueEvent?>? removedFromProjectEvent = null,
-            global::System.Action<global::G.ConvertedNoteToIssueIssueEvent?>? convertedNoteToEvent = null,
-            global::System.Action<global::G.TimelineCommentEvent?>? commentEvent = null,
-            global::System.Action<global::G.TimelineCrossReferencedEvent?>? crossReferencedEvent = null,
-            global::System.Action<global::G.TimelineCommittedEvent?>? committedEvent = null,
-            global::System.Action<global::G.TimelineReviewedEvent?>? reviewedEvent = null,
-            global::System.Action<global::G.TimelineLineCommentedEvent?>? lineCommentedEvent = null,
-            global::System.Action<global::G.TimelineCommitCommentedEvent?>? commitCommentedEvent = null,
-            global::System.Action<global::G.TimelineAssignedIssueEvent?>? assignedEvent = null,
-            global::System.Action<global::G.TimelineUnassignedIssueEvent?>? unassignedEvent = null,
-            global::System.Action<global::G.StateChangeIssueEvent?>? stateChangeEvent = null,
+            global::System.Action<global::G.LabeledIssueEvent?>? labeledIssueEvent = null,
+            global::System.Action<global::G.UnlabeledIssueEvent?>? unlabeledIssueEvent = null,
+            global::System.Action<global::G.MilestonedIssueEvent?>? milestonedIssueEvent = null,
+            global::System.Action<global::G.DemilestonedIssueEvent?>? demilestonedIssueEvent = null,
+            global::System.Action<global::G.RenamedIssueEvent?>? renamedIssueEvent = null,
+            global::System.Action<global::G.ReviewRequestedIssueEvent?>? reviewRequestedIssueEvent = null,
+            global::System.Action<global::G.ReviewRequestRemovedIssueEvent?>? reviewRequestRemovedIssueEvent = null,
+            global::System.Action<global::G.ReviewDismissedIssueEvent?>? reviewDismissedIssueEvent = null,
+            global::System.Action<global::G.LockedIssueEvent?>? lockedIssueEvent = null,
+            global::System.Action<global::G.AddedToProjectIssueEvent?>? addedToProjectIssueEvent = null,
+            global::System.Action<global::G.MovedColumnInProjectIssueEvent?>? movedColumnInProjectIssueEvent = null,
+            global::System.Action<global::G.RemovedFromProjectIssueEvent?>? removedFromProjectIssueEvent = null,
+            global::System.Action<global::G.ConvertedNoteToIssueIssueEvent?>? convertedNoteToIssueIssueEvent = null,
+            global::System.Action<global::G.TimelineCommentEvent?>? timelineCommentEvent = null,
+            global::System.Action<global::G.TimelineCrossReferencedEvent?>? timelineCrossReferencedEvent = null,
+            global::System.Action<global::G.TimelineCommittedEvent?>? timelineCommittedEvent = null,
+            global::System.Action<global::G.TimelineReviewedEvent?>? timelineReviewedEvent = null,
+            global::System.Action<global::G.TimelineLineCommentedEvent?>? timelineLineCommentedEvent = null,
+            global::System.Action<global::G.TimelineCommitCommentedEvent?>? timelineCommitCommentedEvent = null,
+            global::System.Action<global::G.TimelineAssignedIssueEvent?>? timelineAssignedIssueEvent = null,
+            global::System.Action<global::G.TimelineUnassignedIssueEvent?>? timelineUnassignedIssueEvent = null,
+            global::System.Action<global::G.StateChangeIssueEvent?>? stateChangeIssueEvent = null,
             bool validate = true)
         {
             if (validate)
@@ -1053,93 +1053,93 @@ namespace G
                 Validate();
             }
 
-            if (IsLabeledEvent)
+            if (IsLabeledIssueEvent)
             {
-                labeledEvent?.Invoke(LabeledEvent!);
+                labeledIssueEvent?.Invoke(LabeledIssueEvent!);
             }
-            else if (IsUnlabeledEvent)
+            else if (IsUnlabeledIssueEvent)
             {
-                unlabeledEvent?.Invoke(UnlabeledEvent!);
+                unlabeledIssueEvent?.Invoke(UnlabeledIssueEvent!);
             }
-            else if (IsMilestonedEvent)
+            else if (IsMilestonedIssueEvent)
             {
-                milestonedEvent?.Invoke(MilestonedEvent!);
+                milestonedIssueEvent?.Invoke(MilestonedIssueEvent!);
             }
-            else if (IsDemilestonedEvent)
+            else if (IsDemilestonedIssueEvent)
             {
-                demilestonedEvent?.Invoke(DemilestonedEvent!);
+                demilestonedIssueEvent?.Invoke(DemilestonedIssueEvent!);
             }
-            else if (IsRenamedEvent)
+            else if (IsRenamedIssueEvent)
             {
-                renamedEvent?.Invoke(RenamedEvent!);
+                renamedIssueEvent?.Invoke(RenamedIssueEvent!);
             }
-            else if (IsReviewRequestedEvent)
+            else if (IsReviewRequestedIssueEvent)
             {
-                reviewRequestedEvent?.Invoke(ReviewRequestedEvent!);
+                reviewRequestedIssueEvent?.Invoke(ReviewRequestedIssueEvent!);
             }
-            else if (IsReviewRequestRemovedEvent)
+            else if (IsReviewRequestRemovedIssueEvent)
             {
-                reviewRequestRemovedEvent?.Invoke(ReviewRequestRemovedEvent!);
+                reviewRequestRemovedIssueEvent?.Invoke(ReviewRequestRemovedIssueEvent!);
             }
-            else if (IsReviewDismissedEvent)
+            else if (IsReviewDismissedIssueEvent)
             {
-                reviewDismissedEvent?.Invoke(ReviewDismissedEvent!);
+                reviewDismissedIssueEvent?.Invoke(ReviewDismissedIssueEvent!);
             }
-            else if (IsLockedEvent)
+            else if (IsLockedIssueEvent)
             {
-                lockedEvent?.Invoke(LockedEvent!);
+                lockedIssueEvent?.Invoke(LockedIssueEvent!);
             }
-            else if (IsAddedToProjectEvent)
+            else if (IsAddedToProjectIssueEvent)
             {
-                addedToProjectEvent?.Invoke(AddedToProjectEvent!);
+                addedToProjectIssueEvent?.Invoke(AddedToProjectIssueEvent!);
             }
-            else if (IsMovedColumnInProjectEvent)
+            else if (IsMovedColumnInProjectIssueEvent)
             {
-                movedColumnInProjectEvent?.Invoke(MovedColumnInProjectEvent!);
+                movedColumnInProjectIssueEvent?.Invoke(MovedColumnInProjectIssueEvent!);
             }
-            else if (IsRemovedFromProjectEvent)
+            else if (IsRemovedFromProjectIssueEvent)
             {
-                removedFromProjectEvent?.Invoke(RemovedFromProjectEvent!);
+                removedFromProjectIssueEvent?.Invoke(RemovedFromProjectIssueEvent!);
             }
-            else if (IsConvertedNoteToEvent)
+            else if (IsConvertedNoteToIssueIssueEvent)
             {
-                convertedNoteToEvent?.Invoke(ConvertedNoteToEvent!);
+                convertedNoteToIssueIssueEvent?.Invoke(ConvertedNoteToIssueIssueEvent!);
             }
-            else if (IsCommentEvent)
+            else if (IsTimelineCommentEvent)
             {
-                commentEvent?.Invoke(CommentEvent!);
+                timelineCommentEvent?.Invoke(TimelineCommentEvent!);
             }
-            else if (IsCrossReferencedEvent)
+            else if (IsTimelineCrossReferencedEvent)
             {
-                crossReferencedEvent?.Invoke(CrossReferencedEvent!);
+                timelineCrossReferencedEvent?.Invoke(TimelineCrossReferencedEvent!);
             }
-            else if (IsCommittedEvent)
+            else if (IsTimelineCommittedEvent)
             {
-                committedEvent?.Invoke(CommittedEvent!);
+                timelineCommittedEvent?.Invoke(TimelineCommittedEvent!);
             }
-            else if (IsReviewedEvent)
+            else if (IsTimelineReviewedEvent)
             {
-                reviewedEvent?.Invoke(ReviewedEvent!);
+                timelineReviewedEvent?.Invoke(TimelineReviewedEvent!);
             }
-            else if (IsLineCommentedEvent)
+            else if (IsTimelineLineCommentedEvent)
             {
-                lineCommentedEvent?.Invoke(LineCommentedEvent!);
+                timelineLineCommentedEvent?.Invoke(TimelineLineCommentedEvent!);
             }
-            else if (IsCommitCommentedEvent)
+            else if (IsTimelineCommitCommentedEvent)
             {
-                commitCommentedEvent?.Invoke(CommitCommentedEvent!);
+                timelineCommitCommentedEvent?.Invoke(TimelineCommitCommentedEvent!);
             }
-            else if (IsAssignedEvent)
+            else if (IsTimelineAssignedIssueEvent)
             {
-                assignedEvent?.Invoke(AssignedEvent!);
+                timelineAssignedIssueEvent?.Invoke(TimelineAssignedIssueEvent!);
             }
-            else if (IsUnassignedEvent)
+            else if (IsTimelineUnassignedIssueEvent)
             {
-                unassignedEvent?.Invoke(UnassignedEvent!);
+                timelineUnassignedIssueEvent?.Invoke(TimelineUnassignedIssueEvent!);
             }
-            else if (IsStateChangeEvent)
+            else if (IsStateChangeIssueEvent)
             {
-                stateChangeEvent?.Invoke(StateChangeEvent!);
+                stateChangeIssueEvent?.Invoke(StateChangeIssueEvent!);
             }
         }
 
@@ -1150,49 +1150,49 @@ namespace G
         {
             var fields = new object?[]
             {
-                LabeledEvent,
+                LabeledIssueEvent,
                 typeof(global::G.LabeledIssueEvent),
-                UnlabeledEvent,
+                UnlabeledIssueEvent,
                 typeof(global::G.UnlabeledIssueEvent),
-                MilestonedEvent,
+                MilestonedIssueEvent,
                 typeof(global::G.MilestonedIssueEvent),
-                DemilestonedEvent,
+                DemilestonedIssueEvent,
                 typeof(global::G.DemilestonedIssueEvent),
-                RenamedEvent,
+                RenamedIssueEvent,
                 typeof(global::G.RenamedIssueEvent),
-                ReviewRequestedEvent,
+                ReviewRequestedIssueEvent,
                 typeof(global::G.ReviewRequestedIssueEvent),
-                ReviewRequestRemovedEvent,
+                ReviewRequestRemovedIssueEvent,
                 typeof(global::G.ReviewRequestRemovedIssueEvent),
-                ReviewDismissedEvent,
+                ReviewDismissedIssueEvent,
                 typeof(global::G.ReviewDismissedIssueEvent),
-                LockedEvent,
+                LockedIssueEvent,
                 typeof(global::G.LockedIssueEvent),
-                AddedToProjectEvent,
+                AddedToProjectIssueEvent,
                 typeof(global::G.AddedToProjectIssueEvent),
-                MovedColumnInProjectEvent,
+                MovedColumnInProjectIssueEvent,
                 typeof(global::G.MovedColumnInProjectIssueEvent),
-                RemovedFromProjectEvent,
+                RemovedFromProjectIssueEvent,
                 typeof(global::G.RemovedFromProjectIssueEvent),
-                ConvertedNoteToEvent,
+                ConvertedNoteToIssueIssueEvent,
                 typeof(global::G.ConvertedNoteToIssueIssueEvent),
-                CommentEvent,
+                TimelineCommentEvent,
                 typeof(global::G.TimelineCommentEvent),
-                CrossReferencedEvent,
+                TimelineCrossReferencedEvent,
                 typeof(global::G.TimelineCrossReferencedEvent),
-                CommittedEvent,
+                TimelineCommittedEvent,
                 typeof(global::G.TimelineCommittedEvent),
-                ReviewedEvent,
+                TimelineReviewedEvent,
                 typeof(global::G.TimelineReviewedEvent),
-                LineCommentedEvent,
+                TimelineLineCommentedEvent,
                 typeof(global::G.TimelineLineCommentedEvent),
-                CommitCommentedEvent,
+                TimelineCommitCommentedEvent,
                 typeof(global::G.TimelineCommitCommentedEvent),
-                AssignedEvent,
+                TimelineAssignedIssueEvent,
                 typeof(global::G.TimelineAssignedIssueEvent),
-                UnassignedEvent,
+                TimelineUnassignedIssueEvent,
                 typeof(global::G.TimelineUnassignedIssueEvent),
-                StateChangeEvent,
+                StateChangeIssueEvent,
                 typeof(global::G.StateChangeIssueEvent),
             };
             const int offset = unchecked((int)2166136261);
@@ -1210,28 +1210,28 @@ namespace G
         public bool Equals(TimelineIssueEvents other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.LabeledIssueEvent?>.Default.Equals(LabeledEvent, other.LabeledEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UnlabeledIssueEvent?>.Default.Equals(UnlabeledEvent, other.UnlabeledEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MilestonedIssueEvent?>.Default.Equals(MilestonedEvent, other.MilestonedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DemilestonedIssueEvent?>.Default.Equals(DemilestonedEvent, other.DemilestonedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RenamedIssueEvent?>.Default.Equals(RenamedEvent, other.RenamedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ReviewRequestedIssueEvent?>.Default.Equals(ReviewRequestedEvent, other.ReviewRequestedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ReviewRequestRemovedIssueEvent?>.Default.Equals(ReviewRequestRemovedEvent, other.ReviewRequestRemovedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ReviewDismissedIssueEvent?>.Default.Equals(ReviewDismissedEvent, other.ReviewDismissedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LockedIssueEvent?>.Default.Equals(LockedEvent, other.LockedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AddedToProjectIssueEvent?>.Default.Equals(AddedToProjectEvent, other.AddedToProjectEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MovedColumnInProjectIssueEvent?>.Default.Equals(MovedColumnInProjectEvent, other.MovedColumnInProjectEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RemovedFromProjectIssueEvent?>.Default.Equals(RemovedFromProjectEvent, other.RemovedFromProjectEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ConvertedNoteToIssueIssueEvent?>.Default.Equals(ConvertedNoteToEvent, other.ConvertedNoteToEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommentEvent?>.Default.Equals(CommentEvent, other.CommentEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCrossReferencedEvent?>.Default.Equals(CrossReferencedEvent, other.CrossReferencedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommittedEvent?>.Default.Equals(CommittedEvent, other.CommittedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineReviewedEvent?>.Default.Equals(ReviewedEvent, other.ReviewedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineLineCommentedEvent?>.Default.Equals(LineCommentedEvent, other.LineCommentedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommitCommentedEvent?>.Default.Equals(CommitCommentedEvent, other.CommitCommentedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineAssignedIssueEvent?>.Default.Equals(AssignedEvent, other.AssignedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TimelineUnassignedIssueEvent?>.Default.Equals(UnassignedEvent, other.UnassignedEvent) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StateChangeIssueEvent?>.Default.Equals(StateChangeEvent, other.StateChangeEvent) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LabeledIssueEvent?>.Default.Equals(LabeledIssueEvent, other.LabeledIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UnlabeledIssueEvent?>.Default.Equals(UnlabeledIssueEvent, other.UnlabeledIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MilestonedIssueEvent?>.Default.Equals(MilestonedIssueEvent, other.MilestonedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DemilestonedIssueEvent?>.Default.Equals(DemilestonedIssueEvent, other.DemilestonedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RenamedIssueEvent?>.Default.Equals(RenamedIssueEvent, other.RenamedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReviewRequestedIssueEvent?>.Default.Equals(ReviewRequestedIssueEvent, other.ReviewRequestedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReviewRequestRemovedIssueEvent?>.Default.Equals(ReviewRequestRemovedIssueEvent, other.ReviewRequestRemovedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReviewDismissedIssueEvent?>.Default.Equals(ReviewDismissedIssueEvent, other.ReviewDismissedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LockedIssueEvent?>.Default.Equals(LockedIssueEvent, other.LockedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AddedToProjectIssueEvent?>.Default.Equals(AddedToProjectIssueEvent, other.AddedToProjectIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MovedColumnInProjectIssueEvent?>.Default.Equals(MovedColumnInProjectIssueEvent, other.MovedColumnInProjectIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RemovedFromProjectIssueEvent?>.Default.Equals(RemovedFromProjectIssueEvent, other.RemovedFromProjectIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConvertedNoteToIssueIssueEvent?>.Default.Equals(ConvertedNoteToIssueIssueEvent, other.ConvertedNoteToIssueIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommentEvent?>.Default.Equals(TimelineCommentEvent, other.TimelineCommentEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCrossReferencedEvent?>.Default.Equals(TimelineCrossReferencedEvent, other.TimelineCrossReferencedEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommittedEvent?>.Default.Equals(TimelineCommittedEvent, other.TimelineCommittedEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineReviewedEvent?>.Default.Equals(TimelineReviewedEvent, other.TimelineReviewedEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineLineCommentedEvent?>.Default.Equals(TimelineLineCommentedEvent, other.TimelineLineCommentedEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineCommitCommentedEvent?>.Default.Equals(TimelineCommitCommentedEvent, other.TimelineCommitCommentedEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineAssignedIssueEvent?>.Default.Equals(TimelineAssignedIssueEvent, other.TimelineAssignedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TimelineUnassignedIssueEvent?>.Default.Equals(TimelineUnassignedIssueEvent, other.TimelineUnassignedIssueEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StateChangeIssueEvent?>.Default.Equals(StateChangeIssueEvent, other.StateChangeIssueEvent) 
                 ;
         }
 

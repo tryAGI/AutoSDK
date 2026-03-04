@@ -24,8 +24,8 @@ namespace G
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_messages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>))]
-        public global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? InputMessages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>))]
+        public global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>? InputMessages { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
 #endif
         public CreateEvalCompletionsRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalStoredCompletionsSource> source,
-            global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::G.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>? inputMessages,
+            global::G.OneOf<global::G.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>? inputMessages,
             global::G.CreateEvalCompletionsRunDataSourceSamplingParams? samplingParams,
             string? model,
             global::G.CreateEvalCompletionsRunDataSourceType type = global::G.CreateEvalCompletionsRunDataSourceType.Completions)

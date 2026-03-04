@@ -14,52 +14,52 @@ namespace G
         /// A citation to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FileCitationBody? FileCitationBody { get; init; }
+        public global::G.FileCitationBody? FileCitation { get; init; }
 #else
-        public global::G.FileCitationBody? FileCitationBody { get; }
+        public global::G.FileCitationBody? FileCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitationBody))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
-        public bool IsFileCitationBody => FileCitationBody != null;
+        public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
         /// A citation for a web resource used to generate a model response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UrlCitationBody? UrlCitationBody { get; init; }
+        public global::G.UrlCitationBody? UrlCitation { get; init; }
 #else
-        public global::G.UrlCitationBody? UrlCitationBody { get; }
+        public global::G.UrlCitationBody? UrlCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitationBody))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
 #endif
-        public bool IsUrlCitationBody => UrlCitationBody != null;
+        public bool IsUrlCitation => UrlCitation != null;
 
         /// <summary>
         /// A citation for a container file used to generate a model response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; init; }
+        public global::G.ContainerFileCitationBody? ContainerFileCitation { get; init; }
 #else
-        public global::G.ContainerFileCitationBody? ContainerFileCitationBody { get; }
+        public global::G.ContainerFileCitationBody? ContainerFileCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitationBody))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitation))]
 #endif
-        public bool IsContainerFileCitationBody => ContainerFileCitationBody != null;
+        public bool IsContainerFileCitation => ContainerFileCitation != null;
 
         /// <summary>
         /// A path to a file.
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FileCitationBody?(Annotation @this) => @this.FileCitationBody;
+        public static implicit operator global::G.FileCitationBody?(Annotation @this) => @this.FileCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public Annotation(global::G.FileCitationBody? value)
         {
-            FileCitationBody = value;
+            FileCitation = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UrlCitationBody?(Annotation @this) => @this.UrlCitationBody;
+        public static implicit operator global::G.UrlCitationBody?(Annotation @this) => @this.UrlCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public Annotation(global::G.UrlCitationBody? value)
         {
-            UrlCitationBody = value;
+            UrlCitation = value;
         }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ContainerFileCitationBody?(Annotation @this) => @this.ContainerFileCitationBody;
+        public static implicit operator global::G.ContainerFileCitationBody?(Annotation @this) => @this.ContainerFileCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public Annotation(global::G.ContainerFileCitationBody? value)
         {
-            ContainerFileCitationBody = value;
+            ContainerFileCitation = value;
         }
 
         /// <summary>
@@ -153,15 +153,15 @@ namespace G
         /// 
         /// </summary>
         public Annotation(
-            global::G.FileCitationBody? fileCitationBody,
-            global::G.UrlCitationBody? urlCitationBody,
-            global::G.ContainerFileCitationBody? containerFileCitationBody,
+            global::G.FileCitationBody? fileCitation,
+            global::G.UrlCitationBody? urlCitation,
+            global::G.ContainerFileCitationBody? containerFileCitation,
             global::G.FilePath? filePath
             )
         {
-            FileCitationBody = fileCitationBody;
-            UrlCitationBody = urlCitationBody;
-            ContainerFileCitationBody = containerFileCitationBody;
+            FileCitation = fileCitation;
+            UrlCitation = urlCitation;
+            ContainerFileCitation = containerFileCitation;
             FilePath = filePath;
         }
 
@@ -170,18 +170,18 @@ namespace G
         /// </summary>
         public object? Object =>
             FilePath as object ??
-            ContainerFileCitationBody as object ??
-            UrlCitationBody as object ??
-            FileCitationBody as object 
+            ContainerFileCitation as object ??
+            UrlCitation as object ??
+            FileCitation as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            FileCitationBody?.ToString() ??
-            UrlCitationBody?.ToString() ??
-            ContainerFileCitationBody?.ToString() ??
+            FileCitation?.ToString() ??
+            UrlCitation?.ToString() ??
+            ContainerFileCitation?.ToString() ??
             FilePath?.ToString() 
             ;
 
@@ -190,16 +190,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && IsFilePath;
+            return IsFileCitation && !IsUrlCitation && !IsContainerFileCitation && !IsFilePath || !IsFileCitation && IsUrlCitation && !IsContainerFileCitation && !IsFilePath || !IsFileCitation && !IsUrlCitation && IsContainerFileCitation && !IsFilePath || !IsFileCitation && !IsUrlCitation && !IsContainerFileCitation && IsFilePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileCitationBody?, TResult>? fileCitationBody = null,
-            global::System.Func<global::G.UrlCitationBody?, TResult>? urlCitationBody = null,
-            global::System.Func<global::G.ContainerFileCitationBody?, TResult>? containerFileCitationBody = null,
+            global::System.Func<global::G.FileCitationBody?, TResult>? fileCitation = null,
+            global::System.Func<global::G.UrlCitationBody?, TResult>? urlCitation = null,
+            global::System.Func<global::G.ContainerFileCitationBody?, TResult>? containerFileCitation = null,
             global::System.Func<global::G.FilePath?, TResult>? filePath = null,
             bool validate = true)
         {
@@ -208,17 +208,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitationBody && fileCitationBody != null)
+            if (IsFileCitation && fileCitation != null)
             {
-                return fileCitationBody(FileCitationBody!);
+                return fileCitation(FileCitation!);
             }
-            else if (IsUrlCitationBody && urlCitationBody != null)
+            else if (IsUrlCitation && urlCitation != null)
             {
-                return urlCitationBody(UrlCitationBody!);
+                return urlCitation(UrlCitation!);
             }
-            else if (IsContainerFileCitationBody && containerFileCitationBody != null)
+            else if (IsContainerFileCitation && containerFileCitation != null)
             {
-                return containerFileCitationBody(ContainerFileCitationBody!);
+                return containerFileCitation(ContainerFileCitation!);
             }
             else if (IsFilePath && filePath != null)
             {
@@ -232,9 +232,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileCitationBody?>? fileCitationBody = null,
-            global::System.Action<global::G.UrlCitationBody?>? urlCitationBody = null,
-            global::System.Action<global::G.ContainerFileCitationBody?>? containerFileCitationBody = null,
+            global::System.Action<global::G.FileCitationBody?>? fileCitation = null,
+            global::System.Action<global::G.UrlCitationBody?>? urlCitation = null,
+            global::System.Action<global::G.ContainerFileCitationBody?>? containerFileCitation = null,
             global::System.Action<global::G.FilePath?>? filePath = null,
             bool validate = true)
         {
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitationBody)
+            if (IsFileCitation)
             {
-                fileCitationBody?.Invoke(FileCitationBody!);
+                fileCitation?.Invoke(FileCitation!);
             }
-            else if (IsUrlCitationBody)
+            else if (IsUrlCitation)
             {
-                urlCitationBody?.Invoke(UrlCitationBody!);
+                urlCitation?.Invoke(UrlCitation!);
             }
-            else if (IsContainerFileCitationBody)
+            else if (IsContainerFileCitation)
             {
-                containerFileCitationBody?.Invoke(ContainerFileCitationBody!);
+                containerFileCitation?.Invoke(ContainerFileCitation!);
             }
             else if (IsFilePath)
             {
@@ -268,11 +268,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                FileCitationBody,
+                FileCitation,
                 typeof(global::G.FileCitationBody),
-                UrlCitationBody,
+                UrlCitation,
                 typeof(global::G.UrlCitationBody),
-                ContainerFileCitationBody,
+                ContainerFileCitation,
                 typeof(global::G.ContainerFileCitationBody),
                 FilePath,
                 typeof(global::G.FilePath),
@@ -292,9 +292,9 @@ namespace G
         public bool Equals(Annotation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.FileCitationBody?>.Default.Equals(FileCitationBody, other.FileCitationBody) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UrlCitationBody?>.Default.Equals(UrlCitationBody, other.UrlCitationBody) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContainerFileCitationBody?>.Default.Equals(ContainerFileCitationBody, other.ContainerFileCitationBody) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FileCitationBody?>.Default.Equals(FileCitation, other.FileCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UrlCitationBody?>.Default.Equals(UrlCitation, other.UrlCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ContainerFileCitationBody?>.Default.Equals(ContainerFileCitation, other.ContainerFileCitation) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FilePath?>.Default.Equals(FilePath, other.FilePath) 
                 ;
         }

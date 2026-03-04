@@ -16,18 +16,18 @@ namespace G
         /// replace the previous `system` messages.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestDeveloperMessage? Developer { get; init; }
+        public global::G.ChatCompletionRequestDeveloperMessage? DeveloperMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestDeveloperMessage? Developer { get; }
+        public global::G.ChatCompletionRequestDeveloperMessage? DeveloperMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeveloperMessage))]
 #endif
-        public bool IsDeveloper => Developer != null;
+        public bool IsDeveloperMessage => DeveloperMessage != null;
 
         /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
@@ -35,87 +35,87 @@ namespace G
         /// for this purpose instead.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestSystemMessage? System { get; init; }
+        public global::G.ChatCompletionRequestSystemMessage? SystemMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestSystemMessage? System { get; }
+        public global::G.ChatCompletionRequestSystemMessage? SystemMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemMessage))]
 #endif
-        public bool IsSystem => System != null;
+        public bool IsSystemMessage => SystemMessage != null;
 
         /// <summary>
         /// Messages sent by an end user, containing prompts or additional context<br/>
         /// information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestUserMessage? User { get; init; }
+        public global::G.ChatCompletionRequestUserMessage? UserMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestUserMessage? User { get; }
+        public global::G.ChatCompletionRequestUserMessage? UserMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
 #endif
-        public bool IsUser => User != null;
+        public bool IsUserMessage => UserMessage != null;
 
         /// <summary>
         /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; init; }
+        public global::G.ChatCompletionRequestAssistantMessage? AssistantMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestAssistantMessage? Assistant { get; }
+        public global::G.ChatCompletionRequestAssistantMessage? AssistantMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
 #endif
-        public bool IsAssistant => Assistant != null;
+        public bool IsAssistantMessage => AssistantMessage != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestToolMessage? Tool { get; init; }
+        public global::G.ChatCompletionRequestToolMessage? ToolMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestToolMessage? Tool { get; }
+        public global::G.ChatCompletionRequestToolMessage? ToolMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolMessage))]
 #endif
-        public bool IsTool => Tool != null;
+        public bool IsToolMessage => ToolMessage != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestFunctionMessage? Function { get; init; }
+        public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage { get; init; }
 #else
-        public global::G.ChatCompletionRequestFunctionMessage? Function { get; }
+        public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionMessage))]
 #endif
-        public bool IsFunction => Function != null;
+        public bool IsFunctionMessage => FunctionMessage != null;
         /// <summary>
         /// 
         /// </summary>
@@ -124,14 +124,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestDeveloperMessage?(ChatCompletionRequestMessage @this) => @this.Developer;
+        public static implicit operator global::G.ChatCompletionRequestDeveloperMessage?(ChatCompletionRequestMessage @this) => @this.DeveloperMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestDeveloperMessage? value)
         {
-            Developer = value;
+            DeveloperMessage = value;
         }
 
         /// <summary>
@@ -142,14 +142,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestSystemMessage?(ChatCompletionRequestMessage @this) => @this.System;
+        public static implicit operator global::G.ChatCompletionRequestSystemMessage?(ChatCompletionRequestMessage @this) => @this.SystemMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage? value)
         {
-            System = value;
+            SystemMessage = value;
         }
 
         /// <summary>
@@ -160,14 +160,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestUserMessage?(ChatCompletionRequestMessage @this) => @this.User;
+        public static implicit operator global::G.ChatCompletionRequestUserMessage?(ChatCompletionRequestMessage @this) => @this.UserMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestUserMessage? value)
         {
-            User = value;
+            UserMessage = value;
         }
 
         /// <summary>
@@ -178,14 +178,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestAssistantMessage?(ChatCompletionRequestMessage @this) => @this.Assistant;
+        public static implicit operator global::G.ChatCompletionRequestAssistantMessage?(ChatCompletionRequestMessage @this) => @this.AssistantMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestAssistantMessage? value)
         {
-            Assistant = value;
+            AssistantMessage = value;
         }
 
         /// <summary>
@@ -196,14 +196,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestToolMessage?(ChatCompletionRequestMessage @this) => @this.Tool;
+        public static implicit operator global::G.ChatCompletionRequestToolMessage?(ChatCompletionRequestMessage @this) => @this.ToolMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestToolMessage? value)
         {
-            Tool = value;
+            ToolMessage = value;
         }
 
         /// <summary>
@@ -214,58 +214,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestFunctionMessage?(ChatCompletionRequestMessage @this) => @this.Function;
+        public static implicit operator global::G.ChatCompletionRequestFunctionMessage?(ChatCompletionRequestMessage @this) => @this.FunctionMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(global::G.ChatCompletionRequestFunctionMessage? value)
         {
-            Function = value;
+            FunctionMessage = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(
-            global::G.ChatCompletionRequestDeveloperMessage? developer,
-            global::G.ChatCompletionRequestSystemMessage? system,
-            global::G.ChatCompletionRequestUserMessage? user,
-            global::G.ChatCompletionRequestAssistantMessage? assistant,
-            global::G.ChatCompletionRequestToolMessage? tool,
-            global::G.ChatCompletionRequestFunctionMessage? function
+            global::G.ChatCompletionRequestDeveloperMessage? developerMessage,
+            global::G.ChatCompletionRequestSystemMessage? systemMessage,
+            global::G.ChatCompletionRequestUserMessage? userMessage,
+            global::G.ChatCompletionRequestAssistantMessage? assistantMessage,
+            global::G.ChatCompletionRequestToolMessage? toolMessage,
+            global::G.ChatCompletionRequestFunctionMessage? functionMessage
             )
         {
-            Developer = developer;
-            System = system;
-            User = user;
-            Assistant = assistant;
-            Tool = tool;
-            Function = function;
+            DeveloperMessage = developerMessage;
+            SystemMessage = systemMessage;
+            UserMessage = userMessage;
+            AssistantMessage = assistantMessage;
+            ToolMessage = toolMessage;
+            FunctionMessage = functionMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Function as object ??
-            Tool as object ??
-            Assistant as object ??
-            User as object ??
-            System as object ??
-            Developer as object 
+            FunctionMessage as object ??
+            ToolMessage as object ??
+            AssistantMessage as object ??
+            UserMessage as object ??
+            SystemMessage as object ??
+            DeveloperMessage as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Developer?.ToString() ??
-            System?.ToString() ??
-            User?.ToString() ??
-            Assistant?.ToString() ??
-            Tool?.ToString() ??
-            Function?.ToString() 
+            DeveloperMessage?.ToString() ??
+            SystemMessage?.ToString() ??
+            UserMessage?.ToString() ??
+            AssistantMessage?.ToString() ??
+            ToolMessage?.ToString() ??
+            FunctionMessage?.ToString() 
             ;
 
         /// <summary>
@@ -273,19 +273,19 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && IsFunction;
+            return IsDeveloperMessage && !IsSystemMessage && !IsUserMessage && !IsAssistantMessage && !IsToolMessage && !IsFunctionMessage || !IsDeveloperMessage && IsSystemMessage && !IsUserMessage && !IsAssistantMessage && !IsToolMessage && !IsFunctionMessage || !IsDeveloperMessage && !IsSystemMessage && IsUserMessage && !IsAssistantMessage && !IsToolMessage && !IsFunctionMessage || !IsDeveloperMessage && !IsSystemMessage && !IsUserMessage && IsAssistantMessage && !IsToolMessage && !IsFunctionMessage || !IsDeveloperMessage && !IsSystemMessage && !IsUserMessage && !IsAssistantMessage && IsToolMessage && !IsFunctionMessage || !IsDeveloperMessage && !IsSystemMessage && !IsUserMessage && !IsAssistantMessage && !IsToolMessage && IsFunctionMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestDeveloperMessage?, TResult>? developer = null,
-            global::System.Func<global::G.ChatCompletionRequestSystemMessage?, TResult>? system = null,
-            global::System.Func<global::G.ChatCompletionRequestUserMessage?, TResult>? user = null,
-            global::System.Func<global::G.ChatCompletionRequestAssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::G.ChatCompletionRequestToolMessage?, TResult>? tool = null,
-            global::System.Func<global::G.ChatCompletionRequestFunctionMessage?, TResult>? function = null,
+            global::System.Func<global::G.ChatCompletionRequestDeveloperMessage?, TResult>? developerMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestSystemMessage?, TResult>? systemMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestUserMessage?, TResult>? userMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestAssistantMessage?, TResult>? assistantMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestToolMessage?, TResult>? toolMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestFunctionMessage?, TResult>? functionMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -293,29 +293,29 @@ namespace G
                 Validate();
             }
 
-            if (IsDeveloper && developer != null)
+            if (IsDeveloperMessage && developerMessage != null)
             {
-                return developer(Developer!);
+                return developerMessage(DeveloperMessage!);
             }
-            else if (IsSystem && system != null)
+            else if (IsSystemMessage && systemMessage != null)
             {
-                return system(System!);
+                return systemMessage(SystemMessage!);
             }
-            else if (IsUser && user != null)
+            else if (IsUserMessage && userMessage != null)
             {
-                return user(User!);
+                return userMessage(UserMessage!);
             }
-            else if (IsAssistant && assistant != null)
+            else if (IsAssistantMessage && assistantMessage != null)
             {
-                return assistant(Assistant!);
+                return assistantMessage(AssistantMessage!);
             }
-            else if (IsTool && tool != null)
+            else if (IsToolMessage && toolMessage != null)
             {
-                return tool(Tool!);
+                return toolMessage(ToolMessage!);
             }
-            else if (IsFunction && function != null)
+            else if (IsFunctionMessage && functionMessage != null)
             {
-                return function(Function!);
+                return functionMessage(FunctionMessage!);
             }
 
             return default(TResult);
@@ -325,12 +325,12 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestDeveloperMessage?>? developer = null,
-            global::System.Action<global::G.ChatCompletionRequestSystemMessage?>? system = null,
-            global::System.Action<global::G.ChatCompletionRequestUserMessage?>? user = null,
-            global::System.Action<global::G.ChatCompletionRequestAssistantMessage?>? assistant = null,
-            global::System.Action<global::G.ChatCompletionRequestToolMessage?>? tool = null,
-            global::System.Action<global::G.ChatCompletionRequestFunctionMessage?>? function = null,
+            global::System.Action<global::G.ChatCompletionRequestDeveloperMessage?>? developerMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestSystemMessage?>? systemMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestUserMessage?>? userMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestAssistantMessage?>? assistantMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestToolMessage?>? toolMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestFunctionMessage?>? functionMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -338,29 +338,29 @@ namespace G
                 Validate();
             }
 
-            if (IsDeveloper)
+            if (IsDeveloperMessage)
             {
-                developer?.Invoke(Developer!);
+                developerMessage?.Invoke(DeveloperMessage!);
             }
-            else if (IsSystem)
+            else if (IsSystemMessage)
             {
-                system?.Invoke(System!);
+                systemMessage?.Invoke(SystemMessage!);
             }
-            else if (IsUser)
+            else if (IsUserMessage)
             {
-                user?.Invoke(User!);
+                userMessage?.Invoke(UserMessage!);
             }
-            else if (IsAssistant)
+            else if (IsAssistantMessage)
             {
-                assistant?.Invoke(Assistant!);
+                assistantMessage?.Invoke(AssistantMessage!);
             }
-            else if (IsTool)
+            else if (IsToolMessage)
             {
-                tool?.Invoke(Tool!);
+                toolMessage?.Invoke(ToolMessage!);
             }
-            else if (IsFunction)
+            else if (IsFunctionMessage)
             {
-                function?.Invoke(Function!);
+                functionMessage?.Invoke(FunctionMessage!);
             }
         }
 
@@ -371,17 +371,17 @@ namespace G
         {
             var fields = new object?[]
             {
-                Developer,
+                DeveloperMessage,
                 typeof(global::G.ChatCompletionRequestDeveloperMessage),
-                System,
+                SystemMessage,
                 typeof(global::G.ChatCompletionRequestSystemMessage),
-                User,
+                UserMessage,
                 typeof(global::G.ChatCompletionRequestUserMessage),
-                Assistant,
+                AssistantMessage,
                 typeof(global::G.ChatCompletionRequestAssistantMessage),
-                Tool,
+                ToolMessage,
                 typeof(global::G.ChatCompletionRequestToolMessage),
-                Function,
+                FunctionMessage,
                 typeof(global::G.ChatCompletionRequestFunctionMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -399,12 +399,12 @@ namespace G
         public bool Equals(ChatCompletionRequestMessage other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestDeveloperMessage?>.Default.Equals(Developer, other.Developer) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestSystemMessage?>.Default.Equals(System, other.System) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestUserMessage?>.Default.Equals(User, other.User) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestAssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestToolMessage?>.Default.Equals(Tool, other.Tool) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestFunctionMessage?>.Default.Equals(Function, other.Function) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestDeveloperMessage?>.Default.Equals(DeveloperMessage, other.DeveloperMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestSystemMessage?>.Default.Equals(SystemMessage, other.SystemMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestUserMessage?>.Default.Equals(UserMessage, other.UserMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestAssistantMessage?>.Default.Equals(AssistantMessage, other.AssistantMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestToolMessage?>.Default.Equals(ToolMessage, other.ToolMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestFunctionMessage?>.Default.Equals(FunctionMessage, other.FunctionMessage) 
                 ;
         }
 

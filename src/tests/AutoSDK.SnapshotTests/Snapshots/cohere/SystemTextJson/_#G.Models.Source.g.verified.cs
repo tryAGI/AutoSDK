@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolSource? Tool { get; init; }
+        public global::G.ToolSource? ToolOutput { get; init; }
 #else
-        public global::G.ToolSource? Tool { get; }
+        public global::G.ToolSource? ToolOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolOutput))]
 #endif
-        public bool IsTool => Tool != null;
+        public bool IsToolOutput => ToolOutput != null;
 
         /// <summary>
         /// A document source object containing the unique identifier of the document and the document itself.
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolSource?(Source @this) => @this.Tool;
+        public static implicit operator global::G.ToolSource?(Source @this) => @this.ToolOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public Source(global::G.ToolSource? value)
         {
-            Tool = value;
+            ToolOutput = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public Source(
-            global::G.ToolSource? tool,
+            global::G.ToolSource? toolOutput,
             global::G.DocumentSource? document
             )
         {
-            Tool = tool;
+            ToolOutput = toolOutput;
             Document = document;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Document as object ??
-            Tool as object 
+            ToolOutput as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Tool?.ToString() ??
+            ToolOutput?.ToString() ??
             Document?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsTool && !IsDocument || !IsTool && IsDocument;
+            return IsToolOutput && !IsDocument || !IsToolOutput && IsDocument;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolSource?, TResult>? tool = null,
+            global::System.Func<global::G.ToolSource?, TResult>? toolOutput = null,
             global::System.Func<global::G.DocumentSource?, TResult>? document = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTool && tool != null)
+            if (IsToolOutput && toolOutput != null)
             {
-                return tool(Tool!);
+                return toolOutput(ToolOutput!);
             }
             else if (IsDocument && document != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolSource?>? tool = null,
+            global::System.Action<global::G.ToolSource?>? toolOutput = null,
             global::System.Action<global::G.DocumentSource?>? document = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTool)
+            if (IsToolOutput)
             {
-                tool?.Invoke(Tool!);
+                toolOutput?.Invoke(ToolOutput!);
             }
             else if (IsDocument)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Tool,
+                ToolOutput,
                 typeof(global::G.ToolSource),
                 Document,
                 typeof(global::G.DocumentSource),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(Source other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolSource?>.Default.Equals(Tool, other.Tool) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolSource?>.Default.Equals(ToolOutput, other.ToolOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.DocumentSource?>.Default.Equals(Document, other.Document) 
                 ;
         }

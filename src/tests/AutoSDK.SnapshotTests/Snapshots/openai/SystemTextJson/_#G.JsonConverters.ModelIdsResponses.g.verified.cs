@@ -30,12 +30,12 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ModelIdsResponsesEnum? value2 = default;
+            global::G.ModelIdsResponsesEnum? responsesOnlyModel = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelIdsResponsesEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelIdsResponsesEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsResponsesEnum).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                responsesOnlyModel = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,7 +43,7 @@ namespace G.JsonConverters
 
             var result = new global::G.ModelIdsResponses(
                 value1,
-                value2
+                responsesOnlyModel
                 );
 
             if (value1 != null)
@@ -52,7 +52,7 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsShared).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (value2 != null)
+            else if (responsesOnlyModel != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelIdsResponsesEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelIdsResponsesEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsResponsesEnum).Name}");
@@ -77,11 +77,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsShared).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsResponsesOnlyModel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelIdsResponsesEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelIdsResponsesEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsResponsesEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesOnlyModel, typeInfo);
             }
         }
     }

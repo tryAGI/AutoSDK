@@ -272,7 +272,7 @@ public class SchemaContext(
         var context = new SchemaContext(
             settings,
             schema,
-            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index),
+            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index, title: schema.Title),
             type: ComputeType(schema, isComponent: componentId != null))
         {
             Parent = parent,
@@ -437,7 +437,7 @@ public class SchemaContext(
         {
             ParameterData = MethodParameter.FromSchemaContext(this);
         }
-        if (IsAnyOfLikeStructure)
+        if (IsAnyOfLikeStructure && !TypeData.IsCollapsedAnyOfLike(this))
         {
             AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
         }

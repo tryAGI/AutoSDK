@@ -16,18 +16,18 @@ namespace G
         /// precedence over instructions given with the `user` role.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputMessage? Value1 { get; init; }
+        public global::G.InputMessage? InputMessage { get; init; }
 #else
-        public global::G.InputMessage? Value1 { get; }
+        public global::G.InputMessage? InputMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessage))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
         /// 
@@ -53,14 +53,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputMessage?(InputMessageResource @this) => @this.Value1;
+        public static implicit operator global::G.InputMessage?(InputMessageResource @this) => @this.InputMessage;
 
         /// <summary>
         /// 
         /// </summary>
         public InputMessageResource(global::G.InputMessage? value)
         {
-            Value1 = value;
+            InputMessage = value;
         }
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace G
         /// 
         /// </summary>
         public InputMessageResource(
-            global::G.InputMessage? value1,
+            global::G.InputMessage? inputMessage,
             global::G.InputMessageResourceVariant2? value2
             )
         {
-            Value1 = value1;
+            InputMessage = inputMessage;
             Value2 = value2;
         }
 
@@ -98,14 +98,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            InputMessage as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            InputMessage?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -114,14 +114,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsInputMessage && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputMessage?, TResult>? value1 = null,
+            global::System.Func<global::G.InputMessage?, TResult>? inputMessage = null,
             global::System.Func<global::G.InputMessageResourceVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -130,9 +130,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInputMessage && inputMessage != null)
             {
-                return value1(Value1!);
+                return inputMessage(InputMessage!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -146,7 +146,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputMessage?>? value1 = null,
+            global::System.Action<global::G.InputMessage?>? inputMessage = null,
             global::System.Action<global::G.InputMessageResourceVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -155,9 +155,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInputMessage)
             {
-                value1?.Invoke(Value1!);
+                inputMessage?.Invoke(InputMessage!);
             }
             else if (IsValue2)
             {
@@ -172,7 +172,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                InputMessage,
                 typeof(global::G.InputMessage),
                 Value2,
                 typeof(global::G.InputMessageResourceVariant2),
@@ -192,7 +192,7 @@ namespace G
         public bool Equals(InputMessageResource other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.InputMessage?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputMessage?>.Default.Equals(InputMessage, other.InputMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.InputMessageResourceVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

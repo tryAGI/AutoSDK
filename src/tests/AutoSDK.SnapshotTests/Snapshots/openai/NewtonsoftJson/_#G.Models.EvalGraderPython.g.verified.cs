@@ -14,18 +14,18 @@ namespace G
         /// A PythonGrader object that runs a python script on the input.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraderPython? Value1 { get; init; }
+        public global::G.GraderPython? PythonGrader { get; init; }
 #else
-        public global::G.GraderPython? Value1 { get; }
+        public global::G.GraderPython? PythonGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PythonGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPythonGrader => PythonGrader != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraderPython?(EvalGraderPython @this) => @this.Value1;
+        public static implicit operator global::G.GraderPython?(EvalGraderPython @this) => @this.PythonGrader;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalGraderPython(global::G.GraderPython? value)
         {
-            Value1 = value;
+            PythonGrader = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public EvalGraderPython(
-            global::G.GraderPython? value1,
+            global::G.GraderPython? pythonGrader,
             global::G.EvalGraderPythonVariant2? value2
             )
         {
-            Value1 = value1;
+            PythonGrader = pythonGrader;
             Value2 = value2;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            PythonGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            PythonGrader?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsPythonGrader && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderPython?, TResult>? value1 = null,
+            global::System.Func<global::G.GraderPython?, TResult>? pythonGrader = null,
             global::System.Func<global::G.EvalGraderPythonVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPythonGrader && pythonGrader != null)
             {
-                return value1(Value1!);
+                return pythonGrader(PythonGrader!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderPython?>? value1 = null,
+            global::System.Action<global::G.GraderPython?>? pythonGrader = null,
             global::System.Action<global::G.EvalGraderPythonVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPythonGrader)
             {
-                value1?.Invoke(Value1!);
+                pythonGrader?.Invoke(PythonGrader!);
             }
             else if (IsValue2)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PythonGrader,
                 typeof(global::G.GraderPython),
                 Value2,
                 typeof(global::G.EvalGraderPythonVariant2),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(EvalGraderPython other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GraderPython?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraderPython?>.Default.Equals(PythonGrader, other.PythonGrader) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.EvalGraderPythonVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

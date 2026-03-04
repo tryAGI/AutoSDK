@@ -30,12 +30,12 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.LoRATrainingType? loRA = default;
+            global::G.LoRATrainingType? lora = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LoRATrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LoRATrainingType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LoRATrainingType).Name}");
-                loRA = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                lora = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,7 +43,7 @@ namespace G.JsonConverters
 
             var result = new global::G.FinetuneResponseTrainingType(
                 full,
-                loRA
+                lora
                 );
 
             if (full != null)
@@ -52,7 +52,7 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FullTrainingType).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (loRA != null)
+            else if (lora != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LoRATrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LoRATrainingType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LoRATrainingType).Name}");
@@ -77,11 +77,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FullTrainingType).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Full, typeInfo);
             }
-            else if (value.IsLoRA)
+            else if (value.IsLora)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LoRATrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LoRATrainingType?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LoRATrainingType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LoRA, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lora, typeInfo);
             }
         }
     }

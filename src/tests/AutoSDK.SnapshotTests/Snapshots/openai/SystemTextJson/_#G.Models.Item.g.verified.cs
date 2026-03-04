@@ -16,141 +16,141 @@ namespace G
         /// precedence over instructions given with the `user` role.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputMessage? InputMessage { get; init; }
+        public global::G.InputMessage? Message1 { get; init; }
 #else
-        public global::G.InputMessage? InputMessage { get; }
+        public global::G.InputMessage? Message1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message1))]
 #endif
-        public bool IsInputMessage => InputMessage != null;
+        public bool IsMessage1 => Message1 != null;
 
         /// <summary>
         /// An output message from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OutputMessage? OutputMessage { get; init; }
+        public global::G.OutputMessage? Message2 { get; init; }
 #else
-        public global::G.OutputMessage? OutputMessage { get; }
+        public global::G.OutputMessage? Message2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message2))]
 #endif
-        public bool IsOutputMessage => OutputMessage != null;
+        public bool IsMessage2 => Message2 != null;
 
         /// <summary>
         /// The results of a file search tool call. See the <br/>
         /// [file search guide](/docs/guides/tools-file-search) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FileSearchToolCall? FileSearchToolCall { get; init; }
+        public global::G.FileSearchToolCall? FileSearchCall { get; init; }
 #else
-        public global::G.FileSearchToolCall? FileSearchToolCall { get; }
+        public global::G.FileSearchToolCall? FileSearchCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCall))]
 #endif
-        public bool IsFileSearchToolCall => FileSearchToolCall != null;
+        public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
         /// A tool call to a computer use tool. See the <br/>
         /// [computer use guide](/docs/guides/tools-computer-use) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerToolCall? ComputerToolCall { get; init; }
+        public global::G.ComputerToolCall? ComputerCall { get; init; }
 #else
-        public global::G.ComputerToolCall? ComputerToolCall { get; }
+        public global::G.ComputerToolCall? ComputerCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
 #endif
-        public bool IsComputerToolCall => ComputerToolCall != null;
+        public bool IsComputerCall => ComputerCall != null;
 
         /// <summary>
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerCallOutputItemParam? ComputerCallOutputParam { get; init; }
+        public global::G.ComputerCallOutputItemParam? ComputerCallOutput { get; init; }
 #else
-        public global::G.ComputerCallOutputItemParam? ComputerCallOutputParam { get; }
+        public global::G.ComputerCallOutputItemParam? ComputerCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutputParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutput))]
 #endif
-        public bool IsComputerCallOutputParam => ComputerCallOutputParam != null;
+        public bool IsComputerCallOutput => ComputerCallOutput != null;
 
         /// <summary>
         /// The results of a web search tool call. See the <br/>
         /// [web search guide](/docs/guides/tools-web-search) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebSearchToolCall? WebSearchToolCall { get; init; }
+        public global::G.WebSearchToolCall? WebSearchCall { get; init; }
 #else
-        public global::G.WebSearchToolCall? WebSearchToolCall { get; }
+        public global::G.WebSearchToolCall? WebSearchCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCall))]
 #endif
-        public bool IsWebSearchToolCall => WebSearchToolCall != null;
+        public bool IsWebSearchCall => WebSearchCall != null;
 
         /// <summary>
         /// A tool call to run a function. See the <br/>
         /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionToolCall? FunctionToolCall { get; init; }
+        public global::G.FunctionToolCall? FunctionCall { get; init; }
 #else
-        public global::G.FunctionToolCall? FunctionToolCall { get; }
+        public global::G.FunctionToolCall? FunctionCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
 #endif
-        public bool IsFunctionToolCall => FunctionToolCall != null;
+        public bool IsFunctionCall => FunctionCall != null;
 
         /// <summary>
         /// The output of a function tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionCallOutputItemParam? FunctionCallOutputParam { get; init; }
+        public global::G.FunctionCallOutputItemParam? FunctionCallOutput { get; init; }
 #else
-        public global::G.FunctionCallOutputItemParam? FunctionCallOutputParam { get; }
+        public global::G.FunctionCallOutputItemParam? FunctionCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutput))]
 #endif
-        public bool IsFunctionCallOutputParam => FunctionCallOutputParam != null;
+        public bool IsFunctionCallOutput => FunctionCallOutput != null;
 
         /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
@@ -176,137 +176,137 @@ namespace G
         /// An image generation request made by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageGenToolCall? ImageGenToolCall { get; init; }
+        public global::G.ImageGenToolCall? ImageGenerationCall { get; init; }
 #else
-        public global::G.ImageGenToolCall? ImageGenToolCall { get; }
+        public global::G.ImageGenToolCall? ImageGenerationCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCall))]
 #endif
-        public bool IsImageGenToolCall => ImageGenToolCall != null;
+        public bool IsImageGenerationCall => ImageGenerationCall != null;
 
         /// <summary>
         /// A tool call to run code.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; init; }
+        public global::G.CodeInterpreterToolCall? CodeInterpreterCall { get; init; }
 #else
-        public global::G.CodeInterpreterToolCall? CodeInterpreterToolCall { get; }
+        public global::G.CodeInterpreterToolCall? CodeInterpreterCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCall))]
 #endif
-        public bool IsCodeInterpreterToolCall => CodeInterpreterToolCall != null;
+        public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
 
         /// <summary>
         /// A tool call to run a command on the local shell.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LocalShellToolCall? LocalShellToolCall { get; init; }
+        public global::G.LocalShellToolCall? LocalShellCall { get; init; }
 #else
-        public global::G.LocalShellToolCall? LocalShellToolCall { get; }
+        public global::G.LocalShellToolCall? LocalShellCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCall))]
 #endif
-        public bool IsLocalShellToolCall => LocalShellToolCall != null;
+        public bool IsLocalShellCall => LocalShellCall != null;
 
         /// <summary>
         /// The output of a local shell tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; init; }
+        public global::G.LocalShellToolCallOutput? LocalShellCallOutput { get; init; }
 #else
-        public global::G.LocalShellToolCallOutput? LocalShellToolCallOutput { get; }
+        public global::G.LocalShellToolCallOutput? LocalShellCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCallOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallOutput))]
 #endif
-        public bool IsLocalShellToolCallOutput => LocalShellToolCallOutput != null;
+        public bool IsLocalShellCallOutput => LocalShellCallOutput != null;
 
         /// <summary>
         /// A list of tools available on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPListTools? MCPListTools { get; init; }
+        public global::G.MCPListTools? McpListTools { get; init; }
 #else
-        public global::G.MCPListTools? MCPListTools { get; }
+        public global::G.MCPListTools? McpListTools { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListTools))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
 #endif
-        public bool IsMCPListTools => MCPListTools != null;
+        public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
         /// A request for human approval of a tool invocation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; init; }
+        public global::G.MCPApprovalRequest? McpApprovalRequest { get; init; }
 #else
-        public global::G.MCPApprovalRequest? MCPApprovalRequest { get; }
+        public global::G.MCPApprovalRequest? McpApprovalRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalRequest))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
 #endif
-        public bool IsMCPApprovalRequest => MCPApprovalRequest != null;
+        public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
         /// A response to an MCP approval request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; init; }
+        public global::G.MCPApprovalResponse? McpApprovalResponse { get; init; }
 #else
-        public global::G.MCPApprovalResponse? MCPApprovalResponse { get; }
+        public global::G.MCPApprovalResponse? McpApprovalResponse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalResponse))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
 #endif
-        public bool IsMCPApprovalResponse => MCPApprovalResponse != null;
+        public bool IsMcpApprovalResponse => McpApprovalResponse != null;
 
         /// <summary>
         /// An invocation of a tool on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPToolCall? MCPToolCall { get; init; }
+        public global::G.MCPToolCall? McpCall { get; init; }
 #else
-        public global::G.MCPToolCall? MCPToolCall { get; }
+        public global::G.MCPToolCall? McpCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPToolCall))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
 #endif
-        public bool IsMCPToolCall => MCPToolCall != null;
+        public bool IsMcpCall => McpCall != null;
         /// <summary>
         /// 
         /// </summary>
@@ -315,14 +315,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputMessage?(Item @this) => @this.InputMessage;
+        public static implicit operator global::G.InputMessage?(Item @this) => @this.Message1;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.InputMessage? value)
         {
-            InputMessage = value;
+            Message1 = value;
         }
 
         /// <summary>
@@ -333,14 +333,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OutputMessage?(Item @this) => @this.OutputMessage;
+        public static implicit operator global::G.OutputMessage?(Item @this) => @this.Message2;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.OutputMessage? value)
         {
-            OutputMessage = value;
+            Message2 = value;
         }
 
         /// <summary>
@@ -351,14 +351,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FileSearchToolCall?(Item @this) => @this.FileSearchToolCall;
+        public static implicit operator global::G.FileSearchToolCall?(Item @this) => @this.FileSearchCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.FileSearchToolCall? value)
         {
-            FileSearchToolCall = value;
+            FileSearchCall = value;
         }
 
         /// <summary>
@@ -369,14 +369,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerToolCall?(Item @this) => @this.ComputerToolCall;
+        public static implicit operator global::G.ComputerToolCall?(Item @this) => @this.ComputerCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.ComputerToolCall? value)
         {
-            ComputerToolCall = value;
+            ComputerCall = value;
         }
 
         /// <summary>
@@ -387,14 +387,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutputParam;
+        public static implicit operator global::G.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.ComputerCallOutputItemParam? value)
         {
-            ComputerCallOutputParam = value;
+            ComputerCallOutput = value;
         }
 
         /// <summary>
@@ -405,14 +405,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebSearchToolCall?(Item @this) => @this.WebSearchToolCall;
+        public static implicit operator global::G.WebSearchToolCall?(Item @this) => @this.WebSearchCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.WebSearchToolCall? value)
         {
-            WebSearchToolCall = value;
+            WebSearchCall = value;
         }
 
         /// <summary>
@@ -423,14 +423,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionToolCall?(Item @this) => @this.FunctionToolCall;
+        public static implicit operator global::G.FunctionToolCall?(Item @this) => @this.FunctionCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.FunctionToolCall? value)
         {
-            FunctionToolCall = value;
+            FunctionCall = value;
         }
 
         /// <summary>
@@ -441,14 +441,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutputParam;
+        public static implicit operator global::G.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.FunctionCallOutputItemParam? value)
         {
-            FunctionCallOutputParam = value;
+            FunctionCallOutput = value;
         }
 
         /// <summary>
@@ -477,14 +477,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageGenToolCall?(Item @this) => @this.ImageGenToolCall;
+        public static implicit operator global::G.ImageGenToolCall?(Item @this) => @this.ImageGenerationCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.ImageGenToolCall? value)
         {
-            ImageGenToolCall = value;
+            ImageGenerationCall = value;
         }
 
         /// <summary>
@@ -495,14 +495,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CodeInterpreterToolCall?(Item @this) => @this.CodeInterpreterToolCall;
+        public static implicit operator global::G.CodeInterpreterToolCall?(Item @this) => @this.CodeInterpreterCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.CodeInterpreterToolCall? value)
         {
-            CodeInterpreterToolCall = value;
+            CodeInterpreterCall = value;
         }
 
         /// <summary>
@@ -513,14 +513,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LocalShellToolCall?(Item @this) => @this.LocalShellToolCall;
+        public static implicit operator global::G.LocalShellToolCall?(Item @this) => @this.LocalShellCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.LocalShellToolCall? value)
         {
-            LocalShellToolCall = value;
+            LocalShellCall = value;
         }
 
         /// <summary>
@@ -531,14 +531,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LocalShellToolCallOutput?(Item @this) => @this.LocalShellToolCallOutput;
+        public static implicit operator global::G.LocalShellToolCallOutput?(Item @this) => @this.LocalShellCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.LocalShellToolCallOutput? value)
         {
-            LocalShellToolCallOutput = value;
+            LocalShellCallOutput = value;
         }
 
         /// <summary>
@@ -549,14 +549,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPListTools?(Item @this) => @this.MCPListTools;
+        public static implicit operator global::G.MCPListTools?(Item @this) => @this.McpListTools;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.MCPListTools? value)
         {
-            MCPListTools = value;
+            McpListTools = value;
         }
 
         /// <summary>
@@ -567,14 +567,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPApprovalRequest?(Item @this) => @this.MCPApprovalRequest;
+        public static implicit operator global::G.MCPApprovalRequest?(Item @this) => @this.McpApprovalRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.MCPApprovalRequest? value)
         {
-            MCPApprovalRequest = value;
+            McpApprovalRequest = value;
         }
 
         /// <summary>
@@ -585,14 +585,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPApprovalResponse?(Item @this) => @this.MCPApprovalResponse;
+        public static implicit operator global::G.MCPApprovalResponse?(Item @this) => @this.McpApprovalResponse;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.MCPApprovalResponse? value)
         {
-            MCPApprovalResponse = value;
+            McpApprovalResponse = value;
         }
 
         /// <summary>
@@ -603,102 +603,102 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPToolCall?(Item @this) => @this.MCPToolCall;
+        public static implicit operator global::G.MCPToolCall?(Item @this) => @this.McpCall;
 
         /// <summary>
         /// 
         /// </summary>
         public Item(global::G.MCPToolCall? value)
         {
-            MCPToolCall = value;
+            McpCall = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Item(
-            global::G.InputMessage? inputMessage,
-            global::G.OutputMessage? outputMessage,
-            global::G.FileSearchToolCall? fileSearchToolCall,
-            global::G.ComputerToolCall? computerToolCall,
-            global::G.ComputerCallOutputItemParam? computerCallOutputParam,
-            global::G.WebSearchToolCall? webSearchToolCall,
-            global::G.FunctionToolCall? functionToolCall,
-            global::G.FunctionCallOutputItemParam? functionCallOutputParam,
+            global::G.InputMessage? message1,
+            global::G.OutputMessage? message2,
+            global::G.FileSearchToolCall? fileSearchCall,
+            global::G.ComputerToolCall? computerCall,
+            global::G.ComputerCallOutputItemParam? computerCallOutput,
+            global::G.WebSearchToolCall? webSearchCall,
+            global::G.FunctionToolCall? functionCall,
+            global::G.FunctionCallOutputItemParam? functionCallOutput,
             global::G.ReasoningItem? reasoning,
-            global::G.ImageGenToolCall? imageGenToolCall,
-            global::G.CodeInterpreterToolCall? codeInterpreterToolCall,
-            global::G.LocalShellToolCall? localShellToolCall,
-            global::G.LocalShellToolCallOutput? localShellToolCallOutput,
-            global::G.MCPListTools? mCPListTools,
-            global::G.MCPApprovalRequest? mCPApprovalRequest,
-            global::G.MCPApprovalResponse? mCPApprovalResponse,
-            global::G.MCPToolCall? mCPToolCall
+            global::G.ImageGenToolCall? imageGenerationCall,
+            global::G.CodeInterpreterToolCall? codeInterpreterCall,
+            global::G.LocalShellToolCall? localShellCall,
+            global::G.LocalShellToolCallOutput? localShellCallOutput,
+            global::G.MCPListTools? mcpListTools,
+            global::G.MCPApprovalRequest? mcpApprovalRequest,
+            global::G.MCPApprovalResponse? mcpApprovalResponse,
+            global::G.MCPToolCall? mcpCall
             )
         {
-            InputMessage = inputMessage;
-            OutputMessage = outputMessage;
-            FileSearchToolCall = fileSearchToolCall;
-            ComputerToolCall = computerToolCall;
-            ComputerCallOutputParam = computerCallOutputParam;
-            WebSearchToolCall = webSearchToolCall;
-            FunctionToolCall = functionToolCall;
-            FunctionCallOutputParam = functionCallOutputParam;
+            Message1 = message1;
+            Message2 = message2;
+            FileSearchCall = fileSearchCall;
+            ComputerCall = computerCall;
+            ComputerCallOutput = computerCallOutput;
+            WebSearchCall = webSearchCall;
+            FunctionCall = functionCall;
+            FunctionCallOutput = functionCallOutput;
             Reasoning = reasoning;
-            ImageGenToolCall = imageGenToolCall;
-            CodeInterpreterToolCall = codeInterpreterToolCall;
-            LocalShellToolCall = localShellToolCall;
-            LocalShellToolCallOutput = localShellToolCallOutput;
-            MCPListTools = mCPListTools;
-            MCPApprovalRequest = mCPApprovalRequest;
-            MCPApprovalResponse = mCPApprovalResponse;
-            MCPToolCall = mCPToolCall;
+            ImageGenerationCall = imageGenerationCall;
+            CodeInterpreterCall = codeInterpreterCall;
+            LocalShellCall = localShellCall;
+            LocalShellCallOutput = localShellCallOutput;
+            McpListTools = mcpListTools;
+            McpApprovalRequest = mcpApprovalRequest;
+            McpApprovalResponse = mcpApprovalResponse;
+            McpCall = mcpCall;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MCPToolCall as object ??
-            MCPApprovalResponse as object ??
-            MCPApprovalRequest as object ??
-            MCPListTools as object ??
-            LocalShellToolCallOutput as object ??
-            LocalShellToolCall as object ??
-            CodeInterpreterToolCall as object ??
-            ImageGenToolCall as object ??
+            McpCall as object ??
+            McpApprovalResponse as object ??
+            McpApprovalRequest as object ??
+            McpListTools as object ??
+            LocalShellCallOutput as object ??
+            LocalShellCall as object ??
+            CodeInterpreterCall as object ??
+            ImageGenerationCall as object ??
             Reasoning as object ??
-            FunctionCallOutputParam as object ??
-            FunctionToolCall as object ??
-            WebSearchToolCall as object ??
-            ComputerCallOutputParam as object ??
-            ComputerToolCall as object ??
-            FileSearchToolCall as object ??
-            OutputMessage as object ??
-            InputMessage as object 
+            FunctionCallOutput as object ??
+            FunctionCall as object ??
+            WebSearchCall as object ??
+            ComputerCallOutput as object ??
+            ComputerCall as object ??
+            FileSearchCall as object ??
+            Message2 as object ??
+            Message1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            InputMessage?.ToString() ??
-            OutputMessage?.ToString() ??
-            FileSearchToolCall?.ToString() ??
-            ComputerToolCall?.ToString() ??
-            ComputerCallOutputParam?.ToString() ??
-            WebSearchToolCall?.ToString() ??
-            FunctionToolCall?.ToString() ??
-            FunctionCallOutputParam?.ToString() ??
+            Message1?.ToString() ??
+            Message2?.ToString() ??
+            FileSearchCall?.ToString() ??
+            ComputerCall?.ToString() ??
+            ComputerCallOutput?.ToString() ??
+            WebSearchCall?.ToString() ??
+            FunctionCall?.ToString() ??
+            FunctionCallOutput?.ToString() ??
             Reasoning?.ToString() ??
-            ImageGenToolCall?.ToString() ??
-            CodeInterpreterToolCall?.ToString() ??
-            LocalShellToolCall?.ToString() ??
-            LocalShellToolCallOutput?.ToString() ??
-            MCPListTools?.ToString() ??
-            MCPApprovalRequest?.ToString() ??
-            MCPApprovalResponse?.ToString() ??
-            MCPToolCall?.ToString() 
+            ImageGenerationCall?.ToString() ??
+            CodeInterpreterCall?.ToString() ??
+            LocalShellCall?.ToString() ??
+            LocalShellCallOutput?.ToString() ??
+            McpListTools?.ToString() ??
+            McpApprovalRequest?.ToString() ??
+            McpApprovalResponse?.ToString() ??
+            McpCall?.ToString() 
             ;
 
         /// <summary>
@@ -706,30 +706,30 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && IsMCPApprovalRequest && !IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && IsMCPApprovalResponse && !IsMCPToolCall || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning && !IsImageGenToolCall && !IsCodeInterpreterToolCall && !IsLocalShellToolCall && !IsLocalShellToolCallOutput && !IsMCPListTools && !IsMCPApprovalRequest && !IsMCPApprovalResponse && IsMCPToolCall;
+            return IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && IsMcpApprovalResponse && !IsMcpCall || !IsMessage1 && !IsMessage2 && !IsFileSearchCall && !IsComputerCall && !IsComputerCallOutput && !IsWebSearchCall && !IsFunctionCall && !IsFunctionCallOutput && !IsReasoning && !IsImageGenerationCall && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && IsMcpCall;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputMessage?, TResult>? inputMessage = null,
-            global::System.Func<global::G.OutputMessage?, TResult>? outputMessage = null,
-            global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchToolCall = null,
-            global::System.Func<global::G.ComputerToolCall?, TResult>? computerToolCall = null,
-            global::System.Func<global::G.ComputerCallOutputItemParam?, TResult>? computerCallOutputParam = null,
-            global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchToolCall = null,
-            global::System.Func<global::G.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::G.FunctionCallOutputItemParam?, TResult>? functionCallOutputParam = null,
+            global::System.Func<global::G.InputMessage?, TResult>? message1 = null,
+            global::System.Func<global::G.OutputMessage?, TResult>? message2 = null,
+            global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchCall = null,
+            global::System.Func<global::G.ComputerToolCall?, TResult>? computerCall = null,
+            global::System.Func<global::G.ComputerCallOutputItemParam?, TResult>? computerCallOutput = null,
+            global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchCall = null,
+            global::System.Func<global::G.FunctionToolCall?, TResult>? functionCall = null,
+            global::System.Func<global::G.FunctionCallOutputItemParam?, TResult>? functionCallOutput = null,
             global::System.Func<global::G.ReasoningItem?, TResult>? reasoning = null,
-            global::System.Func<global::G.ImageGenToolCall?, TResult>? imageGenToolCall = null,
-            global::System.Func<global::G.CodeInterpreterToolCall?, TResult>? codeInterpreterToolCall = null,
-            global::System.Func<global::G.LocalShellToolCall?, TResult>? localShellToolCall = null,
-            global::System.Func<global::G.LocalShellToolCallOutput?, TResult>? localShellToolCallOutput = null,
-            global::System.Func<global::G.MCPListTools?, TResult>? mCPListTools = null,
-            global::System.Func<global::G.MCPApprovalRequest?, TResult>? mCPApprovalRequest = null,
-            global::System.Func<global::G.MCPApprovalResponse?, TResult>? mCPApprovalResponse = null,
-            global::System.Func<global::G.MCPToolCall?, TResult>? mCPToolCall = null,
+            global::System.Func<global::G.ImageGenToolCall?, TResult>? imageGenerationCall = null,
+            global::System.Func<global::G.CodeInterpreterToolCall?, TResult>? codeInterpreterCall = null,
+            global::System.Func<global::G.LocalShellToolCall?, TResult>? localShellCall = null,
+            global::System.Func<global::G.LocalShellToolCallOutput?, TResult>? localShellCallOutput = null,
+            global::System.Func<global::G.MCPListTools?, TResult>? mcpListTools = null,
+            global::System.Func<global::G.MCPApprovalRequest?, TResult>? mcpApprovalRequest = null,
+            global::System.Func<global::G.MCPApprovalResponse?, TResult>? mcpApprovalResponse = null,
+            global::System.Func<global::G.MCPToolCall?, TResult>? mcpCall = null,
             bool validate = true)
         {
             if (validate)
@@ -737,73 +737,73 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage && inputMessage != null)
+            if (IsMessage1 && message1 != null)
             {
-                return inputMessage(InputMessage!);
+                return message1(Message1!);
             }
-            else if (IsOutputMessage && outputMessage != null)
+            else if (IsMessage2 && message2 != null)
             {
-                return outputMessage(OutputMessage!);
+                return message2(Message2!);
             }
-            else if (IsFileSearchToolCall && fileSearchToolCall != null)
+            else if (IsFileSearchCall && fileSearchCall != null)
             {
-                return fileSearchToolCall(FileSearchToolCall!);
+                return fileSearchCall(FileSearchCall!);
             }
-            else if (IsComputerToolCall && computerToolCall != null)
+            else if (IsComputerCall && computerCall != null)
             {
-                return computerToolCall(ComputerToolCall!);
+                return computerCall(ComputerCall!);
             }
-            else if (IsComputerCallOutputParam && computerCallOutputParam != null)
+            else if (IsComputerCallOutput && computerCallOutput != null)
             {
-                return computerCallOutputParam(ComputerCallOutputParam!);
+                return computerCallOutput(ComputerCallOutput!);
             }
-            else if (IsWebSearchToolCall && webSearchToolCall != null)
+            else if (IsWebSearchCall && webSearchCall != null)
             {
-                return webSearchToolCall(WebSearchToolCall!);
+                return webSearchCall(WebSearchCall!);
             }
-            else if (IsFunctionToolCall && functionToolCall != null)
+            else if (IsFunctionCall && functionCall != null)
             {
-                return functionToolCall(FunctionToolCall!);
+                return functionCall(FunctionCall!);
             }
-            else if (IsFunctionCallOutputParam && functionCallOutputParam != null)
+            else if (IsFunctionCallOutput && functionCallOutput != null)
             {
-                return functionCallOutputParam(FunctionCallOutputParam!);
+                return functionCallOutput(FunctionCallOutput!);
             }
             else if (IsReasoning && reasoning != null)
             {
                 return reasoning(Reasoning!);
             }
-            else if (IsImageGenToolCall && imageGenToolCall != null)
+            else if (IsImageGenerationCall && imageGenerationCall != null)
             {
-                return imageGenToolCall(ImageGenToolCall!);
+                return imageGenerationCall(ImageGenerationCall!);
             }
-            else if (IsCodeInterpreterToolCall && codeInterpreterToolCall != null)
+            else if (IsCodeInterpreterCall && codeInterpreterCall != null)
             {
-                return codeInterpreterToolCall(CodeInterpreterToolCall!);
+                return codeInterpreterCall(CodeInterpreterCall!);
             }
-            else if (IsLocalShellToolCall && localShellToolCall != null)
+            else if (IsLocalShellCall && localShellCall != null)
             {
-                return localShellToolCall(LocalShellToolCall!);
+                return localShellCall(LocalShellCall!);
             }
-            else if (IsLocalShellToolCallOutput && localShellToolCallOutput != null)
+            else if (IsLocalShellCallOutput && localShellCallOutput != null)
             {
-                return localShellToolCallOutput(LocalShellToolCallOutput!);
+                return localShellCallOutput(LocalShellCallOutput!);
             }
-            else if (IsMCPListTools && mCPListTools != null)
+            else if (IsMcpListTools && mcpListTools != null)
             {
-                return mCPListTools(MCPListTools!);
+                return mcpListTools(McpListTools!);
             }
-            else if (IsMCPApprovalRequest && mCPApprovalRequest != null)
+            else if (IsMcpApprovalRequest && mcpApprovalRequest != null)
             {
-                return mCPApprovalRequest(MCPApprovalRequest!);
+                return mcpApprovalRequest(McpApprovalRequest!);
             }
-            else if (IsMCPApprovalResponse && mCPApprovalResponse != null)
+            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
             {
-                return mCPApprovalResponse(MCPApprovalResponse!);
+                return mcpApprovalResponse(McpApprovalResponse!);
             }
-            else if (IsMCPToolCall && mCPToolCall != null)
+            else if (IsMcpCall && mcpCall != null)
             {
-                return mCPToolCall(MCPToolCall!);
+                return mcpCall(McpCall!);
             }
 
             return default(TResult);
@@ -813,23 +813,23 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputMessage?>? inputMessage = null,
-            global::System.Action<global::G.OutputMessage?>? outputMessage = null,
-            global::System.Action<global::G.FileSearchToolCall?>? fileSearchToolCall = null,
-            global::System.Action<global::G.ComputerToolCall?>? computerToolCall = null,
-            global::System.Action<global::G.ComputerCallOutputItemParam?>? computerCallOutputParam = null,
-            global::System.Action<global::G.WebSearchToolCall?>? webSearchToolCall = null,
-            global::System.Action<global::G.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::G.FunctionCallOutputItemParam?>? functionCallOutputParam = null,
+            global::System.Action<global::G.InputMessage?>? message1 = null,
+            global::System.Action<global::G.OutputMessage?>? message2 = null,
+            global::System.Action<global::G.FileSearchToolCall?>? fileSearchCall = null,
+            global::System.Action<global::G.ComputerToolCall?>? computerCall = null,
+            global::System.Action<global::G.ComputerCallOutputItemParam?>? computerCallOutput = null,
+            global::System.Action<global::G.WebSearchToolCall?>? webSearchCall = null,
+            global::System.Action<global::G.FunctionToolCall?>? functionCall = null,
+            global::System.Action<global::G.FunctionCallOutputItemParam?>? functionCallOutput = null,
             global::System.Action<global::G.ReasoningItem?>? reasoning = null,
-            global::System.Action<global::G.ImageGenToolCall?>? imageGenToolCall = null,
-            global::System.Action<global::G.CodeInterpreterToolCall?>? codeInterpreterToolCall = null,
-            global::System.Action<global::G.LocalShellToolCall?>? localShellToolCall = null,
-            global::System.Action<global::G.LocalShellToolCallOutput?>? localShellToolCallOutput = null,
-            global::System.Action<global::G.MCPListTools?>? mCPListTools = null,
-            global::System.Action<global::G.MCPApprovalRequest?>? mCPApprovalRequest = null,
-            global::System.Action<global::G.MCPApprovalResponse?>? mCPApprovalResponse = null,
-            global::System.Action<global::G.MCPToolCall?>? mCPToolCall = null,
+            global::System.Action<global::G.ImageGenToolCall?>? imageGenerationCall = null,
+            global::System.Action<global::G.CodeInterpreterToolCall?>? codeInterpreterCall = null,
+            global::System.Action<global::G.LocalShellToolCall?>? localShellCall = null,
+            global::System.Action<global::G.LocalShellToolCallOutput?>? localShellCallOutput = null,
+            global::System.Action<global::G.MCPListTools?>? mcpListTools = null,
+            global::System.Action<global::G.MCPApprovalRequest?>? mcpApprovalRequest = null,
+            global::System.Action<global::G.MCPApprovalResponse?>? mcpApprovalResponse = null,
+            global::System.Action<global::G.MCPToolCall?>? mcpCall = null,
             bool validate = true)
         {
             if (validate)
@@ -837,73 +837,73 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (IsMessage1)
             {
-                inputMessage?.Invoke(InputMessage!);
+                message1?.Invoke(Message1!);
             }
-            else if (IsOutputMessage)
+            else if (IsMessage2)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                message2?.Invoke(Message2!);
             }
-            else if (IsFileSearchToolCall)
+            else if (IsFileSearchCall)
             {
-                fileSearchToolCall?.Invoke(FileSearchToolCall!);
+                fileSearchCall?.Invoke(FileSearchCall!);
             }
-            else if (IsComputerToolCall)
+            else if (IsComputerCall)
             {
-                computerToolCall?.Invoke(ComputerToolCall!);
+                computerCall?.Invoke(ComputerCall!);
             }
-            else if (IsComputerCallOutputParam)
+            else if (IsComputerCallOutput)
             {
-                computerCallOutputParam?.Invoke(ComputerCallOutputParam!);
+                computerCallOutput?.Invoke(ComputerCallOutput!);
             }
-            else if (IsWebSearchToolCall)
+            else if (IsWebSearchCall)
             {
-                webSearchToolCall?.Invoke(WebSearchToolCall!);
+                webSearchCall?.Invoke(WebSearchCall!);
             }
-            else if (IsFunctionToolCall)
+            else if (IsFunctionCall)
             {
-                functionToolCall?.Invoke(FunctionToolCall!);
+                functionCall?.Invoke(FunctionCall!);
             }
-            else if (IsFunctionCallOutputParam)
+            else if (IsFunctionCallOutput)
             {
-                functionCallOutputParam?.Invoke(FunctionCallOutputParam!);
+                functionCallOutput?.Invoke(FunctionCallOutput!);
             }
             else if (IsReasoning)
             {
                 reasoning?.Invoke(Reasoning!);
             }
-            else if (IsImageGenToolCall)
+            else if (IsImageGenerationCall)
             {
-                imageGenToolCall?.Invoke(ImageGenToolCall!);
+                imageGenerationCall?.Invoke(ImageGenerationCall!);
             }
-            else if (IsCodeInterpreterToolCall)
+            else if (IsCodeInterpreterCall)
             {
-                codeInterpreterToolCall?.Invoke(CodeInterpreterToolCall!);
+                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
             }
-            else if (IsLocalShellToolCall)
+            else if (IsLocalShellCall)
             {
-                localShellToolCall?.Invoke(LocalShellToolCall!);
+                localShellCall?.Invoke(LocalShellCall!);
             }
-            else if (IsLocalShellToolCallOutput)
+            else if (IsLocalShellCallOutput)
             {
-                localShellToolCallOutput?.Invoke(LocalShellToolCallOutput!);
+                localShellCallOutput?.Invoke(LocalShellCallOutput!);
             }
-            else if (IsMCPListTools)
+            else if (IsMcpListTools)
             {
-                mCPListTools?.Invoke(MCPListTools!);
+                mcpListTools?.Invoke(McpListTools!);
             }
-            else if (IsMCPApprovalRequest)
+            else if (IsMcpApprovalRequest)
             {
-                mCPApprovalRequest?.Invoke(MCPApprovalRequest!);
+                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
             }
-            else if (IsMCPApprovalResponse)
+            else if (IsMcpApprovalResponse)
             {
-                mCPApprovalResponse?.Invoke(MCPApprovalResponse!);
+                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
             }
-            else if (IsMCPToolCall)
+            else if (IsMcpCall)
             {
-                mCPToolCall?.Invoke(MCPToolCall!);
+                mcpCall?.Invoke(McpCall!);
             }
         }
 
@@ -914,39 +914,39 @@ namespace G
         {
             var fields = new object?[]
             {
-                InputMessage,
+                Message1,
                 typeof(global::G.InputMessage),
-                OutputMessage,
+                Message2,
                 typeof(global::G.OutputMessage),
-                FileSearchToolCall,
+                FileSearchCall,
                 typeof(global::G.FileSearchToolCall),
-                ComputerToolCall,
+                ComputerCall,
                 typeof(global::G.ComputerToolCall),
-                ComputerCallOutputParam,
+                ComputerCallOutput,
                 typeof(global::G.ComputerCallOutputItemParam),
-                WebSearchToolCall,
+                WebSearchCall,
                 typeof(global::G.WebSearchToolCall),
-                FunctionToolCall,
+                FunctionCall,
                 typeof(global::G.FunctionToolCall),
-                FunctionCallOutputParam,
+                FunctionCallOutput,
                 typeof(global::G.FunctionCallOutputItemParam),
                 Reasoning,
                 typeof(global::G.ReasoningItem),
-                ImageGenToolCall,
+                ImageGenerationCall,
                 typeof(global::G.ImageGenToolCall),
-                CodeInterpreterToolCall,
+                CodeInterpreterCall,
                 typeof(global::G.CodeInterpreterToolCall),
-                LocalShellToolCall,
+                LocalShellCall,
                 typeof(global::G.LocalShellToolCall),
-                LocalShellToolCallOutput,
+                LocalShellCallOutput,
                 typeof(global::G.LocalShellToolCallOutput),
-                MCPListTools,
+                McpListTools,
                 typeof(global::G.MCPListTools),
-                MCPApprovalRequest,
+                McpApprovalRequest,
                 typeof(global::G.MCPApprovalRequest),
-                MCPApprovalResponse,
+                McpApprovalResponse,
                 typeof(global::G.MCPApprovalResponse),
-                MCPToolCall,
+                McpCall,
                 typeof(global::G.MCPToolCall),
             };
             const int offset = unchecked((int)2166136261);
@@ -964,23 +964,23 @@ namespace G
         public bool Equals(Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.InputMessage?>.Default.Equals(InputMessage, other.InputMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FileSearchToolCall?>.Default.Equals(FileSearchToolCall, other.FileSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerCallOutputItemParam?>.Default.Equals(ComputerCallOutputParam, other.ComputerCallOutputParam) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionCallOutputItemParam?>.Default.Equals(FunctionCallOutputParam, other.FunctionCallOutputParam) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputMessage?>.Default.Equals(Message1, other.Message1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OutputMessage?>.Default.Equals(Message2, other.Message2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FileSearchToolCall?>.Default.Equals(FileSearchCall, other.FileSearchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCall?>.Default.Equals(ComputerCall, other.ComputerCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerCallOutputItemParam?>.Default.Equals(ComputerCallOutput, other.ComputerCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolCall?>.Default.Equals(WebSearchCall, other.WebSearchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCall?>.Default.Equals(FunctionCall, other.FunctionCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionCallOutputItemParam?>.Default.Equals(FunctionCallOutput, other.FunctionCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ReasoningItem?>.Default.Equals(Reasoning, other.Reasoning) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenToolCall?>.Default.Equals(ImageGenToolCall, other.ImageGenToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterToolCall?>.Default.Equals(CodeInterpreterToolCall, other.CodeInterpreterToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LocalShellToolCall?>.Default.Equals(LocalShellToolCall, other.LocalShellToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LocalShellToolCallOutput?>.Default.Equals(LocalShellToolCallOutput, other.LocalShellToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPListTools?>.Default.Equals(MCPListTools, other.MCPListTools) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPApprovalRequest?>.Default.Equals(MCPApprovalRequest, other.MCPApprovalRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPApprovalResponse?>.Default.Equals(MCPApprovalResponse, other.MCPApprovalResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolCall?>.Default.Equals(MCPToolCall, other.MCPToolCall) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageGenToolCall?>.Default.Equals(ImageGenerationCall, other.ImageGenerationCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterToolCall?>.Default.Equals(CodeInterpreterCall, other.CodeInterpreterCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LocalShellToolCall?>.Default.Equals(LocalShellCall, other.LocalShellCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LocalShellToolCallOutput?>.Default.Equals(LocalShellCallOutput, other.LocalShellCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPListTools?>.Default.Equals(McpListTools, other.McpListTools) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPApprovalRequest?>.Default.Equals(McpApprovalRequest, other.McpApprovalRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPApprovalResponse?>.Default.Equals(McpApprovalResponse, other.McpApprovalResponse) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolCall?>.Default.Equals(McpCall, other.McpCall) 
                 ;
         }
 

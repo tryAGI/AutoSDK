@@ -18,41 +18,41 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ColorPaletteWithPresetName? value1 = default;
+            global::G.ColorPaletteWithPresetName? colorPaletteWithPresetName = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithPresetName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithPresetName> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithPresetName).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                colorPaletteWithPresetName = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ColorPaletteWithMembers? value2 = default;
+            global::G.ColorPaletteWithMembers? colorPaletteWithMembers = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithMembers), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithMembers> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithMembers).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                colorPaletteWithMembers = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::G.ColorPaletteWithPresetNameOrMembers(
-                value1,
-                value2
+                colorPaletteWithPresetName,
+                colorPaletteWithMembers
                 );
 
-            if (value1 != null)
+            if (colorPaletteWithPresetName != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithPresetName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithPresetName> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithPresetName).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (value2 != null)
+            else if (colorPaletteWithMembers != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithMembers), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithMembers> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithMembers).Name}");
@@ -71,17 +71,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsColorPaletteWithPresetName)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithPresetName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithPresetName?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithPresetName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithPresetName, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsColorPaletteWithMembers)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithMembers), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithMembers?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithMembers).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithMembers, typeInfo);
             }
         }
     }

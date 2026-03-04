@@ -30,11 +30,11 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ChatCompletionResponseVariant2? value2 = default;
+            global::G.ChatCompletionResponseChatCompletionResponse1? value2 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseChatCompletionResponse1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseChatCompletionResponse1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseChatCompletionResponse1).Name}");
                 value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -54,8 +54,8 @@ namespace G.JsonConverters
             }
             else if (value2 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseChatCompletionResponse1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseChatCompletionResponse1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseChatCompletionResponse1).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -79,8 +79,8 @@ namespace G.JsonConverters
             }
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponseChatCompletionResponse1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponseChatCompletionResponse1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponseChatCompletionResponse1).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
         }

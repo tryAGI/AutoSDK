@@ -15,9 +15,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2> Author { get; set; }
+        public required global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2> Author { get; set; }
 
         /// <summary>
         /// 
@@ -30,9 +30,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2> Committer { get; set; }
+        public required global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2> Committer { get; set; }
 
         /// <summary>
         /// 
@@ -82,9 +82,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookStatusCommitCommit(
-            global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2> author,
+            global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2> author,
             int commentCount,
-            global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2> committer,
+            global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2> committer,
             string message,
             global::G.WebhookStatusCommitCommitTree tree,
             string url,

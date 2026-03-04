@@ -15,54 +15,54 @@ namespace G
         /// Example: {"model":"jina-embeddings-v2-base-en","input":["Hello, world!"]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TextEmbeddingInput? Text { get; init; }
+        public global::G.TextEmbeddingInput? TextEmbeddingInput { get; init; }
 #else
-        public global::G.TextEmbeddingInput? Text { get; }
+        public global::G.TextEmbeddingInput? TextEmbeddingInput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEmbeddingInput))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextEmbeddingInput => TextEmbeddingInput != null;
 
         /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageEmbeddingInput? Image { get; init; }
+        public global::G.ImageEmbeddingInput? ImageEmbeddingInput { get; init; }
 #else
-        public global::G.ImageEmbeddingInput? Image { get; }
+        public global::G.ImageEmbeddingInput? ImageEmbeddingInput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageEmbeddingInput))]
 #endif
-        public bool IsImage => Image != null;
+        public bool IsImageEmbeddingInput => ImageEmbeddingInput != null;
 
         /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MixedEmbeddingInput? Mixed { get; init; }
+        public global::G.MixedEmbeddingInput? MixedEmbeddingInput { get; init; }
 #else
-        public global::G.MixedEmbeddingInput? Mixed { get; }
+        public global::G.MixedEmbeddingInput? MixedEmbeddingInput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mixed))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MixedEmbeddingInput))]
 #endif
-        public bool IsMixed => Mixed != null;
+        public bool IsMixedEmbeddingInput => MixedEmbeddingInput != null;
         /// <summary>
         /// 
         /// </summary>
@@ -71,14 +71,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TextEmbeddingInput?(EmbeddingInput @this) => @this.Text;
+        public static implicit operator global::G.TextEmbeddingInput?(EmbeddingInput @this) => @this.TextEmbeddingInput;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingInput(global::G.TextEmbeddingInput? value)
         {
-            Text = value;
+            TextEmbeddingInput = value;
         }
 
         /// <summary>
@@ -89,14 +89,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageEmbeddingInput?(EmbeddingInput @this) => @this.Image;
+        public static implicit operator global::G.ImageEmbeddingInput?(EmbeddingInput @this) => @this.ImageEmbeddingInput;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingInput(global::G.ImageEmbeddingInput? value)
         {
-            Image = value;
+            ImageEmbeddingInput = value;
         }
 
         /// <summary>
@@ -107,46 +107,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MixedEmbeddingInput?(EmbeddingInput @this) => @this.Mixed;
+        public static implicit operator global::G.MixedEmbeddingInput?(EmbeddingInput @this) => @this.MixedEmbeddingInput;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingInput(global::G.MixedEmbeddingInput? value)
         {
-            Mixed = value;
+            MixedEmbeddingInput = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingInput(
-            global::G.TextEmbeddingInput? text,
-            global::G.ImageEmbeddingInput? image,
-            global::G.MixedEmbeddingInput? mixed
+            global::G.TextEmbeddingInput? textEmbeddingInput,
+            global::G.ImageEmbeddingInput? imageEmbeddingInput,
+            global::G.MixedEmbeddingInput? mixedEmbeddingInput
             )
         {
-            Text = text;
-            Image = image;
-            Mixed = mixed;
+            TextEmbeddingInput = textEmbeddingInput;
+            ImageEmbeddingInput = imageEmbeddingInput;
+            MixedEmbeddingInput = mixedEmbeddingInput;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Mixed as object ??
-            Image as object ??
-            Text as object 
+            MixedEmbeddingInput as object ??
+            ImageEmbeddingInput as object ??
+            TextEmbeddingInput as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Image?.ToString() ??
-            Mixed?.ToString() 
+            TextEmbeddingInput?.ToString() ??
+            ImageEmbeddingInput?.ToString() ??
+            MixedEmbeddingInput?.ToString() 
             ;
 
         /// <summary>
@@ -154,16 +154,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsImage || IsMixed;
+            return IsTextEmbeddingInput || IsImageEmbeddingInput || IsMixedEmbeddingInput;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextEmbeddingInput?, TResult>? text = null,
-            global::System.Func<global::G.ImageEmbeddingInput?, TResult>? image = null,
-            global::System.Func<global::G.MixedEmbeddingInput?, TResult>? mixed = null,
+            global::System.Func<global::G.TextEmbeddingInput?, TResult>? textEmbeddingInput = null,
+            global::System.Func<global::G.ImageEmbeddingInput?, TResult>? imageEmbeddingInput = null,
+            global::System.Func<global::G.MixedEmbeddingInput?, TResult>? mixedEmbeddingInput = null,
             bool validate = true)
         {
             if (validate)
@@ -171,17 +171,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextEmbeddingInput && textEmbeddingInput != null)
             {
-                return text(Text!);
+                return textEmbeddingInput(TextEmbeddingInput!);
             }
-            else if (IsImage && image != null)
+            else if (IsImageEmbeddingInput && imageEmbeddingInput != null)
             {
-                return image(Image!);
+                return imageEmbeddingInput(ImageEmbeddingInput!);
             }
-            else if (IsMixed && mixed != null)
+            else if (IsMixedEmbeddingInput && mixedEmbeddingInput != null)
             {
-                return mixed(Mixed!);
+                return mixedEmbeddingInput(MixedEmbeddingInput!);
             }
 
             return default(TResult);
@@ -191,9 +191,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextEmbeddingInput?>? text = null,
-            global::System.Action<global::G.ImageEmbeddingInput?>? image = null,
-            global::System.Action<global::G.MixedEmbeddingInput?>? mixed = null,
+            global::System.Action<global::G.TextEmbeddingInput?>? textEmbeddingInput = null,
+            global::System.Action<global::G.ImageEmbeddingInput?>? imageEmbeddingInput = null,
+            global::System.Action<global::G.MixedEmbeddingInput?>? mixedEmbeddingInput = null,
             bool validate = true)
         {
             if (validate)
@@ -201,17 +201,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextEmbeddingInput)
             {
-                text?.Invoke(Text!);
+                textEmbeddingInput?.Invoke(TextEmbeddingInput!);
             }
-            else if (IsImage)
+            else if (IsImageEmbeddingInput)
             {
-                image?.Invoke(Image!);
+                imageEmbeddingInput?.Invoke(ImageEmbeddingInput!);
             }
-            else if (IsMixed)
+            else if (IsMixedEmbeddingInput)
             {
-                mixed?.Invoke(Mixed!);
+                mixedEmbeddingInput?.Invoke(MixedEmbeddingInput!);
             }
         }
 
@@ -222,11 +222,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                TextEmbeddingInput,
                 typeof(global::G.TextEmbeddingInput),
-                Image,
+                ImageEmbeddingInput,
                 typeof(global::G.ImageEmbeddingInput),
-                Mixed,
+                MixedEmbeddingInput,
                 typeof(global::G.MixedEmbeddingInput),
             };
             const int offset = unchecked((int)2166136261);
@@ -244,9 +244,9 @@ namespace G
         public bool Equals(EmbeddingInput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TextEmbeddingInput?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageEmbeddingInput?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MixedEmbeddingInput?>.Default.Equals(Mixed, other.Mixed) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TextEmbeddingInput?>.Default.Equals(TextEmbeddingInput, other.TextEmbeddingInput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageEmbeddingInput?>.Default.Equals(ImageEmbeddingInput, other.ImageEmbeddingInput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MixedEmbeddingInput?>.Default.Equals(MixedEmbeddingInput, other.MixedEmbeddingInput) 
                 ;
         }
 

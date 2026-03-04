@@ -14,35 +14,35 @@ namespace G
         /// The output of a code interpreter tool call that is text.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterTextOutput? Text { get; init; }
+        public global::G.CodeInterpreterTextOutput? Logs { get; init; }
 #else
-        public global::G.CodeInterpreterTextOutput? Text { get; }
+        public global::G.CodeInterpreterTextOutput? Logs { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Logs))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsLogs => Logs != null;
 
         /// <summary>
         /// The output of a code interpreter tool call that is a file.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CodeInterpreterFileOutput? File { get; init; }
+        public global::G.CodeInterpreterFileOutput? Files { get; init; }
 #else
-        public global::G.CodeInterpreterFileOutput? File { get; }
+        public global::G.CodeInterpreterFileOutput? Files { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Files))]
 #endif
-        public bool IsFile => File != null;
+        public bool IsFiles => Files != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CodeInterpreterTextOutput?(CodeInterpreterToolOutput @this) => @this.Text;
+        public static implicit operator global::G.CodeInterpreterTextOutput?(CodeInterpreterToolOutput @this) => @this.Logs;
 
         /// <summary>
         /// 
         /// </summary>
         public CodeInterpreterToolOutput(global::G.CodeInterpreterTextOutput? value)
         {
-            Text = value;
+            Logs = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CodeInterpreterFileOutput?(CodeInterpreterToolOutput @this) => @this.File;
+        public static implicit operator global::G.CodeInterpreterFileOutput?(CodeInterpreterToolOutput @this) => @this.Files;
 
         /// <summary>
         /// 
         /// </summary>
         public CodeInterpreterToolOutput(global::G.CodeInterpreterFileOutput? value)
         {
-            File = value;
+            Files = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CodeInterpreterToolOutput(
-            global::G.CodeInterpreterTextOutput? text,
-            global::G.CodeInterpreterFileOutput? file
+            global::G.CodeInterpreterTextOutput? logs,
+            global::G.CodeInterpreterFileOutput? files
             )
         {
-            Text = text;
-            File = file;
+            Logs = logs;
+            Files = files;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            File as object ??
-            Text as object 
+            Files as object ??
+            Logs as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            File?.ToString() 
+            Logs?.ToString() ??
+            Files?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsFile || !IsText && IsFile;
+            return IsLogs && !IsFiles || !IsLogs && IsFiles;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CodeInterpreterTextOutput?, TResult>? text = null,
-            global::System.Func<global::G.CodeInterpreterFileOutput?, TResult>? file = null,
+            global::System.Func<global::G.CodeInterpreterTextOutput?, TResult>? logs = null,
+            global::System.Func<global::G.CodeInterpreterFileOutput?, TResult>? files = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsLogs && logs != null)
             {
-                return text(Text!);
+                return logs(Logs!);
             }
-            else if (IsFile && file != null)
+            else if (IsFiles && files != null)
             {
-                return file(File!);
+                return files(Files!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CodeInterpreterTextOutput?>? text = null,
-            global::System.Action<global::G.CodeInterpreterFileOutput?>? file = null,
+            global::System.Action<global::G.CodeInterpreterTextOutput?>? logs = null,
+            global::System.Action<global::G.CodeInterpreterFileOutput?>? files = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsLogs)
             {
-                text?.Invoke(Text!);
+                logs?.Invoke(Logs!);
             }
-            else if (IsFile)
+            else if (IsFiles)
             {
-                file?.Invoke(File!);
+                files?.Invoke(Files!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                Logs,
                 typeof(global::G.CodeInterpreterTextOutput),
-                File,
+                Files,
                 typeof(global::G.CodeInterpreterFileOutput),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CodeInterpreterToolOutput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterTextOutput?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterFileOutput?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterTextOutput?>.Default.Equals(Logs, other.Logs) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterFileOutput?>.Default.Equals(Files, other.Files) 
                 ;
         }
 

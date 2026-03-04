@@ -16,52 +16,52 @@ namespace G
         /// Conditions to target repositories by name and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? Value1 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? RepositoryNameAndRefName { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? Value1 { get; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? RepositoryNameAndRefName { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryNameAndRefName))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRepositoryNameAndRefName => RepositoryNameAndRefName != null;
 
         /// <summary>
         /// Conditions to target repositories by id and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? Value2 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? RepositoryIdAndRefName { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? Value2 { get; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? RepositoryIdAndRefName { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryIdAndRefName))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRepositoryIdAndRefName => RepositoryIdAndRefName != null;
 
         /// <summary>
         /// Conditions to target repositories by property and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? Value3 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? RepositoryPropertyAndRefName { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? Value3 { get; }
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? RepositoryPropertyAndRefName { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryPropertyAndRefName))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsRepositoryPropertyAndRefName => RepositoryPropertyAndRefName != null;
         /// <summary>
         /// 
         /// </summary>
@@ -70,14 +70,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?(OrgRulesetConditions @this) => @this.Value1;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?(OrgRulesetConditions @this) => @this.RepositoryNameAndRefName;
 
         /// <summary>
         /// 
         /// </summary>
         public OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? value)
         {
-            Value1 = value;
+            RepositoryNameAndRefName = value;
         }
 
         /// <summary>
@@ -88,14 +88,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?(OrgRulesetConditions @this) => @this.Value2;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?(OrgRulesetConditions @this) => @this.RepositoryIdAndRefName;
 
         /// <summary>
         /// 
         /// </summary>
         public OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? value)
         {
-            Value2 = value;
+            RepositoryIdAndRefName = value;
         }
 
         /// <summary>
@@ -106,46 +106,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?(OrgRulesetConditions @this) => @this.Value3;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?(OrgRulesetConditions @this) => @this.RepositoryPropertyAndRefName;
 
         /// <summary>
         /// 
         /// </summary>
         public OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? value)
         {
-            Value3 = value;
+            RepositoryPropertyAndRefName = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public OrgRulesetConditions(
-            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? value1,
-            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? value2,
-            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? value3
+            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? repositoryNameAndRefName,
+            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? repositoryIdAndRefName,
+            global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? repositoryPropertyAndRefName
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            RepositoryNameAndRefName = repositoryNameAndRefName;
+            RepositoryIdAndRefName = repositoryIdAndRefName;
+            RepositoryPropertyAndRefName = repositoryPropertyAndRefName;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            RepositoryPropertyAndRefName as object ??
+            RepositoryIdAndRefName as object ??
+            RepositoryNameAndRefName as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            RepositoryNameAndRefName?.ToString() ??
+            RepositoryIdAndRefName?.ToString() ??
+            RepositoryPropertyAndRefName?.ToString() 
             ;
 
         /// <summary>
@@ -153,16 +153,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsRepositoryNameAndRefName && !IsRepositoryIdAndRefName && !IsRepositoryPropertyAndRefName || !IsRepositoryNameAndRefName && IsRepositoryIdAndRefName && !IsRepositoryPropertyAndRefName || !IsRepositoryNameAndRefName && !IsRepositoryIdAndRefName && IsRepositoryPropertyAndRefName;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?, TResult>? value1 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?, TResult>? value2 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?, TResult>? value3 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?, TResult>? repositoryNameAndRefName = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?, TResult>? repositoryIdAndRefName = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?, TResult>? repositoryPropertyAndRefName = null,
             bool validate = true)
         {
             if (validate)
@@ -170,17 +170,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRepositoryNameAndRefName && repositoryNameAndRefName != null)
             {
-                return value1(Value1!);
+                return repositoryNameAndRefName(RepositoryNameAndRefName!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRepositoryIdAndRefName && repositoryIdAndRefName != null)
             {
-                return value2(Value2!);
+                return repositoryIdAndRefName(RepositoryIdAndRefName!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsRepositoryPropertyAndRefName && repositoryPropertyAndRefName != null)
             {
-                return value3(Value3!);
+                return repositoryPropertyAndRefName(RepositoryPropertyAndRefName!);
             }
 
             return default(TResult);
@@ -190,9 +190,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>? value1 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>? value2 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>? value3 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>? repositoryNameAndRefName = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>? repositoryIdAndRefName = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>? repositoryPropertyAndRefName = null,
             bool validate = true)
         {
             if (validate)
@@ -200,17 +200,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRepositoryNameAndRefName)
             {
-                value1?.Invoke(Value1!);
+                repositoryNameAndRefName?.Invoke(RepositoryNameAndRefName!);
             }
-            else if (IsValue2)
+            else if (IsRepositoryIdAndRefName)
             {
-                value2?.Invoke(Value2!);
+                repositoryIdAndRefName?.Invoke(RepositoryIdAndRefName!);
             }
-            else if (IsValue3)
+            else if (IsRepositoryPropertyAndRefName)
             {
-                value3?.Invoke(Value3!);
+                repositoryPropertyAndRefName?.Invoke(RepositoryPropertyAndRefName!);
             }
         }
 
@@ -221,11 +221,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                RepositoryNameAndRefName,
                 typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>),
-                Value2,
+                RepositoryIdAndRefName,
                 typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>),
-                Value3,
+                RepositoryPropertyAndRefName,
                 typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>),
             };
             const int offset = unchecked((int)2166136261);
@@ -243,9 +243,9 @@ namespace G
         public bool Equals(OrgRulesetConditions other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>.Default.Equals(RepositoryNameAndRefName, other.RepositoryNameAndRefName) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>.Default.Equals(RepositoryIdAndRefName, other.RepositoryIdAndRefName) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>.Default.Equals(RepositoryPropertyAndRefName, other.RepositoryPropertyAndRefName) 
                 ;
         }
 

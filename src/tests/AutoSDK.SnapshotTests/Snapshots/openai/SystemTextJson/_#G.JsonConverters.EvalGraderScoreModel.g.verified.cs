@@ -18,12 +18,12 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.GraderScoreModel? value1 = default;
+            global::G.GraderScoreModel? scoreModelGrader = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -42,11 +42,11 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.EvalGraderScoreModel(
-                value1,
+                scoreModelGrader,
                 value2
                 );
 
-            if (value1 != null)
+            if (scoreModelGrader != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
@@ -71,11 +71,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsScoreModelGrader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreModelGrader, typeInfo);
             }
             else if (value.IsValue2)
             {

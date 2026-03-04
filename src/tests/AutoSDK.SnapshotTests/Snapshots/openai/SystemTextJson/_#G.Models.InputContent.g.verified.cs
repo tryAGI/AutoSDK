@@ -14,52 +14,52 @@ namespace G
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputTextContent? Text { get; init; }
+        public global::G.InputTextContent? InputText { get; init; }
 #else
-        public global::G.InputTextContent? Text { get; }
+        public global::G.InputTextContent? InputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsInputText => InputText != null;
 
         /// <summary>
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputImageContent? Image { get; init; }
+        public global::G.InputImageContent? InputImage { get; init; }
 #else
-        public global::G.InputImageContent? Image { get; }
+        public global::G.InputImageContent? InputImage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
 #endif
-        public bool IsImage => Image != null;
+        public bool IsInputImage => InputImage != null;
 
         /// <summary>
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputFileContent? File { get; init; }
+        public global::G.InputFileContent? InputFile { get; init; }
 #else
-        public global::G.InputFileContent? File { get; }
+        public global::G.InputFileContent? InputFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
-        public bool IsFile => File != null;
+        public bool IsInputFile => InputFile != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputTextContent?(InputContent @this) => @this.Text;
+        public static implicit operator global::G.InputTextContent?(InputContent @this) => @this.InputText;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::G.InputTextContent? value)
         {
-            Text = value;
+            InputText = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputImageContent?(InputContent @this) => @this.Image;
+        public static implicit operator global::G.InputImageContent?(InputContent @this) => @this.InputImage;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::G.InputImageContent? value)
         {
-            Image = value;
+            InputImage = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputFileContent?(InputContent @this) => @this.File;
+        public static implicit operator global::G.InputFileContent?(InputContent @this) => @this.InputFile;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::G.InputFileContent? value)
         {
-            File = value;
+            InputFile = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(
-            global::G.InputTextContent? text,
-            global::G.InputImageContent? image,
-            global::G.InputFileContent? file
+            global::G.InputTextContent? inputText,
+            global::G.InputImageContent? inputImage,
+            global::G.InputFileContent? inputFile
             )
         {
-            Text = text;
-            Image = image;
-            File = file;
+            InputText = inputText;
+            InputImage = inputImage;
+            InputFile = inputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            File as object ??
-            Image as object ??
-            Text as object 
+            InputFile as object ??
+            InputImage as object ??
+            InputText as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Image?.ToString() ??
-            File?.ToString() 
+            InputText?.ToString() ??
+            InputImage?.ToString() ??
+            InputFile?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsFile || !IsText && IsImage && !IsFile || !IsText && !IsImage && IsFile;
+            return IsInputText && !IsInputImage && !IsInputFile || !IsInputText && IsInputImage && !IsInputFile || !IsInputText && !IsInputImage && IsInputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputTextContent?, TResult>? text = null,
-            global::System.Func<global::G.InputImageContent?, TResult>? image = null,
-            global::System.Func<global::G.InputFileContent?, TResult>? file = null,
+            global::System.Func<global::G.InputTextContent?, TResult>? inputText = null,
+            global::System.Func<global::G.InputImageContent?, TResult>? inputImage = null,
+            global::System.Func<global::G.InputFileContent?, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsInputText && inputText != null)
             {
-                return text(Text!);
+                return inputText(InputText!);
             }
-            else if (IsImage && image != null)
+            else if (IsInputImage && inputImage != null)
             {
-                return image(Image!);
+                return inputImage(InputImage!);
             }
-            else if (IsFile && file != null)
+            else if (IsInputFile && inputFile != null)
             {
-                return file(File!);
+                return inputFile(InputFile!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputTextContent?>? text = null,
-            global::System.Action<global::G.InputImageContent?>? image = null,
-            global::System.Action<global::G.InputFileContent?>? file = null,
+            global::System.Action<global::G.InputTextContent?>? inputText = null,
+            global::System.Action<global::G.InputImageContent?>? inputImage = null,
+            global::System.Action<global::G.InputFileContent?>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsInputText)
             {
-                text?.Invoke(Text!);
+                inputText?.Invoke(InputText!);
             }
-            else if (IsImage)
+            else if (IsInputImage)
             {
-                image?.Invoke(Image!);
+                inputImage?.Invoke(InputImage!);
             }
-            else if (IsFile)
+            else if (IsInputFile)
             {
-                file?.Invoke(File!);
+                inputFile?.Invoke(InputFile!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                InputText,
                 typeof(global::G.InputTextContent),
-                Image,
+                InputImage,
                 typeof(global::G.InputImageContent),
-                File,
+                InputFile,
                 typeof(global::G.InputFileContent),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(InputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.InputTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputImageContent?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputFileContent?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::G.InputTextContent?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputFileContent?>.Default.Equals(InputFile, other.InputFile) 
                 ;
         }
 

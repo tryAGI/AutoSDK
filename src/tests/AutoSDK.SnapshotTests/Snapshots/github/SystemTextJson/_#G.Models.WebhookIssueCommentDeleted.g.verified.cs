@@ -45,9 +45,9 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2> Issue { get; set; }
+        public required global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -113,7 +113,7 @@ namespace G
 #endif
         public WebhookIssueCommentDeleted(
             global::G.WebhooksIssueComment comment,
-            global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2> issue,
+            global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2> issue,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookIssueCommentDeletedAction action,

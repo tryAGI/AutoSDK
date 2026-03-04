@@ -14,35 +14,35 @@ namespace G
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; }
+        public global::G.ChatCompletionRequestMessageContentPartText? TextContentPart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextContentPart => TextContentPart != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartRefusal? RefusalContentPart { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; }
+        public global::G.ChatCompletionRequestMessageContentPartRefusal? RefusalContentPart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalContentPart))]
 #endif
-        public bool IsRefusal => Refusal != null;
+        public bool IsRefusalContentPart => RefusalContentPart != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestAssistantMessageContentPart @this) => @this.Text;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestAssistantMessageContentPart @this) => @this.TextContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText? value)
         {
-            Text = value;
+            TextContentPart = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartRefusal?(ChatCompletionRequestAssistantMessageContentPart @this) => @this.Refusal;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartRefusal?(ChatCompletionRequestAssistantMessageContentPart @this) => @this.RefusalContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartRefusal? value)
         {
-            Refusal = value;
+            RefusalContentPart = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(
-            global::G.ChatCompletionRequestMessageContentPartText? text,
-            global::G.ChatCompletionRequestMessageContentPartRefusal? refusal
+            global::G.ChatCompletionRequestMessageContentPartText? textContentPart,
+            global::G.ChatCompletionRequestMessageContentPartRefusal? refusalContentPart
             )
         {
-            Text = text;
-            Refusal = refusal;
+            TextContentPart = textContentPart;
+            RefusalContentPart = refusalContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Refusal as object ??
-            Text as object 
+            RefusalContentPart as object ??
+            TextContentPart as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Refusal?.ToString() 
+            TextContentPart?.ToString() ??
+            RefusalContentPart?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsRefusal || !IsText && IsRefusal;
+            return IsTextContentPart && !IsRefusalContentPart || !IsTextContentPart && IsRefusalContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartRefusal?, TResult>? refusal = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartRefusal?, TResult>? refusalContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextContentPart && textContentPart != null)
             {
-                return text(Text!);
+                return textContentPart(TextContentPart!);
             }
-            else if (IsRefusal && refusal != null)
+            else if (IsRefusalContentPart && refusalContentPart != null)
             {
-                return refusal(Refusal!);
+                return refusalContentPart(RefusalContentPart!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartRefusal?>? refusal = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartRefusal?>? refusalContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextContentPart)
             {
-                text?.Invoke(Text!);
+                textContentPart?.Invoke(TextContentPart!);
             }
-            else if (IsRefusal)
+            else if (IsRefusalContentPart)
             {
-                refusal?.Invoke(Refusal!);
+                refusalContentPart?.Invoke(RefusalContentPart!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                TextContentPart,
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
-                Refusal,
+                RefusalContentPart,
                 typeof(global::G.ChatCompletionRequestMessageContentPartRefusal),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChatCompletionRequestAssistantMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartRefusal?>.Default.Equals(Refusal, other.Refusal) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartRefusal?>.Default.Equals(RefusalContentPart, other.RefusalContentPart) 
                 ;
         }
 

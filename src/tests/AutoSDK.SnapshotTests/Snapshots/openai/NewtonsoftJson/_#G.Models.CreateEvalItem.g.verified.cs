@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateEvalItemVariant1? Value1 { get; init; }
+        public global::G.CreateEvalItemSimpleInputMessage? SimpleInputMessage { get; init; }
 #else
-        public global::G.CreateEvalItemVariant1? Value1 { get; }
+        public global::G.CreateEvalItemSimpleInputMessage? SimpleInputMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SimpleInputMessage))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSimpleInputMessage => SimpleInputMessage != null;
 
         /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
@@ -35,34 +35,34 @@ namespace G
         /// interactions.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EvalItem? Value2 { get; init; }
+        public global::G.EvalItem? EvalMessageObject { get; init; }
 #else
-        public global::G.EvalItem? Value2 { get; }
+        public global::G.EvalItem? EvalMessageObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalMessageObject))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEvalMessageObject => EvalMessageObject != null;
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateEvalItem(global::G.CreateEvalItemVariant1 value) => new CreateEvalItem((global::G.CreateEvalItemVariant1?)value);
+        public static implicit operator CreateEvalItem(global::G.CreateEvalItemSimpleInputMessage value) => new CreateEvalItem((global::G.CreateEvalItemSimpleInputMessage?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateEvalItemVariant1?(CreateEvalItem @this) => @this.Value1;
+        public static implicit operator global::G.CreateEvalItemSimpleInputMessage?(CreateEvalItem @this) => @this.SimpleInputMessage;
 
         /// <summary>
         /// 
         /// </summary>
-        public CreateEvalItem(global::G.CreateEvalItemVariant1? value)
+        public CreateEvalItem(global::G.CreateEvalItemSimpleInputMessage? value)
         {
-            Value1 = value;
+            SimpleInputMessage = value;
         }
 
         /// <summary>
@@ -73,42 +73,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EvalItem?(CreateEvalItem @this) => @this.Value2;
+        public static implicit operator global::G.EvalItem?(CreateEvalItem @this) => @this.EvalMessageObject;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateEvalItem(global::G.EvalItem? value)
         {
-            Value2 = value;
+            EvalMessageObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateEvalItem(
-            global::G.CreateEvalItemVariant1? value1,
-            global::G.EvalItem? value2
+            global::G.CreateEvalItemSimpleInputMessage? simpleInputMessage,
+            global::G.EvalItem? evalMessageObject
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            SimpleInputMessage = simpleInputMessage;
+            EvalMessageObject = evalMessageObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            EvalMessageObject as object ??
+            SimpleInputMessage as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            SimpleInputMessage?.ToString() ??
+            EvalMessageObject?.ToString() 
             ;
 
         /// <summary>
@@ -116,15 +116,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsSimpleInputMessage && !IsEvalMessageObject || !IsSimpleInputMessage && IsEvalMessageObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateEvalItemVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.EvalItem?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateEvalItemSimpleInputMessage?, TResult>? simpleInputMessage = null,
+            global::System.Func<global::G.EvalItem?, TResult>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)
@@ -132,13 +132,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSimpleInputMessage && simpleInputMessage != null)
             {
-                return value1(Value1!);
+                return simpleInputMessage(SimpleInputMessage!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEvalMessageObject && evalMessageObject != null)
             {
-                return value2(Value2!);
+                return evalMessageObject(EvalMessageObject!);
             }
 
             return default(TResult);
@@ -148,8 +148,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateEvalItemVariant1?>? value1 = null,
-            global::System.Action<global::G.EvalItem?>? value2 = null,
+            global::System.Action<global::G.CreateEvalItemSimpleInputMessage?>? simpleInputMessage = null,
+            global::System.Action<global::G.EvalItem?>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)
@@ -157,13 +157,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSimpleInputMessage)
             {
-                value1?.Invoke(Value1!);
+                simpleInputMessage?.Invoke(SimpleInputMessage!);
             }
-            else if (IsValue2)
+            else if (IsEvalMessageObject)
             {
-                value2?.Invoke(Value2!);
+                evalMessageObject?.Invoke(EvalMessageObject!);
             }
         }
 
@@ -174,9 +174,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(global::G.CreateEvalItemVariant1),
-                Value2,
+                SimpleInputMessage,
+                typeof(global::G.CreateEvalItemSimpleInputMessage),
+                EvalMessageObject,
                 typeof(global::G.EvalItem),
             };
             const int offset = unchecked((int)2166136261);
@@ -194,8 +194,8 @@ namespace G
         public bool Equals(CreateEvalItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateEvalItemVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EvalItem?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateEvalItemSimpleInputMessage?>.Default.Equals(SimpleInputMessage, other.SimpleInputMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.EvalItem?>.Default.Equals(EvalMessageObject, other.EvalMessageObject) 
                 ;
         }
 

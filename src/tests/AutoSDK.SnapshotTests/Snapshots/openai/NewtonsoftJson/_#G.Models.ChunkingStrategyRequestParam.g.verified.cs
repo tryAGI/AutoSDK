@@ -14,35 +14,35 @@ namespace G
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AutoChunkingStrategyRequestParam? Auto { get; init; }
+        public global::G.AutoChunkingStrategyRequestParam? AutoChunkingStrategy { get; init; }
 #else
-        public global::G.AutoChunkingStrategyRequestParam? Auto { get; }
+        public global::G.AutoChunkingStrategyRequestParam? AutoChunkingStrategy { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoChunkingStrategy))]
 #endif
-        public bool IsAuto => Auto != null;
+        public bool IsAutoChunkingStrategy => AutoChunkingStrategy != null;
 
         /// <summary>
         /// Customize your own chunking strategy by setting chunk size and chunk overlap.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StaticChunkingStrategyRequestParam? Static { get; init; }
+        public global::G.StaticChunkingStrategyRequestParam? StaticChunkingStrategy { get; init; }
 #else
-        public global::G.StaticChunkingStrategyRequestParam? Static { get; }
+        public global::G.StaticChunkingStrategyRequestParam? StaticChunkingStrategy { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticChunkingStrategy))]
 #endif
-        public bool IsStatic => Static != null;
+        public bool IsStaticChunkingStrategy => StaticChunkingStrategy != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AutoChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Auto;
+        public static implicit operator global::G.AutoChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.AutoChunkingStrategy;
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(global::G.AutoChunkingStrategyRequestParam? value)
         {
-            Auto = value;
+            AutoChunkingStrategy = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StaticChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Static;
+        public static implicit operator global::G.StaticChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.StaticChunkingStrategy;
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(global::G.StaticChunkingStrategyRequestParam? value)
         {
-            Static = value;
+            StaticChunkingStrategy = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(
-            global::G.AutoChunkingStrategyRequestParam? auto,
-            global::G.StaticChunkingStrategyRequestParam? @static
+            global::G.AutoChunkingStrategyRequestParam? autoChunkingStrategy,
+            global::G.StaticChunkingStrategyRequestParam? staticChunkingStrategy
             )
         {
-            Auto = auto;
-            Static = @static;
+            AutoChunkingStrategy = autoChunkingStrategy;
+            StaticChunkingStrategy = staticChunkingStrategy;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Static as object ??
-            Auto as object 
+            StaticChunkingStrategy as object ??
+            AutoChunkingStrategy as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Auto?.ToString() ??
-            Static?.ToString() 
+            AutoChunkingStrategy?.ToString() ??
+            StaticChunkingStrategy?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsAuto && !IsStatic || !IsAuto && IsStatic;
+            return IsAutoChunkingStrategy && !IsStaticChunkingStrategy || !IsAutoChunkingStrategy && IsStaticChunkingStrategy;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AutoChunkingStrategyRequestParam?, TResult>? auto = null,
-            global::System.Func<global::G.StaticChunkingStrategyRequestParam?, TResult>? @static = null,
+            global::System.Func<global::G.AutoChunkingStrategyRequestParam?, TResult>? autoChunkingStrategy = null,
+            global::System.Func<global::G.StaticChunkingStrategyRequestParam?, TResult>? staticChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAuto && auto != null)
+            if (IsAutoChunkingStrategy && autoChunkingStrategy != null)
             {
-                return auto(Auto!);
+                return autoChunkingStrategy(AutoChunkingStrategy!);
             }
-            else if (IsStatic && @static != null)
+            else if (IsStaticChunkingStrategy && staticChunkingStrategy != null)
             {
-                return @static(Static!);
+                return staticChunkingStrategy(StaticChunkingStrategy!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AutoChunkingStrategyRequestParam?>? auto = null,
-            global::System.Action<global::G.StaticChunkingStrategyRequestParam?>? @static = null,
+            global::System.Action<global::G.AutoChunkingStrategyRequestParam?>? autoChunkingStrategy = null,
+            global::System.Action<global::G.StaticChunkingStrategyRequestParam?>? staticChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAuto)
+            if (IsAutoChunkingStrategy)
             {
-                auto?.Invoke(Auto!);
+                autoChunkingStrategy?.Invoke(AutoChunkingStrategy!);
             }
-            else if (IsStatic)
+            else if (IsStaticChunkingStrategy)
             {
-                @static?.Invoke(Static!);
+                staticChunkingStrategy?.Invoke(StaticChunkingStrategy!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Auto,
+                AutoChunkingStrategy,
                 typeof(global::G.AutoChunkingStrategyRequestParam),
-                Static,
+                StaticChunkingStrategy,
                 typeof(global::G.StaticChunkingStrategyRequestParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChunkingStrategyRequestParam other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AutoChunkingStrategyRequestParam?>.Default.Equals(Auto, other.Auto) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyRequestParam?>.Default.Equals(Static, other.Static) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AutoChunkingStrategyRequestParam?>.Default.Equals(AutoChunkingStrategy, other.AutoChunkingStrategy) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyRequestParam?>.Default.Equals(StaticChunkingStrategy, other.StaticChunkingStrategy) 
                 ;
         }
 

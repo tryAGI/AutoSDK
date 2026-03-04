@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ColorPaletteWithPresetName? Value1 { get; init; }
+        public global::G.ColorPaletteWithPresetName? ColorPaletteWithPresetName { get; init; }
 #else
-        public global::G.ColorPaletteWithPresetName? Value1 { get; }
+        public global::G.ColorPaletteWithPresetName? ColorPaletteWithPresetName { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ColorPaletteWithPresetName))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsColorPaletteWithPresetName => ColorPaletteWithPresetName != null;
 
         /// <summary>
         /// A color palette represented only via its members
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ColorPaletteWithMembers? Value2 { get; init; }
+        public global::G.ColorPaletteWithMembers? ColorPaletteWithMembers { get; init; }
 #else
-        public global::G.ColorPaletteWithMembers? Value2 { get; }
+        public global::G.ColorPaletteWithMembers? ColorPaletteWithMembers { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ColorPaletteWithMembers))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsColorPaletteWithMembers => ColorPaletteWithMembers != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ColorPaletteWithPresetName?(ColorPaletteWithPresetNameOrMembers @this) => @this.Value1;
+        public static implicit operator global::G.ColorPaletteWithPresetName?(ColorPaletteWithPresetNameOrMembers @this) => @this.ColorPaletteWithPresetName;
 
         /// <summary>
         /// 
         /// </summary>
         public ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithPresetName? value)
         {
-            Value1 = value;
+            ColorPaletteWithPresetName = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ColorPaletteWithMembers?(ColorPaletteWithPresetNameOrMembers @this) => @this.Value2;
+        public static implicit operator global::G.ColorPaletteWithMembers?(ColorPaletteWithPresetNameOrMembers @this) => @this.ColorPaletteWithMembers;
 
         /// <summary>
         /// 
         /// </summary>
         public ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithMembers? value)
         {
-            Value2 = value;
+            ColorPaletteWithMembers = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ColorPaletteWithPresetNameOrMembers(
-            global::G.ColorPaletteWithPresetName? value1,
-            global::G.ColorPaletteWithMembers? value2
+            global::G.ColorPaletteWithPresetName? colorPaletteWithPresetName,
+            global::G.ColorPaletteWithMembers? colorPaletteWithMembers
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ColorPaletteWithPresetName = colorPaletteWithPresetName;
+            ColorPaletteWithMembers = colorPaletteWithMembers;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ColorPaletteWithMembers as object ??
+            ColorPaletteWithPresetName as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ColorPaletteWithPresetName?.ToString() ??
+            ColorPaletteWithMembers?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsColorPaletteWithPresetName && !IsColorPaletteWithMembers || !IsColorPaletteWithPresetName && IsColorPaletteWithMembers;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ColorPaletteWithPresetName?, TResult>? value1 = null,
-            global::System.Func<global::G.ColorPaletteWithMembers?, TResult>? value2 = null,
+            global::System.Func<global::G.ColorPaletteWithPresetName?, TResult>? colorPaletteWithPresetName = null,
+            global::System.Func<global::G.ColorPaletteWithMembers?, TResult>? colorPaletteWithMembers = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsColorPaletteWithPresetName && colorPaletteWithPresetName != null)
             {
-                return value1(Value1!);
+                return colorPaletteWithPresetName(ColorPaletteWithPresetName!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsColorPaletteWithMembers && colorPaletteWithMembers != null)
             {
-                return value2(Value2!);
+                return colorPaletteWithMembers(ColorPaletteWithMembers!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ColorPaletteWithPresetName?>? value1 = null,
-            global::System.Action<global::G.ColorPaletteWithMembers?>? value2 = null,
+            global::System.Action<global::G.ColorPaletteWithPresetName?>? colorPaletteWithPresetName = null,
+            global::System.Action<global::G.ColorPaletteWithMembers?>? colorPaletteWithMembers = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsColorPaletteWithPresetName)
             {
-                value1?.Invoke(Value1!);
+                colorPaletteWithPresetName?.Invoke(ColorPaletteWithPresetName!);
             }
-            else if (IsValue2)
+            else if (IsColorPaletteWithMembers)
             {
-                value2?.Invoke(Value2!);
+                colorPaletteWithMembers?.Invoke(ColorPaletteWithMembers!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ColorPaletteWithPresetName,
                 typeof(global::G.ColorPaletteWithPresetName),
-                Value2,
+                ColorPaletteWithMembers,
                 typeof(global::G.ColorPaletteWithMembers),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ColorPaletteWithPresetNameOrMembers other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ColorPaletteWithPresetName?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ColorPaletteWithMembers?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ColorPaletteWithPresetName?>.Default.Equals(ColorPaletteWithPresetName, other.ColorPaletteWithPresetName) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ColorPaletteWithMembers?>.Default.Equals(ColorPaletteWithMembers, other.ColorPaletteWithMembers) 
                 ;
         }
 

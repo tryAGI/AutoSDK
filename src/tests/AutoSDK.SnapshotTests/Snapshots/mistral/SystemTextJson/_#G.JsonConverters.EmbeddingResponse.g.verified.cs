@@ -18,12 +18,12 @@ namespace G.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ResponseBase? value1 = default;
+            global::G.ResponseBase? responseBase = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseBase> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseBase).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                responseBase = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -42,11 +42,11 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.EmbeddingResponse(
-                value1,
+                responseBase,
                 value2
                 );
 
-            if (value1 != null)
+            if (responseBase != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseBase> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseBase).Name}");
@@ -71,11 +71,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsResponseBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseBase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseBase, typeInfo);
             }
             else if (value.IsValue2)
             {

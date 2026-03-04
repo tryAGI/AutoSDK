@@ -23,9 +23,9 @@ namespace G
         /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forkee")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookForkForkeeRepository, global::G.WebhookForkForkeeVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2> Forkee { get; set; }
+        public required global::G.AllOf<global::G.WebhookForkForkeeRepository, global::G.WebhookForkForkeeVariant2> Forkee { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -94,7 +94,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookFork(
-            global::G.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2> forkee,
+            global::G.AllOf<global::G.WebhookForkForkeeRepository, global::G.WebhookForkForkeeVariant2> forkee,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.EnterpriseWebhooks? enterprise,

@@ -1869,51 +1869,51 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant16? Type460 { get; set; }
+        public global::G.RepositoryRuleFilePathRestriction? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant16Type? Type461 { get; set; }
+        public global::G.RepositoryRuleFilePathRestrictionType? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant16Parameters? Type462 { get; set; }
+        public global::G.RepositoryRuleFilePathRestrictionParameters? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant17? Type463 { get; set; }
+        public global::G.RepositoryRuleMaxFilePathLength? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant17Type? Type464 { get; set; }
+        public global::G.RepositoryRuleMaxFilePathLengthType? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant17Parameters? Type465 { get; set; }
+        public global::G.RepositoryRuleMaxFilePathLengthParameters? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant18? Type466 { get; set; }
+        public global::G.RepositoryRuleFileExtensionRestriction? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant18Type? Type467 { get; set; }
+        public global::G.RepositoryRuleFileExtensionRestrictionType? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant18Parameters? Type468 { get; set; }
+        public global::G.RepositoryRuleFileExtensionRestrictionParameters? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant19? Type469 { get; set; }
+        public global::G.RepositoryRuleMaxFileSize? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant19Type? Type470 { get; set; }
+        public global::G.RepositoryRuleMaxFileSizeType? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleVariant19Parameters? Type471 { get; set; }
+        public global::G.RepositoryRuleMaxFileSizeParameters? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5877,35 +5877,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>>? Type1462 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerUser, global::G.WebhooksPullRequest5RequestedReviewerTeam>>? Type1462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>? Type1463 { get; set; }
+        public global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerUser, global::G.WebhooksPullRequest5RequestedReviewerTeam>? Type1463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant1? Type1464 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerUser? Type1464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant1Type? Type1465 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerUserType? Type1465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant2? Type1466 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerTeam? Type1466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant2Parent? Type1467 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerTeamParent? Type1467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant2ParentPrivacy? Type1468 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerTeamParentPrivacy? Type1468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhooksPullRequest5RequestedReviewerVariant2Privacy? Type1469 { get; set; }
+        public global::G.WebhooksPullRequest5RequestedReviewerTeamPrivacy? Type1469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -8697,31 +8697,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2>? Type2167 { get; set; }
+        public global::G.AllOf<global::G.WebhookForkForkeeRepository, global::G.WebhookForkForkeeVariant2>? Type2167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1? Type2168 { get; set; }
+        public global::G.WebhookForkForkeeRepository? Type2168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1License? Type2169 { get; set; }
+        public global::G.WebhookForkForkeeRepositoryLicense? Type2169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1Owner? Type2170 { get; set; }
+        public global::G.WebhookForkForkeeRepositoryOwner? Type2170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1OwnerType? Type2171 { get; set; }
+        public global::G.WebhookForkForkeeRepositoryOwnerType? Type2171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1Permissions? Type2172 { get; set; }
+        public global::G.WebhookForkForkeeRepositoryPermissions? Type2172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookForkForkeeVariant1Visibility? Type2173 { get; set; }
+        public global::G.WebhookForkForkeeRepositoryVisibility? Type2173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -8881,247 +8881,247 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookIssueCommentCreatedIssueVariant1, global::G.WebhookIssueCommentCreatedIssueVariant2>? Type2213 { get; set; }
+        public global::G.AllOf<global::G.WebhookIssueCommentCreatedIssueIssue1, global::G.WebhookIssueCommentCreatedIssueVariant2>? Type2213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1? Type2214 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1? Type2214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1ActiveLockReason? Type2215 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1ActiveLockReason? Type2215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1Assignee? Type2216 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1Assignee? Type2216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1AssigneeType? Type2217 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1AssigneeType? Type2217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueVariant1Assignee2>? Type2218 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueIssue1Assignee2>? Type2218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1Assignee2? Type2219 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1Assignee2? Type2219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1AssigneeType2? Type2220 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1AssigneeType2? Type2220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1AuthorAssociation? Type2221 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1AuthorAssociation? Type2221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueVariant1Label>? Type2222 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueIssue1Label>? Type2222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1Label? Type2223 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1Label? Type2223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1Milestone? Type2224 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1Milestone? Type2224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1MilestoneCreator? Type2225 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1MilestoneCreator? Type2225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1MilestoneCreatorType? Type2226 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType? Type2226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1MilestoneState? Type2227 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1MilestoneState? Type2227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubApp? Type2228 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubApp? Type2228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppEvent>? Type2229 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppEvent>? Type2229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppEvent? Type2230 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppEvent? Type2230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppOwner? Type2231 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppOwner? Type2231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppOwnerType? Type2232 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppOwnerType? Type2232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissions? Type2233 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissions? Type2233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsActions? Type2234 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsActions? Type2234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsAdministration? Type2235 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsAdministration? Type2235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsChecks? Type2236 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsChecks? Type2236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsContentReferences? Type2237 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsContentReferences? Type2237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsContents? Type2238 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsContents? Type2238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsDeployments? Type2239 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsDeployments? Type2239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsDiscussions? Type2240 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsDiscussions? Type2240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsEmails? Type2241 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsEmails? Type2241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsEnvironments? Type2242 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsEnvironments? Type2242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsIssues? Type2243 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsIssues? Type2243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsKeys? Type2244 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsKeys? Type2244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsMembers? Type2245 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsMembers? Type2245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsMetadata? Type2246 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsMetadata? Type2246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2247 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationHooks? Type2248 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationHooks? Type2248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPackages? Type2249 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPackages? Type2249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPlan? Type2250 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPlan? Type2250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationProjects? Type2251 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects? Type2251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2252 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2253 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2254 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPackages? Type2255 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsPackages? Type2255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPages? Type2256 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsPages? Type2256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPullRequests? Type2257 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsPullRequests? Type2257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsRepositoryHooks? Type2258 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsRepositoryHooks? Type2258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsRepositoryProjects? Type2259 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects? Type2259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2260 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsSecrets? Type2261 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsSecrets? Type2261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsSecurityEvents? Type2262 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsSecurityEvents? Type2262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2263 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsSingleFile? Type2264 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? Type2264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsStatuses? Type2265 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsStatuses? Type2265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsTeamDiscussions? Type2266 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsTeamDiscussions? Type2266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2267 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsWorkflows? Type2268 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppPermissionsWorkflows? Type2268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1PullRequest? Type2269 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1PullRequest? Type2269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1Reactions? Type2270 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1Reactions? Type2270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1State? Type2271 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1State? Type2271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1User? Type2272 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1User? Type2272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentCreatedIssueVariant1UserType? Type2273 { get; set; }
+        public global::G.WebhookIssueCommentCreatedIssueIssue1UserType? Type2273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -9165,247 +9165,247 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueVariant1, global::G.WebhookIssueCommentDeletedIssueVariant2>? Type2284 { get; set; }
+        public global::G.AllOf<global::G.WebhookIssueCommentDeletedIssueIssue1, global::G.WebhookIssueCommentDeletedIssueVariant2>? Type2284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1? Type2285 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1? Type2285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1ActiveLockReason? Type2286 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1ActiveLockReason? Type2286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1Assignee? Type2287 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1Assignee? Type2287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1AssigneeType? Type2288 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1AssigneeType? Type2288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueVariant1Assignee2>? Type2289 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueIssue1Assignee2>? Type2289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1Assignee2? Type2290 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1Assignee2? Type2290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1AssigneeType2? Type2291 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1AssigneeType2? Type2291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1AuthorAssociation? Type2292 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1AuthorAssociation? Type2292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueVariant1Label>? Type2293 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueIssue1Label>? Type2293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1Label? Type2294 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1Label? Type2294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1Milestone? Type2295 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1Milestone? Type2295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1MilestoneCreator? Type2296 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1MilestoneCreator? Type2296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1MilestoneCreatorType? Type2297 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1MilestoneCreatorType? Type2297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1MilestoneState? Type2298 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1MilestoneState? Type2298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubApp? Type2299 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubApp? Type2299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppEvent>? Type2300 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent>? Type2300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppEvent? Type2301 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent? Type2301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppOwner? Type2302 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwner? Type2302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppOwnerType? Type2303 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwnerType? Type2303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissions? Type2304 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissions? Type2304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsActions? Type2305 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsActions? Type2305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsAdministration? Type2306 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsAdministration? Type2306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsChecks? Type2307 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsChecks? Type2307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsContentReferences? Type2308 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsContentReferences? Type2308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsContents? Type2309 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsContents? Type2309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsDeployments? Type2310 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsDeployments? Type2310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsDiscussions? Type2311 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsDiscussions? Type2311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsEmails? Type2312 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsEmails? Type2312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsEnvironments? Type2313 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsEnvironments? Type2313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsIssues? Type2314 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsIssues? Type2314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsKeys? Type2315 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsKeys? Type2315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsMembers? Type2316 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsMembers? Type2316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsMetadata? Type2317 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsMetadata? Type2317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2318 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationHooks? Type2319 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationHooks? Type2319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPackages? Type2320 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPackages? Type2320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPlan? Type2321 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPlan? Type2321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationProjects? Type2322 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects? Type2322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2323 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2324 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2325 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsPackages? Type2326 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsPackages? Type2326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsPages? Type2327 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsPages? Type2327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsPullRequests? Type2328 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsPullRequests? Type2328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsRepositoryHooks? Type2329 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryHooks? Type2329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsRepositoryProjects? Type2330 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects? Type2330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2331 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsSecrets? Type2332 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsSecrets? Type2332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsSecurityEvents? Type2333 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsSecurityEvents? Type2333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2334 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsSingleFile? Type2335 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? Type2335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsStatuses? Type2336 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsStatuses? Type2336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsTeamDiscussions? Type2337 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsTeamDiscussions? Type2337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2338 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppPermissionsWorkflows? Type2339 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsWorkflows? Type2339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1PullRequest? Type2340 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PullRequest? Type2340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1Reactions? Type2341 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1Reactions? Type2341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1State? Type2342 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1State? Type2342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1User? Type2343 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1User? Type2343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentDeletedIssueVariant1UserType? Type2344 { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1UserType? Type2344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -9449,247 +9449,247 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2>? Type2355 { get; set; }
+        public global::G.AllOf<global::G.WebhookIssueCommentEditedIssueIssue1, global::G.WebhookIssueCommentEditedIssueVariant2>? Type2355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1? Type2356 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1? Type2356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1ActiveLockReason? Type2357 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1ActiveLockReason? Type2357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1Assignee? Type2358 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1Assignee? Type2358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1AssigneeType? Type2359 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1AssigneeType? Type2359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueVariant1Assignee2>? Type2360 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueIssue1Assignee2>? Type2360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1Assignee2? Type2361 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1Assignee2? Type2361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1AssigneeType2? Type2362 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1AssigneeType2? Type2362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1AuthorAssociation? Type2363 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1AuthorAssociation? Type2363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueVariant1Label>? Type2364 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueIssue1Label>? Type2364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1Label? Type2365 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1Label? Type2365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1Milestone? Type2366 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1Milestone? Type2366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1MilestoneCreator? Type2367 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1MilestoneCreator? Type2367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1MilestoneCreatorType? Type2368 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1MilestoneCreatorType? Type2368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1MilestoneState? Type2369 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1MilestoneState? Type2369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubApp? Type2370 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubApp? Type2370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppEvent>? Type2371 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppEvent>? Type2371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppEvent? Type2372 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppEvent? Type2372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppOwner? Type2373 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwner? Type2373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppOwnerType? Type2374 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType? Type2374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissions? Type2375 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissions? Type2375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsActions? Type2376 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsActions? Type2376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsAdministration? Type2377 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsAdministration? Type2377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsChecks? Type2378 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsChecks? Type2378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsContentReferences? Type2379 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsContentReferences? Type2379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsContents? Type2380 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsContents? Type2380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsDeployments? Type2381 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsDeployments? Type2381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsDiscussions? Type2382 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsDiscussions? Type2382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsEmails? Type2383 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsEmails? Type2383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsEnvironments? Type2384 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsEnvironments? Type2384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsIssues? Type2385 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsIssues? Type2385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsKeys? Type2386 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsKeys? Type2386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsMembers? Type2387 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsMembers? Type2387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsMetadata? Type2388 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsMetadata? Type2388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2389 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationHooks? Type2390 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationHooks? Type2390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPackages? Type2391 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPackages? Type2391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPlan? Type2392 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPlan? Type2392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationProjects? Type2393 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects? Type2393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2394 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2395 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2396 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPackages? Type2397 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsPackages? Type2397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPages? Type2398 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsPages? Type2398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPullRequests? Type2399 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsPullRequests? Type2399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsRepositoryHooks? Type2400 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsRepositoryHooks? Type2400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsRepositoryProjects? Type2401 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects? Type2401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2402 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecrets? Type2403 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsSecrets? Type2403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecurityEvents? Type2404 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsSecurityEvents? Type2404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2405 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSingleFile? Type2406 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? Type2406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsStatuses? Type2407 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsStatuses? Type2407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsTeamDiscussions? Type2408 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsTeamDiscussions? Type2408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2409 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsWorkflows? Type2410 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppPermissionsWorkflows? Type2410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1PullRequest? Type2411 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1PullRequest? Type2411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1Reactions? Type2412 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1Reactions? Type2412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1State? Type2413 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1State? Type2413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1User? Type2414 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1User? Type2414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssueCommentEditedIssueVariant1UserType? Type2415 { get; set; }
+        public global::G.WebhookIssueCommentEditedIssueIssue1UserType? Type2415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -9741,247 +9741,247 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookIssuesClosedIssueVariant1, global::G.WebhookIssuesClosedIssueVariant2>? Type2428 { get; set; }
+        public global::G.AllOf<global::G.WebhookIssuesClosedIssueIssue1, global::G.WebhookIssuesClosedIssueVariant2>? Type2428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1? Type2429 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1? Type2429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1ActiveLockReason? Type2430 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1ActiveLockReason? Type2430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1Assignee? Type2431 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1Assignee? Type2431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1AssigneeType? Type2432 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1AssigneeType? Type2432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueVariant1Assignee2>? Type2433 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueIssue1Assignee2>? Type2433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1Assignee2? Type2434 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1Assignee2? Type2434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1AssigneeType2? Type2435 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1AssigneeType2? Type2435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1AuthorAssociation? Type2436 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1AuthorAssociation? Type2436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueVariant1Label>? Type2437 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueIssue1Label>? Type2437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1Label? Type2438 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1Label? Type2438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1Milestone? Type2439 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1Milestone? Type2439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1MilestoneCreator? Type2440 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1MilestoneCreator? Type2440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1MilestoneCreatorType? Type2441 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1MilestoneCreatorType? Type2441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1MilestoneState? Type2442 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1MilestoneState? Type2442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubApp? Type2443 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubApp? Type2443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppEvent>? Type2444 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent>? Type2444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppEvent? Type2445 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent? Type2445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppOwner? Type2446 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppOwner? Type2446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppOwnerType? Type2447 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppOwnerType? Type2447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissions? Type2448 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissions? Type2448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsActions? Type2449 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsActions? Type2449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsAdministration? Type2450 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsAdministration? Type2450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsChecks? Type2451 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsChecks? Type2451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsContentReferences? Type2452 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsContentReferences? Type2452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsContents? Type2453 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsContents? Type2453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsDeployments? Type2454 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsDeployments? Type2454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsDiscussions? Type2455 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsDiscussions? Type2455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsEmails? Type2456 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsEmails? Type2456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsEnvironments? Type2457 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsEnvironments? Type2457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsIssues? Type2458 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsIssues? Type2458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsKeys? Type2459 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsKeys? Type2459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsMembers? Type2460 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsMembers? Type2460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsMetadata? Type2461 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsMetadata? Type2461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2462 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationAdministration? Type2462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationHooks? Type2463 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationHooks? Type2463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPackages? Type2464 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPackages? Type2464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPlan? Type2465 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationPlan? Type2465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationProjects? Type2466 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects? Type2466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2467 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSecrets? Type2467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2468 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Type2468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2469 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationUserBlocking? Type2469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsPackages? Type2470 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsPackages? Type2470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsPages? Type2471 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsPages? Type2471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsPullRequests? Type2472 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsPullRequests? Type2472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsRepositoryHooks? Type2473 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsRepositoryHooks? Type2473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsRepositoryProjects? Type2474 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects? Type2474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2475 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSecretScanningAlerts? Type2475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsSecrets? Type2476 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSecrets? Type2476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsSecurityEvents? Type2477 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSecurityEvents? Type2477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2478 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSecurityScanningAlert? Type2478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsSingleFile? Type2479 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsSingleFile? Type2479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsStatuses? Type2480 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsStatuses? Type2480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsTeamDiscussions? Type2481 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsTeamDiscussions? Type2481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2482 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsVulnerabilityAlerts? Type2482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppPermissionsWorkflows? Type2483 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsWorkflows? Type2483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1PullRequest? Type2484 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1PullRequest? Type2484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1Reactions? Type2485 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1Reactions? Type2485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1State? Type2486 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1State? Type2486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1User? Type2487 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1User? Type2487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookIssuesClosedIssueVariant1UserType? Type2488 { get; set; }
+        public global::G.WebhookIssuesClosedIssueIssue1UserType? Type2488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -13541,19 +13541,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2>? Type3378 { get; set; }
+        public global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardProjectCard1, global::G.WebhookProjectCardMovedProjectCardVariant2>? Type3378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookProjectCardMovedProjectCardVariant1? Type3379 { get; set; }
+        public global::G.WebhookProjectCardMovedProjectCardProjectCard1? Type3379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookProjectCardMovedProjectCardVariant1Creator? Type3380 { get; set; }
+        public global::G.WebhookProjectCardMovedProjectCardProjectCard1Creator? Type3380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookProjectCardMovedProjectCardVariant1CreatorType? Type3381 { get; set; }
+        public global::G.WebhookProjectCardMovedProjectCardProjectCard1CreatorType? Type3381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -14097,35 +14097,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2>>? Type3517 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeam>>? Type3517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2>? Type3518 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeam>? Type3518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1? Type3519 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerUser? Type3519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1Type? Type3520 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerUserType? Type3520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2? Type3521 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeam? Type3521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2Parent? Type3522 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeamParent? Type3522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2ParentPrivacy? Type3523 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeamParentPrivacy? Type3523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2Privacy? Type3524 { get; set; }
+        public global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeamPrivacy? Type3524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -14389,35 +14389,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2>>? Type3590 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeam>>? Type3590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2>? Type3591 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeam>? Type3591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1? Type3592 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUser? Type3592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1Type? Type3593 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType? Type3593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2? Type3594 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeam? Type3594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2Parent? Type3595 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParent? Type3595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2ParentPrivacy? Type3596 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy? Type3596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2Privacy? Type3597 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamPrivacy? Type3597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -14681,35 +14681,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2>>? Type3663 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeam>>? Type3663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2>? Type3664 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeam>? Type3664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1? Type3665 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUser? Type3665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1Type? Type3666 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType? Type3666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2? Type3667 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeam? Type3667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2Parent? Type3668 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParent? Type3668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2ParentPrivacy? Type3669 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy? Type3669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2Privacy? Type3670 { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamPrivacy? Type3670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -14997,35 +14997,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2>>? Type3742 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeam>>? Type3742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2>? Type3743 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeam>? Type3743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1? Type3744 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerUser? Type3744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1Type? Type3745 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerUserType? Type3745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2? Type3746 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeam? Type3746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2Parent? Type3747 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeamParent? Type3747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2ParentPrivacy? Type3748 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeamParentPrivacy? Type3748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2Privacy? Type3749 { get; set; }
+        public global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeamPrivacy? Type3749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -15325,35 +15325,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2>>? Type3824 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeam>>? Type3824 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2>? Type3825 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeam>? Type3825 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1? Type3826 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerUser? Type3826 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1Type? Type3827 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerUserType? Type3827 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2? Type3828 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeam? Type3828 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2Parent? Type3829 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeamParent? Type3829 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2ParentPrivacy? Type3830 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeamParentPrivacy? Type3830 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2Privacy? Type3831 { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeamPrivacy? Type3831 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -15617,35 +15617,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2>>? Type3897 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeam>>? Type3897 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2>? Type3898 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeam>? Type3898 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1? Type3899 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerUser? Type3899 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1Type? Type3900 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerUserType? Type3900 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2? Type3901 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeam? Type3901 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2Parent? Type3902 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeamParent? Type3902 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2ParentPrivacy? Type3903 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeamParentPrivacy? Type3903 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2Privacy? Type3904 { get; set; }
+        public global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeamPrivacy? Type3904 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -15909,35 +15909,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>>? Type3970 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam>>? Type3970 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>? Type3971 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam>? Type3971 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1? Type3972 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser? Type3972 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1Type? Type3973 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUserType? Type3973 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2? Type3974 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam? Type3974 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2Parent? Type3975 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeamParent? Type3975 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2ParentPrivacy? Type3976 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeamParentPrivacy? Type3976 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2Privacy? Type3977 { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeamPrivacy? Type3977 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -16273,35 +16273,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2>>? Type4061 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeam>>? Type4061 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2>? Type4062 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeam>? Type4062 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1? Type4063 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUser? Type4063 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1Type? Type4064 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType? Type4064 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2? Type4065 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeam? Type4065 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2Parent? Type4066 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeamParent? Type4066 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4067 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeamParentPrivacy? Type4067 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2Privacy? Type4068 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeamPrivacy? Type4068 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -16557,35 +16557,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2>>? Type4132 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeam>>? Type4132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2>? Type4133 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeam>? Type4133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1? Type4134 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerUser? Type4134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1Type? Type4135 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerUserType? Type4135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2? Type4136 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeam? Type4136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2Parent? Type4137 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeamParent? Type4137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4138 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeamParentPrivacy? Type4138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2Privacy? Type4139 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeamPrivacy? Type4139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -16841,35 +16841,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>>? Type4203 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeam>>? Type4203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>? Type4204 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeam>? Type4204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1? Type4205 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerUser? Type4205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1Type? Type4206 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerUserType? Type4206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2? Type4207 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeam? Type4207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2Parent? Type4208 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeamParent? Type4208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4209 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeamParentPrivacy? Type4209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2Privacy? Type4210 { get; set; }
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeamPrivacy? Type4210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -17125,35 +17125,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2>>? Type4274 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeam>>? Type4274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2>? Type4275 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeam>? Type4275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1? Type4276 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerUser? Type4276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1Type? Type4277 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerUserType? Type4277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2? Type4278 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeam? Type4278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2Parent? Type4279 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeamParent? Type4279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4280 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeamParentPrivacy? Type4280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2Privacy? Type4281 { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeamPrivacy? Type4281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -17417,35 +17417,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2>>? Type4347 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeam>>? Type4347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2>? Type4348 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeam>? Type4348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1? Type4349 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerUser? Type4349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1Type? Type4350 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerUserType? Type4350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2? Type4351 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeam? Type4351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2Parent? Type4352 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeamParent? Type4352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4353 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeamParentPrivacy? Type4353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2Privacy? Type4354 { get; set; }
+        public global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeamPrivacy? Type4354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -17713,35 +17713,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2>>? Type4421 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeam>>? Type4421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2>? Type4422 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeam>? Type4422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1? Type4423 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerUser? Type4423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1Type? Type4424 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerUserType? Type4424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2? Type4425 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeam? Type4425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2Parent? Type4426 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeamParent? Type4426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2ParentPrivacy? Type4427 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeamParentPrivacy? Type4427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2Privacy? Type4428 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeamPrivacy? Type4428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -18013,35 +18013,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2>>? Type4496 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeam>>? Type4496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2>? Type4497 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeam>? Type4497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1? Type4498 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerUser? Type4498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1Type? Type4499 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerUserType? Type4499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2? Type4500 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeam? Type4500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2Parent? Type4501 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeamParent? Type4501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2ParentPrivacy? Type4502 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeamParentPrivacy? Type4502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2Privacy? Type4503 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeamPrivacy? Type4503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -18325,35 +18325,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2>>? Type4574 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeam>>? Type4574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2>? Type4575 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeam>? Type4575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1? Type4576 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerUser? Type4576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1Type? Type4577 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerUserType? Type4577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2? Type4578 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeam? Type4578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2Parent? Type4579 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeamParent? Type4579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2ParentPrivacy? Type4580 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeamParentPrivacy? Type4580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2Privacy? Type4581 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeamPrivacy? Type4581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -18625,35 +18625,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>>? Type4649 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam>>? Type4649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>? Type4650 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam>? Type4650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1? Type4651 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser? Type4651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1Type? Type4652 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUserType? Type4652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2? Type4653 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam? Type4653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2Parent? Type4654 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParent? Type4654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2ParentPrivacy? Type4655 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy? Type4655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2Privacy? Type4656 { get; set; }
+        public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamPrivacy? Type4656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -18925,35 +18925,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2>>? Type4724 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeam>>? Type4724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2>? Type4725 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeam>? Type4725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1? Type4726 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUser? Type4726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1Type? Type4727 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType? Type4727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2? Type4728 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeam? Type4728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2Parent? Type4729 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeamParent? Type4729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4730 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeamParentPrivacy? Type4730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2Privacy? Type4731 { get; set; }
+        public global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeamPrivacy? Type4731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -19177,35 +19177,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2>>? Type4787 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeam>>? Type4787 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2>? Type4788 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeam>? Type4788 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1? Type4789 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerUser? Type4789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1Type? Type4790 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerUserType? Type4790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2? Type4791 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeam? Type4791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2Parent? Type4792 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeamParent? Type4792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4793 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeamParentPrivacy? Type4793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2Privacy? Type4794 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeamPrivacy? Type4794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -19485,35 +19485,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2>>? Type4864 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeam>>? Type4864 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2>? Type4865 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeam>? Type4865 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1? Type4866 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerUser? Type4866 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1Type? Type4867 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerUserType? Type4867 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2? Type4868 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeam? Type4868 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2Parent? Type4869 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeamParent? Type4869 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2ParentPrivacy? Type4870 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeamParentPrivacy? Type4870 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2Privacy? Type4871 { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeamPrivacy? Type4871 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -19833,35 +19833,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2>>? Type4951 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerUser, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeam>>? Type4951 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2>? Type4952 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerUser, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeam>? Type4952 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1? Type4953 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerUser? Type4953 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1Type? Type4954 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType? Type4954 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2? Type4955 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeam? Type4955 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2Parent? Type4956 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeamParent? Type4956 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2ParentPrivacy? Type4957 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeamParentPrivacy? Type4957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2Privacy? Type4958 { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeamPrivacy? Type4958 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -20125,35 +20125,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2>>? Type5024 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeam>>? Type5024 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2>? Type5025 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeam>? Type5025 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1? Type5026 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerUser? Type5026 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1Type? Type5027 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerUserType? Type5027 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2? Type5028 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeam? Type5028 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2Parent? Type5029 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeamParent? Type5029 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2ParentPrivacy? Type5030 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeamParentPrivacy? Type5030 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2Privacy? Type5031 { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeamPrivacy? Type5031 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -20417,35 +20417,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2>>? Type5097 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeam>>? Type5097 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2>? Type5098 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeam>? Type5098 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1? Type5099 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerUser? Type5099 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1Type? Type5100 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerUserType? Type5100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2? Type5101 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeam? Type5101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2Parent? Type5102 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeamParent? Type5102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2ParentPrivacy? Type5103 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeamParentPrivacy? Type5103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2Privacy? Type5104 { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeamPrivacy? Type5104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -20709,35 +20709,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2>>? Type5170 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeam>>? Type5170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2>? Type5171 { get; set; }
+        public global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeam>? Type5171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1? Type5172 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerUser? Type5172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1Type? Type5173 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerUserType? Type5173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2? Type5174 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeam? Type5174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2Parent? Type5175 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamParent? Type5175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2ParentPrivacy? Type5176 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamParentPrivacy? Type5176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2Privacy? Type5177 { get; set; }
+        public global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeamPrivacy? Type5177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -21625,11 +21625,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1, global::G.WebhookStatusCommitCommitAuthorVariant2>? Type5399 { get; set; }
+        public global::G.AllOf<global::G.WebhookStatusCommitCommitAuthorCommitter, global::G.WebhookStatusCommitCommitAuthorVariant2>? Type5399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookStatusCommitCommitAuthorVariant1? Type5400 { get; set; }
+        public global::G.WebhookStatusCommitCommitAuthorCommitter? Type5400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -21637,11 +21637,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1, global::G.WebhookStatusCommitCommitCommitterVariant2>? Type5402 { get; set; }
+        public global::G.AllOf<global::G.WebhookStatusCommitCommitCommitterCommitter1, global::G.WebhookStatusCommitCommitCommitterVariant2>? Type5402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookStatusCommitCommitCommitterVariant1? Type5403 { get; set; }
+        public global::G.WebhookStatusCommitCommitCommitterCommitter1? Type5403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -21929,35 +21929,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2>? Type5475 { get; set; }
+        public global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2>? Type5475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1? Type5476 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1? Type5476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion? Type5477 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion? Type5477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Status? Type5478 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status? Type5478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Step>? Type5479 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Step>? Type5479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Step? Type5480 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Step? Type5480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1StepConclusion? Type5481 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1StepConclusion? Type5481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1StepStatus? Type5482 { get; set; }
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1StepStatus? Type5482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -21977,35 +21977,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2>? Type5487 { get; set; }
+        public global::G.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2>? Type5487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1? Type5488 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1? Type5488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion? Type5489 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Conclusion? Type5489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Status? Type5490 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status? Type5490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Step>? Type5491 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Step>? Type5491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Step? Type5492 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Step? Type5492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1StepConclusion? Type5493 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepConclusion? Type5493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1StepStatus? Type5494 { get; set; }
+        public global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus? Type5494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26794,7 +26794,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>>? ListType120 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerUser, global::G.WebhooksPullRequest5RequestedReviewerTeam>>? ListType120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26930,15 +26930,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1Assignee2>? ListType154 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueIssue1Assignee2>? ListType154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1Label>? ListType155 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueIssue1Label>? ListType155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppEvent>? ListType156 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentCreatedIssueIssue1PerformedViaGithubAppEvent>? ListType156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26946,15 +26946,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1Assignee2>? ListType158 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueIssue1Assignee2>? ListType158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1Label>? ListType159 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueIssue1Label>? ListType159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueVariant1PerformedViaGithubAppEvent>? ListType160 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent>? ListType160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26962,15 +26962,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1Assignee2>? ListType162 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueIssue1Assignee2>? ListType162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1Label>? ListType163 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueIssue1Label>? ListType163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppEvent>? ListType164 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppEvent>? ListType164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26978,15 +26978,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1Assignee2>? ListType166 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueIssue1Assignee2>? ListType166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1Label>? ListType167 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueIssue1Label>? ListType167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueVariant1PerformedViaGithubAppEvent>? ListType168 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent>? ListType168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27162,7 +27162,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2>>? ListType212 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerTeam>>? ListType212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27178,7 +27178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerVariant2>>? ListType216 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeam>>? ListType216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27194,7 +27194,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2>>? ListType220 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeam>>? ListType220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27210,7 +27210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2>>? ListType224 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerTeam>>? ListType224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27226,7 +27226,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2>>? ListType228 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerTeam>>? ListType228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27242,7 +27242,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2>>? ListType232 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerTeam>>? ListType232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27258,7 +27258,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>>? ListType236 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerTeam>>? ListType236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27274,7 +27274,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerVariant2>>? ListType240 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerTeam>>? ListType240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27290,7 +27290,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2>>? ListType244 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerTeam>>? ListType244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27306,7 +27306,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>>? ListType248 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerTeam>>? ListType248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27322,7 +27322,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2>>? ListType252 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerTeam>>? ListType252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27338,7 +27338,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerVariant2>>? ListType256 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeam>>? ListType256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27354,7 +27354,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerVariant2>>? ListType260 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestRequestedReviewerTeam>>? ListType260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27370,7 +27370,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerVariant2>>? ListType264 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestRequestedReviewerTeam>>? ListType264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27386,7 +27386,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerVariant2>>? ListType268 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeam>>? ListType268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27402,7 +27402,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerVariant2>>? ListType272 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeam>>? ListType272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27418,7 +27418,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerVariant2>>? ListType276 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerTeam>>? ListType276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27434,7 +27434,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerVariant2>>? ListType280 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeam>>? ListType280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27454,7 +27454,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerVariant2>>? ListType285 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeam>>? ListType285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27474,7 +27474,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerVariant2>>? ListType290 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerUser, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewerTeam>>? ListType290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27490,7 +27490,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerVariant2>>? ListType294 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeam>>? ListType294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27506,7 +27506,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2>>? ListType298 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerTeam>>? ListType298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27522,7 +27522,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerVariant2>>? ListType302 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerUser, global::G.WebhookPullRequestUnlockedPullRequestRequestedReviewerTeam>>? ListType302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -27594,11 +27594,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Step>? ListType320 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Step>? ListType320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Step>? ListType321 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Step>? ListType321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
