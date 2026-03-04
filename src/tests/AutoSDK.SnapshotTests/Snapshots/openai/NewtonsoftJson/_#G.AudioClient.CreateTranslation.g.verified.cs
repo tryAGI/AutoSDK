@@ -68,30 +68,38 @@ namespace G
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                name: "file",
-                fileName: request.Filename ?? string.Empty);
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
-                name: "model");
+                name: "\"model\"");
             if (request.Prompt != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                    name: "prompt");
+                    name: "\"prompt\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
+                    name: "\"response_format\"");
             } 
             if (request.Temperature != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                    name: "temperature");
+                    name: "\"temperature\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

@@ -69,36 +69,45 @@ namespace G
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                name: "file",
-                fileName: request.Filename ?? string.Empty);
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.InputKeys, x => x))}]"),
-                name: "input_keys");
+                name: "\"input_keys\"");
             if (request.Name != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Name}"),
-                    name: "name");
+                    name: "\"name\"");
             } 
             if (request.DataType != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.DataType?.ToValueString()}"),
-                    name: "data_type");
+                    name: "\"data_type\"");
             } 
             if (request.OutputKeys != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
-                    name: "output_keys");
+                    name: "\"output_keys\"");
             } 
             if (request.Description != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Description}"),
-                    name: "description");
+                    name: "\"description\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

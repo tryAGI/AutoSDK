@@ -68,30 +68,34 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Name}"),
-                name: "name");
+                name: "\"name\"");
             if (request.File != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.File}"),
-                    name: "file");
+                    name: "\"file\"");
             } 
             if (request.Description != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Description}"),
-                    name: "description");
+                    name: "\"description\"");
             } 
             if (request.WorkspaceAccess != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.WorkspaceAccess}"),
-                    name: "workspace_access");
+                    name: "\"workspace_access\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

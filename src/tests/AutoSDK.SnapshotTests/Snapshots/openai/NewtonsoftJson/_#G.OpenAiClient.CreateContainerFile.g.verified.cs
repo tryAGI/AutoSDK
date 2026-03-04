@@ -77,19 +77,26 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{containerId}"),
-                name: "container_id");
+                name: "\"container_id\"");
             if (request.FileId != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FileId}"),
-                    name: "file_id");
+                    name: "\"file_id\"");
             } 
             if (request.File != default)
             {
+
+                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                    name: "file",
-                    fileName: request.Filename ?? string.Empty);
+                    content: __contentFile,
+                    name: "\"file\"",
+                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                if (__contentFile.Headers.ContentDisposition != null)
+                {
+                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             }
             __httpRequest.Content = __httpRequestContent;
 

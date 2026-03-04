@@ -70,37 +70,47 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (requestStartTime != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{requestStartTime}"),
-                    name: "request_start_time");
-            } 
+                    name: "\"request_start_time\"");
+            }
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                name: "file",
-                fileName: request.Filename ?? string.Empty);
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.Path != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Path}"),
-                    name: "path");
+                    name: "\"path\"");
             } 
             if (request.Labels != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Labels, x => x))}]"),
-                    name: "labels");
+                    name: "\"labels\"");
             } 
             if (request.PublicUrl != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.PublicUrl}"),
-                    name: "publicUrl");
+                    name: "\"publicUrl\"");
             } 
             if (request.CustomConfigs != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.CustomConfigs}"),
-                    name: "custom_configs");
+                    name: "\"custom_configs\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

@@ -62,45 +62,81 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (request.Post_runId_ != default)
             {
+
+                var __contentPost_runId_ = new global::System.Net.Http.ByteArrayContent(request.Post_runId_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Post_runId_ ?? global::System.Array.Empty<byte>()),
-                    name: "post.{run_id}",
-                    fileName: request.Post_runId_name ?? string.Empty);
+                    content: __contentPost_runId_,
+                    name: "\"post.{run_id}\"",
+                    fileName: request.Post_runId_name != null ? $"\"{request.Post_runId_name}\"" : string.Empty);
+                if (__contentPost_runId_.Headers.ContentDisposition != null)
+                {
+                    __contentPost_runId_.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Patch_runId_ != default)
             {
+
+                var __contentPatch_runId_ = new global::System.Net.Http.ByteArrayContent(request.Patch_runId_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Patch_runId_ ?? global::System.Array.Empty<byte>()),
-                    name: "patch.{run_id}",
-                    fileName: request.Patch_runId_name ?? string.Empty);
+                    content: __contentPatch_runId_,
+                    name: "\"patch.{run_id}\"",
+                    fileName: request.Patch_runId_name != null ? $"\"{request.Patch_runId_name}\"" : string.Empty);
+                if (__contentPatch_runId_.Headers.ContentDisposition != null)
+                {
+                    __contentPatch_runId_.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Post_runId_Inputs != default)
             {
+
+                var __contentPost_runId_Inputs = new global::System.Net.Http.ByteArrayContent(request.Post_runId_Inputs ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Post_runId_Inputs ?? global::System.Array.Empty<byte>()),
-                    name: "post.{run_id}.inputs",
-                    fileName: request.Post_runId_Inputsname ?? string.Empty);
+                    content: __contentPost_runId_Inputs,
+                    name: "\"post.{run_id}.inputs\"",
+                    fileName: request.Post_runId_Inputsname != null ? $"\"{request.Post_runId_Inputsname}\"" : string.Empty);
+                if (__contentPost_runId_Inputs.Headers.ContentDisposition != null)
+                {
+                    __contentPost_runId_Inputs.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Patch_runId_Outputs != default)
             {
+
+                var __contentPatch_runId_Outputs = new global::System.Net.Http.ByteArrayContent(request.Patch_runId_Outputs ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Patch_runId_Outputs ?? global::System.Array.Empty<byte>()),
-                    name: "patch.{run_id}.outputs",
-                    fileName: request.Patch_runId_Outputsname ?? string.Empty);
+                    content: __contentPatch_runId_Outputs,
+                    name: "\"patch.{run_id}.outputs\"",
+                    fileName: request.Patch_runId_Outputsname != null ? $"\"{request.Patch_runId_Outputsname}\"" : string.Empty);
+                if (__contentPatch_runId_Outputs.Headers.ContentDisposition != null)
+                {
+                    __contentPatch_runId_Outputs.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Feedback_runId_ != default)
             {
+
+                var __contentFeedback_runId_ = new global::System.Net.Http.ByteArrayContent(request.Feedback_runId_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Feedback_runId_ ?? global::System.Array.Empty<byte>()),
-                    name: "feedback.{run_id}",
-                    fileName: request.Feedback_runId_name ?? string.Empty);
+                    content: __contentFeedback_runId_,
+                    name: "\"feedback.{run_id}\"",
+                    fileName: request.Feedback_runId_name != null ? $"\"{request.Feedback_runId_name}\"" : string.Empty);
+                if (__contentFeedback_runId_.Headers.ContentDisposition != null)
+                {
+                    __contentFeedback_runId_.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Attachment_runId__filename_ != default)
             {
+
+                var __contentAttachment_runId__filename_ = new global::System.Net.Http.ByteArrayContent(request.Attachment_runId__filename_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Attachment_runId__filename_ ?? global::System.Array.Empty<byte>()),
-                    name: "attachment.{run_id}.{filename}",
-                    fileName: request.Attachment_runId__filename_name ?? string.Empty);
+                    content: __contentAttachment_runId__filename_,
+                    name: "\"attachment.{run_id}.{filename}\"",
+                    fileName: request.Attachment_runId__filename_name != null ? $"\"{request.Attachment_runId__filename_name}\"" : string.Empty);
+                if (__contentAttachment_runId__filename_.Headers.ContentDisposition != null)
+                {
+                    __contentAttachment_runId__filename_.Headers.ContentDisposition.FileNameStar = null;
+                }
             }
             __httpRequest.Content = __httpRequestContent;
 

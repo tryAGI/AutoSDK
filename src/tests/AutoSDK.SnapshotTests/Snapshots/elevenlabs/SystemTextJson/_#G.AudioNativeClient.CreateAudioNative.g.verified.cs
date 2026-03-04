@@ -70,79 +70,96 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Name}"),
-                name: "name");
+                name: "\"name\"");
             if (request.Image != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Image}"),
-                    name: "image");
+                    name: "\"image\"");
             } 
             if (request.Author != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Author}"),
-                    name: "author");
+                    name: "\"author\"");
             } 
             if (request.Title != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Title}"),
-                    name: "title");
+                    name: "\"title\"");
             } 
             if (request.Small != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Small}"),
-                    name: "small");
+                    name: "\"small\"");
             } 
             if (request.TextColor != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.TextColor}"),
-                    name: "text_color");
+                    name: "\"text_color\"");
             } 
             if (request.BackgroundColor != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.BackgroundColor}"),
-                    name: "background_color");
+                    name: "\"background_color\"");
             } 
             if (request.Sessionization != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Sessionization}"),
-                    name: "sessionization");
+                    name: "\"sessionization\"");
             } 
             if (request.VoiceId != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.VoiceId}"),
-                    name: "voice_id");
+                    name: "\"voice_id\"");
             } 
             if (request.ModelId != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ModelId}"),
-                    name: "model_id");
+                    name: "\"model_id\"");
             } 
             if (request.File != default)
             {
+
+                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                    name: "file",
-                    fileName: request.Filename ?? string.Empty);
+                    content: __contentFile,
+                    name: "\"file\"",
+                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                if (__contentFile.Headers.ContentDisposition != null)
+                {
+                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.AutoConvert != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
-                    name: "auto_convert");
+                    name: "\"auto_convert\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

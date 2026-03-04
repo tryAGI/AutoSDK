@@ -64,13 +64,14 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (requestStartTime != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{requestStartTime}"),
-                    name: "request_start_time");
-            } 
+                    name: "\"request_start_time\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                name: "files");
+                name: "\"files\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

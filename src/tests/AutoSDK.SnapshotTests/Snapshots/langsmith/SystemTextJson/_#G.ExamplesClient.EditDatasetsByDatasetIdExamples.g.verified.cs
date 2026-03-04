@@ -49,37 +49,66 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentx_exampleId_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_ ?? global::System.Array.Empty<byte>()),
-                name: "{example_id}",
-                fileName: request.x_exampleId_name ?? string.Empty);
+                content: __contentx_exampleId_,
+                name: "\"{example_id}\"",
+                fileName: request.x_exampleId_name != null ? $"\"{request.x_exampleId_name}\"" : string.Empty);
+            if (__contentx_exampleId_.Headers.ContentDisposition != null)
+            {
+                __contentx_exampleId_.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.x_exampleId_Inputs != default)
             {
+
+                var __contentx_exampleId_Inputs = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Inputs ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.inputs",
-                    fileName: request.x_exampleId_Inputsname ?? string.Empty);
+                    content: __contentx_exampleId_Inputs,
+                    name: "\"{example_id}.inputs\"",
+                    fileName: request.x_exampleId_Inputsname != null ? $"\"{request.x_exampleId_Inputsname}\"" : string.Empty);
+                if (__contentx_exampleId_Inputs.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_Inputs.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.x_exampleId_Outputs != default)
             {
+
+                var __contentx_exampleId_Outputs = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Outputs ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.outputs",
-                    fileName: request.x_exampleId_Outputsname ?? string.Empty);
+                    content: __contentx_exampleId_Outputs,
+                    name: "\"{example_id}.outputs\"",
+                    fileName: request.x_exampleId_Outputsname != null ? $"\"{request.x_exampleId_Outputsname}\"" : string.Empty);
+                if (__contentx_exampleId_Outputs.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_Outputs.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.x_exampleId_AttachmentsOperations != default)
             {
+
+                var __contentx_exampleId_AttachmentsOperations = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_AttachmentsOperations ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_AttachmentsOperations ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.attachments_operations",
-                    fileName: request.x_exampleId_AttachmentsOperationsname ?? string.Empty);
+                    content: __contentx_exampleId_AttachmentsOperations,
+                    name: "\"{example_id}.attachments_operations\"",
+                    fileName: request.x_exampleId_AttachmentsOperationsname != null ? $"\"{request.x_exampleId_AttachmentsOperationsname}\"" : string.Empty);
+                if (__contentx_exampleId_AttachmentsOperations.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_AttachmentsOperations.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.x_exampleId_Attachment_name_ != default)
             {
+
+                var __contentx_exampleId_Attachment_name_ = new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachment_name_ ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.x_exampleId_Attachment_name_ ?? global::System.Array.Empty<byte>()),
-                    name: "{example_id}.attachment.{name}",
-                    fileName: request.x_exampleId_Attachment_name_name ?? string.Empty);
+                    content: __contentx_exampleId_Attachment_name_,
+                    name: "\"{example_id}.attachment.{name}\"",
+                    fileName: request.x_exampleId_Attachment_name_name != null ? $"\"{request.x_exampleId_Attachment_name_name}\"" : string.Empty);
+                if (__contentx_exampleId_Attachment_name_.Headers.ContentDisposition != null)
+                {
+                    __contentx_exampleId_Attachment_name_.Headers.ContentDisposition.FileNameStar = null;
+                }
             }
             __httpRequest.Content = __httpRequestContent;
 

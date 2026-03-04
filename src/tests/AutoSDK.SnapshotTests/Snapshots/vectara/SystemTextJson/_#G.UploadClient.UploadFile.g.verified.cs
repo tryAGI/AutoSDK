@@ -106,47 +106,58 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (requestTimeout != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{requestTimeout}"),
-                    name: "Request-Timeout");
+                    name: "\"Request-Timeout\"");
             } 
             if (requestTimeoutMillis != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{requestTimeoutMillis}"),
-                    name: "Request-Timeout-Millis");
-            } 
+                    name: "\"Request-Timeout-Millis\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{corpusKey}"),
-                name: "corpus_key");
+                name: "\"corpus_key\"");
             if (request.Metadata != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Metadata}"),
-                    name: "metadata");
+                    name: "\"metadata\"");
             } 
             if (request.ChunkingStrategy != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent(request.ChunkingStrategy?.ToString() ?? string.Empty),
-                    name: "chunking_strategy");
+                    name: "\"chunking_strategy\"");
             } 
             if (request.TableExtractionConfig != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.TableExtractionConfig}"),
-                    name: "table_extraction_config");
+                    name: "\"table_extraction_config\"");
             } 
             if (request.Filename != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Filename}"),
-                    name: "filename");
-            } 
+                    name: "\"filename\"");
+            }
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                name: "file",
-                fileName: request.Filename ?? string.Empty);
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

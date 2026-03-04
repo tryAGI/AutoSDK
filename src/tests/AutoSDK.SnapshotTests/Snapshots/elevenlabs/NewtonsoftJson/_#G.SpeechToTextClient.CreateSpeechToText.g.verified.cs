@@ -79,84 +79,97 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (enableLogging != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{enableLogging}"),
-                    name: "enable_logging");
+                    name: "\"enable_logging\"");
             } 
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.ModelId}"),
-                name: "model_id");
+                name: "\"model_id\"");
             if (request.File != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.File}"),
-                    name: "file");
+                    name: "\"file\"");
             } 
             if (request.LanguageCode != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.LanguageCode}"),
-                    name: "language_code");
+                    name: "\"language_code\"");
             } 
             if (request.TagAudioEvents != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.TagAudioEvents}"),
-                    name: "tag_audio_events");
+                    name: "\"tag_audio_events\"");
             } 
             if (request.NumSpeakers != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.NumSpeakers}"),
-                    name: "num_speakers");
+                    name: "\"num_speakers\"");
             } 
             if (request.TimestampsGranularity != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.TimestampsGranularity?.ToValueString()}"),
-                    name: "timestamps_granularity");
+                    name: "\"timestamps_granularity\"");
             } 
             if (request.Diarize != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Diarize}"),
-                    name: "diarize");
+                    name: "\"diarize\"");
             } 
             if (request.AdditionalFormats != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.AdditionalFormats, x => x))}]"),
-                    name: "additional_formats");
+                    name: "\"additional_formats\"");
             } 
             if (request.FileFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FileFormat?.ToValueString()}"),
-                    name: "file_format");
+                    name: "\"file_format\"");
             } 
             if (request.CloudStorageUrl != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.CloudStorageUrl}"),
-                    name: "cloud_storage_url");
+                    name: "\"cloud_storage_url\"");
             } 
             if (request.Webhook != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Webhook}"),
-                    name: "webhook");
+                    name: "\"webhook\"");
             } 
             if (request.Temperature != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                    name: "temperature");
+                    name: "\"temperature\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

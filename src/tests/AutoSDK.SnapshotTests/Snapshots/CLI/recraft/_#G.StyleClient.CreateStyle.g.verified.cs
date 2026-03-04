@@ -54,10 +54,10 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Images, x => x))}]"),
-                name: "images");
+                name: "\"images\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
-                name: "style");
+                name: "\"style\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

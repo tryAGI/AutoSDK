@@ -70,70 +70,85 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent(request.Image.ToString() ?? string.Empty),
-                name: "image");
+                name: "\"image\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "prompt");
+                name: "\"prompt\"");
             if (request.Mask != default)
             {
+
+                var __contentMask = new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
-                    name: "mask",
-                    fileName: request.Maskname ?? string.Empty);
+                    content: __contentMask,
+                    name: "\"mask\"",
+                    fileName: request.Maskname != null ? $"\"{request.Maskname}\"" : string.Empty);
+                if (__contentMask.Headers.ContentDisposition != null)
+                {
+                    __contentMask.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Background != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Background?.ToValueString()}"),
-                    name: "background");
+                    name: "\"background\"");
             } 
             if (request.Model != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
-                    name: "model");
+                    name: "\"model\"");
             } 
             if (request.N != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "n");
+                    name: "\"n\"");
             } 
             if (request.Size != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                    name: "size");
+                    name: "\"size\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
+                    name: "\"response_format\"");
             } 
             if (request.OutputFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.OutputFormat?.ToValueString()}"),
-                    name: "output_format");
+                    name: "\"output_format\"");
             } 
             if (request.OutputCompression != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.OutputCompression}"),
-                    name: "output_compression");
+                    name: "\"output_compression\"");
             } 
             if (request.User != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.User}"),
-                    name: "user");
+                    name: "\"user\"");
             } 
             if (request.Quality != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Quality?.ToValueString()}"),
-                    name: "quality");
+                    name: "\"quality\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

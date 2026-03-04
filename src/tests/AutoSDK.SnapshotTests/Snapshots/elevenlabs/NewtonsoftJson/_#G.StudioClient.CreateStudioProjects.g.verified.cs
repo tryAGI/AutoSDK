@@ -68,159 +68,183 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Name}"),
-                name: "name");
+                name: "\"name\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.DefaultTitleVoiceId}"),
-                name: "default_title_voice_id");
+                name: "\"default_title_voice_id\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.DefaultParagraphVoiceId}"),
-                name: "default_paragraph_voice_id");
+                name: "\"default_paragraph_voice_id\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.DefaultModelId}"),
-                name: "default_model_id");
+                name: "\"default_model_id\"");
             if (request.FromUrl != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FromUrl}"),
-                    name: "from_url");
+                    name: "\"from_url\"");
             } 
             if (request.FromDocument != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FromDocument}"),
-                    name: "from_document");
+                    name: "\"from_document\"");
             } 
             if (request.FromContentJson != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FromContentJson}"),
-                    name: "from_content_json");
+                    name: "\"from_content_json\"");
             } 
             if (request.QualityPreset != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.QualityPreset}"),
-                    name: "quality_preset");
+                    name: "\"quality_preset\"");
             } 
             if (request.Title != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Title}"),
-                    name: "title");
+                    name: "\"title\"");
             } 
             if (request.Author != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Author}"),
-                    name: "author");
+                    name: "\"author\"");
             } 
             if (request.Description != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Description}"),
-                    name: "description");
+                    name: "\"description\"");
             } 
             if (request.Genres != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Genres, x => x))}]"),
-                    name: "genres");
+                    name: "\"genres\"");
             } 
             if (request.TargetAudience != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.TargetAudience}"),
-                    name: "target_audience");
+                    name: "\"target_audience\"");
             } 
             if (request.Language != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Language}"),
-                    name: "language");
+                    name: "\"language\"");
             } 
             if (request.ContentType != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ContentType}"),
-                    name: "content_type");
+                    name: "\"content_type\"");
             } 
             if (request.OriginalPublicationDate != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.OriginalPublicationDate}"),
-                    name: "original_publication_date");
+                    name: "\"original_publication_date\"");
             } 
             if (request.MatureContent != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.MatureContent}"),
-                    name: "mature_content");
+                    name: "\"mature_content\"");
             } 
             if (request.IsbnNumber != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.IsbnNumber}"),
-                    name: "isbn_number");
+                    name: "\"isbn_number\"");
             } 
             if (request.AcxVolumeNormalization != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AcxVolumeNormalization}"),
-                    name: "acx_volume_normalization");
+                    name: "\"acx_volume_normalization\"");
             } 
             if (request.VolumeNormalization != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.VolumeNormalization}"),
-                    name: "volume_normalization");
+                    name: "\"volume_normalization\"");
             } 
             if (request.PronunciationDictionaryLocators != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.PronunciationDictionaryLocators, x => x))}]"),
-                    name: "pronunciation_dictionary_locators");
+                    name: "\"pronunciation_dictionary_locators\"");
             } 
             if (request.CallbackUrl != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.CallbackUrl}"),
-                    name: "callback_url");
+                    name: "\"callback_url\"");
             } 
             if (request.Fiction != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Fiction}"),
-                    name: "fiction");
+                    name: "\"fiction\"");
             } 
             if (request.ApplyTextNormalization != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ApplyTextNormalization}"),
-                    name: "apply_text_normalization");
+                    name: "\"apply_text_normalization\"");
             } 
             if (request.AutoConvert != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
-                    name: "auto_convert");
+                    name: "\"auto_convert\"");
             } 
             if (request.AutoAssignVoices != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoAssignVoices}"),
-                    name: "auto_assign_voices");
+                    name: "\"auto_assign_voices\"");
             } 
             if (request.SourceType != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.SourceType}"),
-                    name: "source_type");
+                    name: "\"source_type\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

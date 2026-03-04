@@ -76,30 +76,34 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{projectId}"),
-                name: "project_id");
+                name: "\"project_id\"");
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
+                    name: "\"xi-api-key\"");
             } 
             if (request.FromUrl != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FromUrl}"),
-                    name: "from_url");
+                    name: "\"from_url\"");
             } 
             if (request.FromDocument != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FromDocument}"),
-                    name: "from_document");
+                    name: "\"from_document\"");
             } 
             if (request.AutoConvert != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
-                    name: "auto_convert");
+                    name: "\"auto_convert\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

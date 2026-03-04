@@ -52,15 +52,21 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
+                content: __contentImage,
+                name: "\"image\"",
+                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+            if (__contentImage.Headers.ContentDisposition != null)
+            {
+                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
+                    name: "\"response_format\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

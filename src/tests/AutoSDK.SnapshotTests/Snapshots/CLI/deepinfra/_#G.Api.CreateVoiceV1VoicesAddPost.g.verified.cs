@@ -82,19 +82,20 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Name}"),
-                name: "name");
+                name: "\"name\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Description}"),
-                name: "description");
+                name: "\"description\"");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                name: "files");
+                name: "\"files\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

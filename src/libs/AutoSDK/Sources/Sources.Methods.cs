@@ -586,15 +586,20 @@ namespace {endPoint.Settings.Namespace}
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
-    var add = x.Type.IsBinary ? @$" 
+    var add = x.Type.IsBinary ? @$"
+            var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>()),
-                name: ""{x.Id}"",
-                fileName: request.{x.Name + "name"} ?? string.Empty);
- " : @$" 
+                content: __content{x.Name},
+                name: ""\""{x.Id}\"""",
+                fileName: request.{x.Name + "name"} != null ? $""\""{{request.{x.Name + "name"}}}\"""" : string.Empty);
+            if (__content{x.Name}.Headers.ContentDisposition != null)
+            {{
+                __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
+            }}
+ " : @$"
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent({SerializePropertyAsString(x)}),
-                name: ""{x.Id}"");
+                name: ""\""{x.Id}\"""");
  ";
     if (x.IsRequired)
     {

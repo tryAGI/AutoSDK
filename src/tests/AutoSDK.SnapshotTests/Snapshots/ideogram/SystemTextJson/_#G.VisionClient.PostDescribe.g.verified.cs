@@ -68,10 +68,15 @@ namespace G
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>()),
-                name: "image_file",
-                fileName: request.ImageFilename ?? string.Empty);
+                content: __contentImageFile,
+                name: "\"image_file\"",
+                fileName: request.ImageFilename != null ? $"\"{request.ImageFilename}\"" : string.Empty);
+            if (__contentImageFile.Headers.ContentDisposition != null)
+            {
+                __contentImageFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

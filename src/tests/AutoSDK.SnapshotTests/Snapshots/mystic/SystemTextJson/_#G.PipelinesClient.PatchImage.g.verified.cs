@@ -91,23 +91,30 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{pipelineId}"),
-                name: "pipeline_id");
+                name: "\"pipeline_id\"");
             if (pointer != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{pointer}"),
-                    name: "pointer");
+                    name: "\"pointer\"");
             } 
             if (pipelineIdOrPointer != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{pipelineIdOrPointer}"),
-                    name: "pipeline_id_or_pointer");
-            } 
+                    name: "\"pipeline_id_or_pointer\"");
+            }
+            var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>()),
-                name: "image_file",
-                fileName: request.ImageFilename ?? string.Empty);
+                content: __contentImageFile,
+                name: "\"image_file\"",
+                fileName: request.ImageFilename != null ? $"\"{request.ImageFilename}\"" : string.Empty);
+            if (__contentImageFile.Headers.ContentDisposition != null)
+            {
+                __contentImageFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

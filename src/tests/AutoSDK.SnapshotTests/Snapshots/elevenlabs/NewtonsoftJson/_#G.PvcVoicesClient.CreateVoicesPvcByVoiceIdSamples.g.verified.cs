@@ -75,21 +75,23 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{voiceId}"),
-                name: "voice_id");
+                name: "\"voice_id\"");
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                name: "files");
+                name: "\"files\"");
             if (request.RemoveBackgroundNoise != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
-                    name: "remove_background_noise");
+                    name: "\"remove_background_noise\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

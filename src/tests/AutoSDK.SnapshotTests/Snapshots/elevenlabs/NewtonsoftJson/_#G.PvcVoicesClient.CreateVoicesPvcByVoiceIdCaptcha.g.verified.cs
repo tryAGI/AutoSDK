@@ -75,17 +75,23 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{voiceId}"),
-                name: "voice_id");
+                name: "\"voice_id\"");
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
+            var __contentRecording = new global::System.Net.Http.ByteArrayContent(request.Recording ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Recording ?? global::System.Array.Empty<byte>()),
-                name: "recording",
-                fileName: request.Recordingname ?? string.Empty);
+                content: __contentRecording,
+                name: "\"recording\"",
+                fileName: request.Recordingname != null ? $"\"{request.Recordingname}\"" : string.Empty);
+            if (__contentRecording.Headers.ContentDisposition != null)
+            {
+                __contentRecording.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

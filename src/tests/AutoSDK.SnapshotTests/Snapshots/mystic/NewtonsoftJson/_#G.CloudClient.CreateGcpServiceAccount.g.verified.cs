@@ -70,14 +70,20 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (request.CredentialId != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.CredentialId}"),
-                    name: "credential_id");
-            } 
+                    name: "\"credential_id\"");
+            }
+            var __contentServiceAccountFile = new global::System.Net.Http.ByteArrayContent(request.ServiceAccountFile ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.ServiceAccountFile ?? global::System.Array.Empty<byte>()),
-                name: "service_account_file",
-                fileName: request.ServiceAccountFilename ?? string.Empty);
+                content: __contentServiceAccountFile,
+                name: "\"service_account_file\"",
+                fileName: request.ServiceAccountFilename != null ? $"\"{request.ServiceAccountFilename}\"" : string.Empty);
+            if (__contentServiceAccountFile.Headers.ContentDisposition != null)
+            {
+                __contentServiceAccountFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

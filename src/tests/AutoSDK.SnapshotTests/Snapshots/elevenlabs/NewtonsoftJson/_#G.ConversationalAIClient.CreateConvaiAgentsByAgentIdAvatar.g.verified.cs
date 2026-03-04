@@ -75,17 +75,23 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{agentId}"),
-                name: "agent_id");
+                name: "\"agent_id\"");
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
-            } 
+                    name: "\"xi-api-key\"");
+            }
+            var __contentAvatarFile = new global::System.Net.Http.ByteArrayContent(request.AvatarFile ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.AvatarFile ?? global::System.Array.Empty<byte>()),
-                name: "avatar_file",
-                fileName: request.AvatarFilename ?? string.Empty);
+                content: __contentAvatarFile,
+                name: "\"avatar_file\"",
+                fileName: request.AvatarFilename != null ? $"\"{request.AvatarFilename}\"" : string.Empty);
+            if (__contentAvatarFile.Headers.ContentDisposition != null)
+            {
+                __contentAvatarFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

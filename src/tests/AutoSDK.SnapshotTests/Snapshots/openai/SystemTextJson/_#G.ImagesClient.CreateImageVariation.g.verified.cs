@@ -68,39 +68,49 @@ namespace G
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
+                content: __contentImage,
+                name: "\"image\"",
+                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+            if (__contentImage.Headers.ContentDisposition != null)
+            {
+                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.Model != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
-                    name: "model");
+                    name: "\"model\"");
             } 
             if (request.N != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "n");
+                    name: "\"n\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
+                    name: "\"response_format\"");
             } 
             if (request.Size != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                    name: "size");
+                    name: "\"size\"");
             } 
             if (request.User != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.User}"),
-                    name: "user");
+                    name: "\"user\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

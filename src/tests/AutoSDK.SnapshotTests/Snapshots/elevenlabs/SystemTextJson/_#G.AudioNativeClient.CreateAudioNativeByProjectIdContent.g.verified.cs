@@ -75,31 +75,40 @@ namespace G
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{projectId}"),
-                name: "project_id");
+                name: "\"project_id\"");
             if (xiApiKey != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
-                    name: "xi-api-key");
+                    name: "\"xi-api-key\"");
             } 
             if (request.File != default)
             {
+
+                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
-                    name: "file",
-                    fileName: request.Filename ?? string.Empty);
+                    content: __contentFile,
+                    name: "\"file\"",
+                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                if (__contentFile.Headers.ContentDisposition != null)
+                {
+                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.AutoConvert != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
-                    name: "auto_convert");
+                    name: "\"auto_convert\"");
             } 
             if (request.AutoPublish != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoPublish}"),
-                    name: "auto_publish");
+                    name: "\"auto_publish\"");
             }
             __httpRequest.Content = __httpRequestContent;
 
