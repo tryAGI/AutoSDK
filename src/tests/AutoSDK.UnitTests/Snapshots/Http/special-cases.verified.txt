@@ -1,0 +1,22 @@
+﻿=== http-client.env.json ===
+{
+  "dev": {
+    "host": "http://petstore.swagger.io/v1"
+  }
+}
+=== pets.http ===
+### List all pets
+# @name listPets
+GET {{host}}/pets?limit={{limit}}
+Accept: application/json
+
+### Create a pet
+# @name createPets
+POST {{host}}/pets
+Accept: application/json
+
+### Info for a specific pet
+# @name showPetById
+GET {{host}}/pets/{{petId}}
+Accept: application/json
+

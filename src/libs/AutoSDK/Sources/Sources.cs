@@ -1,11 +1,32 @@
 ﻿using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    public static FileWithName HttpFile(
+        string tag,
+        IReadOnlyList<OperationContext> operations,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{tag}.http",
+            Text: GenerateHttpFile(tag, operations));
+    }
+
+    public static FileWithName HttpEnvironmentFile(
+        IReadOnlyList<OpenApiServer> servers,
+        IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: "http-client.env.json",
+            Text: GenerateHttpEnvironmentFile(servers, securitySchemes));
+    }
+
     public static FileWithName Class(
         ModelData modelData,
         CancellationToken cancellationToken = default)
