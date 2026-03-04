@@ -26,11 +26,11 @@ namespace G
         /// The type of the base model.<br/>
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
-        /// <default>global::G.BaseType.UNSPECIFIED</default>
+        /// <default>global::G.BaseType.Unspecified</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BaseType BaseType { get; set; } = global::G.BaseType.UNSPECIFIED;
+        public required global::G.BaseType BaseType { get; set; } = global::G.BaseType.Unspecified;
 
         /// <summary>
         /// Deprecated: The fine-tuning strategy.<br/>

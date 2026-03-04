@@ -13,43 +13,43 @@ namespace G
         /// Parameters for IMAGE_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("IMAGE_GENERATION")]
-        public global::G.PricingCalculatorRequestServiceParamsIMAGEGENERATION? IMAGEGENERATION { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsImageGeneration? ImageGeneration { get; set; }
 
         /// <summary>
         /// Parameters for FANTASY_AVATAR_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("FANTASY_AVATAR_GENERATION")]
-        public global::G.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? FANTASYAVATARGENERATION { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? FantasyAvatarGeneration { get; set; }
 
         /// <summary>
         /// Parameters for MOTION_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MOTION_GENERATION")]
-        public global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? MOTIONGENERATION { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsMotionGeneration? MotionGeneration { get; set; }
 
         /// <summary>
         /// Parameters for LCM_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("LCM_GENERATION")]
-        public global::G.PricingCalculatorRequestServiceParamsLCMGENERATION? LCMGENERATION { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsLcmGeneration? LcmGeneration { get; set; }
 
         /// <summary>
         /// Parameters for MODEL_TRAINING service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MODEL_TRAINING")]
-        public global::G.PricingCalculatorRequestServiceParamsMODELTRAINING? MODELTRAINING { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsModelTraining? ModelTraining { get; set; }
 
         /// <summary>
         /// Parameters for TEXTURE_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("TEXTURE_GENERATION")]
-        public global::G.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? TEXTUREGENERATION { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsTextureGeneration? TextureGeneration { get; set; }
 
         /// <summary>
         /// Parameters for UNIVERSAL_UPSCALER service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UNIVERSAL_UPSCALER")]
-        public global::G.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? UNIVERSALUPSCALER { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsUniversalUpscaler? UniversalUpscaler { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,46 +60,46 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
         /// </summary>
-        /// <param name="iMAGEGENERATION">
+        /// <param name="imageGeneration">
         /// Parameters for IMAGE_GENERATION service
         /// </param>
-        /// <param name="fANTASYAVATARGENERATION">
+        /// <param name="fantasyAvatarGeneration">
         /// Parameters for FANTASY_AVATAR_GENERATION service
         /// </param>
-        /// <param name="mOTIONGENERATION">
+        /// <param name="motionGeneration">
         /// Parameters for MOTION_GENERATION service
         /// </param>
-        /// <param name="lCMGENERATION">
+        /// <param name="lcmGeneration">
         /// Parameters for LCM_GENERATION service
         /// </param>
-        /// <param name="mODELTRAINING">
+        /// <param name="modelTraining">
         /// Parameters for MODEL_TRAINING service
         /// </param>
-        /// <param name="tEXTUREGENERATION">
+        /// <param name="textureGeneration">
         /// Parameters for TEXTURE_GENERATION service
         /// </param>
-        /// <param name="uNIVERSALUPSCALER">
+        /// <param name="universalUpscaler">
         /// Parameters for UNIVERSAL_UPSCALER service
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PricingCalculatorRequestServiceParams(
-            global::G.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
-            global::G.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
-            global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? mOTIONGENERATION,
-            global::G.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
-            global::G.PricingCalculatorRequestServiceParamsMODELTRAINING? mODELTRAINING,
-            global::G.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? tEXTUREGENERATION,
-            global::G.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? uNIVERSALUPSCALER)
+            global::G.PricingCalculatorRequestServiceParamsImageGeneration? imageGeneration,
+            global::G.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? fantasyAvatarGeneration,
+            global::G.PricingCalculatorRequestServiceParamsMotionGeneration? motionGeneration,
+            global::G.PricingCalculatorRequestServiceParamsLcmGeneration? lcmGeneration,
+            global::G.PricingCalculatorRequestServiceParamsModelTraining? modelTraining,
+            global::G.PricingCalculatorRequestServiceParamsTextureGeneration? textureGeneration,
+            global::G.PricingCalculatorRequestServiceParamsUniversalUpscaler? universalUpscaler)
         {
-            this.IMAGEGENERATION = iMAGEGENERATION;
-            this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
-            this.MOTIONGENERATION = mOTIONGENERATION;
-            this.LCMGENERATION = lCMGENERATION;
-            this.MODELTRAINING = mODELTRAINING;
-            this.TEXTUREGENERATION = tEXTUREGENERATION;
-            this.UNIVERSALUPSCALER = uNIVERSALUPSCALER;
+            this.ImageGeneration = imageGeneration;
+            this.FantasyAvatarGeneration = fantasyAvatarGeneration;
+            this.MotionGeneration = motionGeneration;
+            this.LcmGeneration = lcmGeneration;
+            this.ModelTraining = modelTraining;
+            this.TextureGeneration = textureGeneration;
+            this.UniversalUpscaler = universalUpscaler;
         }
 
         /// <summary>

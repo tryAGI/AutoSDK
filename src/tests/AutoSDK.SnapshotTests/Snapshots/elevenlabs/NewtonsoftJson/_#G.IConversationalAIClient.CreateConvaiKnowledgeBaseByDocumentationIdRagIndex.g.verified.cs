@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiKnowledgeBaseByDocumentationIdRagIndex.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiKnowledgeBaseByDocumentationIdRagIndex.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Compute Rag Index.<br/>

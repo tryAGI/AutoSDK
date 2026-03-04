@@ -15,27 +15,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HEALTHY")]
-        HEALTHY,
+        Healthy,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNHEALTHY")]
-        UNHEALTHY,
+        Unhealthy,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNAVAILABLE")]
-        UNAVAILABLE,
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TIMEOUT")]
-        TIMEOUT,
+        Timeout,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INDEXING")]
-        INDEXING,
+        Indexing,
     }
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace G
         {
             return value switch
             {
-                NodeStatusStatus.HEALTHY => "HEALTHY",
-                NodeStatusStatus.UNHEALTHY => "UNHEALTHY",
-                NodeStatusStatus.UNAVAILABLE => "UNAVAILABLE",
-                NodeStatusStatus.TIMEOUT => "TIMEOUT",
-                NodeStatusStatus.INDEXING => "INDEXING",
+                NodeStatusStatus.Healthy => "HEALTHY",
+                NodeStatusStatus.Unhealthy => "UNHEALTHY",
+                NodeStatusStatus.Unavailable => "UNAVAILABLE",
+                NodeStatusStatus.Timeout => "TIMEOUT",
+                NodeStatusStatus.Indexing => "INDEXING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,11 +65,11 @@ namespace G
         {
             return value switch
             {
-                "HEALTHY" => NodeStatusStatus.HEALTHY,
-                "UNHEALTHY" => NodeStatusStatus.UNHEALTHY,
-                "UNAVAILABLE" => NodeStatusStatus.UNAVAILABLE,
-                "TIMEOUT" => NodeStatusStatus.TIMEOUT,
-                "INDEXING" => NodeStatusStatus.INDEXING,
+                "HEALTHY" => NodeStatusStatus.Healthy,
+                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
+                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
+                "TIMEOUT" => NodeStatusStatus.Timeout,
+                "INDEXING" => NodeStatusStatus.Indexing,
                 _ => null,
             };
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey.g.cs
+﻿//HintName: G.Models.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey
+    public sealed partial class VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey
     {
 
         /// <summary>

@@ -20,27 +20,27 @@ namespace G
         /// Unspecified model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_UNSPECIFIED")]
-        UNSPECIFIED,
+        Unspecified,
         /// <summary>
         /// Deprecated: Generative model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_GENERATIVE")]
-        GENERATIVE,
+        Generative,
         /// <summary>
         /// Classification model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CLASSIFICATION")]
-        CLASSIFICATION,
+        Classification,
         /// <summary>
         /// Rerank model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_RERANK")]
-        RERANK,
+        Rerank,
         /// <summary>
         /// Chat model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CHAT")]
-        CHAT,
+        Chat,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
         {
             return value switch
             {
-                BaseType.UNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
-                BaseType.GENERATIVE => "BASE_TYPE_GENERATIVE",
-                BaseType.CLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
-                BaseType.RERANK => "BASE_TYPE_RERANK",
-                BaseType.CHAT => "BASE_TYPE_CHAT",
+                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
+                BaseType.Generative => "BASE_TYPE_GENERATIVE",
+                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
+                BaseType.Rerank => "BASE_TYPE_RERANK",
+                BaseType.Chat => "BASE_TYPE_CHAT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +70,11 @@ namespace G
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.UNSPECIFIED,
-                "BASE_TYPE_GENERATIVE" => BaseType.GENERATIVE,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.CLASSIFICATION,
-                "BASE_TYPE_RERANK" => BaseType.RERANK,
-                "BASE_TYPE_CHAT" => BaseType.CHAT,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
+                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
+                "BASE_TYPE_RERANK" => BaseType.Rerank,
+                "BASE_TYPE_CHAT" => BaseType.Chat,
                 _ => null,
             };
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableMACOSJobRun.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableMacosJobRun.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableMACOSJobRun
+    public sealed partial class WorkflowRunUsageBillableMacosJobRun
     {
         /// <summary>
         /// 
@@ -30,14 +30,14 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMACOSJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMacosJobRun" /> class.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="durationMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowRunUsageBillableMACOSJobRun(
+        public WorkflowRunUsageBillableMacosJobRun(
             int jobId,
             int durationMs)
         {
@@ -46,9 +46,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMACOSJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMacosJobRun" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableMACOSJobRun()
+        public WorkflowRunUsageBillableMacosJobRun()
         {
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MODELASSETTEXTURETYPES.g.cs
+﻿//HintName: G.Models.ModelAssetTextureTypes.g.cs
 
 #nullable enable
 
@@ -9,67 +9,67 @@ namespace G
     /// Default Value: NORMAL
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum MODELASSETTEXTURETYPES
+    public enum ModelAssetTextureTypes
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALBEDO")]
-        ALBEDO,
+        Albedo,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NORMAL")]
-        NORMAL,
+        Normal,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ROUGHNESS")]
-        ROUGHNESS,
+        Roughness,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DISPLACEMENT")]
-        DISPLACEMENT,
+        Displacement,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HDRP_MASK")]
-        HDRPMASK,
+        HdrpMask,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class MODELASSETTEXTURETYPESExtensions
+    public static class ModelAssetTextureTypesExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this MODELASSETTEXTURETYPES value)
+        public static string ToValueString(this ModelAssetTextureTypes value)
         {
             return value switch
             {
-                MODELASSETTEXTURETYPES.ALBEDO => "ALBEDO",
-                MODELASSETTEXTURETYPES.NORMAL => "NORMAL",
-                MODELASSETTEXTURETYPES.ROUGHNESS => "ROUGHNESS",
-                MODELASSETTEXTURETYPES.DISPLACEMENT => "DISPLACEMENT",
-                MODELASSETTEXTURETYPES.HDRPMASK => "HDRP_MASK",
+                ModelAssetTextureTypes.Albedo => "ALBEDO",
+                ModelAssetTextureTypes.Normal => "NORMAL",
+                ModelAssetTextureTypes.Roughness => "ROUGHNESS",
+                ModelAssetTextureTypes.Displacement => "DISPLACEMENT",
+                ModelAssetTextureTypes.HdrpMask => "HDRP_MASK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MODELASSETTEXTURETYPES? ToEnum(string value)
+        public static ModelAssetTextureTypes? ToEnum(string value)
         {
             return value switch
             {
-                "ALBEDO" => MODELASSETTEXTURETYPES.ALBEDO,
-                "NORMAL" => MODELASSETTEXTURETYPES.NORMAL,
-                "ROUGHNESS" => MODELASSETTEXTURETYPES.ROUGHNESS,
-                "DISPLACEMENT" => MODELASSETTEXTURETYPES.DISPLACEMENT,
-                "HDRP_MASK" => MODELASSETTEXTURETYPES.HDRPMASK,
+                "ALBEDO" => ModelAssetTextureTypes.Albedo,
+                "NORMAL" => ModelAssetTextureTypes.Normal,
+                "ROUGHNESS" => ModelAssetTextureTypes.Roughness,
+                "DISPLACEMENT" => ModelAssetTextureTypes.Displacement,
+                "HDRP_MASK" => ModelAssetTextureTypes.HdrpMask,
                 _ => null,
             };
         }

@@ -14,17 +14,17 @@ namespace G
         /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
         /// <summary>
         /// Contains the recipe of the resource.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_RECIPE")]
-        VIEWRECIPE,
+        ViewRecipe,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListPipelinesView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceListPipelinesView.VIEWFULL => "VIEW_FULL",
-                PipelinePublicServiceListPipelinesView.VIEWRECIPE => "VIEW_RECIPE",
+                PipelinePublicServiceListPipelinesView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceListPipelinesView.ViewFull => "VIEW_FULL",
+                PipelinePublicServiceListPipelinesView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceListPipelinesView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceListPipelinesView.VIEWFULL,
-                "VIEW_RECIPE" => PipelinePublicServiceListPipelinesView.VIEWRECIPE,
+                "VIEW_BASIC" => PipelinePublicServiceListPipelinesView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceListPipelinesView.ViewFull,
+                "VIEW_RECIPE" => PipelinePublicServiceListPipelinesView.ViewRecipe,
                 _ => null,
             };
         }

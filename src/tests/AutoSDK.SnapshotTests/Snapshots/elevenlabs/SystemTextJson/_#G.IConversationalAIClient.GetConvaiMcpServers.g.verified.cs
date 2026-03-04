@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiMcpServers.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiMcpServers.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// List Mcp Servers<br/>

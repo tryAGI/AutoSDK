@@ -67,7 +67,7 @@ the parent namespace and the ID of the secret.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceDeleteNamespaceSecretAsync(
+            var response = await _client.Vdp.PipelinePublicServiceDeleteNamespaceSecretAsync(
                 namespaceId: namespaceId,
                 secretId: secretId,
                 cancellationToken: cancellationToken);

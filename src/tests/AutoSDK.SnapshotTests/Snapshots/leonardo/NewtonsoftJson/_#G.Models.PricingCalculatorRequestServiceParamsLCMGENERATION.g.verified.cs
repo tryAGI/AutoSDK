@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsLCMGENERATION.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsLcmGeneration.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for LCM_GENERATION service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsLCMGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsLcmGeneration
     {
         /// <summary>
         /// The output height of the image. Must be 512, 640 or 1024.
@@ -40,7 +40,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLCMGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLcmGeneration" /> class.
         /// </summary>
         /// <param name="height">
         /// The output height of the image. Must be 512, 640 or 1024.
@@ -54,7 +54,7 @@ namespace G
         /// <param name="refine">
         /// Enable for normal alchemy upscale
         /// </param>
-        public PricingCalculatorRequestServiceParamsLCMGENERATION(
+        public PricingCalculatorRequestServiceParamsLcmGeneration(
             int? height,
             int? width,
             bool? instantRefine,
@@ -67,9 +67,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLCMGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLcmGeneration" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsLCMGENERATION()
+        public PricingCalculatorRequestServiceParamsLcmGeneration()
         {
         }
     }

@@ -14,12 +14,12 @@ namespace G
         /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetOrganizationMembershipView.VIEWBASIC => "VIEW_BASIC",
-                GetOrganizationMembershipView.VIEWFULL => "VIEW_FULL",
+                GetOrganizationMembershipView.ViewBasic => "VIEW_BASIC",
+                GetOrganizationMembershipView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => GetOrganizationMembershipView.VIEWBASIC,
-                "VIEW_FULL" => GetOrganizationMembershipView.VIEWFULL,
+                "VIEW_BASIC" => GetOrganizationMembershipView.ViewBasic,
+                "VIEW_FULL" => GetOrganizationMembershipView.ViewFull,
                 _ => null,
             };
         }

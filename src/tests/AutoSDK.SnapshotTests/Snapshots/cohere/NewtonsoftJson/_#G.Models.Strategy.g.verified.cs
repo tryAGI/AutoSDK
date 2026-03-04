@@ -18,17 +18,17 @@ namespace G
         /// Unspecified strategy.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_UNSPECIFIED")]
-        UNSPECIFIED,
+        Unspecified,
         /// <summary>
         /// Deprecated: Serve the fine-tuned model on a dedicated GPU.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_VANILLA")]
-        VANILLA,
+        Vanilla,
         /// <summary>
         /// Deprecated: Serve the fine-tuned model on a shared GPU.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_TFEW")]
-        TFEW,
+        Tfew,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                Strategy.UNSPECIFIED => "STRATEGY_UNSPECIFIED",
-                Strategy.VANILLA => "STRATEGY_VANILLA",
-                Strategy.TFEW => "STRATEGY_TFEW",
+                Strategy.Unspecified => "STRATEGY_UNSPECIFIED",
+                Strategy.Vanilla => "STRATEGY_VANILLA",
+                Strategy.Tfew => "STRATEGY_TFEW",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "STRATEGY_UNSPECIFIED" => Strategy.UNSPECIFIED,
-                "STRATEGY_VANILLA" => Strategy.VANILLA,
-                "STRATEGY_TFEW" => Strategy.TFEW,
+                "STRATEGY_UNSPECIFIED" => Strategy.Unspecified,
+                "STRATEGY_VANILLA" => Strategy.Vanilla,
+                "STRATEGY_TFEW" => Strategy.Tfew,
                 _ => null,
             };
         }

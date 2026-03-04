@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey.Json.g.cs
+﻿//HintName: G.Models.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey
+    public sealed partial class HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey? FromJson(
+        public static global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey),
-                jsonSerializerContext) as global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey;
+                typeof(global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey),
+                jsonSerializerContext) as global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey? FromJson(
+        public static global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey;
+                typeof(global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

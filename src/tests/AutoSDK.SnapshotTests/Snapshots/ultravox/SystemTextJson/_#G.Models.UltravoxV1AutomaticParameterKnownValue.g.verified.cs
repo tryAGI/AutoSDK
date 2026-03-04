@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        KNOWNPARAMUNSPECIFIED,
+        KnownParamUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        KNOWNPARAMCALLID,
+        KnownParamCallId,
         /// <summary>
         /// 
         /// </summary>
-        KNOWNPARAMCONVERSATIONHISTORY,
+        KnownParamConversationHistory,
         /// <summary>
         /// 
         /// </summary>
-        KNOWNPARAMOUTPUTSAMPLERATE,
+        KnownParamOutputSampleRate,
         /// <summary>
         /// 
         /// </summary>
-        KNOWNPARAMCALLSTATE,
+        KnownParamCallState,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMUNSPECIFIED => "KNOWN_PARAM_UNSPECIFIED",
-                UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCALLID => "KNOWN_PARAM_CALL_ID",
-                UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCONVERSATIONHISTORY => "KNOWN_PARAM_CONVERSATION_HISTORY",
-                UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMOUTPUTSAMPLERATE => "KNOWN_PARAM_OUTPUT_SAMPLE_RATE",
-                UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCALLSTATE => "KNOWN_PARAM_CALL_STATE",
+                UltravoxV1AutomaticParameterKnownValue.KnownParamUnspecified => "KNOWN_PARAM_UNSPECIFIED",
+                UltravoxV1AutomaticParameterKnownValue.KnownParamCallId => "KNOWN_PARAM_CALL_ID",
+                UltravoxV1AutomaticParameterKnownValue.KnownParamConversationHistory => "KNOWN_PARAM_CONVERSATION_HISTORY",
+                UltravoxV1AutomaticParameterKnownValue.KnownParamOutputSampleRate => "KNOWN_PARAM_OUTPUT_SAMPLE_RATE",
+                UltravoxV1AutomaticParameterKnownValue.KnownParamCallState => "KNOWN_PARAM_CALL_STATE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "KNOWN_PARAM_UNSPECIFIED" => UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMUNSPECIFIED,
-                "KNOWN_PARAM_CALL_ID" => UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCALLID,
-                "KNOWN_PARAM_CONVERSATION_HISTORY" => UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCONVERSATIONHISTORY,
-                "KNOWN_PARAM_OUTPUT_SAMPLE_RATE" => UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMOUTPUTSAMPLERATE,
-                "KNOWN_PARAM_CALL_STATE" => UltravoxV1AutomaticParameterKnownValue.KNOWNPARAMCALLSTATE,
+                "KNOWN_PARAM_UNSPECIFIED" => UltravoxV1AutomaticParameterKnownValue.KnownParamUnspecified,
+                "KNOWN_PARAM_CALL_ID" => UltravoxV1AutomaticParameterKnownValue.KnownParamCallId,
+                "KNOWN_PARAM_CONVERSATION_HISTORY" => UltravoxV1AutomaticParameterKnownValue.KnownParamConversationHistory,
+                "KNOWN_PARAM_OUTPUT_SAMPLE_RATE" => UltravoxV1AutomaticParameterKnownValue.KnownParamOutputSampleRate,
+                "KNOWN_PARAM_CALL_STATE" => UltravoxV1AutomaticParameterKnownValue.KnownParamCallState,
                 _ => null,
             };
         }

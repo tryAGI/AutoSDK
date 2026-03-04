@@ -14,42 +14,42 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COLLABORATOR")]
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CONTRIBUTOR")]
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIMER")]
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIME_CONTRIBUTOR")]
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MANNEQUIN")]
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBER")]
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
-                WebhooksIssueAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhooksIssueAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhooksIssueAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhooksIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhooksIssueAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhooksIssueAuthorAssociation.MEMBER => "MEMBER",
-                WebhooksIssueAuthorAssociation.NONE => "NONE",
-                WebhooksIssueAuthorAssociation.OWNER => "OWNER",
+                WebhooksIssueAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhooksIssueAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhooksIssueAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhooksIssueAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhooksIssueAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhooksIssueAuthorAssociation.Member => "MEMBER",
+                WebhooksIssueAuthorAssociation.None => "NONE",
+                WebhooksIssueAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhooksIssueAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhooksIssueAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhooksIssueAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhooksIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhooksIssueAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhooksIssueAuthorAssociation.MEMBER,
-                "NONE" => WebhooksIssueAuthorAssociation.NONE,
-                "OWNER" => WebhooksIssueAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhooksIssueAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhooksIssueAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhooksIssueAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhooksIssueAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhooksIssueAuthorAssociation.Mannequin,
+                "MEMBER" => WebhooksIssueAuthorAssociation.Member,
+                "NONE" => WebhooksIssueAuthorAssociation.None,
+                "OWNER" => WebhooksIssueAuthorAssociation.Owner,
                 _ => null,
             };
         }

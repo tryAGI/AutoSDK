@@ -16,12 +16,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MERGE_MESSAGE")]
-        MERGEMESSAGE,
+        MergeMessage,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.PRTITLE => "PR_TITLE",
-                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.MERGEMESSAGE => "MERGE_MESSAGE",
+                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.PrTitle => "PR_TITLE",
+                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.MergeMessage => "MERGE_MESSAGE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.PRTITLE,
-                "MERGE_MESSAGE" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.MERGEMESSAGE,
+                "PR_TITLE" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.PrTitle,
+                "MERGE_MESSAGE" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitTitle.MergeMessage,
                 _ => null,
             };
         }

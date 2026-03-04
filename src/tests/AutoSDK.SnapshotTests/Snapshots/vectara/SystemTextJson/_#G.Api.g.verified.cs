@@ -207,7 +207,7 @@ namespace G
         /// <summary>
         /// Create, manage, and revoke API keys for secure access to the platform
         /// </summary>
-        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
+        public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

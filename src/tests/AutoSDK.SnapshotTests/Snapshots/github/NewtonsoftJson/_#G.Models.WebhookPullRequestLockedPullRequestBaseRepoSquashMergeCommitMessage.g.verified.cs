@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhookPullRequestLockedPullRequestBaseRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

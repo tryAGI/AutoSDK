@@ -17,17 +17,17 @@ namespace G
         /// Successfully completed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_COMPLETED")]
-        STATUSCOMPLETED,
+        StatusCompleted,
         /// <summary>
         /// Skipped.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_SKIPPED")]
-        STATUSSKIPPED,
+        StatusSkipped,
         /// <summary>
         /// Aborted with error.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_ERROR")]
-        STATUSERROR,
+        StatusError,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                TraceStatus.STATUSCOMPLETED => "STATUS_COMPLETED",
-                TraceStatus.STATUSSKIPPED => "STATUS_SKIPPED",
-                TraceStatus.STATUSERROR => "STATUS_ERROR",
+                TraceStatus.StatusCompleted => "STATUS_COMPLETED",
+                TraceStatus.StatusSkipped => "STATUS_SKIPPED",
+                TraceStatus.StatusError => "STATUS_ERROR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "STATUS_COMPLETED" => TraceStatus.STATUSCOMPLETED,
-                "STATUS_SKIPPED" => TraceStatus.STATUSSKIPPED,
-                "STATUS_ERROR" => TraceStatus.STATUSERROR,
+                "STATUS_COMPLETED" => TraceStatus.StatusCompleted,
+                "STATUS_SKIPPED" => TraceStatus.StatusSkipped,
+                "STATUS_ERROR" => TraceStatus.StatusError,
                 _ => null,
             };
         }

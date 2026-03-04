@@ -14,17 +14,17 @@ namespace G
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="APPROVE")]
-        APPROVE,
+        Approve,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
-        REQUESTCHANGES,
+        RequestChanges,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
-        COMMENT,
+        Comment,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PullsCreateReviewRequestEvent.APPROVE => "APPROVE",
-                PullsCreateReviewRequestEvent.REQUESTCHANGES => "REQUEST_CHANGES",
-                PullsCreateReviewRequestEvent.COMMENT => "COMMENT",
+                PullsCreateReviewRequestEvent.Approve => "APPROVE",
+                PullsCreateReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
+                PullsCreateReviewRequestEvent.Comment => "COMMENT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "APPROVE" => PullsCreateReviewRequestEvent.APPROVE,
-                "REQUEST_CHANGES" => PullsCreateReviewRequestEvent.REQUESTCHANGES,
-                "COMMENT" => PullsCreateReviewRequestEvent.COMMENT,
+                "APPROVE" => PullsCreateReviewRequestEvent.Approve,
+                "REQUEST_CHANGES" => PullsCreateReviewRequestEvent.RequestChanges,
+                "COMMENT" => PullsCreateReviewRequestEvent.Comment,
                 _ => null,
             };
         }

@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FREE")]
-        FREE,
+        Free,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FLAT_RATE")]
-        FLATRATE,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PER_UNIT")]
-        PERUNIT,
+        PerUnit,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FREE => "FREE",
-                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FLATRATE => "FLAT_RATE",
-                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.PERUNIT => "PER_UNIT",
+                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.Free => "FREE",
+                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FlatRate => "FLAT_RATE",
+                WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "FREE" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FREE,
-                "FLAT_RATE" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FLATRATE,
-                "PER_UNIT" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.PERUNIT,
+                "FREE" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.Free,
+                "FLAT_RATE" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.FlatRate,
+                "PER_UNIT" => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.PerUnit,
                 _ => null,
             };
         }

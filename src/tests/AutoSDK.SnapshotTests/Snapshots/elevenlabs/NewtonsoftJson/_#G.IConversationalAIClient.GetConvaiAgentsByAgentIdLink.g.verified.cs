@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiAgentsByAgentIdLink.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiAgentsByAgentIdLink.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Shareable Agent Link<br/>

@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiAgentsByAgentIdAvatar.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiAgentsByAgentIdAvatar.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Post Agent Avatar<br/>

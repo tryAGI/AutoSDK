@@ -14,17 +14,17 @@ namespace G
         /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
         /// <summary>
         /// Contains the recipe of the resource.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_RECIPE")]
-        VIEWRECIPE,
+        ViewRecipe,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListComponentRunsView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceListComponentRunsView.VIEWFULL => "VIEW_FULL",
-                PipelinePublicServiceListComponentRunsView.VIEWRECIPE => "VIEW_RECIPE",
+                PipelinePublicServiceListComponentRunsView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceListComponentRunsView.ViewFull => "VIEW_FULL",
+                PipelinePublicServiceListComponentRunsView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceListComponentRunsView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceListComponentRunsView.VIEWFULL,
-                "VIEW_RECIPE" => PipelinePublicServiceListComponentRunsView.VIEWRECIPE,
+                "VIEW_BASIC" => PipelinePublicServiceListComponentRunsView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceListComponentRunsView.ViewFull,
+                "VIEW_RECIPE" => PipelinePublicServiceListComponentRunsView.ViewRecipe,
                 _ => null,
             };
         }

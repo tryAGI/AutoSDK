@@ -1,9 +1,9 @@
-﻿//HintName: G.IStreamingAPIClient.StreamingInterrupt.g.cs
+﻿//HintName: G.IStreamingApiClient.StreamingInterrupt.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IStreamingAPIClient
+    public partial interface IStreamingApiClient
     {
         /// <summary>
         /// streaming.interrupt<br/>

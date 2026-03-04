@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsTEXTUREGENERATION.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsTextureGeneration.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for TEXTURE_GENERATION service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsTEXTUREGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsTextureGeneration
     {
         /// <summary>
         /// 
@@ -22,19 +22,19 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTEXTUREGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTextureGeneration" /> class.
         /// </summary>
         /// <param name="preview"></param>
-        public PricingCalculatorRequestServiceParamsTEXTUREGENERATION(
+        public PricingCalculatorRequestServiceParamsTextureGeneration(
             bool? preview)
         {
             this.Preview = preview;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTEXTUREGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTextureGeneration" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsTEXTUREGENERATION()
+        public PricingCalculatorRequestServiceParamsTextureGeneration()
         {
         }
     }

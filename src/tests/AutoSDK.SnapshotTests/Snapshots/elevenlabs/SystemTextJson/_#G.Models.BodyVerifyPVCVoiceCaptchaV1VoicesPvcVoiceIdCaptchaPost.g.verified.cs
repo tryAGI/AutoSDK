@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost.g.cs
+﻿//HintName: G.Models.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost
+    public sealed partial class BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost
     {
         /// <summary>
         /// Audio recording of the user
@@ -30,7 +30,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost" /> class.
         /// </summary>
         /// <param name="recording">
         /// Audio recording of the user
@@ -41,7 +41,7 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost(
+        public BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost(
             byte[] recording,
             string recordingname)
         {
@@ -50,9 +50,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost" /> class.
         /// </summary>
-        public BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost()
+        public BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost()
         {
         }
     }

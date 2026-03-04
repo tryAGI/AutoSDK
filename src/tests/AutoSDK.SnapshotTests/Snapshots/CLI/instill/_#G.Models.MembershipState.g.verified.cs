@@ -15,11 +15,11 @@ namespace G
         /// <summary>
         /// Active.
         /// </summary>
-        ACTIVE,
+        Active,
         /// <summary>
         /// Pending, i.e., a request has been sent to the user to join an
         /// </summary>
-        PENDING,
+        Pending,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                MembershipState.ACTIVE => "MEMBERSHIP_STATE_ACTIVE",
-                MembershipState.PENDING => "MEMBERSHIP_STATE_PENDING",
+                MembershipState.Active => "MEMBERSHIP_STATE_ACTIVE",
+                MembershipState.Pending => "MEMBERSHIP_STATE_PENDING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "MEMBERSHIP_STATE_ACTIVE" => MembershipState.ACTIVE,
-                "MEMBERSHIP_STATE_PENDING" => MembershipState.PENDING,
+                "MEMBERSHIP_STATE_ACTIVE" => MembershipState.Active,
+                "MEMBERSHIP_STATE_PENDING" => MembershipState.Pending,
                 _ => null,
             };
         }

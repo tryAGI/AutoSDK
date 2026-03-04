@@ -14,7 +14,7 @@ namespace G
         /// <param name="llmId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.LLM> GetLLMAsync(
+        global::System.Threading.Tasks.Task<global::G.Llm> GetLLMAsync(
             string llmId,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

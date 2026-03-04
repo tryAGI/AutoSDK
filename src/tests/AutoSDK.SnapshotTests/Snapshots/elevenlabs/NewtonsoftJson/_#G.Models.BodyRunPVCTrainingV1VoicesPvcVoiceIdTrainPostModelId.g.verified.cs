@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId.g.cs
+﻿//HintName: G.Models.BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPostModelId.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// The model ID to use for the conversion.
     /// </summary>
-    public sealed partial class BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId
+    public sealed partial class BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPostModelId
     {
 
         /// <summary>

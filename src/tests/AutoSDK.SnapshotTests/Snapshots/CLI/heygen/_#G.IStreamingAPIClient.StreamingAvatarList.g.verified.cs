@@ -1,9 +1,9 @@
-﻿//HintName: G.IStreamingAPIClient.StreamingAvatarList.g.cs
+﻿//HintName: G.IStreamingApiClient.StreamingAvatarList.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IStreamingAPIClient
+    public partial interface IStreamingApiClient
     {
         /// <summary>
         /// streaming/avatar.list<br/>

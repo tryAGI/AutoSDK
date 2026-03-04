@@ -20,8 +20,8 @@ namespace G
         /// Default Value: gemini-2.0-flash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LLMJsonConverter))]
-        public global::G.LLM? Llm { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LlmJsonConverter))]
+        public global::G.Llm? Llm { get; set; }
 
         /// <summary>
         /// The temperature for the LLM<br/>
@@ -140,7 +140,7 @@ namespace G
 #endif
         public PromptAgentOutput(
             string? prompt,
-            global::G.LLM? llm,
+            global::G.Llm? llm,
             double? temperature,
             int? maxTokens,
             global::System.Collections.Generic.IList<global::G.ToolsItem3>? tools,

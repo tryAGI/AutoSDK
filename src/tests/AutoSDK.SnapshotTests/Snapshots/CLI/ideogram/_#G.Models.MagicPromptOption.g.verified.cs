@@ -14,15 +14,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AUTO,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        ON,
+        On,
         /// <summary>
         /// 
         /// </summary>
-        OFF,
+        Off,
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ namespace G
         {
             return value switch
             {
-                MagicPromptOption.AUTO => "AUTO",
-                MagicPromptOption.ON => "ON",
-                MagicPromptOption.OFF => "OFF",
+                MagicPromptOption.Auto => "AUTO",
+                MagicPromptOption.On => "ON",
+                MagicPromptOption.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +50,9 @@ namespace G
         {
             return value switch
             {
-                "AUTO" => MagicPromptOption.AUTO,
-                "ON" => MagicPromptOption.ON,
-                "OFF" => MagicPromptOption.OFF,
+                "AUTO" => MagicPromptOption.Auto,
+                "ON" => MagicPromptOption.On,
+                "OFF" => MagicPromptOption.Off,
                 _ => null,
             };
         }

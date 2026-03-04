@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INPAINT")]
-        INPAINT,
+        Inpaint,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OUTPAINT")]
-        OUTPAINT,
+        Outpaint,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SKETCH2IMG")]
-        SKETCH2IMG,
+        Sketch2img,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="IMG2IMG")]
-        IMG2IMG,
+        Img2img,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                CanvasRequestType.INPAINT => "INPAINT",
-                CanvasRequestType.OUTPAINT => "OUTPAINT",
-                CanvasRequestType.SKETCH2IMG => "SKETCH2IMG",
-                CanvasRequestType.IMG2IMG => "IMG2IMG",
+                CanvasRequestType.Inpaint => "INPAINT",
+                CanvasRequestType.Outpaint => "OUTPAINT",
+                CanvasRequestType.Sketch2img => "SKETCH2IMG",
+                CanvasRequestType.Img2img => "IMG2IMG",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "INPAINT" => CanvasRequestType.INPAINT,
-                "OUTPAINT" => CanvasRequestType.OUTPAINT,
-                "SKETCH2IMG" => CanvasRequestType.SKETCH2IMG,
-                "IMG2IMG" => CanvasRequestType.IMG2IMG,
+                "INPAINT" => CanvasRequestType.Inpaint,
+                "OUTPAINT" => CanvasRequestType.Outpaint,
+                "SKETCH2IMG" => CanvasRequestType.Sketch2img,
+                "IMG2IMG" => CanvasRequestType.Img2img,
                 _ => null,
             };
         }

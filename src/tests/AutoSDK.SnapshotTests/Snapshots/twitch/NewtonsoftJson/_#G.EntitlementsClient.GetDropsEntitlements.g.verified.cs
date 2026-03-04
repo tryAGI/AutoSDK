@@ -80,8 +80,8 @@ namespace G
 
             var fulfillmentStatusValue = fulfillmentStatus switch
             {
-                global::G.GetDropsEntitlementsFulfillmentStatus.CLAIMED => "CLAIMED",
-                global::G.GetDropsEntitlementsFulfillmentStatus.FULFILLED => "FULFILLED",
+                global::G.GetDropsEntitlementsFulfillmentStatus.Claimed => "CLAIMED",
+                global::G.GetDropsEntitlementsFulfillmentStatus.Fulfilled => "FULFILLED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

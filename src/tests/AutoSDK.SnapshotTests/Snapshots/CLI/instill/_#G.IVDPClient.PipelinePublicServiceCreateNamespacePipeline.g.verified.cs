@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceCreateNamespacePipeline.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceCreateNamespacePipeline.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Create a new pipeline<br/>

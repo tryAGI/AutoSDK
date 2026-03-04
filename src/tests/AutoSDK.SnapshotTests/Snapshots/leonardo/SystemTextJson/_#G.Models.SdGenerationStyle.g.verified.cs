@@ -13,127 +13,127 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ANIME,
+        Anime,
         /// <summary>
         /// 
         /// </summary>
-        BOKEH,
+        Bokeh,
         /// <summary>
         /// 
         /// </summary>
-        CINEMATIC,
+        Cinematic,
         /// <summary>
         /// 
         /// </summary>
-        CINEMATICCLOSEUP,
+        CinematicCloseup,
         /// <summary>
         /// 
         /// </summary>
-        CREATIVE,
+        Creative,
         /// <summary>
         /// 
         /// </summary>
-        DYNAMIC,
+        Dynamic,
         /// <summary>
         /// 
         /// </summary>
-        ENVIRONMENT,
+        Environment,
         /// <summary>
         /// 
         /// </summary>
-        FASHION,
+        Fashion,
         /// <summary>
         /// 
         /// </summary>
-        FILM,
+        Film,
         /// <summary>
         /// 
         /// </summary>
-        FOOD,
+        Food,
         /// <summary>
         /// 
         /// </summary>
-        GENERAL,
+        General,
         /// <summary>
         /// 
         /// </summary>
-        HDR,
+        Hdr,
         /// <summary>
         /// 
         /// </summary>
-        ILLUSTRATION,
+        Illustration,
         /// <summary>
         /// 
         /// </summary>
-        LEONARDO,
+        Leonardo,
         /// <summary>
         /// 
         /// </summary>
-        LONGEXPOSURE,
+        LongExposure,
         /// <summary>
         /// 
         /// </summary>
-        MACRO,
+        Macro,
         /// <summary>
         /// 
         /// </summary>
-        MINIMALISTIC,
+        Minimalistic,
         /// <summary>
         /// 
         /// </summary>
-        MONOCHROME,
+        Monochrome,
         /// <summary>
         /// 
         /// </summary>
-        MOODY,
+        Moody,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        NEUTRAL,
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        PHOTOGRAPHY,
+        Photography,
         /// <summary>
         /// 
         /// </summary>
-        PORTRAIT,
+        Portrait,
         /// <summary>
         /// 
         /// </summary>
-        RAYTRACED,
+        Raytraced,
         /// <summary>
         /// 
         /// </summary>
-        RENDER3D,
+        Render3d,
         /// <summary>
         /// 
         /// </summary>
-        RETRO,
+        Retro,
         /// <summary>
         /// 
         /// </summary>
-        SKETCHBW,
+        SketchBw,
         /// <summary>
         /// 
         /// </summary>
-        SKETCHCOLOR,
+        SketchColor,
         /// <summary>
         /// 
         /// </summary>
-        STOCKPHOTO,
+        StockPhoto,
         /// <summary>
         /// 
         /// </summary>
-        VIBRANT,
+        Vibrant,
         /// <summary>
         /// 
         /// </summary>
-        UNPROCESSED,
+        Unprocessed,
     }
 
     /// <summary>
@@ -148,37 +148,37 @@ namespace G
         {
             return value switch
             {
-                SdGenerationStyle.ANIME => "ANIME",
-                SdGenerationStyle.BOKEH => "BOKEH",
-                SdGenerationStyle.CINEMATIC => "CINEMATIC",
-                SdGenerationStyle.CINEMATICCLOSEUP => "CINEMATIC_CLOSEUP",
-                SdGenerationStyle.CREATIVE => "CREATIVE",
-                SdGenerationStyle.DYNAMIC => "DYNAMIC",
-                SdGenerationStyle.ENVIRONMENT => "ENVIRONMENT",
-                SdGenerationStyle.FASHION => "FASHION",
-                SdGenerationStyle.FILM => "FILM",
-                SdGenerationStyle.FOOD => "FOOD",
-                SdGenerationStyle.GENERAL => "GENERAL",
-                SdGenerationStyle.HDR => "HDR",
-                SdGenerationStyle.ILLUSTRATION => "ILLUSTRATION",
-                SdGenerationStyle.LEONARDO => "LEONARDO",
-                SdGenerationStyle.LONGEXPOSURE => "LONG_EXPOSURE",
-                SdGenerationStyle.MACRO => "MACRO",
-                SdGenerationStyle.MINIMALISTIC => "MINIMALISTIC",
-                SdGenerationStyle.MONOCHROME => "MONOCHROME",
-                SdGenerationStyle.MOODY => "MOODY",
-                SdGenerationStyle.NONE => "NONE",
-                SdGenerationStyle.NEUTRAL => "NEUTRAL",
-                SdGenerationStyle.PHOTOGRAPHY => "PHOTOGRAPHY",
-                SdGenerationStyle.PORTRAIT => "PORTRAIT",
-                SdGenerationStyle.RAYTRACED => "RAYTRACED",
-                SdGenerationStyle.RENDER3D => "RENDER_3D",
-                SdGenerationStyle.RETRO => "RETRO",
-                SdGenerationStyle.SKETCHBW => "SKETCH_BW",
-                SdGenerationStyle.SKETCHCOLOR => "SKETCH_COLOR",
-                SdGenerationStyle.STOCKPHOTO => "STOCK_PHOTO",
-                SdGenerationStyle.VIBRANT => "VIBRANT",
-                SdGenerationStyle.UNPROCESSED => "UNPROCESSED",
+                SdGenerationStyle.Anime => "ANIME",
+                SdGenerationStyle.Bokeh => "BOKEH",
+                SdGenerationStyle.Cinematic => "CINEMATIC",
+                SdGenerationStyle.CinematicCloseup => "CINEMATIC_CLOSEUP",
+                SdGenerationStyle.Creative => "CREATIVE",
+                SdGenerationStyle.Dynamic => "DYNAMIC",
+                SdGenerationStyle.Environment => "ENVIRONMENT",
+                SdGenerationStyle.Fashion => "FASHION",
+                SdGenerationStyle.Film => "FILM",
+                SdGenerationStyle.Food => "FOOD",
+                SdGenerationStyle.General => "GENERAL",
+                SdGenerationStyle.Hdr => "HDR",
+                SdGenerationStyle.Illustration => "ILLUSTRATION",
+                SdGenerationStyle.Leonardo => "LEONARDO",
+                SdGenerationStyle.LongExposure => "LONG_EXPOSURE",
+                SdGenerationStyle.Macro => "MACRO",
+                SdGenerationStyle.Minimalistic => "MINIMALISTIC",
+                SdGenerationStyle.Monochrome => "MONOCHROME",
+                SdGenerationStyle.Moody => "MOODY",
+                SdGenerationStyle.None => "NONE",
+                SdGenerationStyle.Neutral => "NEUTRAL",
+                SdGenerationStyle.Photography => "PHOTOGRAPHY",
+                SdGenerationStyle.Portrait => "PORTRAIT",
+                SdGenerationStyle.Raytraced => "RAYTRACED",
+                SdGenerationStyle.Render3d => "RENDER_3D",
+                SdGenerationStyle.Retro => "RETRO",
+                SdGenerationStyle.SketchBw => "SKETCH_BW",
+                SdGenerationStyle.SketchColor => "SKETCH_COLOR",
+                SdGenerationStyle.StockPhoto => "STOCK_PHOTO",
+                SdGenerationStyle.Vibrant => "VIBRANT",
+                SdGenerationStyle.Unprocessed => "UNPROCESSED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -189,37 +189,37 @@ namespace G
         {
             return value switch
             {
-                "ANIME" => SdGenerationStyle.ANIME,
-                "BOKEH" => SdGenerationStyle.BOKEH,
-                "CINEMATIC" => SdGenerationStyle.CINEMATIC,
-                "CINEMATIC_CLOSEUP" => SdGenerationStyle.CINEMATICCLOSEUP,
-                "CREATIVE" => SdGenerationStyle.CREATIVE,
-                "DYNAMIC" => SdGenerationStyle.DYNAMIC,
-                "ENVIRONMENT" => SdGenerationStyle.ENVIRONMENT,
-                "FASHION" => SdGenerationStyle.FASHION,
-                "FILM" => SdGenerationStyle.FILM,
-                "FOOD" => SdGenerationStyle.FOOD,
-                "GENERAL" => SdGenerationStyle.GENERAL,
-                "HDR" => SdGenerationStyle.HDR,
-                "ILLUSTRATION" => SdGenerationStyle.ILLUSTRATION,
-                "LEONARDO" => SdGenerationStyle.LEONARDO,
-                "LONG_EXPOSURE" => SdGenerationStyle.LONGEXPOSURE,
-                "MACRO" => SdGenerationStyle.MACRO,
-                "MINIMALISTIC" => SdGenerationStyle.MINIMALISTIC,
-                "MONOCHROME" => SdGenerationStyle.MONOCHROME,
-                "MOODY" => SdGenerationStyle.MOODY,
-                "NONE" => SdGenerationStyle.NONE,
-                "NEUTRAL" => SdGenerationStyle.NEUTRAL,
-                "PHOTOGRAPHY" => SdGenerationStyle.PHOTOGRAPHY,
-                "PORTRAIT" => SdGenerationStyle.PORTRAIT,
-                "RAYTRACED" => SdGenerationStyle.RAYTRACED,
-                "RENDER_3D" => SdGenerationStyle.RENDER3D,
-                "RETRO" => SdGenerationStyle.RETRO,
-                "SKETCH_BW" => SdGenerationStyle.SKETCHBW,
-                "SKETCH_COLOR" => SdGenerationStyle.SKETCHCOLOR,
-                "STOCK_PHOTO" => SdGenerationStyle.STOCKPHOTO,
-                "VIBRANT" => SdGenerationStyle.VIBRANT,
-                "UNPROCESSED" => SdGenerationStyle.UNPROCESSED,
+                "ANIME" => SdGenerationStyle.Anime,
+                "BOKEH" => SdGenerationStyle.Bokeh,
+                "CINEMATIC" => SdGenerationStyle.Cinematic,
+                "CINEMATIC_CLOSEUP" => SdGenerationStyle.CinematicCloseup,
+                "CREATIVE" => SdGenerationStyle.Creative,
+                "DYNAMIC" => SdGenerationStyle.Dynamic,
+                "ENVIRONMENT" => SdGenerationStyle.Environment,
+                "FASHION" => SdGenerationStyle.Fashion,
+                "FILM" => SdGenerationStyle.Film,
+                "FOOD" => SdGenerationStyle.Food,
+                "GENERAL" => SdGenerationStyle.General,
+                "HDR" => SdGenerationStyle.Hdr,
+                "ILLUSTRATION" => SdGenerationStyle.Illustration,
+                "LEONARDO" => SdGenerationStyle.Leonardo,
+                "LONG_EXPOSURE" => SdGenerationStyle.LongExposure,
+                "MACRO" => SdGenerationStyle.Macro,
+                "MINIMALISTIC" => SdGenerationStyle.Minimalistic,
+                "MONOCHROME" => SdGenerationStyle.Monochrome,
+                "MOODY" => SdGenerationStyle.Moody,
+                "NONE" => SdGenerationStyle.None,
+                "NEUTRAL" => SdGenerationStyle.Neutral,
+                "PHOTOGRAPHY" => SdGenerationStyle.Photography,
+                "PORTRAIT" => SdGenerationStyle.Portrait,
+                "RAYTRACED" => SdGenerationStyle.Raytraced,
+                "RENDER_3D" => SdGenerationStyle.Render3d,
+                "RETRO" => SdGenerationStyle.Retro,
+                "SKETCH_BW" => SdGenerationStyle.SketchBw,
+                "SKETCH_COLOR" => SdGenerationStyle.SketchColor,
+                "STOCK_PHOTO" => SdGenerationStyle.StockPhoto,
+                "VIBRANT" => SdGenerationStyle.Vibrant,
+                "UNPROCESSED" => SdGenerationStyle.Unprocessed,
                 _ => null,
             };
         }

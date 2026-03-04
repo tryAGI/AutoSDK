@@ -25,55 +25,55 @@ namespace G
         /// <summary>
         /// Image Classification - classify images into predefined categories.
         /// </summary>
-        TASKCLASSIFICATION,
+        TaskClassification,
         /// <summary>
         /// Object Detection - detect and localize multiple objects in images.
         /// </summary>
-        TASKDETECTION,
+        TaskDetection,
         /// <summary>
         /// Keypoint Detection - detect and localize multiple keypoints of objects in images.
         /// </summary>
-        TASKKEYPOINT,
+        TaskKeypoint,
         /// <summary>
         /// OCR (Optical Character Recognition) - detect and recognize text in images.
         /// </summary>
-        TASKOCR,
+        TaskOcr,
         /// <summary>
         /// Instance Segmentation - detect, localize and delineate multiple objects in images.
         /// </summary>
-        TASKINSTANCESEGMENTATION,
+        TaskInstanceSegmentation,
         /// <summary>
         /// Semantic Segmentation - classify image pixels into predefined categories.
         /// </summary>
-        TASKSEMANTICSEGMENTATION,
+        TaskSemanticSegmentation,
         /// <summary>
         /// Text to Image - generate images from input text prompts.
         /// </summary>
-        TASKTEXTTOIMAGE,
+        TaskTextToImage,
         /// <summary>
         /// Image to Image - generate an image from another image.
         /// </summary>
-        TASKIMAGETOIMAGE,
+        TaskImageToImage,
         /// <summary>
         /// Embedding - generate an embedding (a representation as coordinates) from a multimodal input.
         /// </summary>
-        TASKEMBEDDING,
+        TaskEmbedding,
         /// <summary>
         /// Speech Recognition - transcribe the words in an audio input.
         /// </summary>
-        TASKSPEECHRECOGNITION,
+        TaskSpeechRecognition,
         /// <summary>
         /// Conversational Text Generation - generate text as responses to a dialog input.
         /// </summary>
-        TASKCHAT,
+        TaskChat,
         /// <summary>
         /// Completion Text Generation - generate text following the input prompt.
         /// </summary>
-        TASKCOMPLETION,
+        TaskCompletion,
         /// <summary>
         /// Custom - custom task type for free form input/output.
         /// </summary>
-        TASKCUSTOM,
+        TaskCustom,
     }
 
     /// <summary>
@@ -88,19 +88,19 @@ namespace G
         {
             return value switch
             {
-                AITask.TASKCLASSIFICATION => "TASK_CLASSIFICATION",
-                AITask.TASKDETECTION => "TASK_DETECTION",
-                AITask.TASKKEYPOINT => "TASK_KEYPOINT",
-                AITask.TASKOCR => "TASK_OCR",
-                AITask.TASKINSTANCESEGMENTATION => "TASK_INSTANCE_SEGMENTATION",
-                AITask.TASKSEMANTICSEGMENTATION => "TASK_SEMANTIC_SEGMENTATION",
-                AITask.TASKTEXTTOIMAGE => "TASK_TEXT_TO_IMAGE",
-                AITask.TASKIMAGETOIMAGE => "TASK_IMAGE_TO_IMAGE",
-                AITask.TASKEMBEDDING => "TASK_EMBEDDING",
-                AITask.TASKSPEECHRECOGNITION => "TASK_SPEECH_RECOGNITION",
-                AITask.TASKCHAT => "TASK_CHAT",
-                AITask.TASKCOMPLETION => "TASK_COMPLETION",
-                AITask.TASKCUSTOM => "TASK_CUSTOM",
+                AITask.TaskClassification => "TASK_CLASSIFICATION",
+                AITask.TaskDetection => "TASK_DETECTION",
+                AITask.TaskKeypoint => "TASK_KEYPOINT",
+                AITask.TaskOcr => "TASK_OCR",
+                AITask.TaskInstanceSegmentation => "TASK_INSTANCE_SEGMENTATION",
+                AITask.TaskSemanticSegmentation => "TASK_SEMANTIC_SEGMENTATION",
+                AITask.TaskTextToImage => "TASK_TEXT_TO_IMAGE",
+                AITask.TaskImageToImage => "TASK_IMAGE_TO_IMAGE",
+                AITask.TaskEmbedding => "TASK_EMBEDDING",
+                AITask.TaskSpeechRecognition => "TASK_SPEECH_RECOGNITION",
+                AITask.TaskChat => "TASK_CHAT",
+                AITask.TaskCompletion => "TASK_COMPLETION",
+                AITask.TaskCustom => "TASK_CUSTOM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -111,19 +111,19 @@ namespace G
         {
             return value switch
             {
-                "TASK_CLASSIFICATION" => AITask.TASKCLASSIFICATION,
-                "TASK_DETECTION" => AITask.TASKDETECTION,
-                "TASK_KEYPOINT" => AITask.TASKKEYPOINT,
-                "TASK_OCR" => AITask.TASKOCR,
-                "TASK_INSTANCE_SEGMENTATION" => AITask.TASKINSTANCESEGMENTATION,
-                "TASK_SEMANTIC_SEGMENTATION" => AITask.TASKSEMANTICSEGMENTATION,
-                "TASK_TEXT_TO_IMAGE" => AITask.TASKTEXTTOIMAGE,
-                "TASK_IMAGE_TO_IMAGE" => AITask.TASKIMAGETOIMAGE,
-                "TASK_EMBEDDING" => AITask.TASKEMBEDDING,
-                "TASK_SPEECH_RECOGNITION" => AITask.TASKSPEECHRECOGNITION,
-                "TASK_CHAT" => AITask.TASKCHAT,
-                "TASK_COMPLETION" => AITask.TASKCOMPLETION,
-                "TASK_CUSTOM" => AITask.TASKCUSTOM,
+                "TASK_CLASSIFICATION" => AITask.TaskClassification,
+                "TASK_DETECTION" => AITask.TaskDetection,
+                "TASK_KEYPOINT" => AITask.TaskKeypoint,
+                "TASK_OCR" => AITask.TaskOcr,
+                "TASK_INSTANCE_SEGMENTATION" => AITask.TaskInstanceSegmentation,
+                "TASK_SEMANTIC_SEGMENTATION" => AITask.TaskSemanticSegmentation,
+                "TASK_TEXT_TO_IMAGE" => AITask.TaskTextToImage,
+                "TASK_IMAGE_TO_IMAGE" => AITask.TaskImageToImage,
+                "TASK_EMBEDDING" => AITask.TaskEmbedding,
+                "TASK_SPEECH_RECOGNITION" => AITask.TaskSpeechRecognition,
+                "TASK_CHAT" => AITask.TaskChat,
+                "TASK_COMPLETION" => AITask.TaskCompletion,
+                "TASK_CUSTOM" => AITask.TaskCustom,
                 _ => null,
             };
         }

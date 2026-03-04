@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost.g.cs
+﻿//HintName: G.Models.BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost
+    public sealed partial class BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost
     {
         /// <summary>
         /// The model ID to use for the conversion.
@@ -22,21 +22,21 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost" /> class.
         /// </summary>
         /// <param name="modelId">
         /// The model ID to use for the conversion.
         /// </param>
-        public BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost(
+        public BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost(
             string? modelId)
         {
             this.ModelId = modelId;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost" /> class.
         /// </summary>
-        public BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost()
+        public BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost()
         {
         }
     }

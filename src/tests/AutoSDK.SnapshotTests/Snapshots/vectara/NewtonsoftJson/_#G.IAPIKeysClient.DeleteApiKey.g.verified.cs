@@ -1,9 +1,9 @@
-﻿//HintName: G.IAPIKeysClient.DeleteApiKey.g.cs
+﻿//HintName: G.IApiKeysClient.DeleteApiKey.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IAPIKeysClient
+    public partial interface IApiKeysClient
     {
         /// <summary>
         /// Delete an API key<br/>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableUBUNTU.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableUbuntu.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableUBUNTU
+    public sealed partial class WorkflowRunUsageBillableUbuntu
     {
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? JobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUbuntuJobRun>? JobRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTU" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUbuntu" /> class.
         /// </summary>
         /// <param name="totalMs"></param>
         /// <param name="jobs"></param>
@@ -44,10 +44,10 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowRunUsageBillableUBUNTU(
+        public WorkflowRunUsageBillableUbuntu(
             int totalMs,
             int jobs,
-            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? jobRuns)
+            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUbuntuJobRun>? jobRuns)
         {
             this.TotalMs = totalMs;
             this.Jobs = jobs;
@@ -55,9 +55,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTU" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUbuntu" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableUBUNTU()
+        public WorkflowRunUsageBillableUbuntu()
         {
         }
     }

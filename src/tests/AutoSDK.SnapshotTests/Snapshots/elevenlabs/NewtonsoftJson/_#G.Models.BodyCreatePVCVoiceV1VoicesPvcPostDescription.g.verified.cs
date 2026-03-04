@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreatePVCVoiceV1VoicesPvcPostDescription.g.cs
+﻿//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPostDescription.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Description to use for the created voice.
     /// </summary>
-    public sealed partial class BodyCreatePVCVoiceV1VoicesPvcPostDescription
+    public sealed partial class BodyCreatePvcVoiceV1VoicesPvcPostDescription
     {
 
         /// <summary>

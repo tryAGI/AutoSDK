@@ -14,17 +14,17 @@ namespace G
         /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
         /// <summary>
         /// Contains the recipe of the resource.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_RECIPE")]
-        VIEWRECIPE,
+        ViewRecipe,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListNamespacePipelineReleasesView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceListNamespacePipelineReleasesView.VIEWFULL => "VIEW_FULL",
-                PipelinePublicServiceListNamespacePipelineReleasesView.VIEWRECIPE => "VIEW_RECIPE",
+                PipelinePublicServiceListNamespacePipelineReleasesView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceListNamespacePipelineReleasesView.ViewFull => "VIEW_FULL",
+                PipelinePublicServiceListNamespacePipelineReleasesView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceListNamespacePipelineReleasesView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceListNamespacePipelineReleasesView.VIEWFULL,
-                "VIEW_RECIPE" => PipelinePublicServiceListNamespacePipelineReleasesView.VIEWRECIPE,
+                "VIEW_BASIC" => PipelinePublicServiceListNamespacePipelineReleasesView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceListNamespacePipelineReleasesView.ViewFull,
+                "VIEW_RECIPE" => PipelinePublicServiceListNamespacePipelineReleasesView.ViewRecipe,
                 _ => null,
             };
         }

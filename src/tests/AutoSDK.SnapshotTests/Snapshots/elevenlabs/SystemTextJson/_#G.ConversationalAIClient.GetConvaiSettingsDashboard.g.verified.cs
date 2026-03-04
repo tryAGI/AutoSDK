@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiSettingsDashboard.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiSettingsDashboard.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiSettingsDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,

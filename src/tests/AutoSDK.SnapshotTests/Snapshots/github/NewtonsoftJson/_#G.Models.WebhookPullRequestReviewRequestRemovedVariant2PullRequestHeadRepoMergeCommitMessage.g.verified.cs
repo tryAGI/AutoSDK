@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PRTITLE => "PR_TITLE",
-                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PrTitle => "PR_TITLE",
+                WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PRBODY,
-                "PR_TITLE" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PRTITLE,
-                "BLANK" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PrBody,
+                "PR_TITLE" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.PrTitle,
+                "BLANK" => WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoMergeCommitMessage.Blank,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// text
         /// </summary>
-        TEXT,
+        Text,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                MessageType.TEXT => "MESSAGE_TYPE_TEXT",
+                MessageType.Text => "MESSAGE_TYPE_TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "MESSAGE_TYPE_TEXT" => MessageType.TEXT,
+                "MESSAGE_TYPE_TEXT" => MessageType.Text,
                 _ => null,
             };
         }

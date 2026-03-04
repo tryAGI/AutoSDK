@@ -19,27 +19,27 @@ namespace G
         /// Connect with an AI model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_AI")]
-        AI,
+        Ai,
         /// <summary>
         /// Connect with a remote data source.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_DATA")]
-        DATA,
+        Data,
         /// <summary>
         /// Manipulate data.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_OPERATOR")]
-        OPERATOR,
+        Operator,
         /// <summary>
         /// Connect with an external application.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_APPLICATION")]
-        APPLICATION,
+        Application,
         /// <summary>
         /// Generic.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_GENERIC")]
-        GENERIC,
+        Generic,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
         {
             return value switch
             {
-                ComponentType.AI => "COMPONENT_TYPE_AI",
-                ComponentType.DATA => "COMPONENT_TYPE_DATA",
-                ComponentType.OPERATOR => "COMPONENT_TYPE_OPERATOR",
-                ComponentType.APPLICATION => "COMPONENT_TYPE_APPLICATION",
-                ComponentType.GENERIC => "COMPONENT_TYPE_GENERIC",
+                ComponentType.Ai => "COMPONENT_TYPE_AI",
+                ComponentType.Data => "COMPONENT_TYPE_DATA",
+                ComponentType.Operator => "COMPONENT_TYPE_OPERATOR",
+                ComponentType.Application => "COMPONENT_TYPE_APPLICATION",
+                ComponentType.Generic => "COMPONENT_TYPE_GENERIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,11 +69,11 @@ namespace G
         {
             return value switch
             {
-                "COMPONENT_TYPE_AI" => ComponentType.AI,
-                "COMPONENT_TYPE_DATA" => ComponentType.DATA,
-                "COMPONENT_TYPE_OPERATOR" => ComponentType.OPERATOR,
-                "COMPONENT_TYPE_APPLICATION" => ComponentType.APPLICATION,
-                "COMPONENT_TYPE_GENERIC" => ComponentType.GENERIC,
+                "COMPONENT_TYPE_AI" => ComponentType.Ai,
+                "COMPONENT_TYPE_DATA" => ComponentType.Data,
+                "COMPONENT_TYPE_OPERATOR" => ComponentType.Operator,
+                "COMPONENT_TYPE_APPLICATION" => ComponentType.Application,
+                "COMPONENT_TYPE_GENERIC" => ComponentType.Generic,
                 _ => null,
             };
         }

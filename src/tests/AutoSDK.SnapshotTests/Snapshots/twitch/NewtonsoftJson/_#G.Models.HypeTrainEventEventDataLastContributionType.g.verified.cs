@@ -18,17 +18,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BITS")]
-        BITS,
+        Bits,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUBS")]
-        SUBS,
+        Subs,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OTHER")]
-        OTHER,
+        Other,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                HypeTrainEventEventDataLastContributionType.BITS => "BITS",
-                HypeTrainEventEventDataLastContributionType.SUBS => "SUBS",
-                HypeTrainEventEventDataLastContributionType.OTHER => "OTHER",
+                HypeTrainEventEventDataLastContributionType.Bits => "BITS",
+                HypeTrainEventEventDataLastContributionType.Subs => "SUBS",
+                HypeTrainEventEventDataLastContributionType.Other => "OTHER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "BITS" => HypeTrainEventEventDataLastContributionType.BITS,
-                "SUBS" => HypeTrainEventEventDataLastContributionType.SUBS,
-                "OTHER" => HypeTrainEventEventDataLastContributionType.OTHER,
+                "BITS" => HypeTrainEventEventDataLastContributionType.Bits,
+                "SUBS" => HypeTrainEventEventDataLastContributionType.Subs,
+                "OTHER" => HypeTrainEventEventDataLastContributionType.Other,
                 _ => null,
             };
         }

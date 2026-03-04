@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASIC")]
-        BASIC,
+        Basic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STARTER")]
-        STARTER,
+        Starter,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PRO")]
-        PRO,
+        Pro,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BYOC")]
-        BYOC,
+        Byoc,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                AccountTier.BASIC => "BASIC",
-                AccountTier.STARTER => "STARTER",
-                AccountTier.PRO => "PRO",
-                AccountTier.BYOC => "BYOC",
+                AccountTier.Basic => "BASIC",
+                AccountTier.Starter => "STARTER",
+                AccountTier.Pro => "PRO",
+                AccountTier.Byoc => "BYOC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "BASIC" => AccountTier.BASIC,
-                "STARTER" => AccountTier.STARTER,
-                "PRO" => AccountTier.PRO,
-                "BYOC" => AccountTier.BYOC,
+                "BASIC" => AccountTier.Basic,
+                "STARTER" => AccountTier.Starter,
+                "PRO" => AccountTier.Pro,
+                "BYOC" => AccountTier.Byoc,
                 _ => null,
             };
         }

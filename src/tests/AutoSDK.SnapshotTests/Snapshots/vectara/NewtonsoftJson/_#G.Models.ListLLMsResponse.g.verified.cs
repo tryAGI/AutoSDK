@@ -13,7 +13,7 @@ namespace G
         /// List of LLMs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llms")]
-        public global::System.Collections.Generic.IList<global::G.LLM>? Llms { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Llm>? Llms { get; set; }
 
         /// <summary>
         /// The standard metadata in the response of a list operation.
@@ -37,7 +37,7 @@ namespace G
         /// The standard metadata in the response of a list operation.
         /// </param>
         public ListLLMsResponse(
-            global::System.Collections.Generic.IList<global::G.LLM>? llms,
+            global::System.Collections.Generic.IList<global::G.Llm>? llms,
             global::G.ListMetadata? metadata)
         {
             this.Llms = llms;

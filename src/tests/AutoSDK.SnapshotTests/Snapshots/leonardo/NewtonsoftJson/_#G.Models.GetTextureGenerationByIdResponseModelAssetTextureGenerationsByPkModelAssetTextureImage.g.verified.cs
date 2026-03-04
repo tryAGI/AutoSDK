@@ -20,7 +20,7 @@ namespace G
         /// Default Value: NORMAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MODELASSETTEXTURETYPES? Type { get; set; }
+        public global::G.ModelAssetTextureTypes? Type { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// <param name="url"></param>
         public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage(
             string? id,
-            global::G.MODELASSETTEXTURETYPES? type,
+            global::G.ModelAssetTextureTypes? type,
             string? url)
         {
             this.Id = id;

@@ -145,7 +145,7 @@ information is passed as connection metadata.",
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceUpdateNamespaceConnectionAsync(
+            var response = await _client.Vdp.PipelinePublicServiceUpdateNamespaceConnectionAsync(
                 namespaceId: namespaceId,
                 connectionId: connectionId,
                 id: id,

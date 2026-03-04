@@ -12,31 +12,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COMPLETE,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
-        STOPSEQUENCE,
+        StopSequence,
         /// <summary>
         /// 
         /// </summary>
-        ERROR,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        ERRORTOXIC,
+        ErrorToxic,
         /// <summary>
         /// 
         /// </summary>
-        ERRORLIMIT,
+        ErrorLimit,
         /// <summary>
         /// 
         /// </summary>
-        USERCANCEL,
+        UserCancel,
         /// <summary>
         /// 
         /// </summary>
-        MAXTOKENS,
+        MaxTokens,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                FinishReason.COMPLETE => "COMPLETE",
-                FinishReason.STOPSEQUENCE => "STOP_SEQUENCE",
-                FinishReason.ERROR => "ERROR",
-                FinishReason.ERRORTOXIC => "ERROR_TOXIC",
-                FinishReason.ERRORLIMIT => "ERROR_LIMIT",
-                FinishReason.USERCANCEL => "USER_CANCEL",
-                FinishReason.MAXTOKENS => "MAX_TOKENS",
+                FinishReason.Complete => "COMPLETE",
+                FinishReason.StopSequence => "STOP_SEQUENCE",
+                FinishReason.Error => "ERROR",
+                FinishReason.ErrorToxic => "ERROR_TOXIC",
+                FinishReason.ErrorLimit => "ERROR_LIMIT",
+                FinishReason.UserCancel => "USER_CANCEL",
+                FinishReason.MaxTokens => "MAX_TOKENS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "COMPLETE" => FinishReason.COMPLETE,
-                "STOP_SEQUENCE" => FinishReason.STOPSEQUENCE,
-                "ERROR" => FinishReason.ERROR,
-                "ERROR_TOXIC" => FinishReason.ERRORTOXIC,
-                "ERROR_LIMIT" => FinishReason.ERRORLIMIT,
-                "USER_CANCEL" => FinishReason.USERCANCEL,
-                "MAX_TOKENS" => FinishReason.MAXTOKENS,
+                "COMPLETE" => FinishReason.Complete,
+                "STOP_SEQUENCE" => FinishReason.StopSequence,
+                "ERROR" => FinishReason.Error,
+                "ERROR_TOXIC" => FinishReason.ErrorToxic,
+                "ERROR_LIMIT" => FinishReason.ErrorLimit,
+                "USER_CANCEL" => FinishReason.UserCancel,
+                "MAX_TOKENS" => FinishReason.MaxTokens,
                 _ => null,
             };
         }

@@ -1,10 +1,10 @@
-﻿//HintName: G.VideoTranslateAPIClient.V2VideoTranslate.g.cs
+﻿//HintName: G.VideoTranslateApiClient.V2VideoTranslate.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VideoTranslateAPIClient
+    public partial class VideoTranslateApiClient
     {
         partial void PrepareV2VideoTranslateArguments(
             global::System.Net.Http.HttpClient httpClient,

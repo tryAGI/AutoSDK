@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DONE,
+        done,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                StreamSentinelData.DONE => "[DONE]",
+                StreamSentinelData.done => "[DONE]",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "[DONE]" => StreamSentinelData.DONE,
+                "[DONE]" => StreamSentinelData.done,
                 _ => null,
             };
         }

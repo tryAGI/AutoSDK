@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

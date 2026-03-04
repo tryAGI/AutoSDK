@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PRTITLE => "PR_TITLE",
-                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PrTitle => "PR_TITLE",
+                WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PRBODY,
-                "PR_TITLE" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PRTITLE,
-                "BLANK" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PrBody,
+                "PR_TITLE" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.PrTitle,
+                "BLANK" => WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.Blank,
                 _ => null,
             };
         }

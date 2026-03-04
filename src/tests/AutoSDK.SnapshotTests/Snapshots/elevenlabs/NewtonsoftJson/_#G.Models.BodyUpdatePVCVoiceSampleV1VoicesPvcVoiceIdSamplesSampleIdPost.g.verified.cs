@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost.g.cs
+﻿//HintName: G.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost
+    public sealed partial class BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost
     {
         /// <summary>
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
@@ -41,7 +41,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost" /> class.
         /// </summary>
         /// <param name="removeBackgroundNoise">
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
@@ -56,7 +56,7 @@ namespace G
         /// <param name="trimEndTime">
         /// The end time of the audio to be used for PVC training. Time should be in milliseconds
         /// </param>
-        public BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost(
+        public BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost(
             bool? removeBackgroundNoise,
             global::System.Collections.Generic.IList<string>? selectedSpeakerIds,
             int? trimStartTime,
@@ -69,9 +69,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost" /> class.
         /// </summary>
-        public BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost()
+        public BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost()
         {
         }
     }

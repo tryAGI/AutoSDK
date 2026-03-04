@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsMOTIONGENERATION.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsMotionGeneration.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for MOTION_GENERATION service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsMOTIONGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsMotionGeneration
     {
         /// <summary>
         /// The total duration of the motion generation in seconds.
@@ -22,21 +22,21 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMOTIONGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMotionGeneration" /> class.
         /// </summary>
         /// <param name="durationSeconds">
         /// The total duration of the motion generation in seconds.
         /// </param>
-        public PricingCalculatorRequestServiceParamsMOTIONGENERATION(
+        public PricingCalculatorRequestServiceParamsMotionGeneration(
             int? durationSeconds)
         {
             this.DurationSeconds = durationSeconds;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMOTIONGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMotionGeneration" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsMOTIONGENERATION()
+        public PricingCalculatorRequestServiceParamsMotionGeneration()
         {
         }
     }

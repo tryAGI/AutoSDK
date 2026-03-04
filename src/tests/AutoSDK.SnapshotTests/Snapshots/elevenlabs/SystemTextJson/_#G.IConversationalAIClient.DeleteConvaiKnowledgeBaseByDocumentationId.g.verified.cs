@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.DeleteConvaiKnowledgeBaseByDocumentationId.g.cs
+﻿//HintName: G.IConversationalAiClient.DeleteConvaiKnowledgeBaseByDocumentationId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Delete Knowledge Base Document<br/>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableUBUNTUJobRun.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableUbuntuJobRun.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableUBUNTUJobRun
+    public sealed partial class WorkflowRunUsageBillableUbuntuJobRun
     {
         /// <summary>
         /// 
@@ -30,14 +30,14 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTUJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUbuntuJobRun" /> class.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="durationMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowRunUsageBillableUBUNTUJobRun(
+        public WorkflowRunUsageBillableUbuntuJobRun(
             int jobId,
             int durationMs)
         {
@@ -46,9 +46,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTUJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUbuntuJobRun" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableUBUNTUJobRun()
+        public WorkflowRunUsageBillableUbuntuJobRun()
         {
         }
     }

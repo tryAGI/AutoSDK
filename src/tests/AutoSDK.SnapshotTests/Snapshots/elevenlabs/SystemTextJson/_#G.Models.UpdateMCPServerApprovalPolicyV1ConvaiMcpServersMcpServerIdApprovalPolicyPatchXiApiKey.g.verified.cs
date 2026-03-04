@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateMCPServerApprovalPolicyV1ConvaiMcpServersMcpServerIdApprovalPolicyPatchXiApiKey.g.cs
+﻿//HintName: G.Models.UpdateMcpServerApprovalPolicyV1ConvaiMcpServersMcpServerIdApprovalPolicyPatchXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class UpdateMCPServerApprovalPolicyV1ConvaiMcpServersMcpServerIdApprovalPolicyPatchXiApiKey
+    public sealed partial class UpdateMcpServerApprovalPolicyV1ConvaiMcpServersMcpServerIdApprovalPolicyPatchXiApiKey
     {
 
         /// <summary>

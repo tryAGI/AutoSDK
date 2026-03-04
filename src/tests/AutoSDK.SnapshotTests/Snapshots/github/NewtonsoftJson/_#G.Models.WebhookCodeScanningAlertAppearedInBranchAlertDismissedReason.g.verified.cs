@@ -29,7 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ namespace G
                 WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.FalsePositive => "false positive",
                 WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.WontFix => "won't fix",
                 WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.UsedInTests => "used in tests",
-                WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -61,7 +61,7 @@ namespace G
                 "false positive" => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.FalsePositive,
                 "won't fix" => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.WontFix,
                 "used in tests" => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.UsedInTests,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

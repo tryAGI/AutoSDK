@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableWINDOWS.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableWindows.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableWINDOWS
+    public sealed partial class WorkflowRunUsageBillableWindows
     {
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? JobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWindowsJobRun>? JobRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWINDOWS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWindows" /> class.
         /// </summary>
         /// <param name="totalMs"></param>
         /// <param name="jobs"></param>
@@ -44,10 +44,10 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowRunUsageBillableWINDOWS(
+        public WorkflowRunUsageBillableWindows(
             int totalMs,
             int jobs,
-            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? jobRuns)
+            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWindowsJobRun>? jobRuns)
         {
             this.TotalMs = totalMs;
             this.Jobs = jobs;
@@ -55,9 +55,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWINDOWS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWindows" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableWINDOWS()
+        public WorkflowRunUsageBillableWindows()
         {
         }
     }

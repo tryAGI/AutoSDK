@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.VDPGroupCommand.g.cs
+﻿//HintName: G.Commands.VdpGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class VDPGroupCommand : global::System.CommandLine.Command
+    internal sealed partial class VdpGroupCommand : global::System.CommandLine.Command
     {
-        public VDPGroupCommand(
+        public VdpGroupCommand(
             PipelinePublicServiceListPipelinesCommand command0,
             PipelinePublicServiceListNamespacePipelinesCommand command1,
             PipelinePublicServiceCreateNamespacePipelineCommand command2,

@@ -1,10 +1,10 @@
-﻿//HintName: G.StreamingAPIClient.StreamingCreateToken.g.cs
+﻿//HintName: G.StreamingApiClient.StreamingCreateToken.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class StreamingAPIClient
+    public partial class StreamingApiClient
     {
         partial void PrepareStreamingCreateTokenArguments(
             global::System.Net.Http.HttpClient httpClient,

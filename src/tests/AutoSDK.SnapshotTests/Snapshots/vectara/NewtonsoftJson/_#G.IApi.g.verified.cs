@@ -104,7 +104,7 @@ namespace G
         /// <summary>
         /// Create, manage, and revoke API keys for secure access to the platform
         /// </summary>
-        public APIKeysClient APIKeys { get; }
+        public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
         /// Configure and manage application clients for OAuth authentication

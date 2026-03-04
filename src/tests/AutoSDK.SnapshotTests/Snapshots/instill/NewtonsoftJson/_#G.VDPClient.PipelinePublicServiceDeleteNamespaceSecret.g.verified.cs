@@ -1,10 +1,10 @@
-﻿//HintName: G.VDPClient.PipelinePublicServiceDeleteNamespaceSecret.g.cs
+﻿//HintName: G.VdpClient.PipelinePublicServiceDeleteNamespaceSecret.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VDPClient
+    public partial class VdpClient
     {
         partial void PreparePipelinePublicServiceDeleteNamespaceSecretArguments(
             global::System.Net.Http.HttpClient httpClient,

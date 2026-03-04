@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositoryWebhooksSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                NullableRepositoryWebhooksSquashMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositoryWebhooksSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => NullableRepositoryWebhooksSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => NullableRepositoryWebhooksSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositoryWebhooksSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => NullableRepositoryWebhooksSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => NullableRepositoryWebhooksSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhookPullRequestSynchronizePullRequestBaseRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

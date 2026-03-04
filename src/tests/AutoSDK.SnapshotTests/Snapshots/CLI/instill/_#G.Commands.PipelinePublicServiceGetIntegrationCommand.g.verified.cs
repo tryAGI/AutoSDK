@@ -68,7 +68,7 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceGetIntegrationAsync(
+            var response = await _client.Vdp.PipelinePublicServiceGetIntegrationAsync(
                 integrationId: integrationId,
                 view: view,
                 cancellationToken: cancellationToken);

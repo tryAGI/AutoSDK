@@ -2373,39 +2373,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableUBUNTU? Type586 { get; set; }
+        public global::G.WorkflowRunUsageBillableUbuntu? Type586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? Type587 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUbuntuJobRun>? Type587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableUBUNTUJobRun? Type588 { get; set; }
+        public global::G.WorkflowRunUsageBillableUbuntuJobRun? Type588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableMACOS? Type589 { get; set; }
+        public global::G.WorkflowRunUsageBillableMacos? Type589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? Type590 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMacosJobRun>? Type590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableMACOSJobRun? Type591 { get; set; }
+        public global::G.WorkflowRunUsageBillableMacosJobRun? Type591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableWINDOWS? Type592 { get; set; }
+        public global::G.WorkflowRunUsageBillableWindows? Type592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? Type593 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWindowsJobRun>? Type593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowRunUsageBillableWINDOWSJobRun? Type594 { get; set; }
+        public global::G.WorkflowRunUsageBillableWindowsJobRun? Type594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2425,15 +2425,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableUBUNTU? Type599 { get; set; }
+        public global::G.WorkflowUsageBillableUbuntu? Type599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableMACOS? Type600 { get; set; }
+        public global::G.WorkflowUsageBillableMacos? Type600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUsageBillableWINDOWS? Type601 { get; set; }
+        public global::G.WorkflowUsageBillableWindows? Type601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -26502,15 +26502,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? ListType47 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableUbuntuJobRun>? ListType47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableMACOSJobRun>? ListType48 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableMacosJobRun>? ListType48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? ListType49 { get; set; }
+        public global::System.Collections.Generic.List<global::G.WorkflowRunUsageBillableWindowsJobRun>? ListType49 { get; set; }
         /// <summary>
         /// 
         /// </summary>

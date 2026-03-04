@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetMCPServerV1ConvaiMcpServersMcpServerIdGetXiApiKey.g.cs
+﻿//HintName: G.Models.GetMcpServerV1ConvaiMcpServersMcpServerIdGetXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class GetMCPServerV1ConvaiMcpServersMcpServerIdGetXiApiKey
+    public sealed partial class GetMcpServerV1ConvaiMcpServersMcpServerIdGetXiApiKey
     {
 
         /// <summary>

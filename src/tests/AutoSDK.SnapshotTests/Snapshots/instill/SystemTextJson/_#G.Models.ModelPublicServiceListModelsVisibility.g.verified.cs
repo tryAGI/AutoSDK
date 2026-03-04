@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// Only the owner can see the model.
         /// </summary>
-        VISIBILITYPRIVATE,
+        VisibilityPrivate,
         /// <summary>
         /// Other users can see the model.
         /// </summary>
-        VISIBILITYPUBLIC,
+        VisibilityPublic,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ModelPublicServiceListModelsVisibility.VISIBILITYPRIVATE => "VISIBILITY_PRIVATE",
-                ModelPublicServiceListModelsVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
+                ModelPublicServiceListModelsVisibility.VisibilityPrivate => "VISIBILITY_PRIVATE",
+                ModelPublicServiceListModelsVisibility.VisibilityPublic => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "VISIBILITY_PRIVATE" => ModelPublicServiceListModelsVisibility.VISIBILITYPRIVATE,
-                "VISIBILITY_PUBLIC" => ModelPublicServiceListModelsVisibility.VISIBILITYPUBLIC,
+                "VISIBILITY_PRIVATE" => ModelPublicServiceListModelsVisibility.VisibilityPrivate,
+                "VISIBILITY_PUBLIC" => ModelPublicServiceListModelsVisibility.VisibilityPublic,
                 _ => null,
             };
         }

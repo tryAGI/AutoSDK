@@ -14,19 +14,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AGENTREACTIONUNSPECIFIED,
+        AgentReactionUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        AGENTREACTIONSPEAKS,
+        AgentReactionSpeaks,
         /// <summary>
         /// 
         /// </summary>
-        AGENTREACTIONLISTENS,
+        AgentReactionListens,
         /// <summary>
         /// 
         /// </summary>
-        AGENTREACTIONSPEAKSONCE,
+        AgentReactionSpeaksOnce,
     }
 
     /// <summary>
@@ -41,10 +41,10 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONUNSPECIFIED => "AGENT_REACTION_UNSPECIFIED",
-                UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONSPEAKS => "AGENT_REACTION_SPEAKS",
-                UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONLISTENS => "AGENT_REACTION_LISTENS",
-                UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONSPEAKSONCE => "AGENT_REACTION_SPEAKS_ONCE",
+                UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionUnspecified => "AGENT_REACTION_UNSPECIFIED",
+                UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionSpeaks => "AGENT_REACTION_SPEAKS",
+                UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionListens => "AGENT_REACTION_LISTENS",
+                UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionSpeaksOnce => "AGENT_REACTION_SPEAKS_ONCE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,10 +55,10 @@ namespace G
         {
             return value switch
             {
-                "AGENT_REACTION_UNSPECIFIED" => UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONUNSPECIFIED,
-                "AGENT_REACTION_SPEAKS" => UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONSPEAKS,
-                "AGENT_REACTION_LISTENS" => UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONLISTENS,
-                "AGENT_REACTION_SPEAKS_ONCE" => UltravoxV1BaseToolDefinitionDefaultReaction.AGENTREACTIONSPEAKSONCE,
+                "AGENT_REACTION_UNSPECIFIED" => UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionUnspecified,
+                "AGENT_REACTION_SPEAKS" => UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionSpeaks,
+                "AGENT_REACTION_LISTENS" => UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionListens,
+                "AGENT_REACTION_SPEAKS_ONCE" => UltravoxV1BaseToolDefinitionDefaultReaction.AgentReactionSpeaksOnce,
                 _ => null,
             };
         }

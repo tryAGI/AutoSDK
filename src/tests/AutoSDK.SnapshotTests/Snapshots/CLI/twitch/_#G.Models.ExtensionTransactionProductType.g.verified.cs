@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BITSINEXTENSION,
+        BitsInExtension,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                ExtensionTransactionProductType.BITSINEXTENSION => "BITS_IN_EXTENSION",
+                ExtensionTransactionProductType.BitsInExtension => "BITS_IN_EXTENSION",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "BITS_IN_EXTENSION" => ExtensionTransactionProductType.BITSINEXTENSION,
+                "BITS_IN_EXTENSION" => ExtensionTransactionProductType.BitsInExtension,
                 _ => null,
             };
         }

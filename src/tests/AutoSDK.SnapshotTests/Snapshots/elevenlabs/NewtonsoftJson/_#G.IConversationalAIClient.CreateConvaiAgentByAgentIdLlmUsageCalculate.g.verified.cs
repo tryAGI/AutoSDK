@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiAgentByAgentIdLlmUsageCalculate.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiAgentByAgentIdLlmUsageCalculate.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Calculate Expected Llm Usage For An Agent<br/>

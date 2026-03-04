@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.ListMCPServersV1ConvaiMcpServersGetXiApiKey.Json.g.cs
+﻿//HintName: G.Models.ListMcpServersV1ConvaiMcpServersGetXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class ListMCPServersV1ConvaiMcpServersGetXiApiKey
+    public sealed partial class ListMcpServersV1ConvaiMcpServersGetXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey? FromJson(
+        public static global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey),
-                jsonSerializerContext) as global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey;
+                typeof(global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey),
+                jsonSerializerContext) as global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey? FromJson(
+        public static global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey;
+                typeof(global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.ListMCPServersV1ConvaiMcpServersGetXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.ListMcpServersV1ConvaiMcpServersGetXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

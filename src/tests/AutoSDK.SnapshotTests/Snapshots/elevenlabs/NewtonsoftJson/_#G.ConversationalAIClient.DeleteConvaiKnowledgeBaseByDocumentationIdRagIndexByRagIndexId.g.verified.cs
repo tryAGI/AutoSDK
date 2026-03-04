@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.DeleteConvaiKnowledgeBaseByDocumentationIdRagIndexByRagIndexId.g.cs
+﻿//HintName: G.ConversationalAiClient.DeleteConvaiKnowledgeBaseByDocumentationIdRagIndexByRagIndexId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareDeleteConvaiKnowledgeBaseByDocumentationIdRagIndexByRagIndexIdArguments(
             global::System.Net.Http.HttpClient httpClient,

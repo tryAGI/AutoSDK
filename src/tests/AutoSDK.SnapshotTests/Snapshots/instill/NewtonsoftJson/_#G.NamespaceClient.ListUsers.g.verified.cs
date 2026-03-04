@@ -56,8 +56,8 @@ namespace G
 
             var viewValue = view switch
             {
-                global::G.ListUsersView.VIEWBASIC => "VIEW_BASIC",
-                global::G.ListUsersView.VIEWFULL => "VIEW_FULL",
+                global::G.ListUsersView.ViewBasic => "VIEW_BASIC",
+                global::G.ListUsersView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

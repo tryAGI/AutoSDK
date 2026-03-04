@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

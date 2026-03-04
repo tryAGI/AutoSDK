@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALL")]
-        ALL,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -49,7 +49,7 @@ namespace G
         {
             return value switch
             {
-                BatchObjectsCreateRequestField.ALL => "ALL",
+                BatchObjectsCreateRequestField.All => "ALL",
                 BatchObjectsCreateRequestField.Class => "class",
                 BatchObjectsCreateRequestField.Schema => "schema",
                 BatchObjectsCreateRequestField.Id => "id",
@@ -64,7 +64,7 @@ namespace G
         {
             return value switch
             {
-                "ALL" => BatchObjectsCreateRequestField.ALL,
+                "ALL" => BatchObjectsCreateRequestField.All,
                 "class" => BatchObjectsCreateRequestField.Class,
                 "schema" => BatchObjectsCreateRequestField.Schema,
                 "id" => BatchObjectsCreateRequestField.Id,

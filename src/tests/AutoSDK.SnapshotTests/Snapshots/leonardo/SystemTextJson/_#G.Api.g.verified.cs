@@ -47,14 +47,14 @@ namespace G
                     new global::G.JsonConverters.StrengthNullableJsonConverter(),
                     new global::G.JsonConverters.JobStatusJsonConverter(),
                     new global::G.JsonConverters.JobStatusNullableJsonConverter(),
-                    new global::G.JsonConverters.MODELASSETTEXTURETYPESJsonConverter(),
-                    new global::G.JsonConverters.MODELASSETTEXTURETYPESNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelAssetTextureTypesJsonConverter(),
+                    new global::G.JsonConverters.ModelAssetTextureTypesNullableJsonConverter(),
                     new global::G.JsonConverters.CustomModelTypeJsonConverter(),
                     new global::G.JsonConverters.CustomModelTypeNullableJsonConverter(),
                     new global::G.JsonConverters.SdGenerationSchedulersJsonConverter(),
                     new global::G.JsonConverters.SdGenerationSchedulersNullableJsonConverter(),
-                    new global::G.JsonConverters.VARIATIONTYPEJsonConverter(),
-                    new global::G.JsonConverters.VARIATIONTYPENullableJsonConverter(),
+                    new global::G.JsonConverters.VariationTypeJsonConverter(),
+                    new global::G.JsonConverters.VariationTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ControlnetInputInitImageTypeJsonConverter(),
                     new global::G.JsonConverters.ControlnetInputInitImageTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ControlnetInputStrengthTypeJsonConverter(),
@@ -189,7 +189,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(HttpClient, authorizations: Authorizations)
+        public x3dModelAssetsClient x3dModelAssets => new x3dModelAssetsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiConversationsByConversationIdFeedback.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiConversationsByConversationIdFeedback.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiConversationsByConversationIdFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,

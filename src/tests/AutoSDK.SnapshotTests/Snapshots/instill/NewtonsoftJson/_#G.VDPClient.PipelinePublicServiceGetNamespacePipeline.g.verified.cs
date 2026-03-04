@@ -1,10 +1,10 @@
-﻿//HintName: G.VDPClient.PipelinePublicServiceGetNamespacePipeline.g.cs
+﻿//HintName: G.VdpClient.PipelinePublicServiceGetNamespacePipeline.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VDPClient
+    public partial class VdpClient
     {
         partial void PreparePipelinePublicServiceGetNamespacePipelineArguments(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,9 +51,9 @@ namespace G
 
             var viewValue = view switch
             {
-                global::G.PipelinePublicServiceGetNamespacePipelineView.VIEWBASIC => "VIEW_BASIC",
-                global::G.PipelinePublicServiceGetNamespacePipelineView.VIEWFULL => "VIEW_FULL",
-                global::G.PipelinePublicServiceGetNamespacePipelineView.VIEWRECIPE => "VIEW_RECIPE",
+                global::G.PipelinePublicServiceGetNamespacePipelineView.ViewBasic => "VIEW_BASIC",
+                global::G.PipelinePublicServiceGetNamespacePipelineView.ViewFull => "VIEW_FULL",
+                global::G.PipelinePublicServiceGetNamespacePipelineView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

@@ -72,7 +72,7 @@ account in the 3rd party app.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceTestNamespaceConnectionAsync(
+            var response = await _client.Vdp.PipelinePublicServiceTestNamespaceConnectionAsync(
                 namespaceId: namespaceId,
                 connectionId: connectionId,
                 cancellationToken: cancellationToken);

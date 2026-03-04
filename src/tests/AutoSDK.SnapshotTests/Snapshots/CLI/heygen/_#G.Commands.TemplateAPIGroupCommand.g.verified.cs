@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.TemplateAPIGroupCommand.g.cs
+﻿//HintName: G.Commands.TemplateApiGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class TemplateAPIGroupCommand : global::System.CommandLine.Command
+    internal sealed partial class TemplateApiGroupCommand : global::System.CommandLine.Command
     {
-        public TemplateAPIGroupCommand(
+        public TemplateApiGroupCommand(
             V2TemplatesCommand command0,
             V2TemplateIdCommand command1,
             V2TemplateGenerateCommand command2)

@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceListPipelineRuns.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceListPipelineRuns.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// List Pipeline Runs<br/>

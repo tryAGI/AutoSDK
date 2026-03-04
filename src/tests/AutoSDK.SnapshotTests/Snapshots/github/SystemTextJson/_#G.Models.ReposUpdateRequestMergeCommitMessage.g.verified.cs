@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateRequestMergeCommitMessage.PRBODY => "PR_BODY",
-                ReposUpdateRequestMergeCommitMessage.PRTITLE => "PR_TITLE",
-                ReposUpdateRequestMergeCommitMessage.BLANK => "BLANK",
+                ReposUpdateRequestMergeCommitMessage.PrBody => "PR_BODY",
+                ReposUpdateRequestMergeCommitMessage.PrTitle => "PR_TITLE",
+                ReposUpdateRequestMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => ReposUpdateRequestMergeCommitMessage.PRBODY,
-                "PR_TITLE" => ReposUpdateRequestMergeCommitMessage.PRTITLE,
-                "BLANK" => ReposUpdateRequestMergeCommitMessage.BLANK,
+                "PR_BODY" => ReposUpdateRequestMergeCommitMessage.PrBody,
+                "PR_TITLE" => ReposUpdateRequestMergeCommitMessage.PrTitle,
+                "BLANK" => ReposUpdateRequestMergeCommitMessage.Blank,
                 _ => null,
             };
         }

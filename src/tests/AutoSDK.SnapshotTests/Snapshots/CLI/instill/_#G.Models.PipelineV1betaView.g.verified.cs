@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// Default view.
         /// </summary>
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                PipelineV1betaView.VIEWBASIC => "VIEW_BASIC",
-                PipelineV1betaView.VIEWFULL => "VIEW_FULL",
+                PipelineV1betaView.ViewBasic => "VIEW_BASIC",
+                PipelineV1betaView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelineV1betaView.VIEWBASIC,
-                "VIEW_FULL" => PipelineV1betaView.VIEWFULL,
+                "VIEW_BASIC" => PipelineV1betaView.ViewBasic,
+                "VIEW_FULL" => PipelineV1betaView.ViewFull,
                 _ => null,
             };
         }

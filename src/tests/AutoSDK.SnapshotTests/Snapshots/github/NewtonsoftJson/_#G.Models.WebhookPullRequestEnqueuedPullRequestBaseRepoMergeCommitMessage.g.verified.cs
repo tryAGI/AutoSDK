@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PRTITLE => "PR_TITLE",
-                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.BLANK => "BLANK",
+                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PrBody => "PR_BODY",
+                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PrTitle => "PR_TITLE",
+                WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PRBODY,
-                "PR_TITLE" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PRTITLE,
-                "BLANK" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PrBody,
+                "PR_TITLE" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.PrTitle,
+                "BLANK" => WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage.Blank,
                 _ => null,
             };
         }

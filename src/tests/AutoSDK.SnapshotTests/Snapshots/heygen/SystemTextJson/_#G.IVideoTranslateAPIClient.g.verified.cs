@@ -1,4 +1,4 @@
-﻿//HintName: G.IVideoTranslateAPIClient.g.cs
+﻿//HintName: G.IVideoTranslateApiClient.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IVideoTranslateAPIClient : global::System.IDisposable
+    public partial interface IVideoTranslateApiClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.

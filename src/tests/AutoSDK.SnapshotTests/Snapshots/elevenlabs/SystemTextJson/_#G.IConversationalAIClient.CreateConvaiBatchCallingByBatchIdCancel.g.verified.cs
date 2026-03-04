@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiBatchCallingByBatchIdCancel.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiBatchCallingByBatchIdCancel.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Cancel A Batch Call.<br/>

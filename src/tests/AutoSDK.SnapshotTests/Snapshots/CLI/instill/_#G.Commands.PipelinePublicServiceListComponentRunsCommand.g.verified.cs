@@ -124,7 +124,7 @@ The basic view excludes input / output data.
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListComponentRunsAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListComponentRunsAsync(
                 pipelineRunId: pipelineRunId,
                 page: page,
                 pageSize: pageSize,

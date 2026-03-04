@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELED")]
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FULFILLED")]
-        FULFILLED,
+        Fulfilled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNFULFILLED")]
-        UNFULFILLED,
+        Unfulfilled,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                GetCustomRewardRedemptionStatus.CANCELED => "CANCELED",
-                GetCustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
-                GetCustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
+                GetCustomRewardRedemptionStatus.Canceled => "CANCELED",
+                GetCustomRewardRedemptionStatus.Fulfilled => "FULFILLED",
+                GetCustomRewardRedemptionStatus.Unfulfilled => "UNFULFILLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "CANCELED" => GetCustomRewardRedemptionStatus.CANCELED,
-                "FULFILLED" => GetCustomRewardRedemptionStatus.FULFILLED,
-                "UNFULFILLED" => GetCustomRewardRedemptionStatus.UNFULFILLED,
+                "CANCELED" => GetCustomRewardRedemptionStatus.Canceled,
+                "FULFILLED" => GetCustomRewardRedemptionStatus.Fulfilled,
+                "UNFULFILLED" => GetCustomRewardRedemptionStatus.Unfulfilled,
                 _ => null,
             };
         }

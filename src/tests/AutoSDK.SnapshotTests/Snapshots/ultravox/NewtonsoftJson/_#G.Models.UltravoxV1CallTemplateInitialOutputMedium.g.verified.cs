@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_UNSPECIFIED")]
-        MESSAGEMEDIUMUNSPECIFIED,
+        MessageMediumUnspecified,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_VOICE")]
-        MESSAGEMEDIUMVOICE,
+        MessageMediumVoice,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_TEXT")]
-        MESSAGEMEDIUMTEXT,
+        MessageMediumText,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMUNSPECIFIED => "MESSAGE_MEDIUM_UNSPECIFIED",
-                UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMVOICE => "MESSAGE_MEDIUM_VOICE",
-                UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMTEXT => "MESSAGE_MEDIUM_TEXT",
+                UltravoxV1CallTemplateInitialOutputMedium.MessageMediumUnspecified => "MESSAGE_MEDIUM_UNSPECIFIED",
+                UltravoxV1CallTemplateInitialOutputMedium.MessageMediumVoice => "MESSAGE_MEDIUM_VOICE",
+                UltravoxV1CallTemplateInitialOutputMedium.MessageMediumText => "MESSAGE_MEDIUM_TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "MESSAGE_MEDIUM_UNSPECIFIED" => UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMUNSPECIFIED,
-                "MESSAGE_MEDIUM_VOICE" => UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMVOICE,
-                "MESSAGE_MEDIUM_TEXT" => UltravoxV1CallTemplateInitialOutputMedium.MESSAGEMEDIUMTEXT,
+                "MESSAGE_MEDIUM_UNSPECIFIED" => UltravoxV1CallTemplateInitialOutputMedium.MessageMediumUnspecified,
+                "MESSAGE_MEDIUM_VOICE" => UltravoxV1CallTemplateInitialOutputMedium.MessageMediumVoice,
+                "MESSAGE_MEDIUM_TEXT" => UltravoxV1CallTemplateInitialOutputMedium.MessageMediumText,
                 _ => null,
             };
         }

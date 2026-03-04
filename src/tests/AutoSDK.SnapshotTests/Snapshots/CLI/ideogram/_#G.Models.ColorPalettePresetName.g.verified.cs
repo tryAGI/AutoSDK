@@ -13,35 +13,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EMBER,
+        Ember,
         /// <summary>
         /// 
         /// </summary>
-        FRESH,
+        Fresh,
         /// <summary>
         /// 
         /// </summary>
-        JUNGLE,
+        Jungle,
         /// <summary>
         /// 
         /// </summary>
-        MAGIC,
+        Magic,
         /// <summary>
         /// 
         /// </summary>
-        MELON,
+        Melon,
         /// <summary>
         /// 
         /// </summary>
-        MOSAIC,
+        Mosaic,
         /// <summary>
         /// 
         /// </summary>
-        PASTEL,
+        Pastel,
         /// <summary>
         /// 
         /// </summary>
-        ULTRAMARINE,
+        Ultramarine,
     }
 
     /// <summary>
@@ -56,14 +56,14 @@ namespace G
         {
             return value switch
             {
-                ColorPalettePresetName.EMBER => "EMBER",
-                ColorPalettePresetName.FRESH => "FRESH",
-                ColorPalettePresetName.JUNGLE => "JUNGLE",
-                ColorPalettePresetName.MAGIC => "MAGIC",
-                ColorPalettePresetName.MELON => "MELON",
-                ColorPalettePresetName.MOSAIC => "MOSAIC",
-                ColorPalettePresetName.PASTEL => "PASTEL",
-                ColorPalettePresetName.ULTRAMARINE => "ULTRAMARINE",
+                ColorPalettePresetName.Ember => "EMBER",
+                ColorPalettePresetName.Fresh => "FRESH",
+                ColorPalettePresetName.Jungle => "JUNGLE",
+                ColorPalettePresetName.Magic => "MAGIC",
+                ColorPalettePresetName.Melon => "MELON",
+                ColorPalettePresetName.Mosaic => "MOSAIC",
+                ColorPalettePresetName.Pastel => "PASTEL",
+                ColorPalettePresetName.Ultramarine => "ULTRAMARINE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,14 +74,14 @@ namespace G
         {
             return value switch
             {
-                "EMBER" => ColorPalettePresetName.EMBER,
-                "FRESH" => ColorPalettePresetName.FRESH,
-                "JUNGLE" => ColorPalettePresetName.JUNGLE,
-                "MAGIC" => ColorPalettePresetName.MAGIC,
-                "MELON" => ColorPalettePresetName.MELON,
-                "MOSAIC" => ColorPalettePresetName.MOSAIC,
-                "PASTEL" => ColorPalettePresetName.PASTEL,
-                "ULTRAMARINE" => ColorPalettePresetName.ULTRAMARINE,
+                "EMBER" => ColorPalettePresetName.Ember,
+                "FRESH" => ColorPalettePresetName.Fresh,
+                "JUNGLE" => ColorPalettePresetName.Jungle,
+                "MAGIC" => ColorPalettePresetName.Magic,
+                "MELON" => ColorPalettePresetName.Melon,
+                "MOSAIC" => ColorPalettePresetName.Mosaic,
+                "PASTEL" => ColorPalettePresetName.Pastel,
+                "ULTRAMARINE" => ColorPalettePresetName.Ultramarine,
                 _ => null,
             };
         }

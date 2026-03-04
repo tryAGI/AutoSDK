@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="QUEUED")]
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VALIDATING")]
-        VALIDATING,
+        Validating,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VALIDATED")]
-        VALIDATED,
+        Validated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED_VALIDATION")]
-        FAILEDVALIDATION,
+        FailedValidation,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLED")]
-        CANCELLED,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLATION_REQUESTED")]
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.QUEUED => "QUEUED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.STARTED => "STARTED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATING => "VALIDATING",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATED => "VALIDATED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.RUNNING => "RUNNING",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILEDVALIDATION => "FAILED_VALIDATION",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILED => "FAILED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.SUCCESS => "SUCCESS",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLED => "CANCELLED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Queued => "QUEUED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Started => "STARTED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validating => "VALIDATING",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validated => "VALIDATED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Running => "RUNNING",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FailedValidation => "FAILED_VALIDATION",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Failed => "FAILED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Success => "SUCCESS",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Cancelled => "CANCELLED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CancellationRequested => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.QUEUED,
-                "STARTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.STARTED,
-                "VALIDATING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATING,
-                "VALIDATED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATED,
-                "RUNNING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.RUNNING,
-                "FAILED_VALIDATION" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILEDVALIDATION,
-                "FAILED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILED,
-                "SUCCESS" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.SUCCESS,
-                "CANCELLED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLED,
-                "CANCELLATION_REQUESTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLATIONREQUESTED,
+                "QUEUED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Queued,
+                "STARTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Started,
+                "VALIDATING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validating,
+                "VALIDATED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validated,
+                "RUNNING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Running,
+                "FAILED_VALIDATION" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FailedValidation,
+                "FAILED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Failed,
+                "SUCCESS" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Success,
+                "CANCELLED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Cancelled,
+                "CANCELLATION_REQUESTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CancellationRequested,
                 _ => null,
             };
         }

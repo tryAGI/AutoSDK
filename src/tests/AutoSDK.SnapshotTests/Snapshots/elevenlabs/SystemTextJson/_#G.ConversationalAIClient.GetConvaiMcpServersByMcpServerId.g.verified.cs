@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiMcpServersByMcpServerId.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiMcpServersByMcpServerId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiMcpServersByMcpServerIdArguments(
             global::System.Net.Http.HttpClient httpClient,

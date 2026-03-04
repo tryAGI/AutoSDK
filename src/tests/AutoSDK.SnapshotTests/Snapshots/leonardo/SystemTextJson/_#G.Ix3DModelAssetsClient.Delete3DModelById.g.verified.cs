@@ -1,9 +1,9 @@
-﻿//HintName: G.Ix3DModelAssetsClient.Delete3DModelById.g.cs
+﻿//HintName: G.Ix3dModelAssetsClient.Delete3DModelById.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface Ix3DModelAssetsClient
+    public partial interface Ix3dModelAssetsClient
     {
         /// <summary>
         /// Delete 3D Model by ID<br/>

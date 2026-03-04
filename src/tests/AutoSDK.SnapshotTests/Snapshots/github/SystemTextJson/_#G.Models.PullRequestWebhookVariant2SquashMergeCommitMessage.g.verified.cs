@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                PullRequestWebhookVariant2SquashMergeCommitMessage.PRBODY => "PR_BODY",
-                PullRequestWebhookVariant2SquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                PullRequestWebhookVariant2SquashMergeCommitMessage.BLANK => "BLANK",
+                PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody => "PR_BODY",
+                PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                PullRequestWebhookVariant2SquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => PullRequestWebhookVariant2SquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => PullRequestWebhookVariant2SquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => PullRequestWebhookVariant2SquashMergeCommitMessage.BLANK,
+                "PR_BODY" => PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages,
+                "BLANK" => PullRequestWebhookVariant2SquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

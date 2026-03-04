@@ -68,7 +68,7 @@ the parent of the pipeline in order to delete it.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceDeleteNamespacePipelineAsync(
+            var response = await _client.Vdp.PipelinePublicServiceDeleteNamespacePipelineAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 cancellationToken: cancellationToken);

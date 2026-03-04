@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiAgentsByAgentIdAvatar.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiAgentsByAgentIdAvatar.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiAgentsByAgentIdAvatarArguments(
             global::System.Net.Http.HttpClient httpClient,

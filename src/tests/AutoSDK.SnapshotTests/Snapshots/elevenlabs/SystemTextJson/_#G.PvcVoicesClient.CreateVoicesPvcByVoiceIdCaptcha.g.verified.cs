@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string voiceId,
             ref string? xiApiKey,
-            global::G.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request);
+            global::G.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request);
         partial void PrepareCreateVoicesPvcByVoiceIdCaptchaRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string voiceId,
             string? xiApiKey,
-            global::G.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request);
+            global::G.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request);
         partial void ProcessCreateVoicesPvcByVoiceIdCaptchaResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VerifyPVCVoiceCaptchaResponseModel> CreateVoicesPvcByVoiceIdCaptchaAsync(
             string voiceId,
-            global::G.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request,
+            global::G.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -250,7 +250,7 @@ namespace G
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost
+            var __request = new global::G.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost
             {
                 Recording = recording,
                 Recordingname = recordingname,

@@ -1,10 +1,10 @@
-﻿//HintName: G.VDPClient.PipelinePublicServiceGetNamespacePipeline.g.cs
+﻿//HintName: G.VdpClient.PipelinePublicServiceGetNamespacePipeline.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VDPClient
+    public partial class VdpClient
     {
         partial void PreparePipelinePublicServiceGetNamespacePipelineArguments(
             global::System.Net.Http.HttpClient httpClient,

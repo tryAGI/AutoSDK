@@ -21,32 +21,32 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ACTIVE")]
-        ACTIVE,
+        Active,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPLETED")]
-        COMPLETED,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TERMINATED")]
-        TERMINATED,
+        Terminated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ARCHIVED")]
-        ARCHIVED,
+        Archived,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODERATED")]
-        MODERATED,
+        Moderated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INVALID")]
-        INVALID,
+        Invalid,
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ namespace G
         {
             return value switch
             {
-                PollStatus.ACTIVE => "ACTIVE",
-                PollStatus.COMPLETED => "COMPLETED",
-                PollStatus.TERMINATED => "TERMINATED",
-                PollStatus.ARCHIVED => "ARCHIVED",
-                PollStatus.MODERATED => "MODERATED",
-                PollStatus.INVALID => "INVALID",
+                PollStatus.Active => "ACTIVE",
+                PollStatus.Completed => "COMPLETED",
+                PollStatus.Terminated => "TERMINATED",
+                PollStatus.Archived => "ARCHIVED",
+                PollStatus.Moderated => "MODERATED",
+                PollStatus.Invalid => "INVALID",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,12 +77,12 @@ namespace G
         {
             return value switch
             {
-                "ACTIVE" => PollStatus.ACTIVE,
-                "COMPLETED" => PollStatus.COMPLETED,
-                "TERMINATED" => PollStatus.TERMINATED,
-                "ARCHIVED" => PollStatus.ARCHIVED,
-                "MODERATED" => PollStatus.MODERATED,
-                "INVALID" => PollStatus.INVALID,
+                "ACTIVE" => PollStatus.Active,
+                "COMPLETED" => PollStatus.Completed,
+                "TERMINATED" => PollStatus.Terminated,
+                "ARCHIVED" => PollStatus.Archived,
+                "MODERATED" => PollStatus.Moderated,
+                "INVALID" => PollStatus.Invalid,
                 _ => null,
             };
         }

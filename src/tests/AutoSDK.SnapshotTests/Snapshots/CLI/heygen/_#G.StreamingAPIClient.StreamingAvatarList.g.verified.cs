@@ -1,10 +1,10 @@
-﻿//HintName: G.StreamingAPIClient.StreamingAvatarList.g.cs
+﻿//HintName: G.StreamingApiClient.StreamingAvatarList.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class StreamingAPIClient
+    public partial class StreamingApiClient
     {
         partial void PrepareStreamingAvatarListArguments(
             global::System.Net.Http.HttpClient httpClient);

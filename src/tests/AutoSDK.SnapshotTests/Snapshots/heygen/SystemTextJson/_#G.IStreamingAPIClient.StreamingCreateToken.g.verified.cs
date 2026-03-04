@@ -1,9 +1,9 @@
-﻿//HintName: G.IStreamingAPIClient.StreamingCreateToken.g.cs
+﻿//HintName: G.IStreamingApiClient.StreamingCreateToken.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IStreamingAPIClient
+    public partial interface IStreamingApiClient
     {
         /// <summary>
         /// streaming.create_token<br/>

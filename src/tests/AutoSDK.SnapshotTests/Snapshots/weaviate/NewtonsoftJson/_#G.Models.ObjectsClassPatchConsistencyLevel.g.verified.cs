@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ONE")]
-        ONE,
+        One,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="QUORUM")]
-        QUORUM,
+        Quorum,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALL")]
-        ALL,
+        All,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ObjectsClassPatchConsistencyLevel.ONE => "ONE",
-                ObjectsClassPatchConsistencyLevel.QUORUM => "QUORUM",
-                ObjectsClassPatchConsistencyLevel.ALL => "ALL",
+                ObjectsClassPatchConsistencyLevel.One => "ONE",
+                ObjectsClassPatchConsistencyLevel.Quorum => "QUORUM",
+                ObjectsClassPatchConsistencyLevel.All => "ALL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "ONE" => ObjectsClassPatchConsistencyLevel.ONE,
-                "QUORUM" => ObjectsClassPatchConsistencyLevel.QUORUM,
-                "ALL" => ObjectsClassPatchConsistencyLevel.ALL,
+                "ONE" => ObjectsClassPatchConsistencyLevel.One,
+                "QUORUM" => ObjectsClassPatchConsistencyLevel.Quorum,
+                "ALL" => ObjectsClassPatchConsistencyLevel.All,
                 _ => null,
             };
         }

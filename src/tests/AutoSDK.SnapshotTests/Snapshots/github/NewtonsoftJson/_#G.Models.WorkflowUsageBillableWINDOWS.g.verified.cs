@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowUsageBillableWINDOWS.g.cs
+﻿//HintName: G.Models.WorkflowUsageBillableWindows.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowUsageBillableWINDOWS
+    public sealed partial class WorkflowUsageBillableWindows
     {
         /// <summary>
         /// 
@@ -22,19 +22,19 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWINDOWS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWindows" /> class.
         /// </summary>
         /// <param name="totalMs"></param>
-        public WorkflowUsageBillableWINDOWS(
+        public WorkflowUsageBillableWindows(
             int? totalMs)
         {
             this.TotalMs = totalMs;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWINDOWS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWindows" /> class.
         /// </summary>
-        public WorkflowUsageBillableWINDOWS()
+        public WorkflowUsageBillableWindows()
         {
         }
     }

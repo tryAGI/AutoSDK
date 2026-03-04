@@ -1,4 +1,4 @@
-﻿//HintName: G.ICreateVideoAPIClient.g.cs
+﻿//HintName: G.ICreateVideoApiClient.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface ICreateVideoAPIClient : global::System.IDisposable
+    public partial interface ICreateVideoApiClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.

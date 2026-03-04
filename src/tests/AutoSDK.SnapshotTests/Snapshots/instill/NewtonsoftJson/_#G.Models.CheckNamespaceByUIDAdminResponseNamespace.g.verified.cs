@@ -18,22 +18,22 @@ namespace G
         /// Available.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_AVAILABLE")]
-        NAMESPACEAVAILABLE,
+        NamespaceAvailable,
         /// <summary>
         /// Namespace belongs to a user.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_USER")]
-        NAMESPACEUSER,
+        NamespaceUser,
         /// <summary>
         /// Namespace belongs to an organization.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_ORGANIZATION")]
-        NAMESPACEORGANIZATION,
+        NamespaceOrganization,
         /// <summary>
         /// Reserved.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_RESERVED")]
-        NAMESPACERESERVED,
+        NamespaceReserved,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
         {
             return value switch
             {
-                CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEAVAILABLE => "NAMESPACE_AVAILABLE",
-                CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEUSER => "NAMESPACE_USER",
-                CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEORGANIZATION => "NAMESPACE_ORGANIZATION",
-                CheckNamespaceByUIDAdminResponseNamespace.NAMESPACERESERVED => "NAMESPACE_RESERVED",
+                CheckNamespaceByUIDAdminResponseNamespace.NamespaceAvailable => "NAMESPACE_AVAILABLE",
+                CheckNamespaceByUIDAdminResponseNamespace.NamespaceUser => "NAMESPACE_USER",
+                CheckNamespaceByUIDAdminResponseNamespace.NamespaceOrganization => "NAMESPACE_ORGANIZATION",
+                CheckNamespaceByUIDAdminResponseNamespace.NamespaceReserved => "NAMESPACE_RESERVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,10 +62,10 @@ namespace G
         {
             return value switch
             {
-                "NAMESPACE_AVAILABLE" => CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEAVAILABLE,
-                "NAMESPACE_USER" => CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEUSER,
-                "NAMESPACE_ORGANIZATION" => CheckNamespaceByUIDAdminResponseNamespace.NAMESPACEORGANIZATION,
-                "NAMESPACE_RESERVED" => CheckNamespaceByUIDAdminResponseNamespace.NAMESPACERESERVED,
+                "NAMESPACE_AVAILABLE" => CheckNamespaceByUIDAdminResponseNamespace.NamespaceAvailable,
+                "NAMESPACE_USER" => CheckNamespaceByUIDAdminResponseNamespace.NamespaceUser,
+                "NAMESPACE_ORGANIZATION" => CheckNamespaceByUIDAdminResponseNamespace.NamespaceOrganization,
+                "NAMESPACE_RESERVED" => CheckNamespaceByUIDAdminResponseNamespace.NamespaceReserved,
                 _ => null,
             };
         }

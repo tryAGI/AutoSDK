@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// Default view, only includes basic information.
         /// </summary>
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
-        VIEWFULL,
+        ViewFull,
         /// <summary>
         /// Contains the recipe of the resource.
         /// </summary>
-        VIEWRECIPE,
+        ViewRecipe,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                PipelineView.VIEWBASIC => "VIEW_BASIC",
-                PipelineView.VIEWFULL => "VIEW_FULL",
-                PipelineView.VIEWRECIPE => "VIEW_RECIPE",
+                PipelineView.ViewBasic => "VIEW_BASIC",
+                PipelineView.ViewFull => "VIEW_FULL",
+                PipelineView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelineView.VIEWBASIC,
-                "VIEW_FULL" => PipelineView.VIEWFULL,
-                "VIEW_RECIPE" => PipelineView.VIEWRECIPE,
+                "VIEW_BASIC" => PipelineView.ViewBasic,
+                "VIEW_FULL" => PipelineView.ViewFull,
+                "VIEW_RECIPE" => PipelineView.ViewRecipe,
                 _ => null,
             };
         }

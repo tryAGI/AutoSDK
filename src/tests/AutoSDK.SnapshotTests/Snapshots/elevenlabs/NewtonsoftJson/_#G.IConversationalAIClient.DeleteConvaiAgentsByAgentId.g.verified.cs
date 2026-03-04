@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.DeleteConvaiAgentsByAgentId.g.cs
+﻿//HintName: G.IConversationalAiClient.DeleteConvaiAgentsByAgentId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Delete Agent<br/>

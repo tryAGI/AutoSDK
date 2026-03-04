@@ -16,12 +16,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_OR_PR_TITLE")]
-        COMMITORPRTITLE,
+        CommitOrPrTitle,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.PRTITLE => "PR_TITLE",
-                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.COMMITORPRTITLE => "COMMIT_OR_PR_TITLE",
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.PrTitle => "PR_TITLE",
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.CommitOrPrTitle => "COMMIT_OR_PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.PRTITLE,
-                "COMMIT_OR_PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.COMMITORPRTITLE,
+                "PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.PrTitle,
+                "COMMIT_OR_PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.CommitOrPrTitle,
                 _ => null,
             };
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LLM.g.cs
+﻿//HintName: G.Models.Llm.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// A LLM can be used to enhance query results with a response, and be used as<br/>
     /// the responder during a chat.
     /// </summary>
-    public sealed partial class LLM
+    public sealed partial class Llm
     {
         /// <summary>
         /// The ID of the LLM.
@@ -55,7 +55,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LLM" /> class.
+        /// Initializes a new instance of the <see cref="Llm" /> class.
         /// </summary>
         /// <param name="id">
         /// The ID of the LLM.
@@ -73,7 +73,7 @@ namespace G
         /// If this is the default LLM, it is used in queries when the generator<br/>
         /// is not specified.
         /// </param>
-        public LLM(
+        public Llm(
             string? id,
             string? name,
             string? description,
@@ -88,9 +88,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LLM" /> class.
+        /// Initializes a new instance of the <see cref="Llm" /> class.
         /// </summary>
-        public LLM()
+        public Llm()
         {
         }
     }

@@ -40,18 +40,18 @@ namespace G
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TextResponseFormatJsonSchema? JSONSchema { get; init; }
+        public global::G.TextResponseFormatJsonSchema? JsonSchema { get; init; }
 #else
-        public global::G.TextResponseFormatJsonSchema? JSONSchema { get; }
+        public global::G.TextResponseFormatJsonSchema? JsonSchema { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONSchema))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
-        public bool IsJSONSchema => JSONSchema != null;
+        public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -60,18 +60,18 @@ namespace G
         /// to do so.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseFormatJsonObject? JSONObject { get; init; }
+        public global::G.ResponseFormatJsonObject? JsonObject { get; init; }
 #else
-        public global::G.ResponseFormatJsonObject? JSONObject { get; }
+        public global::G.ResponseFormatJsonObject? JsonObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
-        public bool IsJSONObject => JSONObject != null;
+        public bool IsJsonObject => JsonObject != null;
         /// <summary>
         /// 
         /// </summary>
@@ -98,14 +98,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TextResponseFormatJsonSchema?(TextResponseFormatConfiguration @this) => @this.JSONSchema;
+        public static implicit operator global::G.TextResponseFormatJsonSchema?(TextResponseFormatConfiguration @this) => @this.JsonSchema;
 
         /// <summary>
         /// 
         /// </summary>
         public TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema? value)
         {
-            JSONSchema = value;
+            JsonSchema = value;
         }
 
         /// <summary>
@@ -116,14 +116,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseFormatJsonObject?(TextResponseFormatConfiguration @this) => @this.JSONObject;
+        public static implicit operator global::G.ResponseFormatJsonObject?(TextResponseFormatConfiguration @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
         public TextResponseFormatConfiguration(global::G.ResponseFormatJsonObject? value)
         {
-            JSONObject = value;
+            JsonObject = value;
         }
 
         /// <summary>
@@ -131,21 +131,21 @@ namespace G
         /// </summary>
         public TextResponseFormatConfiguration(
             global::G.ResponseFormatText? text,
-            global::G.TextResponseFormatJsonSchema? jSONSchema,
-            global::G.ResponseFormatJsonObject? jSONObject
+            global::G.TextResponseFormatJsonSchema? jsonSchema,
+            global::G.ResponseFormatJsonObject? jsonObject
             )
         {
             Text = text;
-            JSONSchema = jSONSchema;
-            JSONObject = jSONObject;
+            JsonSchema = jsonSchema;
+            JsonObject = jsonObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            JSONObject as object ??
-            JSONSchema as object ??
+            JsonObject as object ??
+            JsonSchema as object ??
             Text as object 
             ;
 
@@ -154,8 +154,8 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            JSONSchema?.ToString() ??
-            JSONObject?.ToString() 
+            JsonSchema?.ToString() ??
+            JsonObject?.ToString() 
             ;
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsJSONSchema && !IsJSONObject || !IsText && IsJSONSchema && !IsJSONObject || !IsText && !IsJSONSchema && IsJSONObject;
+            return IsText && !IsJsonSchema && !IsJsonObject || !IsText && IsJsonSchema && !IsJsonObject || !IsText && !IsJsonSchema && IsJsonObject;
         }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ResponseFormatText?, TResult>? text = null,
-            global::System.Func<global::G.TextResponseFormatJsonSchema?, TResult>? jSONSchema = null,
-            global::System.Func<global::G.ResponseFormatJsonObject?, TResult>? jSONObject = null,
+            global::System.Func<global::G.TextResponseFormatJsonSchema?, TResult>? jsonSchema = null,
+            global::System.Func<global::G.ResponseFormatJsonObject?, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -184,13 +184,13 @@ namespace G
             {
                 return text(Text!);
             }
-            else if (IsJSONSchema && jSONSchema != null)
+            else if (IsJsonSchema && jsonSchema != null)
             {
-                return jSONSchema(JSONSchema!);
+                return jsonSchema(JsonSchema!);
             }
-            else if (IsJSONObject && jSONObject != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return jSONObject(JSONObject!);
+                return jsonObject(JsonObject!);
             }
 
             return default(TResult);
@@ -201,8 +201,8 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ResponseFormatText?>? text = null,
-            global::System.Action<global::G.TextResponseFormatJsonSchema?>? jSONSchema = null,
-            global::System.Action<global::G.ResponseFormatJsonObject?>? jSONObject = null,
+            global::System.Action<global::G.TextResponseFormatJsonSchema?>? jsonSchema = null,
+            global::System.Action<global::G.ResponseFormatJsonObject?>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -214,13 +214,13 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
-            else if (IsJSONSchema)
+            else if (IsJsonSchema)
             {
-                jSONSchema?.Invoke(JSONSchema!);
+                jsonSchema?.Invoke(JsonSchema!);
             }
-            else if (IsJSONObject)
+            else if (IsJsonObject)
             {
-                jSONObject?.Invoke(JSONObject!);
+                jsonObject?.Invoke(JsonObject!);
             }
         }
 
@@ -233,9 +233,9 @@ namespace G
             {
                 Text,
                 typeof(global::G.ResponseFormatText),
-                JSONSchema,
+                JsonSchema,
                 typeof(global::G.TextResponseFormatJsonSchema),
-                JSONObject,
+                JsonObject,
                 typeof(global::G.ResponseFormatJsonObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -254,8 +254,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TextResponseFormatJsonSchema?>.Default.Equals(JSONSchema, other.JSONSchema) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonObject?>.Default.Equals(JSONObject, other.JSONObject) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TextResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject) 
                 ;
         }
 

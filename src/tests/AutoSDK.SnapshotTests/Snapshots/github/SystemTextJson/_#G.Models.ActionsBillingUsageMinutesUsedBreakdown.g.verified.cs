@@ -13,19 +13,19 @@ namespace G
         /// Total minutes used on Ubuntu runner machines.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UBUNTU")]
-        public int? UBUNTU { get; set; }
+        public int? Ubuntu { get; set; }
 
         /// <summary>
         /// Total minutes used on macOS runner machines.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MACOS")]
-        public int? MACOS { get; set; }
+        public int? Macos { get; set; }
 
         /// <summary>
         /// Total minutes used on Windows runner machines.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("WINDOWS")]
-        public int? WINDOWS { get; set; }
+        public int? Windows { get; set; }
 
         /// <summary>
         /// Total minutes used on Ubuntu 4 core runner machines.
@@ -108,13 +108,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ActionsBillingUsageMinutesUsedBreakdown" /> class.
         /// </summary>
-        /// <param name="uBUNTU">
+        /// <param name="ubuntu">
         /// Total minutes used on Ubuntu runner machines.
         /// </param>
-        /// <param name="mACOS">
+        /// <param name="macos">
         /// Total minutes used on macOS runner machines.
         /// </param>
-        /// <param name="wINDOWS">
+        /// <param name="windows">
         /// Total minutes used on Windows runner machines.
         /// </param>
         /// <param name="ubuntu4Core">
@@ -157,9 +157,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ActionsBillingUsageMinutesUsedBreakdown(
-            int? uBUNTU,
-            int? mACOS,
-            int? wINDOWS,
+            int? ubuntu,
+            int? macos,
+            int? windows,
             int? ubuntu4Core,
             int? ubuntu8Core,
             int? ubuntu16Core,
@@ -173,9 +173,9 @@ namespace G
             int? macos12Core,
             int? total)
         {
-            this.UBUNTU = uBUNTU;
-            this.MACOS = mACOS;
-            this.WINDOWS = wINDOWS;
+            this.Ubuntu = ubuntu;
+            this.Macos = macos;
+            this.Windows = windows;
             this.Ubuntu4Core = ubuntu4Core;
             this.Ubuntu8Core = ubuntu8Core;
             this.Ubuntu16Core = ubuntu16Core;

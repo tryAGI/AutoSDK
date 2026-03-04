@@ -1,9 +1,9 @@
-﻿//HintName: G.IStreamingAPIClient.StreamingTask.g.cs
+﻿//HintName: G.IStreamingApiClient.StreamingTask.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IStreamingAPIClient
+    public partial interface IStreamingApiClient
     {
         /// <summary>
         /// streaming.task<br/>

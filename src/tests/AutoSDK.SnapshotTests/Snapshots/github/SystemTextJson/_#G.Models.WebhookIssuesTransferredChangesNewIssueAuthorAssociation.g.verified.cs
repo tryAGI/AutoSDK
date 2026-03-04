@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.MEMBER => "MEMBER",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.NONE => "NONE",
-                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.OWNER => "OWNER",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Member => "MEMBER",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.None => "NONE",
+                WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.MEMBER,
-                "NONE" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.NONE,
-                "OWNER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Member,
+                "NONE" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.None,
+                "OWNER" => WebhookIssuesTransferredChangesNewIssueAuthorAssociation.Owner,
                 _ => null,
             };
         }

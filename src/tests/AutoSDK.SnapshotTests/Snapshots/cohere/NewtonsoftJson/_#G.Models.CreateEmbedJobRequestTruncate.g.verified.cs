@@ -16,12 +16,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="START")]
-        START,
+        Start,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="END")]
-        END,
+        End,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CreateEmbedJobRequestTruncate.START => "START",
-                CreateEmbedJobRequestTruncate.END => "END",
+                CreateEmbedJobRequestTruncate.Start => "START",
+                CreateEmbedJobRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "START" => CreateEmbedJobRequestTruncate.START,
-                "END" => CreateEmbedJobRequestTruncate.END,
+                "START" => CreateEmbedJobRequestTruncate.Start,
+                "END" => CreateEmbedJobRequestTruncate.End,
                 _ => null,
             };
         }

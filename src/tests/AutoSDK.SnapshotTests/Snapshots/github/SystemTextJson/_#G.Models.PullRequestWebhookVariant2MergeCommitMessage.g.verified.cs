@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                PullRequestWebhookVariant2MergeCommitMessage.PRBODY => "PR_BODY",
-                PullRequestWebhookVariant2MergeCommitMessage.PRTITLE => "PR_TITLE",
-                PullRequestWebhookVariant2MergeCommitMessage.BLANK => "BLANK",
+                PullRequestWebhookVariant2MergeCommitMessage.PrBody => "PR_BODY",
+                PullRequestWebhookVariant2MergeCommitMessage.PrTitle => "PR_TITLE",
+                PullRequestWebhookVariant2MergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => PullRequestWebhookVariant2MergeCommitMessage.PRBODY,
-                "PR_TITLE" => PullRequestWebhookVariant2MergeCommitMessage.PRTITLE,
-                "BLANK" => PullRequestWebhookVariant2MergeCommitMessage.BLANK,
+                "PR_BODY" => PullRequestWebhookVariant2MergeCommitMessage.PrBody,
+                "PR_TITLE" => PullRequestWebhookVariant2MergeCommitMessage.PrTitle,
+                "BLANK" => PullRequestWebhookVariant2MergeCommitMessage.Blank,
                 _ => null,
             };
         }

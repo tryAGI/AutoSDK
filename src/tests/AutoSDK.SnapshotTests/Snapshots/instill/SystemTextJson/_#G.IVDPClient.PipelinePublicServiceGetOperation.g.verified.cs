@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceGetOperation.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceGetOperation.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Get the details of a long-running operation<br/>

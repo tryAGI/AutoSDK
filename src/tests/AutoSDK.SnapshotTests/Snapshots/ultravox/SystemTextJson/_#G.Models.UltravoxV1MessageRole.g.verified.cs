@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEROLEUNSPECIFIED,
+        MessageRoleUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEROLEUSER,
+        MessageRoleUser,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEROLEAGENT,
+        MessageRoleAgent,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEROLETOOLCALL,
+        MessageRoleToolCall,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEROLETOOLRESULT,
+        MessageRoleToolResult,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1MessageRole.MESSAGEROLEUNSPECIFIED => "MESSAGE_ROLE_UNSPECIFIED",
-                UltravoxV1MessageRole.MESSAGEROLEUSER => "MESSAGE_ROLE_USER",
-                UltravoxV1MessageRole.MESSAGEROLEAGENT => "MESSAGE_ROLE_AGENT",
-                UltravoxV1MessageRole.MESSAGEROLETOOLCALL => "MESSAGE_ROLE_TOOL_CALL",
-                UltravoxV1MessageRole.MESSAGEROLETOOLRESULT => "MESSAGE_ROLE_TOOL_RESULT",
+                UltravoxV1MessageRole.MessageRoleUnspecified => "MESSAGE_ROLE_UNSPECIFIED",
+                UltravoxV1MessageRole.MessageRoleUser => "MESSAGE_ROLE_USER",
+                UltravoxV1MessageRole.MessageRoleAgent => "MESSAGE_ROLE_AGENT",
+                UltravoxV1MessageRole.MessageRoleToolCall => "MESSAGE_ROLE_TOOL_CALL",
+                UltravoxV1MessageRole.MessageRoleToolResult => "MESSAGE_ROLE_TOOL_RESULT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "MESSAGE_ROLE_UNSPECIFIED" => UltravoxV1MessageRole.MESSAGEROLEUNSPECIFIED,
-                "MESSAGE_ROLE_USER" => UltravoxV1MessageRole.MESSAGEROLEUSER,
-                "MESSAGE_ROLE_AGENT" => UltravoxV1MessageRole.MESSAGEROLEAGENT,
-                "MESSAGE_ROLE_TOOL_CALL" => UltravoxV1MessageRole.MESSAGEROLETOOLCALL,
-                "MESSAGE_ROLE_TOOL_RESULT" => UltravoxV1MessageRole.MESSAGEROLETOOLRESULT,
+                "MESSAGE_ROLE_UNSPECIFIED" => UltravoxV1MessageRole.MessageRoleUnspecified,
+                "MESSAGE_ROLE_USER" => UltravoxV1MessageRole.MessageRoleUser,
+                "MESSAGE_ROLE_AGENT" => UltravoxV1MessageRole.MessageRoleAgent,
+                "MESSAGE_ROLE_TOOL_CALL" => UltravoxV1MessageRole.MessageRoleToolCall,
+                "MESSAGE_ROLE_TOOL_RESULT" => UltravoxV1MessageRole.MessageRoleToolResult,
                 _ => null,
             };
         }

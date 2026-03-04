@@ -19,22 +19,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ACTIVE")]
-        ACTIVE,
+        Active,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELED")]
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LOCKED")]
-        LOCKED,
+        Locked,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RESOLVED")]
-        RESOLVED,
+        Resolved,
     }
 
     /// <summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                PredictionStatus.ACTIVE => "ACTIVE",
-                PredictionStatus.CANCELED => "CANCELED",
-                PredictionStatus.LOCKED => "LOCKED",
-                PredictionStatus.RESOLVED => "RESOLVED",
+                PredictionStatus.Active => "ACTIVE",
+                PredictionStatus.Canceled => "CANCELED",
+                PredictionStatus.Locked => "LOCKED",
+                PredictionStatus.Resolved => "RESOLVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,10 +63,10 @@ namespace G
         {
             return value switch
             {
-                "ACTIVE" => PredictionStatus.ACTIVE,
-                "CANCELED" => PredictionStatus.CANCELED,
-                "LOCKED" => PredictionStatus.LOCKED,
-                "RESOLVED" => PredictionStatus.RESOLVED,
+                "ACTIVE" => PredictionStatus.Active,
+                "CANCELED" => PredictionStatus.Canceled,
+                "LOCKED" => PredictionStatus.Locked,
+                "RESOLVED" => PredictionStatus.Resolved,
                 _ => null,
             };
         }

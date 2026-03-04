@@ -14,42 +14,42 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COLLABORATOR")]
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CONTRIBUTOR")]
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIMER")]
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIME_CONTRIBUTOR")]
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MANNEQUIN")]
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBER")]
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.MEMBER => "MEMBER",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.NONE => "NONE",
-                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.OWNER => "OWNER",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Member => "MEMBER",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.None => "NONE",
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.MEMBER,
-                "NONE" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.NONE,
-                "OWNER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Member,
+                "NONE" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.None,
+                "OWNER" => WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.Owner,
                 _ => null,
             };
         }

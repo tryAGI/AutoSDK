@@ -18,22 +18,22 @@ namespace G
         /// Alpha.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_ALPHA")]
-        ALPHA,
+        Alpha,
         /// <summary>
         /// Beta.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_BETA")]
-        BETA,
+        Beta,
         /// <summary>
         /// Generally available.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_GENERALLY_AVAILABLE")]
-        GENERALLYAVAILABLE,
+        GenerallyAvailable,
         /// <summary>
         /// Custom.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_CUSTOM")]
-        CUSTOM,
+        Custom,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
         {
             return value switch
             {
-                ReleaseStage.ALPHA => "RELEASE_STAGE_ALPHA",
-                ReleaseStage.BETA => "RELEASE_STAGE_BETA",
-                ReleaseStage.GENERALLYAVAILABLE => "RELEASE_STAGE_GENERALLY_AVAILABLE",
-                ReleaseStage.CUSTOM => "RELEASE_STAGE_CUSTOM",
+                ReleaseStage.Alpha => "RELEASE_STAGE_ALPHA",
+                ReleaseStage.Beta => "RELEASE_STAGE_BETA",
+                ReleaseStage.GenerallyAvailable => "RELEASE_STAGE_GENERALLY_AVAILABLE",
+                ReleaseStage.Custom => "RELEASE_STAGE_CUSTOM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,10 +62,10 @@ namespace G
         {
             return value switch
             {
-                "RELEASE_STAGE_ALPHA" => ReleaseStage.ALPHA,
-                "RELEASE_STAGE_BETA" => ReleaseStage.BETA,
-                "RELEASE_STAGE_GENERALLY_AVAILABLE" => ReleaseStage.GENERALLYAVAILABLE,
-                "RELEASE_STAGE_CUSTOM" => ReleaseStage.CUSTOM,
+                "RELEASE_STAGE_ALPHA" => ReleaseStage.Alpha,
+                "RELEASE_STAGE_BETA" => ReleaseStage.Beta,
+                "RELEASE_STAGE_GENERALLY_AVAILABLE" => ReleaseStage.GenerallyAvailable,
+                "RELEASE_STAGE_CUSTOM" => ReleaseStage.Custom,
                 _ => null,
             };
         }

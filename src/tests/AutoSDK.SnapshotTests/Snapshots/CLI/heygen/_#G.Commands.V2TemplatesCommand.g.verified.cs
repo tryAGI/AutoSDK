@@ -45,7 +45,7 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.TemplateAPI.V2TemplatesAsync(
+            await _client.TemplateApi.V2TemplatesAsync(
                 cancellationToken: cancellationToken);
 
             Complete(

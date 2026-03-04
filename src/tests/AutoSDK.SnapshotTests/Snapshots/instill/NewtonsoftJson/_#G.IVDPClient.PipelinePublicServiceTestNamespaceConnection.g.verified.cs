@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceTestNamespaceConnection.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceTestNamespaceConnection.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Test a connection<br/>

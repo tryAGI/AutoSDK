@@ -1,9 +1,9 @@
-﻿//HintName: G.ICreateVideoAPIClient.V1VideoDelete.g.cs
+﻿//HintName: G.ICreateVideoApiClient.V1VideoDelete.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface ICreateVideoAPIClient
+    public partial interface ICreateVideoApiClient
     {
         /// <summary>
         /// v1/video.delete<br/>

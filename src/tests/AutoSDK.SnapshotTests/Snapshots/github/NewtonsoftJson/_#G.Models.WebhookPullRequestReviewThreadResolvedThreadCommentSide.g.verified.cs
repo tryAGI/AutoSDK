@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LEFT")]
-        LEFT,
+        Left,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RIGHT")]
-        RIGHT,
+        Right,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadResolvedThreadCommentSide.LEFT => "LEFT",
-                WebhookPullRequestReviewThreadResolvedThreadCommentSide.RIGHT => "RIGHT",
+                WebhookPullRequestReviewThreadResolvedThreadCommentSide.Left => "LEFT",
+                WebhookPullRequestReviewThreadResolvedThreadCommentSide.Right => "RIGHT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.LEFT,
-                "RIGHT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.RIGHT,
+                "LEFT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.Left,
+                "RIGHT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.Right,
                 _ => null,
             };
         }

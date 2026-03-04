@@ -1,20 +1,20 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiSipTrunkOutboundCall.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiSipTrunkOutboundCall.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiSipTrunkOutboundCallArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xiApiKey,
-            global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost request);
+            global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost request);
         partial void PrepareCreateConvaiSipTrunkOutboundCallRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xiApiKey,
-            global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost request);
+            global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost request);
         partial void ProcessCreateConvaiSipTrunkOutboundCallResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SIPTrunkOutboundCallResponse> CreateConvaiSipTrunkOutboundCallAsync(
-            global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost request,
+            global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -223,7 +223,7 @@ namespace G
             global::G.ConversationInitiationClientDataRequestInput? conversationInitiationClientData = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost
+            var __request = new global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost
             {
                 AgentId = agentId,
                 AgentPhoneNumberId = agentPhoneNumberId,

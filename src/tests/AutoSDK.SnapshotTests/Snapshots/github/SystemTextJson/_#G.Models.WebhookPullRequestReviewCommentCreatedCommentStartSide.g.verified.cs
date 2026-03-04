@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// 
         /// </summary>
-        RIGHT,
+        Right,
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewCommentCreatedCommentStartSide.LEFT => "LEFT",
-                WebhookPullRequestReviewCommentCreatedCommentStartSide.RIGHT => "RIGHT",
-                WebhookPullRequestReviewCommentCreatedCommentStartSide.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookPullRequestReviewCommentCreatedCommentStartSide.Left => "LEFT",
+                WebhookPullRequestReviewCommentCreatedCommentStartSide.Right => "RIGHT",
+                WebhookPullRequestReviewCommentCreatedCommentStartSide.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => WebhookPullRequestReviewCommentCreatedCommentStartSide.LEFT,
-                "RIGHT" => WebhookPullRequestReviewCommentCreatedCommentStartSide.RIGHT,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookPullRequestReviewCommentCreatedCommentStartSide.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+                "LEFT" => WebhookPullRequestReviewCommentCreatedCommentStartSide.Left,
+                "RIGHT" => WebhookPullRequestReviewCommentCreatedCommentStartSide.Right,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookPullRequestReviewCommentCreatedCommentStartSide.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

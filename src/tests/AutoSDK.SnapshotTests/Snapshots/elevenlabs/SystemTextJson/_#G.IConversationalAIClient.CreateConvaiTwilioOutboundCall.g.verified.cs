@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiTwilioOutboundCall.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiTwilioOutboundCall.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Handle An Outbound Call Via Twilio<br/>

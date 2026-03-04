@@ -14,72 +14,72 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ANIME")]
-        ANIME,
+        Anime,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CINEMATIC")]
-        CINEMATIC,
+        Cinematic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DIGITAL_ART")]
-        DIGITALART,
+        DigitalArt,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DYNAMIC")]
-        DYNAMIC,
+        Dynamic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ENVIRONMENT")]
-        ENVIRONMENT,
+        Environment,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FANTASY_ART")]
-        FANTASYART,
+        FantasyArt,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ILLUSTRATION")]
-        ILLUSTRATION,
+        Illustration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PHOTOGRAPHY")]
-        PHOTOGRAPHY,
+        Photography,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RENDER_3D")]
-        RENDER3D,
+        Render3d,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RAYTRACED")]
-        RAYTRACED,
+        Raytraced,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SKETCH_BW")]
-        SKETCHBW,
+        SketchBw,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SKETCH_COLOR")]
-        SKETCHCOLOR,
+        SketchColor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIBRANT")]
-        VIBRANT,
+        Vibrant,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
     }
 
     /// <summary>
@@ -94,20 +94,20 @@ namespace G
         {
             return value switch
             {
-                LcmGenerationStyle.ANIME => "ANIME",
-                LcmGenerationStyle.CINEMATIC => "CINEMATIC",
-                LcmGenerationStyle.DIGITALART => "DIGITAL_ART",
-                LcmGenerationStyle.DYNAMIC => "DYNAMIC",
-                LcmGenerationStyle.ENVIRONMENT => "ENVIRONMENT",
-                LcmGenerationStyle.FANTASYART => "FANTASY_ART",
-                LcmGenerationStyle.ILLUSTRATION => "ILLUSTRATION",
-                LcmGenerationStyle.PHOTOGRAPHY => "PHOTOGRAPHY",
-                LcmGenerationStyle.RENDER3D => "RENDER_3D",
-                LcmGenerationStyle.RAYTRACED => "RAYTRACED",
-                LcmGenerationStyle.SKETCHBW => "SKETCH_BW",
-                LcmGenerationStyle.SKETCHCOLOR => "SKETCH_COLOR",
-                LcmGenerationStyle.VIBRANT => "VIBRANT",
-                LcmGenerationStyle.NONE => "NONE",
+                LcmGenerationStyle.Anime => "ANIME",
+                LcmGenerationStyle.Cinematic => "CINEMATIC",
+                LcmGenerationStyle.DigitalArt => "DIGITAL_ART",
+                LcmGenerationStyle.Dynamic => "DYNAMIC",
+                LcmGenerationStyle.Environment => "ENVIRONMENT",
+                LcmGenerationStyle.FantasyArt => "FANTASY_ART",
+                LcmGenerationStyle.Illustration => "ILLUSTRATION",
+                LcmGenerationStyle.Photography => "PHOTOGRAPHY",
+                LcmGenerationStyle.Render3d => "RENDER_3D",
+                LcmGenerationStyle.Raytraced => "RAYTRACED",
+                LcmGenerationStyle.SketchBw => "SKETCH_BW",
+                LcmGenerationStyle.SketchColor => "SKETCH_COLOR",
+                LcmGenerationStyle.Vibrant => "VIBRANT",
+                LcmGenerationStyle.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -118,20 +118,20 @@ namespace G
         {
             return value switch
             {
-                "ANIME" => LcmGenerationStyle.ANIME,
-                "CINEMATIC" => LcmGenerationStyle.CINEMATIC,
-                "DIGITAL_ART" => LcmGenerationStyle.DIGITALART,
-                "DYNAMIC" => LcmGenerationStyle.DYNAMIC,
-                "ENVIRONMENT" => LcmGenerationStyle.ENVIRONMENT,
-                "FANTASY_ART" => LcmGenerationStyle.FANTASYART,
-                "ILLUSTRATION" => LcmGenerationStyle.ILLUSTRATION,
-                "PHOTOGRAPHY" => LcmGenerationStyle.PHOTOGRAPHY,
-                "RENDER_3D" => LcmGenerationStyle.RENDER3D,
-                "RAYTRACED" => LcmGenerationStyle.RAYTRACED,
-                "SKETCH_BW" => LcmGenerationStyle.SKETCHBW,
-                "SKETCH_COLOR" => LcmGenerationStyle.SKETCHCOLOR,
-                "VIBRANT" => LcmGenerationStyle.VIBRANT,
-                "NONE" => LcmGenerationStyle.NONE,
+                "ANIME" => LcmGenerationStyle.Anime,
+                "CINEMATIC" => LcmGenerationStyle.Cinematic,
+                "DIGITAL_ART" => LcmGenerationStyle.DigitalArt,
+                "DYNAMIC" => LcmGenerationStyle.Dynamic,
+                "ENVIRONMENT" => LcmGenerationStyle.Environment,
+                "FANTASY_ART" => LcmGenerationStyle.FantasyArt,
+                "ILLUSTRATION" => LcmGenerationStyle.Illustration,
+                "PHOTOGRAPHY" => LcmGenerationStyle.Photography,
+                "RENDER_3D" => LcmGenerationStyle.Render3d,
+                "RAYTRACED" => LcmGenerationStyle.Raytraced,
+                "SKETCH_BW" => LcmGenerationStyle.SketchBw,
+                "SKETCH_COLOR" => LcmGenerationStyle.SketchColor,
+                "VIBRANT" => LcmGenerationStyle.Vibrant,
+                "NONE" => LcmGenerationStyle.None,
                 _ => null,
             };
         }

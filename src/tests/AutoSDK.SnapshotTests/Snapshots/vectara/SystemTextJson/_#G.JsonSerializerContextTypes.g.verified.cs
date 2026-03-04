@@ -437,7 +437,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLM? Type102 { get; set; }
+        public global::G.Llm? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -489,7 +489,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.LLM>? Type115 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Llm>? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -938,7 +938,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.LLM>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Llm>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>

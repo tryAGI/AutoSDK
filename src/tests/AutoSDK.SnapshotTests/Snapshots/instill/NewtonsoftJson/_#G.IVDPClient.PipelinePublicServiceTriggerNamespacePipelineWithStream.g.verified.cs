@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceTriggerNamespacePipelineWithStream.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceTriggerNamespacePipelineWithStream.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Trigger a pipeline via streaming<br/>

@@ -14,27 +14,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INACTIVE")]
-        INACTIVE,
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ON_TRACK")]
-        ONTRACK,
+        OnTrack,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AT_RISK")]
-        ATRISK,
+        AtRisk,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OFF_TRACK")]
-        OFFTRACK,
+        OffTrack,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
-        COMPLETE,
+        Complete,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.INACTIVE => "INACTIVE",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.ONTRACK => "ON_TRACK",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.ATRISK => "AT_RISK",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OFFTRACK => "OFF_TRACK",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.COMPLETE => "COMPLETE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive => "INACTIVE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack => "ON_TRACK",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.AtRisk => "AT_RISK",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack => "OFF_TRACK",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Complete => "COMPLETE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.INACTIVE,
-                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.ONTRACK,
-                "AT_RISK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.ATRISK,
-                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OFFTRACK,
-                "COMPLETE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.COMPLETE,
+                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive,
+                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack,
+                "AT_RISK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.AtRisk,
+                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack,
+                "COMPLETE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Complete,
                 _ => null,
             };
         }

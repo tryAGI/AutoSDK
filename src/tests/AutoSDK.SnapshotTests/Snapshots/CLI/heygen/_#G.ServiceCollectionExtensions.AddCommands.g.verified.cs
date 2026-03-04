@@ -93,13 +93,13 @@ namespace G
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ListGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateVideoAPIGroupCommand>(services);
+                CreateVideoApiGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                TemplateAPIGroupCommand>(services);
+                TemplateApiGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VideoTranslateAPIGroupCommand>(services);
+                VideoTranslateApiGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingAPIGroupCommand>(services);
+                StreamingApiGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 WebhookGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

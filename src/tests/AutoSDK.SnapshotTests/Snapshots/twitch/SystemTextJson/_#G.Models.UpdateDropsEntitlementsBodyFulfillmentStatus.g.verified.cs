@@ -15,11 +15,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CLAIMED,
+        Claimed,
         /// <summary>
         /// 
         /// </summary>
-        FULFILLED,
+        Fulfilled,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                UpdateDropsEntitlementsBodyFulfillmentStatus.CLAIMED => "CLAIMED",
-                UpdateDropsEntitlementsBodyFulfillmentStatus.FULFILLED => "FULFILLED",
+                UpdateDropsEntitlementsBodyFulfillmentStatus.Claimed => "CLAIMED",
+                UpdateDropsEntitlementsBodyFulfillmentStatus.Fulfilled => "FULFILLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "CLAIMED" => UpdateDropsEntitlementsBodyFulfillmentStatus.CLAIMED,
-                "FULFILLED" => UpdateDropsEntitlementsBodyFulfillmentStatus.FULFILLED,
+                "CLAIMED" => UpdateDropsEntitlementsBodyFulfillmentStatus.Claimed,
+                "FULFILLED" => UpdateDropsEntitlementsBodyFulfillmentStatus.Fulfilled,
                 _ => null,
             };
         }

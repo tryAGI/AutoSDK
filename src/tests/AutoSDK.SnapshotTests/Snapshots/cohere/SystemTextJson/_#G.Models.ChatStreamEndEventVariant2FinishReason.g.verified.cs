@@ -16,23 +16,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COMPLETE,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
-        ERRORLIMIT,
+        ErrorLimit,
         /// <summary>
         /// 
         /// </summary>
-        MAXTOKENS,
+        MaxTokens,
         /// <summary>
         /// 
         /// </summary>
-        ERROR,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        ERRORTOXIC,
+        ErrorToxic,
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace G
         {
             return value switch
             {
-                ChatStreamEndEventVariant2FinishReason.COMPLETE => "COMPLETE",
-                ChatStreamEndEventVariant2FinishReason.ERRORLIMIT => "ERROR_LIMIT",
-                ChatStreamEndEventVariant2FinishReason.MAXTOKENS => "MAX_TOKENS",
-                ChatStreamEndEventVariant2FinishReason.ERROR => "ERROR",
-                ChatStreamEndEventVariant2FinishReason.ERRORTOXIC => "ERROR_TOXIC",
+                ChatStreamEndEventVariant2FinishReason.Complete => "COMPLETE",
+                ChatStreamEndEventVariant2FinishReason.ErrorLimit => "ERROR_LIMIT",
+                ChatStreamEndEventVariant2FinishReason.MaxTokens => "MAX_TOKENS",
+                ChatStreamEndEventVariant2FinishReason.Error => "ERROR",
+                ChatStreamEndEventVariant2FinishReason.ErrorToxic => "ERROR_TOXIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,11 +62,11 @@ namespace G
         {
             return value switch
             {
-                "COMPLETE" => ChatStreamEndEventVariant2FinishReason.COMPLETE,
-                "ERROR_LIMIT" => ChatStreamEndEventVariant2FinishReason.ERRORLIMIT,
-                "MAX_TOKENS" => ChatStreamEndEventVariant2FinishReason.MAXTOKENS,
-                "ERROR" => ChatStreamEndEventVariant2FinishReason.ERROR,
-                "ERROR_TOXIC" => ChatStreamEndEventVariant2FinishReason.ERRORTOXIC,
+                "COMPLETE" => ChatStreamEndEventVariant2FinishReason.Complete,
+                "ERROR_LIMIT" => ChatStreamEndEventVariant2FinishReason.ErrorLimit,
+                "MAX_TOKENS" => ChatStreamEndEventVariant2FinishReason.MaxTokens,
+                "ERROR" => ChatStreamEndEventVariant2FinishReason.Error,
+                "ERROR_TOXIC" => ChatStreamEndEventVariant2FinishReason.ErrorToxic,
                 _ => null,
             };
         }

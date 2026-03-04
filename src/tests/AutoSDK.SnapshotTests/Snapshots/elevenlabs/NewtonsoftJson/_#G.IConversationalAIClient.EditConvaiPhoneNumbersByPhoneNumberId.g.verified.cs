@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.EditConvaiPhoneNumbersByPhoneNumberId.g.cs
+﻿//HintName: G.IConversationalAiClient.EditConvaiPhoneNumbersByPhoneNumberId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Update Phone Number<br/>

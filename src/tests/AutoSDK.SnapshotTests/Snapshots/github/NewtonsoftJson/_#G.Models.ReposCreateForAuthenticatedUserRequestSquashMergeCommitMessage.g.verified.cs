@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.BLANK => "BLANK",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PrBody => "PR_BODY",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

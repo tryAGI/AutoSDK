@@ -16,12 +16,12 @@ namespace G
         /// Free plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_FREE")]
-        PLANFREE,
+        PlanFree,
         /// <summary>
         /// Pro plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_PRO")]
-        PLANPRO,
+        PlanPro,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                UserSubscriptionPlan.PLANFREE => "PLAN_FREE",
-                UserSubscriptionPlan.PLANPRO => "PLAN_PRO",
+                UserSubscriptionPlan.PlanFree => "PLAN_FREE",
+                UserSubscriptionPlan.PlanPro => "PLAN_PRO",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "PLAN_FREE" => UserSubscriptionPlan.PLANFREE,
-                "PLAN_PRO" => UserSubscriptionPlan.PLANPRO,
+                "PLAN_FREE" => UserSubscriptionPlan.PlanFree,
+                "PLAN_PRO" => UserSubscriptionPlan.PlanPro,
                 _ => null,
             };
         }

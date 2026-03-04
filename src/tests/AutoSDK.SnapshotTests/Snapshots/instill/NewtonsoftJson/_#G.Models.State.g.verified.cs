@@ -24,37 +24,37 @@ namespace G
         /// Offline is the state when the model instance number is 0.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_OFFLINE")]
-        OFFLINE,
+        Offline,
         /// <summary>
         /// Active is the state when a model is processing requests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_ACTIVE")]
-        ACTIVE,
+        Active,
         /// <summary>
         /// Idle is the state when a model is alive but not processing requests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_IDLE")]
-        IDLE,
+        Idle,
         /// <summary>
         /// Error is the state when the model is undeployable.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_ERROR")]
-        ERROR,
+        Error,
         /// <summary>
         /// Starting is the state when the system is provisioning the necessary
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_STARTING")]
-        STARTING,
+        Starting,
         /// <summary>
         /// Scaling Up is the transition state when the system is provisioning compute resource for this model instance.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_SCALING_UP")]
-        SCALINGUP,
+        ScalingUp,
         /// <summary>
         /// Scaling is the transition state when the system is releasing compute resource for this model instance.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_SCALING_DOWN")]
-        SCALINGDOWN,
+        ScalingDown,
     }
 
     /// <summary>
@@ -69,13 +69,13 @@ namespace G
         {
             return value switch
             {
-                State.OFFLINE => "STATE_OFFLINE",
-                State.ACTIVE => "STATE_ACTIVE",
-                State.IDLE => "STATE_IDLE",
-                State.ERROR => "STATE_ERROR",
-                State.STARTING => "STATE_STARTING",
-                State.SCALINGUP => "STATE_SCALING_UP",
-                State.SCALINGDOWN => "STATE_SCALING_DOWN",
+                State.Offline => "STATE_OFFLINE",
+                State.Active => "STATE_ACTIVE",
+                State.Idle => "STATE_IDLE",
+                State.Error => "STATE_ERROR",
+                State.Starting => "STATE_STARTING",
+                State.ScalingUp => "STATE_SCALING_UP",
+                State.ScalingDown => "STATE_SCALING_DOWN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,13 +86,13 @@ namespace G
         {
             return value switch
             {
-                "STATE_OFFLINE" => State.OFFLINE,
-                "STATE_ACTIVE" => State.ACTIVE,
-                "STATE_IDLE" => State.IDLE,
-                "STATE_ERROR" => State.ERROR,
-                "STATE_STARTING" => State.STARTING,
-                "STATE_SCALING_UP" => State.SCALINGUP,
-                "STATE_SCALING_DOWN" => State.SCALINGDOWN,
+                "STATE_OFFLINE" => State.Offline,
+                "STATE_ACTIVE" => State.Active,
+                "STATE_IDLE" => State.Idle,
+                "STATE_ERROR" => State.Error,
+                "STATE_STARTING" => State.Starting,
+                "STATE_SCALING_UP" => State.ScalingUp,
+                "STATE_SCALING_DOWN" => State.ScalingDown,
                 _ => null,
             };
         }

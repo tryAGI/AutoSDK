@@ -19,15 +19,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OFF,
+        Off,
         /// <summary>
         /// Cohere Platform Only
         /// </summary>
-        AUTO,
+        Auto,
         /// <summary>
         /// Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
-        AUTOPRESERVEORDER,
+        AutoPreserveOrder,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                ChatRequestPromptTruncation.OFF => "OFF",
-                ChatRequestPromptTruncation.AUTO => "AUTO",
-                ChatRequestPromptTruncation.AUTOPRESERVEORDER => "AUTO_PRESERVE_ORDER",
+                ChatRequestPromptTruncation.Off => "OFF",
+                ChatRequestPromptTruncation.Auto => "AUTO",
+                ChatRequestPromptTruncation.AutoPreserveOrder => "AUTO_PRESERVE_ORDER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "OFF" => ChatRequestPromptTruncation.OFF,
-                "AUTO" => ChatRequestPromptTruncation.AUTO,
-                "AUTO_PRESERVE_ORDER" => ChatRequestPromptTruncation.AUTOPRESERVEORDER,
+                "OFF" => ChatRequestPromptTruncation.Off,
+                "AUTO" => ChatRequestPromptTruncation.Auto,
+                "AUTO_PRESERVE_ORDER" => ChatRequestPromptTruncation.AutoPreserveOrder,
                 _ => null,
             };
         }

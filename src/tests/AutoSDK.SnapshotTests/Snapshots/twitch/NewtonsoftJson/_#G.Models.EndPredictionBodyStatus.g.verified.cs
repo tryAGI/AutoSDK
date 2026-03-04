@@ -22,17 +22,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RESOLVED")]
-        RESOLVED,
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELED")]
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LOCKED")]
-        LOCKED,
+        Locked,
     }
 
     /// <summary>
@@ -47,9 +47,9 @@ namespace G
         {
             return value switch
             {
-                EndPredictionBodyStatus.RESOLVED => "RESOLVED",
-                EndPredictionBodyStatus.CANCELED => "CANCELED",
-                EndPredictionBodyStatus.LOCKED => "LOCKED",
+                EndPredictionBodyStatus.Resolved => "RESOLVED",
+                EndPredictionBodyStatus.Canceled => "CANCELED",
+                EndPredictionBodyStatus.Locked => "LOCKED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,9 +60,9 @@ namespace G
         {
             return value switch
             {
-                "RESOLVED" => EndPredictionBodyStatus.RESOLVED,
-                "CANCELED" => EndPredictionBodyStatus.CANCELED,
-                "LOCKED" => EndPredictionBodyStatus.LOCKED,
+                "RESOLVED" => EndPredictionBodyStatus.Resolved,
+                "CANCELED" => EndPredictionBodyStatus.Canceled,
+                "LOCKED" => EndPredictionBodyStatus.Locked,
                 _ => null,
             };
         }

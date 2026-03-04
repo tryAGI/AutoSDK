@@ -40,7 +40,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ namespace G
                 WebhookDeploymentCreatedWorkflowRunConclusion.TimedOut => "timed_out",
                 WebhookDeploymentCreatedWorkflowRunConclusion.ActionRequired => "action_required",
                 WebhookDeploymentCreatedWorkflowRunConclusion.Stale => "stale",
-                WebhookDeploymentCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookDeploymentCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,7 +80,7 @@ namespace G
                 "timed_out" => WebhookDeploymentCreatedWorkflowRunConclusion.TimedOut,
                 "action_required" => WebhookDeploymentCreatedWorkflowRunConclusion.ActionRequired,
                 "stale" => WebhookDeploymentCreatedWorkflowRunConclusion.Stale,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

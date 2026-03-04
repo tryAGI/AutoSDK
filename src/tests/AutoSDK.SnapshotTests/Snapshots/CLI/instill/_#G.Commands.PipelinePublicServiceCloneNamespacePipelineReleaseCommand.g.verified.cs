@@ -116,7 +116,7 @@ parent, and this can be either a namespace or an organization.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceCloneNamespacePipelineReleaseAsync(
+            var response = await _client.Vdp.PipelinePublicServiceCloneNamespacePipelineReleaseAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 releaseId: releaseId,

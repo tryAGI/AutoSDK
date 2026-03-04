@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
-        TRANSFERRING,
+        Transferring,
         /// <summary>
         /// 
         /// </summary>
-        TRANSFERRED,
+        Transferred,
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace G
         {
             return value switch
             {
-                BackupCreateResponseStatus.STARTED => "STARTED",
-                BackupCreateResponseStatus.TRANSFERRING => "TRANSFERRING",
-                BackupCreateResponseStatus.TRANSFERRED => "TRANSFERRED",
-                BackupCreateResponseStatus.SUCCESS => "SUCCESS",
-                BackupCreateResponseStatus.FAILED => "FAILED",
+                BackupCreateResponseStatus.Started => "STARTED",
+                BackupCreateResponseStatus.Transferring => "TRANSFERRING",
+                BackupCreateResponseStatus.Transferred => "TRANSFERRED",
+                BackupCreateResponseStatus.Success => "SUCCESS",
+                BackupCreateResponseStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,11 +59,11 @@ namespace G
         {
             return value switch
             {
-                "STARTED" => BackupCreateResponseStatus.STARTED,
-                "TRANSFERRING" => BackupCreateResponseStatus.TRANSFERRING,
-                "TRANSFERRED" => BackupCreateResponseStatus.TRANSFERRED,
-                "SUCCESS" => BackupCreateResponseStatus.SUCCESS,
-                "FAILED" => BackupCreateResponseStatus.FAILED,
+                "STARTED" => BackupCreateResponseStatus.Started,
+                "TRANSFERRING" => BackupCreateResponseStatus.Transferring,
+                "TRANSFERRED" => BackupCreateResponseStatus.Transferred,
+                "SUCCESS" => BackupCreateResponseStatus.Success,
+                "FAILED" => BackupCreateResponseStatus.Failed,
                 _ => null,
             };
         }

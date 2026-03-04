@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPostXiApiKey.g.cs
+﻿//HintName: G.Models.AddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPostXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class AddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPostXiApiKey
+    public sealed partial class AddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPostXiApiKey
     {
 
         /// <summary>

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FIRSTSPEAKERAGENT,
+        FirstSpeakerAgent,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTSPEAKERUSER,
+        FirstSpeakerUser,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                FirstSpeakerEnum.FIRSTSPEAKERAGENT => "FIRST_SPEAKER_AGENT",
-                FirstSpeakerEnum.FIRSTSPEAKERUSER => "FIRST_SPEAKER_USER",
+                FirstSpeakerEnum.FirstSpeakerAgent => "FIRST_SPEAKER_AGENT",
+                FirstSpeakerEnum.FirstSpeakerUser => "FIRST_SPEAKER_USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "FIRST_SPEAKER_AGENT" => FirstSpeakerEnum.FIRSTSPEAKERAGENT,
-                "FIRST_SPEAKER_USER" => FirstSpeakerEnum.FIRSTSPEAKERUSER,
+                "FIRST_SPEAKER_AGENT" => FirstSpeakerEnum.FirstSpeakerAgent,
+                "FIRST_SPEAKER_USER" => FirstSpeakerEnum.FirstSpeakerUser,
                 _ => null,
             };
         }

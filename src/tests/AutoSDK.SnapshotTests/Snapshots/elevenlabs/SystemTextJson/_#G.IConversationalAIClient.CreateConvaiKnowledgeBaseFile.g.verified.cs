@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiKnowledgeBaseFile.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiKnowledgeBaseFile.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Create File Document<br/>

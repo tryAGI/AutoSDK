@@ -13,19 +13,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        VERYLOW,
+        VeryLow,
         /// <summary>
         /// 
         /// </summary>
-        LOW,
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        MEDIUM,
+        Medium,
         /// <summary>
         /// 
         /// </summary>
-        HIGH,
+        High,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                Strength.VERYLOW => "VERY_LOW",
-                Strength.LOW => "LOW",
-                Strength.MEDIUM => "MEDIUM",
-                Strength.HIGH => "HIGH",
+                Strength.VeryLow => "VERY_LOW",
+                Strength.Low => "LOW",
+                Strength.Medium => "MEDIUM",
+                Strength.High => "HIGH",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "VERY_LOW" => Strength.VERYLOW,
-                "LOW" => Strength.LOW,
-                "MEDIUM" => Strength.MEDIUM,
-                "HIGH" => Strength.HIGH,
+                "VERY_LOW" => Strength.VeryLow,
+                "LOW" => Strength.Low,
+                "MEDIUM" => Strength.Medium,
+                "HIGH" => Strength.High,
                 _ => null,
             };
         }

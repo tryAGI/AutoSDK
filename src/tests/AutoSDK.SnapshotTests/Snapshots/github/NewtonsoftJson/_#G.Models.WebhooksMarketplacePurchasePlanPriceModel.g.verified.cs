@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FREE")]
-        FREE,
+        Free,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FLAT_RATE")]
-        FLATRATE,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PER_UNIT")]
-        PERUNIT,
+        PerUnit,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksMarketplacePurchasePlanPriceModel.FREE => "FREE",
-                WebhooksMarketplacePurchasePlanPriceModel.FLATRATE => "FLAT_RATE",
-                WebhooksMarketplacePurchasePlanPriceModel.PERUNIT => "PER_UNIT",
+                WebhooksMarketplacePurchasePlanPriceModel.Free => "FREE",
+                WebhooksMarketplacePurchasePlanPriceModel.FlatRate => "FLAT_RATE",
+                WebhooksMarketplacePurchasePlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "FREE" => WebhooksMarketplacePurchasePlanPriceModel.FREE,
-                "FLAT_RATE" => WebhooksMarketplacePurchasePlanPriceModel.FLATRATE,
-                "PER_UNIT" => WebhooksMarketplacePurchasePlanPriceModel.PERUNIT,
+                "FREE" => WebhooksMarketplacePurchasePlanPriceModel.Free,
+                "FLAT_RATE" => WebhooksMarketplacePurchasePlanPriceModel.FlatRate,
+                "PER_UNIT" => WebhooksMarketplacePurchasePlanPriceModel.PerUnit,
                 _ => null,
             };
         }

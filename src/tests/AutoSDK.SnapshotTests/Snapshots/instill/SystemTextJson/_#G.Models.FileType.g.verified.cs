@@ -25,59 +25,59 @@ namespace G
         /// <summary>
         /// text
         /// </summary>
-        TEXT,
+        Text,
         /// <summary>
         /// PDF
         /// </summary>
-        PDF,
+        Pdf,
         /// <summary>
         /// MARKDOWN
         /// </summary>
-        MARKDOWN,
+        Markdown,
         /// <summary>
         /// PNG(not supported yet)
         /// </summary>
-        PNG,
+        Png,
         /// <summary>
         /// JPEG(not supported yet)
         /// </summary>
-        JPEG,
+        Jpeg,
         /// <summary>
         /// JPG(not supported yet)
         /// </summary>
-        JPG,
+        Jpg,
         /// <summary>
         /// HTML
         /// </summary>
-        HTML,
+        Html,
         /// <summary>
         /// DOCX
         /// </summary>
-        DOCX,
+        Docx,
         /// <summary>
         /// DOCX
         /// </summary>
-        DOC,
+        Doc,
         /// <summary>
         /// PPT
         /// </summary>
-        PPT,
+        Ppt,
         /// <summary>
         /// PPTX
         /// </summary>
-        PPTX,
+        Pptx,
         /// <summary>
         /// XLS
         /// </summary>
-        XLS,
+        Xls,
         /// <summary>
         /// XLSX
         /// </summary>
-        XLSX,
+        Xlsx,
         /// <summary>
         /// CSV
         /// </summary>
-        CSV,
+        Csv,
     }
 
     /// <summary>
@@ -92,20 +92,20 @@ namespace G
         {
             return value switch
             {
-                FileType.TEXT => "FILE_TYPE_TEXT",
-                FileType.PDF => "FILE_TYPE_PDF",
-                FileType.MARKDOWN => "FILE_TYPE_MARKDOWN",
-                FileType.PNG => "FILE_TYPE_PNG",
-                FileType.JPEG => "FILE_TYPE_JPEG",
-                FileType.JPG => "FILE_TYPE_JPG",
-                FileType.HTML => "FILE_TYPE_HTML",
-                FileType.DOCX => "FILE_TYPE_DOCX",
-                FileType.DOC => "FILE_TYPE_DOC",
-                FileType.PPT => "FILE_TYPE_PPT",
-                FileType.PPTX => "FILE_TYPE_PPTX",
-                FileType.XLS => "FILE_TYPE_XLS",
-                FileType.XLSX => "FILE_TYPE_XLSX",
-                FileType.CSV => "FILE_TYPE_CSV",
+                FileType.Text => "FILE_TYPE_TEXT",
+                FileType.Pdf => "FILE_TYPE_PDF",
+                FileType.Markdown => "FILE_TYPE_MARKDOWN",
+                FileType.Png => "FILE_TYPE_PNG",
+                FileType.Jpeg => "FILE_TYPE_JPEG",
+                FileType.Jpg => "FILE_TYPE_JPG",
+                FileType.Html => "FILE_TYPE_HTML",
+                FileType.Docx => "FILE_TYPE_DOCX",
+                FileType.Doc => "FILE_TYPE_DOC",
+                FileType.Ppt => "FILE_TYPE_PPT",
+                FileType.Pptx => "FILE_TYPE_PPTX",
+                FileType.Xls => "FILE_TYPE_XLS",
+                FileType.Xlsx => "FILE_TYPE_XLSX",
+                FileType.Csv => "FILE_TYPE_CSV",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -116,20 +116,20 @@ namespace G
         {
             return value switch
             {
-                "FILE_TYPE_TEXT" => FileType.TEXT,
-                "FILE_TYPE_PDF" => FileType.PDF,
-                "FILE_TYPE_MARKDOWN" => FileType.MARKDOWN,
-                "FILE_TYPE_PNG" => FileType.PNG,
-                "FILE_TYPE_JPEG" => FileType.JPEG,
-                "FILE_TYPE_JPG" => FileType.JPG,
-                "FILE_TYPE_HTML" => FileType.HTML,
-                "FILE_TYPE_DOCX" => FileType.DOCX,
-                "FILE_TYPE_DOC" => FileType.DOC,
-                "FILE_TYPE_PPT" => FileType.PPT,
-                "FILE_TYPE_PPTX" => FileType.PPTX,
-                "FILE_TYPE_XLS" => FileType.XLS,
-                "FILE_TYPE_XLSX" => FileType.XLSX,
-                "FILE_TYPE_CSV" => FileType.CSV,
+                "FILE_TYPE_TEXT" => FileType.Text,
+                "FILE_TYPE_PDF" => FileType.Pdf,
+                "FILE_TYPE_MARKDOWN" => FileType.Markdown,
+                "FILE_TYPE_PNG" => FileType.Png,
+                "FILE_TYPE_JPEG" => FileType.Jpeg,
+                "FILE_TYPE_JPG" => FileType.Jpg,
+                "FILE_TYPE_HTML" => FileType.Html,
+                "FILE_TYPE_DOCX" => FileType.Docx,
+                "FILE_TYPE_DOC" => FileType.Doc,
+                "FILE_TYPE_PPT" => FileType.Ppt,
+                "FILE_TYPE_PPTX" => FileType.Pptx,
+                "FILE_TYPE_XLS" => FileType.Xls,
+                "FILE_TYPE_XLSX" => FileType.Xlsx,
+                "FILE_TYPE_CSV" => FileType.Csv,
                 _ => null,
             };
         }

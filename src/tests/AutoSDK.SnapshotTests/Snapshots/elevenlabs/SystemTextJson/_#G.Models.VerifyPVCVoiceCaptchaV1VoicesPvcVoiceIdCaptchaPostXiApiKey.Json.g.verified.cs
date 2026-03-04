@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey.Json.g.cs
+﻿//HintName: G.Models.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey
+    public sealed partial class VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey? FromJson(
+        public static global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey),
-                jsonSerializerContext) as global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey;
+                typeof(global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey),
+                jsonSerializerContext) as global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey? FromJson(
+        public static global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey;
+                typeof(global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.VerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.VerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPostXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

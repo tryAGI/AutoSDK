@@ -17,12 +17,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MERGE_MESSAGE")]
-        MERGEMESSAGE,
+        MergeMessage,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateRequestMergeCommitTitle.PRTITLE => "PR_TITLE",
-                ReposUpdateRequestMergeCommitTitle.MERGEMESSAGE => "MERGE_MESSAGE",
+                ReposUpdateRequestMergeCommitTitle.PrTitle => "PR_TITLE",
+                ReposUpdateRequestMergeCommitTitle.MergeMessage => "MERGE_MESSAGE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => ReposUpdateRequestMergeCommitTitle.PRTITLE,
-                "MERGE_MESSAGE" => ReposUpdateRequestMergeCommitTitle.MERGEMESSAGE,
+                "PR_TITLE" => ReposUpdateRequestMergeCommitTitle.PrTitle,
+                "MERGE_MESSAGE" => ReposUpdateRequestMergeCommitTitle.MergeMessage,
                 _ => null,
             };
         }

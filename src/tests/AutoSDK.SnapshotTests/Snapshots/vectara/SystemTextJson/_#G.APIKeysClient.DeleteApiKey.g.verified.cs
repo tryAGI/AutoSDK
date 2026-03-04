@@ -1,10 +1,10 @@
-﻿//HintName: G.APIKeysClient.DeleteApiKey.g.cs
+﻿//HintName: G.ApiKeysClient.DeleteApiKey.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class APIKeysClient
+    public partial class ApiKeysClient
     {
         partial void PrepareDeleteApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,

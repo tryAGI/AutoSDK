@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("URL")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string URL { get; set; }
+        public required string Url { get; set; }
 
         /// <summary>
         /// The type of report.
@@ -49,7 +49,7 @@ namespace G
         /// <param name="gameId">
         /// An ID that identifies the game that the report was generated for.
         /// </param>
-        /// <param name="uRL">
+        /// <param name="url">
         /// The URL that you use to download the report. The URL is valid for 5 minutes.
         /// </param>
         /// <param name="type">
@@ -63,12 +63,12 @@ namespace G
 #endif
         public GameAnalytics(
             string gameId,
-            string uRL,
+            string url,
             string type,
             global::G.GameAnalyticsDateRange dateRange)
         {
             this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
-            this.URL = uRL ?? throw new global::System.ArgumentNullException(nameof(uRL));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.DateRange = dateRange ?? throw new global::System.ArgumentNullException(nameof(dateRange));
         }

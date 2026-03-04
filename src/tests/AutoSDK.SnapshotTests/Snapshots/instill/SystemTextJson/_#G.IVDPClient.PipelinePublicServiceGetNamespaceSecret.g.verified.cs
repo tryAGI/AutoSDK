@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceGetNamespaceSecret.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceGetNamespaceSecret.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Get a secret<br/>

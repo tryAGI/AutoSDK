@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowUsageBillableMACOS.g.cs
+﻿//HintName: G.Models.WorkflowUsageBillableMacos.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowUsageBillableMACOS
+    public sealed partial class WorkflowUsageBillableMacos
     {
         /// <summary>
         /// 
@@ -22,22 +22,22 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowUsageBillableMACOS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableMacos" /> class.
         /// </summary>
         /// <param name="totalMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowUsageBillableMACOS(
+        public WorkflowUsageBillableMacos(
             int? totalMs)
         {
             this.TotalMs = totalMs;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowUsageBillableMACOS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableMacos" /> class.
         /// </summary>
-        public WorkflowUsageBillableMACOS()
+        public WorkflowUsageBillableMacos()
         {
         }
     }

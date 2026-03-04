@@ -15,72 +15,72 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GENERAL")]
-        GENERAL,
+        General,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BUILDINGS")]
-        BUILDINGS,
+        Buildings,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHARACTERS")]
-        CHARACTERS,
+        Characters,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ENVIRONMENTS")]
-        ENVIRONMENTS,
+        Environments,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FASHION")]
-        FASHION,
+        Fashion,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ILLUSTRATIONS")]
-        ILLUSTRATIONS,
+        Illustrations,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GAME_ITEMS")]
-        GAMEITEMS,
+        GameItems,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GRAPHICAL_ELEMENTS")]
-        GRAPHICALELEMENTS,
+        GraphicalElements,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PHOTOGRAPHY")]
-        PHOTOGRAPHY,
+        Photography,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PIXEL_ART")]
-        PIXELART,
+        PixelArt,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PRODUCT_DESIGN")]
-        PRODUCTDESIGN,
+        ProductDesign,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TEXTURES")]
-        TEXTURES,
+        Textures,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UI_ELEMENTS")]
-        UIELEMENTS,
+        UiElements,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VECTOR")]
-        VECTOR,
+        Vector,
     }
 
     /// <summary>
@@ -95,20 +95,20 @@ namespace G
         {
             return value switch
             {
-                CustomModelType.GENERAL => "GENERAL",
-                CustomModelType.BUILDINGS => "BUILDINGS",
-                CustomModelType.CHARACTERS => "CHARACTERS",
-                CustomModelType.ENVIRONMENTS => "ENVIRONMENTS",
-                CustomModelType.FASHION => "FASHION",
-                CustomModelType.ILLUSTRATIONS => "ILLUSTRATIONS",
-                CustomModelType.GAMEITEMS => "GAME_ITEMS",
-                CustomModelType.GRAPHICALELEMENTS => "GRAPHICAL_ELEMENTS",
-                CustomModelType.PHOTOGRAPHY => "PHOTOGRAPHY",
-                CustomModelType.PIXELART => "PIXEL_ART",
-                CustomModelType.PRODUCTDESIGN => "PRODUCT_DESIGN",
-                CustomModelType.TEXTURES => "TEXTURES",
-                CustomModelType.UIELEMENTS => "UI_ELEMENTS",
-                CustomModelType.VECTOR => "VECTOR",
+                CustomModelType.General => "GENERAL",
+                CustomModelType.Buildings => "BUILDINGS",
+                CustomModelType.Characters => "CHARACTERS",
+                CustomModelType.Environments => "ENVIRONMENTS",
+                CustomModelType.Fashion => "FASHION",
+                CustomModelType.Illustrations => "ILLUSTRATIONS",
+                CustomModelType.GameItems => "GAME_ITEMS",
+                CustomModelType.GraphicalElements => "GRAPHICAL_ELEMENTS",
+                CustomModelType.Photography => "PHOTOGRAPHY",
+                CustomModelType.PixelArt => "PIXEL_ART",
+                CustomModelType.ProductDesign => "PRODUCT_DESIGN",
+                CustomModelType.Textures => "TEXTURES",
+                CustomModelType.UiElements => "UI_ELEMENTS",
+                CustomModelType.Vector => "VECTOR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -119,20 +119,20 @@ namespace G
         {
             return value switch
             {
-                "GENERAL" => CustomModelType.GENERAL,
-                "BUILDINGS" => CustomModelType.BUILDINGS,
-                "CHARACTERS" => CustomModelType.CHARACTERS,
-                "ENVIRONMENTS" => CustomModelType.ENVIRONMENTS,
-                "FASHION" => CustomModelType.FASHION,
-                "ILLUSTRATIONS" => CustomModelType.ILLUSTRATIONS,
-                "GAME_ITEMS" => CustomModelType.GAMEITEMS,
-                "GRAPHICAL_ELEMENTS" => CustomModelType.GRAPHICALELEMENTS,
-                "PHOTOGRAPHY" => CustomModelType.PHOTOGRAPHY,
-                "PIXEL_ART" => CustomModelType.PIXELART,
-                "PRODUCT_DESIGN" => CustomModelType.PRODUCTDESIGN,
-                "TEXTURES" => CustomModelType.TEXTURES,
-                "UI_ELEMENTS" => CustomModelType.UIELEMENTS,
-                "VECTOR" => CustomModelType.VECTOR,
+                "GENERAL" => CustomModelType.General,
+                "BUILDINGS" => CustomModelType.Buildings,
+                "CHARACTERS" => CustomModelType.Characters,
+                "ENVIRONMENTS" => CustomModelType.Environments,
+                "FASHION" => CustomModelType.Fashion,
+                "ILLUSTRATIONS" => CustomModelType.Illustrations,
+                "GAME_ITEMS" => CustomModelType.GameItems,
+                "GRAPHICAL_ELEMENTS" => CustomModelType.GraphicalElements,
+                "PHOTOGRAPHY" => CustomModelType.Photography,
+                "PIXEL_ART" => CustomModelType.PixelArt,
+                "PRODUCT_DESIGN" => CustomModelType.ProductDesign,
+                "TEXTURES" => CustomModelType.Textures,
+                "UI_ELEMENTS" => CustomModelType.UiElements,
+                "VECTOR" => CustomModelType.Vector,
                 _ => null,
             };
         }

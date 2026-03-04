@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// //docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// //docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
         /// </summary>
-        RIGHT,
+        Right,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                PullsCreateReviewCommentRequestSide.LEFT => "LEFT",
-                PullsCreateReviewCommentRequestSide.RIGHT => "RIGHT",
+                PullsCreateReviewCommentRequestSide.Left => "LEFT",
+                PullsCreateReviewCommentRequestSide.Right => "RIGHT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => PullsCreateReviewCommentRequestSide.LEFT,
-                "RIGHT" => PullsCreateReviewCommentRequestSide.RIGHT,
+                "LEFT" => PullsCreateReviewCommentRequestSide.Left,
+                "RIGHT" => PullsCreateReviewCommentRequestSide.Right,
                 _ => null,
             };
         }

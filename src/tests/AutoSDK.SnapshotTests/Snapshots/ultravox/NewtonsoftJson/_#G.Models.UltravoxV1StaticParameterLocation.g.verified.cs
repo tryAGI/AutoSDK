@@ -14,27 +14,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARAMETER_LOCATION_UNSPECIFIED")]
-        PARAMETERLOCATIONUNSPECIFIED,
+        ParameterLocationUnspecified,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARAMETER_LOCATION_QUERY")]
-        PARAMETERLOCATIONQUERY,
+        ParameterLocationQuery,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARAMETER_LOCATION_PATH")]
-        PARAMETERLOCATIONPATH,
+        ParameterLocationPath,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARAMETER_LOCATION_HEADER")]
-        PARAMETERLOCATIONHEADER,
+        ParameterLocationHeader,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARAMETER_LOCATION_BODY")]
-        PARAMETERLOCATIONBODY,
+        ParameterLocationBody,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1StaticParameterLocation.PARAMETERLOCATIONUNSPECIFIED => "PARAMETER_LOCATION_UNSPECIFIED",
-                UltravoxV1StaticParameterLocation.PARAMETERLOCATIONQUERY => "PARAMETER_LOCATION_QUERY",
-                UltravoxV1StaticParameterLocation.PARAMETERLOCATIONPATH => "PARAMETER_LOCATION_PATH",
-                UltravoxV1StaticParameterLocation.PARAMETERLOCATIONHEADER => "PARAMETER_LOCATION_HEADER",
-                UltravoxV1StaticParameterLocation.PARAMETERLOCATIONBODY => "PARAMETER_LOCATION_BODY",
+                UltravoxV1StaticParameterLocation.ParameterLocationUnspecified => "PARAMETER_LOCATION_UNSPECIFIED",
+                UltravoxV1StaticParameterLocation.ParameterLocationQuery => "PARAMETER_LOCATION_QUERY",
+                UltravoxV1StaticParameterLocation.ParameterLocationPath => "PARAMETER_LOCATION_PATH",
+                UltravoxV1StaticParameterLocation.ParameterLocationHeader => "PARAMETER_LOCATION_HEADER",
+                UltravoxV1StaticParameterLocation.ParameterLocationBody => "PARAMETER_LOCATION_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "PARAMETER_LOCATION_UNSPECIFIED" => UltravoxV1StaticParameterLocation.PARAMETERLOCATIONUNSPECIFIED,
-                "PARAMETER_LOCATION_QUERY" => UltravoxV1StaticParameterLocation.PARAMETERLOCATIONQUERY,
-                "PARAMETER_LOCATION_PATH" => UltravoxV1StaticParameterLocation.PARAMETERLOCATIONPATH,
-                "PARAMETER_LOCATION_HEADER" => UltravoxV1StaticParameterLocation.PARAMETERLOCATIONHEADER,
-                "PARAMETER_LOCATION_BODY" => UltravoxV1StaticParameterLocation.PARAMETERLOCATIONBODY,
+                "PARAMETER_LOCATION_UNSPECIFIED" => UltravoxV1StaticParameterLocation.ParameterLocationUnspecified,
+                "PARAMETER_LOCATION_QUERY" => UltravoxV1StaticParameterLocation.ParameterLocationQuery,
+                "PARAMETER_LOCATION_PATH" => UltravoxV1StaticParameterLocation.ParameterLocationPath,
+                "PARAMETER_LOCATION_HEADER" => UltravoxV1StaticParameterLocation.ParameterLocationHeader,
+                "PARAMETER_LOCATION_BODY" => UltravoxV1StaticParameterLocation.ParameterLocationBody,
                 _ => null,
             };
         }

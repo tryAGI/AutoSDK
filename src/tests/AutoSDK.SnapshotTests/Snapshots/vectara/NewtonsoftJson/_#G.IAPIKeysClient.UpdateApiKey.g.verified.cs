@@ -1,9 +1,9 @@
-﻿//HintName: G.IAPIKeysClient.UpdateApiKey.g.cs
+﻿//HintName: G.IApiKeysClient.UpdateApiKey.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IAPIKeysClient
+    public partial interface IApiKeysClient
     {
         /// <summary>
         /// Update an API key<br/>

@@ -57,7 +57,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MODELASSETTEXTURETYPES? Type7 { get; set; }
+        public global::G.ModelAssetTextureTypes? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VARIATIONTYPE? Type10 { get; set; }
+        public global::G.VariationType? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -241,31 +241,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsIMAGEGENERATION? Type53 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsImageGeneration? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? Type54 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? Type55 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsMotionGeneration? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsLCMGENERATION? Type56 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsLcmGeneration? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsMODELTRAINING? Type57 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsModelTraining? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? Type58 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsTextureGeneration? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? Type59 { get; set; }
+        public global::G.PricingCalculatorRequestServiceParamsUniversalUpscaler? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>

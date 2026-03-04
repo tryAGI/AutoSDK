@@ -14,12 +14,12 @@ namespace G
         /// Only the user can see the pipeline.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VISIBILITY_PRIVATE")]
-        VISIBILITYPRIVATE,
+        VisibilityPrivate,
         /// <summary>
         /// Other users can see the pipeline.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VISIBILITY_PUBLIC")]
-        VISIBILITYPUBLIC,
+        VisibilityPublic,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListNamespacePipelinesVisibility.VISIBILITYPRIVATE => "VISIBILITY_PRIVATE",
-                PipelinePublicServiceListNamespacePipelinesVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
+                PipelinePublicServiceListNamespacePipelinesVisibility.VisibilityPrivate => "VISIBILITY_PRIVATE",
+                PipelinePublicServiceListNamespacePipelinesVisibility.VisibilityPublic => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "VISIBILITY_PRIVATE" => PipelinePublicServiceListNamespacePipelinesVisibility.VISIBILITYPRIVATE,
-                "VISIBILITY_PUBLIC" => PipelinePublicServiceListNamespacePipelinesVisibility.VISIBILITYPUBLIC,
+                "VISIBILITY_PRIVATE" => PipelinePublicServiceListNamespacePipelinesVisibility.VisibilityPrivate,
+                "VISIBILITY_PUBLIC" => PipelinePublicServiceListNamespacePipelinesVisibility.VisibilityPublic,
                 _ => null,
             };
         }

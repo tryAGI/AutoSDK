@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="[DONE]")]
-        DONE,
+        done,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                DoneEventData.DONE => "[DONE]",
+                DoneEventData.done => "[DONE]",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "[DONE]" => DoneEventData.DONE,
+                "[DONE]" => DoneEventData.done,
                 _ => null,
             };
         }

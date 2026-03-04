@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BLUE,
+        Blue,
         /// <summary>
         /// 
         /// </summary>
-        PINK,
+        Pink,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                PredictionOutcomeColor.BLUE => "BLUE",
-                PredictionOutcomeColor.PINK => "PINK",
+                PredictionOutcomeColor.Blue => "BLUE",
+                PredictionOutcomeColor.Pink => "PINK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "BLUE" => PredictionOutcomeColor.BLUE,
-                "PINK" => PredictionOutcomeColor.PINK,
+                "BLUE" => PredictionOutcomeColor.Blue,
+                "PINK" => PredictionOutcomeColor.Pink,
                 _ => null,
             };
         }

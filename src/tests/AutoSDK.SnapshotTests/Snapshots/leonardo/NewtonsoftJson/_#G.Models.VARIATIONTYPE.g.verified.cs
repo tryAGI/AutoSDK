@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VARIATIONTYPE.g.cs
+﻿//HintName: G.Models.VariationType.g.cs
 
 #nullable enable
 
@@ -8,67 +8,67 @@ namespace G
     /// The type of variation.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum VARIATIONTYPE
+    public enum VariationType
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OUTPAINT")]
-        OUTPAINT,
+        Outpaint,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INPAINT")]
-        INPAINT,
+        Inpaint,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UPSCALE")]
-        UPSCALE,
+        Upscale,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNZOOM")]
-        UNZOOM,
+        Unzoom,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NOBG")]
-        NOBG,
+        Nobg,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class VARIATIONTYPEExtensions
+    public static class VariationTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this VARIATIONTYPE value)
+        public static string ToValueString(this VariationType value)
         {
             return value switch
             {
-                VARIATIONTYPE.OUTPAINT => "OUTPAINT",
-                VARIATIONTYPE.INPAINT => "INPAINT",
-                VARIATIONTYPE.UPSCALE => "UPSCALE",
-                VARIATIONTYPE.UNZOOM => "UNZOOM",
-                VARIATIONTYPE.NOBG => "NOBG",
+                VariationType.Outpaint => "OUTPAINT",
+                VariationType.Inpaint => "INPAINT",
+                VariationType.Upscale => "UPSCALE",
+                VariationType.Unzoom => "UNZOOM",
+                VariationType.Nobg => "NOBG",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VARIATIONTYPE? ToEnum(string value)
+        public static VariationType? ToEnum(string value)
         {
             return value switch
             {
-                "OUTPAINT" => VARIATIONTYPE.OUTPAINT,
-                "INPAINT" => VARIATIONTYPE.INPAINT,
-                "UPSCALE" => VARIATIONTYPE.UPSCALE,
-                "UNZOOM" => VARIATIONTYPE.UNZOOM,
-                "NOBG" => VARIATIONTYPE.NOBG,
+                "OUTPAINT" => VariationType.Outpaint,
+                "INPAINT" => VariationType.Inpaint,
+                "UPSCALE" => VariationType.Upscale,
+                "UNZOOM" => VariationType.Unzoom,
+                "NOBG" => VariationType.Nobg,
                 _ => null,
             };
         }

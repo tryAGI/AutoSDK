@@ -14,12 +14,12 @@ namespace G
         /// Default view, only includes basic information (omits `model_spec`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ModelPublicServiceListNamespaceModelsView.VIEWBASIC => "VIEW_BASIC",
-                ModelPublicServiceListNamespaceModelsView.VIEWFULL => "VIEW_FULL",
+                ModelPublicServiceListNamespaceModelsView.ViewBasic => "VIEW_BASIC",
+                ModelPublicServiceListNamespaceModelsView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => ModelPublicServiceListNamespaceModelsView.VIEWBASIC,
-                "VIEW_FULL" => ModelPublicServiceListNamespaceModelsView.VIEWFULL,
+                "VIEW_BASIC" => ModelPublicServiceListNamespaceModelsView.ViewBasic,
+                "VIEW_FULL" => ModelPublicServiceListNamespaceModelsView.ViewFull,
                 _ => null,
             };
         }

@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PRBODY => "PR_BODY",
-                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PRTITLE => "PR_TITLE",
-                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.BLANK => "BLANK",
+                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrBody => "PR_BODY",
+                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrTitle => "PR_TITLE",
+                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PRBODY,
-                "PR_TITLE" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PRTITLE,
-                "BLANK" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.BLANK,
+                "PR_BODY" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrBody,
+                "PR_TITLE" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrTitle,
+                "BLANK" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank,
                 _ => null,
             };
         }

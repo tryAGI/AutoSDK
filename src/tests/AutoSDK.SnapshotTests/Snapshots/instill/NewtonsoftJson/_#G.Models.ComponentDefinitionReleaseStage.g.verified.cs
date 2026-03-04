@@ -33,27 +33,27 @@ namespace G
         /// This component is unimplemented and community contributions are welcome
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_OPEN_FOR_CONTRIBUTION")]
-        RELEASESTAGEOPENFORCONTRIBUTION,
+        ReleaseStageOpenForContribution,
         /// <summary>
         /// The implementation of this component is planned and will be tackled by
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_COMING_SOON")]
-        RELEASESTAGECOMINGSOON,
+        ReleaseStageComingSoon,
         /// <summary>
         /// Initial implementation intended to gather feedback and issues from early
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_ALPHA")]
-        RELEASESTAGEALPHA,
+        ReleaseStageAlpha,
         /// <summary>
         /// The component has reached stability and no backwards incompatible
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_BETA")]
-        RELEASESTAGEBETA,
+        ReleaseStageBeta,
         /// <summary>
         /// Generally available - ready for use in production and fully supported by
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RELEASE_STAGE_GA")]
-        RELEASESTAGEGA,
+        ReleaseStageGa,
     }
 
     /// <summary>
@@ -68,11 +68,11 @@ namespace G
         {
             return value switch
             {
-                ComponentDefinitionReleaseStage.RELEASESTAGEOPENFORCONTRIBUTION => "RELEASE_STAGE_OPEN_FOR_CONTRIBUTION",
-                ComponentDefinitionReleaseStage.RELEASESTAGECOMINGSOON => "RELEASE_STAGE_COMING_SOON",
-                ComponentDefinitionReleaseStage.RELEASESTAGEALPHA => "RELEASE_STAGE_ALPHA",
-                ComponentDefinitionReleaseStage.RELEASESTAGEBETA => "RELEASE_STAGE_BETA",
-                ComponentDefinitionReleaseStage.RELEASESTAGEGA => "RELEASE_STAGE_GA",
+                ComponentDefinitionReleaseStage.ReleaseStageOpenForContribution => "RELEASE_STAGE_OPEN_FOR_CONTRIBUTION",
+                ComponentDefinitionReleaseStage.ReleaseStageComingSoon => "RELEASE_STAGE_COMING_SOON",
+                ComponentDefinitionReleaseStage.ReleaseStageAlpha => "RELEASE_STAGE_ALPHA",
+                ComponentDefinitionReleaseStage.ReleaseStageBeta => "RELEASE_STAGE_BETA",
+                ComponentDefinitionReleaseStage.ReleaseStageGa => "RELEASE_STAGE_GA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,11 +83,11 @@ namespace G
         {
             return value switch
             {
-                "RELEASE_STAGE_OPEN_FOR_CONTRIBUTION" => ComponentDefinitionReleaseStage.RELEASESTAGEOPENFORCONTRIBUTION,
-                "RELEASE_STAGE_COMING_SOON" => ComponentDefinitionReleaseStage.RELEASESTAGECOMINGSOON,
-                "RELEASE_STAGE_ALPHA" => ComponentDefinitionReleaseStage.RELEASESTAGEALPHA,
-                "RELEASE_STAGE_BETA" => ComponentDefinitionReleaseStage.RELEASESTAGEBETA,
-                "RELEASE_STAGE_GA" => ComponentDefinitionReleaseStage.RELEASESTAGEGA,
+                "RELEASE_STAGE_OPEN_FOR_CONTRIBUTION" => ComponentDefinitionReleaseStage.ReleaseStageOpenForContribution,
+                "RELEASE_STAGE_COMING_SOON" => ComponentDefinitionReleaseStage.ReleaseStageComingSoon,
+                "RELEASE_STAGE_ALPHA" => ComponentDefinitionReleaseStage.ReleaseStageAlpha,
+                "RELEASE_STAGE_BETA" => ComponentDefinitionReleaseStage.ReleaseStageBeta,
+                "RELEASE_STAGE_GA" => ComponentDefinitionReleaseStage.ReleaseStageGa,
                 _ => null,
             };
         }

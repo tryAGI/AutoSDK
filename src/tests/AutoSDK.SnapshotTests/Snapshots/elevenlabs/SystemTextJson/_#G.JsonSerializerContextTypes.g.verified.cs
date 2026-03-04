@@ -257,7 +257,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLM? Type57 { get; set; }
+        public global::G.Llm? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -985,7 +985,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost? Type239 { get; set; }
+        public global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1105,7 +1105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreatePVCVoiceV1VoicesPvcPost? Type269 { get; set; }
+        public global::G.BodyCreatePvcVoiceV1VoicesPvcPost? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1141,7 +1141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost? Type278 { get; set; }
+        public global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1261,7 +1261,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost? Type308 { get; set; }
+        public global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1321,7 +1321,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost? Type323 { get; set; }
+        public global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1373,7 +1373,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost? Type336 { get; set; }
+        public global::G.BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1569,7 +1569,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost? Type385 { get; set; }
+        public global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1609,7 +1609,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyVerifyPVCVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost? Type395 { get; set; }
+        public global::G.BodyVerifyPvcVoiceCaptchaV1VoicesPvcVoiceIdCaptchaPost? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>

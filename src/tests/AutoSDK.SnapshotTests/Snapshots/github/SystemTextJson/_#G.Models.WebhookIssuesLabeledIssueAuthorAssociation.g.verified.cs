@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhookIssuesLabeledIssueAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookIssuesLabeledIssueAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookIssuesLabeledIssueAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookIssuesLabeledIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookIssuesLabeledIssueAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookIssuesLabeledIssueAuthorAssociation.MEMBER => "MEMBER",
-                WebhookIssuesLabeledIssueAuthorAssociation.NONE => "NONE",
-                WebhookIssuesLabeledIssueAuthorAssociation.OWNER => "OWNER",
+                WebhookIssuesLabeledIssueAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookIssuesLabeledIssueAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookIssuesLabeledIssueAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookIssuesLabeledIssueAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookIssuesLabeledIssueAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookIssuesLabeledIssueAuthorAssociation.Member => "MEMBER",
+                WebhookIssuesLabeledIssueAuthorAssociation.None => "NONE",
+                WebhookIssuesLabeledIssueAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookIssuesLabeledIssueAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookIssuesLabeledIssueAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookIssuesLabeledIssueAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookIssuesLabeledIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookIssuesLabeledIssueAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookIssuesLabeledIssueAuthorAssociation.MEMBER,
-                "NONE" => WebhookIssuesLabeledIssueAuthorAssociation.NONE,
-                "OWNER" => WebhookIssuesLabeledIssueAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookIssuesLabeledIssueAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookIssuesLabeledIssueAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookIssuesLabeledIssueAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookIssuesLabeledIssueAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookIssuesLabeledIssueAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookIssuesLabeledIssueAuthorAssociation.Member,
+                "NONE" => WebhookIssuesLabeledIssueAuthorAssociation.None,
+                "OWNER" => WebhookIssuesLabeledIssueAuthorAssociation.Owner,
                 _ => null,
             };
         }

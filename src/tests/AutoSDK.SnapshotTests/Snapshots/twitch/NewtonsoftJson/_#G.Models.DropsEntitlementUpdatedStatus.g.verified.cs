@@ -20,27 +20,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INVALID_ID")]
-        INVALIDID,
+        InvalidId,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NOT_FOUND")]
-        NOTFOUND,
+        NotFound,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNAUTHORIZED")]
-        UNAUTHORIZED,
+        Unauthorized,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UPDATE_FAILED")]
-        UPDATEFAILED,
+        UpdateFailed,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
         {
             return value switch
             {
-                DropsEntitlementUpdatedStatus.INVALIDID => "INVALID_ID",
-                DropsEntitlementUpdatedStatus.NOTFOUND => "NOT_FOUND",
-                DropsEntitlementUpdatedStatus.SUCCESS => "SUCCESS",
-                DropsEntitlementUpdatedStatus.UNAUTHORIZED => "UNAUTHORIZED",
-                DropsEntitlementUpdatedStatus.UPDATEFAILED => "UPDATE_FAILED",
+                DropsEntitlementUpdatedStatus.InvalidId => "INVALID_ID",
+                DropsEntitlementUpdatedStatus.NotFound => "NOT_FOUND",
+                DropsEntitlementUpdatedStatus.Success => "SUCCESS",
+                DropsEntitlementUpdatedStatus.Unauthorized => "UNAUTHORIZED",
+                DropsEntitlementUpdatedStatus.UpdateFailed => "UPDATE_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +70,11 @@ namespace G
         {
             return value switch
             {
-                "INVALID_ID" => DropsEntitlementUpdatedStatus.INVALIDID,
-                "NOT_FOUND" => DropsEntitlementUpdatedStatus.NOTFOUND,
-                "SUCCESS" => DropsEntitlementUpdatedStatus.SUCCESS,
-                "UNAUTHORIZED" => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
-                "UPDATE_FAILED" => DropsEntitlementUpdatedStatus.UPDATEFAILED,
+                "INVALID_ID" => DropsEntitlementUpdatedStatus.InvalidId,
+                "NOT_FOUND" => DropsEntitlementUpdatedStatus.NotFound,
+                "SUCCESS" => DropsEntitlementUpdatedStatus.Success,
+                "UNAUTHORIZED" => DropsEntitlementUpdatedStatus.Unauthorized,
+                "UPDATE_FAILED" => DropsEntitlementUpdatedStatus.UpdateFailed,
                 _ => null,
             };
         }

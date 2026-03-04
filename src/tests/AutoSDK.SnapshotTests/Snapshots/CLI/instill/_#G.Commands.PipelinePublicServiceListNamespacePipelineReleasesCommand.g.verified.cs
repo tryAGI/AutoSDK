@@ -124,7 +124,7 @@ name, which is formed by the parent namespace and ID of the pipeline.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListNamespacePipelineReleasesAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListNamespacePipelineReleasesAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 pageSize: pageSize,

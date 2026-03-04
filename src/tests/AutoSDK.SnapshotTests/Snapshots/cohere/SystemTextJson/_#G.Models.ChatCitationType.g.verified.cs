@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TEXTCONTENT,
+        TextContent,
         /// <summary>
         /// 
         /// </summary>
-        PLAN,
+        Plan,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ChatCitationType.TEXTCONTENT => "TEXT_CONTENT",
-                ChatCitationType.PLAN => "PLAN",
+                ChatCitationType.TextContent => "TEXT_CONTENT",
+                ChatCitationType.Plan => "PLAN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "TEXT_CONTENT" => ChatCitationType.TEXTCONTENT,
-                "PLAN" => ChatCitationType.PLAN,
+                "TEXT_CONTENT" => ChatCitationType.TextContent,
+                "PLAN" => ChatCitationType.Plan,
                 _ => null,
             };
         }

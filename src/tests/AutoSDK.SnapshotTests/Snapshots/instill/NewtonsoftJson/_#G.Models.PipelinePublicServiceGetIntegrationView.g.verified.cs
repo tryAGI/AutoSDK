@@ -14,12 +14,12 @@ namespace G
         /// Default view.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceGetIntegrationView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceGetIntegrationView.VIEWFULL => "VIEW_FULL",
+                PipelinePublicServiceGetIntegrationView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceGetIntegrationView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceGetIntegrationView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceGetIntegrationView.VIEWFULL,
+                "VIEW_BASIC" => PipelinePublicServiceGetIntegrationView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceGetIntegrationView.ViewFull,
                 _ => null,
             };
         }

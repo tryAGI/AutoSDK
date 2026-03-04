@@ -97,7 +97,7 @@ capabilities, for the components that might be used in a VDP pipeline.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListComponentDefinitionsAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListComponentDefinitionsAsync(
                 pageSize: pageSize,
                 view: view,
                 filter: filter,

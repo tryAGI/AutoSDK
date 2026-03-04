@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceDeleteNamespaceConnection.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceDeleteNamespaceConnection.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Delete a connection<br/>

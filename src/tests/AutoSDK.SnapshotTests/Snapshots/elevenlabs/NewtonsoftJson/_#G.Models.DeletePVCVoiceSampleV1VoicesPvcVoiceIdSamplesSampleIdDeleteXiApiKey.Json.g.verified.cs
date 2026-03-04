@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey.Json.g.cs
+﻿//HintName: G.Models.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey
+    public sealed partial class DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey? FromJson(
+        public static global::G.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey?>(serializer.Deserialize<global::G.DeletePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey?>(serializer.Deserialize<global::G.DeletePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdDeleteXiApiKey>(jsonReader));
         }
     }
 }

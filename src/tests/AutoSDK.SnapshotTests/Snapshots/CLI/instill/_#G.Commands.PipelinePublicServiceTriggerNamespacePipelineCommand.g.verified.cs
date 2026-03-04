@@ -102,7 +102,7 @@ For more information, see [Run NamespacePipeline](https://www.instill.tech/docs/
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceTriggerNamespacePipelineAsync(
+            var response = await _client.Vdp.PipelinePublicServiceTriggerNamespacePipelineAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 instillRequesterUid: instillRequesterUid,

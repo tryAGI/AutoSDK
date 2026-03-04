@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PENDING")]
-        PENDING,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
-        COMPLETE,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                JobStatus.PENDING => "PENDING",
-                JobStatus.COMPLETE => "COMPLETE",
-                JobStatus.FAILED => "FAILED",
+                JobStatus.Pending => "PENDING",
+                JobStatus.Complete => "COMPLETE",
+                JobStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "PENDING" => JobStatus.PENDING,
-                "COMPLETE" => JobStatus.COMPLETE,
-                "FAILED" => JobStatus.FAILED,
+                "PENDING" => JobStatus.Pending,
+                "COMPLETE" => JobStatus.Complete,
+                "FAILED" => JobStatus.Failed,
                 _ => null,
             };
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreatePVCVoiceV1VoicesPvcPostLabels.g.cs
+﻿//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Serialized labels dictionary for the voice.
     /// </summary>
-    public sealed partial class BodyCreatePVCVoiceV1VoicesPvcPostLabels
+    public sealed partial class BodyCreatePvcVoiceV1VoicesPvcPostLabels
     {
 
         /// <summary>

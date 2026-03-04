@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -57,7 +57,7 @@ namespace G
             {
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success => "success",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Failure => "failure",
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Skipped => "skipped",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired => "action_required",
@@ -75,7 +75,7 @@ namespace G
             {
                 "success" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success,
                 "failure" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Failure,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "skipped" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Skipped,
                 "cancelled" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled,
                 "action_required" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired,

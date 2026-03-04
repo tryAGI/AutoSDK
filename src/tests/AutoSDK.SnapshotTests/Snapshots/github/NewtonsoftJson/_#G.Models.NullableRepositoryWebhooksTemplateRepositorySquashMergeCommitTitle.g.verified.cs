@@ -16,12 +16,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_OR_PR_TITLE")]
-        COMMITORPRTITLE,
+        CommitOrPrTitle,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.PRTITLE => "PR_TITLE",
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.COMMITORPRTITLE => "COMMIT_OR_PR_TITLE",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.PrTitle => "PR_TITLE",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.CommitOrPrTitle => "COMMIT_OR_PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.PRTITLE,
-                "COMMIT_OR_PR_TITLE" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.COMMITORPRTITLE,
+                "PR_TITLE" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.PrTitle,
+                "COMMIT_OR_PR_TITLE" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.CommitOrPrTitle,
                 _ => null,
             };
         }

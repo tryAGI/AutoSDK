@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        HARMBLOCKTHRESHOLDUNSPECIFIED,
+        HarmBlockThresholdUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        BLOCKLOWANDABOVE,
+        BlockLowAndAbove,
         /// <summary>
         /// 
         /// </summary>
-        BLOCKMEDIUMANDABOVE,
+        BlockMediumAndAbove,
         /// <summary>
         /// 
         /// </summary>
-        BLOCKONLYHIGH,
+        BlockOnlyHigh,
         /// <summary>
         /// 
         /// </summary>
-        BLOCKNONE,
+        BlockNone,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SafetySettingThreshold.HARMBLOCKTHRESHOLDUNSPECIFIED => "HARM_BLOCK_THRESHOLD_UNSPECIFIED",
-                SafetySettingThreshold.BLOCKLOWANDABOVE => "BLOCK_LOW_AND_ABOVE",
-                SafetySettingThreshold.BLOCKMEDIUMANDABOVE => "BLOCK_MEDIUM_AND_ABOVE",
-                SafetySettingThreshold.BLOCKONLYHIGH => "BLOCK_ONLY_HIGH",
-                SafetySettingThreshold.BLOCKNONE => "BLOCK_NONE",
+                SafetySettingThreshold.HarmBlockThresholdUnspecified => "HARM_BLOCK_THRESHOLD_UNSPECIFIED",
+                SafetySettingThreshold.BlockLowAndAbove => "BLOCK_LOW_AND_ABOVE",
+                SafetySettingThreshold.BlockMediumAndAbove => "BLOCK_MEDIUM_AND_ABOVE",
+                SafetySettingThreshold.BlockOnlyHigh => "BLOCK_ONLY_HIGH",
+                SafetySettingThreshold.BlockNone => "BLOCK_NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "HARM_BLOCK_THRESHOLD_UNSPECIFIED" => SafetySettingThreshold.HARMBLOCKTHRESHOLDUNSPECIFIED,
-                "BLOCK_LOW_AND_ABOVE" => SafetySettingThreshold.BLOCKLOWANDABOVE,
-                "BLOCK_MEDIUM_AND_ABOVE" => SafetySettingThreshold.BLOCKMEDIUMANDABOVE,
-                "BLOCK_ONLY_HIGH" => SafetySettingThreshold.BLOCKONLYHIGH,
-                "BLOCK_NONE" => SafetySettingThreshold.BLOCKNONE,
+                "HARM_BLOCK_THRESHOLD_UNSPECIFIED" => SafetySettingThreshold.HarmBlockThresholdUnspecified,
+                "BLOCK_LOW_AND_ABOVE" => SafetySettingThreshold.BlockLowAndAbove,
+                "BLOCK_MEDIUM_AND_ABOVE" => SafetySettingThreshold.BlockMediumAndAbove,
+                "BLOCK_ONLY_HIGH" => SafetySettingThreshold.BlockOnlyHigh,
+                "BLOCK_NONE" => SafetySettingThreshold.BlockNone,
                 _ => null,
             };
         }

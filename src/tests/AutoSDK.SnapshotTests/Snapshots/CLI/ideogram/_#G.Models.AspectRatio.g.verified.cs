@@ -13,47 +13,47 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ASPECT1016,
+        Aspect1016,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT1610,
+        Aspect1610,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT916,
+        Aspect916,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT169,
+        Aspect169,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT32,
+        Aspect32,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT23,
+        Aspect23,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT43,
+        Aspect43,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT34,
+        Aspect34,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT11,
+        Aspect11,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT13,
+        Aspect13,
         /// <summary>
         /// 
         /// </summary>
-        ASPECT31,
+        Aspect31,
     }
 
     /// <summary>
@@ -68,17 +68,17 @@ namespace G
         {
             return value switch
             {
-                AspectRatio.ASPECT1016 => "ASPECT_10_16",
-                AspectRatio.ASPECT1610 => "ASPECT_16_10",
-                AspectRatio.ASPECT916 => "ASPECT_9_16",
-                AspectRatio.ASPECT169 => "ASPECT_16_9",
-                AspectRatio.ASPECT32 => "ASPECT_3_2",
-                AspectRatio.ASPECT23 => "ASPECT_2_3",
-                AspectRatio.ASPECT43 => "ASPECT_4_3",
-                AspectRatio.ASPECT34 => "ASPECT_3_4",
-                AspectRatio.ASPECT11 => "ASPECT_1_1",
-                AspectRatio.ASPECT13 => "ASPECT_1_3",
-                AspectRatio.ASPECT31 => "ASPECT_3_1",
+                AspectRatio.Aspect1016 => "ASPECT_10_16",
+                AspectRatio.Aspect1610 => "ASPECT_16_10",
+                AspectRatio.Aspect916 => "ASPECT_9_16",
+                AspectRatio.Aspect169 => "ASPECT_16_9",
+                AspectRatio.Aspect32 => "ASPECT_3_2",
+                AspectRatio.Aspect23 => "ASPECT_2_3",
+                AspectRatio.Aspect43 => "ASPECT_4_3",
+                AspectRatio.Aspect34 => "ASPECT_3_4",
+                AspectRatio.Aspect11 => "ASPECT_1_1",
+                AspectRatio.Aspect13 => "ASPECT_1_3",
+                AspectRatio.Aspect31 => "ASPECT_3_1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -89,17 +89,17 @@ namespace G
         {
             return value switch
             {
-                "ASPECT_10_16" => AspectRatio.ASPECT1016,
-                "ASPECT_16_10" => AspectRatio.ASPECT1610,
-                "ASPECT_9_16" => AspectRatio.ASPECT916,
-                "ASPECT_16_9" => AspectRatio.ASPECT169,
-                "ASPECT_3_2" => AspectRatio.ASPECT32,
-                "ASPECT_2_3" => AspectRatio.ASPECT23,
-                "ASPECT_4_3" => AspectRatio.ASPECT43,
-                "ASPECT_3_4" => AspectRatio.ASPECT34,
-                "ASPECT_1_1" => AspectRatio.ASPECT11,
-                "ASPECT_1_3" => AspectRatio.ASPECT13,
-                "ASPECT_3_1" => AspectRatio.ASPECT31,
+                "ASPECT_10_16" => AspectRatio.Aspect1016,
+                "ASPECT_16_10" => AspectRatio.Aspect1610,
+                "ASPECT_9_16" => AspectRatio.Aspect916,
+                "ASPECT_16_9" => AspectRatio.Aspect169,
+                "ASPECT_3_2" => AspectRatio.Aspect32,
+                "ASPECT_2_3" => AspectRatio.Aspect23,
+                "ASPECT_4_3" => AspectRatio.Aspect43,
+                "ASPECT_3_4" => AspectRatio.Aspect34,
+                "ASPECT_1_1" => AspectRatio.Aspect11,
+                "ASPECT_1_3" => AspectRatio.Aspect13,
+                "ASPECT_3_1" => AspectRatio.Aspect31,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.IRAGEngineClient.V1LibraryAnswer.g.cs
+﻿//HintName: G.IRagEngineClient.V1LibraryAnswer.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IRAGEngineClient
+    public partial interface IRagEngineClient
     {
         /// <summary>
         /// Answer

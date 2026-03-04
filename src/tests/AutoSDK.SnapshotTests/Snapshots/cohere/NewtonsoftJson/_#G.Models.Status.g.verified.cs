@@ -24,47 +24,47 @@ namespace G
         /// Unspecified status.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_UNSPECIFIED")]
-        UNSPECIFIED,
+        Unspecified,
         /// <summary>
         /// The fine-tuned model is being fine-tuned.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_FINETUNING")]
-        FINETUNING,
+        Finetuning,
         /// <summary>
         /// Deprecated: The fine-tuned model is being deployed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_DEPLOYING_API")]
-        DEPLOYINGAPI,
+        DeployingApi,
         /// <summary>
         /// The fine-tuned model is ready to receive requests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_READY")]
-        READY,
+        Ready,
         /// <summary>
         /// The fine-tuned model failed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// The fine-tuned model was deleted.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_DELETED")]
-        DELETED,
+        Deleted,
         /// <summary>
         /// Deprecated: The fine-tuned model is temporarily unavailable.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_TEMPORARILY_OFFLINE")]
-        TEMPORARILYOFFLINE,
+        TemporarilyOffline,
         /// <summary>
         /// Deprecated: The fine-tuned model is paused (Vanilla only).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAUSED")]
-        PAUSED,
+        Paused,
         /// <summary>
         /// The fine-tuned model is queued for training.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_QUEUED")]
-        QUEUED,
+        Queued,
     }
 
     /// <summary>
@@ -79,15 +79,15 @@ namespace G
         {
             return value switch
             {
-                Status.UNSPECIFIED => "STATUS_UNSPECIFIED",
-                Status.FINETUNING => "STATUS_FINETUNING",
-                Status.DEPLOYINGAPI => "STATUS_DEPLOYING_API",
-                Status.READY => "STATUS_READY",
-                Status.FAILED => "STATUS_FAILED",
-                Status.DELETED => "STATUS_DELETED",
-                Status.TEMPORARILYOFFLINE => "STATUS_TEMPORARILY_OFFLINE",
-                Status.PAUSED => "STATUS_PAUSED",
-                Status.QUEUED => "STATUS_QUEUED",
+                Status.Unspecified => "STATUS_UNSPECIFIED",
+                Status.Finetuning => "STATUS_FINETUNING",
+                Status.DeployingApi => "STATUS_DEPLOYING_API",
+                Status.Ready => "STATUS_READY",
+                Status.Failed => "STATUS_FAILED",
+                Status.Deleted => "STATUS_DELETED",
+                Status.TemporarilyOffline => "STATUS_TEMPORARILY_OFFLINE",
+                Status.Paused => "STATUS_PAUSED",
+                Status.Queued => "STATUS_QUEUED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -98,15 +98,15 @@ namespace G
         {
             return value switch
             {
-                "STATUS_UNSPECIFIED" => Status.UNSPECIFIED,
-                "STATUS_FINETUNING" => Status.FINETUNING,
-                "STATUS_DEPLOYING_API" => Status.DEPLOYINGAPI,
-                "STATUS_READY" => Status.READY,
-                "STATUS_FAILED" => Status.FAILED,
-                "STATUS_DELETED" => Status.DELETED,
-                "STATUS_TEMPORARILY_OFFLINE" => Status.TEMPORARILYOFFLINE,
-                "STATUS_PAUSED" => Status.PAUSED,
-                "STATUS_QUEUED" => Status.QUEUED,
+                "STATUS_UNSPECIFIED" => Status.Unspecified,
+                "STATUS_FINETUNING" => Status.Finetuning,
+                "STATUS_DEPLOYING_API" => Status.DeployingApi,
+                "STATUS_READY" => Status.Ready,
+                "STATUS_FAILED" => Status.Failed,
+                "STATUS_DELETED" => Status.Deleted,
+                "STATUS_TEMPORARILY_OFFLINE" => Status.TemporarilyOffline,
+                "STATUS_PAUSED" => Status.Paused,
+                "STATUS_QUEUED" => Status.Queued,
                 _ => null,
             };
         }

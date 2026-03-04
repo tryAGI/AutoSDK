@@ -16,12 +16,12 @@ namespace G
         /// Only the owner can see the model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VISIBILITY_PRIVATE")]
-        VISIBILITYPRIVATE,
+        VisibilityPrivate,
         /// <summary>
         /// Other users can see the model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VISIBILITY_PUBLIC")]
-        VISIBILITYPUBLIC,
+        VisibilityPublic,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                ModelVisibility.VISIBILITYPRIVATE => "VISIBILITY_PRIVATE",
-                ModelVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
+                ModelVisibility.VisibilityPrivate => "VISIBILITY_PRIVATE",
+                ModelVisibility.VisibilityPublic => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "VISIBILITY_PRIVATE" => ModelVisibility.VISIBILITYPRIVATE,
-                "VISIBILITY_PUBLIC" => ModelVisibility.VISIBILITYPUBLIC,
+                "VISIBILITY_PRIVATE" => ModelVisibility.VisibilityPrivate,
+                "VISIBILITY_PUBLIC" => ModelVisibility.VisibilityPublic,
                 _ => null,
             };
         }

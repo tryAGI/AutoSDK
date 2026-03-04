@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiKnowledgeBaseUrl.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiKnowledgeBaseUrl.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Create Url Document<br/>
@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddKnowledgeBaseResponseModel> CreateConvaiKnowledgeBaseUrlAsync(
-            global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost request,
+            global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 

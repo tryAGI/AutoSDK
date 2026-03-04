@@ -15,42 +15,42 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="EMBER")]
-        EMBER,
+        Ember,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FRESH")]
-        FRESH,
+        Fresh,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="JUNGLE")]
-        JUNGLE,
+        Jungle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MAGIC")]
-        MAGIC,
+        Magic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MELON")]
-        MELON,
+        Melon,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MOSAIC")]
-        MOSAIC,
+        Mosaic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PASTEL")]
-        PASTEL,
+        Pastel,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ULTRAMARINE")]
-        ULTRAMARINE,
+        Ultramarine,
     }
 
     /// <summary>
@@ -65,14 +65,14 @@ namespace G
         {
             return value switch
             {
-                ColorPalettePresetName.EMBER => "EMBER",
-                ColorPalettePresetName.FRESH => "FRESH",
-                ColorPalettePresetName.JUNGLE => "JUNGLE",
-                ColorPalettePresetName.MAGIC => "MAGIC",
-                ColorPalettePresetName.MELON => "MELON",
-                ColorPalettePresetName.MOSAIC => "MOSAIC",
-                ColorPalettePresetName.PASTEL => "PASTEL",
-                ColorPalettePresetName.ULTRAMARINE => "ULTRAMARINE",
+                ColorPalettePresetName.Ember => "EMBER",
+                ColorPalettePresetName.Fresh => "FRESH",
+                ColorPalettePresetName.Jungle => "JUNGLE",
+                ColorPalettePresetName.Magic => "MAGIC",
+                ColorPalettePresetName.Melon => "MELON",
+                ColorPalettePresetName.Mosaic => "MOSAIC",
+                ColorPalettePresetName.Pastel => "PASTEL",
+                ColorPalettePresetName.Ultramarine => "ULTRAMARINE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,14 +83,14 @@ namespace G
         {
             return value switch
             {
-                "EMBER" => ColorPalettePresetName.EMBER,
-                "FRESH" => ColorPalettePresetName.FRESH,
-                "JUNGLE" => ColorPalettePresetName.JUNGLE,
-                "MAGIC" => ColorPalettePresetName.MAGIC,
-                "MELON" => ColorPalettePresetName.MELON,
-                "MOSAIC" => ColorPalettePresetName.MOSAIC,
-                "PASTEL" => ColorPalettePresetName.PASTEL,
-                "ULTRAMARINE" => ColorPalettePresetName.ULTRAMARINE,
+                "EMBER" => ColorPalettePresetName.Ember,
+                "FRESH" => ColorPalettePresetName.Fresh,
+                "JUNGLE" => ColorPalettePresetName.Jungle,
+                "MAGIC" => ColorPalettePresetName.Magic,
+                "MELON" => ColorPalettePresetName.Melon,
+                "MOSAIC" => ColorPalettePresetName.Mosaic,
+                "PASTEL" => ColorPalettePresetName.Pastel,
+                "ULTRAMARINE" => ColorPalettePresetName.Ultramarine,
                 _ => null,
             };
         }

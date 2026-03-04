@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.BLANK => "BLANK",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PrBody => "PR_BODY",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

@@ -1,13 +1,13 @@
-﻿//HintName: G.JsonConverters.MODELASSETTEXTURETYPESNullable.g.cs
+﻿//HintName: G.JsonConverters.ModelAssetTextureTypesNullable.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class MODELASSETTEXTURETYPESNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MODELASSETTEXTURETYPES?>
+    public sealed class ModelAssetTextureTypesNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ModelAssetTextureTypes?>
     {
         /// <inheritdoc />
-        public override global::G.MODELASSETTEXTURETYPES? Read(
+        public override global::G.ModelAssetTextureTypes? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.MODELASSETTEXTURETYPESExtensions.ToEnum(stringValue);
+                        return global::G.ModelAssetTextureTypesExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -27,11 +27,11 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.MODELASSETTEXTURETYPES)numValue;
+                    return (global::G.ModelAssetTextureTypes)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::G.MODELASSETTEXTURETYPES?);
+                    return default(global::G.ModelAssetTextureTypes?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -43,7 +43,7 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.MODELASSETTEXTURETYPES? value,
+            global::G.ModelAssetTextureTypes? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -54,7 +54,7 @@ namespace G.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::G.MODELASSETTEXTURETYPESExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::G.ModelAssetTextureTypesExtensions.ToValueString(value.Value));
             }
         }
     }

@@ -54,7 +54,7 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.CreateVideoAPI.V1VideoDeleteAsync(
+            await _client.CreateVideoApi.V1VideoDeleteAsync(
                 videoId: videoId,
                 cancellationToken: cancellationToken);
 

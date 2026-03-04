@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LLMPrompts.g.cs
+﻿//HintName: G.Models.LlmPrompts.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// List of prompts that the model can use. This is deprecated; see `/v2/generation_presets` instead.
     /// </summary>
     [global::System.Obsolete("This model marked as deprecated.")]
-    public sealed partial class LLMPrompts
+    public sealed partial class LlmPrompts
     {
 
         /// <summary>

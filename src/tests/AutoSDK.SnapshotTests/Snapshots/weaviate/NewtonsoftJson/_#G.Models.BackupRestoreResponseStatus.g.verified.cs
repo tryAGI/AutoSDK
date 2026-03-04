@@ -15,27 +15,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRING")]
-        TRANSFERRING,
+        Transferring,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRED")]
-        TRANSFERRED,
+        Transferred,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace G
         {
             return value switch
             {
-                BackupRestoreResponseStatus.STARTED => "STARTED",
-                BackupRestoreResponseStatus.TRANSFERRING => "TRANSFERRING",
-                BackupRestoreResponseStatus.TRANSFERRED => "TRANSFERRED",
-                BackupRestoreResponseStatus.SUCCESS => "SUCCESS",
-                BackupRestoreResponseStatus.FAILED => "FAILED",
+                BackupRestoreResponseStatus.Started => "STARTED",
+                BackupRestoreResponseStatus.Transferring => "TRANSFERRING",
+                BackupRestoreResponseStatus.Transferred => "TRANSFERRED",
+                BackupRestoreResponseStatus.Success => "SUCCESS",
+                BackupRestoreResponseStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,11 +65,11 @@ namespace G
         {
             return value switch
             {
-                "STARTED" => BackupRestoreResponseStatus.STARTED,
-                "TRANSFERRING" => BackupRestoreResponseStatus.TRANSFERRING,
-                "TRANSFERRED" => BackupRestoreResponseStatus.TRANSFERRED,
-                "SUCCESS" => BackupRestoreResponseStatus.SUCCESS,
-                "FAILED" => BackupRestoreResponseStatus.FAILED,
+                "STARTED" => BackupRestoreResponseStatus.Started,
+                "TRANSFERRING" => BackupRestoreResponseStatus.Transferring,
+                "TRANSFERRED" => BackupRestoreResponseStatus.Transferred,
+                "SUCCESS" => BackupRestoreResponseStatus.Success,
+                "FAILED" => BackupRestoreResponseStatus.Failed,
                 _ => null,
             };
         }

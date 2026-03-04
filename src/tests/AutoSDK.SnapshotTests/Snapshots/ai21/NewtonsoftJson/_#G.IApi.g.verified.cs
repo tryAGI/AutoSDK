@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RAGEngineClient RAGEngine { get; }
+        public RagEngineClient RagEngine { get; }
 
         /// <summary>
         /// 

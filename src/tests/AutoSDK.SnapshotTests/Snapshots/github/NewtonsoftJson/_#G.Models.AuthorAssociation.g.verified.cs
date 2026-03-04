@@ -15,42 +15,42 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COLLABORATOR")]
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CONTRIBUTOR")]
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIMER")]
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIME_CONTRIBUTOR")]
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MANNEQUIN")]
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBER")]
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -65,14 +65,14 @@ namespace G
         {
             return value switch
             {
-                AuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                AuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                AuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                AuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                AuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                AuthorAssociation.MEMBER => "MEMBER",
-                AuthorAssociation.NONE => "NONE",
-                AuthorAssociation.OWNER => "OWNER",
+                AuthorAssociation.Collaborator => "COLLABORATOR",
+                AuthorAssociation.Contributor => "CONTRIBUTOR",
+                AuthorAssociation.FirstTimer => "FIRST_TIMER",
+                AuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                AuthorAssociation.Mannequin => "MANNEQUIN",
+                AuthorAssociation.Member => "MEMBER",
+                AuthorAssociation.None => "NONE",
+                AuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,14 +83,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => AuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => AuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => AuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => AuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => AuthorAssociation.MANNEQUIN,
-                "MEMBER" => AuthorAssociation.MEMBER,
-                "NONE" => AuthorAssociation.NONE,
-                "OWNER" => AuthorAssociation.OWNER,
+                "COLLABORATOR" => AuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => AuthorAssociation.Contributor,
+                "FIRST_TIMER" => AuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => AuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => AuthorAssociation.Mannequin,
+                "MEMBER" => AuthorAssociation.Member,
+                "NONE" => AuthorAssociation.None,
+                "OWNER" => AuthorAssociation.Owner,
                 _ => null,
             };
         }

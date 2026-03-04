@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for FANTASY_AVATAR_GENERATION service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsFantasyAvatarGeneration
     {
         /// <summary>
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
@@ -34,7 +34,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFantasyAvatarGeneration" /> class.
         /// </summary>
         /// <param name="imageHeight">
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
@@ -45,7 +45,7 @@ namespace G
         /// <param name="numImages">
         /// The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.
         /// </param>
-        public PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION(
+        public PricingCalculatorRequestServiceParamsFantasyAvatarGeneration(
             int? imageHeight,
             int? imageWidth,
             int? numImages)
@@ -56,9 +56,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFantasyAvatarGeneration" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION()
+        public PricingCalculatorRequestServiceParamsFantasyAvatarGeneration()
         {
         }
     }

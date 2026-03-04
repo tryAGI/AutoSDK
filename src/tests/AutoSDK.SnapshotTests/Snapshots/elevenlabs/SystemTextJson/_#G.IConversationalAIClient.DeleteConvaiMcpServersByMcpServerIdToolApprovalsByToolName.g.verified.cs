@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.DeleteConvaiMcpServersByMcpServerIdToolApprovalsByToolName.g.cs
+﻿//HintName: G.IConversationalAiClient.DeleteConvaiMcpServersByMcpServerIdToolApprovalsByToolName.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Delete Mcp Server Tool Approval<br/>

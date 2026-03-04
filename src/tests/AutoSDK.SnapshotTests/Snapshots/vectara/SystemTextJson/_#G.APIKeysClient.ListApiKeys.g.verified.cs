@@ -1,10 +1,10 @@
-﻿//HintName: G.APIKeysClient.ListApiKeys.g.cs
+﻿//HintName: G.ApiKeysClient.ListApiKeys.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class APIKeysClient
+    public partial class ApiKeysClient
     {
         partial void PrepareListApiKeysArguments(
             global::System.Net.Http.HttpClient httpClient,

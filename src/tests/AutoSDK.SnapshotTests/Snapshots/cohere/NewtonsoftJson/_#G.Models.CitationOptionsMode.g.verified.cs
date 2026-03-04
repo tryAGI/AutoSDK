@@ -16,17 +16,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAST")]
-        FAST,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ACCURATE")]
-        ACCURATE,
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OFF")]
-        OFF,
+        Off,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace G
         {
             return value switch
             {
-                CitationOptionsMode.FAST => "FAST",
-                CitationOptionsMode.ACCURATE => "ACCURATE",
-                CitationOptionsMode.OFF => "OFF",
+                CitationOptionsMode.Fast => "FAST",
+                CitationOptionsMode.Accurate => "ACCURATE",
+                CitationOptionsMode.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                "FAST" => CitationOptionsMode.FAST,
-                "ACCURATE" => CitationOptionsMode.ACCURATE,
-                "OFF" => CitationOptionsMode.OFF,
+                "FAST" => CitationOptionsMode.Fast,
+                "ACCURATE" => CitationOptionsMode.Accurate,
+                "OFF" => CitationOptionsMode.Off,
                 _ => null,
             };
         }

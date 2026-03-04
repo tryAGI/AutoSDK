@@ -99,7 +99,7 @@ the connection.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListPipelineIDsByConnectionIDAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListPipelineIDsByConnectionIDAsync(
                 namespaceId: namespaceId,
                 connectionId: connectionId,
                 pageSize: pageSize,

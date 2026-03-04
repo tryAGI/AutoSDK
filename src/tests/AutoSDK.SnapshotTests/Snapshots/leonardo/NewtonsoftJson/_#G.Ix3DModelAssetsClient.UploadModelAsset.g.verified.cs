@@ -1,9 +1,9 @@
-﻿//HintName: G.Ix3DModelAssetsClient.UploadModelAsset.g.cs
+﻿//HintName: G.Ix3dModelAssetsClient.UploadModelAsset.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface Ix3DModelAssetsClient
+    public partial interface Ix3dModelAssetsClient
     {
         /// <summary>
         /// Upload 3D Model<br/>

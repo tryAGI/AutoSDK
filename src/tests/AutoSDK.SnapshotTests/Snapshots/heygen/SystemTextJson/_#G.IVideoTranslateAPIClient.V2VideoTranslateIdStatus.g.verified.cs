@@ -1,9 +1,9 @@
-﻿//HintName: G.IVideoTranslateAPIClient.V2VideoTranslateIdStatus.g.cs
+﻿//HintName: G.IVideoTranslateApiClient.V2VideoTranslateIdStatus.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVideoTranslateAPIClient
+    public partial interface IVideoTranslateApiClient
     {
         /// <summary>
         /// v2/video_translate/&lt;id&gt; (status)<br/>

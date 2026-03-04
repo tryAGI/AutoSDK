@@ -18,17 +18,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="START")]
-        START,
+        Start,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="END")]
-        END,
+        End,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                GenerateRequestTruncate.NONE => "NONE",
-                GenerateRequestTruncate.START => "START",
-                GenerateRequestTruncate.END => "END",
+                GenerateRequestTruncate.None => "NONE",
+                GenerateRequestTruncate.Start => "START",
+                GenerateRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "NONE" => GenerateRequestTruncate.NONE,
-                "START" => GenerateRequestTruncate.START,
-                "END" => GenerateRequestTruncate.END,
+                "NONE" => GenerateRequestTruncate.None,
+                "START" => GenerateRequestTruncate.Start,
+                "END" => GenerateRequestTruncate.End,
                 _ => null,
             };
         }

@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.DeleteConvaiPhoneNumbersByPhoneNumberId.g.cs
+﻿//HintName: G.ConversationalAiClient.DeleteConvaiPhoneNumbersByPhoneNumberId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareDeleteConvaiPhoneNumbersByPhoneNumberIdArguments(
             global::System.Net.Http.HttpClient httpClient,

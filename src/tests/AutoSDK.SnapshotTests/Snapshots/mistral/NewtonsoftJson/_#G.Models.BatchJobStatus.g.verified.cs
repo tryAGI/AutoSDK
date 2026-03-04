@@ -14,37 +14,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="QUEUED")]
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TIMEOUT_EXCEEDED")]
-        TIMEOUTEXCEEDED,
+        TimeoutExceeded,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLATION_REQUESTED")]
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLED")]
-        CANCELLED,
+        Cancelled,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                BatchJobStatus.QUEUED => "QUEUED",
-                BatchJobStatus.RUNNING => "RUNNING",
-                BatchJobStatus.SUCCESS => "SUCCESS",
-                BatchJobStatus.FAILED => "FAILED",
-                BatchJobStatus.TIMEOUTEXCEEDED => "TIMEOUT_EXCEEDED",
-                BatchJobStatus.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
-                BatchJobStatus.CANCELLED => "CANCELLED",
+                BatchJobStatus.Queued => "QUEUED",
+                BatchJobStatus.Running => "RUNNING",
+                BatchJobStatus.Success => "SUCCESS",
+                BatchJobStatus.Failed => "FAILED",
+                BatchJobStatus.TimeoutExceeded => "TIMEOUT_EXCEEDED",
+                BatchJobStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                BatchJobStatus.Cancelled => "CANCELLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => BatchJobStatus.QUEUED,
-                "RUNNING" => BatchJobStatus.RUNNING,
-                "SUCCESS" => BatchJobStatus.SUCCESS,
-                "FAILED" => BatchJobStatus.FAILED,
-                "TIMEOUT_EXCEEDED" => BatchJobStatus.TIMEOUTEXCEEDED,
-                "CANCELLATION_REQUESTED" => BatchJobStatus.CANCELLATIONREQUESTED,
-                "CANCELLED" => BatchJobStatus.CANCELLED,
+                "QUEUED" => BatchJobStatus.Queued,
+                "RUNNING" => BatchJobStatus.Running,
+                "SUCCESS" => BatchJobStatus.Success,
+                "FAILED" => BatchJobStatus.Failed,
+                "TIMEOUT_EXCEEDED" => BatchJobStatus.TimeoutExceeded,
+                "CANCELLATION_REQUESTED" => BatchJobStatus.CancellationRequested,
+                "CANCELLED" => BatchJobStatus.Cancelled,
                 _ => null,
             };
         }

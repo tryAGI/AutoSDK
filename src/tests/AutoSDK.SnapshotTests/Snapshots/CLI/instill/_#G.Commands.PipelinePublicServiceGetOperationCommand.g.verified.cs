@@ -67,7 +67,7 @@ long-running operations such as asynchronous pipeline triggers.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceGetOperationAsync(
+            var response = await _client.Vdp.PipelinePublicServiceGetOperationAsync(
                 operationId: operationId,
                 instillRequesterUid: instillRequesterUid,
                 cancellationToken: cancellationToken);

@@ -14,27 +14,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DB_RECORD_CREATED")]
-        DBRECORDCREATED,
+        DbRecordCreated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UPLOADED")]
-        UPLOADED,
+        Uploaded,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UPLOAD_FAILED")]
-        UPLOADFAILED,
+        UploadFailed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PROCESSED")]
-        PROCESSED,
+        Processed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PROCESSING_FAILED")]
-        PROCESSINGFAILED,
+        ProcessingFailed,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                FileStatus.DBRECORDCREATED => "DB_RECORD_CREATED",
-                FileStatus.UPLOADED => "UPLOADED",
-                FileStatus.UPLOADFAILED => "UPLOAD_FAILED",
-                FileStatus.PROCESSED => "PROCESSED",
-                FileStatus.PROCESSINGFAILED => "PROCESSING_FAILED",
+                FileStatus.DbRecordCreated => "DB_RECORD_CREATED",
+                FileStatus.Uploaded => "UPLOADED",
+                FileStatus.UploadFailed => "UPLOAD_FAILED",
+                FileStatus.Processed => "PROCESSED",
+                FileStatus.ProcessingFailed => "PROCESSING_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "DB_RECORD_CREATED" => FileStatus.DBRECORDCREATED,
-                "UPLOADED" => FileStatus.UPLOADED,
-                "UPLOAD_FAILED" => FileStatus.UPLOADFAILED,
-                "PROCESSED" => FileStatus.PROCESSED,
-                "PROCESSING_FAILED" => FileStatus.PROCESSINGFAILED,
+                "DB_RECORD_CREATED" => FileStatus.DbRecordCreated,
+                "UPLOADED" => FileStatus.Uploaded,
+                "UPLOAD_FAILED" => FileStatus.UploadFailed,
+                "PROCESSED" => FileStatus.Processed,
+                "PROCESSING_FAILED" => FileStatus.ProcessingFailed,
                 _ => null,
             };
         }

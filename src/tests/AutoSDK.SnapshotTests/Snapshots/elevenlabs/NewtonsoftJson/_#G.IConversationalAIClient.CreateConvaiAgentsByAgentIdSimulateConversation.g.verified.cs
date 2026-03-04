@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiAgentsByAgentIdSimulateConversation.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiAgentsByAgentIdSimulateConversation.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Simulates A Conversation<br/>

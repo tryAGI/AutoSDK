@@ -20,8 +20,8 @@ namespace G
         /// Default Value: NORMAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
-        public global::G.MODELASSETTEXTURETYPES? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelAssetTextureTypesJsonConverter))]
+        public global::G.ModelAssetTextureTypes? Type { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
 #endif
         public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage(
             string? id,
-            global::G.MODELASSETTEXTURETYPES? type,
+            global::G.ModelAssetTextureTypes? type,
             string? url)
         {
             this.Id = id;

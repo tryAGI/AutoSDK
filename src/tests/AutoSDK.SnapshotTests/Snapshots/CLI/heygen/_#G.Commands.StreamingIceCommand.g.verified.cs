@@ -64,7 +64,7 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.StreamingAPI.StreamingIceAsync(
+            await _client.StreamingApi.StreamingIceAsync(
                 candidate: candidate,
                 sessionId: sessionId,
                 cancellationToken: cancellationToken);

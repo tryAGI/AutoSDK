@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string voiceId,
             ref string? xiApiKey,
-            global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost request);
+            global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost request);
         partial void PrepareCreateVoicesPvcByVoiceIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string voiceId,
             string? xiApiKey,
-            global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost request);
+            global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost request);
         partial void ProcessCreateVoicesPvcByVoiceIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcByVoiceIdAsync(
             string voiceId,
-            global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost request,
+            global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -243,7 +243,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost
+            var __request = new global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost
             {
                 Name = name,
                 Language = language,

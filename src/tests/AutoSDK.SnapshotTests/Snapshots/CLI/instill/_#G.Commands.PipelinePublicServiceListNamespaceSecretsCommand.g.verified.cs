@@ -78,7 +78,7 @@ namespace.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListNamespaceSecretsAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListNamespaceSecretsAsync(
                 namespaceId: namespaceId,
                 pageSize: pageSize,
                 pageToken: pageToken,

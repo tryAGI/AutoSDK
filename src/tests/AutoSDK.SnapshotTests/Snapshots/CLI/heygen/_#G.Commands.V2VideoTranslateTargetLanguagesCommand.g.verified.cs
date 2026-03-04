@@ -45,7 +45,7 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.VideoTranslateAPI.V2VideoTranslateTargetLanguagesAsync(
+            await _client.VideoTranslateApi.V2VideoTranslateTargetLanguagesAsync(
                 cancellationToken: cancellationToken);
 
             Complete(

@@ -1,4 +1,4 @@
-﻿//HintName: G.VideoTranslateAPIClient.g.cs
+﻿//HintName: G.VideoTranslateApiClient.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class VideoTranslateAPIClient : global::G.IVideoTranslateAPIClient, global::System.IDisposable
+    public sealed partial class VideoTranslateApiClient : global::G.IVideoTranslateApiClient, global::System.IDisposable
     {
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
 
 
         /// <summary>
-        /// Creates a new instance of the VideoTranslateAPIClient.
+        /// Creates a new instance of the VideoTranslateApiClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
@@ -48,7 +48,7 @@ namespace G
         /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
         /// <param name="authorizations">The authorizations to use for the requests.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
-        public VideoTranslateAPIClient(
+        public VideoTranslateApiClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,

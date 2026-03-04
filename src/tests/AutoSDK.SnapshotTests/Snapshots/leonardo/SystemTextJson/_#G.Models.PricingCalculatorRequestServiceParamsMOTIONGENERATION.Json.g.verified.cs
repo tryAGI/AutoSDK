@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsMOTIONGENERATION.Json.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsMotionGeneration.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class PricingCalculatorRequestServiceParamsMOTIONGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsMotionGeneration
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? FromJson(
+        public static global::G.PricingCalculatorRequestServiceParamsMotionGeneration? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION),
-                jsonSerializerContext) as global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION;
+                typeof(global::G.PricingCalculatorRequestServiceParamsMotionGeneration),
+                jsonSerializerContext) as global::G.PricingCalculatorRequestServiceParamsMotionGeneration;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? FromJson(
+        public static global::G.PricingCalculatorRequestServiceParamsMotionGeneration? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.PricingCalculatorRequestServiceParamsMotionGeneration>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.PricingCalculatorRequestServiceParamsMotionGeneration?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION;
+                typeof(global::G.PricingCalculatorRequestServiceParamsMotionGeneration),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.PricingCalculatorRequestServiceParamsMotionGeneration;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.PricingCalculatorRequestServiceParamsMotionGeneration?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.PricingCalculatorRequestServiceParamsMotionGeneration?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

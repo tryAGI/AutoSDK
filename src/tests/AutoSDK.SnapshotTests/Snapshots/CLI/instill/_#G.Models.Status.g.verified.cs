@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// Successfully completed.
         /// </summary>
-        COMPLETED,
+        Completed,
         /// <summary>
         /// Finished with error.
         /// </summary>
-        ERRORED,
+        Errored,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                Status.COMPLETED => "STATUS_COMPLETED",
-                Status.ERRORED => "STATUS_ERRORED",
+                Status.Completed => "STATUS_COMPLETED",
+                Status.Errored => "STATUS_ERRORED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "STATUS_COMPLETED" => Status.COMPLETED,
-                "STATUS_ERRORED" => Status.ERRORED,
+                "STATUS_COMPLETED" => Status.Completed,
+                "STATUS_ERRORED" => Status.Errored,
                 _ => null,
             };
         }

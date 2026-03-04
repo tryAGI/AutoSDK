@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.EditConvaiPhoneNumbersByPhoneNumberId.g.cs
+﻿//HintName: G.ConversationalAiClient.EditConvaiPhoneNumbersByPhoneNumberId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareEditConvaiPhoneNumbersByPhoneNumberIdArguments(
             global::System.Net.Http.HttpClient httpClient,

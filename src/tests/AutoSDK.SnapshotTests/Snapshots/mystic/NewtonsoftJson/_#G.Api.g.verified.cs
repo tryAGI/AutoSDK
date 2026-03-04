@@ -148,7 +148,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GCPClient GCP => new GCPClient(HttpClient, authorizations: Authorizations)
+        public GcpClient Gcp => new GcpClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -157,7 +157,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AWSClient AWS => new AWSClient(HttpClient, authorizations: Authorizations)
+        public AwsClient Aws => new AwsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -80,7 +80,7 @@ namespace G
         /// Create personalized avatar videos with ease using the **HeyGen API**. By selecting an avatar and a voice, you can create engaging videos for various purposes. 🌟<br/>
         /// **Guide**: [https://docs.heygen.com/docs/create-video](https://docs.heygen.com/docs/create-video)**Reference**: [https://docs.heygen.com/reference/create-an-avatar-video-v2](https://docs.heygen.com/reference/create-an-avatar-video-v2)
         /// </summary>
-        public CreateVideoAPIClient CreateVideoAPI => new CreateVideoAPIClient(HttpClient, authorizations: Authorizations)
+        public CreateVideoApiClient CreateVideoApi => new CreateVideoApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -96,7 +96,7 @@ namespace G
         /// **Guide**: [https://docs.heygen.com/docs/generate-video-from-template-v2](https://docs.heygen.com/docs/generate-video-from-template-v2)  <br/>
         /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2)
         /// </summary>
-        public TemplateAPIClient TemplateAPI => new TemplateAPIClient(HttpClient, authorizations: Authorizations)
+        public TemplateApiClient TemplateApi => new TemplateApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -106,7 +106,7 @@ namespace G
         /// The [Video Translate](https://labs.heygen.com/video-translate) by HeyGen provides a powerful solution for effortlessly translating videos, integrating natural voice cloning and authentic speaking styles seamlessly. Now, you can harness its capabilities programmatically through the **Video Translate API**!<br/>
         /// **Guide**: [https://docs.heygen.com/docs/video-translate-api](https://docs.heygen.com/docs/video-translate-api)**Reference**: [https://docs.heygen.com/reference/video-translate](https://docs.heygen.com/reference/video-translate)
         /// </summary>
-        public VideoTranslateAPIClient VideoTranslateAPI => new VideoTranslateAPIClient(HttpClient, authorizations: Authorizations)
+        public VideoTranslateApiClient VideoTranslateApi => new VideoTranslateApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -116,7 +116,7 @@ namespace G
         /// HeyGen's **Streaming API** allows developers to seamlessly integrate dynamic digital avatars into their applications for immersive and interactive user experiences. With this API, you can create _virtual assistants, real-time training simulations,_ and more, with a focus on real-time, low-latency communication between _users_ and _avatars_ with power of WebRTC.<br/>
         /// **Guide**: [https://docs.heygen.com/docs/streaming-api](https://docs.heygen.com/docs/streaming-api)**Reference**: [https://docs.heygen.com/reference/new-session](https://docs.heygen.com/reference/new-session)
         /// </summary>
-        public StreamingAPIClient StreamingAPI => new StreamingAPIClient(HttpClient, authorizations: Authorizations)
+        public StreamingApiClient StreamingApi => new StreamingApiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

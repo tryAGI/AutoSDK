@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="QUEUED")]
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VALIDATING")]
-        VALIDATING,
+        Validating,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VALIDATED")]
-        VALIDATED,
+        Validated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED_VALIDATION")]
-        FAILEDVALIDATION,
+        FailedValidation,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLED")]
-        CANCELLED,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLATION_REQUESTED")]
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                ClassifierJobOutStatus.QUEUED => "QUEUED",
-                ClassifierJobOutStatus.STARTED => "STARTED",
-                ClassifierJobOutStatus.VALIDATING => "VALIDATING",
-                ClassifierJobOutStatus.VALIDATED => "VALIDATED",
-                ClassifierJobOutStatus.RUNNING => "RUNNING",
-                ClassifierJobOutStatus.FAILEDVALIDATION => "FAILED_VALIDATION",
-                ClassifierJobOutStatus.FAILED => "FAILED",
-                ClassifierJobOutStatus.SUCCESS => "SUCCESS",
-                ClassifierJobOutStatus.CANCELLED => "CANCELLED",
-                ClassifierJobOutStatus.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
+                ClassifierJobOutStatus.Queued => "QUEUED",
+                ClassifierJobOutStatus.Started => "STARTED",
+                ClassifierJobOutStatus.Validating => "VALIDATING",
+                ClassifierJobOutStatus.Validated => "VALIDATED",
+                ClassifierJobOutStatus.Running => "RUNNING",
+                ClassifierJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                ClassifierJobOutStatus.Failed => "FAILED",
+                ClassifierJobOutStatus.Success => "SUCCESS",
+                ClassifierJobOutStatus.Cancelled => "CANCELLED",
+                ClassifierJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => ClassifierJobOutStatus.QUEUED,
-                "STARTED" => ClassifierJobOutStatus.STARTED,
-                "VALIDATING" => ClassifierJobOutStatus.VALIDATING,
-                "VALIDATED" => ClassifierJobOutStatus.VALIDATED,
-                "RUNNING" => ClassifierJobOutStatus.RUNNING,
-                "FAILED_VALIDATION" => ClassifierJobOutStatus.FAILEDVALIDATION,
-                "FAILED" => ClassifierJobOutStatus.FAILED,
-                "SUCCESS" => ClassifierJobOutStatus.SUCCESS,
-                "CANCELLED" => ClassifierJobOutStatus.CANCELLED,
-                "CANCELLATION_REQUESTED" => ClassifierJobOutStatus.CANCELLATIONREQUESTED,
+                "QUEUED" => ClassifierJobOutStatus.Queued,
+                "STARTED" => ClassifierJobOutStatus.Started,
+                "VALIDATING" => ClassifierJobOutStatus.Validating,
+                "VALIDATED" => ClassifierJobOutStatus.Validated,
+                "RUNNING" => ClassifierJobOutStatus.Running,
+                "FAILED_VALIDATION" => ClassifierJobOutStatus.FailedValidation,
+                "FAILED" => ClassifierJobOutStatus.Failed,
+                "SUCCESS" => ClassifierJobOutStatus.Success,
+                "CANCELLED" => ClassifierJobOutStatus.Cancelled,
+                "CANCELLATION_REQUESTED" => ClassifierJobOutStatus.CancellationRequested,
                 _ => null,
             };
         }

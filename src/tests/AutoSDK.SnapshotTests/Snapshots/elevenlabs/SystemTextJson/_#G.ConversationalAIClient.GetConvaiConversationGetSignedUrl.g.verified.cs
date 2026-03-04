@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiConversationGetSignedUrl.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiConversationGetSignedUrl.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiConversationGetSignedUrlArguments(
             global::System.Net.Http.HttpClient httpClient,

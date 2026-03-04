@@ -168,7 +168,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RAGEngineClient RAGEngine => new RAGEngineClient(HttpClient, authorizations: Authorizations)
+        public RagEngineClient RagEngine => new RagEngineClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

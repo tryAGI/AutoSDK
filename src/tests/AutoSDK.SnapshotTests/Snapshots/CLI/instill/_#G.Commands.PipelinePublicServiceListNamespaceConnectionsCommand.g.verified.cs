@@ -92,7 +92,7 @@ The following filters are supported:
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListNamespaceConnectionsAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListNamespaceConnectionsAsync(
                 namespaceId: namespaceId,
                 pageSize: pageSize,
                 pageToken: pageToken,

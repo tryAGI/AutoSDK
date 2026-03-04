@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceTriggerAsyncNamespacePipelineRelease.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceTriggerAsyncNamespacePipelineRelease.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Trigger a pipeline release asynchronously<br/>

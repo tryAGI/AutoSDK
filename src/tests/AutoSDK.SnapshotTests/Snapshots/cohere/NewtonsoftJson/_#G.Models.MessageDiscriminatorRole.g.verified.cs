@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHATBOT")]
-        CHATBOT,
+        Chatbot,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SYSTEM")]
-        SYSTEM,
+        System,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="USER")]
-        USER,
+        User,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TOOL")]
-        TOOL,
+        Tool,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                MessageDiscriminatorRole.CHATBOT => "CHATBOT",
-                MessageDiscriminatorRole.SYSTEM => "SYSTEM",
-                MessageDiscriminatorRole.USER => "USER",
-                MessageDiscriminatorRole.TOOL => "TOOL",
+                MessageDiscriminatorRole.Chatbot => "CHATBOT",
+                MessageDiscriminatorRole.System => "SYSTEM",
+                MessageDiscriminatorRole.User => "USER",
+                MessageDiscriminatorRole.Tool => "TOOL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "CHATBOT" => MessageDiscriminatorRole.CHATBOT,
-                "SYSTEM" => MessageDiscriminatorRole.SYSTEM,
-                "USER" => MessageDiscriminatorRole.USER,
-                "TOOL" => MessageDiscriminatorRole.TOOL,
+                "CHATBOT" => MessageDiscriminatorRole.Chatbot,
+                "SYSTEM" => MessageDiscriminatorRole.System,
+                "USER" => MessageDiscriminatorRole.User,
+                "TOOL" => MessageDiscriminatorRole.Tool,
                 _ => null,
             };
         }

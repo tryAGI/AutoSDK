@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceGetNamespaceConnection.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceGetNamespaceConnection.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Get a namespace connection<br/>

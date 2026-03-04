@@ -20,7 +20,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcByVoiceIdAsync(
             string voiceId,
-            global::G.BodyEditPVCVoiceV1VoicesPvcVoiceIdPost request,
+            global::G.BodyEditPvcVoiceV1VoicesPvcVoiceIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 

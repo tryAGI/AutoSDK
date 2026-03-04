@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        HEALTHY,
+        Healthy,
         /// <summary>
         /// 
         /// </summary>
-        UNHEALTHY,
+        Unhealthy,
         /// <summary>
         /// 
         /// </summary>
-        UNAVAILABLE,
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
-        TIMEOUT,
+        Timeout,
         /// <summary>
         /// 
         /// </summary>
-        INDEXING,
+        Indexing,
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace G
         {
             return value switch
             {
-                NodeStatusStatus.HEALTHY => "HEALTHY",
-                NodeStatusStatus.UNHEALTHY => "UNHEALTHY",
-                NodeStatusStatus.UNAVAILABLE => "UNAVAILABLE",
-                NodeStatusStatus.TIMEOUT => "TIMEOUT",
-                NodeStatusStatus.INDEXING => "INDEXING",
+                NodeStatusStatus.Healthy => "HEALTHY",
+                NodeStatusStatus.Unhealthy => "UNHEALTHY",
+                NodeStatusStatus.Unavailable => "UNAVAILABLE",
+                NodeStatusStatus.Timeout => "TIMEOUT",
+                NodeStatusStatus.Indexing => "INDEXING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,11 +59,11 @@ namespace G
         {
             return value switch
             {
-                "HEALTHY" => NodeStatusStatus.HEALTHY,
-                "UNHEALTHY" => NodeStatusStatus.UNHEALTHY,
-                "UNAVAILABLE" => NodeStatusStatus.UNAVAILABLE,
-                "TIMEOUT" => NodeStatusStatus.TIMEOUT,
-                "INDEXING" => NodeStatusStatus.INDEXING,
+                "HEALTHY" => NodeStatusStatus.Healthy,
+                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
+                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
+                "TIMEOUT" => NodeStatusStatus.Timeout,
+                "INDEXING" => NodeStatusStatus.Indexing,
                 _ => null,
             };
         }

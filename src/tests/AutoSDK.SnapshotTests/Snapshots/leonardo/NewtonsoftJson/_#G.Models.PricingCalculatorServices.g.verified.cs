@@ -14,37 +14,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="IMAGE_GENERATION")]
-        IMAGEGENERATION,
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FANTASY_AVATAR_GENERATION")]
-        FANTASYAVATARGENERATION,
+        FantasyAvatarGeneration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MOTION_GENERATION")]
-        MOTIONGENERATION,
+        MotionGeneration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LCM_GENERATION")]
-        LCMGENERATION,
+        LcmGeneration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODEL_TRAINING")]
-        MODELTRAINING,
+        ModelTraining,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TEXTURE_GENERATION")]
-        TEXTUREGENERATION,
+        TextureGeneration,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNIVERSAL_UPSCALER")]
-        UNIVERSALUPSCALER,
+        UniversalUpscaler,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                PricingCalculatorServices.IMAGEGENERATION => "IMAGE_GENERATION",
-                PricingCalculatorServices.FANTASYAVATARGENERATION => "FANTASY_AVATAR_GENERATION",
-                PricingCalculatorServices.MOTIONGENERATION => "MOTION_GENERATION",
-                PricingCalculatorServices.LCMGENERATION => "LCM_GENERATION",
-                PricingCalculatorServices.MODELTRAINING => "MODEL_TRAINING",
-                PricingCalculatorServices.TEXTUREGENERATION => "TEXTURE_GENERATION",
-                PricingCalculatorServices.UNIVERSALUPSCALER => "UNIVERSAL_UPSCALER",
+                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
+                PricingCalculatorServices.FantasyAvatarGeneration => "FANTASY_AVATAR_GENERATION",
+                PricingCalculatorServices.MotionGeneration => "MOTION_GENERATION",
+                PricingCalculatorServices.LcmGeneration => "LCM_GENERATION",
+                PricingCalculatorServices.ModelTraining => "MODEL_TRAINING",
+                PricingCalculatorServices.TextureGeneration => "TEXTURE_GENERATION",
+                PricingCalculatorServices.UniversalUpscaler => "UNIVERSAL_UPSCALER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "IMAGE_GENERATION" => PricingCalculatorServices.IMAGEGENERATION,
-                "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FANTASYAVATARGENERATION,
-                "MOTION_GENERATION" => PricingCalculatorServices.MOTIONGENERATION,
-                "LCM_GENERATION" => PricingCalculatorServices.LCMGENERATION,
-                "MODEL_TRAINING" => PricingCalculatorServices.MODELTRAINING,
-                "TEXTURE_GENERATION" => PricingCalculatorServices.TEXTUREGENERATION,
-                "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UNIVERSALUPSCALER,
+                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
+                "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FantasyAvatarGeneration,
+                "MOTION_GENERATION" => PricingCalculatorServices.MotionGeneration,
+                "LCM_GENERATION" => PricingCalculatorServices.LcmGeneration,
+                "MODEL_TRAINING" => PricingCalculatorServices.ModelTraining,
+                "TEXTURE_GENERATION" => PricingCalculatorServices.TextureGeneration,
+                "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UniversalUpscaler,
                 _ => null,
             };
         }

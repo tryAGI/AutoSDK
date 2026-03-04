@@ -16,12 +16,12 @@ namespace G
         /// Run from frontend UI.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUN_SOURCE_CONSOLE")]
-        CONSOLE,
+        Console,
         /// <summary>
         /// Run from API or SDK.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUN_SOURCE_API")]
-        API,
+        Api,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                RunSource.CONSOLE => "RUN_SOURCE_CONSOLE",
-                RunSource.API => "RUN_SOURCE_API",
+                RunSource.Console => "RUN_SOURCE_CONSOLE",
+                RunSource.Api => "RUN_SOURCE_API",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "RUN_SOURCE_CONSOLE" => RunSource.CONSOLE,
-                "RUN_SOURCE_API" => RunSource.API,
+                "RUN_SOURCE_CONSOLE" => RunSource.Console,
+                "RUN_SOURCE_API" => RunSource.Api,
                 _ => null,
             };
         }

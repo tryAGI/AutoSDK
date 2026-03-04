@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiPhoneNumbersCreate.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiPhoneNumbersCreate.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Import Phone Number<br/>

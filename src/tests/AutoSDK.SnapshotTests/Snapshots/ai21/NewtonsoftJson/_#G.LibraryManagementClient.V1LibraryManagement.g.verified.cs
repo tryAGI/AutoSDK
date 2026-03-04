@@ -78,11 +78,11 @@ namespace G
 
             var statusValue = status switch
             {
-                global::G.FileStatus.DBRECORDCREATED => "DB_RECORD_CREATED",
-                global::G.FileStatus.UPLOADED => "UPLOADED",
-                global::G.FileStatus.UPLOADFAILED => "UPLOAD_FAILED",
-                global::G.FileStatus.PROCESSED => "PROCESSED",
-                global::G.FileStatus.PROCESSINGFAILED => "PROCESSING_FAILED",
+                global::G.FileStatus.DbRecordCreated => "DB_RECORD_CREATED",
+                global::G.FileStatus.Uploaded => "UPLOADED",
+                global::G.FileStatus.UploadFailed => "UPLOAD_FAILED",
+                global::G.FileStatus.Processed => "PROCESSED",
+                global::G.FileStatus.ProcessingFailed => "PROCESSING_FAILED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

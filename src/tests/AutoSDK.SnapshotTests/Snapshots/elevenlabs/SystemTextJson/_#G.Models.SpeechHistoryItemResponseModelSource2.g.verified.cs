@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TTS,
+        Tts,
         /// <summary>
         /// 
         /// </summary>
-        STS,
+        Sts,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PD,
+        Pd,
         /// <summary>
         /// 
         /// </summary>
-        AN,
+        An,
         /// <summary>
         /// 
         /// </summary>
@@ -55,11 +55,11 @@ namespace G
         {
             return value switch
             {
-                SpeechHistoryItemResponseModelSource2.TTS => "TTS",
-                SpeechHistoryItemResponseModelSource2.STS => "STS",
+                SpeechHistoryItemResponseModelSource2.Tts => "TTS",
+                SpeechHistoryItemResponseModelSource2.Sts => "STS",
                 SpeechHistoryItemResponseModelSource2.Projects => "Projects",
-                SpeechHistoryItemResponseModelSource2.PD => "PD",
-                SpeechHistoryItemResponseModelSource2.AN => "AN",
+                SpeechHistoryItemResponseModelSource2.Pd => "PD",
+                SpeechHistoryItemResponseModelSource2.An => "AN",
                 SpeechHistoryItemResponseModelSource2.Dubbing => "Dubbing",
                 SpeechHistoryItemResponseModelSource2.PlayAPI => "PlayAPI",
                 SpeechHistoryItemResponseModelSource2.ConvAI => "ConvAI",
@@ -73,11 +73,11 @@ namespace G
         {
             return value switch
             {
-                "TTS" => SpeechHistoryItemResponseModelSource2.TTS,
-                "STS" => SpeechHistoryItemResponseModelSource2.STS,
+                "TTS" => SpeechHistoryItemResponseModelSource2.Tts,
+                "STS" => SpeechHistoryItemResponseModelSource2.Sts,
                 "Projects" => SpeechHistoryItemResponseModelSource2.Projects,
-                "PD" => SpeechHistoryItemResponseModelSource2.PD,
-                "AN" => SpeechHistoryItemResponseModelSource2.AN,
+                "PD" => SpeechHistoryItemResponseModelSource2.Pd,
+                "AN" => SpeechHistoryItemResponseModelSource2.An,
                 "Dubbing" => SpeechHistoryItemResponseModelSource2.Dubbing,
                 "PlayAPI" => SpeechHistoryItemResponseModelSource2.PlayAPI,
                 "ConvAI" => SpeechHistoryItemResponseModelSource2.ConvAI,

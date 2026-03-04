@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GENERATED")]
-        GENERATED,
+        Generated,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UPLOADED")]
-        UPLOADED,
+        Uploaded,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ControlnetInputInitImageType.GENERATED => "GENERATED",
-                ControlnetInputInitImageType.UPLOADED => "UPLOADED",
+                ControlnetInputInitImageType.Generated => "GENERATED",
+                ControlnetInputInitImageType.Uploaded => "UPLOADED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "GENERATED" => ControlnetInputInitImageType.GENERATED,
-                "UPLOADED" => ControlnetInputInitImageType.UPLOADED,
+                "GENERATED" => ControlnetInputInitImageType.Generated,
+                "UPLOADED" => ControlnetInputInitImageType.Uploaded,
                 _ => null,
             };
         }

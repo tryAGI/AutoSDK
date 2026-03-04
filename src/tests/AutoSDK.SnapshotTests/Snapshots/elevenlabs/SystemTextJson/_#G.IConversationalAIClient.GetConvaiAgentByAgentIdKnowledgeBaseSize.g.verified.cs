@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiAgentByAgentIdKnowledgeBaseSize.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiAgentByAgentIdKnowledgeBaseSize.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Returns The Size Of The Agent'S Knowledge Base<br/>

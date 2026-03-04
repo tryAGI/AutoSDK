@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
-        RIGHT,
+        Right,
         /// <summary>
         /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                PullsCreateReviewCommentRequestStartSide.LEFT => "LEFT",
-                PullsCreateReviewCommentRequestStartSide.RIGHT => "RIGHT",
+                PullsCreateReviewCommentRequestStartSide.Left => "LEFT",
+                PullsCreateReviewCommentRequestStartSide.Right => "RIGHT",
                 PullsCreateReviewCommentRequestStartSide.Side => "side",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => PullsCreateReviewCommentRequestStartSide.LEFT,
-                "RIGHT" => PullsCreateReviewCommentRequestStartSide.RIGHT,
+                "LEFT" => PullsCreateReviewCommentRequestStartSide.Left,
+                "RIGHT" => PullsCreateReviewCommentRequestStartSide.Right,
                 "side" => PullsCreateReviewCommentRequestStartSide.Side,
                 _ => null,
             };

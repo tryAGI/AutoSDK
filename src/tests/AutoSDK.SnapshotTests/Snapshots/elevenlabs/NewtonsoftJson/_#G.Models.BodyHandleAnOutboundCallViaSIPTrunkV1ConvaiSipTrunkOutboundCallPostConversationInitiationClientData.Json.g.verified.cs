@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData.Json.g.cs
+﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData
+    public sealed partial class BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData? FromJson(
+        public static global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData?>(serializer.Deserialize<global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData?>(serializer.Deserialize<global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData>(jsonReader));
         }
     }
 }

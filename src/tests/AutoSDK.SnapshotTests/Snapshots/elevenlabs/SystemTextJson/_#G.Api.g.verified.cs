@@ -69,8 +69,8 @@ namespace G
                     new global::G.JsonConverters.ExportOptionsDiscriminatorFormatNullableJsonConverter(),
                     new global::G.JsonConverters.BanReasonTypeJsonConverter(),
                     new global::G.JsonConverters.BanReasonTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.LLMJsonConverter(),
-                    new global::G.JsonConverters.LLMNullableJsonConverter(),
+                    new global::G.JsonConverters.LlmJsonConverter(),
+                    new global::G.JsonConverters.LlmNullableJsonConverter(),
                     new global::G.JsonConverters.WebhookToolApiSchemaConfigInputMethodJsonConverter(),
                     new global::G.JsonConverters.WebhookToolApiSchemaConfigInputMethodNullableJsonConverter(),
                     new global::G.JsonConverters.LiteralJsonSchemaPropertyTypeJsonConverter(),
@@ -671,7 +671,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ConversationalAIClient ConversationalAI => new ConversationalAIClient(HttpClient, authorizations: Authorizations)
+        public ConversationalAiClient ConversationalAi => new ConversationalAiClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

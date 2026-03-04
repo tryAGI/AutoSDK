@@ -16,19 +16,19 @@ namespace G
         /// <summary>
         /// Run in progress.
         /// </summary>
-        PROCESSING,
+        Processing,
         /// <summary>
         /// Run succeeded.
         /// </summary>
-        COMPLETED,
+        Completed,
         /// <summary>
         /// Run failed.
         /// </summary>
-        FAILED,
+        Failed,
         /// <summary>
         /// Run is waiting to be executed.
         /// </summary>
-        QUEUED,
+        Queued,
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                RunStatus.PROCESSING => "RUN_STATUS_PROCESSING",
-                RunStatus.COMPLETED => "RUN_STATUS_COMPLETED",
-                RunStatus.FAILED => "RUN_STATUS_FAILED",
-                RunStatus.QUEUED => "RUN_STATUS_QUEUED",
+                RunStatus.Processing => "RUN_STATUS_PROCESSING",
+                RunStatus.Completed => "RUN_STATUS_COMPLETED",
+                RunStatus.Failed => "RUN_STATUS_FAILED",
+                RunStatus.Queued => "RUN_STATUS_QUEUED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,10 +57,10 @@ namespace G
         {
             return value switch
             {
-                "RUN_STATUS_PROCESSING" => RunStatus.PROCESSING,
-                "RUN_STATUS_COMPLETED" => RunStatus.COMPLETED,
-                "RUN_STATUS_FAILED" => RunStatus.FAILED,
-                "RUN_STATUS_QUEUED" => RunStatus.QUEUED,
+                "RUN_STATUS_PROCESSING" => RunStatus.Processing,
+                "RUN_STATUS_COMPLETED" => RunStatus.Completed,
+                "RUN_STATUS_FAILED" => RunStatus.Failed,
+                "RUN_STATUS_QUEUED" => RunStatus.Queued,
                 _ => null,
             };
         }

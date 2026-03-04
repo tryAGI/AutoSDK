@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.EditConvaiAgentsByAgentId.g.cs
+﻿//HintName: G.IConversationalAiClient.EditConvaiAgentsByAgentId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Patches An Agent Settings<br/>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsMODELTRAINING.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsModelTraining.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for MODEL_TRAINING service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsMODELTRAINING
+    public sealed partial class PricingCalculatorRequestServiceParamsModelTraining
     {
         /// <summary>
         /// The resolution for training. Must be 512 or 768.
@@ -22,21 +22,21 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMODELTRAINING" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsModelTraining" /> class.
         /// </summary>
         /// <param name="resolution">
         /// The resolution for training. Must be 512 or 768.
         /// </param>
-        public PricingCalculatorRequestServiceParamsMODELTRAINING(
+        public PricingCalculatorRequestServiceParamsModelTraining(
             int? resolution)
         {
             this.Resolution = resolution;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMODELTRAINING" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsModelTraining" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsMODELTRAINING()
+        public PricingCalculatorRequestServiceParamsModelTraining()
         {
         }
     }

@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages,
+                "BLANK" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

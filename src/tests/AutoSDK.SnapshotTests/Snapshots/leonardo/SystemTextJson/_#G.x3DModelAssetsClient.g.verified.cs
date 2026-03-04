@@ -1,4 +1,4 @@
-﻿//HintName: G.x3DModelAssetsClient.g.cs
+﻿//HintName: G.x3dModelAssetsClient.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class x3DModelAssetsClient : global::G.Ix3DModelAssetsClient, global::System.IDisposable
+    public sealed partial class x3dModelAssetsClient : global::G.Ix3dModelAssetsClient, global::System.IDisposable
     {
         /// <summary>
         /// Leonardo.Ai API server
@@ -38,7 +38,7 @@ namespace G
 
 
         /// <summary>
-        /// Creates a new instance of the x3DModelAssetsClient.
+        /// Creates a new instance of the x3dModelAssetsClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
@@ -46,7 +46,7 @@ namespace G
         /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
         /// <param name="authorizations">The authorizations to use for the requests.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
-        public x3DModelAssetsClient(
+        public x3dModelAssetsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,

@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("SHA256_RSA")]
-        public string? SHA256RSA { get; set; }
+        public string? Sha256Rsa { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("SHA256_DSA")]
-        public string? SHA256DSA { get; set; }
+        public string? Sha256Dsa { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("SHA256_ECDSA")]
-        public string? SHA256ECDSA { get; set; }
+        public string? Sha256Ecdsa { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("SHA256_ED25519")]
-        public string? SHA256ED25519 { get; set; }
+        public string? Sha256Ed25519 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,23 +42,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiOverviewSshKeyFingerprints" /> class.
         /// </summary>
-        /// <param name="sHA256RSA"></param>
-        /// <param name="sHA256DSA"></param>
-        /// <param name="sHA256ECDSA"></param>
-        /// <param name="sHA256ED25519"></param>
+        /// <param name="sha256Rsa"></param>
+        /// <param name="sha256Dsa"></param>
+        /// <param name="sha256Ecdsa"></param>
+        /// <param name="sha256Ed25519"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ApiOverviewSshKeyFingerprints(
-            string? sHA256RSA,
-            string? sHA256DSA,
-            string? sHA256ECDSA,
-            string? sHA256ED25519)
+            string? sha256Rsa,
+            string? sha256Dsa,
+            string? sha256Ecdsa,
+            string? sha256Ed25519)
         {
-            this.SHA256RSA = sHA256RSA;
-            this.SHA256DSA = sHA256DSA;
-            this.SHA256ECDSA = sHA256ECDSA;
-            this.SHA256ED25519 = sHA256ED25519;
+            this.Sha256Rsa = sha256Rsa;
+            this.Sha256Dsa = sha256Dsa;
+            this.Sha256Ecdsa = sha256Ecdsa;
+            this.Sha256Ed25519 = sha256Ed25519;
         }
 
         /// <summary>

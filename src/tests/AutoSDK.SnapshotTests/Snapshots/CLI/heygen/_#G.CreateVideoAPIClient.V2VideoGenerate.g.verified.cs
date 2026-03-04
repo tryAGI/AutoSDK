@@ -1,10 +1,10 @@
-﻿//HintName: G.CreateVideoAPIClient.V2VideoGenerate.g.cs
+﻿//HintName: G.CreateVideoApiClient.V2VideoGenerate.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class CreateVideoAPIClient
+    public partial class CreateVideoApiClient
     {
         partial void PrepareV2VideoGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,

@@ -13,59 +13,59 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        GENERAL,
+        General,
         /// <summary>
         /// 
         /// </summary>
-        BUILDINGS,
+        Buildings,
         /// <summary>
         /// 
         /// </summary>
-        CHARACTERS,
+        Characters,
         /// <summary>
         /// 
         /// </summary>
-        ENVIRONMENTS,
+        Environments,
         /// <summary>
         /// 
         /// </summary>
-        FASHION,
+        Fashion,
         /// <summary>
         /// 
         /// </summary>
-        ILLUSTRATIONS,
+        Illustrations,
         /// <summary>
         /// 
         /// </summary>
-        GAMEITEMS,
+        GameItems,
         /// <summary>
         /// 
         /// </summary>
-        GRAPHICALELEMENTS,
+        GraphicalElements,
         /// <summary>
         /// 
         /// </summary>
-        PHOTOGRAPHY,
+        Photography,
         /// <summary>
         /// 
         /// </summary>
-        PIXELART,
+        PixelArt,
         /// <summary>
         /// 
         /// </summary>
-        PRODUCTDESIGN,
+        ProductDesign,
         /// <summary>
         /// 
         /// </summary>
-        TEXTURES,
+        Textures,
         /// <summary>
         /// 
         /// </summary>
-        UIELEMENTS,
+        UiElements,
         /// <summary>
         /// 
         /// </summary>
-        VECTOR,
+        Vector,
     }
 
     /// <summary>
@@ -80,20 +80,20 @@ namespace G
         {
             return value switch
             {
-                CustomModelType.GENERAL => "GENERAL",
-                CustomModelType.BUILDINGS => "BUILDINGS",
-                CustomModelType.CHARACTERS => "CHARACTERS",
-                CustomModelType.ENVIRONMENTS => "ENVIRONMENTS",
-                CustomModelType.FASHION => "FASHION",
-                CustomModelType.ILLUSTRATIONS => "ILLUSTRATIONS",
-                CustomModelType.GAMEITEMS => "GAME_ITEMS",
-                CustomModelType.GRAPHICALELEMENTS => "GRAPHICAL_ELEMENTS",
-                CustomModelType.PHOTOGRAPHY => "PHOTOGRAPHY",
-                CustomModelType.PIXELART => "PIXEL_ART",
-                CustomModelType.PRODUCTDESIGN => "PRODUCT_DESIGN",
-                CustomModelType.TEXTURES => "TEXTURES",
-                CustomModelType.UIELEMENTS => "UI_ELEMENTS",
-                CustomModelType.VECTOR => "VECTOR",
+                CustomModelType.General => "GENERAL",
+                CustomModelType.Buildings => "BUILDINGS",
+                CustomModelType.Characters => "CHARACTERS",
+                CustomModelType.Environments => "ENVIRONMENTS",
+                CustomModelType.Fashion => "FASHION",
+                CustomModelType.Illustrations => "ILLUSTRATIONS",
+                CustomModelType.GameItems => "GAME_ITEMS",
+                CustomModelType.GraphicalElements => "GRAPHICAL_ELEMENTS",
+                CustomModelType.Photography => "PHOTOGRAPHY",
+                CustomModelType.PixelArt => "PIXEL_ART",
+                CustomModelType.ProductDesign => "PRODUCT_DESIGN",
+                CustomModelType.Textures => "TEXTURES",
+                CustomModelType.UiElements => "UI_ELEMENTS",
+                CustomModelType.Vector => "VECTOR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -104,20 +104,20 @@ namespace G
         {
             return value switch
             {
-                "GENERAL" => CustomModelType.GENERAL,
-                "BUILDINGS" => CustomModelType.BUILDINGS,
-                "CHARACTERS" => CustomModelType.CHARACTERS,
-                "ENVIRONMENTS" => CustomModelType.ENVIRONMENTS,
-                "FASHION" => CustomModelType.FASHION,
-                "ILLUSTRATIONS" => CustomModelType.ILLUSTRATIONS,
-                "GAME_ITEMS" => CustomModelType.GAMEITEMS,
-                "GRAPHICAL_ELEMENTS" => CustomModelType.GRAPHICALELEMENTS,
-                "PHOTOGRAPHY" => CustomModelType.PHOTOGRAPHY,
-                "PIXEL_ART" => CustomModelType.PIXELART,
-                "PRODUCT_DESIGN" => CustomModelType.PRODUCTDESIGN,
-                "TEXTURES" => CustomModelType.TEXTURES,
-                "UI_ELEMENTS" => CustomModelType.UIELEMENTS,
-                "VECTOR" => CustomModelType.VECTOR,
+                "GENERAL" => CustomModelType.General,
+                "BUILDINGS" => CustomModelType.Buildings,
+                "CHARACTERS" => CustomModelType.Characters,
+                "ENVIRONMENTS" => CustomModelType.Environments,
+                "FASHION" => CustomModelType.Fashion,
+                "ILLUSTRATIONS" => CustomModelType.Illustrations,
+                "GAME_ITEMS" => CustomModelType.GameItems,
+                "GRAPHICAL_ELEMENTS" => CustomModelType.GraphicalElements,
+                "PHOTOGRAPHY" => CustomModelType.Photography,
+                "PIXEL_ART" => CustomModelType.PixelArt,
+                "PRODUCT_DESIGN" => CustomModelType.ProductDesign,
+                "TEXTURES" => CustomModelType.Textures,
+                "UI_ELEMENTS" => CustomModelType.UiElements,
+                "VECTOR" => CustomModelType.Vector,
                 _ => null,
             };
         }

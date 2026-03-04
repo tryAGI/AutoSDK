@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FREE,
+        Free,
         /// <summary>
         /// 
         /// </summary>
-        FLATRATE,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
-        PERUNIT,
+        PerUnit,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                MarketplaceListingPlanPriceModel.FREE => "FREE",
-                MarketplaceListingPlanPriceModel.FLATRATE => "FLAT_RATE",
-                MarketplaceListingPlanPriceModel.PERUNIT => "PER_UNIT",
+                MarketplaceListingPlanPriceModel.Free => "FREE",
+                MarketplaceListingPlanPriceModel.FlatRate => "FLAT_RATE",
+                MarketplaceListingPlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "FREE" => MarketplaceListingPlanPriceModel.FREE,
-                "FLAT_RATE" => MarketplaceListingPlanPriceModel.FLATRATE,
-                "PER_UNIT" => MarketplaceListingPlanPriceModel.PERUNIT,
+                "FREE" => MarketplaceListingPlanPriceModel.Free,
+                "FLAT_RATE" => MarketplaceListingPlanPriceModel.FlatRate,
+                "PER_UNIT" => MarketplaceListingPlanPriceModel.PerUnit,
                 _ => null,
             };
         }

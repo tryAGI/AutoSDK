@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALLGREEN")]
-        ALLGREEN,
+        Allgreen,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HEADGREEN")]
-        HEADGREEN,
+        Headgreen,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleMergeQueueParametersGroupingStrategy.ALLGREEN => "ALLGREEN",
-                RepositoryRuleMergeQueueParametersGroupingStrategy.HEADGREEN => "HEADGREEN",
+                RepositoryRuleMergeQueueParametersGroupingStrategy.Allgreen => "ALLGREEN",
+                RepositoryRuleMergeQueueParametersGroupingStrategy.Headgreen => "HEADGREEN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "ALLGREEN" => RepositoryRuleMergeQueueParametersGroupingStrategy.ALLGREEN,
-                "HEADGREEN" => RepositoryRuleMergeQueueParametersGroupingStrategy.HEADGREEN,
+                "ALLGREEN" => RepositoryRuleMergeQueueParametersGroupingStrategy.Allgreen,
+                "HEADGREEN" => RepositoryRuleMergeQueueParametersGroupingStrategy.Headgreen,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiConversationsByConversationIdFeedback.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiConversationsByConversationIdFeedback.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Send Conversation Feedback<br/>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey.g.cs
+﻿//HintName: G.Models.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey
+    public sealed partial class GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey
     {
 
         /// <summary>

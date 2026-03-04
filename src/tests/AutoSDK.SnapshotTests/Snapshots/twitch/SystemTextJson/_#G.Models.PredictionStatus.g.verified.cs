@@ -17,19 +17,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ACTIVE,
+        Active,
         /// <summary>
         /// 
         /// </summary>
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
-        LOCKED,
+        Locked,
         /// <summary>
         /// 
         /// </summary>
-        RESOLVED,
+        Resolved,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                PredictionStatus.ACTIVE => "ACTIVE",
-                PredictionStatus.CANCELED => "CANCELED",
-                PredictionStatus.LOCKED => "LOCKED",
-                PredictionStatus.RESOLVED => "RESOLVED",
+                PredictionStatus.Active => "ACTIVE",
+                PredictionStatus.Canceled => "CANCELED",
+                PredictionStatus.Locked => "LOCKED",
+                PredictionStatus.Resolved => "RESOLVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "ACTIVE" => PredictionStatus.ACTIVE,
-                "CANCELED" => PredictionStatus.CANCELED,
-                "LOCKED" => PredictionStatus.LOCKED,
-                "RESOLVED" => PredictionStatus.RESOLVED,
+                "ACTIVE" => PredictionStatus.Active,
+                "CANCELED" => PredictionStatus.Canceled,
+                "LOCKED" => PredictionStatus.Locked,
+                "RESOLVED" => PredictionStatus.Resolved,
                 _ => null,
             };
         }

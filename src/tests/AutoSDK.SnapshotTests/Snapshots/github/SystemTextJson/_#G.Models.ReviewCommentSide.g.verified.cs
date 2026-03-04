@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// 
         /// </summary>
-        RIGHT,
+        Right,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                ReviewCommentSide.LEFT => "LEFT",
-                ReviewCommentSide.RIGHT => "RIGHT",
+                ReviewCommentSide.Left => "LEFT",
+                ReviewCommentSide.Right => "RIGHT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => ReviewCommentSide.LEFT,
-                "RIGHT" => ReviewCommentSide.RIGHT,
+                "LEFT" => ReviewCommentSide.Left,
+                "RIGHT" => ReviewCommentSide.Right,
                 _ => null,
             };
         }

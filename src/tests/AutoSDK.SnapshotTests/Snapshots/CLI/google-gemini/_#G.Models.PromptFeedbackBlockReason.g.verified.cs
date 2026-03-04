@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BLOCKREASONUNSPECIFIED,
+        BlockReasonUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        SAFETY,
+        Safety,
         /// <summary>
         /// 
         /// </summary>
-        OTHER,
+        Other,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                PromptFeedbackBlockReason.BLOCKREASONUNSPECIFIED => "BLOCK_REASON_UNSPECIFIED",
-                PromptFeedbackBlockReason.SAFETY => "SAFETY",
-                PromptFeedbackBlockReason.OTHER => "OTHER",
+                PromptFeedbackBlockReason.BlockReasonUnspecified => "BLOCK_REASON_UNSPECIFIED",
+                PromptFeedbackBlockReason.Safety => "SAFETY",
+                PromptFeedbackBlockReason.Other => "OTHER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "BLOCK_REASON_UNSPECIFIED" => PromptFeedbackBlockReason.BLOCKREASONUNSPECIFIED,
-                "SAFETY" => PromptFeedbackBlockReason.SAFETY,
-                "OTHER" => PromptFeedbackBlockReason.OTHER,
+                "BLOCK_REASON_UNSPECIFIED" => PromptFeedbackBlockReason.BlockReasonUnspecified,
+                "SAFETY" => PromptFeedbackBlockReason.Safety,
+                "OTHER" => PromptFeedbackBlockReason.Other,
                 _ => null,
             };
         }

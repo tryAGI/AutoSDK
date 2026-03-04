@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TASKTYPEUNSPECIFIED,
+        TaskTypeUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        RETRIEVALQUERY,
+        RetrievalQuery,
         /// <summary>
         /// 
         /// </summary>
-        RETRIEVALDOCUMENT,
+        RetrievalDocument,
         /// <summary>
         /// 
         /// </summary>
-        SEMANTICSIMILARITY,
+        SemanticSimilarity,
         /// <summary>
         /// 
         /// </summary>
-        CLASSIFICATION,
+        Classification,
         /// <summary>
         /// 
         /// </summary>
-        CLUSTERING,
+        Clustering,
         /// <summary>
         /// 
         /// </summary>
-        QUESTIONANSWERING,
+        QuestionAnswering,
         /// <summary>
         /// 
         /// </summary>
-        FACTVERIFICATION,
+        FactVerification,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                EmbedContentRequestTaskType.TASKTYPEUNSPECIFIED => "TASK_TYPE_UNSPECIFIED",
-                EmbedContentRequestTaskType.RETRIEVALQUERY => "RETRIEVAL_QUERY",
-                EmbedContentRequestTaskType.RETRIEVALDOCUMENT => "RETRIEVAL_DOCUMENT",
-                EmbedContentRequestTaskType.SEMANTICSIMILARITY => "SEMANTIC_SIMILARITY",
-                EmbedContentRequestTaskType.CLASSIFICATION => "CLASSIFICATION",
-                EmbedContentRequestTaskType.CLUSTERING => "CLUSTERING",
-                EmbedContentRequestTaskType.QUESTIONANSWERING => "QUESTION_ANSWERING",
-                EmbedContentRequestTaskType.FACTVERIFICATION => "FACT_VERIFICATION",
+                EmbedContentRequestTaskType.TaskTypeUnspecified => "TASK_TYPE_UNSPECIFIED",
+                EmbedContentRequestTaskType.RetrievalQuery => "RETRIEVAL_QUERY",
+                EmbedContentRequestTaskType.RetrievalDocument => "RETRIEVAL_DOCUMENT",
+                EmbedContentRequestTaskType.SemanticSimilarity => "SEMANTIC_SIMILARITY",
+                EmbedContentRequestTaskType.Classification => "CLASSIFICATION",
+                EmbedContentRequestTaskType.Clustering => "CLUSTERING",
+                EmbedContentRequestTaskType.QuestionAnswering => "QUESTION_ANSWERING",
+                EmbedContentRequestTaskType.FactVerification => "FACT_VERIFICATION",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "TASK_TYPE_UNSPECIFIED" => EmbedContentRequestTaskType.TASKTYPEUNSPECIFIED,
-                "RETRIEVAL_QUERY" => EmbedContentRequestTaskType.RETRIEVALQUERY,
-                "RETRIEVAL_DOCUMENT" => EmbedContentRequestTaskType.RETRIEVALDOCUMENT,
-                "SEMANTIC_SIMILARITY" => EmbedContentRequestTaskType.SEMANTICSIMILARITY,
-                "CLASSIFICATION" => EmbedContentRequestTaskType.CLASSIFICATION,
-                "CLUSTERING" => EmbedContentRequestTaskType.CLUSTERING,
-                "QUESTION_ANSWERING" => EmbedContentRequestTaskType.QUESTIONANSWERING,
-                "FACT_VERIFICATION" => EmbedContentRequestTaskType.FACTVERIFICATION,
+                "TASK_TYPE_UNSPECIFIED" => EmbedContentRequestTaskType.TaskTypeUnspecified,
+                "RETRIEVAL_QUERY" => EmbedContentRequestTaskType.RetrievalQuery,
+                "RETRIEVAL_DOCUMENT" => EmbedContentRequestTaskType.RetrievalDocument,
+                "SEMANTIC_SIMILARITY" => EmbedContentRequestTaskType.SemanticSimilarity,
+                "CLASSIFICATION" => EmbedContentRequestTaskType.Classification,
+                "CLUSTERING" => EmbedContentRequestTaskType.Clustering,
+                "QUESTION_ANSWERING" => EmbedContentRequestTaskType.QuestionAnswering,
+                "FACT_VERIFICATION" => EmbedContentRequestTaskType.FactVerification,
                 _ => null,
             };
         }

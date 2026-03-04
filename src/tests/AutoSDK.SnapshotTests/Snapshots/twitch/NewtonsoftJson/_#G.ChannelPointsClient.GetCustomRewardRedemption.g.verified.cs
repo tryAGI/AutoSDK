@@ -73,15 +73,15 @@ namespace G
 
             var statusValue = status switch
             {
-                global::G.GetCustomRewardRedemptionStatus.CANCELED => "CANCELED",
-                global::G.GetCustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
-                global::G.GetCustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
+                global::G.GetCustomRewardRedemptionStatus.Canceled => "CANCELED",
+                global::G.GetCustomRewardRedemptionStatus.Fulfilled => "FULFILLED",
+                global::G.GetCustomRewardRedemptionStatus.Unfulfilled => "UNFULFILLED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var sortValue = sort switch
             {
-                global::G.GetCustomRewardRedemptionSort.OLDEST => "OLDEST",
-                global::G.GetCustomRewardRedemptionSort.NEWEST => "NEWEST",
+                global::G.GetCustomRewardRedemptionSort.Oldest => "OLDEST",
+                global::G.GetCustomRewardRedemptionSort.Newest => "NEWEST",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

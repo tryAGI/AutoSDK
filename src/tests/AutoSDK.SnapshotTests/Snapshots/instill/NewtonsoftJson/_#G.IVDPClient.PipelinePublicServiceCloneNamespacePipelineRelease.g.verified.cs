@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceCloneNamespacePipelineRelease.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceCloneNamespacePipelineRelease.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Clone a pipeline release<br/>

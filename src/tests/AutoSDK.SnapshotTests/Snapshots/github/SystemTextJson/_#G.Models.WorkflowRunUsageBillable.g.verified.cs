@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UBUNTU")]
-        public global::G.WorkflowRunUsageBillableUBUNTU? UBUNTU { get; set; }
+        public global::G.WorkflowRunUsageBillableUbuntu? Ubuntu { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MACOS")]
-        public global::G.WorkflowRunUsageBillableMACOS? MACOS { get; set; }
+        public global::G.WorkflowRunUsageBillableMacos? Macos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("WINDOWS")]
-        public global::G.WorkflowRunUsageBillableWINDOWS? WINDOWS { get; set; }
+        public global::G.WorkflowRunUsageBillableWindows? Windows { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,20 +36,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowRunUsageBillable" /> class.
         /// </summary>
-        /// <param name="uBUNTU"></param>
-        /// <param name="mACOS"></param>
-        /// <param name="wINDOWS"></param>
+        /// <param name="ubuntu"></param>
+        /// <param name="macos"></param>
+        /// <param name="windows"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WorkflowRunUsageBillable(
-            global::G.WorkflowRunUsageBillableUBUNTU? uBUNTU,
-            global::G.WorkflowRunUsageBillableMACOS? mACOS,
-            global::G.WorkflowRunUsageBillableWINDOWS? wINDOWS)
+            global::G.WorkflowRunUsageBillableUbuntu? ubuntu,
+            global::G.WorkflowRunUsageBillableMacos? macos,
+            global::G.WorkflowRunUsageBillableWindows? windows)
         {
-            this.UBUNTU = uBUNTU;
-            this.MACOS = mACOS;
-            this.WINDOWS = wINDOWS;
+            this.Ubuntu = ubuntu;
+            this.Macos = macos;
+            this.Windows = windows;
         }
 
         /// <summary>

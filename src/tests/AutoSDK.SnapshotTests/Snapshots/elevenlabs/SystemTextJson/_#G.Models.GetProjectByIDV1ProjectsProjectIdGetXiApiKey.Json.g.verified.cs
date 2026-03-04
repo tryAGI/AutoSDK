@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.GetProjectByIDV1ProjectsProjectIdGetXiApiKey.Json.g.cs
+﻿//HintName: G.Models.GetProjectByIdV1ProjectsProjectIdGetXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class GetProjectByIDV1ProjectsProjectIdGetXiApiKey
+    public sealed partial class GetProjectByIdV1ProjectsProjectIdGetXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey? FromJson(
+        public static global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey),
-                jsonSerializerContext) as global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey;
+                typeof(global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey),
+                jsonSerializerContext) as global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey? FromJson(
+        public static global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey;
+                typeof(global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.GetProjectByIDV1ProjectsProjectIdGetXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.GetProjectByIdV1ProjectsProjectIdGetXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

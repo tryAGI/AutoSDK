@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ namespace G
                 CompletionResponseStreamChoiceFinishReason.Length => "length",
                 CompletionResponseStreamChoiceFinishReason.Error => "error",
                 CompletionResponseStreamChoiceFinishReason.ToolCalls => "tool_calls",
-                CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,7 +62,7 @@ namespace G
                 "length" => CompletionResponseStreamChoiceFinishReason.Length,
                 "error" => CompletionResponseStreamChoiceFinishReason.Error,
                 "tool_calls" => CompletionResponseStreamChoiceFinishReason.ToolCalls,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

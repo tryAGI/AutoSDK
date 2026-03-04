@@ -69,7 +69,7 @@ Validation checks the recipe of the pipeline and the status of its components.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceValidateNamespacePipelineAsync(
+            var response = await _client.Vdp.PipelinePublicServiceValidateNamespacePipelineAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 cancellationToken: cancellationToken);

@@ -17,12 +17,12 @@ namespace G
         /// All live guests are tiled within the browser source with the same size.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TILED_LAYOUT")]
-        TILEDLAYOUT,
+        TiledLayout,
         /// <summary>
         /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SCREENSHARE_LAYOUT")]
-        SCREENSHARELAYOUT,
+        ScreenshareLayout,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT => "TILED_LAYOUT",
-                GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT => "SCREENSHARE_LAYOUT",
+                GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout => "TILED_LAYOUT",
+                GetChannelGuestStarSettingsResponseGroupLayout.ScreenshareLayout => "SCREENSHARE_LAYOUT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
-                "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
+                "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout,
+                "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.ScreenshareLayout,
                 _ => null,
             };
         }

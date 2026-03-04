@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.Json.g.cs
+﻿//HintName: G.Models.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
+    public sealed partial class DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
+        public static global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey),
-                jsonSerializerContext) as global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey;
+                typeof(global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey),
+                jsonSerializerContext) as global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
+        public static global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey;
+                typeof(global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

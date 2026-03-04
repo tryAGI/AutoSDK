@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsIMAGEGENERATION.g.cs
+﻿//HintName: G.Models.PricingCalculatorRequestServiceParamsImageGeneration.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Parameters for IMAGE_GENERATION service
     /// </summary>
-    public sealed partial class PricingCalculatorRequestServiceParamsIMAGEGENERATION
+    public sealed partial class PricingCalculatorRequestServiceParamsImageGeneration
     {
         /// <summary>
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
@@ -100,7 +100,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsIMAGEGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsImageGeneration" /> class.
         /// </summary>
         /// <param name="imageHeight">
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
@@ -147,7 +147,7 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public PricingCalculatorRequestServiceParamsIMAGEGENERATION(
+        public PricingCalculatorRequestServiceParamsImageGeneration(
             int? imageHeight,
             int? imageWidth,
             int? numImages,
@@ -180,9 +180,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsIMAGEGENERATION" /> class.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsImageGeneration" /> class.
         /// </summary>
-        public PricingCalculatorRequestServiceParamsIMAGEGENERATION()
+        public PricingCalculatorRequestServiceParamsImageGeneration()
         {
         }
     }

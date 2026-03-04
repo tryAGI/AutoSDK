@@ -100,12 +100,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GCPClient GCP { get; }
+        public GcpClient Gcp { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public AWSClient AWS { get; }
+        public AwsClient Aws { get; }
 
         /// <summary>
         /// 

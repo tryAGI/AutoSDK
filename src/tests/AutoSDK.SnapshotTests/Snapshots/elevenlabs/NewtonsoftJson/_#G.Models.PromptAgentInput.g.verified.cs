@@ -20,7 +20,7 @@ namespace G
         /// Default Value: gemini-2.0-flash
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm")]
-        public global::G.LLM? Llm { get; set; }
+        public global::G.Llm? Llm { get; set; }
 
         /// <summary>
         /// The temperature for the LLM<br/>
@@ -136,7 +136,7 @@ namespace G
         /// </param>
         public PromptAgentInput(
             string? prompt,
-            global::G.LLM? llm,
+            global::G.Llm? llm,
             double? temperature,
             int? maxTokens,
             global::System.Collections.Generic.IList<global::G.ToolsItem2>? tools,

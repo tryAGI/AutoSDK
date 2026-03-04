@@ -11,14 +11,14 @@ namespace G
             ref string voiceId,
             ref string sampleId,
             ref string? xiApiKey,
-            global::G.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request);
+            global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request);
         partial void PrepareCreateVoicesPvcByVoiceIdSamplesBySampleIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string voiceId,
             string sampleId,
             string? xiApiKey,
-            global::G.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request);
+            global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request);
         partial void ProcessCreateVoicesPvcByVoiceIdSamplesBySampleIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,7 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcByVoiceIdSamplesBySampleIdAsync(
             string voiceId,
             string sampleId,
-            global::G.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request,
+            global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -256,7 +256,7 @@ namespace G
             int? trimEndTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost
+            var __request = new global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost
             {
                 RemoveBackgroundNoise = removeBackgroundNoise,
                 SelectedSpeakerIds = selectedSpeakerIds,

@@ -18,7 +18,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        V1TURBO,
+        V1Turbo,
         /// <summary>
         /// 
         /// </summary>
@@ -26,7 +26,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        V2TURBO,
+        V2Turbo,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
             return value switch
             {
                 ModelEnum.V1 => "V_1",
-                ModelEnum.V1TURBO => "V_1_TURBO",
+                ModelEnum.V1Turbo => "V_1_TURBO",
                 ModelEnum.V2 => "V_2",
-                ModelEnum.V2TURBO => "V_2_TURBO",
+                ModelEnum.V2Turbo => "V_2_TURBO",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
             return value switch
             {
                 "V_1" => ModelEnum.V1,
-                "V_1_TURBO" => ModelEnum.V1TURBO,
+                "V_1_TURBO" => ModelEnum.V1Turbo,
                 "V_2" => ModelEnum.V2,
-                "V_2_TURBO" => ModelEnum.V2TURBO,
+                "V_2_TURBO" => ModelEnum.V2Turbo,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AND,
+        And,
         /// <summary>
         /// 
         /// </summary>
-        OR,
+        Or,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                LibrarySearchRequestLabelsFilterMode.AND => "AND",
-                LibrarySearchRequestLabelsFilterMode.OR => "OR",
+                LibrarySearchRequestLabelsFilterMode.And => "AND",
+                LibrarySearchRequestLabelsFilterMode.Or => "OR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "AND" => LibrarySearchRequestLabelsFilterMode.AND,
-                "OR" => LibrarySearchRequestLabelsFilterMode.OR,
+                "AND" => LibrarySearchRequestLabelsFilterMode.And,
+                "OR" => LibrarySearchRequestLabelsFilterMode.Or,
                 _ => null,
             };
         }

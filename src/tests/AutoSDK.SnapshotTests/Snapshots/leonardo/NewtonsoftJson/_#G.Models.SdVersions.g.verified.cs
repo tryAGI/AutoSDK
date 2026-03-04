@@ -29,22 +29,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SDXL_0_8")]
-        SDXL08,
+        Sdxl08,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SDXL_0_9")]
-        SDXL09,
+        Sdxl09,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SDXL_1_0")]
-        SDXL10,
+        Sdxl10,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SDXL_LIGHTNING")]
-        SDXLLIGHTNING,
+        SdxlLightning,
     }
 
     /// <summary>
@@ -62,10 +62,10 @@ namespace G
                 SdVersions.V15 => "v1_5",
                 SdVersions.V2 => "v2",
                 SdVersions.V3 => "v3",
-                SdVersions.SDXL08 => "SDXL_0_8",
-                SdVersions.SDXL09 => "SDXL_0_9",
-                SdVersions.SDXL10 => "SDXL_1_0",
-                SdVersions.SDXLLIGHTNING => "SDXL_LIGHTNING",
+                SdVersions.Sdxl08 => "SDXL_0_8",
+                SdVersions.Sdxl09 => "SDXL_0_9",
+                SdVersions.Sdxl10 => "SDXL_1_0",
+                SdVersions.SdxlLightning => "SDXL_LIGHTNING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -79,10 +79,10 @@ namespace G
                 "v1_5" => SdVersions.V15,
                 "v2" => SdVersions.V2,
                 "v3" => SdVersions.V3,
-                "SDXL_0_8" => SdVersions.SDXL08,
-                "SDXL_0_9" => SdVersions.SDXL09,
-                "SDXL_1_0" => SdVersions.SDXL10,
-                "SDXL_LIGHTNING" => SdVersions.SDXLLIGHTNING,
+                "SDXL_0_8" => SdVersions.Sdxl08,
+                "SDXL_0_9" => SdVersions.Sdxl09,
+                "SDXL_1_0" => SdVersions.Sdxl10,
+                "SDXL_LIGHTNING" => SdVersions.SdxlLightning,
                 _ => null,
             };
         }

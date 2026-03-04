@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceListPipelineIDsByConnectionID.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceListPipelineIDsByConnectionID.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// List pipelines that reference a connection<br/>

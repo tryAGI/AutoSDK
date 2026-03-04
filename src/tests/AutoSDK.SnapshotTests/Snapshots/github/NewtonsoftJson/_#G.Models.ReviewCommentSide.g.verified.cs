@@ -15,12 +15,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LEFT")]
-        LEFT,
+        Left,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RIGHT")]
-        RIGHT,
+        Right,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ReviewCommentSide.LEFT => "LEFT",
-                ReviewCommentSide.RIGHT => "RIGHT",
+                ReviewCommentSide.Left => "LEFT",
+                ReviewCommentSide.Right => "RIGHT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => ReviewCommentSide.LEFT,
-                "RIGHT" => ReviewCommentSide.RIGHT,
+                "LEFT" => ReviewCommentSide.Left,
+                "RIGHT" => ReviewCommentSide.Right,
                 _ => null,
             };
         }

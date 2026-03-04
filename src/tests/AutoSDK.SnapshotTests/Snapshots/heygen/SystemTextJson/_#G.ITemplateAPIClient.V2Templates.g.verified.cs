@@ -1,9 +1,9 @@
-﻿//HintName: G.ITemplateAPIClient.V2Templates.g.cs
+﻿//HintName: G.ITemplateApiClient.V2Templates.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface ITemplateAPIClient
+    public partial interface ITemplateApiClient
     {
         /// <summary>
         /// v2/templates<br/>

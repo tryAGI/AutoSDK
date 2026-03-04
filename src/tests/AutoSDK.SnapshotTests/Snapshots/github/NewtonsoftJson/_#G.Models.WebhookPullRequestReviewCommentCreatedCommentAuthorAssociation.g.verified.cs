@@ -14,42 +14,42 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COLLABORATOR")]
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CONTRIBUTOR")]
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIMER")]
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FIRST_TIME_CONTRIBUTOR")]
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MANNEQUIN")]
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBER")]
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.MEMBER => "MEMBER",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.NONE => "NONE",
-                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.OWNER => "OWNER",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Member => "MEMBER",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.None => "NONE",
+                WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.MEMBER,
-                "NONE" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.NONE,
-                "OWNER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Member,
+                "NONE" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.None,
+                "OWNER" => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.Owner,
                 _ => null,
             };
         }

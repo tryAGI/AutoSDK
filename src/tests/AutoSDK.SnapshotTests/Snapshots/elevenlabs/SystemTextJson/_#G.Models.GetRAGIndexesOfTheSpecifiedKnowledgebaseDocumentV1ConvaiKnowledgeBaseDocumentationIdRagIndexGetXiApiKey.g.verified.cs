@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetRAGIndexesOfTheSpecifiedKnowledgebaseDocumentV1ConvaiKnowledgeBaseDocumentationIdRagIndexGetXiApiKey.g.cs
+﻿//HintName: G.Models.GetRagIndexesOfTheSpecifiedKnowledgebaseDocumentV1ConvaiKnowledgeBaseDocumentationIdRagIndexGetXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class GetRAGIndexesOfTheSpecifiedKnowledgebaseDocumentV1ConvaiKnowledgeBaseDocumentationIdRagIndexGetXiApiKey
+    public sealed partial class GetRagIndexesOfTheSpecifiedKnowledgebaseDocumentV1ConvaiKnowledgeBaseDocumentationIdRagIndexGetXiApiKey
     {
 
         /// <summary>

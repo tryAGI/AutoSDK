@@ -1,10 +1,10 @@
-﻿//HintName: G.x3DModelAssetsClient.UploadModelAsset.g.cs
+﻿//HintName: G.x3dModelAssetsClient.UploadModelAsset.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class x3DModelAssetsClient
+    public partial class x3dModelAssetsClient
     {
         partial void PrepareUploadModelAssetArguments(
             global::System.Net.Http.HttpClient httpClient,

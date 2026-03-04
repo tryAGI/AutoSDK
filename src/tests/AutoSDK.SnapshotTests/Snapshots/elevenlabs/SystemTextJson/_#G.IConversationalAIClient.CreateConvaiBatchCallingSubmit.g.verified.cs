@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiBatchCallingSubmit.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiBatchCallingSubmit.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Submit A Batch Call Request.<br/>

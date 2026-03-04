@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.BodyCreatePVCVoiceV1VoicesPvcPost.Json.g.cs
+﻿//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPost.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class BodyCreatePVCVoiceV1VoicesPvcPost
+    public sealed partial class BodyCreatePvcVoiceV1VoicesPvcPost
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.BodyCreatePVCVoiceV1VoicesPvcPost? FromJson(
+        public static global::G.BodyCreatePvcVoiceV1VoicesPvcPost? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.BodyCreatePVCVoiceV1VoicesPvcPost),
-                jsonSerializerContext) as global::G.BodyCreatePVCVoiceV1VoicesPvcPost;
+                typeof(global::G.BodyCreatePvcVoiceV1VoicesPvcPost),
+                jsonSerializerContext) as global::G.BodyCreatePvcVoiceV1VoicesPvcPost;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.BodyCreatePVCVoiceV1VoicesPvcPost? FromJson(
+        public static global::G.BodyCreatePvcVoiceV1VoicesPvcPost? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.BodyCreatePVCVoiceV1VoicesPvcPost>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.BodyCreatePvcVoiceV1VoicesPvcPost>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.BodyCreatePVCVoiceV1VoicesPvcPost?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.BodyCreatePvcVoiceV1VoicesPvcPost?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.BodyCreatePVCVoiceV1VoicesPvcPost),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.BodyCreatePVCVoiceV1VoicesPvcPost;
+                typeof(global::G.BodyCreatePvcVoiceV1VoicesPvcPost),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.BodyCreatePvcVoiceV1VoicesPvcPost;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.BodyCreatePVCVoiceV1VoicesPvcPost?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.BodyCreatePvcVoiceV1VoicesPvcPost?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.BodyCreatePVCVoiceV1VoicesPvcPost?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.BodyCreatePvcVoiceV1VoicesPvcPost?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

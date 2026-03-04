@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.DeleteConvaiAgentsByAgentId.g.cs
+﻿//HintName: G.ConversationalAiClient.DeleteConvaiAgentsByAgentId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareDeleteConvaiAgentsByAgentIdArguments(
             global::System.Net.Http.HttpClient httpClient,

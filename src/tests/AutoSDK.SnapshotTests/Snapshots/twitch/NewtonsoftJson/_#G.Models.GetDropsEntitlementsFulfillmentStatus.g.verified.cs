@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CLAIMED")]
-        CLAIMED,
+        Claimed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FULFILLED")]
-        FULFILLED,
+        Fulfilled,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetDropsEntitlementsFulfillmentStatus.CLAIMED => "CLAIMED",
-                GetDropsEntitlementsFulfillmentStatus.FULFILLED => "FULFILLED",
+                GetDropsEntitlementsFulfillmentStatus.Claimed => "CLAIMED",
+                GetDropsEntitlementsFulfillmentStatus.Fulfilled => "FULFILLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "CLAIMED" => GetDropsEntitlementsFulfillmentStatus.CLAIMED,
-                "FULFILLED" => GetDropsEntitlementsFulfillmentStatus.FULFILLED,
+                "CLAIMED" => GetDropsEntitlementsFulfillmentStatus.Claimed,
+                "FULFILLED" => GetDropsEntitlementsFulfillmentStatus.Fulfilled,
                 _ => null,
             };
         }

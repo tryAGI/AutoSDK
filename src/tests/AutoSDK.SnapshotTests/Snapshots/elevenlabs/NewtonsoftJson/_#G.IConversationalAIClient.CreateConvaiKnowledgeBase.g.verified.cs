@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiKnowledgeBase.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiKnowledgeBase.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Add To Knowledge Base<br/>

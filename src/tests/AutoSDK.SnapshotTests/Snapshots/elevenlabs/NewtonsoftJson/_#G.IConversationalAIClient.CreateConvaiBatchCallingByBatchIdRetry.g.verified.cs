@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiBatchCallingByBatchIdRetry.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiBatchCallingByBatchIdRetry.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Retry A Batch Call.<br/>

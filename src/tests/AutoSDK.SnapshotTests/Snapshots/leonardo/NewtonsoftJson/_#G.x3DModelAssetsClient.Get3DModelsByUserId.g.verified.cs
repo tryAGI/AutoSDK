@@ -1,10 +1,10 @@
-﻿//HintName: G.x3DModelAssetsClient.Get3DModelsByUserId.g.cs
+﻿//HintName: G.x3dModelAssetsClient.Get3DModelsByUserId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class x3DModelAssetsClient
+    public partial class x3dModelAssetsClient
     {
         partial void PrepareGet3DModelsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,

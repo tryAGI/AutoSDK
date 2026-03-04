@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.StreamingAPIGroupCommand.g.cs
+﻿//HintName: G.Commands.StreamingApiGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class StreamingAPIGroupCommand : global::System.CommandLine.Command
+    internal sealed partial class StreamingApiGroupCommand : global::System.CommandLine.Command
     {
-        public StreamingAPIGroupCommand(
+        public StreamingApiGroupCommand(
             StreamingNewCommand command0,
             StreamingStartCommand command1,
             StreamingListCommand command2,

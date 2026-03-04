@@ -136,7 +136,7 @@ The requester can view all the runs by the requester across different pipelines.
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListPipelineRunsByRequesterAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListPipelineRunsByRequesterAsync(
                 page: page,
                 pageSize: pageSize,
                 filter: filter,

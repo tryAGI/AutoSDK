@@ -17,12 +17,12 @@ namespace G
         /// Key-value collection. The user is responsible of fetching the connection
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="METHOD_DICTIONARY")]
-        DICTIONARY,
+        Dictionary,
         /// <summary>
         /// Access token created via OAuth 2.0 authorization.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="METHOD_OAUTH")]
-        OAUTH,
+        Oauth,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                Method.DICTIONARY => "METHOD_DICTIONARY",
-                Method.OAUTH => "METHOD_OAUTH",
+                Method.Dictionary => "METHOD_DICTIONARY",
+                Method.Oauth => "METHOD_OAUTH",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "METHOD_DICTIONARY" => Method.DICTIONARY,
-                "METHOD_OAUTH" => Method.OAUTH,
+                "METHOD_DICTIONARY" => Method.Dictionary,
+                "METHOD_OAUTH" => Method.Oauth,
                 _ => null,
             };
         }

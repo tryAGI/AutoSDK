@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public VDPClient VDP => new VDPClient(HttpClient, authorizations: Authorizations)
+        public VdpClient Vdp => new VdpClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -1,10 +1,10 @@
-﻿//HintName: G.CreateVideoAPIClient.V1VideoDelete.g.cs
+﻿//HintName: G.CreateVideoApiClient.V1VideoDelete.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class CreateVideoAPIClient
+    public partial class CreateVideoApiClient
     {
         partial void PrepareV1VideoDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,

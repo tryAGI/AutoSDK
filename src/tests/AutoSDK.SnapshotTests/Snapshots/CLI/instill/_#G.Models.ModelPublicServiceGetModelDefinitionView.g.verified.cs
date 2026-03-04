@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// Default view, only includes basic information (omits `model_spec`).
         /// </summary>
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ModelPublicServiceGetModelDefinitionView.VIEWBASIC => "VIEW_BASIC",
-                ModelPublicServiceGetModelDefinitionView.VIEWFULL => "VIEW_FULL",
+                ModelPublicServiceGetModelDefinitionView.ViewBasic => "VIEW_BASIC",
+                ModelPublicServiceGetModelDefinitionView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => ModelPublicServiceGetModelDefinitionView.VIEWBASIC,
-                "VIEW_FULL" => ModelPublicServiceGetModelDefinitionView.VIEWFULL,
+                "VIEW_BASIC" => ModelPublicServiceGetModelDefinitionView.ViewBasic,
+                "VIEW_FULL" => ModelPublicServiceGetModelDefinitionView.ViewFull,
                 _ => null,
             };
         }

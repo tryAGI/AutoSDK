@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.ChatMessage? cHATBOT = default;
-            if (discriminator?.Role == global::G.MessageDiscriminatorRole.CHATBOT)
+            global::G.ChatMessage? chatbot = default;
+            if (discriminator?.Role == global::G.MessageDiscriminatorRole.Chatbot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatMessage)}");
-                cHATBOT = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                chatbot = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ToolMessage? tOOL = default;
-            if (discriminator?.Role == global::G.MessageDiscriminatorRole.TOOL)
+            global::G.ToolMessage? tool = default;
+            if (discriminator?.Role == global::G.MessageDiscriminatorRole.Tool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolMessage)}");
-                tOOL = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.Message(
                 discriminator?.Role,
-                cHATBOT,
-                tOOL
+                chatbot,
+                tool
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCHATBOT)
+            if (value.IsChatbot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CHATBOT, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chatbot, typeInfo);
             }
-            else if (value.IsTOOL)
+            else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TOOL, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
             }
         }
     }

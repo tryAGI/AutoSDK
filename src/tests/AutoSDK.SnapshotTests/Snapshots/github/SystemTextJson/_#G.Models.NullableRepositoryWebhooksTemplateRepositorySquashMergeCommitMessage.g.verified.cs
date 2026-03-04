@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages,
+                "BLANK" => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

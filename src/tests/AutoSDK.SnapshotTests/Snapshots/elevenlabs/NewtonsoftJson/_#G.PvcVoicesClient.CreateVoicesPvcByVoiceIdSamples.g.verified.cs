@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string voiceId,
             ref string? xiApiKey,
-            global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost request);
+            global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost request);
         partial void PrepareCreateVoicesPvcByVoiceIdSamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string voiceId,
             string? xiApiKey,
-            global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost request);
+            global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost request);
         partial void ProcessCreateVoicesPvcByVoiceIdSamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SampleResponseModel>> CreateVoicesPvcByVoiceIdSamplesAsync(
             string voiceId,
-            global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost request,
+            global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -252,7 +252,7 @@ namespace G
             bool? removeBackgroundNoise = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost
+            var __request = new global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost
             {
                 Files = files,
                 RemoveBackgroundNoise = removeBackgroundNoise,

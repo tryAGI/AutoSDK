@@ -1,9 +1,9 @@
-﻿//HintName: G.IAPIKeysClient.CreateApiKey.g.cs
+﻿//HintName: G.IApiKeysClient.CreateApiKey.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IAPIKeysClient
+    public partial interface IApiKeysClient
     {
         /// <summary>
         /// Create an API key<br/>

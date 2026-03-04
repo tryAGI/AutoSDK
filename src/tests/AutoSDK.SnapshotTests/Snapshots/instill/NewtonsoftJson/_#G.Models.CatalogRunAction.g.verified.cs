@@ -20,32 +20,32 @@ namespace G
         /// Create catalog.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_CREATE")]
-        CREATE,
+        Create,
         /// <summary>
         /// Update catalog.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_UPDATE")]
-        UPDATE,
+        Update,
         /// <summary>
         /// Delete catalog.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_DELETE")]
-        DELETE,
+        Delete,
         /// <summary>
         /// Upload catalog file.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_CREATE_FILE")]
-        CREATEFILE,
+        CreateFile,
         /// <summary>
         /// Process catalog file.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_PROCESS_FILE")]
-        PROCESSFILE,
+        ProcessFile,
         /// <summary>
         /// Delete catalog file.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CATALOG_RUN_ACTION_DELETE_FILE")]
-        DELETEFILE,
+        DeleteFile,
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ namespace G
         {
             return value switch
             {
-                CatalogRunAction.CREATE => "CATALOG_RUN_ACTION_CREATE",
-                CatalogRunAction.UPDATE => "CATALOG_RUN_ACTION_UPDATE",
-                CatalogRunAction.DELETE => "CATALOG_RUN_ACTION_DELETE",
-                CatalogRunAction.CREATEFILE => "CATALOG_RUN_ACTION_CREATE_FILE",
-                CatalogRunAction.PROCESSFILE => "CATALOG_RUN_ACTION_PROCESS_FILE",
-                CatalogRunAction.DELETEFILE => "CATALOG_RUN_ACTION_DELETE_FILE",
+                CatalogRunAction.Create => "CATALOG_RUN_ACTION_CREATE",
+                CatalogRunAction.Update => "CATALOG_RUN_ACTION_UPDATE",
+                CatalogRunAction.Delete => "CATALOG_RUN_ACTION_DELETE",
+                CatalogRunAction.CreateFile => "CATALOG_RUN_ACTION_CREATE_FILE",
+                CatalogRunAction.ProcessFile => "CATALOG_RUN_ACTION_PROCESS_FILE",
+                CatalogRunAction.DeleteFile => "CATALOG_RUN_ACTION_DELETE_FILE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,12 +76,12 @@ namespace G
         {
             return value switch
             {
-                "CATALOG_RUN_ACTION_CREATE" => CatalogRunAction.CREATE,
-                "CATALOG_RUN_ACTION_UPDATE" => CatalogRunAction.UPDATE,
-                "CATALOG_RUN_ACTION_DELETE" => CatalogRunAction.DELETE,
-                "CATALOG_RUN_ACTION_CREATE_FILE" => CatalogRunAction.CREATEFILE,
-                "CATALOG_RUN_ACTION_PROCESS_FILE" => CatalogRunAction.PROCESSFILE,
-                "CATALOG_RUN_ACTION_DELETE_FILE" => CatalogRunAction.DELETEFILE,
+                "CATALOG_RUN_ACTION_CREATE" => CatalogRunAction.Create,
+                "CATALOG_RUN_ACTION_UPDATE" => CatalogRunAction.Update,
+                "CATALOG_RUN_ACTION_DELETE" => CatalogRunAction.Delete,
+                "CATALOG_RUN_ACTION_CREATE_FILE" => CatalogRunAction.CreateFile,
+                "CATALOG_RUN_ACTION_PROCESS_FILE" => CatalogRunAction.ProcessFile,
+                "CATALOG_RUN_ACTION_DELETE_FILE" => CatalogRunAction.DeleteFile,
                 _ => null,
             };
         }

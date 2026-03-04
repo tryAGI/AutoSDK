@@ -88,7 +88,7 @@ character maximum.",
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceCreateNamespaceSecretAsync(
+            var response = await _client.Vdp.PipelinePublicServiceCreateNamespaceSecretAsync(
                 namespaceId: namespaceId,
                 id: id,
                 value: value,

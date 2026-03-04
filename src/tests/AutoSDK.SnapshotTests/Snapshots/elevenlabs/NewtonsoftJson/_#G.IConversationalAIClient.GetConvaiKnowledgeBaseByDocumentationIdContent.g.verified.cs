@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiKnowledgeBaseByDocumentationIdContent.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiKnowledgeBaseByDocumentationIdContent.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Document Content<br/>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime.g.cs
+﻿//HintName: G.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// The start time of the audio to be used for PVC training. Time should be in milliseconds
     /// </summary>
-    public sealed partial class BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime
+    public sealed partial class BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime
     {
 
         /// <summary>

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ONE,
+        One,
         /// <summary>
         /// 
         /// </summary>
-        QUORUM,
+        Quorum,
         /// <summary>
         /// 
         /// </summary>
-        ALL,
+        All,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                BatchObjectsDeleteConsistencyLevel.ONE => "ONE",
-                BatchObjectsDeleteConsistencyLevel.QUORUM => "QUORUM",
-                BatchObjectsDeleteConsistencyLevel.ALL => "ALL",
+                BatchObjectsDeleteConsistencyLevel.One => "ONE",
+                BatchObjectsDeleteConsistencyLevel.Quorum => "QUORUM",
+                BatchObjectsDeleteConsistencyLevel.All => "ALL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "ONE" => BatchObjectsDeleteConsistencyLevel.ONE,
-                "QUORUM" => BatchObjectsDeleteConsistencyLevel.QUORUM,
-                "ALL" => BatchObjectsDeleteConsistencyLevel.ALL,
+                "ONE" => BatchObjectsDeleteConsistencyLevel.One,
+                "QUORUM" => BatchObjectsDeleteConsistencyLevel.Quorum,
+                "ALL" => BatchObjectsDeleteConsistencyLevel.All,
                 _ => null,
             };
         }

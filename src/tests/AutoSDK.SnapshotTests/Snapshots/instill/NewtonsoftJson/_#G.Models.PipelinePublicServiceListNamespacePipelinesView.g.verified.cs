@@ -14,17 +14,17 @@ namespace G
         /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
-        VIEWFULL,
+        ViewFull,
         /// <summary>
         /// Contains the recipe of the resource.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_RECIPE")]
-        VIEWRECIPE,
+        ViewRecipe,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListNamespacePipelinesView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceListNamespacePipelinesView.VIEWFULL => "VIEW_FULL",
-                PipelinePublicServiceListNamespacePipelinesView.VIEWRECIPE => "VIEW_RECIPE",
+                PipelinePublicServiceListNamespacePipelinesView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceListNamespacePipelinesView.ViewFull => "VIEW_FULL",
+                PipelinePublicServiceListNamespacePipelinesView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceListNamespacePipelinesView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceListNamespacePipelinesView.VIEWFULL,
-                "VIEW_RECIPE" => PipelinePublicServiceListNamespacePipelinesView.VIEWRECIPE,
+                "VIEW_BASIC" => PipelinePublicServiceListNamespacePipelinesView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceListNamespacePipelinesView.ViewFull,
+                "VIEW_RECIPE" => PipelinePublicServiceListNamespacePipelinesView.ViewRecipe,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName.Json.g.cs
+﻿//HintName: G.Models.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName
+    public sealed partial class BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName? FromJson(
+        public static global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName?>(serializer.Deserialize<global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName?>(serializer.Deserialize<global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName>(jsonReader));
         }
     }
 }

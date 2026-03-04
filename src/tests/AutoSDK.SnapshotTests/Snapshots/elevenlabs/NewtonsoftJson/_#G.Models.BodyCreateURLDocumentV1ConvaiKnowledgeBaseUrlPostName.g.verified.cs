@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName.g.cs
+﻿//HintName: G.Models.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// A custom, human-readable name for the document.
     /// </summary>
-    public sealed partial class BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPostName
+    public sealed partial class BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPostName
     {
 
         /// <summary>

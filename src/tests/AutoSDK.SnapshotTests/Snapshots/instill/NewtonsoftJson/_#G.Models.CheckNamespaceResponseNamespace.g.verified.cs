@@ -18,22 +18,22 @@ namespace G
         /// Available.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_AVAILABLE")]
-        NAMESPACEAVAILABLE,
+        NamespaceAvailable,
         /// <summary>
         /// Namespace belongs to a user.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_USER")]
-        NAMESPACEUSER,
+        NamespaceUser,
         /// <summary>
         /// Namespace belongs to an organization.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_ORGANIZATION")]
-        NAMESPACEORGANIZATION,
+        NamespaceOrganization,
         /// <summary>
         /// Reserved.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_RESERVED")]
-        NAMESPACERESERVED,
+        NamespaceReserved,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
         {
             return value switch
             {
-                CheckNamespaceResponseNamespace.NAMESPACEAVAILABLE => "NAMESPACE_AVAILABLE",
-                CheckNamespaceResponseNamespace.NAMESPACEUSER => "NAMESPACE_USER",
-                CheckNamespaceResponseNamespace.NAMESPACEORGANIZATION => "NAMESPACE_ORGANIZATION",
-                CheckNamespaceResponseNamespace.NAMESPACERESERVED => "NAMESPACE_RESERVED",
+                CheckNamespaceResponseNamespace.NamespaceAvailable => "NAMESPACE_AVAILABLE",
+                CheckNamespaceResponseNamespace.NamespaceUser => "NAMESPACE_USER",
+                CheckNamespaceResponseNamespace.NamespaceOrganization => "NAMESPACE_ORGANIZATION",
+                CheckNamespaceResponseNamespace.NamespaceReserved => "NAMESPACE_RESERVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,10 +62,10 @@ namespace G
         {
             return value switch
             {
-                "NAMESPACE_AVAILABLE" => CheckNamespaceResponseNamespace.NAMESPACEAVAILABLE,
-                "NAMESPACE_USER" => CheckNamespaceResponseNamespace.NAMESPACEUSER,
-                "NAMESPACE_ORGANIZATION" => CheckNamespaceResponseNamespace.NAMESPACEORGANIZATION,
-                "NAMESPACE_RESERVED" => CheckNamespaceResponseNamespace.NAMESPACERESERVED,
+                "NAMESPACE_AVAILABLE" => CheckNamespaceResponseNamespace.NamespaceAvailable,
+                "NAMESPACE_USER" => CheckNamespaceResponseNamespace.NamespaceUser,
+                "NAMESPACE_ORGANIZATION" => CheckNamespaceResponseNamespace.NamespaceOrganization,
+                "NAMESPACE_RESERVED" => CheckNamespaceResponseNamespace.NamespaceReserved,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// 
         /// </summary>
-        RIGHT,
+        Right,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.LEFT => "LEFT",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.RIGHT => "RIGHT",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.Left => "LEFT",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.Right => "RIGHT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "LEFT" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.LEFT,
-                "RIGHT" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.RIGHT,
+                "LEFT" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.Left,
+                "RIGHT" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSide.Right,
                 _ => null,
             };
         }

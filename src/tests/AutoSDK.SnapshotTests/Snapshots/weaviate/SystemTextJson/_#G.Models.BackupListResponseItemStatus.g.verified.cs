@@ -12,27 +12,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
-        TRANSFERRING,
+        Transferring,
         /// <summary>
         /// 
         /// </summary>
-        TRANSFERRED,
+        Transferred,
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        CANCELED,
+        Canceled,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                BackupListResponseItemStatus.STARTED => "STARTED",
-                BackupListResponseItemStatus.TRANSFERRING => "TRANSFERRING",
-                BackupListResponseItemStatus.TRANSFERRED => "TRANSFERRED",
-                BackupListResponseItemStatus.SUCCESS => "SUCCESS",
-                BackupListResponseItemStatus.FAILED => "FAILED",
-                BackupListResponseItemStatus.CANCELED => "CANCELED",
+                BackupListResponseItemStatus.Started => "STARTED",
+                BackupListResponseItemStatus.Transferring => "TRANSFERRING",
+                BackupListResponseItemStatus.Transferred => "TRANSFERRED",
+                BackupListResponseItemStatus.Success => "SUCCESS",
+                BackupListResponseItemStatus.Failed => "FAILED",
+                BackupListResponseItemStatus.Canceled => "CANCELED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "STARTED" => BackupListResponseItemStatus.STARTED,
-                "TRANSFERRING" => BackupListResponseItemStatus.TRANSFERRING,
-                "TRANSFERRED" => BackupListResponseItemStatus.TRANSFERRED,
-                "SUCCESS" => BackupListResponseItemStatus.SUCCESS,
-                "FAILED" => BackupListResponseItemStatus.FAILED,
-                "CANCELED" => BackupListResponseItemStatus.CANCELED,
+                "STARTED" => BackupListResponseItemStatus.Started,
+                "TRANSFERRING" => BackupListResponseItemStatus.Transferring,
+                "TRANSFERRED" => BackupListResponseItemStatus.Transferred,
+                "SUCCESS" => BackupListResponseItemStatus.Success,
+                "FAILED" => BackupListResponseItemStatus.Failed,
+                "CANCELED" => BackupListResponseItemStatus.Canceled,
                 _ => null,
             };
         }

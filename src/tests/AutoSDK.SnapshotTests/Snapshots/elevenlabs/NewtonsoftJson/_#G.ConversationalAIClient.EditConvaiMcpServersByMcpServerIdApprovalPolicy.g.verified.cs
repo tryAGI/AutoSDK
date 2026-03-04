@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.EditConvaiMcpServersByMcpServerIdApprovalPolicy.g.cs
+﻿//HintName: G.ConversationalAiClient.EditConvaiMcpServersByMcpServerIdApprovalPolicy.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareEditConvaiMcpServersByMcpServerIdApprovalPolicyArguments(
             global::System.Net.Http.HttpClient httpClient,

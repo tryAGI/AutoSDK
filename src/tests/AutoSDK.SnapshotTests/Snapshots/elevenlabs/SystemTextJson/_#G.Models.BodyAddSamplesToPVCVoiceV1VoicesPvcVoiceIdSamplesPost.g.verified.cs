@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost.g.cs
+﻿//HintName: G.Models.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost
+    public sealed partial class BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost
     {
         /// <summary>
         /// Audio files used to create the voice.
@@ -30,7 +30,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost" /> class.
         /// </summary>
         /// <param name="files">
         /// Audio files used to create the voice.
@@ -42,7 +42,7 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost(
+        public BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost(
             global::System.Collections.Generic.IList<byte[]> files,
             bool? removeBackgroundNoise)
         {
@@ -51,9 +51,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost" /> class.
         /// </summary>
-        public BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost()
+        public BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost()
         {
         }
     }

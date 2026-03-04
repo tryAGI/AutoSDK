@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiSipTrunkOutboundCall.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiSipTrunkOutboundCall.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Handle An Outbound Call Via Sip Trunk<br/>
@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SIPTrunkOutboundCallResponse> CreateConvaiSipTrunkOutboundCallAsync(
-            global::G.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost request,
+            global::G.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DISMISS,
+        Dismiss,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                PullsDismissReviewRequestEvent.DISMISS => "DISMISS",
+                PullsDismissReviewRequestEvent.Dismiss => "DISMISS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "DISMISS" => PullsDismissReviewRequestEvent.DISMISS,
+                "DISMISS" => PullsDismissReviewRequestEvent.Dismiss,
                 _ => null,
             };
         }

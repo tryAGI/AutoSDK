@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey.Json.g.cs
+﻿//HintName: G.Models.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey
+    public sealed partial class GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey? FromJson(
+        public static global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey),
-                jsonSerializerContext) as global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey;
+                typeof(global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey),
+                jsonSerializerContext) as global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey? FromJson(
+        public static global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey;
+                typeof(global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.GetTheDubbingResourceForAnIDV1DubbingResourceDubbingIdGetXiApiKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.GetTheDubbingResourceForAnIdV1DubbingResourceDubbingIdGetXiApiKey?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

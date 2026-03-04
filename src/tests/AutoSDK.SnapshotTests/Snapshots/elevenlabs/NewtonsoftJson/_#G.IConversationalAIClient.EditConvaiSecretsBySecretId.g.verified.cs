@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.EditConvaiSecretsBySecretId.g.cs
+﻿//HintName: G.IConversationalAiClient.EditConvaiSecretsBySecretId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Update Convai Workspace Secret<br/>

@@ -1,10 +1,10 @@
-﻿//HintName: G.VDPClient.PipelinePublicServiceListPipelines.g.cs
+﻿//HintName: G.VdpClient.PipelinePublicServiceListPipelines.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VDPClient
+    public partial class VdpClient
     {
         partial void PreparePipelinePublicServiceListPipelinesArguments(
             global::System.Net.Http.HttpClient httpClient,
@@ -71,15 +71,15 @@ namespace G
 
             var viewValue = view switch
             {
-                global::G.PipelinePublicServiceListPipelinesView.VIEWBASIC => "VIEW_BASIC",
-                global::G.PipelinePublicServiceListPipelinesView.VIEWFULL => "VIEW_FULL",
-                global::G.PipelinePublicServiceListPipelinesView.VIEWRECIPE => "VIEW_RECIPE",
+                global::G.PipelinePublicServiceListPipelinesView.ViewBasic => "VIEW_BASIC",
+                global::G.PipelinePublicServiceListPipelinesView.ViewFull => "VIEW_FULL",
+                global::G.PipelinePublicServiceListPipelinesView.ViewRecipe => "VIEW_RECIPE",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var visibilityValue = visibility switch
             {
-                global::G.PipelinePublicServiceListPipelinesVisibility.VISIBILITYPRIVATE => "VISIBILITY_PRIVATE",
-                global::G.PipelinePublicServiceListPipelinesVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
+                global::G.PipelinePublicServiceListPipelinesVisibility.VisibilityPrivate => "VISIBILITY_PRIVATE",
+                global::G.PipelinePublicServiceListPipelinesVisibility.VisibilityPublic => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

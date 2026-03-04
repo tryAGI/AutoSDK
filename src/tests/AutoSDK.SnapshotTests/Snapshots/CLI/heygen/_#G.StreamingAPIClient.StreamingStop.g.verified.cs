@@ -1,10 +1,10 @@
-﻿//HintName: G.StreamingAPIClient.StreamingStop.g.cs
+﻿//HintName: G.StreamingApiClient.StreamingStop.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class StreamingAPIClient
+    public partial class StreamingApiClient
     {
         partial void PrepareStreamingStopArguments(
             global::System.Net.Http.HttpClient httpClient,

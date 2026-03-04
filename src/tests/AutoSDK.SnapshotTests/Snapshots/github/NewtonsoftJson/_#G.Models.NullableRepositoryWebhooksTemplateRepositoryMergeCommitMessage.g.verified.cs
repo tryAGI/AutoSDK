@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PRTITLE,
+        PrTitle,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRTITLE => "PR_TITLE",
-                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PrTitle => "PR_TITLE",
+                NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRBODY,
-                "PR_TITLE" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRTITLE,
-                "BLANK" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PrBody,
+                "PR_TITLE" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.PrTitle,
+                "BLANK" => NullableRepositoryWebhooksTemplateRepositoryMergeCommitMessage.Blank,
                 _ => null,
             };
         }

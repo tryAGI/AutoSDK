@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.CreateConvaiMcpServersByMcpServerIdToolApprovals.g.cs
+﻿//HintName: G.IConversationalAiClient.CreateConvaiMcpServersByMcpServerIdToolApprovals.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Create Mcp Server Tool Approval<br/>

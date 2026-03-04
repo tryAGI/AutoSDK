@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositorySquashMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositorySquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                NullableRepositorySquashMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositorySquashMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositorySquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                NullableRepositorySquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositorySquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => NullableRepositorySquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => NullableRepositorySquashMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositorySquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => NullableRepositorySquashMergeCommitMessage.CommitMessages,
+                "BLANK" => NullableRepositorySquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

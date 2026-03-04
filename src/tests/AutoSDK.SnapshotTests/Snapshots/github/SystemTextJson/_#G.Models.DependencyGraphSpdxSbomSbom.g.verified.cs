@@ -16,7 +16,7 @@ namespace G
         /// <example>SPDXRef-DOCUMENT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("SPDXID")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SPDXID { get; set; }
+        public required string Spdxid { get; set; }
 
         /// <summary>
         /// The version of the SPDX specification that this document conforms to.<br/>
@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbom" /> class.
         /// </summary>
-        /// <param name="sPDXID">
+        /// <param name="spdxid">
         /// The SPDX identifier for the SPDX document.<br/>
         /// Example: SPDXRef-DOCUMENT
         /// </param>
@@ -113,7 +113,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DependencyGraphSpdxSbomSbom(
-            string sPDXID,
+            string spdxid,
             string spdxVersion,
             global::G.DependencyGraphSpdxSbomSbomCreationInfo creationInfo,
             string name,
@@ -122,7 +122,7 @@ namespace G
             string documentNamespace,
             global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackage> packages)
         {
-            this.SPDXID = sPDXID ?? throw new global::System.ArgumentNullException(nameof(sPDXID));
+            this.Spdxid = spdxid ?? throw new global::System.ArgumentNullException(nameof(spdxid));
             this.SpdxVersion = spdxVersion ?? throw new global::System.ArgumentNullException(nameof(spdxVersion));
             this.CreationInfo = creationInfo ?? throw new global::System.ArgumentNullException(nameof(creationInfo));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

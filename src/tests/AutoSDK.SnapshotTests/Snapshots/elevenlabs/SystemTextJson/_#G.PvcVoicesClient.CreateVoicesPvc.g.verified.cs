@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateVoicesPvcArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xiApiKey,
-            global::G.BodyCreatePVCVoiceV1VoicesPvcPost request);
+            global::G.BodyCreatePvcVoiceV1VoicesPvcPost request);
         partial void PrepareCreateVoicesPvcRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xiApiKey,
-            global::G.BodyCreatePVCVoiceV1VoicesPvcPost request);
+            global::G.BodyCreatePvcVoiceV1VoicesPvcPost request);
         partial void ProcessCreateVoicesPvcResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcAsync(
-            global::G.BodyCreatePVCVoiceV1VoicesPvcPost request,
+            global::G.BodyCreatePvcVoiceV1VoicesPvcPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -231,7 +231,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyCreatePVCVoiceV1VoicesPvcPost
+            var __request = new global::G.BodyCreatePvcVoiceV1VoicesPvcPost
             {
                 Name = name,
                 Language = language,

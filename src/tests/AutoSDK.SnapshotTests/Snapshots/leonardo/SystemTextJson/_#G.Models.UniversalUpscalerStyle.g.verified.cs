@@ -13,19 +13,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        GENERAL,
+        General,
         /// <summary>
         /// 
         /// </summary>
-        CINEMATIC,
+        Cinematic,
         /// <summary>
         /// 
         /// </summary>
-        x2DART_ILLUSTRATION,
+        x2dArt_Illustration,
         /// <summary>
         /// 
         /// </summary>
-        CGART_GAMEASSETS,
+        CgArt_GameAssets,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                UniversalUpscalerStyle.GENERAL => "GENERAL",
-                UniversalUpscalerStyle.CINEMATIC => "CINEMATIC",
-                UniversalUpscalerStyle.x2DART_ILLUSTRATION => "2D ART & ILLUSTRATION",
-                UniversalUpscalerStyle.CGART_GAMEASSETS => "CG ART & GAME ASSETS",
+                UniversalUpscalerStyle.General => "GENERAL",
+                UniversalUpscalerStyle.Cinematic => "CINEMATIC",
+                UniversalUpscalerStyle.x2dArt_Illustration => "2D ART & ILLUSTRATION",
+                UniversalUpscalerStyle.CgArt_GameAssets => "CG ART & GAME ASSETS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "GENERAL" => UniversalUpscalerStyle.GENERAL,
-                "CINEMATIC" => UniversalUpscalerStyle.CINEMATIC,
-                "2D ART & ILLUSTRATION" => UniversalUpscalerStyle.x2DART_ILLUSTRATION,
-                "CG ART & GAME ASSETS" => UniversalUpscalerStyle.CGART_GAMEASSETS,
+                "GENERAL" => UniversalUpscalerStyle.General,
+                "CINEMATIC" => UniversalUpscalerStyle.Cinematic,
+                "2D ART & ILLUSTRATION" => UniversalUpscalerStyle.x2dArt_Illustration,
+                "CG ART & GAME ASSETS" => UniversalUpscalerStyle.CgArt_GameAssets,
                 _ => null,
             };
         }

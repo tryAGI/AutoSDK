@@ -1,12 +1,12 @@
-﻿//HintName: G.Commands.CreateVideoAPIGroupCommand.g.cs
+﻿//HintName: G.Commands.CreateVideoApiGroupCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class CreateVideoAPIGroupCommand : global::System.CommandLine.Command
+    internal sealed partial class CreateVideoApiGroupCommand : global::System.CommandLine.Command
     {
-        public CreateVideoAPIGroupCommand(
+        public CreateVideoApiGroupCommand(
             V2VideoGenerateCommand command0,
             V1VideoDeleteCommand command1)
             : base(

@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                DiscussionAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                DiscussionAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                DiscussionAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                DiscussionAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                DiscussionAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                DiscussionAuthorAssociation.MEMBER => "MEMBER",
-                DiscussionAuthorAssociation.NONE => "NONE",
-                DiscussionAuthorAssociation.OWNER => "OWNER",
+                DiscussionAuthorAssociation.Collaborator => "COLLABORATOR",
+                DiscussionAuthorAssociation.Contributor => "CONTRIBUTOR",
+                DiscussionAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                DiscussionAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                DiscussionAuthorAssociation.Mannequin => "MANNEQUIN",
+                DiscussionAuthorAssociation.Member => "MEMBER",
+                DiscussionAuthorAssociation.None => "NONE",
+                DiscussionAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => DiscussionAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => DiscussionAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => DiscussionAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => DiscussionAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => DiscussionAuthorAssociation.MANNEQUIN,
-                "MEMBER" => DiscussionAuthorAssociation.MEMBER,
-                "NONE" => DiscussionAuthorAssociation.NONE,
-                "OWNER" => DiscussionAuthorAssociation.OWNER,
+                "COLLABORATOR" => DiscussionAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => DiscussionAuthorAssociation.Contributor,
+                "FIRST_TIMER" => DiscussionAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => DiscussionAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => DiscussionAuthorAssociation.Mannequin,
+                "MEMBER" => DiscussionAuthorAssociation.Member,
+                "NONE" => DiscussionAuthorAssociation.None,
+                "OWNER" => DiscussionAuthorAssociation.Owner,
                 _ => null,
             };
         }

@@ -12,27 +12,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        BAN,
+        Ban,
         /// <summary>
         /// 
         /// </summary>
-        CAPTCHA,
+        Captcha,
         /// <summary>
         /// 
         /// </summary>
-        CAPTCHAANDMODERATION,
+        CaptchaAndModeration,
         /// <summary>
         /// 
         /// </summary>
-        ENTERPRISEBAN,
+        EnterpriseBan,
         /// <summary>
         /// 
         /// </summary>
-        ENTERPRISECAPTCHA,
+        EnterpriseCaptcha,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                VoiceResponseModelSafetyControl2.NONE => "NONE",
-                VoiceResponseModelSafetyControl2.BAN => "BAN",
-                VoiceResponseModelSafetyControl2.CAPTCHA => "CAPTCHA",
-                VoiceResponseModelSafetyControl2.CAPTCHAANDMODERATION => "CAPTCHA_AND_MODERATION",
-                VoiceResponseModelSafetyControl2.ENTERPRISEBAN => "ENTERPRISE_BAN",
-                VoiceResponseModelSafetyControl2.ENTERPRISECAPTCHA => "ENTERPRISE_CAPTCHA",
+                VoiceResponseModelSafetyControl2.None => "NONE",
+                VoiceResponseModelSafetyControl2.Ban => "BAN",
+                VoiceResponseModelSafetyControl2.Captcha => "CAPTCHA",
+                VoiceResponseModelSafetyControl2.CaptchaAndModeration => "CAPTCHA_AND_MODERATION",
+                VoiceResponseModelSafetyControl2.EnterpriseBan => "ENTERPRISE_BAN",
+                VoiceResponseModelSafetyControl2.EnterpriseCaptcha => "ENTERPRISE_CAPTCHA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "NONE" => VoiceResponseModelSafetyControl2.NONE,
-                "BAN" => VoiceResponseModelSafetyControl2.BAN,
-                "CAPTCHA" => VoiceResponseModelSafetyControl2.CAPTCHA,
-                "CAPTCHA_AND_MODERATION" => VoiceResponseModelSafetyControl2.CAPTCHAANDMODERATION,
-                "ENTERPRISE_BAN" => VoiceResponseModelSafetyControl2.ENTERPRISEBAN,
-                "ENTERPRISE_CAPTCHA" => VoiceResponseModelSafetyControl2.ENTERPRISECAPTCHA,
+                "NONE" => VoiceResponseModelSafetyControl2.None,
+                "BAN" => VoiceResponseModelSafetyControl2.Ban,
+                "CAPTCHA" => VoiceResponseModelSafetyControl2.Captcha,
+                "CAPTCHA_AND_MODERATION" => VoiceResponseModelSafetyControl2.CaptchaAndModeration,
+                "ENTERPRISE_BAN" => VoiceResponseModelSafetyControl2.EnterpriseBan,
+                "ENTERPRISE_CAPTCHA" => VoiceResponseModelSafetyControl2.EnterpriseCaptcha,
                 _ => null,
             };
         }

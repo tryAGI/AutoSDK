@@ -1,4 +1,4 @@
-﻿//HintName: G.IAWSClient.g.cs
+﻿//HintName: G.IAwsClient.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IAWSClient : global::System.IDisposable
+    public partial interface IAwsClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.

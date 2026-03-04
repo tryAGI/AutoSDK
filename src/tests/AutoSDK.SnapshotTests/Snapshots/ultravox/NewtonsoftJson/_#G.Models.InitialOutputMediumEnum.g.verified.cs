@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_VOICE")]
-        MESSAGEMEDIUMVOICE,
+        MessageMediumVoice,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_TEXT")]
-        MESSAGEMEDIUMTEXT,
+        MessageMediumText,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                InitialOutputMediumEnum.MESSAGEMEDIUMVOICE => "MESSAGE_MEDIUM_VOICE",
-                InitialOutputMediumEnum.MESSAGEMEDIUMTEXT => "MESSAGE_MEDIUM_TEXT",
+                InitialOutputMediumEnum.MessageMediumVoice => "MESSAGE_MEDIUM_VOICE",
+                InitialOutputMediumEnum.MessageMediumText => "MESSAGE_MEDIUM_TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "MESSAGE_MEDIUM_VOICE" => InitialOutputMediumEnum.MESSAGEMEDIUMVOICE,
-                "MESSAGE_MEDIUM_TEXT" => InitialOutputMediumEnum.MESSAGEMEDIUMTEXT,
+                "MESSAGE_MEDIUM_VOICE" => InitialOutputMediumEnum.MessageMediumVoice,
+                "MESSAGE_MEDIUM_TEXT" => InitialOutputMediumEnum.MessageMediumText,
                 _ => null,
             };
         }

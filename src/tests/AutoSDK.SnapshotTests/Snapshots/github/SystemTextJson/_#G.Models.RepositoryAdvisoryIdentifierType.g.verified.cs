@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CVE,
+        Cve,
         /// <summary>
         /// 
         /// </summary>
-        GHSA,
+        Ghsa,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RepositoryAdvisoryIdentifierType.CVE => "CVE",
-                RepositoryAdvisoryIdentifierType.GHSA => "GHSA",
+                RepositoryAdvisoryIdentifierType.Cve => "CVE",
+                RepositoryAdvisoryIdentifierType.Ghsa => "GHSA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "CVE" => RepositoryAdvisoryIdentifierType.CVE,
-                "GHSA" => RepositoryAdvisoryIdentifierType.GHSA,
+                "CVE" => RepositoryAdvisoryIdentifierType.Cve,
+                "GHSA" => RepositoryAdvisoryIdentifierType.Ghsa,
                 _ => null,
             };
         }

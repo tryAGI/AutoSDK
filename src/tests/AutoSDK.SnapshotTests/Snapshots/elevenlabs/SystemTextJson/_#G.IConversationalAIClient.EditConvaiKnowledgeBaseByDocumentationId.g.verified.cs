@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.EditConvaiKnowledgeBaseByDocumentationId.g.cs
+﻿//HintName: G.IConversationalAiClient.EditConvaiKnowledgeBaseByDocumentationId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Update Document<br/>

@@ -80,7 +80,7 @@ perform this action.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceDeleteNamespacePipelineReleaseAsync(
+            var response = await _client.Vdp.PipelinePublicServiceDeleteNamespacePipelineReleaseAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 releaseId: releaseId,

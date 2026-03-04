@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEMEDIUMUNSPECIFIED,
+        MessageMediumUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEMEDIUMVOICE,
+        MessageMediumVoice,
         /// <summary>
         /// 
         /// </summary>
-        MESSAGEMEDIUMTEXT,
+        MessageMediumText,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1MessageMedium.MESSAGEMEDIUMUNSPECIFIED => "MESSAGE_MEDIUM_UNSPECIFIED",
-                UltravoxV1MessageMedium.MESSAGEMEDIUMVOICE => "MESSAGE_MEDIUM_VOICE",
-                UltravoxV1MessageMedium.MESSAGEMEDIUMTEXT => "MESSAGE_MEDIUM_TEXT",
+                UltravoxV1MessageMedium.MessageMediumUnspecified => "MESSAGE_MEDIUM_UNSPECIFIED",
+                UltravoxV1MessageMedium.MessageMediumVoice => "MESSAGE_MEDIUM_VOICE",
+                UltravoxV1MessageMedium.MessageMediumText => "MESSAGE_MEDIUM_TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "MESSAGE_MEDIUM_UNSPECIFIED" => UltravoxV1MessageMedium.MESSAGEMEDIUMUNSPECIFIED,
-                "MESSAGE_MEDIUM_VOICE" => UltravoxV1MessageMedium.MESSAGEMEDIUMVOICE,
-                "MESSAGE_MEDIUM_TEXT" => UltravoxV1MessageMedium.MESSAGEMEDIUMTEXT,
+                "MESSAGE_MEDIUM_UNSPECIFIED" => UltravoxV1MessageMedium.MessageMediumUnspecified,
+                "MESSAGE_MEDIUM_VOICE" => UltravoxV1MessageMedium.MessageMediumVoice,
+                "MESSAGE_MEDIUM_TEXT" => UltravoxV1MessageMedium.MessageMediumText,
                 _ => null,
             };
         }

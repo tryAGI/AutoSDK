@@ -19,12 +19,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELED")]
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FULFILLED")]
-        FULFILLED,
+        Fulfilled,
     }
 
     /// <summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                UpdateRedemptionStatusBodyStatus.CANCELED => "CANCELED",
-                UpdateRedemptionStatusBodyStatus.FULFILLED => "FULFILLED",
+                UpdateRedemptionStatusBodyStatus.Canceled => "CANCELED",
+                UpdateRedemptionStatusBodyStatus.Fulfilled => "FULFILLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,8 +51,8 @@ namespace G
         {
             return value switch
             {
-                "CANCELED" => UpdateRedemptionStatusBodyStatus.CANCELED,
-                "FULFILLED" => UpdateRedemptionStatusBodyStatus.FULFILLED,
+                "CANCELED" => UpdateRedemptionStatusBodyStatus.Canceled,
+                "FULFILLED" => UpdateRedemptionStatusBodyStatus.Fulfilled,
                 _ => null,
             };
         }

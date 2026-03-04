@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableMACOS.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableMacos.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableMACOS
+    public sealed partial class WorkflowRunUsageBillableMacos
     {
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? JobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMacosJobRun>? JobRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMACOS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMacos" /> class.
         /// </summary>
         /// <param name="totalMs"></param>
         /// <param name="jobs"></param>
@@ -44,10 +44,10 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkflowRunUsageBillableMACOS(
+        public WorkflowRunUsageBillableMacos(
             int totalMs,
             int jobs,
-            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? jobRuns)
+            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMacosJobRun>? jobRuns)
         {
             this.TotalMs = totalMs;
             this.Jobs = jobs;
@@ -55,9 +55,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMACOS" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableMacos" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableMACOS()
+        public WorkflowRunUsageBillableMacos()
         {
         }
     }

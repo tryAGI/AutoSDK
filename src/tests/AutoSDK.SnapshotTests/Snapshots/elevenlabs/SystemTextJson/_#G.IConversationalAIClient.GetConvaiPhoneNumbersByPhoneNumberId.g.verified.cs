@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiPhoneNumbersByPhoneNumberId.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiPhoneNumbersByPhoneNumberId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Phone Number<br/>

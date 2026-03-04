@@ -1,9 +1,9 @@
-﻿//HintName: G.ICreateVideoAPIClient.V2VideoGenerate.g.cs
+﻿//HintName: G.ICreateVideoApiClient.V2VideoGenerate.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface ICreateVideoAPIClient
+    public partial interface ICreateVideoApiClient
     {
         /// <summary>
         /// v2/video/generate<br/>

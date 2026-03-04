@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiLlmUsageCalculate.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiLlmUsageCalculate.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiLlmUsageCalculateArguments(
             global::System.Net.Http.HttpClient httpClient,

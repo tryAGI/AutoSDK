@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        PENDING,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ObjectsGetResponseVariant3ResultStatus.SUCCESS => "SUCCESS",
-                ObjectsGetResponseVariant3ResultStatus.PENDING => "PENDING",
-                ObjectsGetResponseVariant3ResultStatus.FAILED => "FAILED",
+                ObjectsGetResponseVariant3ResultStatus.Success => "SUCCESS",
+                ObjectsGetResponseVariant3ResultStatus.Pending => "PENDING",
+                ObjectsGetResponseVariant3ResultStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.SUCCESS,
-                "PENDING" => ObjectsGetResponseVariant3ResultStatus.PENDING,
-                "FAILED" => ObjectsGetResponseVariant3ResultStatus.FAILED,
+                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.Success,
+                "PENDING" => ObjectsGetResponseVariant3ResultStatus.Pending,
+                "FAILED" => ObjectsGetResponseVariant3ResultStatus.Failed,
                 _ => null,
             };
         }

@@ -26,7 +26,7 @@ namespace G
         /// The type of the base model.<br/>
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
-        /// <default>global::G.BaseType.UNSPECIFIED</default>
+        /// <default>global::G.BaseType.Unspecified</default>
         [global::Newtonsoft.Json.JsonProperty("base_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.BaseType BaseType { get; set; } = default!;
 

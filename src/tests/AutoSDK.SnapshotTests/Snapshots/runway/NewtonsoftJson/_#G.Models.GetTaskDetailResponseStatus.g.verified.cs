@@ -20,32 +20,32 @@ namespace G
         /// The task is waiting in the queue.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PENDING")]
-        PENDING,
+        Pending,
         /// <summary>
         /// The task is waiting to be enqueued due to other running jobs.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="THROTTLED")]
-        THROTTLED,
+        Throttled,
         /// <summary>
         /// The task is currently being processed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
-        RUNNING,
+        Running,
         /// <summary>
         /// The task completed successfully.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCEEDED")]
-        SUCCEEDED,
+        Succeeded,
         /// <summary>
         /// The task failed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// The task was aborted.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANCELLED")]
-        CANCELLED,
+        Cancelled,
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ namespace G
         {
             return value switch
             {
-                GetTaskDetailResponseStatus.PENDING => "PENDING",
-                GetTaskDetailResponseStatus.THROTTLED => "THROTTLED",
-                GetTaskDetailResponseStatus.RUNNING => "RUNNING",
-                GetTaskDetailResponseStatus.SUCCEEDED => "SUCCEEDED",
-                GetTaskDetailResponseStatus.FAILED => "FAILED",
-                GetTaskDetailResponseStatus.CANCELLED => "CANCELLED",
+                GetTaskDetailResponseStatus.Pending => "PENDING",
+                GetTaskDetailResponseStatus.Throttled => "THROTTLED",
+                GetTaskDetailResponseStatus.Running => "RUNNING",
+                GetTaskDetailResponseStatus.Succeeded => "SUCCEEDED",
+                GetTaskDetailResponseStatus.Failed => "FAILED",
+                GetTaskDetailResponseStatus.Cancelled => "CANCELLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,12 +76,12 @@ namespace G
         {
             return value switch
             {
-                "PENDING" => GetTaskDetailResponseStatus.PENDING,
-                "THROTTLED" => GetTaskDetailResponseStatus.THROTTLED,
-                "RUNNING" => GetTaskDetailResponseStatus.RUNNING,
-                "SUCCEEDED" => GetTaskDetailResponseStatus.SUCCEEDED,
-                "FAILED" => GetTaskDetailResponseStatus.FAILED,
-                "CANCELLED" => GetTaskDetailResponseStatus.CANCELLED,
+                "PENDING" => GetTaskDetailResponseStatus.Pending,
+                "THROTTLED" => GetTaskDetailResponseStatus.Throttled,
+                "RUNNING" => GetTaskDetailResponseStatus.Running,
+                "SUCCEEDED" => GetTaskDetailResponseStatus.Succeeded,
+                "FAILED" => GetTaskDetailResponseStatus.Failed,
+                "CANCELLED" => GetTaskDetailResponseStatus.Cancelled,
                 _ => null,
             };
         }

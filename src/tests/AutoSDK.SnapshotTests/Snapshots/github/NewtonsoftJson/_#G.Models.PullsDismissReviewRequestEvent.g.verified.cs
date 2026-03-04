@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DISMISS")]
-        DISMISS,
+        Dismiss,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                PullsDismissReviewRequestEvent.DISMISS => "DISMISS",
+                PullsDismissReviewRequestEvent.Dismiss => "DISMISS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "DISMISS" => PullsDismissReviewRequestEvent.DISMISS,
+                "DISMISS" => PullsDismissReviewRequestEvent.Dismiss,
                 _ => null,
             };
         }

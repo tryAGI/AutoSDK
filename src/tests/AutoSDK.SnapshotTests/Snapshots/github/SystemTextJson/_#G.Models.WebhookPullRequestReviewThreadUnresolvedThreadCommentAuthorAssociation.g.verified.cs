@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.MEMBER => "MEMBER",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.NONE => "NONE",
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.OWNER => "OWNER",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Member => "MEMBER",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.None => "NONE",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.MEMBER,
-                "NONE" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.NONE,
-                "OWNER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Member,
+                "NONE" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.None,
+                "OWNER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Owner,
                 _ => null,
             };
         }

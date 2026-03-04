@@ -8,10 +8,10 @@ namespace G
     {
         public MainCommand(
             ListGroupCommand command0,
-            CreateVideoAPIGroupCommand command1,
-            TemplateAPIGroupCommand command2,
-            VideoTranslateAPIGroupCommand command3,
-            StreamingAPIGroupCommand command4,
+            CreateVideoApiGroupCommand command1,
+            TemplateApiGroupCommand command2,
+            VideoTranslateApiGroupCommand command3,
+            StreamingApiGroupCommand command4,
             WebhookGroupCommand command5,
             TalkingPhotoGroupCommand command6,
             PersonalizedVideoGroupCommand command7,

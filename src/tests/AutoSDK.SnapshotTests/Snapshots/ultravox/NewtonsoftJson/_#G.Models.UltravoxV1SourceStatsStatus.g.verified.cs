@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SOURCE_STATUS_UNSPECIFIED")]
-        SOURCESTATUSUNSPECIFIED,
+        SourceStatusUnspecified,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SOURCE_STATUS_INITIALIZING")]
-        SOURCESTATUSINITIALIZING,
+        SourceStatusInitializing,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SOURCE_STATUS_READY")]
-        SOURCESTATUSREADY,
+        SourceStatusReady,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SOURCE_STATUS_UPDATING")]
-        SOURCESTATUSUPDATING,
+        SourceStatusUpdating,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1SourceStatsStatus.SOURCESTATUSUNSPECIFIED => "SOURCE_STATUS_UNSPECIFIED",
-                UltravoxV1SourceStatsStatus.SOURCESTATUSINITIALIZING => "SOURCE_STATUS_INITIALIZING",
-                UltravoxV1SourceStatsStatus.SOURCESTATUSREADY => "SOURCE_STATUS_READY",
-                UltravoxV1SourceStatsStatus.SOURCESTATUSUPDATING => "SOURCE_STATUS_UPDATING",
+                UltravoxV1SourceStatsStatus.SourceStatusUnspecified => "SOURCE_STATUS_UNSPECIFIED",
+                UltravoxV1SourceStatsStatus.SourceStatusInitializing => "SOURCE_STATUS_INITIALIZING",
+                UltravoxV1SourceStatsStatus.SourceStatusReady => "SOURCE_STATUS_READY",
+                UltravoxV1SourceStatsStatus.SourceStatusUpdating => "SOURCE_STATUS_UPDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "SOURCE_STATUS_UNSPECIFIED" => UltravoxV1SourceStatsStatus.SOURCESTATUSUNSPECIFIED,
-                "SOURCE_STATUS_INITIALIZING" => UltravoxV1SourceStatsStatus.SOURCESTATUSINITIALIZING,
-                "SOURCE_STATUS_READY" => UltravoxV1SourceStatsStatus.SOURCESTATUSREADY,
-                "SOURCE_STATUS_UPDATING" => UltravoxV1SourceStatsStatus.SOURCESTATUSUPDATING,
+                "SOURCE_STATUS_UNSPECIFIED" => UltravoxV1SourceStatsStatus.SourceStatusUnspecified,
+                "SOURCE_STATUS_INITIALIZING" => UltravoxV1SourceStatsStatus.SourceStatusInitializing,
+                "SOURCE_STATUS_READY" => UltravoxV1SourceStatsStatus.SourceStatusReady,
+                "SOURCE_STATUS_UPDATING" => UltravoxV1SourceStatsStatus.SourceStatusUpdating,
                 _ => null,
             };
         }

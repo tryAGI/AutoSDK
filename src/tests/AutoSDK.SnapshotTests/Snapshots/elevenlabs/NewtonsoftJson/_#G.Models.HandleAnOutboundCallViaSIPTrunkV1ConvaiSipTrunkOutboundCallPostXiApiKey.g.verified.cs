@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey.g.cs
+﻿//HintName: G.Models.HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class HandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey
+    public sealed partial class HandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostXiApiKey
     {
 
         /// <summary>

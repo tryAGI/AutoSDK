@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiConversationsByConversationIdAudio.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiConversationsByConversationIdAudio.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiConversationsByConversationIdAudioArguments(
             global::System.Net.Http.HttpClient httpClient,

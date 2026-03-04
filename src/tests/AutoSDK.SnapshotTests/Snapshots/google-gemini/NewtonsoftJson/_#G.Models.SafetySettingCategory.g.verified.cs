@@ -14,57 +14,57 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_UNSPECIFIED")]
-        HARMCATEGORYUNSPECIFIED,
+        HarmCategoryUnspecified,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_DEROGATORY")]
-        HARMCATEGORYDEROGATORY,
+        HarmCategoryDerogatory,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_TOXICITY")]
-        HARMCATEGORYTOXICITY,
+        HarmCategoryToxicity,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_VIOLENCE")]
-        HARMCATEGORYVIOLENCE,
+        HarmCategoryViolence,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_SEXUAL")]
-        HARMCATEGORYSEXUAL,
+        HarmCategorySexual,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_MEDICAL")]
-        HARMCATEGORYMEDICAL,
+        HarmCategoryMedical,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_DANGEROUS")]
-        HARMCATEGORYDANGEROUS,
+        HarmCategoryDangerous,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_HARASSMENT")]
-        HARMCATEGORYHARASSMENT,
+        HarmCategoryHarassment,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_HATE_SPEECH")]
-        HARMCATEGORYHATESPEECH,
+        HarmCategoryHateSpeech,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_SEXUALLY_EXPLICIT")]
-        HARMCATEGORYSEXUALLYEXPLICIT,
+        HarmCategorySexuallyExplicit,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HARM_CATEGORY_DANGEROUS_CONTENT")]
-        HARMCATEGORYDANGEROUSCONTENT,
+        HarmCategoryDangerousContent,
     }
 
     /// <summary>
@@ -79,17 +79,17 @@ namespace G
         {
             return value switch
             {
-                SafetySettingCategory.HARMCATEGORYUNSPECIFIED => "HARM_CATEGORY_UNSPECIFIED",
-                SafetySettingCategory.HARMCATEGORYDEROGATORY => "HARM_CATEGORY_DEROGATORY",
-                SafetySettingCategory.HARMCATEGORYTOXICITY => "HARM_CATEGORY_TOXICITY",
-                SafetySettingCategory.HARMCATEGORYVIOLENCE => "HARM_CATEGORY_VIOLENCE",
-                SafetySettingCategory.HARMCATEGORYSEXUAL => "HARM_CATEGORY_SEXUAL",
-                SafetySettingCategory.HARMCATEGORYMEDICAL => "HARM_CATEGORY_MEDICAL",
-                SafetySettingCategory.HARMCATEGORYDANGEROUS => "HARM_CATEGORY_DANGEROUS",
-                SafetySettingCategory.HARMCATEGORYHARASSMENT => "HARM_CATEGORY_HARASSMENT",
-                SafetySettingCategory.HARMCATEGORYHATESPEECH => "HARM_CATEGORY_HATE_SPEECH",
-                SafetySettingCategory.HARMCATEGORYSEXUALLYEXPLICIT => "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                SafetySettingCategory.HARMCATEGORYDANGEROUSCONTENT => "HARM_CATEGORY_DANGEROUS_CONTENT",
+                SafetySettingCategory.HarmCategoryUnspecified => "HARM_CATEGORY_UNSPECIFIED",
+                SafetySettingCategory.HarmCategoryDerogatory => "HARM_CATEGORY_DEROGATORY",
+                SafetySettingCategory.HarmCategoryToxicity => "HARM_CATEGORY_TOXICITY",
+                SafetySettingCategory.HarmCategoryViolence => "HARM_CATEGORY_VIOLENCE",
+                SafetySettingCategory.HarmCategorySexual => "HARM_CATEGORY_SEXUAL",
+                SafetySettingCategory.HarmCategoryMedical => "HARM_CATEGORY_MEDICAL",
+                SafetySettingCategory.HarmCategoryDangerous => "HARM_CATEGORY_DANGEROUS",
+                SafetySettingCategory.HarmCategoryHarassment => "HARM_CATEGORY_HARASSMENT",
+                SafetySettingCategory.HarmCategoryHateSpeech => "HARM_CATEGORY_HATE_SPEECH",
+                SafetySettingCategory.HarmCategorySexuallyExplicit => "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                SafetySettingCategory.HarmCategoryDangerousContent => "HARM_CATEGORY_DANGEROUS_CONTENT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -100,17 +100,17 @@ namespace G
         {
             return value switch
             {
-                "HARM_CATEGORY_UNSPECIFIED" => SafetySettingCategory.HARMCATEGORYUNSPECIFIED,
-                "HARM_CATEGORY_DEROGATORY" => SafetySettingCategory.HARMCATEGORYDEROGATORY,
-                "HARM_CATEGORY_TOXICITY" => SafetySettingCategory.HARMCATEGORYTOXICITY,
-                "HARM_CATEGORY_VIOLENCE" => SafetySettingCategory.HARMCATEGORYVIOLENCE,
-                "HARM_CATEGORY_SEXUAL" => SafetySettingCategory.HARMCATEGORYSEXUAL,
-                "HARM_CATEGORY_MEDICAL" => SafetySettingCategory.HARMCATEGORYMEDICAL,
-                "HARM_CATEGORY_DANGEROUS" => SafetySettingCategory.HARMCATEGORYDANGEROUS,
-                "HARM_CATEGORY_HARASSMENT" => SafetySettingCategory.HARMCATEGORYHARASSMENT,
-                "HARM_CATEGORY_HATE_SPEECH" => SafetySettingCategory.HARMCATEGORYHATESPEECH,
-                "HARM_CATEGORY_SEXUALLY_EXPLICIT" => SafetySettingCategory.HARMCATEGORYSEXUALLYEXPLICIT,
-                "HARM_CATEGORY_DANGEROUS_CONTENT" => SafetySettingCategory.HARMCATEGORYDANGEROUSCONTENT,
+                "HARM_CATEGORY_UNSPECIFIED" => SafetySettingCategory.HarmCategoryUnspecified,
+                "HARM_CATEGORY_DEROGATORY" => SafetySettingCategory.HarmCategoryDerogatory,
+                "HARM_CATEGORY_TOXICITY" => SafetySettingCategory.HarmCategoryToxicity,
+                "HARM_CATEGORY_VIOLENCE" => SafetySettingCategory.HarmCategoryViolence,
+                "HARM_CATEGORY_SEXUAL" => SafetySettingCategory.HarmCategorySexual,
+                "HARM_CATEGORY_MEDICAL" => SafetySettingCategory.HarmCategoryMedical,
+                "HARM_CATEGORY_DANGEROUS" => SafetySettingCategory.HarmCategoryDangerous,
+                "HARM_CATEGORY_HARASSMENT" => SafetySettingCategory.HarmCategoryHarassment,
+                "HARM_CATEGORY_HATE_SPEECH" => SafetySettingCategory.HarmCategoryHateSpeech,
+                "HARM_CATEGORY_SEXUALLY_EXPLICIT" => SafetySettingCategory.HarmCategorySexuallyExplicit,
+                "HARM_CATEGORY_DANGEROUS_CONTENT" => SafetySettingCategory.HarmCategoryDangerousContent,
                 _ => null,
             };
         }

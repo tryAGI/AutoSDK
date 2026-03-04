@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets { get; }
+        public x3dModelAssetsClient x3dModelAssets { get; }
 
     }
 }

@@ -1,9 +1,9 @@
-﻿//HintName: G.IVDPClient.PipelinePublicServiceDeleteNamespaceSecret.g.cs
+﻿//HintName: G.IVdpClient.PipelinePublicServiceDeleteNamespaceSecret.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IVDPClient
+    public partial interface IVdpClient
     {
         /// <summary>
         /// Delete a secret<br/>

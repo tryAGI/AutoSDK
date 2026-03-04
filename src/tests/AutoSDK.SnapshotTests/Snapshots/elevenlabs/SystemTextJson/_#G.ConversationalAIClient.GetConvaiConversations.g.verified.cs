@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiConversations.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiConversations.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiConversationsArguments(
             global::System.Net.Http.HttpClient httpClient,

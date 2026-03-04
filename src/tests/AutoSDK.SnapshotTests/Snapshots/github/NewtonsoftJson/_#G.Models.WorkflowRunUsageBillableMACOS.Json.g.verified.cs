@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableMACOS.Json.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableMacos.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class WorkflowRunUsageBillableMACOS
+    public sealed partial class WorkflowRunUsageBillableMacos
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.WorkflowRunUsageBillableMACOS? FromJson(
+        public static global::G.WorkflowRunUsageBillableMacos? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.WorkflowRunUsageBillableMACOS>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.WorkflowRunUsageBillableMacos>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.WorkflowRunUsageBillableMACOS?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.WorkflowRunUsageBillableMacos?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.WorkflowRunUsageBillableMACOS?>(serializer.Deserialize<global::G.WorkflowRunUsageBillableMACOS>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.WorkflowRunUsageBillableMacos?>(serializer.Deserialize<global::G.WorkflowRunUsageBillableMacos>(jsonReader));
         }
     }
 }

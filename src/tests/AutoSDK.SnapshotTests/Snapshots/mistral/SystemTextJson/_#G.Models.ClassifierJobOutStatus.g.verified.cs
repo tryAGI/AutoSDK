@@ -12,43 +12,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATING,
+        Validating,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATED,
+        Validated,
         /// <summary>
         /// 
         /// </summary>
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
-        FAILEDVALIDATION,
+        FailedValidation,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLED,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                ClassifierJobOutStatus.QUEUED => "QUEUED",
-                ClassifierJobOutStatus.STARTED => "STARTED",
-                ClassifierJobOutStatus.VALIDATING => "VALIDATING",
-                ClassifierJobOutStatus.VALIDATED => "VALIDATED",
-                ClassifierJobOutStatus.RUNNING => "RUNNING",
-                ClassifierJobOutStatus.FAILEDVALIDATION => "FAILED_VALIDATION",
-                ClassifierJobOutStatus.FAILED => "FAILED",
-                ClassifierJobOutStatus.SUCCESS => "SUCCESS",
-                ClassifierJobOutStatus.CANCELLED => "CANCELLED",
-                ClassifierJobOutStatus.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
+                ClassifierJobOutStatus.Queued => "QUEUED",
+                ClassifierJobOutStatus.Started => "STARTED",
+                ClassifierJobOutStatus.Validating => "VALIDATING",
+                ClassifierJobOutStatus.Validated => "VALIDATED",
+                ClassifierJobOutStatus.Running => "RUNNING",
+                ClassifierJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                ClassifierJobOutStatus.Failed => "FAILED",
+                ClassifierJobOutStatus.Success => "SUCCESS",
+                ClassifierJobOutStatus.Cancelled => "CANCELLED",
+                ClassifierJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => ClassifierJobOutStatus.QUEUED,
-                "STARTED" => ClassifierJobOutStatus.STARTED,
-                "VALIDATING" => ClassifierJobOutStatus.VALIDATING,
-                "VALIDATED" => ClassifierJobOutStatus.VALIDATED,
-                "RUNNING" => ClassifierJobOutStatus.RUNNING,
-                "FAILED_VALIDATION" => ClassifierJobOutStatus.FAILEDVALIDATION,
-                "FAILED" => ClassifierJobOutStatus.FAILED,
-                "SUCCESS" => ClassifierJobOutStatus.SUCCESS,
-                "CANCELLED" => ClassifierJobOutStatus.CANCELLED,
-                "CANCELLATION_REQUESTED" => ClassifierJobOutStatus.CANCELLATIONREQUESTED,
+                "QUEUED" => ClassifierJobOutStatus.Queued,
+                "STARTED" => ClassifierJobOutStatus.Started,
+                "VALIDATING" => ClassifierJobOutStatus.Validating,
+                "VALIDATED" => ClassifierJobOutStatus.Validated,
+                "RUNNING" => ClassifierJobOutStatus.Running,
+                "FAILED_VALIDATION" => ClassifierJobOutStatus.FailedValidation,
+                "FAILED" => ClassifierJobOutStatus.Failed,
+                "SUCCESS" => ClassifierJobOutStatus.Success,
+                "CANCELLED" => ClassifierJobOutStatus.Cancelled,
+                "CANCELLATION_REQUESTED" => ClassifierJobOutStatus.CancellationRequested,
                 _ => null,
             };
         }

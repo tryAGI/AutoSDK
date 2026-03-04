@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiAgentsByAgentIdWidget.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiAgentsByAgentIdWidget.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Agent Widget Config<br/>

@@ -1,10 +1,10 @@
-﻿//HintName: G.TemplateAPIClient.V2TemplateGenerate.g.cs
+﻿//HintName: G.TemplateApiClient.V2TemplateGenerate.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class TemplateAPIClient
+    public partial class TemplateApiClient
     {
         partial void PrepareV2TemplateGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,

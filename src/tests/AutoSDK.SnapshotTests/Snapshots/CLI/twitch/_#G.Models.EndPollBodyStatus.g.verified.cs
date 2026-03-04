@@ -15,11 +15,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TERMINATED,
+        Terminated,
         /// <summary>
         /// 
         /// </summary>
-        ARCHIVED,
+        Archived,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                EndPollBodyStatus.TERMINATED => "TERMINATED",
-                EndPollBodyStatus.ARCHIVED => "ARCHIVED",
+                EndPollBodyStatus.Terminated => "TERMINATED",
+                EndPollBodyStatus.Archived => "ARCHIVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "TERMINATED" => EndPollBodyStatus.TERMINATED,
-                "ARCHIVED" => EndPollBodyStatus.ARCHIVED,
+                "TERMINATED" => EndPollBodyStatus.Terminated,
+                "ARCHIVED" => EndPollBodyStatus.Archived,
                 _ => null,
             };
         }

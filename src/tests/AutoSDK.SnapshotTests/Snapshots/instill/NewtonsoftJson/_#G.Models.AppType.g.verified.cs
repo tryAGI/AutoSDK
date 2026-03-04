@@ -15,7 +15,7 @@ namespace G
         /// AppType is a AI assistant app.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="APP_TYPE_AI_ASSISTANT")]
-        AIASSISTANT,
+        AiAssistant,
     }
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace G
         {
             return value switch
             {
-                AppType.AIASSISTANT => "APP_TYPE_AI_ASSISTANT",
+                AppType.AiAssistant => "APP_TYPE_AI_ASSISTANT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -41,7 +41,7 @@ namespace G
         {
             return value switch
             {
-                "APP_TYPE_AI_ASSISTANT" => AppType.AIASSISTANT,
+                "APP_TYPE_AI_ASSISTANT" => AppType.AiAssistant,
                 _ => null,
             };
         }

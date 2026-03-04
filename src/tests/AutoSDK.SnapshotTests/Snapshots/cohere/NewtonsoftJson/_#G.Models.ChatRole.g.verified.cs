@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHATBOT")]
-        CHATBOT,
+        Chatbot,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SYSTEM")]
-        SYSTEM,
+        System,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="USER")]
-        USER,
+        User,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TOOL")]
-        TOOL,
+        Tool,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ChatRole.CHATBOT => "CHATBOT",
-                ChatRole.SYSTEM => "SYSTEM",
-                ChatRole.USER => "USER",
-                ChatRole.TOOL => "TOOL",
+                ChatRole.Chatbot => "CHATBOT",
+                ChatRole.System => "SYSTEM",
+                ChatRole.User => "USER",
+                ChatRole.Tool => "TOOL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "CHATBOT" => ChatRole.CHATBOT,
-                "SYSTEM" => ChatRole.SYSTEM,
-                "USER" => ChatRole.USER,
-                "TOOL" => ChatRole.TOOL,
+                "CHATBOT" => ChatRole.Chatbot,
+                "SYSTEM" => ChatRole.System,
+                "USER" => ChatRole.User,
+                "TOOL" => ChatRole.Tool,
                 _ => null,
             };
         }

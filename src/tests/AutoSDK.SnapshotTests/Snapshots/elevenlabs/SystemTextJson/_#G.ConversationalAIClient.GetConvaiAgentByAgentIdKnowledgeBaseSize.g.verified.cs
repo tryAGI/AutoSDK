@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiAgentByAgentIdKnowledgeBaseSize.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiAgentByAgentIdKnowledgeBaseSize.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiAgentByAgentIdKnowledgeBaseSizeArguments(
             global::System.Net.Http.HttpClient httpClient,

@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.EditConvaiSecretsBySecretId.g.cs
+﻿//HintName: G.ConversationalAiClient.EditConvaiSecretsBySecretId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareEditConvaiSecretsBySecretIdArguments(
             global::System.Net.Http.HttpClient httpClient,

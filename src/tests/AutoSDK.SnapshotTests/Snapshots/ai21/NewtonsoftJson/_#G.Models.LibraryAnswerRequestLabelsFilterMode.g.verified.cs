@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AND")]
-        AND,
+        And,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OR")]
-        OR,
+        Or,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                LibraryAnswerRequestLabelsFilterMode.AND => "AND",
-                LibraryAnswerRequestLabelsFilterMode.OR => "OR",
+                LibraryAnswerRequestLabelsFilterMode.And => "AND",
+                LibraryAnswerRequestLabelsFilterMode.Or => "OR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "AND" => LibraryAnswerRequestLabelsFilterMode.AND,
-                "OR" => LibraryAnswerRequestLabelsFilterMode.OR,
+                "AND" => LibraryAnswerRequestLabelsFilterMode.And,
+                "OR" => LibraryAnswerRequestLabelsFilterMode.Or,
                 _ => null,
             };
         }

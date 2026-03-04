@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CVE")]
-        CVE,
+        Cve,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GHSA")]
-        GHSA,
+        Ghsa,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GlobalAdvisoryIdentifierType.CVE => "CVE",
-                GlobalAdvisoryIdentifierType.GHSA => "GHSA",
+                GlobalAdvisoryIdentifierType.Cve => "CVE",
+                GlobalAdvisoryIdentifierType.Ghsa => "GHSA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "CVE" => GlobalAdvisoryIdentifierType.CVE,
-                "GHSA" => GlobalAdvisoryIdentifierType.GHSA,
+                "CVE" => GlobalAdvisoryIdentifierType.Cve,
+                "GHSA" => GlobalAdvisoryIdentifierType.Ghsa,
                 _ => null,
             };
         }

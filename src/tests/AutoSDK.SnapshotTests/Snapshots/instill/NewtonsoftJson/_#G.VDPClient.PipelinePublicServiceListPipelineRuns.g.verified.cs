@@ -1,10 +1,10 @@
-﻿//HintName: G.VDPClient.PipelinePublicServiceListPipelineRuns.g.cs
+﻿//HintName: G.VdpClient.PipelinePublicServiceListPipelineRuns.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class VDPClient
+    public partial class VdpClient
     {
         partial void PreparePipelinePublicServiceListPipelineRunsArguments(
             global::System.Net.Http.HttpClient httpClient,

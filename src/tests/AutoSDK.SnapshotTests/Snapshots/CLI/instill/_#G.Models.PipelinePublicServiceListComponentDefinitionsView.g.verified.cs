@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// Default view, only includes basic information (removes the `spec`
         /// </summary>
-        VIEWBASIC,
+        ViewBasic,
         /// <summary>
         /// Full representation.
         /// </summary>
-        VIEWFULL,
+        ViewFull,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                PipelinePublicServiceListComponentDefinitionsView.VIEWBASIC => "VIEW_BASIC",
-                PipelinePublicServiceListComponentDefinitionsView.VIEWFULL => "VIEW_FULL",
+                PipelinePublicServiceListComponentDefinitionsView.ViewBasic => "VIEW_BASIC",
+                PipelinePublicServiceListComponentDefinitionsView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => PipelinePublicServiceListComponentDefinitionsView.VIEWBASIC,
-                "VIEW_FULL" => PipelinePublicServiceListComponentDefinitionsView.VIEWFULL,
+                "VIEW_BASIC" => PipelinePublicServiceListComponentDefinitionsView.ViewBasic,
+                "VIEW_FULL" => PipelinePublicServiceListComponentDefinitionsView.ViewFull,
                 _ => null,
             };
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreatePVCVoiceV1VoicesPvcPost.g.cs
+﻿//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyCreatePVCVoiceV1VoicesPvcPost
+    public sealed partial class BodyCreatePvcVoiceV1VoicesPvcPost
     {
         /// <summary>
         /// The name that identifies this voice. This will be displayed in the dropdown of the website.
@@ -40,7 +40,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyCreatePVCVoiceV1VoicesPvcPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyCreatePvcVoiceV1VoicesPvcPost" /> class.
         /// </summary>
         /// <param name="name">
         /// The name that identifies this voice. This will be displayed in the dropdown of the website.
@@ -54,7 +54,7 @@ namespace G
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.
         /// </param>
-        public BodyCreatePVCVoiceV1VoicesPvcPost(
+        public BodyCreatePvcVoiceV1VoicesPvcPost(
             string name,
             string language,
             string? description,
@@ -67,9 +67,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyCreatePVCVoiceV1VoicesPvcPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyCreatePvcVoiceV1VoicesPvcPost" /> class.
         /// </summary>
-        public BodyCreatePVCVoiceV1VoicesPvcPost()
+        public BodyCreatePvcVoiceV1VoicesPvcPost()
         {
         }
     }

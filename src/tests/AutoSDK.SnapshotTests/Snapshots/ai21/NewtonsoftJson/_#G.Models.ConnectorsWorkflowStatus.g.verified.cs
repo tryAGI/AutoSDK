@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="IN_PROGRESS")]
-        INPROGRESS,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARTIALLY_COMPLETED")]
-        PARTIALLYCOMPLETED,
+        PartiallyCompleted,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCEEDED")]
-        SUCCEEDED,
+        Succeeded,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ConnectorsWorkflowStatus.INPROGRESS => "IN_PROGRESS",
-                ConnectorsWorkflowStatus.PARTIALLYCOMPLETED => "PARTIALLY_COMPLETED",
-                ConnectorsWorkflowStatus.FAILED => "FAILED",
-                ConnectorsWorkflowStatus.SUCCEEDED => "SUCCEEDED",
+                ConnectorsWorkflowStatus.InProgress => "IN_PROGRESS",
+                ConnectorsWorkflowStatus.PartiallyCompleted => "PARTIALLY_COMPLETED",
+                ConnectorsWorkflowStatus.Failed => "FAILED",
+                ConnectorsWorkflowStatus.Succeeded => "SUCCEEDED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "IN_PROGRESS" => ConnectorsWorkflowStatus.INPROGRESS,
-                "PARTIALLY_COMPLETED" => ConnectorsWorkflowStatus.PARTIALLYCOMPLETED,
-                "FAILED" => ConnectorsWorkflowStatus.FAILED,
-                "SUCCEEDED" => ConnectorsWorkflowStatus.SUCCEEDED,
+                "IN_PROGRESS" => ConnectorsWorkflowStatus.InProgress,
+                "PARTIALLY_COMPLETED" => ConnectorsWorkflowStatus.PartiallyCompleted,
+                "FAILED" => ConnectorsWorkflowStatus.Failed,
+                "SUCCEEDED" => ConnectorsWorkflowStatus.Succeeded,
                 _ => null,
             };
         }

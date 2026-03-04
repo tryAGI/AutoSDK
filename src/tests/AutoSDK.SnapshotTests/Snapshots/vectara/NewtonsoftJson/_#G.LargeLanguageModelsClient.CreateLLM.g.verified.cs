@@ -35,7 +35,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.LLM> CreateLLMAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Llm> CreateLLMAsync(
             global::G.CreateLLMRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
@@ -211,7 +211,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.LLM.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.Llm.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -242,7 +242,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.LLM.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.Llm.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -269,7 +269,7 @@ namespace G
         /// <param name="requestTimeoutMillis"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.LLM> CreateLLMAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Llm> CreateLLMAsync(
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default)

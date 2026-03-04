@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ONE,
+        One,
         /// <summary>
         /// 
         /// </summary>
-        QUORUM,
+        Quorum,
         /// <summary>
         /// 
         /// </summary>
-        ALL,
+        All,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ObjectsClassReferencesPutConsistencyLevel.ONE => "ONE",
-                ObjectsClassReferencesPutConsistencyLevel.QUORUM => "QUORUM",
-                ObjectsClassReferencesPutConsistencyLevel.ALL => "ALL",
+                ObjectsClassReferencesPutConsistencyLevel.One => "ONE",
+                ObjectsClassReferencesPutConsistencyLevel.Quorum => "QUORUM",
+                ObjectsClassReferencesPutConsistencyLevel.All => "ALL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "ONE" => ObjectsClassReferencesPutConsistencyLevel.ONE,
-                "QUORUM" => ObjectsClassReferencesPutConsistencyLevel.QUORUM,
-                "ALL" => ObjectsClassReferencesPutConsistencyLevel.ALL,
+                "ONE" => ObjectsClassReferencesPutConsistencyLevel.One,
+                "QUORUM" => ObjectsClassReferencesPutConsistencyLevel.Quorum,
+                "ALL" => ObjectsClassReferencesPutConsistencyLevel.All,
                 _ => null,
             };
         }

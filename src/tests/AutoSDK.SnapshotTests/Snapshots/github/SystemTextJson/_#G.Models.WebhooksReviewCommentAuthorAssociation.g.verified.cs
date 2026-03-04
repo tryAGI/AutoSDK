@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhooksReviewCommentAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhooksReviewCommentAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhooksReviewCommentAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhooksReviewCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhooksReviewCommentAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhooksReviewCommentAuthorAssociation.MEMBER => "MEMBER",
-                WebhooksReviewCommentAuthorAssociation.NONE => "NONE",
-                WebhooksReviewCommentAuthorAssociation.OWNER => "OWNER",
+                WebhooksReviewCommentAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhooksReviewCommentAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhooksReviewCommentAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhooksReviewCommentAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhooksReviewCommentAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhooksReviewCommentAuthorAssociation.Member => "MEMBER",
+                WebhooksReviewCommentAuthorAssociation.None => "NONE",
+                WebhooksReviewCommentAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhooksReviewCommentAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhooksReviewCommentAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhooksReviewCommentAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhooksReviewCommentAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhooksReviewCommentAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhooksReviewCommentAuthorAssociation.MEMBER,
-                "NONE" => WebhooksReviewCommentAuthorAssociation.NONE,
-                "OWNER" => WebhooksReviewCommentAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhooksReviewCommentAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhooksReviewCommentAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhooksReviewCommentAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhooksReviewCommentAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhooksReviewCommentAuthorAssociation.Mannequin,
+                "MEMBER" => WebhooksReviewCommentAuthorAssociation.Member,
+                "NONE" => WebhooksReviewCommentAuthorAssociation.None,
+                "OWNER" => WebhooksReviewCommentAuthorAssociation.Owner,
                 _ => null,
             };
         }

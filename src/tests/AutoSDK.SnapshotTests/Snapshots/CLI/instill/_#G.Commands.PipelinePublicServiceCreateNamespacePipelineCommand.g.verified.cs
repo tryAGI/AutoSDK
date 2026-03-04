@@ -179,7 +179,7 @@ are connected.",
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceCreateNamespacePipelineAsync(
+            var response = await _client.Vdp.PipelinePublicServiceCreateNamespacePipelineAsync(
                 namespaceId: namespaceId,
                 id: id,
                 description: description,

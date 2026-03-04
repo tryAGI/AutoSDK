@@ -14,17 +14,17 @@ namespace G
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="APPROVE")]
-        APPROVE,
+        Approve,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
-        REQUESTCHANGES,
+        RequestChanges,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
-        COMMENT,
+        Comment,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                PullsSubmitReviewRequestEvent.APPROVE => "APPROVE",
-                PullsSubmitReviewRequestEvent.REQUESTCHANGES => "REQUEST_CHANGES",
-                PullsSubmitReviewRequestEvent.COMMENT => "COMMENT",
+                PullsSubmitReviewRequestEvent.Approve => "APPROVE",
+                PullsSubmitReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
+                PullsSubmitReviewRequestEvent.Comment => "COMMENT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "APPROVE" => PullsSubmitReviewRequestEvent.APPROVE,
-                "REQUEST_CHANGES" => PullsSubmitReviewRequestEvent.REQUESTCHANGES,
-                "COMMENT" => PullsSubmitReviewRequestEvent.COMMENT,
+                "APPROVE" => PullsSubmitReviewRequestEvent.Approve,
+                "REQUEST_CHANGES" => PullsSubmitReviewRequestEvent.RequestChanges,
+                "COMMENT" => PullsSubmitReviewRequestEvent.Comment,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey.Json.g.cs
+﻿//HintName: G.Models.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey
+    public sealed partial class DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey? FromJson(
+        public static global::G.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey?>(serializer.Deserialize<global::G.DeleteRAGIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey?>(serializer.Deserialize<global::G.DeleteRagIndexV1ConvaiKnowledgeBaseDocumentationIdRagIndexRagIndexIdDeleteXiApiKey>(jsonReader));
         }
     }
 }

@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DRYRUN")]
-        DRYRUN,
+        Dryrun,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                BatchDeleteResponseResultsObjectStatus.SUCCESS => "SUCCESS",
-                BatchDeleteResponseResultsObjectStatus.DRYRUN => "DRYRUN",
-                BatchDeleteResponseResultsObjectStatus.FAILED => "FAILED",
+                BatchDeleteResponseResultsObjectStatus.Success => "SUCCESS",
+                BatchDeleteResponseResultsObjectStatus.Dryrun => "DRYRUN",
+                BatchDeleteResponseResultsObjectStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "SUCCESS" => BatchDeleteResponseResultsObjectStatus.SUCCESS,
-                "DRYRUN" => BatchDeleteResponseResultsObjectStatus.DRYRUN,
-                "FAILED" => BatchDeleteResponseResultsObjectStatus.FAILED,
+                "SUCCESS" => BatchDeleteResponseResultsObjectStatus.Success,
+                "DRYRUN" => BatchDeleteResponseResultsObjectStatus.Dryrun,
+                "FAILED" => BatchDeleteResponseResultsObjectStatus.Failed,
                 _ => null,
             };
         }

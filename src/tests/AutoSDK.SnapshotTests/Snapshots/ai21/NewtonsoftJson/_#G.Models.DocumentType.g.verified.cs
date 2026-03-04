@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="URL")]
-        URL,
+        Url,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TEXT")]
-        TEXT,
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                DocumentType.URL => "URL",
-                DocumentType.TEXT => "TEXT",
+                DocumentType.Url => "URL",
+                DocumentType.Text => "TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "URL" => DocumentType.URL,
-                "TEXT" => DocumentType.TEXT,
+                "URL" => DocumentType.Url,
+                "TEXT" => DocumentType.Text,
                 _ => null,
             };
         }

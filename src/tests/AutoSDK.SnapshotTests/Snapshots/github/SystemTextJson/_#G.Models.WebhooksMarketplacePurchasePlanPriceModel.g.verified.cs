@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FREE,
+        Free,
         /// <summary>
         /// 
         /// </summary>
-        FLATRATE,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
-        PERUNIT,
+        PerUnit,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksMarketplacePurchasePlanPriceModel.FREE => "FREE",
-                WebhooksMarketplacePurchasePlanPriceModel.FLATRATE => "FLAT_RATE",
-                WebhooksMarketplacePurchasePlanPriceModel.PERUNIT => "PER_UNIT",
+                WebhooksMarketplacePurchasePlanPriceModel.Free => "FREE",
+                WebhooksMarketplacePurchasePlanPriceModel.FlatRate => "FLAT_RATE",
+                WebhooksMarketplacePurchasePlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "FREE" => WebhooksMarketplacePurchasePlanPriceModel.FREE,
-                "FLAT_RATE" => WebhooksMarketplacePurchasePlanPriceModel.FLATRATE,
-                "PER_UNIT" => WebhooksMarketplacePurchasePlanPriceModel.PERUNIT,
+                "FREE" => WebhooksMarketplacePurchasePlanPriceModel.Free,
+                "FLAT_RATE" => WebhooksMarketplacePurchasePlanPriceModel.FlatRate,
+                "PER_UNIT" => WebhooksMarketplacePurchasePlanPriceModel.PerUnit,
                 _ => null,
             };
         }

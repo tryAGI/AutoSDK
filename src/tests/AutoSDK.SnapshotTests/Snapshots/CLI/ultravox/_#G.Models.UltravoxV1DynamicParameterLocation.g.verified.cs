@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PARAMETERLOCATIONUNSPECIFIED,
+        ParameterLocationUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        PARAMETERLOCATIONQUERY,
+        ParameterLocationQuery,
         /// <summary>
         /// 
         /// </summary>
-        PARAMETERLOCATIONPATH,
+        ParameterLocationPath,
         /// <summary>
         /// 
         /// </summary>
-        PARAMETERLOCATIONHEADER,
+        ParameterLocationHeader,
         /// <summary>
         /// 
         /// </summary>
-        PARAMETERLOCATIONBODY,
+        ParameterLocationBody,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONUNSPECIFIED => "PARAMETER_LOCATION_UNSPECIFIED",
-                UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONQUERY => "PARAMETER_LOCATION_QUERY",
-                UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONPATH => "PARAMETER_LOCATION_PATH",
-                UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONHEADER => "PARAMETER_LOCATION_HEADER",
-                UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONBODY => "PARAMETER_LOCATION_BODY",
+                UltravoxV1DynamicParameterLocation.ParameterLocationUnspecified => "PARAMETER_LOCATION_UNSPECIFIED",
+                UltravoxV1DynamicParameterLocation.ParameterLocationQuery => "PARAMETER_LOCATION_QUERY",
+                UltravoxV1DynamicParameterLocation.ParameterLocationPath => "PARAMETER_LOCATION_PATH",
+                UltravoxV1DynamicParameterLocation.ParameterLocationHeader => "PARAMETER_LOCATION_HEADER",
+                UltravoxV1DynamicParameterLocation.ParameterLocationBody => "PARAMETER_LOCATION_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "PARAMETER_LOCATION_UNSPECIFIED" => UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONUNSPECIFIED,
-                "PARAMETER_LOCATION_QUERY" => UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONQUERY,
-                "PARAMETER_LOCATION_PATH" => UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONPATH,
-                "PARAMETER_LOCATION_HEADER" => UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONHEADER,
-                "PARAMETER_LOCATION_BODY" => UltravoxV1DynamicParameterLocation.PARAMETERLOCATIONBODY,
+                "PARAMETER_LOCATION_UNSPECIFIED" => UltravoxV1DynamicParameterLocation.ParameterLocationUnspecified,
+                "PARAMETER_LOCATION_QUERY" => UltravoxV1DynamicParameterLocation.ParameterLocationQuery,
+                "PARAMETER_LOCATION_PATH" => UltravoxV1DynamicParameterLocation.ParameterLocationPath,
+                "PARAMETER_LOCATION_HEADER" => UltravoxV1DynamicParameterLocation.ParameterLocationHeader,
+                "PARAMETER_LOCATION_BODY" => UltravoxV1DynamicParameterLocation.ParameterLocationBody,
                 _ => null,
             };
         }

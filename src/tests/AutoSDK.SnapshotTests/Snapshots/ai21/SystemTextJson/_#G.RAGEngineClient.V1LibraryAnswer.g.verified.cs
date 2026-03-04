@@ -1,10 +1,10 @@
-﻿//HintName: G.RAGEngineClient.V1LibraryAnswer.g.cs
+﻿//HintName: G.RagEngineClient.V1LibraryAnswer.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class RAGEngineClient
+    public partial class RagEngineClient
     {
         partial void PrepareV1LibraryAnswerArguments(
             global::System.Net.Http.HttpClient httpClient,

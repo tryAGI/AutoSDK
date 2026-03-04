@@ -65,9 +65,9 @@ namespace G
 
             var consistencyLevelValue = consistencyLevel switch
             {
-                global::G.ObjectsClassReferencesDeleteConsistencyLevel.ONE => "ONE",
-                global::G.ObjectsClassReferencesDeleteConsistencyLevel.QUORUM => "QUORUM",
-                global::G.ObjectsClassReferencesDeleteConsistencyLevel.ALL => "ALL",
+                global::G.ObjectsClassReferencesDeleteConsistencyLevel.One => "ONE",
+                global::G.ObjectsClassReferencesDeleteConsistencyLevel.Quorum => "QUORUM",
+                global::G.ObjectsClassReferencesDeleteConsistencyLevel.All => "ALL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

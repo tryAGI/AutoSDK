@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost.g.cs
+﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost
+    public sealed partial class BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost
     {
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost" /> class.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="agentPhoneNumberId"></param>
@@ -52,7 +52,7 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost(
+        public BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost(
             string agentId,
             string agentPhoneNumberId,
             string toNumber,
@@ -65,9 +65,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost" /> class.
+        /// Initializes a new instance of the <see cref="BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost" /> class.
         /// </summary>
-        public BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPost()
+        public BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPost()
         {
         }
     }

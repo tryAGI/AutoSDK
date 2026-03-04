@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData.g.cs
+﻿//HintName: G.Models.BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyHandleAnOutboundCallViaSIPTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData
+    public sealed partial class BodyHandleAnOutboundCallViaSipTrunkV1ConvaiSipTrunkOutboundCallPostConversationInitiationClientData
     {
 
         /// <summary>

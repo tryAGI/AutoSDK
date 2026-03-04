@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryWebhooksSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                NullableRepositoryWebhooksSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                NullableRepositoryWebhooksSquashMergeCommitMessage.BLANK => "BLANK",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.PrBody => "PR_BODY",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                NullableRepositoryWebhooksSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => NullableRepositoryWebhooksSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => NullableRepositoryWebhooksSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => NullableRepositoryWebhooksSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => NullableRepositoryWebhooksSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => NullableRepositoryWebhooksSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => NullableRepositoryWebhooksSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

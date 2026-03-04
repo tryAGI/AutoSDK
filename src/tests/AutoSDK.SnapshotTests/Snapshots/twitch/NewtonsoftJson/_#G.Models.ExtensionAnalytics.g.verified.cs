@@ -19,7 +19,7 @@ namespace G
         /// The URL that you use to download the report. The URL is valid for 5 minutes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("URL", Required = global::Newtonsoft.Json.Required.Always)]
-        public string URL { get; set; } = default!;
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// The type of report.
@@ -45,7 +45,7 @@ namespace G
         /// <param name="extensionId">
         /// An ID that identifies the extension that the report was generated for.
         /// </param>
-        /// <param name="uRL">
+        /// <param name="url">
         /// The URL that you use to download the report. The URL is valid for 5 minutes.
         /// </param>
         /// <param name="type">
@@ -56,12 +56,12 @@ namespace G
         /// </param>
         public ExtensionAnalytics(
             string extensionId,
-            string uRL,
+            string url,
             string type,
             global::G.ExtensionAnalyticsDateRange dateRange)
         {
             this.ExtensionId = extensionId ?? throw new global::System.ArgumentNullException(nameof(extensionId));
-            this.URL = uRL ?? throw new global::System.ArgumentNullException(nameof(uRL));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.DateRange = dateRange ?? throw new global::System.ArgumentNullException(nameof(dateRange));
         }

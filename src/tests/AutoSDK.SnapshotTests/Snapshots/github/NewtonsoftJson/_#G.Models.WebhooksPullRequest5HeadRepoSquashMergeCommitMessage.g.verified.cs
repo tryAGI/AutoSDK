@@ -17,17 +17,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PRBODY,
+        PrBody,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_MESSAGES")]
-        COMMITMESSAGES,
+        CommitMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        BLANK,
+        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
-                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
-                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
+                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.PRBODY,
-                "COMMIT_MESSAGES" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.COMMITMESSAGES,
-                "BLANK" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.BLANK,
+                "PR_BODY" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.PrBody,
+                "COMMIT_MESSAGES" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.CommitMessages,
+                "BLANK" => WebhooksPullRequest5HeadRepoSquashMergeCommitMessage.Blank,
                 _ => null,
             };
         }

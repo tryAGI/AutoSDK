@@ -101,7 +101,7 @@ account when updating the resource.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceUpdateNamespaceSecretAsync(
+            var response = await _client.Vdp.PipelinePublicServiceUpdateNamespaceSecretAsync(
                 namespaceId: namespaceId,
                 secretId: secretId,
                 id: id,

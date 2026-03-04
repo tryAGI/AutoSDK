@@ -245,17 +245,25 @@ public static class StringExtensions
         params char[] separator)
     {
         propertyName = propertyName ?? throw new ArgumentNullException(nameof(propertyName));
-        
+
         if (!separator.Any(propertyName.Contains))
         {
+            // Handle all-caps single words (e.g. "SUCCEEDED" → "Succeeded")
+            if (propertyName.Length > 1 && propertyName == propertyName.ToUpperInvariant())
+            {
+                return propertyName[0] + propertyName.Substring(1).ToLowerInvariant();
+            }
+
             return propertyName;
         }
-        
+
         return string.Join(
             string.Empty,
             propertyName
                 .Split(separator)
-                .Select(word => word.ToPropertyName()));
+                .Select(word => word.Length > 1 && word == word.ToUpperInvariant()
+                    ? word[0] + word.Substring(1).ToLowerInvariant()
+                    : word.ToPropertyName()));
     }
     
     private readonly static string[] NewLine = { "\n" };

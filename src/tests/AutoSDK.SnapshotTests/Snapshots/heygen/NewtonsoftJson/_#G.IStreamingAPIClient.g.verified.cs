@@ -1,4 +1,4 @@
-﻿//HintName: G.IStreamingAPIClient.g.cs
+﻿//HintName: G.IStreamingApiClient.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IStreamingAPIClient : global::System.IDisposable
+    public partial interface IStreamingApiClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.

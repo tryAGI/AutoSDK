@@ -1,20 +1,20 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiKnowledgeBaseUrl.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiKnowledgeBaseUrl.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiKnowledgeBaseUrlArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xiApiKey,
-            global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost request);
+            global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost request);
         partial void PrepareCreateConvaiKnowledgeBaseUrlRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xiApiKey,
-            global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost request);
+            global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost request);
         partial void ProcessCreateConvaiKnowledgeBaseUrlResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddKnowledgeBaseResponseModel> CreateConvaiKnowledgeBaseUrlAsync(
-            global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost request,
+            global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -223,7 +223,7 @@ namespace G
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyCreateURLDocumentV1ConvaiKnowledgeBaseUrlPost
+            var __request = new global::G.BodyCreateUrlDocumentV1ConvaiKnowledgeBaseUrlPost
             {
                 Url = url,
                 Name = name,

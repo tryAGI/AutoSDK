@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OLDEST")]
-        OLDEST,
+        Oldest,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NEWEST")]
-        NEWEST,
+        Newest,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetCustomRewardRedemptionSort.OLDEST => "OLDEST",
-                GetCustomRewardRedemptionSort.NEWEST => "NEWEST",
+                GetCustomRewardRedemptionSort.Oldest => "OLDEST",
+                GetCustomRewardRedemptionSort.Newest => "NEWEST",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "OLDEST" => GetCustomRewardRedemptionSort.OLDEST,
-                "NEWEST" => GetCustomRewardRedemptionSort.NEWEST,
+                "OLDEST" => GetCustomRewardRedemptionSort.Oldest,
+                "NEWEST" => GetCustomRewardRedemptionSort.Newest,
                 _ => null,
             };
         }

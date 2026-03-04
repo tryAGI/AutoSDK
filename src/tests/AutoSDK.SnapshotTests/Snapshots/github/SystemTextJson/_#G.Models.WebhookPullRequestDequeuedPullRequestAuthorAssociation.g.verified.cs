@@ -12,35 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        COLLABORATOR,
+        Collaborator,
         /// <summary>
         /// 
         /// </summary>
-        CONTRIBUTOR,
+        Contributor,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMER,
+        FirstTimer,
         /// <summary>
         /// 
         /// </summary>
-        FIRSTTIMECONTRIBUTOR,
+        FirstTimeContributor,
         /// <summary>
         /// 
         /// </summary>
-        MANNEQUIN,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
-        MEMBER,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        NONE,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        OWNER,
+        Owner,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.COLLABORATOR => "COLLABORATOR",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.MANNEQUIN => "MANNEQUIN",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.MEMBER => "MEMBER",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.NONE => "NONE",
-                WebhookPullRequestDequeuedPullRequestAuthorAssociation.OWNER => "OWNER",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.Member => "MEMBER",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.None => "NONE",
+                WebhookPullRequestDequeuedPullRequestAuthorAssociation.Owner => "OWNER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "COLLABORATOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.COLLABORATOR,
-                "CONTRIBUTOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.CONTRIBUTOR,
-                "FIRST_TIMER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.FIRSTTIMER,
-                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR,
-                "MANNEQUIN" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.MANNEQUIN,
-                "MEMBER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.MEMBER,
-                "NONE" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.NONE,
-                "OWNER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.OWNER,
+                "COLLABORATOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.Member,
+                "NONE" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.None,
+                "OWNER" => WebhookPullRequestDequeuedPullRequestAuthorAssociation.Owner,
                 _ => null,
             };
         }

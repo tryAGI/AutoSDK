@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        HARMPROBABILITYUNSPECIFIED,
+        HarmProbabilityUnspecified,
         /// <summary>
         /// 
         /// </summary>
-        NEGLIGIBLE,
+        Negligible,
         /// <summary>
         /// 
         /// </summary>
-        LOW,
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        MEDIUM,
+        Medium,
         /// <summary>
         /// 
         /// </summary>
-        HIGH,
+        High,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SafetyRatingProbability.HARMPROBABILITYUNSPECIFIED => "HARM_PROBABILITY_UNSPECIFIED",
-                SafetyRatingProbability.NEGLIGIBLE => "NEGLIGIBLE",
-                SafetyRatingProbability.LOW => "LOW",
-                SafetyRatingProbability.MEDIUM => "MEDIUM",
-                SafetyRatingProbability.HIGH => "HIGH",
+                SafetyRatingProbability.HarmProbabilityUnspecified => "HARM_PROBABILITY_UNSPECIFIED",
+                SafetyRatingProbability.Negligible => "NEGLIGIBLE",
+                SafetyRatingProbability.Low => "LOW",
+                SafetyRatingProbability.Medium => "MEDIUM",
+                SafetyRatingProbability.High => "HIGH",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "HARM_PROBABILITY_UNSPECIFIED" => SafetyRatingProbability.HARMPROBABILITYUNSPECIFIED,
-                "NEGLIGIBLE" => SafetyRatingProbability.NEGLIGIBLE,
-                "LOW" => SafetyRatingProbability.LOW,
-                "MEDIUM" => SafetyRatingProbability.MEDIUM,
-                "HIGH" => SafetyRatingProbability.HIGH,
+                "HARM_PROBABILITY_UNSPECIFIED" => SafetyRatingProbability.HarmProbabilityUnspecified,
+                "NEGLIGIBLE" => SafetyRatingProbability.Negligible,
+                "LOW" => SafetyRatingProbability.Low,
+                "MEDIUM" => SafetyRatingProbability.Medium,
+                "HIGH" => SafetyRatingProbability.High,
                 _ => null,
             };
         }

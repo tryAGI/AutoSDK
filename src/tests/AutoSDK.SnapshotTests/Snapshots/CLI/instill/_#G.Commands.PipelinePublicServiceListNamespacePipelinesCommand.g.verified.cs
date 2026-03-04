@@ -139,7 +139,7 @@ Format: `order_by=id` or `order_by=create_time desc`, default is `asc`.",
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListNamespacePipelinesAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListNamespacePipelinesAsync(
                 namespaceId: namespaceId,
                 pageSize: pageSize,
                 pageToken: pageToken,

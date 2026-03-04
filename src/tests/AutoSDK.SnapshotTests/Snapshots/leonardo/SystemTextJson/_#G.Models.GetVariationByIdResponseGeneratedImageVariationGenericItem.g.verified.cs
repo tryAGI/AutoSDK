@@ -32,8 +32,8 @@ namespace G
         /// The type of variation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VARIATIONTYPEJsonConverter))]
-        public global::G.VARIATIONTYPE? TransformType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VariationTypeJsonConverter))]
+        public global::G.VariationType? TransformType { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
             string? createdAt,
             string? id,
             global::G.JobStatus? status,
-            global::G.VARIATIONTYPE? transformType,
+            global::G.VariationType? transformType,
             string? url)
         {
             this.CreatedAt = createdAt;

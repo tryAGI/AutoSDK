@@ -122,7 +122,7 @@ runs requested by themselves.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.VDP.PipelinePublicServiceListPipelineRunsAsync(
+            var response = await _client.Vdp.PipelinePublicServiceListPipelineRunsAsync(
                 namespaceId: namespaceId,
                 pipelineId: pipelineId,
                 page: page,

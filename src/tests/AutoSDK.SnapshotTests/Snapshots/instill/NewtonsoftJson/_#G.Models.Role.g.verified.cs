@@ -16,12 +16,12 @@ namespace G
         /// Viewers can see the resource properties.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ROLE_VIEWER")]
-        VIEWER,
+        Viewer,
         /// <summary>
         /// Executors can execute the resource (e.g. trigger a pipeline).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ROLE_EXECUTOR")]
-        EXECUTOR,
+        Executor,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                Role.VIEWER => "ROLE_VIEWER",
-                Role.EXECUTOR => "ROLE_EXECUTOR",
+                Role.Viewer => "ROLE_VIEWER",
+                Role.Executor => "ROLE_EXECUTOR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "ROLE_VIEWER" => Role.VIEWER,
-                "ROLE_EXECUTOR" => Role.EXECUTOR,
+                "ROLE_VIEWER" => Role.Viewer,
+                "ROLE_EXECUTOR" => Role.Executor,
                 _ => null,
             };
         }

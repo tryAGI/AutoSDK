@@ -271,7 +271,7 @@ namespace G
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 NamespaceGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VDPGroupCommand>(services);
+                VdpGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ModelGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

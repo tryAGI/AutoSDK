@@ -12,43 +12,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATING,
+        Validating,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATED,
+        Validated,
         /// <summary>
         /// 
         /// </summary>
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
-        FAILEDVALIDATION,
+        FailedValidation,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLED,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                CompletionDetailedJobOutStatus.QUEUED => "QUEUED",
-                CompletionDetailedJobOutStatus.STARTED => "STARTED",
-                CompletionDetailedJobOutStatus.VALIDATING => "VALIDATING",
-                CompletionDetailedJobOutStatus.VALIDATED => "VALIDATED",
-                CompletionDetailedJobOutStatus.RUNNING => "RUNNING",
-                CompletionDetailedJobOutStatus.FAILEDVALIDATION => "FAILED_VALIDATION",
-                CompletionDetailedJobOutStatus.FAILED => "FAILED",
-                CompletionDetailedJobOutStatus.SUCCESS => "SUCCESS",
-                CompletionDetailedJobOutStatus.CANCELLED => "CANCELLED",
-                CompletionDetailedJobOutStatus.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
+                CompletionDetailedJobOutStatus.Queued => "QUEUED",
+                CompletionDetailedJobOutStatus.Started => "STARTED",
+                CompletionDetailedJobOutStatus.Validating => "VALIDATING",
+                CompletionDetailedJobOutStatus.Validated => "VALIDATED",
+                CompletionDetailedJobOutStatus.Running => "RUNNING",
+                CompletionDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                CompletionDetailedJobOutStatus.Failed => "FAILED",
+                CompletionDetailedJobOutStatus.Success => "SUCCESS",
+                CompletionDetailedJobOutStatus.Cancelled => "CANCELLED",
+                CompletionDetailedJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => CompletionDetailedJobOutStatus.QUEUED,
-                "STARTED" => CompletionDetailedJobOutStatus.STARTED,
-                "VALIDATING" => CompletionDetailedJobOutStatus.VALIDATING,
-                "VALIDATED" => CompletionDetailedJobOutStatus.VALIDATED,
-                "RUNNING" => CompletionDetailedJobOutStatus.RUNNING,
-                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FAILEDVALIDATION,
-                "FAILED" => CompletionDetailedJobOutStatus.FAILED,
-                "SUCCESS" => CompletionDetailedJobOutStatus.SUCCESS,
-                "CANCELLED" => CompletionDetailedJobOutStatus.CANCELLED,
-                "CANCELLATION_REQUESTED" => CompletionDetailedJobOutStatus.CANCELLATIONREQUESTED,
+                "QUEUED" => CompletionDetailedJobOutStatus.Queued,
+                "STARTED" => CompletionDetailedJobOutStatus.Started,
+                "VALIDATING" => CompletionDetailedJobOutStatus.Validating,
+                "VALIDATED" => CompletionDetailedJobOutStatus.Validated,
+                "RUNNING" => CompletionDetailedJobOutStatus.Running,
+                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FailedValidation,
+                "FAILED" => CompletionDetailedJobOutStatus.Failed,
+                "SUCCESS" => CompletionDetailedJobOutStatus.Success,
+                "CANCELLED" => CompletionDetailedJobOutStatus.Cancelled,
+                "CANCELLATION_REQUESTED" => CompletionDetailedJobOutStatus.CancellationRequested,
                 _ => null,
             };
         }

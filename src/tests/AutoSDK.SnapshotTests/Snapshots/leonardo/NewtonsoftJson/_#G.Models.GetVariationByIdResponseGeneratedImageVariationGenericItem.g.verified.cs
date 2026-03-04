@@ -31,7 +31,7 @@ namespace G
         /// The type of variation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformType")]
-        public global::G.VARIATIONTYPE? TransformType { get; set; }
+        public global::G.VariationType? TransformType { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
             string? createdAt,
             string? id,
             global::G.JobStatus? status,
-            global::G.VARIATIONTYPE? transformType,
+            global::G.VariationType? transformType,
             string? url)
         {
             this.CreatedAt = createdAt;

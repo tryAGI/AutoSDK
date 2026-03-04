@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SSE,
+        Sse,
         /// <summary>
         /// 
         /// </summary>
-        STREAMABLEHTTP,
+        StreamableHttp,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                MCPServerTransport.SSE => "SSE",
-                MCPServerTransport.STREAMABLEHTTP => "STREAMABLE_HTTP",
+                MCPServerTransport.Sse => "SSE",
+                MCPServerTransport.StreamableHttp => "STREAMABLE_HTTP",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "SSE" => MCPServerTransport.SSE,
-                "STREAMABLE_HTTP" => MCPServerTransport.STREAMABLEHTTP,
+                "SSE" => MCPServerTransport.Sse,
+                "STREAMABLE_HTTP" => MCPServerTransport.StreamableHttp,
                 _ => null,
             };
         }

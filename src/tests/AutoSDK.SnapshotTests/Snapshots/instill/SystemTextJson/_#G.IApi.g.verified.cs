@@ -46,7 +46,7 @@ namespace G
         /// <summary>
         /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public VDPClient VDP { get; }
+        public VdpClient Vdp { get; }
 
         /// <summary>
         /// AI Model resources for MLOps/LLMOps.

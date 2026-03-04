@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.EditConvaiSettings.g.cs
+﻿//HintName: G.IConversationalAiClient.EditConvaiSettings.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Update Convai Settings<br/>

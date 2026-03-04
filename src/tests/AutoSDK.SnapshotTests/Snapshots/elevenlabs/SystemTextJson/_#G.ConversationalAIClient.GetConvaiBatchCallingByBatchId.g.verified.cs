@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.GetConvaiBatchCallingByBatchId.g.cs
+﻿//HintName: G.ConversationalAiClient.GetConvaiBatchCallingByBatchId.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareGetConvaiBatchCallingByBatchIdArguments(
             global::System.Net.Http.HttpClient httpClient,

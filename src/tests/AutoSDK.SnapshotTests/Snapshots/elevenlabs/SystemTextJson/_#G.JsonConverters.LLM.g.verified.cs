@@ -1,13 +1,13 @@
-﻿//HintName: G.JsonConverters.LLM.g.cs
+﻿//HintName: G.JsonConverters.Llm.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class LLMJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.LLM>
+    public sealed class LlmJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.Llm>
     {
         /// <inheritdoc />
-        public override global::G.LLM Read(
+        public override global::G.Llm Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.LLMExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.LlmExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,11 +27,11 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.LLM)numValue;
+                    return (global::G.Llm)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::G.LLM);
+                    return default(global::G.Llm);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -43,12 +43,12 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.LLM value,
+            global::G.Llm value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.LLMExtensions.ToValueString(value));
+            writer.WriteStringValue(global::G.LlmExtensions.ToValueString(value));
         }
     }
 }

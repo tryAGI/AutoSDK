@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.DeleteConvaiMcpServersByMcpServerIdToolApprovalsByToolName.g.cs
+﻿//HintName: G.ConversationalAiClient.DeleteConvaiMcpServersByMcpServerIdToolApprovalsByToolName.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareDeleteConvaiMcpServersByMcpServerIdToolApprovalsByToolNameArguments(
             global::System.Net.Http.HttpClient httpClient,

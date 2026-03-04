@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostLabels2.g.cs
+﻿//HintName: G.Models.BodyEditPvcVoiceV1VoicesPvcVoiceIdPostLabels2.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BodyEditPVCVoiceV1VoicesPvcVoiceIdPostLabels2
+    public sealed partial class BodyEditPvcVoiceV1VoicesPvcVoiceIdPostLabels2
     {
 
         /// <summary>

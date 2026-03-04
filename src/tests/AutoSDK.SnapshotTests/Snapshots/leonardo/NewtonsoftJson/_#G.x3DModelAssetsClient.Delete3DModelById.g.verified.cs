@@ -1,10 +1,10 @@
-﻿//HintName: G.x3DModelAssetsClient.Delete3DModelById.g.cs
+﻿//HintName: G.x3dModelAssetsClient.Delete3DModelById.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class x3DModelAssetsClient
+    public partial class x3dModelAssetsClient
     {
         partial void PrepareDelete3DModelByIdArguments(
             global::System.Net.Http.HttpClient httpClient,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetABatchCallByIDV1ConvaiBatchCallingBatchIdGetXiApiKey.g.cs
+﻿//HintName: G.Models.GetABatchCallByIdV1ConvaiBatchCallingBatchIdGetXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class GetABatchCallByIDV1ConvaiBatchCallingBatchIdGetXiApiKey
+    public sealed partial class GetABatchCallByIdV1ConvaiBatchCallingBatchIdGetXiApiKey
     {
 
         /// <summary>

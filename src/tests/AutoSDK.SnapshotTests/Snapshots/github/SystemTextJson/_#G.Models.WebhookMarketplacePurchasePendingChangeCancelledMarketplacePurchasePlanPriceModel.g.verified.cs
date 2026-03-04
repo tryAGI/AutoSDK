@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FREE,
+        Free,
         /// <summary>
         /// 
         /// </summary>
-        FLATRATE,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
-        PERUNIT,
+        PerUnit,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FREE => "FREE",
-                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FLATRATE => "FLAT_RATE",
-                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.PERUNIT => "PER_UNIT",
+                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.Free => "FREE",
+                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FlatRate => "FLAT_RATE",
+                WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "FREE" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FREE,
-                "FLAT_RATE" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FLATRATE,
-                "PER_UNIT" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.PERUNIT,
+                "FREE" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.Free,
+                "FLAT_RATE" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.FlatRate,
+                "PER_UNIT" => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.PerUnit,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.Json.g.cs
+﻿//HintName: G.Models.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
+    public sealed partial class DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
+        public static global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?>(serializer.Deserialize<global::G.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey?>(serializer.Deserialize<global::G.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey>(jsonReader));
         }
     }
 }

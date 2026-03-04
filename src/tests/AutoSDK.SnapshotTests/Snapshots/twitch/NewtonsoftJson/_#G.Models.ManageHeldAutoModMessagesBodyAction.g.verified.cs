@@ -17,12 +17,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALLOW")]
-        ALLOW,
+        Allow,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DENY")]
-        DENY,
+        Deny,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                ManageHeldAutoModMessagesBodyAction.ALLOW => "ALLOW",
-                ManageHeldAutoModMessagesBodyAction.DENY => "DENY",
+                ManageHeldAutoModMessagesBodyAction.Allow => "ALLOW",
+                ManageHeldAutoModMessagesBodyAction.Deny => "DENY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "ALLOW" => ManageHeldAutoModMessagesBodyAction.ALLOW,
-                "DENY" => ManageHeldAutoModMessagesBodyAction.DENY,
+                "ALLOW" => ManageHeldAutoModMessagesBodyAction.Allow,
+                "DENY" => ManageHeldAutoModMessagesBodyAction.Deny,
                 _ => null,
             };
         }

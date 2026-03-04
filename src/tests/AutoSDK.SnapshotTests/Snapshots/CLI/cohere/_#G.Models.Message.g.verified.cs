@@ -20,35 +20,35 @@ namespace G
         /// The chat_history parameter should not be used for `SYSTEM` messages in most cases. Instead, to add a `SYSTEM` role message at the beginning of a conversation, the `preamble` parameter should be used.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatMessage? CHATBOT { get; init; }
+        public global::G.ChatMessage? Chatbot { get; init; }
 #else
-        public global::G.ChatMessage? CHATBOT { get; }
+        public global::G.ChatMessage? Chatbot { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CHATBOT))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chatbot))]
 #endif
-        public bool IsCHATBOT => CHATBOT != null;
+        public bool IsChatbot => Chatbot != null;
 
         /// <summary>
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolMessage? TOOL { get; init; }
+        public global::G.ToolMessage? Tool { get; init; }
 #else
-        public global::G.ToolMessage? TOOL { get; }
+        public global::G.ToolMessage? Tool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TOOL))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
-        public bool IsTOOL => TOOL != null;
+        public bool IsTool => Tool != null;
         /// <summary>
         /// 
         /// </summary>
@@ -57,14 +57,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatMessage?(Message @this) => @this.CHATBOT;
+        public static implicit operator global::G.ChatMessage?(Message @this) => @this.Chatbot;
 
         /// <summary>
         /// 
         /// </summary>
         public Message(global::G.ChatMessage? value)
         {
-            CHATBOT = value;
+            Chatbot = value;
         }
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolMessage?(Message @this) => @this.TOOL;
+        public static implicit operator global::G.ToolMessage?(Message @this) => @this.Tool;
 
         /// <summary>
         /// 
         /// </summary>
         public Message(global::G.ToolMessage? value)
         {
-            TOOL = value;
+            Tool = value;
         }
 
         /// <summary>
@@ -90,30 +90,30 @@ namespace G
         /// </summary>
         public Message(
             global::G.MessageDiscriminatorRole? role,
-            global::G.ChatMessage? cHATBOT,
-            global::G.ToolMessage? tOOL
+            global::G.ChatMessage? chatbot,
+            global::G.ToolMessage? tool
             )
         {
             Role = role;
 
-            CHATBOT = cHATBOT;
-            TOOL = tOOL;
+            Chatbot = chatbot;
+            Tool = tool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            TOOL as object ??
-            CHATBOT as object 
+            Tool as object ??
+            Chatbot as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            CHATBOT?.ToString() ??
-            TOOL?.ToString() 
+            Chatbot?.ToString() ??
+            Tool?.ToString() 
             ;
 
         /// <summary>
@@ -121,15 +121,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCHATBOT && !IsTOOL || !IsCHATBOT && IsTOOL;
+            return IsChatbot && !IsTool || !IsChatbot && IsTool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatMessage?, TResult>? cHATBOT = null,
-            global::System.Func<global::G.ToolMessage?, TResult>? tOOL = null,
+            global::System.Func<global::G.ChatMessage?, TResult>? chatbot = null,
+            global::System.Func<global::G.ToolMessage?, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -137,13 +137,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCHATBOT && cHATBOT != null)
+            if (IsChatbot && chatbot != null)
             {
-                return cHATBOT(CHATBOT!);
+                return chatbot(Chatbot!);
             }
-            else if (IsTOOL && tOOL != null)
+            else if (IsTool && tool != null)
             {
-                return tOOL(TOOL!);
+                return tool(Tool!);
             }
 
             return default(TResult);
@@ -153,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatMessage?>? cHATBOT = null,
-            global::System.Action<global::G.ToolMessage?>? tOOL = null,
+            global::System.Action<global::G.ChatMessage?>? chatbot = null,
+            global::System.Action<global::G.ToolMessage?>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -162,13 +162,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCHATBOT)
+            if (IsChatbot)
             {
-                cHATBOT?.Invoke(CHATBOT!);
+                chatbot?.Invoke(Chatbot!);
             }
-            else if (IsTOOL)
+            else if (IsTool)
             {
-                tOOL?.Invoke(TOOL!);
+                tool?.Invoke(Tool!);
             }
         }
 
@@ -179,9 +179,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                CHATBOT,
+                Chatbot,
                 typeof(global::G.ChatMessage),
-                TOOL,
+                Tool,
                 typeof(global::G.ToolMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -199,8 +199,8 @@ namespace G
         public bool Equals(Message other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatMessage?>.Default.Equals(CHATBOT, other.CHATBOT) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolMessage?>.Default.Equals(TOOL, other.TOOL) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatMessage?>.Default.Equals(Chatbot, other.Chatbot) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolMessage?>.Default.Equals(Tool, other.Tool) 
                 ;
         }
 

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        POST,
+        Post,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                BatchRequestInputMethod.POST => "POST",
+                BatchRequestInputMethod.Post => "POST",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "POST" => BatchRequestInputMethod.POST,
+                "POST" => BatchRequestInputMethod.Post,
                 _ => null,
             };
         }

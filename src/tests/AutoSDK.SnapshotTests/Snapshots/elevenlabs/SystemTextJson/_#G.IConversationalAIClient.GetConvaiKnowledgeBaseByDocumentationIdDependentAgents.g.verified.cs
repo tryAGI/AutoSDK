@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiKnowledgeBaseByDocumentationIdDependentAgents.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiKnowledgeBaseByDocumentationIdDependentAgents.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Dependent Agents List<br/>

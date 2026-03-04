@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MERGE,
+        Merge,
         /// <summary>
         /// 
         /// </summary>
-        SQUASH,
+        Squash,
         /// <summary>
         /// 
         /// </summary>
-        REBASE,
+        Rebase,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleMergeQueueParametersMergeMethod.MERGE => "MERGE",
-                RepositoryRuleMergeQueueParametersMergeMethod.SQUASH => "SQUASH",
-                RepositoryRuleMergeQueueParametersMergeMethod.REBASE => "REBASE",
+                RepositoryRuleMergeQueueParametersMergeMethod.Merge => "MERGE",
+                RepositoryRuleMergeQueueParametersMergeMethod.Squash => "SQUASH",
+                RepositoryRuleMergeQueueParametersMergeMethod.Rebase => "REBASE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "MERGE" => RepositoryRuleMergeQueueParametersMergeMethod.MERGE,
-                "SQUASH" => RepositoryRuleMergeQueueParametersMergeMethod.SQUASH,
-                "REBASE" => RepositoryRuleMergeQueueParametersMergeMethod.REBASE,
+                "MERGE" => RepositoryRuleMergeQueueParametersMergeMethod.Merge,
+                "SQUASH" => RepositoryRuleMergeQueueParametersMergeMethod.Squash,
+                "REBASE" => RepositoryRuleMergeQueueParametersMergeMethod.Rebase,
                 _ => null,
             };
         }

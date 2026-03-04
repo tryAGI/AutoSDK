@@ -12,43 +12,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        STARTED,
+        Started,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATING,
+        Validating,
         /// <summary>
         /// 
         /// </summary>
-        VALIDATED,
+        Validated,
         /// <summary>
         /// 
         /// </summary>
-        RUNNING,
+        Running,
         /// <summary>
         /// 
         /// </summary>
-        FAILEDVALIDATION,
+        FailedValidation,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLED,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        CANCELLATIONREQUESTED,
+        CancellationRequested,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.QUEUED => "QUEUED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.STARTED => "STARTED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATING => "VALIDATING",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATED => "VALIDATED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.RUNNING => "RUNNING",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILEDVALIDATION => "FAILED_VALIDATION",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILED => "FAILED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.SUCCESS => "SUCCESS",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLED => "CANCELLED",
-                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLATIONREQUESTED => "CANCELLATION_REQUESTED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Queued => "QUEUED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Started => "STARTED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validating => "VALIDATING",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validated => "VALIDATED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Running => "RUNNING",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FailedValidation => "FAILED_VALIDATION",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Failed => "FAILED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Success => "SUCCESS",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Cancelled => "CANCELLED",
+                JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CancellationRequested => "CANCELLATION_REQUESTED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.QUEUED,
-                "STARTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.STARTED,
-                "VALIDATING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATING,
-                "VALIDATED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.VALIDATED,
-                "RUNNING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.RUNNING,
-                "FAILED_VALIDATION" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILEDVALIDATION,
-                "FAILED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FAILED,
-                "SUCCESS" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.SUCCESS,
-                "CANCELLED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLED,
-                "CANCELLATION_REQUESTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CANCELLATIONREQUESTED,
+                "QUEUED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Queued,
+                "STARTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Started,
+                "VALIDATING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validating,
+                "VALIDATED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Validated,
+                "RUNNING" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Running,
+                "FAILED_VALIDATION" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.FailedValidation,
+                "FAILED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Failed,
+                "SUCCESS" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Success,
+                "CANCELLED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.Cancelled,
+                "CANCELLATION_REQUESTED" => JobsApiRoutesFineTuningGetFineTuningJobsStatus2.CancellationRequested,
                 _ => null,
             };
         }

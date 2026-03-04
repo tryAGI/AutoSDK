@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LLMJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LlmJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.LLM Llm { get; set; }
+        public required global::G.Llm Llm { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LLMUsageCalculatorLLMResponseModel(
-            global::G.LLM llm,
+            global::G.Llm llm,
             double pricePerMinute)
         {
             this.Llm = llm;

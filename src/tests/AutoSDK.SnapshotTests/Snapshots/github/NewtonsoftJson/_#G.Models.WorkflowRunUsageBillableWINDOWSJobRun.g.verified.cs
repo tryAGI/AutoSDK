@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowRunUsageBillableWINDOWSJobRun.g.cs
+﻿//HintName: G.Models.WorkflowRunUsageBillableWindowsJobRun.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class WorkflowRunUsageBillableWINDOWSJobRun
+    public sealed partial class WorkflowRunUsageBillableWindowsJobRun
     {
         /// <summary>
         /// 
@@ -28,11 +28,11 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWINDOWSJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWindowsJobRun" /> class.
         /// </summary>
         /// <param name="jobId"></param>
         /// <param name="durationMs"></param>
-        public WorkflowRunUsageBillableWINDOWSJobRun(
+        public WorkflowRunUsageBillableWindowsJobRun(
             int jobId,
             int durationMs)
         {
@@ -41,9 +41,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWINDOWSJobRun" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableWindowsJobRun" /> class.
         /// </summary>
-        public WorkflowRunUsageBillableWINDOWSJobRun()
+        public WorkflowRunUsageBillableWindowsJobRun()
         {
         }
     }

@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BITS,
+        Bits,
         /// <summary>
         /// 
         /// </summary>
-        SUBS,
+        Subs,
         /// <summary>
         /// 
         /// </summary>
-        OTHER,
+        Other,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                HypeTrainEventEventDataTopContributionType.BITS => "BITS",
-                HypeTrainEventEventDataTopContributionType.SUBS => "SUBS",
-                HypeTrainEventEventDataTopContributionType.OTHER => "OTHER",
+                HypeTrainEventEventDataTopContributionType.Bits => "BITS",
+                HypeTrainEventEventDataTopContributionType.Subs => "SUBS",
+                HypeTrainEventEventDataTopContributionType.Other => "OTHER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "BITS" => HypeTrainEventEventDataTopContributionType.BITS,
-                "SUBS" => HypeTrainEventEventDataTopContributionType.SUBS,
-                "OTHER" => HypeTrainEventEventDataTopContributionType.OTHER,
+                "BITS" => HypeTrainEventEventDataTopContributionType.Bits,
+                "SUBS" => HypeTrainEventEventDataTopContributionType.Subs,
+                "OTHER" => HypeTrainEventEventDataTopContributionType.Other,
                 _ => null,
             };
         }

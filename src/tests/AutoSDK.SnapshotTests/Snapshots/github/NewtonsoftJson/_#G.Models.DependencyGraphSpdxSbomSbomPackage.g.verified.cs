@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         /// <example>SPDXRef-Package</example>
         [global::Newtonsoft.Json.JsonProperty("SPDXID")]
-        public string? SPDXID { get; set; }
+        public string? Spdxid { get; set; }
 
         /// <summary>
         /// The name of the package.<br/>
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbomPackage" /> class.
         /// </summary>
-        /// <param name="sPDXID">
+        /// <param name="spdxid">
         /// A unique SPDX identifier for the package.<br/>
         /// Example: SPDXRef-Package
         /// </param>
@@ -142,7 +142,7 @@ namespace G
         /// </param>
         /// <param name="externalRefs"></param>
         public DependencyGraphSpdxSbomSbomPackage(
-            string? sPDXID,
+            string? spdxid,
             string? name,
             string? versionInfo,
             string? downloadLocation,
@@ -153,7 +153,7 @@ namespace G
             string? copyrightText,
             global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackageExternalRef>? externalRefs)
         {
-            this.SPDXID = sPDXID;
+            this.Spdxid = spdxid;
             this.Name = name;
             this.VersionInfo = versionInfo;
             this.DownloadLocation = downloadLocation;

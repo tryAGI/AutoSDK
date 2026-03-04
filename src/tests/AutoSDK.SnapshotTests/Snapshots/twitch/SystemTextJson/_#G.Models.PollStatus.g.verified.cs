@@ -19,27 +19,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ACTIVE,
+        Active,
         /// <summary>
         /// 
         /// </summary>
-        COMPLETED,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        TERMINATED,
+        Terminated,
         /// <summary>
         /// 
         /// </summary>
-        ARCHIVED,
+        Archived,
         /// <summary>
         /// 
         /// </summary>
-        MODERATED,
+        Moderated,
         /// <summary>
         /// 
         /// </summary>
-        INVALID,
+        Invalid,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                PollStatus.ACTIVE => "ACTIVE",
-                PollStatus.COMPLETED => "COMPLETED",
-                PollStatus.TERMINATED => "TERMINATED",
-                PollStatus.ARCHIVED => "ARCHIVED",
-                PollStatus.MODERATED => "MODERATED",
-                PollStatus.INVALID => "INVALID",
+                PollStatus.Active => "ACTIVE",
+                PollStatus.Completed => "COMPLETED",
+                PollStatus.Terminated => "TERMINATED",
+                PollStatus.Archived => "ARCHIVED",
+                PollStatus.Moderated => "MODERATED",
+                PollStatus.Invalid => "INVALID",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "ACTIVE" => PollStatus.ACTIVE,
-                "COMPLETED" => PollStatus.COMPLETED,
-                "TERMINATED" => PollStatus.TERMINATED,
-                "ARCHIVED" => PollStatus.ARCHIVED,
-                "MODERATED" => PollStatus.MODERATED,
-                "INVALID" => PollStatus.INVALID,
+                "ACTIVE" => PollStatus.Active,
+                "COMPLETED" => PollStatus.Completed,
+                "TERMINATED" => PollStatus.Terminated,
+                "ARCHIVED" => PollStatus.Archived,
+                "MODERATED" => PollStatus.Moderated,
+                "INVALID" => PollStatus.Invalid,
                 _ => null,
             };
         }

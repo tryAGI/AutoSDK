@@ -58,8 +58,8 @@ namespace G
 
             var viewValue = view switch
             {
-                global::G.ModelPublicServiceGetNamespaceModelOperationView.VIEWBASIC => "VIEW_BASIC",
-                global::G.ModelPublicServiceGetNamespaceModelOperationView.VIEWFULL => "VIEW_FULL",
+                global::G.ModelPublicServiceGetNamespaceModelOperationView.ViewBasic => "VIEW_BASIC",
+                global::G.ModelPublicServiceGetNamespaceModelOperationView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CANCELED,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
-        FULFILLED,
+        Fulfilled,
         /// <summary>
         /// 
         /// </summary>
-        UNFULFILLED,
+        Unfulfilled,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CustomRewardRedemptionStatus.CANCELED => "CANCELED",
-                CustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
-                CustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
+                CustomRewardRedemptionStatus.Canceled => "CANCELED",
+                CustomRewardRedemptionStatus.Fulfilled => "FULFILLED",
+                CustomRewardRedemptionStatus.Unfulfilled => "UNFULFILLED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "CANCELED" => CustomRewardRedemptionStatus.CANCELED,
-                "FULFILLED" => CustomRewardRedemptionStatus.FULFILLED,
-                "UNFULFILLED" => CustomRewardRedemptionStatus.UNFULFILLED,
+                "CANCELED" => CustomRewardRedemptionStatus.Canceled,
+                "FULFILLED" => CustomRewardRedemptionStatus.Fulfilled,
+                "UNFULFILLED" => CustomRewardRedemptionStatus.Unfulfilled,
                 _ => null,
             };
         }

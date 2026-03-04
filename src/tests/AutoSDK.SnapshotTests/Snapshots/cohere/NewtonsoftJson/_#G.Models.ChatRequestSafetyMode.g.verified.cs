@@ -19,17 +19,17 @@ namespace G
         /// //docs.cohere.com/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CONTEXTUAL")]
-        CONTEXTUAL,
+        Contextual,
         /// <summary>
         /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRICT")]
-        STRICT,
+        Strict,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        NONE,
+        None,
     }
 
     /// <summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                ChatRequestSafetyMode.CONTEXTUAL => "CONTEXTUAL",
-                ChatRequestSafetyMode.STRICT => "STRICT",
-                ChatRequestSafetyMode.NONE => "NONE",
+                ChatRequestSafetyMode.Contextual => "CONTEXTUAL",
+                ChatRequestSafetyMode.Strict => "STRICT",
+                ChatRequestSafetyMode.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,9 +57,9 @@ namespace G
         {
             return value switch
             {
-                "CONTEXTUAL" => ChatRequestSafetyMode.CONTEXTUAL,
-                "STRICT" => ChatRequestSafetyMode.STRICT,
-                "NONE" => ChatRequestSafetyMode.NONE,
+                "CONTEXTUAL" => ChatRequestSafetyMode.Contextual,
+                "STRICT" => ChatRequestSafetyMode.Strict,
+                "NONE" => ChatRequestSafetyMode.None,
                 _ => null,
             };
         }

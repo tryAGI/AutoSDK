@@ -12,23 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        INACTIVE,
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
-        ONTRACK,
+        OnTrack,
         /// <summary>
         /// 
         /// </summary>
-        ATRISK,
+        AtRisk,
         /// <summary>
         /// 
         /// </summary>
-        OFFTRACK,
+        OffTrack,
         /// <summary>
         /// 
         /// </summary>
-        COMPLETE,
+        Complete,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                ProjectsV2StatusUpdateStatus.INACTIVE => "INACTIVE",
-                ProjectsV2StatusUpdateStatus.ONTRACK => "ON_TRACK",
-                ProjectsV2StatusUpdateStatus.ATRISK => "AT_RISK",
-                ProjectsV2StatusUpdateStatus.OFFTRACK => "OFF_TRACK",
-                ProjectsV2StatusUpdateStatus.COMPLETE => "COMPLETE",
+                ProjectsV2StatusUpdateStatus.Inactive => "INACTIVE",
+                ProjectsV2StatusUpdateStatus.OnTrack => "ON_TRACK",
+                ProjectsV2StatusUpdateStatus.AtRisk => "AT_RISK",
+                ProjectsV2StatusUpdateStatus.OffTrack => "OFF_TRACK",
+                ProjectsV2StatusUpdateStatus.Complete => "COMPLETE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "INACTIVE" => ProjectsV2StatusUpdateStatus.INACTIVE,
-                "ON_TRACK" => ProjectsV2StatusUpdateStatus.ONTRACK,
-                "AT_RISK" => ProjectsV2StatusUpdateStatus.ATRISK,
-                "OFF_TRACK" => ProjectsV2StatusUpdateStatus.OFFTRACK,
-                "COMPLETE" => ProjectsV2StatusUpdateStatus.COMPLETE,
+                "INACTIVE" => ProjectsV2StatusUpdateStatus.Inactive,
+                "ON_TRACK" => ProjectsV2StatusUpdateStatus.OnTrack,
+                "AT_RISK" => ProjectsV2StatusUpdateStatus.AtRisk,
+                "OFF_TRACK" => ProjectsV2StatusUpdateStatus.OffTrack,
+                "COMPLETE" => ProjectsV2StatusUpdateStatus.Complete,
                 _ => null,
             };
         }

@@ -1,9 +1,9 @@
-﻿//HintName: G.IConversationalAIClient.GetConvaiKnowledgeBaseByDocumentationIdChunkByChunkId.g.cs
+﻿//HintName: G.IConversationalAiClient.GetConvaiKnowledgeBaseByDocumentationIdChunkByChunkId.g.cs
 #nullable enable
 
 namespace G
 {
-    public partial interface IConversationalAIClient
+    public partial interface IConversationalAiClient
     {
         /// <summary>
         /// Get Documentation Chunk From Knowledge Base<br/>

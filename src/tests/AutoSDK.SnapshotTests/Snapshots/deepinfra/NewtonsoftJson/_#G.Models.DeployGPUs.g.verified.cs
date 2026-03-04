@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="A100-80GB")]
-        A10080GB,
+        A10080gb,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="H100-80GB")]
-        H10080GB,
+        H10080gb,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="H200-141GB")]
-        H200141GB,
+        H200141gb,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="B200-180GB")]
-        B200180GB,
+        B200180gb,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                DeployGPUs.A10080GB => "A100-80GB",
-                DeployGPUs.H10080GB => "H100-80GB",
-                DeployGPUs.H200141GB => "H200-141GB",
-                DeployGPUs.B200180GB => "B200-180GB",
+                DeployGPUs.A10080gb => "A100-80GB",
+                DeployGPUs.H10080gb => "H100-80GB",
+                DeployGPUs.H200141gb => "H200-141GB",
+                DeployGPUs.B200180gb => "B200-180GB",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "A100-80GB" => DeployGPUs.A10080GB,
-                "H100-80GB" => DeployGPUs.H10080GB,
-                "H200-141GB" => DeployGPUs.H200141GB,
-                "B200-180GB" => DeployGPUs.B200180GB,
+                "A100-80GB" => DeployGPUs.A10080gb,
+                "H100-80GB" => DeployGPUs.H10080gb,
+                "H200-141GB" => DeployGPUs.H200141gb,
+                "B200-180GB" => DeployGPUs.B200180gb,
                 _ => null,
             };
         }

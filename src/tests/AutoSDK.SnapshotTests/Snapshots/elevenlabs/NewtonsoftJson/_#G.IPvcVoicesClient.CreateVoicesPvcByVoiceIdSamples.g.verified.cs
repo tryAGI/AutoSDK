@@ -20,7 +20,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SampleResponseModel>> CreateVoicesPvcByVoiceIdSamplesAsync(
             string voiceId,
-            global::G.BodyAddSamplesToPVCVoiceV1VoicesPvcVoiceIdSamplesPost request,
+            global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 

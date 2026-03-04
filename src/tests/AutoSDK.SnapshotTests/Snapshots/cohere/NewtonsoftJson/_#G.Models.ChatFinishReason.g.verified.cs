@@ -19,27 +19,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
-        COMPLETE,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STOP_SEQUENCE")]
-        STOPSEQUENCE,
+        StopSequence,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MAX_TOKENS")]
-        MAXTOKENS,
+        MaxTokens,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TOOL_CALL")]
-        TOOLCALL,
+        ToolCall,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ERROR")]
-        ERROR,
+        Error,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
         {
             return value switch
             {
-                ChatFinishReason.COMPLETE => "COMPLETE",
-                ChatFinishReason.STOPSEQUENCE => "STOP_SEQUENCE",
-                ChatFinishReason.MAXTOKENS => "MAX_TOKENS",
-                ChatFinishReason.TOOLCALL => "TOOL_CALL",
-                ChatFinishReason.ERROR => "ERROR",
+                ChatFinishReason.Complete => "COMPLETE",
+                ChatFinishReason.StopSequence => "STOP_SEQUENCE",
+                ChatFinishReason.MaxTokens => "MAX_TOKENS",
+                ChatFinishReason.ToolCall => "TOOL_CALL",
+                ChatFinishReason.Error => "ERROR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,11 +69,11 @@ namespace G
         {
             return value switch
             {
-                "COMPLETE" => ChatFinishReason.COMPLETE,
-                "STOP_SEQUENCE" => ChatFinishReason.STOPSEQUENCE,
-                "MAX_TOKENS" => ChatFinishReason.MAXTOKENS,
-                "TOOL_CALL" => ChatFinishReason.TOOLCALL,
-                "ERROR" => ChatFinishReason.ERROR,
+                "COMPLETE" => ChatFinishReason.Complete,
+                "STOP_SEQUENCE" => ChatFinishReason.StopSequence,
+                "MAX_TOKENS" => ChatFinishReason.MaxTokens,
+                "TOOL_CALL" => ChatFinishReason.ToolCall,
+                "ERROR" => ChatFinishReason.Error,
                 _ => null,
             };
         }

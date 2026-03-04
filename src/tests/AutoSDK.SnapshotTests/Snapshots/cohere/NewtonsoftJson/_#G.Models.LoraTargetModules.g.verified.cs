@@ -19,22 +19,22 @@ namespace G
         /// Unspecified LoRA target modules.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LORA_TARGET_MODULES_UNSPECIFIED")]
-        UNSPECIFIED,
+        Unspecified,
         /// <summary>
         /// LoRA adapts the query and value matrices in transformer attention layers.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LORA_TARGET_MODULES_QV")]
-        QV,
+        Qv,
         /// <summary>
         /// LoRA adapts query, key, value, and output matrices in attention layers.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LORA_TARGET_MODULES_QKVO")]
-        QKVO,
+        Qkvo,
         /// <summary>
         /// LoRA adapts attention projection matrices and feed-forward networks (FFN).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LORA_TARGET_MODULES_QKVO_FFN")]
-        QKVOFFN,
+        QkvoFfn,
     }
 
     /// <summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                LoraTargetModules.UNSPECIFIED => "LORA_TARGET_MODULES_UNSPECIFIED",
-                LoraTargetModules.QV => "LORA_TARGET_MODULES_QV",
-                LoraTargetModules.QKVO => "LORA_TARGET_MODULES_QKVO",
-                LoraTargetModules.QKVOFFN => "LORA_TARGET_MODULES_QKVO_FFN",
+                LoraTargetModules.Unspecified => "LORA_TARGET_MODULES_UNSPECIFIED",
+                LoraTargetModules.Qv => "LORA_TARGET_MODULES_QV",
+                LoraTargetModules.Qkvo => "LORA_TARGET_MODULES_QKVO",
+                LoraTargetModules.QkvoFfn => "LORA_TARGET_MODULES_QKVO_FFN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,10 +63,10 @@ namespace G
         {
             return value switch
             {
-                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.UNSPECIFIED,
-                "LORA_TARGET_MODULES_QV" => LoraTargetModules.QV,
-                "LORA_TARGET_MODULES_QKVO" => LoraTargetModules.QKVO,
-                "LORA_TARGET_MODULES_QKVO_FFN" => LoraTargetModules.QKVOFFN,
+                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.Unspecified,
+                "LORA_TARGET_MODULES_QV" => LoraTargetModules.Qv,
+                "LORA_TARGET_MODULES_QKVO" => LoraTargetModules.Qkvo,
+                "LORA_TARGET_MODULES_QKVO_FFN" => LoraTargetModules.QkvoFfn,
                 _ => null,
             };
         }

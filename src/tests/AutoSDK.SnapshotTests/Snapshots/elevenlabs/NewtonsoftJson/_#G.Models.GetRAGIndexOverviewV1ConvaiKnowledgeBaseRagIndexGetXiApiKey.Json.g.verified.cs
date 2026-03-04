@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey.Json.g.cs
+﻿//HintName: G.Models.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey
+    public sealed partial class GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -27,11 +27,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey? FromJson(
+        public static global::G.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey>(
                 json,
                 jsonSerializerOptions);
         }
@@ -43,14 +43,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
             using var streamReader = new global::System.IO.StreamReader(jsonStream);
             using var jsonReader = new global::Newtonsoft.Json.JsonTextReader(streamReader);
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
-            return new global::System.Threading.Tasks.ValueTask<global::G.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey?>(serializer.Deserialize<global::G.GetRAGIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey>(jsonReader));
+            return new global::System.Threading.Tasks.ValueTask<global::G.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey?>(serializer.Deserialize<global::G.GetRagIndexOverviewV1ConvaiKnowledgeBaseRagIndexGetXiApiKey>(jsonReader));
         }
     }
 }

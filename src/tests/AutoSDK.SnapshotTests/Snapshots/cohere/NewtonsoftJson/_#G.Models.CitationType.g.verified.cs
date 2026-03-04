@@ -14,12 +14,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TEXT_CONTENT")]
-        TEXTCONTENT,
+        TextContent,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN")]
-        PLAN,
+        Plan,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CitationType.TEXTCONTENT => "TEXT_CONTENT",
-                CitationType.PLAN => "PLAN",
+                CitationType.TextContent => "TEXT_CONTENT",
+                CitationType.Plan => "PLAN",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "TEXT_CONTENT" => CitationType.TEXTCONTENT,
-                "PLAN" => CitationType.PLAN,
+                "TEXT_CONTENT" => CitationType.TextContent,
+                "PLAN" => CitationType.Plan,
                 _ => null,
             };
         }

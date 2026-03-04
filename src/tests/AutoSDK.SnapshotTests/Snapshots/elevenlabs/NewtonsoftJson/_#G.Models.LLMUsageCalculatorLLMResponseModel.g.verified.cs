@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.LLM Llm { get; set; } = default!;
+        public global::G.Llm Llm { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="llm"></param>
         /// <param name="pricePerMinute"></param>
         public LLMUsageCalculatorLLMResponseModel(
-            global::G.LLM llm,
+            global::G.Llm llm,
             double pricePerMinute)
         {
             this.Llm = llm;

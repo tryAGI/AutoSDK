@@ -8,7 +8,7 @@ namespace G
     {
         public MainCommand(
             NamespaceGroupCommand command0,
-            VDPGroupCommand command1,
+            VdpGroupCommand command1,
             ModelGroupCommand command2,
             ArtifactGroupCommand command3,
             AppGroupCommand command4,

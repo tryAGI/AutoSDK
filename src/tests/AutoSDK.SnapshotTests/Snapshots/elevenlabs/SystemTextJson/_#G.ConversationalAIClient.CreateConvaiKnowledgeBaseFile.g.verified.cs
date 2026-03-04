@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiKnowledgeBaseFile.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiKnowledgeBaseFile.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiKnowledgeBaseFileArguments(
             global::System.Net.Http.HttpClient httpClient,

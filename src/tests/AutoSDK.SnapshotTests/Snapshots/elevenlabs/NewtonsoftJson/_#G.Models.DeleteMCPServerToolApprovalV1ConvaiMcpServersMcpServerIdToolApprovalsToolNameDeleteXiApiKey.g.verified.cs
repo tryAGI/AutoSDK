@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.g.cs
+﻿//HintName: G.Models.DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
-    public sealed partial class DeleteMCPServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
+    public sealed partial class DeleteMcpServerToolApprovalV1ConvaiMcpServersMcpServerIdToolApprovalsToolNameDeleteXiApiKey
     {
 
         /// <summary>

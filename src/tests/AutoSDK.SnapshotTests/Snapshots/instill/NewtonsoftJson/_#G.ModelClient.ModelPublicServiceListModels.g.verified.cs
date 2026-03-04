@@ -71,14 +71,14 @@ namespace G
 
             var viewValue = view switch
             {
-                global::G.ModelPublicServiceListModelsView.VIEWBASIC => "VIEW_BASIC",
-                global::G.ModelPublicServiceListModelsView.VIEWFULL => "VIEW_FULL",
+                global::G.ModelPublicServiceListModelsView.ViewBasic => "VIEW_BASIC",
+                global::G.ModelPublicServiceListModelsView.ViewFull => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var visibilityValue = visibility switch
             {
-                global::G.ModelPublicServiceListModelsVisibility.VISIBILITYPRIVATE => "VISIBILITY_PRIVATE",
-                global::G.ModelPublicServiceListModelsVisibility.VISIBILITYPUBLIC => "VISIBILITY_PUBLIC",
+                global::G.ModelPublicServiceListModelsVisibility.VisibilityPrivate => "VISIBILITY_PRIVATE",
+                global::G.ModelPublicServiceListModelsVisibility.VisibilityPublic => "VISIBILITY_PUBLIC",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

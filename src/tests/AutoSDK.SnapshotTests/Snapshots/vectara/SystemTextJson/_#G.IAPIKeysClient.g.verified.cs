@@ -1,4 +1,4 @@
-﻿//HintName: G.IAPIKeysClient.g.cs
+﻿//HintName: G.IApiKeysClient.g.cs
 
 #nullable enable
 
@@ -9,7 +9,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IAPIKeysClient : global::System.IDisposable
+    public partial interface IApiKeysClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.

@@ -14,52 +14,52 @@ namespace G
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ACTIVE")]
-        ACTIVE,
+        Active,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INACTIVE")]
-        INACTIVE,
+        Inactive,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OFFLOADED")]
-        OFFLOADED,
+        Offloaded,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="OFFLOADING")]
-        OFFLOADING,
+        Offloading,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ONLOADING")]
-        ONLOADING,
+        Onloading,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HOT")]
-        HOT,
+        Hot,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COLD")]
-        COLD,
+        Cold,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FROZEN")]
-        FROZEN,
+        Frozen,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FREEZING")]
-        FREEZING,
+        Freezing,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="UNFREEZING")]
-        UNFREEZING,
+        Unfreezing,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                TenantActivityStatus.ACTIVE => "ACTIVE",
-                TenantActivityStatus.INACTIVE => "INACTIVE",
-                TenantActivityStatus.OFFLOADED => "OFFLOADED",
-                TenantActivityStatus.OFFLOADING => "OFFLOADING",
-                TenantActivityStatus.ONLOADING => "ONLOADING",
-                TenantActivityStatus.HOT => "HOT",
-                TenantActivityStatus.COLD => "COLD",
-                TenantActivityStatus.FROZEN => "FROZEN",
-                TenantActivityStatus.FREEZING => "FREEZING",
-                TenantActivityStatus.UNFREEZING => "UNFREEZING",
+                TenantActivityStatus.Active => "ACTIVE",
+                TenantActivityStatus.Inactive => "INACTIVE",
+                TenantActivityStatus.Offloaded => "OFFLOADED",
+                TenantActivityStatus.Offloading => "OFFLOADING",
+                TenantActivityStatus.Onloading => "ONLOADING",
+                TenantActivityStatus.Hot => "HOT",
+                TenantActivityStatus.Cold => "COLD",
+                TenantActivityStatus.Frozen => "FROZEN",
+                TenantActivityStatus.Freezing => "FREEZING",
+                TenantActivityStatus.Unfreezing => "UNFREEZING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "ACTIVE" => TenantActivityStatus.ACTIVE,
-                "INACTIVE" => TenantActivityStatus.INACTIVE,
-                "OFFLOADED" => TenantActivityStatus.OFFLOADED,
-                "OFFLOADING" => TenantActivityStatus.OFFLOADING,
-                "ONLOADING" => TenantActivityStatus.ONLOADING,
-                "HOT" => TenantActivityStatus.HOT,
-                "COLD" => TenantActivityStatus.COLD,
-                "FROZEN" => TenantActivityStatus.FROZEN,
-                "FREEZING" => TenantActivityStatus.FREEZING,
-                "UNFREEZING" => TenantActivityStatus.UNFREEZING,
+                "ACTIVE" => TenantActivityStatus.Active,
+                "INACTIVE" => TenantActivityStatus.Inactive,
+                "OFFLOADED" => TenantActivityStatus.Offloaded,
+                "OFFLOADING" => TenantActivityStatus.Offloading,
+                "ONLOADING" => TenantActivityStatus.Onloading,
+                "HOT" => TenantActivityStatus.Hot,
+                "COLD" => TenantActivityStatus.Cold,
+                "FROZEN" => TenantActivityStatus.Frozen,
+                "FREEZING" => TenantActivityStatus.Freezing,
+                "UNFREEZING" => TenantActivityStatus.Unfreezing,
                 _ => null,
             };
         }

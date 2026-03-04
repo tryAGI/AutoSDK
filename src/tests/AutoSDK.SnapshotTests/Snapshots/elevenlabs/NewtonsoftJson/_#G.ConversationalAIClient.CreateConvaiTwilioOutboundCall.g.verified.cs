@@ -1,10 +1,10 @@
-﻿//HintName: G.ConversationalAIClient.CreateConvaiTwilioOutboundCall.g.cs
+﻿//HintName: G.ConversationalAiClient.CreateConvaiTwilioOutboundCall.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class ConversationalAIClient
+    public partial class ConversationalAiClient
     {
         partial void PrepareCreateConvaiTwilioOutboundCallArguments(
             global::System.Net.Http.HttpClient httpClient,
