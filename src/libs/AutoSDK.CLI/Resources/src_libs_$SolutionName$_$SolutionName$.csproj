@@ -21,4 +21,8 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 
+  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">
+    <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.0" />
+  </ItemGroup>
+
 </Project>

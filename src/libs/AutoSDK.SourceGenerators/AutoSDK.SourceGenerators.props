@@ -110,7 +110,7 @@
 <!--        MetadataName="%(CompilerVisibleProperty.Identity)" />-->
 <!--  </ItemGroup>-->
 
-  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net9.0'))">
+  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">
     <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.0" />
   </ItemGroup>
 
