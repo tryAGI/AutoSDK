@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletionsAsync(
+
             global::G.CompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -457,8 +458,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletionsAsync(
-            string prompt,
-            string model,
+            string prompt = "<s>[INST] What is the capital of France? [/INST]",
+            string model = "mistralai/Mixtral-8x7B-Instruct-v0.1",
             int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stop = default,
             float? temperature = default,

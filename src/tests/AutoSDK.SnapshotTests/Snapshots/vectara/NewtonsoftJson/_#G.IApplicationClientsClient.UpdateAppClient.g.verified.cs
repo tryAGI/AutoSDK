@@ -17,6 +17,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAppClientAsync(
             string appClientId,
+
             global::G.UpdateAppClientRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

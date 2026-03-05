@@ -39,6 +39,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CheckSuitePreference> ChecksSetSuitesPreferencesAsync(
             string owner,
             string repo,
+
             global::G.ChecksSetSuitesPreferencesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

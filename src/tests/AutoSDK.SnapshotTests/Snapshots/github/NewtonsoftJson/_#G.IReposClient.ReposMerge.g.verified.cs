@@ -16,6 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Commit> ReposMergeAsync(
             string owner,
             string repo,
+
             global::G.ReposMergeRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

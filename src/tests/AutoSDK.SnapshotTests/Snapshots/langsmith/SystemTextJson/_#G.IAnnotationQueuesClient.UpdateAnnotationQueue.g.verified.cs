@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
+
             global::G.AnnotationQueueUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

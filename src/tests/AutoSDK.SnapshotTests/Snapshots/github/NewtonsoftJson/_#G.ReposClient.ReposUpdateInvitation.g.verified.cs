@@ -41,6 +41,7 @@ namespace G
             string owner,
             string repo,
             int invitationId,
+
             global::G.ReposUpdateInvitationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

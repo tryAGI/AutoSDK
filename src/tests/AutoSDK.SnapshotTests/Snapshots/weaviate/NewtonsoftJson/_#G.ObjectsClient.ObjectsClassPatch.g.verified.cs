@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
+
             global::G.Object request,
             global::G.ObjectsClassPatchConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)

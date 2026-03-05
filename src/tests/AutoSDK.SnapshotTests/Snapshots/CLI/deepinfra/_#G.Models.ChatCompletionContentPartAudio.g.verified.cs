@@ -12,9 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"input_audio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "input_audio";
 
         /// <summary>
         /// 

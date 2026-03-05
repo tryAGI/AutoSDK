@@ -28,6 +28,7 @@ namespace G
             string dubbingId,
             string segmentId,
             string language,
+
             global::G.SegmentUpdatePayload request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

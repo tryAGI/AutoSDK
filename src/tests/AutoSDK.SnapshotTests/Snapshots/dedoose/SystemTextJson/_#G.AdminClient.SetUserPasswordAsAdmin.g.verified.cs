@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> SetUserPasswordAsAdminAsync(
+
             global::G.SetUserPasswordRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

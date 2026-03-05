@@ -19,9 +19,10 @@ namespace G
         /// <summary>
         /// The type of the rule.
         /// </summary>
+        /// <default>"phoneme"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "phoneme";
 
         /// <summary>
         /// The phoneme rule.

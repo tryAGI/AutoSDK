@@ -21,6 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateCustomRewardResponse> UpdateCustomRewardAsync(
             string broadcasterId,
             string id,
+
             global::G.UpdateCustomRewardBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

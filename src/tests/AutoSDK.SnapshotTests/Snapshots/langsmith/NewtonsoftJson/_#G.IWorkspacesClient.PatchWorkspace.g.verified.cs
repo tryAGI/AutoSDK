@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> PatchWorkspaceAsync(
             global::System.Guid workspaceId,
+
             global::G.WorkspacePatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

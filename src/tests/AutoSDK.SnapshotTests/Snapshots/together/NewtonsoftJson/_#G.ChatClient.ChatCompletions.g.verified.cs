@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> ChatCompletionsAsync(
+
             global::G.ChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -467,7 +468,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> ChatCompletionsAsync(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
-            string model,
+            string model = "mistralai/Mixtral-8x7B-Instruct-v0.1",
             int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stop = default,
             float? temperature = default,

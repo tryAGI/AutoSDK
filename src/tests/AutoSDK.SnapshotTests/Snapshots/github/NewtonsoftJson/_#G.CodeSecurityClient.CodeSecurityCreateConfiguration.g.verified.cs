@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodeSecurityConfiguration> CodeSecurityCreateConfigurationAsync(
             string org,
+
             global::G.CodeSecurityCreateConfigurationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

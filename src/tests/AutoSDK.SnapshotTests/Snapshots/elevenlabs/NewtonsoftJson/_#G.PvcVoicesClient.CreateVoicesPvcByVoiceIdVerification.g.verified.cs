@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RequestPVCManualVerificationResponseModel> CreateVoicesPvcByVoiceIdVerificationAsync(
             string voiceId,
+
             global::G.BodyRequestManualVerificationV1VoicesPvcVoiceIdVerificationPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

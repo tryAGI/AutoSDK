@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Certificate> ModifyCertificateAsync(
             string certificateId,
+
             global::G.ModifyCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

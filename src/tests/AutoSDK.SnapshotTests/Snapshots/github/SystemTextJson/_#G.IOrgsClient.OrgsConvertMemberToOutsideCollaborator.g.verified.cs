@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OrgsConvertMemberToOutsideCollaboratorResponse> OrgsConvertMemberToOutsideCollaboratorAsync(
             string org,
             string username,
+
             global::G.OrgsConvertMemberToOutsideCollaboratorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

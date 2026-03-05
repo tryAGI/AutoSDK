@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FilterView> UpdateFilterViewAsync(
             global::System.Guid sessionId,
             global::System.Guid viewId,
+
             global::G.FilterViewUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"__missing__"</default>
         [global::Newtonsoft.Json.JsonProperty("__missing__", Required = global::Newtonsoft.Json.Required.Always)]
         public string Missing1 { get; set; } = default!;
 

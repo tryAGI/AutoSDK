@@ -41,6 +41,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GitCommit> GitCreateCommitAsync(
             string owner,
             string repo,
+
             global::G.GitCreateCommitRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

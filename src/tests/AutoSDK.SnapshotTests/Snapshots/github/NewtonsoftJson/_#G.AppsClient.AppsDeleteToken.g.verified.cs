@@ -29,6 +29,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task AppsDeleteTokenAsync(
             string clientId,
+
             global::G.AppsDeleteTokenRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

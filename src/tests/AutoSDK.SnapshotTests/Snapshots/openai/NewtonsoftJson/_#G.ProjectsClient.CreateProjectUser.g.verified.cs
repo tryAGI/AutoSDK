@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectUser> CreateProjectUserAsync(
             string projectId,
+
             global::G.ProjectUserCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

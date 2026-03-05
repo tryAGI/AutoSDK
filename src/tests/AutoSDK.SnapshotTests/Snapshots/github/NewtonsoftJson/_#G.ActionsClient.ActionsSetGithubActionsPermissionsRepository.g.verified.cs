@@ -34,6 +34,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsSetGithubActionsPermissionsRepositoryAsync(
             string owner,
             string repo,
+
             global::G.ActionsSetGithubActionsPermissionsRepositoryRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

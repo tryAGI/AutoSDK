@@ -40,6 +40,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> UpdateUserAsync(
             string username,
+
             global::G.UpdateUserRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

@@ -51,6 +51,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.QueryFullResponse> QueryCorpusAsync(
             string corpusKey,
+
             global::G.QueryCorpusRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

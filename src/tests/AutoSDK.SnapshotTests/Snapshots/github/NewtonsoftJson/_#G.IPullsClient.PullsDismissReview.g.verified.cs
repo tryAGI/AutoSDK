@@ -28,6 +28,7 @@ namespace G
             string repo,
             int pullNumber,
             int reviewId,
+
             global::G.PullsDismissReviewRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

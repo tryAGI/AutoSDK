@@ -18,6 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetSelfHostedRunnersInGroupForOrgAsync(
             string org,
             int runnerGroupId,
+
             global::G.ActionsSetSelfHostedRunnersInGroupForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -22,6 +22,7 @@ namespace G
             string owner,
             string repo,
             int runId,
+
             global::G.AnyOf<global::G.ReviewCustomGatesCommentRequired, global::G.ReviewCustomGatesStateRequired> request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

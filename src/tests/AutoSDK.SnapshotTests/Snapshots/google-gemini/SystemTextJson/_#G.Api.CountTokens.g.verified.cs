@@ -34,8 +34,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CountTokensResponse> CountTokensAsync(
-            string modelId,
+
             global::G.CountTokensRequest request,
+            string modelId = "gemini-pro",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -178,7 +179,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CountTokensResponse> CountTokensAsync(
-            string modelId,
+            string modelId = "gemini-pro",
             global::System.Collections.Generic.IList<global::G.Content>? contents = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

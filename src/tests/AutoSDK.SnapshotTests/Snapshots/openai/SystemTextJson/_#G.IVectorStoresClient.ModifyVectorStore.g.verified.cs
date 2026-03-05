@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VectorStoreObject> ModifyVectorStoreAsync(
             string vectorStoreId,
+
             global::G.UpdateVectorStoreRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

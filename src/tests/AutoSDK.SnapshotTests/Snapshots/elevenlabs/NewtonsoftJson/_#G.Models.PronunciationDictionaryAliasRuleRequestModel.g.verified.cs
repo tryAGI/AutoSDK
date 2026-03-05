@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// The type of the rule.
         /// </summary>
+        /// <default>"alias"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

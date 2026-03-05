@@ -45,6 +45,7 @@ namespace G
             string owner,
             string repo,
             string ghsaId,
+
             global::G.RepositoryAdvisoryUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -55,9 +55,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "url";
 
         /// <summary>
         /// 

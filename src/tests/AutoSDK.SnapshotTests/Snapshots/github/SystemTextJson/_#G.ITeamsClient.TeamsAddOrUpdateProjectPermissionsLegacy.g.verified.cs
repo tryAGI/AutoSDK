@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsLegacyAsync(
             int teamId,
             int projectId,
+
             global::G.TeamsAddOrUpdateProjectPermissionsLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

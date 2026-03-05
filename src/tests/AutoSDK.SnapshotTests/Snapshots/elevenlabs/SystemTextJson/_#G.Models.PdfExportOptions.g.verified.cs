@@ -24,9 +24,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"pdf"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Format { get; set; }
+        public required string Format { get; set; } = "pdf";
 
         /// <summary>
         /// 

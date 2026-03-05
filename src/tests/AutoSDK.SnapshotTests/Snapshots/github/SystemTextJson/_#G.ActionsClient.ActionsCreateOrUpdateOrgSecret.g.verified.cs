@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsCreateOrUpdateOrgSecretAsync(
             string org,
             string secretName,
+
             global::G.ActionsCreateOrUpdateOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

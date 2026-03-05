@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FIMCompletionResponse> FimCompletionV1FimCompletionsPostAsync(
+
             global::G.FIMCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -246,8 +247,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FIMCompletionResponse> FimCompletionV1FimCompletionsPostAsync(
-            string model,
             string prompt,
+            string model = "codestral-2405",
             double? temperature = default,
             double? topP = default,
             int? maxTokens = default,

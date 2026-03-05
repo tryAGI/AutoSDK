@@ -21,6 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateNamespacePipelineResponse> PipelinePublicServiceUpdateNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
+
             global::G.Pipeline request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

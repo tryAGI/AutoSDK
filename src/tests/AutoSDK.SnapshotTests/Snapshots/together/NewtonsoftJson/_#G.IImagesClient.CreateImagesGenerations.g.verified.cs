@@ -13,6 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImageResponse> CreateImagesGenerationsAsync(
+
             global::G.Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -55,8 +56,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImageResponse> CreateImagesGenerationsAsync(
-            string prompt,
-            string model,
+            string prompt = "cat floating in space, cinematic",
+            string model = "stabilityai/stable-diffusion-xl-base-1.0",
             int? steps = default,
             int? seed = default,
             int? n = default,

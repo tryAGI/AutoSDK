@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
+
             global::G.BulkExportUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -220,7 +221,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
-            string status,
+            string status = "Cancelled",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BulkExportUpdate

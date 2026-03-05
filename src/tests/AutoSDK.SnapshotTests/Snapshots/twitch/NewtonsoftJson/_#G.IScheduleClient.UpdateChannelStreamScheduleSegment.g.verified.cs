@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateChannelStreamScheduleSegmentResponse> UpdateChannelStreamScheduleSegmentAsync(
             string broadcasterId,
             string id,
+
             global::G.UpdateChannelStreamScheduleSegmentBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

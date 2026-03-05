@@ -47,6 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.UpdateAutoModSettingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

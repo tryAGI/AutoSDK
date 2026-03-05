@@ -27,9 +27,10 @@ namespace G
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only 24h is supported.
         /// </summary>
+        /// <default>"24h"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CompletionWindow { get; set; }
+        public required string CompletionWindow { get; set; } = "24h";
 
         /// <summary>
         /// Optional metadata to be stored with the batch.

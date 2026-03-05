@@ -19,6 +19,7 @@ namespace G
             string owner,
             string repo,
             long commentId,
+
             global::G.ReactionsCreateForPullRequestReviewCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

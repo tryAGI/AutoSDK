@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ReleaseNotesContent> ReposGenerateReleaseNotesAsync(
             string owner,
             string repo,
+
             global::G.ReposGenerateReleaseNotesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

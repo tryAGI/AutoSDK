@@ -47,6 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EditChapterResponseModel> CreateStudioProjectsByProjectIdChaptersByChapterIdAsync(
             string projectId,
             string chapterId,
+
             global::G.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

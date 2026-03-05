@@ -24,6 +24,7 @@ namespace G
             string org,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
+
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

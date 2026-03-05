@@ -20,6 +20,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateTextToDialogueAsync(
+
             global::G.BodyTextToDialogueMultiVoiceV1TextToDialoguePost request,
             global::G.TextToDialogueMultiVoiceV1TextToDialoguePostOutputFormat? outputFormat = default,
             string? xiApiKey = default,

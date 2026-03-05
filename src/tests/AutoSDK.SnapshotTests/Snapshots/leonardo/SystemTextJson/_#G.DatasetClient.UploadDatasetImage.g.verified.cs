@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UploadDatasetImageResponse> UploadDatasetImageAsync(
             string datasetId,
+
             global::G.UploadDatasetImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

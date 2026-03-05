@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ChatResponse> AppPublicServiceChatAsync(
             string namespaceId,
             string appId,
+
             global::G.ChatBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

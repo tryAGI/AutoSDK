@@ -16,6 +16,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> OidcUpdateOidcCustomSubTemplateForOrgAsync(
             string org,
+
             global::G.OidcCustomSub request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

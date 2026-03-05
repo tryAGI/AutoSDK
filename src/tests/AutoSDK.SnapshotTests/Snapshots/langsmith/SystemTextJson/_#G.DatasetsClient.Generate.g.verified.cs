@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> GenerateAsync(
             global::System.Guid datasetId,
+
             global::G.GenerateSyntheticExamplesBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

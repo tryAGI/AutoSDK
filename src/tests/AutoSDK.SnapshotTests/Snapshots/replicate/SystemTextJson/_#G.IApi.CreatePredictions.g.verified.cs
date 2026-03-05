@@ -26,6 +26,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreatePredictionsAsync(
+
             global::G.VersionPredictionRequest request,
             string? prefer = default,
             global::System.Threading.CancellationToken cancellationToken = default);

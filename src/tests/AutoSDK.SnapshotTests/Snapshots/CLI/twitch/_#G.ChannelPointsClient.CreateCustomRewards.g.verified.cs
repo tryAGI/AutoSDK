@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateCustomRewardsResponse> CreateCustomRewardsAsync(
             string broadcasterId,
+
             global::G.CreateCustomRewardsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

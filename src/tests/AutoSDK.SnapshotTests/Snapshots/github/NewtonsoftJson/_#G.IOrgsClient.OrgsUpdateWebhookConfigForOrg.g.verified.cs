@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.WebhookConfig> OrgsUpdateWebhookConfigForOrgAsync(
             string org,
             int hookId,
+
             global::G.OrgsUpdateWebhookConfigForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

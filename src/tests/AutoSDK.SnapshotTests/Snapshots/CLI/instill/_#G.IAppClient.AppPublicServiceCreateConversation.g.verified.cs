@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateConversationResponse> AppPublicServiceCreateConversationAsync(
             string namespaceId,
             string appId,
+
             global::G.CreateConversationBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

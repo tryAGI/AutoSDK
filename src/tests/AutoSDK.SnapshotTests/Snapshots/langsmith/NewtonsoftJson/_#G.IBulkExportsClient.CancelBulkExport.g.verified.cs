@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
+
             global::G.BulkExportUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -28,7 +29,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BulkExport> CancelBulkExportAsync(
             global::System.Guid bulkExportId,
-            string status,
+            string status = "Cancelled",
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

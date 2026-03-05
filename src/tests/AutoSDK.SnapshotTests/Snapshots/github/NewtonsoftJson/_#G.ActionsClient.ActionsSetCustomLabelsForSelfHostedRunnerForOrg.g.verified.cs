@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse> ActionsSetCustomLabelsForSelfHostedRunnerForOrgAsync(
             string org,
             int runnerId,
+
             global::G.ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

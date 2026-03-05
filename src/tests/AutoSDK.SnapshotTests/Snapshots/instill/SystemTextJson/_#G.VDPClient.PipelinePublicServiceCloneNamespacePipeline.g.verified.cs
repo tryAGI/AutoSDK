@@ -39,6 +39,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> PipelinePublicServiceCloneNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
+
             global::G.CloneNamespacePipelineBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrganizationInvitation> OrgsCreateInvitationAsync(
             string org,
+
             global::G.OrgsCreateInvitationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

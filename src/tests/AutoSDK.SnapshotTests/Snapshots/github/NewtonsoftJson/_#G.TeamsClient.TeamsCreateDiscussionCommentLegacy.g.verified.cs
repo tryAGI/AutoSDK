@@ -43,6 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TeamDiscussionComment> TeamsCreateDiscussionCommentLegacyAsync(
             int teamId,
             int discussionNumber,
+
             global::G.TeamsCreateDiscussionCommentLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

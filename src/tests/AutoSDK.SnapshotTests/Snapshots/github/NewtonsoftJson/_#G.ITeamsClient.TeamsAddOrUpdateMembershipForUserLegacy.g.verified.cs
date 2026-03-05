@@ -25,6 +25,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserLegacyAsync(
             int teamId,
             string username,
+
             global::G.TeamsAddOrUpdateMembershipForUserLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

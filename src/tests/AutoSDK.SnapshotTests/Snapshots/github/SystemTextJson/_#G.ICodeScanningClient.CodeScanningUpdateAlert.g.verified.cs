@@ -23,6 +23,7 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
+
             global::G.CodeScanningUpdateAlertRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

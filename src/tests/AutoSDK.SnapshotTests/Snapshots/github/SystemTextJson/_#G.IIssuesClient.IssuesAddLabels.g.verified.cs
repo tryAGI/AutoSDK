@@ -19,6 +19,7 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
+
             global::G.OneOf<global::G.IssuesAddLabelsRequestVariant1, global::System.Collections.Generic.IList<string>, global::G.IssuesAddLabelsRequestVariant3, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequestVariant4Item>, string> request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

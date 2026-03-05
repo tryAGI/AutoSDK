@@ -16,6 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MessageObject> ModifyMessageAsync(
             string threadId,
             string messageId,
+
             global::G.ModifyMessageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

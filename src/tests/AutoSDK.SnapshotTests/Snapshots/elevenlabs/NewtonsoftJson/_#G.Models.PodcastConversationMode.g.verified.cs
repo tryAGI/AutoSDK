@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// The type of podcast to create.
         /// </summary>
+        /// <default>"conversation"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

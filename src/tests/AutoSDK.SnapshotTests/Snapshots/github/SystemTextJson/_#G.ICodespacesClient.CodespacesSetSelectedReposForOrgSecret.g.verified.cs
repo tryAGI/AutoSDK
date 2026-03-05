@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task CodespacesSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
+
             global::G.CodespacesSetSelectedReposForOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

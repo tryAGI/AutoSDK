@@ -18,6 +18,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ResponseStreamEvent> CreateResponseAsStreamAsync(
+
             global::G.CreateResponse request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

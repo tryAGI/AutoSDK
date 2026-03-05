@@ -39,6 +39,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RenameNamespaceModelResponse> ModelPublicServiceRenameNamespaceModelAsync(
             string namespaceId,
             string modelId,
+
             global::G.RenameNamespaceModelBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

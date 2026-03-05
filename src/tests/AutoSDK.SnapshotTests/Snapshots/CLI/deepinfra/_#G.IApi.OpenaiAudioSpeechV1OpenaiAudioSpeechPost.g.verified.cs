@@ -14,6 +14,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiAudioSpeechV1OpenaiAudioSpeechPostAsync(
+
             global::G.OpenAITextToSpeechIn request,
             string? xDeepinfraSource = default,
             string? xiApiKey = default,

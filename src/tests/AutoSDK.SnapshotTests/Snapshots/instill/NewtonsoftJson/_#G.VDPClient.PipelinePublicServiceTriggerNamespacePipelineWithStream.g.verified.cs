@@ -45,6 +45,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PipelinePublicServiceTriggerNamespacePipelineWithStreamResponse> PipelinePublicServiceTriggerNamespacePipelineWithStreamAsync(
             string namespaceId,
             string pipelineId,
+
             global::G.TriggerNamespacePipelineWithStreamBody request,
             string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default)

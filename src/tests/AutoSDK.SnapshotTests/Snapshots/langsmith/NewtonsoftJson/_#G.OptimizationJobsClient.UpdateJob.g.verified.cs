@@ -42,6 +42,7 @@ namespace G
             global::System.Guid jobId,
             string owner,
             string repo,
+
             global::G.PromptOptimizationJobUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

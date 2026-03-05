@@ -12,6 +12,7 @@ namespace recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::recraft.GenerateImageResponse> GenerateImageAsync(
+
             global::recraft.GenerateImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

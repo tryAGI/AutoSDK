@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task ReposUpdateInformationAboutPagesSiteAsync(
             string owner,
             string repo,
+
             global::G.ReposUpdateInformationAboutPagesSiteRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

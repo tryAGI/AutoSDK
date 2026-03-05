@@ -20,6 +20,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatchResponse> EditConvaiPhoneNumbersByPhoneNumberIdAsync(
             string phoneNumberId,
+
             global::G.UpdatePhoneNumberRequest request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

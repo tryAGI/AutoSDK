@@ -19,9 +19,10 @@ namespace G
         /// <summary>
         /// The type of the rule.
         /// </summary>
+        /// <default>"alias"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "alias";
 
         /// <summary>
         /// The alias for the string to be replaced.

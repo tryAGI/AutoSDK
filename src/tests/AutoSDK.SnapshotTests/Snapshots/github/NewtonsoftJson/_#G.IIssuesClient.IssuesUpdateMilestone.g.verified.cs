@@ -18,6 +18,7 @@ namespace G
             string owner,
             string repo,
             int milestoneNumber,
+
             global::G.IssuesUpdateMilestoneRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

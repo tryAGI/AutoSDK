@@ -25,6 +25,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task PersonalizedVideoAddContactAsync(
+
             global::G.PersonalizedVideoAddContactRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
+
             global::G.FeedbackUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -46,6 +46,7 @@ namespace G
             string org,
             string teamSlug,
             int discussionNumber,
+
             global::G.ReactionsCreateForTeamDiscussionInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectCard> ProjectsCreateCardAsync(
             int columnId,
+
             global::G.OneOf<global::G.ProjectsCreateCardRequestVariant1, global::G.ProjectsCreateCardRequestVariant2> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

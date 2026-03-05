@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesAddByPublicUserIdByVoiceIdAsync(
             string publicUserId,
             string voiceId,
+
             global::G.BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

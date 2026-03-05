@@ -24,6 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"docx"</default>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
         public string Format { get; set; } = default!;
 

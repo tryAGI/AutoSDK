@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateCatalogResponse> CreateCatalogAsync(
             string namespaceId,
+
             global::G.CreateCatalogBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -44,6 +44,7 @@ namespace G
             string teamSlug,
             string owner,
             string repo,
+
             global::G.TeamsAddOrUpdateRepoPermissionsInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

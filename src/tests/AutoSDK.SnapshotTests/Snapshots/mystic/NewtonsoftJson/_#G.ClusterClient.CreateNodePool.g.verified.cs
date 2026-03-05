@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateNodePoolAsync(
             string clusterId,
+
             global::G.NodePoolCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

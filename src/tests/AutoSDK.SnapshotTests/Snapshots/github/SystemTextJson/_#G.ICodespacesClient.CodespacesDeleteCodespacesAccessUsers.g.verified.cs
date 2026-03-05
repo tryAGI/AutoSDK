@@ -19,6 +19,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task CodespacesDeleteCodespacesAccessUsersAsync(
             string org,
+
             global::G.CodespacesDeleteCodespacesAccessUsersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

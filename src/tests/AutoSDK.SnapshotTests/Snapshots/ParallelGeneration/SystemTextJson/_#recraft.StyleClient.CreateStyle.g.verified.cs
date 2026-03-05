@@ -29,6 +29,7 @@ namespace recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::recraft.CreateStyleResponse> CreateStyleAsync(
+
             global::recraft.CreateStyleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

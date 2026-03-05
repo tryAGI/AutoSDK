@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> UpdateVectorStoreFileAttributesAsync(
             string vectorStoreId,
             string fileId,
+
             global::G.UpdateVectorStoreFileAttributesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

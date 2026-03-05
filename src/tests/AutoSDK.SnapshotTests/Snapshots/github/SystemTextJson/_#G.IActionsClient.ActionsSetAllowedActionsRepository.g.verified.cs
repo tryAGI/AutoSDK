@@ -18,6 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetAllowedActionsRepositoryAsync(
             string owner,
             string repo,
+
             global::G.SelectedActions request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

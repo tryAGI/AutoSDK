@@ -20,6 +20,7 @@ namespace G
             string owner,
             string repo,
             int hookId,
+
             global::G.ReposUpdateWebhookConfigForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

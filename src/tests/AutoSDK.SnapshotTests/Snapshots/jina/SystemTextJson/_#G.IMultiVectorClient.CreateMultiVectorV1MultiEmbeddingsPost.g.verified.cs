@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiEmbeddingsPostAsync(
+
             global::G.TextEmbeddingAPIInput request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

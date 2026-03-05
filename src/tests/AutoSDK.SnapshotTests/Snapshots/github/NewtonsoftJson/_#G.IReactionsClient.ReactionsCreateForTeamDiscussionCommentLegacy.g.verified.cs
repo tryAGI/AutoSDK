@@ -24,6 +24,7 @@ namespace G
             int teamId,
             int discussionNumber,
             int commentNumber,
+
             global::G.ReactionsCreateForTeamDiscussionCommentLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

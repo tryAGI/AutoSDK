@@ -43,6 +43,7 @@ namespace G
             string owner,
             string repo,
             int pullNumber,
+
             global::G.PullsMergeRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

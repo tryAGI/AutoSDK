@@ -24,6 +24,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateTranscriptionResponseStreamEvent> CreateTranscriptionAsStreamAsync(
+
             global::G.CreateTranscriptionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {

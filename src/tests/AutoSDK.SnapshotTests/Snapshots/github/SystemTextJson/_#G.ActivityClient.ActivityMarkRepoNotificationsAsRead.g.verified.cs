@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActivityMarkRepoNotificationsAsReadResponse> ActivityMarkRepoNotificationsAsReadAsync(
             string owner,
             string repo,
+
             global::G.ActivityMarkRepoNotificationsAsReadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

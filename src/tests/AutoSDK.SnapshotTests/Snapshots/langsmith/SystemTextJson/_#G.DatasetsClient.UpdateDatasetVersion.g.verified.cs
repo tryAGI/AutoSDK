@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetVersion> UpdateDatasetVersionAsync(
             global::System.Guid datasetId,
+
             global::G.PutDatasetVersionsSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

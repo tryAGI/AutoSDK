@@ -21,6 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TagProtection> ReposCreateTagProtectionAsync(
             string owner,
             string repo,
+
             global::G.ReposCreateTagProtectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -35,6 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PostWorkspaceSecretResponseModel> CreateConvaiSecretsAsync(
+
             global::G.PostWorkspaceSecretRequest request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -215,10 +216,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PostWorkspaceSecretResponseModel> CreateConvaiSecretsAsync(
-            string type,
             string name,
             string value,
             string? xiApiKey = default,
+            string type = "new",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PostWorkspaceSecretRequest

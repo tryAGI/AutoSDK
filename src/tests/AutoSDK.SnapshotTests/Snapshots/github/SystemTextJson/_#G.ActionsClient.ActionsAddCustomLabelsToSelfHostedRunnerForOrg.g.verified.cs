@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse> ActionsAddCustomLabelsToSelfHostedRunnerForOrgAsync(
             string org,
             int runnerId,
+
             global::G.ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

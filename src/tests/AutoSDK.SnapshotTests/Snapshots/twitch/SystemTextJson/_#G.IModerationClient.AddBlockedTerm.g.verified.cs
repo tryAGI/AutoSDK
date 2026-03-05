@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AddBlockedTermResponse> AddBlockedTermAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.AddBlockedTermBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

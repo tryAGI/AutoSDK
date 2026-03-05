@@ -39,6 +39,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamFull> TeamsUpdateLegacyAsync(
             int teamId,
+
             global::G.TeamsUpdateLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

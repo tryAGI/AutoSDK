@@ -37,6 +37,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
+
             global::G.ChatRequest request,
             string? xClientName = default,
             global::G.ChatAccepts? accepts = default,

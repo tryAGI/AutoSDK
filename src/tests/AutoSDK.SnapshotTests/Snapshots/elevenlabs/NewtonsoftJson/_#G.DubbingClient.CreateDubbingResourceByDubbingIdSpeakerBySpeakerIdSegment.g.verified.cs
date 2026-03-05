@@ -47,6 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SegmentCreateResponse> CreateDubbingResourceByDubbingIdSpeakerBySpeakerIdSegmentAsync(
             string dubbingId,
             string speakerId,
+
             global::G.SegmentCreatePayload request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
             global::System.Guid exampleId,
+
             global::G.ExampleUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

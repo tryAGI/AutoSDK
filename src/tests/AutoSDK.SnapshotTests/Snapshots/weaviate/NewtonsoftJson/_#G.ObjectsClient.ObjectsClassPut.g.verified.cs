@@ -43,6 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Object> ObjectsClassPutAsync(
             string className,
             global::System.Guid id,
+
             global::G.Object request,
             global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)

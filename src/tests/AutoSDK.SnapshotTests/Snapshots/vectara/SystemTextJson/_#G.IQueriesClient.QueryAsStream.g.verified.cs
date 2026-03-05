@@ -23,6 +23,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.QueryStreamedResponse> QueryAsStreamAsync(
+
             global::G.QueryRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

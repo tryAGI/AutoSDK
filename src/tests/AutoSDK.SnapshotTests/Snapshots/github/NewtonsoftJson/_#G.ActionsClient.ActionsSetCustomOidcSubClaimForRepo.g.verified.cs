@@ -39,6 +39,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsSetCustomOidcSubClaimForRepoAsync(
             string owner,
             string repo,
+
             global::G.ActionsSetCustomOidcSubClaimForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

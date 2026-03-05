@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UltravoxV1Corpus> CorporaPartialUpdateAsync(
             global::System.Guid corpusId,
+
             global::G.UltravoxV1Corpus request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

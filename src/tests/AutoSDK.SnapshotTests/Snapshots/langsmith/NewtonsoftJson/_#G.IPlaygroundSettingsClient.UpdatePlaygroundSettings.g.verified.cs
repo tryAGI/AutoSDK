@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PlaygroundSettingsResponse> UpdatePlaygroundSettingsAsync(
             string playgroundSettingsId,
+
             global::G.PlaygroundSettingsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -16,6 +16,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task PipelineCooldownAsync(
             string pipelineIdOrPointer,
+
             global::G.PipelineCooldown request,
             string? pipelineId = default,
             string? pointer = default,

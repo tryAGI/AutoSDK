@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeleteTextureGenerationByIdResponse> DeleteTextureGenerationByIdAsync(
             string id,
+
             global::G.DeleteTextureGenerationByIdRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

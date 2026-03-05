@@ -40,6 +40,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.AddKnowledgeBaseResponseModel> CreateConvaiAgentsByAgentIdAddToKnowledgeBaseAsync(
             string agentId,
+
             global::G.BodyAddToKnowledgeBaseV1ConvaiAgentsAgentIdAddToKnowledgeBasePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

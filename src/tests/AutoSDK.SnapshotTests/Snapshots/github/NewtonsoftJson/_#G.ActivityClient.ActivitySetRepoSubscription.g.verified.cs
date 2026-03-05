@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RepositorySubscription> ActivitySetRepoSubscriptionAsync(
             string owner,
             string repo,
+
             global::G.ActivitySetRepoSubscriptionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

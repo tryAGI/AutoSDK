@@ -39,6 +39,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChatResponse> V1J2UltraChatAsync(
+
             global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest request,
             string? model = default,
             int? requestStartTime = default,

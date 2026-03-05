@@ -208,6 +208,13 @@ public record struct MethodParameter(
         }
     }
     
+    /// <summary>
+    /// Whether this parameter has a real schema default/const value
+    /// that can be used as a C# default parameter value.
+    /// </summary>
+    public bool HasSchemaDefault =>
+        !string.IsNullOrWhiteSpace(DefaultValue) && !Type.IsAnyOfLike;
+
     public string ParameterDefaultValue =>
         DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOfLike
         ? "default"

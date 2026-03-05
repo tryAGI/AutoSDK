@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
+
             global::G.SearchDatasetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

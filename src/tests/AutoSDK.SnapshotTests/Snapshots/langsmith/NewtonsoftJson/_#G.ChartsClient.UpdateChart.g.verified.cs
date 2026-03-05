@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
             global::System.Guid chartId,
+
             global::G.CustomChartUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -17,6 +17,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ThreadSubscription> ActivitySetThreadSubscriptionAsync(
             int threadId,
+
             global::G.ActivitySetThreadSubscriptionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -15,6 +15,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiChatCompletionsV1OpenaiChatCompletionsPostAsync(
+
             global::G.OpenAIChatCompletionsIn request,
             string? xDeepinfraSource = default,
             string? userAgent = default,

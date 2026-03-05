@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ValidateNamespacePipelineResponse> PipelinePublicServiceValidateNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
+
             object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -21,6 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsUpdateDiscussionLegacyAsync(
             int teamId,
             int discussionNumber,
+
             global::G.TeamsUpdateDiscussionLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

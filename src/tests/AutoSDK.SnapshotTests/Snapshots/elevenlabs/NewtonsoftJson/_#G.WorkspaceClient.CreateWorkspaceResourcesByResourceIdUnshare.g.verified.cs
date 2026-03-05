@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateWorkspaceResourcesByResourceIdUnshareAsync(
             string resourceId,
+
             global::G.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

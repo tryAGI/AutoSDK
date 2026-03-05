@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrgMembership> OrgsUpdateMembershipForAuthenticatedUserAsync(
             string org,
+
             global::G.OrgsUpdateMembershipForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

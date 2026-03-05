@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RerankResponse> RerankAsync(
+
             global::G.RerankRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -423,9 +424,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RerankResponse> RerankAsync(
-            string model,
-            string query,
             global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> documents,
+            string model = "Salesforce/Llama-Rank-V1",
+            string query = "What animals can I find near Peru?",
             int? topN = default,
             bool? returnDocuments = default,
             global::System.Collections.Generic.IList<string>? rankFields = default,

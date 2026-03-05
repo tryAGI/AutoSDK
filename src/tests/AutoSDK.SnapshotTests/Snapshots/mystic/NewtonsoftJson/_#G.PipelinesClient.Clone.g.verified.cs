@@ -39,6 +39,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PipelineGet> CloneAsync(
             string pipelineId,
+
             global::G.ClonePipeline request,
             string? pointer = default,
             string? pipelineIdOrPointer = default,

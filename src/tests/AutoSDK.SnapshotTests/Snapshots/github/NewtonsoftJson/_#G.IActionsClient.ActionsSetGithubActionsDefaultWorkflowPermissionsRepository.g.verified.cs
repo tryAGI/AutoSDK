@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetGithubActionsDefaultWorkflowPermissionsRepositoryAsync(
             string owner,
             string repo,
+
             global::G.ActionsSetDefaultWorkflowPermissions request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

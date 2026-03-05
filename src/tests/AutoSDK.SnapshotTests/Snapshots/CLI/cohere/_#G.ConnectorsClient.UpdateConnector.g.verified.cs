@@ -37,6 +37,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateConnectorResponse> UpdateConnectorAsync(
             string id,
+
             global::G.UpdateConnectorRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)

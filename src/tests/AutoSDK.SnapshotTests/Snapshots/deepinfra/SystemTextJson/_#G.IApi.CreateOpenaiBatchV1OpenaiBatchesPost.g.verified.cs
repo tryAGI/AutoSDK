@@ -13,6 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
+
             global::G.OpenAIBatchesIn request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -38,9 +39,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            string completionWindow,
             object? metadata,
             string? xiApiKey = default,
+            string completionWindow = "24h",
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

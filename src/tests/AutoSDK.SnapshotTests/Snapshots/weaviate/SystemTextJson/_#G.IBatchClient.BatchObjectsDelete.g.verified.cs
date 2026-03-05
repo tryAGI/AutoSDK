@@ -17,6 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.BatchDeleteResponse> BatchObjectsDeleteAsync(
+
             global::G.BatchDelete request,
             global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,

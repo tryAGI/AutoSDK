@@ -43,6 +43,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CopilotAddCopilotSeatsForTeamsResponse> CopilotAddCopilotSeatsForTeamsAsync(
             string org,
+
             global::G.CopilotAddCopilotSeatsForTeamsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

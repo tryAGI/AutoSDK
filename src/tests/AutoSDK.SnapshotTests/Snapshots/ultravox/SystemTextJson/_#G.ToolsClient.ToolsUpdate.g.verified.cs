@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ToolDetail> ToolsUpdateAsync(
             global::System.Guid toolId,
+
             global::G.ToolDetail request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

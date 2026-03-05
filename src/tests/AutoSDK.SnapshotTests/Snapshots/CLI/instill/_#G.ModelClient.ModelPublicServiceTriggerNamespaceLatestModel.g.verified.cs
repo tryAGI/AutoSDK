@@ -42,6 +42,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TriggerNamespaceLatestModelResponse> ModelPublicServiceTriggerNamespaceLatestModelAsync(
             string namespaceId,
             string modelId,
+
             global::G.TriggerNamespaceLatestModelBody request,
             string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default)

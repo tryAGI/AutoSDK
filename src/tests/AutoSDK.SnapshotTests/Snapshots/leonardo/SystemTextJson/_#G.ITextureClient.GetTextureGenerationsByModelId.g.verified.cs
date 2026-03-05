@@ -21,6 +21,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
+
             global::G.GetTextureGenerationsByModelIdRequest request,
             int? offset = default,
             int? limit = default,

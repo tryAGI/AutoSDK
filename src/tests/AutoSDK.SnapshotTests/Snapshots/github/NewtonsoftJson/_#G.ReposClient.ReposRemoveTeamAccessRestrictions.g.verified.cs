@@ -43,6 +43,7 @@ namespace G
             string owner,
             string repo,
             string branch,
+
             global::G.OneOf<global::G.ReposRemoveTeamAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

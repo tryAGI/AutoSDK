@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OrgHook> OrgsUpdateWebhookAsync(
             string org,
             int hookId,
+
             global::G.OrgsUpdateWebhookRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

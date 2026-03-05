@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ReposCreateAttestationResponse> ReposCreateAttestationAsync(
             string owner,
             string repo,
+
             global::G.ReposCreateAttestationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

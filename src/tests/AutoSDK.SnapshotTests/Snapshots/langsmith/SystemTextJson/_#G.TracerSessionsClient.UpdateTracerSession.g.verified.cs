@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> UpdateTracerSessionAsync(
             global::System.Guid sessionId,
+
             global::G.TracerSessionUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

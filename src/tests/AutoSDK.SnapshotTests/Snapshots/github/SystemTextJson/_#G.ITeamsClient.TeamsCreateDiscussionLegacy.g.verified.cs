@@ -20,6 +20,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsCreateDiscussionLegacyAsync(
             int teamId,
+
             global::G.TeamsCreateDiscussionLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

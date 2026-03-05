@@ -21,6 +21,7 @@ namespace G
             global::System.Collections.Generic.IList<string> id,
             string broadcasterId,
             string rewardId,
+
             global::G.UpdateRedemptionStatusBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -22,6 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForTeamDiscussionLegacyAsync(
             int teamId,
             int discussionNumber,
+
             global::G.ReactionsCreateForTeamDiscussionLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

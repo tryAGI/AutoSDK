@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateShieldModeStatusResponse> UpdateShieldModeStatusAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.UpdateShieldModeStatusBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

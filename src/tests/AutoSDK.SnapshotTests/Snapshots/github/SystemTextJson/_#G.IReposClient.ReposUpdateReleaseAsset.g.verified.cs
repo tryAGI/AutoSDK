@@ -19,6 +19,7 @@ namespace G
             string owner,
             string repo,
             int assetId,
+
             global::G.ReposUpdateReleaseAssetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

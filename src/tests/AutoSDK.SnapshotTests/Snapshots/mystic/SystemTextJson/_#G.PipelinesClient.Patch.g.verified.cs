@@ -40,6 +40,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchAsync(
             string pipelineId,
+
             global::G.Patch request,
             string? pointer = default,
             string? pipelineIdOrPointer = default,

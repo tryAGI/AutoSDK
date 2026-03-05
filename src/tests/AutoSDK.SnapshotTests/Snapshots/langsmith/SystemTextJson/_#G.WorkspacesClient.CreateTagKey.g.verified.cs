@@ -29,6 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagKey> CreateTagKeyAsync(
+
             global::G.TagKeyCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -28,6 +28,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.QueryStreamedResponse> QueryCorpusAsStreamAsync(
             string corpusKey,
+
             global::G.QueryCorpusRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

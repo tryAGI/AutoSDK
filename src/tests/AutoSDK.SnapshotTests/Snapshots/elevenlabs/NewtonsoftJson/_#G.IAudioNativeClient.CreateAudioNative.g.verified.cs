@@ -16,6 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AudioNativeCreateProjectResponseModel> CreateAudioNativeAsync(
+
             global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

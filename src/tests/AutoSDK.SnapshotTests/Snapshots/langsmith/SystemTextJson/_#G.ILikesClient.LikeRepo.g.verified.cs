@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.LikeRepoResponse> LikeRepoAsync(
             string owner,
             string repo,
+
             global::G.LikeRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -30,9 +30,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"txt"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Format { get; set; }
+        public required string Format { get; set; } = "txt";
 
         /// <summary>
         /// 

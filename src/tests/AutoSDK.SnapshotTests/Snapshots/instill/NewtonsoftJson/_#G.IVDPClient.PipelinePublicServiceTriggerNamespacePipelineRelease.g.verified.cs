@@ -25,6 +25,7 @@ namespace G
             string namespaceId,
             string pipelineId,
             string releaseId,
+
             global::G.TriggerNamespacePipelineReleaseBody request,
             string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -25,6 +25,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionStream> ChatCompletionsAsStreamAsync(
+
             global::G.ChatCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -208,7 +209,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionStream> ChatCompletionsAsStreamAsync(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
-            string model,
+            string model = "mistralai/Mixtral-8x7B-Instruct-v0.1",
             int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stop = default,
             float? temperature = default,

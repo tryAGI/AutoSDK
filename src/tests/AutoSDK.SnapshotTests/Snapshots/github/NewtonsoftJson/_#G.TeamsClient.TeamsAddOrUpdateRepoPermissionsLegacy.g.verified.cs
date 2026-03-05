@@ -41,6 +41,7 @@ namespace G
             int teamId,
             string owner,
             string repo,
+
             global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

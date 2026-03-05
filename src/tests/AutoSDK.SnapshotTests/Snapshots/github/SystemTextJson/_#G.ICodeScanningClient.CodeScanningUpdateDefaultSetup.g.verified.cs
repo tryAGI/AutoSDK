@@ -18,6 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodeScanningUpdateDefaultSetupAsync(
             string owner,
             string repo,
+
             global::G.CodeScanningDefaultSetupUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

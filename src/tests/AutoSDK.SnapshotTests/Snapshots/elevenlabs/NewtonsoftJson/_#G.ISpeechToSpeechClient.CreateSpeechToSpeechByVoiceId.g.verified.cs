@@ -37,6 +37,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateSpeechToSpeechByVoiceIdAsync(
             string voiceId,
+
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,

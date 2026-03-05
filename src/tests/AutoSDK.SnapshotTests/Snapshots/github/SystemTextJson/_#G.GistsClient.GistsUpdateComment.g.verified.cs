@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GistComment> GistsUpdateCommentAsync(
             string gistId,
             long commentId,
+
             global::G.GistsUpdateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -226,11 +226,11 @@ namespace {endPoint.Settings.Namespace}
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$"
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: false }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -708,11 +708,11 @@ namespace {endPoint.Settings.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{parameters.Where(static x => x.IsRequired).Select(x => $@"
+{parameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).Select(x => $@"
 {x.DisableDeprecationWarningIfRequired}
             {x.Type.CSharpType} {x.ParameterName},
 {x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
-{parameters.Where(static x => x is { IsRequired: false }).Select(x => $@"
+{parameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).Select(x => $@"
 {x.DisableDeprecationWarningIfRequired}
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
 {x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}

@@ -21,6 +21,7 @@ namespace G
             string owner,
             string repo,
             int runnerId,
+
             global::G.ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

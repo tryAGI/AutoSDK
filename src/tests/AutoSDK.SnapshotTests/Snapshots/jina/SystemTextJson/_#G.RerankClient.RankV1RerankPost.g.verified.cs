@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RankingOutput> RankV1RerankPostAsync(
+
             global::G.RankAPIInput request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

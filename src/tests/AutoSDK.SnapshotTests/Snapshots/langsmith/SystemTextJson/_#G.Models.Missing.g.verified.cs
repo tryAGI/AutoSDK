@@ -12,9 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"__missing__"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Missing1 { get; set; }
+        public required string Missing1 { get; set; } = "__missing__";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetWorkflowAccessToRepositoryAsync(
             string owner,
             string repo,
+
             global::G.ActionsWorkflowAccessToRepository request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

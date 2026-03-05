@@ -12,9 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"dataset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "dataset";
 
         /// <summary>
         /// 

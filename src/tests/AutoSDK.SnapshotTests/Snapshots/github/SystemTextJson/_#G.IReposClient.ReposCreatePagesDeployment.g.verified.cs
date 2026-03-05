@@ -18,6 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PageDeployment> ReposCreatePagesDeploymentAsync(
             string owner,
             string repo,
+
             global::G.ReposCreatePagesDeploymentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -50,11 +51,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PageDeployment> ReposCreatePagesDeploymentAsync(
             string owner,
             string repo,
-            string pagesBuildVersion,
             string oidcToken,
             double? artifactId = default,
             string? artifactUrl = default,
             string? environment = default,
+            string pagesBuildVersion = "GITHUB_SHA",
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

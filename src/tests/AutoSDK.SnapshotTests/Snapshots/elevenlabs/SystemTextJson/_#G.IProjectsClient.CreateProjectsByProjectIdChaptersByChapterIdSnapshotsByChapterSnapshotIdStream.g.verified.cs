@@ -29,6 +29,7 @@ namespace G
             string projectId,
             string chapterId,
             string chapterSnapshotId,
+
             global::G.BodyStreamChapterAudioV1ProjectsProjectIdChaptersChapterIdSnapshotsChapterSnapshotIdStreamPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

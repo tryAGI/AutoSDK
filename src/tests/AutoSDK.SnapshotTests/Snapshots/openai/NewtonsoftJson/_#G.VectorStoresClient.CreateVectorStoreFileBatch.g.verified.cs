@@ -35,6 +35,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileBatchObject> CreateVectorStoreFileBatchAsync(
             string vectorStoreId,
+
             global::G.CreateVectorStoreFileBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

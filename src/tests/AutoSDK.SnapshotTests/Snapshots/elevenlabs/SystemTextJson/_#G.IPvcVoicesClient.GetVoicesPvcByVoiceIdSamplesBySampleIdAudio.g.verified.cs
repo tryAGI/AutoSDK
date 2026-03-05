@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.VoiceSamplePreviewResponseModel> GetVoicesPvcByVoiceIdSamplesBySampleIdAudioAsync(
             string voiceId,
             string sampleId,
+
             global::G.BodyRetrieveVoiceSampleAudioV1VoicesPvcVoiceIdSamplesSampleIdAudioGet request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

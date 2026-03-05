@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SessionFeedbackDelta> ReadSharedDeltaAsync(
             global::System.Guid shareToken,
+
             global::G.QueryFeedbackDelta request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

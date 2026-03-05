@@ -42,6 +42,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostAsync(
             string voiceId,
+
             global::G.ElevenLabsTextToSpeechIn request,
             string? outputFormat = default,
             string? xDeepinfraSource = default,

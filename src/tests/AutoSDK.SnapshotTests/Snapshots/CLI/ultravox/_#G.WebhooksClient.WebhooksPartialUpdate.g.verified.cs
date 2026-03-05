@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Webhook> WebhooksPartialUpdateAsync(
             global::System.Guid webhookId,
+
             global::G.PatchedWebhook request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

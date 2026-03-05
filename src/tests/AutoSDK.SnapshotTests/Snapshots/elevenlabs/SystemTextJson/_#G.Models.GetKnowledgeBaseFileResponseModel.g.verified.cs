@@ -55,9 +55,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "file";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

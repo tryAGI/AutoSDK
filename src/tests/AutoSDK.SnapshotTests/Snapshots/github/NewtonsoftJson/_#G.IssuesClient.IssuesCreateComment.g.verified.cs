@@ -51,6 +51,7 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
+
             global::G.IssuesCreateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

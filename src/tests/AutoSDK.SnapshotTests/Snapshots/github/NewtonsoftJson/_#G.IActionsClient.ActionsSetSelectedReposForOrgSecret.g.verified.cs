@@ -21,6 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
+
             global::G.ActionsSetSelectedReposForOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

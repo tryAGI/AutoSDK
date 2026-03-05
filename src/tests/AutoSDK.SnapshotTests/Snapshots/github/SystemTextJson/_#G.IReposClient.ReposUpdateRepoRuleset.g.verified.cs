@@ -19,6 +19,7 @@ namespace G
             string owner,
             string repo,
             int rulesetId,
+
             global::G.ReposUpdateRepoRulesetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

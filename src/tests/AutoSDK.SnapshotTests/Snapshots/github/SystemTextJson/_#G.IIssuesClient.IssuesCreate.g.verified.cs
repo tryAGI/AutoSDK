@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Issue> IssuesCreateAsync(
             string owner,
             string repo,
+
             global::G.IssuesCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

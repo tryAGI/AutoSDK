@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task PipelineWarmupAsync(
             string pipelineIdOrPointer,
+
             global::G.PipelineWarmup request,
             string? pipelineId = default,
             string? pointer = default,

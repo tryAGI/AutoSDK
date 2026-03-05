@@ -47,6 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SpeakerUpdatedResponse> EditDubbingResourceByDubbingIdSpeakerBySpeakerIdAsync(
             string dubbingId,
             string speakerId,
+
             global::G.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

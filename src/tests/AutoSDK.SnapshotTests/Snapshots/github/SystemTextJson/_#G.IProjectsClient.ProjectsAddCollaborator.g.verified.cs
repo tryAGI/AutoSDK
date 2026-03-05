@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
+
             global::G.ProjectsAddCollaboratorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

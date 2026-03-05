@@ -12,9 +12,10 @@ namespace G
         /// <summary>
         /// The type of source to create.
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "url";
 
         /// <summary>
         /// The URL to create the podcast from.

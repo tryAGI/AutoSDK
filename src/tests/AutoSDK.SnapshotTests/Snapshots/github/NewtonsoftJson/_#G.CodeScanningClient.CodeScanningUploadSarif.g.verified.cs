@@ -61,6 +61,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodeScanningSarifsReceipt> CodeScanningUploadSarifAsync(
             string owner,
             string repo,
+
             global::G.CodeScanningUploadSarifRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

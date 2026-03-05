@@ -35,6 +35,7 @@ namespace G
         public async global::System.Threading.Tasks.Task SendChatAnnouncementAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.SendChatAnnouncementBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

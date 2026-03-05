@@ -17,6 +17,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.AddProjectResponseModel> CreateProjectsAddAsync(
+
             global::G.BodyAddProjectV1ProjectsAddPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

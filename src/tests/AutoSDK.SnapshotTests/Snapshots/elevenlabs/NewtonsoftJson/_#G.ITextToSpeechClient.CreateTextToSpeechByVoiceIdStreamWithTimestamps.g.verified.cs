@@ -37,6 +37,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StreamingAudioChunkWithTimestampsResponseModel> CreateTextToSpeechByVoiceIdStreamWithTimestampsAsync(
             string voiceId,
+
             global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,

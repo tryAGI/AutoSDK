@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunRulesSchema> UpdateRuleAsync(
             global::System.Guid ruleId,
+
             global::G.RunRulesCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

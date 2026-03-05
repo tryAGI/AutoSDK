@@ -17,6 +17,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatStreamedResponse> CreateChatTurnAsStreamAsync(
             string chatId,
+
             global::G.ChatRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

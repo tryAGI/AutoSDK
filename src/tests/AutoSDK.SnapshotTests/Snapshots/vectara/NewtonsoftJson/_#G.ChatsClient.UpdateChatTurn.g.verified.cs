@@ -44,6 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Turn> UpdateChatTurnAsync(
             string chatId,
             string turnId,
+
             global::G.UpdateTurnRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

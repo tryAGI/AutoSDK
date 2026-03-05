@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"Cancelled"</default>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
 

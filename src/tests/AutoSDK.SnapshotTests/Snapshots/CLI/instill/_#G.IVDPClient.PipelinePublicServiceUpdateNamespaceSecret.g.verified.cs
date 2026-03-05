@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateNamespaceSecretResponse> PipelinePublicServiceUpdateNamespaceSecretAsync(
             string namespaceId,
             string secretId,
+
             global::G.Secret request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

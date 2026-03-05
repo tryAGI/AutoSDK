@@ -49,6 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Document> UpdateCorpusDocumentAsync(
             string corpusKey,
             string documentId,
+
             global::G.UpdateDocumentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

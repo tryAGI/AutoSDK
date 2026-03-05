@@ -43,6 +43,7 @@ namespace G
             string owner,
             string repo,
             string branch,
+
             global::G.ReposUpdateStatusCheckProtectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

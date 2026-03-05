@@ -19,6 +19,7 @@ namespace G
             string namespaceId,
             string appId,
             string conversationId,
+
             global::G.UpdateConversationBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

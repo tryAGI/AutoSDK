@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RepositoryAdvisory> SecurityAdvisoriesCreateRepositoryAdvisoryAsync(
             string owner,
             string repo,
+
             global::G.RepositoryAdvisoryCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

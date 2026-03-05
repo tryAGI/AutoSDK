@@ -31,6 +31,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatStreamedResponse> CreateChatAsStreamAsync(
+
             global::G.ChatRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

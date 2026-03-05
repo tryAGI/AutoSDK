@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"new"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

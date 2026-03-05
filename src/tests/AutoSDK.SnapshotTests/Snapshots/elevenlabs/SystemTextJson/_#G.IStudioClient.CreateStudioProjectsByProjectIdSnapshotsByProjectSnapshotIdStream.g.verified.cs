@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task CreateStudioProjectsByProjectIdSnapshotsByProjectSnapshotIdStreamAsync(
             string projectId,
             string projectSnapshotId,
+
             global::G.BodyStreamStudioProjectAudioV1StudioProjectsProjectIdSnapshotsProjectSnapshotIdStreamPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

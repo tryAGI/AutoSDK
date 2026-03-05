@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UpdateCatalogResponse> UpdateCatalogAsync(
             string namespaceId,
             string catalogId,
+
             global::G.UpdateCatalogBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

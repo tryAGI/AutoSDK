@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateLoraV1LoraLoraNamePatchAsync(
             string loraName,
+
             global::G.UpdateLoraApiRequest request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

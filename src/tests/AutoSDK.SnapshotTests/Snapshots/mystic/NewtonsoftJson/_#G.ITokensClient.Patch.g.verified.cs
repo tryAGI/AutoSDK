@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TokenGet> PatchAsync(
             string tokenId,
+
             global::G.TokenPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

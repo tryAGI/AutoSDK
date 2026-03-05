@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> AgentsPartialUpdateAsync(
             global::System.Guid agentId,
+
             global::G.PatchedAgent request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

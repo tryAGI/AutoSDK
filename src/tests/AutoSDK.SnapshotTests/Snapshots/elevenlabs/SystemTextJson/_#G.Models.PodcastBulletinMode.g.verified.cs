@@ -12,9 +12,10 @@ namespace G
         /// <summary>
         /// The type of podcast to create.
         /// </summary>
+        /// <default>"bulletin"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "bulletin";
 
         /// <summary>
         /// The voice settings for the bulletin.<br/>

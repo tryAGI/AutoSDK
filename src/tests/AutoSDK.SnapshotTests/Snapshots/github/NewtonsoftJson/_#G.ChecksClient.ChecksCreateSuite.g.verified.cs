@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CheckSuite> ChecksCreateSuiteAsync(
             string owner,
             string repo,
+
             global::G.ChecksCreateSuiteRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

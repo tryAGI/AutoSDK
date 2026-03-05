@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
+
             global::G.CustomChartsSectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

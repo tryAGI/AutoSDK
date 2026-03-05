@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodespacesCreateOrUpdateOrgSecretAsync(
             string org,
             string secretName,
+
             global::G.CodespacesCreateOrUpdateOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

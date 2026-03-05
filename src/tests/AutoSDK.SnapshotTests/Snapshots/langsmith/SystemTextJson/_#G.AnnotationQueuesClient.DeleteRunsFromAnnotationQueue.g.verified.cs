@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> DeleteRunsFromAnnotationQueueAsync(
             global::System.Guid queueId,
+
             global::G.AnnotationQueueBulkDeleteRunsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -21,6 +21,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GistSimple> GistsUpdateAsync(
             string gistId,
+
             global::G.GistsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

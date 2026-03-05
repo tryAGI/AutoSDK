@@ -16,6 +16,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
             global::System.Guid sessionId,
+
             global::G.CustomChartsSectionRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);

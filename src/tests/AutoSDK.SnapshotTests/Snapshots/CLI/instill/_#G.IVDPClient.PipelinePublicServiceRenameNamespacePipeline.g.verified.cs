@@ -23,6 +23,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RenameNamespacePipelineResponse> PipelinePublicServiceRenameNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
+
             global::G.RenameNamespacePipelineBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

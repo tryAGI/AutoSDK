@@ -38,6 +38,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.InstallationToken> AppsCreateInstallationAccessTokenAsync(
             int installationId,
+
             global::G.AppsCreateInstallationAccessTokenRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

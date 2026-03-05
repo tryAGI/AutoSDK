@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SegmentTranslationResponse> CreateDubbingResourceByDubbingIdTranslateAsync(
             string dubbingId,
+
             global::G.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

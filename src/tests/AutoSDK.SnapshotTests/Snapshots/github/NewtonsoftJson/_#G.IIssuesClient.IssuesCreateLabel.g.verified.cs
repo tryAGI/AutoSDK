@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Label> IssuesCreateLabelAsync(
             string owner,
             string repo,
+
             global::G.IssuesCreateLabelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

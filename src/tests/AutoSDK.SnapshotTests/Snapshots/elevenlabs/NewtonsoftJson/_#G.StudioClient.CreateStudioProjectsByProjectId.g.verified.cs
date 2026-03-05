@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.EditProjectResponseModel> CreateStudioProjectsByProjectIdAsync(
             string projectId,
+
             global::G.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

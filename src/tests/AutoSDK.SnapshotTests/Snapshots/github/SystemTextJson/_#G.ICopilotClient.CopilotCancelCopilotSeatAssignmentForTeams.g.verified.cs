@@ -22,6 +22,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CopilotCancelCopilotSeatAssignmentForTeamsResponse> CopilotCancelCopilotSeatAssignmentForTeamsAsync(
             string org,
+
             global::G.CopilotCancelCopilotSeatAssignmentForTeamsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

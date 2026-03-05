@@ -19,6 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DependencyGraphCreateRepositorySnapshotResponse> DependencyGraphCreateRepositorySnapshotAsync(
             string owner,
             string repo,
+
             global::G.Snapshot request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

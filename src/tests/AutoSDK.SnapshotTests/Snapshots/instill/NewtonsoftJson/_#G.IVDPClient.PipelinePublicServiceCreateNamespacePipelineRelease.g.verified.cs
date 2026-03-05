@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateNamespacePipelineReleaseResponse> PipelinePublicServiceCreateNamespacePipelineReleaseAsync(
             string namespaceId,
             string pipelineId,
+
             global::G.PipelineRelease request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateNamespaceSecretResponse> PipelinePublicServiceCreateNamespaceSecretAsync(
             string namespaceId,
+
             global::G.Secret request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

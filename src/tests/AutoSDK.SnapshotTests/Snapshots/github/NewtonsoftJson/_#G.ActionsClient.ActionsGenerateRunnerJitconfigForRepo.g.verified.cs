@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsGenerateRunnerJitconfigForRepoResponse> ActionsGenerateRunnerJitconfigForRepoAsync(
             string owner,
             string repo,
+
             global::G.ActionsGenerateRunnerJitconfigForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

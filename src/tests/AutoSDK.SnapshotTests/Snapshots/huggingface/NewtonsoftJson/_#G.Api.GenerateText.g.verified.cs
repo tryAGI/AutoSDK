@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.GenerateTextResponseValue>> GenerateTextAsync(
             string modelId,
+
             global::G.GenerateTextRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

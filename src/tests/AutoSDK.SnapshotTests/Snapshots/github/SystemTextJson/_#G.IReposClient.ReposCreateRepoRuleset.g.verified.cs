@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RepositoryRuleset> ReposCreateRepoRulesetAsync(
             string owner,
             string repo,
+
             global::G.ReposCreateRepoRulesetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

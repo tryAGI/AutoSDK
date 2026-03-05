@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task ReposCreateDispatchEventAsync(
             string owner,
             string repo,
+
             global::G.ReposCreateDispatchEventRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

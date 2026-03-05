@@ -22,6 +22,7 @@ namespace G
         global::System.Collections.Generic.IAsyncEnumerable<global::G.SummarizeDocumentStreamedResponse> SummarizeCorpusDocumentAsStreamAsync(
             string corpusKey,
             string documentId,
+
             global::G.SummarizeDocumentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateNamespacePipelineResponse> PipelinePublicServiceCreateNamespacePipelineAsync(
             string namespaceId,
+
             global::G.Pipeline request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

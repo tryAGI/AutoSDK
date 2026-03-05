@@ -42,6 +42,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsCreateDiscussionInOrgAsync(
             string org,
             string teamSlug,
+
             global::G.TeamsCreateDiscussionInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

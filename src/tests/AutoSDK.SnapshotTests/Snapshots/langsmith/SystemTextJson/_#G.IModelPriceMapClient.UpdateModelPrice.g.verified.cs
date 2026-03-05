@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
             global::System.Guid id,
+
             global::G.ModelPriceMapUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

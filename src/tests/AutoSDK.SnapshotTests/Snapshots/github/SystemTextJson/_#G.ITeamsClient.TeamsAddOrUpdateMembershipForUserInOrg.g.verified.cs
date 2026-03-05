@@ -26,6 +26,7 @@ namespace G
             string org,
             string teamSlug,
             string username,
+
             global::G.TeamsAddOrUpdateMembershipForUserInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

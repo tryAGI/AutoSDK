@@ -16,6 +16,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsSetGithubActionsPermissionsOrganizationAsync(
             string org,
+
             global::G.ActionsSetGithubActionsPermissionsOrganizationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MergedUpstream> ReposMergeUpstreamAsync(
             string owner,
             string repo,
+
             global::G.ReposMergeUpstreamRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

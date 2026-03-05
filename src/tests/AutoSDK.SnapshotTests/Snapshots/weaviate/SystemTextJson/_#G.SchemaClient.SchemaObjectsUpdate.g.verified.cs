@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Class> SchemaObjectsUpdateAsync(
             string className,
+
             global::G.Class request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

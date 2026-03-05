@@ -43,6 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.BanUserResponse> BanUserAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.BanUserBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
+
             global::G.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

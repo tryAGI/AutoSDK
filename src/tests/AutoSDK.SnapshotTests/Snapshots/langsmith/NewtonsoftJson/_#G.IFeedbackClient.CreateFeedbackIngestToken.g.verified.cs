@@ -13,6 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>> CreateFeedbackIngestTokenAsync(
+
             global::G.AnyOf<global::G.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenCreateSchema>> request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

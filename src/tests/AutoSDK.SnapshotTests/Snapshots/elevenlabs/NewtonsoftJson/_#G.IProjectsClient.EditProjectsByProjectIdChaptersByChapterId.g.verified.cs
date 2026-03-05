@@ -25,6 +25,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.EditChapterResponseModel> EditProjectsByProjectIdChaptersByChapterIdAsync(
             string projectId,
             string chapterId,
+
             global::G.BodyEditChapterV1ProjectsProjectIdChaptersChapterIdPatch request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

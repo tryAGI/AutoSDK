@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Delete3DModelByIdResponse> Delete3DModelByIdAsync(
             string id,
+
             global::G.Delete3DModelByIdRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

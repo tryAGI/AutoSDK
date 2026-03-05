@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateOrganizationResponse> UpdateOrganizationAsync(
             string organizationId,
+
             global::G.Organization request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

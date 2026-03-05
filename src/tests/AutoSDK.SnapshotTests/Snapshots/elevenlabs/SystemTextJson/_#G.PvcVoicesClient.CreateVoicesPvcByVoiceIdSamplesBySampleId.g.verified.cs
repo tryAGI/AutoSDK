@@ -47,6 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcByVoiceIdSamplesBySampleIdAsync(
             string voiceId,
             string sampleId,
+
             global::G.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -33,6 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.UltravoxV1CorpusQueryResult>> CorporaQueryAsync(
             global::System.Guid corpusId,
+
             global::G.UltravoxV1QueryCorpusRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

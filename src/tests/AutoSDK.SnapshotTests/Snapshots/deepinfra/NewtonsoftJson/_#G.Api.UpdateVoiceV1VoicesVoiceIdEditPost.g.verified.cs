@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Voice> UpdateVoiceV1VoicesVoiceIdEditPostAsync(
             string voiceId,
+
             global::G.BodyUpdateVoiceV1VoicesVoiceIdEditPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -37,6 +37,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UltravoxV1CorpusSource> CorporaSourcesPartialUpdateAsync(
             global::System.Guid corpusId,
             global::System.Guid sourceId,
+
             global::G.UltravoxV1CorpusSource request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

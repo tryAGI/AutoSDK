@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> CreateConvaiConversationsByConversationIdFeedbackAsync(
             string conversationId,
+
             global::G.BodySendConversationFeedbackV1ConvaiConversationsConversationIdFeedbackPost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

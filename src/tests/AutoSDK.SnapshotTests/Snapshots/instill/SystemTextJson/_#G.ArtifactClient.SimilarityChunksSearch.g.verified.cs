@@ -41,6 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SimilarityChunksSearchResponse> SimilarityChunksSearchAsync(
             string namespaceId,
             string catalogId,
+
             global::G.SimilarityChunksSearchBody request,
             string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default)

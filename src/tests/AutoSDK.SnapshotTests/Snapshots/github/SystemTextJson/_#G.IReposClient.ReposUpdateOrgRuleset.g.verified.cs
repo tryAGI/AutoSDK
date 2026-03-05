@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RepositoryRuleset> ReposUpdateOrgRulesetAsync(
             string org,
             int rulesetId,
+
             global::G.ReposUpdateOrgRulesetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

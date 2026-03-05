@@ -48,6 +48,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Corpus> UpdateCorpusAsync(
             string corpusKey,
+
             global::G.UpdateCorpusRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

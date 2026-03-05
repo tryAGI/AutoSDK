@@ -16,6 +16,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VectorStoreSearchResultsPage> SearchVectorStoreAsync(
             string vectorStoreId,
+
             global::G.VectorStoreSearchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

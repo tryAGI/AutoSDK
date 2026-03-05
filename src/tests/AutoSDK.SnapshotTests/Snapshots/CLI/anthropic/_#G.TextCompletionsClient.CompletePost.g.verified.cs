@@ -38,6 +38,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletePostAsync(
+
             global::G.CompletionRequest request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -42,6 +42,7 @@ namespace G
             string owner,
             string repo,
             int releaseId,
+
             global::G.ReposUpdateReleaseRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

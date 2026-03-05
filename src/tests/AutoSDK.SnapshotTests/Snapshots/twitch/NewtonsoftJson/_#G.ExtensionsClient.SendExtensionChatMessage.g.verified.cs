@@ -32,6 +32,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionChatMessageAsync(
             string broadcasterId,
+
             global::G.SendExtensionChatMessageBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

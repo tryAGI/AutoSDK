@@ -15,6 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SessionFeedbackDelta> ReadDeltaAsync(
             global::System.Guid datasetId,
+
             global::G.QueryFeedbackDelta request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -21,6 +21,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.EditProjectResponseModel> CreateProjectsByProjectIdAsync(
             string projectId,
+
             global::G.BodyEditBasicProjectInfoV1ProjectsProjectIdPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

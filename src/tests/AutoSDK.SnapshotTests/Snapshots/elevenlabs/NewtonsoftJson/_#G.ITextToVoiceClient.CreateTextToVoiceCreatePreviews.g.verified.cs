@@ -20,6 +20,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VoicePreviewsResponseModel> CreateTextToVoiceCreatePreviewsAsync(
+
             global::G.VoicePreviewsRequestModel request,
             global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat = default,
             string? xiApiKey = default,

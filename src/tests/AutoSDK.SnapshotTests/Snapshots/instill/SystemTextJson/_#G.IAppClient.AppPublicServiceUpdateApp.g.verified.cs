@@ -17,6 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateAppResponse> AppPublicServiceUpdateAppAsync(
             string namespaceId,
             string appId,
+
             global::G.UpdateAppBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -47,6 +47,7 @@ namespace G
             string owner,
             string repo,
             string path,
+
             global::G.ReposDeleteFileRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

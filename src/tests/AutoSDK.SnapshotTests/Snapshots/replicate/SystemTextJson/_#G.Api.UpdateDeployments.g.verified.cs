@@ -72,6 +72,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DeploymentsUpdateResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
+
             global::G.DeploymentsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -22,6 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SummarizeDocumentResponse> SummarizeCorpusDocumentAsync(
             string corpusKey,
             string documentId,
+
             global::G.SummarizeDocumentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

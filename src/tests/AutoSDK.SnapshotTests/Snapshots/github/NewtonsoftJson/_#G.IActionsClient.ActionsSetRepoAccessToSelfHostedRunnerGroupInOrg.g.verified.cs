@@ -18,6 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgAsync(
             string org,
             int runnerGroupId,
+
             global::G.ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

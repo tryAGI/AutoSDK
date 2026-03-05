@@ -16,6 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ProjectUser> ModifyProjectUserAsync(
             string projectId,
             string userId,
+
             global::G.ProjectUserUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

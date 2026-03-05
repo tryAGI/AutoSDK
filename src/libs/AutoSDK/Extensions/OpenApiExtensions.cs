@@ -427,6 +427,14 @@ public static class OpenApiExtensions
         // {
         //     return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.CombinedEnumOriginalSchema.Value.Value.Enum.First().ToEnumValue(context.Settings).Name;
         // }
+        // Handle const values as defaults when no explicit default is set (string types only)
+        if (context.Schema.IsConst() && context.Schema.Default == null &&
+            !context.TypeData.IsEnum &&
+            !(context.Schema.Enum?.Any() ?? false))
+        {
+            return $"\"{context.Schema.Const}\"";
+        }
+
         var defaultString = context.Schema.Default?.GetString();
         if ((context.Schema.Enum?.Any() ?? false) && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {

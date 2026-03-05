@@ -39,6 +39,7 @@ namespace G
             string org,
             string teamSlug,
             int projectId,
+
             global::G.TeamsAddOrUpdateProjectPermissionsInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

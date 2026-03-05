@@ -34,6 +34,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsSharedDatasetRunsAsync(
             global::System.Guid shareToken,
+
             global::G.RunStatsQueryParams request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

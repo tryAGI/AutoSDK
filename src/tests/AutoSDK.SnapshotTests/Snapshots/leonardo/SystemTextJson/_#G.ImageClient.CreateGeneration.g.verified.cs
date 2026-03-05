@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateGenerationResponse> CreateGenerationAsync(
+
             global::G.CreateGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -294,7 +295,6 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateGenerationResponse> CreateGenerationAsync(
-            string prompt,
             bool? alchemy = default,
             double? contrastRatio = default,
             global::System.Collections.Generic.IList<global::G.ControlnetInput>? controlnets = default,
@@ -318,6 +318,7 @@ namespace G
             string? photoRealVersion = default,
             double? photoRealStrength = default,
             global::G.SdGenerationStyle? presetStyle = default,
+            string prompt = "A majestic cat in the snow",
             bool? promptMagic = default,
             double? promptMagicStrength = default,
             string? promptMagicVersion = default,

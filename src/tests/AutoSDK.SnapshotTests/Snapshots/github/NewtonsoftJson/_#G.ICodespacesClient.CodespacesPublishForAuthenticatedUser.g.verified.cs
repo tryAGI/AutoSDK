@@ -18,6 +18,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodespaceWithFullRepository> CodespacesPublishForAuthenticatedUserAsync(
             string codespaceName,
+
             global::G.CodespacesPublishForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

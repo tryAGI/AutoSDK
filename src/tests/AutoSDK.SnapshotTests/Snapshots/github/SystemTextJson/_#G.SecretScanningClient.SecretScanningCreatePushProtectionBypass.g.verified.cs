@@ -40,6 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SecretScanningPushProtectionBypass> SecretScanningCreatePushProtectionBypassAsync(
             string owner,
             string repo,
+
             global::G.SecretScanningCreatePushProtectionBypassRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -43,6 +43,7 @@ namespace G
             string owner,
             string repo,
             int jobId,
+
             global::G.ActionsReRunJobForWorkflowRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task DependabotSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
+
             global::G.DependabotSetSelectedReposForOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

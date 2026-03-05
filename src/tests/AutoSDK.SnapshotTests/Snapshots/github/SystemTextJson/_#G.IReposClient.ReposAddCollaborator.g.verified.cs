@@ -30,6 +30,7 @@ namespace G
             string owner,
             string repo,
             string username,
+
             global::G.ReposAddCollaboratorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -41,9 +41,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"twilio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "twilio";
 
         /// <summary>
         /// 

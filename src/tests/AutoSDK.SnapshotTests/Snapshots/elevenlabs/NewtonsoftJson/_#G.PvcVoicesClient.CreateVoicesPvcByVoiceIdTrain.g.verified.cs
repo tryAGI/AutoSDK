@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.StartPVCVoiceTrainingResponseModel> CreateVoicesPvcByVoiceIdTrainAsync(
             string voiceId,
+
             global::G.BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

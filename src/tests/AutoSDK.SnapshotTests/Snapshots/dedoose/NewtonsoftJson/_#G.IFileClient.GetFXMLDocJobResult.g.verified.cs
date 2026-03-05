@@ -13,6 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> GetFXMLDocJobResultAsync(
+
             global::G.GetFXMLDocJobResultRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

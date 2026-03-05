@@ -41,6 +41,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSoundGenerationAsync(
+
             global::G.BodySoundGenerationV1SoundGenerationPost request,
             global::G.SoundGenerationV1SoundGenerationPostOutputFormat? outputFormat = default,
             string? xiApiKey = default,

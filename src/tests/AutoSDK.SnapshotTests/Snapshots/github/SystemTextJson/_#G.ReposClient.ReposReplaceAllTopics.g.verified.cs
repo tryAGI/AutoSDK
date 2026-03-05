@@ -37,6 +37,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Topic> ReposReplaceAllTopicsAsync(
             string owner,
             string repo,
+
             global::G.ReposReplaceAllTopicsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

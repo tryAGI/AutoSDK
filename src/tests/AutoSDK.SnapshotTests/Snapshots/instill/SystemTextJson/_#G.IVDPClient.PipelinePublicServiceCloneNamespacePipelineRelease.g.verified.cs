@@ -20,6 +20,7 @@ namespace G
             string namespaceId,
             string pipelineId,
             string releaseId,
+
             global::G.CloneNamespacePipelineReleaseBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

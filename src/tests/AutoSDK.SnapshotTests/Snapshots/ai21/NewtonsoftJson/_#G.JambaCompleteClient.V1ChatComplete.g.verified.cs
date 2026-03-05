@@ -43,6 +43,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
             string authorization,
+
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request,
             int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)

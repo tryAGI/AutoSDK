@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<string> CodeSecurityAttachConfigurationAsync(
             string org,
             int configurationId,
+
             global::G.CodeSecurityAttachConfigurationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

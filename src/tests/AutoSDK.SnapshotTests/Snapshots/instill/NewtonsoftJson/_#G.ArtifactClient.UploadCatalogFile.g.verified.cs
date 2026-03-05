@@ -38,6 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UploadCatalogFileResponse> UploadCatalogFileAsync(
             string namespaceId,
             string catalogId,
+
             global::G.File request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

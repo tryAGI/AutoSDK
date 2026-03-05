@@ -36,6 +36,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Codespace> CodespacesUpdateForAuthenticatedUserAsync(
             string codespaceName,
+
             global::G.CodespacesUpdateForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

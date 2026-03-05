@@ -42,6 +42,7 @@ namespace G
             string owner,
             string repo,
             long commentId,
+
             global::G.ReactionsCreateForIssueCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

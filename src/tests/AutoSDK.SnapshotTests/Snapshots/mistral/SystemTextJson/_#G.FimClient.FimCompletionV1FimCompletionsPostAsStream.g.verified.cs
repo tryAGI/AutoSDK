@@ -25,6 +25,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CompletionEvent> FimCompletionV1FimCompletionsPostAsStreamAsync(
+
             global::G.FIMCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -172,8 +173,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CompletionEvent> FimCompletionV1FimCompletionsPostAsStreamAsync(
-            string model,
             string prompt,
+            string model = "codestral-2405",
             double? temperature = default,
             double? topP = default,
             int? maxTokens = default,

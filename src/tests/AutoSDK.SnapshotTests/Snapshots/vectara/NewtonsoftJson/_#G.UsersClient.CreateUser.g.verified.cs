@@ -36,6 +36,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>> CreateUserAsync(
+
             global::G.CreateUserRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

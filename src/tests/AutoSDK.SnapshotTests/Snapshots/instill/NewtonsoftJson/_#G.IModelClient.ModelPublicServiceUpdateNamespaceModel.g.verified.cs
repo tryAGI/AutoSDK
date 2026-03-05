@@ -20,6 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateNamespaceModelResponse> ModelPublicServiceUpdateNamespaceModelAsync(
             string namespaceId,
             string modelId,
+
             global::G.Model request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

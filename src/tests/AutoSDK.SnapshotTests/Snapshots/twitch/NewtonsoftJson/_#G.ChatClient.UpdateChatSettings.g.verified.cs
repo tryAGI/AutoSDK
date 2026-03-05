@@ -45,6 +45,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
             string broadcasterId,
             string moderatorId,
+
             global::G.UpdateChatSettingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

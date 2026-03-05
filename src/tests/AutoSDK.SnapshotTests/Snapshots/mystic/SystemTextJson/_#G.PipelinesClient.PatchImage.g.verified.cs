@@ -41,6 +41,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchImageAsync(
             string pipelineId,
+
             global::G.BodyPatchImageV4PipelinesPipelineIdImagePatch request,
             string? pointer = default,
             string? pipelineIdOrPointer = default,

@@ -15,8 +15,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedContentResponse> EmbedContentAsync(
-            string modelId,
+
             global::G.EmbedContentRequest request,
+            string modelId = "embedding-001",
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedContentResponse> EmbedContentAsync(
-            string modelId,
+            string modelId = "embedding-001",
             string? title = default,
             global::G.Content? content = default,
             global::G.EmbedContentRequestTaskType? taskType = default,

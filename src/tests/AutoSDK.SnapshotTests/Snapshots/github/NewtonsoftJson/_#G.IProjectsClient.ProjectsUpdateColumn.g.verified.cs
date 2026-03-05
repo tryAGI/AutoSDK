@@ -14,6 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectColumn> ProjectsUpdateColumnAsync(
             int columnId,
+
             global::G.ProjectsUpdateColumnRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

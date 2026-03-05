@@ -47,6 +47,7 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
+
             global::G.SecretScanningUpdateAlertRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

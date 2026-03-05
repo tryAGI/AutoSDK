@@ -30,6 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreateVoiceGenerationGenerateVoiceAsync(
+
             global::G.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

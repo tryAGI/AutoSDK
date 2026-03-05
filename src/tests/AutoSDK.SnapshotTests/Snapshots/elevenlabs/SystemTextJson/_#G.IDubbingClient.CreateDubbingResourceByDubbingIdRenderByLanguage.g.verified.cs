@@ -24,6 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DubbingRenderResponseModel> CreateDubbingResourceByDubbingIdRenderByLanguageAsync(
             string dubbingId,
             string language,
+
             global::G.BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
