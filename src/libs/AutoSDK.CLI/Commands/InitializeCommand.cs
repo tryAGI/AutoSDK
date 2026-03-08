@@ -94,7 +94,7 @@ internal sealed class InitializeCommand : Command
         var resources = new List<H.Resource>
         {
             H.Resources.__gitignore,
-            H.Resources.__SolutionName__sln,
+            H.Resources.__SolutionName__slnx,
             H.Resources.__github_dependabot_yml,
             H.Resources.__github_workflows_auto_merge_yml,
             H.Resources.__github_workflows_auto_update_yml,
@@ -139,15 +139,10 @@ internal sealed class InitializeCommand : Command
         }
         else
         {
-            replaces.Add(@"Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""$SolutionName$.IntegrationTests"", ""src\tests\IntegrationTests\$SolutionName$.IntegrationTests.csproj"", ""{592ADBC9-C951-4AF7-A163-B6C63B970B19}""
-EndProject", string.Empty);
-            replaces.Add(@"
-		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.Build.0 = Release|Any CPU", string.Empty);
-            replaces.Add(@"
-		{592ADBC9-C951-4AF7-A163-B6C63B970B19} = {AAA11B78-2764-4520-A97E-46AA7089A588}", string.Empty);
+            replaces.Add(@"  <Folder Name=""/tests/"">
+    <Project Path=""src/tests/IntegrationTests/$SolutionName$.IntegrationTests.csproj"" />
+  </Folder>
+", string.Empty);
         }
         
         foreach (var resource in resources)
