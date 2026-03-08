@@ -246,11 +246,14 @@ public static class Data
             })
             .ToImmutableArray();
 
-        foreach (var group in methods
-                     .GroupBy(x => x.Tag)
-                     .Where(x => !x.AreKeysUnique(y => y.CliAction)))
+        if (settings.GenerateCli)
         {
-            Console.WriteLine($"Found duplicate CLI action names in '{group.Key.SingularizedName}': {string.Join(", ", group.Select(x => x.CliAction))}");
+            foreach (var group in methods
+                         .GroupBy(x => x.Tag)
+                         .Where(x => !x.AreKeysUnique(y => y.CliAction)))
+            {
+                Console.WriteLine($"Found duplicate CLI action names in '{group.Key.SingularizedName}': {string.Join(", ", group.Select(x => x.CliAction))}");
+            }
         }
         
         var authorizations = openApiDocument.Security!
