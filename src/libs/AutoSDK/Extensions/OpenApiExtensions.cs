@@ -48,6 +48,10 @@ public static class OpenApiExtensions
         openApiDocument.Security ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
+        if (!string.IsNullOrEmpty(settings.BaseUrl))
+        {
+            openApiDocument.InjectBaseUrl(settings);
+        }
         if (settings.SecuritySchemes.Length > 0)
         {
             openApiDocument.InjectSecuritySchemes(settings);
@@ -61,9 +65,98 @@ public static class OpenApiExtensions
             openApiDocument = openApiDocument.AddMissingPathParameters();
         }
 
+        openApiDocument.SanitizeNumericConstraints();
+
         return openApiDocument;
     }
+
+    /// <summary>
+    /// Walks all schemas in the document and removes minimum/maximum values
+    /// that exceed the representable range of their target C# type.
+    /// This prevents issues with values like minimum: -9223372036854776000
+    /// which exceed long.MinValue and can cause problems in spec processing.
+    /// </summary>
+    public static void SanitizeNumericConstraints(this OpenApiDocument document)
+    {
+        document = document ?? throw new ArgumentNullException(nameof(document));
+
+        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaNumericConstraints(schema);
+        }
+    }
+
+    private static void SanitizeSchemaNumericConstraints(IOpenApiSchema? schema)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(concreteSchema.Minimum) || !string.IsNullOrEmpty(concreteSchema.Maximum))
+        {
+            var (min, max) = GetTypeRange(concreteSchema);
+            if (!string.IsNullOrEmpty(concreteSchema.Minimum) &&
+                decimal.TryParse(concreteSchema.Minimum, NumberStyles.Any, CultureInfo.InvariantCulture, out var minValue) &&
+                minValue < min)
+            {
+                concreteSchema.Minimum = null;
+            }
+            if (!string.IsNullOrEmpty(concreteSchema.Maximum) &&
+                decimal.TryParse(concreteSchema.Maximum, NumberStyles.Any, CultureInfo.InvariantCulture, out var maxValue) &&
+                maxValue > max)
+            {
+                concreteSchema.Maximum = null;
+            }
+        }
+
+        foreach (var property in concreteSchema.Properties?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaNumericConstraints(property);
+        }
+        foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaNumericConstraints(child);
+        }
+        foreach (var child in concreteSchema.OneOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaNumericConstraints(child);
+        }
+        foreach (var child in concreteSchema.AllOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaNumericConstraints(child);
+        }
+        SanitizeSchemaNumericConstraints(concreteSchema.Items);
+        SanitizeSchemaNumericConstraints(concreteSchema.AdditionalProperties);
+    }
+
+    private static (decimal Min, decimal Max) GetTypeRange(OpenApiSchema schema)
+    {
+        var isInteger = (schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer;
+        if (!isInteger)
+        {
+            return (decimal.MinValue, decimal.MaxValue);
+        }
+
+        return schema.Format?.ToLowerInvariant() switch
+        {
+            "int32" => (int.MinValue, int.MaxValue),
+            _ => (long.MinValue, long.MaxValue),
+        };
+    }
     
+    public static void InjectBaseUrl(
+        this OpenApiDocument openApiDocument,
+        Settings settings)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+
+        openApiDocument.Servers!.Insert(0, new OpenApiServer
+        {
+            Url = settings.BaseUrl,
+        });
+    }
+
     public static void InjectSecuritySchemes(
         this OpenApiDocument openApiDocument,
         Settings settings)
