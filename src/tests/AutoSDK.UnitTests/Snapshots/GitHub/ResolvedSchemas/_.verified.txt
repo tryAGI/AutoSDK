@@ -35690,8 +35690,6 @@
       ChecksCreateRequestVariant1Status(enum)[checks],
     ChecksCreateRequestVariant2(class)[checks],
       ChecksCreateRequestVariant2Status(enum)[checks],
-    ChecksCreateRequestDiscriminator(class)[checks],
-      Status(string)[checks],
   ChecksUpdateRequest(class)[checks],
     Name(string)[checks],
     DetailsUrl(string)[checks],

@@ -601,1495 +601,1487 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInputMessageDiscriminator? Type143 { get; set; }
+        public global::G.BetaInputSchema? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInputSchema? Type144 { get; set; }
+        public global::G.BetaInputSchemaType? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInputSchemaType? Type145 { get; set; }
+        public global::G.BetaInvalidRequestErrorType? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInvalidRequestErrorType? Type146 { get; set; }
+        public global::G.BetaListResponseMessageBatch? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaListResponseMessageBatch? Type147 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BetaMessageBatch>? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BetaMessageBatch>? Type148 { get; set; }
+        public global::G.BetaMessageBatch? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatch? Type149 { get; set; }
+        public global::G.BetaListResponseModelInfo? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaListResponseModelInfo? Type150 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BetaModelInfo>? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BetaModelInfo>? Type151 { get; set; }
+        public global::G.BetaModelInfo? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaModelInfo? Type152 { get; set; }
+        public global::G.BetaMessage? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessage? Type153 { get; set; }
+        public global::G.BetaMessageType? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageType? Type154 { get; set; }
+        public global::G.BetaMessageRole? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageRole? Type155 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BetaContentBlock>? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BetaContentBlock>? Type156 { get; set; }
+        public global::G.BetaContentBlock? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlock? Type157 { get; set; }
+        public global::G.BetaMessageStopReason2? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStopReason2? Type158 { get; set; }
+        public global::G.BetaUsage? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaUsage? Type159 { get; set; }
+        public global::G.BetaMessageBatchType? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatchType? Type160 { get; set; }
+        public global::G.BetaMessageBatchProcessingStatus? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatchProcessingStatus? Type161 { get; set; }
+        public global::G.BetaRequestCounts? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestCounts? Type162 { get; set; }
+        public global::System.DateTime? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type163 { get; set; }
+        public global::G.BetaMessageBatchIndividualResponse? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatchIndividualResponse? Type164 { get; set; }
+        public global::G.Result? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Result? Type165 { get; set; }
+        public global::G.BetaSucceededResult? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaSucceededResult? Type166 { get; set; }
+        public global::G.BetaMessageBatchIndividualResponseResultDiscriminator? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatchIndividualResponseResultDiscriminator? Type167 { get; set; }
+        public global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType? Type168 { get; set; }
+        public global::G.BetaMessageDelta? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDelta? Type169 { get; set; }
+        public global::G.BetaMessageDeltaStopReason2? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDeltaStopReason2? Type170 { get; set; }
+        public global::G.BetaMessageDeltaEvent? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDeltaEvent? Type171 { get; set; }
+        public global::G.BetaMessageDeltaEventType? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDeltaEventType? Type172 { get; set; }
+        public global::G.BetaMessageDeltaUsage? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDeltaUsage? Type173 { get; set; }
+        public global::G.BetaMessageStartEvent? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStartEvent? Type174 { get; set; }
+        public global::G.BetaMessageStartEventType? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStartEventType? Type175 { get; set; }
+        public global::G.BetaMessageStopEvent? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStopEvent? Type176 { get; set; }
+        public global::G.BetaMessageStopEventType? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStopEventType? Type177 { get; set; }
+        public global::G.BetaMessageStreamEvent? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStreamEvent? Type178 { get; set; }
+        public global::G.BetaMessageStreamEventDiscriminator? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStreamEventDiscriminator? Type179 { get; set; }
+        public global::G.BetaMessageStreamEventDiscriminatorType? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStreamEventDiscriminatorType? Type180 { get; set; }
+        public global::G.BetaModelInfoType? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaModelInfoType? Type181 { get; set; }
+        public global::G.BetaNotFoundErrorType? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaNotFoundErrorType? Type182 { get; set; }
+        public global::G.BetaOverloadedErrorType? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaOverloadedErrorType? Type183 { get; set; }
+        public global::G.BetaPermissionErrorType? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPermissionErrorType? Type184 { get; set; }
+        public global::G.BetaPlainTextSource? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPlainTextSource? Type185 { get; set; }
+        public global::G.BetaPlainTextSourceType? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPlainTextSourceType? Type186 { get; set; }
+        public global::G.BetaPlainTextSourceMediaType? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPlainTextSourceMediaType? Type187 { get; set; }
+        public global::G.BetaRateLimitErrorType? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRateLimitErrorType? Type188 { get; set; }
+        public global::G.BetaRequestCharLocationCitation? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestCharLocationCitation? Type189 { get; set; }
+        public global::G.BetaRequestCharLocationCitationType? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestCharLocationCitationType? Type190 { get; set; }
+        public global::G.BetaRequestCitationsConfig? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestCitationsConfig? Type191 { get; set; }
+        public global::G.BetaRequestContentBlockLocationCitation? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestContentBlockLocationCitation? Type192 { get; set; }
+        public global::G.BetaRequestContentBlockLocationCitationType? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestContentBlockLocationCitationType? Type193 { get; set; }
+        public global::G.BetaRequestDocumentBlock? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlock? Type194 { get; set; }
+        public global::G.CacheControlVariant16? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant16? Type195 { get; set; }
+        public global::G.BetaRequestDocumentBlockCacheControlVariant1Discriminator? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlockCacheControlVariant1Discriminator? Type196 { get; set; }
+        public global::G.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorType? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorType? Type197 { get; set; }
+        public global::G.BetaRequestDocumentBlockType? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlockType? Type198 { get; set; }
+        public global::G.Source? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source? Type199 { get; set; }
+        public global::G.BetaURLPDFSource? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaURLPDFSource? Type200 { get; set; }
+        public global::G.BetaRequestDocumentBlockSourceDiscriminator? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlockSourceDiscriminator? Type201 { get; set; }
+        public global::G.BetaRequestDocumentBlockSourceDiscriminatorType? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlockSourceDiscriminatorType? Type202 { get; set; }
+        public global::G.CacheControlVariant17? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant17? Type203 { get; set; }
+        public global::G.BetaRequestImageBlockCacheControlVariant1Discriminator? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlockCacheControlVariant1Discriminator? Type204 { get; set; }
+        public global::G.BetaRequestImageBlockCacheControlVariant1DiscriminatorType? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlockCacheControlVariant1DiscriminatorType? Type205 { get; set; }
+        public global::G.BetaRequestImageBlockType? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlockType? Type206 { get; set; }
+        public global::G.Source2? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source2? Type207 { get; set; }
+        public global::G.BetaURLImageSource? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaURLImageSource? Type208 { get; set; }
+        public global::G.BetaRequestImageBlockSourceDiscriminator? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlockSourceDiscriminator? Type209 { get; set; }
+        public global::G.BetaRequestImageBlockSourceDiscriminatorType? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlockSourceDiscriminatorType? Type210 { get; set; }
+        public global::G.BetaRequestPageLocationCitation? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestPageLocationCitation? Type211 { get; set; }
+        public global::G.BetaRequestPageLocationCitationType? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestPageLocationCitationType? Type212 { get; set; }
+        public global::G.BetaRequestRedactedThinkingBlock? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestRedactedThinkingBlock? Type213 { get; set; }
+        public global::G.BetaRequestRedactedThinkingBlockType? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestRedactedThinkingBlockType? Type214 { get; set; }
+        public global::G.CacheControlVariant18? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant18? Type215 { get; set; }
+        public global::G.BetaRequestTextBlockCacheControlVariant1Discriminator? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlockCacheControlVariant1Discriminator? Type216 { get; set; }
+        public global::G.BetaRequestTextBlockCacheControlVariant1DiscriminatorType? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlockCacheControlVariant1DiscriminatorType? Type217 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? Type218 { get; set; }
+        public global::G.CitationsVariant1Item? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsVariant1Item? Type219 { get; set; }
+        public global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminator? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminator? Type220 { get; set; }
+        public global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorType? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorType? Type221 { get; set; }
+        public global::G.BetaRequestTextBlockType? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlockType? Type222 { get; set; }
+        public global::G.BetaRequestThinkingBlock? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestThinkingBlock? Type223 { get; set; }
+        public global::G.BetaRequestThinkingBlockType? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestThinkingBlockType? Type224 { get; set; }
+        public global::G.BetaRequestToolResultBlock? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlock? Type225 { get; set; }
+        public global::G.CacheControlVariant19? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant19? Type226 { get; set; }
+        public global::G.BetaRequestToolResultBlockCacheControlVariant1Discriminator? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockCacheControlVariant1Discriminator? Type227 { get; set; }
+        public global::G.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorType? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorType? Type228 { get; set; }
+        public global::G.BetaRequestToolResultBlockType? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockType? Type229 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type230 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type231 { get; set; }
+        public global::G.ContentVariant2Item? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item? Type232 { get; set; }
+        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminator? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminator? Type233 { get; set; }
+        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type234 { get; set; }
+        public global::G.BetaRequestToolUseBlock? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlock? Type235 { get; set; }
+        public global::G.CacheControlVariant110? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant110? Type236 { get; set; }
+        public global::G.BetaRequestToolUseBlockCacheControlVariant1Discriminator? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlockCacheControlVariant1Discriminator? Type237 { get; set; }
+        public global::G.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType? Type238 { get; set; }
+        public global::G.BetaRequestToolUseBlockType? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlockType? Type239 { get; set; }
+        public global::G.BetaResponseCharLocationCitationType? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseCharLocationCitationType? Type240 { get; set; }
+        public global::G.BetaResponseContentBlockLocationCitationType? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseContentBlockLocationCitationType? Type241 { get; set; }
+        public global::G.BetaResponsePageLocationCitationType? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponsePageLocationCitationType? Type242 { get; set; }
+        public global::G.BetaResponseRedactedThinkingBlockType? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseRedactedThinkingBlockType? Type243 { get; set; }
+        public global::G.BetaResponseTextBlockType? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseTextBlockType? Type244 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? Type245 { get; set; }
+        public global::G.CitationsVariant1Item2? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsVariant1Item2? Type246 { get; set; }
+        public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminator? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminator? Type247 { get; set; }
+        public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type248 { get; set; }
+        public global::G.BetaResponseThinkingBlockType? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseThinkingBlockType? Type249 { get; set; }
+        public global::G.BetaResponseToolUseBlockType? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaResponseToolUseBlockType? Type250 { get; set; }
+        public global::G.BetaSignatureContentBlockDeltaType? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaSignatureContentBlockDeltaType? Type251 { get; set; }
+        public global::G.BetaSucceededResultType? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaSucceededResultType? Type252 { get; set; }
+        public global::G.BetaTextContentBlockDeltaType? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextContentBlockDeltaType? Type253 { get; set; }
+        public global::G.CacheControlVariant111? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant111? Type254 { get; set; }
+        public global::G.BetaTextEditor20241022CacheControlVariant1Discriminator? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20241022CacheControlVariant1Discriminator? Type255 { get; set; }
+        public global::G.BetaTextEditor20241022CacheControlVariant1DiscriminatorType? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20241022CacheControlVariant1DiscriminatorType? Type256 { get; set; }
+        public global::G.BetaTextEditor20241022Type? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20241022Type? Type257 { get; set; }
+        public global::G.BetaTextEditor20241022Name? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20241022Name? Type258 { get; set; }
+        public global::G.CacheControlVariant112? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant112? Type259 { get; set; }
+        public global::G.BetaTextEditor20250124CacheControlVariant1Discriminator? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20250124CacheControlVariant1Discriminator? Type260 { get; set; }
+        public global::G.BetaTextEditor20250124CacheControlVariant1DiscriminatorType? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20250124CacheControlVariant1DiscriminatorType? Type261 { get; set; }
+        public global::G.BetaTextEditor20250124Type? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20250124Type? Type262 { get; set; }
+        public global::G.BetaTextEditor20250124Name? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextEditor20250124Name? Type263 { get; set; }
+        public global::G.BetaThinkingConfigDisabled? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigDisabled? Type264 { get; set; }
+        public global::G.BetaThinkingConfigDisabledType? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigDisabledType? Type265 { get; set; }
+        public global::G.BetaThinkingConfigEnabled? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigEnabled? Type266 { get; set; }
+        public global::G.BetaThinkingConfigEnabledType? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigEnabledType? Type267 { get; set; }
+        public global::G.BetaThinkingContentBlockDeltaType? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingContentBlockDeltaType? Type268 { get; set; }
+        public global::G.BetaToolType2? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolType2? Type269 { get; set; }
+        public global::G.CacheControlVariant113? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant113? Type270 { get; set; }
+        public global::G.BetaToolCacheControlVariant1Discriminator? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolCacheControlVariant1Discriminator? Type271 { get; set; }
+        public global::G.BetaToolCacheControlVariant1DiscriminatorType? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolCacheControlVariant1DiscriminatorType? Type272 { get; set; }
+        public global::G.BetaToolChoiceAny? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAny? Type273 { get; set; }
+        public global::G.BetaToolChoiceAnyType? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAnyType? Type274 { get; set; }
+        public global::G.BetaToolChoiceAuto? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAuto? Type275 { get; set; }
+        public global::G.BetaToolChoiceAutoType? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAutoType? Type276 { get; set; }
+        public global::G.BetaToolChoiceTool? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceTool? Type277 { get; set; }
+        public global::G.BetaToolChoiceToolType? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceToolType? Type278 { get; set; }
+        public global::G.BetaURLImageSourceType? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaURLImageSourceType? Type279 { get; set; }
+        public global::G.BetaURLPDFSourceType? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaURLPDFSourceType? Type280 { get; set; }
+        public global::G.BillingError? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BillingError? Type281 { get; set; }
+        public global::G.BillingErrorType? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BillingErrorType? Type282 { get; set; }
+        public global::G.CacheControlEphemeralType? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlEphemeralType? Type283 { get; set; }
+        public global::G.CanceledResult? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CanceledResult? Type284 { get; set; }
+        public global::G.CanceledResultType? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CanceledResultType? Type285 { get; set; }
+        public global::G.CitationsDelta? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsDelta? Type286 { get; set; }
+        public global::G.CitationsDeltaType? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsDeltaType? Type287 { get; set; }
+        public global::G.Citation2? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Citation2? Type288 { get; set; }
+        public global::G.ResponseCharLocationCitation? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCharLocationCitation? Type289 { get; set; }
+        public global::G.ResponsePageLocationCitation? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsePageLocationCitation? Type290 { get; set; }
+        public global::G.ResponseContentBlockLocationCitation? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentBlockLocationCitation? Type291 { get; set; }
+        public global::G.CitationsDeltaCitationDiscriminator? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsDeltaCitationDiscriminator? Type292 { get; set; }
+        public global::G.CitationsDeltaCitationDiscriminatorType? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsDeltaCitationDiscriminatorType? Type293 { get; set; }
+        public global::G.CompletionRequest? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionRequest? Type294 { get; set; }
+        public global::G.Metadata? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Metadata? Type295 { get; set; }
+        public global::G.CompletionResponse? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionResponse? Type296 { get; set; }
+        public global::G.CompletionResponseType? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionResponseType? Type297 { get; set; }
+        public global::G.ContentBlockDeltaEvent? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEvent? Type298 { get; set; }
+        public global::G.ContentBlockDeltaEventType? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEventType? Type299 { get; set; }
+        public global::G.Delta2? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Delta2? Type300 { get; set; }
+        public global::G.TextContentBlockDelta? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextContentBlockDelta? Type301 { get; set; }
+        public global::G.InputJsonContentBlockDelta? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputJsonContentBlockDelta? Type302 { get; set; }
+        public global::G.ThinkingContentBlockDelta? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingContentBlockDelta? Type303 { get; set; }
+        public global::G.SignatureContentBlockDelta? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SignatureContentBlockDelta? Type304 { get; set; }
+        public global::G.ContentBlockDeltaEventDeltaDiscriminator? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEventDeltaDiscriminator? Type305 { get; set; }
+        public global::G.ContentBlockDeltaEventDeltaDiscriminatorType? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEventDeltaDiscriminatorType? Type306 { get; set; }
+        public global::G.ContentBlockSource? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSource? Type307 { get; set; }
+        public global::G.ContentBlockSourceType? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSourceType? Type308 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>>? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>>? Type309 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>? Type310 { get; set; }
+        public global::G.ContentContentBlockSourceContentItem? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentContentBlockSourceContentItem? Type311 { get; set; }
+        public global::G.RequestTextBlock? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlock? Type312 { get; set; }
+        public global::G.RequestImageBlock? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlock? Type313 { get; set; }
+        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator? Type314 { get; set; }
+        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType? Type315 { get; set; }
+        public global::G.ContentBlockStartEvent? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEvent? Type316 { get; set; }
+        public global::G.ContentBlockStartEventType? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEventType? Type317 { get; set; }
+        public global::G.ContentBlock2? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlock2? Type318 { get; set; }
+        public global::G.ResponseTextBlock? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlock? Type319 { get; set; }
+        public global::G.ResponseToolUseBlock? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseToolUseBlock? Type320 { get; set; }
+        public global::G.ResponseThinkingBlock? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseThinkingBlock? Type321 { get; set; }
+        public global::G.ResponseRedactedThinkingBlock? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseRedactedThinkingBlock? Type322 { get; set; }
+        public global::G.ContentBlockStartEventContentBlockDiscriminator? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEventContentBlockDiscriminator? Type323 { get; set; }
+        public global::G.ContentBlockStartEventContentBlockDiscriminatorType? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEventContentBlockDiscriminatorType? Type324 { get; set; }
+        public global::G.ContentBlockStopEvent? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStopEvent? Type325 { get; set; }
+        public global::G.ContentBlockStopEventType? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStopEventType? Type326 { get; set; }
+        public global::G.CountMessageTokensParams? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountMessageTokensParams? Type327 { get; set; }
+        public global::G.ToolChoice? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoice? Type328 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? Type329 { get; set; }
+        public global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>? Type330 { get; set; }
+        public global::G.Tool? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Tool? Type331 { get; set; }
+        public global::G.TextEditor20250124? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124? Type332 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputMessage>? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputMessage>? Type333 { get; set; }
+        public global::G.InputMessage? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessage? Type334 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.RequestTextBlock>>? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.RequestTextBlock>>? Type335 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RequestTextBlock>? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RequestTextBlock>? Type336 { get; set; }
+        public global::G.ThinkingConfigParam? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigParam? Type337 { get; set; }
+        public global::G.CountMessageTokensResponse? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountMessageTokensResponse? Type338 { get; set; }
+        public global::G.CreateMessageBatchParams? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageBatchParams? Type339 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessageBatchIndividualRequestParams>? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessageBatchIndividualRequestParams>? Type340 { get; set; }
+        public global::G.MessageBatchIndividualRequestParams? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchIndividualRequestParams? Type341 { get; set; }
+        public global::G.CreateMessageParams? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageParams? Type342 { get; set; }
+        public global::G.DeleteMessageBatchResponse? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMessageBatchResponse? Type343 { get; set; }
+        public global::G.DeleteMessageBatchResponseType? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMessageBatchResponseType? Type344 { get; set; }
+        public global::G.ErrorResponse? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponse? Type345 { get; set; }
+        public global::G.ErrorResponseType? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponseType? Type346 { get; set; }
+        public global::G.Error2? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Error2? Type347 { get; set; }
+        public global::G.InvalidRequestError? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvalidRequestError? Type348 { get; set; }
+        public global::G.PermissionError? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PermissionError? Type349 { get; set; }
+        public global::G.NotFoundError? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotFoundError? Type350 { get; set; }
+        public global::G.RateLimitError? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitError? Type351 { get; set; }
+        public global::G.GatewayTimeoutError? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GatewayTimeoutError? Type352 { get; set; }
+        public global::G.OverloadedError? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OverloadedError? Type353 { get; set; }
+        public global::G.ErrorResponseErrorDiscriminator? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponseErrorDiscriminator? Type354 { get; set; }
+        public global::G.ErrorResponseErrorDiscriminatorType? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponseErrorDiscriminatorType? Type355 { get; set; }
+        public global::G.ErroredResult? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErroredResult? Type356 { get; set; }
+        public global::G.ErroredResultType? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErroredResultType? Type357 { get; set; }
+        public global::G.ExpiredResult? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpiredResult? Type358 { get; set; }
+        public global::G.ExpiredResultType? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpiredResultType? Type359 { get; set; }
+        public global::G.GatewayTimeoutErrorType? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GatewayTimeoutErrorType? Type360 { get; set; }
+        public global::G.InputJsonContentBlockDeltaType? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputJsonContentBlockDeltaType? Type361 { get; set; }
+        public global::G.InputMessageRole? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageRole? Type362 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputContentBlock>>? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputContentBlock>>? Type363 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputContentBlock>? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputContentBlock>? Type364 { get; set; }
+        public global::G.InputContentBlock? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputContentBlock? Type365 { get; set; }
+        public global::G.InputSchema? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageDiscriminator? Type366 { get; set; }
+        public global::G.InputSchemaType? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputSchema? Type367 { get; set; }
+        public global::G.InvalidRequestErrorType? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputSchemaType? Type368 { get; set; }
+        public global::G.ListResponseMessageBatch? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvalidRequestErrorType? Type369 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessageBatch>? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListResponseMessageBatch? Type370 { get; set; }
+        public global::G.MessageBatch? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessageBatch>? Type371 { get; set; }
+        public global::G.ListResponseModelInfo? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatch? Type372 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModelInfo>? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListResponseModelInfo? Type373 { get; set; }
+        public global::G.ModelInfo? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModelInfo>? Type374 { get; set; }
+        public global::G.Message? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfo? Type375 { get; set; }
+        public global::G.MessageType? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Message? Type376 { get; set; }
+        public global::G.MessageRole? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageType? Type377 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentBlock3>? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageRole? Type378 { get; set; }
+        public global::G.ContentBlock3? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentBlock3>? Type379 { get; set; }
+        public global::G.MessageStopReason2? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlock3? Type380 { get; set; }
+        public global::G.Usage? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopReason2? Type381 { get; set; }
+        public global::G.MessageBatchType? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Usage? Type382 { get; set; }
+        public global::G.MessageBatchProcessingStatus? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchType? Type383 { get; set; }
+        public global::G.RequestCounts? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchProcessingStatus? Type384 { get; set; }
+        public global::G.MessageBatchIndividualResponse? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestCounts? Type385 { get; set; }
+        public global::G.Result2? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchIndividualResponse? Type386 { get; set; }
+        public global::G.SucceededResult? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Result2? Type387 { get; set; }
+        public global::G.MessageBatchIndividualResponseResultDiscriminator? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SucceededResult? Type388 { get; set; }
+        public global::G.MessageBatchIndividualResponseResultDiscriminatorType? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchIndividualResponseResultDiscriminator? Type389 { get; set; }
+        public global::G.MessageDelta? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchIndividualResponseResultDiscriminatorType? Type390 { get; set; }
+        public global::G.MessageDeltaStopReason2? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDelta? Type391 { get; set; }
+        public global::G.MessageDeltaEvent? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaStopReason2? Type392 { get; set; }
+        public global::G.MessageDeltaEventType? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaEvent? Type393 { get; set; }
+        public global::G.MessageDeltaUsage? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaEventType? Type394 { get; set; }
+        public global::G.MessageStartEvent? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaUsage? Type395 { get; set; }
+        public global::G.MessageStartEventType? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStartEvent? Type396 { get; set; }
+        public global::G.MessageStopEvent? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStartEventType? Type397 { get; set; }
+        public global::G.MessageStopEventType? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopEvent? Type398 { get; set; }
+        public global::G.MessageStreamEvent? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopEventType? Type399 { get; set; }
+        public global::G.MessageStreamEventDiscriminator? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEvent? Type400 { get; set; }
+        public global::G.MessageStreamEventDiscriminatorType? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminator? Type401 { get; set; }
+        public global::G.ModelInfoType? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminatorType? Type402 { get; set; }
+        public global::G.NotFoundErrorType? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfoType? Type403 { get; set; }
+        public global::G.OverloadedErrorType? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotFoundErrorType? Type404 { get; set; }
+        public global::G.PermissionErrorType? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OverloadedErrorType? Type405 { get; set; }
+        public global::G.PlainTextSource? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PermissionErrorType? Type406 { get; set; }
+        public global::G.PlainTextSourceType? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlainTextSource? Type407 { get; set; }
+        public global::G.PlainTextSourceMediaType? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlainTextSourceType? Type408 { get; set; }
+        public global::G.RateLimitErrorType? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlainTextSourceMediaType? Type409 { get; set; }
+        public global::G.RequestCharLocationCitation? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitErrorType? Type410 { get; set; }
+        public global::G.RequestCharLocationCitationType? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestCharLocationCitation? Type411 { get; set; }
+        public global::G.RequestCitationsConfig? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestCharLocationCitationType? Type412 { get; set; }
+        public global::G.RequestContentBlockLocationCitation? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestCitationsConfig? Type413 { get; set; }
+        public global::G.RequestContentBlockLocationCitationType? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestContentBlockLocationCitation? Type414 { get; set; }
+        public global::G.RequestDocumentBlock? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestContentBlockLocationCitationType? Type415 { get; set; }
+        public global::G.CacheControlVariant114? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlock? Type416 { get; set; }
+        public global::G.RequestDocumentBlockCacheControlVariant1Discriminator? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant114? Type417 { get; set; }
+        public global::G.RequestDocumentBlockCacheControlVariant1DiscriminatorType? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockCacheControlVariant1Discriminator? Type418 { get; set; }
+        public global::G.RequestDocumentBlockType? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockCacheControlVariant1DiscriminatorType? Type419 { get; set; }
+        public global::G.Source3? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockType? Type420 { get; set; }
+        public global::G.URLPDFSource? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source3? Type421 { get; set; }
+        public global::G.RequestDocumentBlockSourceDiscriminator? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.URLPDFSource? Type422 { get; set; }
+        public global::G.RequestDocumentBlockSourceDiscriminatorType? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockSourceDiscriminator? Type423 { get; set; }
+        public global::G.CacheControlVariant115? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockSourceDiscriminatorType? Type424 { get; set; }
+        public global::G.RequestImageBlockCacheControlVariant1Discriminator? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant115? Type425 { get; set; }
+        public global::G.RequestImageBlockCacheControlVariant1DiscriminatorType? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlockCacheControlVariant1Discriminator? Type426 { get; set; }
+        public global::G.RequestImageBlockType? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlockCacheControlVariant1DiscriminatorType? Type427 { get; set; }
+        public global::G.Source4? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlockType? Type428 { get; set; }
+        public global::G.URLImageSource? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source4? Type429 { get; set; }
+        public global::G.RequestImageBlockSourceDiscriminator? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.URLImageSource? Type430 { get; set; }
+        public global::G.RequestImageBlockSourceDiscriminatorType? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlockSourceDiscriminator? Type431 { get; set; }
+        public global::G.RequestPageLocationCitation? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlockSourceDiscriminatorType? Type432 { get; set; }
+        public global::G.RequestPageLocationCitationType? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestPageLocationCitation? Type433 { get; set; }
+        public global::G.RequestRedactedThinkingBlock? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestPageLocationCitationType? Type434 { get; set; }
+        public global::G.RequestRedactedThinkingBlockType? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestRedactedThinkingBlock? Type435 { get; set; }
+        public global::G.CacheControlVariant116? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestRedactedThinkingBlockType? Type436 { get; set; }
+        public global::G.RequestTextBlockCacheControlVariant1Discriminator? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant116? Type437 { get; set; }
+        public global::G.RequestTextBlockCacheControlVariant1DiscriminatorType? Type437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlockCacheControlVariant1Discriminator? Type438 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlockCacheControlVariant1DiscriminatorType? Type439 { get; set; }
+        public global::G.CitationsVariant1Item3? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? Type440 { get; set; }
+        public global::G.RequestTextBlockCitationsVariant1ItemDiscriminator? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsVariant1Item3? Type441 { get; set; }
+        public global::G.RequestTextBlockCitationsVariant1ItemDiscriminatorType? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlockCitationsVariant1ItemDiscriminator? Type442 { get; set; }
+        public global::G.RequestTextBlockType? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlockCitationsVariant1ItemDiscriminatorType? Type443 { get; set; }
+        public global::G.RequestThinkingBlock? Type443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlockType? Type444 { get; set; }
+        public global::G.RequestThinkingBlockType? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestThinkingBlock? Type445 { get; set; }
+        public global::G.RequestToolResultBlock? Type445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestThinkingBlockType? Type446 { get; set; }
+        public global::G.CacheControlVariant117? Type446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlock? Type447 { get; set; }
+        public global::G.RequestToolResultBlockCacheControlVariant1Discriminator? Type447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant117? Type448 { get; set; }
+        public global::G.RequestToolResultBlockCacheControlVariant1DiscriminatorType? Type448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockCacheControlVariant1Discriminator? Type449 { get; set; }
+        public global::G.RequestToolResultBlockType? Type449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockCacheControlVariant1DiscriminatorType? Type450 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockType? Type451 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type452 { get; set; }
+        public global::G.ContentVariant2Item2? Type452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type453 { get; set; }
+        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminator? Type453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item2? Type454 { get; set; }
+        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? Type454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminator? Type455 { get; set; }
+        public global::G.RequestToolUseBlock? Type455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? Type456 { get; set; }
+        public global::G.CacheControlVariant118? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolUseBlock? Type457 { get; set; }
+        public global::G.RequestToolUseBlockCacheControlVariant1Discriminator? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant118? Type458 { get; set; }
+        public global::G.RequestToolUseBlockCacheControlVariant1DiscriminatorType? Type458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolUseBlockCacheControlVariant1Discriminator? Type459 { get; set; }
+        public global::G.RequestToolUseBlockType? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolUseBlockCacheControlVariant1DiscriminatorType? Type460 { get; set; }
+        public global::G.ResponseCharLocationCitationType? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolUseBlockType? Type461 { get; set; }
+        public global::G.ResponseContentBlockLocationCitationType? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCharLocationCitationType? Type462 { get; set; }
+        public global::G.ResponsePageLocationCitationType? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentBlockLocationCitationType? Type463 { get; set; }
+        public global::G.ResponseRedactedThinkingBlockType? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsePageLocationCitationType? Type464 { get; set; }
+        public global::G.ResponseTextBlockType? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseRedactedThinkingBlockType? Type465 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item4>? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlockType? Type466 { get; set; }
+        public global::G.CitationsVariant1Item4? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item4>? Type467 { get; set; }
+        public global::G.ResponseTextBlockCitationsVariant1ItemDiscriminator? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationsVariant1Item4? Type468 { get; set; }
+        public global::G.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlockCitationsVariant1ItemDiscriminator? Type469 { get; set; }
+        public global::G.ResponseThinkingBlockType? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type470 { get; set; }
+        public global::G.ResponseToolUseBlockType? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseThinkingBlockType? Type471 { get; set; }
+        public global::G.SignatureContentBlockDeltaType? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseToolUseBlockType? Type472 { get; set; }
+        public global::G.SucceededResultType? Type472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SignatureContentBlockDeltaType? Type473 { get; set; }
+        public global::G.TextContentBlockDeltaType? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SucceededResultType? Type474 { get; set; }
+        public global::G.CacheControlVariant119? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextContentBlockDeltaType? Type475 { get; set; }
+        public global::G.TextEditor20250124CacheControlVariant1Discriminator? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant119? Type476 { get; set; }
+        public global::G.TextEditor20250124CacheControlVariant1DiscriminatorType? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124CacheControlVariant1Discriminator? Type477 { get; set; }
+        public global::G.TextEditor20250124Type? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124CacheControlVariant1DiscriminatorType? Type478 { get; set; }
+        public global::G.TextEditor20250124Name? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124Type? Type479 { get; set; }
+        public global::G.ThinkingConfigDisabled? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124Name? Type480 { get; set; }
+        public global::G.ThinkingConfigDisabledType? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigDisabled? Type481 { get; set; }
+        public global::G.ThinkingConfigEnabled? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigDisabledType? Type482 { get; set; }
+        public global::G.ThinkingConfigEnabledType? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigEnabled? Type483 { get; set; }
+        public global::G.ThinkingContentBlockDeltaType? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigEnabledType? Type484 { get; set; }
+        public global::G.CacheControlVariant120? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingContentBlockDeltaType? Type485 { get; set; }
+        public global::G.ToolCacheControlVariant1Discriminator? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlVariant120? Type486 { get; set; }
+        public global::G.ToolCacheControlVariant1DiscriminatorType? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCacheControlVariant1Discriminator? Type487 { get; set; }
+        public global::G.ToolChoiceAny? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCacheControlVariant1DiscriminatorType? Type488 { get; set; }
+        public global::G.ToolChoiceAnyType? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceAny? Type489 { get; set; }
+        public global::G.ToolChoiceAuto? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceAnyType? Type490 { get; set; }
+        public global::G.ToolChoiceAutoType? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceAuto? Type491 { get; set; }
+        public global::G.ToolChoiceTool? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceAutoType? Type492 { get; set; }
+        public global::G.ToolChoiceToolType? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceTool? Type493 { get; set; }
+        public global::G.URLImageSourceType? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceToolType? Type494 { get; set; }
+        public global::G.URLPDFSourceType? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.URLImageSourceType? Type495 { get; set; }
+        public global::G.CreateMessageParamsWithoutStream? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.URLPDFSourceType? Type496 { get; set; }
+        public global::G.AnthropicBeta? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageParamsWithoutStream? Type497 { get; set; }
+        public global::G.AnthropicBetaEnum? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicBeta? Type498 { get; set; }
+        public global::G.ThinkingConfigParamDiscriminator? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicBetaEnum? Type499 { get; set; }
+        public global::G.ThinkingConfigParamDiscriminatorType? Type499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigParamDiscriminator? Type500 { get; set; }
+        public global::G.BetaThinkingConfigParamDiscriminator? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigParamDiscriminatorType? Type501 { get; set; }
+        public global::G.BetaThinkingConfigParamDiscriminatorType? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigParamDiscriminator? Type502 { get; set; }
+        public global::G.ToolChoiceDiscriminator? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingConfigParamDiscriminatorType? Type503 { get; set; }
+        public global::G.ToolChoiceDiscriminatorType? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceDiscriminator? Type504 { get; set; }
+        public global::G.BetaToolChoiceDiscriminator? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceDiscriminatorType? Type505 { get; set; }
+        public global::G.BetaToolChoiceDiscriminatorType? Type505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceDiscriminator? Type506 { get; set; }
+        public global::G.ContentBlockDiscriminator? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceDiscriminatorType? Type507 { get; set; }
+        public global::G.ContentBlockDiscriminatorType? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDiscriminator? Type508 { get; set; }
+        public global::G.InputContentBlockDiscriminator? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDiscriminatorType? Type509 { get; set; }
+        public global::G.InputContentBlockDiscriminatorType? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputContentBlockDiscriminator? Type510 { get; set; }
+        public global::G.BetaContentBlockDiscriminator? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputContentBlockDiscriminatorType? Type511 { get; set; }
+        public global::G.BetaContentBlockDiscriminatorType? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlockDiscriminator? Type512 { get; set; }
+        public global::G.BetaInputContentBlockDiscriminator? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlockDiscriminatorType? Type513 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BetaInputContentBlockDiscriminator? Type514 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BetaInputContentBlockDiscriminatorType? Type515 { get; set; }
+        public global::G.BetaInputContentBlockDiscriminatorType? Type513 { get; set; }
 
         /// <summary>
         /// 

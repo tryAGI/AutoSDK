@@ -359,7 +359,9 @@ public class SchemaContext(
                 depth: depth + 1));
         }
 
-        if (schema.Discriminator != null && schema.Discriminator.PropertyName != null)
+        if (schema.Discriminator != null && schema.Discriminator.PropertyName != null &&
+            (schema.IsOneOf() || schema.IsAnyOf() || schema.IsAllOf() ||
+             schema.Discriminator.Mapping is { Count: > 0 }))
         {
             var discriminatorSchema = new OpenApiSchema
             {
