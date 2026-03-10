@@ -65,17 +65,22 @@ namespace G.JsonConverters
                 srt = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ExportOptions(
+            var __value = new global::G.ExportOptions(
                 discriminator?.Format,
                 segmentedJson,
+
                 docx,
+
                 pdf,
+
                 txt,
+
                 html,
+
                 srt
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -13,18 +13,18 @@ namespace G
             ref string voiceId,
             ref bool? enableLogging,
             int? optimizeStreamingLatency,
-            ref global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat? outputFormat,
+            ref global::G.TextToSpeechStreamWithTimestampsOutputFormat? outputFormat,
             ref string? xiApiKey,
-            global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPost request);
+            global::G.BodyTextToSpeechStreamWithTimestamps request);
         partial void PrepareCreateTextToSpeechByVoiceIdStreamWithTimestampsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string voiceId,
             bool? enableLogging,
             int? optimizeStreamingLatency,
-            global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat? outputFormat,
+            global::G.TextToSpeechStreamWithTimestampsOutputFormat? outputFormat,
             string? xiApiKey,
-            global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPost request);
+            global::G.BodyTextToSpeechStreamWithTimestamps request);
         partial void ProcessCreateTextToSpeechByVoiceIdStreamWithTimestampsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,7 +59,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -67,10 +67,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.StreamingAudioChunkWithTimestampsResponseModel> CreateTextToSpeechByVoiceIdStreamWithTimestampsAsync(
             string voiceId,
 
-            global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPost request,
+            global::G.BodyTextToSpeechStreamWithTimestamps request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat? outputFormat = default,
+            global::G.TextToSpeechStreamWithTimestampsOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,25 +89,27 @@ namespace G
 
             var outputFormatValue = outputFormat switch
             {
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp32205032 => "mp3_22050_32",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp34410032 => "mp3_44100_32",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp34410064 => "mp3_44100_64",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp34410096 => "mp3_44100_96",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp344100128 => "mp3_44100_128",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Mp344100192 => "mp3_44100_192",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm8000 => "pcm_8000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm16000 => "pcm_16000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm22050 => "pcm_22050",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm24000 => "pcm_24000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm44100 => "pcm_44100",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Pcm48000 => "pcm_48000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Ulaw8000 => "ulaw_8000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Alaw8000 => "alaw_8000",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Opus4800032 => "opus_48000_32",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Opus4800064 => "opus_48000_64",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Opus4800096 => "opus_48000_96",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Opus48000128 => "opus_48000_128",
-                global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp32205032 => "mp3_22050_32",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp32400048 => "mp3_24000_48",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp34410032 => "mp3_44100_32",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp34410064 => "mp3_44100_64",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp34410096 => "mp3_44100_96",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp344100128 => "mp3_44100_128",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Mp344100192 => "mp3_44100_192",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm8000 => "pcm_8000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm16000 => "pcm_16000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm22050 => "pcm_22050",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm24000 => "pcm_24000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm32000 => "pcm_32000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm44100 => "pcm_44100",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Pcm48000 => "pcm_48000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Ulaw8000 => "ulaw_8000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Alaw8000 => "alaw_8000",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Opus4800032 => "opus_48000_32",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Opus4800064 => "opus_48000_64",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Opus4800096 => "opus_48000_96",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Opus48000128 => "opus_48000_128",
+                global::G.TextToSpeechStreamWithTimestampsOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -298,7 +300,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="text">
         /// The text that will get converted into speech.
@@ -308,7 +310,7 @@ namespace G
         /// Default Value: eleven_multilingual_v2
         /// </param>
         /// <param name="languageCode">
-        /// Language code (ISO 639-1) used to enforce a language for the model. Currently only Turbo v2.5 and Flash v2.5 support language enforcement. For other models, an error will be returned if language code is provided.
+        /// Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.
         /// </param>
         /// <param name="voiceSettings">
         /// Voice settings overriding stored settings for the given voice. They are applied only on the given request.
@@ -332,7 +334,7 @@ namespace G
         /// A list of request_id of the samples that come after this generation. next_request_ids is especially useful for maintaining the speech's continuity when regenerating a sample that has had some audio quality issues. For example, if you have generated 3 speech clips, and you want to improve clip 2, passing the request id of clip 3 as a next_request_id (and that of clip 1 as a previous_request_id) will help maintain natural flow in the combined speech. The results will be best when the same model is used across the generations. In case both next_text and next_request_ids is send, next_text will be ignored. A maximum of 3 request_ids can be send.
         /// </param>
         /// <param name="applyTextNormalization">
-        /// This parameter controls text normalization with three modes: 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped. Cannot be turned on for 'eleven_turbo_v2_5' or 'eleven_flash_v2_5' models.<br/>
+        /// This parameter controls text normalization with three modes: 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="applyLanguageTextNormalization">
@@ -346,7 +348,7 @@ namespace G
             string text,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.TextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostOutputFormat? outputFormat = default,
+            global::G.TextToSpeechStreamWithTimestampsOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
             string? languageCode = default,
@@ -357,11 +359,11 @@ namespace G
             string? nextText = default,
             global::System.Collections.Generic.IList<string>? previousRequestIds = default,
             global::System.Collections.Generic.IList<string>? nextRequestIds = default,
-            global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPostApplyTextNormalization? applyTextNormalization = default,
+            global::G.BodyTextToSpeechStreamWithTimestampsApplyTextNormalization? applyTextNormalization = default,
             bool? applyLanguageTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.BodyTextToSpeechStreamingWithTimestampsV1TextToSpeechVoiceIdStreamWithTimestampsPost
+            var __request = new global::G.BodyTextToSpeechStreamWithTimestamps
             {
                 Text = text,
                 ModelId = modelId,

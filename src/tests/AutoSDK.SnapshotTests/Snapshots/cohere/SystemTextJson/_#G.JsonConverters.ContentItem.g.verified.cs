@@ -30,12 +30,12 @@ namespace G.JsonConverters
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ContentItem(
+            var __value = new global::G.ContentItem(
                 discriminator?.Type,
                 text
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

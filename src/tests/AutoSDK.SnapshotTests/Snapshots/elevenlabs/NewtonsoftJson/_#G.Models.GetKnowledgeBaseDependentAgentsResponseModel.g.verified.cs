@@ -13,7 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.AgentsItem> Agents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.AgentsItem2> Agents { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("branches")]
+        public global::System.Collections.Generic.IList<global::G.DependentBranchInfo>? Branches { get; set; }
 
         /// <summary>
         /// 
@@ -37,15 +43,18 @@ namespace G
         /// Initializes a new instance of the <see cref="GetKnowledgeBaseDependentAgentsResponseModel" /> class.
         /// </summary>
         /// <param name="agents"></param>
+        /// <param name="branches"></param>
         /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
         public GetKnowledgeBaseDependentAgentsResponseModel(
-            global::System.Collections.Generic.IList<global::G.AgentsItem> agents,
+            global::System.Collections.Generic.IList<global::G.AgentsItem2> agents,
             bool hasMore,
+            global::System.Collections.Generic.IList<global::G.DependentBranchInfo>? branches,
             string? nextCursor)
         {
             this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));
             this.HasMore = hasMore;
+            this.Branches = branches;
             this.NextCursor = nextCursor;
         }
 

@@ -94,6 +94,22 @@ namespace G
         public bool? AutoConvert { get; set; }
 
         /// <summary>
+        ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
+        ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
+        ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
+        ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
+        ///     
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
+        public global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2? ApplyTextNormalization { get; set; }
+
+        /// <summary>
+        /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("pronunciation_dictionary_locators")]
+        public global::System.Collections.Generic.IList<string>? PronunciationDictionaryLocators { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -133,6 +149,16 @@ namespace G
         /// Whether to auto convert the project to audio or not.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="applyTextNormalization">
+        ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
+        ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
+        ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
+        ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
+        ///     
+        /// </param>
+        /// <param name="pronunciationDictionaryLocators">
+        /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'.
+        /// </param>
         public BodyCreatesAudioNativeEnabledProjectV1AudioNativePost(
             string name,
             string? author,
@@ -143,7 +169,9 @@ namespace G
             string? modelId,
             byte[]? file,
             string? filename,
-            bool? autoConvert)
+            bool? autoConvert,
+            global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2? applyTextNormalization,
+            global::System.Collections.Generic.IList<string>? pronunciationDictionaryLocators)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Author = author;
@@ -155,6 +183,8 @@ namespace G
             this.File = file;
             this.Filename = filename;
             this.AutoConvert = autoConvert;
+            this.ApplyTextNormalization = applyTextNormalization;
+            this.PronunciationDictionaryLocators = pronunciationDictionaryLocators;
         }
 
         /// <summary>

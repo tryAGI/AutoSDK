@@ -72,18 +72,24 @@ namespace G.JsonConverters
                 redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.BetaInputContentBlock(
+            var __value = new global::G.BetaInputContentBlock(
                 discriminator?.Type,
                 text,
+
                 image,
+
                 toolUse,
+
                 toolResult,
+
                 document,
+
                 thinking,
+
                 redactedThinking
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

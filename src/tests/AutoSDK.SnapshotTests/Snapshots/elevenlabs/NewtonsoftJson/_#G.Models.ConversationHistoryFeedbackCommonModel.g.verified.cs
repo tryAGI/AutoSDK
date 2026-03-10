@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ConversationFeedbackType? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("overall_score")]
         public global::G.UserFeedbackScore? OverallScore { get; set; }
 
@@ -28,6 +34,18 @@ namespace G
         public int? Dislikes { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("rating")]
+        public int? Rating { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("comment")]
+        public string? Comment { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,6 +54,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryFeedbackCommonModel" /> class.
         /// </summary>
+        /// <param name="type"></param>
         /// <param name="overallScore"></param>
         /// <param name="likes">
         /// Default Value: 0
@@ -43,14 +62,22 @@ namespace G
         /// <param name="dislikes">
         /// Default Value: 0
         /// </param>
+        /// <param name="rating"></param>
+        /// <param name="comment"></param>
         public ConversationHistoryFeedbackCommonModel(
+            global::G.ConversationFeedbackType? type,
             global::G.UserFeedbackScore? overallScore,
             int? likes,
-            int? dislikes)
+            int? dislikes,
+            int? rating,
+            string? comment)
         {
+            this.Type = type;
             this.OverallScore = overallScore;
             this.Likes = likes;
             this.Dislikes = dislikes;
+            this.Rating = rating;
+            this.Comment = comment;
         }
 
         /// <summary>

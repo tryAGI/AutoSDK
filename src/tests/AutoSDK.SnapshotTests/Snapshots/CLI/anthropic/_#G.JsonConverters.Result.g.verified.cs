@@ -51,15 +51,18 @@ namespace G.JsonConverters
                 expired = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.Result(
+            var __value = new global::G.Result(
                 discriminator?.Type,
                 succeeded,
+
                 errored,
+
                 canceled,
+
                 expired
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

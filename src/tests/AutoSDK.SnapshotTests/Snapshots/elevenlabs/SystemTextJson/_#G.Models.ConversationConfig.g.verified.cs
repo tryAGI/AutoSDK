@@ -30,6 +30,19 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ClientEvent>? ClientEvents { get; set; }
 
         /// <summary>
+        /// Enable real-time monitoring of conversations via WebSocket<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("monitoring_enabled")]
+        public bool? MonitoringEnabled { get; set; }
+
+        /// <summary>
+        /// The events that will be sent to monitoring connections.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("monitoring_events")]
+        public global::System.Collections.Generic.IList<global::G.ClientEvent>? MonitoringEvents { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,17 +62,28 @@ namespace G
         /// <param name="clientEvents">
         /// The events that will be sent to the client
         /// </param>
+        /// <param name="monitoringEnabled">
+        /// Enable real-time monitoring of conversations via WebSocket<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="monitoringEvents">
+        /// The events that will be sent to monitoring connections.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationConfig(
             bool? textOnly,
             int? maxDurationSeconds,
-            global::System.Collections.Generic.IList<global::G.ClientEvent>? clientEvents)
+            global::System.Collections.Generic.IList<global::G.ClientEvent>? clientEvents,
+            bool? monitoringEnabled,
+            global::System.Collections.Generic.IList<global::G.ClientEvent>? monitoringEvents)
         {
             this.TextOnly = textOnly;
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ClientEvents = clientEvents;
+            this.MonitoringEnabled = monitoringEnabled;
+            this.MonitoringEvents = monitoringEvents;
         }
 
         /// <summary>

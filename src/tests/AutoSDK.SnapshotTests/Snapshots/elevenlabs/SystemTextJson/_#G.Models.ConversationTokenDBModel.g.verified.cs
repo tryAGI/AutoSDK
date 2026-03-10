@@ -44,6 +44,12 @@ namespace G
         public global::G.ConversationTokenPurpose? Purpose { get; set; }
 
         /// <summary>
+        /// The user ID of the entity who requested the token
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token_requester_user_id")]
+        public string? TokenRequesterUserId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +74,9 @@ namespace G
         /// The purpose of the token<br/>
         /// Default Value: signed_url
         /// </param>
+        /// <param name="tokenRequesterUserId">
+        /// The user ID of the entity who requested the token
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,13 +85,15 @@ namespace G
             string conversationToken,
             int? expirationTimeUnixSecs,
             string? conversationId,
-            global::G.ConversationTokenPurpose? purpose)
+            global::G.ConversationTokenPurpose? purpose,
+            string? tokenRequesterUserId)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.ConversationToken = conversationToken ?? throw new global::System.ArgumentNullException(nameof(conversationToken));
             this.ExpirationTimeUnixSecs = expirationTimeUnixSecs;
             this.ConversationId = conversationId;
             this.Purpose = purpose;
+            this.TokenRequesterUserId = tokenRequesterUserId;
         }
 
         /// <summary>

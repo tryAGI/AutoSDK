@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The Target language to dub the content into.
+    /// The Target language to dub the content into. Expects a valid iso639-1 or iso639-3 language code.
     /// </summary>
     public sealed partial class BodyDubAVideoOrAnAudioFileV1DubbingPostTargetLang
     {

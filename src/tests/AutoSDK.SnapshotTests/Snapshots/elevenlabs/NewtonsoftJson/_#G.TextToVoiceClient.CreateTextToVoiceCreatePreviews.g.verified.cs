@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareCreateTextToVoiceCreatePreviewsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat,
+            ref global::G.AllowedOutputFormats? outputFormat,
             ref string? xiApiKey,
             global::G.VoicePreviewsRequestModel request);
         partial void PrepareCreateTextToVoiceCreatePreviewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat,
+            global::G.AllowedOutputFormats? outputFormat,
             string? xiApiKey,
             global::G.VoicePreviewsRequestModel request);
         partial void ProcessCreateTextToVoiceCreatePreviewsResponse(
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: mp3_44100_192
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.VoicePreviewsResponseModel> CreateTextToVoiceCreatePreviewsAsync(
 
             global::G.VoicePreviewsRequestModel request,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -59,25 +59,27 @@ namespace G
 
             var outputFormatValue = outputFormat switch
             {
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp32205032 => "mp3_22050_32",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp34410032 => "mp3_44100_32",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp34410064 => "mp3_44100_64",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp34410096 => "mp3_44100_96",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp344100128 => "mp3_44100_128",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Mp344100192 => "mp3_44100_192",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm8000 => "pcm_8000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm16000 => "pcm_16000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm22050 => "pcm_22050",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm24000 => "pcm_24000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm44100 => "pcm_44100",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Pcm48000 => "pcm_48000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Ulaw8000 => "ulaw_8000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Alaw8000 => "alaw_8000",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus4800032 => "opus_48000_32",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus4800064 => "opus_48000_64",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus4800096 => "opus_48000_96",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus48000128 => "opus_48000_128",
-                global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.AllowedOutputFormats.Mp32205032 => "mp3_22050_32",
+                global::G.AllowedOutputFormats.Mp32400048 => "mp3_24000_48",
+                global::G.AllowedOutputFormats.Mp34410032 => "mp3_44100_32",
+                global::G.AllowedOutputFormats.Mp34410064 => "mp3_44100_64",
+                global::G.AllowedOutputFormats.Mp34410096 => "mp3_44100_96",
+                global::G.AllowedOutputFormats.Mp344100128 => "mp3_44100_128",
+                global::G.AllowedOutputFormats.Mp344100192 => "mp3_44100_192",
+                global::G.AllowedOutputFormats.Pcm8000 => "pcm_8000",
+                global::G.AllowedOutputFormats.Pcm16000 => "pcm_16000",
+                global::G.AllowedOutputFormats.Pcm22050 => "pcm_22050",
+                global::G.AllowedOutputFormats.Pcm24000 => "pcm_24000",
+                global::G.AllowedOutputFormats.Pcm32000 => "pcm_32000",
+                global::G.AllowedOutputFormats.Pcm44100 => "pcm_44100",
+                global::G.AllowedOutputFormats.Pcm48000 => "pcm_48000",
+                global::G.AllowedOutputFormats.Ulaw8000 => "ulaw_8000",
+                global::G.AllowedOutputFormats.Alaw8000 => "alaw_8000",
+                global::G.AllowedOutputFormats.Opus4800032 => "opus_48000_32",
+                global::G.AllowedOutputFormats.Opus4800064 => "opus_48000_64",
+                global::G.AllowedOutputFormats.Opus4800096 => "opus_48000_96",
+                global::G.AllowedOutputFormats.Opus48000128 => "opus_48000_128",
+                global::G.AllowedOutputFormats.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -247,7 +249,7 @@ namespace G
         /// Default Value: mp3_44100_192
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="voiceDescription">
         /// Description to use for the created voice.
@@ -274,11 +276,15 @@ namespace G
         /// Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.<br/>
         /// Default Value: 5
         /// </param>
+        /// <param name="shouldEnhance">
+        /// Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VoicePreviewsResponseModel> CreateTextToVoiceCreatePreviewsAsync(
             string voiceDescription,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             string? text = default,
             bool? autoGenerateText = default,
@@ -286,6 +292,7 @@ namespace G
             double? quality = default,
             int? seed = default,
             double? guidanceScale = default,
+            bool? shouldEnhance = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.VoicePreviewsRequestModel
@@ -297,6 +304,7 @@ namespace G
                 Quality = quality,
                 Seed = seed,
                 GuidanceScale = guidanceScale,
+                ShouldEnhance = shouldEnhance,
             };
 
             return await CreateTextToVoiceCreatePreviewsAsync(

@@ -24,6 +24,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_criteria_results_list")]
+        public global::System.Collections.Generic.IList<global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? EvaluationCriteriaResultsList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_collection_results_list")]
+        public global::System.Collections.Generic.IList<global::G.DataCollectionResultCommonModel>? DataCollectionResultsList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_successful")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EvaluationSuccessResultJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,6 +49,12 @@ namespace G
         public required string TranscriptSummary { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_summary_title")]
+        public string? CallSummaryTitle { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,8 +65,11 @@ namespace G
         /// </summary>
         /// <param name="evaluationCriteriaResults"></param>
         /// <param name="dataCollectionResults"></param>
+        /// <param name="evaluationCriteriaResultsList"></param>
+        /// <param name="dataCollectionResultsList"></param>
         /// <param name="callSuccessful"></param>
         /// <param name="transcriptSummary"></param>
+        /// <param name="callSummaryTitle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +77,18 @@ namespace G
             global::G.EvaluationSuccessResult callSuccessful,
             string transcriptSummary,
             global::System.Collections.Generic.Dictionary<string, global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? evaluationCriteriaResults,
-            global::System.Collections.Generic.Dictionary<string, global::G.DataCollectionResultCommonModel>? dataCollectionResults)
+            global::System.Collections.Generic.Dictionary<string, global::G.DataCollectionResultCommonModel>? dataCollectionResults,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? evaluationCriteriaResultsList,
+            global::System.Collections.Generic.IList<global::G.DataCollectionResultCommonModel>? dataCollectionResultsList,
+            string? callSummaryTitle)
         {
             this.CallSuccessful = callSuccessful;
             this.TranscriptSummary = transcriptSummary ?? throw new global::System.ArgumentNullException(nameof(transcriptSummary));
             this.EvaluationCriteriaResults = evaluationCriteriaResults;
             this.DataCollectionResults = dataCollectionResults;
+            this.EvaluationCriteriaResultsList = evaluationCriteriaResultsList;
+            this.DataCollectionResultsList = dataCollectionResultsList;
+            this.CallSummaryTitle = callSummaryTitle;
         }
 
         /// <summary>

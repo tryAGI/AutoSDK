@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dispatched")]
+        Dispatched,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="initiated")]
         Initiated,
         /// <summary>
@@ -40,6 +45,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
         Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="voicemail")]
+        Voicemail,
     }
 
     /// <summary>
@@ -55,11 +65,13 @@ namespace G
             return value switch
             {
                 BatchCallRecipientStatus.Pending => "pending",
+                BatchCallRecipientStatus.Dispatched => "dispatched",
                 BatchCallRecipientStatus.Initiated => "initiated",
                 BatchCallRecipientStatus.InProgress => "in_progress",
                 BatchCallRecipientStatus.Completed => "completed",
                 BatchCallRecipientStatus.Failed => "failed",
                 BatchCallRecipientStatus.Cancelled => "cancelled",
+                BatchCallRecipientStatus.Voicemail => "voicemail",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +83,13 @@ namespace G
             return value switch
             {
                 "pending" => BatchCallRecipientStatus.Pending,
+                "dispatched" => BatchCallRecipientStatus.Dispatched,
                 "initiated" => BatchCallRecipientStatus.Initiated,
                 "in_progress" => BatchCallRecipientStatus.InProgress,
                 "completed" => BatchCallRecipientStatus.Completed,
                 "failed" => BatchCallRecipientStatus.Failed,
                 "cancelled" => BatchCallRecipientStatus.Cancelled,
+                "voicemail" => BatchCallRecipientStatus.Voicemail,
                 _ => null,
             };
         }

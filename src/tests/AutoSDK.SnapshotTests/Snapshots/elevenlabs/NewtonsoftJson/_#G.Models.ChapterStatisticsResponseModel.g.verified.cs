@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"characters_converted":500,"characters_unconverted":1000,"paragraphs_converted":20,"paragraphs_unconverted":10}
+    /// Example: {"characters_converted":500,"characters_unconverted":1000,"paragraphs_converted":20,"paragraphs_unconverted":10,"voice_statistics":[{"characters_converted":300,"characters_unconverted":600,"voice_id":"voice123"},{"characters_converted":200,"characters_unconverted":400,"voice_id":"voice456"}]}
     /// </summary>
     public sealed partial class ChapterStatisticsResponseModel
     {
@@ -34,6 +34,12 @@ namespace G
         public int ParagraphsUnconverted { get; set; } = default!;
 
         /// <summary>
+        /// Per-voice breakdown of character counts.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("voice_statistics")]
+        public global::System.Collections.Generic.IList<global::G.VoiceStatisticsResponseModel>? VoiceStatistics { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -54,16 +60,21 @@ namespace G
         /// <param name="paragraphsUnconverted">
         /// The number of unconverted paragraphs.
         /// </param>
+        /// <param name="voiceStatistics">
+        /// Per-voice breakdown of character counts.
+        /// </param>
         public ChapterStatisticsResponseModel(
             int charactersUnconverted,
             int charactersConverted,
             int paragraphsConverted,
-            int paragraphsUnconverted)
+            int paragraphsUnconverted,
+            global::System.Collections.Generic.IList<global::G.VoiceStatisticsResponseModel>? voiceStatistics)
         {
             this.CharactersUnconverted = charactersUnconverted;
             this.CharactersConverted = charactersConverted;
             this.ParagraphsConverted = paragraphsConverted;
             this.ParagraphsUnconverted = paragraphsUnconverted;
+            this.VoiceStatistics = voiceStatistics;
         }
 
         /// <summary>

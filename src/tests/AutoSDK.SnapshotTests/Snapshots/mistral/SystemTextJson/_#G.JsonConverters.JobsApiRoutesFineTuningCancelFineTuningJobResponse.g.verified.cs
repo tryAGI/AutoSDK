@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 classifier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.JobsApiRoutesFineTuningCancelFineTuningJobResponse(
+            var __value = new global::G.JobsApiRoutesFineTuningCancelFineTuningJobResponse(
                 discriminator?.JobType,
                 completion,
+
                 classifier
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

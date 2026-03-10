@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.ProjectResponseModelCreatedByUserId.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The user ID who created the project.
+    /// </summary>
+    public sealed partial class ProjectResponseModelCreatedByUserId
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

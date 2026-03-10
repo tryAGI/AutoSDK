@@ -40,8 +40,9 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.OneOf<T1, T2>(
+            var __value = new global::G.OneOf<T1, T2>(
                 value1,
+
                 value2
                 );
 
@@ -58,7 +59,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -653,59 +653,111 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.ResponseStreamEvent(
+            var __value = new global::G.ResponseStreamEvent(
                 responseAudioDelta,
+
                 responseAudioDone,
+
                 responseAudioTranscriptDelta,
+
                 responseAudioTranscriptDone,
+
                 responseCodeInterpreterCallCodeDelta,
+
                 responseCodeInterpreterCallCodeDone,
+
                 responseCodeInterpreterCallCompleted,
+
                 responseCodeInterpreterCallInProgress,
+
                 responseCodeInterpreterCallInterpreting,
+
                 responseCompleted,
+
                 responseContentPartAdded,
+
                 responseContentPartDone,
+
                 responseCreated,
+
                 error,
+
                 responseFileSearchCallCompleted,
+
                 responseFileSearchCallInProgress,
+
                 responseFileSearchCallSearching,
+
                 responseFunctionCallArgumentsDelta,
+
                 responseFunctionCallArgumentsDone,
+
                 responseInProgress,
+
                 responseFailed,
+
                 responseIncomplete,
+
                 responseOutputItemAdded,
+
                 responseOutputItemDone,
+
                 responseReasoningSummaryPartAdded,
+
                 responseReasoningSummaryPartDone,
+
                 responseReasoningSummaryTextDelta,
+
                 responseReasoningSummaryTextDone,
+
                 responseRefusalDelta,
+
                 responseRefusalDone,
+
                 responseOutputTextDelta,
+
                 responseOutputTextDone,
+
                 responseWebSearchCallCompleted,
+
                 responseWebSearchCallInProgress,
+
                 responseWebSearchCallSearching,
+
                 responseImageGenerationCallCompleted,
+
                 responseImageGenerationCallGenerating,
+
                 responseImageGenerationCallInProgress,
+
                 responseImageGenerationCallPartialImage,
+
                 responseMcpCallArgumentsDelta,
+
                 responseMcpCallArgumentsDone,
+
                 responseMcpCallCompleted,
+
                 responseMcpCallFailed,
+
                 responseMcpCallInProgress,
+
                 responseMcpListToolsCompleted,
+
                 responseMcpListToolsFailed,
+
                 responseMcpListToolsInProgress,
+
                 responseOutputTextAnnotationAdded,
+
                 responseQueued,
+
                 responseReasoningDelta,
+
                 responseReasoningDone,
+
                 responseReasoningSummaryDelta,
+
                 responseReasoningSummaryDone
                 );
 
@@ -1028,7 +1080,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

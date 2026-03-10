@@ -65,10 +65,13 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.Annotation(
+            var __value = new global::G.Annotation(
                 fileCitation,
+
                 urlCitation,
+
                 containerFileCitation,
+
                 filePath
                 );
 
@@ -97,7 +100,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

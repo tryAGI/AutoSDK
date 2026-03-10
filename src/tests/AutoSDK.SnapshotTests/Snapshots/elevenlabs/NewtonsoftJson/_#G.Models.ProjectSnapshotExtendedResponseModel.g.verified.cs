@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"created_at_unix":1714204800,"name":"My Project Snapshot","project_id":"aw1NgEzBg83R7vgmiJt6","project_snapshot_id":"aw1NgEzBg83R7vgmiJt6"}
+    /// Example: {"audio_duration_secs":123.45,"character_alignments":[],"created_at_unix":1714204800,"name":"My Project Snapshot","project_id":"aw1NgEzBg83R7vgmiJt6","project_snapshot_id":"aw1NgEzBg83R7vgmiJt6"}
     /// </summary>
     public sealed partial class ProjectSnapshotExtendedResponseModel
     {
@@ -52,6 +52,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.CharacterAlignmentModel> CharacterAlignments { get; set; } = default!;
 
         /// <summary>
+        /// The total duration of the audio in seconds.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("audio_duration_secs", Required = global::Newtonsoft.Json.Required.Always)]
+        public double AudioDurationSecs { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -79,12 +85,16 @@ namespace G
         /// (Deprecated)
         /// </param>
         /// <param name="characterAlignments"></param>
+        /// <param name="audioDurationSecs">
+        /// The total duration of the audio in seconds.
+        /// </param>
         public ProjectSnapshotExtendedResponseModel(
             string projectSnapshotId,
             string projectId,
             int createdAtUnix,
             string name,
             global::System.Collections.Generic.IList<global::G.CharacterAlignmentModel> characterAlignments,
+            double audioDurationSecs,
             object? audioUpload,
             object? zipUpload)
         {
@@ -93,6 +103,7 @@ namespace G
             this.CreatedAtUnix = createdAtUnix;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CharacterAlignments = characterAlignments ?? throw new global::System.ArgumentNullException(nameof(characterAlignments));
+            this.AudioDurationSecs = audioDurationSecs;
             this.AudioUpload = audioUpload;
             this.ZipUpload = zipUpload;
         }

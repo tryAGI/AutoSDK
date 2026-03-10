@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 embeddingsByType = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.EmbedResponse(
+            var __value = new global::G.EmbedResponse(
                 discriminator?.ResponseType,
                 embeddingsFloats,
+
                 embeddingsByType
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

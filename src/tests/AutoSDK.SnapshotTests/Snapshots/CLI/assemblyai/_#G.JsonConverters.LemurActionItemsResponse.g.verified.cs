@@ -29,7 +29,7 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.LemurActionItemsResponse(
+            var __value = new global::G.LemurActionItemsResponse(
                 @string
                 );
 
@@ -40,7 +40,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

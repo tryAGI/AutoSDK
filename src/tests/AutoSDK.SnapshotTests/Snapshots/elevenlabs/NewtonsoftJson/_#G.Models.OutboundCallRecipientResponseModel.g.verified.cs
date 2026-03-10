@@ -18,8 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("phone_number", Required = global::Newtonsoft.Json.Required.Always)]
-        public string PhoneNumber { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("phone_number")]
+        public string? PhoneNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("whatsapp_user_id")]
+        public string? WhatsappUserId { get; set; }
 
         /// <summary>
         /// 
@@ -62,6 +68,7 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumber"></param>
+        /// <param name="whatsappUserId"></param>
         /// <param name="status"></param>
         /// <param name="createdAtUnix"></param>
         /// <param name="updatedAtUnix"></param>
@@ -69,18 +76,20 @@ namespace G
         /// <param name="conversationInitiationClientData"></param>
         public OutboundCallRecipientResponseModel(
             string id,
-            string phoneNumber,
             global::G.BatchCallRecipientStatus status,
             int createdAtUnix,
             int updatedAtUnix,
+            string? phoneNumber,
+            string? whatsappUserId,
             string? conversationId,
             global::G.ConversationInitiationClientDataInternal? conversationInitiationClientData)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Status = status;
             this.CreatedAtUnix = createdAtUnix;
             this.UpdatedAtUnix = updatedAtUnix;
+            this.PhoneNumber = phoneNumber;
+            this.WhatsappUserId = whatsappUserId;
             this.ConversationId = conversationId;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }

@@ -29,7 +29,7 @@ namespace G
         /// Creates a new Studio project, it can be either initialized as blank, from a document or from a URL.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -77,15 +77,27 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Name}"),
                 name: "\"name\"");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.DefaultTitleVoiceId}"),
-                name: "\"default_title_voice_id\"");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.DefaultParagraphVoiceId}"),
-                name: "\"default_paragraph_voice_id\"");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.DefaultModelId}"),
-                name: "\"default_model_id\"");
+            if (request.DefaultTitleVoiceId != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.DefaultTitleVoiceId}"),
+                    name: "\"default_title_voice_id\"");
+            } 
+            if (request.DefaultParagraphVoiceId != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.DefaultParagraphVoiceId}"),
+                    name: "\"default_paragraph_voice_id\"");
+            } 
+            if (request.DefaultModelId != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.DefaultModelId}"),
+                    name: "\"default_model_id\"");
+            } 
             if (request.FromUrl != default)
             {
 
@@ -111,7 +123,7 @@ namespace G
             {
 
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.QualityPreset}"),
+                    content: new global::System.Net.Http.StringContent($"{request.QualityPreset?.ToValueString()}"),
                     name: "\"quality_preset\"");
             } 
             if (request.Title != default)
@@ -246,6 +258,20 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.SourceType}"),
                     name: "\"source_type\"");
+            } 
+            if (request.VoiceSettings != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.VoiceSettings, x => x))}]"),
+                    name: "\"voice_settings\"");
+            } 
+            if (request.CreatePublishingRead != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.CreatePublishingRead}"),
+                    name: "\"create_publishing_read\"");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -384,7 +410,7 @@ namespace G
         /// Creates a new Studio project, it can be either initialized as blank, from a document or from a URL.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
         /// The name of the Studio project, used for identification only.
@@ -405,14 +431,17 @@ namespace G
         /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </param>
         /// <param name="fromContentJson">
-        /// An optional content to initialize the Studio project with. If this is set, 'from_url' and 'from_document' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
+        ///     An optional content to initialize the Studio project with. If this is set, 'from_url' and 'from_document' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
+        ///     Example:<br/>
+        ///     [{"name": "Chapter A", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "A", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "B", "type": "tts_node"}]}, {"sub_type": "h1", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "C", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "D", "type": "tts_node"}]}]}, {"name": "Chapter B", "blocks": [{"sub_type": "p", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "E", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "F", "type": "tts_node"}]}, {"sub_type": "h2", "nodes": [{"voice_id": "6lCwbsX1yVjD49QmpkT0", "text": "G", "type": "tts_node"}, {"voice_id": "6lCwbsX1yVjD49QmpkT1", "text": "H", "type": "tts_node"}]}]}]<br/>
+        ///     
         /// </param>
         /// <param name="qualityPreset">
         /// Output quality of the generated audio. Must be one of:<br/>
-        /// standard - standard output format, 128kbps with 44.1kHz sample rate.<br/>
-        /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
-        /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
-        /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
+        /// 'standard' - standard output format, 128kbps with 44.1kHz sample rate.<br/>
+        /// 'high' - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.<br/>
+        /// 'ultra' - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.<br/>
+        /// 'ultra_lossless' - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.<br/>
         /// Default Value: standard
         /// </param>
         /// <param name="title">
@@ -455,7 +484,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="pronunciationDictionaryLocators">
-        /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'. Note that multiple dictionaries are not currently supported by our UI which will only show the first.
+        /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'.
         /// </param>
         /// <param name="callbackUrl">
         ///     A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion<br/>
@@ -533,18 +562,28 @@ namespace G
         /// <param name="sourceType">
         /// The type of Studio project to create.
         /// </param>
+        /// <param name="voiceSettings">
+        ///     Optional voice settings overrides for the project, encoded as a list of JSON strings.<br/>
+        ///     Example:<br/>
+        ///     ["{\"voice_id\": \"21m00Tcm4TlvDq8ikWAM\", \"stability\": 0.7, \"similarity_boost\": 0.8, \"style\": 0.5, \"speed\": 1.0, \"use_speaker_boost\": true}"]<br/>
+        ///     
+        /// </param>
+        /// <param name="createPublishingRead">
+        /// If true, creates a corresponding read for direct publishing in draft state<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddProjectResponseModel> CreateStudioProjectsAsync(
             string name,
-            string defaultTitleVoiceId,
-            string defaultParagraphVoiceId,
-            string defaultModelId,
             string? xiApiKey = default,
+            string? defaultTitleVoiceId = default,
+            string? defaultParagraphVoiceId = default,
+            string? defaultModelId = default,
             string? fromUrl = default,
             byte[]? fromDocument = default,
             string? fromContentJson = default,
-            string? qualityPreset = default,
+            global::G.BodyCreateStudioProjectV1StudioProjectsPostQualityPreset? qualityPreset = default,
             string? title = default,
             string? author = default,
             string? description = default,
@@ -564,6 +603,8 @@ namespace G
             bool? autoConvert = default,
             bool? autoAssignVoices = default,
             global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType2? sourceType = default,
+            global::System.Collections.Generic.IList<string>? voiceSettings = default,
+            bool? createPublishingRead = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyCreateStudioProjectV1StudioProjectsPost
@@ -595,6 +636,8 @@ namespace G
                 AutoConvert = autoConvert,
                 AutoAssignVoices = autoAssignVoices,
                 SourceType = sourceType,
+                VoiceSettings = voiceSettings,
+                CreatePublishingRead = createPublishingRead,
             };
 
             return await CreateStudioProjectsAsync(

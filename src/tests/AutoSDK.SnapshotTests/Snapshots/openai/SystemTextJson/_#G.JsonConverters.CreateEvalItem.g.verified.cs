@@ -41,8 +41,9 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.CreateEvalItem(
+            var __value = new global::G.CreateEvalItem(
                 simpleInputMessage,
+
                 evalMessageObject
                 );
 
@@ -59,7 +60,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

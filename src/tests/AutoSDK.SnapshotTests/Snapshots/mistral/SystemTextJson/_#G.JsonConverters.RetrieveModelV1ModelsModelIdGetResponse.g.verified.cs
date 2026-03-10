@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.RetrieveModelV1ModelsModelIdGetResponse(
+            var __value = new global::G.RetrieveModelV1ModelsModelIdGetResponse(
                 discriminator?.Type,
                 @base,
+
                 fineTuned
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

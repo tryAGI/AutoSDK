@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         Viewer,
     }
 
@@ -37,6 +41,7 @@ namespace G
             {
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Admin => "admin",
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor => "editor",
+                GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Commenter => "commenter",
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,6 +55,7 @@ namespace G
             {
                 "admin" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Admin,
                 "editor" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor,
+                "commenter" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Commenter,
                 "viewer" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Viewer,
                 _ => null,
             };

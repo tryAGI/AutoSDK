@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
         /// <summary>
@@ -40,6 +45,7 @@ namespace G
             return value switch
             {
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.File => "file",
+                GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Folder => "folder",
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Text => "text",
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -53,6 +59,7 @@ namespace G
             return value switch
             {
                 "file" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.File,
+                "folder" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Folder,
                 "text" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Text,
                 "url" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Url,
                 _ => null,

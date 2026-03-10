@@ -18,6 +18,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -30,8 +36,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("outputSchema")]
+        public object? OutputSchema { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotations")]
         public global::G.ToolAnnotations2? Annotations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("_meta")]
+        public object? Meta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,19 +61,28 @@ namespace G
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="inputSchema"></param>
+        /// <param name="outputSchema"></param>
         /// <param name="annotations"></param>
+        /// <param name="meta"></param>
         public Tool(
             string name,
             object inputSchema,
+            string? title,
             string? description,
-            global::G.ToolAnnotations2? annotations)
+            object? outputSchema,
+            global::G.ToolAnnotations2? annotations,
+            object? meta)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
+            this.Title = title;
             this.Description = description;
+            this.OutputSchema = outputSchema;
             this.Annotations = annotations;
+            this.Meta = meta;
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("simulated_conversation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> SimulatedConversation { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptResponseModel> SimulatedConversation { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentSimulatedChatTestResponseModel(
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> simulatedConversation,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptResponseModel> simulatedConversation,
             global::G.ConversationHistoryAnalysisCommonModel analysis)
         {
             this.SimulatedConversation = simulatedConversation ?? throw new global::System.ArgumentNullException(nameof(simulatedConversation));

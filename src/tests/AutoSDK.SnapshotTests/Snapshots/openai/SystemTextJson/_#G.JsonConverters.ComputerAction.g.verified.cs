@@ -125,15 +125,23 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.ComputerAction(
+            var __value = new global::G.ComputerAction(
                 click,
+
                 doubleClick,
+
                 drag,
+
                 keyPress,
+
                 move,
+
                 screenshot,
+
                 scroll,
+
                 type,
+
                 wait
                 );
 
@@ -192,7 +200,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

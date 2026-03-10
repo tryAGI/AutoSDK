@@ -30,12 +30,12 @@ namespace G.JsonConverters
                 wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.IntegrationsVariant1Item3(
+            var __value = new global::G.IntegrationsVariant1Item3(
                 discriminator?.Type,
                 wandb
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 sipTrunking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.PhoneCallVariant1(
+            var __value = new global::G.PhoneCallVariant1(
                 discriminator?.Type,
                 twilio,
+
                 sipTrunking
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

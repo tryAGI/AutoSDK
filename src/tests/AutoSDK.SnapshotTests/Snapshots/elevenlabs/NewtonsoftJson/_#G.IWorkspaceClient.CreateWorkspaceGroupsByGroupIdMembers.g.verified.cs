@@ -7,13 +7,13 @@ namespace G
     {
         /// <summary>
         /// Add Member To User Group<br/>
-        /// Adds a member of your workspace to the specified group. This endpoint may only be called by workspace administrators.
+        /// Adds a member of your workspace to the specified group. Requires `group_members_manage` permission.
         /// </summary>
         /// <param name="groupId">
         /// The ID of the target group.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -27,13 +27,13 @@ namespace G
 
         /// <summary>
         /// Add Member To User Group<br/>
-        /// Adds a member of your workspace to the specified group. This endpoint may only be called by workspace administrators.
+        /// Adds a member of your workspace to the specified group. Requires `group_members_manage` permission.
         /// </summary>
         /// <param name="groupId">
         /// The ID of the target group.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="email">
         /// The email of the target workspace member.

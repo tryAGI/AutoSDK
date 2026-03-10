@@ -16,6 +16,12 @@ namespace G
         public string NewName { get; set; } = default!;
 
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("bookmarked")]
+        public bool? Bookmarked { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -27,10 +33,15 @@ namespace G
         /// <param name="newName">
         /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </param>
+        /// <param name="bookmarked">
+        /// Default Value: true
+        /// </param>
         public BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost(
-            string newName)
+            string newName,
+            bool? bookmarked)
         {
             this.NewName = newName ?? throw new global::System.ArgumentNullException(nameof(newName));
+            this.Bookmarked = bookmarked;
         }
 
         /// <summary>

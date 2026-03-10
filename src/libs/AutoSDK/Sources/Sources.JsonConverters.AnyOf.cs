@@ -47,14 +47,14 @@ public static partial class Sources
             }}
 ").Inject().TrimEnd(',')}
 
-            var result = new {typeNameWithTypes}(
+            var __value = new {typeNameWithTypes}(
                 discriminator?.{anyOfData.DiscriminatorPropertyName},
-{anyOfData.Properties.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@"
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
-{(anyOfData.Settings.ValidateAnyOfs ? @$" 
-            if (!result.Validate())
+{(anyOfData.Settings.ValidateAnyOfs ? @$"
+            if (!__value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{nameof({x.Type.CSharpTypeWithoutNullability})}}"))}>"");
             }}" : " ")}" : $@" 
@@ -77,13 +77,13 @@ public static partial class Sources
             }}
 ").Inject()}
 
-            var result = new {typeNameWithTypes}(
-{anyOfData.Properties.Select(x => $@" 
+            var __value = new {typeNameWithTypes}(
+{anyOfData.Properties.Select(x => $@"
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
-{(anyOfData.Settings.ValidateAnyOfs ? @$" 
-            if (!result.Validate())
+{(anyOfData.Settings.ValidateAnyOfs ? @$"
+            if (!__value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
             }}" : " ")}
@@ -120,7 +120,7 @@ namespace {anyOfData.Namespace}.JsonConverters
 
 {read}
 
-            return result;
+            return __value;
         }}
 
         /// <inheritdoc />

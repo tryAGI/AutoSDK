@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"creator_user_id":"5zavrE1kZXv2lFw9BKgEkf0B5Wqo","resource_id":"4ZUqyldxf71HqUbcP2Lc","resource_type":"voice","role_to_group_ids":{"admin":["5zavrE1kZXv2lFw9BKgEkf0B5Wqo"],"editor":["8ruQDGM2R4w1mFbHI5aROCUjIpJZ"],"viewer":[]},"share_options":[{"id":"i2YYI6huwBmcgYydAXARmQJc3pmX","name":"user@example.com","type":"user"},{"id":"x1AfvYKAmiqxCnbvZeNXHqqthJaC","name":"mygroup","type":"group"}]}
+    /// Example: {"anonymous_access_level_override":"viewer","creator_user_id":"5zavrE1kZXv2lFw9BKgEkf0B5Wqo","resource_id":"4ZUqyldxf71HqUbcP2Lc","resource_name":"My Custom Voice","resource_type":"voice","role_to_group_ids":{"admin":["5zavrE1kZXv2lFw9BKgEkf0B5Wqo"],"editor":["8ruQDGM2R4w1mFbHI5aROCUjIpJZ"],"viewer":[]},"share_options":[{"id":"i2YYI6huwBmcgYydAXARmQJc3pmX","name":"user@example.com","type":"user"},{"id":"x1AfvYKAmiqxCnbvZeNXHqqthJaC","name":"mygroup","type":"group"}]}
     /// </summary>
     public sealed partial class ResourceMetadataResponseModel
     {
@@ -14,6 +14,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ResourceId { get; set; } = default!;
+
+        /// <summary>
+        /// The name of the resource, if available.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("resource_name")]
+        public string? ResourceName { get; set; }
 
         /// <summary>
         /// The type of the resource.
@@ -26,6 +32,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator_user_id")]
         public string? CreatorUserId { get; set; }
+
+        /// <summary>
+        /// The access level for anonymous users. If None, the resource is not shared publicly.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("anonymous_access_level_override")]
+        public global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? AnonymousAccessLevelOverride { get; set; }
 
         /// <summary>
         /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user's id.
@@ -51,11 +63,17 @@ namespace G
         /// <param name="resourceId">
         /// The ID of the resource.
         /// </param>
+        /// <param name="resourceName">
+        /// The name of the resource, if available.
+        /// </param>
         /// <param name="resourceType">
         /// The type of the resource.
         /// </param>
         /// <param name="creatorUserId">
         /// The ID of the user who created the resource.
+        /// </param>
+        /// <param name="anonymousAccessLevelOverride">
+        /// The access level for anonymous users. If None, the resource is not shared publicly.
         /// </param>
         /// <param name="roleToGroupIds">
         /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user's id.
@@ -68,13 +86,17 @@ namespace G
             global::G.WorkspaceResourceType resourceType,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>> roleToGroupIds,
             global::System.Collections.Generic.IList<global::G.ShareOptionResponseModel> shareOptions,
-            string? creatorUserId)
+            string? resourceName,
+            string? creatorUserId,
+            global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? anonymousAccessLevelOverride)
         {
             this.ResourceId = resourceId ?? throw new global::System.ArgumentNullException(nameof(resourceId));
             this.ResourceType = resourceType;
             this.RoleToGroupIds = roleToGroupIds ?? throw new global::System.ArgumentNullException(nameof(roleToGroupIds));
             this.ShareOptions = shareOptions ?? throw new global::System.ArgumentNullException(nameof(shareOptions));
+            this.ResourceName = resourceName;
             this.CreatorUserId = creatorUserId;
+            this.AnonymousAccessLevelOverride = anonymousAccessLevelOverride;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
+    /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (Agents Platform).
     /// </summary>
     public sealed partial class SpeechHistoryItemResponseModelSource
     {

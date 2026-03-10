@@ -46,11 +46,23 @@ namespace G
         public required global::G.ResourceAccessInfo AccessInfo { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the parent folder, or null if the document is at the root level.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_parent_id")]
+        public string? FolderParentId { get; set; }
+
+        /// <summary>
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_path")]
+        public global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? FolderPath { get; set; }
+
+        /// <summary>
+        /// This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependent_agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> DependentAgents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem4> DependentAgents { get; set; }
 
         /// <summary>
         /// 
@@ -82,7 +94,15 @@ namespace G
         /// <param name="accessInfo">
         /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </param>
-        /// <param name="dependentAgents"></param>
+        /// <param name="folderParentId">
+        /// The ID of the parent folder, or null if the document is at the root level.
+        /// </param>
+        /// <param name="folderPath">
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </param>
+        /// <param name="dependentAgents">
+        /// This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.
+        /// </param>
         /// <param name="type"></param>
         /// <param name="url"></param>
 #if NET7_0_OR_GREATER
@@ -94,8 +114,10 @@ namespace G
             global::G.KnowledgeBaseDocumentMetadataResponseModel metadata,
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
-            global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> dependentAgents,
+            global::System.Collections.Generic.IList<global::G.DependentAgentsItem4> dependentAgents,
             string url,
+            string? folderParentId,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? folderPath,
             string type = "url")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -105,6 +127,8 @@ namespace G
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
             this.DependentAgents = dependentAgents ?? throw new global::System.ArgumentNullException(nameof(dependentAgents));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.FolderParentId = folderParentId;
+            this.FolderPath = folderPath;
             this.Type = type;
         }
 

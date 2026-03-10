@@ -18,6 +18,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("branch_id")]
+        public string? BranchId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("version_id")]
+        public string? VersionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_name")]
         public string? AgentName { get; set; }
 
@@ -58,6 +70,48 @@ namespace G
         public global::G.EvaluationSuccessResult CallSuccessful { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transcript_summary")]
+        public string? TranscriptSummary { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("call_summary_title")]
+        public string? CallSummaryTitle { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("main_language")]
+        public string? MainLanguage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("conversation_initiation_source")]
+        public global::G.ConversationInitiationSource? ConversationInitiationSource { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_names")]
+        public global::System.Collections.Generic.IList<string>? ToolNames { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("direction")]
+        public global::G.ConversationSummaryResponseModelDirection2? Direction { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("rating")]
+        public double? Rating { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -67,6 +121,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationSummaryResponseModel" /> class.
         /// </summary>
         /// <param name="agentId"></param>
+        /// <param name="branchId"></param>
+        /// <param name="versionId"></param>
         /// <param name="agentName"></param>
         /// <param name="conversationId"></param>
         /// <param name="startTimeUnixSecs"></param>
@@ -74,6 +130,13 @@ namespace G
         /// <param name="messageCount"></param>
         /// <param name="status"></param>
         /// <param name="callSuccessful"></param>
+        /// <param name="transcriptSummary"></param>
+        /// <param name="callSummaryTitle"></param>
+        /// <param name="mainLanguage"></param>
+        /// <param name="conversationInitiationSource"></param>
+        /// <param name="toolNames"></param>
+        /// <param name="direction"></param>
+        /// <param name="rating"></param>
         public ConversationSummaryResponseModel(
             string agentId,
             string conversationId,
@@ -82,7 +145,16 @@ namespace G
             int messageCount,
             global::G.ConversationSummaryResponseModelStatus status,
             global::G.EvaluationSuccessResult callSuccessful,
-            string? agentName)
+            string? branchId,
+            string? versionId,
+            string? agentName,
+            string? transcriptSummary,
+            string? callSummaryTitle,
+            string? mainLanguage,
+            global::G.ConversationInitiationSource? conversationInitiationSource,
+            global::System.Collections.Generic.IList<string>? toolNames,
+            global::G.ConversationSummaryResponseModelDirection2? direction,
+            double? rating)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
@@ -91,7 +163,16 @@ namespace G
             this.MessageCount = messageCount;
             this.Status = status;
             this.CallSuccessful = callSuccessful;
+            this.BranchId = branchId;
+            this.VersionId = versionId;
             this.AgentName = agentName;
+            this.TranscriptSummary = transcriptSummary;
+            this.CallSummaryTitle = callSummaryTitle;
+            this.MainLanguage = mainLanguage;
+            this.ConversationInitiationSource = conversationInitiationSource;
+            this.ToolNames = toolNames;
+            this.Direction = direction;
+            this.Rating = rating;
         }
 
         /// <summary>

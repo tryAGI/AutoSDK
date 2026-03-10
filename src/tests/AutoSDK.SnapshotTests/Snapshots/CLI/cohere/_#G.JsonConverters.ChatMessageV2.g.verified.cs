@@ -51,15 +51,18 @@ namespace G.JsonConverters
                 tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ChatMessageV2(
+            var __value = new global::G.ChatMessageV2(
                 discriminator?.Role,
                 user,
+
                 assistant,
+
                 system,
+
                 tool
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

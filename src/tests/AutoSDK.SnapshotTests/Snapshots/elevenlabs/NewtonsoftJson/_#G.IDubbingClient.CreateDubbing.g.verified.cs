@@ -10,7 +10,7 @@ namespace G
         /// Dubs a provided audio or video file into given language.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,7 +26,7 @@ namespace G
         /// Dubs a provided audio or video file into given language.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="file">
         /// A list of file paths to audio recordings intended for voice cloning
@@ -47,11 +47,14 @@ namespace G
         /// URL of the source video/audio file.
         /// </param>
         /// <param name="sourceLang">
-        /// Source language.<br/>
+        /// Source language. Expects a valid iso639-1 or iso639-3 language code.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="targetLang">
-        /// The Target language to dub the content into.
+        /// The Target language to dub the content into. Expects a valid iso639-1 or iso639-3 language code.
+        /// </param>
+        /// <param name="targetAccent">
+        /// [Experimental] An accent to apply when selecting voices from the library and to use to inform translation of the dialect to prefer.
         /// </param>
         /// <param name="numSpeakers">
         /// Number of speakers to use for the dubbing. Set to 0 to automatically detect the number of speakers<br/>
@@ -83,12 +86,15 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="disableVoiceCloning">
-        /// [BETA] Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library.<br/>
+        /// Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library. Voices used from the library will contribute towards a workspace's custom voices limit, and if there aren't enough available slots the dub will fail. Using this feature requires the caller to have the 'add_voice_from_voice_library' permission on their workspace to access new voices.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="mode">
-        /// automatic or manual. Manual mode is only supported when creating a dubbing studio project<br/>
+        /// The mode in which to run this Dubbing job. Defaults to automatic, use manual if specifically providing a CSV transcript to use. Note that manual mode is experimental and production use is strongly discouraged.<br/>
         /// Default Value: automatic
+        /// </param>
+        /// <param name="csvFps">
+        /// Frames per second to use when parsing a CSV file for dubbing. If not provided, FPS will be inferred from timecodes.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -102,6 +108,7 @@ namespace G
             string? sourceUrl = default,
             string? sourceLang = default,
             string? targetLang = default,
+            string? targetAccent = default,
             int? numSpeakers = default,
             bool? watermark = default,
             int? startTime = default,
@@ -111,7 +118,8 @@ namespace G
             bool? useProfanityFilter = default,
             bool? dubbingStudio = default,
             bool? disableVoiceCloning = default,
-            string? mode = default,
+            global::G.BodyDubAVideoOrAnAudioFileV1DubbingPostMode? mode = default,
+            double? csvFps = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

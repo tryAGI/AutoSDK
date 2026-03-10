@@ -5,8 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The workspace permission of the user
+    /// The workspace permission of the user. This is deprecated, use `seat_type` instead.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission
     {
 

@@ -50,6 +50,12 @@ namespace G
         public object? RequestHeaders { get; set; }
 
         /// <summary>
+        /// Optional auth connection to use for authentication with this MCP server
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("auth_connection")]
+        public global::G.AuthConnectionLocator? AuthConnection { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
@@ -60,6 +66,53 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// If true, all tools from this MCP server will require pre-tool execution speech<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("force_pre_tool_speech")]
+        public bool? ForcePreToolSpeech { get; set; }
+
+        /// <summary>
+        /// If true, the user will not be able to interrupt the agent while any tool from this MCP server is running.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("disable_interruptions")]
+        public bool? DisableInterruptions { get; set; }
+
+        /// <summary>
+        /// Predefined tool call sound type to play during tool execution for all tools from this MCP server
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_call_sound")]
+        public global::G.ToolCallSoundType? ToolCallSound { get; set; }
+
+        /// <summary>
+        /// Determines when the tool call sound should play for all tools from this MCP server<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_call_sound_behavior")]
+        public global::G.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
+
+        /// <summary>
+        /// Determines when and how all tools from this MCP server execute: 'immediate' executes the tool right away when requested by the LLM, 'post_tool_speech' waits for the agent to finish speaking before executing, 'async' runs the tool in the background without blocking - best for long-running operations.<br/>
+        /// Default Value: immediate
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("execution_mode")]
+        public global::G.ToolExecutionMode? ExecutionMode { get; set; }
+
+        /// <summary>
+        /// List of per-tool configuration overrides that override the server-level defaults for specific tools
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tool_config_overrides")]
+        public global::System.Collections.Generic.IList<global::G.MCPToolConfigOverride>? ToolConfigOverrides { get; set; }
+
+        /// <summary>
+        /// Whether to disable HTTP compression for this MCP server. Enable this if the server does not support compressed responses.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("disable_compression")]
+        public bool? DisableCompression { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,8 +143,37 @@ namespace G
         /// <param name="requestHeaders">
         /// The headers included in the request
         /// </param>
+        /// <param name="authConnection">
+        /// Optional auth connection to use for authentication with this MCP server
+        /// </param>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="forcePreToolSpeech">
+        /// If true, all tools from this MCP server will require pre-tool execution speech<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disableInterruptions">
+        /// If true, the user will not be able to interrupt the agent while any tool from this MCP server is running.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="toolCallSound">
+        /// Predefined tool call sound type to play during tool execution for all tools from this MCP server
+        /// </param>
+        /// <param name="toolCallSoundBehavior">
+        /// Determines when the tool call sound should play for all tools from this MCP server<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="executionMode">
+        /// Determines when and how all tools from this MCP server execute: 'immediate' executes the tool right away when requested by the LLM, 'post_tool_speech' waits for the agent to finish speaking before executing, 'async' runs the tool in the background without blocking - best for long-running operations.<br/>
+        /// Default Value: immediate
+        /// </param>
+        /// <param name="toolConfigOverrides">
+        /// List of per-tool configuration overrides that override the server-level defaults for specific tools
+        /// </param>
+        /// <param name="disableCompression">
+        /// Whether to disable HTTP compression for this MCP server. Enable this if the server does not support compressed responses.<br/>
+        /// Default Value: false
+        /// </param>
         public MCPServerConfigInput(
             global::G.AnyOf<string, global::G.ConvAISecretLocator> url,
             string name,
@@ -100,7 +182,15 @@ namespace G
             global::G.MCPServerTransport? transport,
             global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>? secretToken,
             object? requestHeaders,
-            string? description)
+            global::G.AuthConnectionLocator? authConnection,
+            string? description,
+            bool? forcePreToolSpeech,
+            bool? disableInterruptions,
+            global::G.ToolCallSoundType? toolCallSound,
+            global::G.ToolCallSoundBehavior? toolCallSoundBehavior,
+            global::G.ToolExecutionMode? executionMode,
+            global::System.Collections.Generic.IList<global::G.MCPToolConfigOverride>? toolConfigOverrides,
+            bool? disableCompression)
         {
             this.Url = url;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -109,7 +199,15 @@ namespace G
             this.Transport = transport;
             this.SecretToken = secretToken;
             this.RequestHeaders = requestHeaders;
+            this.AuthConnection = authConnection;
             this.Description = description;
+            this.ForcePreToolSpeech = forcePreToolSpeech;
+            this.DisableInterruptions = disableInterruptions;
+            this.ToolCallSound = toolCallSound;
+            this.ToolCallSoundBehavior = toolCallSoundBehavior;
+            this.ExecutionMode = executionMode;
+            this.ToolConfigOverrides = toolConfigOverrides;
+            this.DisableCompression = disableCompression;
         }
 
         /// <summary>

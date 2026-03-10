@@ -23,10 +23,17 @@ namespace G
         public bool? IsLocked { get; set; }
 
         /// <summary>
-        /// Role dictating permissions in the workspace.
+        /// The workspace role of the user. This is deprecated, use `workspace_seat_type` instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_role")]
-        public global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? WorkspaceRole { get; set; }
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.SeatType? WorkspaceRole { get; set; }
+
+        /// <summary>
+        /// The workspace seat type
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_seat_type")]
+        public global::G.SeatType? WorkspaceSeatType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,8 +50,8 @@ namespace G
         /// <param name="isLocked">
         /// Whether to lock or unlock the user account.
         /// </param>
-        /// <param name="workspaceRole">
-        /// Role dictating permissions in the workspace.
+        /// <param name="workspaceSeatType">
+        /// The workspace seat type
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,11 +59,11 @@ namespace G
         public BodyUpdateMemberV1WorkspaceMembersPost(
             string email,
             bool? isLocked,
-            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? workspaceRole)
+            global::G.SeatType? workspaceSeatType)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.IsLocked = isLocked;
-            this.WorkspaceRole = workspaceRole;
+            this.WorkspaceSeatType = workspaceSeatType;
         }
 
         /// <summary>

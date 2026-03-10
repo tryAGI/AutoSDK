@@ -30,12 +30,12 @@ namespace G.JsonConverters
                 openaiCompatible = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.CreateEncoderRequest(
+            var __value = new global::G.CreateEncoderRequest(
                 discriminator?.Type,
                 openaiCompatible
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

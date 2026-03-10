@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareCreateSoundGenerationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.SoundGenerationV1SoundGenerationPostOutputFormat? outputFormat,
+            ref global::G.AllowedOutputFormats? outputFormat,
             ref string? xiApiKey,
             global::G.BodySoundGenerationV1SoundGenerationPost request);
         partial void PrepareCreateSoundGenerationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.SoundGenerationV1SoundGenerationPostOutputFormat? outputFormat,
+            global::G.AllowedOutputFormats? outputFormat,
             string? xiApiKey,
             global::G.BodySoundGenerationV1SoundGenerationPost request);
         partial void ProcessCreateSoundGenerationResponse(
@@ -28,14 +28,14 @@ namespace G
 
         /// <summary>
         /// Sound Generation<br/>
-        /// Turn text into sound effects for your videos, voice-overs or video games using the most advanced sound effects model in the world.
+        /// Turn text into sound effects for your videos, voice-overs or video games using the most advanced sound effects models in the world.
         /// </summary>
         /// <param name="outputFormat">
         /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<byte[]> CreateSoundGenerationAsync(
 
             global::G.BodySoundGenerationV1SoundGenerationPost request,
-            global::G.SoundGenerationV1SoundGenerationPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -59,25 +59,27 @@ namespace G
 
             var outputFormatValue = outputFormat switch
             {
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp32205032 => "mp3_22050_32",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp34410032 => "mp3_44100_32",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp34410064 => "mp3_44100_64",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp34410096 => "mp3_44100_96",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp344100128 => "mp3_44100_128",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Mp344100192 => "mp3_44100_192",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm8000 => "pcm_8000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm16000 => "pcm_16000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm22050 => "pcm_22050",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm24000 => "pcm_24000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm44100 => "pcm_44100",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Pcm48000 => "pcm_48000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Ulaw8000 => "ulaw_8000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Alaw8000 => "alaw_8000",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800032 => "opus_48000_32",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800064 => "opus_48000_64",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus4800096 => "opus_48000_96",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus48000128 => "opus_48000_128",
-                global::G.SoundGenerationV1SoundGenerationPostOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.AllowedOutputFormats.Mp32205032 => "mp3_22050_32",
+                global::G.AllowedOutputFormats.Mp32400048 => "mp3_24000_48",
+                global::G.AllowedOutputFormats.Mp34410032 => "mp3_44100_32",
+                global::G.AllowedOutputFormats.Mp34410064 => "mp3_44100_64",
+                global::G.AllowedOutputFormats.Mp34410096 => "mp3_44100_96",
+                global::G.AllowedOutputFormats.Mp344100128 => "mp3_44100_128",
+                global::G.AllowedOutputFormats.Mp344100192 => "mp3_44100_192",
+                global::G.AllowedOutputFormats.Pcm8000 => "pcm_8000",
+                global::G.AllowedOutputFormats.Pcm16000 => "pcm_16000",
+                global::G.AllowedOutputFormats.Pcm22050 => "pcm_22050",
+                global::G.AllowedOutputFormats.Pcm24000 => "pcm_24000",
+                global::G.AllowedOutputFormats.Pcm32000 => "pcm_32000",
+                global::G.AllowedOutputFormats.Pcm44100 => "pcm_44100",
+                global::G.AllowedOutputFormats.Pcm48000 => "pcm_48000",
+                global::G.AllowedOutputFormats.Ulaw8000 => "ulaw_8000",
+                global::G.AllowedOutputFormats.Alaw8000 => "alaw_8000",
+                global::G.AllowedOutputFormats.Opus4800032 => "opus_48000_32",
+                global::G.AllowedOutputFormats.Opus4800064 => "opus_48000_64",
+                global::G.AllowedOutputFormats.Opus4800096 => "opus_48000_96",
+                global::G.AllowedOutputFormats.Opus48000128 => "opus_48000_128",
+                global::G.AllowedOutputFormats.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -231,40 +233,52 @@ namespace G
 
         /// <summary>
         /// Sound Generation<br/>
-        /// Turn text into sound effects for your videos, voice-overs or video games using the most advanced sound effects model in the world.
+        /// Turn text into sound effects for your videos, voice-overs or video games using the most advanced sound effects models in the world.
         /// </summary>
         /// <param name="outputFormat">
         /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="text">
         /// The text that will get converted into a sound effect.
         /// </param>
+        /// <param name="loop">
+        /// Whether to create a sound effect that loops smoothly. Only available for the 'eleven_text_to_sound_v2 model'.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="durationSeconds">
-        /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 22. If set to None we will guess the optimal duration using the prompt. Defaults to None.
+        /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 30. If set to None we will guess the optimal duration using the prompt. Defaults to None.
         /// </param>
         /// <param name="promptInfluence">
         /// A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.<br/>
         /// Default Value: 0.3F
         /// </param>
+        /// <param name="modelId">
+        /// The model ID to use for the sound generation.<br/>
+        /// Default Value: eleven_text_to_sound_v2
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSoundGenerationAsync(
             string text,
-            global::G.SoundGenerationV1SoundGenerationPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
+            bool? loop = default,
             double? durationSeconds = default,
             double? promptInfluence = default,
+            string? modelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySoundGenerationV1SoundGenerationPost
             {
                 Text = text,
+                Loop = loop,
                 DurationSeconds = durationSeconds,
                 PromptInfluence = promptInfluence,
+                ModelId = modelId,
             };
 
             return await CreateSoundGenerationAsync(

@@ -33,6 +33,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
+        Famous,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="high_quality")]
         HighQuality,
     }
@@ -53,6 +58,7 @@ namespace G
                 VoiceResponseModelCategory.Cloned => "cloned",
                 VoiceResponseModelCategory.Premade => "premade",
                 VoiceResponseModelCategory.Professional => "professional",
+                VoiceResponseModelCategory.Famous => "famous",
                 VoiceResponseModelCategory.HighQuality => "high_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,6 +74,7 @@ namespace G
                 "cloned" => VoiceResponseModelCategory.Cloned,
                 "premade" => VoiceResponseModelCategory.Premade,
                 "professional" => VoiceResponseModelCategory.Professional,
+                "famous" => VoiceResponseModelCategory.Famous,
                 "high_quality" => VoiceResponseModelCategory.HighQuality,
                 _ => null,
             };

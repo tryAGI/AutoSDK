@@ -172,19 +172,31 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(
+            var __value = new global::G.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(
                 value1,
+
                 value2,
+
                 value3,
+
                 value4,
+
                 value5,
+
                 value6,
+
                 value7,
+
                 value8,
+
                 value9,
+
                 value10,
+
                 value11,
+
                 value12,
+
                 value13
                 );
 
@@ -267,7 +279,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

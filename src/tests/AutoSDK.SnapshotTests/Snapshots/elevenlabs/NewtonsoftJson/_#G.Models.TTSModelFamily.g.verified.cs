@@ -25,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="multilingual")]
         Multilingual,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="v3_conversational")]
+        V3Conversational,
     }
 
     /// <summary>
@@ -42,6 +47,7 @@ namespace G
                 TTSModelFamily.Turbo => "turbo",
                 TTSModelFamily.Flash => "flash",
                 TTSModelFamily.Multilingual => "multilingual",
+                TTSModelFamily.V3Conversational => "v3_conversational",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,6 +61,7 @@ namespace G
                 "turbo" => TTSModelFamily.Turbo,
                 "flash" => TTSModelFamily.Flash,
                 "multilingual" => TTSModelFamily.Multilingual,
+                "v3_conversational" => TTSModelFamily.V3Conversational,
                 _ => null,
             };
         }

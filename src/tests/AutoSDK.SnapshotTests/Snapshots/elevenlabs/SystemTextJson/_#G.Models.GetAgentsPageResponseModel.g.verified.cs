@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"has_more":false,"next_cursor":"123"}
+    /// Example: {"agents":[{"access_info":{"creator_email":"john@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"},"agent_id":"J3Pbu5gP6NNKBscdCdwB","archived":false,"created_at_unix_secs":1716153600,"name":"My Agent","tags":["Customer Support","Technical Help","Eleven"]}],"has_more":false,"next_cursor":"123"}
     /// </summary>
     public sealed partial class GetAgentsPageResponseModel
     {

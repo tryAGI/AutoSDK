@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.Source2(
+            var __value = new global::G.Source2(
                 discriminator?.Type,
                 base64,
+
                 url
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

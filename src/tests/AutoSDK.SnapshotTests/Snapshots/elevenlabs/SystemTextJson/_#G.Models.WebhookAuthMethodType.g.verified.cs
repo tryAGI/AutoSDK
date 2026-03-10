@@ -17,6 +17,10 @@ namespace G
         /// 
         /// </summary>
         Oauth2,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mtls,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 WebhookAuthMethodType.Hmac => "hmac",
                 WebhookAuthMethodType.Oauth2 => "oauth2",
+                WebhookAuthMethodType.Mtls => "mtls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "hmac" => WebhookAuthMethodType.Hmac,
                 "oauth2" => WebhookAuthMethodType.Oauth2,
+                "mtls" => WebhookAuthMethodType.Mtls,
                 _ => null,
             };
         }

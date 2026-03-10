@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareCreateStudioPodcastsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? safetyIdentifier,
             ref string? xiApiKey,
             global::G.BodyCreatePodcastV1StudioPodcastsPost request);
         partial void PrepareCreateStudioPodcastsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? safetyIdentifier,
             string? xiApiKey,
             global::G.BodyCreatePodcastV1StudioPodcastsPost request);
         partial void ProcessCreateStudioPodcastsResponse(
@@ -28,8 +30,11 @@ namespace G
         /// Create Podcast<br/>
         /// Create and auto-convert a podcast project. Currently, the LLM cost is covered by us but you will still be charged for the audio generation. In the future, you will be charged for both the LLM and audio generation costs.
         /// </summary>
+        /// <param name="safetyIdentifier">
+        /// Used for moderation. Your workspace must be allowlisted to use this feature.
+        /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -37,6 +42,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PodcastProjectResponseModel> CreateStudioPodcastsAsync(
 
             global::G.BodyCreatePodcastV1StudioPodcastsPost request,
+            string? safetyIdentifier = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -46,6 +52,7 @@ namespace G
                 client: HttpClient);
             PrepareCreateStudioPodcastsArguments(
                 httpClient: HttpClient,
+                safetyIdentifier: ref safetyIdentifier,
                 xiApiKey: ref xiApiKey,
                 request: request);
 
@@ -61,6 +68,10 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+            if (safetyIdentifier != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("safety-identifier", safetyIdentifier.ToString());
+            }
             if (xiApiKey != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
@@ -79,6 +90,7 @@ namespace G
             PrepareCreateStudioPodcastsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                safetyIdentifier: safetyIdentifier,
                 xiApiKey: xiApiKey,
                 request: request);
 
@@ -207,8 +219,11 @@ namespace G
         /// Create Podcast<br/>
         /// Create and auto-convert a podcast project. Currently, the LLM cost is covered by us but you will still be charged for the audio generation. In the future, you will be charged for both the LLM and audio generation costs.
         /// </summary>
+        /// <param name="safetyIdentifier">
+        /// Used for moderation. Your workspace must be allowlisted to use this feature.
+        /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="modelId">
         /// The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.
@@ -221,21 +236,30 @@ namespace G
         /// </param>
         /// <param name="qualityPreset">
         /// Output quality of the generated audio. Must be one of:<br/>
-        /// standard - standard output format, 128kbps with 44.1kHz sample rate.<br/>
-        /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
-        /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
-        /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
+        /// 'standard' - standard output format, 128kbps with 44.1kHz sample rate.<br/>
+        /// 'high' - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.<br/>
+        /// 'ultra' - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.<br/>
+        /// 'ultra_lossless' - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.<br/>
         /// Default Value: standard
         /// </param>
         /// <param name="durationScale">
         /// Duration of the generated podcast. Must be one of:<br/>
         /// short - produces podcasts shorter than 3 minutes.<br/>
         /// default - produces podcasts roughly between 3-7 minutes.<br/>
-        /// long - prodces podcasts longer than 7 minutes.<br/>
+        /// long - produces podcasts longer than 7 minutes.<br/>
         /// Default Value: default
         /// </param>
         /// <param name="language">
         /// An optional language of the Studio project. Two-letter language code (ISO 639-1).
+        /// </param>
+        /// <param name="intro">
+        /// The intro text that will always be added to the beginning of the podcast.
+        /// </param>
+        /// <param name="outro">
+        /// The outro text that will always be added to the end of the podcast.
+        /// </param>
+        /// <param name="instructionsPrompt">
+        /// Additional instructions prompt for the podcast generation used to adjust the podcast's style and tone.
         /// </param>
         /// <param name="highlights">
         /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.
@@ -295,18 +319,30 @@ namespace G
         ///     }<br/>
         ///     
         /// </param>
+        /// <param name="applyTextNormalization">
+        ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
+        ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
+        ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
+        ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
+        ///     
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PodcastProjectResponseModel> CreateStudioPodcastsAsync(
             string modelId,
             global::G.AnyOf<global::G.PodcastConversationMode, global::G.PodcastBulletinMode> mode,
             global::G.AnyOf<global::G.PodcastTextSource, global::G.PodcastURLSource, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PodcastTextSource, global::G.PodcastURLSource>>> source,
+            string? safetyIdentifier = default,
             string? xiApiKey = default,
             global::G.BodyCreatePodcastV1StudioPodcastsPostQualityPreset? qualityPreset = default,
             global::G.BodyCreatePodcastV1StudioPodcastsPostDurationScale? durationScale = default,
             string? language = default,
+            string? intro = default,
+            string? outro = default,
+            string? instructionsPrompt = default,
             global::System.Collections.Generic.IList<string>? highlights = default,
             string? callbackUrl = default,
+            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? applyTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyCreatePodcastV1StudioPodcastsPost
@@ -317,11 +353,16 @@ namespace G
                 QualityPreset = qualityPreset,
                 DurationScale = durationScale,
                 Language = language,
+                Intro = intro,
+                Outro = outro,
+                InstructionsPrompt = instructionsPrompt,
                 Highlights = highlights,
                 CallbackUrl = callbackUrl,
+                ApplyTextNormalization = applyTextNormalization,
             };
 
             return await CreateStudioPodcastsAsync(
+                safetyIdentifier: safetyIdentifier,
                 xiApiKey: xiApiKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

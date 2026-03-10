@@ -79,9 +79,14 @@ namespace G
         public SpeechHistoryClient SpeechHistory { get; }
 
         /// <summary>
-        /// Access, create and convert Studio Projects programmatically, only specifically whitelisted accounts can access the Projects API. If you need access please contact our sales team.
+        /// Access, create and convert Studio Projects programmatically, only specifically whitelisted accounts can access the Studio API. If you need access please contact our sales team.
         /// </summary>
         public StudiosClient Studios { get; }
+
+        /// <summary>
+        /// Access to workspace related endpoints.
+        /// </summary>
+        public WorkspaceClient Workspace { get; }
 
         /// <summary>
         /// 
@@ -101,27 +106,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoiceGenerationClient VoiceGeneration { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public TextToVoiceClient TextToVoice { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public StudioClient Studio { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ProjectsClient Projects { get; }
 
         /// <summary>
         /// 
@@ -151,22 +141,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsageClient Usage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public PronunciationDictionaryClient PronunciationDictionary { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public WorkspaceClient Workspace { get; }
+        public SingleUseTokenClient SingleUseToken { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentsPlatformClient AgentsPlatform { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationalAiClient ConversationalAi { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MusicGenerationClient MusicGeneration { get; }
 
         /// <summary>
         /// 

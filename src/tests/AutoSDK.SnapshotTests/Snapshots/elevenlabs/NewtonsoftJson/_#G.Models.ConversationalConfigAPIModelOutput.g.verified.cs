@@ -19,17 +19,17 @@ namespace G
 
         /// <summary>
         /// Configuration for turn detection<br/>
-        /// Example: {"mode":"turn","silence_end_call_timeout":-1,"turn_timeout":7}
+        /// Example: {"mode":"turn","silence_end_call_timeout":-1.0,"soft_timeout_config":{"message":"Hhmmmm...yeah.","timeout_seconds":-1.0},"speculative_turn":false,"spelling_patience":"auto","turn_eagerness":"normal","turn_timeout":7.0}
         /// </summary>
-        /// <example>{"mode":"turn","silence_end_call_timeout":-1,"turn_timeout":7}</example>
+        /// <example>{"mode":"turn","silence_end_call_timeout":-1.0,"soft_timeout_config":{"message":"Hhmmmm...yeah.","timeout_seconds":-1.0},"speculative_turn":false,"spelling_patience":"auto","turn_eagerness":"normal","turn_timeout":7.0}</example>
         [global::Newtonsoft.Json.JsonProperty("turn")]
         public global::G.TurnConfig? Turn { get; set; }
 
         /// <summary>
         /// Configuration for conversational text to speech<br/>
-        /// Example: {"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}
+        /// Example: {"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1.0,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}
         /// </summary>
-        /// <example>{"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}</example>
+        /// <example>{"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1.0,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}</example>
         [global::Newtonsoft.Json.JsonProperty("tts")]
         public global::G.TTSConversationalConfigOutput? Tts { get; set; }
 
@@ -48,10 +48,18 @@ namespace G
         public global::System.Collections.Generic.Dictionary<string, global::G.LanguagePresetOutput>? LanguagePresets { get; set; }
 
         /// <summary>
-        /// Agent specific configuration<br/>
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Configuration for voice activity detection<br/>
+        /// Example: {"background_voice_detection":false}
         /// </summary>
-        /// <example>{"first_message":"Hello, how can I help you today?","language":"en"}</example>
+        /// <example>{"background_voice_detection":false}</example>
+        [global::Newtonsoft.Json.JsonProperty("vad")]
+        public global::G.VADConfig? Vad { get; set; }
+
+        /// <summary>
+        /// Agent specific configuration<br/>
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
+        /// </summary>
+        /// <example>{"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}</example>
         [global::Newtonsoft.Json.JsonProperty("agent")]
         public global::G.AgentConfigAPIModelOutput? Agent { get; set; }
 
@@ -70,11 +78,11 @@ namespace G
         /// </param>
         /// <param name="turn">
         /// Configuration for turn detection<br/>
-        /// Example: {"mode":"turn","silence_end_call_timeout":-1,"turn_timeout":7}
+        /// Example: {"mode":"turn","silence_end_call_timeout":-1.0,"soft_timeout_config":{"message":"Hhmmmm...yeah.","timeout_seconds":-1.0},"speculative_turn":false,"spelling_patience":"auto","turn_eagerness":"normal","turn_timeout":7.0}
         /// </param>
         /// <param name="tts">
         /// Configuration for conversational text to speech<br/>
-        /// Example: {"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}
+        /// Example: {"agent_output_audio_format":"pcm_16000","model_id":"eleven_turbo_v2","optimize_streaming_latency":3,"pronunciation_dictionary_locators":[],"similarity_boost":0.8,"speed":1.0,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"}
         /// </param>
         /// <param name="conversation">
         /// Configuration for conversational events<br/>
@@ -83,9 +91,13 @@ namespace G
         /// <param name="languagePresets">
         /// Language presets for conversations
         /// </param>
+        /// <param name="vad">
+        /// Configuration for voice activity detection<br/>
+        /// Example: {"background_voice_detection":false}
+        /// </param>
         /// <param name="agent">
         /// Agent specific configuration<br/>
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
         /// </param>
         public ConversationalConfigAPIModelOutput(
             global::G.ASRConversationalConfig? asr,
@@ -93,6 +105,7 @@ namespace G
             global::G.TTSConversationalConfigOutput? tts,
             global::G.ConversationConfig? conversation,
             global::System.Collections.Generic.Dictionary<string, global::G.LanguagePresetOutput>? languagePresets,
+            global::G.VADConfig? vad,
             global::G.AgentConfigAPIModelOutput? agent)
         {
             this.Asr = asr;
@@ -100,6 +113,7 @@ namespace G
             this.Tts = tts;
             this.Conversation = conversation;
             this.LanguagePresets = languagePresets;
+            this.Vad = vad;
             this.Agent = agent;
         }
 

@@ -30,7 +30,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -41,7 +41,7 @@ namespace G
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechFullOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -70,7 +70,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="audio">
         /// The audio file which holds the content and emotion that will control the generated speech.
@@ -104,7 +104,7 @@ namespace G
             string audioname,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechFullOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
             string? voiceSettings = default,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The media metadata of the dubbing project.
+    /// Metadata, such as the length in seconds and content type, of the dubbed content.
     /// </summary>
     public sealed partial class DubbingMetadataResponseMediaMetadata
     {

@@ -18,48 +18,69 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptAgentInputToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptAgentInputToolDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PromptAgentInputToolDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptAgentAPIModelInputToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptAgentAPIModelInputToolDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PromptAgentAPIModelInputToolDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.WebhookToolConfigInput? webhook = default;
-            if (discriminator?.Type == global::G.PromptAgentInputToolDiscriminatorType.Webhook)
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.Webhook)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookToolConfigInput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebhookToolConfigInput)}");
                 webhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ClientToolConfigInput? client = default;
-            if (discriminator?.Type == global::G.PromptAgentInputToolDiscriminatorType.Client)
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.Client)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClientToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClientToolConfigInput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClientToolConfigInput)}");
                 client = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SystemToolConfigInput? system = default;
-            if (discriminator?.Type == global::G.PromptAgentInputToolDiscriminatorType.System)
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.System)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemToolConfigInput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemToolConfigInput)}");
                 system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MCPToolConfigInput? mcp = default;
-            if (discriminator?.Type == global::G.PromptAgentInputToolDiscriminatorType.Mcp)
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.Mcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPToolConfigInput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MCPToolConfigInput)}");
                 mcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.ApiIntegrationWebhookToolConfigInput? apiIntegrationWebhook = default;
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.ApiIntegrationWebhook)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApiIntegrationWebhookToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApiIntegrationWebhookToolConfigInput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ApiIntegrationWebhookToolConfigInput)}");
+                apiIntegrationWebhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.SMBToolConfig? smb = default;
+            if (discriminator?.Type == global::G.PromptAgentAPIModelInputToolDiscriminatorType.Smb)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SMBToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SMBToolConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SMBToolConfig)}");
+                smb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
-            var result = new global::G.ToolsItem2(
+            var __value = new global::G.ToolsItem2(
                 discriminator?.Type,
                 webhook,
+
                 client,
+
                 system,
-                mcp
+
+                mcp,
+
+                apiIntegrationWebhook,
+
+                smb
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
@@ -94,6 +115,18 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPToolConfigInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPToolConfigInput).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeInfo);
+            }
+            else if (value.IsApiIntegrationWebhook)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApiIntegrationWebhookToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApiIntegrationWebhookToolConfigInput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ApiIntegrationWebhookToolConfigInput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiIntegrationWebhook, typeInfo);
+            }
+            else if (value.IsSmb)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SMBToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SMBToolConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SMBToolConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Smb, typeInfo);
             }
         }
     }

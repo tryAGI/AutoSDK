@@ -37,7 +37,7 @@ namespace G
         /// ID of the language.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -160,6 +160,39 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Dubbing not ready
+            if ((int)__response.StatusCode == 425)
+            {
+                string? __content_425 = null;
+                global::System.Exception? __exception_425 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_425 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_425 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_425 = __ex;
+                }
+
+                throw new global::G.ApiException(
+                    message: __content_425 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_425,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_425,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
             // Validation Error
             if ((int)__response.StatusCode == 422)
             {
@@ -191,39 +224,6 @@ namespace G
                 {
                     ResponseBody = __content_422,
                     ResponseObject = __value_422,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Dubbing not ready
-            if ((int)__response.StatusCode == 425)
-            {
-                string? __content_425 = null;
-                global::System.Exception? __exception_425 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_425 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    }
-                    else
-                    {
-                        var __contentStream_425 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_425 = __ex;
-                }
-
-                throw new global::G.ApiException(
-                    message: __content_425 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_425,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_425,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,

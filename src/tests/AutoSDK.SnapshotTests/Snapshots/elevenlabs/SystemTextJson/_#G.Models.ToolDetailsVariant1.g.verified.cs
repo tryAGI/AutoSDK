@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptToolCallCommonModelToolDetailsVariant1DiscriminatorType? Type { get; }
+        public global::G.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -48,6 +48,40 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Client))]
 #endif
         public bool IsClient => Client != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ConversationHistoryTranscriptToolCallMCPDetails? Mcp { get; init; }
+#else
+        public global::G.ConversationHistoryTranscriptToolCallMCPDetails? Mcp { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
+#endif
+        public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? ApiIntegrationWebhook { get; init; }
+#else
+        public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? ApiIntegrationWebhook { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiIntegrationWebhook))]
+#endif
+        public bool IsApiIntegrationWebhook => ApiIntegrationWebhook != null;
         /// <summary>
         /// 
         /// </summary>
@@ -87,22 +121,64 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ToolDetailsVariant1(global::G.ConversationHistoryTranscriptToolCallMCPDetails value) => new ToolDetailsVariant1((global::G.ConversationHistoryTranscriptToolCallMCPDetails?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ConversationHistoryTranscriptToolCallMCPDetails?(ToolDetailsVariant1 @this) => @this.Mcp;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolDetailsVariant1(global::G.ConversationHistoryTranscriptToolCallMCPDetails? value)
+        {
+            Mcp = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolDetailsVariant1(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails value) => new ToolDetailsVariant1((global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?(ToolDetailsVariant1 @this) => @this.ApiIntegrationWebhook;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolDetailsVariant1(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? value)
+        {
+            ApiIntegrationWebhook = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolDetailsVariant1(
-            global::G.ConversationHistoryTranscriptToolCallCommonModelToolDetailsVariant1DiscriminatorType? type,
+            global::G.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsVariant1DiscriminatorType? type,
             global::G.ConversationHistoryTranscriptToolCallWebhookDetails? webhook,
-            global::G.ConversationHistoryTranscriptToolCallClientDetails? client
+            global::G.ConversationHistoryTranscriptToolCallClientDetails? client,
+            global::G.ConversationHistoryTranscriptToolCallMCPDetails? mcp,
+            global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? apiIntegrationWebhook
             )
         {
             Type = type;
 
             Webhook = webhook;
             Client = client;
+            Mcp = mcp;
+            ApiIntegrationWebhook = apiIntegrationWebhook;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ApiIntegrationWebhook as object ??
+            Mcp as object ??
             Client as object ??
             Webhook as object 
             ;
@@ -112,7 +188,9 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Webhook?.ToString() ??
-            Client?.ToString() 
+            Client?.ToString() ??
+            Mcp?.ToString() ??
+            ApiIntegrationWebhook?.ToString() 
             ;
 
         /// <summary>
@@ -120,7 +198,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsWebhook && !IsClient || !IsWebhook && IsClient;
+            return IsWebhook && !IsClient && !IsMcp && !IsApiIntegrationWebhook || !IsWebhook && IsClient && !IsMcp && !IsApiIntegrationWebhook || !IsWebhook && !IsClient && IsMcp && !IsApiIntegrationWebhook || !IsWebhook && !IsClient && !IsMcp && IsApiIntegrationWebhook;
         }
 
         /// <summary>
@@ -129,6 +207,8 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?, TResult>? webhook = null,
             global::System.Func<global::G.ConversationHistoryTranscriptToolCallClientDetails?, TResult>? client = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallMCPDetails?, TResult>? mcp = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?, TResult>? apiIntegrationWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -144,6 +224,14 @@ namespace G
             {
                 return client(Client!);
             }
+            else if (IsMcp && mcp != null)
+            {
+                return mcp(Mcp!);
+            }
+            else if (IsApiIntegrationWebhook && apiIntegrationWebhook != null)
+            {
+                return apiIntegrationWebhook(ApiIntegrationWebhook!);
+            }
 
             return default(TResult);
         }
@@ -154,6 +242,8 @@ namespace G
         public void Match(
             global::System.Action<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?>? webhook = null,
             global::System.Action<global::G.ConversationHistoryTranscriptToolCallClientDetails?>? client = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallMCPDetails?>? mcp = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?>? apiIntegrationWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -169,6 +259,14 @@ namespace G
             {
                 client?.Invoke(Client!);
             }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+            else if (IsApiIntegrationWebhook)
+            {
+                apiIntegrationWebhook?.Invoke(ApiIntegrationWebhook!);
+            }
         }
 
         /// <summary>
@@ -182,6 +280,10 @@ namespace G
                 typeof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails),
                 Client,
                 typeof(global::G.ConversationHistoryTranscriptToolCallClientDetails),
+                Mcp,
+                typeof(global::G.ConversationHistoryTranscriptToolCallMCPDetails),
+                ApiIntegrationWebhook,
+                typeof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -199,7 +301,9 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?>.Default.Equals(Webhook, other.Webhook) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ConversationHistoryTranscriptToolCallClientDetails?>.Default.Equals(Client, other.Client) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationHistoryTranscriptToolCallClientDetails?>.Default.Equals(Client, other.Client) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationHistoryTranscriptToolCallMCPDetails?>.Default.Equals(Mcp, other.Mcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?>.Default.Equals(ApiIntegrationWebhook, other.ApiIntegrationWebhook) 
                 ;
         }
 

@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// Configures overrides for nested fields.
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("turn")]
+        public global::G.TurnConfigOverrideConfig? Turn { get; set; }
+
+        /// <summary>
+        /// Configures overrides for nested fields.
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tts")]
         public global::G.TTSConversationalConfigOverrideConfig? Tts { get; set; }
 
@@ -36,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideConfigInput" /> class.
         /// </summary>
+        /// <param name="turn">
+        /// Configures overrides for nested fields.
+        /// </param>
         /// <param name="tts">
         /// Configures overrides for nested fields.
         /// </param>
@@ -46,10 +55,12 @@ namespace G
         /// Configures overrides for nested fields.
         /// </param>
         public ConversationConfigClientOverrideConfigInput(
+            global::G.TurnConfigOverrideConfig? turn,
             global::G.TTSConversationalConfigOverrideConfig? tts,
             global::G.ConversationConfigOverrideConfig? conversation,
             global::G.AgentConfigOverrideConfig? agent)
         {
+            this.Turn = turn;
             this.Tts = tts;
             this.Conversation = conversation;
             this.Agent = agent;

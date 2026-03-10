@@ -13,7 +13,7 @@ namespace G
             ref string voiceId,
             ref bool? enableLogging,
             int? optimizeStreamingLatency,
-            ref global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat,
+            ref global::G.SpeechToSpeechFullOutputFormat? outputFormat,
             ref string? xiApiKey,
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request);
         partial void PrepareCreateSpeechToSpeechByVoiceIdRequest(
@@ -22,7 +22,7 @@ namespace G
             string voiceId,
             bool? enableLogging,
             int? optimizeStreamingLatency,
-            global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat,
+            global::G.SpeechToSpeechFullOutputFormat? outputFormat,
             string? xiApiKey,
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request);
         partial void ProcessCreateSpeechToSpeechByVoiceIdResponse(
@@ -59,7 +59,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -70,7 +70,7 @@ namespace G
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechFullOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,25 +89,27 @@ namespace G
 
             var outputFormatValue = outputFormat switch
             {
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp32205032 => "mp3_22050_32",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp34410032 => "mp3_44100_32",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp34410064 => "mp3_44100_64",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp34410096 => "mp3_44100_96",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp344100128 => "mp3_44100_128",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Mp344100192 => "mp3_44100_192",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm8000 => "pcm_8000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm16000 => "pcm_16000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm22050 => "pcm_22050",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm24000 => "pcm_24000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm44100 => "pcm_44100",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Pcm48000 => "pcm_48000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Ulaw8000 => "ulaw_8000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Alaw8000 => "alaw_8000",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800032 => "opus_48000_32",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800064 => "opus_48000_64",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus4800096 => "opus_48000_96",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus48000128 => "opus_48000_128",
-                global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.SpeechToSpeechFullOutputFormat.Mp32205032 => "mp3_22050_32",
+                global::G.SpeechToSpeechFullOutputFormat.Mp32400048 => "mp3_24000_48",
+                global::G.SpeechToSpeechFullOutputFormat.Mp34410032 => "mp3_44100_32",
+                global::G.SpeechToSpeechFullOutputFormat.Mp34410064 => "mp3_44100_64",
+                global::G.SpeechToSpeechFullOutputFormat.Mp34410096 => "mp3_44100_96",
+                global::G.SpeechToSpeechFullOutputFormat.Mp344100128 => "mp3_44100_128",
+                global::G.SpeechToSpeechFullOutputFormat.Mp344100192 => "mp3_44100_192",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm8000 => "pcm_8000",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm16000 => "pcm_16000",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm22050 => "pcm_22050",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm24000 => "pcm_24000",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm32000 => "pcm_32000",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm44100 => "pcm_44100",
+                global::G.SpeechToSpeechFullOutputFormat.Pcm48000 => "pcm_48000",
+                global::G.SpeechToSpeechFullOutputFormat.Ulaw8000 => "ulaw_8000",
+                global::G.SpeechToSpeechFullOutputFormat.Alaw8000 => "alaw_8000",
+                global::G.SpeechToSpeechFullOutputFormat.Opus4800032 => "opus_48000_32",
+                global::G.SpeechToSpeechFullOutputFormat.Opus4800064 => "opus_48000_64",
+                global::G.SpeechToSpeechFullOutputFormat.Opus4800096 => "opus_48000_96",
+                global::G.SpeechToSpeechFullOutputFormat.Opus48000128 => "opus_48000_128",
+                global::G.SpeechToSpeechFullOutputFormat.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -360,7 +362,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="audio">
         /// The audio file which holds the content and emotion that will control the generated speech.
@@ -394,7 +396,7 @@ namespace G
             string audioname,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechV1SpeechToSpeechVoiceIdPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechFullOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
             string? voiceSettings = default,

@@ -16,6 +16,12 @@ namespace G
         public int CreatedAtUnixSecs { get; set; } = default!;
 
         /// <summary>
+        /// The last update time of the agent in unix seconds
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("updated_at_unix_secs", Required = global::Newtonsoft.Json.Required.Always)]
+        public int UpdatedAtUnixSecs { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -27,10 +33,15 @@ namespace G
         /// <param name="createdAtUnixSecs">
         /// The creation time of the agent in unix seconds
         /// </param>
+        /// <param name="updatedAtUnixSecs">
+        /// The last update time of the agent in unix seconds
+        /// </param>
         public AgentMetadataResponseModel(
-            int createdAtUnixSecs)
+            int createdAtUnixSecs,
+            int updatedAtUnixSecs)
         {
             this.CreatedAtUnixSecs = createdAtUnixSecs;
+            this.UpdatedAtUnixSecs = updatedAtUnixSecs;
         }
 
         /// <summary>

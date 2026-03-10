@@ -46,11 +46,16 @@ namespace G
         public required global::G.ResourceAccessInfo AccessInfo { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the parent folder, or null if the document is at the root level.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("extracted_inner_html")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ExtractedInnerHtml { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_parent_id")]
+        public string? FolderParentId { get; set; }
+
+        /// <summary>
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_path")]
+        public global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentResponseModel>? FolderPath { get; set; }
 
         /// <summary>
         /// 
@@ -58,6 +63,13 @@ namespace G
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "text";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("extracted_inner_html")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ExtractedInnerHtml { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,8 +87,14 @@ namespace G
         /// <param name="accessInfo">
         /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </param>
-        /// <param name="extractedInnerHtml"></param>
+        /// <param name="folderParentId">
+        /// The ID of the parent folder, or null if the document is at the root level.
+        /// </param>
+        /// <param name="folderPath">
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </param>
         /// <param name="type"></param>
+        /// <param name="extractedInnerHtml"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,6 +105,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
             string extractedInnerHtml,
+            string? folderParentId,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentResponseModel>? folderPath,
             string type = "text")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -95,6 +115,8 @@ namespace G
             this.SupportedUsages = supportedUsages ?? throw new global::System.ArgumentNullException(nameof(supportedUsages));
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
             this.ExtractedInnerHtml = extractedInnerHtml ?? throw new global::System.ArgumentNullException(nameof(extractedInnerHtml));
+            this.FolderParentId = folderParentId;
+            this.FolderPath = folderPath;
             this.Type = type;
         }
 

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Token to retrieve the next page of results. Pass this value to the next request to continue pagination. Null if there are no more results.
     /// </summary>
     public sealed partial class GetVoicesV2ResponseModelNextPageToken
     {

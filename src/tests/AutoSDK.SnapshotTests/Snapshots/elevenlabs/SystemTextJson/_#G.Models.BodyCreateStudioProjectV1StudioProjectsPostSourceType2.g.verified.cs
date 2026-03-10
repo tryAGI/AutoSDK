@@ -25,6 +25,14 @@ namespace G
         /// 
         /// </summary>
         Genfm,
+        /// <summary>
+        /// 
+        /// </summary>
+        Video,
+        /// <summary>
+        /// 
+        /// </summary>
+        Screenplay,
     }
 
     /// <summary>
@@ -43,6 +51,8 @@ namespace G
                 BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Book => "book",
                 BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Article => "article",
                 BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Genfm => "genfm",
+                BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Video => "video",
+                BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Screenplay => "screenplay",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,6 +67,8 @@ namespace G
                 "book" => BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Book,
                 "article" => BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Article,
                 "genfm" => BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Genfm,
+                "video" => BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Video,
+                "screenplay" => BodyCreateStudioProjectV1StudioProjectsPostSourceType2.Screenplay,
                 _ => null,
             };
         }

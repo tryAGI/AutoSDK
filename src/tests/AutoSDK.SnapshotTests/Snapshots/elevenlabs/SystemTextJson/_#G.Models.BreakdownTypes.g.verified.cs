@@ -53,6 +53,26 @@ namespace G
         /// 
         /// </summary>
         RequestQueue,
+        /// <summary>
+        /// 
+        /// </summary>
+        Region,
+        /// <summary>
+        /// 
+        /// </summary>
+        SubresourceId,
+        /// <summary>
+        /// 
+        /// </summary>
+        ReportingWorkspaceId,
+        /// <summary>
+        /// 
+        /// </summary>
+        HasApiKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        RequestSource,
     }
 
     /// <summary>
@@ -78,6 +98,11 @@ namespace G
                 BreakdownTypes.Model => "model",
                 BreakdownTypes.Resource => "resource",
                 BreakdownTypes.RequestQueue => "request_queue",
+                BreakdownTypes.Region => "region",
+                BreakdownTypes.SubresourceId => "subresource_id",
+                BreakdownTypes.ReportingWorkspaceId => "reporting_workspace_id",
+                BreakdownTypes.HasApiKey => "has_api_key",
+                BreakdownTypes.RequestSource => "request_source",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -99,6 +124,11 @@ namespace G
                 "model" => BreakdownTypes.Model,
                 "resource" => BreakdownTypes.Resource,
                 "request_queue" => BreakdownTypes.RequestQueue,
+                "region" => BreakdownTypes.Region,
+                "subresource_id" => BreakdownTypes.SubresourceId,
+                "reporting_workspace_id" => BreakdownTypes.ReportingWorkspaceId,
+                "has_api_key" => BreakdownTypes.HasApiKey,
+                "request_source" => BreakdownTypes.RequestSource,
                 _ => null,
             };
         }

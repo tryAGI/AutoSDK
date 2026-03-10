@@ -24,7 +24,7 @@ namespace G
         /// Removes background noise from audio
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -84,6 +84,13 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.FileFormat}"),
                     name: "\"file_format\"");
+            } 
+            if (request.PreviewB64 != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.PreviewB64}"),
+                    name: "\"preview_b64\"");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -207,7 +214,7 @@ namespace G
         /// Removes background noise from audio
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="audio">
         /// The audio file from which vocals/speech will be isolated from.
@@ -219,6 +226,9 @@ namespace G
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
         /// Default Value: other
         /// </param>
+        /// <param name="previewB64">
+        /// Optional preview image base64 for tracking this generation.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
@@ -226,6 +236,7 @@ namespace G
             string audioname,
             string? xiApiKey = default,
             global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat = default,
+            string? previewB64 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAudioIsolationV1AudioIsolationPost
@@ -233,6 +244,7 @@ namespace G
                 Audio = audio,
                 Audioname = audioname,
                 FileFormat = fileFormat,
+                PreviewB64 = previewB64,
             };
 
             await CreateAudioIsolationAsync(

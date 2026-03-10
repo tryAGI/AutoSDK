@@ -10,14 +10,6 @@ namespace G
     public sealed partial class AgentPlatformSettingsRequestModel
     {
         /// <summary>
-        /// Settings for authentication<br/>
-        /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"shareable_token":"1234567890"}
-        /// </summary>
-        /// <example>{"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"shareable_token":"1234567890"}</example>
-        [global::Newtonsoft.Json.JsonProperty("auth")]
-        public global::G.AuthSettings? Auth { get; set; }
-
-        /// <summary>
         /// Settings for evaluation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation")]
@@ -46,6 +38,47 @@ namespace G
         public global::G.ConversationInitiationClientDataConfigInput? Overrides { get; set; }
 
         /// <summary>
+        /// Workspace overrides for the agent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("workspace_overrides")]
+        public global::G.AgentWorkspaceOverridesInput? WorkspaceOverrides { get; set; }
+
+        /// <summary>
+        /// Testing configuration for the agent<br/>
+        /// Example: {"attached_tests":[{"test_id":"test_123","workflow_node_id":"node_abc"},{"test_id":"test_456"}],"referenced_tests_ids":["test_123","test_456"]}
+        /// </summary>
+        /// <example>{"attached_tests":[{"test_id":"test_123","workflow_node_id":"node_abc"},{"test_id":"test_456"}],"referenced_tests_ids":["test_123","test_456"]}</example>
+        [global::Newtonsoft.Json.JsonProperty("testing")]
+        public global::G.AgentTestingSettings? Testing { get; set; }
+
+        /// <summary>
+        /// Whether the agent is archived<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("archived")]
+        public bool? Archived { get; set; }
+
+        /// <summary>
+        /// Guardrails configuration for the agent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("guardrails")]
+        public global::G.GuardrailsV1Input? Guardrails { get; set; }
+
+        /// <summary>
+        /// Language for all conversation analysis outputs (summaries, titles, evaluation rationales, data collection rationales). If not set, the language will be inferred from the conversation. Must be one of the supported conversation languages.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("summary_language")]
+        public string? SummaryLanguage { get; set; }
+
+        /// <summary>
+        /// Settings for authentication<br/>
+        /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"require_origin_header":true,"shareable_token":"1234567890"}
+        /// </summary>
+        /// <example>{"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"require_origin_header":true,"shareable_token":"1234567890"}</example>
+        [global::Newtonsoft.Json.JsonProperty("auth")]
+        public global::G.AuthSettings? Auth { get; set; }
+
+        /// <summary>
         /// Call limits for the agent<br/>
         /// Example: {"agent_concurrency_limit":-1,"bursting_enabled":true,"daily_limit":100000}
         /// </summary>
@@ -59,13 +92,7 @@ namespace G
         /// </summary>
         /// <example>{"apply_to_existing_conversations":false,"delete_audio":false,"delete_transcript_and_pii":false,"record_voice":true,"retention_days":-1,"zero_retention_mode":false}</example>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public global::G.PrivacyConfig? Privacy { get; set; }
-
-        /// <summary>
-        /// Workspace overrides for the agent
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("workspace_overrides")]
-        public global::G.AgentWorkspaceOverridesInput? WorkspaceOverrides { get; set; }
+        public global::G.PrivacyConfigInput? Privacy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,10 +103,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentPlatformSettingsRequestModel" /> class.
         /// </summary>
-        /// <param name="auth">
-        /// Settings for authentication<br/>
-        /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"shareable_token":"1234567890"}
-        /// </param>
         /// <param name="evaluation">
         /// Settings for evaluation
         /// </param>
@@ -94,6 +117,27 @@ namespace G
         /// Additional overrides for the agent during conversation initiation<br/>
         /// Example: {"custom_llm_extra_body":true,"enable_conversation_initiation_client_data_from_webhook":true}
         /// </param>
+        /// <param name="workspaceOverrides">
+        /// Workspace overrides for the agent
+        /// </param>
+        /// <param name="testing">
+        /// Testing configuration for the agent<br/>
+        /// Example: {"attached_tests":[{"test_id":"test_123","workflow_node_id":"node_abc"},{"test_id":"test_456"}],"referenced_tests_ids":["test_123","test_456"]}
+        /// </param>
+        /// <param name="archived">
+        /// Whether the agent is archived<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="guardrails">
+        /// Guardrails configuration for the agent
+        /// </param>
+        /// <param name="summaryLanguage">
+        /// Language for all conversation analysis outputs (summaries, titles, evaluation rationales, data collection rationales). If not set, the language will be inferred from the conversation. Must be one of the supported conversation languages.
+        /// </param>
+        /// <param name="auth">
+        /// Settings for authentication<br/>
+        /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"require_origin_header":true,"shareable_token":"1234567890"}
+        /// </param>
         /// <param name="callLimits">
         /// Call limits for the agent<br/>
         /// Example: {"agent_concurrency_limit":-1,"bursting_enabled":true,"daily_limit":100000}
@@ -102,27 +146,32 @@ namespace G
         /// Privacy settings for the agent<br/>
         /// Example: {"apply_to_existing_conversations":false,"delete_audio":false,"delete_transcript_and_pii":false,"record_voice":true,"retention_days":-1,"zero_retention_mode":false}
         /// </param>
-        /// <param name="workspaceOverrides">
-        /// Workspace overrides for the agent
-        /// </param>
         public AgentPlatformSettingsRequestModel(
-            global::G.AuthSettings? auth,
             global::G.EvaluationSettings? evaluation,
             global::G.WidgetConfigInput? widget,
             global::System.Collections.Generic.Dictionary<string, global::G.LiteralJsonSchemaProperty>? dataCollection,
             global::G.ConversationInitiationClientDataConfigInput? overrides,
+            global::G.AgentWorkspaceOverridesInput? workspaceOverrides,
+            global::G.AgentTestingSettings? testing,
+            bool? archived,
+            global::G.GuardrailsV1Input? guardrails,
+            string? summaryLanguage,
+            global::G.AuthSettings? auth,
             global::G.AgentCallLimits? callLimits,
-            global::G.PrivacyConfig? privacy,
-            global::G.AgentWorkspaceOverridesInput? workspaceOverrides)
+            global::G.PrivacyConfigInput? privacy)
         {
-            this.Auth = auth;
             this.Evaluation = evaluation;
             this.Widget = widget;
             this.DataCollection = dataCollection;
             this.Overrides = overrides;
+            this.WorkspaceOverrides = workspaceOverrides;
+            this.Testing = testing;
+            this.Archived = archived;
+            this.Guardrails = guardrails;
+            this.SummaryLanguage = summaryLanguage;
+            this.Auth = auth;
             this.CallLimits = callLimits;
             this.Privacy = privacy;
-            this.WorkspaceOverrides = workspaceOverrides;
         }
 
         /// <summary>

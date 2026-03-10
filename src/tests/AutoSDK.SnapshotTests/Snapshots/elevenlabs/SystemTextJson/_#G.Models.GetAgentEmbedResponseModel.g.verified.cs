@@ -17,9 +17,9 @@ namespace G
         public required string AgentId { get; set; }
 
         /// <summary>
-        /// Example: {"action_text":"Call","bg_color":"#ffffff","border_color":"#e1e1e1","border_radius":10,"btn_color":"#000000","btn_radius":10,"btn_text_color":"#ffffff","disable_banner":false,"end_call_text":"End Call","expand_text":"Expand","expandable":"never","feedback_mode":"none","focus_color":"#000000","listening_text":"Listening...","mic_muting_enabled":false,"shareable_page_show_terms":true,"shareable_page_text":"Share","speaking_text":"Speaking...","start_call_text":"Start Call","terms_html":"\u003Cp\u003ETerms and Conditions\u003C/p\u003E","terms_key":"terms","terms_text":"Terms and Conditions","text_color":"#000000","variant":"full"}
+        /// Example: {"first_message":"Hello! How can I help you today?","language":"en","language_presets":{},"supported_language_overrides":["es","fr"],"supports_text_only":true,"text_only":false,"use_rtc":false}
         /// </summary>
-        /// <example>{"action_text":"Call","bg_color":"#ffffff","border_color":"#e1e1e1","border_radius":10,"btn_color":"#000000","btn_radius":10,"btn_text_color":"#ffffff","disable_banner":false,"end_call_text":"End Call","expand_text":"Expand","expandable":"never","feedback_mode":"none","focus_color":"#000000","listening_text":"Listening...","mic_muting_enabled":false,"shareable_page_show_terms":true,"shareable_page_text":"Share","speaking_text":"Speaking...","start_call_text":"Start Call","terms_html":"\u003Cp\u003ETerms and Conditions\u003C/p\u003E","terms_key":"terms","terms_text":"Terms and Conditions","text_color":"#000000","variant":"full"}</example>
+        /// <example>{"first_message":"Hello! How can I help you today?","language":"en","language_presets":{},"supported_language_overrides":["es","fr"],"supports_text_only":true,"text_only":false,"use_rtc":false}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("widget_config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WidgetConfigResponseModel WidgetConfig { get; set; }
@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="widgetConfig">
-        /// Example: {"action_text":"Call","bg_color":"#ffffff","border_color":"#e1e1e1","border_radius":10,"btn_color":"#000000","btn_radius":10,"btn_text_color":"#ffffff","disable_banner":false,"end_call_text":"End Call","expand_text":"Expand","expandable":"never","feedback_mode":"none","focus_color":"#000000","listening_text":"Listening...","mic_muting_enabled":false,"shareable_page_show_terms":true,"shareable_page_text":"Share","speaking_text":"Speaking...","start_call_text":"Start Call","terms_html":"\u003Cp\u003ETerms and Conditions\u003C/p\u003E","terms_key":"terms","terms_text":"Terms and Conditions","text_color":"#000000","variant":"full"}
+        /// Example: {"first_message":"Hello! How can I help you today?","language":"en","language_presets":{},"supported_language_overrides":["es","fr"],"supports_text_only":true,"text_only":false,"use_rtc":false}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

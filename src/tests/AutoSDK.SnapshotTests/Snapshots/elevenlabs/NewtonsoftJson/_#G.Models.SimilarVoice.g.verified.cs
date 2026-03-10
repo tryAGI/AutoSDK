@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimilarVoiceCategory Category { get; set; } = default!;
+        public global::G.VoiceCategory Category { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         public SimilarVoice(
             string voiceId,
             string name,
-            global::G.SimilarVoiceCategory category,
+            global::G.VoiceCategory category,
             string? description,
             string? previewUrl)
         {

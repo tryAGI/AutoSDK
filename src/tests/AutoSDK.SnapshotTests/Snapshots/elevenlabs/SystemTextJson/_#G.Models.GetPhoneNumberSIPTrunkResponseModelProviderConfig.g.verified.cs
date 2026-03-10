@@ -7,6 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class GetPhoneNumberSIPTrunkResponseModelProviderConfig
     {
 

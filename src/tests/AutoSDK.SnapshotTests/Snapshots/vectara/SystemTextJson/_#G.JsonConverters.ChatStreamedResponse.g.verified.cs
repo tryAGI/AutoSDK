@@ -79,19 +79,26 @@ namespace G.JsonConverters
                 error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ChatStreamedResponse(
+            var __value = new global::G.ChatStreamedResponse(
                 discriminator?.Type,
                 searchResults,
+
                 chatInfo,
+
                 generationChunk,
+
                 generationEnd,
+
                 factualConsistencyScore,
+
                 end,
+
                 generationInfo,
+
                 error
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -57,6 +57,13 @@ namespace G
         public double? GuidanceScale { get; set; }
 
         /// <summary>
+        /// Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("should_enhance")]
+        public bool? ShouldEnhance { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +97,10 @@ namespace G
         /// Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.<br/>
         /// Default Value: 5
         /// </param>
+        /// <param name="shouldEnhance">
+        /// Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +111,8 @@ namespace G
             double? loudness,
             double? quality,
             int? seed,
-            double? guidanceScale)
+            double? guidanceScale,
+            bool? shouldEnhance)
         {
             this.VoiceDescription = voiceDescription ?? throw new global::System.ArgumentNullException(nameof(voiceDescription));
             this.Text = text;
@@ -109,6 +121,7 @@ namespace G
             this.Quality = quality;
             this.Seed = seed;
             this.GuidanceScale = guidanceScale;
+            this.ShouldEnhance = shouldEnhance;
         }
 
         /// <summary>

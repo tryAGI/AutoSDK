@@ -44,14 +44,16 @@ namespace G.JsonConverters
                 streamError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.GenerateStreamedResponse(
+            var __value = new global::G.GenerateStreamedResponse(
                 discriminator?.EventType,
                 textGeneration,
+
                 streamEnd,
+
                 streamError
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -17,6 +17,10 @@ namespace G
         /// 
         /// </summary>
         Eur,
+        /// <summary>
+        /// 
+        /// </summary>
+        Inr,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 ExtendedSubscriptionResponseModelCurrency2.Usd => "usd",
                 ExtendedSubscriptionResponseModelCurrency2.Eur => "eur",
+                ExtendedSubscriptionResponseModelCurrency2.Inr => "inr",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "usd" => ExtendedSubscriptionResponseModelCurrency2.Usd,
                 "eur" => ExtendedSubscriptionResponseModelCurrency2.Eur,
+                "inr" => ExtendedSubscriptionResponseModelCurrency2.Inr,
                 _ => null,
             };
         }

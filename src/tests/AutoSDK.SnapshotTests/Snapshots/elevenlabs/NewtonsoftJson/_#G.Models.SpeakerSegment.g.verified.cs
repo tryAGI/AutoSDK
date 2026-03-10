@@ -36,6 +36,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("subtitles", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> Subtitles { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dubs", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.Dictionary<string, global::G.DubbedSegment> Dubs { get; set; } = default!;
 
@@ -52,18 +58,21 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="subtitles"></param>
         /// <param name="dubs"></param>
         public SpeakerSegment(
             string id,
             double startTime,
             double endTime,
             string text,
+            global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> subtitles,
             global::System.Collections.Generic.Dictionary<string, global::G.DubbedSegment> dubs)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Subtitles = subtitles ?? throw new global::System.ArgumentNullException(nameof(subtitles));
             this.Dubs = dubs ?? throw new global::System.ArgumentNullException(nameof(dubs));
         }
 

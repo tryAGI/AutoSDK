@@ -19,8 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("whatsapp_user_id")]
+        public string? WhatsappUserId { get; set; }
 
         /// <summary>
         /// 
@@ -39,17 +44,20 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumber"></param>
+        /// <param name="whatsappUserId"></param>
         /// <param name="conversationInitiationClientData"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutboundCallRecipient(
-            string phoneNumber,
             string? id,
+            string? phoneNumber,
+            string? whatsappUserId,
             global::G.ConversationInitiationClientDataRequestInput? conversationInitiationClientData)
         {
-            this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Id = id;
+            this.PhoneNumber = phoneNumber;
+            this.WhatsappUserId = whatsappUserId;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }
 

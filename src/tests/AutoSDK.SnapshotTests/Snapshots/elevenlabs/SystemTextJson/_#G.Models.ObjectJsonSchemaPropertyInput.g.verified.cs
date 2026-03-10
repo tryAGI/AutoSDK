@@ -34,6 +34,12 @@ namespace G
         public object? Properties { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("required_constraints")]
+        public global::G.RequiredConstraints? RequiredConstraints { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,6 +54,7 @@ namespace G
         /// <param name="required"></param>
         /// <param name="description"></param>
         /// <param name="properties"></param>
+        /// <param name="requiredConstraints"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,12 +62,14 @@ namespace G
             string? type,
             global::System.Collections.Generic.IList<string>? required,
             string? description,
-            object? properties)
+            object? properties,
+            global::G.RequiredConstraints? requiredConstraints)
         {
             this.Type = type;
             this.Required = required;
             this.Description = description;
             this.Properties = properties;
+            this.RequiredConstraints = requiredConstraints;
         }
 
         /// <summary>

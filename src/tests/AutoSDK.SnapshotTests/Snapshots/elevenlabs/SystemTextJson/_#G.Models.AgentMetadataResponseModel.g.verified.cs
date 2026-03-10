@@ -17,6 +17,13 @@ namespace G
         public required int CreatedAtUnixSecs { get; set; }
 
         /// <summary>
+        /// The last update time of the agent in unix seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at_unix_secs")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int UpdatedAtUnixSecs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -28,13 +35,18 @@ namespace G
         /// <param name="createdAtUnixSecs">
         /// The creation time of the agent in unix seconds
         /// </param>
+        /// <param name="updatedAtUnixSecs">
+        /// The last update time of the agent in unix seconds
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentMetadataResponseModel(
-            int createdAtUnixSecs)
+            int createdAtUnixSecs,
+            int updatedAtUnixSecs)
         {
             this.CreatedAtUnixSecs = createdAtUnixSecs;
+            this.UpdatedAtUnixSecs = updatedAtUnixSecs;
         }
 
         /// <summary>

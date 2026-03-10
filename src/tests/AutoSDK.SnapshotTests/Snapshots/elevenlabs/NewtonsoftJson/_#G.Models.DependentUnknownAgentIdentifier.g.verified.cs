@@ -11,6 +11,12 @@ namespace G
     public sealed partial class DependentUnknownAgentIdentifier
     {
         /// <summary>
+        /// If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("referenced_resource_ids")]
+        public global::System.Collections.Generic.IList<string>? ReferencedResourceIds { get; set; }
+
+        /// <summary>
         /// Default Value: unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -25,12 +31,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependentUnknownAgentIdentifier" /> class.
         /// </summary>
+        /// <param name="referencedResourceIds">
+        /// If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly.
+        /// </param>
         /// <param name="type">
         /// Default Value: unknown
         /// </param>
         public DependentUnknownAgentIdentifier(
+            global::System.Collections.Generic.IList<string>? referencedResourceIds,
             string? type)
         {
+            this.ReferencedResourceIds = referencedResourceIds;
             this.Type = type;
         }
 

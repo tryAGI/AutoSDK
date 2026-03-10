@@ -199,7 +199,7 @@ public record struct MethodParameter(
     {
         get
         {
-            if (Type.EnumValues.Length != 0 && Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            if (Type.EnumValues.Length != 0 && !Type.IsAnyOfLike && Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
             {
                 return ParameterName + "Value";
             }

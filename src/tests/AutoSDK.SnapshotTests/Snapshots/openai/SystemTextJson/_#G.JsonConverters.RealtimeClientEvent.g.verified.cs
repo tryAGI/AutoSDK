@@ -161,18 +161,29 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.RealtimeClientEvent(
+            var __value = new global::G.RealtimeClientEvent(
                 conversationItemCreate,
+
                 conversationItemDelete,
+
                 conversationItemRetrieve,
+
                 conversationItemTruncate,
+
                 inputAudioBufferAppend,
+
                 inputAudioBufferClear,
+
                 outputAudioBufferClear,
+
                 inputAudioBufferCommit,
+
                 responseCancel,
+
                 responseCreate,
+
                 sessionUpdate,
+
                 transcriptionSessionUpdate
                 );
 
@@ -249,7 +260,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

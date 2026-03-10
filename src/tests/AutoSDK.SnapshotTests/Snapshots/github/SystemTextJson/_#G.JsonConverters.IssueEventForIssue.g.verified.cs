@@ -197,21 +197,35 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.IssueEventForIssue(
+            var __value = new global::G.IssueEventForIssue(
                 labeledIssueEvent,
+
                 unlabeledIssueEvent,
+
                 assignedIssueEvent,
+
                 unassignedIssueEvent,
+
                 milestonedIssueEvent,
+
                 demilestonedIssueEvent,
+
                 renamedIssueEvent,
+
                 reviewRequestedIssueEvent,
+
                 reviewRequestRemovedIssueEvent,
+
                 reviewDismissedIssueEvent,
+
                 lockedIssueEvent,
+
                 addedToProjectIssueEvent,
+
                 movedColumnInProjectIssueEvent,
+
                 removedFromProjectIssueEvent,
+
                 convertedNoteToIssueIssueEvent
                 );
 
@@ -306,7 +320,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

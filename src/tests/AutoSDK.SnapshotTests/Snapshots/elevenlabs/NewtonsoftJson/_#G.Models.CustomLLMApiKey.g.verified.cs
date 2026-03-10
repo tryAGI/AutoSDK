@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The API key for authentication
+    /// The API key for authentication. Either a workspace secret reference {'secret_id': '...'} or an environment variable reference {'env_var_label': '...'}.
     /// </summary>
     public sealed partial class CustomLLMApiKey
     {

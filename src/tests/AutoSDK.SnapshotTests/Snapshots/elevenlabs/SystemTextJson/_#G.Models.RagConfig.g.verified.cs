@@ -44,6 +44,18 @@ namespace G
         public int? MaxRetrievedRagChunksCount { get; set; }
 
         /// <summary>
+        /// Number of candidates evaluated in ANN vector search. Higher number means better results, but higher latency. Minimum recommended value is 100. If disabled, the default value is used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_candidates")]
+        public int? NumCandidates { get; set; }
+
+        /// <summary>
+        /// Custom prompt for rewriting user queries before RAG retrieval. The conversation history will be automatically appended at the end. If not set, the default prompt will be used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("query_rewrite_prompt_override")]
+        public string? QueryRewritePromptOverride { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +82,12 @@ namespace G
         /// Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="numCandidates">
+        /// Number of candidates evaluated in ANN vector search. Higher number means better results, but higher latency. Minimum recommended value is 100. If disabled, the default value is used.
+        /// </param>
+        /// <param name="queryRewritePromptOverride">
+        /// Custom prompt for rewriting user queries before RAG retrieval. The conversation history will be automatically appended at the end. If not set, the default prompt will be used.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,13 +96,17 @@ namespace G
             global::G.EmbeddingModelEnum? embeddingModel,
             double? maxVectorDistance,
             int? maxDocumentsLength,
-            int? maxRetrievedRagChunksCount)
+            int? maxRetrievedRagChunksCount,
+            int? numCandidates,
+            string? queryRewritePromptOverride)
         {
             this.Enabled = enabled;
             this.EmbeddingModel = embeddingModel;
             this.MaxVectorDistance = maxVectorDistance;
             this.MaxDocumentsLength = maxDocumentsLength;
             this.MaxRetrievedRagChunksCount = maxRetrievedRagChunksCount;
+            this.NumCandidates = numCandidates;
+            this.QueryRewritePromptOverride = queryRewritePromptOverride;
         }
 
         /// <summary>

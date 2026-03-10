@@ -65,17 +65,22 @@ namespace G.JsonConverters
                 rewrittenQuery = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.QueryHistorySpan(
+            var __value = new global::G.QueryHistorySpan(
                 discriminator?.Type,
                 rephrase,
+
                 search,
+
                 rerank,
+
                 generation,
+
                 fcs,
+
                 rewrittenQuery
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

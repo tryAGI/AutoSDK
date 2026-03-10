@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public global::G.ConversationFeedbackType? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_score")]
         public global::G.UserFeedbackScore? OverallScore { get; set; }
 
@@ -28,6 +34,18 @@ namespace G
         public int? Dislikes { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rating")]
+        public int? Rating { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
+        public string? Comment { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,6 +54,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryFeedbackCommonModel" /> class.
         /// </summary>
+        /// <param name="type"></param>
         /// <param name="overallScore"></param>
         /// <param name="likes">
         /// Default Value: 0
@@ -43,17 +62,25 @@ namespace G
         /// <param name="dislikes">
         /// Default Value: 0
         /// </param>
+        /// <param name="rating"></param>
+        /// <param name="comment"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationHistoryFeedbackCommonModel(
+            global::G.ConversationFeedbackType? type,
             global::G.UserFeedbackScore? overallScore,
             int? likes,
-            int? dislikes)
+            int? dislikes,
+            int? rating,
+            string? comment)
         {
+            this.Type = type;
             this.OverallScore = overallScore;
             this.Likes = likes;
             this.Dislikes = dislikes;
+            this.Rating = rating;
+            this.Comment = comment;
         }
 
         /// <summary>

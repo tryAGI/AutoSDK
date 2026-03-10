@@ -65,6 +65,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.GetKnowledgeBaseSummaryFolderResponseModel? Folder { get; init; }
+#else
+        public global::G.GetKnowledgeBaseSummaryFolderResponseModel? Folder { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Folder))]
+#endif
+        public bool IsFolder => Folder != null;
         /// <summary>
         /// 
         /// </summary>
@@ -122,11 +139,30 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFolderResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryFolderResponseModel?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.GetKnowledgeBaseSummaryFolderResponseModel?(DocumentsItem @this) => @this.Folder;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DocumentsItem(global::G.GetKnowledgeBaseSummaryFolderResponseModel? value)
+        {
+            Folder = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DocumentsItem(
             global::G.GetKnowledgeBaseListResponseModelDocumentDiscriminatorType? type,
             global::G.GetKnowledgeBaseSummaryURLResponseModel? url,
             global::G.GetKnowledgeBaseSummaryFileResponseModel? file,
-            global::G.GetKnowledgeBaseSummaryTextResponseModel? text
+            global::G.GetKnowledgeBaseSummaryTextResponseModel? text,
+            global::G.GetKnowledgeBaseSummaryFolderResponseModel? folder
             )
         {
             Type = type;
@@ -134,12 +170,14 @@ namespace G
             Url = url;
             File = file;
             Text = text;
+            Folder = folder;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Folder as object ??
             Text as object ??
             File as object ??
             Url as object 
@@ -151,7 +189,8 @@ namespace G
         public override string? ToString() =>
             Url?.ToString() ??
             File?.ToString() ??
-            Text?.ToString() 
+            Text?.ToString() ??
+            Folder?.ToString() 
             ;
 
         /// <summary>
@@ -159,7 +198,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsUrl && !IsFile && !IsText || !IsUrl && IsFile && !IsText || !IsUrl && !IsFile && IsText;
+            return IsUrl && !IsFile && !IsText && !IsFolder || !IsUrl && IsFile && !IsText && !IsFolder || !IsUrl && !IsFile && IsText && !IsFolder || !IsUrl && !IsFile && !IsText && IsFolder;
         }
 
         /// <summary>
@@ -169,6 +208,7 @@ namespace G
             global::System.Func<global::G.GetKnowledgeBaseSummaryURLResponseModel?, TResult>? url = null,
             global::System.Func<global::G.GetKnowledgeBaseSummaryFileResponseModel?, TResult>? file = null,
             global::System.Func<global::G.GetKnowledgeBaseSummaryTextResponseModel?, TResult>? text = null,
+            global::System.Func<global::G.GetKnowledgeBaseSummaryFolderResponseModel?, TResult>? folder = null,
             bool validate = true)
         {
             if (validate)
@@ -188,6 +228,10 @@ namespace G
             {
                 return text(Text!);
             }
+            else if (IsFolder && folder != null)
+            {
+                return folder(Folder!);
+            }
 
             return default(TResult);
         }
@@ -199,6 +243,7 @@ namespace G
             global::System.Action<global::G.GetKnowledgeBaseSummaryURLResponseModel?>? url = null,
             global::System.Action<global::G.GetKnowledgeBaseSummaryFileResponseModel?>? file = null,
             global::System.Action<global::G.GetKnowledgeBaseSummaryTextResponseModel?>? text = null,
+            global::System.Action<global::G.GetKnowledgeBaseSummaryFolderResponseModel?>? folder = null,
             bool validate = true)
         {
             if (validate)
@@ -218,6 +263,10 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
+            else if (IsFolder)
+            {
+                folder?.Invoke(Folder!);
+            }
         }
 
         /// <summary>
@@ -233,6 +282,8 @@ namespace G
                 typeof(global::G.GetKnowledgeBaseSummaryFileResponseModel),
                 Text,
                 typeof(global::G.GetKnowledgeBaseSummaryTextResponseModel),
+                Folder,
+                typeof(global::G.GetKnowledgeBaseSummaryFolderResponseModel),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -251,7 +302,8 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryURLResponseModel?>.Default.Equals(Url, other.Url) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryFileResponseModel?>.Default.Equals(File, other.File) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryTextResponseModel?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryTextResponseModel?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GetKnowledgeBaseSummaryFolderResponseModel?>.Default.Equals(Folder, other.Folder) 
                 ;
         }
 

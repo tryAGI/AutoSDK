@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        TtsCharacters,
+        /// <summary>
+        /// 
+        /// </summary>
         MinutesUsed,
         /// <summary>
         /// 
@@ -33,6 +37,14 @@ namespace G
         /// 
         /// </summary>
         FiatUnitsSpent,
+        /// <summary>
+        /// 
+        /// </summary>
+        Concurrency,
+        /// <summary>
+        /// 
+        /// </summary>
+        ConcurrencyAverage,
     }
 
     /// <summary>
@@ -48,11 +60,14 @@ namespace G
             return value switch
             {
                 MetricType.Credits => "credits",
+                MetricType.TtsCharacters => "tts_characters",
                 MetricType.MinutesUsed => "minutes_used",
                 MetricType.RequestCount => "request_count",
                 MetricType.TtfbAvg => "ttfb_avg",
                 MetricType.TtfbP95 => "ttfb_p95",
                 MetricType.FiatUnitsSpent => "fiat_units_spent",
+                MetricType.Concurrency => "concurrency",
+                MetricType.ConcurrencyAverage => "concurrency_average",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +79,14 @@ namespace G
             return value switch
             {
                 "credits" => MetricType.Credits,
+                "tts_characters" => MetricType.TtsCharacters,
                 "minutes_used" => MetricType.MinutesUsed,
                 "request_count" => MetricType.RequestCount,
                 "ttfb_avg" => MetricType.TtfbAvg,
                 "ttfb_p95" => MetricType.TtfbP95,
                 "fiat_units_spent" => MetricType.FiatUnitsSpent,
+                "concurrency" => MetricType.Concurrency,
+                "concurrency_average" => MetricType.ConcurrencyAverage,
                 _ => null,
             };
         }

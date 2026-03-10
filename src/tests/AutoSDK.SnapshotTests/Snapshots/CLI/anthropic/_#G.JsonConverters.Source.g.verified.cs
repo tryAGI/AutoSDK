@@ -51,15 +51,18 @@ namespace G.JsonConverters
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.Source(
+            var __value = new global::G.Source(
                 discriminator?.Type,
                 base64,
+
                 text,
+
                 content,
+
                 url
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         Viewer,
     }
 
@@ -37,6 +41,7 @@ namespace G
             {
                 BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Admin => "admin",
                 BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Editor => "editor",
+                BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Commenter => "commenter",
                 BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,6 +55,7 @@ namespace G
             {
                 "admin" => BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Admin,
                 "editor" => BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Editor,
+                "commenter" => BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Commenter,
                 "viewer" => BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2.Viewer,
                 _ => null,
             };

@@ -5,11 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// Configuration for a webhook that will be called by an LLM tool.<br/>
     /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
     /// </summary>
     public sealed partial class WebhookToolApiSchemaConfigInput
     {
+        /// <summary>
+        /// Headers that should be included in the request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_headers")]
+        public object? RequestHeaders { get; set; }
+
         /// <summary>
         /// The URL that the webhook will be sent to. May include path parameters, e.g. https://example.com/agents/{agent_id}
         /// </summary>
@@ -44,10 +49,18 @@ namespace G
         public global::G.ObjectJsonSchemaPropertyInput? RequestBodySchema { get; set; }
 
         /// <summary>
-        /// Headers that should be included in the request
+        /// Content type for the request body. Only applies to POST/PUT/PATCH requests.<br/>
+        /// Default Value: application/json
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("request_headers")]
-        public object? RequestHeaders { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookToolApiSchemaConfigInputContentTypeJsonConverter))]
+        public global::G.WebhookToolApiSchemaConfigInputContentType? ContentType { get; set; }
+
+        /// <summary>
+        /// Optional auth connection to use for authentication with this webhook
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_connection")]
+        public global::G.AuthConnectionLocator? AuthConnection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,6 +71,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookToolApiSchemaConfigInput" /> class.
         /// </summary>
+        /// <param name="requestHeaders">
+        /// Headers that should be included in the request
+        /// </param>
         /// <param name="url">
         /// The URL that the webhook will be sent to. May include path parameters, e.g. https://example.com/agents/{agent_id}
         /// </param>
@@ -74,26 +90,34 @@ namespace G
         /// <param name="requestBodySchema">
         /// Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body
         /// </param>
-        /// <param name="requestHeaders">
-        /// Headers that should be included in the request
+        /// <param name="contentType">
+        /// Content type for the request body. Only applies to POST/PUT/PATCH requests.<br/>
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="authConnection">
+        /// Optional auth connection to use for authentication with this webhook
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookToolApiSchemaConfigInput(
             string url,
+            object? requestHeaders,
             global::G.WebhookToolApiSchemaConfigInputMethod? method,
             global::System.Collections.Generic.Dictionary<string, global::G.LiteralJsonSchemaProperty>? pathParamsSchema,
             global::G.QueryParamsJsonSchema? queryParamsSchema,
             global::G.ObjectJsonSchemaPropertyInput? requestBodySchema,
-            object? requestHeaders)
+            global::G.WebhookToolApiSchemaConfigInputContentType? contentType,
+            global::G.AuthConnectionLocator? authConnection)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.RequestHeaders = requestHeaders;
             this.Method = method;
             this.PathParamsSchema = pathParamsSchema;
             this.QueryParamsSchema = queryParamsSchema;
             this.RequestBodySchema = requestBodySchema;
-            this.RequestHeaders = requestHeaders;
+            this.ContentType = contentType;
+            this.AuthConnection = authConnection;
         }
 
         /// <summary>

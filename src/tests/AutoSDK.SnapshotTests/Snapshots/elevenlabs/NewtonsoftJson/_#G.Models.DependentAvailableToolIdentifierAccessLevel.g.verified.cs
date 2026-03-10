@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="commenter")]
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
         Viewer,
     }
@@ -41,6 +46,7 @@ namespace G
             {
                 DependentAvailableToolIdentifierAccessLevel.Admin => "admin",
                 DependentAvailableToolIdentifierAccessLevel.Editor => "editor",
+                DependentAvailableToolIdentifierAccessLevel.Commenter => "commenter",
                 DependentAvailableToolIdentifierAccessLevel.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,6 +60,7 @@ namespace G
             {
                 "admin" => DependentAvailableToolIdentifierAccessLevel.Admin,
                 "editor" => DependentAvailableToolIdentifierAccessLevel.Editor,
+                "commenter" => DependentAvailableToolIdentifierAccessLevel.Commenter,
                 "viewer" => DependentAvailableToolIdentifierAccessLevel.Viewer,
                 _ => null,
             };

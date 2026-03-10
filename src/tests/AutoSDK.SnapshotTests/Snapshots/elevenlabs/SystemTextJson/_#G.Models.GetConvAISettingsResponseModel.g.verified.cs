@@ -35,6 +35,13 @@ namespace G
         public int? RagRetentionPeriodDays { get; set; }
 
         /// <summary>
+        /// Default Value: standard
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_livekit_stack")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LivekitStackTypeJsonConverter))]
+        public global::G.LivekitStackType? DefaultLivekitStack { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +59,9 @@ namespace G
         /// <param name="ragRetentionPeriodDays">
         /// Default Value: 10
         /// </param>
+        /// <param name="defaultLivekitStack">
+        /// Default Value: standard
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,12 +69,14 @@ namespace G
             global::G.ConversationInitiationClientDataWebhook? conversationInitiationClientDataWebhook,
             global::G.ConvAIWebhooks? webhooks,
             bool? canUseMcpServers,
-            int? ragRetentionPeriodDays)
+            int? ragRetentionPeriodDays,
+            global::G.LivekitStackType? defaultLivekitStack)
         {
             this.ConversationInitiationClientDataWebhook = conversationInitiationClientDataWebhook;
             this.Webhooks = webhooks;
             this.CanUseMcpServers = canUseMcpServers;
             this.RagRetentionPeriodDays = ragRetentionPeriodDays;
+            this.DefaultLivekitStack = defaultLivekitStack;
         }
 
         /// <summary>

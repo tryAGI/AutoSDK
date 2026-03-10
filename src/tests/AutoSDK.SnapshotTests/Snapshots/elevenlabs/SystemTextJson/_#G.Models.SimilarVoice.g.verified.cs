@@ -27,9 +27,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SimilarVoiceCategoryJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VoiceCategoryJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimilarVoiceCategory Category { get; set; }
+        public required global::G.VoiceCategory Category { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         public SimilarVoice(
             string voiceId,
             string name,
-            global::G.SimilarVoiceCategory category,
+            global::G.VoiceCategory category,
             string? description,
             string? previewUrl)
         {

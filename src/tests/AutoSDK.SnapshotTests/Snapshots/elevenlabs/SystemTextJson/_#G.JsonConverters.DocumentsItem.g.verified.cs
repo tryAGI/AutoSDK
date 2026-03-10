@@ -43,15 +43,26 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetKnowledgeBaseSummaryTextResponseModel)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.GetKnowledgeBaseSummaryFolderResponseModel? folder = default;
+            if (discriminator?.Type == global::G.GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Folder)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetKnowledgeBaseSummaryFolderResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetKnowledgeBaseSummaryFolderResponseModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetKnowledgeBaseSummaryFolderResponseModel)}");
+                folder = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
-            var result = new global::G.DocumentsItem(
+            var __value = new global::G.DocumentsItem(
                 discriminator?.Type,
                 url,
+
                 file,
-                text
+
+                text,
+
+                folder
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
@@ -80,6 +91,12 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetKnowledgeBaseSummaryTextResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetKnowledgeBaseSummaryTextResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetKnowledgeBaseSummaryTextResponseModel).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+            }
+            else if (value.IsFolder)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetKnowledgeBaseSummaryFolderResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetKnowledgeBaseSummaryFolderResponseModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetKnowledgeBaseSummaryFolderResponseModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Folder, typeInfo);
             }
         }
     }

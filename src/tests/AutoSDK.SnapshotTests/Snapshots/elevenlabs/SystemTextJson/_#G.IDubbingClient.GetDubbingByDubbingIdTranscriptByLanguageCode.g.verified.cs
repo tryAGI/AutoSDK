@@ -13,21 +13,22 @@ namespace G
         /// ID of the dubbing project.
         /// </param>
         /// <param name="languageCode">
-        /// ID of the language.
+        /// ISO-693 language code to retrieve the transcript for. Use 'source' to fetch the transcript of the original media.
         /// </param>
         /// <param name="formatType">
-        /// Format to use for the subtitle file, either 'srt' or 'webvtt'<br/>
+        /// Format to return transcript in. For subtitles use either 'srt' or 'webvtt', and for a full transcript use 'json'. The 'json' format is not yet supported for Dubbing Studio.<br/>
         /// Default Value: srt
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> GetDubbingByDubbingIdTranscriptByLanguageCodeAsync(
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.DubbingTranscriptResponseModel, string>> GetDubbingByDubbingIdTranscriptByLanguageCodeAsync(
             string dubbingId,
             string languageCode,
-            global::G.GetDubbedTranscriptV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType = default,
+            global::G.GetDubbedTranscriptFileFormatType? formatType = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

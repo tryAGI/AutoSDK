@@ -13,6 +13,10 @@ namespace G
         /// 
         /// </summary>
         Elevenlabs,
+        /// <summary>
+        /// 
+        /// </summary>
+        ScribeRealtime,
     }
 
     /// <summary>
@@ -28,6 +32,7 @@ namespace G
             return value switch
             {
                 ASRProvider.Elevenlabs => "elevenlabs",
+                ASRProvider.ScribeRealtime => "scribe_realtime",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +44,7 @@ namespace G
             return value switch
             {
                 "elevenlabs" => ASRProvider.Elevenlabs,
+                "scribe_realtime" => ASRProvider.ScribeRealtime,
                 _ => null,
             };
         }

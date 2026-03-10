@@ -48,6 +48,36 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5")]
+        Gpt5,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5.1")]
+        Gpt51,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5.2")]
+        Gpt52,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5.2-chat-latest")]
+        Gpt52ChatLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5-mini")]
+        Gpt5Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5-nano")]
+        Gpt5Nano,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-3.5-turbo")]
         Gpt35Turbo,
         /// <summary>
@@ -73,13 +103,48 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-lite")]
+        Gemini25FlashLite,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash")]
         Gemini25Flash,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-3-pro-preview")]
+        Gemini3ProPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-3-flash-preview")]
+        Gemini3FlashPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-3.1-flash-lite-preview")]
+        Gemini31FlashLitePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-sonnet-4-5")]
+        ClaudeSonnet45,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-sonnet-4-6")]
+        ClaudeSonnet46,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="claude-sonnet-4")]
         ClaudeSonnet4,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-haiku-4-5")]
+        ClaudeHaiku45,
         /// <summary>
         /// 
         /// </summary>
@@ -113,6 +178,41 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="qwen3-4b")]
+        Qwen34b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="qwen3-30b-a3b")]
+        Qwen330bA3b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-oss-20b")]
+        GptOss20b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-oss-120b")]
+        GptOss120b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="glm-45-air-fp8")]
+        Glm45AirFp8,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-preview-09-2025")]
+        Gemini25FlashPreview092025,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-lite-preview-09-2025")]
+        Gemini25FlashLitePreview092025,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-preview-05-20")]
         Gemini25FlashPreview0520,
         /// <summary>
@@ -120,6 +220,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-preview-04-17")]
         Gemini25FlashPreview0417,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gemini-2.5-flash-lite-preview-06-17")]
+        Gemini25FlashLitePreview0617,
         /// <summary>
         /// 
         /// </summary>
@@ -158,6 +263,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-sonnet-4-5@20250929")]
+        ClaudeSonnet45_20250929,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-haiku-4-5@20251001")]
+        ClaudeHaiku45_20251001,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="claude-3-7-sonnet@20250219")]
         Claude37Sonnet_20250219,
         /// <summary>
@@ -175,6 +290,31 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="claude-3-haiku@20240307")]
         Claude3Haiku_20240307,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5-2025-08-07")]
+        Gpt520250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5.1-2025-11-13")]
+        Gpt5120251113,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5.2-2025-12-11")]
+        Gpt5220251211,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5-mini-2025-08-07")]
+        Gpt5Mini20250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-5-nano-2025-08-07")]
+        Gpt5Nano20250807,
         /// <summary>
         /// 
         /// </summary>
@@ -235,6 +375,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-3.5-turbo-1106")]
         Gpt35Turbo1106,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="watt-tool-8b")]
+        WattTool8b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="watt-tool-70b")]
+        WattTool70b,
     }
 
     /// <summary>
@@ -256,21 +406,42 @@ namespace G
                 Llm.Gpt41 => "gpt-4.1",
                 Llm.Gpt41Mini => "gpt-4.1-mini",
                 Llm.Gpt41Nano => "gpt-4.1-nano",
+                Llm.Gpt5 => "gpt-5",
+                Llm.Gpt51 => "gpt-5.1",
+                Llm.Gpt52 => "gpt-5.2",
+                Llm.Gpt52ChatLatest => "gpt-5.2-chat-latest",
+                Llm.Gpt5Mini => "gpt-5-mini",
+                Llm.Gpt5Nano => "gpt-5-nano",
                 Llm.Gpt35Turbo => "gpt-3.5-turbo",
                 Llm.Gemini15Pro => "gemini-1.5-pro",
                 Llm.Gemini15Flash => "gemini-1.5-flash",
                 Llm.Gemini20Flash => "gemini-2.0-flash",
                 Llm.Gemini20FlashLite => "gemini-2.0-flash-lite",
+                Llm.Gemini25FlashLite => "gemini-2.5-flash-lite",
                 Llm.Gemini25Flash => "gemini-2.5-flash",
+                Llm.Gemini3ProPreview => "gemini-3-pro-preview",
+                Llm.Gemini3FlashPreview => "gemini-3-flash-preview",
+                Llm.Gemini31FlashLitePreview => "gemini-3.1-flash-lite-preview",
+                Llm.ClaudeSonnet45 => "claude-sonnet-4-5",
+                Llm.ClaudeSonnet46 => "claude-sonnet-4-6",
                 Llm.ClaudeSonnet4 => "claude-sonnet-4",
+                Llm.ClaudeHaiku45 => "claude-haiku-4-5",
                 Llm.Claude37Sonnet => "claude-3-7-sonnet",
                 Llm.Claude35Sonnet => "claude-3-5-sonnet",
                 Llm.Claude35SonnetV1 => "claude-3-5-sonnet-v1",
                 Llm.Claude3Haiku => "claude-3-haiku",
                 Llm.GrokBeta => "grok-beta",
                 Llm.CustomLlm => "custom-llm",
+                Llm.Qwen34b => "qwen3-4b",
+                Llm.Qwen330bA3b => "qwen3-30b-a3b",
+                Llm.GptOss20b => "gpt-oss-20b",
+                Llm.GptOss120b => "gpt-oss-120b",
+                Llm.Glm45AirFp8 => "glm-45-air-fp8",
+                Llm.Gemini25FlashPreview092025 => "gemini-2.5-flash-preview-09-2025",
+                Llm.Gemini25FlashLitePreview092025 => "gemini-2.5-flash-lite-preview-09-2025",
                 Llm.Gemini25FlashPreview0520 => "gemini-2.5-flash-preview-05-20",
                 Llm.Gemini25FlashPreview0417 => "gemini-2.5-flash-preview-04-17",
+                Llm.Gemini25FlashLitePreview0617 => "gemini-2.5-flash-lite-preview-06-17",
                 Llm.Gemini20FlashLite001 => "gemini-2.0-flash-lite-001",
                 Llm.Gemini20Flash001 => "gemini-2.0-flash-001",
                 Llm.Gemini15Flash002 => "gemini-1.5-flash-002",
@@ -278,10 +449,17 @@ namespace G
                 Llm.Gemini15Pro002 => "gemini-1.5-pro-002",
                 Llm.Gemini15Pro001 => "gemini-1.5-pro-001",
                 Llm.ClaudeSonnet4_20250514 => "claude-sonnet-4@20250514",
+                Llm.ClaudeSonnet45_20250929 => "claude-sonnet-4-5@20250929",
+                Llm.ClaudeHaiku45_20251001 => "claude-haiku-4-5@20251001",
                 Llm.Claude37Sonnet_20250219 => "claude-3-7-sonnet@20250219",
                 Llm.Claude35Sonnet_20240620 => "claude-3-5-sonnet@20240620",
                 Llm.Claude35SonnetV2_20241022 => "claude-3-5-sonnet-v2@20241022",
                 Llm.Claude3Haiku_20240307 => "claude-3-haiku@20240307",
+                Llm.Gpt520250807 => "gpt-5-2025-08-07",
+                Llm.Gpt5120251113 => "gpt-5.1-2025-11-13",
+                Llm.Gpt5220251211 => "gpt-5.2-2025-12-11",
+                Llm.Gpt5Mini20250807 => "gpt-5-mini-2025-08-07",
+                Llm.Gpt5Nano20250807 => "gpt-5-nano-2025-08-07",
                 Llm.Gpt4120250414 => "gpt-4.1-2025-04-14",
                 Llm.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
                 Llm.Gpt41Nano20250414 => "gpt-4.1-nano-2025-04-14",
@@ -294,6 +472,8 @@ namespace G
                 Llm.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 Llm.Gpt35Turbo0125 => "gpt-3.5-turbo-0125",
                 Llm.Gpt35Turbo1106 => "gpt-3.5-turbo-1106",
+                Llm.WattTool8b => "watt-tool-8b",
+                Llm.WattTool70b => "watt-tool-70b",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -311,21 +491,42 @@ namespace G
                 "gpt-4.1" => Llm.Gpt41,
                 "gpt-4.1-mini" => Llm.Gpt41Mini,
                 "gpt-4.1-nano" => Llm.Gpt41Nano,
+                "gpt-5" => Llm.Gpt5,
+                "gpt-5.1" => Llm.Gpt51,
+                "gpt-5.2" => Llm.Gpt52,
+                "gpt-5.2-chat-latest" => Llm.Gpt52ChatLatest,
+                "gpt-5-mini" => Llm.Gpt5Mini,
+                "gpt-5-nano" => Llm.Gpt5Nano,
                 "gpt-3.5-turbo" => Llm.Gpt35Turbo,
                 "gemini-1.5-pro" => Llm.Gemini15Pro,
                 "gemini-1.5-flash" => Llm.Gemini15Flash,
                 "gemini-2.0-flash" => Llm.Gemini20Flash,
                 "gemini-2.0-flash-lite" => Llm.Gemini20FlashLite,
+                "gemini-2.5-flash-lite" => Llm.Gemini25FlashLite,
                 "gemini-2.5-flash" => Llm.Gemini25Flash,
+                "gemini-3-pro-preview" => Llm.Gemini3ProPreview,
+                "gemini-3-flash-preview" => Llm.Gemini3FlashPreview,
+                "gemini-3.1-flash-lite-preview" => Llm.Gemini31FlashLitePreview,
+                "claude-sonnet-4-5" => Llm.ClaudeSonnet45,
+                "claude-sonnet-4-6" => Llm.ClaudeSonnet46,
                 "claude-sonnet-4" => Llm.ClaudeSonnet4,
+                "claude-haiku-4-5" => Llm.ClaudeHaiku45,
                 "claude-3-7-sonnet" => Llm.Claude37Sonnet,
                 "claude-3-5-sonnet" => Llm.Claude35Sonnet,
                 "claude-3-5-sonnet-v1" => Llm.Claude35SonnetV1,
                 "claude-3-haiku" => Llm.Claude3Haiku,
                 "grok-beta" => Llm.GrokBeta,
                 "custom-llm" => Llm.CustomLlm,
+                "qwen3-4b" => Llm.Qwen34b,
+                "qwen3-30b-a3b" => Llm.Qwen330bA3b,
+                "gpt-oss-20b" => Llm.GptOss20b,
+                "gpt-oss-120b" => Llm.GptOss120b,
+                "glm-45-air-fp8" => Llm.Glm45AirFp8,
+                "gemini-2.5-flash-preview-09-2025" => Llm.Gemini25FlashPreview092025,
+                "gemini-2.5-flash-lite-preview-09-2025" => Llm.Gemini25FlashLitePreview092025,
                 "gemini-2.5-flash-preview-05-20" => Llm.Gemini25FlashPreview0520,
                 "gemini-2.5-flash-preview-04-17" => Llm.Gemini25FlashPreview0417,
+                "gemini-2.5-flash-lite-preview-06-17" => Llm.Gemini25FlashLitePreview0617,
                 "gemini-2.0-flash-lite-001" => Llm.Gemini20FlashLite001,
                 "gemini-2.0-flash-001" => Llm.Gemini20Flash001,
                 "gemini-1.5-flash-002" => Llm.Gemini15Flash002,
@@ -333,10 +534,17 @@ namespace G
                 "gemini-1.5-pro-002" => Llm.Gemini15Pro002,
                 "gemini-1.5-pro-001" => Llm.Gemini15Pro001,
                 "claude-sonnet-4@20250514" => Llm.ClaudeSonnet4_20250514,
+                "claude-sonnet-4-5@20250929" => Llm.ClaudeSonnet45_20250929,
+                "claude-haiku-4-5@20251001" => Llm.ClaudeHaiku45_20251001,
                 "claude-3-7-sonnet@20250219" => Llm.Claude37Sonnet_20250219,
                 "claude-3-5-sonnet@20240620" => Llm.Claude35Sonnet_20240620,
                 "claude-3-5-sonnet-v2@20241022" => Llm.Claude35SonnetV2_20241022,
                 "claude-3-haiku@20240307" => Llm.Claude3Haiku_20240307,
+                "gpt-5-2025-08-07" => Llm.Gpt520250807,
+                "gpt-5.1-2025-11-13" => Llm.Gpt5120251113,
+                "gpt-5.2-2025-12-11" => Llm.Gpt5220251211,
+                "gpt-5-mini-2025-08-07" => Llm.Gpt5Mini20250807,
+                "gpt-5-nano-2025-08-07" => Llm.Gpt5Nano20250807,
                 "gpt-4.1-2025-04-14" => Llm.Gpt4120250414,
                 "gpt-4.1-mini-2025-04-14" => Llm.Gpt41Mini20250414,
                 "gpt-4.1-nano-2025-04-14" => Llm.Gpt41Nano20250414,
@@ -349,6 +557,8 @@ namespace G
                 "gpt-4-turbo-2024-04-09" => Llm.Gpt4Turbo20240409,
                 "gpt-3.5-turbo-0125" => Llm.Gpt35Turbo0125,
                 "gpt-3.5-turbo-1106" => Llm.Gpt35Turbo1106,
+                "watt-tool-8b" => Llm.WattTool8b,
+                "watt-tool-70b" => Llm.WattTool70b,
                 _ => null,
             };
         }

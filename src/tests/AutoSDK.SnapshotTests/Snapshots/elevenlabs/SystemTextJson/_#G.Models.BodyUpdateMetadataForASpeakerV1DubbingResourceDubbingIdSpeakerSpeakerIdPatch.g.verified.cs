@@ -10,10 +10,34 @@ namespace G
     public sealed partial class BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch
     {
         /// <summary>
+        /// Name to attribute to this speaker.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speaker_name")]
+        public string? SpeakerName { get; set; }
+
+        /// <summary>
         /// Either the identifier of a voice from the ElevenLabs voice library, or one of ['track-clone', 'clip-clone'].
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
         public string? VoiceId { get; set; }
+
+        /// <summary>
+        /// For models that support it, the voice similarity value to use. This will default to 0.65, with a valid range of [0.0, 1.0].
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_stability")]
+        public double? VoiceStability { get; set; }
+
+        /// <summary>
+        /// For models that support it, the voice similarity value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_similarity")]
+        public double? VoiceSimilarity { get; set; }
+
+        /// <summary>
+        /// For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_style")]
+        public double? VoiceStyle { get; set; }
 
         /// <summary>
         /// Languages to apply these changes to. If empty, will apply to all languages.
@@ -30,8 +54,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch" /> class.
         /// </summary>
+        /// <param name="speakerName">
+        /// Name to attribute to this speaker.
+        /// </param>
         /// <param name="voiceId">
         /// Either the identifier of a voice from the ElevenLabs voice library, or one of ['track-clone', 'clip-clone'].
+        /// </param>
+        /// <param name="voiceStability">
+        /// For models that support it, the voice similarity value to use. This will default to 0.65, with a valid range of [0.0, 1.0].
+        /// </param>
+        /// <param name="voiceSimilarity">
+        /// For models that support it, the voice similarity value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
+        /// </param>
+        /// <param name="voiceStyle">
+        /// For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
         /// </param>
         /// <param name="languages">
         /// Languages to apply these changes to. If empty, will apply to all languages.
@@ -40,10 +76,18 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch(
+            string? speakerName,
             string? voiceId,
+            double? voiceStability,
+            double? voiceSimilarity,
+            double? voiceStyle,
             global::System.Collections.Generic.IList<string>? languages)
         {
+            this.SpeakerName = speakerName;
             this.VoiceId = voiceId;
+            this.VoiceStability = voiceStability;
+            this.VoiceSimilarity = voiceSimilarity;
+            this.VoiceStyle = voiceStyle;
             this.Languages = languages;
         }
 

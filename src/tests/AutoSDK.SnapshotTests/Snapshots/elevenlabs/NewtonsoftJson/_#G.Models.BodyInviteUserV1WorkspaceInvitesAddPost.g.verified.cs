@@ -16,16 +16,23 @@ namespace G
         public string Email { get; set; } = default!;
 
         /// <summary>
+        /// The workspace permission of the user. This is deprecated, use `seat_type` instead.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("workspace_permission")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public string? WorkspacePermission { get; set; }
+
+        /// <summary>
+        /// The seat type of the user
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seat_type")]
+        public global::G.SeatType? SeatType { get; set; }
+
+        /// <summary>
         /// The group ids of the user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_ids")]
         public global::System.Collections.Generic.IList<string>? GroupIds { get; set; }
-
-        /// <summary>
-        /// The workspace permission of the user
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("workspace_permission")]
-        public global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission2? WorkspacePermission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,20 +46,20 @@ namespace G
         /// <param name="email">
         /// The email of the customer
         /// </param>
+        /// <param name="seatType">
+        /// The seat type of the user
+        /// </param>
         /// <param name="groupIds">
         /// The group ids of the user
         /// </param>
-        /// <param name="workspacePermission">
-        /// The workspace permission of the user
-        /// </param>
         public BodyInviteUserV1WorkspaceInvitesAddPost(
             string email,
-            global::System.Collections.Generic.IList<string>? groupIds,
-            global::G.BodyInviteUserV1WorkspaceInvitesAddPostWorkspacePermission2? workspacePermission)
+            global::G.SeatType? seatType,
+            global::System.Collections.Generic.IList<string>? groupIds)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.SeatType = seatType;
             this.GroupIds = groupIds;
-            this.WorkspacePermission = workspacePermission;
         }
 
         /// <summary>

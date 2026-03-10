@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptAgentInputToolDiscriminatorType? Type { get; }
+        public global::G.PromptAgentAPIModelInputToolDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A webhook tool is a tool that calls an external webhook from our server<br/>
@@ -52,8 +52,7 @@ namespace G
         public bool IsClient => Client != null;
 
         /// <summary>
-        /// A system tool is a tool that is used to call a system method in the server<br/>
-        /// Example: {"type":"system"}
+        /// A system tool is a tool that is used to call a system method in the server
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SystemToolConfigInput? System { get; init; }
@@ -85,6 +84,40 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
         public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ApiIntegrationWebhookToolConfigInput? ApiIntegrationWebhook { get; init; }
+#else
+        public global::G.ApiIntegrationWebhookToolConfigInput? ApiIntegrationWebhook { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiIntegrationWebhook))]
+#endif
+        public bool IsApiIntegrationWebhook => ApiIntegrationWebhook != null;
+
+        /// <summary>
+        /// SMB tool configuration that wraps SMB tool parameters.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SMBToolConfig? Smb { get; init; }
+#else
+        public global::G.SMBToolConfig? Smb { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Smb))]
+#endif
+        public bool IsSmb => Smb != null;
         /// <summary>
         /// 
         /// </summary>
@@ -160,12 +193,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ToolsItem2(global::G.ApiIntegrationWebhookToolConfigInput value) => new ToolsItem2((global::G.ApiIntegrationWebhookToolConfigInput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ApiIntegrationWebhookToolConfigInput?(ToolsItem2 @this) => @this.ApiIntegrationWebhook;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsItem2(global::G.ApiIntegrationWebhookToolConfigInput? value)
+        {
+            ApiIntegrationWebhook = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolsItem2(global::G.SMBToolConfig value) => new ToolsItem2((global::G.SMBToolConfig?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.SMBToolConfig?(ToolsItem2 @this) => @this.Smb;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolsItem2(global::G.SMBToolConfig? value)
+        {
+            Smb = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolsItem2(
-            global::G.PromptAgentInputToolDiscriminatorType? type,
+            global::G.PromptAgentAPIModelInputToolDiscriminatorType? type,
             global::G.WebhookToolConfigInput? webhook,
             global::G.ClientToolConfigInput? client,
             global::G.SystemToolConfigInput? system,
-            global::G.MCPToolConfigInput? mcp
+            global::G.MCPToolConfigInput? mcp,
+            global::G.ApiIntegrationWebhookToolConfigInput? apiIntegrationWebhook,
+            global::G.SMBToolConfig? smb
             )
         {
             Type = type;
@@ -174,12 +245,16 @@ namespace G
             Client = client;
             System = system;
             Mcp = mcp;
+            ApiIntegrationWebhook = apiIntegrationWebhook;
+            Smb = smb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Smb as object ??
+            ApiIntegrationWebhook as object ??
             Mcp as object ??
             System as object ??
             Client as object ??
@@ -193,7 +268,9 @@ namespace G
             Webhook?.ToString() ??
             Client?.ToString() ??
             System?.ToString() ??
-            Mcp?.ToString() 
+            Mcp?.ToString() ??
+            ApiIntegrationWebhook?.ToString() ??
+            Smb?.ToString() 
             ;
 
         /// <summary>
@@ -201,7 +278,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsWebhook && !IsClient && !IsSystem && !IsMcp || !IsWebhook && IsClient && !IsSystem && !IsMcp || !IsWebhook && !IsClient && IsSystem && !IsMcp || !IsWebhook && !IsClient && !IsSystem && IsMcp;
+            return IsWebhook && !IsClient && !IsSystem && !IsMcp && !IsApiIntegrationWebhook && !IsSmb || !IsWebhook && IsClient && !IsSystem && !IsMcp && !IsApiIntegrationWebhook && !IsSmb || !IsWebhook && !IsClient && IsSystem && !IsMcp && !IsApiIntegrationWebhook && !IsSmb || !IsWebhook && !IsClient && !IsSystem && IsMcp && !IsApiIntegrationWebhook && !IsSmb || !IsWebhook && !IsClient && !IsSystem && !IsMcp && IsApiIntegrationWebhook && !IsSmb || !IsWebhook && !IsClient && !IsSystem && !IsMcp && !IsApiIntegrationWebhook && IsSmb;
         }
 
         /// <summary>
@@ -212,6 +289,8 @@ namespace G
             global::System.Func<global::G.ClientToolConfigInput?, TResult>? client = null,
             global::System.Func<global::G.SystemToolConfigInput?, TResult>? system = null,
             global::System.Func<global::G.MCPToolConfigInput?, TResult>? mcp = null,
+            global::System.Func<global::G.ApiIntegrationWebhookToolConfigInput?, TResult>? apiIntegrationWebhook = null,
+            global::System.Func<global::G.SMBToolConfig?, TResult>? smb = null,
             bool validate = true)
         {
             if (validate)
@@ -235,6 +314,14 @@ namespace G
             {
                 return mcp(Mcp!);
             }
+            else if (IsApiIntegrationWebhook && apiIntegrationWebhook != null)
+            {
+                return apiIntegrationWebhook(ApiIntegrationWebhook!);
+            }
+            else if (IsSmb && smb != null)
+            {
+                return smb(Smb!);
+            }
 
             return default(TResult);
         }
@@ -247,6 +334,8 @@ namespace G
             global::System.Action<global::G.ClientToolConfigInput?>? client = null,
             global::System.Action<global::G.SystemToolConfigInput?>? system = null,
             global::System.Action<global::G.MCPToolConfigInput?>? mcp = null,
+            global::System.Action<global::G.ApiIntegrationWebhookToolConfigInput?>? apiIntegrationWebhook = null,
+            global::System.Action<global::G.SMBToolConfig?>? smb = null,
             bool validate = true)
         {
             if (validate)
@@ -270,6 +359,14 @@ namespace G
             {
                 mcp?.Invoke(Mcp!);
             }
+            else if (IsApiIntegrationWebhook)
+            {
+                apiIntegrationWebhook?.Invoke(ApiIntegrationWebhook!);
+            }
+            else if (IsSmb)
+            {
+                smb?.Invoke(Smb!);
+            }
         }
 
         /// <summary>
@@ -287,6 +384,10 @@ namespace G
                 typeof(global::G.SystemToolConfigInput),
                 Mcp,
                 typeof(global::G.MCPToolConfigInput),
+                ApiIntegrationWebhook,
+                typeof(global::G.ApiIntegrationWebhookToolConfigInput),
+                Smb,
+                typeof(global::G.SMBToolConfig),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -306,7 +407,9 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.WebhookToolConfigInput?>.Default.Equals(Webhook, other.Webhook) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ClientToolConfigInput?>.Default.Equals(Client, other.Client) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.SystemToolConfigInput?>.Default.Equals(System, other.System) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigInput?>.Default.Equals(Mcp, other.Mcp) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigInput?>.Default.Equals(Mcp, other.Mcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ApiIntegrationWebhookToolConfigInput?>.Default.Equals(ApiIntegrationWebhook, other.ApiIntegrationWebhook) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SMBToolConfig?>.Default.Equals(Smb, other.Smb) 
                 ;
         }
 

@@ -221,23 +221,39 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.Item(
+            var __value = new global::G.Item(
                 message1,
+
                 message2,
+
                 fileSearchCall,
+
                 computerCall,
+
                 computerCallOutput,
+
                 webSearchCall,
+
                 functionCall,
+
                 functionCallOutput,
+
                 reasoning,
+
                 imageGenerationCall,
+
                 codeInterpreterCall,
+
                 localShellCall,
+
                 localShellCallOutput,
+
                 mcpListTools,
+
                 mcpApprovalRequest,
+
                 mcpApprovalResponse,
+
                 mcpCall
                 );
 
@@ -344,7 +360,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

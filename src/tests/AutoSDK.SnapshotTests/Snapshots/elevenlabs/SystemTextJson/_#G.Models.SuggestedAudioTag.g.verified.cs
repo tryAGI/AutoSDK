@@ -1,0 +1,58 @@
+﻿//HintName: G.Models.SuggestedAudioTag.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SuggestedAudioTag
+    {
+        /// <summary>
+        /// Audio tag to use (for best performance, 1-2 words, e.g., 'happy', 'excited')
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Tag { get; set; }
+
+        /// <summary>
+        /// Optional description of when to use this tag
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SuggestedAudioTag" /> class.
+        /// </summary>
+        /// <param name="tag">
+        /// Audio tag to use (for best performance, 1-2 words, e.g., 'happy', 'excited')
+        /// </param>
+        /// <param name="description">
+        /// Optional description of when to use this tag
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public SuggestedAudioTag(
+            string tag,
+            string? description)
+        {
+            this.Tag = tag ?? throw new global::System.ArgumentNullException(nameof(tag));
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SuggestedAudioTag" /> class.
+        /// </summary>
+        public SuggestedAudioTag()
+        {
+        }
+    }
+}

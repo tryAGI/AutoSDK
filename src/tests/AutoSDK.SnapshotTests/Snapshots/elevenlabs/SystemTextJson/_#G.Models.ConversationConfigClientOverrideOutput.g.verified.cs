@@ -5,10 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"voice_id":"cjVigY5qzO86Huf0OWal"}}
+    /// Example: {"agent":{"first_message":"Hello, how can I help you today?","language":"en","prompt":{"llm":"gemini-2.0-flash-001","prompt":"You are a helpful assistant that can answer questions about the topic of the conversation."}},"tts":{"similarity_boost":0.8,"speed":1.0,"stability":0.5,"voice_id":"cjVigY5qzO86Huf0OWal"},"turn":{"soft_timeout_config":{"message":"Hhmmmm...yeah."}}}
     /// </summary>
     public sealed partial class ConversationConfigClientOverrideOutput
     {
+        /// <summary>
+        /// Configuration for turn detection
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("turn")]
+        public global::G.TurnConfigOverride? Turn { get; set; }
+
         /// <summary>
         /// Configuration for conversational text to speech
         /// </summary>
@@ -25,7 +31,7 @@ namespace G
         /// Agent specific configuration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
-        public global::G.AgentConfigOverride? Agent { get; set; }
+        public global::G.AgentConfigOverrideOutput? Agent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationConfigClientOverrideOutput" /> class.
         /// </summary>
+        /// <param name="turn">
+        /// Configuration for turn detection
+        /// </param>
         /// <param name="tts">
         /// Configuration for conversational text to speech
         /// </param>
@@ -49,10 +58,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationConfigClientOverrideOutput(
+            global::G.TurnConfigOverride? turn,
             global::G.TTSConversationalConfigOverride? tts,
             global::G.ConversationConfigOverride? conversation,
-            global::G.AgentConfigOverride? agent)
+            global::G.AgentConfigOverrideOutput? agent)
         {
+            this.Turn = turn;
             this.Tts = tts;
             this.Conversation = conversation;
             this.Agent = agent;

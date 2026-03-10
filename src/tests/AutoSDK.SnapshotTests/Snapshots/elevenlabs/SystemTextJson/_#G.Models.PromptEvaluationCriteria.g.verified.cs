@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// An evaluation using the transcript and a prompt for a yes/no achieved answer<br/>
-    /// Example: {"conversation_goal_prompt":"You are a helpful assistant that can answer questions about the topic of the conversation.","id":"1234567890","use_knowledge_base":false}
+    /// Example: {"conversation_goal_prompt":"You are a helpful assistant that can answer questions about the topic of the conversation.","id":"1234567890","name":"Customer satisfaction check","use_knowledge_base":false}
     /// </summary>
     public sealed partial class PromptEvaluationCriteria
     {

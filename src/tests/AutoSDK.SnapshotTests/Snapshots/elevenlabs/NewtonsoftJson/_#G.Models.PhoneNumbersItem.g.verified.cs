@@ -16,7 +16,7 @@ namespace G
         public global::G.GetAgentResponseModelPhoneNumberDiscriminatorProvider? Provider { get; }
 
         /// <summary>
-        /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
+        /// Example: {"label":"Customer Support","phone_number":"\u002B1234567890","phone_number_id":"phone_123","provider":"twilio"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetPhoneNumberTwilioResponseModel? Twilio { get; init; }
@@ -33,7 +33,7 @@ namespace G
         public bool IsTwilio => Twilio != null;
 
         /// <summary>
-        /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
+        /// Example: {"label":"Sales Team","livekit_stack":"standard","phone_number":"\u002B1987654321","phone_number_id":"phone_456","provider":"sip_trunk"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetPhoneNumberSIPTrunkResponseModel? SipTrunk { get; init; }

@@ -41,10 +41,16 @@ namespace G
         public global::G.ResourceAccessInfo AccessInfo { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The ID of the parent folder, or null if the document is at the root level.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("extracted_inner_html", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ExtractedInnerHtml { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("folder_parent_id")]
+        public string? FolderParentId { get; set; }
+
+        /// <summary>
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("folder_path")]
+        public global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentResponseModel>? FolderPath { get; set; }
 
         /// <summary>
         /// 
@@ -52,6 +58,12 @@ namespace G
         /// <default>"text"</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string Type { get; set; } = "text";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("extracted_inner_html", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ExtractedInnerHtml { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,8 +81,14 @@ namespace G
         /// <param name="accessInfo">
         /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </param>
-        /// <param name="extractedInnerHtml"></param>
+        /// <param name="folderParentId">
+        /// The ID of the parent folder, or null if the document is at the root level.
+        /// </param>
+        /// <param name="folderPath">
+        /// The folder path segments leading to this entity, from root to parent folder.
+        /// </param>
         /// <param name="type"></param>
+        /// <param name="extractedInnerHtml"></param>
         public GetKnowledgeBaseTextResponseModel(
             string id,
             string name,
@@ -78,6 +96,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
             string extractedInnerHtml,
+            string? folderParentId,
+            global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentResponseModel>? folderPath,
             string type = "text")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -86,6 +106,8 @@ namespace G
             this.SupportedUsages = supportedUsages ?? throw new global::System.ArgumentNullException(nameof(supportedUsages));
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
             this.ExtractedInnerHtml = extractedInnerHtml ?? throw new global::System.ArgumentNullException(nameof(extractedInnerHtml));
+            this.FolderParentId = folderParentId;
+            this.FolderPath = folderPath;
             this.Type = type;
         }
 

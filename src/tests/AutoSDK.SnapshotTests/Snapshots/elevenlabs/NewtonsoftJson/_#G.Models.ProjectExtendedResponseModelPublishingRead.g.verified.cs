@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.ProjectExtendedResponseModelPublishingRead.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The ElevenReader data if the book was published.
+    /// </summary>
+    public sealed partial class ProjectExtendedResponseModelPublishingRead
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

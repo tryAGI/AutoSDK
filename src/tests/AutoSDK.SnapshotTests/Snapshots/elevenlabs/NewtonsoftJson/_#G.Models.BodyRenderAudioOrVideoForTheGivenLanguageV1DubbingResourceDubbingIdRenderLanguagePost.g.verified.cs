@@ -16,6 +16,13 @@ namespace G
         public global::G.RenderType2 RenderType { get; set; } = default!;
 
         /// <summary>
+        /// Whether to normalize the volume of the rendered audio.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("normalize_volume")]
+        public bool? NormalizeVolume { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -27,10 +34,16 @@ namespace G
         /// <param name="renderType">
         /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
         /// </param>
+        /// <param name="normalizeVolume">
+        /// Whether to normalize the volume of the rendered audio.<br/>
+        /// Default Value: false
+        /// </param>
         public BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost(
-            global::G.RenderType2 renderType)
+            global::G.RenderType2 renderType,
+            bool? normalizeVolume)
         {
             this.RenderType = renderType;
+            this.NormalizeVolume = normalizeVolume;
         }
 
         /// <summary>

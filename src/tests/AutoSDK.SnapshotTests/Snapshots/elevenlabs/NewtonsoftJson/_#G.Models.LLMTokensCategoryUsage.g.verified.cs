@@ -16,7 +16,7 @@ namespace G
         public int? Tokens { get; set; }
 
         /// <summary>
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price")]
         public double? Price { get; set; }
@@ -34,7 +34,7 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="price">
-        /// Default Value: 0
+        /// Default Value: 0F
         /// </param>
         public LLMTokensCategoryUsage(
             int? tokens,

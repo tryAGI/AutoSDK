@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         Viewer,
     }
 
@@ -37,6 +41,7 @@ namespace G
             {
                 ProjectExtendedResponseModelAccessLevel.Admin => "admin",
                 ProjectExtendedResponseModelAccessLevel.Editor => "editor",
+                ProjectExtendedResponseModelAccessLevel.Commenter => "commenter",
                 ProjectExtendedResponseModelAccessLevel.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,6 +55,7 @@ namespace G
             {
                 "admin" => ProjectExtendedResponseModelAccessLevel.Admin,
                 "editor" => ProjectExtendedResponseModelAccessLevel.Editor,
+                "commenter" => ProjectExtendedResponseModelAccessLevel.Commenter,
                 "viewer" => ProjectExtendedResponseModelAccessLevel.Viewer,
                 _ => null,
             };

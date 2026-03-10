@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 sentenceChunkingStrategy = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ChunkingStrategy(
+            var __value = new global::G.ChunkingStrategy(
                 discriminator?.Type,
                 maxCharsChunkingStrategy,
+
                 sentenceChunkingStrategy
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

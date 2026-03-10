@@ -10,7 +10,7 @@ namespace G
         /// Gets a list of all available voices for a user with search, filtering and pagination.
         /// </summary>
         /// <param name="nextPageToken">
-        /// The next page token to use for pagination. Returned from the previous request.
+        /// The next page token to use for pagination. Returned from the previous request. Use this in combination with the has_more flag for reliable pagination.
         /// </param>
         /// <param name="pageSize">
         /// How many voices to return at maximum. Can not exceed 100, defaults to 10. Page 0 may include more voices due to default voices being included.<br/>
@@ -26,7 +26,7 @@ namespace G
         /// Which direction to sort the voices in. 'asc' or 'desc'.
         /// </param>
         /// <param name="voiceType">
-        /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace', 'non-default'. 'non-default' is equal to all but 'default'.
+        /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace', 'non-default', 'saved'. 'non-default' is equal to all but 'default'. 'saved' is equal to non-default, but includes default voices if they have been added to a collection.
         /// </param>
         /// <param name="category">
         /// Category of the voice to filter by. One of 'premade', 'cloned', 'generated', 'professional'
@@ -38,11 +38,14 @@ namespace G
         /// Collection ID to filter voices by.
         /// </param>
         /// <param name="includeTotalCount">
-        /// Whether to include the total count of voices found in the response. Incurs a performance cost.<br/>
+        /// Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="voiceIds">
+        /// Voice IDs to lookup by. Maximum 100 voice IDs.
+        /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -57,6 +60,7 @@ namespace G
             string? fineTuningState = default,
             string? collectionId = default,
             bool? includeTotalCount = default,
+            global::System.Collections.Generic.IList<string>? voiceIds = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

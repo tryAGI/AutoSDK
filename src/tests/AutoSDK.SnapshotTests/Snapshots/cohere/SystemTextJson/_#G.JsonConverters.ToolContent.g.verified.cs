@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ToolContent(
+            var __value = new global::G.ToolContent(
                 discriminator?.Type,
                 text,
+
                 document
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

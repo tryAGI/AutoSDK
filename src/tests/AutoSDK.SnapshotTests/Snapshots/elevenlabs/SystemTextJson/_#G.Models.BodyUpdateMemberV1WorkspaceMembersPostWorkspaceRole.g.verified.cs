@@ -5,8 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// Role dictating permissions in the workspace.
+    /// The workspace role of the user. This is deprecated, use `workspace_seat_type` instead.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole
     {
 

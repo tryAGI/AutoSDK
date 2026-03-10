@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Folder,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -36,6 +40,7 @@ namespace G
             return value switch
             {
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.File => "file",
+                GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Folder => "folder",
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Text => "text",
                 GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -49,6 +54,7 @@ namespace G
             return value switch
             {
                 "file" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.File,
+                "folder" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Folder,
                 "text" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Text,
                 "url" => GetKnowledgeBaseListResponseModelDocumentDiscriminatorType.Url,
                 _ => null,

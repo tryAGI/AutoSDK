@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 unknown = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.DependentAgentsItem(
+            var __value = new global::G.DependentAgentsItem(
                 discriminator?.Type,
                 available,
+
                 unknown
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

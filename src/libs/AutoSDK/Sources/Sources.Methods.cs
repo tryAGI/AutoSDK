@@ -132,7 +132,7 @@ namespace {endPoint.Settings.Namespace}
                 request: request")});
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
-    .Where(x => x is { Location: not null, Type.IsEnum: true, Type.EnumValues.Length: > 0 })
+    .Where(x => x is { Location: not null, Type.IsEnum: true, Type.IsAnyOfLike: false, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch
             {{
@@ -176,13 +176,13 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
-            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
+            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
     .Select(x => $@"
             if ({x.ParameterName} != default)
             {{
-                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
  

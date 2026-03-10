@@ -46,6 +46,12 @@ namespace G
         public global::G.WidgetFeedbackMode? FeedbackMode { get; set; }
 
         /// <summary>
+        /// Configuration for feedback collected at the end of the conversation
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("end_feedback")]
+        public global::G.WidgetEndFeedbackConfig? EndFeedback { get; set; }
+
+        /// <summary>
         /// The background color of the widget<br/>
         /// Default Value: #ffffff
         /// </summary>
@@ -187,6 +193,26 @@ namespace G
         public string? OverrideLink { get; set; }
 
         /// <summary>
+        /// List of allowed hostnames for clickable markdown links. Use { hostname: '*' } to allow any domain. Empty means no links are allowed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("markdown_link_allowed_hosts")]
+        public global::System.Collections.Generic.IList<global::G.AllowlistItem>? MarkdownLinkAllowedHosts { get; set; }
+
+        /// <summary>
+        /// Whether to automatically include www. variants of allowed hosts<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("markdown_link_include_www")]
+        public bool? MarkdownLinkIncludeWww { get; set; }
+
+        /// <summary>
+        /// Whether to allow http:// in addition to https:// for allowed hosts<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("markdown_link_allow_http")]
+        public bool? MarkdownLinkAllowHttp { get; set; }
+
+        /// <summary>
         /// Whether to enable mic muting<br/>
         /// Default Value: false
         /// </summary>
@@ -206,6 +232,61 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_input_enabled")]
         public bool? TextInputEnabled { get; set; }
+
+        /// <summary>
+        /// Whether to enable the conversation mode toggle in the widget<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("conversation_mode_toggle_enabled")]
+        public bool? ConversationModeToggleEnabled { get; set; }
+
+        /// <summary>
+        /// Whether the widget should be expanded by default<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("default_expanded")]
+        public bool? DefaultExpanded { get; set; }
+
+        /// <summary>
+        /// Whether the widget should always be expanded<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("always_expanded")]
+        public bool? AlwaysExpanded { get; set; }
+
+        /// <summary>
+        /// Whether the widget can be dismissed by the user<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dismissible")]
+        public bool? Dismissible { get; set; }
+
+        /// <summary>
+        /// Whether to show agent working/done/error status during tool use<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("show_agent_status")]
+        public bool? ShowAgentStatus { get; set; }
+
+        /// <summary>
+        /// Whether to show the conversation ID after disconnection.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("show_conversation_id")]
+        public bool? ShowConversationId { get; set; }
+
+        /// <summary>
+        /// Whether to strip audio markup from messages.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("strip_audio_tags")]
+        public bool? StripAudioTags { get; set; }
+
+        /// <summary>
+        /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("syntax_highlight_theme")]
+        public global::G.WidgetConfigInputSyntaxHighlightTheme2? SyntaxHighlightTheme { get; set; }
 
         /// <summary>
         /// Text contents of the widget
@@ -272,6 +353,9 @@ namespace G
         /// <param name="feedbackMode">
         /// The feedback mode of the widget<br/>
         /// Default Value: none
+        /// </param>
+        /// <param name="endFeedback">
+        /// Configuration for feedback collected at the end of the conversation
         /// </param>
         /// <param name="bgColor">
         /// The background color of the widget<br/>
@@ -348,6 +432,17 @@ namespace G
         /// <param name="overrideLink">
         /// The override link for the widget
         /// </param>
+        /// <param name="markdownLinkAllowedHosts">
+        /// List of allowed hostnames for clickable markdown links. Use { hostname: '*' } to allow any domain. Empty means no links are allowed.
+        /// </param>
+        /// <param name="markdownLinkIncludeWww">
+        /// Whether to automatically include www. variants of allowed hosts<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="markdownLinkAllowHttp">
+        /// Whether to allow http:// in addition to https:// for allowed hosts<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="micMutingEnabled">
         /// Whether to enable mic muting<br/>
         /// Default Value: false
@@ -359,6 +454,37 @@ namespace G
         /// <param name="textInputEnabled">
         /// Whether the user should be able to send text messages<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="conversationModeToggleEnabled">
+        /// Whether to enable the conversation mode toggle in the widget<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="defaultExpanded">
+        /// Whether the widget should be expanded by default<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="alwaysExpanded">
+        /// Whether the widget should always be expanded<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="dismissible">
+        /// Whether the widget can be dismissed by the user<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="showAgentStatus">
+        /// Whether to show agent working/done/error status during tool use<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="showConversationId">
+        /// Whether to show the conversation ID after disconnection.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="stripAudioTags">
+        /// Whether to strip audio markup from messages.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="syntaxHighlightTheme">
+        /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
         /// </param>
         /// <param name="textContents">
         /// Text contents of the widget
@@ -386,6 +512,7 @@ namespace G
             global::G.WidgetExpandable? expandable,
             global::G.AnyOf<global::G.OrbAvatar, global::G.URLAvatar, global::G.ImageAvatar>? avatar,
             global::G.WidgetFeedbackMode? feedbackMode,
+            global::G.WidgetEndFeedbackConfig? endFeedback,
             string? bgColor,
             string? textColor,
             string? btnColor,
@@ -408,9 +535,20 @@ namespace G
             bool? showAvatarWhenCollapsed,
             bool? disableBanner,
             string? overrideLink,
+            global::System.Collections.Generic.IList<global::G.AllowlistItem>? markdownLinkAllowedHosts,
+            bool? markdownLinkIncludeWww,
+            bool? markdownLinkAllowHttp,
             bool? micMutingEnabled,
             bool? transcriptEnabled,
             bool? textInputEnabled,
+            bool? conversationModeToggleEnabled,
+            bool? defaultExpanded,
+            bool? alwaysExpanded,
+            bool? dismissible,
+            bool? showAgentStatus,
+            bool? showConversationId,
+            bool? stripAudioTags,
+            global::G.WidgetConfigInputSyntaxHighlightTheme2? syntaxHighlightTheme,
             global::G.WidgetTextContents? textContents,
             global::G.WidgetStyles? styles,
             bool? languageSelector,
@@ -423,6 +561,7 @@ namespace G
             this.Expandable = expandable;
             this.Avatar = avatar;
             this.FeedbackMode = feedbackMode;
+            this.EndFeedback = endFeedback;
             this.BgColor = bgColor;
             this.TextColor = textColor;
             this.BtnColor = btnColor;
@@ -445,9 +584,20 @@ namespace G
             this.ShowAvatarWhenCollapsed = showAvatarWhenCollapsed;
             this.DisableBanner = disableBanner;
             this.OverrideLink = overrideLink;
+            this.MarkdownLinkAllowedHosts = markdownLinkAllowedHosts;
+            this.MarkdownLinkIncludeWww = markdownLinkIncludeWww;
+            this.MarkdownLinkAllowHttp = markdownLinkAllowHttp;
             this.MicMutingEnabled = micMutingEnabled;
             this.TranscriptEnabled = transcriptEnabled;
             this.TextInputEnabled = textInputEnabled;
+            this.ConversationModeToggleEnabled = conversationModeToggleEnabled;
+            this.DefaultExpanded = defaultExpanded;
+            this.AlwaysExpanded = alwaysExpanded;
+            this.Dismissible = dismissible;
+            this.ShowAgentStatus = showAgentStatus;
+            this.ShowConversationId = showConversationId;
+            this.StripAudioTags = stripAudioTags;
+            this.SyntaxHighlightTheme = syntaxHighlightTheme;
             this.TextContents = textContents;
             this.Styles = styles;
             this.LanguageSelector = languageSelector;

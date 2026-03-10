@@ -10,7 +10,7 @@ namespace G
         /// Updates attributes of a workspace member. Apart from the email identifier, all parameters will remain unchanged unless specified. This endpoint may only be called by workspace administrators.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,7 +26,7 @@ namespace G
         /// Updates attributes of a workspace member. Apart from the email identifier, all parameters will remain unchanged unless specified. This endpoint may only be called by workspace administrators.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="email">
         /// Email of the target user.
@@ -34,8 +34,8 @@ namespace G
         /// <param name="isLocked">
         /// Whether to lock or unlock the user account.
         /// </param>
-        /// <param name="workspaceRole">
-        /// Role dictating permissions in the workspace.
+        /// <param name="workspaceSeatType">
+        /// The workspace seat type
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -43,7 +43,7 @@ namespace G
             string email,
             string? xiApiKey = default,
             bool? isLocked = default,
-            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole2? workspaceRole = default,
+            global::G.SeatType? workspaceSeatType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

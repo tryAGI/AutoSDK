@@ -19,9 +19,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("agent_tools")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.AgentToolsItem> AgentTools { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.AgentsItem> Agents { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ConvAIStoredSecretDependencies" /> class.
         /// </summary>
         /// <param name="tools"></param>
-        /// <param name="agentTools"></param>
+        /// <param name="agents"></param>
         /// <param name="others"></param>
         /// <param name="phoneNumbers"></param>
 #if NET7_0_OR_GREATER
@@ -54,12 +54,12 @@ namespace G
 #endif
         public ConvAIStoredSecretDependencies(
             global::System.Collections.Generic.IList<global::G.ToolsItem> tools,
-            global::System.Collections.Generic.IList<global::G.AgentToolsItem> agentTools,
+            global::System.Collections.Generic.IList<global::G.AgentsItem> agents,
             global::System.Collections.Generic.IList<global::G.SecretDependencyType> others,
             global::System.Collections.Generic.IList<global::G.DependentPhoneNumberIdentifier>? phoneNumbers)
         {
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.AgentTools = agentTools ?? throw new global::System.ArgumentNullException(nameof(agentTools));
+            this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));
             this.Others = others ?? throw new global::System.ArgumentNullException(nameof(others));
             this.PhoneNumbers = phoneNumbers;
         }

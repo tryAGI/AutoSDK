@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"alias":"tie-land","string_to_replace":"Thailand","type":"alias"}
+    /// Example: {"alias":"tie-land","case_sensitive":true,"string_to_replace":"Thailand","type":"alias","word_boundaries":true}
     /// </summary>
     public sealed partial class PronunciationDictionaryAliasRuleRequestModel
     {
@@ -15,6 +15,20 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("string_to_replace")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StringToReplace { get; set; }
+
+        /// <summary>
+        /// Whether the rule should match case-sensitively.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("case_sensitive")]
+        public bool? CaseSensitive { get; set; }
+
+        /// <summary>
+        /// Whether the rule should only match at word boundaries.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("word_boundaries")]
+        public bool? WordBoundaries { get; set; }
 
         /// <summary>
         /// The type of the rule.
@@ -42,6 +56,14 @@ namespace G
         /// <param name="stringToReplace">
         /// The string to replace. Must be a non-empty string.
         /// </param>
+        /// <param name="caseSensitive">
+        /// Whether the rule should match case-sensitively.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="wordBoundaries">
+        /// Whether the rule should only match at word boundaries.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="type">
         /// The type of the rule.
         /// </param>
@@ -54,10 +76,14 @@ namespace G
         public PronunciationDictionaryAliasRuleRequestModel(
             string stringToReplace,
             string alias,
+            bool? caseSensitive,
+            bool? wordBoundaries,
             string type = "alias")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
             this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
+            this.CaseSensitive = caseSensitive;
+            this.WordBoundaries = wordBoundaries;
             this.Type = type;
         }
 

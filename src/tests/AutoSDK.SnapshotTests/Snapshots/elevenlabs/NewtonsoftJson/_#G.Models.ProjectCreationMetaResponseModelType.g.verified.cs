@@ -25,6 +25,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto_assign_voices")]
         AutoAssignVoices,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dub_video")]
+        DubVideo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="import_speech")]
+        ImportSpeech,
     }
 
     /// <summary>
@@ -42,6 +52,8 @@ namespace G
                 ProjectCreationMetaResponseModelType.Blank => "blank",
                 ProjectCreationMetaResponseModelType.GeneratePodcast => "generate_podcast",
                 ProjectCreationMetaResponseModelType.AutoAssignVoices => "auto_assign_voices",
+                ProjectCreationMetaResponseModelType.DubVideo => "dub_video",
+                ProjectCreationMetaResponseModelType.ImportSpeech => "import_speech",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,6 +67,8 @@ namespace G
                 "blank" => ProjectCreationMetaResponseModelType.Blank,
                 "generate_podcast" => ProjectCreationMetaResponseModelType.GeneratePodcast,
                 "auto_assign_voices" => ProjectCreationMetaResponseModelType.AutoAssignVoices,
+                "dub_video" => ProjectCreationMetaResponseModelType.DubVideo,
+                "import_speech" => ProjectCreationMetaResponseModelType.ImportSpeech,
                 _ => null,
             };
         }

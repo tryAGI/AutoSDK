@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// Response model for testing tools available on an MCP server.<br/>
-    /// Example: {"success":true,"tools":[{"description":"Gets tomorrow\u0027s forecasted weather conditions for a location.","inputSchema":{"properties":{"latitude":{"description":"Latitude","type":"string"},"longitude":{"description":"Longitude","type":"string"}},"required":["latitude","longitude"],"type":"object"},"name":"weather_by_zapier_get_tomorrow"},{"description":"Description of tool2","name":"tool2"}]}
+    /// Example: {"success":true,"tools":[{"description":"Gets current weather conditions for a location.","inputSchema":{"properties":{"latitude":{"description":"Latitude","type":"string"},"longitude":{"description":"Longitude","type":"string"}},"required":["latitude","longitude"],"type":"object"},"name":"weather_by_zapier_get_current"},{"description":"Description of tool2","inputSchema":{"properties":{},"type":"object"},"name":"tool2"}]}
     /// </summary>
     public sealed partial class ListMCPToolsResponseModel
     {

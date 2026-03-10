@@ -65,10 +65,13 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.ChatCompletionRequestUserMessageContentPart(
+            var __value = new global::G.ChatCompletionRequestUserMessageContentPart(
                 textContentPart,
+
                 imageContentPart,
+
                 audioContentPart,
+
                 fileContentPart
                 );
 
@@ -97,7 +100,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

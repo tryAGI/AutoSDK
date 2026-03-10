@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.GetDocumentationFromKnowledgeBaseResponseDiscriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GetDocumentationFromKnowledgeBaseResponseDiscriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.GetDocumentationFromKnowledgeBaseResponseDiscriminatorType? Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDocumentationFromKnowledgeBaseResponseDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        public GetDocumentationFromKnowledgeBaseResponseDiscriminator(
+            global::G.GetDocumentationFromKnowledgeBaseResponseDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDocumentationFromKnowledgeBaseResponseDiscriminator" /> class.
+        /// </summary>
+        public GetDocumentationFromKnowledgeBaseResponseDiscriminator()
+        {
+        }
+    }
+}

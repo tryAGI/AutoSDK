@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.BodyMoveEntityToFolderV1ConvaiKnowledgeBaseDocumentIdMovePostMoveTo.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The folder to move the entities to. If not set, the entities will be moved to the root folder.
+    /// </summary>
+    public sealed partial class BodyMoveEntityToFolderV1ConvaiKnowledgeBaseDocumentIdMovePostMoveTo
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

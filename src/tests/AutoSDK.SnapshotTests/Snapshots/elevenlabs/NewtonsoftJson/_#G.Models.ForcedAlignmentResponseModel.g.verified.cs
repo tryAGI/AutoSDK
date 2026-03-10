@@ -22,6 +22,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ForcedAlignmentWordResponseModel> Words { get; set; } = default!;
 
         /// <summary>
+        /// The average alignment loss/confidence score for the entire transcript, calculated from all characters.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("loss", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Loss { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,12 +42,17 @@ namespace G
         /// <param name="words">
         /// List of words with their timing information.
         /// </param>
+        /// <param name="loss">
+        /// The average alignment loss/confidence score for the entire transcript, calculated from all characters.
+        /// </param>
         public ForcedAlignmentResponseModel(
             global::System.Collections.Generic.IList<global::G.ForcedAlignmentCharacterResponseModel> characters,
-            global::System.Collections.Generic.IList<global::G.ForcedAlignmentWordResponseModel> words)
+            global::System.Collections.Generic.IList<global::G.ForcedAlignmentWordResponseModel> words,
+            double loss)
         {
             this.Characters = characters ?? throw new global::System.ArgumentNullException(nameof(characters));
             this.Words = words ?? throw new global::System.ArgumentNullException(nameof(words));
+            this.Loss = loss;
         }
 
         /// <summary>

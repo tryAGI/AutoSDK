@@ -9,11 +9,13 @@ namespace G
         partial void PrepareGetStudioProjectsByProjectIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
+            ref string? shareId,
             ref string? xiApiKey);
         partial void PrepareGetStudioProjectsByProjectIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
+            string? shareId,
             string? xiApiKey);
         partial void ProcessGetStudioProjectsByProjectIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,13 +33,17 @@ namespace G
         /// <param name="projectId">
         /// The ID of the Studio project.
         /// </param>
+        /// <param name="shareId">
+        /// The share ID of the project
+        /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectExtendedResponseModel> GetStudioProjectsByProjectIdAsync(
             string projectId,
+            string? shareId = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -46,11 +52,15 @@ namespace G
             PrepareGetStudioProjectsByProjectIdArguments(
                 httpClient: HttpClient,
                 projectId: ref projectId,
+                shareId: ref shareId,
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/studio/projects/{projectId}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("share_id", shareId) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -73,6 +83,7 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 projectId: projectId,
+                shareId: shareId,
                 xiApiKey: xiApiKey);
 
             using var __response = await HttpClient.SendAsync(

@@ -12,11 +12,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        AgentPromptChange,
+        /// <summary>
+        /// 
+        /// </summary>
         EndCall,
         /// <summary>
         /// 
         /// </summary>
         LanguageDetection,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryEntryCreate,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryEntryDelete,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryEntrySearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryEntryUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        PlayKeypadTouchTone,
         /// <summary>
         /// 
         /// </summary>
@@ -29,6 +53,10 @@ namespace G
         /// 
         /// </summary>
         TransferToNumber,
+        /// <summary>
+        /// 
+        /// </summary>
+        VoicemailDetection,
     }
 
     /// <summary>
@@ -43,11 +71,18 @@ namespace G
         {
             return value switch
             {
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.AgentPromptChange => "agent_prompt_change",
                 SystemToolConfigInputParamsDiscriminatorSystemToolType.EndCall => "end_call",
                 SystemToolConfigInputParamsDiscriminatorSystemToolType.LanguageDetection => "language_detection",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryCreate => "memory_entry_create",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryDelete => "memory_entry_delete",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntrySearch => "memory_entry_search",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryUpdate => "memory_entry_update",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.PlayKeypadTouchTone => "play_keypad_touch_tone",
                 SystemToolConfigInputParamsDiscriminatorSystemToolType.SkipTurn => "skip_turn",
                 SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToAgent => "transfer_to_agent",
                 SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToNumber => "transfer_to_number",
+                SystemToolConfigInputParamsDiscriminatorSystemToolType.VoicemailDetection => "voicemail_detection",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +93,18 @@ namespace G
         {
             return value switch
             {
+                "agent_prompt_change" => SystemToolConfigInputParamsDiscriminatorSystemToolType.AgentPromptChange,
                 "end_call" => SystemToolConfigInputParamsDiscriminatorSystemToolType.EndCall,
                 "language_detection" => SystemToolConfigInputParamsDiscriminatorSystemToolType.LanguageDetection,
+                "memory_entry_create" => SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryCreate,
+                "memory_entry_delete" => SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryDelete,
+                "memory_entry_search" => SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntrySearch,
+                "memory_entry_update" => SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryUpdate,
+                "play_keypad_touch_tone" => SystemToolConfigInputParamsDiscriminatorSystemToolType.PlayKeypadTouchTone,
                 "skip_turn" => SystemToolConfigInputParamsDiscriminatorSystemToolType.SkipTurn,
                 "transfer_to_agent" => SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToAgent,
                 "transfer_to_number" => SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToNumber,
+                "voicemail_detection" => SystemToolConfigInputParamsDiscriminatorSystemToolType.VoicemailDetection,
                 _ => null,
             };
         }

@@ -39,7 +39,7 @@ namespace G
         /// ID of the speaker.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -230,10 +230,22 @@ namespace G
         /// ID of the speaker.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="speakerName">
+        /// Name to attribute to this speaker.
         /// </param>
         /// <param name="voiceId">
         /// Either the identifier of a voice from the ElevenLabs voice library, or one of ['track-clone', 'clip-clone'].
+        /// </param>
+        /// <param name="voiceStability">
+        /// For models that support it, the voice similarity value to use. This will default to 0.65, with a valid range of [0.0, 1.0].
+        /// </param>
+        /// <param name="voiceSimilarity">
+        /// For models that support it, the voice similarity value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
+        /// </param>
+        /// <param name="voiceStyle">
+        /// For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
         /// </param>
         /// <param name="languages">
         /// Languages to apply these changes to. If empty, will apply to all languages.
@@ -244,13 +256,21 @@ namespace G
             string dubbingId,
             string speakerId,
             string? xiApiKey = default,
+            string? speakerName = default,
             string? voiceId = default,
+            double? voiceStability = default,
+            double? voiceSimilarity = default,
+            double? voiceStyle = default,
             global::System.Collections.Generic.IList<string>? languages = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch
             {
+                SpeakerName = speakerName,
                 VoiceId = voiceId,
+                VoiceStability = voiceStability,
+                VoiceSimilarity = voiceSimilarity,
+                VoiceStyle = voiceStyle,
                 Languages = languages,
             };
 

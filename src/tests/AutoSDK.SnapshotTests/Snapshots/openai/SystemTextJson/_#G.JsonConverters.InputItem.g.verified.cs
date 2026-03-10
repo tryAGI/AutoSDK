@@ -53,9 +53,11 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.InputItem(
+            var __value = new global::G.InputItem(
                 message,
+
                 value2,
+
                 itemReference
                 );
 
@@ -78,7 +80,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

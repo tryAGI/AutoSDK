@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         Viewer,
     }
 
@@ -37,6 +41,7 @@ namespace G
             {
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Admin => "admin",
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor => "editor",
+                BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Commenter => "commenter",
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,6 +55,7 @@ namespace G
             {
                 "admin" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Admin,
                 "editor" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor,
+                "commenter" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Commenter,
                 "viewer" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Viewer,
                 _ => null,
             };

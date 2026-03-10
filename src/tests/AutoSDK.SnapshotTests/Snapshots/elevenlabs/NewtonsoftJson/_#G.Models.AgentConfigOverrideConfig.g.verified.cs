@@ -27,7 +27,7 @@ namespace G
         /// Configures overrides for nested fields.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
-        public global::G.PromptAgentOverrideConfig? Prompt { get; set; }
+        public global::G.PromptAgentAPIModelOverrideConfig? Prompt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,7 @@ namespace G
         public AgentConfigOverrideConfig(
             bool? firstMessage,
             bool? language,
-            global::G.PromptAgentOverrideConfig? prompt)
+            global::G.PromptAgentAPIModelOverrideConfig? prompt)
         {
             this.FirstMessage = firstMessage;
             this.Language = language;

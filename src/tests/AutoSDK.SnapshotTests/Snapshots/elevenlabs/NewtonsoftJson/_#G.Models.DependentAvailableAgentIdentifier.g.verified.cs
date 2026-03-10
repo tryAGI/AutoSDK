@@ -10,6 +10,12 @@ namespace G
     public sealed partial class DependentAvailableAgentIdentifier
     {
         /// <summary>
+        /// If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("referenced_resource_ids")]
+        public global::System.Collections.Generic.IList<string>? ReferencedResourceIds { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -48,6 +54,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependentAvailableAgentIdentifier" /> class.
         /// </summary>
+        /// <param name="referencedResourceIds">
+        /// If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="type">
@@ -60,12 +69,14 @@ namespace G
             string name,
             int createdAtUnixSecs,
             global::G.DependentAvailableAgentIdentifierAccessLevel accessLevel,
+            global::System.Collections.Generic.IList<string>? referencedResourceIds,
             string? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.AccessLevel = accessLevel;
+            this.ReferencedResourceIds = referencedResourceIds;
             this.Type = type;
         }
 

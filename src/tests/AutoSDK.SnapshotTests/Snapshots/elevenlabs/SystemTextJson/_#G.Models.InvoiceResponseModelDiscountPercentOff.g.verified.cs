@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The discount applied to the invoice. E.g. [20.0f] for 20% off.
+    /// Deprecated. Use [discounts] instead. The discount applied to the invoice. E.g. [20.0f] for 20% off.
     /// </summary>
     public sealed partial class InvoiceResponseModelDiscountPercentOff
     {

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("simulated_conversation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> SimulatedConversation { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptResponseModel> SimulatedConversation { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="simulatedConversation"></param>
         /// <param name="analysis"></param>
         public AgentSimulatedChatTestResponseModel(
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelOutput> simulatedConversation,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptResponseModel> simulatedConversation,
             global::G.ConversationHistoryAnalysisCommonModel analysis)
         {
             this.SimulatedConversation = simulatedConversation ?? throw new global::System.ArgumentNullException(nameof(simulatedConversation));

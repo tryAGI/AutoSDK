@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ThinkingConfigParam(
+            var __value = new global::G.ThinkingConfigParam(
                 discriminator?.Type,
                 enabled,
+
                 disabled
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

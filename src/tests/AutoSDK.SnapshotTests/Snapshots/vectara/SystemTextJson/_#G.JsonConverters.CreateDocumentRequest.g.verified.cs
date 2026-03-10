@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 structured = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.CreateDocumentRequest(
+            var __value = new global::G.CreateDocumentRequest(
                 discriminator?.Type,
                 core,
+
                 structured
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

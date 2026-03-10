@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 dataset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.EntitiesItem(
+            var __value = new global::G.EntitiesItem(
                 discriminator?.Type,
                 run,
+
                 dataset
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

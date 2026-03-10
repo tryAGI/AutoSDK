@@ -1,0 +1,45 @@
+﻿//HintName: G.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("result_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1DiscriminatorResultTypeJsonConverter))]
+        public global::G.ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1DiscriminatorResultType? ResultType { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator" /> class.
+        /// </summary>
+        /// <param name="resultType"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator(
+            global::G.ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1DiscriminatorResultType? resultType)
+        {
+            this.ResultType = resultType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator" /> class.
+        /// </summary>
+        public ConversationHistoryTranscriptSystemToolResultCommonModelInputResultVariant1Discriminator()
+        {
+        }
+    }
+}

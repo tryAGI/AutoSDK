@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="commenter")]
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
         Viewer,
     }
@@ -41,6 +46,7 @@ namespace G
             {
                 ResourceAccessInfoRole.Admin => "admin",
                 ResourceAccessInfoRole.Editor => "editor",
+                ResourceAccessInfoRole.Commenter => "commenter",
                 ResourceAccessInfoRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,6 +60,7 @@ namespace G
             {
                 "admin" => ResourceAccessInfoRole.Admin,
                 "editor" => ResourceAccessInfoRole.Editor,
+                "commenter" => ResourceAccessInfoRole.Commenter,
                 "viewer" => ResourceAccessInfoRole.Viewer,
                 _ => null,
             };

@@ -1,0 +1,292 @@
+﻿//HintName: G.AgentsPlatformClient.EditConvaiMcpServersByMcpServerId.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class AgentsPlatformClient
+    {
+        partial void PrepareEditConvaiMcpServersByMcpServerIdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string mcpServerId,
+            ref string? xiApiKey,
+            global::G.MCPServerConfigUpdateRequestModel request);
+        partial void PrepareEditConvaiMcpServersByMcpServerIdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string mcpServerId,
+            string? xiApiKey,
+            global::G.MCPServerConfigUpdateRequestModel request);
+        partial void ProcessEditConvaiMcpServersByMcpServerIdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessEditConvaiMcpServersByMcpServerIdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Update Mcp Server Configuration<br/>
+        /// Update the configuration settings for an MCP server.
+        /// </summary>
+        /// <param name="mcpServerId">
+        /// ID of the MCP Server.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> EditConvaiMcpServersByMcpServerIdAsync(
+            string mcpServerId,
+
+            global::G.MCPServerConfigUpdateRequestModel request,
+            string? xiApiKey = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareEditConvaiMcpServersByMcpServerIdArguments(
+                httpClient: HttpClient,
+                mcpServerId: ref mcpServerId,
+                xiApiKey: ref xiApiKey,
+                request: request);
+
+            var __pathBuilder = new global::G.PathBuilder(
+                path: $"/v1/convai/mcp-servers/{mcpServerId}",
+                baseUri: HttpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareEditConvaiMcpServersByMcpServerIdRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                mcpServerId: mcpServerId,
+                xiApiKey: xiApiKey,
+                request: request);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessEditConvaiMcpServersByMcpServerIdResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // Validation Error
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
+                global::G.HTTPValidationError? __value_422 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::G.HTTPValidationError.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_422 = __ex;
+                }
+
+                throw new global::G.ApiException<global::G.HTTPValidationError>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessEditConvaiMcpServersByMcpServerIdResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::G.MCPServerResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::G.MCPServerResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+
+        /// <summary>
+        /// Update Mcp Server Configuration<br/>
+        /// Update the configuration settings for an MCP server.
+        /// </summary>
+        /// <param name="mcpServerId">
+        /// ID of the MCP Server.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="approvalPolicy">
+        /// The approval mode to set for the MCP server
+        /// </param>
+        /// <param name="forcePreToolSpeech">
+        /// If set, overrides the server's force_pre_tool_speech setting for this tool
+        /// </param>
+        /// <param name="disableInterruptions">
+        /// If set, overrides the server's disable_interruptions setting for this tool
+        /// </param>
+        /// <param name="toolCallSound">
+        /// Predefined tool call sound type to play during tool execution for all tools from this MCP server
+        /// </param>
+        /// <param name="toolCallSoundBehavior">
+        /// Determines when the tool call sound should play for all tools from this MCP server
+        /// </param>
+        /// <param name="executionMode">
+        /// If set, overrides the server's execution_mode setting for this tool
+        /// </param>
+        /// <param name="requestHeaders">
+        /// The headers to include in requests to the MCP server
+        /// </param>
+        /// <param name="disableCompression">
+        /// Whether to disable HTTP compression for this MCP server
+        /// </param>
+        /// <param name="secretToken">
+        /// Optional secret token for authentication with this MCP server
+        /// </param>
+        /// <param name="authConnection">
+        /// Optional auth connection to use for authentication with this MCP server
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> EditConvaiMcpServersByMcpServerIdAsync(
+            string mcpServerId,
+            string? xiApiKey = default,
+            global::G.MCPApprovalPolicy? approvalPolicy = default,
+            bool? forcePreToolSpeech = default,
+            bool? disableInterruptions = default,
+            global::G.ToolCallSoundType? toolCallSound = default,
+            global::G.ToolCallSoundBehavior? toolCallSoundBehavior = default,
+            global::G.ToolExecutionMode? executionMode = default,
+            object? requestHeaders = default,
+            bool? disableCompression = default,
+            global::G.ConvAISecretLocator? secretToken = default,
+            global::G.AuthConnectionLocator? authConnection = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.MCPServerConfigUpdateRequestModel
+            {
+                ApprovalPolicy = approvalPolicy,
+                ForcePreToolSpeech = forcePreToolSpeech,
+                DisableInterruptions = disableInterruptions,
+                ToolCallSound = toolCallSound,
+                ToolCallSoundBehavior = toolCallSoundBehavior,
+                ExecutionMode = executionMode,
+                RequestHeaders = requestHeaders,
+                DisableCompression = disableCompression,
+                SecretToken = secretToken,
+                AuthConnection = authConnection,
+            };
+
+            return await EditConvaiMcpServersByMcpServerIdAsync(
+                mcpServerId: mcpServerId,
+                xiApiKey: xiApiKey,
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+    }
+}

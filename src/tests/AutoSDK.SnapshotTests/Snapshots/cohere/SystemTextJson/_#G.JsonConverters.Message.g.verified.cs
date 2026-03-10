@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.Message(
+            var __value = new global::G.Message(
                 discriminator?.Role,
                 chatbot,
+
                 tool
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

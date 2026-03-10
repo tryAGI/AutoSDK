@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Default Value: 90
+    /// Default Value: 84
     /// </summary>
     public sealed partial class SrtExportOptionsMaxSegmentChars
     {

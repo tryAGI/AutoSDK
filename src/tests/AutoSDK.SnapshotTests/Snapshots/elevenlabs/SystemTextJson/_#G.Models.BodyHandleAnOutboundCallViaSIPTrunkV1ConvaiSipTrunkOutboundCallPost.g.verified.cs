@@ -37,6 +37,12 @@ namespace G
         public global::G.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get; set; }
 
         /// <summary>
+        /// Default Value: {"ringing_timeout_secs":60}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("telephony_call_config")]
+        public global::G.TelephonyCallConfig? TelephonyCallConfig { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +55,9 @@ namespace G
         /// <param name="agentPhoneNumberId"></param>
         /// <param name="toNumber"></param>
         /// <param name="conversationInitiationClientData"></param>
+        /// <param name="telephonyCallConfig">
+        /// Default Value: {"ringing_timeout_secs":60}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -56,12 +65,14 @@ namespace G
             string agentId,
             string agentPhoneNumberId,
             string toNumber,
-            global::G.ConversationInitiationClientDataRequestInput? conversationInitiationClientData)
+            global::G.ConversationInitiationClientDataRequestInput? conversationInitiationClientData,
+            global::G.TelephonyCallConfig? telephonyCallConfig)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentPhoneNumberId = agentPhoneNumberId ?? throw new global::System.ArgumentNullException(nameof(agentPhoneNumberId));
             this.ToNumber = toNumber ?? throw new global::System.ArgumentNullException(nameof(toNumber));
             this.ConversationInitiationClientData = conversationInitiationClientData;
+            this.TelephonyCallConfig = telephonyCallConfig;
         }
 
         /// <summary>

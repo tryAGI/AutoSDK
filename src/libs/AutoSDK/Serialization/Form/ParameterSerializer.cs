@@ -110,6 +110,13 @@ public static class ParameterSerializer
                 Value = parameter.ArgumentName,
             }];
         }
+        if (parameter.Type.IsAnyOfLike)
+        {
+            return [parameter with
+            {
+                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString() ?? string.Empty",
+            }];
+        }
         if (parameter.Type.IsEnum)
         {
             return [parameter with
@@ -193,14 +200,6 @@ public static class ParameterSerializer
                 Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
             }];
         }
-        if (parameter.Type.IsAnyOfLike)
-        {
-            return [parameter with
-            {
-                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString() ?? string.Empty",
-            }];
-        }
-
         return [parameter with
         {
             Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString()",

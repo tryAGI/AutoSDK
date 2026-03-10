@@ -37,7 +37,7 @@ namespace G
         /// Resource type of the target resource.
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -67,10 +67,30 @@ namespace G
                 global::G.WorkspaceResourceType.ConvaiTools => "convai_tools",
                 global::G.WorkspaceResourceType.ConvaiSettings => "convai_settings",
                 global::G.WorkspaceResourceType.ConvaiSecrets => "convai_secrets",
-                global::G.WorkspaceResourceType.MusicLatent => "music_latent",
+                global::G.WorkspaceResourceType.WorkspaceAuthConnections => "workspace_auth_connections",
                 global::G.WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
                 global::G.WorkspaceResourceType.ConvaiMcpServers => "convai_mcp_servers",
+                global::G.WorkspaceResourceType.ConvaiApiIntegrationConnections => "convai_api_integration_connections",
+                global::G.WorkspaceResourceType.ConvaiApiIntegrationTriggerConnections => "convai_api_integration_trigger_connections",
                 global::G.WorkspaceResourceType.ConvaiBatchCalls => "convai_batch_calls",
+                global::G.WorkspaceResourceType.ConvaiAgentResponseTests => "convai_agent_response_tests",
+                global::G.WorkspaceResourceType.ConvaiTestSuiteInvocations => "convai_test_suite_invocations",
+                global::G.WorkspaceResourceType.ConvaiCrawlJobs => "convai_crawl_jobs",
+                global::G.WorkspaceResourceType.ConvaiCrawlTasks => "convai_crawl_tasks",
+                global::G.WorkspaceResourceType.ConvaiWhatsappAccounts => "convai_whatsapp_accounts",
+                global::G.WorkspaceResourceType.ConvaiAgentVersions => "convai_agent_versions",
+                global::G.WorkspaceResourceType.ConvaiAgentBranches => "convai_agent_branches",
+                global::G.WorkspaceResourceType.ConvaiAgentVersionsDeployments => "convai_agent_versions_deployments",
+                global::G.WorkspaceResourceType.ConvaiMemoryEntries => "convai_memory_entries",
+                global::G.WorkspaceResourceType.ConvaiCoachingProposals => "convai_coaching_proposals",
+                global::G.WorkspaceResourceType.Dashboard => "dashboard",
+                global::G.WorkspaceResourceType.DashboardConfiguration => "dashboard_configuration",
+                global::G.WorkspaceResourceType.ConvaiAgentDrafts => "convai_agent_drafts",
+                global::G.WorkspaceResourceType.ResourceLocators => "resource_locators",
+                global::G.WorkspaceResourceType.Assets => "assets",
+                global::G.WorkspaceResourceType.ContentGenerations => "content_generations",
+                global::G.WorkspaceResourceType.ContentTemplates => "content_templates",
+                global::G.WorkspaceResourceType.Songs => "songs",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

@@ -5,36 +5,41 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"similarity_boost":1,"speed":1,"stability":1,"style":0,"use_speaker_boost":true}
+    /// Example: {"similarity_boost":1.0,"speed":1.0,"stability":1.0,"style":0.0,"use_speaker_boost":true}
     /// </summary>
     public sealed partial class VoiceSettingsResponseModel
     {
         /// <summary>
-        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.
+        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.<br/>
+        /// Default Value: 0.5F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stability")]
         public double? Stability { get; set; }
 
         /// <summary>
-        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.
+        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_speaker_boost")]
         public bool? UseSpeakerBoost { get; set; }
 
         /// <summary>
-        /// Determines how closely the AI should adhere to the original voice when attempting to replicate it.
+        /// Determines how closely the AI should adhere to the original voice when attempting to replicate it.<br/>
+        /// Default Value: 0.75F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("similarity_boost")]
         public double? SimilarityBoost { get; set; }
 
         /// <summary>
-        /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.
+        /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.<br/>
+        /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
         public double? Style { get; set; }
 
         /// <summary>
-        /// Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.
+        /// Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.<br/>
+        /// Default Value: 1F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
         public double? Speed { get; set; }
@@ -49,19 +54,24 @@ namespace G
         /// Initializes a new instance of the <see cref="VoiceSettingsResponseModel" /> class.
         /// </summary>
         /// <param name="stability">
-        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.
+        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.<br/>
+        /// Default Value: 0.5F
         /// </param>
         /// <param name="useSpeakerBoost">
-        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.
+        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.<br/>
+        /// Default Value: true
         /// </param>
         /// <param name="similarityBoost">
-        /// Determines how closely the AI should adhere to the original voice when attempting to replicate it.
+        /// Determines how closely the AI should adhere to the original voice when attempting to replicate it.<br/>
+        /// Default Value: 0.75F
         /// </param>
         /// <param name="style">
-        /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.
+        /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.<br/>
+        /// Default Value: 0F
         /// </param>
         /// <param name="speed">
-        /// Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.
+        /// Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.<br/>
+        /// Default Value: 1F
         /// </param>
         public VoiceSettingsResponseModel(
             double? stability,

@@ -93,21 +93,30 @@ namespace G.JsonConverters
                 debug = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.StreamedChatResponseV2(
+            var __value = new global::G.StreamedChatResponseV2(
                 discriminator?.Type,
                 messageStart,
+
                 contentStart,
+
                 contentDelta,
+
                 contentEnd,
+
                 toolPlanDelta,
+
                 toolCallStart,
+
                 toolCallDelta,
+
                 toolCallEnd,
+
                 messageEnd,
+
                 debug
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

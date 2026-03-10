@@ -7,7 +7,7 @@ namespace G
     {
         /// <summary>
         /// Update Pvc Voice Sample<br/>
-        /// Update a PVC voice sample - apply noise removal, or select speaker.
+        /// Update a PVC voice sample - apply noise removal, select speaker, change trim times or file name.
         /// </summary>
         /// <param name="voiceId">
         /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
@@ -16,7 +16,7 @@ namespace G
         /// Sample ID to be used
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -31,7 +31,7 @@ namespace G
 
         /// <summary>
         /// Update Pvc Voice Sample<br/>
-        /// Update a PVC voice sample - apply noise removal, or select speaker.
+        /// Update a PVC voice sample - apply noise removal, select speaker, change trim times or file name.
         /// </summary>
         /// <param name="voiceId">
         /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
@@ -40,7 +40,7 @@ namespace G
         /// Sample ID to be used
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="removeBackgroundNoise">
         /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
@@ -55,6 +55,9 @@ namespace G
         /// <param name="trimEndTime">
         /// The end time of the audio to be used for PVC training. Time should be in milliseconds
         /// </param>
+        /// <param name="fileName">
+        /// The name of the audio file to be used for PVC training.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddVoiceResponseModel> CreateVoicesPvcByVoiceIdSamplesBySampleIdAsync(
@@ -65,6 +68,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? selectedSpeakerIds = default,
             int? trimStartTime = default,
             int? trimEndTime = default,
+            string? fileName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

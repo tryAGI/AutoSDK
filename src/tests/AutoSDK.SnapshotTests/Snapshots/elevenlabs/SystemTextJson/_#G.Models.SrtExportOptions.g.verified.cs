@@ -10,7 +10,7 @@ namespace G
     public sealed partial class SrtExportOptions
     {
         /// <summary>
-        /// Default Value: 50
+        /// Default Value: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_characters_per_line")]
         public int? MaxCharactersPerLine { get; set; }
@@ -35,19 +35,19 @@ namespace G
         public string Format { get; set; } = "srt";
 
         /// <summary>
-        /// Default Value: 0.6F
+        /// Default Value: 0.8F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment_on_silence_longer_than_s")]
         public double? SegmentOnSilenceLongerThanS { get; set; }
 
         /// <summary>
-        /// Default Value: 5
+        /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segment_duration_s")]
         public double? MaxSegmentDurationS { get; set; }
 
         /// <summary>
-        /// Default Value: 90
+        /// Default Value: 84
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segment_chars")]
         public int? MaxSegmentChars { get; set; }
@@ -62,7 +62,7 @@ namespace G
         /// Initializes a new instance of the <see cref="SrtExportOptions" /> class.
         /// </summary>
         /// <param name="maxCharactersPerLine">
-        /// Default Value: 50
+        /// Default Value: 42
         /// </param>
         /// <param name="includeSpeakers">
         /// Default Value: false
@@ -72,13 +72,13 @@ namespace G
         /// </param>
         /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS">
-        /// Default Value: 0.6F
+        /// Default Value: 0.8F
         /// </param>
         /// <param name="maxSegmentDurationS">
-        /// Default Value: 5
+        /// Default Value: 4
         /// </param>
         /// <param name="maxSegmentChars">
-        /// Default Value: 90
+        /// Default Value: 84
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

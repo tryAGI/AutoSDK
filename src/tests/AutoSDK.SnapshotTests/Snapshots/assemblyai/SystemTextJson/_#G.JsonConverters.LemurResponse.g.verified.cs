@@ -41,8 +41,9 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.LemurResponse(
+            var __value = new global::G.LemurResponse(
                 @string,
+
                 questionAnswer
                 );
 
@@ -59,7 +60,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

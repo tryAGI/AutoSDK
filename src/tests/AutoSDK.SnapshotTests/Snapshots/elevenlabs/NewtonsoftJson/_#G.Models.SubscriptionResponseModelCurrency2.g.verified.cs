@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="eur")]
         Eur,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="inr")]
+        Inr,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 SubscriptionResponseModelCurrency2.Usd => "usd",
                 SubscriptionResponseModelCurrency2.Eur => "eur",
+                SubscriptionResponseModelCurrency2.Inr => "inr",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "usd" => SubscriptionResponseModelCurrency2.Usd,
                 "eur" => SubscriptionResponseModelCurrency2.Eur,
+                "inr" => SubscriptionResponseModelCurrency2.Inr,
                 _ => null,
             };
         }

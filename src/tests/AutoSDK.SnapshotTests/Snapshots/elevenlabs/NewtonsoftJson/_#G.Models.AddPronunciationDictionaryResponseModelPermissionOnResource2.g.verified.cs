@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="commenter")]
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
         Viewer,
     }
@@ -41,6 +46,7 @@ namespace G
             {
                 AddPronunciationDictionaryResponseModelPermissionOnResource2.Admin => "admin",
                 AddPronunciationDictionaryResponseModelPermissionOnResource2.Editor => "editor",
+                AddPronunciationDictionaryResponseModelPermissionOnResource2.Commenter => "commenter",
                 AddPronunciationDictionaryResponseModelPermissionOnResource2.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,6 +60,7 @@ namespace G
             {
                 "admin" => AddPronunciationDictionaryResponseModelPermissionOnResource2.Admin,
                 "editor" => AddPronunciationDictionaryResponseModelPermissionOnResource2.Editor,
+                "commenter" => AddPronunciationDictionaryResponseModelPermissionOnResource2.Commenter,
                 "viewer" => AddPronunciationDictionaryResponseModelPermissionOnResource2.Viewer,
                 _ => null,
             };

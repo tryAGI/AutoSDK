@@ -13,7 +13,7 @@ namespace G
             ref string voiceId,
             ref bool? enableLogging,
             int? optimizeStreamingLatency,
-            ref global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat,
+            ref global::G.SpeechToSpeechStreamOutputFormat? outputFormat,
             ref string? xiApiKey,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request);
         partial void PrepareCreateSpeechToSpeechByVoiceIdStreamRequest(
@@ -22,7 +22,7 @@ namespace G
             string voiceId,
             bool? enableLogging,
             int? optimizeStreamingLatency,
-            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat,
+            global::G.SpeechToSpeechStreamOutputFormat? outputFormat,
             string? xiApiKey,
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request);
         partial void ProcessCreateSpeechToSpeechByVoiceIdStreamResponse(
@@ -59,7 +59,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -70,7 +70,7 @@ namespace G
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost request,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechStreamOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -337,7 +337,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="audio">
         /// The audio file which holds the content and emotion that will control the generated speech.
@@ -371,7 +371,7 @@ namespace G
             string audioname,
             bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            global::G.SpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostOutputFormat? outputFormat = default,
+            global::G.SpeechToSpeechStreamOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
             string? voiceSettings = default,

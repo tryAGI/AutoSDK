@@ -22,6 +22,12 @@ namespace G
         public string? StartCall { get; set; }
 
         /// <summary>
+        /// Text and ARIA label for the start chat button (text only)
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("start_chat")]
+        public string? StartChat { get; set; }
+
+        /// <summary>
         /// Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_call")]
@@ -94,6 +100,12 @@ namespace G
         public string? ConnectingStatus { get; set; }
 
         /// <summary>
+        /// Status displayed when the agent is chatting (text only)
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chatting_status")]
+        public string? ChattingStatus { get; set; }
+
+        /// <summary>
         /// ARIA label for the text message input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_label")]
@@ -104,6 +116,18 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_placeholder")]
         public string? InputPlaceholder { get; set; }
+
+        /// <summary>
+        /// Placeholder text for the text message input (text only)
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input_placeholder_text_only")]
+        public string? InputPlaceholderTextOnly { get; set; }
+
+        /// <summary>
+        /// Placeholder text for the text message input when starting a new conversation (text only)
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input_placeholder_new_conversation")]
+        public string? InputPlaceholderNewConversation { get; set; }
 
         /// <summary>
         /// Information message displayed when the user ends the conversation.
@@ -136,6 +160,114 @@ namespace G
         public string? CopyId { get; set; }
 
         /// <summary>
+        /// Text displayed to prompt the user for feedback.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("initiate_feedback")]
+        public string? InitiateFeedback { get; set; }
+
+        /// <summary>
+        /// Text displayed to request additional feedback details.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("request_follow_up_feedback")]
+        public string? RequestFollowUpFeedback { get; set; }
+
+        /// <summary>
+        /// Text displayed to thank the user for providing feedback.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("thanks_for_feedback")]
+        public string? ThanksForFeedback { get; set; }
+
+        /// <summary>
+        /// Additional text displayed explaining the value of user feedback.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("thanks_for_feedback_details")]
+        public string? ThanksForFeedbackDetails { get; set; }
+
+        /// <summary>
+        /// Placeholder text for the follow-up feedback input field.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("follow_up_feedback_placeholder")]
+        public string? FollowUpFeedbackPlaceholder { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the submit button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("submit")]
+        public string? Submit { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the go back button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("go_back")]
+        public string? GoBack { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the send message button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("send_message")]
+        public string? SendMessage { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the switch to text mode button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text_mode")]
+        public string? TextMode { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the switch to voice mode button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("voice_mode")]
+        public string? VoiceMode { get; set; }
+
+        /// <summary>
+        /// Toast notification displayed when switching to text mode.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("switched_to_text_mode")]
+        public string? SwitchedToTextMode { get; set; }
+
+        /// <summary>
+        /// Toast notification displayed when switching to voice mode.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("switched_to_voice_mode")]
+        public string? SwitchedToVoiceMode { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the copy button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("copy")]
+        public string? Copy { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the download button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("download")]
+        public string? Download { get; set; }
+
+        /// <summary>
+        /// Text and ARIA label for the wrap toggle button.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("wrap")]
+        public string? Wrap { get; set; }
+
+        /// <summary>
+        /// Status text displayed when the agent is processing a tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_working")]
+        public string? AgentWorking { get; set; }
+
+        /// <summary>
+        /// Status text displayed when the agent finishes processing a tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_done")]
+        public string? AgentDone { get; set; }
+
+        /// <summary>
+        /// Status text displayed when the agent encounters an error during a tool call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_error")]
+        public string? AgentError { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -149,6 +281,9 @@ namespace G
         /// </param>
         /// <param name="startCall">
         /// Text and ARIA label for the start call button.
+        /// </param>
+        /// <param name="startChat">
+        /// Text and ARIA label for the start chat button (text only)
         /// </param>
         /// <param name="newCall">
         /// Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one.
@@ -186,11 +321,20 @@ namespace G
         /// <param name="connectingStatus">
         /// Status displayed when the agent is connecting.
         /// </param>
+        /// <param name="chattingStatus">
+        /// Status displayed when the agent is chatting (text only)
+        /// </param>
         /// <param name="inputLabel">
         /// ARIA label for the text message input.
         /// </param>
         /// <param name="inputPlaceholder">
         /// Placeholder text for the text message input.
+        /// </param>
+        /// <param name="inputPlaceholderTextOnly">
+        /// Placeholder text for the text message input (text only)
+        /// </param>
+        /// <param name="inputPlaceholderNewConversation">
+        /// Placeholder text for the text message input when starting a new conversation (text only)
         /// </param>
         /// <param name="userEndedConversation">
         /// Information message displayed when the user ends the conversation.
@@ -207,9 +351,64 @@ namespace G
         /// <param name="copyId">
         /// Text and ARIA label used for the copy ID button.
         /// </param>
+        /// <param name="initiateFeedback">
+        /// Text displayed to prompt the user for feedback.
+        /// </param>
+        /// <param name="requestFollowUpFeedback">
+        /// Text displayed to request additional feedback details.
+        /// </param>
+        /// <param name="thanksForFeedback">
+        /// Text displayed to thank the user for providing feedback.
+        /// </param>
+        /// <param name="thanksForFeedbackDetails">
+        /// Additional text displayed explaining the value of user feedback.
+        /// </param>
+        /// <param name="followUpFeedbackPlaceholder">
+        /// Placeholder text for the follow-up feedback input field.
+        /// </param>
+        /// <param name="submit">
+        /// Text and ARIA label for the submit button.
+        /// </param>
+        /// <param name="goBack">
+        /// Text and ARIA label for the go back button.
+        /// </param>
+        /// <param name="sendMessage">
+        /// Text and ARIA label for the send message button.
+        /// </param>
+        /// <param name="textMode">
+        /// Text and ARIA label for the switch to text mode button.
+        /// </param>
+        /// <param name="voiceMode">
+        /// Text and ARIA label for the switch to voice mode button.
+        /// </param>
+        /// <param name="switchedToTextMode">
+        /// Toast notification displayed when switching to text mode.
+        /// </param>
+        /// <param name="switchedToVoiceMode">
+        /// Toast notification displayed when switching to voice mode.
+        /// </param>
+        /// <param name="copy">
+        /// Text and ARIA label for the copy button.
+        /// </param>
+        /// <param name="download">
+        /// Text and ARIA label for the download button.
+        /// </param>
+        /// <param name="wrap">
+        /// Text and ARIA label for the wrap toggle button.
+        /// </param>
+        /// <param name="agentWorking">
+        /// Status text displayed when the agent is processing a tool call.
+        /// </param>
+        /// <param name="agentDone">
+        /// Status text displayed when the agent finishes processing a tool call.
+        /// </param>
+        /// <param name="agentError">
+        /// Status text displayed when the agent encounters an error during a tool call.
+        /// </param>
         public WidgetTextContents(
             string? mainLabel,
             string? startCall,
+            string? startChat,
             string? newCall,
             string? endCall,
             string? muteMicrophone,
@@ -222,16 +421,38 @@ namespace G
             string? listeningStatus,
             string? speakingStatus,
             string? connectingStatus,
+            string? chattingStatus,
             string? inputLabel,
             string? inputPlaceholder,
+            string? inputPlaceholderTextOnly,
+            string? inputPlaceholderNewConversation,
             string? userEndedConversation,
             string? agentEndedConversation,
             string? conversationId,
             string? errorOccurred,
-            string? copyId)
+            string? copyId,
+            string? initiateFeedback,
+            string? requestFollowUpFeedback,
+            string? thanksForFeedback,
+            string? thanksForFeedbackDetails,
+            string? followUpFeedbackPlaceholder,
+            string? submit,
+            string? goBack,
+            string? sendMessage,
+            string? textMode,
+            string? voiceMode,
+            string? switchedToTextMode,
+            string? switchedToVoiceMode,
+            string? copy,
+            string? download,
+            string? wrap,
+            string? agentWorking,
+            string? agentDone,
+            string? agentError)
         {
             this.MainLabel = mainLabel;
             this.StartCall = startCall;
+            this.StartChat = startChat;
             this.NewCall = newCall;
             this.EndCall = endCall;
             this.MuteMicrophone = muteMicrophone;
@@ -244,13 +465,34 @@ namespace G
             this.ListeningStatus = listeningStatus;
             this.SpeakingStatus = speakingStatus;
             this.ConnectingStatus = connectingStatus;
+            this.ChattingStatus = chattingStatus;
             this.InputLabel = inputLabel;
             this.InputPlaceholder = inputPlaceholder;
+            this.InputPlaceholderTextOnly = inputPlaceholderTextOnly;
+            this.InputPlaceholderNewConversation = inputPlaceholderNewConversation;
             this.UserEndedConversation = userEndedConversation;
             this.AgentEndedConversation = agentEndedConversation;
             this.ConversationId = conversationId;
             this.ErrorOccurred = errorOccurred;
             this.CopyId = copyId;
+            this.InitiateFeedback = initiateFeedback;
+            this.RequestFollowUpFeedback = requestFollowUpFeedback;
+            this.ThanksForFeedback = thanksForFeedback;
+            this.ThanksForFeedbackDetails = thanksForFeedbackDetails;
+            this.FollowUpFeedbackPlaceholder = followUpFeedbackPlaceholder;
+            this.Submit = submit;
+            this.GoBack = goBack;
+            this.SendMessage = sendMessage;
+            this.TextMode = textMode;
+            this.VoiceMode = voiceMode;
+            this.SwitchedToTextMode = switchedToTextMode;
+            this.SwitchedToVoiceMode = switchedToVoiceMode;
+            this.Copy = copy;
+            this.Download = download;
+            this.Wrap = wrap;
+            this.AgentWorking = agentWorking;
+            this.AgentDone = agentDone;
+            this.AgentError = agentError;
         }
 
         /// <summary>

@@ -50,6 +50,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="genesys_api_key")]
         GenesysApiKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="whatsapp")]
+        Whatsapp,
     }
 
     /// <summary>
@@ -72,6 +77,7 @@ namespace G
                 AuthorizationMethod.LivekitToken => "livekit_token",
                 AuthorizationMethod.LivekitTokenWebsite => "livekit_token_website",
                 AuthorizationMethod.GenesysApiKey => "genesys_api_key",
+                AuthorizationMethod.Whatsapp => "whatsapp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -90,6 +96,7 @@ namespace G
                 "livekit_token" => AuthorizationMethod.LivekitToken,
                 "livekit_token_website" => AuthorizationMethod.LivekitTokenWebsite,
                 "genesys_api_key" => AuthorizationMethod.GenesysApiKey,
+                "whatsapp" => AuthorizationMethod.Whatsapp,
                 _ => null,
             };
         }

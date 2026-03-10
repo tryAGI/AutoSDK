@@ -46,17 +46,23 @@ namespace G
         public string? SourceUrl { get; set; }
 
         /// <summary>
-        /// Source language.<br/>
+        /// Source language. Expects a valid iso639-1 or iso639-3 language code.<br/>
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_lang")]
         public string? SourceLang { get; set; }
 
         /// <summary>
-        /// The Target language to dub the content into.
+        /// The Target language to dub the content into. Expects a valid iso639-1 or iso639-3 language code.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_lang")]
         public string? TargetLang { get; set; }
+
+        /// <summary>
+        /// [Experimental] An accent to apply when selecting voices from the library and to use to inform translation of the dialect to prefer.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("target_accent")]
+        public string? TargetAccent { get; set; }
 
         /// <summary>
         /// Number of speakers to use for the dubbing. Set to 0 to automatically detect the number of speakers<br/>
@@ -112,18 +118,24 @@ namespace G
         public bool? DubbingStudio { get; set; }
 
         /// <summary>
-        /// [BETA] Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library.<br/>
+        /// Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library. Voices used from the library will contribute towards a workspace's custom voices limit, and if there aren't enough available slots the dub will fail. Using this feature requires the caller to have the 'add_voice_from_voice_library' permission on their workspace to access new voices.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disable_voice_cloning")]
         public bool? DisableVoiceCloning { get; set; }
 
         /// <summary>
-        /// automatic or manual. Manual mode is only supported when creating a dubbing studio project<br/>
+        /// The mode in which to run this Dubbing job. Defaults to automatic, use manual if specifically providing a CSV transcript to use. Note that manual mode is experimental and production use is strongly discouraged.<br/>
         /// Default Value: automatic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
-        public string? Mode { get; set; }
+        public global::G.BodyDubAVideoOrAnAudioFileV1DubbingPostMode? Mode { get; set; }
+
+        /// <summary>
+        /// Frames per second to use when parsing a CSV file for dubbing. If not provided, FPS will be inferred from timecodes.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("csv_fps")]
+        public double? CsvFps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -153,11 +165,14 @@ namespace G
         /// URL of the source video/audio file.
         /// </param>
         /// <param name="sourceLang">
-        /// Source language.<br/>
+        /// Source language. Expects a valid iso639-1 or iso639-3 language code.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="targetLang">
-        /// The Target language to dub the content into.
+        /// The Target language to dub the content into. Expects a valid iso639-1 or iso639-3 language code.
+        /// </param>
+        /// <param name="targetAccent">
+        /// [Experimental] An accent to apply when selecting voices from the library and to use to inform translation of the dialect to prefer.
         /// </param>
         /// <param name="numSpeakers">
         /// Number of speakers to use for the dubbing. Set to 0 to automatically detect the number of speakers<br/>
@@ -189,12 +204,15 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="disableVoiceCloning">
-        /// [BETA] Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library.<br/>
+        /// Instead of using a voice clone in dubbing, use a similar voice from the ElevenLabs Voice Library. Voices used from the library will contribute towards a workspace's custom voices limit, and if there aren't enough available slots the dub will fail. Using this feature requires the caller to have the 'add_voice_from_voice_library' permission on their workspace to access new voices.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="mode">
-        /// automatic or manual. Manual mode is only supported when creating a dubbing studio project<br/>
+        /// The mode in which to run this Dubbing job. Defaults to automatic, use manual if specifically providing a CSV transcript to use. Note that manual mode is experimental and production use is strongly discouraged.<br/>
         /// Default Value: automatic
+        /// </param>
+        /// <param name="csvFps">
+        /// Frames per second to use when parsing a CSV file for dubbing. If not provided, FPS will be inferred from timecodes.
         /// </param>
         public BodyDubAVideoOrAnAudioFileV1DubbingPost(
             byte[]? file,
@@ -205,6 +223,7 @@ namespace G
             string? sourceUrl,
             string? sourceLang,
             string? targetLang,
+            string? targetAccent,
             int? numSpeakers,
             bool? watermark,
             int? startTime,
@@ -214,7 +233,8 @@ namespace G
             bool? useProfanityFilter,
             bool? dubbingStudio,
             bool? disableVoiceCloning,
-            string? mode)
+            global::G.BodyDubAVideoOrAnAudioFileV1DubbingPostMode? mode,
+            double? csvFps)
         {
             this.File = file;
             this.CsvFile = csvFile;
@@ -224,6 +244,7 @@ namespace G
             this.SourceUrl = sourceUrl;
             this.SourceLang = sourceLang;
             this.TargetLang = targetLang;
+            this.TargetAccent = targetAccent;
             this.NumSpeakers = numSpeakers;
             this.Watermark = watermark;
             this.StartTime = startTime;
@@ -234,6 +255,7 @@ namespace G
             this.DubbingStudio = dubbingStudio;
             this.DisableVoiceCloning = disableVoiceCloning;
             this.Mode = mode;
+            this.CsvFps = csvFps;
         }
 
         /// <summary>

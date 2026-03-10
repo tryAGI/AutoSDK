@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// Model representing a single word with its timing information from the aligner.<br/>
-    /// Example: {"end":1.02,"start":0,"text":"Hello"}
+    /// Example: {"end":1.02,"loss":0.12,"start":0.0,"text":"Hello"}
     /// </summary>
     public sealed partial class ForcedAlignmentWordResponseModel
     {
@@ -29,6 +29,12 @@ namespace G
         public double End { get; set; } = default!;
 
         /// <summary>
+        /// The average alignment loss/confidence score for this word, calculated from its constituent characters.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("loss", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Loss { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -46,14 +52,19 @@ namespace G
         /// <param name="end">
         /// The end time of the word in seconds.
         /// </param>
+        /// <param name="loss">
+        /// The average alignment loss/confidence score for this word, calculated from its constituent characters.
+        /// </param>
         public ForcedAlignmentWordResponseModel(
             string text,
             double start,
-            double end)
+            double end,
+            double loss)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Start = start;
             this.End = end;
+            this.Loss = loss;
         }
 
         /// <summary>

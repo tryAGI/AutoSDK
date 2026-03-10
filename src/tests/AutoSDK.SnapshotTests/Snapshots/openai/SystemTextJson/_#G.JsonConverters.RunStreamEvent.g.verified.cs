@@ -137,16 +137,25 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.RunStreamEvent(
+            var __value = new global::G.RunStreamEvent(
                 value1,
+
                 value2,
+
                 value3,
+
                 value4,
+
                 value5,
+
                 value6,
+
                 value7,
+
                 value8,
+
                 value9,
+
                 value10
                 );
 
@@ -211,7 +220,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

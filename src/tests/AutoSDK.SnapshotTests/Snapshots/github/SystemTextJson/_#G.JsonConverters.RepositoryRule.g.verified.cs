@@ -269,27 +269,47 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.RepositoryRule(
+            var __value = new global::G.RepositoryRule(
                 creation,
+
                 update,
+
                 deletion,
+
                 requiredLinearHistory,
+
                 mergeQueue,
+
                 requiredDeployments,
+
                 requiredSignatures,
+
                 pullRequest,
+
                 requiredStatusChecks,
+
                 nonFastForward,
+
                 commitMessagePattern,
+
                 commitAuthorEmailPattern,
+
                 committerEmailPattern,
+
                 branchNamePattern,
+
                 tagNamePattern,
+
                 filePathRestriction,
+
                 maxFilePathLength,
+
                 fileExtensionRestriction,
+
                 maxFileSize,
+
                 workflows,
+
                 codeScanning
                 );
 
@@ -420,7 +440,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

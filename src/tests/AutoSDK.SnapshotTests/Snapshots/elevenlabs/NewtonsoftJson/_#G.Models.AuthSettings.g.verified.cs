@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"shareable_token":"1234567890"}
+    /// Example: {"allowlist":[{"hostname":"https://example.com"}],"enable_auth":true,"require_origin_header":true,"shareable_token":"1234567890"}
     /// </summary>
     public sealed partial class AuthSettings
     {
@@ -21,6 +21,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowlist")]
         public global::System.Collections.Generic.IList<global::G.AllowlistItem>? Allowlist { get; set; }
+
+        /// <summary>
+        /// When enabled, connections with no origin header will be rejected. If the allowlist is empty, this option has no effect.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("require_origin_header")]
+        public bool? RequireOriginHeader { get; set; }
 
         /// <summary>
         /// A shareable token that can be used to start a conversation with the agent
@@ -44,16 +51,22 @@ namespace G
         /// <param name="allowlist">
         /// A list of hosts that are allowed to start conversations with the agent
         /// </param>
+        /// <param name="requireOriginHeader">
+        /// When enabled, connections with no origin header will be rejected. If the allowlist is empty, this option has no effect.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="shareableToken">
         /// A shareable token that can be used to start a conversation with the agent
         /// </param>
         public AuthSettings(
             bool? enableAuth,
             global::System.Collections.Generic.IList<global::G.AllowlistItem>? allowlist,
+            bool? requireOriginHeader,
             string? shareableToken)
         {
             this.EnableAuth = enableAuth;
             this.Allowlist = allowlist;
+            this.RequireOriginHeader = requireOriginHeader;
             this.ShareableToken = shareableToken;
         }
 

@@ -30,7 +30,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Serialized labels dictionary for the voice.
+        /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
@@ -54,7 +54,7 @@ namespace G
         /// Description to use for the created voice.
         /// </param>
         /// <param name="labels">
-        /// Serialized labels dictionary for the voice.
+        /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -40,6 +40,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("subtitles")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> Subtitles { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dubs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.Dictionary<string, global::G.DubbedSegment> Dubs { get; set; }
@@ -57,6 +64,7 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="subtitles"></param>
         /// <param name="dubs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,12 +74,14 @@ namespace G
             double startTime,
             double endTime,
             string text,
+            global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> subtitles,
             global::System.Collections.Generic.Dictionary<string, global::G.DubbedSegment> dubs)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Subtitles = subtitles ?? throw new global::System.ArgumentNullException(nameof(subtitles));
             this.Dubs = dubs ?? throw new global::System.ArgumentNullException(nameof(dubs));
         }
 

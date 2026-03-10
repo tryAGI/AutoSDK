@@ -10,7 +10,7 @@ namespace G
     public sealed partial class BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost
     {
         /// <summary>
-        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.
+        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,6 +22,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_id")]
         public string? ModelId { get; set; }
+
+        /// <summary>
+        /// Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
+        public string? LanguageCode { get; set; }
 
         /// <summary>
         /// Settings controlling the dialogue generation.
@@ -42,6 +48,14 @@ namespace G
         public int? Seed { get; set; }
 
         /// <summary>
+        /// This parameter controls text normalization with three modes: 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("apply_text_normalization")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalizationJsonConverter))]
+        public global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization? ApplyTextNormalization { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -51,11 +65,14 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost" /> class.
         /// </summary>
         /// <param name="inputs">
-        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.
+        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10.
         /// </param>
         /// <param name="modelId">
         /// Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.<br/>
         /// Default Value: eleven_v3
+        /// </param>
+        /// <param name="languageCode">
+        /// Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.
         /// </param>
         /// <param name="settings">
         /// Settings controlling the dialogue generation.
@@ -66,21 +83,29 @@ namespace G
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </param>
+        /// <param name="applyTextNormalization">
+        /// This parameter controls text normalization with three modes: 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.<br/>
+        /// Default Value: auto
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost(
             global::System.Collections.Generic.IList<global::G.DialogueInput> inputs,
             string? modelId,
+            string? languageCode,
             global::G.ModelSettingsResponseModel? settings,
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorRequestModel>? pronunciationDictionaryLocators,
-            int? seed)
+            int? seed,
+            global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization? applyTextNormalization)
         {
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.ModelId = modelId;
+            this.LanguageCode = languageCode;
             this.Settings = settings;
             this.PronunciationDictionaryLocators = pronunciationDictionaryLocators;
             this.Seed = seed;
+            this.ApplyTextNormalization = applyTextNormalization;
         }
 
         /// <summary>

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareCreateTextToDialogueStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat? outputFormat,
+            ref global::G.AllowedOutputFormats? outputFormat,
             ref string? xiApiKey,
             global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost request);
         partial void PrepareCreateTextToDialogueStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat? outputFormat,
+            global::G.AllowedOutputFormats? outputFormat,
             string? xiApiKey,
             global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost request);
         partial void ProcessCreateTextToDialogueStreamResponse(
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<byte[]> CreateTextToDialogueStreamAsync(
 
             global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost request,
-            global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -59,25 +59,27 @@ namespace G
 
             var outputFormatValue = outputFormat switch
             {
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp32205032 => "mp3_22050_32",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp34410032 => "mp3_44100_32",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp34410064 => "mp3_44100_64",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp34410096 => "mp3_44100_96",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp344100128 => "mp3_44100_128",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Mp344100192 => "mp3_44100_192",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm8000 => "pcm_8000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm16000 => "pcm_16000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm22050 => "pcm_22050",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm24000 => "pcm_24000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm44100 => "pcm_44100",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Pcm48000 => "pcm_48000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Ulaw8000 => "ulaw_8000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Alaw8000 => "alaw_8000",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Opus4800032 => "opus_48000_32",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Opus4800064 => "opus_48000_64",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Opus4800096 => "opus_48000_96",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Opus48000128 => "opus_48000_128",
-                global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.AllowedOutputFormats.Mp32205032 => "mp3_22050_32",
+                global::G.AllowedOutputFormats.Mp32400048 => "mp3_24000_48",
+                global::G.AllowedOutputFormats.Mp34410032 => "mp3_44100_32",
+                global::G.AllowedOutputFormats.Mp34410064 => "mp3_44100_64",
+                global::G.AllowedOutputFormats.Mp34410096 => "mp3_44100_96",
+                global::G.AllowedOutputFormats.Mp344100128 => "mp3_44100_128",
+                global::G.AllowedOutputFormats.Mp344100192 => "mp3_44100_192",
+                global::G.AllowedOutputFormats.Pcm8000 => "pcm_8000",
+                global::G.AllowedOutputFormats.Pcm16000 => "pcm_16000",
+                global::G.AllowedOutputFormats.Pcm22050 => "pcm_22050",
+                global::G.AllowedOutputFormats.Pcm24000 => "pcm_24000",
+                global::G.AllowedOutputFormats.Pcm32000 => "pcm_32000",
+                global::G.AllowedOutputFormats.Pcm44100 => "pcm_44100",
+                global::G.AllowedOutputFormats.Pcm48000 => "pcm_48000",
+                global::G.AllowedOutputFormats.Ulaw8000 => "ulaw_8000",
+                global::G.AllowedOutputFormats.Alaw8000 => "alaw_8000",
+                global::G.AllowedOutputFormats.Opus4800032 => "opus_48000_32",
+                global::G.AllowedOutputFormats.Opus4800064 => "opus_48000_64",
+                global::G.AllowedOutputFormats.Opus4800096 => "opus_48000_96",
+                global::G.AllowedOutputFormats.Opus48000128 => "opus_48000_128",
+                global::G.AllowedOutputFormats.Opus48000192 => "opus_48000_192",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(
@@ -238,14 +240,17 @@ namespace G
         /// Default Value: mp3_44100_128
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="inputs">
-        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech.
+        /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10.
         /// </param>
         /// <param name="modelId">
         /// Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.<br/>
         /// Default Value: eleven_v3
+        /// </param>
+        /// <param name="languageCode">
+        /// Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.
         /// </param>
         /// <param name="settings">
         /// Settings controlling the dialogue generation.
@@ -256,25 +261,33 @@ namespace G
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.
         /// </param>
+        /// <param name="applyTextNormalization">
+        /// This parameter controls text normalization with three modes: 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.<br/>
+        /// Default Value: auto
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateTextToDialogueStreamAsync(
             global::System.Collections.Generic.IList<global::G.DialogueInput> inputs,
-            global::G.TextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             string? modelId = default,
+            string? languageCode = default,
             global::G.ModelSettingsResponseModel? settings = default,
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorRequestModel>? pronunciationDictionaryLocators = default,
             int? seed = default,
+            global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization? applyTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost
             {
                 Inputs = inputs,
                 ModelId = modelId,
+                LanguageCode = languageCode,
                 Settings = settings,
                 PronunciationDictionaryLocators = pronunciationDictionaryLocators,
                 Seed = seed,
+                ApplyTextNormalization = applyTextNormalization,
             };
 
             return await CreateTextToDialogueStreamAsync(

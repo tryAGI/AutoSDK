@@ -48,15 +48,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference Background { get; set; }
+        public global::G.DubbingMediaReference? Background { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("foreground")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference Foreground { get; set; }
+        public global::G.DubbingMediaReference? Foreground { get; set; }
 
         /// <summary>
         /// 
@@ -107,22 +105,22 @@ namespace G
             string sourceLanguage,
             global::System.Collections.Generic.IList<string> targetLanguages,
             global::G.DubbingMediaReference input,
-            global::G.DubbingMediaReference background,
-            global::G.DubbingMediaReference foreground,
             global::System.Collections.Generic.Dictionary<string, global::G.SpeakerTrack> speakerTracks,
             global::System.Collections.Generic.Dictionary<string, global::G.SpeakerSegment> speakerSegments,
-            global::System.Collections.Generic.Dictionary<string, global::G.Render> renders)
+            global::System.Collections.Generic.Dictionary<string, global::G.Render> renders,
+            global::G.DubbingMediaReference? background,
+            global::G.DubbingMediaReference? foreground)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
             this.SourceLanguage = sourceLanguage ?? throw new global::System.ArgumentNullException(nameof(sourceLanguage));
             this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Background = background ?? throw new global::System.ArgumentNullException(nameof(background));
-            this.Foreground = foreground ?? throw new global::System.ArgumentNullException(nameof(foreground));
             this.SpeakerTracks = speakerTracks ?? throw new global::System.ArgumentNullException(nameof(speakerTracks));
             this.SpeakerSegments = speakerSegments ?? throw new global::System.ArgumentNullException(nameof(speakerSegments));
             this.Renders = renders ?? throw new global::System.ArgumentNullException(nameof(renders));
+            this.Background = background;
+            this.Foreground = foreground;
         }
 
         /// <summary>

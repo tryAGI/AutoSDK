@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ConversationHistoryTranscriptCommonModelOutput.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -20,20 +22,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_metadata")]
+        public global::G.AgentMetadata? AgentMetadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("multivoice_message")]
+        public global::G.ConversationHistoryMultivoiceMessageModel? MultivoiceMessage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolCallCommonModel>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolCallCommonModelOutput>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_results")]
-        public global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolResultCommonModel>? ToolResults { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ConversationHistoryTranscriptOtherToolsResultCommonModel, global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutput, global::G.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModel, global::G.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput>>? ToolResults { get; set; }
 
         /// <summary>
         /// 
@@ -88,7 +102,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_medium")]
-        public global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium2? SourceMedium { get; set; }
+        public global::G.ChatSourceMedium? SourceMedium { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,7 +114,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptCommonModelOutput" /> class.
         /// </summary>
         /// <param name="role"></param>
+        /// <param name="agentMetadata"></param>
         /// <param name="message"></param>
+        /// <param name="multivoiceMessage"></param>
         /// <param name="toolCalls"></param>
         /// <param name="toolResults"></param>
         /// <param name="feedback"></param>
@@ -120,9 +136,11 @@ namespace G
         public ConversationHistoryTranscriptCommonModelOutput(
             global::G.ConversationHistoryTranscriptCommonModelOutputRole role,
             int timeInCallSecs,
+            global::G.AgentMetadata? agentMetadata,
             string? message,
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolCallCommonModel>? toolCalls,
-            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolResultCommonModel>? toolResults,
+            global::G.ConversationHistoryMultivoiceMessageModel? multivoiceMessage,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptToolCallCommonModelOutput>? toolCalls,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ConversationHistoryTranscriptOtherToolsResultCommonModel, global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutput, global::G.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModel, global::G.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput>>? toolResults,
             global::G.UserFeedback? feedback,
             string? llmOverride,
             global::G.ConversationTurnMetrics? conversationTurnMetrics,
@@ -130,11 +148,13 @@ namespace G
             global::G.LLMUsageOutput? llmUsage,
             bool? interrupted,
             string? originalMessage,
-            global::G.ConversationHistoryTranscriptCommonModelOutputSourceMedium2? sourceMedium)
+            global::G.ChatSourceMedium? sourceMedium)
         {
             this.Role = role;
             this.TimeInCallSecs = timeInCallSecs;
+            this.AgentMetadata = agentMetadata;
             this.Message = message;
+            this.MultivoiceMessage = multivoiceMessage;
             this.ToolCalls = toolCalls;
             this.ToolResults = toolResults;
             this.Feedback = feedback;

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 22. If set to None we will guess the optimal duration using the prompt. Defaults to None.
+    /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 30. If set to None we will guess the optimal duration using the prompt. Defaults to None.
     /// </summary>
     public sealed partial class BodySoundGenerationV1SoundGenerationPostDurationSeconds
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Serialized labels dictionary for the voice.
+    /// 
     /// </summary>
     public sealed partial class BodyEditVoiceV1VoicesVoiceIdEditPostLabels
     {

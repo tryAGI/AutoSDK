@@ -31,6 +31,12 @@ namespace G
         public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? FileFormat { get; set; }
 
         /// <summary>
+        /// Optional preview image base64 for tracking this generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preview_b64")]
+        public string? PreviewB64 { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,17 +55,22 @@ namespace G
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
         /// Default Value: other
         /// </param>
+        /// <param name="previewB64">
+        /// Optional preview image base64 for tracking this generation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyAudioIsolationV1AudioIsolationPost(
             byte[] audio,
             string audioname,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat)
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat,
+            string? previewB64)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));
             this.FileFormat = fileFormat;
+            this.PreviewB64 = previewB64;
         }
 
         /// <summary>

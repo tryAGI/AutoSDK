@@ -89,12 +89,17 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.ChatCompletionRequestMessage(
+            var __value = new global::G.ChatCompletionRequestMessage(
                 developerMessage,
+
                 systemMessage,
+
                 userMessage,
+
                 assistantMessage,
+
                 toolMessage,
+
                 functionMessage
                 );
 
@@ -135,7 +140,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

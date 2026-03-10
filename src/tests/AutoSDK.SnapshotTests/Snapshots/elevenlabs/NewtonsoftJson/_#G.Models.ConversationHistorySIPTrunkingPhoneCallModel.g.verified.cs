@@ -47,6 +47,12 @@ namespace G
         public string CallSid { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sip_header_dynamic_variables")]
+        public global::System.Collections.Generic.Dictionary<string, string>? SipHeaderDynamicVariables { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -61,12 +67,14 @@ namespace G
         /// <param name="externalNumber"></param>
         /// <param name="type"></param>
         /// <param name="callSid"></param>
+        /// <param name="sipHeaderDynamicVariables"></param>
         public ConversationHistorySIPTrunkingPhoneCallModel(
             global::G.ConversationHistorySIPTrunkingPhoneCallModelDirection direction,
             string phoneNumberId,
             string agentNumber,
             string externalNumber,
             string callSid,
+            global::System.Collections.Generic.Dictionary<string, string>? sipHeaderDynamicVariables,
             string type = "sip_trunking")
         {
             this.Direction = direction;
@@ -75,6 +83,7 @@ namespace G
             this.ExternalNumber = externalNumber ?? throw new global::System.ArgumentNullException(nameof(externalNumber));
             this.CallSid = callSid ?? throw new global::System.ArgumentNullException(nameof(callSid));
             this.Type = type;
+            this.SipHeaderDynamicVariables = sipHeaderDynamicVariables;
         }
 
         /// <summary>

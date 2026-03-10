@@ -86,20 +86,28 @@ namespace G.JsonConverters
                 debug = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.StreamedChatResponse(
+            var __value = new global::G.StreamedChatResponse(
                 discriminator?.EventType,
                 streamStart,
+
                 searchQueriesGeneration,
+
                 searchResults,
+
                 textGeneration,
+
                 citationGeneration,
+
                 toolCallsGeneration,
+
                 streamEnd,
+
                 toolCallsChunk,
+
                 debug
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

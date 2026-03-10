@@ -24,6 +24,22 @@ namespace G
         public required string Label { get; set; }
 
         /// <summary>
+        /// This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_inbound")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? SupportsInbound { get; set; }
+
+        /// <summary>
+        /// This field is deprecated and will be removed in the future. Whether this phone number supports outbound calls<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_outbound")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? SupportsOutbound { get; set; }
+
+        /// <summary>
         /// Default Value: twilio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -42,6 +58,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Token { get; set; }
+
+        /// <summary>
+        /// Twilio Additional Region Configuration
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("region_config")]
+        public global::G.RegionConfigRequest? RegionConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,6 +89,9 @@ namespace G
         /// <param name="token">
         /// Twilio Auth Token
         /// </param>
+        /// <param name="regionConfig">
+        /// Twilio Additional Region Configuration
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,13 +100,15 @@ namespace G
             string label,
             string sid,
             string token,
-            string? provider)
+            string? provider,
+            global::G.RegionConfigRequest? regionConfig)
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Sid = sid ?? throw new global::System.ArgumentNullException(nameof(sid));
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Provider = provider;
+            this.RegionConfig = regionConfig;
         }
 
         /// <summary>

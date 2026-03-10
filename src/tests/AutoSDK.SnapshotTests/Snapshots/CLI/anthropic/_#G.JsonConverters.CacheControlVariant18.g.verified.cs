@@ -30,12 +30,12 @@ namespace G.JsonConverters
                 ephemeral = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.CacheControlVariant18(
+            var __value = new global::G.CacheControlVariant18(
                 discriminator?.Type,
                 ephemeral
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

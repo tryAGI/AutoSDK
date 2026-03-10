@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"alphabet":"ipa","phoneme":"/\u02C8ta\u026A.l\u00E6nd/","string_to_replace":"Thailand","type":"phoneme"}
+    /// Example: {"alphabet":"ipa","case_sensitive":true,"phoneme":"/\u02C8ta\u026A.l\u00E6nd/","string_to_replace":"Thailand","type":"phoneme","word_boundaries":true}
     /// </summary>
     public sealed partial class PronunciationDictionaryPhonemeRuleRequestModel
     {
@@ -14,6 +14,20 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("string_to_replace", Required = global::Newtonsoft.Json.Required.Always)]
         public string StringToReplace { get; set; } = default!;
+
+        /// <summary>
+        /// Whether the rule should match case-sensitively.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("case_sensitive")]
+        public bool? CaseSensitive { get; set; }
+
+        /// <summary>
+        /// Whether the rule should only match at word boundaries.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("word_boundaries")]
+        public bool? WordBoundaries { get; set; }
 
         /// <summary>
         /// The type of the rule.
@@ -46,6 +60,14 @@ namespace G
         /// <param name="stringToReplace">
         /// The string to replace. Must be a non-empty string.
         /// </param>
+        /// <param name="caseSensitive">
+        /// Whether the rule should match case-sensitively.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="wordBoundaries">
+        /// Whether the rule should only match at word boundaries.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="type">
         /// The type of the rule.
         /// </param>
@@ -59,11 +81,15 @@ namespace G
             string stringToReplace,
             string phoneme,
             string alphabet,
+            bool? caseSensitive,
+            bool? wordBoundaries,
             string type = "phoneme")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
             this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
             this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
+            this.CaseSensitive = caseSensitive;
+            this.WordBoundaries = wordBoundaries;
             this.Type = type;
         }
 

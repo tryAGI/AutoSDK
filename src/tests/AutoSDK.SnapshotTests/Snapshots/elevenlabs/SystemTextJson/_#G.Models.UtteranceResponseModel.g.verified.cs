@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"end":1,"start":0}
+    /// Example: {"end":1.0,"start":0.0}
     /// </summary>
     public sealed partial class UtteranceResponseModel
     {

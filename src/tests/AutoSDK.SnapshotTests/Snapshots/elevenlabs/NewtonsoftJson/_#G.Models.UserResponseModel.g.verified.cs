@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"first_name":"John","is_api_key_hashed":false,"is_new_user":false,"is_onboarding_checklist_completed":true,"is_onboarding_completed":true,"subscription":{"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1},"subscription_extras":{"can_bypass_voice_captcha":true,"can_request_manual_pro_voice_verification":true,"concurrency":10,"convai_asr_chars_per_minute":1000,"convai_chars_per_minute":1000,"convai_concurrency":10,"force_logging_disabled":false,"moderation":{"enterprise_background_moderation_enabled":false,"enterprise_check_block_nogo_voice":false,"enterprise_check_nogo_voice":false,"is_in_probation":false,"never_live_moderate":false,"nogo_voice_similar_voice_upload_count":0,"on_watchlist":false},"overused_characters_rolled_over_from_previous_period":1000,"unused_characters_rolled_over_from_previous_period":1000,"usage":{"actual_reported_credits":1000,"manually_gifted_credits_quota":1000,"manually_gifted_credits_used":1000,"paid_usage_based_credits_used":1000,"rollover_credits_quota":1000,"rollover_credits_used":1000,"subscription_cycle_credits_quota":1000,"subscription_cycle_credits_used":1000}},"user_id":"1234567890","xi_api_key":"8so27l7327189x0h939ekx293380l920"}
+    /// Example: {"can_use_delayed_payment_methods":false,"created_at":1753999199,"first_name":"John","is_api_key_hashed":false,"is_new_user":false,"is_onboarding_checklist_completed":true,"is_onboarding_completed":true,"seat_type":"workspace_member","show_compliance_terms":false,"subscription":{"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_character_limit_extension":10000,"max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1},"user_id":"1234567890","xi_api_key":"8so27l7327189x0h939ekx293380l920"}
     /// </summary>
     public sealed partial class UserResponseModel
     {
@@ -17,20 +17,14 @@ namespace G
 
         /// <summary>
         /// Details of the user's subscription.<br/>
-        /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
+        /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_character_limit_extension":10000,"max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
         /// </summary>
-        /// <example>{"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}</example>
+        /// <example>{"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_character_limit_extension":10000,"max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}</example>
         [global::Newtonsoft.Json.JsonProperty("subscription", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.SubscriptionResponseModel Subscription { get; set; } = default!;
 
         /// <summary>
-        /// Optional additional details about the user's subscription.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("subscription_extras")]
-        public global::G.SubscriptionExtrasResponseModel? SubscriptionExtras { get; set; }
-
-        /// <summary>
-        /// Whether the user is new.
+        /// Whether the user is new. This field is deprecated and will be removed in the future. Use 'created_at' instead.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_new_user", Required = global::Newtonsoft.Json.Required.Always)]
         public bool IsNewUser { get; set; } = default!;
@@ -58,6 +52,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_onboarding_checklist_completed", Required = global::Newtonsoft.Json.Required.Always)]
         public bool IsOnboardingChecklistCompleted { get; set; } = default!;
+
+        /// <summary>
+        /// Whether to show compliance terms (ToS, Privacy Policy, biometric consent) during onboarding. Set for users signing up from the marketing site.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("show_compliance_terms")]
+        public bool? ShowComplianceTerms { get; set; }
 
         /// <summary>
         /// First name of the user.
@@ -91,6 +92,18 @@ namespace G
         public string? PartnerstackPartnerDefaultLink { get; set; }
 
         /// <summary>
+        /// The unix timestamp of the user's creation. 0 if the user was created before the unix timestamp was added.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The seat type of the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seat_type", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.SeatType SeatType { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -104,13 +117,10 @@ namespace G
         /// </param>
         /// <param name="subscription">
         /// Details of the user's subscription.<br/>
-        /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
-        /// </param>
-        /// <param name="subscriptionExtras">
-        /// Optional additional details about the user's subscription.
+        /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_character_limit_extension":10000,"max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
         /// </param>
         /// <param name="isNewUser">
-        /// Whether the user is new.
+        /// Whether the user is new. This field is deprecated and will be removed in the future. Use 'created_at' instead.
         /// </param>
         /// <param name="xiApiKey">
         /// The API key of the user.
@@ -123,6 +133,10 @@ namespace G
         /// </param>
         /// <param name="isOnboardingChecklistCompleted">
         /// Whether the user's onboarding checklist is completed.
+        /// </param>
+        /// <param name="showComplianceTerms">
+        /// Whether to show compliance terms (ToS, Privacy Policy, biometric consent) during onboarding. Set for users signing up from the marketing site.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="firstName">
         /// First name of the user.
@@ -140,6 +154,12 @@ namespace G
         /// <param name="partnerstackPartnerDefaultLink">
         /// The Partnerstack partner default link of the user.
         /// </param>
+        /// <param name="createdAt">
+        /// The unix timestamp of the user's creation. 0 if the user was created before the unix timestamp was added.
+        /// </param>
+        /// <param name="seatType">
+        /// The seat type of the user.
+        /// </param>
         public UserResponseModel(
             string userId,
             global::G.SubscriptionResponseModel subscription,
@@ -147,8 +167,10 @@ namespace G
             bool canUseDelayedPaymentMethods,
             bool isOnboardingCompleted,
             bool isOnboardingChecklistCompleted,
-            global::G.SubscriptionExtrasResponseModel? subscriptionExtras,
+            global::System.DateTimeOffset createdAt,
+            global::G.SeatType seatType,
             string? xiApiKey,
+            bool? showComplianceTerms,
             string? firstName,
             bool? isApiKeyHashed,
             string? xiApiKeyPreview,
@@ -161,8 +183,10 @@ namespace G
             this.CanUseDelayedPaymentMethods = canUseDelayedPaymentMethods;
             this.IsOnboardingCompleted = isOnboardingCompleted;
             this.IsOnboardingChecklistCompleted = isOnboardingChecklistCompleted;
-            this.SubscriptionExtras = subscriptionExtras;
+            this.CreatedAt = createdAt;
+            this.SeatType = seatType;
             this.XiApiKey = xiApiKey;
+            this.ShowComplianceTerms = showComplianceTerms;
             this.FirstName = firstName;
             this.IsApiKeyHashed = isApiKeyHashed;
             this.XiApiKeyPreview = xiApiKeyPreview;

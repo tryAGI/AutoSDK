@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+    /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
     /// </summary>
     public sealed partial class GetSignedUrlDeprecatedXiApiKey
     {

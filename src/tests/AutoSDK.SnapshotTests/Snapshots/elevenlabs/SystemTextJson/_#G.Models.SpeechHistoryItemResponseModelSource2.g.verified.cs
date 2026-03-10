@@ -41,6 +41,10 @@ namespace G
         /// 
         /// </summary>
         ConvAI,
+        /// <summary>
+        /// 
+        /// </summary>
+        VoiceGeneration,
     }
 
     /// <summary>
@@ -63,6 +67,7 @@ namespace G
                 SpeechHistoryItemResponseModelSource2.Dubbing => "Dubbing",
                 SpeechHistoryItemResponseModelSource2.PlayAPI => "PlayAPI",
                 SpeechHistoryItemResponseModelSource2.ConvAI => "ConvAI",
+                SpeechHistoryItemResponseModelSource2.VoiceGeneration => "VoiceGeneration",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -81,6 +86,7 @@ namespace G
                 "Dubbing" => SpeechHistoryItemResponseModelSource2.Dubbing,
                 "PlayAPI" => SpeechHistoryItemResponseModelSource2.PlayAPI,
                 "ConvAI" => SpeechHistoryItemResponseModelSource2.ConvAI,
+                "VoiceGeneration" => SpeechHistoryItemResponseModelSource2.VoiceGeneration,
                 _ => null,
             };
         }

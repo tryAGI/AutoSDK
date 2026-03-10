@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// Model representing a single character with its timing information from the aligner.<br/>
-    /// Example: {"end":0.02,"start":0,"text":"H"}
+    /// Example: {"end":0.02,"start":0.0,"text":"H"}
     /// </summary>
     public sealed partial class ForcedAlignmentCharacterResponseModel
     {

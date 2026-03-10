@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("agent_tools", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.AgentToolsItem> AgentTools { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("agents", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.AgentsItem> Agents { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -43,17 +43,17 @@ namespace G
         /// Initializes a new instance of the <see cref="ConvAIStoredSecretDependencies" /> class.
         /// </summary>
         /// <param name="tools"></param>
-        /// <param name="agentTools"></param>
+        /// <param name="agents"></param>
         /// <param name="others"></param>
         /// <param name="phoneNumbers"></param>
         public ConvAIStoredSecretDependencies(
             global::System.Collections.Generic.IList<global::G.ToolsItem> tools,
-            global::System.Collections.Generic.IList<global::G.AgentToolsItem> agentTools,
+            global::System.Collections.Generic.IList<global::G.AgentsItem> agents,
             global::System.Collections.Generic.IList<global::G.SecretDependencyType> others,
             global::System.Collections.Generic.IList<global::G.DependentPhoneNumberIdentifier>? phoneNumbers)
         {
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.AgentTools = agentTools ?? throw new global::System.ArgumentNullException(nameof(agentTools));
+            this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));
             this.Others = others ?? throw new global::System.ArgumentNullException(nameof(others));
             this.PhoneNumbers = phoneNumbers;
         }

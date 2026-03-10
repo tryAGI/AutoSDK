@@ -29,7 +29,7 @@ namespace G
         /// Add a new voice to your collection of voices in VoiceLab.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -98,7 +98,7 @@ namespace G
             {
 
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Labels}"),
+                    content: new global::System.Net.Http.StringContent(request.Labels?.ToString() ?? string.Empty),
                     name: "\"labels\"");
             }
             __httpRequest.Content = __httpRequestContent;
@@ -238,7 +238,7 @@ namespace G
         /// Add a new voice to your collection of voices in VoiceLab.
         /// </summary>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="name">
         /// The name that identifies this voice. This will be displayed in the dropdown of the website.
@@ -254,7 +254,7 @@ namespace G
         /// A description of the voice.
         /// </param>
         /// <param name="labels">
-        /// Serialized labels dictionary for the voice.
+        /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -264,7 +264,7 @@ namespace G
             string? xiApiKey = default,
             bool? removeBackgroundNoise = default,
             string? description = default,
-            string? labels = default,
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAddVoiceV1VoicesAddPost

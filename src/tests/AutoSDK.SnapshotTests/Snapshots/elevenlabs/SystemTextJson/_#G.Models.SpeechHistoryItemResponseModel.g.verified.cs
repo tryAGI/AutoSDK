@@ -108,7 +108,7 @@ namespace G
         public string? ShareLinkId { get; set; }
 
         /// <summary>
-        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
+        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (Agents Platform).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         public global::G.SpeechHistoryItemResponseModelSource2? Source { get; set; }
@@ -180,7 +180,7 @@ namespace G
         /// The ID of the share link.
         /// </param>
         /// <param name="source">
-        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (conversational AI).
+        /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (Agents Platform).
         /// </param>
         /// <param name="alignments">
         /// The alignments of the history item.

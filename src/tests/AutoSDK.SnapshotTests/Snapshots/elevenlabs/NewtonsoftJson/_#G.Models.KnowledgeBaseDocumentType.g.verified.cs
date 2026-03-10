@@ -25,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
     }
 
     /// <summary>
@@ -42,6 +47,7 @@ namespace G
                 KnowledgeBaseDocumentType.File => "file",
                 KnowledgeBaseDocumentType.Url => "url",
                 KnowledgeBaseDocumentType.Text => "text",
+                KnowledgeBaseDocumentType.Folder => "folder",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,6 +61,7 @@ namespace G
                 "file" => KnowledgeBaseDocumentType.File,
                 "url" => KnowledgeBaseDocumentType.Url,
                 "text" => KnowledgeBaseDocumentType.Text,
+                "folder" => KnowledgeBaseDocumentType.Folder,
                 _ => null,
             };
         }

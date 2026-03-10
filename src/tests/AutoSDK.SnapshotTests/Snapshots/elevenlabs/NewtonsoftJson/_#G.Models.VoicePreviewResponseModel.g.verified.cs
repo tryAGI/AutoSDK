@@ -34,6 +34,12 @@ namespace G
         public double DurationSecs { get; set; } = default!;
 
         /// <summary>
+        /// The language of the preview.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("language")]
+        public string? Language { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -54,16 +60,21 @@ namespace G
         /// <param name="durationSecs">
         /// The duration of the preview in seconds.
         /// </param>
+        /// <param name="language">
+        /// The language of the preview.
+        /// </param>
         public VoicePreviewResponseModel(
             string audioBase64,
             string generatedVoiceId,
             string mediaType,
-            double durationSecs)
+            double durationSecs,
+            string? language)
         {
             this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.GeneratedVoiceId = generatedVoiceId ?? throw new global::System.ArgumentNullException(nameof(generatedVoiceId));
             this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
             this.DurationSecs = durationSecs;
+            this.Language = language;
         }
 
         /// <summary>

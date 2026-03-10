@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.
+    /// Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.<br/>
+    /// Default Value: 0F
     /// </summary>
     public sealed partial class VoiceSettingsResponseModelStyle
     {

@@ -32,11 +32,11 @@ namespace G
         /// The id of the pronunciation dictionary
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionaryMetadataResponseModel> GetPronunciationDictionariesByPronunciationDictionaryIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionaryWithRulesResponseModel> GetPronunciationDictionariesByPronunciationDictionaryIdAsync(
             string pronunciationDictionaryId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -49,7 +49,7 @@ namespace G
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(
-                path: $"/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/",
+                path: $"/v1/pronunciation-dictionaries/{pronunciationDictionaryId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -146,7 +146,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.GetPronunciationDictionaryMetadataResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.GetPronunciationDictionaryWithRulesResponseModel.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -177,7 +177,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.GetPronunciationDictionaryMetadataResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.GetPronunciationDictionaryWithRulesResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

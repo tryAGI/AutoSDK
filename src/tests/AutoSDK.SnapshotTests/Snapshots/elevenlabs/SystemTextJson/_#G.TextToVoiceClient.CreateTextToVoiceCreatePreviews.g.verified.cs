@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareCreateTextToVoiceCreatePreviewsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat,
+            ref global::G.AllowedOutputFormats? outputFormat,
             ref string? xiApiKey,
             global::G.VoicePreviewsRequestModel request);
         partial void PrepareCreateTextToVoiceCreatePreviewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat,
+            global::G.AllowedOutputFormats? outputFormat,
             string? xiApiKey,
             global::G.VoicePreviewsRequestModel request);
         partial void ProcessCreateTextToVoiceCreatePreviewsResponse(
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: mp3_44100_192
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.VoicePreviewsResponseModel> CreateTextToVoiceCreatePreviewsAsync(
 
             global::G.VoicePreviewsRequestModel request,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -224,7 +224,7 @@ namespace G
         /// Default Value: mp3_44100_192
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="voiceDescription">
         /// Description to use for the created voice.
@@ -251,11 +251,15 @@ namespace G
         /// Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.<br/>
         /// Default Value: 5
         /// </param>
+        /// <param name="shouldEnhance">
+        /// Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VoicePreviewsResponseModel> CreateTextToVoiceCreatePreviewsAsync(
             string voiceDescription,
-            global::G.GenerateAVoicePreviewFromDescriptionV1TextToVoiceCreatePreviewsPostOutputFormat? outputFormat = default,
+            global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
             string? text = default,
             bool? autoGenerateText = default,
@@ -263,6 +267,7 @@ namespace G
             double? quality = default,
             int? seed = default,
             double? guidanceScale = default,
+            bool? shouldEnhance = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.VoicePreviewsRequestModel
@@ -274,6 +279,7 @@ namespace G
                 Quality = quality,
                 Seed = seed,
                 GuidanceScale = guidanceScale,
+                ShouldEnhance = shouldEnhance,
             };
 
             return await CreateTextToVoiceCreatePreviewsAsync(

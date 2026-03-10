@@ -38,6 +38,12 @@ namespace G
         public required double DurationSecs { get; set; }
 
         /// <summary>
+        /// The language of the preview.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        public string? Language { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -58,6 +64,9 @@ namespace G
         /// <param name="durationSecs">
         /// The duration of the preview in seconds.
         /// </param>
+        /// <param name="language">
+        /// The language of the preview.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,12 +74,14 @@ namespace G
             string audioBase64,
             string generatedVoiceId,
             string mediaType,
-            double durationSecs)
+            double durationSecs,
+            string? language)
         {
             this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.GeneratedVoiceId = generatedVoiceId ?? throw new global::System.ArgumentNullException(nameof(generatedVoiceId));
             this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
             this.DurationSecs = durationSecs;
+            this.Language = language;
         }
 
         /// <summary>

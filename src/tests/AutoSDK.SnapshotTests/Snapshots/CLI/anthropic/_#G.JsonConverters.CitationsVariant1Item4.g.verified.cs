@@ -44,14 +44,16 @@ namespace G.JsonConverters
                 contentBlockLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.CitationsVariant1Item4(
+            var __value = new global::G.CitationsVariant1Item4(
                 discriminator?.Type,
                 charLocation,
+
                 pageLocation,
+
                 contentBlockLocation
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

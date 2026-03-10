@@ -425,40 +425,73 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.RealtimeServerEvent(
+            var __value = new global::G.RealtimeServerEvent(
                 conversationCreated,
+
                 conversationItemCreated,
+
                 conversationItemDeleted,
+
                 conversationItemInputAudioTranscriptionCompleted,
+
                 conversationItemInputAudioTranscriptionDelta,
+
                 conversationItemInputAudioTranscriptionFailed,
+
                 conversationItemRetrieved,
+
                 conversationItemTruncated,
+
                 error,
+
                 inputAudioBufferCleared,
+
                 inputAudioBufferCommitted,
+
                 inputAudioBufferSpeechStarted,
+
                 inputAudioBufferSpeechStopped,
+
                 rateLimitsUpdated,
+
                 responseAudioDelta,
+
                 responseAudioDone,
+
                 responseAudioTranscriptDelta,
+
                 responseAudioTranscriptDone,
+
                 responseContentPartAdded,
+
                 responseContentPartDone,
+
                 responseCreated,
+
                 responseDone,
+
                 responseFunctionCallArgumentsDelta,
+
                 responseFunctionCallArgumentsDone,
+
                 responseOutputItemAdded,
+
                 responseOutputItemDone,
+
                 responseTextDelta,
+
                 responseTextDone,
+
                 sessionCreated,
+
                 sessionUpdated,
+
                 transcriptionSessionUpdated,
+
                 outputAudioBufferStarted,
+
                 outputAudioBufferStopped,
+
                 outputAudioBufferCleared
                 );
 
@@ -667,7 +700,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

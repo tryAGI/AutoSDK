@@ -113,14 +113,21 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.Tool(
+            var __value = new global::G.Tool(
                 function,
+
                 fileSearch,
+
                 webSearchPreview,
+
                 computerUsePreview,
+
                 mcp,
+
                 codeInterpreter,
+
                 imageGeneration,
+
                 localShell
                 );
 
@@ -173,7 +180,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

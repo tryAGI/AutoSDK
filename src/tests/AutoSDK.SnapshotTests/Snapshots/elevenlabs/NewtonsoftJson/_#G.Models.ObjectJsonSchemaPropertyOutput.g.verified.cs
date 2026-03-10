@@ -34,6 +34,12 @@ namespace G
         public object? Properties { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("required_constraints")]
+        public global::G.RequiredConstraints? RequiredConstraints { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -48,16 +54,19 @@ namespace G
         /// <param name="required"></param>
         /// <param name="description"></param>
         /// <param name="properties"></param>
+        /// <param name="requiredConstraints"></param>
         public ObjectJsonSchemaPropertyOutput(
             string? type,
             global::System.Collections.Generic.IList<string>? required,
             string? description,
-            object? properties)
+            object? properties,
+            global::G.RequiredConstraints? requiredConstraints)
         {
             this.Type = type;
             this.Required = required;
             this.Description = description;
             this.Properties = properties;
+            this.RequiredConstraints = requiredConstraints;
         }
 
         /// <summary>

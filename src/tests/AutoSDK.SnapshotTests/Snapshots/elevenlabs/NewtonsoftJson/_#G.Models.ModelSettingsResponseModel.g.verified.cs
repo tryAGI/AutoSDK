@@ -5,21 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"similarity_boost":1,"stability":1}
+    /// Example: {"stability":0.5}
     /// </summary>
     public sealed partial class ModelSettingsResponseModel
     {
         /// <summary>
-        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.
+        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.<br/>
+        /// Default Value: 0.5F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stability")]
         public double? Stability { get; set; }
-
-        /// <summary>
-        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("use_speaker_boost")]
-        public bool? UseSpeakerBoost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +26,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelSettingsResponseModel" /> class.
         /// </summary>
         /// <param name="stability">
-        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.
-        /// </param>
-        /// <param name="useSpeakerBoost">
-        /// This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.
+        /// Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.<br/>
+        /// Default Value: 0.5F
         /// </param>
         public ModelSettingsResponseModel(
-            double? stability,
-            bool? useSpeakerBoost)
+            double? stability)
         {
             this.Stability = stability;
-            this.UseSpeakerBoost = useSpeakerBoost;
         }
 
         /// <summary>

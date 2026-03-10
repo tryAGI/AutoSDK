@@ -22,6 +22,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.PromptEvaluationCriteria>? ExtraEvaluationCriteria { get; set; }
 
         /// <summary>
+        /// Maximum number of new turns to generate in the conversation simulation<br/>
+        /// Default Value: 10000
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("new_turns_limit")]
+        public int? NewTurnsLimit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,12 +43,18 @@ namespace G
         /// <param name="extraEvaluationCriteria">
         /// A list of evaluation criteria to test
         /// </param>
+        /// <param name="newTurnsLimit">
+        /// Maximum number of new turns to generate in the conversation simulation<br/>
+        /// Default Value: 10000
+        /// </param>
         public BodySimulatesAConversationStreamV1ConvaiAgentsAgentIdSimulateConversationStreamPost(
             global::G.ConversationSimulationSpecification simulationSpecification,
-            global::System.Collections.Generic.IList<global::G.PromptEvaluationCriteria>? extraEvaluationCriteria)
+            global::System.Collections.Generic.IList<global::G.PromptEvaluationCriteria>? extraEvaluationCriteria,
+            int? newTurnsLimit)
         {
             this.SimulationSpecification = simulationSpecification ?? throw new global::System.ArgumentNullException(nameof(simulationSpecification));
             this.ExtraEvaluationCriteria = extraEvaluationCriteria;
+            this.NewTurnsLimit = newTurnsLimit;
         }
 
         /// <summary>

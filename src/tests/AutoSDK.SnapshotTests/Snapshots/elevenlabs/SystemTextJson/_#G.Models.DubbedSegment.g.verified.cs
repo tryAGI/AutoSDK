@@ -32,6 +32,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("subtitles")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> Subtitles { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_stale")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool AudioStale { get; set; }
@@ -54,6 +61,7 @@ namespace G
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="text"></param>
+        /// <param name="subtitles"></param>
         /// <param name="audioStale"></param>
         /// <param name="mediaRef"></param>
 #if NET7_0_OR_GREATER
@@ -62,12 +70,14 @@ namespace G
         public DubbedSegment(
             double startTime,
             double endTime,
+            global::System.Collections.Generic.IList<global::G.SegmentSubtitleFrame> subtitles,
             bool audioStale,
             string? text,
             global::G.DubbingMediaReference? mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.Subtitles = subtitles ?? throw new global::System.ArgumentNullException(nameof(subtitles));
             this.AudioStale = audioStale;
             this.Text = text;
             this.MediaRef = mediaRef;

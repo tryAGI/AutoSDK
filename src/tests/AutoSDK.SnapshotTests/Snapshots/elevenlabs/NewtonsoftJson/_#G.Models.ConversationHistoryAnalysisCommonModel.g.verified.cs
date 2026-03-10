@@ -24,6 +24,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("evaluation_criteria_results_list")]
+        public global::System.Collections.Generic.IList<global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? EvaluationCriteriaResultsList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data_collection_results_list")]
+        public global::System.Collections.Generic.IList<global::G.DataCollectionResultCommonModel>? DataCollectionResultsList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("call_successful", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.EvaluationSuccessResult CallSuccessful { get; set; } = default!;
 
@@ -32,6 +44,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript_summary", Required = global::Newtonsoft.Json.Required.Always)]
         public string TranscriptSummary { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("call_summary_title")]
+        public string? CallSummaryTitle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,18 +62,27 @@ namespace G
         /// </summary>
         /// <param name="evaluationCriteriaResults"></param>
         /// <param name="dataCollectionResults"></param>
+        /// <param name="evaluationCriteriaResultsList"></param>
+        /// <param name="dataCollectionResultsList"></param>
         /// <param name="callSuccessful"></param>
         /// <param name="transcriptSummary"></param>
+        /// <param name="callSummaryTitle"></param>
         public ConversationHistoryAnalysisCommonModel(
             global::G.EvaluationSuccessResult callSuccessful,
             string transcriptSummary,
             global::System.Collections.Generic.Dictionary<string, global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? evaluationCriteriaResults,
-            global::System.Collections.Generic.Dictionary<string, global::G.DataCollectionResultCommonModel>? dataCollectionResults)
+            global::System.Collections.Generic.Dictionary<string, global::G.DataCollectionResultCommonModel>? dataCollectionResults,
+            global::System.Collections.Generic.IList<global::G.ConversationHistoryEvaluationCriteriaResultCommonModel>? evaluationCriteriaResultsList,
+            global::System.Collections.Generic.IList<global::G.DataCollectionResultCommonModel>? dataCollectionResultsList,
+            string? callSummaryTitle)
         {
             this.CallSuccessful = callSuccessful;
             this.TranscriptSummary = transcriptSummary ?? throw new global::System.ArgumentNullException(nameof(transcriptSummary));
             this.EvaluationCriteriaResults = evaluationCriteriaResults;
             this.DataCollectionResults = dataCollectionResults;
+            this.EvaluationCriteriaResultsList = evaluationCriteriaResultsList;
+            this.DataCollectionResultsList = dataCollectionResultsList;
+            this.CallSummaryTitle = callSummaryTitle;
         }
 
         /// <summary>

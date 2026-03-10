@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="oauth2")]
         Oauth2,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mtls")]
+        Mtls,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 WebhookAuthMethodType.Hmac => "hmac",
                 WebhookAuthMethodType.Oauth2 => "oauth2",
+                WebhookAuthMethodType.Mtls => "mtls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "hmac" => WebhookAuthMethodType.Hmac,
                 "oauth2" => WebhookAuthMethodType.Oauth2,
+                "mtls" => WebhookAuthMethodType.Mtls,
                 _ => null,
             };
         }

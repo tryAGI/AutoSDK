@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ContentVariant2Item2(
+            var __value = new global::G.ContentVariant2Item2(
                 discriminator?.Type,
                 text,
+
                 image
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

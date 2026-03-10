@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
+    /// Example: {"allowed_to_extend_character_limit":false,"billing_period":"monthly_period","can_extend_character_limit":false,"can_extend_voice_limit":false,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":17231,"character_limit":100000,"character_refresh_period":"monthly_period","currency":"usd","max_character_limit_extension":10000,"max_voice_add_edits":230,"next_character_count_reset_unix":1738356858,"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"free","tier":"trial","voice_add_edit_counter":212,"voice_limit":120,"voice_slots_used":1}
     /// </summary>
     public sealed partial class SubscriptionResponseModel
     {
@@ -121,13 +121,13 @@ namespace G
         /// The billing period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_period")]
-        public global::G.SubscriptionResponseModelBillingPeriod2? BillingPeriod { get; set; }
+        public global::G.BillingPeriod? BillingPeriod { get; set; }
 
         /// <summary>
         /// The character refresh period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_refresh_period")]
-        public global::G.SubscriptionResponseModelCharacterRefreshPeriod2? CharacterRefreshPeriod { get; set; }
+        public global::G.CharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -217,8 +217,8 @@ namespace G
             int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
             global::G.SubscriptionResponseModelCurrency2? currency,
-            global::G.SubscriptionResponseModelBillingPeriod2? billingPeriod,
-            global::G.SubscriptionResponseModelCharacterRefreshPeriod2? characterRefreshPeriod)
+            global::G.BillingPeriod? billingPeriod,
+            global::G.CharacterRefreshPeriod? characterRefreshPeriod)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;

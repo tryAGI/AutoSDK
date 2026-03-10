@@ -44,14 +44,16 @@ namespace G.JsonConverters
                 dataCollection = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.ChartsItem(
+            var __value = new global::G.ChartsItem(
                 discriminator?.Type,
                 callSuccess,
+
                 criteria,
+
                 dataCollection
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

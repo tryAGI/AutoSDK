@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string dubbingId,
             ref string languageCode,
-            ref global::G.GetDubbedTranscriptV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType,
+            ref global::G.GetDubbedTranscriptFileFormatType? formatType,
             ref string? xiApiKey);
         partial void PrepareGetDubbingByDubbingIdTranscriptByLanguageCodeRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string dubbingId,
             string languageCode,
-            global::G.GetDubbedTranscriptV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType,
+            global::G.GetDubbedTranscriptFileFormatType? formatType,
             string? xiApiKey);
         partial void ProcessGetDubbingByDubbingIdTranscriptByLanguageCodeResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,21 +36,22 @@ namespace G
         /// ID of the dubbing project.
         /// </param>
         /// <param name="languageCode">
-        /// ID of the language.
+        /// ISO-693 language code to retrieve the transcript for. Use 'source' to fetch the transcript of the original media.
         /// </param>
         /// <param name="formatType">
-        /// Format to use for the subtitle file, either 'srt' or 'webvtt'<br/>
+        /// Format to return transcript in. For subtitles use either 'srt' or 'webvtt', and for a full transcript use 'json'. The 'json' format is not yet supported for Dubbing Studio.<br/>
         /// Default Value: srt
         /// </param>
         /// <param name="xiApiKey">
-        /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> GetDubbingByDubbingIdTranscriptByLanguageCodeAsync(
+        [global::System.Obsolete("This method marked as deprecated.")]
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.DubbingTranscriptResponseModel, string>> GetDubbingByDubbingIdTranscriptByLanguageCodeAsync(
             string dubbingId,
             string languageCode,
-            global::G.GetDubbedTranscriptV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType = default,
+            global::G.GetDubbedTranscriptFileFormatType? formatType = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -172,6 +173,39 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Dubbing not ready
+            if ((int)__response.StatusCode == 425)
+            {
+                string? __content_425 = null;
+                global::System.Exception? __exception_425 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_425 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_425 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_425 = __ex;
+                }
+
+                throw new global::G.ApiException(
+                    message: __content_425 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_425,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_425,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
             // Validation Error
             if ((int)__response.StatusCode == 422)
             {
@@ -209,39 +243,6 @@ namespace G
                         h => h.Value),
                 };
             }
-            // Dubbing not ready
-            if ((int)__response.StatusCode == 425)
-            {
-                string? __content_425 = null;
-                global::System.Exception? __exception_425 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_425 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    }
-                    else
-                    {
-                        var __contentStream_425 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_425 = __ex;
-                }
-
-                throw new global::G.ApiException(
-                    message: __content_425 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_425,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_425,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
 
             if (ReadResponseAsString)
             {
@@ -264,7 +265,9 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::G.AnyOf<global::G.DubbingTranscriptResponseModel, string>.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -287,13 +290,15 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::G.AnyOf<global::G.DubbingTranscriptResponseModel, string>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.BodyEditVoiceV1VoicesVoiceIdEditPost.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -35,10 +37,10 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Serialized labels dictionary for the voice.
+        /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public string? Labels { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? Labels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,14 +65,14 @@ namespace G
         /// A description of the voice.
         /// </param>
         /// <param name="labels">
-        /// Serialized labels dictionary for the voice.
+        /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </param>
         public BodyEditVoiceV1VoicesVoiceIdEditPost(
             string name,
             global::System.Collections.Generic.IList<byte[]>? files,
             bool? removeBackgroundNoise,
             string? description,
-            string? labels)
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? labels)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Files = files;

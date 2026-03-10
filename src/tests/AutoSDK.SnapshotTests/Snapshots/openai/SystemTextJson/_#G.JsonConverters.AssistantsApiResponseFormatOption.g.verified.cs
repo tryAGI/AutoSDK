@@ -65,10 +65,13 @@ namespace G.JsonConverters
             {
             }
 
-            var result = new global::G.AssistantsApiResponseFormatOption(
+            var __value = new global::G.AssistantsApiResponseFormatOption(
                 value1,
+
                 text,
+
                 jsonObject,
+
                 jsonSchema
                 );
 
@@ -97,7 +100,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

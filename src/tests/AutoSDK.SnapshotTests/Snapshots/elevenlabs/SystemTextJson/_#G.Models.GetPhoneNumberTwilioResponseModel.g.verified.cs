@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"phone_number_id":"X3Pbu5gP6NNKBscdCdwB"}
+    /// Example: {"label":"Customer Support","phone_number":"\u002B1234567890","phone_number_id":"phone_123","provider":"twilio"}
     /// </summary>
     public sealed partial class GetPhoneNumberTwilioResponseModel
     {
@@ -22,6 +22,22 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Label { get; set; }
+
+        /// <summary>
+        /// This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_inbound")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? SupportsInbound { get; set; }
+
+        /// <summary>
+        /// This field is deprecated and will be removed in the future. Whether this phone number supports outbound calls<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_outbound")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public bool? SupportsOutbound { get; set; }
 
         /// <summary>
         /// The ID of the phone number

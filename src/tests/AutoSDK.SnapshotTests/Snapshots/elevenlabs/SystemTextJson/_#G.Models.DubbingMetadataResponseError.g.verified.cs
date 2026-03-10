@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Optional error message if the dubbing project failed.
+    /// Error message indicate, if this dub has failed, what happened.
     /// </summary>
     public sealed partial class DubbingMetadataResponseError
     {

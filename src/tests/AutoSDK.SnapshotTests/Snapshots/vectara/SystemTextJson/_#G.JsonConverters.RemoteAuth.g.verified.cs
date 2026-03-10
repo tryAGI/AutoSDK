@@ -37,13 +37,14 @@ namespace G.JsonConverters
                 header = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.RemoteAuth(
+            var __value = new global::G.RemoteAuth(
                 discriminator?.Type,
                 bearer,
+
                 header
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"char":"H","end":0.1,"start":0}
+    /// Example: {"end":0.1,"start":0.0,"text":"H"}
     /// </summary>
     public sealed partial class SpeechToTextCharacterResponseModel
     {

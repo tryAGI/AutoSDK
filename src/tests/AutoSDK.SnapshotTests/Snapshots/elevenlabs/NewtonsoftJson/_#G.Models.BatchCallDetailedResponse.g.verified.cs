@@ -18,14 +18,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("phone_number_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string PhoneNumberId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("phone_number_id")]
+        public string? PhoneNumberId { get; set; }
 
         /// <summary>
-        /// Default Value: twilio
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phone_provider")]
         public global::G.TelephonyProvider? PhoneProvider { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("whatsapp_params")]
+        public global::G.BatchCallWhatsAppParams? WhatsappParams { get; set; }
 
         /// <summary>
         /// 
@@ -54,14 +60,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("timezone")]
+        public string? Timezone { get; set; }
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_calls_dispatched", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalCallsDispatched { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_calls_scheduled", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalCallsScheduled { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total_calls_finished", Required = global::Newtonsoft.Json.Required.Always)]
+        public int TotalCallsFinished { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -74,6 +92,24 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.BatchCallStatus Status { get; set; } = default!;
+
+        /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("retry_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int RetryCount { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("telephony_call_config", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.TelephonyCallConfig TelephonyCallConfig { get; set; } = default!;
+
+        /// <summary>
+        /// Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("target_concurrency_limit")]
+        public int? TargetConcurrencyLimit { get; set; }
 
         /// <summary>
         /// 
@@ -98,47 +134,73 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumberId"></param>
-        /// <param name="phoneProvider">
-        /// Default Value: twilio
-        /// </param>
+        /// <param name="phoneProvider"></param>
+        /// <param name="whatsappParams"></param>
         /// <param name="name"></param>
         /// <param name="agentId"></param>
         /// <param name="createdAtUnix"></param>
         /// <param name="scheduledTimeUnix"></param>
-        /// <param name="totalCallsDispatched"></param>
-        /// <param name="totalCallsScheduled"></param>
+        /// <param name="timezone"></param>
+        /// <param name="totalCallsDispatched">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="totalCallsScheduled">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="totalCallsFinished">
+        /// Default Value: 0
+        /// </param>
         /// <param name="lastUpdatedAtUnix"></param>
         /// <param name="status"></param>
+        /// <param name="retryCount">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="telephonyCallConfig"></param>
+        /// <param name="targetConcurrencyLimit">
+        /// Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.
+        /// </param>
         /// <param name="agentName"></param>
         /// <param name="recipients"></param>
         public BatchCallDetailedResponse(
             string id,
-            string phoneNumberId,
             string name,
             string agentId,
             int createdAtUnix,
             int scheduledTimeUnix,
             int totalCallsDispatched,
             int totalCallsScheduled,
+            int totalCallsFinished,
             int lastUpdatedAtUnix,
             global::G.BatchCallStatus status,
+            int retryCount,
+            global::G.TelephonyCallConfig telephonyCallConfig,
             string agentName,
             global::System.Collections.Generic.IList<global::G.OutboundCallRecipientResponseModel> recipients,
-            global::G.TelephonyProvider? phoneProvider)
+            string? phoneNumberId,
+            global::G.TelephonyProvider? phoneProvider,
+            global::G.BatchCallWhatsAppParams? whatsappParams,
+            string? timezone,
+            int? targetConcurrencyLimit)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.CreatedAtUnix = createdAtUnix;
             this.ScheduledTimeUnix = scheduledTimeUnix;
             this.TotalCallsDispatched = totalCallsDispatched;
             this.TotalCallsScheduled = totalCallsScheduled;
+            this.TotalCallsFinished = totalCallsFinished;
             this.LastUpdatedAtUnix = lastUpdatedAtUnix;
             this.Status = status;
+            this.RetryCount = retryCount;
+            this.TelephonyCallConfig = telephonyCallConfig ?? throw new global::System.ArgumentNullException(nameof(telephonyCallConfig));
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));
             this.Recipients = recipients ?? throw new global::System.ArgumentNullException(nameof(recipients));
+            this.PhoneNumberId = phoneNumberId;
             this.PhoneProvider = phoneProvider;
+            this.WhatsappParams = whatsappParams;
+            this.Timezone = timezone;
+            this.TargetConcurrencyLimit = targetConcurrencyLimit;
         }
 
         /// <summary>

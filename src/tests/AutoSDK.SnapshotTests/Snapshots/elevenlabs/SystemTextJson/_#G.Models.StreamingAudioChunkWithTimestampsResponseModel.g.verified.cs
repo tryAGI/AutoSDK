@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0,0.1],"characters":["H","e"]},"audio_base64":"base64_encoded_audio_chunk","normalized_alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0,0.1],"characters":["H","e"]}}
+    /// Example: {"alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0.0,0.1],"characters":["H","e"]},"audio_base64":"base64_encoded_audio_chunk","normalized_alignment":{"character_end_times_seconds":[0.1,0.2],"character_start_times_seconds":[0.0,0.1],"characters":["H","e"]}}
     /// </summary>
     public sealed partial class StreamingAudioChunkWithTimestampsResponseModel
     {

@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="new")]
+        New,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created")]
         Created,
         /// <summary>
@@ -40,6 +45,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="document_too_small")]
         DocumentTooSmall,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cannot_index_folder")]
+        CannotIndexFolder,
     }
 
     /// <summary>
@@ -54,12 +64,14 @@ namespace G
         {
             return value switch
             {
+                RAGIndexStatus.New => "new",
                 RAGIndexStatus.Created => "created",
                 RAGIndexStatus.Processing => "processing",
                 RAGIndexStatus.Failed => "failed",
                 RAGIndexStatus.Succeeded => "succeeded",
                 RAGIndexStatus.RagLimitExceeded => "rag_limit_exceeded",
                 RAGIndexStatus.DocumentTooSmall => "document_too_small",
+                RAGIndexStatus.CannotIndexFolder => "cannot_index_folder",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +82,14 @@ namespace G
         {
             return value switch
             {
+                "new" => RAGIndexStatus.New,
                 "created" => RAGIndexStatus.Created,
                 "processing" => RAGIndexStatus.Processing,
                 "failed" => RAGIndexStatus.Failed,
                 "succeeded" => RAGIndexStatus.Succeeded,
                 "rag_limit_exceeded" => RAGIndexStatus.RagLimitExceeded,
                 "document_too_small" => RAGIndexStatus.DocumentTooSmall,
+                "cannot_index_folder" => RAGIndexStatus.CannotIndexFolder,
                 _ => null,
             };
         }

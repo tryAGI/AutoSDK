@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: {"access_level":"viewer","author":"John Doe","can_be_downloaded":true,"content_type":"Novel","cover_image_url":"https://example.com/cover.jpg","create_date_unix":1714204800,"creation_meta":{"creation_progress":0.5,"status":"pending","type":"blank"},"default_model_id":"eleven_multilingual_v2","default_paragraph_voice_id":"JBFqnCBsd6RMkjVDRZzb","default_title_voice_id":"JBFqnCBsd6RMkjVDRZzb","description":"This is a description of my project.","fiction":"fiction","genres":["Novel","Short Story"],"isbn_number":"978-90-274-3964-2","language":"en","last_conversion_date_unix":1714204800,"mature_content":false,"name":"My Project","original_publication_date":"2025-01-01","project_id":"aw1NgEzBg83R7vgmiJt6","quality_check_on":false,"quality_check_on_when_bulk_convert":false,"state":"default","target_audience":"Young Adults","title":"My Project","volume_normalization":true}
+    /// Example: {"access_level":"viewer","author":"John Doe","can_be_downloaded":true,"content_type":"Novel","cover_image_url":"https://example.com/cover.jpg","create_date_unix":1714204800,"created_by_user_id":"Vbtgl3bRdj6lk79rYAgx","creation_meta":{"creation_progress":0.5,"status":"pending","type":"blank"},"default_model_id":"eleven_multilingual_v2","default_paragraph_voice_id":"JBFqnCBsd6RMkjVDRZzb","default_title_voice_id":"JBFqnCBsd6RMkjVDRZzb","description":"This is a description of my project.","fiction":"fiction","genres":["Novel","Short Story"],"isbn_number":"978-90-274-3964-2","language":"en","last_conversion_date_unix":1714204800,"mature_content":false,"name":"My Project","original_publication_date":"2025-01-01","project_id":"aw1NgEzBg83R7vgmiJt6","public_share_id":"abc123def456789","quality_check_on":false,"quality_check_on_when_bulk_convert":false,"state":"default","target_audience":"young adult","title":"My Project","volume_normalization":true}
     /// </summary>
     public sealed partial class ProjectResponseModel
     {
@@ -29,6 +29,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("create_date_unix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CreateDateUnix { get; set; }
+
+        /// <summary>
+        /// The user ID who created the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by_user_id")]
+        public string? CreatedByUserId { get; set; }
 
         /// <summary>
         /// The default title voice ID.
@@ -193,6 +199,43 @@ namespace G
         public bool? ChaptersEnabled { get; set; }
 
         /// <summary>
+        /// Whether captions are enabled for the project.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("captions_enabled")]
+        public bool? CaptionsEnabled { get; set; }
+
+        /// <summary>
+        /// Global styling to be applied to all captions
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caption_style")]
+        public global::G.CaptionStyleModel? CaptionStyle { get; set; }
+
+        /// <summary>
+        /// Styling changes that have been made to the provided templates
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caption_style_template_overrides")]
+        public global::System.Collections.Generic.Dictionary<string, global::G.CaptionStyleModel>? CaptionStyleTemplateOverrides { get; set; }
+
+        /// <summary>
+        /// The public share ID of the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("public_share_id")]
+        public string? PublicShareId { get; set; }
+
+        /// <summary>
+        /// The aspect ratio of the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
+        public global::G.ProjectResponseModelAspectRatio2? AspectRatio { get; set; }
+
+        /// <summary>
+        /// Agent-related settings for the project
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_settings")]
+        public global::G.StudioAgentSettingsModel? AgentSettings { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -209,6 +252,9 @@ namespace G
         /// </param>
         /// <param name="createDateUnix">
         /// The creation date of the project.
+        /// </param>
+        /// <param name="createdByUserId">
+        /// The user ID who created the project.
         /// </param>
         /// <param name="defaultTitleVoiceId">
         /// The default title voice ID.
@@ -286,6 +332,25 @@ namespace G
         /// Whether chapters are enabled for the project.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="captionsEnabled">
+        /// Whether captions are enabled for the project.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="captionStyle">
+        /// Global styling to be applied to all captions
+        /// </param>
+        /// <param name="captionStyleTemplateOverrides">
+        /// Styling changes that have been made to the provided templates
+        /// </param>
+        /// <param name="publicShareId">
+        /// The public share ID of the project.
+        /// </param>
+        /// <param name="aspectRatio">
+        /// The aspect ratio of the project.
+        /// </param>
+        /// <param name="agentSettings">
+        /// Agent-related settings for the project
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -302,6 +367,7 @@ namespace G
             global::G.ProjectResponseModelAccessLevel accessLevel,
             bool qualityCheckOn,
             bool qualityCheckOnWhenBulkConvert,
+            string? createdByUserId,
             int? lastConversionDateUnix,
             string? title,
             string? author,
@@ -317,7 +383,13 @@ namespace G
             global::G.ProjectResponseModelFiction2? fiction,
             global::G.ProjectCreationMetaResponseModel? creationMeta,
             global::G.ProjectResponseModelSourceType2? sourceType,
-            bool? chaptersEnabled)
+            bool? chaptersEnabled,
+            bool? captionsEnabled,
+            global::G.CaptionStyleModel? captionStyle,
+            global::System.Collections.Generic.Dictionary<string, global::G.CaptionStyleModel>? captionStyleTemplateOverrides,
+            string? publicShareId,
+            global::G.ProjectResponseModelAspectRatio2? aspectRatio,
+            global::G.StudioAgentSettingsModel? agentSettings)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -331,6 +403,7 @@ namespace G
             this.AccessLevel = accessLevel;
             this.QualityCheckOn = qualityCheckOn;
             this.QualityCheckOnWhenBulkConvert = qualityCheckOnWhenBulkConvert;
+            this.CreatedByUserId = createdByUserId;
             this.LastConversionDateUnix = lastConversionDateUnix;
             this.Title = title;
             this.Author = author;
@@ -347,6 +420,12 @@ namespace G
             this.CreationMeta = creationMeta;
             this.SourceType = sourceType;
             this.ChaptersEnabled = chaptersEnabled;
+            this.CaptionsEnabled = captionsEnabled;
+            this.CaptionStyle = captionStyle;
+            this.CaptionStyleTemplateOverrides = captionStyleTemplateOverrides;
+            this.PublicShareId = publicShareId;
+            this.AspectRatio = aspectRatio;
+            this.AgentSettings = agentSettings;
         }
 
         /// <summary>

@@ -10,12 +10,12 @@ namespace G
     public sealed partial class ConversationSimulationSpecification
     {
         /// <summary>
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
         /// </summary>
-        /// <example>{"first_message":"Hello, how can I help you today?","language":"en"}</example>
+        /// <example>{"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("simulated_user_config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AgentConfigDBModel SimulatedUserConfig { get; set; }
+        public required global::G.AgentConfigAPIModelInput SimulatedUserConfig { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationSimulationSpecification" /> class.
         /// </summary>
         /// <param name="simulatedUserConfig">
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
         /// </param>
         /// <param name="toolMockConfig"></param>
         /// <param name="partialConversationHistory">
@@ -56,7 +56,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationSimulationSpecification(
-            global::G.AgentConfigDBModel simulatedUserConfig,
+            global::G.AgentConfigAPIModelInput simulatedUserConfig,
             global::System.Collections.Generic.Dictionary<string, global::G.ToolMockConfig>? toolMockConfig,
             global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelInput>? partialConversationHistory,
             object? dynamicVariables)

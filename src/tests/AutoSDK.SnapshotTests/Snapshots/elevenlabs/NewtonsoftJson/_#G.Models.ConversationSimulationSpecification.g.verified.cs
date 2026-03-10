@@ -10,11 +10,11 @@ namespace G
     public sealed partial class ConversationSimulationSpecification
     {
         /// <summary>
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
         /// </summary>
-        /// <example>{"first_message":"Hello, how can I help you today?","language":"en"}</example>
+        /// <example>{"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}</example>
         [global::Newtonsoft.Json.JsonProperty("simulated_user_config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AgentConfigDBModel SimulatedUserConfig { get; set; } = default!;
+        public global::G.AgentConfigAPIModelInput SimulatedUserConfig { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationSimulationSpecification" /> class.
         /// </summary>
         /// <param name="simulatedUserConfig">
-        /// Example: {"first_message":"Hello, how can I help you today?","language":"en"}
+        /// Example: {"disable_first_message_interruptions":false,"first_message":"Hello, how can I help you today?","language":"en"}
         /// </param>
         /// <param name="toolMockConfig"></param>
         /// <param name="partialConversationHistory">
@@ -52,7 +52,7 @@ namespace G
         /// </param>
         /// <param name="dynamicVariables"></param>
         public ConversationSimulationSpecification(
-            global::G.AgentConfigDBModel simulatedUserConfig,
+            global::G.AgentConfigAPIModelInput simulatedUserConfig,
             global::System.Collections.Generic.Dictionary<string, global::G.ToolMockConfig>? toolMockConfig,
             global::System.Collections.Generic.IList<global::G.ConversationHistoryTranscriptCommonModelInput>? partialConversationHistory,
             object? dynamicVariables)

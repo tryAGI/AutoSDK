@@ -1,0 +1,54 @@
+﻿//HintName: G.Models.DynamicVariableSchemaOverride.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class DynamicVariableSchemaOverride
+    {
+        /// <summary>
+        /// Default Value: dynamic_variable
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("source")]
+        public string? Source { get; set; }
+
+        /// <summary>
+        /// The name of the dynamic variable to use
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dynamic_variable", Required = global::Newtonsoft.Json.Required.Always)]
+        public string DynamicVariable { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DynamicVariableSchemaOverride" /> class.
+        /// </summary>
+        /// <param name="source">
+        /// Default Value: dynamic_variable
+        /// </param>
+        /// <param name="dynamicVariable">
+        /// The name of the dynamic variable to use
+        /// </param>
+        public DynamicVariableSchemaOverride(
+            string dynamicVariable,
+            string? source)
+        {
+            this.DynamicVariable = dynamicVariable ?? throw new global::System.ArgumentNullException(nameof(dynamicVariable));
+            this.Source = source;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DynamicVariableSchemaOverride" /> class.
+        /// </summary>
+        public DynamicVariableSchemaOverride()
+        {
+        }
+    }
+}

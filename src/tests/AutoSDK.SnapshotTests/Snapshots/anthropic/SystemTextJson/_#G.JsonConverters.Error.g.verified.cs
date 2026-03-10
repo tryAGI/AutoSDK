@@ -86,20 +86,28 @@ namespace G.JsonConverters
                 overloadedError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::G.Error(
+            var __value = new global::G.Error(
                 discriminator?.Type,
                 invalidRequestError,
+
                 authenticationError,
+
                 billingError,
+
                 permissionError,
+
                 notFoundError,
+
                 rateLimitError,
+
                 timeoutError,
+
                 apiError,
+
                 overloadedError
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

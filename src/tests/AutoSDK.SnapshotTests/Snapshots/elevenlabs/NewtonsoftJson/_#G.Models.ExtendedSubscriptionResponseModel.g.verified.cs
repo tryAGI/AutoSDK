@@ -1,11 +1,13 @@
 ﻿//HintName: G.Models.ExtendedSubscriptionResponseModel.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Example: {"has_open_invoices":false,"next_invoice":{"amount_due_cents":1000,"next_payment_attempt_unix":1738356858}}
+    /// Example: {"allowed_to_extend_character_limit":true,"billing_period":"monthly_period","can_extend_character_limit":true,"can_extend_voice_limit":true,"can_use_instant_voice_cloning":true,"can_use_professional_voice_cloning":true,"character_count":1000,"character_limit":10000,"character_refresh_period":"monthly_period","currency":"usd","has_open_invoices":true,"max_character_limit_extension":10000,"next_character_count_reset_unix":1738356858,"next_invoice":{"amount_due_cents":1000,"discounts":[{"discount_percent_off":20.0}],"next_payment_attempt_unix":1738356858,"payment_intent_status":"processing","payment_intent_statusses":["processing","succeeded"],"subtotal_cents":900,"tax_cents":100},"open_invoices":[{"amount_due_cents":1000,"discounts":[{"discount_percent_off":20.0}],"next_payment_attempt_unix":1738356858,"payment_intent_status":"processing","payment_intent_statusses":["processing","succeeded"],"subtotal_cents":900,"tax_cents":100}],"professional_voice_limit":1,"professional_voice_slots_used":0,"status":"active","tier":"starter","voice_add_edit_counter":0,"voice_limit":10,"voice_slots_used":1}
     /// </summary>
     public sealed partial class ExtendedSubscriptionResponseModel
     {
@@ -121,13 +123,13 @@ namespace G
         /// The billing period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_period")]
-        public global::G.ExtendedSubscriptionResponseModelBillingPeriod2? BillingPeriod { get; set; }
+        public global::G.BillingPeriod? BillingPeriod { get; set; }
 
         /// <summary>
         /// The character refresh period of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_refresh_period")]
-        public global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod2? CharacterRefreshPeriod { get; set; }
+        public global::G.CharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
 
         /// <summary>
         /// The next invoice for the user.
@@ -136,10 +138,22 @@ namespace G
         public global::G.InvoiceResponseModel? NextInvoice { get; set; }
 
         /// <summary>
+        /// The open invoices for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("open_invoices", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.InvoiceResponseModel> OpenInvoices { get; set; } = default!;
+
+        /// <summary>
         /// Whether the user has open invoices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_open_invoices", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasOpenInvoices { get; set; } = default!;
+
+        /// <summary>
+        /// The pending change for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("pending_change")]
+        public global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? PendingChange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -213,8 +227,14 @@ namespace G
         /// <param name="nextInvoice">
         /// The next invoice for the user.
         /// </param>
+        /// <param name="openInvoices">
+        /// The open invoices for the user.
+        /// </param>
         /// <param name="hasOpenInvoices">
         /// Whether the user has open invoices.
+        /// </param>
+        /// <param name="pendingChange">
+        /// The pending change for the user.
         /// </param>
         public ExtendedSubscriptionResponseModel(
             string tier,
@@ -231,14 +251,16 @@ namespace G
             bool canUseInstantVoiceCloning,
             bool canUseProfessionalVoiceCloning,
             global::G.SubscriptionStatusType status,
+            global::System.Collections.Generic.IList<global::G.InvoiceResponseModel> openInvoices,
             bool hasOpenInvoices,
             int? maxCharacterLimitExtension,
             int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
             global::G.ExtendedSubscriptionResponseModelCurrency2? currency,
-            global::G.ExtendedSubscriptionResponseModelBillingPeriod2? billingPeriod,
-            global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod2? characterRefreshPeriod,
-            global::G.InvoiceResponseModel? nextInvoice)
+            global::G.BillingPeriod? billingPeriod,
+            global::G.CharacterRefreshPeriod? characterRefreshPeriod,
+            global::G.InvoiceResponseModel? nextInvoice,
+            global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? pendingChange)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;
@@ -254,6 +276,7 @@ namespace G
             this.CanUseInstantVoiceCloning = canUseInstantVoiceCloning;
             this.CanUseProfessionalVoiceCloning = canUseProfessionalVoiceCloning;
             this.Status = status;
+            this.OpenInvoices = openInvoices ?? throw new global::System.ArgumentNullException(nameof(openInvoices));
             this.HasOpenInvoices = hasOpenInvoices;
             this.MaxCharacterLimitExtension = maxCharacterLimitExtension;
             this.NextCharacterCountResetUnix = nextCharacterCountResetUnix;
@@ -262,6 +285,7 @@ namespace G
             this.BillingPeriod = billingPeriod;
             this.CharacterRefreshPeriod = characterRefreshPeriod;
             this.NextInvoice = nextInvoice;
+            this.PendingChange = pendingChange;
         }
 
         /// <summary>

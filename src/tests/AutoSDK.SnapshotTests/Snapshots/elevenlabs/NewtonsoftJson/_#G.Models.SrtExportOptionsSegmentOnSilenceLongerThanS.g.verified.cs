@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Default Value: 0.6F
+    /// Default Value: 0.8F
     /// </summary>
     public sealed partial class SrtExportOptionsSegmentOnSilenceLongerThanS
     {

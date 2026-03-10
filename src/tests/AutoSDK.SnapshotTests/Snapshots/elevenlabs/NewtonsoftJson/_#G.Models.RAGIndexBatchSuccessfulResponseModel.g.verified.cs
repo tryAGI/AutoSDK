@@ -1,0 +1,53 @@
+﻿//HintName: G.Models.RAGIndexBatchSuccessfulResponseModel.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class RAGIndexBatchSuccessfulResponseModel
+    {
+        /// <summary>
+        /// Default Value: success
+        /// </summary>
+        /// <default>"success"</default>
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public string Status { get; set; } = "success";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RAGDocumentIndexResponseModel Data { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RAGIndexBatchSuccessfulResponseModel" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Default Value: success
+        /// </param>
+        /// <param name="data"></param>
+        public RAGIndexBatchSuccessfulResponseModel(
+            global::G.RAGDocumentIndexResponseModel data,
+            string status = "success")
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RAGIndexBatchSuccessfulResponseModel" /> class.
+        /// </summary>
+        public RAGIndexBatchSuccessfulResponseModel()
+        {
+        }
+    }
+}

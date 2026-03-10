@@ -28,6 +28,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Famous,
+        /// <summary>
+        /// 
+        /// </summary>
         HighQuality,
     }
 
@@ -47,6 +51,7 @@ namespace G
                 LibraryVoiceResponseModelCategory.Cloned => "cloned",
                 LibraryVoiceResponseModelCategory.Premade => "premade",
                 LibraryVoiceResponseModelCategory.Professional => "professional",
+                LibraryVoiceResponseModelCategory.Famous => "famous",
                 LibraryVoiceResponseModelCategory.HighQuality => "high_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,6 +67,7 @@ namespace G
                 "cloned" => LibraryVoiceResponseModelCategory.Cloned,
                 "premade" => LibraryVoiceResponseModelCategory.Premade,
                 "professional" => LibraryVoiceResponseModelCategory.Professional,
+                "famous" => LibraryVoiceResponseModelCategory.Famous,
                 "high_quality" => LibraryVoiceResponseModelCategory.HighQuality,
                 _ => null,
             };

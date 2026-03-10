@@ -35,6 +35,12 @@ namespace G
         public int? TrimEndTime { get; set; }
 
         /// <summary>
+        /// The name of the audio file to be used for PVC training.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("file_name")]
+        public string? FileName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -56,16 +62,21 @@ namespace G
         /// <param name="trimEndTime">
         /// The end time of the audio to be used for PVC training. Time should be in milliseconds
         /// </param>
+        /// <param name="fileName">
+        /// The name of the audio file to be used for PVC training.
+        /// </param>
         public BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost(
             bool? removeBackgroundNoise,
             global::System.Collections.Generic.IList<string>? selectedSpeakerIds,
             int? trimStartTime,
-            int? trimEndTime)
+            int? trimEndTime,
+            string? fileName)
         {
             this.RemoveBackgroundNoise = removeBackgroundNoise;
             this.SelectedSpeakerIds = selectedSpeakerIds;
             this.TrimStartTime = trimStartTime;
             this.TrimEndTime = trimEndTime;
+            this.FileName = fileName;
         }
 
         /// <summary>

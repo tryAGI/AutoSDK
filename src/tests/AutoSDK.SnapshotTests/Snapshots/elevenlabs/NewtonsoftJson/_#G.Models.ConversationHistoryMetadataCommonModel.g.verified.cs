@@ -84,6 +84,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("warnings")]
+        public global::System.Collections.Generic.IList<string>? Warnings { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("main_language")]
         public string? MainLanguage { get; set; }
 
@@ -104,6 +110,61 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("features_usage")]
         public global::G.FeaturesUsageCommonModel? FeaturesUsage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("eleven_assistant")]
+        public global::G.ConversationHistoryElevenAssistantCommonModel? ElevenAssistant { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("initiator_id")]
+        public string? InitiatorId { get; set; }
+
+        /// <summary>
+        /// Enum representing the possible sources for conversation initiation.<br/>
+        /// Default Value: unknown
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("conversation_initiation_source")]
+        public global::G.ConversationInitiationSource? ConversationInitiationSource { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("conversation_initiation_source_version")]
+        public string? ConversationInitiationSourceVersion { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("timezone")]
+        public string? Timezone { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("async_metadata")]
+        public global::G.AsyncConversationMetadata? AsyncMetadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("whatsapp")]
+        public global::G.WhatsAppConversationInfo? Whatsapp { get; set; }
+
+        /// <summary>
+        /// Default Value: unknown
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_created_from")]
+        public global::G.AgentDefinitionSource? AgentCreatedFrom { get; set; }
+
+        /// <summary>
+        /// Default Value: unknown
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_last_updated_from")]
+        public global::G.AgentDefinitionSource? AgentLastUpdatedFrom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -128,12 +189,29 @@ namespace G
         /// <param name="batchCall"></param>
         /// <param name="terminationReason"></param>
         /// <param name="error"></param>
+        /// <param name="warnings"></param>
         /// <param name="mainLanguage"></param>
         /// <param name="ragUsage"></param>
         /// <param name="textOnly">
         /// Default Value: false
         /// </param>
         /// <param name="featuresUsage"></param>
+        /// <param name="elevenAssistant"></param>
+        /// <param name="initiatorId"></param>
+        /// <param name="conversationInitiationSource">
+        /// Enum representing the possible sources for conversation initiation.<br/>
+        /// Default Value: unknown
+        /// </param>
+        /// <param name="conversationInitiationSourceVersion"></param>
+        /// <param name="timezone"></param>
+        /// <param name="asyncMetadata"></param>
+        /// <param name="whatsapp"></param>
+        /// <param name="agentCreatedFrom">
+        /// Default Value: unknown
+        /// </param>
+        /// <param name="agentLastUpdatedFrom">
+        /// Default Value: unknown
+        /// </param>
         public ConversationHistoryMetadataCommonModel(
             int startTimeUnixSecs,
             int callDurationSecs,
@@ -147,10 +225,20 @@ namespace G
             global::G.ConversationHistoryBatchCallModel? batchCall,
             string? terminationReason,
             global::G.ConversationHistoryErrorCommonModel? error,
+            global::System.Collections.Generic.IList<string>? warnings,
             string? mainLanguage,
             global::G.ConversationHistoryRagUsageCommonModel? ragUsage,
             bool? textOnly,
-            global::G.FeaturesUsageCommonModel? featuresUsage)
+            global::G.FeaturesUsageCommonModel? featuresUsage,
+            global::G.ConversationHistoryElevenAssistantCommonModel? elevenAssistant,
+            string? initiatorId,
+            global::G.ConversationInitiationSource? conversationInitiationSource,
+            string? conversationInitiationSourceVersion,
+            string? timezone,
+            global::G.AsyncConversationMetadata? asyncMetadata,
+            global::G.WhatsAppConversationInfo? whatsapp,
+            global::G.AgentDefinitionSource? agentCreatedFrom,
+            global::G.AgentDefinitionSource? agentLastUpdatedFrom)
         {
             this.StartTimeUnixSecs = startTimeUnixSecs;
             this.CallDurationSecs = callDurationSecs;
@@ -164,10 +252,20 @@ namespace G
             this.BatchCall = batchCall;
             this.TerminationReason = terminationReason;
             this.Error = error;
+            this.Warnings = warnings;
             this.MainLanguage = mainLanguage;
             this.RagUsage = ragUsage;
             this.TextOnly = textOnly;
             this.FeaturesUsage = featuresUsage;
+            this.ElevenAssistant = elevenAssistant;
+            this.InitiatorId = initiatorId;
+            this.ConversationInitiationSource = conversationInitiationSource;
+            this.ConversationInitiationSourceVersion = conversationInitiationSourceVersion;
+            this.Timezone = timezone;
+            this.AsyncMetadata = asyncMetadata;
+            this.Whatsapp = whatsapp;
+            this.AgentCreatedFrom = agentCreatedFrom;
+            this.AgentLastUpdatedFrom = agentLastUpdatedFrom;
         }
 
         /// <summary>

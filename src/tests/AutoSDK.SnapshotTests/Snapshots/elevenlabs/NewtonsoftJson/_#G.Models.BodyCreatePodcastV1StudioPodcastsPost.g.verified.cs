@@ -31,10 +31,10 @@ namespace G
 
         /// <summary>
         /// Output quality of the generated audio. Must be one of:<br/>
-        /// standard - standard output format, 128kbps with 44.1kHz sample rate.<br/>
-        /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
-        /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
-        /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
+        /// 'standard' - standard output format, 128kbps with 44.1kHz sample rate.<br/>
+        /// 'high' - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.<br/>
+        /// 'ultra' - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.<br/>
+        /// 'ultra_lossless' - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.<br/>
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality_preset")]
@@ -44,7 +44,7 @@ namespace G
         /// Duration of the generated podcast. Must be one of:<br/>
         /// short - produces podcasts shorter than 3 minutes.<br/>
         /// default - produces podcasts roughly between 3-7 minutes.<br/>
-        /// long - prodces podcasts longer than 7 minutes.<br/>
+        /// long - produces podcasts longer than 7 minutes.<br/>
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration_scale")]
@@ -55,6 +55,24 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
         public string? Language { get; set; }
+
+        /// <summary>
+        /// The intro text that will always be added to the beginning of the podcast.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("intro")]
+        public string? Intro { get; set; }
+
+        /// <summary>
+        /// The outro text that will always be added to the end of the podcast.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("outro")]
+        public string? Outro { get; set; }
+
+        /// <summary>
+        /// Additional instructions prompt for the podcast generation used to adjust the podcast's style and tone.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("instructions_prompt")]
+        public string? InstructionsPrompt { get; set; }
 
         /// <summary>
         /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.
@@ -121,6 +139,16 @@ namespace G
         public string? CallbackUrl { get; set; }
 
         /// <summary>
+        ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
+        ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
+        ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
+        ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
+        ///     
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
+        public global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? ApplyTextNormalization { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -140,21 +168,30 @@ namespace G
         /// </param>
         /// <param name="qualityPreset">
         /// Output quality of the generated audio. Must be one of:<br/>
-        /// standard - standard output format, 128kbps with 44.1kHz sample rate.<br/>
-        /// high - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side. Using this setting increases the credit cost by 20%.<br/>
-        /// ultra - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side. Using this setting increases the credit cost by 50%.<br/>
-        /// ultra lossless - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format. Using this setting increases the credit cost by 100%.<br/>
+        /// 'standard' - standard output format, 128kbps with 44.1kHz sample rate.<br/>
+        /// 'high' - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.<br/>
+        /// 'ultra' - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.<br/>
+        /// 'ultra_lossless' - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.<br/>
         /// Default Value: standard
         /// </param>
         /// <param name="durationScale">
         /// Duration of the generated podcast. Must be one of:<br/>
         /// short - produces podcasts shorter than 3 minutes.<br/>
         /// default - produces podcasts roughly between 3-7 minutes.<br/>
-        /// long - prodces podcasts longer than 7 minutes.<br/>
+        /// long - produces podcasts longer than 7 minutes.<br/>
         /// Default Value: default
         /// </param>
         /// <param name="language">
         /// An optional language of the Studio project. Two-letter language code (ISO 639-1).
+        /// </param>
+        /// <param name="intro">
+        /// The intro text that will always be added to the beginning of the podcast.
+        /// </param>
+        /// <param name="outro">
+        /// The outro text that will always be added to the end of the podcast.
+        /// </param>
+        /// <param name="instructionsPrompt">
+        /// Additional instructions prompt for the podcast generation used to adjust the podcast's style and tone.
         /// </param>
         /// <param name="highlights">
         /// A brief summary or highlights of the Studio project's content, providing key points or themes. This should be between 10 and 70 characters.
@@ -214,6 +251,13 @@ namespace G
         ///     }<br/>
         ///     
         /// </param>
+        /// <param name="applyTextNormalization">
+        ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
+        ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
+        ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
+        ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
+        ///     
+        /// </param>
         public BodyCreatePodcastV1StudioPodcastsPost(
             string modelId,
             global::G.AnyOf<global::G.PodcastConversationMode, global::G.PodcastBulletinMode> mode,
@@ -221,8 +265,12 @@ namespace G
             global::G.BodyCreatePodcastV1StudioPodcastsPostQualityPreset? qualityPreset,
             global::G.BodyCreatePodcastV1StudioPodcastsPostDurationScale? durationScale,
             string? language,
+            string? intro,
+            string? outro,
+            string? instructionsPrompt,
             global::System.Collections.Generic.IList<string>? highlights,
-            string? callbackUrl)
+            string? callbackUrl,
+            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? applyTextNormalization)
         {
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.Mode = mode;
@@ -230,8 +278,12 @@ namespace G
             this.QualityPreset = qualityPreset;
             this.DurationScale = durationScale;
             this.Language = language;
+            this.Intro = intro;
+            this.Outro = outro;
+            this.InstructionsPrompt = instructionsPrompt;
             this.Highlights = highlights;
             this.CallbackUrl = callbackUrl;
+            this.ApplyTextNormalization = applyTextNormalization;
         }
 
         /// <summary>
