@@ -94,6 +94,9 @@
     <!-- Generates CLI -->
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateCli"/>
+
+    <!-- Security schemes to inject as 'Type:Location:Name' separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_SecuritySchemes"/>
   </ItemGroup>
 
   <ItemGroup>

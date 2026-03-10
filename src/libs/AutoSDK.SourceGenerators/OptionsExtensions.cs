@@ -75,7 +75,9 @@ public static class OptionsExtensions
             
             GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: Settings.Default.GenerateSdk),
             FromCli: false,
-            GenerateCli: options.GetBoolGlobalOption(nameof(Settings.GenerateCli), prefix, defaultValue: Settings.Default.GenerateCli));
+            GenerateCli: options.GetBoolGlobalOption(nameof(Settings.GenerateCli), prefix, defaultValue: Settings.Default.GenerateCli),
+            SecuritySchemes: (options.GetGlobalOption(nameof(Settings.SecuritySchemes), prefix)?.Split(';') ??
+                              []).ToImmutableArray());
         
         string? GetOptionFromAdditionalText(string name)
         {

@@ -48,6 +48,10 @@ public static class OpenApiExtensions
         openApiDocument.Security ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
+        if (settings.SecuritySchemes.Length > 0)
+        {
+            openApiDocument.InjectSecuritySchemes(settings);
+        }
         if (settings.ComputeDiscriminators)
         {
             openApiDocument = openApiDocument.ComputeDiscriminators();
@@ -56,10 +60,71 @@ public static class OpenApiExtensions
         {
             openApiDocument = openApiDocument.AddMissingPathParameters();
         }
-        
+
         return openApiDocument;
     }
     
+    public static void InjectSecuritySchemes(
+        this OpenApiDocument openApiDocument,
+        Settings settings)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+
+        openApiDocument.Components!.SecuritySchemes ??= new Dictionary<string, IOpenApiSecurityScheme>();
+
+        foreach (var scheme in settings.SecuritySchemes)
+        {
+            var parts = scheme.Split(':');
+            if (parts.Length != 3)
+            {
+                Console.WriteLine($"Invalid security scheme format '{scheme}'. Expected 'Type:Location:Name' (e.g., 'ApiKey:Header:x-api-key').");
+                continue;
+            }
+
+            var typePart = parts[0];
+            var locationPart = parts[1];
+            var namePart = parts[2];
+
+            if (!Enum.TryParse<SecuritySchemeType>(typePart, ignoreCase: true, out var schemeType))
+            {
+                Console.WriteLine($"Invalid security scheme type '{typePart}'. Expected: ApiKey, Http, OAuth2, OpenIdConnect.");
+                continue;
+            }
+
+            if (!Enum.TryParse<ParameterLocation>(locationPart, ignoreCase: true, out var location))
+            {
+                Console.WriteLine($"Invalid parameter location '{locationPart}'. Expected: Header, Query, Cookie.");
+                continue;
+            }
+
+            string schemeName;
+            var securityScheme = new OpenApiSecurityScheme();
+
+            if (schemeType == SecuritySchemeType.Http)
+            {
+                schemeName = $"http_{namePart.ToLowerInvariant()}";
+                securityScheme.Type = SecuritySchemeType.Http;
+                securityScheme.Scheme = namePart;
+                securityScheme.In = location;
+            }
+            else
+            {
+                schemeName = $"apikey_{namePart.ToLowerInvariant()}";
+                securityScheme.Type = schemeType;
+                securityScheme.In = location;
+                securityScheme.Name = namePart;
+            }
+
+            openApiDocument.Components.SecuritySchemes[schemeName] = securityScheme;
+
+            var schemeRef = new OpenApiSecuritySchemeReference(schemeName, openApiDocument);
+            openApiDocument.Security!.Add(new OpenApiSecurityRequirement
+            {
+                [schemeRef] = new List<string>(),
+            });
+        }
+    }
+
     public static OpenApiDocument Simplify(
         this OpenApiDocument openApiDocument)
     {

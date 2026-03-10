@@ -47,8 +47,10 @@ public record struct Settings(
 
     bool GenerateSdk,
     bool FromCli,
-    
-    bool GenerateCli)
+
+    bool GenerateCli,
+
+    ImmutableArray<string> SecuritySchemes)
 {
     public static Settings Default => new(
         TargetFramework: "net10.0",
@@ -88,6 +90,7 @@ public record struct Settings(
         GenerateExceptions: true,
         GenerateSdk: true,
         FromCli: false,
-        GenerateCli: false
+        GenerateCli: false,
+        SecuritySchemes: ImmutableArray<string>.Empty
     );
 }

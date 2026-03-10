@@ -114,6 +114,14 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => Settings.Default.GenerateCli,
         Description = "Generate CLI for the client",
     };
+
+    private Option<string[]> SecuritySchemes { get; } = new(
+        name: "--security-scheme")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Security scheme as 'Type:Location:Name' (e.g., 'ApiKey:Header:x-api-key', 'Http:Header:Bearer'). Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
     
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
@@ -131,6 +139,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateModelValidationMethods);
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
+        Options.Add(SecuritySchemes);
 
         SetAction(HandleAsync);
     }
@@ -159,6 +168,7 @@ internal sealed class GenerateCommand : Command
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
+            SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
         };
             
         Console.WriteLine($"Loading {input}...");

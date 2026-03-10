@@ -97,6 +97,7 @@ Key options:
 | `--validation` | | `false` | Generate model validation methods |
 | `--compute-discriminators` | | `false` | Compute discriminators for polymorphic models |
 | `--generate-cli` | | `false` | Generate a CLI wrapper for the client |
+| `--security-scheme` | | (none) | Inject auth scheme as `Type:Location:Name` (repeatable) |
 
 See [CLI-REFERENCE.md](CLI-REFERENCE.md) for the complete option reference.
 
@@ -190,6 +191,17 @@ autosdk generate openapi.yaml \
 
 The pipeline: install CLI -> download spec -> fix spec (3.1->3.0) -> generate.
 
+If the spec lacks authentication definitions (no `securitySchemes`), use `--security-scheme` instead of patching the spec in FixOpenApiSpec:
+
+```bash
+autosdk generate openapi.yaml \
+  --namespace Anthropic \
+  --clientClassName AnthropicClient \
+  --targetFramework net8.0 \
+  --output Generated \
+  --security-scheme "ApiKey:Header:x-api-key"
+```
+
 ## Post-Generation Customization
 
 Generated clients are partial classes, enabling extension without modifying generated code:
@@ -235,6 +247,7 @@ The `generate` command's most important configuration flags:
 | `--validation` | Model validation methods | When input validation is needed |
 | `--generate-cli` | Generate CLI wrapper | When you want a CLI for the API |
 | `--methodNamingConvention` | Method name style | `SimpleOperationId` (default), `MethodAndPath`, `OperationIdWithDots` |
+| `--security-scheme` | Inject auth for specs missing `securitySchemes` | `ApiKey:Header:x-api-key`, `Http:Header:Bearer` (repeatable) |
 
 ## Troubleshooting
 
@@ -244,5 +257,6 @@ Common issues and solutions:
 - **OpenAPI 3.1 spec errors** -- Run FixOpenApiSpec helper before generation
 - **Missing operations** -- Check that operationIds exist in the spec; use `--ignore-openapi-errors` if needed
 - **Naming collisions** -- AutoSDK resolves these automatically via suffixes
+- **No auth constructors generated** -- Spec is missing `securitySchemes`; use `--security-scheme "ApiKey:Header:x-api-key"` to inject auth
 
 See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for the complete troubleshooting guide.

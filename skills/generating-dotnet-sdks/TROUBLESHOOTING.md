@@ -111,6 +111,40 @@ dotnet build src/helpers/TrimmingHelper/TrimmingHelper.csproj
 
 If this builds without warnings, your SDK is NativeAOT-compatible.
 
+## Missing Authentication / No Auth Constructors
+
+**Symptom:** The generated SDK has no authentication constructors or `AuthorizeUsing*` methods, even though the API requires authentication.
+
+**Cause:** The OpenAPI spec lacks `securitySchemes` definitions in its `components` section. This is common with specs from providers like Anthropic.
+
+**Solution:** Use the `--security-scheme` CLI option to inject authentication at generation time:
+
+```bash
+# API key in a custom header (e.g., Anthropic's x-api-key)
+autosdk generate openapi.yaml \
+  --namespace Anthropic \
+  --clientClassName AnthropicClient \
+  --security-scheme "ApiKey:Header:x-api-key"
+
+# HTTP Bearer token
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --security-scheme "Http:Header:Bearer"
+```
+
+Format: `Type:Location:Name` (e.g., `ApiKey:Header:x-api-key`, `Http:Header:Bearer`, `ApiKey:Query:api_key`). The option is repeatable for multiple schemes.
+
+For the source generator, use the MSBuild property:
+
+```xml
+<PropertyGroup>
+  <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key</AutoSDK_SecuritySchemes>
+</PropertyGroup>
+```
+
+---
+
 ## Large Specs / Slow Generation
 
 **Symptom:** Generation takes a very long time or uses excessive memory.

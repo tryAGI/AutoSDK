@@ -151,6 +151,46 @@ var tools = service.AsTools();
 var result = service.AsCalls(toolCallName, toolCallArguments);
 ```
 
+## Injecting Security Schemes
+
+Many OpenAPI specs (e.g., Anthropic) lack `securitySchemes` definitions, which means the generated SDK won't include authentication constructors. Instead of patching the spec in FixOpenApiSpec, use the `--security-scheme` CLI option:
+
+```bash
+# API key in a custom header
+autosdk generate openapi.yaml \
+  --namespace Anthropic \
+  --clientClassName AnthropicClient \
+  --security-scheme "ApiKey:Header:x-api-key"
+
+# HTTP Bearer token
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --security-scheme "Http:Header:Bearer"
+
+# Multiple schemes
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --security-scheme "ApiKey:Header:x-api-key" \
+  --security-scheme "Http:Header:Bearer"
+```
+
+Format: `Type:Location:Name` where:
+- **Type**: `ApiKey` or `Http`
+- **Location**: `Header`, `Query`, or `Cookie`
+- **Name**: Header/query param name (for ApiKey) or scheme name like `Bearer`/`Basic` (for Http)
+
+For the source generator approach, use the MSBuild property (semicolon-separated):
+
+```xml
+<PropertyGroup>
+  <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key</AutoSDK_SecuritySchemes>
+</PropertyGroup>
+```
+
+This injects the security schemes into the OpenAPI document at generation time, producing the same auth constructors as if the spec defined them natively.
+
 ## The FixOpenApiSpec Helper
 
 Every SDK project includes a `FixOpenApiSpec` helper that preprocesses the OpenAPI spec before generation. It handles:

@@ -43,6 +43,7 @@ Generates a C# SDK from an OpenAPI specification.
 | `--validation` | | bool | `false` | Generate `IValidatableObject` validation methods for models |
 | `--compute-discriminators` | | bool | `false` | Compute discriminator mappings for polymorphic models (oneOf/anyOf schemas) |
 | `--generate-cli` | | bool | `false` | Generate CLI command classes for the API (System.CommandLine-based) |
+| `--security-scheme` | | string[] | (none) | Inject a security scheme as `Type:Location:Name`. Repeatable. See below for format |
 
 **Examples:**
 
@@ -84,6 +85,25 @@ autosdk generate openapi.yaml \
   --namespace MyApi \
   --clientClassName MyApiClient \
   --validation
+
+# Inject security schemes (for specs missing securitySchemes)
+autosdk generate openapi.yaml \
+  --namespace Anthropic \
+  --clientClassName AnthropicClient \
+  --security-scheme "ApiKey:Header:x-api-key"
+
+# Multiple security schemes
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --security-scheme "ApiKey:Header:x-api-key" \
+  --security-scheme "Http:Header:Bearer"
+
+# API key in query parameter
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --security-scheme "ApiKey:Query:api_key"
 ```
 
 **Namespace/ClassName auto-derivation:** If `--namespace` or `--clientClassName` are not specified, they are derived from the input filename. For example, `my-cool-api.yaml` produces namespace `MyCoolApi` and client class `MyCoolApiClient`. Special characters (`\`, `-`, `.`, `_`, `/`) are treated as word separators and converted to PascalCase.
@@ -235,6 +255,53 @@ export OPENAI_API_KEY=sk-your-key
 autosdk ai spec-from-docs https://docs.example.com/api \
   --output example-api.yaml
 ```
+
+## Security Scheme Format
+
+The `--security-scheme` option injects authentication schemes into OpenAPI specs that lack `securitySchemes` definitions. Format: `Type:Location:Name`.
+
+**Type** (first segment):
+
+| Value | Maps to | Description |
+|-------|---------|-------------|
+| `ApiKey` | `SecuritySchemeType.ApiKey` | API key authentication |
+| `Http` | `SecuritySchemeType.Http` | HTTP authentication (Bearer, Basic) |
+
+**Location** (second segment):
+
+| Value | Maps to | Description |
+|-------|---------|-------------|
+| `Header` | `ParameterLocation.Header` | Auth via HTTP header |
+| `Query` | `ParameterLocation.Query` | Auth via query parameter |
+| `Cookie` | `ParameterLocation.Cookie` | Auth via cookie |
+
+**Name** (third segment):
+
+- For `ApiKey`: the header/query/cookie parameter name (e.g., `x-api-key`, `api_key`)
+- For `Http`: the HTTP auth scheme name (e.g., `Bearer`, `Basic`)
+
+**Common patterns:**
+
+| Scheme string | Generated auth |
+|---------------|----------------|
+| `ApiKey:Header:x-api-key` | API key in `x-api-key` header |
+| `ApiKey:Header:Authorization` | API key in `Authorization` header |
+| `ApiKey:Query:api_key` | API key in `api_key` query parameter |
+| `Http:Header:Bearer` | HTTP Bearer token authentication |
+| `Http:Header:Basic` | HTTP Basic authentication |
+
+**MSBuild property equivalent** (for source generator usage):
+
+```xml
+<PropertyGroup>
+  <!-- Single scheme -->
+  <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key</AutoSDK_SecuritySchemes>
+  <!-- Multiple schemes (semicolon-separated) -->
+  <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key;Http:Header:Bearer</AutoSDK_SecuritySchemes>
+</PropertyGroup>
+```
+
+---
 
 ## Method Naming Conventions
 
