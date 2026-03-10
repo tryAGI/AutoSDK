@@ -151,6 +151,12 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
+        if (!Uri.TryCreate(settings.BaseUrl, UriKind.Absolute, out _))
+        {
+            Console.WriteLine($"Invalid base URL '{settings.BaseUrl}'. Expected an absolute URL (e.g., 'https://api.example.com'). Skipping base URL injection.");
+            return;
+        }
+
         openApiDocument.Servers!.Insert(0, new OpenApiServer
         {
             Url = settings.BaseUrl,

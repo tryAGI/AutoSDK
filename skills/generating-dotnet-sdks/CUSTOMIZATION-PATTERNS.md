@@ -151,6 +151,29 @@ var tools = service.AsTools();
 var result = service.AsCalls(toolCallName, toolCallArguments);
 ```
 
+## Injecting a Base URL
+
+Some OpenAPI specs lack a `servers` field, which means the generated client will have an empty `DefaultBaseUrl`. Use the `--base-url` CLI option to inject the server URL at generation time:
+
+```bash
+autosdk generate openapi.yaml \
+  --namespace ElevenLabs \
+  --clientClassName ElevenLabsClient \
+  --base-url "https://api.elevenlabs.io"
+```
+
+The URL must be a valid absolute URL. Invalid URLs are rejected with a warning.
+
+For the source generator approach, use the MSBuild property:
+
+```xml
+<PropertyGroup>
+  <AutoSDK_BaseUrl>https://api.elevenlabs.io</AutoSDK_BaseUrl>
+</PropertyGroup>
+```
+
+This inserts the URL at position 0 in the spec's `servers` list, taking precedence over any existing server entries.
+
 ## Injecting Security Schemes
 
 Many OpenAPI specs (e.g., Anthropic) lack `securitySchemes` definitions, which means the generated SDK won't include authentication constructors. Instead of patching the spec in FixOpenApiSpec, use the `--security-scheme` CLI option:

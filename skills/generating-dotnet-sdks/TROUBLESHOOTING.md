@@ -111,6 +111,31 @@ dotnet build src/helpers/TrimmingHelper/TrimmingHelper.csproj
 
 If this builds without warnings, your SDK is NativeAOT-compatible.
 
+## No Base URL / Empty DefaultBaseUrl
+
+**Symptom:** The generated client's `DefaultBaseUrl` property is empty, causing requests to fail with a relative URI error.
+
+**Cause:** The OpenAPI spec lacks a `servers` field, so no base URL is set in the generated code.
+
+**Solution:** Use the `--base-url` CLI option to inject the server URL at generation time:
+
+```bash
+autosdk generate openapi.yaml \
+  --namespace ElevenLabs \
+  --clientClassName ElevenLabsClient \
+  --base-url "https://api.elevenlabs.io"
+```
+
+For the source generator, use the MSBuild property:
+
+```xml
+<PropertyGroup>
+  <AutoSDK_BaseUrl>https://api.elevenlabs.io</AutoSDK_BaseUrl>
+</PropertyGroup>
+```
+
+The URL must be a valid absolute URL (e.g., `https://api.example.com`).
+
 ## Missing Authentication / No Auth Constructors
 
 **Symptom:** The generated SDK has no authentication constructors or `AuthorizeUsing*` methods, even though the API requires authentication.

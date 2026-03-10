@@ -122,6 +122,13 @@ internal sealed class GenerateCommand : Command
         Description = "Security scheme as 'Type:Location:Name' (e.g., 'ApiKey:Header:x-api-key', 'Http:Header:Bearer'). Repeatable.",
         AllowMultipleArgumentsPerToken = true,
     };
+
+    private Option<string> BaseUrl { get; } = new(
+        name: "--base-url")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Useful for specs missing a servers field.",
+    };
     
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
@@ -140,6 +147,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
         Options.Add(SecuritySchemes);
+        Options.Add(BaseUrl);
 
         SetAction(HandleAsync);
     }
@@ -169,6 +177,7 @@ internal sealed class GenerateCommand : Command
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
+            BaseUrl = parseResult.GetRequiredValue(BaseUrl),
         };
             
         Console.WriteLine($"Loading {input}...");

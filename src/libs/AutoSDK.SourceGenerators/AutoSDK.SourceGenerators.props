@@ -97,6 +97,9 @@
 
     <!-- Security schemes to inject as 'Type:Location:Name' separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_SecuritySchemes"/>
+
+    <!-- Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_BaseUrl"/>
   </ItemGroup>
 
   <ItemGroup>

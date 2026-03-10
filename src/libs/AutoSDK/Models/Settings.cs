@@ -50,7 +50,8 @@ public record struct Settings(
 
     bool GenerateCli,
 
-    ImmutableArray<string> SecuritySchemes)
+    ImmutableArray<string> SecuritySchemes,
+    string BaseUrl)
 {
     public static Settings Default => new(
         TargetFramework: "net10.0",
@@ -91,6 +92,7 @@ public record struct Settings(
         GenerateSdk: true,
         FromCli: false,
         GenerateCli: false,
-        SecuritySchemes: ImmutableArray<string>.Empty
+        SecuritySchemes: ImmutableArray<string>.Empty,
+        BaseUrl: string.Empty
     );
 }

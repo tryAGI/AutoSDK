@@ -98,6 +98,7 @@ Key options:
 | `--compute-discriminators` | | `false` | Compute discriminators for polymorphic models |
 | `--generate-cli` | | `false` | Generate a CLI wrapper for the client |
 | `--security-scheme` | | (none) | Inject auth scheme as `Type:Location:Name` (repeatable) |
+| `--base-url` | | (none) | Server base URL to inject for specs missing `servers` |
 
 See [CLI-REFERENCE.md](CLI-REFERENCE.md) for the complete option reference.
 
@@ -200,6 +201,17 @@ autosdk generate openapi.yaml \
   --targetFramework net8.0 \
   --output Generated \
   --security-scheme "ApiKey:Header:x-api-key"
+```
+
+If the spec is missing a `servers` field, use `--base-url` to inject the base URL:
+
+```bash
+autosdk generate openapi.yaml \
+  --namespace ElevenLabs \
+  --clientClassName ElevenLabsClient \
+  --targetFramework net8.0 \
+  --output Generated \
+  --base-url "https://api.elevenlabs.io"
 ```
 
 ## Post-Generation Customization

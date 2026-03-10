@@ -44,6 +44,7 @@ Generates a C# SDK from an OpenAPI specification.
 | `--compute-discriminators` | | bool | `false` | Compute discriminator mappings for polymorphic models (oneOf/anyOf schemas) |
 | `--generate-cli` | | bool | `false` | Generate CLI command classes for the API (System.CommandLine-based) |
 | `--security-scheme` | | string[] | (none) | Inject a security scheme as `Type:Location:Name`. Repeatable. See below for format |
+| `--base-url` | | string | (none) | Server base URL to inject (e.g., `https://api.example.com`). Useful for specs missing a `servers` field |
 
 **Examples:**
 
@@ -104,6 +105,19 @@ autosdk generate openapi.yaml \
   --namespace MyApi \
   --clientClassName MyApiClient \
   --security-scheme "ApiKey:Query:api_key"
+
+# Inject base URL for specs missing a servers field
+autosdk generate openapi.yaml \
+  --namespace ElevenLabs \
+  --clientClassName ElevenLabsClient \
+  --base-url "https://api.elevenlabs.io"
+
+# Combine base URL with security scheme
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --base-url "https://api.example.com/v1" \
+  --security-scheme "ApiKey:Header:x-api-key"
 ```
 
 **Namespace/ClassName auto-derivation:** If `--namespace` or `--clientClassName` are not specified, they are derived from the input filename. For example, `my-cool-api.yaml` produces namespace `MyCoolApi` and client class `MyCoolApiClient`. Special characters (`\`, `-`, `.`, `_`, `/`) are treated as word separators and converted to PascalCase.
@@ -298,6 +312,22 @@ The `--security-scheme` option injects authentication schemes into OpenAPI specs
   <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key</AutoSDK_SecuritySchemes>
   <!-- Multiple schemes (semicolon-separated) -->
   <AutoSDK_SecuritySchemes>ApiKey:Header:x-api-key;Http:Header:Bearer</AutoSDK_SecuritySchemes>
+</PropertyGroup>
+```
+
+---
+
+## Base URL Injection
+
+The `--base-url` option injects a server entry at position 0 in the OpenAPI spec's `servers` list. This is useful for specs that lack a `servers` field entirely, which would otherwise result in an empty `DefaultBaseUrl` in the generated client.
+
+The URL must be a valid absolute URL (e.g., `https://api.example.com`). Invalid URLs are rejected with a warning.
+
+**MSBuild property equivalent** (for source generator usage):
+
+```xml
+<PropertyGroup>
+  <AutoSDK_BaseUrl>https://api.example.com</AutoSDK_BaseUrl>
 </PropertyGroup>
 ```
 
