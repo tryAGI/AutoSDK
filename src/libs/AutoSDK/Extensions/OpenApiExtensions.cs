@@ -230,7 +230,7 @@ public static class OpenApiExtensions
                 securityScheme.Name = namePart;
             }
 
-            openApiDocument.Components.SecuritySchemes[schemeName] = securityScheme;
+            openApiDocument.AddComponent(schemeName, securityScheme);
 
             var schemeRef = new OpenApiSecuritySchemeReference(schemeName, openApiDocument);
             openApiDocument.Security!.Add(new OpenApiSecurityRequirement

@@ -1,0 +1,128 @@
+using System.Collections.Immutable;
+using AutoSDK.Extensions;
+using AutoSDK.Models;
+using Microsoft.OpenApi;
+
+namespace AutoSDK.UnitTests;
+
+public partial class Tests
+{
+    [TestMethod]
+    public void InjectSecuritySchemes_ApiKeyHeader_ResolvesViaReference()
+    {
+        // Arrange
+        var document = new OpenApiDocument
+        {
+            Components = new OpenApiComponents
+            {
+                SecuritySchemes = new Dictionary<string, IOpenApiSecurityScheme>(),
+            },
+            Security = new List<OpenApiSecurityRequirement>(),
+        };
+        var settings = Settings.Default with
+        {
+            SecuritySchemes = new[] { "ApiKey:Header:xi-api-key" }.ToImmutableArray(),
+        };
+
+        // Act
+        document.InjectSecuritySchemes(settings);
+
+        // Assert — reference resolution must work (the core bug from #146)
+        document.Security.Should().HaveCount(1);
+        var requirement = document.Security[0];
+        var schemeRef = requirement.Keys.First();
+        schemeRef.Type.Should().Be(SecuritySchemeType.ApiKey);
+        schemeRef.In.Should().Be(ParameterLocation.Header);
+        schemeRef.Name.Should().Be("xi-api-key");
+    }
+
+    [TestMethod]
+    public void InjectSecuritySchemes_HttpBearer_ResolvesViaReference()
+    {
+        // Arrange
+        var document = new OpenApiDocument
+        {
+            Components = new OpenApiComponents
+            {
+                SecuritySchemes = new Dictionary<string, IOpenApiSecurityScheme>(),
+            },
+            Security = new List<OpenApiSecurityRequirement>(),
+        };
+        var settings = Settings.Default with
+        {
+            SecuritySchemes = new[] { "Http:Header:Bearer" }.ToImmutableArray(),
+        };
+
+        // Act
+        document.InjectSecuritySchemes(settings);
+
+        // Assert
+        document.Security.Should().HaveCount(1);
+        var schemeRef = document.Security[0].Keys.First();
+        schemeRef.Type.Should().Be(SecuritySchemeType.Http);
+        schemeRef.Scheme.Should().Be("Bearer");
+    }
+
+    [TestMethod]
+    public void InjectSecuritySchemes_ApiKey_ProducesCorrectAuthorization()
+    {
+        // Arrange — use a fully parsed document to get workspace support
+        var yaml = @"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      responses:
+        '200':
+          description: OK
+";
+        var settings = Settings.Default with
+        {
+            SecuritySchemes = new[] { "ApiKey:Header:xi-api-key" }.ToImmutableArray(),
+        };
+
+        // Act — parse then verify the authorization roundtrip
+        var document = yaml.GetOpenApiDocument(settings);
+        var authorizations = document.Security!
+            .SelectMany(r => r)
+            .Select(x => Authorization.FromOpenApiSecurityScheme(
+                x.Key, settings, settings))
+            .ToArray();
+
+        // Assert
+        authorizations.Should().HaveCount(1);
+        var auth = authorizations[0];
+        auth.Type.Should().Be(SecuritySchemeType.ApiKey);
+        auth.In.Should().Be(ParameterLocation.Header);
+        auth.Name.Should().Be("xi-api-key");
+        auth.FriendlyName.Should().Be("ApiKeyInHeader");
+        auth.Parameters.Should().ContainSingle().Which.Should().Be("apiKey");
+    }
+
+    [TestMethod]
+    public void InjectSecuritySchemes_InvalidFormat_Skips()
+    {
+        // Arrange
+        var document = new OpenApiDocument
+        {
+            Components = new OpenApiComponents
+            {
+                SecuritySchemes = new Dictionary<string, IOpenApiSecurityScheme>(),
+            },
+            Security = new List<OpenApiSecurityRequirement>(),
+        };
+        var settings = Settings.Default with
+        {
+            SecuritySchemes = new[] { "InvalidFormat" }.ToImmutableArray(),
+        };
+
+        // Act
+        document.InjectSecuritySchemes(settings);
+
+        // Assert
+        document.Security.Should().BeEmpty();
+    }
+}
