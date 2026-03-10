@@ -416,7 +416,7 @@ public static class OpenApiExtensions
         context = context ?? throw new ArgumentNullException(nameof(context));
         
         if (context.TypeData.CSharpType == "object?" ||
-            context.Schema.Default is JsonArray ||
+            context.Schema.Default is JsonArray or JsonObject ||
             context.TypeData.CSharpTypeNullability)
         {
             return string.Empty;
