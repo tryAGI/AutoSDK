@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"__missing__"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Missing1 { get; set; } = "__missing__";
+        public string Missing1 { get; set; } = "__missing__";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,9 +30,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Missing(
-            string missing1)
+            string missing1 = "__missing__")
         {
-            this.Missing1 = missing1 ?? throw new global::System.ArgumentNullException(nameof(missing1));
+            this.Missing1 = missing1;
         }
 
         /// <summary>

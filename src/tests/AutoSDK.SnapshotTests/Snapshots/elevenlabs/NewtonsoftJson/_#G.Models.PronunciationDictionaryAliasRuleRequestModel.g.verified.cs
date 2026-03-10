@@ -19,8 +19,8 @@ namespace G
         /// The type of the rule.
         /// </summary>
         /// <default>"alias"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "alias";
 
         /// <summary>
         /// The alias for the string to be replaced.
@@ -48,12 +48,12 @@ namespace G
         /// </param>
         public PronunciationDictionaryAliasRuleRequestModel(
             string stringToReplace,
-            string type,
-            string alias)
+            string alias,
+            string type = "alias")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
+            this.Type = type;
         }
 
         /// <summary>

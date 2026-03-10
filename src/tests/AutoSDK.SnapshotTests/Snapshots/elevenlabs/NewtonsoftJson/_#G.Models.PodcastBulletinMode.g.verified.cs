@@ -13,8 +13,8 @@ namespace G
         /// The type of podcast to create.
         /// </summary>
         /// <default>"bulletin"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "bulletin";
 
         /// <summary>
         /// The voice settings for the bulletin.<br/>
@@ -41,11 +41,11 @@ namespace G
         /// Example: {"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
         /// </param>
         public PodcastBulletinMode(
-            string type,
-            global::G.PodcastBulletinModeData bulletin)
+            global::G.PodcastBulletinModeData bulletin,
+            string type = "bulletin")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Bulletin = bulletin ?? throw new global::System.ArgumentNullException(nameof(bulletin));
+            this.Type = type;
         }
 
         /// <summary>

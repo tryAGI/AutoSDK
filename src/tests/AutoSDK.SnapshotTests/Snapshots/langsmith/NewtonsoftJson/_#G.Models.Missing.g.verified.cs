@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"__missing__"</default>
-        [global::Newtonsoft.Json.JsonProperty("__missing__", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Missing1 { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("__missing__")]
+        public string Missing1 { get; set; } = "__missing__";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -27,9 +27,9 @@ namespace G
         /// </summary>
         /// <param name="missing1"></param>
         public Missing(
-            string missing1)
+            string missing1 = "__missing__")
         {
-            this.Missing1 = missing1 ?? throw new global::System.ArgumentNullException(nameof(missing1));
+            this.Missing1 = missing1;
         }
 
         /// <summary>

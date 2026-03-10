@@ -19,8 +19,8 @@ namespace G
         /// The type of the rule.
         /// </summary>
         /// <default>"phoneme"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "phoneme";
 
         /// <summary>
         /// The phoneme rule.
@@ -57,14 +57,14 @@ namespace G
         /// </param>
         public PronunciationDictionaryPhonemeRuleRequestModel(
             string stringToReplace,
-            string type,
             string phoneme,
-            string alphabet)
+            string alphabet,
+            string type = "phoneme")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
             this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
+            this.Type = type;
         }
 
         /// <summary>

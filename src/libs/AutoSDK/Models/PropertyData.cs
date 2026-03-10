@@ -67,6 +67,11 @@ public record struct PropertyData(
         {
             isRequired = false;
         }
+        // Special case for const properties — only one valid value with a default.
+        if (isRequired && context.Schema.IsConst())
+        {
+            isRequired = false;
+        }
 
         return new PropertyData(
             Id: propertyName,

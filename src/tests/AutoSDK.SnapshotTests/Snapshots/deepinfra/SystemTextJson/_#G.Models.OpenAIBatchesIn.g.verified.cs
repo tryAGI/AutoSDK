@@ -29,8 +29,7 @@ namespace G
         /// </summary>
         /// <default>"24h"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CompletionWindow { get; set; } = "24h";
+        public string CompletionWindow { get; set; } = "24h";
 
         /// <summary>
         /// Optional metadata to be stored with the batch.
@@ -66,13 +65,13 @@ namespace G
         public OpenAIBatchesIn(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            string completionWindow,
-            object? metadata)
+            object? metadata,
+            string completionWindow = "24h")
         {
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.Endpoint = endpoint;
-            this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.CompletionWindow = completionWindow;
         }
 
         /// <summary>

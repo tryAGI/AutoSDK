@@ -13,8 +13,8 @@ namespace G
         /// The type of podcast to create.
         /// </summary>
         /// <default>"conversation"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "conversation";
 
         /// <summary>
         /// The voice settings for the conversation.<br/>
@@ -41,11 +41,11 @@ namespace G
         /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
         /// </param>
         public PodcastConversationMode(
-            string type,
-            global::G.PodcastConversationModeData conversation)
+            global::G.PodcastConversationModeData conversation,
+            string type = "conversation")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
+            this.Type = type;
         }
 
         /// <summary>

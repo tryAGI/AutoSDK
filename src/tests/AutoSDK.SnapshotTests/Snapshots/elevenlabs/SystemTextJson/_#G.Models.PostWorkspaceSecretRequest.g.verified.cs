@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"new"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "new";
+        public string Type { get; set; } = "new";
 
         /// <summary>
         /// 
@@ -47,13 +46,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PostWorkspaceSecretRequest(
-            string type,
             string name,
-            string value)
+            string value,
+            string type = "new")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Type = type;
         }
 
         /// <summary>

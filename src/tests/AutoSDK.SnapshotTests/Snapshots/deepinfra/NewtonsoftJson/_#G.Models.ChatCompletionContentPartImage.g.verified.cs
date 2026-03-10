@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"image_url"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "image_url";
 
         /// <summary>
         /// 
@@ -34,11 +34,11 @@ namespace G
         /// <param name="type"></param>
         /// <param name="imageUrl"></param>
         public ChatCompletionContentPartImage(
-            string type,
-            global::G.ImageURL imageUrl)
+            global::G.ImageURL imageUrl,
+            string type = "image_url")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Type = type;
         }
 
         /// <summary>

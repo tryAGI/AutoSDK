@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"stored"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "stored";
+        public string Type { get; set; } = "stored";
 
         /// <summary>
         /// 
@@ -55,15 +54,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConvAIWorkspaceStoredSecretConfig(
-            string type,
             string secretId,
             string name,
-            global::G.ConvAIStoredSecretDependencies usedBy)
+            global::G.ConvAIStoredSecretDependencies usedBy,
+            string type = "stored")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SecretId = secretId ?? throw new global::System.ArgumentNullException(nameof(secretId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.UsedBy = usedBy ?? throw new global::System.ArgumentNullException(nameof(usedBy));
+            this.Type = type;
         }
 
         /// <summary>

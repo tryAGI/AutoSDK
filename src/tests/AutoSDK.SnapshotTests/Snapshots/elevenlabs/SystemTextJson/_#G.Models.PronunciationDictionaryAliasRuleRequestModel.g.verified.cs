@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         /// <default>"alias"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "alias";
+        public string Type { get; set; } = "alias";
 
         /// <summary>
         /// The alias for the string to be replaced.
@@ -54,12 +53,12 @@ namespace G
 #endif
         public PronunciationDictionaryAliasRuleRequestModel(
             string stringToReplace,
-            string type,
-            string alias)
+            string alias,
+            string type = "alias")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
+            this.Type = type;
         }
 
         /// <summary>

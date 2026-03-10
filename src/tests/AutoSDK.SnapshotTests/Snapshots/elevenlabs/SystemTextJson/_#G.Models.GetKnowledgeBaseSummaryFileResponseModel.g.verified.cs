@@ -57,8 +57,7 @@ namespace G
         /// </summary>
         /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "file";
+        public string Type { get; set; } = "file";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -88,7 +87,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
             global::System.Collections.Generic.IList<global::G.DependentAgentsItem> dependentAgents,
-            string type)
+            string type = "file")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -96,7 +95,7 @@ namespace G
             this.SupportedUsages = supportedUsages ?? throw new global::System.ArgumentNullException(nameof(supportedUsages));
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
             this.DependentAgents = dependentAgents ?? throw new global::System.ArgumentNullException(nameof(dependentAgents));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"Cancelled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; } = "Cancelled";
+        public string Status { get; set; } = "Cancelled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,9 +30,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BulkExportUpdate(
-            string status)
+            string status = "Cancelled")
         {
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Status = status;
         }
 
         /// <summary>

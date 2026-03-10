@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"image_url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "image_url";
+        public string Type { get; set; } = "image_url";
 
         /// <summary>
         /// 
@@ -39,11 +38,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionContentPartImage(
-            string type,
-            global::G.ImageURL imageUrl)
+            global::G.ImageURL imageUrl,
+            string type = "image_url")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Type = type;
         }
 
         /// <summary>

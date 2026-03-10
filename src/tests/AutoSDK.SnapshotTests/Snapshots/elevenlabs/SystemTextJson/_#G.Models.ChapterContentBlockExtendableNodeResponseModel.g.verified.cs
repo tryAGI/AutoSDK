@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"_other"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "_other";
+        public string Type { get; set; } = "_other";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,9 +30,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChapterContentBlockExtendableNodeResponseModel(
-            string type)
+            string type = "_other")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

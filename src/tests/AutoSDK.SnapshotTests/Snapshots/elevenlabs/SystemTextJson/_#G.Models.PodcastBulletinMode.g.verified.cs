@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"bulletin"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "bulletin";
+        public string Type { get; set; } = "bulletin";
 
         /// <summary>
         /// The voice settings for the bulletin.<br/>
@@ -46,11 +45,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastBulletinMode(
-            string type,
-            global::G.PodcastBulletinModeData bulletin)
+            global::G.PodcastBulletinModeData bulletin,
+            string type = "bulletin")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Bulletin = bulletin ?? throw new global::System.ArgumentNullException(nameof(bulletin));
+            this.Type = type;
         }
 
         /// <summary>

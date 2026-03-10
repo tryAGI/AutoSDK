@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"new"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "new";
 
         /// <summary>
         /// 
@@ -41,13 +41,13 @@ namespace G
         /// <param name="name"></param>
         /// <param name="value"></param>
         public PostWorkspaceSecretRequest(
-            string type,
             string name,
-            string value)
+            string value,
+            string type = "new")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Type = type;
         }
 
         /// <summary>

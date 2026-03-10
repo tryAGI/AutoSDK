@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"conversation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "conversation";
+        public string Type { get; set; } = "conversation";
 
         /// <summary>
         /// The voice settings for the conversation.<br/>
@@ -46,11 +45,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastConversationMode(
-            string type,
-            global::G.PodcastConversationModeData conversation)
+            global::G.PodcastConversationModeData conversation,
+            string type = "conversation")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
+            this.Type = type;
         }
 
         /// <summary>

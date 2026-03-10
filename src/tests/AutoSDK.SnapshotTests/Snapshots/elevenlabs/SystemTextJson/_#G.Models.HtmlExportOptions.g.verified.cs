@@ -26,8 +26,7 @@ namespace G
         /// </summary>
         /// <default>"html"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Format { get; set; } = "html";
+        public string Format { get; set; } = "html";
 
         /// <summary>
         /// 
@@ -70,16 +69,16 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HtmlExportOptions(
-            string format,
             bool? includeSpeakers,
             bool? includeTimestamps,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
-            int? maxSegmentChars)
+            int? maxSegmentChars,
+            string format = "html")
         {
-            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
+            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

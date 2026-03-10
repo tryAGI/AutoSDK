@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"run"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "run";
+        public string Type { get; set; } = "run";
 
         /// <summary>
         /// 
@@ -83,19 +82,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TenantShareRunToken(
-            string type,
             string shareToken,
             global::System.DateTime createdAt,
             global::System.Guid runId,
             string? runName,
             string? runType,
             global::System.Guid? sessionId,
-            string? sessionName)
+            string? sessionName,
+            string type = "run")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.RunId = runId;
+            this.Type = type;
             this.RunName = runName;
             this.RunType = runType;
             this.SessionId = sessionId;

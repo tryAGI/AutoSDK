@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         /// <default>"phoneme"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "phoneme";
+        public string Type { get; set; } = "phoneme";
 
         /// <summary>
         /// The phoneme rule.
@@ -64,14 +63,14 @@ namespace G
 #endif
         public PronunciationDictionaryPhonemeRuleRequestModel(
             string stringToReplace,
-            string type,
             string phoneme,
-            string alphabet)
+            string alphabet,
+            string type = "phoneme")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
             this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
+            this.Type = type;
         }
 
         /// <summary>

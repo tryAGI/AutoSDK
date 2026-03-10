@@ -13,8 +13,8 @@ namespace G
         /// The type of source to create.
         /// </summary>
         /// <default>"text"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// The text to create the podcast from.
@@ -38,11 +38,11 @@ namespace G
         /// The text to create the podcast from.
         /// </param>
         public PodcastTextSource(
-            string type,
-            string text)
+            string text,
+            string type = "text")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

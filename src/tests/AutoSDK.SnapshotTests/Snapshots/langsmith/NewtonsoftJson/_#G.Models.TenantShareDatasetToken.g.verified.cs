@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"dataset"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "dataset";
 
         /// <summary>
         /// 
@@ -55,16 +55,16 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
         public TenantShareDatasetToken(
-            string type,
             string shareToken,
             global::System.DateTime createdAt,
             global::System.Guid datasetId,
-            string? datasetName)
+            string? datasetName,
+            string type = "dataset")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.DatasetId = datasetId;
+            this.Type = type;
             this.DatasetName = datasetName;
         }
 

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"tts_node"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "tts_node";
+        public string Type { get; set; } = "tts_node";
 
         /// <summary>
         /// 
@@ -47,13 +46,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChapterContentBlockTtsNodeResponseModel(
-            string type,
             string voiceId,
-            string text)
+            string text,
+            string type = "tts_node")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

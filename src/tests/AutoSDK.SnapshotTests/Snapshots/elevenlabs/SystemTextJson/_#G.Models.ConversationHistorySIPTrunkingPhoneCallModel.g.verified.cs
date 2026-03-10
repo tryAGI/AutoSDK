@@ -43,8 +43,7 @@ namespace G
         /// </summary>
         /// <default>"sip_trunking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "sip_trunking";
+        public string Type { get; set; } = "sip_trunking";
 
         /// <summary>
         /// 
@@ -76,15 +75,15 @@ namespace G
             string phoneNumberId,
             string agentNumber,
             string externalNumber,
-            string type,
-            string callSid)
+            string callSid,
+            string type = "sip_trunking")
         {
             this.Direction = direction;
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.AgentNumber = agentNumber ?? throw new global::System.ArgumentNullException(nameof(agentNumber));
             this.ExternalNumber = externalNumber ?? throw new global::System.ArgumentNullException(nameof(externalNumber));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CallSid = callSid ?? throw new global::System.ArgumentNullException(nameof(callSid));
+            this.Type = type;
         }
 
         /// <summary>

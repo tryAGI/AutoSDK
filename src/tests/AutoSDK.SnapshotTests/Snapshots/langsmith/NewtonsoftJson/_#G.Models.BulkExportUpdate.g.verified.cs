@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"Cancelled"</default>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public string Status { get; set; } = "Cancelled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -27,9 +27,9 @@ namespace G
         /// </summary>
         /// <param name="status"></param>
         public BulkExportUpdate(
-            string status)
+            string status = "Cancelled")
         {
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Status = status;
         }
 
         /// <summary>

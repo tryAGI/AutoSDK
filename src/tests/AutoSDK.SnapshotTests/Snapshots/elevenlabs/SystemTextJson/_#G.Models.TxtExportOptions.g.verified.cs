@@ -32,8 +32,7 @@ namespace G
         /// </summary>
         /// <default>"txt"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Format { get; set; } = "txt";
+        public string Format { get; set; } = "txt";
 
         /// <summary>
         /// 
@@ -79,18 +78,18 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TxtExportOptions(
-            string format,
             int? maxCharactersPerLine,
             bool? includeSpeakers,
             bool? includeTimestamps,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
-            int? maxSegmentChars)
+            int? maxSegmentChars,
+            string format = "txt")
         {
-            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.MaxCharactersPerLine = maxCharactersPerLine;
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
+            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

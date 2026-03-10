@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"_other"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "_other";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -27,9 +27,9 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         public ChapterContentBlockExtendableNodeResponseModel(
-            string type)
+            string type = "_other")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

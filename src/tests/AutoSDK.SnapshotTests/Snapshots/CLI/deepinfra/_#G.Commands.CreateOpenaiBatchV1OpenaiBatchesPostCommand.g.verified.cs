@@ -36,12 +36,6 @@ namespace G
             Description = @"The endpoint to be used for all requests in the batch. Currently /v1/chat/completions, /v1/completions are supported.",
         };
 
-        private global::System.CommandLine.Argument<string> CompletionWindow { get; } = new(
-            name: "completionWindow")
-        {
-            Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
-        };
-
         private global::System.CommandLine.Argument<object?> Metadata { get; } = new(
             name: "metadata")
         {
@@ -52,6 +46,12 @@ namespace G
             name: "xiApiKey")
         {
             Description = @"",
+        };
+
+        private global::System.CommandLine.Option<string> CompletionWindow { get; } = new(
+            name: "completionWindow")
+        {
+            Description = @"The time frame within which the batch should be processed. Currently only 24h is supported.",
         };
 
 
@@ -66,9 +66,9 @@ namespace G
 
             Arguments.Add(InputFileId);
             Arguments.Add(Endpoint);
-            Arguments.Add(CompletionWindow);
             Arguments.Add(Metadata);
             Options.Add(XiApiKey);
+            Options.Add(CompletionWindow);
 
             Initialize();
 

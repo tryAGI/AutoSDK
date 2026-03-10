@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text";
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// The text to create the podcast from.
@@ -43,11 +42,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PodcastTextSource(
-            string type,
-            string text)
+            string text,
+            string type = "text")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>

@@ -25,8 +25,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"segmented_json"</default>
-        [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Format { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("format")]
+        public string Format { get; set; } = "segmented_json";
 
         /// <summary>
         /// 
@@ -66,16 +66,16 @@ namespace G
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
         public SegmentedJsonExportOptions(
-            string format,
             bool? includeSpeakers,
             bool? includeTimestamps,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
-            int? maxSegmentChars)
+            int? maxSegmentChars,
+            string format = "segmented_json")
         {
-            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
+            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

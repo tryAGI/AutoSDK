@@ -25,8 +25,8 @@ namespace G
         /// 
         /// </summary>
         /// <default>"pdf"</default>
-        [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Format { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("format")]
+        public string Format { get; set; } = "pdf";
 
         /// <summary>
         /// 
@@ -66,16 +66,16 @@ namespace G
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
         public PdfExportOptions(
-            string format,
             bool? includeSpeakers,
             bool? includeTimestamps,
             double? segmentOnSilenceLongerThanS,
             double? maxSegmentDurationS,
-            int? maxSegmentChars)
+            int? maxSegmentChars,
+            string format = "pdf")
         {
-            this.Format = format ?? throw new global::System.ArgumentNullException(nameof(format));
             this.IncludeSpeakers = includeSpeakers;
             this.IncludeTimestamps = includeTimestamps;
+            this.Format = format;
             this.SegmentOnSilenceLongerThanS = segmentOnSilenceLongerThanS;
             this.MaxSegmentDurationS = maxSegmentDurationS;
             this.MaxSegmentChars = maxSegmentChars;

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         /// <default>"input_audio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "input_audio";
+        public string Type { get; set; } = "input_audio";
 
         /// <summary>
         /// 
@@ -39,11 +38,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionContentPartAudio(
-            string type,
-            global::G.InputAudio inputAudio)
+            global::G.InputAudio inputAudio,
+            string type = "input_audio")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
+            this.Type = type;
         }
 
         /// <summary>

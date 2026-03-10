@@ -13,8 +13,8 @@ namespace G
         /// The type of source to create.
         /// </summary>
         /// <default>"url"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// The URL to create the podcast from.
@@ -38,11 +38,11 @@ namespace G
         /// The URL to create the podcast from.
         /// </param>
         public PodcastURLSource(
-            string type,
-            string url)
+            string url,
+            string type = "url")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Type = type;
         }
 
         /// <summary>
