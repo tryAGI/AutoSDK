@@ -120,6 +120,35 @@ This error happens if the generated file path is too long. This happens if you d
 To enable it follow the offical docs:
 https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#registry-setting-to-enable-long-paths
  
+## 🤖 Claude Code Skill
+
+AutoSDK is available as a [Claude Code](https://claude.ai/code) skill via [skills.sh](https://skills.sh), enabling AI-assisted SDK generation directly from your terminal.
+
+### Install
+
+```bash
+npx skills add tryAGI/AutoSDK@generating-dotnet-sdks
+```
+
+### Usage
+
+Once installed, you can use natural language prompts in Claude Code like:
+- "Generate a C# SDK from this OpenAPI spec"
+- "Scaffold a new AutoSDK project for the Stripe API"
+- "Help me customize the generated client with streaming support"
+
+Claude Code will use the skill's knowledge of AutoSDK CLI options, project conventions, and customization patterns to produce correct commands and code.
+
+### What's included
+
+The skill provides Claude Code with detailed knowledge of:
+- CLI commands and all their options (`generate`, `init`, `http`, `ai spec-from-docs`)
+- Standard project structure and the `generate.sh` regeneration pattern
+- Post-generation customization (partial classes, client hooks, trimming support)
+- Troubleshooting common issues
+
+Skill source: [`skills/generating-dotnet-sdks/`](skills/generating-dotnet-sdks/)
+
 ## 📚Examples of use in real SDKs📚
 - https://github.com/tryAGI/OpenAI
 - https://github.com/tryAGI/Ollama
